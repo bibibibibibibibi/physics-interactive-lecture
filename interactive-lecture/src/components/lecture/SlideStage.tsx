@@ -33,6 +33,33 @@ function fmt(s: number) {
   return `${m}:${String(Math.floor(s % 60)).padStart(2, '0')}`
 }
 
+/** 实测元素内容的紧凑包围盒（屏幕像素）。
+    KaTeX display 公式带 1em 外边距，Range 测量会把边距算进去导致虚高，
+    因此含 display 公式时取各 .katex-display 元素自身的边框盒并集；
+    纯文本取所有叶子 span（文字 run）的并集——段落 div 是 100% 宽，直接 Range 会虚宽。 */
+export function measureContentRect(outer: Element) {
+  let l = Infinity, t = Infinity, r = -Infinity, b = -Infinity
+  const add = (rc: DOMRect) => {
+    l = Math.min(l, rc.left); t = Math.min(t, rc.top)
+    r = Math.max(r, rc.right); b = Math.max(b, rc.bottom)
+  }
+  const displays = outer.querySelectorAll('.katex-display')
+  if (displays.length) {
+    displays.forEach(d => add(d.getBoundingClientRect()))
+  } else {
+    const leaves = Array.from(outer.querySelectorAll('span'))
+      .filter(s => s.children.length === 0 && (s.textContent ?? '').trim())
+    if (leaves.length) leaves.forEach(s => add(s.getBoundingClientRect()))
+    else {
+      const range = document.createRange()
+      range.selectNodeContents(outer)
+      add(range.getBoundingClientRect())
+    }
+  }
+  if (r <= l) return null
+  return { left: l, top: t, right: r, bottom: b, width: r - l, height: b - t }
+}
+
 /** 单个元素渲染（SlidesOnly 静态导出也复用） */
 export function Element({ el, t }: { el: WebElement; t: number }) {
   const base: React.CSSProperties = {
@@ -133,6 +160,36 @@ export default function SlideStage({
     }
     return s
   }, [curPage, t])
+
+  /** 文本/公式实测内容宽度（设计坐标）：热区/红线/激光按真实内容画，
+      忽略 author 里拍的宽盒子；box/图/表保持声明尺寸（边框本身就是视觉边界） */
+  const [fit, setFit] = useState<Record<number, { x: number; w: number }>>({})
+  useEffect(() => {
+    const host = innerRef.current
+    if (!host || !curPage) { setFit({}); return }
+    const design = host.querySelector('.aspect-video > div')
+    if (!design) return
+    const dr = design.getBoundingClientRect()
+    const sc = dr.width / VIDEO_W
+    if (!sc) return
+    const next: Record<number, { x: number; w: number }> = {}
+    curPage.elements.forEach((el, i) => {
+      if (el.step > curStep) return
+      if (el.type !== 'text' && el.type !== 'tex') return
+      const outer = design.querySelector(`[data-elidx="${i}"]`)?.firstElementChild
+      if (!outer) return
+      const rc = measureContentRect(outer)
+      if (!rc || rc.width < 4) return
+      next[i] = { x: Math.round((rc.left - dr.left) / sc), w: Math.round(rc.width / sc) }
+    })
+    setFit(next)
+  }, [curPage, curStep, scale])
+
+  /** 元素的显示几何：文本/公式用实测宽度，其余用声明宽度 */
+  function geoOf(elIdx: number, el: { x: number; w: number }) {
+    const f = fit[elIdx]
+    return f ? { x: f.x, w: f.w } : { x: el.x, w: el.w }
+  }
 
   const pages = weblec?.slides ?? []
   const pageIdx = curPage ? pages.findIndex(p => p.id === curPage.id) : -1
@@ -236,7 +293,7 @@ export default function SlideStage({
             {/* 页面元素：按步揭示 */}
             {curPage?.elements.map((el, i) => (
               el.step <= curStep
-                ? <div key={`${curPage.id}-${i}`} className="wl-in"><Element el={el} t={t} /></div>
+                ? <div key={`${curPage.id}-${i}`} data-elidx={i} className="wl-in"><Element el={el} t={t} /></div>
                 : null
             ))}
 
@@ -245,12 +302,13 @@ export default function SlideStage({
               if (!b.hotspot) return null
               const el = curPage.elements[b.elIdx]
               if (!el || el.step > curStep) return null
+              const g = geoOf(b.elIdx, el)
               return (
                 <button key={bi}
                   onClick={e => { e.currentTarget.blur(); onOpenBullet(curPage, b, bi) }}
                   className="absolute group"
                   style={{
-                    left: el.x, top: el.y, width: el.w, height: el.h ?? 90,
+                    left: g.x, top: el.y, width: g.w, height: el.h ?? 90,
                   }}
                   title={stripMath(b.text)}>
                   {!playing && (
@@ -260,27 +318,34 @@ export default function SlideStage({
               )
             })}
 
-            {/* 激光笔小光点 */}
-            {laserTarget && (
-              <div className="absolute pointer-events-none transition-all duration-700 ease-in-out"
-                style={{ left: laserTarget.x, top: laserTarget.y, transform: 'translate(-50%, -50%)', zIndex: 10 }}>
-                <div className="relative h-2 w-2">
-                  <span className="absolute inset-0 rounded-full bg-red-500 shadow-[0_0_10px_3px_rgba(239,68,68,0.7)]" />
+            {/* 激光笔小光点：横向对准内容真实中心 */}
+            {laserTarget && (() => {
+              const b = curPage?.bullets[laserTarget.idx]
+              const el = b ? curPage?.elements[b.elIdx] : null
+              const g = el ? geoOf(b!.elIdx, el) : null
+              const lx = g ? g.x + g.w / 2 : laserTarget.x
+              return (
+                <div className="absolute pointer-events-none transition-all duration-700 ease-in-out"
+                  style={{ left: lx, top: laserTarget.y, transform: 'translate(-50%, -50%)', zIndex: 10 }}>
+                  <div className="relative h-2 w-2">
+                    <span className="absolute inset-0 rounded-full bg-red-500 shadow-[0_0_10px_3px_rgba(239,68,68,0.7)]" />
+                  </div>
                 </div>
-              </div>
-            )}
+              )
+            })()}
 
-            {/* 重要知识点下划红线：落在元素框下沿，10 秒，每页最多 3 条 */}
+            {/* 重要知识点下划红线：落在内容下沿、与内容同宽，10 秒，每页最多 3 条 */}
             {curPage && underlines.filter(u => u.until > t).map(u => {
               const b = curPage.bullets[u.i]
               const el = b ? curPage.elements[b.elIdx] : null
               if (!el) return null
+              const g = geoOf(b.elIdx, el)
               const eh = el.h ?? 90
               return (
                 <div key={`${u.i}-${u.until}`}
                   className="anim-ul absolute pointer-events-none"
                   style={{
-                    left: el.x, top: el.y + eh + 8, width: el.w, height: 5, zIndex: 10,
+                    left: g.x, top: el.y + eh + 8, width: g.w, height: 5, zIndex: 10,
                     background: '#ef476f', borderRadius: 3,
                     boxShadow: '0 0 8px 2px rgba(239,71,111,0.6)',
                   }} />

@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { ChapterNav, HotspotList, Sidebar, SlideStage } from '@/components/lecture'
+import QaRunner from '@/components/lecture/QaRunner'
 import { aiAnswer } from '@/lib/qa'
 import type { AskContext } from '@/lib/qa'
 import { stripMath } from '@/lib/lecture'
@@ -16,6 +17,8 @@ export default function Home() {
 function Lecture() {
   const mediaRef = useRef<HTMLAudioElement>(null)
   const [weblec, setWeblec] = useState<WebLec | null>(null)
+  /** 版式质检模式：地址栏带 ?qa=1 时自动巡检全部页面 */
+  const qaMode = useMemo(() => new URLSearchParams(window.location.search).has('qa'), [])
   const [t, setT] = useState(0)
   const [active, setActive] = useState<Active | null>(null)
   const [chats, setChats] = useState<Record<string, Msg[]>>({})
@@ -256,6 +259,7 @@ function Lecture() {
           onClearContext={() => clearContext(true)}
         />
       </main>
+      {qaMode && <QaRunner mediaRef={mediaRef} weblec={weblec} />}
     </div>
   )
 }
