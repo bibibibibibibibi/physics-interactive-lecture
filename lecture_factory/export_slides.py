@@ -25,6 +25,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent          # 工作区根
 APP = ROOT / 'interactive-lecture'
 DIST = APP / 'dist-slides'
+OUT_DIR = APP / 'slides-export'                  # 成品单文件目录（不在 vite 构建目录内，构建不会清掉它）
 WEBLEC = APP / 'public' / 'weblec'                      # 各课程目录（weblec/<课名>/）
 
 # 需要内联进单文件的图片（img 元素 src 引用的文件名 → mime）
@@ -42,7 +43,7 @@ def main() -> int:
     ap.add_argument('--course', default='shm', help='课程目录名（public/weblec/<课名>/），默认 shm')
     ap.add_argument('--build', action='store_true',
                     help='先执行 npm run build:slides 再打包（日常一条命令走这个）')
-    ap.add_argument('--out', default=None, help='输出文件名（默认 大学物理-<标题>-幻灯片.html，放 dist-slides/）')
+    ap.add_argument('--out', default=None, help='输出文件名（默认 大学物理-<标题>-幻灯片.html，放 slides-export/）')
     args = ap.parse_args()
 
     media_dir = WEBLEC / args.course
@@ -97,7 +98,8 @@ def main() -> int:
     html = html.replace(mcss.group(0), '<style>' + css + '</style>')
 
     out_name = args.out or f"大学物理-{weblec.get('title', '课件')}-幻灯片.html"
-    out = DIST / out_name
+    OUT_DIR.mkdir(exist_ok=True)
+    out = OUT_DIR / out_name
     out.write_text(html, encoding='utf-8')
     size_mb = out.stat().st_size / 1024 / 1024
     print(f'√ 单文件幻灯片已导出：{out}')

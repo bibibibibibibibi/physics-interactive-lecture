@@ -45,7 +45,7 @@ npm run dev          # → http://localhost:3000（本机由 Kimi Work 托管时
 
 # 3. 导出单文件幻灯片（双击即开，可拷给学生）
 python lecture_factory/export_slides.py --build --course shm
-#    → interactive-lecture/dist-slides/大学物理-<标题>-幻灯片.html
+#    → interactive-lecture/slides-export/大学物理-<标题>-幻灯片.html
 ```
 
 现有课程：**shm**（第九章 振动 · 9-1 简谐振动，16 页，约 7 分钟）。
@@ -170,7 +170,7 @@ python lecture_factory/build_web.py courses_web/旋转矢量
 
 ```bash
 python lecture_factory/export_slides.py --build --course 旋转矢量
-# → interactive-lecture/dist-slides/大学物理-<标题>-幻灯片.html
+# → interactive-lecture/slides-export/大学物理-<标题>-幻灯片.html
 ```
 
 ### 第 8 环：交付与课后闭环

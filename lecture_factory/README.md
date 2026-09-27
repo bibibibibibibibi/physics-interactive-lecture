@@ -145,7 +145,7 @@ HTML/SVG/KaTeX 实时渲染，视觉上对齐老师真实 PPT 的版式与点击
 ```bash
 python lecture_factory/export_slides.py --build            # 一条命令：构建 + 打包（默认 shm）
 python lecture_factory/export_slides.py --build --course <课名>   # 导出其他课程
-# → ../interactive-lecture/dist-slides/大学物理-<标题>-幻灯片.html
+# → ../interactive-lecture/slides-export/大学物理-<标题>-幻灯片.html
 ```
 
 产物是一个自包含 HTML（约 2 MB）：JS/CSS/KaTeX 字体/logo/插图全部内联，

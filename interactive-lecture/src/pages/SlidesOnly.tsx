@@ -85,6 +85,23 @@ export default function SlidesOnly() {
   const [cur, setCur] = useState<Stroke | null>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
+  /* 底部操作提示：浮动显示——动鼠标时出现，静止 2.6 秒后自动隐去，不遮挡页脚 */
+  const [hintOn, setHintOn] = useState(true)
+  const hintTimer = useRef<number | undefined>(undefined)
+  useEffect(() => {
+    const wake = () => {
+      setHintOn(true)
+      window.clearTimeout(hintTimer.current)
+      hintTimer.current = window.setTimeout(() => setHintOn(false), 2600)
+    }
+    wake()
+    window.addEventListener('mousemove', wake)
+    return () => {
+      window.removeEventListener('mousemove', wake)
+      window.clearTimeout(hintTimer.current)
+    }
+  }, [])
+
   useEffect(() => {
     if (window.__WEBLEC__) {
       setWeblec(inlineMedia(window.__WEBLEC__))
@@ -420,8 +437,11 @@ export default function SlidesOnly() {
         </div>
       )}
 
-      {/* 底部操作提示（幻灯片之外） */}
-      <div className="pointer-events-none fixed bottom-2 left-0 right-0 text-center text-xs text-slate-400/80">
+      {/* 底部操作提示：浮动胶囊，静止时自动隐去 */}
+      <div
+        className="pointer-events-none fixed bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white/90 px-4 py-1 text-xs text-slate-500 shadow-md ring-1 ring-slate-200 transition-opacity duration-500"
+        style={{ opacity: hintOn ? 1 : 0 }}
+      >
         → / 空格 / 单击 下一步 · ← / 右键 上一步 · PgUp / PgDn 翻页 · F 全屏 · A 批注
         {pageStrokeCount > 0 && <span className="ml-2 text-[#e03131]">●{pageStrokeCount} 笔</span>}
         <span className="ml-3 text-slate-500">{pageIdx + 1} / {pages.length}</span>
