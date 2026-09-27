@@ -820,8 +820,8 @@ export function PendulumAnim({ t = 0 }: { t?: number }) {
       <circle cx={A[0]} cy={A[1]} r="10" fill="#111" />
       <text x={A[0] - 78} y={A[1] + 64} fontSize="52" fontStyle="italic" fontFamily={SERIF}>A</text>
       {/* 转动正向 */}
-      <ArcArrow cx={A[0] + 250} cy={180} r={70} a0={-0.5} a1={-1.9} />
-      <text x={A[0] + 330} y="160" fontSize="44" fontFamily={HEI}>转动正向</text>
+      <ArcArrow cx={A[0] + 200} cy={180} r={70} a0={-0.5} a1={-1.9} />
+      <text x={A[0] + 285} y="160" fontSize="42" fontFamily={HEI}>转动正向</text>
       {/* 平衡位置：竖直虚线 + 小球 O */}
       <line x1={A[0]} y1={A[1]} x2={A[0]} y2={eqY + 8} stroke="#111" strokeWidth="5" strokeDasharray="16 12" />
       <ellipse cx={A[0]} cy={eqY} rx="30" ry="26" fill="#F4A7A7" stroke="#C00" strokeWidth="2" />
@@ -843,10 +843,10 @@ export function PendulumAnim({ t = 0 }: { t?: number }) {
       </radialGradient>
       <ellipse cx={bx} cy={by} rx="34" ry="30" fill="url(#pd-ball)" />
       <text x={bx + 64} y={by + 8} fontSize="52" fontStyle="italic" fontFamily={SERIF}>m</text>
-      {/* F_T（沿绳指向悬点）与 P（竖直向下） */}
+      {/* F_T（沿绳指向悬点，标签在绳内侧）与 P（竖直向下） */}
       <Arrow x1={bx + ux * 32} y1={by + uy * 32} x2={bx + ux * 200} y2={by + uy * 200} color="#E00" w={6} />
-      <Vec ch="F" x={bx + ux * 238} y={by + uy * 238 + 14} size={46} fill="#E00" anchor="middle" />
-      <text x={bx + ux * 238 + 22} y={by + uy * 238 + 30} fontSize="28" fontStyle="italic" fill="#E00" fontFamily={SERIF}>T</text>
+      <Vec ch="F" x={bx + ux * 235 + uy * 48} y={by + uy * 235 - ux * 48 + 14} size={46} fill="#E00" anchor="middle" />
+      <text x={bx + ux * 235 + uy * 48 + 24} y={by + uy * 235 - ux * 48 + 30} fontSize="28" fontStyle="italic" fill="#E00" fontFamily={SERIF}>T</text>
       <Arrow x1={bx} y1={by + 34} x2={bx} y2={by + 220} color="#C000C0" w={6} />
       <Vec ch="P" x={bx + 46} y={by + 246} size={50} fill="#C000C0" />
       {/* J = ml² */}
@@ -918,11 +918,11 @@ export function RollingBall() {
       <ArcLine cx={O[0]} cy={O[1]} r={130} a0={Math.PI / 2 - th} a1={Math.PI / 2} color="#0A0" w={5} />
       <text x={O[0] + 162 * Math.sin(th / 2) - 24} y={O[1] + 162 * Math.cos(th / 2) + 14}
         textAnchor="middle" fontSize="48" fontStyle="italic" fill="#0A0" fontFamily={SERIF}>θ</text>
-      {/* 支持力 F_N（C → O 方向） */}
-      <Arrow x1={C[0] - ux * (rb + 6)} y1={C[1] - uy * (rb + 6)}
-        x2={C[0] - ux * (rb + 180)} y2={C[1] - uy * (rb + 180)} color="#E00" w={6} />
-      <Vec ch="F" x={C[0] - ux * (rb + 224)} y={C[1] - uy * (rb + 224) + 12} size={46} fill="#E00" anchor="middle" />
-      <text x={C[0] - ux * (rb + 224) + 24} y={C[1] - uy * (rb + 224) + 30} fontSize="28" fontStyle="italic" fill="#E00" fontFamily={SERIF}>N</text>
+      {/* 支持力 F_N（C → O 方向，沿半径线外移 25px 避免与 R 线重叠） */}
+      <Arrow x1={C[0] - ux * (rb + 6) + uy * 25} y1={C[1] - uy * (rb + 6) - ux * 25}
+        x2={C[0] - ux * (rb + 180) + uy * 25} y2={C[1] - uy * (rb + 180) - ux * 25} color="#E00" w={6} />
+      <Vec ch="F" x={C[0] - ux * (rb + 222) + uy * 55} y={C[1] - uy * (rb + 222) - ux * 55 + 12} size={46} fill="#E00" anchor="middle" />
+      <text x={C[0] - ux * (rb + 222) + uy * 55 + 24} y={C[1] - uy * (rb + 222) - ux * 55 + 30} fontSize="28" fontStyle="italic" fill="#E00" fontFamily={SERIF}>N</text>
       {/* 小球（匀质球，半径 r） */}
       <radialGradient id="rb-g" cx="0.35" cy="0.35" r="0.95">
         <stop offset="0%" stopColor="#dceaff" />
@@ -933,9 +933,9 @@ export function RollingBall() {
       <line x1={C[0]} y1={C[1]} x2={C[0] + rb * 0.86} y2={C[1] - rb * 0.5} stroke="#111" strokeWidth="4" />
       <text x={C[0] + rb * 0.9} y={C[1] - rb * 0.6} fontSize="46" fontStyle="italic" fontFamily={SERIF}>r</text>
       <text x={C[0] - 90} y={C[1] + 60} fontSize="50" fontStyle="italic" fontFamily={SERIF}>C</text>
-      {/* 摩擦力 F（接触点沿切线） */}
-      <Arrow x1={ct[0]} y1={ct[1]} x2={ct[0] + tx * 170} y2={ct[1] + ty * 170} color="#7030A0" w={6} />
-      <Vec ch="F" x={ct[0] + tx * 214} y={ct[1] + ty * 214 + 14} size={46} fill="#7030A0" anchor="middle" />
+      {/* 摩擦力 F（接触点沿切线，略短并起于表面内侧） */}
+      <Arrow x1={ct[0] - ux * 8} y1={ct[1] - uy * 8} x2={ct[0] + tx * 140} y2={ct[1] + ty * 140} color="#7030A0" w={6} />
+      <Vec ch="F" x={ct[0] + tx * 178} y={ct[1] + ty * 178 + 14} size={46} fill="#7030A0" anchor="middle" />
       {/* 重力 mg（C 竖直向下） */}
       <Arrow x1={C[0]} y1={C[1] + rb} x2={C[0]} y2={C[1] + rb + 180} color="#C000C0" w={6} />
       <Vec ch="mg" x={C[0] + 60} y={C[1] + rb + 206} size={46} fill="#C000C0" />
