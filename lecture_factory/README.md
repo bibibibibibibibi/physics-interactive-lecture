@@ -133,7 +133,7 @@ HTML/SVG/KaTeX 实时渲染，视觉上对齐老师真实 PPT 的版式与点击
 | 图片元素 | `img` 元素充满 w×h 框（objectFit contain），w/h 直接按显示大小给；白底图片先转透明（参考 clock.gif 处理：近白像素 alpha=0） |
 | 页脚/页码 | z-index 20 + 白底圆角衬，任何内容遮不住 |
 | 文字颜色 | 舞台容器默认 `#111`，表格等不设色的元素不会继承深色页面的浅色字 |
-| logo | `public/weblec/<课名>/logo.png`（格物图标，左上角 270×116）；原图存课程目录 `logo_src.png` |
+| logo | `public/weblec/<课名>/logo.png`（格物图标，左上角 270×116 × `logoScale`，doc 里可选设置、默认 1，9-1/9-2 用 0.67）；原图存课程目录 `logo_src.png` |
 
 讲稿断句约定：同一句里的多个 `[[n]]` 标记会共享同一个配音时刻导致步进重合，
 要把不同步骤拆到不同句子里。`weblec.json` 与 `lecture.json` 结构同形

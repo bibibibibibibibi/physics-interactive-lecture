@@ -55,6 +55,7 @@ doc = {
   "nav": "章节号　%(title)s",          # 页面顶部导航条文字
   "footer": "第九章　振动",             # 页脚（浮于内容之上，不会被遮）
   # "character": "aqiang",             # 可选：覆盖默认出镜角色
+  # "logoScale": 0.67,                 # 可选：课程 logo 缩放（默认 1；9-1/9-2 均用 0.67）
   "pages": pages,
 }
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "slides.json")

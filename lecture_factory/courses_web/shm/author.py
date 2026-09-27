@@ -317,6 +317,7 @@ doc = {
   "nav": "9-1　简谐振动　振幅　周期和频率　相位",
   "footer": "第九章　振动",
   "character": "aqiang",
+  "logoScale": 0.67,
   "pages": pages,
 }
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "slides.json")

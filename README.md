@@ -202,6 +202,7 @@ python lecture_factory/export_slides.py --build --course 旋转矢量
 | --- | --- |
 | `title/nav/footer` | 课程标题、页眉导航、页脚 |
 | `character/characters` | 默认卡通讲师与可切换角色表 |
+| `logoScale` | 可选：logo 缩放（默认 1；9-1/9-2 均用 0.67），author.py 的 doc 里设置、构建时透传 |
 | `duration` | 整课时长（秒），由合并音频实测 |
 | `slides[]` | 页面数组：`elements`（元素 + `step` 步序）、`bullets`（要点 + 热点/问答）、`stepTimes`、`t_start/t_end`、`laser` |
 | `subtitles[]` | 句级字幕（起止时刻 + 文本） |
@@ -225,7 +226,7 @@ python lecture_factory/export_slides.py --build --course 旋转矢量
 | 图片元素 | 充满 w×h 框（contain）；白底图先转透明 |
 | 页脚/页码 | z-index 20 + 白底圆角衬，任何内容遮不住 |
 | 文字颜色 | 舞台容器默认 `#111` |
-| logo | 每课 `logo.png`，左上角 270×116 |
+| logo | 每课 `logo.png`，左上角 270×116 乘以 `logoScale`（默认 1，现有课程 0.67） |
 
 ## 规范校验器
 
