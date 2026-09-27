@@ -18,7 +18,10 @@ interface Props {
 /** AI 助教常驻聊天区：上下文标签 + 候选问题 + 对话记录 + 输入框 */
 export default function TutorPanel({ messages, thinking, input, onInputChange, onAsk, suggestions, contextLabel, onClearContext }: Props) {
   const chatEndRef = useRef<HTMLDivElement>(null)
-  useEffect(() => { chatEndRef.current?.scrollIntoView({ behavior: 'smooth' }) }, [messages, thinking])
+  useEffect(() => {
+    const box = chatEndRef.current?.parentElement
+    box?.scrollTo({ top: box.scrollHeight, behavior: 'smooth' })
+  }, [messages, thinking])
 
   return (
     <>

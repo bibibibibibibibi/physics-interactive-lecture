@@ -14,11 +14,15 @@ interface Props {
 export default function SubtitlePanel({ subs, curSubStart, t, height, onOpenSubtitle }: Props) {
   const subListRef = useRef<HTMLDivElement>(null)
 
-  /** 字幕列表自动跟随当前句滚动 */
+  /** 字幕列表自动跟随当前句滚动（只滚容器自身，不带动整页） */
   useEffect(() => {
     if (curSubStart == null || !subListRef.current) return
-    const el = subListRef.current.querySelector<HTMLElement>(`[data-sub="${curSubStart}"]`)
-    el?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    const box = subListRef.current
+    const el = box.querySelector<HTMLElement>(`[data-sub="${curSubStart}"]`)
+    if (!el) return
+    const target = el.getBoundingClientRect().top - box.getBoundingClientRect().top
+      + box.scrollTop - box.clientHeight / 2 + el.clientHeight / 2
+    box.scrollTo({ top: Math.max(0, target), behavior: 'smooth' })
   }, [curSubStart])
 
   return (
