@@ -179,6 +179,9 @@ def main():
         "slides": pages_out,
         "subtitles": subtitles,
     }
+    for opt in ("logoScale",):  # 可选版式参数透传
+        if opt in doc:
+            weblec[opt] = doc[opt]
     with open(os.path.join(out_dir, "weblec.json"), "w", encoding="utf-8") as f:
         json.dump(weblec, f, ensure_ascii=False, indent=1)
     print(f"total {total:.1f}s -> {out_dir}")

@@ -43,6 +43,8 @@ export interface WebPage extends Omit<Slide, 'bullets'> {
 export interface WebLec extends Omit<Lecture, 'slides'> {
   nav: string
   footer: string
+  /** 可选：课程 logo 缩放（默认 1，作者脚本 doc.logoScale 透传） */
+  logoScale?: number
   duration: number
   slides: WebPage[]
   subtitles: Sub[]

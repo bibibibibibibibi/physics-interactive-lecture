@@ -321,6 +321,7 @@ doc = {
   "nav": "9-2　旋转矢量",
   "footer": "第九章　振动",
   "character": "aqiang",
+  "logoScale": 0.67,
   "pages": pages,
 }
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "slides.json")

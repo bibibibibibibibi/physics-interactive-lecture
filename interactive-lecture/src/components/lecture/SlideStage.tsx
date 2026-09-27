@@ -205,7 +205,9 @@ export default function SlideStage({
           }}>
             {/* 页面版式：课程 logo / 顶部导航 / 页脚 */}
             <img src={`${COURSE_BASE}logo.png`} alt="" style={{
-              position: 'absolute', left: 24, top: 16, height: 116, width: 270, objectFit: 'contain',
+              position: 'absolute', left: 24, top: 16,
+              height: 116 * (weblec?.logoScale ?? 1), width: 270 * (weblec?.logoScale ?? 1),
+              objectFit: 'contain',
             }} />
             <div style={{ position: 'absolute', right: 70, top: 26, textAlign: 'right' }}>
               <span style={{ fontSize: 40, color: '#0000CD', fontFamily: 'SimSun, serif' }}>{weblec?.nav}</span>
