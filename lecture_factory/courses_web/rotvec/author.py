@@ -34,7 +34,7 @@ pages.append({
       label="旋转矢量的定义",
       qa=[{"q": "旋转矢量的角速度和振动有什么关系？",
            "a": "旋转矢量的角速度 ω 与简谐振动的角频率相等，转向规定为逆时针。"}]),
-  box(3, 1120, 700, 520, 110, GREEN_FILL, GREEN_LINE,
+  box(3, 285, 795, 340, 95, GREEN_FILL, GREEN_LINE,
       tex_f="x_0=A\\cos\\varphi", size=46),
  ]})
 

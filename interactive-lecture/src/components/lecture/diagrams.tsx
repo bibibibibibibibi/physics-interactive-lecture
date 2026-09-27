@@ -381,9 +381,6 @@ export function RotvecT0() {
       <text x={tipX - 10} y={O[1] + 58} textAnchor="middle" fontSize="40" fontStyle="italic" fontFamily={SERIF}>x₀</text>
       <AngleArc O={O} r={110} a0={0} a1={phi} label="φ" color="#C000C0" />
       <OmegaArrow cx={O[0]} cy={O[1]} r={Rr + 60} a0={-0.6} a1={-1.5} />
-      {/* 公式 */}
-      <rect x={O[0] - 170} y={O[1] + 120} width="360" height="90" fill="#CCFFCC" stroke="#2E8B57" strokeWidth="3" />
-      <text x={O[0] + 10} y={O[1] + 182} textAnchor="middle" fontSize="46" fontStyle="italic" fontFamily={SERIF}>x₀ = A cos φ</text>
     </svg>
   )
 }
