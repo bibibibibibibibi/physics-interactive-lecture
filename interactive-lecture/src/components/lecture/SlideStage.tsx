@@ -240,7 +240,7 @@ export default function SlideStage({
                 : null
             ))}
 
-            {/* 热点：要点元素上的隐形热区，悬停显描边 */}
+            {/* 热点：要点元素上的隐形热区，暂停时悬停显描边（播放中不打扰） */}
             {curPage?.bullets.map((b, bi) => {
               if (!b.hotspot) return null
               const el = curPage.elements[b.elIdx]
@@ -253,7 +253,9 @@ export default function SlideStage({
                     left: el.x, top: el.y, width: el.w, height: el.h ?? 90,
                   }}
                   title={stripMath(b.text)}>
-                  <span className="absolute inset-0 rounded ring-2 ring-transparent transition group-hover:ring-[#4cc9f0]/70 group-hover:bg-[#4cc9f0]/10" />
+                  {!playing && (
+                    <span className="absolute inset-0 rounded ring-2 ring-transparent transition group-hover:ring-[#4cc9f0]/70 group-hover:bg-[#4cc9f0]/10" />
+                  )}
                 </button>
               )
             })}
