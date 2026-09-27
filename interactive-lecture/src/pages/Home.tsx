@@ -97,19 +97,22 @@ function Lecture() {
     return b ? { x: b.x, y: b.y, idx: m.bullet } : null
   }, [t, curTime, curPage])
 
-  /** 重要知识点下划红线：脚本标注 important 的要点被激光指点时起持续 10 秒，每页最多 3 条 */
-  const [underlines, setUnderlines] = useState<Record<number, { i: number; until: number }[]>>({})
-  useEffect(() => {
-    if (!laserTarget || !curPage) return
-    const b = curPage.bullets[laserTarget.idx]
-    if (!b?.important) return
-    const sid = curPage.id
-    setUnderlines(prev => {
-      const list = (prev[sid] ?? []).filter(u => u.until > t)
-      if (list.some(u => u.i === laserTarget.idx) || list.length >= 3) return { ...prev, [sid]: list }
-      return { ...prev, [sid]: [...list, { i: laserTarget.idx, until: t + 10 }] }
-    })
-  }, [laserTarget, curPage, t])
+  /** 重要知识点下划红线：脚本标注 important 的要点被激光指点时起持续 10 秒，每页最多 3 条。
+      纯派生计算（fire ≤ t ≤ fire+10s），不存状态——跳页/回退/重放都自动正确 */
+  const underlines = useMemo(() => {
+    if (!curPage) return []
+    const seen = new Set<number>()
+    const out: { i: number; until: number }[] = []
+    for (const m of curPage.laser) {
+      if (out.length >= 3) break
+      if (!curPage.bullets[m.bullet]?.important) continue
+      if (t < m.start || t > m.start + 10) continue
+      if (seen.has(m.bullet)) continue
+      seen.add(m.bullet)
+      out.push({ i: m.bullet, until: m.start + 10 })
+    }
+    return out
+  }, [t, curPage])
 
   /** 姿势平滑过渡：两个非中立姿势之间先回到讲解姿势作中间态，再淡入新姿势 */
   const [shownPose, setShownPose] = useState<Pose>('explain')
@@ -223,7 +226,7 @@ function Lecture() {
             t={t}
             onTimeUpdate={setT}
             laserTarget={laserTarget}
-            underlines={curPage ? underlines[curPage.id] ?? [] : []}
+            underlines={underlines}
             onOpenBullet={openBullet}
             rate={rate}
             onRateChange={changeRate}
