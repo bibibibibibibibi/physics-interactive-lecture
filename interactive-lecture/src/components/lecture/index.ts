@@ -1,0 +1,8 @@
+export { default as SlideStage } from './SlideStage'
+export { default as Teacher } from './Teacher'
+export { default as RatePill } from './RatePill'
+export { default as ChapterNav } from './ChapterNav'
+export { default as HotspotList } from './HotspotList'
+export { default as SubtitlePanel } from './SubtitlePanel'
+export { default as TutorPanel } from './TutorPanel'
+export { default as Sidebar } from './Sidebar'

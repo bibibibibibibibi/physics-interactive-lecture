@@ -1,0 +1,300 @@
+# 大学物理交互课堂
+
+把传统 PPT 课件升级为**网页课件**：一次制作、两种产品——
+
+- **交互课堂**：带配音、卡通讲师、激光笔指点、知识点热点与 AI 答疑的网页课堂；
+- **静态幻灯片**：自包含单文件 HTML，双击即开，支持翻页笔逐步揭示、动画图示与课堂批注。
+
+两个产品共用同一份课件数据（`weblec.json`）与同一个渲染组件，版式、公式、步进顺序逐帧一致。
+除内容创作外，构建、导出、校验等环节全部脚本化，**不消耗 AI token**（TTS 配音只产生 API 费用）。
+
+> 正式的《制作方案》见 `docs/大学物理交互课堂制作方案.pdf`（LaTeX 源文件同目录）；
+> 工厂脚本的细粒度约定见 `lecture_factory/README.md`。
+
+---
+
+## 目录
+
+- [快速开始](#快速开始)
+- [目录结构](#目录结构)
+- [做一门新课的完整流程](#做一门新课的完整流程)
+- [日常使用命令](#日常使用命令)
+- [课件数据规范](#课件数据规范)
+- [已固化的视觉/交互标准](#已固化的视觉交互标准)
+- [规范校验器](#规范校验器)
+- [多课并存与课程参数化](#多课并存与课程参数化)
+- [批注闭环](#批注闭环)
+- [环境准备与迁移](#环境准备与迁移)
+- [版本控制约定](#版本控制约定)
+- [故障排查](#故障排查)
+
+---
+
+## 快速开始
+
+```bash
+# 1. 启动网页应用（开发模式）
+cd interactive-lecture
+npm install          # 首次
+npm run dev          # → http://localhost:3000（本机由 Kimi Work 托管时映射为 7100）
+
+# 2. 浏览器打开
+#    http://localhost:7100/                    课程列表
+#    http://localhost:7100/?course=shm        交互课堂（简谐振动）
+#    http://localhost:7100/slides.html?course=shm   静态幻灯片
+
+# 3. 导出单文件幻灯片（双击即开，可拷给学生）
+python lecture_factory/export_slides.py --build --course shm
+#    → interactive-lecture/dist-slides/大学物理-<标题>-幻灯片.html
+```
+
+现有课程：**shm**（第九章 振动 · 9-1 简谐振动，16 页，约 7 分钟）。
+
+## 目录结构
+
+```
+.
+├── interactive-lecture/          # 网页应用（React + Vite + Tailwind）
+│   ├── public/
+│   │   ├── weblec/<课名>/        # 课件产物：weblec.json / audio.mp3 / logo.png / 插图
+│   │   ├── weblec/courses.json   # 课程清单（课程列表页数据源）
+│   │   └── poses/<角色>/         # 卡通讲师姿态图（全部课程共用）
+│   ├── src/
+│   │   ├── pages/
+│   │   │   ├── Home.tsx          # 交互课堂主页（无 ?course= 时显示课程列表）
+│   │   │   ├── CourseMenu.tsx    # 课程列表页
+│   │   │   └── SlidesOnly.tsx    # 静态幻灯片页（含批注系统）
+│   │   ├── components/lecture/   # 渲染组件库（两个产品共用）
+│   │   │   ├── SlideStage.tsx    # 舞台引擎 + Element 渲染器
+│   │   │   ├── diagrams.tsx      # SVG 图示库（弹簧振子、三曲线等）
+│   │   │   ├── Teacher.tsx       # 卡通讲师（可切换/可拖动/姿态机）
+│   │   │   └── Sidebar.tsx 等    # 右栏字幕 + AI 答疑
+│   │   └── lib/
+│   │       ├── course.ts         # 课程参数化（?course=<课名>）
+│   │       ├── weblec.ts         # 课件数据类型定义
+│   │       └── qa.ts             # 答疑（在线 AI + 离线预设库）
+│   ├── slides.html               # 静态幻灯片入口
+│   └── vite.slides.config.ts     # 单文件构建配置（单 chunk + 字体内联）
+│
+├── lecture_factory/              # 课程工厂（全部脚本，0 token）
+│   ├── new_webcourse.py          # 新课骨架脚手架
+│   ├── web_author.py             # 创作共享库（元素函数/配色/约定）
+│   ├── build_web.py              # 构建：TTS + 音频合并 + weblec.json + 自动校验
+│   ├── validate_weblec.py        # 规范校验器（构建后自动跑，也可独立用）
+│   ├── export_slides.py          # 单文件幻灯片导出（--build 一条命令）
+│   ├── gen_audio.py              # 逐句 TTS + 句级时间轴
+│   ├── style.json                # 音色/角色配置
+│   ├── courses_web/<课名>/       # 单课创作目录：author.py + assets/ + audio/（TTS 缓存）
+│   └── README.md                 # 工厂细粒度约定
+│
+├── docs/                         # 《大学物理交互课堂制作方案》.tex/.pdf（Tectonic 编译）
+├── tools/tectonic.exe            # LaTeX 编译器（.gitignore 排除，需自行安放）
+├── ppt_ref.ppt / ppt_ref.pptx    # 9-1 原 PPT（视觉基准）
+├── ppt_ref_slides/               # 原 PPT 逐页导出图
+├── ppt_structure.json            # 原 PPT 点击动画步序
+├── ppt_geometry.json             # 原 PPT 形状几何坐标
+├── export_ppt.ps1 / parse_pptx.py / extract_geometry.py   # PPT 解析三件套（新课复用）
+└── 待处理/                       # 已归档的旧视频渲染方案（.gitignore 排除）
+```
+
+## 做一门新课的完整流程
+
+以「9-2 旋转矢量」为例，八环链路（◆=AI 教学判断环节，其余全脚本）：
+
+### 第 1 环：PPT 解析（0 token）
+
+```powershell
+# 原 PPT 逐页导出 PNG（调本机 PowerPoint）
+powershell -File export_ppt.ps1 <PPT路径>
+```
+
+```bash
+python parse_pptx.py <PPT路径>        # 点击动画步序 → ppt_structure.json
+python extract_geometry.py <PPT路径>  # 形状坐标尺寸 → ppt_geometry.json
+```
+
+目的：得到「视觉基准」——网页版 1:1 贴着原 PPT 复刻，包括点击出现顺序。
+
+### 第 2 环：脚手架建课（0 token）
+
+```bash
+python lecture_factory/new_webcourse.py 旋转矢量
+# → courses_web/旋转矢量/author.py（带示例页与约定注释）+ assets/
+```
+
+### 第 3 环：内容创作（◆ 唯一大量耗 token 环节）
+
+编辑 `courses_web/旋转矢量/author.py`，每页写两块：
+
+- **elements**：用 `web_author.py` 的函数摆元素（`text/tex/box/table/img/diagram`），
+  坐标参考第 1 环的 PPT 几何，每个元素定 `step`（对应 PPT 点击动画的第几步）；
+- **narration**：口语讲稿，`[[n]]` 标记放在关键词**紧前面**；**不同步骤拆到不同句子**
+  （同句多标记会共享配音时刻导致步进重合）。
+
+三个教学决策：每页挑 2–4 个核心知识点设 `hotspot` + 预设问答（学生点击提问）；
+每页至多 3 个最重要概念标 `important`（激光红线）；复制 `logo.png` 到
+`interactive-lecture/public/weblec/旋转矢量/`。
+
+新物理场景的图示（如旋转矢量）在 `diagrams.tsx` 加 SVG 组件——一次性投入，进库复用。
+
+```bash
+python courses_web/旋转矢量/author.py   # 生成 slides.json
+```
+
+### 第 4 环：构建（0 token，花 TTS API 费）
+
+```bash
+python lecture_factory/build_web.py courses_web/旋转矢量
+```
+
+自动完成：逐句 TTS（音色按 `style.json` 角色配置；缓存到 `课程/audio/`，**改稿只重配改动页**）
+→ `[[n]]` 按句内字符比例换算成 `stepTimes` 绝对时刻 → ffmpeg 合并 `audio.mp3`
+→ 输出 `weblec.json` 到 `public/weblec/旋转矢量/` → **末尾自动跑规范校验**。
+
+### 第 5 环：登记课程（0 token）
+
+`interactive-lecture/public/weblec/courses.json` 加一行：
+
+```json
+{ "id": "旋转矢量", "title": "9-2 旋转矢量", "desc": "第九章 振动 · 约 X 分钟" }
+```
+
+### 第 6 环：双产品验收（◆）
+
+- 交互课堂 `/?course=旋转矢量`：逐页核对版式、公式、步进节奏、激光点位置、
+  红线条数、字幕、小人姿态；点热点试 AI 答疑；
+- 静态页 `/slides.html?course=旋转矢量`：步进、动画图示在动、批注可用；
+- 发现问题回 `author.py` 改 → 重跑第 4 环（TTS 缓存保证只重配改动页）。
+
+### 第 7 环：单文件导出（0 token）
+
+```bash
+python lecture_factory/export_slides.py --build --course 旋转矢量
+# → interactive-lecture/dist-slides/大学物理-<标题>-幻灯片.html
+```
+
+### 第 8 环：交付与课后闭环
+
+交付课堂链接 + 单文件。课上用静态页批注（A 键）→ 课后「导出批注」得到 JSON
+（每笔自动标注圈住了哪个元素）→ 回改数据源 → 重跑第 4、7 环。
+
+## 日常使用命令
+
+| 目的 | 命令 |
+| --- | --- |
+| 启动开发服务 | `cd interactive-lecture && npm run dev` |
+| 构建/重建某课 | `python lecture_factory/build_web.py courses_web/<课名>` |
+| 校验某课 | `python lecture_factory/validate_weblec.py <课名>` |
+| 导出单文件幻灯片 | `python lecture_factory/export_slides.py --build --course <课名>` |
+| 类型检查 | `cd interactive-lecture && npx tsc --noEmit -p tsconfig.app.json` |
+| 生产构建（应用） | `cd interactive-lecture && npm run build` |
+| 编译方案文档 | `cd docs && ../tools/tectonic.exe -X compile 大学物理交互课堂制作方案.tex` |
+
+**改讲稿的正确姿势**：改 `author.py` → 运行它重新生成 `slides.json` →
+删掉该课的 `audio/page<n>.mp3` 和 `page<n>.times.json`（只删改动页）→ 重跑 `build_web.py`。
+重配时构建器会自动清掉该页旧句音频，不会按旧下标错配。
+
+## 课件数据规范
+
+`weblec.json` 是唯一数据源，顶层字段：
+
+| 字段 | 说明 |
+| --- | --- |
+| `title/nav/footer` | 课程标题、页眉导航、页脚 |
+| `character/characters` | 默认卡通讲师与可切换角色表 |
+| `duration` | 整课时长（秒），由合并音频实测 |
+| `slides[]` | 页面数组：`elements`（元素 + `step` 步序）、`bullets`（要点 + 热点/问答）、`stepTimes`、`t_start/t_end`、`laser` |
+| `subtitles[]` | 句级字幕（起止时刻 + 文本） |
+
+页面为 1920×1080 设计坐标，元素类型：`text`（富文本，行内公式 `$...$`）、
+`tex`（KaTeX 整行公式）、`box`（色块容器）、`table`（网格表格）、
+`diagram`（SVG 图示组件，动画由时钟推导相位）、`img`（图片）。
+放映时只显示 `step ≤ 当前步` 的元素，与 PPT 点击动画一一对应。
+
+## 已固化的视觉/交互标准
+
+做新课**不要回退**（细节见 `lecture_factory/README.md`）：
+
+| 标准 | 规则 |
+| --- | --- |
+| 步进标记 | `[[n]]` 放关键词紧前面；不同步拆不同句 |
+| 激光点 | 知识点元素底边往下 12px（正下方紧邻） |
+| 下划红线 | `important` 元素被指点时起 10 秒，每页最多 3 条 |
+| 矢量符号 | 用 `diagrams.tsx` 的 `Vec` 组件；禁止组合字符（缺字体显方框） |
+| 曲线图 | 关于横轴对称，A/−A 虚线贴波峰波谷，周期标注落在一个周期正下方 |
+| 图片元素 | 充满 w×h 框（contain）；白底图先转透明 |
+| 页脚/页码 | z-index 20 + 白底圆角衬，任何内容遮不住 |
+| 文字颜色 | 舞台容器默认 `#111` |
+| logo | 每课 `logo.png`，左上角 270×116 |
+
+## 规范校验器
+
+`validate_weblec.py` 把创作约定变成程序约束（构建后自动跑，有 ERROR 即非零退出）：
+
+- 结构：顶层字段、页 id 连续、页面时刻不倒置；
+- 步进：`stepTimes` 键集 == 元素 step 集（除基底 0）、时刻在页面区间内、
+  相邻间隔 <0.8s 警告（抓同句多 `[[n]]`）；
+- 红线：每页 `important` >3 警告；
+- 热点：`elIdx` 有效、热点要点缺预设问答警告；
+- 激光/字幕：下标有效、时刻合法、字幕覆盖整课；
+- 媒体：img 图片存在、`logo.png`、`audio.mp3` 实测时长与 `duration` 匹配。
+
+## 多课并存与课程参数化
+
+- 课件按 `public/weblec/<课名>/` 分目录；URL 带 `?course=<课名>` 加载对应课程；
+- 根路径无参数 → 课程列表页（数据源 `courses.json`，新课手动加一行）；
+- 批注的浏览器本地存储按课程隔离（`slides-annotations-<课名>`）；
+- 单文件导出不依赖 URL 参数（数据内联注入）。
+
+## 批注闭环
+
+1. 课上：静态页按 **A** 进入画笔模式（三色笔、撤销、清除本页、每页文字备注、Esc 退出）；
+2. 课后：「导出批注」下载 JSON——每笔自动标注与哪些页面元素重叠（页码 + 元素编号 + 包围盒）；
+3. 回改：按 JSON 定位元素，修改 `author.py` 或 `weblec.json`，重跑构建与导出。
+
+批注持久化在浏览器 localStorage，刷新不丢；导出前建议先下载备份。
+
+## 环境准备与迁移
+
+**本机已就绪**：Node.js、Python（含 imageio-ffmpeg，ffmpeg 内置）、
+Kimi 桌面端配音插件（TTS 通道，密钥在 Kimi 运行时）、Tectonic（`tools/`）。
+
+**迁移到新机器**：
+
+1. 克隆本仓库；
+2. `cd interactive-lecture && npm install`；
+3. 安装 Python 依赖：`pip install imageio-ffmpeg`（TTS 走 Kimi 配音插件，
+   或自行替换 `gen_audio.py` 的 `tts()` 通道）；
+4. AI 答疑：新建 `interactive-lecture/.env.local`（**不入库**）：
+   ```
+   AI_API_KEY=sk-...
+   AI_BASE_URL=https://api.moonshot.cn/v1   # 可选
+   AI_MODEL=moonshot-v1-8k                  # 可选
+   ```
+   不配 key 时答疑自动退回离线预设库，不影响放映；
+5. 需要编译方案文档时，安放 Tectonic 到 `tools/tectonic.exe`
+   （<https://github.com/tectonic-typesetting/tectonic/releases>）。
+
+**已提交的产物**：`public/weblec/shm/`（含合并音频）、TTS 缓存、姿态图、
+PPT 基准材料——克隆后无需重新构建即可运行现有课程。
+**未入库**：`node_modules/`、`dist*/`、`待处理/`（旧方案归档）、`.env.local`、`tools/tectonic.exe`。
+
+## 版本控制约定
+
+- **提交粒度**：一门新课 / 一次视觉标准调整 / 一个脚手架改动，各一次提交；
+- **提交信息**：`课程: <课名> <改动>` 或 `工厂: <改动>` / `应用: <改动>`；
+- **author.py 与 weblec.json 一起提交**（数据源与产物同步，便于回溯）；
+- **大返工前先打标签**：如 `git tag shm-v1`（某课定稿）；
+- `.gitignore` 已排除依赖、构建产物、密钥与归档目录，勿强行 `git add -f`。
+
+## 故障排查
+
+| 症状 | 排查 |
+| --- | --- |
+| 页面空白/一直加载 | 终端确认 dev server 在跑；浏览器控制台看 `weblec.json` 是否 404（多为 `?course=` 与目录名不一致） |
+| 步进重合/一跳多步 | 讲稿同句有多个 `[[n]]`，拆句后删该页音频缓存重跑构建 |
+| 公式显示方框/源码 | 用了组合字符矢量符号（改用 `Vec`）；或 KaTeX 语法错误（控制台有告警） |
+| 配音没更新 | 忘了删 `课程/audio/` 缓存；删后重跑 `build_web.py` |
+| 构建末尾报错退出 | 读 `validate_weblec.py` 的 ERROR 列表逐条修（WARN 不阻塞） |
+| 单文件里图片裂了 | 图片没放进 `public/weblec/<课名>/` 或文件名与元素 `src` 不一致 |
+| 答疑 503 | `.env.local` 未配 `AI_API_KEY`（已自动退回离线答疑库，属正常降级） |

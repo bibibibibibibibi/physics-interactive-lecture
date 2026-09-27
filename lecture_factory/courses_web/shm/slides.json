@@ -1,0 +1,2107 @@
+{
+ "title": "简谐振动 · 振幅 周期和频率 相位",
+ "nav": "9-1　简谐振动　振幅　周期和频率　相位",
+ "footer": "第九章　振动",
+ "character": "aqiang",
+ "pages": [
+  {
+   "id": 1,
+   "narration": "大家好，这一节我们讲简谐振动。先说什么是[[1]]机械振动。[[2]]物体或者物体的一部分，在某个位置附近来回往复的运动，就叫机械振动。这个位置有个专门的名字，叫[[3]]平衡位置。[[4]]生活里到处都是例子。[[5]]心脏的跳动、钟摆的摆动、乐器发声，甚至地震。[[6]]这些都是机械振动。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 36,
+     "y": 137,
+     "w": 1044,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　简谐振动",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 108,
+     "y": 245,
+     "w": 700,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1　机械振动",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "hotspot": true,
+     "label": "机械振动的定义",
+     "qa": [
+      {
+       "q": "什么是机械振动？",
+       "a": "物体或物体的一部分在一定位置（平衡位置）附近来回往复的运动。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 250,
+     "y": 360,
+     "w": 1300,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "物体或物体的某一部分在一定位置",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 150,
+     "y": 470,
+     "w": 1100,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "附近来回往复的运动",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 1350,
+     "y": 500,
+     "w": 420,
+     "h": 100,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 50,
+     "paras": [
+      [
+       {
+        "t": "平衡位置",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "hotspot": true,
+     "label": "平衡位置",
+     "qa": [
+      {
+       "q": "什么是平衡位置？",
+       "a": "振动物体静止时所在的位置，回复力为零的位置，位移从这里开始计量。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 150,
+     "y": 620,
+     "w": 400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "实例：",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 290,
+     "y": 740,
+     "w": 900,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "心脏的跳动、",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 150,
+     "y": 845,
+     "w": 950,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "钟摆、乐器、地震等",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "img",
+     "step": 6,
+     "x": 1200,
+     "y": 610,
+     "w": 560,
+     "h": 410,
+     "src": "clock.gif"
+    }
+   ],
+   "heading": "机械振动"
+  },
+  {
+   "id": 2,
+   "narration": "在所有振动里，简谐振动是[[1]]最简单、最基本的一种。为什么先要学它？[[2]]因为任何复杂的振动，都可以分解成若干简谐振动的合成；反过来，简谐振动叠加起来就能合成复杂振动。抓住它，就抓住了振动的根本。做简谐振动的物体，我们叫它[[3]]谐振子。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 36,
+     "y": 137,
+     "w": 700,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2　简谐振动",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 300,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "❖ ",
+        "size": 44,
+        "color": "#7030A0",
+        "b": false
+       },
+       {
+        "t": "简谐振动",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "　最简单、最基本的振动",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "hotspot": true,
+     "label": "简谐振动是最简单、最基本的振动",
+     "qa": [
+      {
+       "q": "为什么先学简谐振动？",
+       "a": "因为它最简单、最基本；任何复杂振动都可以分解为若干简谐振动的合成。"
+      }
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 270,
+     "y": 450,
+     "w": 1250,
+     "h": 260,
+     "name": "compose"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 800,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "谐振子",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "　作简谐振动的物体",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "hotspot": true,
+     "label": "谐振子",
+     "qa": [
+      {
+       "q": "什么是谐振子？",
+       "a": "作简谐振动的物体称为谐振子，例如弹簧振子。"
+      }
+     ]
+    }
+   ],
+   "heading": "简谐振动"
+  },
+  {
+   "id": 3,
+   "narration": "最典型的谐振子，是[[1]]弹簧振子。一根劲度系数为 k 的轻弹簧，一端固定，一端系一个质量 m 的小球，放在光滑的水平面上。弹簧保持原长时小球所在的位置，就是平衡位置 O。把小球拉到 A 点再放手，它就在负 A 和正 A 之间来回振动。在 O 点，位移为零，受力也为零。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 160,
+     "w": 900,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "❖ ",
+        "size": 44,
+        "color": "#7030A0",
+        "b": false
+       },
+       {
+        "t": "弹簧振子的振动",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 170,
+     "y": 300,
+     "w": 1580,
+     "h": 620,
+     "name": "spring_o",
+     "hotspot": true,
+     "label": "弹簧振子模型",
+     "qa": [
+      {
+       "q": "弹簧振子的平衡位置在哪里？",
+       "a": "弹簧保持原长时小球所在的位置 O，此处位移为零、受力为零。"
+      }
+     ]
+    }
+   ],
+   "heading": "弹簧振子"
+  },
+  {
+   "id": 4,
+   "narration": "看它的运动。小球被拉离平衡位置后，弹簧的弹力总是把它往回拉，这个指向平衡位置的力叫回复力，大小满足 F 等于负 k x。小球冲回平衡位置时速度最大，靠惯性冲过去，又被弹力拉回来。所以[[1]]振动的成因，就两条。[[2]]回复力，加上惯性。",
+   "elements": [
+    {
+     "type": "diagram",
+     "step": 0,
+     "x": 340,
+     "y": 220,
+     "w": 1150,
+     "h": 480,
+     "name": "spring_anim",
+     "hotspot": true,
+     "label": "回复力 F=-kx",
+     "qa": [
+      {
+       "q": "什么是回复力？",
+       "a": "始终指向平衡位置、与位移成正比的力，弹簧振子中 F=-kx。"
+      },
+      {
+       "q": "振动的成因是什么？",
+       "a": "回复力提供回到平衡位置的趋势，惯性使物体冲过平衡位置，二者结合形成往复振动。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 250,
+     "y": 760,
+     "w": 600,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "振动的成因：",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 400,
+     "y": 880,
+     "w": 700,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "回复力 + 惯性",
+        "size": 48,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true,
+     "hotspot": true,
+     "label": "振动的成因：回复力+惯性"
+    }
+   ],
+   "heading": "振动成因"
+  },
+  {
+   "id": 5,
+   "narration": "[[1]]定量分析一下。[[2]]由牛顿第二定律，F 等于负 k x，等于 m a。[[3]]我们令 ω 方等于 k 比 m。[[4]]整理后得到：d 二 x 比 d t 方等于负 ω 方 x，也就是说，加速度 a 等于负 ω 方 x。这就是简谐振动的特征：[[5]]加速度和位移的大小成正比，方向相反。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 36,
+     "y": 137,
+     "w": 900,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "3　弹簧振子的运动分析",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 150,
+     "y": 240,
+     "w": 1600,
+     "h": 280,
+     "name": "spring_f"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 290,
+     "y": 560,
+     "w": 500,
+     "h": 110,
+     "tex": "F=-kx=ma",
+     "size": 44,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1170,
+     "y": 560,
+     "w": 120,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "令",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 1300,
+     "y": 545,
+     "w": 380,
+     "h": 130,
+     "tex": "\\omega^2=\\dfrac{k}{m}",
+     "size": 44,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 150,
+     "y": 720,
+     "w": 120,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "得",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 280,
+     "y": 700,
+     "w": 480,
+     "h": 130,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": null,
+     "tex": "\\dfrac{d^2x}{dt^2}=-\\omega^2 x",
+     "size": 44,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1150,
+     "y": 720,
+     "w": 120,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "即",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 1300,
+     "y": 700,
+     "w": 400,
+     "h": 110,
+     "tex": "a=-\\omega^2 x",
+     "size": 44,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 140,
+     "y": 860,
+     "w": 1650,
+     "h": 170,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "简谐振动的特征：",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "加速度 $a$ 与位移的大小 $x$ 成正比，方向相反",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "left",
+     "color": "#111111",
+     "important": true,
+     "hotspot": true,
+     "label": "简谐振动的特征：a 与 x 成正比、方向相反",
+     "qa": [
+      {
+       "q": "简谐振动的特征方程是什么？",
+       "a": "a=-ω²x，即加速度与位移大小成正比、方向相反；等价于 d²x/dt²=-ω²x。"
+      }
+     ]
+    }
+   ],
+   "heading": "运动分析"
+  },
+  {
+   "id": 6,
+   "narration": "这个方程，就是简谐振动的微分方程。[[1]]给它加上初始条件。[[2]]t 等于零时，位置是 x 零，速度是 v 零。[[3]]解出来就是：x 等于 A 乘 cos ω t 加 φ。这就是大名鼎鼎的[[5]]简谐振动方程。其中 A 和 φ 是两个[[6]]积分常量，要由初始条件来确定。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 140,
+     "w": 500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "解方程",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 170,
+     "y": 270,
+     "w": 560,
+     "h": 180,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": null,
+     "tex": "\\dfrac{d^2x}{dt^2}=-\\omega^2 x",
+     "size": 46,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 880,
+     "y": 280,
+     "w": 950,
+     "h": 160,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 24,
+     "paras": [
+      [
+       {
+        "t": "简谐振动的微分方程",
+        "size": 46,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 490,
+     "w": 700,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "设初始条件为：",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 340,
+     "y": 620,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$t=0$ 时，$x=x_0$，$v=v_0$",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 770,
+     "w": 140,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "解得",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 340,
+     "y": 750,
+     "w": 780,
+     "h": 130,
+     "tex": "x=A\\cos(\\omega t+\\varphi)",
+     "size": 50,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1300,
+     "y": 770,
+     "w": 620,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "◀── 简谐振动方程",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 910,
+     "w": 1250,
+     "h": 110,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "积分常量，根据初始条件确定",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "解方程"
+  },
+  {
+   "id": 7,
+   "narration": "有了位移，[[1]]对时间求一次导数就是速度：v 等于负 A ω sin ω t 加 φ。再求一次导数就是加速度：a 等于负 A ω 方 cos ω t 加 φ。[[2]]而两个常量这样确定：A 等于根号下 x 零方加上 v 零比 ω 的平方；φ 等于 arctan 负 v 零比 ω x 零。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 220,
+     "y": 140,
+     "w": 120,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "由",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 0,
+     "x": 370,
+     "y": 120,
+     "w": 700,
+     "h": 110,
+     "tex": "x=A\\cos(\\omega t+\\varphi)",
+     "size": 44,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 1250,
+     "y": 130,
+     "w": 650,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "◀── 简谐振动方程",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 220,
+     "y": 300,
+     "w": 120,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "得",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 370,
+     "y": 280,
+     "w": 1200,
+     "h": 110,
+     "tex": "v=\\dfrac{dx}{dt}=-A\\omega\\sin(\\omega t+\\varphi)",
+     "size": 44,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 370,
+     "y": 480,
+     "w": 1200,
+     "h": 110,
+     "tex": "a=\\dfrac{d^2x}{dt^2}=-A\\omega^2\\cos(\\omega t+\\varphi)",
+     "size": 44,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 220,
+     "y": 680,
+     "w": 160,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "其中",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 470,
+     "y": 650,
+     "w": 1200,
+     "h": 260,
+     "tex": "\\begin{cases} A=\\sqrt{x_0^2+\\left(\\dfrac{v_0}{\\omega}\\right)^2} \\\\[8px] \\varphi=\\arctan\\left(-\\dfrac{v_0}{\\omega x_0}\\right) \\end{cases}",
+     "size": 42,
+     "color": "#111111",
+     "align": "left",
+     "hotspot": true,
+     "label": "A 和 φ 由初始条件确定",
+     "qa": [
+      {
+       "q": "怎么由初始条件求 A 和 φ？",
+       "a": "A=√(x₀²+(v₀/ω)²)，φ=arctan(-v₀/ωx₀)，把 t=0 代入位移和速度方程联立得到。"
+      }
+     ]
+    }
+   ],
+   "heading": "速度与加速度"
+  },
+  {
+   "id": 8,
+   "narration": "[[1]]把三个量放在一起看。取 φ 等于零，[[2]]位移是余弦，周期 T 等于 2 π 比 ω。[[3]]速度比位移超前二分之 π。[[4]]也就是说，位移最大时速度为零，速度最大时位移为零。[[5]]加速度再超前二分之 π，正好与位移反相。[[6]]右边三张图从上到下依次是位移、速度、加速度曲线，注意它们的相位关系。",
+   "elements": [
+    {
+     "type": "box",
+     "step": 1,
+     "x": 160,
+     "y": 130,
+     "w": 620,
+     "h": 110,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": null,
+     "tex": "x=A\\cos(\\omega t+\\varphi)",
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 210,
+     "y": 270,
+     "w": 700,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$T=\\dfrac{2\\pi}{\\omega}$　",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "取 $\\varphi=0$",
+        "size": 42,
+        "color": "#C00000",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 160,
+     "y": 420,
+     "w": 820,
+     "h": 110,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": null,
+     "tex": "v=-A\\omega\\sin(\\omega t+\\varphi)",
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 160,
+     "y": 570,
+     "w": 850,
+     "h": 110,
+     "tex": "=A\\omega\\cos(\\omega t+\\varphi+\\dfrac{\\pi}{2})",
+     "size": 40,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 160,
+     "y": 700,
+     "w": 840,
+     "h": 110,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": null,
+     "tex": "a=-A\\omega^2\\cos(\\omega t+\\varphi)",
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "tex",
+     "step": 6,
+     "x": 160,
+     "y": 850,
+     "w": 850,
+     "h": 110,
+     "tex": "=A\\omega^2\\cos(\\omega t+\\varphi+\\pi)",
+     "size": 40,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 1010,
+     "y": 150,
+     "w": 830,
+     "h": 780,
+     "name": "xva",
+     "hotspot": true,
+     "label": "x、v、a 的相位关系",
+     "qa": [
+      {
+       "q": "速度和位移的相位差多少？",
+       "a": "速度比位移超前 π/2；加速度比位移超前 π，即与位移反相。"
+      }
+     ]
+    }
+   ],
+   "heading": "三条曲线"
+  },
+  {
+   "id": 9,
+   "narration": "[[1]]下面看三个特征量，第一个是振幅。[[2]]振动方程也可以写成用周期表示的形式。[[3]]振幅 A，就是最大位移的绝对值，图上波峰到平衡位置的距离。它由你一开始把振子拉多远决定。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 140,
+     "w": 700,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "简谐振动方程",
+        "size": 48,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 400,
+     "y": 260,
+     "w": 1050,
+     "h": 150,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": null,
+     "tex": "x=A\\cos(\\omega t+\\phi)=A\\cos(\\dfrac{2\\pi}{T}t+\\phi)",
+     "size": 42,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 540,
+     "w": 500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　振幅",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 400,
+     "y": 680,
+     "w": 400,
+     "h": 110,
+     "tex": "A=|x_{\\max}|",
+     "size": 46,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "diagram",
+     "step": 3,
+     "x": 950,
+     "y": 440,
+     "w": 820,
+     "h": 520,
+     "name": "xt",
+     "hotspot": true,
+     "label": "振幅 A=|x_max|",
+     "qa": [
+      {
+       "q": "什么是振幅？",
+       "a": "振幅 A 是最大位移的绝对值，即偏离平衡位置的最大距离。"
+      }
+     ]
+    }
+   ],
+   "heading": "振幅"
+  },
+  {
+   "id": 10,
+   "narration": "[[1]]第二个是周期。余弦函数以 2 π 为周期，所以 t 加上一个 T 之后，运动状态完全重复。[[2]]于是周期 T 等于 2 π 比 ω。[[3]]这里要特别注意。对弹簧振子，把 ω 方等于 k 比 m 代进去，[[4]]周期就等于 2 π 根号 m 比 k。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 140,
+     "y": 140,
+     "w": 800,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　周期和频率",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 270,
+     "y": 270,
+     "w": 1450,
+     "h": 110,
+     "tex": "x=A\\cos(\\omega t+\\varphi)=A\\cos[\\,\\omega(t+T)+\\varphi\\,]",
+     "size": 42,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 240,
+     "y": 420,
+     "w": 700,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "❖ ",
+        "size": 44,
+        "color": "#7030A0",
+        "b": false
+       },
+       {
+        "t": "周期　",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "$T=\\dfrac{2\\pi}{\\omega}$",
+        "size": 46,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 3,
+     "x": 60,
+     "y": 490,
+     "w": 400,
+     "h": 220,
+     "name": "burst"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 310,
+     "y": 720,
+     "w": 700,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "弹簧振子周期",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "important": true
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 330,
+     "y": 850,
+     "w": 500,
+     "h": 130,
+     "tex": "T=2\\pi\\sqrt{\\dfrac{m}{k}}",
+     "size": 48,
+     "color": "#111111",
+     "align": "left",
+     "hotspot": true,
+     "label": "弹簧振子周期公式",
+     "qa": [
+      {
+       "q": "弹簧振子的周期公式？",
+       "a": "T=2π√(m/k)，只由质量 m 和劲度系数 k 决定，与振幅无关。"
+      }
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 980,
+     "y": 430,
+     "w": 820,
+     "h": 520,
+     "name": "xt"
+    }
+   ],
+   "heading": "周期"
+  },
+  {
+   "id": 11,
+   "narration": "[[1]]频率 ν 是周期的倒数，等于 ω 比 2 π。[[2]]ω 本身叫角频率，等于 2 π ν，也等于 2 π 比 T。这里有个重要结论：[[3]]周期和频率，只与振动系统本身的物理性质有关，跟你把振子拉多远没有关系。",
+   "elements": [
+    {
+     "type": "tex",
+     "step": 0,
+     "x": 270,
+     "y": 130,
+     "w": 1450,
+     "h": 110,
+     "tex": "x=A\\cos(\\omega t+\\varphi)=A\\cos[\\,\\omega(t+T)+\\varphi\\,]",
+     "size": 42,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 200,
+     "y": 300,
+     "w": 800,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "❖ ",
+        "size": 44,
+        "color": "#7030A0",
+        "b": false
+       },
+       {
+        "t": "频率　",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "$\\nu=\\dfrac{1}{T}=\\dfrac{\\omega}{2\\pi}$",
+        "size": 46,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 200,
+     "y": 500,
+     "w": 800,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "❖ ",
+        "size": 44,
+        "color": "#7030A0",
+        "b": false
+       },
+       {
+        "t": "角频率",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 200,
+     "y": 620,
+     "w": 700,
+     "h": 110,
+     "tex": "\\omega=2\\pi\\nu=\\dfrac{2\\pi}{T}",
+     "size": 44,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 980,
+     "y": 280,
+     "w": 820,
+     "h": 520,
+     "name": "xt"
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 250,
+     "y": 830,
+     "w": 1450,
+     "h": 180,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "周期和频率仅与振动系统",
+        "size": 46,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "本身",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "的物理性质有关。",
+        "size": 46,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "important": true,
+     "hotspot": true,
+     "label": "周期频率只由系统本身决定",
+     "qa": [
+      {
+       "q": "周期和振幅有关吗？",
+       "a": "无关。周期和频率仅由系统本身性质决定（弹簧振子即 m 和 k），与初始条件无关。"
+      }
+     ]
+    }
+   ],
+   "heading": "频率"
+  },
+  {
+   "id": 12,
+   "narration": "举个例子。心脏每分钟跳 80 次，[[1]]周期就是 80 分之 1 分钟，也就是 60 除以 80，等于 0.75 秒；频率取倒数，约 1.33 赫兹。[[2]]各种动物的心跳频率差别很大。[[3]]大象只有 0.4 到 0.5 赫兹，松鼠高达 6.3 赫兹，鲸鱼只有 0.13 赫兹。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 240,
+     "y": 140,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例如，",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "心脏的跳动 80 次/min",
+        "size": 48,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 240,
+     "y": 300,
+     "w": 1500,
+     "h": 130,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "周期为　$T=\\dfrac{1}{80}\\text{min}=\\dfrac{60}{80}\\text{s}=0.75$ s",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 240,
+     "y": 490,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "频率为　$\\nu=1/T=1.33$ Hz",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 440,
+     "y": 630,
+     "w": 1120,
+     "h": 90,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "动物的心跳频率",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "（参考值，单位：Hz）",
+        "size": 36,
+        "color": "#C00000",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "table",
+     "step": 3,
+     "x": 370,
+     "y": 750,
+     "w": 1330,
+     "rows": [
+      [
+       "大象",
+       "0.4~0.5",
+       "马",
+       "0.7~0.8"
+      ],
+      [
+       "猪",
+       "1~1.3",
+       "兔",
+       "1.7"
+      ],
+      [
+       "松鼠",
+       "6.3",
+       "鲸",
+       "0.13"
+      ]
+     ],
+     "rowh": 88,
+     "size": 40,
+     "fill": "#CCFFCC"
+    }
+   ],
+   "heading": "心跳例子"
+  },
+  {
+   "id": 13,
+   "narration": "再看昆虫的翅膀。雌蚊子每秒振动 355 到 415 次，雄蚊子 455 到 600 次，苍蝇大约 330 赫兹，黄蜂大约 220 赫兹。你听到的蚊子嗡嗡声，音调的高低，就来自翅膀振动的频率。",
+   "elements": [
+    {
+     "type": "box",
+     "step": 0,
+     "x": 270,
+     "y": 210,
+     "w": 1380,
+     "h": 110,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "昆虫翅膀振动的频率（单位：Hz）",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "table",
+     "step": 0,
+     "x": 370,
+     "y": 390,
+     "w": 1100,
+     "rows": [
+      [
+       "雌性蚊子",
+       "355~415"
+      ],
+      [
+       "雄性蚊子",
+       "455~600"
+      ],
+      [
+       "苍　　蝇",
+       "330"
+      ],
+      [
+       "黄　　蜂",
+       "220"
+      ]
+     ],
+     "rowh": 115,
+     "size": 44,
+     "fill": "#CCFFCC"
+    }
+   ],
+   "heading": "昆虫频率"
+  },
+  {
+   "id": 14,
+   "narration": "[[1]]第三个特征量，也最抽象：相位。括号里的 ω t 加 φ，合起来叫相位。[[2]]记作大写的 Φ t，等于 ω t 加 φ。[[3]]t 等于零时的相位 φ，叫初相位。[[4]]相位的意义是：它表征任意时刻物体的振动状态。每经过一个周期，相位恰好改变 2 π。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 350,
+     "y": 140,
+     "w": 400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　相位",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 760,
+     "y": 130,
+     "w": 360,
+     "h": 110,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": null,
+     "tex": "\\omega\\, t+\\varphi",
+     "size": 46,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 340,
+     "y": 300,
+     "w": 700,
+     "h": 110,
+     "tex": "x=A\\cos(\\omega t+\\varphi)",
+     "size": 46,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 200,
+     "y": 470,
+     "w": 1100,
+     "h": 120,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "相　位　　$\\Phi(t)=\\omega t+\\varphi$",
+        "size": 46,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 200,
+     "y": 640,
+     "w": 1300,
+     "h": 120,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "初相位 $\\varphi$　　　　$t=0$ 时，$\\Phi(t)=\\varphi$",
+        "size": 46,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 200,
+     "y": 810,
+     "w": 1550,
+     "h": 200,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "相位的意义：",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "表征任意时刻（$t$）物体的振动状态。物体经一周期的振动，相位改变 $2\\pi$。",
+        "size": 46,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true,
+     "hotspot": true,
+     "label": "相位的意义",
+     "qa": [
+      {
+       "q": "相位是什么？",
+       "a": "相位 Φ(t)=ωt+φ，表征任意时刻物体的振动状态；每经一周期相位改变 2π。"
+      },
+      {
+       "q": "什么是初相位？",
+       "a": "t=0 时的相位 φ，由初始条件决定。"
+      }
+     ]
+    }
+   ],
+   "heading": "相位"
+  },
+  {
+   "id": 15,
+   "narration": "[[1]]最后，A 和 φ 到底怎么定？把 t 等于零代入位移和速度两个方程。[[2]]初始条件就是：t 等于零，x 等于 x 零，v 等于 v 零。[[3]]联立解出来：A 等于根号下 x 零方加 v 零方比 ω 方，tan φ 等于负 v 零比 ω x 零。记住这个对应关系：[[4]]周期由系统本身决定，振幅和初相位，由初始条件决定。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 140,
+     "w": 1100,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五　常量 ",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "$A$",
+        "size": 52,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 和 ",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "$\\varphi$",
+        "size": 52,
+        "color": "#E36C0A",
+        "b": false
+       },
+       {
+        "t": " 的确定",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 240,
+     "y": 280,
+     "w": 1000,
+     "h": 200,
+     "tex": "\\begin{cases} x=A\\cos(\\omega t+\\varphi) \\\\[6px] v=-A\\omega\\sin(\\omega t+\\varphi) \\end{cases}",
+     "size": 42,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 240,
+     "y": 500,
+     "w": 1300,
+     "h": 110,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "初始条件　$t=0$　$x=x_0$　$v=v_0$",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "left",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 150,
+     "y": 720,
+     "w": 220,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "➤",
+        "size": 60,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 380,
+     "y": 640,
+     "w": 640,
+     "h": 150,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": null,
+     "tex": "A=\\sqrt{x_0^2+\\dfrac{v_0^2}{\\omega^2}}",
+     "size": 44,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 380,
+     "y": 820,
+     "w": 640,
+     "h": 150,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": null,
+     "tex": "\\tan\\varphi=\\dfrac{-\\,v_0}{\\omega x_0}",
+     "size": 44,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 1080,
+     "y": 560,
+     "w": 720,
+     "h": 430,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "对给定振动系统，周期由系统本身性质决定，",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "振幅和初相位由初始条件决定。",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "important": true,
+     "hotspot": true,
+     "label": "周期由系统决定，A 和 φ 由初始条件决定",
+     "qa": [
+      {
+       "q": "哪些量由系统决定，哪些由初始条件决定？",
+       "a": "周期（频率）由系统本身性质决定；振幅 A 和初相位 φ 由初始条件决定。"
+      }
+     ]
+    }
+   ],
+   "heading": "常量确定"
+  },
+  {
+   "id": 16,
+   "narration": "[[1]]最后留一道讨论题。已知 t 等于零时，x 等于零，初速度小于零，求 φ。[[2]]由零等于 A cos φ，φ 等于正负二分之 π，两个都可能，怎么办？[[3]]再看速度条件：v 零等于负 A ω sin φ，要小于零，所以 sin φ 必须大于零。[[4]]只能取正的二分之 π。振动方程就是 x 等于 A cos ω t 加二分之 π。看右边的图：t 等于零时小球在平衡点，正往负方向走，和曲线完全对上。这一节就到这里。",
+   "elements": [
+    {
+     "type": "box",
+     "step": 0,
+     "x": 170,
+     "y": 140,
+     "w": 280,
+     "h": 110,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 12,
+     "paras": [
+      [
+       {
+        "t": "讨论",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 540,
+     "y": 150,
+     "w": 1300,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "已知 $t=0$，$x=0$，$v_0<0$，求 $\\varphi$",
+        "size": 46,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 330,
+     "w": 800,
+     "h": 110,
+     "tex": "0=A\\cos\\varphi \\;\\Rightarrow\\; \\varphi=\\pm\\dfrac{\\pi}{2}",
+     "size": 44,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 490,
+     "w": 800,
+     "h": 110,
+     "tex": "\\because\\; v_0=-A\\omega\\sin\\varphi<0",
+     "size": 44,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 640,
+     "w": 780,
+     "h": 130,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\therefore\\;\\sin\\varphi>0$　",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "取",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": " $\\varphi=\\dfrac{\\pi}{2}$",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 820,
+     "w": 800,
+     "h": 110,
+     "tex": "x=A\\cos(\\omega t+\\dfrac{\\pi}{2})",
+     "size": 44,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 980,
+     "y": 320,
+     "w": 800,
+     "h": 280,
+     "name": "spring_v"
+    },
+    {
+     "type": "diagram",
+     "step": 3,
+     "x": 980,
+     "y": 620,
+     "w": 800,
+     "h": 440,
+     "name": "xt"
+    }
+   ],
+   "heading": "讨论题"
+  }
+ ]
+}

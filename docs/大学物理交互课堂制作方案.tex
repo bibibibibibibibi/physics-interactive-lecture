@@ -1,0 +1,295 @@
+% !TeX program = tectonic
+\documentclass[11pt]{ctexart}
+
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{listings}
+
+\geometry{a4paper, top=2.5cm, bottom=2.5cm, left=2.8cm, right=2.5cm}
+\setlist[itemize]{itemsep=0.2em, leftmargin=1.6em}
+\setlist[enumerate]{itemsep=0.2em, leftmargin=1.8em}
+
+\definecolor{mainblue}{HTML}{123A63}
+\definecolor{accent}{HTML}{FFB703}
+\definecolor{okgreen}{HTML}{2E7D32}
+
+\newtcolorbox{rulebox}[1]{colback=mainblue!5, colframe=mainblue,
+  title={#1}, fonttitle=\bfseries, boxrule=0.8pt, arc=2mm, left=6pt, right=6pt}
+\newtcolorbox{warnbox}{colback=accent!12, colframe=accent!80!black,
+  boxrule=0.8pt, arc=2mm, left=6pt, right=6pt}
+
+\lstset{basicstyle=\ttfamily\small, backgroundcolor=\color{gray!6},
+  frame=single, framerule=0.3pt, rulecolor=\color{gray!40}, breaklines=true}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small 大学物理交互课堂 · 制作方案}
+\fancyhead[R]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\usepackage[
+    colorlinks=true,
+    linkcolor=mainblue,
+    citecolor=darkgray,
+    urlcolor=mainblue,
+    bookmarks=true,
+    bookmarksnumbered=true,
+    unicode=true
+]{hyperref}
+\hypersetup{pdftitle={大学物理交互课堂制作方案}, pdfauthor={课程视频工厂}}
+
+\title{\bfseries 大学物理交互课堂制作方案\\[4pt]
+  \large —— 网页课件管线的架构、规范与脚手架}
+\author{课程视频工厂}
+\date{2026 年 9 月 27 日}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\vspace{1em}
+
+\section{概述}
+
+\subsection{背景与目标}
+本方案面向大学物理课程的数字化讲授：把传统 PPT 课件升级为\textbf{网页课件}，
+一次制作、两种产品——
+\begin{itemize}
+  \item \textbf{交互课堂}：带配音、卡通讲师、激光笔指点、知识点热点与 AI 答疑的网页课堂；
+  \item \textbf{静态幻灯片}：自包含单文件 HTML，双击即开，支持翻页笔逐步揭示、动画图示与课堂批注。
+\end{itemize}
+两者共用同一份课件数据与同一个渲染组件，保证版式、公式、步进顺序逐帧一致。
+
+\subsection{三条设计原则}
+\begin{rulebox}{方案的核心约定}
+\begin{enumerate}
+  \item \textbf{单一数据源}：\path{weblec.json} 是唯一事实来源。改内容只改它（或其上游 \path{author.py}），两个产品各自重新渲染，永远不会出现两边不一致。
+  \item \textbf{同源双渲染}：静态幻灯片不是「从交互课堂转换」出来的，而是与课堂页共用 \path{Element} 渲染组件与同一份数据，样式零漂移。
+  \item \textbf{脚手架零 token}：除内容创作外，构建、导出、批注定位等环节全部脚本化，不消耗 AI token（TTS 配音只产生 API 费用）。
+\end{enumerate}
+\end{rulebox}
+
+\section{总体架构}
+
+\subsection{数据流}
+\begin{figure}[htbp]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[
+  font=\small,
+  box/.style={draw=mainblue, fill=mainblue!6, rounded corners=2mm,
+              minimum width=4.1cm, minimum height=0.95cm, align=center},
+  data/.style={draw=okgreen, fill=okgreen!8, rounded corners=2mm,
+               minimum width=4.1cm, minimum height=0.95cm, align=center},
+  arr/.style={-{Stealth[length=2.5mm]}, thick, mainblue},
+  lbl/.style={font=\scriptsize\ttfamily, midway, fill=white, inner sep=1pt}
+]
+\node[box] (author) {\path{author.py}\\[-2pt]{\scriptsize 页面元素 + 步序 + 讲稿}};
+\node[box, right=1.1cm of author] (build) {\path{build_web.py}\\[-2pt]{\scriptsize 逐句 TTS + 时间轴}};
+\node[data, right=1.1cm of build] (json) {\path{weblec.json} + \path{audio.mp3}\\[-2pt]{\scriptsize 唯一数据源}};
+\node[box, below right=0.55cm and -0.4cm of json] (slides) {静态幻灯片\\[-2pt]{\scriptsize \path{SlidesOnly.tsx}}};
+\node[box, above right=0.55cm and -0.4cm of json] (lecture) {交互课堂\\[-2pt]{\scriptsize \path{SlideStage.tsx}}};
+\node[data, right=1.1cm of slides] (single) {单文件 HTML\\[-2pt]{\scriptsize 双击即开}};
+\node[box, below=0.75cm of slides] (ann) {批注导出 JSON\\[-2pt]{\scriptsize 自动标注重叠元素}};
+
+\draw[arr] (author) -- (build);
+\draw[arr] (build) -- (json);
+\draw[arr] (json.east) -- (lecture.west);
+\draw[arr] (json.east) -- (slides.west);
+\draw[arr] (slides) -- node[lbl]{export\_slides.py} (single);
+\draw[arr, dashed, okgreen] (single.south) |- (ann.east);
+\draw[arr, dashed, okgreen] (ann.west) -| node[lbl, pos=0.25]{回改数据源} (author.south);
+\end{tikzpicture}}
+\caption{网页课件管线数据流：一份数据，两个产品，批注闭环}\label{fig:pipeline}
+\end{figure}
+
+\subsection{目录结构}
+\begin{table}[htbp]
+\centering\small
+\caption{工作区目录职责}\label{tab:dirs}
+\begin{tabular}{@{}p{6.8cm}p{7.4cm}@{}}
+\toprule
+\textbf{路径} & \textbf{职责} \\
+\midrule
+\path{lecture_factory/} & 工厂脚本与创作库（见第~\ref{sec:scaffold}~节） \\
+\path{lecture_factory/courses_web/}〈课名〉\path{/} & 单课的 \path{author.py}、素材与配音缓存 \\
+\path{interactive-lecture/} & 网页应用（React + Vite），交互课堂与静态页共用 \\
+\path{interactive-lecture/public/weblec/}〈课名〉\path{/} & 课件产物：\path{weblec.json}、\path{audio.mp3}、\path{logo.png}、插图 \\
+\path{interactive-lecture/public/weblec/courses.json} & 课程清单（课程列表页数据源） \\
+\path{interactive-lecture/dist-slides/} & 单文件幻灯片导出产物 \\
+\path{ppt_ref_slides/} 等 & 原 PPT 导出图与结构/几何 JSON，创作视觉基准 \\
+待处理/ & 已归档的旧视频渲染方案与调试中间产物 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{课件数据规范}\label{sec:spec}
+
+\subsection{\texttt{weblec.json} 顶层结构}
+\begin{table}[htbp]
+\centering\small
+\caption{课件数据顶层字段}\label{tab:weblec}
+\begin{tabular}{@{}p{3.4cm}p{10.8cm}@{}}
+\toprule
+\textbf{字段} & \textbf{说明} \\
+\midrule
+\path{title/nav/footer} & 课程标题、页眉导航、页脚（如「第九章 振动」） \\
+\path{character/characters} & 默认卡通讲师与可切换角色表 \\
+\path{duration} & 整课时长（秒），由合并音频实测得出 \\
+\path{slides[]} & 页面数组：\path{elements}（元素 + \path{step} 步序）、\path{bullets}（要点 + 热点/问答）、\path{stepTimes}（步进时刻表）、\path{t_start/t_end}、\path{laser}（激光指点时刻） \\
+\path{subtitles[]} & 句级字幕：起止时刻 + 文本，供右栏滚动与选句提问 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{页面元素类型（1920$\times$1080 设计坐标）}
+\begin{table}[htbp]
+\centering\small
+\caption{元素类型与渲染方式}\label{tab:elements}
+\begin{tabular}{@{}p{2.2cm}p{12cm}@{}}
+\toprule
+\textbf{类型} & \textbf{说明} \\
+\midrule
+\path{text} & 富文本段落（行内公式用 \texttt{\$...\$}），带字号/颜色/加粗 \\
+\path{tex} & KaTeX 整行公式 \\
+\path{box} & 色块容器（填充色 + 边框 + 圆角），内嵌文本或公式 \\
+\path{table} & 网格表格 \\
+\path{diagram} & SVG 图示库组件（弹簧振子、三曲线图等），动画由时钟 \path{t} 推导相位 \\
+\path{img} & 图片（\path{logo.png}、\path{clock.gif} 等，按课分目录） \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{讲稿与步进标记}
+\begin{rulebox}{步进揭示规则（创作时最易踩的坑）}
+\begin{itemize}
+  \item 讲稿中用 \texttt{[[n]]} 标记第 $n$ 步揭示时机，标记放在被念到的关键词\textbf{紧前面}，引擎按句内字符比例插值时刻；
+  \item 同一句里的多个标记会共享同一配音时刻导致步进重合，\textbf{不同步骤必须拆到不同句子}；
+  \item 元素带 \path{step} 字段，放映时只显示 \path{step} $\leq$ 当前步的元素，与 PPT 点击动画一一对应。
+\end{itemize}
+\end{rulebox}
+
+\subsection{已固化的视觉/交互标准}
+\begin{table}[htbp]
+\centering\small
+\caption{打磨后固化的标准（做新课时不要回退）}\label{tab:standards}
+\begin{tabular}{@{}p{3.2cm}p{11cm}@{}}
+\toprule
+\textbf{标准} & \textbf{规则} \\
+\midrule
+激光点 & 知识点元素底边往下 12px（正下方紧邻，文字/公式/图片同一规则） \\
+下划红线 & \path{important} 元素被指点时起 10 秒，每页最多 3 条 \\
+矢量符号 & 用 \path{diagrams.tsx} 的 \path{Vec} 组件（字母 + 手绘箭头）；禁止组合字符（缺字体显方框） \\
+曲线图 & 曲线关于横轴对称，$A$/$-A$ 虚线贴波峰波谷，周期标注落在一个周期正下方 \\
+图片元素 & 充满 $w \times h$ 框（contain），$w$/$h$ 直接按显示大小给；白底图先转透明 \\
+页脚/页码 & z-index 20 + 白底圆角衬，任何内容遮不住 \\
+文字颜色 & 舞台容器默认深色 \texttt{\#111}，不设色元素不会继承页面浅色字 \\
+logo & 每课 \path{logo.png}，左上角 270$\times$116 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{生产线：五环流程}
+
+\begin{table}[htbp]
+\centering\small
+\caption{每做一课的完整流程与消耗}\label{tab:workflow}
+\begin{tabular}{@{}p{0.9cm}p{2.4cm}p{5.6cm}p{4.6cm}@{}}
+\toprule
+ & \textbf{环节} & \textbf{做什么 / 命令} & \textbf{消耗} \\
+\midrule
+\textcircled{1} & 内容创作 & 写 \path{author.py}（页面布局 + 步序 + 讲稿）；\path{new_webcourse.py} 建骨架，\path{web_author.py} 提供元素函数/配色/约定 & AI 参与（唯一耗 token 环节） \\
+\textcircled{2} & 构建 & \path{python build_web.py courses_web/}〈课名〉：逐句 TTS（带缓存，改稿只重配改动页）+ 合并音频 + 输出 \path{weblec.json} & 0 token（TTS 计 API 费） \\
+\textcircled{3} & 双产品生效 & 交互课堂：产物落进 \path{public/weblec/}〈课名〉\path{/} 刷新即更新；静态页：\path{python export_slides.py --build} & 0 token \\
+\textcircled{4} & 课堂使用 & 交互课堂：配音 + 讲师 + 激光 + 答疑；静态页：翻页笔 + A 键批注 & 0 token \\
+\textcircled{5} & 课后迭代 & 导出批注 JSON → 按 \path{overlaps} 定位元素 → 回改数据源 → 回到 \textcircled{2} & 半自动（定位自动，决策在人） \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{warnbox}
+\textbf{闭环要点}：批注闭环的关键不是「把画圈自动变成修改」，而是把\textbf{定位}自动化——
+导出 JSON 里每笔都标注了它圈住的页面元素（页码 + 元素编号 + 包围盒），
+修改决策（改什么、改成什么样）由教师或 AI 完成。
+\end{warnbox}
+
+\section{两个产品}
+
+\subsection{交互课堂（\texttt{/?course=}〈课名〉）}
+网页课堂：音频时钟驱动步进揭示；卡通讲师（可切换角色、可拖动位置、姿态随内容变化）；
+激光笔光点指点当前知识点；重要知识点下划红线（10 秒、每页至多 3 条）；
+知识点热点与右栏字幕都可点击提问，AI 助教在线答疑（离线时退回内置答疑库）；
+授课键盘控制：空格播放/暂停、方向键翻页/步进、B 黑屏、F 全屏，兼容翻页笔。
+
+\subsection{静态幻灯片（\texttt{/slides.html?course=}〈课名〉 或单文件）}
+\begin{itemize}
+  \item \textbf{逐步揭示}：与课堂完全相同的步序；方向键/空格/单击/右键/翻页笔控制，PgUp/PgDn 整页跳，Home/End 首尾页，F 全屏；
+  \item \textbf{动画保留}：弹簧振子等动画图示由自由时钟驱动（\path{setInterval} 20fps，投屏等 rAF 被节流的环境也稳定），放映时持续运动；
+  \item \textbf{课堂批注}：A 键进入画笔模式，三色笔、撤销、清除本页、每页文字备注；笔迹存浏览器本地；「导出批注」下载 JSON，每笔自动标注重叠元素；
+  \item \textbf{单文件导出}：JS/CSS/KaTeX 字体/logo/插图全部内联，约 2\,MB，\path{file://} 双击即开，可直接拷给学生。
+\end{itemize}
+
+\section{脚手架清单}\label{sec:scaffold}
+\begin{table}[htbp]
+\centering\small
+\caption{可复用脚手架（新课零改动或极少改动）}\label{tab:scaffold}
+\begin{tabular}{@{}p{5.4cm}p{8.8cm}@{}}
+\toprule
+\textbf{脚手架} & \textbf{作用} \\
+\midrule
+\path{new_webcourse.py} & 新课目录骨架 \\
+\path{web_author.py} & 创作共享库：元素辅助函数、配色常量、创作约定 \\
+\path{build_web.py} & TTS + 音频合并 + \path{weblec.json}（按课输出） \\
+\path{validate_weblec.py} & 规范校验：结构/步进/红线/热点/激光/字幕/媒体，构建后自动跑 \\
+\path{export_slides.py --build} & 一条命令：构建 + 打包单文件幻灯片（\path{--course} 换课） \\
+\path{SlideStage/Element/diagrams/Teacher} 等 & 双产品共用渲染组件 \\
+\path{SlidesOnly.tsx} & 静态页 + 批注系统 \\
+\path{vite.slides.config.ts} & 单文件构建配置（单 chunk + 字体内联） \\
+\path{course.ts} + \path{CourseMenu.tsx} & 课程参数化与课程列表页 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{多课并存与参数化}
+课件按 \path{public/weblec/}〈课名〉\path{/} 分目录存放；URL 带 \path{?course=}〈课名〉 加载对应课程
+（\path{/?course=shm} 交互课堂、\path{/slides.html?course=shm} 静态页）；
+根路径无参数时显示课程列表页，清单维护在 \path{public/weblec/courses.json}（新课手动加一行）。
+批注的浏览器本地存储按课程隔离。单文件导出不依赖 URL 参数（数据内联注入）。
+
+加一门新课的标准动作：\path{new_webcourse.py} 建骨架 → 写 \path{author.py} →
+\path{build_web.py} 构建（末尾自动跑 \path{validate_weblec.py} 规范校验，不合规即报错）→
+\path{courses.json} 加一行 → \path{export_slides.py --build} 出单文件。
+
+\section{可复制性评估与后续路线}
+
+\subsection{可复制性}
+\begin{table}[htbp]
+\centering\small
+\caption{复制一门新课的成本分布}\label{tab:replication}
+\begin{tabular}{@{}p{4.2cm}p{10cm}@{}}
+\toprule
+\textbf{类别} & \textbf{内容} \\
+\midrule
+强可复制（零改动） & 渲染引擎、批注系统、导出管线、TTS 构建、AI 答疑、课程参数化——第 \textcircled{2}\textcircled{3}\textcircled{4}\textcircled{5} 环全部 \\
+一次性投入后进库 & 新物理场景的 SVG 图示（每章约 2--4 个新图）、课程 logo 与插图 \\
+每课必须新做 & \path{author.py} 的页面布局与讲稿——教学内容本身，AI 可加速 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{后续路线}
+\begin{enumerate}
+  \item \textbf{可视化编辑器}：浏览器里直接改幻灯片（动文字、拖位置、调步序），保存写回 \path{weblec.json}，两个产品同时更新，彻底告别手改 JSON；
+  \item \textbf{批注自动落地}：读批注 JSON、生成改动建议清单、确认后自动写回数据源；
+  \item \textbf{新图示组件}：随章节推进扩充 \path{diagrams.tsx}（旋转矢量、机械波等）。
+\end{enumerate}
+
+\end{document}
