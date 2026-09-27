@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 始终预留纵向滚动条占位：避免页面内容高度变化时滚动条出现/消失导致版心宽度跳动 */
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
