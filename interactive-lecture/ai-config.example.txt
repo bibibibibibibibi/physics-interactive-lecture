@@ -1,0 +1,14 @@
+# 启用 AI 答疑的配置方法
+#
+# 1. 在本项目根目录（interactive-lecture/）新建文件 .env.local
+# 2. 写入以下内容：
+#
+#    AI_API_KEY=sk-你的key
+#    AI_BASE_URL=https://api.moonshot.cn/v1
+#    AI_MODEL=moonshot-v1-8k
+#
+# 3. 重启 npm run dev 即可。
+#
+# 默认兼容 Kimi 开放平台（platform.moonshot.cn 申请 key），
+# 也可换成任何 OpenAI 格式的 chat completions 服务（改 BASE_URL 和 MODEL）。
+# 未配置时问答自动使用离线答疑库，不影响任何功能。
