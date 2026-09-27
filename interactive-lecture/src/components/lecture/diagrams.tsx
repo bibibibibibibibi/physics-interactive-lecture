@@ -746,6 +746,203 @@ export function RotvecTwo() {
   )
 }
 
+/* ================= 9-3 单摆和复摆 ================= */
+
+/** 物理箭头通用件：带三角箭头的直线（屏幕坐标，y 向下） */
+function Arrow({ x1, y1, x2, y2, color = '#E00', w = 7 }: {
+  x1: number; y1: number; x2: number; y2: number; color?: string; w?: number
+}) {
+  const a = Math.atan2(y2 - y1, x2 - x1)
+  const p = a + Math.PI / 2
+  const xb = x2 - 26 * Math.cos(a), yb = y2 - 26 * Math.sin(a)
+  return (
+    <g>
+      <line x1={x1} y1={y1} x2={xb} y2={yb} stroke={color} strokeWidth={w} />
+      <polygon
+        points={`${x2},${y2} ${xb + 12 * Math.cos(p)},${yb + 12 * Math.sin(p)} ${xb - 12 * Math.cos(p)},${yb - 12 * Math.sin(p)}`}
+        fill={color} />
+    </g>
+  )
+}
+
+/** 采样圆弧折线（屏幕坐标：0=正右，π/2=正下）——避开 SVG arc 的 sweep 标志坑 */
+function ArcLine({ cx, cy, r, a0, a1, color = '#0A0', w = 5, dash }: {
+  cx: number; cy: number; r: number; a0: number; a1: number; color?: string; w?: number; dash?: string
+}) {
+  const n = 18
+  const pts: string[] = []
+  for (let i = 0; i <= n; i++) {
+    const a = a0 + ((a1 - a0) * i) / n
+    pts.push(`${cx + r * Math.cos(a)},${cy + r * Math.sin(a)}`)
+  }
+  return <polyline points={pts.join(' ')} fill="none" stroke={color} strokeWidth={w} strokeDasharray={dash} />
+}
+
+/** 采样圆弧 + 末端箭头（转动方向指示） */
+function ArcArrow({ cx, cy, r, a0, a1, color = '#C00', w = 6 }: {
+  cx: number; cy: number; r: number; a0: number; a1: number; color?: string; w?: number
+}) {
+  const n = 18
+  const pts: [number, number][] = []
+  for (let i = 0; i <= n; i++) {
+    const a = a0 + ((a1 - a0) * i) / n
+    pts.push([cx + r * Math.cos(a), cy + r * Math.sin(a)])
+  }
+  const [hx, hy] = pts[n]
+  const da = Math.atan2(hy - pts[n - 1][1], hx - pts[n - 1][0])
+  const p = da + Math.PI / 2
+  const xb = hx - 24 * Math.cos(da), yb = hy - 24 * Math.sin(da)
+  return (
+    <g>
+      <polyline points={pts.map(q => q.join(',')).join(' ')} fill="none" stroke={color} strokeWidth={w} />
+      <polygon
+        points={`${hx},${hy} ${xb + 12 * Math.cos(p)},${yb + 12 * Math.sin(p)} ${xb - 12 * Math.cos(p)},${yb - 12 * Math.sin(p)}`}
+        fill={color} />
+    </g>
+  )
+}
+
+/** 9-3 第 1、2 页：单摆（摆球随主时钟小角摆动；悬点 A、平衡位置 O、θ、l、F_T、P、J=ml²） */
+export function PendulumAnim({ t = 0 }: { t?: number }) {
+  const A: [number, number] = [470, 110]
+  const L = 520
+  const th = 0.5 * Math.cos((2 * Math.PI / 4.5) * t)  // 4.5s 一个周期
+  const bx = A[0] + L * Math.sin(th)
+  const by = A[1] + L * Math.cos(th)
+  const eqY = A[1] + L
+  const ux = (A[0] - bx) / L, uy = (A[1] - by) / L  // 摆球 → 悬点方向
+  return (
+    <svg viewBox="0 0 940 880" width="100%" height="100%">
+      <rect x="6" y="6" width="928" height="868" fill="#fff" stroke="#4a7c8c" strokeWidth="3" />
+      <Hatch id="pd-h" />
+      {/* 天花板与悬点 A */}
+      <rect x={A[0] - 150} y="58" width="300" height="40" fill="url(#pd-h)" stroke="#555" strokeWidth="2" />
+      <circle cx={A[0]} cy={A[1]} r="10" fill="#111" />
+      <text x={A[0] - 78} y={A[1] + 64} fontSize="52" fontStyle="italic" fontFamily={SERIF}>A</text>
+      {/* 转动正向 */}
+      <ArcArrow cx={A[0] + 250} cy={180} r={70} a0={-0.5} a1={-1.9} />
+      <text x={A[0] + 330} y="160" fontSize="44" fontFamily={HEI}>转动正向</text>
+      {/* 平衡位置：竖直虚线 + 小球 O */}
+      <line x1={A[0]} y1={A[1]} x2={A[0]} y2={eqY + 8} stroke="#111" strokeWidth="5" strokeDasharray="16 12" />
+      <ellipse cx={A[0]} cy={eqY} rx="30" ry="26" fill="#F4A7A7" stroke="#C00" strokeWidth="2" />
+      <text x={A[0]} y={eqY + 92} textAnchor="middle" fontSize="54" fontStyle="italic" fontFamily={SERIF}>O</text>
+      {/* 摆动轨迹（虚线弧） */}
+      <ArcLine cx={A[0]} cy={A[1]} r={L} a0={Math.PI / 2 - 0.62} a1={Math.PI / 2 + 0.62} color="#33F" w={4} dash="18 12" />
+      {/* 摆绳与摆长标注 l */}
+      <line x1={A[0]} y1={A[1]} x2={bx} y2={by} stroke="#22C" strokeWidth="6" />
+      <text x={(A[0] + bx) / 2 + 52} y={(A[1] + by) / 2 - 8} fontSize="52" fontStyle="italic" fill="#22C" fontFamily={SERIF}>l</text>
+      {/* θ 角弧（竖直虚线与摆绳之间） */}
+      <ArcLine cx={A[0]} cy={A[1]} r={130} a0={Math.PI / 2 - th} a1={Math.PI / 2} color="#0A0" w={5} />
+      <text x={A[0] + 172 * Math.sin(th / 2)} y={A[1] + 172 * Math.cos(th / 2) + 16}
+        textAnchor="middle" fontSize="48" fontStyle="italic" fill="#0A0" fontFamily={SERIF}>θ</text>
+      {/* 摆球（红）+ m */}
+      <radialGradient id="pd-ball" cx="0.35" cy="0.35" r="0.9">
+        <stop offset="0%" stopColor="#ff8a8a" />
+        <stop offset="60%" stopColor="#cc0000" />
+        <stop offset="100%" stopColor="#6b0000" />
+      </radialGradient>
+      <ellipse cx={bx} cy={by} rx="34" ry="30" fill="url(#pd-ball)" />
+      <text x={bx + 64} y={by + 8} fontSize="52" fontStyle="italic" fontFamily={SERIF}>m</text>
+      {/* F_T（沿绳指向悬点）与 P（竖直向下） */}
+      <Arrow x1={bx + ux * 32} y1={by + uy * 32} x2={bx + ux * 200} y2={by + uy * 200} color="#E00" w={6} />
+      <Vec ch="F" x={bx + ux * 238} y={by + uy * 238 + 14} size={46} fill="#E00" anchor="middle" />
+      <text x={bx + ux * 238 + 22} y={by + uy * 238 + 30} fontSize="28" fontStyle="italic" fill="#E00" fontFamily={SERIF}>T</text>
+      <Arrow x1={bx} y1={by + 34} x2={bx} y2={by + 220} color="#C000C0" w={6} />
+      <Vec ch="P" x={bx + 46} y={by + 246} size={50} fill="#C000C0" />
+      {/* J = ml² */}
+      <text x="110" y="820" fontSize="50" fontStyle="italic" fontFamily={SERIF}>J = ml²</text>
+    </svg>
+  )
+}
+
+/** 9-3 第 3、4 页：复摆（任意刚体绕 O 轴摆动，C 为质心，OC = l，θ、P） */
+export function CompoundPendulum() {
+  const O: [number, number] = [400, 330]
+  const C: [number, number] = [600, 520]
+  const ocA = Math.atan2(C[1] - O[1], C[0] - O[0])
+  const midA = (Math.PI / 2 + ocA) / 2
+  return (
+    <svg viewBox="0 0 940 880" width="100%" height="100%">
+      <rect x="6" y="6" width="928" height="868" fill="#fff" stroke="#4a7c8c" strokeWidth="3" />
+      {/* 转动正向 */}
+      <ArcArrow cx={O[0] - 10} cy={O[1] - 50} r={105} a0={-2.7} a1={-1.5} />
+      <text x={O[0] + 120} y={O[1] - 160} fontSize="44" fontFamily={HEI}>转动正向</text>
+      {/* 刚体（不规则形状） */}
+      <path d="M 400 240 C 330 240 285 300 285 370 C 285 450 340 520 420 570
+               C 500 620 610 640 690 600 C 760 565 795 490 785 410
+               C 775 330 700 270 610 250 C 530 232 460 240 400 240 Z"
+        fill="#DCEAF5" stroke="#2F7D5B" strokeWidth="5" />
+      {/* O 悬点与竖直虚线 */}
+      <circle cx={O[0]} cy={O[1]} r="12" fill="#111" />
+      <text x={O[0] - 68} y={O[1] + 12} fontSize="56" fontWeight="bold" fontStyle="italic" fontFamily={SERIF}>O</text>
+      <line x1={O[0]} y1={O[1]} x2={O[0]} y2="810" stroke="#111" strokeWidth="5" strokeDasharray="16 12" />
+      {/* OC 连线与 l、θ */}
+      <line x1={O[0]} y1={O[1]} x2={C[0]} y2={C[1]} stroke="#0A0" strokeWidth="6" />
+      <text x={(O[0] + C[0]) / 2 + 48} y={(O[1] + C[1]) / 2 - 28} fontSize="52" fontStyle="italic" fill="#0A0" fontFamily={SERIF}>l</text>
+      <ArcLine cx={O[0]} cy={O[1]} r={110} a0={ocA} a1={Math.PI / 2} color="#C000C0" w={5} />
+      <text x={O[0] + 152 * Math.cos(midA)} y={O[1] + 152 * Math.sin(midA) + 16}
+        textAnchor="middle" fontSize="48" fontStyle="italic" fill="#C000C0" fontFamily={SERIF}>θ</text>
+      {/* 质心 C 与重力 P */}
+      <circle cx={C[0]} cy={C[1]} r="10" fill="#111" />
+      <text x={C[0] + 36} y={C[1] - 18} fontSize="56" fontWeight="bold" fontStyle="italic" fontFamily={SERIF}>C</text>
+      <Arrow x1={C[0]} y1={C[1] + 10} x2={C[0]} y2={C[1] + 200} color="#E00" w={7} />
+      <Vec ch="P" x={C[0] + 44} y={C[1] + 230} size={50} fill="#E00" />
+      <text x="470" y="850" textAnchor="middle" fontSize="44" fontFamily={HEI}>（ C 点为质心 ）</text>
+    </svg>
+  )
+}
+
+/** 9-3 第 5–7 页例题：匀质球沿固定球壳内表面纯滚动（O 壳心、C 球心、R、r、θ、F_N、F、mg） */
+export function RollingBall() {
+  const O: [number, number] = [470, 150]
+  const R = 560, rb = 70
+  const th = 0.56
+  const d = R - rb
+  const ux = Math.sin(th), uy = Math.cos(th)  // O → C 方向
+  const C: [number, number] = [O[0] + d * ux, O[1] + d * uy]
+  const ct: [number, number] = [O[0] + R * ux, O[1] + R * uy]  // 接触点
+  const tx = -uy, ty = ux  // 切线方向（沿表面指向平衡位置一侧）
+  return (
+    <svg viewBox="0 0 940 900" width="100%" height="100%">
+      <rect x="6" y="6" width="928" height="888" fill="#FDFBFF" stroke="#7030A0" strokeWidth="3" />
+      {/* 球壳内表面（大圆弧） */}
+      <ArcLine cx={O[0]} cy={O[1]} r={R} a0={Math.PI / 2 - 1.05} a1={Math.PI / 2 + 1.05} color="#22C" w={6} />
+      {/* O 与竖直虚线 */}
+      <circle cx={O[0]} cy={O[1]} r="12" fill="#111" />
+      <text x={O[0] + 28} y={O[1] - 22} fontSize="54" fontStyle="italic" fontFamily={SERIF}>O</text>
+      <line x1={O[0]} y1={O[1]} x2={O[0]} y2={O[1] + R + 30} stroke="#111" strokeWidth="5" strokeDasharray="16 12" />
+      {/* R（O → 接触点连线） */}
+      <line x1={O[0]} y1={O[1]} x2={ct[0]} y2={ct[1]} stroke="#111" strokeWidth="4" />
+      <text x={O[0] + R * 0.55 * ux - 100} y={O[1] + R * 0.55 * uy + 10} fontSize="52" fontStyle="italic" fontFamily={SERIF}>R</text>
+      {/* θ 角弧 */}
+      <ArcLine cx={O[0]} cy={O[1]} r={130} a0={Math.PI / 2 - th} a1={Math.PI / 2} color="#0A0" w={5} />
+      <text x={O[0] + 162 * Math.sin(th / 2) - 24} y={O[1] + 162 * Math.cos(th / 2) + 14}
+        textAnchor="middle" fontSize="48" fontStyle="italic" fill="#0A0" fontFamily={SERIF}>θ</text>
+      {/* 支持力 F_N（C → O 方向） */}
+      <Arrow x1={C[0] - ux * (rb + 6)} y1={C[1] - uy * (rb + 6)}
+        x2={C[0] - ux * (rb + 180)} y2={C[1] - uy * (rb + 180)} color="#E00" w={6} />
+      <Vec ch="F" x={C[0] - ux * (rb + 224)} y={C[1] - uy * (rb + 224) + 12} size={46} fill="#E00" anchor="middle" />
+      <text x={C[0] - ux * (rb + 224) + 24} y={C[1] - uy * (rb + 224) + 30} fontSize="28" fontStyle="italic" fill="#E00" fontFamily={SERIF}>N</text>
+      {/* 小球（匀质球，半径 r） */}
+      <radialGradient id="rb-g" cx="0.35" cy="0.35" r="0.95">
+        <stop offset="0%" stopColor="#dceaff" />
+        <stop offset="60%" stopColor="#7fb2f0" />
+        <stop offset="100%" stopColor="#3a6fb5" />
+      </radialGradient>
+      <circle cx={C[0]} cy={C[1]} r={rb} fill="url(#rb-g)" stroke="#335" strokeWidth="2" />
+      <line x1={C[0]} y1={C[1]} x2={C[0] + rb * 0.86} y2={C[1] - rb * 0.5} stroke="#111" strokeWidth="4" />
+      <text x={C[0] + rb * 0.9} y={C[1] - rb * 0.6} fontSize="46" fontStyle="italic" fontFamily={SERIF}>r</text>
+      <text x={C[0] - 90} y={C[1] + 60} fontSize="50" fontStyle="italic" fontFamily={SERIF}>C</text>
+      {/* 摩擦力 F（接触点沿切线） */}
+      <Arrow x1={ct[0]} y1={ct[1]} x2={ct[0] + tx * 170} y2={ct[1] + ty * 170} color="#7030A0" w={6} />
+      <Vec ch="F" x={ct[0] + tx * 214} y={ct[1] + ty * 214 + 14} size={46} fill="#7030A0" anchor="middle" />
+      {/* 重力 mg（C 竖直向下） */}
+      <Arrow x1={C[0]} y1={C[1] + rb} x2={C[0]} y2={C[1] + rb + 180} color="#C000C0" w={6} />
+      <Vec ch="mg" x={C[0] + 60} y={C[1] + rb + 206} size={46} fill="#C000C0" />
+    </svg>
+  )
+}
+
 const DIAGRAMS: Record<string, (props: { t?: number }) => JSX.Element> = {
   compose: ComposeDiagram,
   spring_o: springO,
@@ -765,6 +962,9 @@ const DIAGRAMS: Record<string, (props: { t?: number }) => JSX.Element> = {
   example_axis: ExampleAxis,
   rotvec_phi: RotvecPhi,
   rotvec_two: RotvecTwo,
+  pendulum_anim: PendulumAnim,
+  compound_pendulum: CompoundPendulum,
+  rolling_ball: RollingBall,
 }
 
 export default DIAGRAMS
