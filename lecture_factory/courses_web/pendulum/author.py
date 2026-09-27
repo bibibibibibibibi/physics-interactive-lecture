@@ -111,7 +111,7 @@ pages.append({
           {"q": "复摆周期公式能退化到单摆吗？",
            "a": "能。单摆 J=ml²，代入得 T=2π√(ml²/mgl)=2π√(l/g)，正是单摆公式。"}]),
   tex(3, 240, 680, 800, "\\theta=\\theta_m\\cos(\\omega t+\\varphi)", 46),
-  text(3, 1080, 680, 300, [R("角谐振动", 48, RED, True)]),
+  text(3, 830, 690, 300, [R("角谐振动", 48, RED, True)]),
   diagram(0, 1160, 110, 690, 890, "compound_pendulum", hotspot=True,
           label="复摆模型图",
           qa=[{"q": "质心 C 在转轴 O 正下方时是什么位置？",
