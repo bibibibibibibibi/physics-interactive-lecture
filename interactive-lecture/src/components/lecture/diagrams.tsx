@@ -488,32 +488,44 @@ export function RotvecVA({ t = 0 }: { t?: number }) {
   )
 }
 
-/** 9-2 第 5 页：用旋转矢量画 x-t 图（动画：曲线随转过的角度逐渐描出） */
+/** 9-2 第 5 页：用旋转矢量画 x-t 图（动画）。
+    左图是旋转矢量整体逆时针转过 90°：x 轴竖直向上，矢量从 +x 方向起逆时针转动；
+    末端到水平轴的距离即为位移 x，随时间逐点描到右侧 x-t 坐标系。 */
 export function RotvecXt({ t = 0 }: { t?: number }) {
   const ph = (t * (2 * Math.PI / 8)) % (2 * Math.PI)  // 8s 一圈，φ=0
   const O: [number, number] = [300, 470], Rr = 210
-  const tipX = O[0] + Rr * Math.cos(ph), tipY = O[1] - Rr * Math.sin(ph)
-  // x-t 图：横轴从 gx0 到 gx1 对应 0..T，纵轴中线的投影高度与圆一致（y 相同）
+  // 矢量末端：从竖直方向起逆时针 → 水平偏移 -R sinφ，高度 -R cosφ
+  const tipX = O[0] - Rr * Math.sin(ph), tipY = O[1] - Rr * Math.cos(ph)
+  const ux = -Math.sin(ph), uy = -Math.cos(ph)  // 矢量方向单位向量
+  const pxv = Math.cos(ph), pyv = -Math.sin(ph) // 垂直方向
+  // x-t 图：横轴 gx0..gx0+gT 对应 0..T，位移与圆共用同一高度
   const gx0 = 640, gT = 620, gy = 470, gA = 210
   const curX = gx0 + (ph / (2 * Math.PI)) * gT
+  // 只生成已转过部分的曲线点（代替 clip，兼容所有渲染路径）
+  const N = Math.max(2, Math.ceil((ph / (2 * Math.PI)) * 160))
   const pts: string[] = []
-  for (let i = 0; i <= 200; i++) {
-    const u = (i / 200) * 2 * Math.PI
+  for (let i = 0; i <= N; i++) {
+    const u = (i / N) * ph
     pts.push(`${gx0 + (u / (2 * Math.PI)) * gT},${gy - gA * Math.cos(u)}`)
   }
-  const clipId = 'xtclip'
   const ticks: Array<[number, string]> = [[0.25, 'T/4'], [0.5, 'T/2'], [0.75, '3T/4'], [1, 'T']]
   return (
     <svg viewBox="0 0 1350 940" width="100%" height="100%">
       <rect x="6" y="6" width="1338" height="928" fill="#fff" stroke="#4a7c8c" strokeWidth="3" />
       <text x="520" y="90" textAnchor="middle" fontSize="52" fontStyle="italic" fontFamily={SERIF}>x = A cos( ωt + φ )　　φ = 0</text>
-      {/* 左：参考圆 */}
+      {/* 左：参考圆（x 轴竖直） */}
       <circle cx={O[0]} cy={O[1]} r={Rr} fill="none" stroke="#111" strokeWidth="4" />
       <line x1={O[0] - Rr - 60} y1={O[1]} x2={O[0] + Rr + 60} y2={O[1]} stroke="#666" strokeWidth="3" strokeDasharray="12 9" />
       <line x1={O[0]} y1={O[1] - Rr - 60} x2={O[0]} y2={O[1] + Rr + 60} stroke="#111" strokeWidth="4" />
       <polygon points={`${O[0]},${O[1] - Rr - 60} ${O[0] - 9},${O[1] - Rr - 34} ${O[0] + 9},${O[1] - Rr - 34}`} fill="#111" />
       <text x={O[0] + 16} y={O[1] - Rr - 70} fontSize="38" fontStyle="italic" fontFamily={SERIF}>x</text>
-      <RotArrow O={O} ang={ph} len={Rr} label="A" />
+      <text x={O[0] - 26} y={O[1] + 56} fontSize="44" fontStyle="italic" fontFamily={SERIF}>O</text>
+      {/* 矢量 */}
+      <line x1={O[0]} y1={O[1]} x2={tipX} y2={tipY} stroke="#E00" strokeWidth="7" />
+      <polygon
+        points={`${tipX},${tipY} ${tipX - 22 * ux + 11 * pxv},${tipY - 22 * uy + 11 * pyv} ${tipX - 22 * ux - 11 * pxv},${tipY - 22 * uy - 11 * pyv}`}
+        fill="#E00" />
+      <text x={tipX + 34 * ux} y={tipY + 34 * uy + 12} textAnchor="middle" fontSize="44" fontStyle="italic" fill="#E00" fontFamily={SERIF}>A</text>
       <OmegaArrow cx={O[0]} cy={O[1]} r={Rr + 45} a0={Math.PI - 0.7} a1={Math.PI - 1.6} size={38} />
       {/* 右：x-t 坐标系 */}
       <line x1={gx0} y1="200" x2={gx0} y2="800" stroke="#111" strokeWidth="4" />
@@ -530,17 +542,12 @@ export function RotvecXt({ t = 0 }: { t?: number }) {
       ))}
       <line x1={gx0} y1={gy - gA} x2={gx0 + gT} y2={gy - gA} stroke="#999" strokeWidth="2.5" strokeDasharray="10 8" />
       <line x1={gx0} y1={gy + gA} x2={gx0 + gT} y2={gy + gA} stroke="#999" strokeWidth="2.5" strokeDasharray="10 8" />
-      {/* 曲线：裁剪窗口随相位前进 */}
-      <defs>
-        <clipPath id={clipId}>
-          <rect x={gx0 - 10} y="180" width={Math.max(0, curX - gx0 + 14)} height="620" />
-        </clipPath>
-      </defs>
-      <polyline points={pts.join(' ')} fill="none" stroke="#E00" strokeWidth="6" clipPath={`url(#${clipId})`} />
-      {/* 投影连线与动点 */}
-      <line x1={tipX} y1={tipY} x2={Math.min(curX, gx0 + gT)} y2={tipY} stroke="#C000C0" strokeWidth="3.5" strokeDasharray="12 9" />
-      {curX <= gx0 + gT && <circle cx={curX} cy={tipY} r="12" fill="#E00" />}
+      {/* 已描出的曲线（随相位增长） */}
+      <polyline points={pts.join(' ')} fill="none" stroke="#E00" strokeWidth="6" />
+      {/* 投影连线：矢量末端 → 曲线当前点（同一高度） */}
+      <line x1={tipX} y1={tipY} x2={curX} y2={tipY} stroke="#C000C0" strokeWidth="3.5" strokeDasharray="12 9" />
       <circle cx={tipX} cy={tipY} r="12" fill="#E00" />
+      <circle cx={curX} cy={tipY} r="12" fill="#E00" />
     </svg>
   )
 }
