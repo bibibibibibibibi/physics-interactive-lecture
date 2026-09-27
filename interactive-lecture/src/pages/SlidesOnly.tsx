@@ -96,6 +96,10 @@ export default function SlidesOnly() {
   }, [])
 
   useEffect(() => {
+    if (weblec?.title) document.title = `${weblec.title} · 幻灯片`
+  }, [weblec])
+
+  useEffect(() => {
     const onResize = () =>
       setScale(Math.min(window.innerWidth / VIDEO_W, window.innerHeight / VIDEO_H))
     onResize()

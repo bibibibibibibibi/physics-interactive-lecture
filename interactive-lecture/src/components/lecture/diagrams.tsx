@@ -297,6 +297,447 @@ export function SpringV() {
   )
 }
 
+/** 旋转矢量公共件：逆时针 ω 弯箭头 */
+function OmegaArrow({ cx, cy, r, a0 = -0.5, a1 = -1.5, size = 40 }: {
+  cx: number; cy: number; r: number; a0?: number; a1?: number; size?: number
+}) {
+  const x0 = cx + r * Math.cos(a0), y0 = cy + r * Math.sin(a0)
+  const x1 = cx + r * Math.cos(a1), y1 = cy + r * Math.sin(a1)
+  const tan = a1 - Math.PI / 2  // 逆时针方向切线角
+  const hs = size * 0.45
+  const p1 = `${x1},${y1}`
+  const p2 = `${x1 - hs * Math.cos(tan - 0.5)},${y1 - hs * Math.sin(tan - 0.5)}`
+  const p3 = `${x1 - hs * Math.cos(tan + 0.5)},${y1 - hs * Math.sin(tan + 0.5)}`
+  return (
+    <g>
+      <path d={`M ${x0} ${y0} A ${r} ${r} 0 0 0 ${x1} ${y1}`} fill="none" stroke="#E8862E" strokeWidth="6" />
+      <polygon points={`${p1} ${p2} ${p3}`} fill="#E8862E" />
+      <text x={cx + (r + 30) * Math.cos((a0 + a1) / 2)} y={cy + (r + 30) * Math.sin((a0 + a1) / 2) + 12}
+        textAnchor="middle" fontSize={size} fontStyle="italic" fill="#111" fontFamily={SERIF}>ω</text>
+    </g>
+  )
+}
+
+/** 旋转矢量公共件：从 O 出发、角度 ang（数学角，逆时针为正）、长度 len 的红色矢量 */
+function RotArrow({ O, ang, len, label, labelR = 34, color = '#E00' }: {
+  O: [number, number]; ang: number; len: number; label?: string; labelR?: number; color?: string
+}) {
+  const x = O[0] + len * Math.cos(ang), y = O[1] - len * Math.sin(ang)
+  const perp = ang + Math.PI / 2
+  return (
+    <g>
+      <line x1={O[0]} y1={O[1]} x2={x} y2={y} stroke={color} strokeWidth="7" />
+      <polygon
+        points={`${x},${y} ${x - 22 * Math.cos(ang) + 11 * Math.cos(perp)},${y + 22 * Math.sin(ang) - 11 * Math.sin(perp)} ${x - 22 * Math.cos(ang) - 11 * Math.cos(perp)},${y + 22 * Math.sin(ang) + 11 * Math.sin(perp)}`}
+        fill={color} />
+      {label && (
+        <Vec ch={label} x={O[0] + (len + labelR) * Math.cos(ang)} y={O[1] - (len + labelR) * Math.sin(ang)}
+          size={46} fill={color} anchor="middle" />
+      )}
+    </g>
+  )
+}
+
+/** 角度弧线（绿色小弧 + 可选标签） */
+function AngleArc({ O, r, a0, a1, label, color = '#0A0', lsize = 38 }: {
+  O: [number, number]; r: number; a0: number; a1: number; label?: string; color?: string; lsize?: number
+}) {
+  const x0 = O[0] + r * Math.cos(a0), y0 = O[1] - r * Math.sin(a0)
+  const x1 = O[0] + r * Math.cos(a1), y1 = O[1] - r * Math.sin(a1)
+  const mid = (a0 + a1) / 2
+  return (
+    <g>
+      <path d={`M ${x0} ${y0} A ${r} ${r} 0 0 0 ${x1} ${y1}`} fill="none" stroke={color} strokeWidth="5" />
+      {label && (
+        <text x={O[0] + (r + 30) * Math.cos(mid)} y={O[1] - (r + 30) * Math.sin(mid) + 12}
+          textAnchor="middle" fontSize={lsize} fontStyle="italic" fill={color} fontFamily={SERIF}>{label}</text>
+      )}
+    </g>
+  )
+}
+
+/** 9-2 第 1 页：t=0 的旋转矢量（静态） */
+export function RotvecT0() {
+  const O: [number, number] = [400, 520], Rr = 330, phi = 0.7
+  const tipX = O[0] + Rr * Math.cos(phi), tipY = O[1] - Rr * Math.sin(phi)
+  return (
+    <svg viewBox="0 0 900 900" width="100%" height="100%">
+      <rect x="6" y="6" width="888" height="888" fill="#fff" stroke="#4a7c8c" strokeWidth="3" />
+      <circle cx={O[0]} cy={O[1]} r={Rr} fill="none" stroke="#33F" strokeWidth="5" strokeDasharray="18 12" />
+      {/* x 轴 */}
+      <line x1="40" y1={O[1]} x2="860" y2={O[1]} stroke="#7030A0" strokeWidth="5" />
+      <polygon points="860,520 834,510 834,530" fill="#7030A0" />
+      <text x="872" y="540" fontSize="44" fontStyle="italic" fontFamily={SERIF}>x</text>
+      <text x={O[0] - 24} y={O[1] + 66} fontSize="52" fontStyle="italic" fontFamily={SERIF}>O</text>
+      <text x="200" y="330" fontSize="48" fontStyle="italic" fontFamily={SERIF}>t = 0</text>
+      {/* 矢量与投影 */}
+      <RotArrow O={O} ang={phi} len={Rr} label="A" />
+      <line x1={tipX} y1={tipY} x2={tipX} y2={O[1]} stroke="#E00" strokeWidth="4" strokeDasharray="12 9" />
+      <circle cx={tipX} cy={O[1]} r="16" fill="#E00" />
+      <text x={tipX - 10} y={O[1] + 58} textAnchor="middle" fontSize="40" fontStyle="italic" fontFamily={SERIF}>x₀</text>
+      <AngleArc O={O} r={110} a0={0} a1={phi} label="φ" color="#C000C0" />
+      <OmegaArrow cx={O[0]} cy={O[1]} r={Rr + 60} a0={-0.6} a1={-1.5} />
+      {/* 公式 */}
+      <rect x={O[0] - 170} y={O[1] + 120} width="360" height="90" fill="#CCFFCC" stroke="#2E8B57" strokeWidth="3" />
+      <text x={O[0] + 10} y={O[1] + 182} textAnchor="middle" fontSize="46" fontStyle="italic" fontFamily={SERIF}>x₀ = A cos φ</text>
+    </svg>
+  )
+}
+
+/** 9-2 第 2 页：t=t 的旋转矢量（静态，初相 φ 与 ωt+φ 双弧） */
+export function RotvecT() {
+  const O: [number, number] = [430, 560], Rr = 320, phi = 0.42, ang = 1.15
+  const tipX = O[0] + Rr * Math.cos(ang), tipY = O[1] - Rr * Math.sin(ang)
+  return (
+    <svg viewBox="0 0 940 940" width="100%" height="100%">
+      <rect x="6" y="6" width="928" height="928" fill="#fff" stroke="#4a7c8c" strokeWidth="3" />
+      <circle cx={O[0]} cy={O[1]} r={Rr} fill="none" stroke="#33F" strokeWidth="5" strokeDasharray="18 12" />
+      <line x1="40" y1={O[1]} x2="900" y2={O[1]} stroke="#7030A0" strokeWidth="5" />
+      <polygon points="900,560 874,550 874,570" fill="#7030A0" />
+      <text x="860" y="620" fontSize="44" fontStyle="italic" fontFamily={SERIF}>x</text>
+      <text x={O[0] - 26} y={O[1] + 72} fontSize="54" fontStyle="italic" fontFamily={SERIF}>O</text>
+      <text x="180" y="360" fontSize="48" fontStyle="italic" fontFamily={SERIF}>t = t</text>
+      {/* 初始矢量（细）与当前矢量 */}
+      <line x1={O[0]} y1={O[1]} x2={O[0] + Rr * Math.cos(phi)} y2={O[1] - Rr * Math.sin(phi)}
+        stroke="#E00" strokeWidth="4" opacity="0.55" />
+      <RotArrow O={O} ang={ang} len={Rr} label="A" />
+      <line x1={tipX} y1={tipY} x2={tipX} y2={O[1]} stroke="#E00" strokeWidth="4" strokeDasharray="12 9" />
+      <circle cx={tipX} cy={O[1]} r="16" fill="#E00" />
+      <AngleArc O={O} r={100} a0={0} a1={phi} label="φ" color="#C000C0" />
+      <AngleArc O={O} r={165} a0={phi} a1={ang} label="ωt" color="#C000C0" />
+      <OmegaArrow cx={O[0]} cy={O[1]} r={Rr + 60} a0={-0.6} a1={-1.5} />
+      <rect x={O[0] - 260} y={O[1] + 120} width="520" height="95" fill="#CCFFCC" stroke="#2E8B57" strokeWidth="3" />
+      <text x={O[0]} y={O[1] + 184} textAnchor="middle" fontSize="46" fontStyle="italic" fontFamily={SERIF}>x = A cos( ωt + φ )</text>
+    </svg>
+  )
+}
+
+/** 9-2 第 3 页：旋转矢量动画（矢量转、投影球往复） */
+export function RotvecAnim({ t = 0 }: { t?: number }) {
+  const ph = t * (2 * Math.PI / 6) + 0.7  // 6s 一圈
+  const O: [number, number] = [430, 470], Rr = 300
+  const tipX = O[0] + Rr * Math.cos(ph), tipY = O[1] - Rr * Math.sin(ph)
+  return (
+    <svg viewBox="0 0 900 940" width="100%" height="100%">
+      <rect x="6" y="6" width="888" height="928" fill="#fff" stroke="#4a7c8c" strokeWidth="3" />
+      <circle cx={O[0]} cy={O[1]} r={Rr} fill="none" stroke="#33F" strokeWidth="5" strokeDasharray="18 12" />
+      <line x1="60" y1={O[1]} x2="850" y2={O[1]} stroke="#7030A0" strokeWidth="5" />
+      <polygon points="850,470 824,460 824,480" fill="#7030A0" />
+      <text x="800" y="530" fontSize="44" fontStyle="italic" fontFamily={SERIF}>x</text>
+      <text x={O[0] - 26} y={O[1] + 70} fontSize="54" fontStyle="italic" fontFamily={SERIF}>O</text>
+      <text x={O[0] - Rr - 20} y={O[1] + 56} textAnchor="middle" fontSize="40" fontStyle="italic" fill="#00C" fontFamily={SERIF}>−A</text>
+      <text x={O[0] + Rr} y={O[1] + 56} textAnchor="middle" fontSize="40" fontStyle="italic" fill="#E00" fontFamily={SERIF}>A</text>
+      <RotArrow O={O} ang={ph} len={Rr} label="A" />
+      <line x1={tipX} y1={tipY} x2={tipX} y2={O[1]} stroke="#E00" strokeWidth="4" strokeDasharray="12 9" />
+      <circle cx={tipX} cy={O[1]} r="20" fill="#0A0" stroke="#054" strokeWidth="3" />
+      <OmegaArrow cx={O[0]} cy={O[1]} r={Rr + 55} a0={-0.6} a1={-1.5} />
+      <rect x={O[0] - 260} y={O[1] + Rr + 60} width="520" height="95" fill="#fff" stroke="#C000C0" strokeWidth="3" />
+      <text x={O[0]} y={O[1] + Rr + 124} textAnchor="middle" fontSize="46" fontStyle="italic" fontFamily={SERIF}>x = A cos( ωt + φ )</text>
+    </svg>
+  )
+}
+
+/** 9-2 第 4 页：由旋转矢量读 v 与 a（动画） */
+export function RotvecVA({ t = 0 }: { t?: number }) {
+  const ph = t * (2 * Math.PI / 7) + 0.9
+  const O: [number, number] = [430, 490], Rr = 290
+  const tipX = O[0] + Rr * Math.cos(ph), tipY = O[1] - Rr * Math.sin(ph)
+  const vLen = 150, aLen = 110
+  const vAng = ph + Math.PI / 2
+  const vx = tipX + vLen * Math.cos(vAng), vy = tipY - vLen * Math.sin(vAng)
+  const ax = tipX - aLen * Math.cos(ph), ay = tipY + aLen * Math.sin(ph)
+  return (
+    <svg viewBox="0 0 920 960" width="100%" height="100%">
+      <rect x="6" y="6" width="908" height="948" fill="#fff" stroke="#2E8B57" strokeWidth="3" />
+      <circle cx={O[0]} cy={O[1]} r={Rr} fill="none" stroke="#33F" strokeWidth="5" strokeDasharray="18 12" />
+      {/* x、y 轴 */}
+      <line x1="40" y1={O[1]} x2="880" y2={O[1]} stroke="#111" strokeWidth="4" />
+      <polygon points="880,490 856,481 856,499" fill="#111" />
+      <text x="850" y="548" fontSize="40" fontStyle="italic" fontFamily={SERIF}>x</text>
+      <line x1={O[0]} y1={O[1] + Rr + 130} x2={O[0]} y2="80" stroke="#111" strokeWidth="4" />
+      <polygon points={`${O[0]},80 ${O[0] - 9},106 ${O[0] + 9},106`} fill="#111" />
+      <text x={O[0] + 16} y="70" fontSize="40" fontStyle="italic" fontFamily={SERIF}>y</text>
+      <text x={O[0] - 30} y={O[1] + 64} fontSize="50" fontStyle="italic" fontFamily={SERIF}>O</text>
+      {/* 主矢量与投影 */}
+      <RotArrow O={O} ang={ph} len={Rr} label="A" />
+      <line x1={tipX} y1={tipY} x2={tipX} y2={O[1]} stroke="#E00" strokeWidth="3.5" strokeDasharray="10 8" />
+      <circle cx={tipX} cy={O[1]} r="15" fill="#E60" />
+      {/* 速度（切向，蓝） */}
+      <line x1={tipX} y1={tipY} x2={vx} y2={vy} stroke="#00C" strokeWidth="6" />
+      <polygon
+        points={`${vx},${vy} ${vx - 20 * Math.cos(vAng) + 10 * Math.cos(ph)},${vy + 20 * Math.sin(vAng) - 10 * Math.sin(ph)} ${vx - 20 * Math.cos(vAng) - 10 * Math.cos(ph)},${vy + 20 * Math.sin(vAng) + 10 * Math.sin(ph)}`}
+        fill="#00C" />
+      <Vec ch="v" x={vx + 30 * Math.cos(vAng)} y={vy - 30 * Math.sin(vAng)} size={42} fill="#00C" anchor="middle" />
+      <text x={vx + 70 * Math.cos(vAng)} y={vy - 70 * Math.sin(vAng) + 10} textAnchor="middle" fontSize="34" fontStyle="italic" fill="#00C" fontFamily={SERIF}>m</text>
+      {/* 向心加速度（绿） */}
+      <line x1={tipX} y1={tipY} x2={ax} y2={ay} stroke="#0A0" strokeWidth="6" />
+      <polygon
+        points={`${ax},${ay} ${ax + 20 * Math.cos(ph) + 10 * Math.cos(vAng)},${ay - 20 * Math.sin(ph) - 10 * Math.sin(vAng)} ${ax + 20 * Math.cos(ph) - 10 * Math.cos(vAng)},${ay - 20 * Math.sin(ph) + 10 * Math.sin(vAng)}`}
+        fill="#0A0" />
+      <Vec ch="a" x={ax - 40 * Math.cos(ph)} y={ay + 40 * Math.sin(ph)} size={42} fill="#0A0" anchor="middle" />
+      <text x={ax - 62 * Math.cos(ph)} y={ay + 62 * Math.sin(ph) + 8} textAnchor="middle" fontSize="32" fontStyle="italic" fill="#0A0" fontFamily={SERIF}>n</text>
+      <AngleArc O={O} r={95} a0={0} a1={ph} label="ωt+φ" color="#C000C0" lsize={30} />
+      <OmegaArrow cx={O[0]} cy={O[1]} r={Rr + 55} a0={-0.5} a1={-1.4} />
+      <rect x={O[0] - 250} y={O[1] + Rr + 55} width="500" height="90" fill="#fff" stroke="#C000C0" strokeWidth="3" />
+      <text x={O[0]} y={O[1] + Rr + 114} textAnchor="middle" fontSize="42" fontStyle="italic" fontFamily={SERIF}>x = A cos( ωt + φ )</text>
+    </svg>
+  )
+}
+
+/** 9-2 第 5 页：用旋转矢量画 x-t 图（动画：曲线随转过的角度逐渐描出） */
+export function RotvecXt({ t = 0 }: { t?: number }) {
+  const ph = (t * (2 * Math.PI / 8)) % (2 * Math.PI)  // 8s 一圈，φ=0
+  const O: [number, number] = [300, 470], Rr = 210
+  const tipX = O[0] + Rr * Math.cos(ph), tipY = O[1] - Rr * Math.sin(ph)
+  // x-t 图：横轴从 gx0 到 gx1 对应 0..T，纵轴中线的投影高度与圆一致（y 相同）
+  const gx0 = 640, gT = 620, gy = 470, gA = 210
+  const curX = gx0 + (ph / (2 * Math.PI)) * gT
+  const pts: string[] = []
+  for (let i = 0; i <= 200; i++) {
+    const u = (i / 200) * 2 * Math.PI
+    pts.push(`${gx0 + (u / (2 * Math.PI)) * gT},${gy - gA * Math.cos(u)}`)
+  }
+  const clipId = 'xtclip'
+  const ticks: Array<[number, string]> = [[0.25, 'T/4'], [0.5, 'T/2'], [0.75, '3T/4'], [1, 'T']]
+  return (
+    <svg viewBox="0 0 1350 940" width="100%" height="100%">
+      <rect x="6" y="6" width="1338" height="928" fill="#fff" stroke="#4a7c8c" strokeWidth="3" />
+      <text x="520" y="90" textAnchor="middle" fontSize="52" fontStyle="italic" fontFamily={SERIF}>x = A cos( ωt + φ )　　φ = 0</text>
+      {/* 左：参考圆 */}
+      <circle cx={O[0]} cy={O[1]} r={Rr} fill="none" stroke="#111" strokeWidth="4" />
+      <line x1={O[0] - Rr - 60} y1={O[1]} x2={O[0] + Rr + 60} y2={O[1]} stroke="#666" strokeWidth="3" strokeDasharray="12 9" />
+      <line x1={O[0]} y1={O[1] - Rr - 60} x2={O[0]} y2={O[1] + Rr + 60} stroke="#111" strokeWidth="4" />
+      <polygon points={`${O[0]},${O[1] - Rr - 60} ${O[0] - 9},${O[1] - Rr - 34} ${O[0] + 9},${O[1] - Rr - 34}`} fill="#111" />
+      <text x={O[0] + 16} y={O[1] - Rr - 70} fontSize="38" fontStyle="italic" fontFamily={SERIF}>x</text>
+      <RotArrow O={O} ang={ph} len={Rr} label="A" />
+      <OmegaArrow cx={O[0]} cy={O[1]} r={Rr + 45} a0={Math.PI - 0.7} a1={Math.PI - 1.6} size={38} />
+      {/* 右：x-t 坐标系 */}
+      <line x1={gx0} y1="200" x2={gx0} y2="800" stroke="#111" strokeWidth="4" />
+      <polygon points={`${gx0},200 ${gx0 - 9},226 ${gx0 + 9},226`} fill="#111" />
+      <text x={gx0 + 14} y="190" fontSize="38" fontStyle="italic" fontFamily={SERIF}>x</text>
+      <line x1={gx0} y1={gy} x2={gx0 + gT + 60} y2={gy} stroke="#111" strokeWidth="4" />
+      <polygon points={`${gx0 + gT + 60},${gy} ${gx0 + gT + 34},${gy - 9} ${gx0 + gT + 34},${gy + 9}`} fill="#111" />
+      <text x={gx0 + gT + 40} y={gy - 20} fontSize="38" fontStyle="italic" fontFamily={SERIF}>t</text>
+      <text x={gx0 - 50} y={gy - gA + 14} fontSize="40" fontStyle="italic" fill="#E00" fontFamily={SERIF}>A</text>
+      <text x={gx0 - 60} y={gy + gA + 14} fontSize="40" fontStyle="italic" fill="#E00" fontFamily={SERIF}>−A</text>
+      <text x={gx0 - 46} y={gy + 14} fontSize="38" fontStyle="italic" fontFamily={SERIF}>O</text>
+      {ticks.map(([f, lab]) => (
+        <text key={lab} x={gx0 + f * gT} y={gy + 60} textAnchor="middle" fontSize="34" fontStyle="italic" fontFamily={SERIF}>{lab}</text>
+      ))}
+      <line x1={gx0} y1={gy - gA} x2={gx0 + gT} y2={gy - gA} stroke="#999" strokeWidth="2.5" strokeDasharray="10 8" />
+      <line x1={gx0} y1={gy + gA} x2={gx0 + gT} y2={gy + gA} stroke="#999" strokeWidth="2.5" strokeDasharray="10 8" />
+      {/* 曲线：裁剪窗口随相位前进 */}
+      <defs>
+        <clipPath id={clipId}>
+          <rect x={gx0 - 10} y="180" width={Math.max(0, curX - gx0 + 14)} height="620" />
+        </clipPath>
+      </defs>
+      <polyline points={pts.join(' ')} fill="none" stroke="#E00" strokeWidth="6" clipPath={`url(#${clipId})`} />
+      {/* 投影连线与动点 */}
+      <line x1={tipX} y1={tipY} x2={Math.min(curX, gx0 + gT)} y2={tipY} stroke="#C000C0" strokeWidth="3.5" strokeDasharray="12 9" />
+      {curX <= gx0 + gT && <circle cx={curX} cy={tipY} r="12" fill="#E00" />}
+      <circle cx={tipX} cy={tipY} r="12" fill="#E00" />
+    </svg>
+  )
+}
+
+/** 9-2 第 7 页：a→b 状态与相位差（静态双图） */
+export function PhaseAB() {
+  // 左：x-t 曲线，a 在 A，b 在 A/2 下行处
+  const gx0 = 200, gy = 380, gA = 200, gT = 560
+  const pts: string[] = []
+  for (let i = 0; i <= 200; i++) {
+    const u = (i / 200) * 2.4 * Math.PI
+    pts.push(`${gx0 + (u / (2.4 * Math.PI)) * gT * 1.2},${gy - gA * Math.cos(u)}`)
+  }
+  const bx = gx0 + (1 / 6) * gT  // 相位 π/3 对应 t=T/6
+  // 右：参考圆双矢量
+  const O: [number, number] = [1170, 380], Rr = 240
+  const angB = Math.PI / 3
+  return (
+    <svg viewBox="0 0 1640 760" width="100%" height="100%">
+      <rect x="6" y="6" width="1628" height="748" fill="#fff" stroke="#4a7c8c" strokeWidth="3" />
+      {/* 左图坐标 */}
+      <line x1={gx0} y1="80" x2={gx0} y2="660" stroke="#111" strokeWidth="4" />
+      <polygon points={`${gx0},80 ${gx0 - 9},106 ${gx0 + 9},106`} fill="#111" />
+      <text x={gx0 - 50} y="110" fontSize="44" fontStyle="italic" fontFamily={SERIF}>x</text>
+      <line x1={gx0} y1={gy} x2={gx0 + gT + 160} y2={gy} stroke="#111" strokeWidth="4" />
+      <polygon points={`${gx0 + gT + 160},${gy} ${gx0 + gT + 134},${gy - 9} ${gx0 + gT + 134},${gy + 9}`} fill="#111" />
+      <text x={gx0 + gT + 130} y={gy - 24} fontSize="44" fontStyle="italic" fontFamily={SERIF}>t</text>
+      <text x={gx0 - 60} y={gy - gA + 16} fontSize="42" fontStyle="italic" fontFamily={SERIF}>A</text>
+      <text x={gx0 - 80} y={gy - gA / 2 + 14} fontSize="38" fontStyle="italic" fontFamily={SERIF}>A/2</text>
+      <text x={gx0 - 56} y={gy + 16} fontSize="42" fontStyle="italic" fontFamily={SERIF}>O</text>
+      <text x={gx0 - 70} y={gy + gA + 16} fontSize="42" fontStyle="italic" fontFamily={SERIF}>−A</text>
+      <line x1={gx0} y1={gy - gA} x2={gx0 + gT + 100} y2={gy - gA} stroke="#99F" strokeWidth="3" strokeDasharray="10 8" />
+      <line x1={gx0} y1={gy - gA / 2} x2={gx0 + gT + 100} y2={gy - gA / 2} stroke="#99F" strokeWidth="3" strokeDasharray="10 8" />
+      <line x1={gx0} y1={gy + gA} x2={gx0 + gT + 100} y2={gy + gA} stroke="#99F" strokeWidth="3" strokeDasharray="10 8" />
+      <polyline points={pts.join(' ')} fill="none" stroke="#E00" strokeWidth="6" />
+      {/* a、b 点 */}
+      <circle cx={gx0} cy={gy - gA} r="12" fill="#111" />
+      <text x={gx0 - 8} y={gy - gA - 26} fontSize="44" fontStyle="italic" fontFamily={SERIF}>a</text>
+      <circle cx={bx} cy={gy - gA / 2} r="12" fill="#111" />
+      <text x={bx + 20} y={gy - gA / 2 - 20} fontSize="44" fontStyle="italic" fontFamily={SERIF}>b</text>
+      {/* b 点速度箭头（向下） */}
+      <line x1={bx + 60} y1={gy - gA / 2} x2={bx + 60} y2={gy + 60} stroke="#C000C0" strokeWidth="7" />
+      <polygon points={`${bx + 60},${gy + 60} ${bx + 48},${gy + 32} ${bx + 72},${gy + 32}`} fill="#C000C0" />
+      <Vec ch="v" x={bx + 66} y={gy + 130} size={44} fill="#C000C0" anchor="middle" />
+      {/* 右图：参考圆 */}
+      <circle cx={O[0]} cy={O[1]} r={Rr} fill="none" stroke="#33F" strokeWidth="5" strokeDasharray="18 12" />
+      <line x1={O[0] - Rr - 120} y1={O[1]} x2={O[0] + Rr + 120} y2={O[1]} stroke="#111" strokeWidth="4" />
+      <polygon points={`${O[0] + Rr + 120},${O[1]} ${O[0] + Rr + 94},${O[1] - 9} ${O[0] + Rr + 94},${O[1] + 9}`} fill="#111" />
+      <text x={O[0] + Rr + 100} y={O[1] + 56} fontSize="44" fontStyle="italic" fontFamily={SERIF}>x</text>
+      <text x={O[0] + Rr + 16} y={O[1] + 60} fontSize="42" fontStyle="italic" fill="#E00" fontFamily={SERIF}>A</text>
+      <text x={O[0] - Rr - 70} y={O[1] + 60} fontSize="42" fontStyle="italic" fill="#E00" fontFamily={SERIF}>−A</text>
+      <text x={O[0] - 90} y={O[1] + 60} fontSize="48" fontStyle="italic" fontFamily={SERIF}>O</text>
+      <RotArrow O={O} ang={0} len={Rr} label="" />
+      <text x={O[0] + Rr - 60} y={O[1] + 60} fontSize="42" fontStyle="italic" fill="#E60" fontFamily={SERIF}>tᴀ</text>
+      <RotArrow O={O} ang={angB} len={Rr} label="" color="#C000C0" />
+      <text x={O[0] + (Rr + 50) * Math.cos(angB)} y={O[1] - (Rr + 50) * Math.sin(angB) + 12} fontSize="42" fontStyle="italic" fill="#C000C0" fontFamily={SERIF}>t_b</text>
+      <line x1={O[0] + Rr * Math.cos(angB)} y1={O[1] - Rr * Math.sin(angB)} x2={O[0] + Rr * Math.cos(angB)} y2={O[1]}
+        stroke="#C000C0" strokeWidth="3.5" strokeDasharray="10 8" />
+      <text x={O[0] + Rr * Math.cos(angB)} y={O[1] + 60} textAnchor="middle" fontSize="38" fontStyle="italic" fill="#C000C0" fontFamily={SERIF}>A/2</text>
+      <AngleArc O={O} r={120} a0={0} a1={angB} label="Δφ" color="#0A0" lsize={44} />
+      <OmegaArrow cx={O[0]} cy={O[1]} r={Rr + 55} a0={-0.4} a1={-1.3} />
+    </svg>
+  )
+}
+
+/** 9-2 第 9 页：三条相位关系波形（同步/反相/一般，静态） */
+export function PhaseWaves() {
+  const panel = (x0: number, dphi: number) => {
+    const w = 460, gy = 380, gA = 150
+    const mk = (off: number, color: string) => {
+      const pts: string[] = []
+      for (let i = 0; i <= 120; i++) {
+        const u = (i / 120) * 2.2 * Math.PI
+        pts.push(`${x0 + 50 + (u / (2.2 * Math.PI)) * (w - 90)},${gy - gA * Math.sin(u + off)}`)
+      }
+      return <polyline points={pts.join(' ')} fill="none" stroke={color} strokeWidth="6" />
+    }
+    return (
+      <g>
+        <rect x={x0} y="20" width={w} height="700" fill="#fff" stroke="#2E8B57" strokeWidth="3" />
+        <line x1={x0 + 50} y1="130" x2={x0 + 50} y2="640" stroke="#111" strokeWidth="3.5" />
+        <polygon points={`${x0 + 50},130 ${x0 + 41},156 ${x0 + 59},156`} fill="#111" />
+        <text x={x0 + 60} y="120" fontSize="38" fontStyle="italic" fontFamily={SERIF}>x</text>
+        <line x1={x0 + 50} y1={gy} x2={x0 + w - 40} y2={gy} stroke="#111" strokeWidth="3.5" />
+        <polygon points={`${x0 + w - 40},${gy} ${x0 + w - 66},${gy - 9} ${x0 + w - 66},${gy + 9}`} fill="#111" />
+        <text x={x0 + w - 66} y={gy - 22} fontSize="38" fontStyle="italic" fontFamily={SERIF}>t</text>
+        <text x={x0 + 6} y={gy + 14} fontSize="38" fontStyle="italic" fontFamily={SERIF}>O</text>
+        {mk(0, '#E00')}
+        {mk(dphi, '#00C')}
+      </g>
+    )
+  }
+  return (
+    <svg viewBox="0 0 1560 740" width="100%" height="100%">
+      {panel(10, 0)}
+      {panel(550, Math.PI)}
+      {panel(1090, Math.PI * 0.6)}
+    </svg>
+  )
+}
+
+/** 9-2 例题公共：x 轴刻度与小球（静态） */
+export function ExampleAxis({ ballX = 0.04, showV = true }: { ballX?: number; showV?: boolean }) {
+  // 数值 -0.08..0.08 映射到像素 260..1380
+  const px = (v: number) => 820 + (v / 0.08) * 560
+  return (
+    <svg viewBox="0 0 1640 420" width="100%" height="100%">
+      <rect x="6" y="6" width="1628" height="408" fill="#fff" stroke="#4a7c8c" strokeWidth="3" />
+      {showV && (
+        <g>
+          <line x1={px(ballX) + 30} y1="120" x2={px(ballX) - 260} y2="120" stroke="#E00" strokeWidth="7" />
+          <polygon points={`${px(ballX) - 260},120 ${px(ballX) - 226},106 ${px(ballX) - 226},134`} fill="#E00" />
+          <text x={px(ballX) - 300} y="112" fontSize="52" fontStyle="italic" fill="#E00" fontFamily={SERIF}>v</text>
+        </g>
+      )}
+      <line x1="180" y1="250" x2="1500" y2="250" stroke="#111" strokeWidth="4" />
+      <polygon points="1500,250 1470,240 1470,260" fill="#111" />
+      <text x="1520" y="242" fontSize="44" fontStyle="italic" fontFamily={SERIF}>x / m</text>
+      {[-0.08, -0.04, 0, 0.04, 0.08].map(v => (
+        <g key={v}>
+          <line x1={px(v)} y1="222" x2={px(v)} y2="250" stroke="#111" strokeWidth="4" />
+          <text x={px(v)} y="330" textAnchor="middle" fontSize="44" fontStyle="italic" fontFamily={SERIF}>
+            {v === 0 ? 'O' : (v < 0 ? '− ' : '') + Math.abs(v).toFixed(2)}
+          </text>
+        </g>
+      ))}
+      <circle cx={px(ballX)} cy="250" r="34" fill="url(#ballg)" />
+    </svg>
+  )
+}
+
+/** 9-2 第 11 页：定初相 φ=π/3（静态） */
+export function RotvecPhi() {
+  const px = (v: number) => 500 + (v / 0.08) * 460
+  const O: [number, number] = [px(0), 620], len = 380, ang = Math.PI / 3
+  return (
+    <svg viewBox="0 0 1100 760" width="100%" height="100%">
+      <rect x="6" y="6" width="1088" height="748" fill="#fff" stroke="#4a7c8c" strokeWidth="3" />
+      <line x1="60" y1={O[1]} x2="1040" y2={O[1]} stroke="#111" strokeWidth="4" />
+      <polygon points={`1040,${O[1]} 1010,${O[1] - 10} 1010,${O[1] + 10}`} fill="#111" />
+      <text x="1010" y={O[1] - 30} fontSize="42" fontStyle="italic" fontFamily={SERIF}>x / m</text>
+      {[-0.08, -0.04, 0, 0.04, 0.08].map(v => (
+        <g key={v}>
+          <line x1={px(v)} y1={O[1] - 26} x2={px(v)} y2={O[1]} stroke="#111" strokeWidth="4" />
+          <text x={px(v)} y={O[1] + 70} textAnchor="middle" fontSize="42" fontStyle="italic" fontFamily={SERIF}>
+            {v === 0 ? 'O' : (v < 0 ? '− ' : '') + Math.abs(v).toFixed(2)}
+          </text>
+        </g>
+      ))}
+      <RotArrow O={O} ang={ang} len={len} label="A" />
+      <line x1={O[0] + len * Math.cos(ang)} y1={O[1] - len * Math.sin(ang)} x2={O[0] + len * Math.cos(ang)} y2={O[1]}
+        stroke="#E00" strokeWidth="4" strokeDasharray="12 9" />
+      <AngleArc O={O} r={110} a0={0} a1={ang} label="π/3" color="#0A0" lsize={42} />
+      <OmegaArrow cx={O[0]} cy={O[1]} r={len + 45} a0={-0.9} a1={-1.8} size={44} />
+    </svg>
+  )
+}
+
+/** 9-2 第 15 页：法二 双矢量（静态） */
+export function RotvecTwo() {
+  const px = (v: number) => 640 + (v / 0.08) * 420
+  const O: [number, number] = [px(0), 640], len = 400
+  const a1 = Math.PI / 3, a2 = 2 * Math.PI / 3
+  return (
+    <svg viewBox="0 0 1280 820" width="100%" height="100%">
+      <rect x="6" y="6" width="1268" height="808" fill="#fff" stroke="#4a7c8c" strokeWidth="3" />
+      <line x1="60" y1={O[1]} x2="1220" y2={O[1]} stroke="#111" strokeWidth="4" />
+      <polygon points={`1220,${O[1]} 1190,${O[1] - 10} 1190,${O[1] + 10}`} fill="#111" />
+      <text x="1150" y={O[1] - 30} fontSize="42" fontStyle="italic" fontFamily={SERIF}>x / m</text>
+      {[-0.08, -0.04, 0, 0.04, 0.08].map(v => (
+        <g key={v}>
+          <line x1={px(v)} y1={O[1] - 26} x2={px(v)} y2={O[1]} stroke="#111" strokeWidth="4" />
+          <text x={px(v)} y={O[1] + 70} textAnchor="middle" fontSize="42" fontStyle="italic" fontFamily={SERIF}>
+            {v === 0 ? 'O' : (v < 0 ? '− ' : '') + Math.abs(v).toFixed(2)}
+          </text>
+        </g>
+      ))}
+      {/* 起始矢量（+π/3）与 t 时刻矢量（+2π/3） */}
+      <RotArrow O={O} ang={a1} len={len} label="" />
+      <RotArrow O={O} ang={a2} len={len} label="" />
+      {[a1, a2].map(a => (
+        <line key={a} x1={O[0] + len * Math.cos(a)} y1={O[1] - len * Math.sin(a)}
+          x2={O[0] + len * Math.cos(a)} y2={O[1]} stroke="#E00" strokeWidth="3.5" strokeDasharray="10 8" />
+      ))}
+      <AngleArc O={O} r={100} a0={0} a1={a1} label="π/3" color="#0A0" lsize={38} />
+      <AngleArc O={O} r={100} a0={a2} a1={Math.PI} label="π/3" color="#0A0" lsize={38} />
+      <AngleArc O={O} r={len + 60} a0={a1} a1={a2} label="ωt" color="#00C" lsize={44} />
+      <OmegaArrow cx={O[0]} cy={O[1]} r={len + 110} a0={Math.PI - 0.5} a1={Math.PI - 1.3} size={42} />
+      {/* 标注牌 */}
+      <rect x={px(0.04) + 60} y="60" width="280" height="80" fill="#CCFFCC" stroke="#2E8B57" strokeWidth="3" />
+      <text x={px(0.04) + 200} y="114" textAnchor="middle" fontSize="40" fontFamily={HEI}>起始时刻</text>
+      <line x1={px(0.04) + 130} y1="140" x2={O[0] + len * Math.cos(a1) + 10} y2={O[1] - len * Math.sin(a1) - 10}
+        stroke="#2E8B57" strokeWidth="3" />
+      <rect x={px(-0.04) - 340} y="60" width="240" height="80" fill="#CCFFCC" stroke="#2E8B57" strokeWidth="3" />
+      <text x={px(-0.04) - 220} y="114" textAnchor="middle" fontSize="40" fontFamily={HEI}>t 时刻</text>
+      <line x1={px(-0.04) - 160} y1="140" x2={O[0] + len * Math.cos(a2) - 10} y2={O[1] - len * Math.sin(a2) - 10}
+        stroke="#2E8B57" strokeWidth="3" />
+    </svg>
+  )
+}
+
 const DIAGRAMS: Record<string, (props: { t?: number }) => JSX.Element> = {
   compose: ComposeDiagram,
   spring_o: springO,
@@ -306,6 +747,16 @@ const DIAGRAMS: Record<string, (props: { t?: number }) => JSX.Element> = {
   xva: XvaGraphs,
   burst: Burst,
   spring_v: SpringV,
+  rotvec_t0: RotvecT0,
+  rotvec_t: RotvecT,
+  rotvec_anim: RotvecAnim,
+  rotvec_va: RotvecVA,
+  rotvec_xt: RotvecXt,
+  phase_ab: PhaseAB,
+  phase_waves: PhaseWaves,
+  example_axis: ExampleAxis,
+  rotvec_phi: RotvecPhi,
+  rotvec_two: RotvecTwo,
 }
 
 export default DIAGRAMS

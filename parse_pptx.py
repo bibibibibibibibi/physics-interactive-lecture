@@ -63,8 +63,13 @@ def parse_slide(z, idx):
                       'text': shapes.get(spid, {}).get('text')})
     return shapes, anims
 
+import sys, os
+WS = os.path.dirname(os.path.abspath(__file__))
+SRC = sys.argv[1] if len(sys.argv) > 1 else os.path.join(WS, 'ppt_ref.pptx')
+DST = sys.argv[2] if len(sys.argv) > 2 else os.path.join(WS, 'ppt_structure.json')
+
 out = {}
-with zipfile.ZipFile(r'C:\Users\Administrator\Documents\kimi\tasks\2026-09-26\15-37-28-d3bc8f97\ppt_ref.pptx') as z:
+with zipfile.ZipFile(SRC) as z:
     slide_files = sorted(
         (n for n in z.namelist() if re.fullmatch(r'ppt/slides/slide\d+\.xml', n)),
         key=lambda n: int(re.search(r'\d+', n.split('/')[-1]).group()))
@@ -72,7 +77,7 @@ with zipfile.ZipFile(r'C:\Users\Administrator\Documents\kimi\tasks\2026-09-26\15
         shapes, anims = parse_slide(z, i)
         out[i] = {'shapes': shapes, 'animations': anims}
 
-with open(r'C:\Users\Administrator\Documents\kimi\tasks\2026-09-26\15-37-28-d3bc8f97\ppt_structure.json', 'w', encoding='utf-8') as f:
+with open(DST, 'w', encoding='utf-8') as f:
     json.dump(out, f, ensure_ascii=False, indent=1)
 
 # 打印每页动画概览

@@ -9,10 +9,23 @@ NS = {
 P = '{%s}' % NS['p']
 A = '{%s}' % NS['a']
 
-EMU_W, EMU_H = 12192000, 6858000  # 16:9 标准页面
+EMU_W, EMU_H = 12192000, 6858000  # 16:9 标准页面（默认值，运行时按 pptx 实际 sldSz 覆盖）
 PXW, PXH = 1920, 1080
 def ex(v): return round(int(v) / EMU_W * PXW, 1)
 def ey(v): return round(int(v) / EMU_H * PXH, 1)
+
+def read_slide_size(path):
+    """从 ppt/presentation.xml 读实际页面尺寸 sldSz（EMU），读不到用 16:9 默认"""
+    global EMU_W, EMU_H
+    try:
+        with zipfile.ZipFile(path) as z:
+            root = ET.fromstring(z.read('ppt/presentation.xml'))
+        sz = root.find(f'{P}sldSz')
+        if sz is not None and sz.get('cx') and sz.get('cy'):
+            EMU_W, EMU_H = int(sz.get('cx')), int(sz.get('cy'))
+    except Exception:
+        pass
+    return EMU_W, EMU_H
 
 def runs_of(sp):
     """提取文本runs：[{text, size_px, color, bold, italic}]，保留段落分隔"""
@@ -45,8 +58,15 @@ def line_of(sp):
     el = sp.find(f'{P}spPr/{A}ln/{A}solidFill/{A}srgbClr')
     return '#' + el.get('val') if el is not None else None
 
+import sys, os
+WS = os.path.dirname(os.path.abspath(__file__))
+SRC = sys.argv[1] if len(sys.argv) > 1 else os.path.join(WS, 'ppt_ref.pptx')
+DST = sys.argv[2] if len(sys.argv) > 2 else os.path.join(WS, 'ppt_geometry.json')
+
 out = {}
-with zipfile.ZipFile(r'C:\Users\Administrator\Documents\kimi\tasks\2026-09-26\15-37-28-d3bc8f97\ppt_ref.pptx') as z:
+w, h = read_slide_size(SRC)
+print(f'页面尺寸: {w}x{h} EMU ({w/914400:.2f}x{h/914400:.2f} in)')
+with zipfile.ZipFile(SRC) as z:
     slides = sorted((n for n in z.namelist() if re.fullmatch(r'ppt/slides/slide\d+\.xml', n)),
                     key=lambda n: int(re.search(r'\d+', n.split('/')[-1]).group()))
     for idx, name in enumerate(slides, 1):
@@ -80,7 +100,7 @@ with zipfile.ZipFile(r'C:\Users\Administrator\Documents\kimi\tasks\2026-09-26\15
             })
         out[idx] = items
 
-with open(r'C:\Users\Administrator\Documents\kimi\tasks\2026-09-26\15-37-28-d3bc8f97\ppt_geometry.json', 'w', encoding='utf-8') as f:
+with open(DST, 'w', encoding='utf-8') as f:
     json.dump(out, f, ensure_ascii=False, indent=1)
 
 # 打印第1页示例验证

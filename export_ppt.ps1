@@ -1,7 +1,12 @@
+param(
+  [string]$ppt = 'ppt_ref.ppt',
+  [string]$out = 'ppt_ref_slides',
+  [string]$pptx = 'ppt_ref.pptx'
+)
 $ErrorActionPreference = 'Stop'
 $ws = 'C:\Users\Administrator\Documents\kimi\tasks\2026-09-26\15-37-28-d3bc8f97'
-$pptPath = Join-Path $ws 'ppt_ref.ppt'
-$outDir = Join-Path $ws 'ppt_ref_slides'
+$pptPath = Join-Path $ws $ppt
+$outDir = Join-Path $ws $out
 New-Item -ItemType Directory -Force -Path $outDir | Out-Null
 
 # 独立实例，不干扰用户正在用的 PowerPoint 窗口
@@ -28,7 +33,7 @@ for ($i = 1; $i -le $n; $i++) {
     }
 }
 
-$pptxPath = Join-Path $ws 'ppt_ref.pptx'
+$pptxPath = Join-Path $ws $pptx
 $pres.SaveAs($pptxPath, 24)  # 24 = ppSaveAsOpenXMLPresentation
 $pres.Close()
 $pp.Quit()
