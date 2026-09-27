@@ -247,7 +247,7 @@ export default function SlideStage({
               if (!el || el.step > curStep) return null
               return (
                 <button key={bi}
-                  onClick={() => onOpenBullet(curPage, b, bi)}
+                  onClick={e => { e.currentTarget.blur(); onOpenBullet(curPage, b, bi) }}
                   className="absolute group"
                   style={{
                     left: el.x, top: el.y, width: el.w, height: el.h ?? 90,

@@ -34,7 +34,7 @@ export default function SubtitlePanel({ subs, curSubStart, t, height, onOpenSubt
           <button
             key={s.start}
             data-sub={s.start}
-            onClick={() => onOpenSubtitle(s)}
+            onClick={e => { e.currentTarget.blur(); onOpenSubtitle(s) }}
             className={`block w-full rounded-lg px-3 py-1.5 text-left text-sm leading-snug transition ${
               isCur
                 ? 'bg-[#ffb703]/15 text-[#ffb703] border-l-2 border-[#ffb703]'

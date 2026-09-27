@@ -29,6 +29,7 @@ export default function TutorPanel({ messages, thinking, input, onInputChange, o
         <span className="text-sm font-semibold text-[#4cc9f0] shrink-0">AI 助教</span>
         {contextLabel != null ? (
           <span className="flex-1 flex items-center gap-1 min-w-0 rounded-full bg-[#123a63] px-2.5 py-1 text-xs text-[#ffb703]">
+            <span className="shrink-0">⏸ 已暂停提问：</span>
             <span className="truncate">{contextLabel}</span>
             <button
               onClick={onClearContext}
