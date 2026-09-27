@@ -338,16 +338,20 @@ function RotArrow({ O, ang, len, label, labelR = 34, color = '#E00' }: {
   )
 }
 
-/** 角度弧线（绿色小弧 + 可选标签） */
+/** 角度弧线（从 a0 逆时针扫到 a1 + 可选标签），自动处理跨半圆/整圈的大弧标志 */
 function AngleArc({ O, r, a0, a1, label, color = '#0A0', lsize = 38 }: {
   O: [number, number]; r: number; a0: number; a1: number; label?: string; color?: string; lsize?: number
 }) {
+  const TAU = Math.PI * 2
+  const delta = ((a1 - a0) % TAU + TAU) % TAU  // 归一化到 [0, 2π)
+  const end = a0 + delta
   const x0 = O[0] + r * Math.cos(a0), y0 = O[1] - r * Math.sin(a0)
-  const x1 = O[0] + r * Math.cos(a1), y1 = O[1] - r * Math.sin(a1)
-  const mid = (a0 + a1) / 2
+  const x1 = O[0] + r * Math.cos(end), y1 = O[1] - r * Math.sin(end)
+  const mid = a0 + delta / 2
+  const large = delta > Math.PI ? 1 : 0
   return (
     <g>
-      <path d={`M ${x0} ${y0} A ${r} ${r} 0 0 0 ${x1} ${y1}`} fill="none" stroke={color} strokeWidth="5" />
+      <path d={`M ${x0} ${y0} A ${r} ${r} 0 ${large} 0 ${x1} ${y1}`} fill="none" stroke={color} strokeWidth="5" />
       {label && (
         <text x={O[0] + (r + 30) * Math.cos(mid)} y={O[1] - (r + 30) * Math.sin(mid) + 12}
           textAnchor="middle" fontSize={lsize} fontStyle="italic" fill={color} fontFamily={SERIF}>{label}</text>
