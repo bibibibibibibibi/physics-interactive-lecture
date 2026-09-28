@@ -48,7 +48,8 @@ python lecture_factory/export_slides.py --build --course shm
 #    → interactive-lecture/slides-export/大学物理-<标题>-幻灯片.html
 ```
 
-现有课程：**shm**（第九章 振动 · 9-1 简谐振动，16 页，约 7 分钟）。
+现有课程：**shm**（9-1 简谐振动）、**rotvec**（9-2 旋转矢量）、**pendulum**（9-3 单摆和复摆）、
+**energy**（9-4 简谐振动的能量）、**compose**（9-5 简谐振动的合成，16 页，约 11 分钟）。
 
 ## 目录结构
 
