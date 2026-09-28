@@ -94,7 +94,8 @@ python lecture_factory/export_slides.py --build --course shm
 ├── ppt_structure.json            # 原 PPT 点击动画步序
 ├── ppt_geometry.json             # 原 PPT 形状几何坐标
 ├── export_ppt.ps1 / parse_pptx.py / extract_geometry.py   # PPT 解析三件套（新课复用）
-└── 待处理/                       # 已归档的旧视频渲染方案（.gitignore 排除）
+└── 待处理/                       # 归档区（.gitignore 排除）：旧视频方案、中间产物、
+                                #   调试图、9-2/9-3 源 PPT 与分析产物、logo 源图
 ```
 
 ## 做一门新课的完整流程
