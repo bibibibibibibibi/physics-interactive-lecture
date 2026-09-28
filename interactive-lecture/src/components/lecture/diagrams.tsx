@@ -943,6 +943,197 @@ export function RollingBall() {
   )
 }
 
+/** 9-4 能量-时间图：上 x-t（红 cos）/ v-t（蓝 −sin），下 Ek（蓝 sin²）/ Ep（红 cos²）/ E（绿线），φ=0 */
+export function EnergyT() {
+  const W = 640, X0 = 150, per = W / 1.25  // 1.25 个周期
+  const xOf = (u: number) => X0 + u * per
+  const cos = (u: number) => Math.cos(u * 2 * Math.PI)
+  const sin = (u: number) => Math.sin(u * 2 * Math.PI)
+  const path = (fn: (u: number) => number, y0: number, amp: number) => {
+    const pts: string[] = []
+    for (let i = 0; i <= 200; i++) { const u = i / 200 * 1.25; pts.push(`${xOf(u)},${y0 - amp * fn(u)}`) }
+    return `M${pts.join(' L')}`
+  }
+  const Y1 = 265  // 上图零线
+  const YE0 = 800, YET = 560  // 下图零线与 E 线高度
+  return (
+    <svg viewBox="0 0 860 900" width="100%" height="100%">
+      <rect x="6" y="6" width="848" height="888" fill="#fff" stroke="#2E8B57" strokeWidth="3" />
+      <text x="430" y="70" textAnchor="middle" fontSize="48" fontWeight="bold" fontFamily={HEI}>简谐振动能量图</text>
+      {/* 上图：x、v */}
+      <text x="60" y="150" fontSize="42" fontStyle="italic" fontFamily={SERIF}>x, v</text>
+      <line x1={X0} y1="110" x2={X0} y2="430" stroke="#111" strokeWidth="3.5" />
+      <polygon points={`${X0},110 ${X0 - 10},138 ${X0 + 10},138`} fill="#111" />
+      <line x1={X0} y1={Y1} x2="830" y2={Y1} stroke="#111" strokeWidth="3.5" />
+      <polygon points="830,265 802,255 802,275" fill="#111" />
+      <text x="806" y="245" fontSize="40" fontStyle="italic" fontFamily={SERIF}>t</text>
+      <text x="70" y="280" fontSize="44" fontStyle="italic" fontFamily={SERIF}>O</text>
+      <path d={path(cos, Y1, 95)} fill="none" stroke="#E00" strokeWidth="6" />
+      <path d={path((u) => -sin(u), Y1, 95)} fill="none" stroke="#00C" strokeWidth="6" />
+      <rect x="560" y="120" width="130" height="52" fill="#FFE0E0" stroke="#E00" strokeWidth="3" />
+      <text x="625" y="158" textAnchor="middle" fontSize="36" fontStyle="italic" fontFamily={SERIF}>x − t</text>
+      <rect x="700" y="120" width="130" height="52" fill="#E0E8FF" stroke="#00C" strokeWidth="3" />
+      <text x="765" y="158" textAnchor="middle" fontSize="36" fontStyle="italic" fontFamily={SERIF}>v − t</text>
+      {/* 下图：能量 */}
+      <text x="36" y="560" fontSize="44" fontWeight="bold" fontFamily={HEI}>能量</text>
+      <line x1={X0} y1="500" x2={X0} y2="850" stroke="#111" strokeWidth="3.5" />
+      <polygon points={`${X0},500 ${X0 - 10},528 ${X0 + 10},528`} fill="#111" />
+      <line x1={X0} y1={YE0} x2="830" y2={YE0} stroke="#111" strokeWidth="3.5" />
+      <polygon points={`830,${YE0} 802,${YE0 - 10} 802,${YE0 + 10}`} fill="#111" />
+      <text x="806" y="780" fontSize="40" fontStyle="italic" fontFamily={SERIF}>t</text>
+      <text x="86" y="812" fontSize="44" fontStyle="italic" fontFamily={SERIF}>O</text>
+      {/* E 绿线（总能量守恒） */}
+      <line x1={X0} y1={YET} x2="830" y2={YET} stroke="#0A0" strokeWidth="7" />
+      <text x="170" y="546" fontSize="42" fontStyle="italic" fill="#0A0" fontFamily={SERIF}>E</text>
+      <path d={path((u) => cos(u) * cos(u), YE0, YE0 - YET)} fill="none" stroke="#E00" strokeWidth="6" />
+      <path d={path((u) => sin(u) * sin(u), YE0, YE0 - YET)} fill="none" stroke="#00C" strokeWidth="6" />
+      <text x="592" y="620" fontSize="38" fontStyle="italic" fill="#E00" fontFamily={SERIF}>E</text>
+      <text x="616" y="652" fontSize="28" fontStyle="italic" fill="#E00" fontFamily={SERIF}>p</text>
+      <text x="648" y="756" fontSize="38" fontStyle="italic" fill="#00C" fontFamily={SERIF}>E</text>
+      <text x="672" y="788" fontSize="28" fontStyle="italic" fill="#00C" fontFamily={SERIF}>k</text>
+      {/* 周期刻度虚线 T/4, T/2, 3T/4, T */}
+      {[0.25, 0.5, 0.75, 1].map(u => (
+        <g key={u}>
+          <line x1={xOf(u)} y1="120" x2={xOf(u)} y2={YE0} stroke="#111" strokeWidth="2.5" strokeDasharray="10 8" />
+          <text x={xOf(u)} y="878" textAnchor="middle" fontSize="34" fontStyle="italic" fontFamily={SERIF}>
+            {u === 0.25 ? 'T/4' : u === 0.5 ? 'T/2' : u === 0.75 ? '3T/4' : 'T'}
+          </text>
+        </g>
+      ))}
+    </svg>
+  )
+}
+
+/** 9-4 势能曲线：Ep=½kx² 抛物线 + E 绿线 + Ek/Ep 箭头（−A…O…+A，端点 B/C） */
+export function EpX() {
+  const X0 = 450, Y0 = 640, Apx = 300, kE = 460  // E 线对应高度（Ep(A)）
+  const ep = (x: number) => Y0 - kE * (x * x) / (Apx * Apx)
+  const pts: string[] = []
+  for (let i = 0; i <= 120; i++) { const x = -Apx + i / 120 * 2 * Apx; pts.push(`${X0 + x},${ep(x)}`) }
+  const xq = 165  // 取点 x≈0.55A 画 Ek/Ep 箭头
+  return (
+    <svg viewBox="0 0 900 760" width="100%" height="100%">
+      <rect x="6" y="6" width="888" height="748" fill="#fff" stroke="#2E8B57" strokeWidth="3" />
+      <text x="450" y="70" textAnchor="middle" fontSize="46" fontWeight="bold" fontFamily={HEI}>简谐运动势能曲线</text>
+      {/* 坐标轴 */}
+      <line x1={X0} y1="110" x2={X0} y2={Y0} stroke="#111" strokeWidth="3.5" />
+      <polygon points={`${X0},110 ${X0 - 10},138 ${X0 + 10},138`} fill="#111" />
+      <text x={X0 - 66} y="150" fontSize="42" fontStyle="italic" fontFamily={SERIF}>E</text>
+      <text x={X0 - 42} y="182" fontSize="30" fontStyle="italic" fontFamily={SERIF}>p</text>
+      <line x1="100" y1={Y0} x2="840" y2={Y0} stroke="#111" strokeWidth="3.5" />
+      <polygon points={`840,${Y0} 812,${Y0 - 10} 812,${Y0 + 10}`} fill="#111" />
+      <text x="816" y={Y0 + 52} fontSize="42" fontStyle="italic" fontFamily={SERIF}>x</text>
+      {/* E 绿线与端点 B、C */}
+      <line x1={X0 - Apx} y1={Y0 - kE} x2={X0 + Apx} y2={Y0 - kE} stroke="#0A0" strokeWidth="7" />
+      <circle cx={X0 - Apx} cy={Y0 - kE} r="12" fill="#E00" stroke="#111" strokeWidth="3" />
+      <circle cx={X0 + Apx} cy={Y0 - kE} r="12" fill="#E00" stroke="#111" strokeWidth="3" />
+      <text x={X0 - Apx - 56} y={Y0 - kE + 14} fontSize="44" fontStyle="italic" fontFamily={SERIF}>C</text>
+      <text x={X0 + Apx + 30} y={Y0 - kE + 14} fontSize="44" fontStyle="italic" fontFamily={SERIF}>B</text>
+      <text x={X0 + 30} y={Y0 - kE + 52} fontSize="44" fontStyle="italic" fill="#0A0" fontFamily={SERIF}>E</text>
+      {/* 抛物线 */}
+      <path d={`M${pts.join(' L')}`} fill="none" stroke="#E00" strokeWidth="7" />
+      {/* ±A 虚线与刻度 */}
+      {[-Apx, Apx].map(x => (
+        <g key={x}>
+          <line x1={X0 + x} y1={Y0 - kE} x2={X0 + x} y2={Y0} stroke="#00C" strokeWidth="3" strokeDasharray="10 8" />
+          <text x={X0 + x} y={Y0 + 58} textAnchor="middle" fontSize="42" fontStyle="italic" fontFamily={SERIF}>
+            {x < 0 ? '− A' : '+ A'}
+          </text>
+        </g>
+      ))}
+      <text x={X0} y={Y0 + 58} textAnchor="middle" fontSize="42" fontStyle="italic" fontFamily={SERIF}>O</text>
+      {/* 取点：Ep 箭头（x轴→曲线）与 Ek 箭头（曲线→E线） */}
+      <line x1={X0 + xq} y1={ep(xq)} x2={X0 + xq} y2={Y0} stroke="#C0C" strokeWidth="3" strokeDasharray="10 8" />
+      <Arrow x1={X0 + xq + 40} y1={Y0 - 12} x2={X0 + xq + 40} y2={ep(xq) + 12} color="#E00" w={5} />
+      <text x={X0 + xq + 66} y={(Y0 + ep(xq)) / 2 + 16} fontSize="42" fontStyle="italic" fill="#E00" fontFamily={SERIF}>E</text>
+      <text x={X0 + xq + 90} y={(Y0 + ep(xq)) / 2 + 48} fontSize="30" fontStyle="italic" fill="#E00" fontFamily={SERIF}>p</text>
+      <Arrow x1={X0 + xq + 40} y1={ep(xq) - 12} x2={X0 + xq + 40} y2={Y0 - kE + 12} color="#E00" w={5} />
+      <text x={X0 + xq - 120} y={(ep(xq) + Y0 - kE) / 2 + 30} fontSize="42" fontStyle="italic" fill="#E00" fontFamily={SERIF}>E</text>
+      <text x={X0 + xq - 96} y={(ep(xq) + Y0 - kE) / 2 + 62} fontSize="30" fontStyle="italic" fill="#E00" fontFamily={SERIF}>k</text>
+      {/* x 双向箭头（O → 取点） */}
+      <line x1={X0 + 8} y1={Y0 + 100} x2={X0 + xq - 8} y2={Y0 + 100} stroke="#C0C" strokeWidth="4" />
+      <polygon points={`${X0 + xq},${Y0 + 100} ${X0 + xq - 22},${Y0 + 92} ${X0 + xq - 22},${Y0 + 108}`} fill="#C0C" />
+      <polygon points={`${X0},${Y0 + 100} ${X0 + 22},${Y0 + 92} ${X0 + 22},${Y0 + 108}`} fill="#C0C" />
+      <text x={X0 + xq / 2} y={Y0 + 142} textAnchor="middle" fontSize="42" fontStyle="italic" fill="#C0C" fontFamily={SERIF}>x</text>
+    </svg>
+  )
+}
+
+/** 9-4 例1：Ek − x 关系图（倒抛物线，±2 m 处为零，峰值约 32 J） */
+export function EkX() {
+  const X0 = 400, Y0 = 470, Apx = 260, H = 330
+  const ek = (x: number) => Y0 - H * (1 - (x * x) / (Apx * Apx))
+  const pts: string[] = []
+  for (let i = 0; i <= 100; i++) { const x = -Apx + i / 100 * 2 * Apx; pts.push(`${X0 + x},${ek(x)}`) }
+  return (
+    <svg viewBox="0 0 800 560" width="100%" height="100%">
+      <rect x="6" y="6" width="788" height="548" fill="#fff" stroke="#888" strokeWidth="3" />
+      <line x1={X0} y1="60" x2={X0} y2={Y0} stroke="#111" strokeWidth="3.5" />
+      <polygon points={`${X0},60 ${X0 - 10},88 ${X0 + 10},88`} fill="#111" />
+      <text x={X0 - 130} y="80" fontSize="38" fontStyle="italic" fontFamily={SERIF}>E</text>
+      <text x={X0 - 106} y="110" fontSize="28" fontStyle="italic" fontFamily={SERIF}>k</text>
+      <text x={X0 - 72} y="80" fontSize="38" fontFamily={SERIF}>/J</text>
+      <line x1="90" y1={Y0} x2="750" y2={Y0} stroke="#111" strokeWidth="3.5" />
+      <polygon points={`750,${Y0} 722,${Y0 - 10} 722,${Y0 + 10}`} fill="#111" />
+      <text x="700" y={Y0 + 52} fontSize="38" fontStyle="italic" fontFamily={SERIF}>x/m</text>
+      {[10, 20, 30].map(v => (
+        <g key={v}>
+          <line x1={X0 - 14} y1={Y0 - v * 10} x2={X0} y2={Y0 - v * 10} stroke="#111" strokeWidth="3" />
+          <text x={X0 - 30} y={Y0 - v * 10 + 12} textAnchor="end" fontSize="32" fontFamily={SERIF}>{v}</text>
+        </g>
+      ))}
+      <path d={`M${pts.join(' L')}`} fill="none" stroke="#2E8B57" strokeWidth="6" />
+      {[-Apx, Apx].map(x => (
+        <text key={x} x={X0 + x} y={Y0 + 52} textAnchor="middle" fontSize="36" fontStyle="italic" fontFamily={SERIF}>
+          {x < 0 ? '−2' : '2'}
+        </text>
+      ))}
+      <text x={X0} y={Y0 + 52} textAnchor="middle" fontSize="36" fontStyle="italic" fontFamily={SERIF}>O</text>
+    </svg>
+  )
+}
+
+/** 9-4 例2：墙-弹簧-容器 m′ + O 点上方滴管（间距 l） */
+export function Dropper() {
+  return (
+    <svg viewBox="0 0 900 500" width="100%" height="100%">
+      <rect x="6" y="6" width="888" height="488" fill="#fff" stroke="#888" strokeWidth="3" />
+      {/* 墙 */}
+      <rect x="60" y="180" width="36" height="180" fill="#BBB" stroke="#666" strokeWidth="3" />
+      {[0, 1, 2, 3].map(i => (
+        <line key={i} x1="60" y1={190 + i * 42} x2="30" y2={218 + i * 42} stroke="#666" strokeWidth="4" />
+      ))}
+      {/* 弹簧 */}
+      <path d={springPath(96, 380, 270, 9, 30)} fill="none" stroke="#111" strokeWidth="6" />
+      <text x="200" y="200" textAnchor="middle" fontSize="42" fontStyle="italic" fontFamily={SERIF}>k</text>
+      {/* 容器 m′（凹槽形） */}
+      <path d="M380 250 L380 360 L520 360 L520 250" fill="#BFE3FF" stroke="#2E86C1" strokeWidth="6" />
+      <text x="450" y="240" textAnchor="middle" fontSize="42" fontStyle="italic" fontFamily={SERIF}>m′</text>
+      {/* x 轴 */}
+      <line x1="80" y1="420" x2="860" y2="420" stroke="#111" strokeWidth="3.5" />
+      <polygon points="860,420 832,410 832,430" fill="#111" />
+      <text x="836" y="470" fontSize="40" fontStyle="italic" fontFamily={SERIF}>x</text>
+      {/* O 点 */}
+      <circle cx="700" cy="420" r="10" fill="#111" />
+      <text x="700" y="480" textAnchor="middle" fontSize="44" fontStyle="italic" fontFamily={SERIF}>O</text>
+      {/* l 双向箭头（容器 → O） */}
+      <line x1="456" y1="386" x2="694" y2="386" stroke="#111" strokeWidth="3.5" />
+      <polygon points="450,386 476,378 476,394" fill="#111" />
+      <polygon points="700,386 674,378 674,394" fill="#111" />
+      <text x="575" y="376" textAnchor="middle" fontSize="42" fontStyle="italic" fontFamily={SERIF}>l</text>
+      {/* 滴管（O 正上方） */}
+      <path d="M672 60 L728 60 L714 120 L714 150 L686 150 L686 120 Z" fill="#F5F5F5" stroke="#444" strokeWidth="5" />
+      <rect x="666" y="44" width="68" height="20" rx="8" fill="#DDD" stroke="#444" strokeWidth="4" />
+      {[0, 1, 2].map(i => (
+        <circle key={i} cx={686 + i * 14} cy={86 + (i % 2) * 14} r="7" fill="#8a6d3b" />
+      ))}
+      <circle cx="700" cy="185" r="8" fill="#8a6d3b" />
+      <circle cx="700" cy="230" r="8" fill="#8a6d3b" />
+      <text x="700" y="330" textAnchor="middle" fontSize="38" fontStyle="italic" fill="#8a6d3b" fontFamily={SERIF}>m</text>
+    </svg>
+  )
+}
+
 const DIAGRAMS: Record<string, (props: { t?: number }) => JSX.Element> = {
   compose: ComposeDiagram,
   spring_o: springO,
@@ -965,6 +1156,10 @@ const DIAGRAMS: Record<string, (props: { t?: number }) => JSX.Element> = {
   pendulum_anim: PendulumAnim,
   compound_pendulum: CompoundPendulum,
   rolling_ball: RollingBall,
+  energy_t: EnergyT,
+  ep_x: EpX,
+  ek_x: EkX,
+  dropper: Dropper,
 }
 
 export default DIAGRAMS
