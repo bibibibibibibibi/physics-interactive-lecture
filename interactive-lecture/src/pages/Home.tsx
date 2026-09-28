@@ -82,16 +82,19 @@ function Lecture() {
   const curSub = weblec?.subtitles.find(s => t >= s.start && t < s.end) ?? null
   const subs = useMemo(() => weblec?.subtitles ?? [], [weblec])
 
-  /** 网页小人姿态与时间轴联动：开场挥手→指点→思考→强调，穿插讲解 */
+  /** 网页小人姿态与时间轴联动：开场挥手→指点→思考/点头→强调/板书，穿插讲解。
+      全部纯派生（由 t 与各时刻直接算出），重放/跳页/拖进度条结果一致 */
   const pose: Pose = useMemo(() => {
     if (!curTime) return 'explain'
     if (curTime.id === 1 && t < 6) return 'wave'
     const rel = t - curTime.t_start
     if (curTime.laser.some(m => rel >= m.start && rel <= m.end)) return 'laser'
-    if (rel > curTime.duration - 4) return 'think'
+    if (rel > curTime.duration - 4) return curTime.id % 2 === 0 ? 'think' : 'nod'
     if (rel < 2.5) return 'point_up'
-    return Math.floor(rel / 8) % 2 === 0 ? 'explain' : 'emphasis'
-  }, [t, curTime])
+    /** 讲稿抛出反问句时摊手启发（激光间隙才轮得到这里） */
+    if (curSub && /[？?]\s*$/.test(curSub.text)) return 'shrug'
+    return (['explain', 'emphasis', 'write'] as const)[Math.floor(rel / 8) % 3]
+  }, [t, curTime, curSub])
 
   /** 当前激光笔指向的知识点坐标（1920×1080 设计坐标）与要点下标 */
   const laserTarget = useMemo(() => {
@@ -100,7 +103,7 @@ function Lecture() {
     const m = curTime.laser.find(m => rel >= m.start && rel <= m.end)
     if (!m) return null
     const b = curPage.bullets[m.bullet]
-    return b ? { x: b.x, y: b.y, idx: m.bullet } : null
+    return b ? { x: b.x, y: b.y, idx: m.bullet, elapsed: rel - m.start } : null
   }, [t, curTime, curPage])
 
   /** 重要知识点下划红线：脚本标注 important 的要点被激光指点时起持续 10 秒，每页最多 3 条。

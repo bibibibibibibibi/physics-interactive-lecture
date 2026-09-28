@@ -27,14 +27,18 @@ export const VIDEO_W = 1920
 export const VIDEO_H = 1080
 export const RATES = [1, 1.5, 2, 2.5]
 
-export type Pose = 'wave' | 'explain' | 'laser' | 'emphasis' | 'think' | 'point_up'
+export type Pose = 'wave' | 'explain' | 'laser' | 'emphasis' | 'think' | 'point_up' | 'nod' | 'shrug' | 'write'
 
-/** 小人立绘清单：六姿态 + 激光笔的斜上/斜下两个方向变体 */
-export const TEACHER_IMGS = ['wave', 'explain', 'laser', 'laser_up', 'laser_down', 'emphasis', 'think', 'point_up'] as const
+/** 小人立绘清单：9 个基础姿态 + 激光笔 7 个方位/距离变体。
+    激光变体选择规则见 Teacher.tsx 的 laserVariant（按方位距离 + 目标下标确定性轮换） */
+export const TEACHER_IMGS = [
+  'wave', 'explain', 'emphasis', 'think', 'point_up', 'nod', 'shrug', 'write',
+  'laser', 'laser_up', 'laser_down', 'laser_high', 'laser_low', 'laser_far', 'laser_lean', 'laser_circle',
+] as const
 export type TeacherImg = typeof TEACHER_IMGS[number]
 
-/** 激光点指向目标（视频像素坐标）与要点下标 */
-export interface LaserTarget { x: number; y: number; idx: number }
+/** 激光点指向目标（视频像素坐标）与要点下标；elapsed=该次指点已持续秒数（驱动画圈变体） */
+export interface LaserTarget { x: number; y: number; idx: number; elapsed?: number }
 
 /** 把文本里的 $...$ 渲染成公式，其余保持纯文本并转义，换行转 <br>，返回 HTML */
 export function renderMath(text: string): string {

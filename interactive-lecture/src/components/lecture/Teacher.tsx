@@ -80,21 +80,36 @@ export default function Teacher({ character, characterName, switchable, onSwitch
     return cx < targetX
   }, [shownPose, laserTarget, teacherPos, stageRef])
 
-  /** 激光姿态按方位选平指/斜上/斜下：让手臂大致指向光点 */
+  /** 激光姿态按方位/距离选变体：高位分「斜上/高举」两档，低位分「斜下/俯身」两档，
+      平指按横向距离选「远指/平指/侧身」；同一档内按目标下标奇偶确定性轮换，
+      避免同一页相邻知识点姿态雷同，也保证重放/跳页结果一致（不依赖随机数） */
   const laserVariant = useMemo((): TeacherImg => {
     if (shownPose !== 'laser' || !laserTarget) return 'laser'
     const stage = stageRef.current
     if (!stage) return 'laser'
     const sr = stage.getBoundingClientRect()
     const dotY = sr.top + (laserTarget.y / VIDEO_H) * sr.height
+    const dotX = sr.left + (laserTarget.x / VIDEO_W) * sr.width
     const cy = teacherPos ? teacherPos.y + 60 : sr.bottom - 60
-    if (dotY < cy - 70) return 'laser_up'
-    if (dotY > cy + 70) return 'laser_down'
-    return 'laser'
+    const cx = teacherPos ? teacherPos.x + 48 : sr.right + 4
+    const dy = dotY - cy
+    const dx = Math.abs(dotX - cx)
+    const alt = laserTarget.idx % 2 === 0
+    if (dy < -200) return alt ? 'laser_high' : 'laser_up'
+    if (dy < -70) return 'laser_up'
+    if (dy > 200) return alt ? 'laser_low' : 'laser_down'
+    if (dy > 70) return 'laser_down'
+    /** 远指用舞台宽度的相对阈值：窄窗口下固定 600px 永远达不到 */
+    if (dx > sr.width * 0.5) return 'laser_far'
+    return alt ? 'laser_lean' : 'laser'
   }, [shownPose, laserTarget, teacherPos, stageRef])
 
+  /** 同一知识点持续指点超过 4 秒：换成「画圈强调」变体，避免一个姿势僵住。
+      纯派生（elapsed 由 Home 按时间轴算出），跳进激光中段也立即正确 */
+  const circling = (laserTarget?.elapsed ?? 0) > 4
+
   /** 实际要显示的立绘：激光姿态时换成对应方向变体 */
-  const effPose: TeacherImg = shownPose === 'laser' ? laserVariant : shownPose
+  const effPose: TeacherImg = shownPose === 'laser' ? (circling ? 'laser_circle' : laserVariant) : shownPose
 
   return (
     <button
