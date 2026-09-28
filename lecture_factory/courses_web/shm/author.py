@@ -93,7 +93,7 @@ pages.append({
       tex_f="\\dfrac{d^2x}{dt^2}=-\\omega^2 x", size=44),
   text(4, 1150, 720, 120, [R("即", 44, RED, True)]),
   tex(4, 1300, 700, 400, "a=-\\omega^2 x", 44),
-  box(5, 490, 902, 950, 86, PINK_FILL, PINK_LINE,
+  box(5, 445, 902, 1030, 86, PINK_FILL, PINK_LINE,
       [[R("简谐振动的特征：", 44, RED, True),
         R("加速度 $a$ 与位移的大小 $x$ 成正比，方向相反", 44)]],
       align="left", important=True, hotspot=True,
