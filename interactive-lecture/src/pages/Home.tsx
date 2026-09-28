@@ -83,7 +83,9 @@ function Lecture() {
   const subs = useMemo(() => weblec?.subtitles ?? [], [weblec])
 
   /** 网页小人姿态与时间轴联动：开场挥手→指点→思考/点头→强调/板书，穿插讲解。
-      全部纯派生（由 t 与各时刻直接算出），重放/跳页/拖进度条结果一致 */
+      全部纯派生（由 t 与各时刻直接算出），重放/跳页/拖进度条结果一致。
+      节奏约定：常规轮换 16s 一拍且中性讲解占两拍，摊手需字幕句剩余 >1.5s——
+      姿态宁稳勿频，避免刚淡入就切走的闪动感 */
   const pose: Pose = useMemo(() => {
     if (!curTime) return 'explain'
     if (curTime.id === 1 && t < 6) return 'wave'
@@ -91,9 +93,9 @@ function Lecture() {
     if (curTime.laser.some(m => rel >= m.start && rel <= m.end)) return 'laser'
     if (rel > curTime.duration - 4) return curTime.id % 2 === 0 ? 'think' : 'nod'
     if (rel < 2.5) return 'point_up'
-    /** 讲稿抛出反问句时摊手启发（激光间隙才轮得到这里） */
-    if (curSub && /[？?]\s*$/.test(curSub.text)) return 'shrug'
-    return (['explain', 'emphasis', 'write'] as const)[Math.floor(rel / 8) % 3]
+    /** 讲稿抛出反问句时摊手启发（激光间隙才轮得到这里）；句尾剩余太短就不换 */
+    if (curSub && /[？?]\s*$/.test(curSub.text) && curSub.end - t > 1.5) return 'shrug'
+    return (['explain', 'emphasis', 'explain', 'write'] as const)[Math.floor(rel / 16) % 4]
   }, [t, curTime, curSub])
 
   /** 当前激光笔指向的知识点坐标（1920×1080 设计坐标）与要点下标 */
