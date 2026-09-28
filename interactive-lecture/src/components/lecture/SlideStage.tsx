@@ -113,7 +113,7 @@ export function Element({ el, t }: { el: WebElement; t: number }) {
   if (el.type === 'box') {
     return (
       <div style={{
-        ...base, background: el.fill, border: `${el.lw ?? 3}px solid ${el.line}`,
+        ...base, height: 'auto', minHeight: el.h, background: el.fill, border: `${el.lw ?? 3}px solid ${el.line}`,
         borderRadius: el.radius ?? 0, padding: '8px 20px',
         alignItems: el.align === 'left' ? 'flex-start' : 'center',
       }}>{inner}</div>

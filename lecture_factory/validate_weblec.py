@@ -19,6 +19,38 @@ VIDEO_W, VIDEO_H = 1920, 1080
 TIME_TOL = 0.6        # 时刻相对页面区间的容忍（秒）
 STEP_MIN_GAP = 0.8    # 相邻步进最小间隔，更小疑似同句多标记
 MAX_IMPORTANT = 3     # 每页 important 要点上限（引擎每页最多画 3 条红线）
+BOX_PAD_X = 40        # box 元素水平内边距（播放器 padding: 8px 20px）
+
+
+def _est_run_width(text, size):
+    """估算单 run 单行自然宽度（设计坐标 px）。
+    CJK/全角标点按 1.0em，ASCII 字母数字 0.5em，空格 0.3em，
+    $...$ 行内公式按内容字符 0.6em 粗估。比真实渲染略保守（偏小）。"""
+    import re as _re
+    w = 0.0
+    for tok in _re.split(r"(\$[^$]*\$)", text):
+        if not tok:
+            continue
+        if tok.startswith("$") and tok.endswith("$"):
+            w += len(tok[1:-1]) * 0.6 * size
+            continue
+        for ch in tok:
+            if ch == " ":
+                w += 0.3 * size
+            elif ord(ch) < 0x2E80:
+                w += 0.5 * size
+            else:
+                w += 1.0 * size
+    return w
+
+
+def est_paras_width(paras, default_size=40):
+    """估算 paras 结构最宽一行的自然宽度。"""
+    worst = 0.0
+    for para in paras or []:
+        line = sum(_est_run_width(r.get("t", ""), r.get("size", default_size)) for r in para)
+        worst = max(worst, line)
+    return worst
 
 
 class Rep:
@@ -92,6 +124,27 @@ def validate(path):
                 src = e.get("src", "")
                 if not src.startswith("data:") and not os.path.exists(os.path.join(base, src)):
                     rep.e(f"{tag} 图片缺失：{src}")
+            # 文字自然宽度估算：box 内换行后总高超过声明高度才会溢出框底（ERROR）；
+            # text 换行仅提醒（WARN）
+            et = e.get("type")
+            if et in ("box", "text") and e.get("paras"):
+                if et == "box":
+                    avail = e.get("w", 0) - BOX_PAD_X
+                    need_h = 16.0  # padding 8×2
+                    for para in e.get("paras"):
+                        pw = sum(_est_run_width(r.get("t", ""), r.get("size", e.get("size", 40))) for r in para)
+                        ph = max((r.get("size", e.get("size", 40)) for r in para), default=e.get("size", 40))
+                        import math as _m
+                        lines = max(1, _m.ceil(pw / max(avail, 1)))
+                        need_h += lines * ph * 1.4
+                    if need_h > e.get("h", 0):
+                        rep.e(f"{tag} box 文字换行后估高 {need_h:.0f} > 声明 h={e.get('h')}（w={e.get('w')}），"
+                              f"将溢出框底：{str(e.get('paras')[0][0].get('t', ''))[:14]}…")
+                else:
+                    est = est_paras_width(e.get("paras"), e.get("size", 40))
+                    if est > e.get("w", 0):
+                        rep.w(f"{tag} text 文字估宽 {est:.0f} > 声明 w={e.get('w')}，将换行："
+                              f"{str(e.get('paras')[0][0].get('t', ''))[:14]}…")
 
         # 要点：红线规则 / elIdx / 热点问答
         imp = [b for b in bls if b.get("important")]
