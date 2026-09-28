@@ -25,6 +25,8 @@ function Lecture() {
   const [input, setInput] = useState('')
   const [thinking, setThinking] = useState(false)
   const [rate, setRate] = useState(1)
+  /** 章节导航默认收起，点进度条右侧页码指示器展开（跳页后自动收起） */
+  const [navOpen, setNavOpen] = useState(false)
 
   /** 卡通讲师可切换：记住用户选择，默认用课程指定的角色 */
   const [character, setCharacter] = useState<string>(
@@ -239,8 +241,13 @@ function Lecture() {
             characterName={characterName}
             charactersSwitchable={!!weblec?.characters?.length}
             onSwitchCharacter={switchCharacter}
+            navOpen={navOpen}
+            onToggleNav={() => setNavOpen(o => !o)}
           />
-          <ChapterNav chapters={chapters} currentId={curTime?.id} onSeek={seekTo} cols={8} />
+          {navOpen && (
+            <ChapterNav chapters={chapters} currentId={curTime?.id}
+              onSeek={time => { seekTo(time); setNavOpen(false) }} cols={8} />
+          )}
           {curPage && <HotspotList slide={curPage} onOpenBullet={openBullet} />}
         </div>
 

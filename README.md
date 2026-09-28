@@ -234,6 +234,7 @@ python lecture_factory/export_slides.py --build --course 旋转矢量
 | logo | 每课 `logo.png`，左上角 270×116 乘以 `logoScale`（默认 1，现有课程 0.67） |
 | 图上叠加标注 | 故意的图内文字/公式标注（如图角公式牌）加 `overlay=True`，质检器跳过它与图的重叠检查 |
 | SVG 图示坐标 | 所有绘制内容必须收在 viewBox 内（质检按未裁剪几何量测，越界即报「文字进图区」）；`OmegaArrow`/`ArcLine` 用**负角度**画上方（屏幕坐标 y 向下） |
+| 章节导航 | 默认收起；页码指示器是可点按钮（点它展开/收起，跳页后自动收起）。其文本格式 `id/总数 标题` 被质检器 `pageShown` 依赖，不能改格式 |
 
 ## 规范校验器
 

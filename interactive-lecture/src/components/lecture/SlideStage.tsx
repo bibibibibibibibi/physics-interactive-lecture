@@ -26,6 +26,9 @@ interface Props {
   characterName: string
   charactersSwitchable: boolean
   onSwitchCharacter: () => void
+  /** 章节导航展开状态与切换（点页码指示器展开/收起） */
+  navOpen?: boolean
+  onToggleNav?: () => void
 }
 
 function fmt(s: number) {
@@ -123,6 +126,7 @@ export function Element({ el, t }: { el: WebElement; t: number }) {
 export default function SlideStage({
   mediaRef, weblec, curPage, t, onTimeUpdate, laserTarget, underlines, onOpenBullet,
   rate, onRateChange, shownPose, character, characterName, charactersSwitchable, onSwitchCharacter,
+  navOpen, onToggleNav,
 }: Props) {
   const stageRef = useRef<HTMLDivElement>(null)
   const innerRef = useRef<HTMLDivElement>(null)
@@ -399,9 +403,13 @@ export default function SlideStage({
           {fmt(t)} / {fmt(weblec?.duration ?? 0)}
         </span>
         {curPage && (
-          <span className="shrink-0 rounded bg-[#123a63] px-2 py-1 text-xs text-slate-300">
+          <button onClick={onToggleNav}
+            className={`shrink-0 rounded px-2 py-1 text-xs transition ${
+              navOpen ? 'bg-[#ffb703] text-[#0b1f38] font-semibold' : 'bg-[#123a63] text-slate-300 hover:bg-[#1a4a7a]'
+            }`}
+            title={navOpen ? '收起章节导航' : '展开章节导航'}>
             {curPage.id}/{pages.length} {curPage.heading}
-          </span>
+          </button>
         )}
       </div>
     </div>

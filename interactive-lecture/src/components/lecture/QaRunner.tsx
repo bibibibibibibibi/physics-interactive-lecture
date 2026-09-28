@@ -106,10 +106,10 @@ export default function QaRunner({ mediaRef, weblec }: {
     async function run() {
       a!.pause()
       const all: QaIssue[] = []
-      /** 页面指示器（SlideStage 右下角「id/总数 标题」span）是否已翻到目标页 */
+      /** 页面指示器（SlideStage 右下角「id/总数 标题」按钮）是否已翻到目标页 */
       const pageShown = (pageId: number) => {
         const marker = `${pageId}/${weblec!.slides.length} `
-        return Array.from(document.querySelectorAll('span')).some(s => s.textContent?.startsWith(marker))
+        return Array.from(document.querySelectorAll('span,button')).some(s => s.textContent?.startsWith(marker))
       }
       for (const p of weblec!.slides) {
         setProgress(`正在检查第 ${p.id} / ${weblec!.slides.length} 页…`)
