@@ -94,7 +94,7 @@ export default function QaRunner({ mediaRef, weblec }: {
             out.push({ page: pageId, kind: '重叠', detail: pair })
         }
       }
-      /** 框体松紧：内容 vs 声明边框 */
+      /** 框体松紧：内容 vs 声明边框（纵横两个方向都查——横向过窄即公式顶边/溢出框外） */
       for (const it of items) {
         const el = page.elements[it.i]
         if (it.type === 'box' && it.crect) {
@@ -102,6 +102,8 @@ export default function QaRunner({ mediaRef, weblec }: {
           const padH = (el.w - it.crect.w) / 2
           if (padV < 3)
             out.push({ page: pageId, kind: '框过紧', detail: `「${it.label}」上下余量 ${padV.toFixed(0)}（建议 ≥10）` })
+          else if (padH < 8)
+            out.push({ page: pageId, kind: '框过紧', detail: `「${it.label}」左右余量 ${padH.toFixed(0)}（建议 ≥10；负值=公式已溢出框外，加宽声明 w）` })
           else if (padV > 70 || padH > 160)
             out.push({ page: pageId, kind: '框过松', detail: `「${it.label}」余量 ${Math.round(padH)}×${Math.round(padV)}（建议 20~40×10~25）` })
         }
