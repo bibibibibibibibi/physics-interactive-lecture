@@ -195,8 +195,16 @@ python lecture_factory/export_slides.py --build --course 旋转矢量
 | 编译方案文档 | `cd docs && ../tools/tectonic.exe -X compile 大学物理交互课堂制作方案.tex` |
 
 **改讲稿的正确姿势**：改 `author.py` → 运行它重新生成 `slides.json` →
-删掉该课的 `audio/page<n>.mp3` 和 `page<n>.times.json`（只删改动页）→ 重跑 `build_web.py`。
+删掉该课的 `audio/page<n>.mp3` 和 **课程根目录**的 `page<n>.times.json`（只删改动页）→ 重跑 `build_web.py`。
 重配时构建器会自动清掉该页旧句音频，不会按旧下标错配。
+注意 sidecar 在 `courses_web/<课>/page<n>.times.json`（不在 audio/ 下）；若只删 mp3 漏删 sidecar，
+构建器会因两个文件不同时存在而整体重配该页，仍能自愈；但句数失配的陈旧 sidecar + 旧 mp3 并存时会
+IndexError——拿不准就把该页两个文件一起删。
+
+**讲稿写作的语义词约定**（小人姿态由讲稿文本驱动，见「课件数据规范」小人姿态行）：
+设问句结尾写「？」、结论句写「所以/得到/也就是说」、引导句写「想一想/不妨」、推演句写「推导/代入/写成」。
+校验器对四类语义词设下限（提问≥2、结论≥3、思考≥2、推演≥1，按整课字幕统计），
+不足即 WARN 提醒补写——新课过完校验器若出现语义词警告，回 author.py 补词后按上面的姿势重配。
 
 ## 课件数据规范
 

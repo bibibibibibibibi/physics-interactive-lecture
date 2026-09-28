@@ -10,6 +10,7 @@
 """
 import json
 import os
+import re
 import sys
 
 FACTORY = os.path.dirname(os.path.abspath(__file__))
@@ -183,6 +184,22 @@ def validate(path):
             rep.w(f"末条字幕 end={subs[-1].get('end')} 与整课时长 {dur} 相差 >2s")
     else:
         rep.w("无字幕")
+
+    # 讲稿语义词分布：小人姿态由讲稿文本语义驱动（Home.tsx 同款正则），
+    # 某类词整课为零意味着对应动作全程不出现 → WARN 提醒回 author.py 补写
+    if subs:
+        texts = [s.get("text", "") for s in subs]
+        cues = [
+            ("提问（摊手）", r"[？?]\s*$|为什么|怎么办|如何|能不能|有没有", 2),
+            ("结论（指天）", r"所以|因此|于是|得到|可见|也就是说|结论|即得|这就是", 3),
+            ("思考（托腮）", r"想一想|思考|不妨|回忆一下|考虑", 2),
+            ("推演（板书）", r"推导|公式|代入|展开|写成|写为|整理", 1),
+        ]
+        for name, pat, minimum in cues:
+            cnt = sum(1 for t in texts if re.search(pat, t))
+            if cnt < minimum:
+                rep.w(f"讲稿语义词「{name}」仅 {cnt} 处 < {minimum}：小人对应动作将很少出现，"
+                      f"建议在 author.py 的设问/收束/引导句补写语义词")
 
     # 媒体文件
     if not os.path.exists(os.path.join(base, "logo.png")):
