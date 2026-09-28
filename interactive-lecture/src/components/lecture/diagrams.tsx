@@ -1018,8 +1018,9 @@ export function EpX() {
       {/* 坐标轴 */}
       <line x1={X0} y1="110" x2={X0} y2={Y0} stroke="#111" strokeWidth="3.5" />
       <polygon points={`${X0},110 ${X0 - 10},138 ${X0 + 10},138`} fill="#111" />
-      <text x={X0 - 66} y="150" fontSize="42" fontStyle="italic" fontFamily={SERIF}>E</text>
-      <text x={X0 - 42} y="182" fontSize="30" fontStyle="italic" fontFamily={SERIF}>p</text>
+      <text x={X0 - 66} y="150" fontSize="42" fontStyle="italic" fontFamily={SERIF}>
+        E<tspan dy="14" fontSize="28">p</tspan>
+      </text>
       <line x1="100" y1={Y0} x2="840" y2={Y0} stroke="#111" strokeWidth="3.5" />
       <polygon points={`840,${Y0} 812,${Y0 - 10} 812,${Y0 + 10}`} fill="#111" />
       <text x="816" y={Y0 + 52} fontSize="42" fontStyle="italic" fontFamily={SERIF}>x</text>
@@ -1029,7 +1030,7 @@ export function EpX() {
       <circle cx={X0 + Apx} cy={Y0 - kE} r="12" fill="#E00" stroke="#111" strokeWidth="3" />
       <text x={X0 - Apx - 56} y={Y0 - kE + 14} fontSize="44" fontStyle="italic" fontFamily={SERIF}>C</text>
       <text x={X0 + Apx + 30} y={Y0 - kE + 14} fontSize="44" fontStyle="italic" fontFamily={SERIF}>B</text>
-      <text x={X0 + 30} y={Y0 - kE + 52} fontSize="44" fontStyle="italic" fill="#0A0" fontFamily={SERIF}>E</text>
+      <text x={X0 + 56} y={Y0 - kE - 16} fontSize="44" fontStyle="italic" fill="#0A0" fontFamily={SERIF}>E</text>
       {/* 抛物线 */}
       <path d={`M${pts.join(' L')}`} fill="none" stroke="#E00" strokeWidth="7" />
       {/* ±A 虚线与刻度 */}
@@ -1042,14 +1043,16 @@ export function EpX() {
         </g>
       ))}
       <text x={X0} y={Y0 + 58} textAnchor="middle" fontSize="42" fontStyle="italic" fontFamily={SERIF}>O</text>
-      {/* 取点：Ep 箭头（x轴→曲线）与 Ek 箭头（曲线→E线） */}
-      <line x1={X0 + xq} y1={ep(xq)} x2={X0 + xq} y2={Y0} stroke="#C0C" strokeWidth="3" strokeDasharray="10 8" />
+      {/* 取点：Ep 箭头（x轴→曲线，标签在箭头右侧）与 Ek 箭头（曲线→E线，标签在箭头左侧） */}
+      <circle cx={X0 + xq} cy={ep(xq)} r="11" fill="#E00" stroke="#111" strokeWidth="2.5" />
       <Arrow x1={X0 + xq + 40} y1={Y0 - 12} x2={X0 + xq + 40} y2={ep(xq) + 12} color="#E00" w={5} />
-      <text x={X0 + xq + 66} y={(Y0 + ep(xq)) / 2 + 16} fontSize="42" fontStyle="italic" fill="#E00" fontFamily={SERIF}>E</text>
-      <text x={X0 + xq + 90} y={(Y0 + ep(xq)) / 2 + 48} fontSize="30" fontStyle="italic" fill="#E00" fontFamily={SERIF}>p</text>
+      <text x={X0 + xq + 66} y={(Y0 + ep(xq)) / 2 + 14} fontSize="42" fontStyle="italic" fill="#E00" fontFamily={SERIF}>
+        E<tspan dy="12" fontSize="28">p</tspan>
+      </text>
       <Arrow x1={X0 + xq + 40} y1={ep(xq) - 12} x2={X0 + xq + 40} y2={Y0 - kE + 12} color="#E00" w={5} />
-      <text x={X0 + xq - 120} y={(ep(xq) + Y0 - kE) / 2 + 30} fontSize="42" fontStyle="italic" fill="#E00" fontFamily={SERIF}>E</text>
-      <text x={X0 + xq - 96} y={(ep(xq) + Y0 - kE) / 2 + 62} fontSize="30" fontStyle="italic" fill="#E00" fontFamily={SERIF}>k</text>
+      <text x={X0 + xq + 14} y={(ep(xq) + Y0 - kE) / 2 + 14} textAnchor="end" fontSize="42" fontStyle="italic" fill="#E00" fontFamily={SERIF}>
+        E<tspan dy="12" fontSize="28">k</tspan>
+      </text>
       {/* x 双向箭头（O → 取点） */}
       <line x1={X0 + 8} y1={Y0 + 100} x2={X0 + xq - 8} y2={Y0 + 100} stroke="#C0C" strokeWidth="4" />
       <polygon points={`${X0 + xq},${Y0 + 100} ${X0 + xq - 22},${Y0 + 92} ${X0 + xq - 22},${Y0 + 108}`} fill="#C0C" />
