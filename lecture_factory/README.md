@@ -118,7 +118,7 @@ HTML/SVG/KaTeX 实时渲染，视觉上对齐老师真实 PPT 的版式与点击
 | 多课并存 | 课件按 `public/weblec/<课名>/` 分目录；URL 带 `?course=<课名>` 加载对应课程（`/?course=shm` 交互课堂、`/slides.html?course=shm` 静态页）；根路径无参数显示课程列表，清单在 `public/weblec/courses.json`（新课手动加一行） |
 | 舞台引擎 | `src/components/lecture/SlideStage.tsx`：音频时钟驱动步进揭示、激光点、红线、热点；授课键盘控制（空格播放/暂停、←→ 暂停时按步进翻/播放时按页跳、B 黑屏、F 全屏，兼容翻页笔） |
 | 图示库 | `src/components/lecture/diagrams.tsx`：SVG 图示；`spring_anim` 等动画由主时钟 `t` 推导相位（4.5s 一个周期），隐藏标签页/倍速/拖进度都不乱 |
-| 视觉基准 | `ppt_ref_slides/slide_01..16.png`（原 PPT 导出图）、`ppt_structure.json`（动画步序）、`ppt_geometry.json`（形状几何） |
+| 视觉基准 | 各课源 PPT 与分析产物（逐页导出图、`ppt_structure.json` 动画步序、`ppt_geometry.json` 形状几何）已归档至 `待处理/ppt9x源文件与分析/`，需要时翻归档 |
 
 ### 已固化的视觉/交互标准（本轮打磨结论，做新课时不要回退）
 

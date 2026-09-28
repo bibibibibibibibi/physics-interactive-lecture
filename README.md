@@ -89,13 +89,9 @@ python lecture_factory/export_slides.py --build --course shm
 │
 ├── docs/                         # 《大学物理交互课堂制作方案》.tex/.pdf（Tectonic 编译）
 ├── tools/tectonic.exe            # LaTeX 编译器（.gitignore 排除，需自行安放）
-├── ppt_ref.ppt / ppt_ref.pptx    # 9-1 原 PPT（视觉基准）
-├── ppt_ref_slides/               # 原 PPT 逐页导出图
-├── ppt_structure.json            # 原 PPT 点击动画步序
-├── ppt_geometry.json             # 原 PPT 形状几何坐标
 ├── export_ppt.ps1 / parse_pptx.py / extract_geometry.py   # PPT 解析三件套（新课复用）
 └── 待处理/                       # 归档区（.gitignore 排除）：旧视频方案、中间产物、
-                                #   调试图、9-2/9-3 源 PPT 与分析产物、logo 源图
+                                #   调试图、9-1~9-4 源 PPT 与分析产物、logo 源图
 ```
 
 ## 做一门新课的完整流程
@@ -323,9 +319,9 @@ Kimi 桌面端配音插件（TTS 通道，密钥在 Kimi 运行时）、Tectonic
 5. 需要编译方案文档时，安放 Tectonic 到 `tools/tectonic.exe`
    （<https://github.com/tectonic-typesetting/tectonic/releases>）。
 
-**已提交的产物**：`public/weblec/shm/`（含合并音频）、TTS 缓存、姿态图、
-PPT 基准材料——克隆后无需重新构建即可运行现有课程。
-**未入库**：`node_modules/`、`dist*/`、`待处理/`（旧方案归档）、`.env.local`、`tools/tectonic.exe`。
+**已提交的产物**：四门课的 `public/weblec/<课名>/`（含合并音频）、TTS 缓存、
+姿态图——克隆后无需重新构建即可运行现有课程。
+**未入库**：`node_modules/`、`dist*/`、`待处理/`（旧方案与各课源 PPT 归档）、`.env.local`、`tools/tectonic.exe`。
 
 ## 版本控制约定
 

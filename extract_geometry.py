@@ -60,7 +60,7 @@ def line_of(sp):
 
 import sys, os
 WS = os.path.dirname(os.path.abspath(__file__))
-SRC = sys.argv[1] if len(sys.argv) > 1 else os.path.join(WS, 'ppt_ref.pptx')
+SRC = sys.argv[1] if len(sys.argv) > 1 else os.path.join(WS, '待处理', 'ppt91源文件与分析', 'ppt_ref.pptx')
 DST = sys.argv[2] if len(sys.argv) > 2 else os.path.join(WS, 'ppt_geometry.json')
 
 out = {}

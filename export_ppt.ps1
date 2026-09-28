@@ -1,7 +1,7 @@
 param(
-  [string]$ppt = 'ppt_ref.ppt',
-  [string]$out = 'ppt_ref_slides',
-  [string]$pptx = 'ppt_ref.pptx'
+  [string]$ppt = '待处理\ppt91源文件与分析\ppt_ref.ppt',
+  [string]$out = '待处理\ppt91源文件与分析\ppt_ref_slides',
+  [string]$pptx = '待处理\ppt91源文件与分析\ppt_ref.pptx'
 )
 $ErrorActionPreference = 'Stop'
 $ws = 'C:\Users\Administrator\Documents\kimi\tasks\2026-09-26\15-37-28-d3bc8f97'
