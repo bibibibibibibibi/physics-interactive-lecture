@@ -82,21 +82,26 @@ function Lecture() {
   const curSub = weblec?.subtitles.find(s => t >= s.start && t < s.end) ?? null
   const subs = useMemo(() => weblec?.subtitles ?? [], [weblec])
 
-  /** 网页小人姿态与时间轴联动：开场挥手→指点→思考/点头→强调/板书，穿插讲解。
+  /** 网页小人姿态与时间轴联动：开场挥手→指点→思考/点头→讲解/板书，穿插点头。
       全部纯派生（由 t 与各时刻直接算出），重放/跳页/拖进度条结果一致。
       节奏约定：常规轮换 16s 一拍且中性讲解占两拍，摊手需字幕句剩余 >1.5s——
-      姿态宁稳勿频，避免刚淡入就切走的闪动感 */
+      姿态宁稳勿频，避免刚淡入就切走的闪动感。
+      emphasis（双手举过头）不进常规轮换，只在特殊节点出现：
+      整课收尾最后 6 秒，或 important 难点激光刚收笔的 1.8 秒内 */
   const pose: Pose = useMemo(() => {
-    if (!curTime) return 'explain'
+    if (!curTime || !timeline || !curPage) return 'explain'
     if (curTime.id === 1 && t < 6) return 'wave'
     const rel = t - curTime.t_start
     if (curTime.laser.some(m => rel >= m.start && rel <= m.end)) return 'laser'
+    const tEnd = timeline.slides[timeline.slides.length - 1].t_end
+    if (t > tEnd - 6) return 'emphasis'
+    if (curTime.laser.some(m => curPage.bullets[m.bullet]?.important && rel > m.end && rel <= m.end + 1.8)) return 'emphasis'
     if (rel > curTime.duration - 4) return curTime.id % 2 === 0 ? 'think' : 'nod'
     if (rel < 2.5) return 'point_up'
     /** 讲稿抛出反问句时摊手启发（激光间隙才轮得到这里）；句尾剩余太短就不换 */
     if (curSub && /[？?]\s*$/.test(curSub.text) && curSub.end - t > 1.5) return 'shrug'
-    return (['explain', 'emphasis', 'explain', 'write'] as const)[Math.floor(rel / 16) % 4]
-  }, [t, curTime, curSub])
+    return (['explain', 'nod', 'explain', 'write'] as const)[Math.floor(rel / 16) % 4]
+  }, [t, curTime, curSub, timeline, curPage])
 
   /** 当前激光笔指向的知识点坐标（1920×1080 设计坐标）与要点下标 */
   const laserTarget = useMemo(() => {
