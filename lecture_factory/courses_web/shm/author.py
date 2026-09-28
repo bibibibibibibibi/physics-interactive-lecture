@@ -314,7 +314,7 @@ for pg, h in zip(pages, HEADINGS):
     pg["heading"] = h
 
 doc = {
-  "title": "简谐振动 · 振幅 周期和频率 相位",
+  "title": "简谐振动",
   "nav": "9-1　简谐振动　振幅　周期和频率　相位",
   "footer": "第九章　振动",
   "character": "aqiang",
