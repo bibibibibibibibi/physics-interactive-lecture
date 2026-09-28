@@ -84,7 +84,8 @@ function Lecture() {
 
   /** 网页小人姿态与时间轴、讲稿语义联动。全部纯派生（由 t 与各时刻直接算出），
       重放/跳页/拖进度条结果一致。**不做强制轮换**：没有语义触发时保持讲解姿态，
-      非语义动作只有激光指点、页尾收束（思考/点头）。语义映射（字幕句剩余 >1.5s 才触发）：
+      非语义动作只有激光指点、页尾收束（思考/点头）。语义映射（按词在句内位置插值
+      出说出时刻，说到才触发；句尾剩余 >1.5s 才换）：
         摊手 shrug    = 提出问题（句尾问号，或含 为什么/怎么办/如何 等提问词）
         指天 point_up = 得出结论（含 所以/因此/得到/可见/也就是说/结论 等收束词）
         思考 think    = 引导思考（含 想一想/思考/不妨/回忆一下）
@@ -99,13 +100,25 @@ function Lecture() {
     const tEnd = timeline.slides[timeline.slides.length - 1].t_end
     if (t > tEnd - 6) return 'emphasis'
     if (curTime.laser.some(m => curPage.bullets[m.bullet]?.important && rel > m.end && rel <= m.end + 1.8)) return 'emphasis'
-    /** 讲稿语义姿态：句尾剩余太短就不换，避免刚淡入就切走的闪动感 */
+    /** 讲稿语义姿态：语义词按句内字符位置比例插值出「被说出的时刻」
+        （与构建器步进时刻同一套算法），说到才换动作，不抢拍；
+        句尾剩余太短就不换，避免刚淡入就切走的闪动感 */
     if (curSub && curSub.end - t > 1.5) {
       const txt = curSub.text
-      if (/[？?]\s*$/.test(txt) || /为什么|怎么办|如何|能不能|有没有/.test(txt)) return 'shrug'
-      if (/所以|因此|于是|得到|可见|也就是说|结论|即得|这就是/.test(txt)) return 'point_up'
-      if (/想一想|思考|不妨|回忆一下|考虑/.test(txt)) return 'think'
-      if (/推导|公式|代入|展开|写成|写为|整理/.test(txt)) return 'write'
+      /** 返回语义词被说出的绝对时刻；句尾问号整句皆为提问，从句首触发 */
+      const cueAt = (re: RegExp, fromStart = false): number | null => {
+        const m = txt.match(re)
+        if (!m) return null
+        const frac = fromStart ? 0 : (m.index ?? 0) / Math.max(txt.length, 1)
+        return curSub.start + frac * (curSub.end - curSub.start)
+      }
+      const cues: [Pose, number | null][] = [
+        ['shrug', cueAt(/[？?]\s*$/, true) ?? cueAt(/为什么|怎么办|如何|能不能|有没有/)],
+        ['point_up', cueAt(/所以|因此|于是|得到|可见|也就是说|结论|即得|这就是/)],
+        ['think', cueAt(/想一想|思考|不妨|回忆一下|考虑/)],
+        ['write', cueAt(/推导|公式|代入|展开|写成|写为|整理/)],
+      ]
+      for (const [p, at] of cues) if (at !== null && t >= at) return p
     }
     if (rel > curTime.duration - 4) return curTime.id % 2 === 0 ? 'think' : 'nod'
     return 'explain'
