@@ -1834,8 +1834,7 @@ export function ResonCurve() {
     for (let i = 0; i <= n; i++) {
       const w = from + (i / n) * (to - from)
       const y = yOf(w, d)
-      pts.push(`${xw(w)},${Math.max(y, yCap)}`)
-      if (y < yCap) break
+      if (y >= yCap) pts.push(`${xw(w)},${y}`)  // 只画截断线以下的点；左支到峰顶即止，右支从峰顶起笔
     }
     return pts.join(' ')
   }
