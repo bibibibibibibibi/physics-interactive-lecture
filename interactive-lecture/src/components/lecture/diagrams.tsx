@@ -1875,6 +1875,197 @@ export function ResonCurve() {
   )
 }
 
+/* ================= 9-7 电磁振荡 ================= */
+
+/** 电感线圈：侧视正弦螺旋，竖直方向从 y0 绕到 y1（两端收在轴线上） */
+function Coil({ x, y0, y1, r = 24, loops = 6, color = '#C03070', w = 5 }: {
+  x: number; y0: number; y1: number; r?: number; loops?: number; color?: string; w?: number
+}) {
+  const n = loops * 16
+  const pts: string[] = []
+  for (let i = 0; i <= n; i++) {
+    const u = i / n
+    pts.push(`${i === 0 ? 'M' : 'L'} ${(x + r * Math.sin(u * loops * 2 * Math.PI)).toFixed(1)} ${(y0 + u * (y1 - y0)).toFixed(1)}`)
+  }
+  return <path d={pts.join(' ')} fill="none" stroke={color} strokeWidth={w} />
+}
+
+/** 小箭头（电场/磁场用，屏幕坐标，头长 12） */
+function SmallArrow({ x1, y1, x2, y2, color = '#E00', w = 3.5 }: {
+  x1: number; y1: number; x2: number; y2: number; color?: string; w?: number
+}) {
+  const a = Math.atan2(y2 - y1, x2 - x1)
+  const p = a + Math.PI / 2
+  const xb = x2 - 12 * Math.cos(a), yb = y2 - 12 * Math.sin(a)
+  return (
+    <g>
+      <line x1={x1} y1={y1} x2={xb} y2={yb} stroke={color} strokeWidth={w} />
+      <polygon
+        points={`${x2},${y2} ${xb + 6 * Math.cos(p)},${yb + 6 * Math.sin(p)} ${xb - 6 * Math.cos(p)},${yb - 6 * Math.sin(p)}`}
+        fill={color} />
+    </g>
+  )
+}
+
+/** 9-7 第 1 页左图：LC 充电回路（电感 L、电容 C、电源 ε、开关 S 断开） */
+export function LcCircuit() {
+  return (
+    <svg viewBox="0 0 720 560" width="100%" height="100%">
+      {/* 回路导线 */}
+      <line x1="140" y1="90" x2="560" y2="90" stroke="#111" strokeWidth="4" />
+      <line x1="140" y1="90" x2="140" y2="140" stroke="#111" strokeWidth="4" />
+      <line x1="140" y1="310" x2="140" y2="390" stroke="#111" strokeWidth="4" />
+      <line x1="560" y1="90" x2="560" y2="180" stroke="#111" strokeWidth="4" />
+      <line x1="560" y1="214" x2="560" y2="390" stroke="#111" strokeWidth="4" />
+      <line x1="560" y1="390" x2="470" y2="390" stroke="#111" strokeWidth="4" />
+      <line x1="390" y1="390" x2="140" y2="390" stroke="#111" strokeWidth="4" />
+      {/* 电感 L（品红螺旋） */}
+      <Coil x={140} y0={140} y1={310} r={26} loops={6} />
+      <text x="66" y="240" fontSize="46" fontStyle="italic" fill="#C03070" fontFamily={SERIF}>L</text>
+      {/* 中间支路：电容 C（蓝色双极板） */}
+      <line x1="350" y1="90" x2="350" y2="200" stroke="#111" strokeWidth="4" />
+      <line x1="350" y1="236" x2="350" y2="390" stroke="#111" strokeWidth="4" />
+      <line x1="295" y1="200" x2="405" y2="200" stroke="#00C" strokeWidth="7" />
+      <line x1="295" y1="236" x2="405" y2="236" stroke="#00C" strokeWidth="7" />
+      <text x="288" y="230" fontSize="44" fontStyle="italic" fill="#111" fontFamily={SERIF} textAnchor="end">C</text>
+      {/* 右上支路：电源 ε（一长一短） */}
+      <line x1="524" y1="180" x2="596" y2="180" stroke="#111" strokeWidth="4" />
+      <line x1="544" y1="214" x2="576" y2="214" stroke="#111" strokeWidth="9" />
+      <text x="500" y="208" fontSize="44" fontStyle="italic" fill="#111" fontFamily={SERIF} textAnchor="end">ℰ</text>
+      {/* 底部开关 S（断开） */}
+      <circle cx="390" cy="390" r="7" fill="#111" />
+      <circle cx="470" cy="390" r="7" fill="#111" />
+      <line x1="390" y1="390" x2="458" y2="330" stroke="#111" strokeWidth="5" />
+      <text x="430" y="452" textAnchor="middle" fontSize="44" fontStyle="italic" fill="#111" fontFamily={SERIF}>S</text>
+      {/* 左下角标注牌 */}
+      <rect x="40" y="458" width="420" height="72" fill="#CCFFCC" stroke="#2E8B57" strokeWidth="3" />
+      <text x="250" y="508" textAnchor="middle" fontSize="38">
+        <tspan fontStyle="italic" fontFamily={SERIF}>LC </tspan>
+        <tspan fontFamily={HEI}>电磁振荡电路</tspan>
+      </text>
+    </svg>
+  )
+}
+
+/** 9-7 第 1 页右图：LC 振荡一周期的四个状态 A/B/C/D（2×2） */
+export function LcCycle() {
+  const cell = (ox: number, oy: number, kind: 'A' | 'B' | 'C' | 'D') => (
+    <g key={kind}>
+      {/* 导线回路 */}
+      <line x1={ox + 120} y1={oy + 40} x2={ox + 380} y2={oy + 40} stroke="#111" strokeWidth="3.5" />
+      <line x1={ox + 380} y1={oy + 40} x2={ox + 380} y2={oy + 108} stroke="#111" strokeWidth="3.5" />
+      <line x1={ox + 380} y1={oy + 152} x2={ox + 380} y2={oy + 220} stroke="#111" strokeWidth="3.5" />
+      <line x1={ox + 380} y1={oy + 220} x2={ox + 120} y2={oy + 220} stroke="#111" strokeWidth="3.5" />
+      <line x1={ox + 120} y1={oy + 220} x2={ox + 120} y2={oy + 170} stroke="#111" strokeWidth="3.5" />
+      <line x1={ox + 120} y1={oy + 80} x2={ox + 120} y2={oy + 40} stroke="#111" strokeWidth="3.5" />
+      {/* 电感与电容 */}
+      <Coil x={ox + 120} y0={oy + 80} y1={oy + 170} r={22} loops={4} w={4.5} />
+      <line x1={ox + 322} y1={oy + 108} x2={ox + 438} y2={oy + 108} stroke="#00C" strokeWidth="7" />
+      <line x1={ox + 322} y1={oy + 152} x2={ox + 438} y2={oy + 152} stroke="#00C" strokeWidth="7" />
+      <text x={ox + 64} y={oy + 148} fontSize="34" fontStyle="italic" fill="#C03070" fontFamily={SERIF}>L</text>
+      <text x={ox + 290} y={oy + 98} fontSize="34" fontStyle="italic" fill="#111" fontFamily={SERIF}>C</text>
+      {/* 各状态内容 */}
+      {(kind === 'A' || kind === 'C') && (
+        <g>
+          {/* 极板电荷符号 */}
+          <text x={ox + 448} y={oy + 100} textAnchor="middle" fontSize="34" fill={kind === 'A' ? '#E00' : '#00C'} fontFamily={SERIF}>
+            {kind === 'A' ? '+' : '−'}
+          </text>
+          <text x={ox + 448} y={oy + 168} textAnchor="middle" fontSize="34" fill={kind === 'A' ? '#00C' : '#E00'} fontFamily={SERIF}>
+            {kind === 'A' ? '−' : '+'}
+          </text>
+          <text x={ox + 396} y={oy + 50} fontSize="34" fontStyle="italic" fill="#111" fontFamily={SERIF}>
+            Q<tspan dy="8" fontSize="22">0</tspan>
+          </text>
+          {/* 极板间电场箭头：A 向下、C 向上 */}
+          {[340, 362, 384, 406].map(dx => (
+            kind === 'A'
+              ? <SmallArrow key={dx} x1={ox + dx} y1={oy + 116} x2={ox + dx} y2={oy + 144} color="#E00" />
+              : <SmallArrow key={dx} x1={ox + dx} y1={oy + 144} x2={ox + dx} y2={oy + 116} color="#E00" />
+          ))}
+          <Vec ch="E" x={ox + 302} y={oy + 148} size={26} fill="#E00" />
+        </g>
+      )}
+      {(kind === 'B' || kind === 'D') && (
+        <g>
+          {/* 电感处磁场箭头：B 向上、D 向下 */}
+          {[106, 120, 134].map(dx => (
+            kind === 'B'
+              ? <SmallArrow key={dx} x1={ox + dx} y1={oy + 182} x2={ox + dx} y2={oy + 72} color="#00C" w={4} />
+              : <SmallArrow key={dx} x1={ox + dx} y1={oy + 72} x2={ox + dx} y2={oy + 182} color="#00C" w={4} />
+          ))}
+          {kind === 'B'
+            ? <Vec ch="B" x={ox + 72} y={oy + 84} size={30} fill="#00C" />
+            : <Vec ch="B" x={ox + 148} y={oy + 238} size={30} fill="#00C" />}
+        </g>
+      )}
+      <text x={ox + 237} y={oy + 292} textAnchor="middle" fontSize="36" fontFamily={HEI}>{kind}</text>
+    </g>
+  )
+  return (
+    <svg viewBox="0 0 950 720" width="100%" height="100%">
+      {cell(40, 30, 'A')}
+      {cell(490, 30, 'C')}
+      {cell(40, 380, 'B')}
+      {cell(490, 380, 'D')}
+    </svg>
+  )
+}
+
+/** 9-7 第 3 页：q = Q0 cosθ（蓝）与 i = −I0 sinθ（红）曲线，θ = ωt+φ */
+export function LcQi() {
+  const ox = 260, oy = 380, W = 1000, AQ = 170, AI = 130
+  const mk = (fn: (u: number) => number) => {
+    const pts: string[] = []
+    for (let i = 0; i <= 340; i++) {
+      const u = i / 340
+      pts.push(`${ox + u * W},${fn(u)}`)
+    }
+    return pts.join(' ')
+  }
+  const th2x = (th: number) => ox + (th / (2.6 * Math.PI)) * W
+  const xPi = th2x(Math.PI), x2Pi = th2x(2 * Math.PI)
+  const xRedPk = th2x(1.5 * Math.PI), xBluePk = th2x(2 * Math.PI)
+  return (
+    <svg viewBox="0 0 1400 660" width="100%" height="100%">
+      {/* 坐标轴 */}
+      <line x1={ox} y1="580" x2={ox} y2="90" stroke="#111" strokeWidth="4" />
+      <polygon points={`${ox},90 ${ox - 9},116 ${ox + 9},116`} fill="#111" />
+      <text x={ox - 52} y="126" fontSize="42" fontStyle="italic" fontFamily={SERIF}>q</text>
+      <text x={ox + 26} y="102" fontSize="42" fontStyle="italic" fontFamily={SERIF}>i</text>
+      <line x1={ox} y1={oy} x2="1300" y2={oy} stroke="#111" strokeWidth="4" />
+      <polygon points={`1300,${oy} 1274,${oy - 9} 1274,${oy + 9}`} fill="#111" />
+      <text x="1340" y="436" textAnchor="end" fontSize="38" fontStyle="italic" fontFamily={SERIF}>( ωt + φ )</text>
+      <text x={ox - 46} y={oy + 52} fontSize="42" fontStyle="italic" fontFamily={SERIF}>o</text>
+      {/* π、2π 刻度 */}
+      {[xPi, x2Pi].map(x => (
+        <line key={x} x1={x} y1={oy - 10} x2={x} y2={oy + 10} stroke="#111" strokeWidth="3.5" />
+      ))}
+      <text x={xPi} y={oy + 54} textAnchor="middle" fontSize="38" fontStyle="italic" fontFamily={SERIF}>π</text>
+      <text x={x2Pi} y={oy + 54} textAnchor="middle" fontSize="38" fontStyle="italic" fontFamily={SERIF}>2π</text>
+      {/* 振幅标注：Q0（蓝）、I0（红）双向箭头 + 虚线 */}
+      <Line2Arrows x1={180} y1={oy} x2={180} y2={oy - AQ} color="#00C" w={4} />
+      <line x1={180} y1={oy - AQ} x2={ox} y2={oy - AQ} stroke="#666" strokeWidth="2.5" strokeDasharray="10 8" />
+      <text x="96" y="302" fontSize="40" fontStyle="italic" fill="#00C" fontFamily={SERIF}>
+        Q<tspan dy="10" fontSize="26">0</tspan>
+      </text>
+      <Line2Arrows x1={232} y1={oy} x2={232} y2={oy - AI} color="#E00" w={4} />
+      <line x1={232} y1={oy - AI} x2={xRedPk} y2={oy - AI} stroke="#666" strokeWidth="2.5" strokeDasharray="10 8" />
+      <text x="196" y="322" fontSize="40" fontStyle="italic" fill="#E00" fontFamily={SERIF}>
+        I<tspan dy="10" fontSize="26">0</tspan>
+      </text>
+      {/* 顶部 π/2 标注：红峰 → 其后蓝峰 */}
+      <line x1={xRedPk} y1={oy - AI} x2={xRedPk} y2="132" stroke="#111" strokeWidth="2.5" />
+      <line x1={xBluePk} y1={oy - AQ} x2={xBluePk} y2="132" stroke="#111" strokeWidth="2.5" />
+      <Line2Arrows x1={xRedPk} y1={132} x2={xBluePk} y2={132} color="#111" w={3.5} />
+      <text x={(xRedPk + xBluePk) / 2} y="120" textAnchor="middle" fontSize="36" fontStyle="italic" fontFamily={SERIF}>π/2</text>
+      {/* 曲线 */}
+      <polyline points={mk((u) => oy - AQ * Math.cos(2.6 * Math.PI * u))} fill="none" stroke="#00C" strokeWidth="5.5" />
+      <polyline points={mk((u) => oy + AI * Math.sin(2.6 * Math.PI * u))} fill="none" stroke="#E00" strokeWidth="5.5" />
+    </svg>
+  )
+}
+
 const DIAGRAMS: Record<string, (props: { t?: number }) => JSX.Element> = {
   compose: ComposeDiagram,
   spring_o: springO,
@@ -1916,6 +2107,9 @@ const DIAGRAMS: Record<string, (props: { t?: number }) => JSX.Element> = {
   damp_xt: DampXt,
   damp_three: DampThree,
   reson_curve: ResonCurve,
+  lc_circuit: LcCircuit,
+  lc_cycle: LcCycle,
+  lc_qi: LcQi,
 }
 
 export default DIAGRAMS
