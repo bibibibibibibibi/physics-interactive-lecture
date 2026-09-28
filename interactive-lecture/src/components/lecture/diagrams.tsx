@@ -2102,12 +2102,9 @@ export function PendModes() {
       <circle cx="930" cy="334" r="16" fill="#222" />
       <Line2Arrows x1={860} y1={380} x2={960} y2={380} color="#111" w={4} />
       <text x="750" y="560" textAnchor="middle" fontSize="40" fontFamily={HEI}>(b)</text>
-      {/* ===== (c) 转动 ===== */}
-      <line x1="1180" y1="55" x2="1360" y2="55" stroke="#888" strokeWidth="3.5" strokeDasharray="14 10" />
-      <line x1="1270" y1="55" x2="1270" y2="100" stroke="#111" strokeWidth="4" />
-      {/* 整圈虚线圆 + 蓝色竖直参考虚线 */}
+      {/* ===== (c) 转动：悬点在圆心，整圈为轨迹；上半截虚线=过顶点的影子杆 ===== */}
       <circle cx="1270" cy="300" r="200" fill="none" stroke="#888" strokeWidth="3.5" strokeDasharray="14 10" />
-      <line x1="1290" y1="110" x2="1290" y2="490" stroke="#33F" strokeWidth="3" strokeDasharray="12 10" />
+      <line x1="1270" y1="300" x2="1270" y2="100" stroke="#888" strokeWidth="3.5" strokeDasharray="14 10" />
       <circle cx="1270" cy="300" r="8" fill="#111" />
       {/* 圆周上的弯曲箭头（逆时针） */}
       <ArcArrow cx={1270} cy={300} r={200} a0={-0.8} a1={-1.75} color="#111" w={4} />
