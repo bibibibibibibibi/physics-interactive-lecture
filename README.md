@@ -50,7 +50,8 @@ python lecture_factory/export_slides.py --build --course shm
 
 现有课程：**shm**（9-1 简谐振动）、**rotvec**（9-2 旋转矢量）、**pendulum**（9-3 单摆和复摆）、
 **energy**（9-4 简谐振动的能量）、**compose**（9-5 简谐振动的合成）、
-**damping**（9-6 阻尼振动 受迫振动 共振）、**emosc**（9-7 电磁振荡，8 页，约 6 分钟）。
+**damping**（9-6 阻尼振动 受迫振动 共振）、**emosc**（9-7 电磁振荡）、
+**nonlinear**（9-8 简述非线性系统，11 页，约 6 分钟）。第九章完结。
 
 ## 目录结构
 

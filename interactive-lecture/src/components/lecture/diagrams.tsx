@@ -2066,6 +2066,169 @@ export function LcQi() {
   )
 }
 
+/* ================= 9-8 简述非线性系统 ================= */
+
+/** 9-8 第 6 页：不同初始能量下单摆的三种运动 (a) 小角摆动 (b) 大角摆动 (c) 转动 */
+export function PendModes() {
+  return (
+    <svg viewBox="0 0 1500 620" width="100%" height="100%">
+      {/* ===== (a) 小角度摆动 ===== */}
+      <line x1="140" y1="55" x2="320" y2="55" stroke="#888" strokeWidth="3.5" strokeDasharray="14 10" />
+      <line x1="230" y1="55" x2="230" y2="80" stroke="#111" strokeWidth="4" />
+      <circle cx="230" cy="80" r="8" fill="#111" />
+      {/* 虚线杆与虚线轨迹弧（蓝色辅助） */}
+      <line x1="230" y1="80" x2="70" y2="357" stroke="#888" strokeWidth="3.5" strokeDasharray="14 10" />
+      <circle cx="70" cy="357" r="12" fill="none" stroke="#888" strokeWidth="3" strokeDasharray="6 5" />
+      <ArcLine cx={230} cy={80} r={320} a0={Math.PI / 2 + 0.524} a1={Math.PI / 2} color="#33F" w={4} dash="14 10" />
+      {/* θ 角弧 */}
+      <ArcLine cx={230} cy={80} r={130} a0={Math.PI / 2 + 0.524} a1={Math.PI / 2} color="#111" w={4} />
+      <text x="192" y="214" fontSize="34" fontStyle="italic" fontFamily={SERIF}>θ</text>
+      {/* 竖直杆 + 摆球 + 来回箭头 */}
+      <line x1="230" y1="80" x2="230" y2="400" stroke="#111" strokeWidth="5" />
+      <circle cx="230" cy="400" r="16" fill="#222" />
+      <Line2Arrows x1={180} y1={450} x2={280} y2={450} color="#111" w={4} />
+      <text x="230" y="560" textAnchor="middle" fontSize="40" fontFamily={HEI}>(a)</text>
+      {/* ===== (b) 大角度摆动 ===== */}
+      <line x1="655" y1="55" x2="845" y2="55" stroke="#888" strokeWidth="3.5" strokeDasharray="14 10" />
+      <line x1="750" y1="55" x2="750" y2="120" stroke="#111" strokeWidth="4" />
+      <circle cx="750" cy="120" r="8" fill="#111" />
+      {/* 平衡位置竖直虚线（蓝色辅助） */}
+      <line x1="750" y1="120" x2="750" y2="470" stroke="#33F" strokeWidth="3" strokeDasharray="12 10" />
+      {/* 接近水平的虚线杆 + 大圆弧轨迹（约 150°） */}
+      <line x1="750" y1="120" x2="487" y2="24" stroke="#888" strokeWidth="3.5" strokeDasharray="14 10" />
+      <circle cx="487" cy="24" r="12" fill="none" stroke="#888" strokeWidth="3" strokeDasharray="6 5" />
+      <ArcLine cx={750} cy={120} r={280} a0={Math.PI / 2 + 1.92} a1={Math.PI / 2 - 0.7} color="#33F" w={4} dash="14 10" />
+      <line x1="750" y1="120" x2="930" y2="334" stroke="#111" strokeWidth="5" />
+      <circle cx="930" cy="334" r="16" fill="#222" />
+      <Line2Arrows x1={860} y1={380} x2={960} y2={380} color="#111" w={4} />
+      <text x="750" y="560" textAnchor="middle" fontSize="40" fontFamily={HEI}>(b)</text>
+      {/* ===== (c) 转动 ===== */}
+      <line x1="1180" y1="55" x2="1360" y2="55" stroke="#888" strokeWidth="3.5" strokeDasharray="14 10" />
+      <line x1="1270" y1="55" x2="1270" y2="100" stroke="#111" strokeWidth="4" />
+      {/* 整圈虚线圆 + 蓝色竖直参考虚线 */}
+      <circle cx="1270" cy="300" r="200" fill="none" stroke="#888" strokeWidth="3.5" strokeDasharray="14 10" />
+      <line x1="1290" y1="110" x2="1290" y2="490" stroke="#33F" strokeWidth="3" strokeDasharray="12 10" />
+      <circle cx="1270" cy="300" r="8" fill="#111" />
+      {/* 圆周上的弯曲箭头（逆时针） */}
+      <ArcArrow cx={1270} cy={300} r={200} a0={-0.8} a1={-1.75} color="#111" w={4} />
+      {/* 杆 + 摆球（底部） */}
+      <line x1="1270" y1="300" x2="1270" y2="500" stroke="#111" strokeWidth="5" />
+      <circle cx="1270" cy="500" r="16" fill="#222" />
+      <text x="1270" y="570" textAnchor="middle" fontSize="40" fontFamily={HEI}>(c)</text>
+    </svg>
+  )
+}
+
+/** 9-8 第 7 页：相图概念 —— v-x 坐标系 + 双峰曲线 + 状态点 P(x,v) */
+export function PhasePoint() {
+  const ox = 150, oy = 520
+  const f = (u: number) =>
+    40 + 200 * Math.exp(-(((u - 0.32) / 0.16) ** 2)) + 300 * Math.exp(-(((u - 0.68) / 0.18) ** 2))
+  const pts: string[] = []
+  for (let i = 0; i <= 120; i++) {
+    const u = i / 120
+    pts.push(`${250 + u * 530},${oy - f(u)}`)
+  }
+  const px = 250 + 0.68 * 530, py = oy - f(0.68)
+  return (
+    <svg viewBox="0 0 900 620" width="100%" height="100%">
+      <line x1={ox} y1="560" x2={ox} y2="90" stroke="#111" strokeWidth="4" />
+      <polygon points={`${ox},90 ${ox - 9},116 ${ox + 9},116`} fill="#111" />
+      <text x={ox - 34} y="116" fontSize="42" fontStyle="italic" fontFamily={SERIF}>v</text>
+      <line x1={ox} y1={oy} x2="830" y2={oy} stroke="#111" strokeWidth="4" />
+      <polygon points={`830,${oy} 804,${oy - 9} 804,${oy + 9}`} fill="#111" />
+      <text x="848" y={oy + 44} fontSize="42" fontStyle="italic" fontFamily={SERIF}>x</text>
+      <text x={ox - 42} y={oy + 46} fontSize="42" fontStyle="italic" fontFamily={SERIF}>O</text>
+      <polyline points={pts.join(' ')} fill="none" stroke="#111" strokeWidth="5" />
+      <circle cx={px} cy={py} r="10" fill="#E00" />
+      <text x={px + 8} y={py - 32} fontSize="40" fontStyle="italic" fontFamily={SERIF}>P ( x , v )</text>
+    </svg>
+  )
+}
+
+/** 9-8 第 8 页：大角度单摆的相轨迹（振动 / 分界 / 转动） */
+export function PhasePortrait() {
+  const cx = 450, cy = 340, hp = 260  // θ=±π 在 cx±260
+  const wave = (yBase: number, sgn: 1 | -1) => {
+    const pts: string[] = []
+    for (let i = 0; i <= 160; i++) {
+      const x = 90 + (i / 160) * 750
+      pts.push(`${x},${yBase + sgn * 35 * Math.cos(((x - cx) / hp) * Math.PI)}`)
+    }
+    return pts.join(' ')
+  }
+  return (
+    <svg viewBox="0 0 900 680" width="100%" height="100%">
+      {/* 坐标轴 */}
+      <line x1={cx} y1="600" x2={cx} y2="70" stroke="#111" strokeWidth="4" />
+      <polygon points={`${cx},70 ${cx - 9},96 ${cx + 9},96`} fill="#111" />
+      <text x={cx + 20} y="64" fontSize="38" fontStyle="italic" fontFamily={SERIF}>dθ/dt</text>
+      <line x1="90" y1={cy} x2="840" y2={cy} stroke="#111" strokeWidth="4" />
+      <polygon points={`840,${cy} 814,${cy - 9} 814,${cy + 9}`} fill="#111" />
+      <text x="852" y={cy + 46} fontSize="40" fontStyle="italic" fontFamily={SERIF}>θ</text>
+      {/* θ=±π 竖直虚线 */}
+      <line x1={cx - hp} y1="90" x2={cx - hp} y2="590" stroke="#888" strokeWidth="3" strokeDasharray="14 10" />
+      <line x1={cx + hp} y1="90" x2={cx + hp} y2="590" stroke="#888" strokeWidth="3" strokeDasharray="14 10" />
+      <text x={cx - hp} y="634" textAnchor="middle" fontSize="36" fontStyle="italic" fontFamily={SERIF}>−π</text>
+      <text x={cx + hp} y="634" textAnchor="middle" fontSize="36" fontStyle="italic" fontFamily={SERIF}>π</text>
+      {/* (a) 振动：中心闭合小椭圆 */}
+      <ellipse cx={cx} cy={cy} rx="110" ry="70" fill="none" stroke="#111" strokeWidth="4.5" />
+      {/* (b) 分界线：过 (±π,0) 的眼睛形（上下两支贝塞尔，尖点在 ±π） */}
+      <path d={`M ${cx - hp} ${cy} C ${cx - 150} ${cy - 180}, ${cx + 150} ${cy - 180}, ${cx + hp} ${cy}`}
+        fill="none" stroke="#111" strokeWidth="4.5" />
+      <path d={`M ${cx - hp} ${cy} C ${cx - 150} ${cy + 180}, ${cx + 150} ${cy + 180}, ${cx + hp} ${cy}`}
+        fill="none" stroke="#111" strokeWidth="4.5" />
+      {/* (c) 转动：上、下开口波浪线（穿越 ±π 虚线延伸） */}
+      <polyline points={wave(150, -1)} fill="none" stroke="#111" strokeWidth="4.5" />
+      <polyline points={wave(530, 1)} fill="none" stroke="#111" strokeWidth="4.5" />
+      <text x={cx} y={cy + 112} textAnchor="middle" fontSize="34" fontFamily={SERIF}>(a)</text>
+      <text x={cx} y={cy + 182} textAnchor="middle" fontSize="34" fontFamily={SERIF}>(b)</text>
+      <text x={cx} y={cy + 276} textAnchor="middle" fontSize="34" fontFamily={SERIF}>(c)</text>
+    </svg>
+  )
+}
+
+/** 9-8 第 10 页（替代示意）：混沌对初值敏感 —— 两条几乎同起点的 θ-t 曲线分叉 */
+export function ChaosSplit() {
+  const ox = 140, oy = 320, W = 1080
+  const base = (u: number) => 0.9 * (120 * Math.sin(2 * Math.PI * 1.3 * u) + 60 * Math.sin(2 * Math.PI * 2.9 * u + 1.0))
+  const diff = (u: number) => 95 * Math.sin(2 * Math.PI * 3.7 * u + 2.0) + 70 * Math.sin(2 * Math.PI * 6.3 * u + 0.5)
+  const ramp = (u: number) => 1 / (1 + Math.exp(-(u - 0.6) / 0.035))  // 约 60% 处分叉
+  const mk = (sgn: 1 | -1) => {
+    const pts: string[] = []
+    for (let i = 0; i <= 400; i++) {
+      const u = i / 400
+      pts.push(`${ox + u * W},${oy - (base(u) + sgn * 0.5 * ramp(u) * diff(u))}`)
+    }
+    return pts.join(' ')
+  }
+  // 分叉注释引线终点（u=0.68 处两曲线中点）
+  const um = 0.68, xm = ox + um * W, ym = oy - base(um)
+  return (
+    <svg viewBox="0 0 1300 620" width="100%" height="100%">
+      {/* 坐标轴 */}
+      <line x1={ox} y1="560" x2={ox} y2="80" stroke="#111" strokeWidth="4" />
+      <polygon points={`${ox},80 ${ox - 9},106 ${ox + 9},106`} fill="#111" />
+      <text x={ox - 34} y="104" fontSize="40" fontStyle="italic" fontFamily={SERIF}>θ</text>
+      <line x1={ox} y1={oy} x2="1220" y2={oy} stroke="#111" strokeWidth="4" />
+      <polygon points={`1220,${oy} 1194,${oy - 9} 1194,${oy + 9}`} fill="#111" />
+      <text x="1238" y={oy + 42} fontSize="40" fontStyle="italic" fontFamily={SERIF}>t</text>
+      <text x={ox - 42} y={oy + 44} fontSize="40" fontStyle="italic" fontFamily={SERIF}>o</text>
+      {/* ±π 水平虚线 */}
+      <line x1={ox} y1={oy - 180} x2="1200" y2={oy - 180} stroke="#888" strokeWidth="3" strokeDasharray="14 10" />
+      <line x1={ox} y1={oy + 180} x2="1200" y2={oy + 180} stroke="#888" strokeWidth="3" strokeDasharray="14 10" />
+      <text x={ox - 44} y={oy - 168} fontSize="36" fontStyle="italic" fontFamily={SERIF}>π</text>
+      <text x={ox - 62} y={oy + 192} fontSize="36" fontStyle="italic" fontFamily={SERIF}>−π</text>
+      {/* 两条曲线：前半段重合（红粗底、蓝细面），后半段分叉 */}
+      <polyline points={mk(1)} fill="none" stroke="#E00" strokeWidth="5.5" />
+      <polyline points={mk(-1)} fill="none" stroke="#00C" strokeWidth="3.5" />
+      {/* 分叉处括注 */}
+      <line x1="830" y1="128" x2={xm} y2={ym} stroke="#E00" strokeWidth="2.5" />
+      <text x="820" y="110" fontSize="36" fill="#E00" fontFamily={HEI}>初值差 0.1%</text>
+    </svg>
+  )
+}
+
 const DIAGRAMS: Record<string, (props: { t?: number }) => JSX.Element> = {
   compose: ComposeDiagram,
   spring_o: springO,
@@ -2110,6 +2273,10 @@ const DIAGRAMS: Record<string, (props: { t?: number }) => JSX.Element> = {
   lc_circuit: LcCircuit,
   lc_cycle: LcCycle,
   lc_qi: LcQi,
+  pend_modes: PendModes,
+  phase_point: PhasePoint,
+  phase_portrait: PhasePortrait,
+  chaos_split: ChaosSplit,
 }
 
 export default DIAGRAMS
