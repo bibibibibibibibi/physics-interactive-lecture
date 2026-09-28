@@ -49,7 +49,8 @@ python lecture_factory/export_slides.py --build --course shm
 ```
 
 现有课程：**shm**（9-1 简谐振动）、**rotvec**（9-2 旋转矢量）、**pendulum**（9-3 单摆和复摆）、
-**energy**（9-4 简谐振动的能量）、**compose**（9-5 简谐振动的合成，16 页，约 11 分钟）。
+**energy**（9-4 简谐振动的能量）、**compose**（9-5 简谐振动的合成）、
+**damping**（9-6 阻尼振动 受迫振动 共振，10 页，约 8 分钟）。
 
 ## 目录结构
 

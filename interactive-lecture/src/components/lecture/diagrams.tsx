@@ -1727,6 +1727,155 @@ export function BeatRotvec({ t = 0 }: { t?: number }) {
   )
 }
 
+/* ================= 9-6 阻尼振动 受迫振动 共振 ================= */
+
+/** 9-6 第 3 页：阻尼振动位移-时间曲线（红衰减振荡 + 蓝虚线包络 ±Ae^{−δt}） */
+export function DampXt() {
+  const ox = 220, oy = 480, amp = 250, W = 960
+  const mk = (fn: (u: number) => number) => {
+    const pts: string[] = []
+    for (let i = 0; i <= 500; i++) {
+      const u = i / 500
+      pts.push(`${ox + u * W},${fn(u)}`)
+    }
+    return pts.join(' ')
+  }
+  const env = (u: number) => Math.exp(-2.6 * u)  // 6.5 个可见周期，末端衰减到 ~0.07A
+  // 第二、三峰位置（cos 峰在 u = 0, 2/13, 4/13, …）
+  const s2 = ox + W * (2 / 13), s3 = ox + W * (4 / 13)
+  const y2 = oy - amp * Math.exp(-2.6 * (2 / 13)), y3 = oy - amp * Math.exp(-2.6 * (4 / 13))
+  return (
+    <svg viewBox="0 0 1300 800" width="100%" height="100%">
+      <text x="650" y="82" textAnchor="middle" fontSize="48" fontFamily={HEI}>阻尼振动位移时间曲线</text>
+      {/* 坐标轴 */}
+      <line x1={ox} y1="730" x2={ox} y2="130" stroke="#111" strokeWidth="4" />
+      <polygon points={`${ox},130 ${ox - 9},156 ${ox + 9},156`} fill="#111" />
+      <text x={ox + 20} y="160" fontSize="42" fontStyle="italic" fontFamily={SERIF}>x</text>
+      <line x1={ox} y1={oy} x2="1200" y2={oy} stroke="#111" strokeWidth="4" />
+      <polygon points={`1200,${oy} 1174,${oy - 9} 1174,${oy + 9}`} fill="#111" />
+      <text x="1216" y={oy + 44} fontSize="42" fontStyle="italic" fontFamily={SERIF}>t</text>
+      <text x={ox - 42} y={oy + 44} fontSize="42" fontStyle="italic" fontFamily={SERIF}>o</text>
+      <text x={ox - 58} y={oy - amp + 14} fontSize="42" fontStyle="italic" fontFamily={SERIF}>A</text>
+      <text x={ox - 76} y={oy + amp + 16} fontSize="42" fontStyle="italic" fontFamily={SERIF}>−A</text>
+      {/* 包络与衰减振荡曲线 */}
+      <polyline points={mk((u) => oy - amp * env(u))} fill="none" stroke="#00C" strokeWidth="4" strokeDasharray="14 10" />
+      <polyline points={mk((u) => oy + amp * env(u))} fill="none" stroke="#00C" strokeWidth="4" strokeDasharray="14 10" />
+      <polyline points={mk((u) => oy - amp * env(u) * Math.cos(13 * Math.PI * u))} fill="none" stroke="#E00" strokeWidth="5.5" />
+      {/* 曲线标注 */}
+      <text x="420" y="282" fontSize="42" fontStyle="italic" fill="#00C" fontFamily={SERIF}>
+        A e<tspan dy="-16" fontSize="28">−δt</tspan>
+      </text>
+      <text x="700" y="342" fontSize="42" fontStyle="italic" fill="#E00" fontFamily={SERIF}>
+        A e<tspan dy="-16" fontSize="28">−δt</tspan><tspan dy="16"> cos ωt</tspan>
+      </text>
+      {/* 周期 T：第二、三峰之间的竖直点线 + 双向箭头 */}
+      <line x1={s2} y1={y2} x2={s2} y2="630" stroke="#111" strokeWidth="3" strokeDasharray="3 8" />
+      <line x1={s3} y1={y3} x2={s3} y2="630" stroke="#111" strokeWidth="3" strokeDasharray="3 8" />
+      <Line2Arrows x1={s2} y1={630} x2={s3} y2={630} color="#111" w={4} />
+      <text x={(s2 + s3) / 2} y="684" textAnchor="middle" fontSize="42" fontStyle="italic" fontFamily={SERIF}>T</text>
+    </svg>
+  )
+}
+
+/** 9-6 第 4 页：三种阻尼比较（a 欠阻尼红 / b 过阻尼蓝 / c 临界阻尼绿） */
+export function DampThree() {
+  const ox = 160, oy = 400, A0 = 200, W = 840
+  const mk = (fn: (u: number) => number) => {
+    const pts: string[] = []
+    for (let i = 0; i <= 200; i++) {
+      const u = i / 200
+      pts.push(`${ox + u * W},${fn(u)}`)
+    }
+    return pts.join(' ')
+  }
+  return (
+    <svg viewBox="0 0 1100 560" width="100%" height="100%">
+      <line x1={ox} y1="480" x2={ox} y2="80" stroke="#111" strokeWidth="3.5" />
+      <polygon points={`${ox},80 ${ox - 9},106 ${ox + 9},106`} fill="#111" />
+      <text x={ox - 34} y="104" fontSize="40" fontStyle="italic" fontFamily={SERIF}>x</text>
+      <line x1={ox} y1={oy} x2="1000" y2={oy} stroke="#111" strokeWidth="3.5" />
+      <polygon points={`1000,${oy} 974,${oy - 9} 974,${oy + 9}`} fill="#111" />
+      <text x="1016" y={oy + 46} fontSize="40" fontStyle="italic" fontFamily={SERIF}>t</text>
+      <text x={ox - 40} y={oy + 46} fontSize="40" fontStyle="italic" fontFamily={SERIF}>o</text>
+      {/* a 欠阻尼（红）：衰减振荡，明显过零 */}
+      <polyline points={mk((u) => oy - A0 * Math.exp(-1.6 * u) * Math.cos(2 * Math.PI * 2.3 * u))}
+        fill="none" stroke="#E00" strokeWidth="5" />
+      {/* b 过阻尼（蓝）：缓慢指数衰减，不过零 */}
+      <polyline points={mk((u) => oy - A0 * Math.exp(-0.9 * u))} fill="none" stroke="#00C" strokeWidth="5" />
+      {/* c 临界阻尼（绿）：(1+λt)e^{−λt}，比 b 更快回到零，不过零 */}
+      <polyline points={mk((u) => oy - A0 * (1 + 6 * u) * Math.exp(-6 * u))} fill="none" stroke="#0A0" strokeWidth="5" />
+      <text x="392" y="548" fontSize="40" fontStyle="italic" fill="#E00" fontFamily={SERIF}>a</text>
+      <text x="415" y="258" fontSize="40" fontStyle="italic" fill="#00C" fontFamily={SERIF}>b</text>
+      <text x="330" y="434" fontSize="40" fontStyle="italic" fill="#0A0" fontFamily={SERIF}>c</text>
+    </svg>
+  )
+}
+
+/** 9-6 第 11 页：共振曲线 A = f/√((ω0²−ωp²)²+4δ²ωp²)，ω0 在横轴 55% 处 */
+export function ResonCurve() {
+  const ox = 120, oy = 620, W = 710, wMax = 1.8, sc = 120  // ω0=1 → x = 120 + 710/1.8 ≈ 55.6%
+  const xw = (w: number) => ox + (w / wMax) * W
+  const amp = (w: number, d: number) => 1 / Math.sqrt((1 - w * w) ** 2 + 4 * d * d * w * w)
+  const yOf = (w: number, d: number) => oy - sc * amp(w, d)
+  const x0 = xw(1)
+  const mkPlain = (d: number) => {
+    const pts: string[] = []
+    for (let i = 0; i <= 300; i++) {
+      const w = 0.15 + (i / 300) * (wMax - 0.15)
+      pts.push(`${xw(w)},${yOf(w, d)}`)
+    }
+    return pts.join(' ')
+  }
+  // 「阻尼→0」：δ 极小，峰顶截断到 yCap，左右两支分开画避免跨顶连线
+  const yCap = 110
+  const mkClamped = (d: number, from: number, to: number) => {
+    const pts: string[] = []
+    const n = 300
+    for (let i = 0; i <= n; i++) {
+      const w = from + (i / n) * (to - from)
+      const y = yOf(w, d)
+      pts.push(`${xw(w)},${Math.max(y, yCap)}`)
+      if (y < yCap) break
+    }
+    return pts.join(' ')
+  }
+  return (
+    <svg viewBox="0 0 900 760" width="100%" height="100%">
+      <text x="450" y="66" textAnchor="middle" fontSize="48" fontFamily={HEI}>共振频率</text>
+      {/* 坐标轴 */}
+      <line x1={ox} y1="660" x2={ox} y2="100" stroke="#111" strokeWidth="4" />
+      <polygon points={`${ox},100 ${ox - 9},126 ${ox + 9},126`} fill="#111" />
+      <text x={ox + 24} y="112" fontSize="42" fontStyle="italic" fontFamily={SERIF}>A</text>
+      <line x1={ox} y1={oy} x2="830" y2={oy} stroke="#111" strokeWidth="4" />
+      <polygon points={`830,${oy} 804,${oy - 9} 804,${oy + 9}`} fill="#111" />
+      <text x="815" y="668" textAnchor="middle" fontSize="38" fontStyle="italic" fontFamily={SERIF}>
+        ω<tspan dy="10" fontSize="26">p</tspan>
+      </text>
+      <text x={ox - 42} y={oy + 48} fontSize="42" fontStyle="italic" fontFamily={SERIF}>o</text>
+      {/* ω0 红色竖直虚线 */}
+      <line x1={x0} y1="120" x2={x0} y2={oy} stroke="#E00" strokeWidth="4" strokeDasharray="14 10" />
+      <text x={x0} y={oy + 50} textAnchor="middle" fontSize="40" fontStyle="italic" fontFamily={SERIF}>
+        ω<tspan dy="10" fontSize="28">0</tspan>
+      </text>
+      {/* 三条共振曲线 */}
+      <polyline points={mkClamped(0.03, 0.15, 0.995)} fill="none" stroke="#00C" strokeWidth="5" strokeDasharray="14 10" />
+      <polyline points={mkClamped(0.03, 1.005, wMax)} fill="none" stroke="#00C" strokeWidth="5" strokeDasharray="14 10" />
+      <polyline points={mkPlain(0.15)} fill="none" stroke="#C000C0" strokeWidth="5" />
+      <polyline points={mkPlain(0.55)} fill="none" stroke="#0A0" strokeWidth="5" />
+      {/* 标注框 + 引线 */}
+      <rect x="630" y="140" width="230" height="76" fill="#F8E1F8" stroke="#C000C0" strokeWidth="3" />
+      <text x="745" y="192" textAnchor="middle" fontSize="44" fill="#C000C0" fontFamily={HEI}>小阻尼</text>
+      <line x1="660" y1="216" x2="530" y2="238" stroke="#C000C0" strokeWidth="2.5" />
+      <rect x="640" y="330" width="240" height="76" fill="#E0E8FF" stroke="#00C" strokeWidth="3" />
+      <text x="760" y="382" textAnchor="middle" fontSize="42" fill="#00C" fontFamily={HEI}>阻尼 → 0</text>
+      <line x1="662" y1="404" x2="616" y2="410" stroke="#00C" strokeWidth="2.5" />
+      <rect x="160" y="470" width="220" height="70" fill="#E6F7E6" stroke="#0A0" strokeWidth="3" />
+      <text x="270" y="518" textAnchor="middle" fontSize="42" fill="#0A0" fontFamily={HEI}>大阻尼</text>
+      <line x1="380" y1="490" x2="470" y2="498" stroke="#0A0" strokeWidth="2.5" />
+    </svg>
+  )
+}
+
 const DIAGRAMS: Record<string, (props: { t?: number }) => JSX.Element> = {
   compose: ComposeDiagram,
   spring_o: springO,
@@ -1765,6 +1914,9 @@ const DIAGRAMS: Record<string, (props: { t?: number }) => JSX.Element> = {
   nvec: NVec,
   beat_waves: BeatWaves,
   beat_rotvec: BeatRotvec,
+  damp_xt: DampXt,
+  damp_three: DampThree,
+  reson_curve: ResonCurve,
 }
 
 export default DIAGRAMS
