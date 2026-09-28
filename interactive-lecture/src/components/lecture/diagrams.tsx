@@ -647,7 +647,7 @@ export function PhaseWaves() {
 }
 
 /** 9-2 例题公共：x 轴刻度与小球（静态） */
-export function ExampleAxis({ ballX = 0.04, showV = true }: { ballX?: number; showV?: boolean }) {
+export function ExampleAxis({ ballX = 0.04, showV = true }: { ballX?: number; showV?: boolean; t?: number }) {
   // 数值 -0.08..0.08 映射到像素 260..1380
   const px = (v: number) => 820 + (v / 0.08) * 560
   return (
@@ -732,7 +732,7 @@ export function RotvecTwo() {
       <AngleArc O={O} r={100} a0={0} a1={a1} label="π/3" color="#0A0" lsize={38} />
       <AngleArc O={O} r={100} a0={a2} a1={Math.PI} label="π/3" color="#0A0" lsize={38} />
       <AngleArc O={O} r={len + 60} a0={a1} a1={a2} label="ωt" color="#00C" lsize={44} />
-      <OmegaArrow cx={O[0]} cy={O[1]} r={len + 110} a0={Math.PI - 0.5} a1={Math.PI - 1.3} size={42} />
+      <OmegaArrow cx={O[0]} cy={O[1]} r={len + 110} a0={-0.5} a1={-1.3} size={42} />
       {/* 标注牌 */}
       <rect x={px(0.04) + 60} y="60" width="280" height="80" fill="#CCFFCC" stroke="#2E8B57" strokeWidth="3" />
       <text x={px(0.04) + 200} y="114" textAnchor="middle" fontSize="40" fontFamily={HEI}>起始时刻</text>

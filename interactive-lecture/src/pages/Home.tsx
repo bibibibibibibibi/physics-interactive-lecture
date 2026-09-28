@@ -56,7 +56,8 @@ function Lecture() {
   }
 
   useEffect(() => {
-    fetch(`${COURSE_BASE}weblec.json`).then(r => r.json()).then(setWeblec)
+    // 加时间戳防旧缓存：weblec.json 拿到 build_ts 后，音频/图片再按 build_ts 戳
+    fetch(`${COURSE_BASE}weblec.json?t=${Date.now()}`).then(r => r.json()).then(setWeblec)
   }, [])
 
   /** 姿态/激光状态机用的时间轴（激光时刻转成页内相对值） */

@@ -6,7 +6,7 @@ import type { WebLec } from '@/lib/weblec'
 
 export interface QaIssue {
   page: number
-  kind: '出界' | '重叠' | '文字进图区' | '框过紧' | '框过松' | '文本框过宽(参考)'
+  kind: '出界' | '重叠' | '文字进图区' | '框过紧' | '框过松' | '文本框过宽(参考)' | '质检未命中'
   detail: string
 }
 
@@ -44,7 +44,7 @@ export default function QaRunner({ mediaRef, weblec }: {
       const dr = design.getBoundingClientRect()
       const sc = dr.width / VIDEO_W
       if (!sc) return []
-      const items: { i: number; type: string; label: string; rect: Rect }[] = []
+      const items: { i: number; type: string; label: string; rect: Rect; overlay: boolean }[] = []
       page.elements.forEach((el, i) => {
         const outer = design.querySelector(`[data-elidx="${i}"]`)?.firstElementChild
         if (!outer) return
@@ -52,7 +52,7 @@ export default function QaRunner({ mediaRef, weblec }: {
         if (!rect || rect.w < 4) return
         const raw = el.label || el.tex ||
           (el.paras ? el.paras.flat().map(r => r.t).join('') : '') || el.name || el.type
-        items.push({ i, type: el.type, label: stripMath(raw).slice(0, 22), rect })
+        items.push({ i, type: el.type, label: stripMath(raw).slice(0, 22), rect, overlay: !!el.overlay })
       })
       const out: QaIssue[] = []
       const textish = (t: string) => t === 'text' || t === 'tex' || t === 'box'
@@ -75,9 +75,11 @@ export default function QaRunner({ mediaRef, weblec }: {
           const oy = Math.min(A.rect.y + A.rect.h, B.rect.y + B.rect.h) - Math.max(A.rect.y, B.rect.y)
           if (ox <= 30 || oy <= 20) continue
           const pair = `「${A.label}」×「${B.label}」相交 ${Math.round(ox)}×${Math.round(oy)}`
-          if ((textish(A.type) && picish(B.type)) || (picish(A.type) && textish(B.type)))
-            out.push({ page: pageId, kind: '文字进图区', detail: pair })
-          else if (textish(A.type) && textish(B.type))
+          if ((textish(A.type) && picish(B.type)) || (picish(A.type) && textish(B.type))) {
+            /** overlay 白名单：author 里显式标记的图上叠加标注，不报 */
+            const txt = textish(A.type) ? A : B
+            if (!txt.overlay) out.push({ page: pageId, kind: '文字进图区', detail: pair })
+          } else if (textish(A.type) && textish(B.type))
             out.push({ page: pageId, kind: '重叠', detail: pair })
         }
       }
@@ -104,13 +106,29 @@ export default function QaRunner({ mediaRef, weblec }: {
     async function run() {
       a!.pause()
       const all: QaIssue[] = []
+      /** 页面指示器（SlideStage 右下角「id/总数 标题」span）是否已翻到目标页 */
+      const pageShown = (pageId: number) => {
+        const marker = `${pageId}/${weblec!.slides.length} `
+        return Array.from(document.querySelectorAll('span')).some(s => s.textContent?.startsWith(marker))
+      }
       for (const p of weblec!.slides) {
         setProgress(`正在检查第 ${p.id} / ${weblec!.slides.length} 页…`)
         const sts = Object.values(p.stepTimes)
         const last = sts.length ? Math.max(...sts) : p.t_start
-        a!.currentTime = Math.min(last + 0.4, p.t_end - 0.05)
-        await sleep(750)
+        /** seek 后等 seeked 事件（音频未缓冲时 3s 兜底），再留 500ms 让 DOM 稳定 */
+        await new Promise<void>(resolve => {
+          const done = () => { clearTimeout(to); a!.removeEventListener('seeked', done); resolve() }
+          const to = setTimeout(done, 3000)
+          a!.addEventListener('seeked', done)
+          a!.currentTime = Math.min(last + 0.4, p.t_end - 0.05)
+        })
+        await sleep(500)
         if (cancelled) return
+        /** 页码指示器没翻过来：再等一次，仍不对就记警告（防止用错页面元数据测量） */
+        if (!pageShown(p.id)) await sleep(800)
+        if (cancelled) return
+        if (!pageShown(p.id))
+          all.push({ page: p.id, kind: '质检未命中', detail: `页面指示器未显示 ${p.id}/${weblec!.slides.length}，本页测量可能不可靠` })
         all.push(...inspectPage(p.id))
       }
       if (!cancelled) { setIssues(all); setProgress('') }

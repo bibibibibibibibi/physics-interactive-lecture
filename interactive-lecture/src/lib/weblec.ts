@@ -22,6 +22,8 @@ export interface WebElement {
   src?: string
   hotspot?: boolean
   important?: boolean
+  /** 故意的图上叠加标注：与图重叠属设计意图，质检跳过 */
+  overlay?: boolean
   qa?: { q: string; a: string }[]
   label?: string
 }
@@ -43,6 +45,8 @@ export interface WebPage extends Omit<Slide, 'bullets'> {
 export interface WebLec extends Omit<Lecture, 'slides'> {
   nav: string
   footer: string
+  /** 可选：构建时间戳（前端给音频/图片做缓存戳） */
+  build_ts?: number
   /** 可选：课程 logo 缩放（默认 1，作者脚本 doc.logoScale 透传） */
   logoScale?: number
   duration: number

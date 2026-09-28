@@ -6,7 +6,7 @@
   audio.mp3    全部页面合并的配音（句间停顿 + 页间 0.8s）
   weblec.json  页面元素、步进揭示时间、句级字幕、问答、激光/红线标记
 """
-import json, os, re, subprocess, sys
+import json, os, re, subprocess, sys, time
 
 FACTORY = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, FACTORY)
@@ -178,6 +178,7 @@ def main():
         "duration": round(total, 3),
         "slides": pages_out,
         "subtitles": subtitles,
+        "build_ts": int(time.time()),  # 构建时间戳：前端给音频/图片做缓存戳，防旧缓存
     }
     for opt in ("logoScale",):  # 可选版式参数透传
         if opt in doc:

@@ -251,7 +251,7 @@ export default function SlideStage({
       <div ref={innerRef} className="group relative"
         style={fs ? { width: 'min(100vw, calc((100vh - 64px) * 16 / 9))' } : undefined}>
         <div className={`relative w-full aspect-video overflow-hidden bg-white ${fs ? '' : 'rounded-xl shadow-2xl'}`}>
-          <audio ref={mediaRef} src={`${COURSE_BASE}audio.mp3`} preload="auto"
+          <audio ref={mediaRef} src={`${COURSE_BASE}audio.mp3${weblec?.build_ts ? `?v=${weblec.build_ts}` : ''}`} preload="auto"
             onTimeUpdate={e => onTimeUpdate((e.target as HTMLAudioElement).currentTime)}
             onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} />
           {/* 1920×1080 设计坐标舞台 */}
@@ -261,7 +261,7 @@ export default function SlideStage({
             color: '#111',
           }}>
             {/* 页面版式：课程 logo / 顶部导航 / 页脚 */}
-            <img src={`${COURSE_BASE}logo.png`} alt="" style={{
+            <img src={`${COURSE_BASE}logo.png${weblec?.build_ts ? `?v=${weblec.build_ts}` : ''}`} alt="" style={{
               position: 'absolute', left: 24, top: 16,
               height: 116 * (weblec?.logoScale ?? 1), width: 270 * (weblec?.logoScale ?? 1),
               objectFit: 'contain',
