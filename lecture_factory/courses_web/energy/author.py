@@ -73,7 +73,7 @@ pages.append({
   text(2, 1000, 130, 900, [[R("$\\varphi=0$", 48)],
                             [R("$x=A\\cos\\omega t$", 48)],
                             [R("$v=-A\\omega\\sin\\omega t$", 48)]],
-       h=230, valign="top"),
+       h=230, valign="top", align="center"),
   box(3, 1080, 400, 480, 175, GREEN_FILL, GREEN_LINE,
       tex_f="E=\\dfrac{1}{2}kA^2", size=48,
       important=True, hotspot=True, label="总能量绿线 E=½kA²",

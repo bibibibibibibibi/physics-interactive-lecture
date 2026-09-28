@@ -1043,7 +1043,10 @@ export function EpX() {
         </g>
       ))}
       <text x={X0} y={Y0 + 58} textAnchor="middle" fontSize="42" fontStyle="italic" fontFamily={SERIF}>O</text>
-      {/* 取点：Ep 箭头（x轴→曲线，标签在箭头右侧）与 Ek 箭头（曲线→E线，标签在箭头左侧） */}
+      {/* 取点：投影辅助线（竖直到 x 轴、水平到 Ep 轴）与横坐标 x 刻度 */}
+      <line x1={X0 + xq} y1={ep(xq)} x2={X0 + xq} y2={Y0} stroke="#C0C" strokeWidth="3" strokeDasharray="10 8" />
+      <line x1={X0} y1={ep(xq)} x2={X0 + xq} y2={ep(xq)} stroke="#C0C" strokeWidth="3" strokeDasharray="10 8" />
+      <text x={X0 + xq} y={Y0 + 58} textAnchor="middle" fontSize="42" fontStyle="italic" fill="#C0C" fontFamily={SERIF}>x</text>
       <circle cx={X0 + xq} cy={ep(xq)} r="11" fill="#E00" stroke="#111" strokeWidth="2.5" />
       <Arrow x1={X0 + xq + 40} y1={Y0 - 12} x2={X0 + xq + 40} y2={ep(xq) + 12} color="#E00" w={5} />
       <text x={X0 + xq + 66} y={(Y0 + ep(xq)) / 2 + 14} fontSize="42" fontStyle="italic" fill="#E00" fontFamily={SERIF}>
@@ -1053,11 +1056,6 @@ export function EpX() {
       <text x={X0 + xq + 14} y={(ep(xq) + Y0 - kE) / 2 + 14} textAnchor="end" fontSize="42" fontStyle="italic" fill="#E00" fontFamily={SERIF}>
         E<tspan dy="12" fontSize="28">k</tspan>
       </text>
-      {/* x 双向箭头（O → 取点） */}
-      <line x1={X0 + 8} y1={Y0 + 100} x2={X0 + xq - 8} y2={Y0 + 100} stroke="#C0C" strokeWidth="4" />
-      <polygon points={`${X0 + xq},${Y0 + 100} ${X0 + xq - 22},${Y0 + 92} ${X0 + xq - 22},${Y0 + 108}`} fill="#C0C" />
-      <polygon points={`${X0},${Y0 + 100} ${X0 + 22},${Y0 + 92} ${X0 + 22},${Y0 + 108}`} fill="#C0C" />
-      <text x={X0 + xq / 2} y={Y0 + 142} textAnchor="middle" fontSize="42" fontStyle="italic" fill="#C0C" fontFamily={SERIF}>x</text>
     </svg>
   )
 }
