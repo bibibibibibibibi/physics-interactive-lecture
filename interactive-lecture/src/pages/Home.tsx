@@ -83,13 +83,13 @@ function Lecture() {
   const subs = useMemo(() => weblec?.subtitles ?? [], [weblec])
 
   /** 网页小人姿态与时间轴、讲稿语义联动。全部纯派生（由 t 与各时刻直接算出），
-      重放/跳页/拖进度条结果一致。语义映射（字幕句剩余 >1.5s 才触发，宁稳勿频）：
+      重放/跳页/拖进度条结果一致。**不做强制轮换**：没有语义触发时保持讲解姿态，
+      非语义动作只有激光指点、页尾收束（思考/点头）。语义映射（字幕句剩余 >1.5s 才触发）：
         摊手 shrug    = 提出问题（句尾问号，或含 为什么/怎么办/如何 等提问词）
         指天 point_up = 得出结论（含 所以/因此/得到/可见/也就是说/结论 等收束词）
         思考 think    = 引导思考（含 想一想/思考/不妨/回忆一下）
-      其余：开场挥手、激光指点跟激光时刻、页尾思考/点头收束、常规 16s 轮换
-      （讲解→点头→讲解→板书，中性讲解占两拍）。
-      emphasis（双手举过头）不进常规轮换，只在特殊节点出现：
+        板书 write    = 推导演算（含 推导/公式/代入/展开/写成/写为/整理）
+      emphasis（双手举过头）只在特殊节点出现：
       整课收尾最后 6 秒，或 important 难点激光刚收笔的 1.8 秒内 */
   const pose: Pose = useMemo(() => {
     if (!curTime || !timeline || !curPage) return 'explain'
@@ -105,9 +105,10 @@ function Lecture() {
       if (/[？?]\s*$/.test(txt) || /为什么|怎么办|如何|能不能|有没有/.test(txt)) return 'shrug'
       if (/所以|因此|于是|得到|可见|也就是说|结论|即得|这就是/.test(txt)) return 'point_up'
       if (/想一想|思考|不妨|回忆一下|考虑/.test(txt)) return 'think'
+      if (/推导|公式|代入|展开|写成|写为|整理/.test(txt)) return 'write'
     }
     if (rel > curTime.duration - 4) return curTime.id % 2 === 0 ? 'think' : 'nod'
-    return (['explain', 'nod', 'explain', 'write'] as const)[Math.floor(rel / 16) % 4]
+    return 'explain'
   }, [t, curTime, curSub, timeline, curPage])
 
   /** 当前激光笔指向的知识点坐标（1920×1080 设计坐标）与要点下标 */
