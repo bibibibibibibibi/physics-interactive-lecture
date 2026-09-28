@@ -264,6 +264,8 @@ export default function SlideStage({
         .wl-in{animation:wl-in .5s ease-out}
         @keyframes ul-in{from{transform:scaleX(0);opacity:0}to{transform:scaleX(1);opacity:1}}
         .anim-ul{animation:ul-in .4s ease-out;transform-origin:left center}
+        @keyframes laser-orbit{to{transform:rotate(360deg)}}
+        .laser-orbit{animation:laser-orbit 1.6s linear infinite;transform-origin:0 0}
       `}</style>
       <div ref={innerRef} className="group relative"
         style={fs ? { width: 'min(100vw, calc((100vh - 64px) * 16 / 9))' } : undefined}>
@@ -335,18 +337,27 @@ export default function SlideStage({
               )
             })}
 
-            {/* 激光笔小光点：横向对准内容真实中心 */}
+            {/* 激光笔小光点：横向对准内容真实中心；同点指 >4s 时与小人「画圈强调」
+                姿态联动（同一 elapsed 信号），光点真的绕目标点画小圈 */}
             {laserTarget && (() => {
               const b = curPage?.bullets[laserTarget.idx]
               const el = b ? curPage?.elements[b.elIdx] : null
               const g = el ? geoOf(b!.elIdx, el) : null
               const lx = g ? g.x + g.w / 2 : laserTarget.x
+              const circling = (laserTarget.elapsed ?? 0) > 4
               return (
                 <div className="absolute pointer-events-none transition-all duration-700 ease-in-out"
                   style={{ left: lx, top: laserTarget.y, transform: 'translate(-50%, -50%)', zIndex: 10 }}>
-                  <div className="relative h-2 w-2">
-                    <span className="absolute inset-0 rounded-full bg-red-500 shadow-[0_0_10px_3px_rgba(239,68,68,0.7)]" />
-                  </div>
+                  {circling ? (
+                    <div className="laser-orbit relative h-0 w-0">
+                      <span className="absolute block h-2 w-2 rounded-full bg-red-500 shadow-[0_0_10px_3px_rgba(239,68,68,0.7)]"
+                        style={{ left: 30, top: -4 }} />
+                    </div>
+                  ) : (
+                    <div className="relative h-2 w-2">
+                      <span className="absolute inset-0 rounded-full bg-red-500 shadow-[0_0_10px_3px_rgba(239,68,68,0.7)]" />
+                    </div>
+                  )}
                 </div>
               )
             })()}
