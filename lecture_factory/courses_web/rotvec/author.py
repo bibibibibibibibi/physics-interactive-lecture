@@ -230,7 +230,7 @@ pages.append({
       important=True, hotspot=True, label="由 v₀<0 定 φ=π/3",
       qa=[{"q": "为什么 φ 取 +π/3 不取 −π/3？",
            "a": "v₀=−Aωsinφ<0 要求 sinφ>0，所以 φ 在第一象限，取 +π/3。"}]),
-  diagram(5, 550, 660, 1000, 380, "rotvec_phi", hotspot=True,
+  diagram(5, 550, 710, 1000, 360, "rotvec_phi", hotspot=True,
           label="初相 φ=π/3 的旋转矢量图",
           qa=[{"q": "图上看为什么投影向负方向走？",
                "a": "矢量逆时针转动，在第一象限时端点投影正从左（+x）向右（平衡位置）移动，即向负方向。"}]),

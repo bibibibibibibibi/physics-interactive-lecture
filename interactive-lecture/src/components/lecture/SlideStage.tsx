@@ -36,28 +36,41 @@ function fmt(s: number) {
   return `${m}:${String(Math.floor(s % 60)).padStart(2, '0')}`
 }
 
-/** 实测元素内容的紧凑包围盒（屏幕像素）。
-    KaTeX display 公式带 1em 外边距，Range 测量会把边距算进去导致虚高，
-    因此含 display 公式时取各 .katex-display 元素自身的边框盒并集；
-    纯文本取所有叶子 span（文字 run）的并集——段落 div 是 100% 宽，直接 Range 会虚宽。 */
+/** 实测元素内容的墨迹边框盒（屏幕 px）。三部分并集：
+    1) 逐文本节点的 Range（必须按文本节点走：「文字+行内公式」混排的 run span
+       因为有子元素（.katex）不是叶子，只看叶子 span 会把裸文本节点丢掉导致虚窄；
+       .katex-mathml 是屏幕阅读器用的隐藏 MathML 源文本，跳过）；
+    2) 无文本但有面积的 span——KaTeX 用 CSS 画的分式线/根号线/上划线；
+    3) 内嵌 SVG（如 \\vec 箭头）。
+    不取 .katex-display 边框盒（带 1em 外边距，用于重叠判定会虚报相撞）。 */
 export function measureContentRect(outer: Element) {
   let l = Infinity, t = Infinity, r = -Infinity, b = -Infinity
   const add = (rc: DOMRect) => {
     l = Math.min(l, rc.left); t = Math.min(t, rc.top)
     r = Math.max(r, rc.right); b = Math.max(b, rc.bottom)
   }
-  const displays = outer.querySelectorAll('.katex-display')
-  if (displays.length) {
-    displays.forEach(d => add(d.getBoundingClientRect()))
-  } else {
-    const leaves = Array.from(outer.querySelectorAll('span'))
-      .filter(s => s.children.length === 0 && (s.textContent ?? '').trim())
-    if (leaves.length) leaves.forEach(s => add(s.getBoundingClientRect()))
-    else {
-      const range = document.createRange()
-      range.selectNodeContents(outer)
-      add(range.getBoundingClientRect())
-    }
+  const walker = document.createTreeWalker(outer, NodeFilter.SHOW_TEXT)
+  let node: Node | null
+  while ((node = walker.nextNode())) {
+    if (!node.textContent || !node.textContent.trim()) continue
+    if ((node as Text).parentElement?.closest('.katex-mathml')) continue
+    const range = document.createRange()
+    range.selectNodeContents(node)
+    const rc = range.getBoundingClientRect()
+    if (rc.width < 0.5 && rc.height < 0.5) continue
+    add(rc)
+  }
+  outer.querySelectorAll('span').forEach(s => {
+    if ((s.textContent ?? '').trim()) return
+    if (s.classList.contains('strut') || s.classList.contains('pstrut')) return  // KaTeX 撑行杆不是墨迹
+    const rc = s.getBoundingClientRect()
+    if (rc.width >= 0.5 && rc.height >= 0.5) add(rc)
+  })
+  outer.querySelectorAll('svg').forEach(g => add(g.getBoundingClientRect()))
+  if (r <= l) {
+    const range = document.createRange()
+    range.selectNodeContents(outer)
+    add(range.getBoundingClientRect())
   }
   if (r <= l) return null
   return { left: l, top: t, right: r, bottom: b, width: r - l, height: b - t }

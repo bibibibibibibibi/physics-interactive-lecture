@@ -79,3 +79,11 @@ html {
     @apply bg-background text-foreground;
   }
 }
+
+/* 课件版式：KaTeX display 公式默认带 1em 上下外边距（44 号时约 90px），
+   会把 box 容器撑高超框、与下一元素相撞（9-1 P8/P9/P15 教训）。
+   课件的 box 已自带 padding，公式外边距收小到 0.25em。
+   幻灯片静态导出共用本样式，同步生效。 */
+.katex-display {
+  margin: 0.25em 0 !important;
+}

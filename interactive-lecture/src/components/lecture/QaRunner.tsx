@@ -44,15 +44,24 @@ export default function QaRunner({ mediaRef, weblec }: {
       const dr = design.getBoundingClientRect()
       const sc = dr.width / VIDEO_W
       if (!sc) return []
-      const items: { i: number; type: string; label: string; rect: Rect; overlay: boolean }[] = []
+      const items: { i: number; type: string; label: string; rect: Rect; crect: Rect | null; overlay: boolean }[] = []
       page.elements.forEach((el, i) => {
         const outer = design.querySelector(`[data-elidx="${i}"]`)?.firstElementChild
         if (!outer) return
-        const rect = contentRect(outer, dr, sc)
+        /** box 的重叠/出界用边框盒（背景/边框本身就是视觉边界，box-box 重叠必须能被抓到）；
+            松紧度仍用内容盒（文字/公式的真实墨迹范围） */
+        const crect = contentRect(outer, dr, sc)
+        let rect: Rect | null
+        if (el.type === 'box') {
+          const br = outer.getBoundingClientRect()
+          rect = { x: (br.left - dr.left) / sc, y: (br.top - dr.top) / sc, w: br.width / sc, h: br.height / sc }
+        } else {
+          rect = crect
+        }
         if (!rect || rect.w < 4) return
         const raw = el.label || el.tex ||
           (el.paras ? el.paras.flat().map(r => r.t).join('') : '') || el.name || el.type
-        items.push({ i, type: el.type, label: stripMath(raw).slice(0, 22), rect, overlay: !!el.overlay })
+        items.push({ i, type: el.type, label: stripMath(raw).slice(0, 22), rect, crect, overlay: !!el.overlay })
       })
       const out: QaIssue[] = []
       const textish = (t: string) => t === 'text' || t === 'tex' || t === 'box'
@@ -74,7 +83,9 @@ export default function QaRunner({ mediaRef, weblec }: {
           const ox = Math.min(A.rect.x + A.rect.w, B.rect.x + B.rect.w) - Math.max(A.rect.x, B.rect.x)
           const oy = Math.min(A.rect.y + A.rect.h, B.rect.y + B.rect.h) - Math.max(A.rect.y, B.rect.y)
           if (ox <= 30 || oy <= 20) continue
-          const pair = `「${A.label}」×「${B.label}」相交 ${Math.round(ox)}×${Math.round(oy)}`
+          const pair = `「${A.label}」×「${B.label}」相交 ${Math.round(ox)}×${Math.round(oy)}` +
+            `（A ${Math.round(A.rect.x)},${Math.round(A.rect.y)} ${Math.round(A.rect.w)}×${Math.round(A.rect.h)}；` +
+            `B ${Math.round(B.rect.x)},${Math.round(B.rect.y)} ${Math.round(B.rect.w)}×${Math.round(B.rect.h)}）`
           if ((textish(A.type) && picish(B.type)) || (picish(A.type) && textish(B.type))) {
             /** overlay 白名单：author 里显式标记的图上叠加标注，不报 */
             const txt = textish(A.type) ? A : B
@@ -86,9 +97,9 @@ export default function QaRunner({ mediaRef, weblec }: {
       /** 框体松紧：内容 vs 声明边框 */
       for (const it of items) {
         const el = page.elements[it.i]
-        if (it.type === 'box') {
-          const padV = ((el.h ?? 90) - it.rect.h) / 2
-          const padH = (el.w - it.rect.w) / 2
+        if (it.type === 'box' && it.crect) {
+          const padV = ((el.h ?? 90) - it.crect.h) / 2
+          const padH = (el.w - it.crect.w) / 2
           if (padV < 3)
             out.push({ page: pageId, kind: '框过紧', detail: `「${it.label}」上下余量 ${padV.toFixed(0)}（建议 ≥10）` })
           else if (padV > 70 || padH > 160)
@@ -123,6 +134,8 @@ export default function QaRunner({ mediaRef, weblec }: {
           a!.currentTime = Math.min(last + 0.4, p.t_end - 0.05)
         })
         await sleep(500)
+        /** KaTeX/中文字体异步加载，未就绪就量会把公式量窄（框过松紧全失真） */
+        await document.fonts.ready
         if (cancelled) return
         /** 页码指示器没翻过来：再等一次，仍不对就记警告（防止用错页面元数据测量） */
         if (!pageShown(p.id)) await sleep(800)
