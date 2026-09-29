@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "build:slides": "vite build --config vite.slides.config.ts"
+    "build:slides": "vite build --config vite.slides.config.ts",
+    "postbuild": "xcopy /Y /Q \"..\\lecture_factory\\assets\\launcher\\*\" \"dist\\\" >nul"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

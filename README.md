@@ -17,7 +17,7 @@
 
 | 目录 | 是什么 | 怎么用 |
 | --- | --- | --- |
-| `interactive-lecture/dist/` | **交互课堂部署版**（已打包，63 MB，含八节课配音与数据） | 整个拷到任意静态服务器即跑；本机演示：`cd dist && python -m http.server 8080` 后开 `http://localhost:8080/`（不能双击 index.html，课件 JSON 需走 http） |
+| `interactive-lecture/dist/` | **交互课堂部署版**（已打包，63 MB，含八节课配音与数据） | **双击 `启动交互课堂.bat` 即自动起本地服务并打开浏览器**（无 Python 时用系统自带 PowerShell 兜底）；也可整个拷到任意静态服务器。不能双击 index.html，课件 JSON 需走 http |
 | `interactive-lecture/slides-export/` | **静态幻灯片**（8 份单文件 HTML，自包含） | 双击即开，可翻页笔逐步揭示、课堂批注，直接拷给学生 |
 | 其余全部（`src/`、`public/`、`lecture_factory/`、各配置文件） | 制作与开发体系 | 只有要做新课／改代码时才需要：`npm install` 后进入开发模式 |
 
@@ -204,7 +204,9 @@ git add -A && git commit -m "课程: …" && git push
 - `interactive-lecture/dist/`：交互课堂部署版，拷到任意静态服务器即跑；
 - `interactive-lecture/slides-export/`：单文件幻灯片，GitHub 上直接下载分发；
 - 注意 `interactive-lecture/.gitignore`（Vite 模板）原有的 `dist` 忽略已移除，
-  新增课程/应用模板时不要再把 `dist`、`slides-export` 加回忽略。
+  新增课程/应用模板时不要再把 `dist`、`slides-export` 加回忽略；
+- 本地启动器（`启动交互课堂.bat` + `serve.ps1`）母版在 `lecture_factory/assets/launcher/`，
+  `npm run build` 后由 `postbuild` 自动拷入 dist，重建不会丢。
 
 ### 第 9 环：交付与课后闭环
 
