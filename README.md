@@ -13,8 +13,21 @@
 
 ---
 
+## 产物说明（clone 下来什么能直接用）
+
+| 目录 | 是什么 | 怎么用 |
+| --- | --- | --- |
+| `interactive-lecture/dist/` | **交互课堂部署版**（已打包，63 MB，含八节课配音与数据） | 整个拷到任意静态服务器即跑；本机演示：`cd dist && python -m http.server 8080` 后开 `http://localhost:8080/`（不能双击 index.html，课件 JSON 需走 http） |
+| `interactive-lecture/slides-export/` | **静态幻灯片**（8 份单文件 HTML，自包含） | 双击即开，可翻页笔逐步揭示、课堂批注，直接拷给学生 |
+| 其余全部（`src/`、`public/`、`lecture_factory/`、各配置文件） | 制作与开发体系 | 只有要做新课／改代码时才需要：`npm install` 后进入开发模式 |
+
+一句话：**用课 = 取 `dist/` 或 `slides-export/`；做课 = 全部**。
+
+---
+
 ## 目录
 
+- [产物说明](#产物说明clone-下来什么能直接用)
 - [快速开始](#快速开始)
 - [目录结构](#目录结构)
 - [做一门新课的完整流程](#做一门新课的完整流程)
