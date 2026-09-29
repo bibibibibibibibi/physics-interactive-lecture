@@ -99,7 +99,7 @@ python lecture_factory/export_slides.py --build --course shm
 
 ## 做一门新课的完整流程
 
-以「9-2 旋转矢量」为例，八环链路（◆=AI 教学判断环节，其余全脚本）：
+以「9-2 旋转矢量」为例，九环链路（◆=AI 教学判断环节，其余全脚本）：
 
 ### 第 1 环：PPT 解析（0 token）
 
@@ -177,7 +177,23 @@ python lecture_factory/export_slides.py --build --course 旋转矢量
 # → interactive-lecture/slides-export/大学物理-<标题>-幻灯片.html
 ```
 
-### 第 8 环：交付与课后闭环
+### 第 8 环：产品同步入库（0 token）
+
+两种最终产品**有意纳入 git 跟踪**，每次课程定稿（含任何版式/讲稿修改）后都要重建并提交，
+保证 GitHub 私有库上的产品永远是最新版：
+
+```bash
+cd interactive-lecture && npm run build && cd ..   # 重建 dist/（交互课堂部署版）
+python lecture_factory/export_slides.py --build    # 重导出 slides-export/（静态幻灯片）
+git add -A && git commit -m "课程: …" && git push
+```
+
+- `interactive-lecture/dist/`：交互课堂部署版，拷到任意静态服务器即跑；
+- `interactive-lecture/slides-export/`：单文件幻灯片，GitHub 上直接下载分发；
+- 注意 `interactive-lecture/.gitignore`（Vite 模板）原有的 `dist` 忽略已移除，
+  新增课程/应用模板时不要再把 `dist`、`slides-export` 加回忽略。
+
+### 第 9 环：交付与课后闭环
 
 交付课堂链接 + 单文件。课上用静态页批注（A 键）→ 课后「导出批注」得到 JSON
 （每笔自动标注圈住了哪个元素）→ 回改数据源 → 重跑第 4、7 环。
@@ -322,9 +338,10 @@ Kimi 桌面端配音插件（TTS 通道，密钥在 Kimi 运行时）、Tectonic
 5. 需要编译方案文档时，安放 Tectonic 到 `tools/tectonic.exe`
    （<https://github.com/tectonic-typesetting/tectonic/releases>）。
 
-**已提交的产物**：四门课的 `public/weblec/<课名>/`（含合并音频）、TTS 缓存、
-姿态图——克隆后无需重新构建即可运行现有课程。
-**未入库**：`node_modules/`、`dist*/`、`待处理/`（旧方案与各课源 PPT 归档）、`.env.local`、`tools/tectonic.exe`。
+**已提交的产物**：各课的 `public/weblec/<课名>/`（含合并音频）、TTS 缓存、
+姿态图，以及**最终产品** `interactive-lecture/dist/`（交互课堂部署版）与
+`interactive-lecture/slides-export/`（8 份单文件幻灯片）——克隆后无需重新构建即可运行、部署、分发。
+**未入库**：`node_modules/`、`dist-slides/`（幻灯片中间构建产物）、`待处理/`（旧方案与各课源 PPT 归档）、`.env.local`、`tools/tectonic.exe`。
 
 ## 版本控制约定
 
