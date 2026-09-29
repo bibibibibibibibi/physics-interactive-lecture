@@ -17,7 +17,7 @@
 
 | 目录 | 是什么 | 怎么用 |
 | --- | --- | --- |
-| `interactive-lecture/dist/` | **交互课堂部署版**（已打包，63 MB，含八节课配音与数据） | **双击 `启动交互课堂.bat` 即自动起本地服务并打开浏览器**（无 Python 时用系统自带 PowerShell 兜底）；也可整个拷到任意静态服务器。不能双击 index.html，课件 JSON 需走 http |
+| `interactive-lecture/dist/` | **交互课堂部署版**（已打包，63 MB，含八节课配音与数据） | **Windows 双击 `启动交互课堂.bat`、Mac 双击 `启动交互课堂.command`**，自动起本地服务并打开浏览器（Mac 首次运行如被拦，到「系统设置 → 隐私与安全性」点允许）；也可整个拷到任意静态服务器。不能双击 index.html，课件 JSON 需走 http |
 | `interactive-lecture/slides-export/` | **静态幻灯片**（8 份单文件 HTML，自包含） | 双击即开，可翻页笔逐步揭示、课堂批注，直接拷给学生 |
 | 其余全部（`src/`、`public/`、`lecture_factory/`、各配置文件） | 制作与开发体系 | 只有要做新课／改代码时才需要：`npm install` 后进入开发模式 |
 
