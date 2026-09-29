@@ -1,10 +1,11 @@
 # 依赖与构建产物
 node_modules/
-interactive-lecture/dist/
 interactive-lecture/dist-slides/
-interactive-lecture/slides-export/
 __pycache__/
 *.pyc
+
+# 注意：交互课堂打包产物 dist/ 与静态幻灯片 slides-export/ 是**有意跟踪**的最终产品，
+# 便于从 GitHub 直接取用部署；只有中间产物 dist-slides/ 忽略。
 
 # 密钥（绝不入库）
 .env
