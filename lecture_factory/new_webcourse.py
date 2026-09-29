@@ -5,9 +5,10 @@
 产物: courses_web/光的干涉/author.py（示例页 + 创作约定）、assets/
 之后: 编辑 author.py → python courses_web/光的干涉/author.py → python build_web.py courses_web/光的干涉
 """
-import os, sys
+import os, shutil, sys
 
 FACTORY = os.path.dirname(os.path.abspath(__file__))
+WEB_PUBLIC = os.path.normpath(os.path.join(FACTORY, "..", "interactive-lecture", "public", "weblec"))
 
 SKELETON = '''# -*- coding: utf-8 -*-
 """%(title)s 网页版幻灯片创作脚本。
@@ -55,7 +56,8 @@ doc = {
   "nav": "章节号　%(title)s",          # 页面顶部导航条文字
   "footer": "第九章　振动",             # 页脚（浮于内容之上，不会被遮）
   # "character": "aqiang",             # 可选：覆盖默认出镜角色
-  # "logoScale": 0.67,                 # 可选：课程 logo 缩放（默认 1；9-1/9-2 均用 0.67）
+  # "logoScale": 0.67,                 # 可选：课程 logo 缩放（默认 1；现有课均用 0.67 左右）
+                                         # logo 由本脚手架自动放入 public/weblec/<课名>/logo.png
   "pages": pages,
 }
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "slides.json")
@@ -76,6 +78,13 @@ def main():
     os.makedirs(os.path.join(cdir, "assets"))
     with open(os.path.join(cdir, "author.py"), "w", encoding="utf-8") as f:
         f.write(SKELETON % {"name": name, "title": name})
+    # 格物 logo：共享资产自动就位（成品图 assets/logo_gewu.png，母版 logo_gewu_master.png）
+    logo_src = os.path.join(FACTORY, "assets", "logo_gewu.png")
+    if os.path.exists(logo_src):
+        pub = os.path.join(WEB_PUBLIC, name)
+        os.makedirs(pub, exist_ok=True)
+        shutil.copy2(logo_src, os.path.join(pub, "logo.png"))
+        print(f"logo 已就位: {os.path.join(pub, 'logo.png')}")
     print(f"已创建 {cdir}")
     print("下一步:")
     print(f"  1. 编辑 courses_web/{name}/author.py（对照 PPT 写页面元素与讲稿）")
