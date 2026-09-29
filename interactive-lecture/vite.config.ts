@@ -89,6 +89,15 @@ export default defineConfig(({ mode }) => {
     server: {
       port: 3000,
     },
+    build: {
+      // 多页构建：交互课堂 index.html + 静态幻灯片 slides.html 都要进 dist
+      rollupOptions: {
+        input: {
+          main: path.resolve(__dirname, 'index.html'),
+          slides: path.resolve(__dirname, 'slides.html'),
+        },
+      },
+    },
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "./src"),
