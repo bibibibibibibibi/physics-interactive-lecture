@@ -136,7 +136,24 @@ def main():
                     bi = next(j for j, b in enumerate(bullets) if b["elIdx"] == i)
                     laser.append({"bullet": bi, "start": round(st, 2),
                                   "end": round(min(st + 5, dur), 2)})
-        pages_out.append({
+
+        # 随堂互动题：at（步进号）→ 绝对秒，与 stepTimes 同一套句内插值
+        interactions = []
+        for it in pg.get("interactions", []):
+            hit = step_at.get(it.get("at"))
+            if hit is None:
+                print(f"× page {n}: 互动题锚点 at={it.get('at')} 在讲稿里找不到 [[{it.get('at')}]] 步进标记")
+                sys.exit(1)
+            si, frac = hit
+            seg = times[si]
+            out = {"t": round(seg["start"] + frac * (seg["end"] - seg["start"]) + t_abs, 3),
+                   "q": it["q"], "answer": it.get("answer")}
+            for opt in ("options", "explain"):
+                if it.get(opt) is not None:
+                    out[opt] = it[opt]
+            interactions.append(out)
+
+        page_out = {
             "id": n, "kind": "page",
             "heading": pg.get("heading") or f"第 {n} 页",
             "narration": re.sub(STEP_MARK, "", pg["narration"]),
@@ -149,7 +166,10 @@ def main():
             "laser": [{"bullet": l["bullet"],
                        "start": round(l["start"] + t_abs, 2),
                        "end": round(l["end"] + t_abs, 2)} for l in laser],
-        })
+        }
+        if interactions:
+            page_out["interactions"] = interactions
+        pages_out.append(page_out)
         for st in times:
             subtitles.append({"slide": n, "start": round(st["start"] + t_abs, 3),
                               "end": round(st["end"] + t_abs, 3), "text": st["text"]})
@@ -180,7 +200,7 @@ def main():
         "subtitles": subtitles,
         "build_ts": int(time.time()),  # 构建时间戳：前端给音频/图片做缓存戳，防旧缓存
     }
-    for opt in ("logoScale",):  # 可选版式参数透传
+    for opt in ("logoScale", "theme", "sections"):  # 可选版式参数透传
         if opt in doc:
             weblec[opt] = doc[opt]
     with open(os.path.join(out_dir, "weblec.json"), "w", encoding="utf-8") as f:

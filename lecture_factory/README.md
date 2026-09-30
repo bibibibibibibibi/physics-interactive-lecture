@@ -98,9 +98,18 @@ HTML/SVG/KaTeX 实时渲染，视觉上对齐老师真实 PPT 的版式与点击
    python new_webcourse.py 光的干涉
    ```
 
-2. 编辑 `courses_web/光的干涉/author.py`：对照 PPT 逐页写 `elements`（辅助函数
-   `text/tex/box/diagram/img/table/R` 来自共享库 `web_author.py`）与讲稿。
-3. 生成 + 构建：
+2. **模拟分流（分析 PPT 时判断，一次性适配）**：若 PPT 出现「点击进入线上平台」
+   类链接、模拟界面截图、或嵌入的演示视频（`ppt_media` 里的 .mov/.mp4）——说明本课
+   有可嵌入的网页模拟，先向老师索取模拟原始 HTML 文件，然后按下面「嵌入交互模拟
+   （html 元素 + msgs 指令）」一节完成三件适配：本地化（vendor/ 零 CDN）→ 按页做
+   精简档（`?embed=1` / `?embed=chart`，一个模拟可服务多页）→ 需要讲稿遥控时加
+   postMessage 演示接口。没有模拟线索的课跳过本步。
+
+3. 编辑 `courses_web/光的干涉/author.py`：对照 PPT 逐页写 `elements`（辅助函数
+   `text/tex/box/diagram/img/table/html/R` 来自共享库 `web_author.py`）与讲稿。
+   有模拟的页用 `html()` 嵌入替代截图，讲稿按「揭示背景 → 演示步触发（msgs 锚步）
+   → 描述现象 → 引导动手」的节奏写。
+4. 生成 + 构建：
 
    ```
    python courses_web/光的干涉/author.py
@@ -115,7 +124,7 @@ HTML/SVG/KaTeX 实时渲染，视觉上对齐老师真实 PPT 的版式与点击
 | 页面规格 + 讲稿 | `courses_web/shm/author.py`：16 页，每页 `elements`（1920×1080 设计坐标，元素带 `step` 步序对应 PPT 点击动画）+ `narration`（讲稿，用 `[[n]]` 标记第 n 步揭示时机） |
 | 构建 | `build_web.py courses_web/shm`：逐句 TTS（缓存 `audio/page<n>.mp3` + `page<n>.times.json`，改讲稿后删这两个文件重跑；重配时自动清掉该页旧句音频，不会按旧下标错配）→ 合并 `audio.mp3` + 输出 `weblec.json`（含 `stepTimes` 步进时刻表）到 `../interactive-lecture/public/weblec/<课名>/`（课名=课程目录名）；末尾自动跑 `validate_weblec.py` 规范校验，有 ERROR 非零退出 |
 | 校验 | `validate_weblec.py <课名>`：结构/步进时刻/红线规则/热点问答/激光/字幕/媒体 0-token 校验（独立可用，构建时已自动挂接） |
-| 多课并存 | 课件按 `public/weblec/<课名>/` 分目录；URL 带 `?course=<课名>` 加载对应课程（`/?course=shm` 交互课堂、`/slides.html?course=shm` 静态页）；根路径无参数显示课程列表，清单在 `public/weblec/courses.json`（新课手动加一行） |
+| 多课并存 | 课件按 `public/weblec/<课名>/` 分目录；URL 带 `?course=<课名>` 加载对应课程（`/?course=shm` 交互课堂、`/slides.html?course=shm` 静态页）；根路径无参数显示课程列表，清单在 `public/weblec/courses.json`（第九章，新课手动加一行）。专题系列（sp1…）与第九章分开，清单单列在 `public/weblec/courses_special.json`，目录入口 `/?menu=special`（第九章菜单头部有「专题系列 →」链接；总目录的入口安排后续再定） |
 | 舞台引擎 | `src/components/lecture/SlideStage.tsx`：音频时钟驱动步进揭示、激光点、红线、热点；授课键盘控制（空格播放/暂停、←→ 暂停时按步进翻/播放时按页跳、B 黑屏、F 全屏，兼容翻页笔） |
 | 图示库 | `src/components/lecture/diagrams.tsx`：SVG 图示；`spring_anim` 等动画由主时钟 `t` 推导相位（4.5s 一个周期），隐藏标签页/倍速/拖进度都不乱 |
 | 视觉基准 | 各课源 PPT 与分析产物（逐页导出图、`ppt_structure.json` 动画步序、`ppt_geometry.json` 形状几何）已归档至 `待处理/ppt9x源文件与分析/`，需要时翻归档 |
@@ -140,6 +149,135 @@ HTML/SVG/KaTeX 实时渲染，视觉上对齐老师真实 PPT 的版式与点击
 讲稿断句约定：同一句里的多个 `[[n]]` 标记会共享同一个配音时刻导致步进重合，
 要把不同步骤拆到不同句子里。`weblec.json` 与 `lecture.json` 结构同形
 （slides/subtitles/bullets），右栏、助教、小人等组件零改动复用。
+
+### 随堂互动答题卡（interactions）
+
+page 字典加可选键 `"interactions"`，用 `web_author.py` 的 `quiz()` 辅助函数写题：
+
+```python
+"interactions": [
+  quiz(2, "角动量守恒的条件是什么？",               # at=讲稿里的 [[2]] 步进标记
+       options=["合外力为零", "合外力矩为零", "动量守恒"],  # 可选；不给则是开放题
+       answer=1,                                     # 选择题=正确项下标；开放题=参考解答文字
+       explain="……可选解析……"),
+]
+```
+
+行为：构建时 `at`（步进号）按与 stepTimes 相同的句内插值换算成绝对秒 `t` 写进
+weblec.json（锚点找不到对应 `[[n]]` 标记时报错并指出页号与 at）；学生端播放到该时刻
+自动暂停弹出答题卡，选择题点选项后标对/错并显示解析，开放题点「查看参考答案」，
+作答后点「继续播放」恢复。已作答的题 seek 回退再放到同一点不重复弹；拖进度条一次
+跨过多道未答题时只弹最后一道，前面的视为跳过。校验器会检查 t 在页面区间内、
+选择题 answer 下标合法、q 非空。旧课件无此字段，完全不受影响。
+
+### 嵌入交互模拟（html 元素 + msgs 指令）
+
+适用于有配套网页交互模拟的课程（Three.js 3D、Canvas 2D 或任何自包含 HTML 应用）；
+没有模拟的课不需要。完整参考实现：sp1 的 `sim_turntable.html` + p4「转台演示」页。
+
+#### 第 1 步：准备模拟文件（离线自包含）
+
+- 复制为 `public/weblec/<课名>/sim_<名字>.html`（ascii 文件名），同步存档
+  `courses_web/<课名>/assets/`
+- **依赖全部本地化**到 `public/weblec/<课名>/vendor/`，importmap/script 一律相对路径，
+  不允许残留 CDN 引用（grep 全文确认无 `http://`/`https://` 外链）：
+  - three.js：`three.module.js` + 实际用到的 addons（如 OrbitControls），核对 addons
+    无二级依赖
+  - KaTeX：直接复用 `interactive-lecture/node_modules/katex/` 的 `katex.min.css` /
+    `katex.min.js` / `contrib/auto-render.min.js` + `fonts/` 里的 woff2（只拷 woff2 即可，
+    浏览器优先命中）
+
+#### 第 2 步（推荐）：加 embed 精简模式
+
+模拟通常功能很多，课件页只展示本页教学需要的部分。给模拟加 `?embed=1` 参数
+（`<body>` 后内联脚本检测并加 class，CSS `display:none` 隐藏）：顶部栏、与本页无关的
+滑块/卡片/图表一律隐藏；只留 3D 场景 + 本页要演示的控件（如臂长滑块）+ 关键读数；
+留存控件字号放大（面板 ≥16px、滑块加高）。不带参数保持完整版，别处可用。
+若某页教学重点是模拟里的某张图（如 p8 的 ω–I 双曲线），可加第二档
+（sp1 用 `?embed=chart`）：在 embed=1 基础上把该图放出来并放大（图表 canvas 高度、
+坐标字号都要提），同页讲稿引用的界面元素必须在该档位里还在。sp1 现有三档：
+`?embed=1` 极简（p4）、`?embed=chart` 加双曲线图（p8）、`?embed=record` 加实验
+记录曲线——L/ω/K 随臂长**现场实时绘制**（demo 触发时先清轨迹再画，颜色与讲稿
+口径一致，图例/坐标字号 ≥12px，p10 用）。
+
+#### 第 3 步（可选）：加 postMessage 演示接口
+
+让讲稿能「遥控」模拟自动演示：
+
+```js
+window.addEventListener('message', e => {
+  if (e.data?.type === 'demo') runAutoDemo()   // 自动演示：用动画驱动参数变化
+  if (e.data?.type === 'reset') reset()        // 恢复初始
+})
+```
+
+要点：演示动画必须走与手动拖滑块**相同的参数更新路径**（物理/读数/3D 全部联动）；
+演示要可重复触发（学生拖回进度条重看时会再收到一次 demo）；演示时长（约 6~8s）与
+讲稿对应句子的时长匹配；可加 `?autodemo=1` 自测参数（加载后自动演一遍，便于脱机验证）。
+
+#### 第 4 步：在 author.py 里嵌入
+
+```python
+html(1, 60, 185, 1800, 815, "sim_turntable.html?embed=1", msgs={2: "demo"})
+```
+
+- 第 1 个参数是揭示步（对应讲稿 `[[1]]`）；`msgs={步进号: 消息}`：该步揭示时播放器
+  自动向 iframe 发 `{type: 消息}`（seek 回退后再播到该步会重发，配合模拟侧重复演示）
+- 尺寸建议 ≥1200×675；要占满版面时用 1800×815 左右（让开页眉 y≤170、页脚 y≈1010）
+- **不要给 html 元素加 hotspot**（热点按钮会挡住 iframe 内部交互）；iframe 内拖拽
+  不会触发播放器手势
+- 讲稿配合节奏：揭示步交代背景 → 演示步说「注意看，我现在……」触发演示 →
+  紧接一两句描述现象 → 引导学生「暂停下来亲手拖一拖」；措辞用「模拟/演示」不用「截图」
+- 改讲稿后删对应页 `audio/page<n>.mp3` 和 `page<n>.times.json` 再重建
+
+### 嵌入短视频（video 元素）
+
+`video(step, x, y, w, h, src)` 在页面里嵌入短视频（实拍/CG 片段）：静音、自动循环、
+随 step 揭示即播（muted 无浏览器自动播放限制），画面 `objectFit: cover` 充满 w×h 框
+（超宽比例如 21:9 会裁两侧，slot 太扁就按视频比例微调框）。适合引入页/演示页替代静态图
+营造现场感（sp1 p3：苏翊鸣大跳台 + 空间站在轨 CG）。视频文件放 `public/weblec/<课名>/`
+并存档 `courses_web/<课名>/assets/`；可以挂 hotspot（视频无内部交互，不冲突）。
+校验器检查文件存在（query 会截断）。与 html 模拟的分工：要交互用 html，只要动起来用 video。
+
+#### 第 5 步：构建与验证
+
+- `python courses_web/<课名>/author.py` → `python build_web.py courses_web/<课名>`
+  （校验器检查：src 文件存在、尺寸 ≥600×340、msgs 步号在本页 step 集合内）
+- 浏览器实测三件事：embed 精简界面正确；播到演示步时模拟真的自动演示（抓两帧对比
+  读数/画面）；拖回进度条重播会再演一遍
+- 回归：`validate_weblec.py shm` 确认第九章不受影响
+
+### 专题风格主题（theme）
+
+author.py 的 doc 加 `"theme": "special"`，构建透传到 weblec.json，前端按主题切换
+整页版式（`src/lib/theme.ts` 的 `THEMES` 表，`resolveTheme(weblec.theme)` 缺省/未知
+一律回落 default，第九章等旧课件零变化）。校验器会拒绝未知 theme 名。
+
+- **default**：现有白底样式——logo 左上、nav 右上（宋体蓝字 + 渐变条）、底部渐变细线、
+  footer/页码带白色 pill
+- **special**（专题系列，对齐专题 PPT）：淡蓝白渐变背景
+  （`#EAF0F8→#F6F9FD→#FFFFFF`）；logo 移到右上；**不渲染通栏页眉字**——小节标题
+  由各页元素顶格自绘（黑蓝粗体无衬线 `#16283F` 约 44px + 96×6 深蓝 accent 短条
+  `#244B88` + 通栏细线 `#D8E0EA`，sp1 里封装为 `sp_header(num, title)`，step 0 常驻，
+  封面/目录页不加）；footer 改小号灰蓝 `#556B8D` + 半透明淡蓝衬底；页码改小号深色
+  `#273444` 无 pill；不渲染底部渐变细线
+
+适用场景：专题系列课件（sp1 等）与第九章正课视觉区分。sp1 用法参考
+`courses_web/sp1/author.py` 的 doc。
+
+> **专题系列（sp 课）的完整制作经验**见 [专题课件制作经验.md](专题课件制作经验.md)：
+> 教学设计（推导链/首尾呼应/术语自洽/互动题选型/时长配比）、special 主题约定、
+> 模拟与视频嵌入、音频缓存迁移等 sp1 定稿经验。**不适用于第九章这类常规课堂**——
+> 常规课沿用本 README 主流程与 default 主题。
+
+### 大段导航（sections）
+
+doc 加可选 `"sections": [{"title": "段名", "page": 该段第一页的页 id}, ...]`
+（构建透传；校验器要求 page 存在且严格递增）。slides 带 sections 时播放器导航按段走：
+进度条在段起点画刻度、右下角指示按钮显示当前段（如「02 · 角动量守恒定律」，
+第一段起点之前的页回落为逐页「页/总数 短名」）、章节导航弹层按段列出、点段名跳
+该段第一页。无 sections 的旧课件行为完全不变。sp1 示例：封面/目录/引入为开场，
+01~04 段分别从「转台演示」「守恒定律」「核心规律」「猫翻身」页开始。
 
 ### 导出纯幻灯片单文件（无配音/小人/侧栏，双击即开）
 

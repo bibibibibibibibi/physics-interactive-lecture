@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Element } from '@/components/lecture/SlideStage'
 import { stripMath, VIDEO_H, VIDEO_W } from '@/lib/lecture'
+import { resolveTheme } from '@/lib/theme'
 import type { WebElement, WebLec, WebPage } from '@/lib/weblec'
 import { COURSE_BASE, COURSE_ID, DEFAULT_COURSE } from '@/lib/course'
 
@@ -323,6 +324,8 @@ export default function SlidesOnly() {
   if (!weblec || !page) {
     return <div className="flex h-screen items-center justify-center bg-white text-slate-400">加载中…</div>
   }
+  /** 页面版式主题：缺省/未知回落 default（与交互课堂同一套 token） */
+  const th = resolveTheme(weblec.theme)
 
   return (
     <div
@@ -349,39 +352,42 @@ export default function SlidesOnly() {
           style={{
             position: 'absolute', width: VIDEO_W, height: VIDEO_H,
             transform: `scale(${scale})`, transformOrigin: 'top left',
-            color: '#111', background: '#fff', overflow: 'hidden',
+            color: '#111', background: th.background, overflow: 'hidden',
           }}
           onClick={() => !annotate && nav(1)}
         >
-          {/* 页面版式：课程 logo / 顶部导航 / 页脚 / 页码（与交互课堂一致） */}
+          {/* 页面版式：课程 logo / 顶部导航 / 页脚 / 页码（与交互课堂一致，按课程 theme 渲染） */}
           <img src={logoSrc} alt="" style={{
-            position: 'absolute', left: 24, top: 16,
+            ...th.logoStyle,
             height: 116 * (weblec.logoScale ?? 1), width: 270 * (weblec.logoScale ?? 1),
             objectFit: 'contain',
           }} />
-          <div style={{ position: 'absolute', right: 70, top: 26, textAlign: 'right' }}>
-            <span style={{ fontSize: 40, color: '#0000CD', fontFamily: 'SimSun, serif' }}>{weblec.nav}</span>
-            <div style={{ height: 5, marginTop: 10, background: 'linear-gradient(90deg, transparent, #0000CD 30%)' }} />
-          </div>
-          <div style={{
-            position: 'absolute', left: 700, right: 700, bottom: 18, height: 3,
-            background: 'linear-gradient(90deg, transparent, #0000CD, transparent)',
-          }} />
+          {th.navStyle && (
+            <div style={th.navStyle}>
+              <span style={th.navText}>{weblec.nav}</span>
+              <div style={th.navBar} />
+            </div>
+          )}
+          {th.headerRule && <div style={th.headerRule} />}
+          {th.bottomLine && (
+            <div style={{
+              position: 'absolute', left: 700, right: 700, bottom: 18, height: 3,
+              background: 'linear-gradient(90deg, transparent, #0000CD, transparent)',
+            }} />
+          )}
           <div style={{
             position: 'absolute', left: 0, right: 0, bottom: 26, textAlign: 'center',
-            fontSize: 26, color: '#0000CD', fontFamily: 'SimSun, serif',
-            zIndex: 20, pointerEvents: 'none',
+            zIndex: 20, pointerEvents: 'none', ...th.footerText,
           }}>
-            <span style={{
-              background: 'rgba(255,255,255,0.92)', padding: '2px 26px', borderRadius: 14,
-            }}>{weblec.footer}</span>
+            <span style={th.footerPill ?? undefined}>{weblec.footer}</span>
           </div>
-          <div style={{
-            position: 'absolute', right: 40, bottom: 22,
-            fontSize: 26, color: '#0000CD', fontFamily: 'SimSun, serif',
-            zIndex: 20, pointerEvents: 'none',
-            background: 'rgba(255,255,255,0.92)', padding: '2px 12px', borderRadius: 10,
-          }}>{page.id}</div>
+          {!(th.pageNumSkipFirst && page.id === 1) && (
+            <div style={{
+              position: 'absolute', right: 40, bottom: 22,
+              zIndex: 20, pointerEvents: 'none',
+              ...th.pageNumText, ...(th.pageNumPill ?? {}),
+            }}>{page.id}</div>
+          )}
 
           {/* 页面元素：按步揭示（与交互课堂同一渲染组件，t 驱动动画图示） */}
           {page.elements.map((el, i) =>

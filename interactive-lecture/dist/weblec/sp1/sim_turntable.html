@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>角动量守恒 · 转台收臂实验 | 3D 交互模拟 v3.1（含实验记录）</title>
+
+<!-- KaTeX（defer，与 three 模块加载互不阻塞） -->
+<link rel="stylesheet" href="vendor/katex.min.css">
+<script defer src="vendor/katex.min.js"></script>
+<script defer src="vendor/katex-contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}],throwOnError:false});"></script>
+
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/addons/"}}</script>
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --accent: #1d4ed8; --line: #e5e7eb; --ink: #1f2937; --sub: #6b7280; --faint: #9ca3af;
+    --serif: "Songti SC", "STSong", "SimSun", serif;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    --panelw: 306px;
+  }
+  html, body { width: 100%; height: 100%; overflow: hidden; background: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    color: var(--ink); }
+  .mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+  #scene3d { position: fixed; inset: 0; z-index: 0; display: block; touch-action: none; }
+
+  .card { background: rgba(255,255,255,.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 8px 30px rgba(0,0,0,.06); }
+
+  /* ---- 顶部标题条 ---- */
+  #topbar { position: fixed; top: 0; left: 0; right: 0; height: 52px; z-index: 10;
+    display: flex; align-items: center; justify-content: space-between; padding: 0 20px;
+    background: rgba(255,255,255,.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line); pointer-events: none; }
+  #topbar .tl { display: flex; align-items: baseline; gap: 12px; }
+  #topbar h1 { font-family: var(--serif); font-size: 20px; font-weight: 700; letter-spacing: .08em; color: #111827; }
+  #topbar .sub { font-size: 12px; color: var(--sub); }
+  #topbar .sub .mono { color: var(--accent); }
+  #topbar .tag { font-size: 11px; color: var(--sub); letter-spacing: .1em; white-space: nowrap;
+    border: 1px solid var(--line); background: rgba(255,255,255,.8); border-radius: 999px; padding: 3px 11px;
+    margin-right: 48px; }   /* 让位于右上角「数据」折叠按钮 */
+
+  /* ---- 折叠按钮（左面板 ‹/› · 右上数据卡） ---- */
+  #panelToggle, #dataToggle { position: fixed; top: 10px; z-index: 30; width: 36px; height: 36px;
+    border: 1px solid var(--line); border-radius: 50%; background: #fff; color: #374151;
+    font-size: 16px; line-height: 1; font-family: inherit; cursor: pointer; padding: 0;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,.10); -webkit-tap-highlight-color: transparent; user-select: none;
+    transition: left .28s ease, color .15s, border-color .15s; }
+  #panelToggle { left: calc(var(--panelw) + 22px); }   /* 打开时贴面板右缘（面板 left 14px + 8px 间距） */
+  #dataToggle { right: 10px; font-size: 11px; letter-spacing: .1em; }
+  #panelToggle:hover, #dataToggle:hover { color: var(--accent); border-color: var(--accent); }
+  #panelToggle:focus-visible, #dataToggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  body.pclosed #panelToggle { left: 10px; }            /* 收起时贴屏幕左缘 */
+  body.pclosed #topbar { padding-left: 54px; }         /* 收起时标题给按钮让位 */
+
+  /* ---- 左列：核心规律卡 + 控制面板 + 公式条 ---- */
+  #panelwrap { position: fixed; left: 14px; top: 64px; bottom: 14px; width: var(--panelw); z-index: 10;
+    display: flex; flex-direction: column; gap: 8px; transition: transform .28s ease; }
+  #panelwrap.collapsed { transform: translateX(-110%); }
+
+  #coreCard { padding: 10px 14px 11px; flex: none; }
+  #coreCard .ctitle { display: flex; align-items: center; gap: 7px; font-family: var(--serif);
+    font-size: 13.5px; font-weight: 700; color: #111827; letter-spacing: .14em; }
+  #coreCard .ctitle::before { content: ''; width: 7px; height: 7px; border-radius: 2px; background: var(--accent); flex: none; }
+  #coreCard .cmain { text-align: center; padding-top: 3px; }
+  #coreCard .cmain .katex { font-size: 15.5px; }
+  #coreCard .cdiv { border-top: 1px dashed var(--line); margin: 6px 0 5px; }
+  #coreCard .crows { text-align: center; overflow-x: auto; padding-bottom: 2px; }
+  #coreCard .crows .katex { font-size: 12.5px; }
+  #coreCard .canalogy { font-size: 11px; color: var(--sub); text-align: center; line-height: 1.8; }
+  #coreCard .canalogy .katex { font-size: 11.5px; color: #374151; }
+  #coreCard .katex-display { margin: 5px 0; }
+
+  #panel { flex: 1; min-height: 0; overflow-y: auto; padding: 12px 14px; font-size: 12px; }
+  #panel::-webkit-scrollbar { width: 6px; }
+  #panel::-webkit-scrollbar-thumb { background: #dfe3e8; border-radius: 3px; }
+
+  /* 面板底部公式条（KaTeX 行内，auto-render 渲染） */
+  #fbar { flex: none; padding: 8px 10px; text-align: center; color: #374151; line-height: 2; }
+  #fbar .katex { font-size: 13px; }
+  #fbar .fsep { color: var(--faint); margin: 0 8px; }
+
+  .grp { font-size: 10.5px; color: var(--faint); letter-spacing: .16em; margin: 13px 0 5px;
+    display: flex; align-items: center; gap: 8px; }
+  .grp::after { content: ''; flex: 1; border-top: 1px solid #f1f2f4; }
+  .grp:first-child { margin-top: 0; }
+  .grp.off { opacity: .45; }
+
+  .mode { display: flex; flex-direction: column; gap: 5px; }
+  .mode label { display: flex; align-items: center; gap: 6px; border: 1px solid var(--line);
+    border-radius: 6px; padding: 6px 9px; cursor: pointer; color: #4b5563; transition: all .15s; font-size: 11.5px; }
+  .mode label.on { border-color: var(--accent); color: var(--accent); background: #eff6ff; }
+  .mode input { accent-color: var(--accent); }
+
+  .ctl { margin: 8px 0; }
+  .ctl .row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px; }
+  .ctl label { color: #374151; font-size: 12px; }
+  .val { font-family: var(--mono); font-variant-numeric: tabular-nums; font-size: 11px;
+    color: var(--accent); background: #f3f4f6; border-radius: 4px; padding: 1px 6px; white-space: nowrap; }
+
+  /* 滑块：4px 轨道 + 填充渐变（--p 由 JS 更新）+ 14px 白色圆头 */
+  input[type="range"] { -webkit-appearance: none; appearance: none; width: 100%; height: 16px;
+    background: transparent; cursor: pointer; --p: 50%; border-radius: 8px; }
+  input[type="range"]::-webkit-slider-runnable-track { height: 4px; border-radius: 2px;
+    background: linear-gradient(to right, var(--accent) var(--p), #e5e7eb var(--p)); }
+  input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 14px; height: 14px; margin-top: -5px;
+    border-radius: 50%; background: #fff; border: 2px solid var(--accent); box-shadow: 0 1px 4px rgba(0,0,0,.18); }
+  input[type="range"]::-moz-range-track { height: 4px; border-radius: 2px;
+    background: linear-gradient(to right, var(--accent) var(--p), #e5e7eb var(--p)); }
+  input[type="range"]::-moz-range-thumb { width: 10px; height: 10px; border-radius: 50%; background: #fff;
+    border: 2px solid var(--accent); box-shadow: 0 1px 4px rgba(0,0,0,.18); }
+  input[type="range"]:focus { outline: none; }
+  input[type="range"]:focus-visible { box-shadow: 0 0 0 3px rgba(29,78,216,.16); }
+  input[type="range"]:disabled { opacity: .45; cursor: not-allowed; }
+
+  .btns { display: flex; gap: 6px; margin-top: 10px; }
+  .btns button { flex: 1; padding: 6px 0; font-size: 12px; background: #fff; color: #374151;
+    border: 1px solid #d1d5db; border-radius: 6px; cursor: pointer; transition: all .15s; }
+  .btns button:hover { border-color: var(--accent); color: var(--accent); }
+  .btns button.on { background: var(--accent); color: #fff; border-color: var(--accent);
+    box-shadow: 0 2px 8px rgba(29,78,216,.25); }
+
+  .chartbox { border: 1px solid #f1f2f4; border-radius: 6px; background: #fcfcfd; overflow: hidden; }
+  #chart { display: block; width: 100%; height: 150px; }
+  #expPlot { display: block; width: 100%; height: 136px; border: 1px solid #f1f2f4; border-radius: 6px; background: #fcfcfd; }
+  body.expfull #scene3d, body.expfull #topbar, body.expfull #datawrap, body.expfull #fbar,
+  body.expfull #panelToggle, body.expfull #dataToggle, body.expfull #explain,
+  body.expfull #panel > *:not(.expsec) { display: none !important; }
+  body.expfull #panelwrap { left: 50%; top: 50%; bottom: auto; transform: translate(-50%, -50%);
+    width: min(1180px, 94vw); max-height: none; }
+  body.expfull #panel { overflow: visible; padding: 26px 34px 22px; }
+  body.expfull .expsec .grp { font-size: 17px; letter-spacing: .06em; margin-bottom: 12px; }
+  body.expfull .expsec .expTag { font-size: 13px; padding: 2px 12px; }
+  body.expfull .expsec .expRow { max-width: 420px; }
+  body.expfull .expsec .expRow button { font-size: 15px; padding: 11px 0; border-radius: 10px; }
+  body.expfull .expsec .hint { font-size: 14px; line-height: 1.7; margin: 12px 0; max-width: 900px; }
+  body.expfull .expsec #expPlot { height: 400px; border-color: #e5e7eb; }
+  body.expfull .expsec .expConc { font-size: 16px; line-height: 1.75; padding: 14px 18px; margin-top: 14px; border-radius: 10px; }
+  .expRow { display: flex; gap: 6px; margin-top: 2px; }
+  .expRow button { flex: 1; padding: 6px 0; font-size: 11.5px; background: #fff; color: #374151;
+    border: 1px solid var(--line); border-radius: 8px; cursor: pointer; font-family: inherit; }
+  .expRow button:hover { border-color: var(--accent); color: var(--accent); }
+  .expRow button.acc { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .expRow button.acc:hover { background: #1e40af; }
+  .hint { font-size: 10.5px; color: #9ca3af; line-height: 1.55; margin: 6px 0 6px; }
+  .expConc { font-size: 11px; color: #374151; line-height: 1.6; margin-top: 7px; padding: 6px 9px;
+    border-radius: 6px; background: #f8fafc; border: 1px solid #eef0f3; }
+  .expConc b { color: var(--accent); font-family: var(--mono); }
+  .expConc .dim { color: #9ca3af; }
+  .expTag { display: inline-block; font-size: 9.5px; color: var(--accent); background: #eff6ff;
+    border: 1px solid #dbe6fd; border-radius: 999px; padding: 0 7px; margin-left: 5px; letter-spacing: .04em; }
+
+  .checks { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 8px; margin-top: 2px; }
+  .checks label { display: flex; align-items: center; gap: 5px; color: #4b5563; cursor: pointer; }
+  .checks input { accent-color: var(--accent); }
+
+  #foot { margin-top: 12px; padding-top: 8px; border-top: 1px dashed var(--line);
+    font-size: 10.5px; color: var(--faint); line-height: 1.75; }
+
+  /* ---- 右列：数据卡 + 两本账 ---- */
+  #datawrap { position: fixed; right: 14px; top: 64px; width: 236px; z-index: 10;
+    display: flex; flex-direction: column; gap: 8px; pointer-events: none; transition: transform .28s ease; }
+  #datawrap.collapsed { transform: translateX(110%); }
+  #data { padding: 10px 14px; }
+  .drow { display: flex; justify-content: space-between; align-items: baseline; padding: 3px 0; }
+  .drow .k { color: var(--sub); }
+  .drow .k sub { font-size: 9px; }
+  .drow .v { font-family: var(--mono); font-variant-numeric: tabular-nums;
+    font-size: clamp(10px, 2.6vw, 12.5px); color: #111827; }
+  .drow .v small { color: var(--faint); font-size: 10px; margin-left: 3px; }
+  #badge { display: inline-block; border: 1px solid var(--accent); background: #fff; color: var(--accent);
+    font-size: 10px; line-height: 1; border-radius: 999px; padding: 2px 7px; margin-left: 6px;
+    vertical-align: 1px; letter-spacing: .12em; }
+  #legend { border-top: 1px solid #f0f1f3; margin-top: 6px; padding-top: 6px;
+    font-size: 10.5px; color: var(--faint); display: flex; gap: 10px; justify-content: center; }
+  #legend .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 3px; }
+
+  #ledger { padding: 9px 12px; font-size: 11px; color: #4b5563; line-height: 1.8;
+    background: rgba(249,250,251,.94); }
+  #ledger .lt { font-family: var(--serif); font-weight: 700; color: #111827; font-size: 11.5px;
+    letter-spacing: .1em; margin-bottom: 2px; }
+  #ledger .hl { color: var(--accent); }
+
+  /* ---- 底部解释条 ---- */
+  #explain { position: fixed; left: 50%; bottom: 14px; transform: translateX(-50%); z-index: 10;
+    max-width: min(640px, calc(100vw - 680px)); min-width: 280px;
+    background: rgba(255,255,255,.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 8px 30px rgba(0,0,0,.06);
+    padding: 8px 16px; font-size: 12.5px; color: #374151; pointer-events: none; text-align: center; }
+  #explain::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent); margin-right: 8px; vertical-align: 2px; }
+
+  /* ---- 嵌入模式（?embed=1）：只留 3D 场景 + 臂长 r 滑块 + 关键读数（ω/转速/L 守恒），
+     顶部栏/核心规律卡/其余滑块/数据卡余项/公式条等一律 display:none，留存控件放大 ---- */
+  body.embed #topbar, body.embed #panelToggle, body.embed #dataToggle,
+  body.embed #coreCard, body.embed #fbar, body.embed #explain,
+  body.embed #ledger, body.embed .embed-hide { display: none !important; }
+  body.embed #panelwrap { left: 14px; top: auto; bottom: 14px; width: 360px; }
+  body.embed #panel { flex: none; overflow: visible; padding: 14px 16px; font-size: 16px; }
+  body.embed .ctl { margin: 4px 0; }
+  body.embed .ctl label { font-size: 16px; }
+  body.embed .val { font-size: 15px; padding: 2px 8px; }
+  body.embed .btns button { font-size: 15px; padding: 9px 0; }
+  body.embed input[type="range"] { height: 26px; }
+  body.embed input[type="range"]::-webkit-slider-runnable-track { height: 6px; border-radius: 3px; }
+  body.embed input[type="range"]::-webkit-slider-thumb { width: 22px; height: 22px; margin-top: -8px; }
+  body.embed input[type="range"]::-moz-range-track { height: 6px; border-radius: 3px; }
+  body.embed input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; }
+  body.embed #datawrap { top: 14px; width: 300px; }
+  body.embed #data { padding: 12px 16px; }
+  body.embed .drow { padding: 5px 0; }
+  body.embed .drow .k { font-size: 15px; }
+  body.embed .drow .v { font-size: 17px; }
+  body.embed .drow .v small { font-size: 12px; }
+  body.embed #badge { font-size: 12px; padding: 3px 9px; }
+
+  /* ---- embed=chart：在 embed=1 精简基础上保留 ω–I 双曲线图并放大（p8 守恒模拟页用） ---- */
+  body.embed-chart .grp.embed-chart-show { display: flex !important; font-size: 13px; }
+  body.embed-chart .chartbox.embed-chart-show { display: block !important; }
+  body.embed-chart #chart { height: 320px; }
+
+  /* ---- embed=record：信息全归左列、小人让右（p10 用）。
+     左列 = 臂长滑块面板（左上）+ 现场记录大卡（左下弹性高度，读数并入卡标题行） ---- */
+  body.embed-record #datawrap { display: none !important; }      /* 读数并入大卡标题行（recReadout），
+                                                                    课件 iframe 高度有限，独立读数卡会让大卡顶天 */
+  body.embed-record #panelwrap { left: 14px; top: 14px; bottom: auto; width: 300px; }
+  body.embed-record #panel { padding: 12px 14px; font-size: 15px;
+    backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+                                                   /* 清 blur：否则 fixed 的大图卡会相对面板定位而不是视口 */
+  body.embed-record .btns button { font-size: 14px; padding: 7px 0; }
+  body.embed-record .expsec.embed-record-show {
+    display: flex !important; flex-direction: column;
+    position: fixed; left: 14px; top: 152px; bottom: 14px;     /* 左下大卡：底对齐，宽 ~740，
+                                                                  高度随视口弹性（课件 iframe 矮，全屏教室高） */
+    width: min(740px, 60vw); z-index: 10;
+    background: rgba(255,255,255,.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 8px 30px rgba(0,0,0,.06);
+    padding: 10px 14px;
+  }
+  body.embed-record .expsec .grp { font-size: 14px; flex: none; }
+  body.embed-record .expsec .grp::after { content: none; }      /* 标题行内有实时读数，去掉延伸线 */
+  body.embed-record .expsec .grp #recReadout { margin-left: 10px; font-size: 14px;
+    font-family: var(--mono); color: #111827; letter-spacing: 0; }
+  body.embed-record .drow.embed-record-show { display: none !important; }
+  body.embed-record #expPlot { flex: 1 1 auto; min-height: 180px; height: auto; background: #fff; }
+
+  @media (max-width: 1150px) {
+    :root { --panelw: 276px; }
+    #datawrap { width: 212px; }
+  }
+  @media (max-width: 900px) {
+    :root { --panelw: min(340px, calc(100vw - 70px)); }
+    #topbar { padding: 0 12px; }
+    #topbar h1 { font-size: 16px; letter-spacing: .05em; }
+    #topbar .sub, #topbar .tag { display: none; }
+    #panelwrap { top: 58px; }
+    #datawrap { width: 184px; }
+    #data { padding: 8px 10px; }
+    #coreCard .cmain .katex { font-size: 13px; }
+    #fbar { padding: 6px 8px; }
+    #fbar .katex { font-size: 11.5px; }
+    #fbar .fsep { margin: 0 5px; }
+    #chart { height: 120px; }
+    #explain { left: 12px; right: 12px; transform: none; max-width: none; min-width: 0; }
+  }
+</style>
+</head>
+<body>
+<script>(function(){ var e = new URLSearchParams(location.search).get('embed');
+  if (e === '1' || e === 'chart' || e === 'record') { document.body.classList.add('embed'); if (e !== '1') document.body.classList.add('embed-' + e); } })();</script>
+
+<header id="topbar">
+  <div class="tl">
+    <h1>角动量守恒</h1>
+    <span class="sub">转台收臂实验 · <span class="mono">\(L = I\omega = \text{常量}\)</span></span>
+  </div>
+  <span class="tag">大学物理 · 演示实验</span>
+</header>
+
+<!-- 折叠按钮：左控制面板 ‹/› · 右上数据卡「数据」（z-index 高于两栏卡片） -->
+<button id="panelToggle" aria-label="收起面板" aria-expanded="true" aria-controls="panelwrap" title="收起/展开控制面板">‹</button>
+<button id="dataToggle" aria-label="收起数据卡" aria-expanded="true" aria-controls="datawrap" title="收起/展开数据卡">数据</button>
+
+<div id="panelwrap">
+  <!-- 核心规律（视觉焦点，PPT 原句） -->
+  <div id="coreCard" class="card">
+    <div class="ctitle">核心规律</div>
+    <div class="cmain">$$\vec M_{\text{外}}=0\ \Longrightarrow\ L=I\omega=\text{常量}$$</div>
+    <div class="cdiv"></div>
+    <div class="crows">$$K=\tfrac{1}{2}I\omega^2=\frac{L^2}{2I},\qquad I=I_0+2mr^2,\qquad \omega=\frac{L}{I}$$</div>
+    <div class="canalogy">平动 ↔ 转动类比：\(p=mv\rightarrow L=I\omega\)、\(F\rightarrow M\)、\(m\rightarrow I\)、\(v\rightarrow\omega\)</div>
+  </div>
+
+  <div id="panel" class="card">
+    <div class="grp embed-hide">模式</div>
+    <div class="mode embed-hide">
+      <label id="modeA" class="on"><input type="radio" name="mode" value="A" checked><span>A · 无外力矩（角动量守恒）</span></label>
+      <label id="modeB"><input type="radio" name="mode" value="B"><span>B · 外力矩 + 摩擦（不守恒）</span></label>
+    </div>
+
+    <div class="grp embed-hide">参数</div>
+    <div class="ctl embed-hide">
+      <div class="row"><label for="s-w0">初始角速度 ω₀</label><span class="val" id="v-w0"></span></div>
+      <input type="range" id="s-w0" min="0" max="8" step="0.1" value="4.0">
+    </div>
+    <div class="ctl embed-hide">
+      <div class="row"><label for="s-m">哑铃质量 m</label><span class="val" id="v-m"></span></div>
+      <input type="range" id="s-m" min="0.5" max="3.0" step="0.05" value="1.5">
+    </div>
+    <div class="ctl embed-hide">
+      <div class="row"><label for="s-I0">本体转动惯量 I₀</label><span class="val" id="v-I0"></span></div>
+      <input type="range" id="s-I0" min="0.5" max="2.0" step="0.05" value="1.0">
+    </div>
+    <div class="ctl">
+      <div class="row"><label for="s-r">臂长 r（收臂 ↔ 伸臂）</label><span class="val" id="v-r"></span></div>
+      <input type="range" id="s-r" min="0.25" max="1.00" step="0.01" value="0.80">
+    </div>
+
+    <div class="grp off embed-hide" id="grpB">仅模式 B 生效</div>
+    <div class="ctl embed-hide">
+      <div class="row"><label for="s-M">外力矩 M</label><span class="val" id="v-M"></span></div>
+      <input type="range" id="s-M" min="-3" max="3" step="0.05" value="0" disabled>
+    </div>
+    <div class="ctl embed-hide">
+      <div class="row"><label for="s-b">粘性摩擦 b</label><span class="val" id="v-b"></span></div>
+      <input type="range" id="s-b" min="0" max="0.4" step="0.01" value="0" disabled>
+    </div>
+
+    <div class="btns">
+      <button id="btn-pause">暂停</button>
+      <button id="btn-reset">重置</button>
+      <button id="btn-demo">花滑演示</button>
+    </div>
+
+    <div class="grp embed-hide embed-chart-show">ω–I 守恒图 · 双曲线</div>
+    <div class="chartbox embed-hide embed-chart-show"><canvas id="chart" width="240" height="150"></canvas></div>
+
+    <div class="expsec embed-hide embed-record-show">
+    <div class="grp">实验 · 现场记录<span id="recReadout"></span><span class="expTag">L = Iω 是否恒定</span></div>
+    <div class="expRow embed-hide">
+      <button id="btn-record" class="acc">记录本点</button>
+      <button id="btn-scan">自动扫臂</button>
+      <button id="btn-clear">清空</button>
+    </div>
+    <div class="hint embed-hide" id="expHint">把 r 从 1.00 m 依次收到 0.25 m，每档点一次『记录本点』；看每个数据点的 Iω 是否都落在同一条双曲线上。</div>
+    <canvas id="expPlot" width="330" height="136"></canvas>
+    <div class="expConc embed-hide" id="expConc">尚未记录数据点。<span class="dim">理论：M = 0 ⟹ L = Iω = 常量。</span></div>
+    </div>
+
+    <div class="grp embed-hide">显示</div>
+    <div class="checks embed-hide">
+      <label><input type="checkbox" id="c-L" checked> L 矢量</label>
+      <label><input type="checkbox" id="c-w" checked> ω 矢量</label>
+      <label><input type="checkbox" id="c-v" checked> 速度矢量</label>
+      <label><input type="checkbox" id="c-ring" checked> 轨迹圆环</label>
+    </div>
+
+    <div id="foot" class="embed-hide">对照 · 脉冲星：\(I\propto R^2\)，恒星坍缩成中子星后 ω 提升约 10⁹ 倍（25 天 → 毫秒级）——同一条 \(I\omega=\text{常量}\)。</div>
+  </div>
+
+  <!-- 左面板底部公式条（KaTeX 行内，auto-render 处理 \( \) 定界符） -->
+  <div id="fbar" class="card">\(L = I\omega\)<span class="fsep">·</span>\(I = I_0 + 2mr^2\)<span class="fsep">·</span>\(E_k = \tfrac{1}{2}I\omega^2 = \dfrac{L^2}{2I}\)</div>
+</div>
+
+<div id="datawrap">
+  <div id="data" class="card">
+    <div class="drow embed-hide"><span class="k">I 转动惯量</span><span class="v"><span id="d-I">—</span><small>kg·m²</small></span></div>
+    <div class="drow"><span class="k">ω 角速度</span><span class="v"><span id="d-w">—</span><small>rad/s</small></span></div>
+    <div class="drow"><span class="k">　└ 转速</span><span class="v"><span id="d-rpm">—</span><small>r/min</small></span></div>
+    <div class="drow"><span class="k">L 角动量</span><span class="v"><span id="d-L">—</span><small>kg·m²/s</small><span id="badge">守恒</span></span></div>
+    <div class="drow embed-hide embed-record-show"><span class="k">E<sub>k</sub> 动能</span><span class="v"><span id="d-Ek">—</span><small>J</small></span></div>
+    <div id="legend" class="embed-hide">
+      <span><i class="dot" style="background:#1d4ed8"></i>L</span>
+      <span><i class="dot" style="background:#16a34a"></i>ω</span>
+      <span><i class="dot" style="background:#ea580c"></i>v</span>
+    </div>
+  </div>
+  <div id="ledger" class="card">
+    <div class="lt">两本账 · 难点提醒</div>
+    <div>角动量守恒不要求转动动能守恒——<b>L 不变时 \(K = L^2/2I\)</b>，I 变则 K 变，差额由内力做功补足。<span class="hl">守恒的是角动量，不是能量。</span></div>
+  </div>
+</div>
+
+<div id="explain">外力矩为零：L = Iω 守恒。</div>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+/* ================= 常量与工具 ================= */
+const ACCENT = 0x1d4ed8;
+const COL_L = 0x1d4ed8, COL_W = 0x16a34a, COL_V = 0xea580c;   // L 蓝 / ω 绿 / v 橙
+const SHOULDER_Y = 1.36;                                       // 肩关节（=哑铃）世界高度
+const SH_X = 0.21, SH_Z = 0.02;                                // 肩关节位置（x 外侧，z 略靠前）
+const A_UP = 0.42, B_FORE = 0.40;                              // 上臂 / 前臂长度
+const HUG_ANG = 66 * Math.PI / 180;                            // 完全收臂时哑铃所在方位角
+const MONO = 'ui-monospace,"SF Mono",Menlo,Consolas,monospace';
+const clamp = (x, a, b) => Math.max(a, Math.min(b, x));
+const smooth = t => t * t * (3 - 2 * t);
+const $ = id => document.getElementById(id);
+
+/* ================= 渲染器 / 场景 / 相机 ================= */
+const scene = new THREE.Scene();                     // 不设背景色：clearAlpha 0，body 纯白透出
+const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
+camera.position.set(4.4, 3.0, 5.8);                  // 略俯视
+
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setClearAlpha(0);                           // 纯白背景由 CSS 提供
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.05;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.domElement.id = 'scene3d';
+document.body.appendChild(renderer.domElement);
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.08;
+controls.target.set(0, 0.85, 0);
+controls.minDistance = 2;
+controls.maxDistance = 25;
+controls.maxPolarAngle = Math.PI * 0.55;
+
+/* ================= 环境反射：RoomEnvironment（PMREM 只生成一次） ================= */
+const pmrem = new THREE.PMREMGenerator(renderer);
+const envScene = new RoomEnvironment();
+scene.environment = pmrem.fromScene(envScene, 0.04).texture;
+pmrem.dispose();
+envScene.traverse(o => {                             // 用完即释放环境场景资源
+  if (o.isMesh) { o.geometry.dispose(); (Array.isArray(o.material) ? o.material : [o.material]).forEach(m => m.dispose()); }
+});
+if ('environmentIntensity' in scene) scene.environmentIntensity = 0.65;
+
+/* ================= 光照 ================= */
+scene.add(new THREE.HemisphereLight(0xffffff, 0xdde3ea, 0.3));   // 低强度半球补光
+const keyLight = new THREE.DirectionalLight(0xffffff, 2.4);
+keyLight.position.set(4, 7, 3);
+keyLight.castShadow = true;
+keyLight.shadow.mapSize.set(2048, 2048);
+keyLight.shadow.radius = 4;
+keyLight.shadow.camera.near = 1;
+keyLight.shadow.camera.far = 20;
+keyLight.shadow.camera.left = -4; keyLight.shadow.camera.right = 4;
+keyLight.shadow.camera.top = 4;  keyLight.shadow.camera.bottom = -4;
+keyLight.shadow.camera.updateProjectionMatrix();
+keyLight.shadow.bias = -0.0004;
+keyLight.shadow.normalBias = 0.02;
+scene.add(keyLight);
+
+/* ================= 地面：软阴影承接 + 淡灰网格 ================= */
+const ground = new THREE.Mesh(new THREE.PlaneGeometry(40, 40), new THREE.ShadowMaterial({ opacity: 0.16 }));
+ground.rotation.x = -Math.PI / 2;
+ground.receiveShadow = true;
+scene.add(ground);
+const grid = new THREE.GridHelper(12, 24, 0xd8dbe0, 0xe9ebee);
+grid.position.y = 0.001;
+scene.add(grid);
+
+/* ================= 材质 ================= */
+const std = (c, roughness = 0.6, metalness = 0, extra = {}) =>
+  new THREE.MeshStandardMaterial({ color: c, roughness, metalness, ...extra });
+const matMetal  = std(0x9aa2ac, 0.35, 0.75);   // 金属底座
+const matMetal2 = std(0x7e858e, 0.40, 0.75);   // 立柱
+const matWood   = std(0xcfc8bd, 0.60, 0);      // 暖灰木感盘面
+const matRubber = std(0x24262a, 0.90, 0);      // 深色橡胶环
+const matBody   = std(0xd9d5cf, 0.55, 0);      // 人台哑光暖灰
+const matJoint  = std(0xb9b3a9, 0.50, 0.15);   // 球关节
+const matDumb   = std(0xc9ced6, 0.28, 0.85);   // 哑铃金属
+const matAccent = std(ACCENT, 0.5, 0, { emissive: ACCENT, emissiveIntensity: 0.3 });
+
+const mkMesh = (geo, mat) => { const m = new THREE.Mesh(geo, mat); m.castShadow = true; return m; };
+
+/* ================= 固定底座：金属底盘 + 立柱（不随转子转动） ================= */
+const pedestal = new THREE.Group();
+const basePlate = mkMesh(new THREE.CylinderGeometry(0.52, 0.60, 0.10, 48), matMetal);
+basePlate.position.y = 0.05;
+const column = mkMesh(new THREE.CylinderGeometry(0.13, 0.17, 0.26, 40), matMetal2);
+column.position.y = 0.23;
+const collar = mkMesh(new THREE.CylinderGeometry(0.19, 0.19, 0.05, 40), matMetal);
+collar.position.y = 0.355;
+pedestal.add(basePlate, column, collar);
+scene.add(pedestal);
+
+/* ================= 转子：转盘 + 人台 + 手臂 + 哑铃 ================= */
+const rotor = new THREE.Group();
+scene.add(rotor);
+
+const disc = mkMesh(new THREE.CylinderGeometry(1.4, 1.4, 0.07, 72), matWood);
+disc.position.y = 0.375;
+disc.receiveShadow = true;
+rotor.add(disc);
+
+const rim = mkMesh(new THREE.TorusGeometry(1.395, 0.045, 14, 120), matRubber);  // 盘缘橡胶环
+rim.rotation.x = Math.PI / 2;
+rim.position.y = 0.375;
+rim.receiveShadow = true;
+rotor.add(rim);
+
+const groove = mkMesh(new THREE.TorusGeometry(1.30, 0.010, 8, 120), std(0x8d867a, 0.85)); // 盘面下缘细凹槽
+groove.rotation.x = Math.PI / 2;
+groove.position.y = 0.352;
+rotor.add(groove);
+
+const marker = mkMesh(new THREE.BoxGeometry(0.20, 0.014, 0.055), matAccent);    // 强调色标记块
+marker.position.set(1.02, 0.417, 0);
+rotor.add(marker);
+
+/* ---- 抽象人台（不画脸） ---- */
+const mannequin = new THREE.Group();
+mannequin.position.y = 0.41;                        // 站在盘面上（局部 y=0 为盘面）
+rotor.add(mannequin);
+
+[-0.085, 0.085].forEach(x => {
+  const leg = mkMesh(new THREE.CapsuleGeometry(0.055, 0.24, 6, 12), matBody);
+  leg.position.set(x, 0.205, 0);
+  leg.receiveShadow = true;
+  const foot = mkMesh(new THREE.BoxGeometry(0.09, 0.035, 0.16), matJoint);
+  foot.position.set(x, 0.028, 0.03);
+  const hip = mkMesh(new THREE.SphereGeometry(0.07, 16, 12), matBody);
+  hip.position.set(x, 0.40, 0);
+  mannequin.add(leg, foot, hip);
+});
+
+const pelvis = mkMesh(new THREE.SphereGeometry(0.115, 18, 14), matBody);
+pelvis.position.y = 0.44;
+const torso = mkMesh(new THREE.CapsuleGeometry(0.16, 0.42, 8, 20), matBody);
+torso.position.y = 0.70;
+torso.receiveShadow = true;
+const neck = mkMesh(new THREE.CylinderGeometry(0.045, 0.045, 0.10, 12), matBody);
+neck.position.y = 1.08;
+const head = mkMesh(new THREE.SphereGeometry(0.125, 24, 18), matBody);
+head.position.y = 1.19;
+mannequin.add(pelvis, torso, neck, head);
+
+/* ---- 哑铃：金属手柄 + 两端球（体积随 m 缩放） ---- */
+function buildDumbbell() {
+  const g = new THREE.Group();
+  const handle = mkMesh(new THREE.CylinderGeometry(0.020, 0.020, 0.13, 16), matDumb);
+  handle.rotation.x = Math.PI / 2;                  // 手柄沿局部 z（切向握持）
+  const ballGeo = new THREE.SphereGeometry(0.052, 20, 14);
+  const b1 = mkMesh(ballGeo, matDumb); b1.position.z = 0.085;
+  const b2 = mkMesh(ballGeo, matDumb); b2.position.z = -0.085;
+  g.add(handle, b1, b2);
+  return g;
+}
+
+/* ---- 手臂：肩/肘球关节 + 上臂/前臂两段胶囊；收臂时绕肩关节抱拢（平面二连杆 IK） ---- */
+function buildArm(side) {                           // side=+1 右臂(+x)，-1 左臂
+  const shoulder = new THREE.Group();
+  shoulder.position.set(SH_X * side, SHOULDER_Y - 0.41, SH_Z);
+  const sBall = mkMesh(new THREE.SphereGeometry(0.062, 18, 14), matJoint);
+  const upGeo = new THREE.CapsuleGeometry(0.046, A_UP - 0.092, 6, 14);
+  upGeo.rotateZ(-Math.PI / 2);
+  upGeo.translate(A_UP / 2, 0, 0);                  // 沿 +x、根在肩关节
+  const upper = new THREE.Mesh(upGeo, matBody);
+  upper.castShadow = true;
+  const elbow = new THREE.Group();
+  elbow.position.x = A_UP;
+  const eBall = mkMesh(new THREE.SphereGeometry(0.05, 16, 12), matJoint);
+  const foGeo = new THREE.CapsuleGeometry(0.042, B_FORE - 0.084, 6, 14);
+  foGeo.rotateZ(-Math.PI / 2);
+  foGeo.translate(B_FORE / 2, 0, 0);
+  const fore = new THREE.Mesh(foGeo, matBody);
+  fore.castShadow = true;
+  const hand = mkMesh(new THREE.SphereGeometry(0.05, 14, 10), matBody);
+  hand.position.x = B_FORE - 0.005;
+  const dumb = buildDumbbell();
+  dumb.position.x = B_FORE;                         // 哑铃始终在臂端
+  elbow.add(eBall, fore, hand, dumb);
+  shoulder.add(sBall, upper, elbow);
+  mannequin.add(shoulder);
+  return { shoulder, elbow, dumb };
+}
+const armR = buildArm(+1), armL = buildArm(-1);
+
+function solveArm(arm, Tx, Tz, side, Sx, Sz) {      // 平面 2 连杆 IK：手端精确落在半径 r 处，肘朝外
+  const dx = Tx - Sx, dz = Tz - Sz;
+  const D = clamp(Math.hypot(dx, dz), Math.abs(A_UP - B_FORE) + 0.03, A_UP + B_FORE - 0.01);
+  const phi = Math.atan2(dz, dx);
+  const beta = Math.acos(clamp((A_UP * A_UP + D * D - B_FORE * B_FORE) / (2 * A_UP * D), -1, 1));
+  const inner = Math.acos(clamp((A_UP * A_UP + B_FORE * B_FORE - D * D) / (2 * A_UP * B_FORE), -1, 1));
+  const psi = phi - side * beta;                    // 上臂方向角（取肘朝外的一支）
+  arm.shoulder.rotation.y = -psi;
+  arm.elbow.rotation.y = -side * (Math.PI - inner);
+}
+function poseArms() {                               // 手臂姿态随 r 插值：伸臂 ↔ 抱拢
+  const t = smooth(clamp((1 - S.r) / 0.75, 0, 1));  // 0=伸臂 1=收臂
+  const alpha = HUG_ANG * t;
+  solveArm(armR,  S.r * Math.cos(alpha), S.r * Math.sin(alpha), +1,  SH_X, SH_Z);
+  solveArm(armL, -S.r * Math.cos(alpha), S.r * Math.sin(alpha), -1, -SH_X, SH_Z);
+}
+
+/* ================= 轨迹圆环（单位圆按 r 缩放，避免重建几何） ================= */
+const ringPts = [];
+for (let i = 0; i <= 160; i++) {
+  const a = (i / 160) * Math.PI * 2;
+  ringPts.push(new THREE.Vector3(Math.cos(a), 0, Math.sin(a)));
+}
+const ring = new THREE.Line(
+  new THREE.BufferGeometry().setFromPoints(ringPts),
+  new THREE.LineBasicMaterial({ color: ACCENT, transparent: true, opacity: 0.15 })
+);
+ring.position.y = SHOULDER_Y;
+scene.add(ring);
+
+/* ================= 矢量箭头（加粗配色 + 大锥头 + 轻微自发光） ================= */
+function makeArrow(col, origin, headLen, headW) {
+  const a = new THREE.ArrowHelper(new THREE.Vector3(0, 1, 0), origin, 1, col, headLen, headW);
+  a.cone.material = new THREE.MeshStandardMaterial({ color: col, emissive: col, emissiveIntensity: 0.45, roughness: 0.4 });
+  return a;
+}
+const arrowL = makeArrow(COL_L, new THREE.Vector3(0, 2.0, 0), 0.24, 0.15);
+const arrowW = makeArrow(COL_W, new THREE.Vector3(0.36, 2.0, 0), 0.24, 0.15);
+const arrowVR = makeArrow(COL_V, new THREE.Vector3(), 0.17, 0.11);
+const arrowVL = makeArrow(COL_V, new THREE.Vector3(), 0.17, 0.11);
+scene.add(arrowL, arrowW, arrowVR, arrowVL);
+
+/* ================= 状态与物理 ================= */
+const S = {
+  mode: 'A',
+  omega0: 4.0, m: 1.5, I0: 1.0, r: 0.80, M: 0.0, b: 0.0,
+  L: 0, omega: 0,
+  paused: false,
+  demo: false, demoT: 0, demoR0: 0.9, rDir: 0,
+  ademo: null,                                     // postMessage 收臂演示 {t, from, to, dur}
+  showL: true, showW: true, showV: true, showRing: true,
+  Iref: 0                                           // 上次给 L 定值时的 I，用于判断收臂/伸臂
+};
+const inertia = r => S.I0 + 2 * S.m * r * r;         // I = I₀ + 2mr²
+
+/* ================= ω–I 双曲线小图 ================= */
+const chart = $('chart');
+const cctx = chart.getContext('2d');
+let CH_H = 150;                                      // 小图高（跟随 CSS，sizeChart 时从 clientHeight 读取）
+let chartFontPx = 9;                                 // 坐标字号（embed=chart 放大到 12）
+const hist = [];                                     // 最近 ~40 个 (I, ω) 历史点
+let chartDirty = true;
+let chartL0 = 0;                                     // 双曲线基准角动量（B 模式下冻结，供点脱离）
+let chartSampleT = 0, lastPt = { i: -1, w: 1e9 };
+
+function sizeChart() {
+  CH_H = chart.clientHeight || 150;                  // 小屏媒体查询会把 CSS 高度压到 120px
+  const w = Math.max(chart.clientWidth, 60);
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  chart.width = Math.round(w * dpr);
+  chart.height = Math.round(CH_H * dpr);
+  cctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  chartDirty = true;
+}
+
+function drawChart() {
+  const W = chart.clientWidth || 240, H = CH_H;
+  cctx.clearRect(0, 0, W, H);
+  const mL = 38, mR = 12, mT = 16, mB = 26;
+  const pw = W - mL - mR, ph = H - mT - mB;
+  if (pw < 50 || ph < 40) return;
+
+  /* 横轴范围：当前滑块下 r∈[0.25,1] 对应的 I 区间 */
+  let iA = S.I0 + 2 * S.m * 0.0625, iB = S.I0 + 2 * S.m;
+  const ip = Math.max((iB - iA) * 0.08, 0.04);
+  iA -= ip; iB += ip;
+  const curI = inertia(S.r), curW = S.omega;
+  let wMax = Math.max(2, Math.abs(S.omega0), Math.abs(curW));
+  if (chartL0 > 1e-9) wMax = Math.max(wMax, chartL0 / iA);
+  let wMin = 0;
+  for (const p of hist) { wMax = Math.max(wMax, Math.abs(p.w)); wMin = Math.min(wMin, p.w); }
+  wMax *= 1.14;
+  if (wMin < 0) wMin *= 1.14;
+  if (wMax - wMin < 1e-6) wMax = wMin + 1;
+
+  const X = i => mL + (i - iA) / (iB - iA) * pw;
+  const Y = w => mT + (1 - (w - wMin) / (wMax - wMin)) * ph;
+
+  /* 边框 / 零线 / 刻度 */
+  cctx.strokeStyle = '#eef0f3'; cctx.lineWidth = 1;
+  cctx.strokeRect(mL + 0.5, mT + 0.5, pw - 1, ph - 1);
+  if (wMin < 0) {
+    cctx.beginPath(); cctx.moveTo(mL, Y(0)); cctx.lineTo(mL + pw, Y(0));
+    cctx.strokeStyle = '#e5e7eb'; cctx.stroke();
+  }
+  cctx.font = chartFontPx + 'px ' + MONO;
+  cctx.fillStyle = '#9ca3af';
+  cctx.textAlign = 'center'; cctx.textBaseline = 'top';
+  [iA, (iA + iB) / 2, iB].forEach(v => cctx.fillText(v.toFixed(1), X(v), mT + ph + 4));
+  cctx.textAlign = 'right'; cctx.textBaseline = 'middle';
+  [wMax, (wMax + wMin) / 2, wMin].forEach(v => cctx.fillText(v.toFixed(1), mL - 5, Y(v)));
+  cctx.textAlign = 'right'; cctx.textBaseline = 'top';
+  cctx.fillText('I / kg·m²', mL + pw, mT + ph + 14);
+  cctx.textAlign = 'left';
+  cctx.fillStyle = '#6b7280';
+  cctx.fillText('ω / (rad/s)', mL, 2);
+
+  /* 双曲线 ω = L₀/I（强调色） */
+  if (chartL0 > 1e-9) {
+    cctx.beginPath();
+    let pen = false;
+    for (let k = 0; k <= 96; k++) {
+      const i = iA + (iB - iA) * k / 96;
+      const w = chartL0 / i;
+      if (w > wMax || w < wMin) { pen = false; continue; }
+      const px = X(i), py = Y(w);
+      if (pen) cctx.lineTo(px, py); else { cctx.moveTo(px, py); pen = true; }
+    }
+    cctx.strokeStyle = '#1d4ed8'; cctx.lineWidth = 1.6; cctx.stroke();
+    cctx.fillStyle = 'rgba(29,78,216,.75)';
+    cctx.font = chartFontPx + 'px ' + MONO;
+    cctx.textAlign = 'right'; cctx.textBaseline = 'top';
+    cctx.fillText('ω = L₀/I', mL + pw - 6, mT + 4);
+  }
+
+  /* 历史点：渐隐小点 */
+  for (let k = 0; k < hist.length; k++) {
+    cctx.globalAlpha = 0.08 + 0.30 * (k + 1) / hist.length;
+    cctx.beginPath();
+    cctx.arc(X(hist[k].i), Y(hist[k].w), 1.7, 0, Math.PI * 2);
+    cctx.fillStyle = '#1d4ed8';
+    cctx.fill();
+  }
+  cctx.globalAlpha = 1;
+
+  /* 当前点：细十字线 + 实心点 */
+  const px = X(curI), py = Y(curW);
+  cctx.strokeStyle = 'rgba(29,78,216,.4)'; cctx.lineWidth = 1;
+  cctx.setLineDash([3, 3]);
+  cctx.beginPath();
+  cctx.moveTo(px, mT + ph); cctx.lineTo(px, py);
+  cctx.moveTo(mL, py); cctx.lineTo(px, py);
+  cctx.stroke();
+  cctx.setLineDash([]);
+  cctx.beginPath();
+  cctx.arc(px, py, 3.4, 0, Math.PI * 2);
+  cctx.fillStyle = '#1d4ed8'; cctx.fill();
+  cctx.lineWidth = 1.4; cctx.strokeStyle = '#fff'; cctx.stroke();
+
+  /* 右下角动态提示 */
+  cctx.font = chartFontPx + 'px ' + MONO;
+  cctx.textAlign = 'right'; cctx.textBaseline = 'alphabetic';
+  if (S.mode === 'A') { cctx.fillStyle = '#6b7280'; cctx.fillText('模式A：沿双曲线滑动', mL + pw - 5, mT + ph - 5); }
+  else { cctx.fillStyle = '#b45309'; cctx.fillText('模式B：脱离双曲线（L 在变）', mL + pw - 5, mT + ph - 5); }
+}
+
+function sampleChart(dt) {                           // 采样最近 (I, ω) 作滑动轨迹
+  chartSampleT += dt;
+  if (chartSampleT < 0.1) return;
+  chartSampleT = 0;
+  const I = inertia(S.r);
+  if (Math.abs(I - lastPt.i) > 1e-4 || Math.abs(S.omega - lastPt.w) > 2e-3) {
+    lastPt = { i: I, w: S.omega };
+    hist.push(lastPt);
+    if (hist.length > 40) hist.shift();
+    chartDirty = true;
+  }
+}
+
+/* ================= 实验记录：验证 L = Iω 恒定 ================= */
+const EXPA = [];                                     // {I, w, L}
+const expCvA = $('expPlot');
+let expScanA = false, expPlotW = 330, expPlotH = 136;
+
+function expRecordA() {
+  const I = inertia(S.r), w = S.omega, L = I * w;
+  const hit = EXPA.find(p => Math.abs(p.I - I) < 1e-4);
+  if (hit) { hit.w = w; hit.L = L; } else EXPA.push({ I, w, L });
+  EXPA.sort((a, b) => a.I - b.I);
+  drawExpA();
+}
+function expClearA() { EXPA.length = 0; drawExpA(); }
+function expScanArm() {
+  if (expScanA) return;
+  expScanA = true;
+  const seq = [1.00, 0.90, 0.80, 0.70, 0.60, 0.50, 0.40, 0.32, 0.25];
+  let i = 0;
+  const step = () => {
+    if (i >= seq.length) { expScanA = false; return; }
+    setR(seq[i++]);
+    S.omega = S.L / inertia(S.r);
+    expRecordA();
+    setTimeout(step, 320);
+  };
+  step();
+}
+function expFitA() {
+  const n = EXPA.length;
+  if (!n) return null;
+  const Ls = EXPA.map(p => p.L);
+  const Lm = Ls.reduce((a, b) => a + b, 0) / n;
+  const dev = Math.max(...Ls.map(L => Math.abs(L - Lm) / Math.abs(Lm || 1) * 100));
+  return { Lm, dev, n };
+}
+function sizeExpPlotA() {
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  expPlotW = Math.max(200, expCvA.clientWidth || 330);
+  expPlotH = Math.max(100, expCvA.clientHeight || 136);
+  expCvA.width = Math.round(expPlotW * dpr);
+  expCvA.height = Math.round(expPlotH * dpr);
+  expCvA.getContext('2d').setTransform(dpr, 0, 0, dpr, 0, 0);
+}
+function drawExpA() {
+  if (!expCvA.width) sizeExpPlotA();
+  const g = expCvA.getContext('2d');
+  const W = expPlotW, H = expPlotH;
+  g.clearRect(0, 0, W, H);
+  const mL = 40, mR = 12, mT = 12, mB = 26;
+  const pw = W - mL - mR, ph = H - mT - mB;
+  if (pw < 40 || ph < 30) return;
+  const fit = expFitA();
+  const iMin = Math.min(0.3, inertia(1.0) * 0.6);
+  let iMax = Math.max(inertia(1.0), ...EXPA.map(p => p.I)) * 1.12;
+  if (iMax - iMin < 1e-6) iMax = iMin + 1;
+  const Lref = fit ? fit.Lm : S.L;
+  let wMax = Math.max(S.omega0, S.omega, Lref / Math.max(iMin, 1e-3) * 0.0, ...EXPA.map(p => p.w)) * 1.18;
+  if (!(wMax > 0)) wMax = 1;
+  const X = i => mL + (i - iMin) / (iMax - iMin) * pw;
+  const Y = w => mT + (1 - w / wMax) * ph;
+  /* 网格 + 轴 */
+  g.strokeStyle = '#eef0f3'; g.lineWidth = 1;
+  for (let k = 1; k <= 4; k++) { const y = mT + ph - k / 4 * ph;
+    g.beginPath(); g.moveTo(mL, y); g.lineTo(mL + pw, y); g.stroke(); }
+  g.strokeStyle = '#d6d9de';
+  g.beginPath(); g.moveTo(mL, mT); g.lineTo(mL, mT + ph); g.lineTo(mL + pw, mT + ph); g.stroke();
+  /* 理论双曲线 ω = L/I */
+  g.strokeStyle = '#c9ced6'; g.lineWidth = 1.3; g.setLineDash([5, 4]);
+  g.beginPath(); let pen = false;
+  for (let k = 0; k <= 120; k++) {
+    const i = iMin + (iMax - iMin) * k / 120, w = Lref / i;
+    if (w > wMax) { pen = false; continue; }
+    pen ? g.lineTo(X(i), Y(w)) : g.moveTo(X(i), Y(w)); pen = true;
+  }
+  g.stroke(); g.setLineDash([]);
+  /* 数据点 */
+  for (const p of EXPA) {
+    g.beginPath(); g.arc(X(p.I), Y(p.w), 3.6, 0, Math.PI * 2);
+    g.fillStyle = '#1d4ed8'; g.fill();
+    g.lineWidth = 1.4; g.strokeStyle = '#fff'; g.stroke();
+  }
+  /* 当前点（空心） */
+  const Ic = inertia(S.r), wc = S.omega;
+  if (wc <= wMax && Ic >= iMin && Ic <= iMax) {
+    g.beginPath(); g.arc(X(Ic), Y(wc), 4.6, 0, Math.PI * 2);
+    g.strokeStyle = '#ea580c'; g.lineWidth = 2; g.stroke();
+  }
+  /* 标注 */
+  g.fillStyle = '#9ca3af'; g.font = '9px ' + MONO;
+  g.textAlign = 'right'; g.textBaseline = 'middle';
+  g.fillText(wMax.toFixed(1), mL - 5, mT + 3);
+  g.fillText('0', mL - 5, mT + ph);
+  g.textAlign = 'center'; g.textBaseline = 'top';
+  g.fillText(iMin.toFixed(1), mL, mT + ph + 4);
+  g.fillText(iMax.toFixed(1), mL + pw, mT + ph + 4);
+  g.fillStyle = '#6b7280'; g.textAlign = 'left';
+  g.fillText('ω / (rad/s)', mL - 34, 1);
+  g.textAlign = 'right';
+  g.fillText('I / (kg·m²)', mL + pw, mT + ph + 14);
+  /* 结论 */
+  const conc = $('expConc');
+  if (!fit) conc.innerHTML = '尚未记录数据点。<span class="dim">理论：M = 0 ⟹ L = Iω = 常量。</span>';
+  else conc.innerHTML = '已记录 <b>' + fit.n + '</b> 点：L = Iω = <b>' + fmt(fit.Lm) + '</b> kg·m²/s　' +
+    '最大相对偏差 <b>' + fit.dev.toFixed(2) + '%</b>' +
+    '<br><span class="dim">I 收小 ' + (EXPA[EXPA.length - 1].I / EXPA[0].I).toFixed(1) + ' 倍，ω 便放大多少倍——乘积纹丝不动。</span>';
+}
+
+/* ================= 现场记录曲线（embed=record：L / ω / K 随臂长实时绘制） ================= */
+let recordMode = false;                              // ?embed=record 时置真
+const REC_BUCKETS = 200;                             // r 轴分桶数：新采样覆盖同桶旧值（重描不折叠）
+const REC = { buckets: new Map() };                  // 桶下标 → {r, L, w, K}
+let recLast = null;                                  // 最近一次采样点（画当前位置标记用）
+let recT = 0;
+
+const recBucket = r => Math.round((clamp(r, 0.25, 1.0) - 0.25) / 0.75 * (REC_BUCKETS - 1));
+
+function recSample(dt) {                             // 随时间采样 (r, L, ω, K)，按 r 分桶覆盖
+  if (!recordMode) return;
+  recT += dt;
+  if (recT < 0.08) return;
+  recT = 0;
+  const I = inertia(S.r), w = S.omega, K = 0.5 * I * w * w;
+  recLast = { r: S.r, L: S.L, w, K };
+  REC.buckets.set(recBucket(S.r), recLast);          // 模式 A 下 ω、K 是 r 的单值函数，同桶即同值
+  drawRec();
+}
+
+function recClear() {                                // 清空已记录轨迹（demo 开始前 / 重置时）
+  REC.buckets.clear();
+  recLast = null;
+  drawRec();
+}
+
+function resetRecord() {                             // record 档的重置：回标准初始状态并清轨迹
+  S.ademo = null;
+  setR(0.80);                                        // r 回初始基准，resetSim 按当前 ω₀ 重建 L₀
+  resetSim();
+  recClear();
+}
+
+function drawRec() {                                 // 横轴=臂长 r（向右=收臂）；左轴 L/ω，右轴 K
+  if (!expCvA.width) sizeExpPlotA();
+  const g = expCvA.getContext('2d');
+  const W = expPlotW, H = expPlotH;
+  g.clearRect(0, 0, W, H);
+  const mL = 64, mR = 70, mT = 52, mB = 56;
+  const pw = W - mL - mR, ph = H - mT - mB;
+  if (pw < 60 || ph < 40) return;
+  const X = r => mL + (1.0 - r) / 0.75 * pw;         // r: 1.0 在左，0.25 在右
+  const YL = v => mT + (1 - v / 14) * ph;            // 左轴 0~14（L、ω）
+  const YK = v => mT + (1 - v / 60) * ph;            // 右轴 0~60（K）
+  const F = px => px + 'px ' + MONO;
+
+  /* 网格 + 边框 */
+  g.strokeStyle = '#eef0f3'; g.lineWidth = 1;
+  for (let k = 1; k <= 3; k++) { const y = mT + ph - k / 4 * ph;
+    g.beginPath(); g.moveTo(mL, y); g.lineTo(mL + pw, y); g.stroke(); }
+  g.strokeStyle = '#d6d9de';
+  g.beginPath(); g.moveTo(mL, mT); g.lineTo(mL, mT + ph); g.lineTo(mL + pw, mT + ph); g.stroke();
+  /* 坐标刻度与轴名（≥14px，教室后排可辨） */
+  g.font = F(14); g.fillStyle = '#6b7280';
+  g.textAlign = 'right'; g.textBaseline = 'middle';
+  [0, 7, 14].forEach(v => g.fillText(String(v), mL - 8, YL(v)));
+  g.fillStyle = '#ea580c';
+  [0, 30, 60].forEach(v => g.fillText(String(v), mL + pw + 36, YK(v)));
+  g.fillStyle = '#6b7280'; g.textAlign = 'center'; g.textBaseline = 'top';
+  [1.0, 0.6, 0.25].forEach(v => g.fillText(v.toFixed(2).replace('1.00', '1.0'), X(v), mT + ph + 8));
+  g.font = F(15);
+  g.fillText('臂长 r / m（向右 = 收臂）', mL + pw / 2, mT + ph + 28);
+  g.textAlign = 'left'; g.textBaseline = 'middle';
+  g.fillText('L, ω', 4, mT - 16);
+  g.fillStyle = '#ea580c'; g.textAlign = 'right';
+  g.fillText('K / J', mL + pw, mT - 16);
+
+  /* 理论曲线（淡色底）：L 恒定、ω=L/I、K=L²/2I */
+  const L0 = S.L;
+  const theory = (fn, Y, col) => {
+    g.beginPath();
+    for (let k = 0; k <= 60; k++) {
+      const r = 1.0 - 0.75 * k / 60, px = X(r), py = Y(fn(r));
+      k ? g.lineTo(px, py) : g.moveTo(px, py);
+    }
+    g.strokeStyle = col; g.lineWidth = 1.6; g.globalAlpha = 0.30; g.stroke(); g.globalAlpha = 1;
+  };
+  g.setLineDash([6, 5]); theory(() => L0, YL, '#dc2626'); g.setLineDash([]);
+  theory(r => L0 / inertia(r), YL, '#1d4ed8');
+  theory(r => L0 * L0 / (2 * inertia(r)), YK, '#ea580c');
+
+  /* 现场轨迹（粗线，随演示/拖动逐点重描）：按 r 排序连线，来回拖 r 不会折叠乱线 */
+  const pts = [...REC.buckets.values()].sort((a, b) => b.r - a.r);   // r 从大到小（左→右）
+  const trace = (key, Y, col, dash) => {
+    if (dash) g.setLineDash([7, 5]);
+    g.beginPath();
+    pts.forEach((p, k) => { const px = X(p.r), py = Y(p[key]); k ? g.lineTo(px, py) : g.moveTo(px, py); });
+    g.strokeStyle = col; g.lineWidth = 3.2; g.stroke();
+    g.setLineDash([]);
+  };
+  trace('L', YL, '#dc2626', true);
+  trace('w', YL, '#1d4ed8', false);
+  trace('K', YK, '#ea580c', false);
+  const cur = recLast;
+  if (cur) {
+    g.beginPath(); g.arc(X(cur.r), YL(cur.w), 6, 0, Math.PI * 2);
+    g.fillStyle = '#1d4ed8'; g.fill(); g.lineWidth = 2.4; g.strokeStyle = '#fff'; g.stroke();
+    g.beginPath(); g.arc(X(cur.r), YK(cur.K), 6, 0, Math.PI * 2);
+    g.fillStyle = '#ea580c'; g.fill(); g.stroke();
+  }
+
+  /* 图例（16px，颜色与讲稿口径一致） */
+  g.font = F(16); g.textBaseline = 'middle'; g.textAlign = 'left';
+  const ly = 18; let lx = mL;
+  const legend = (col, dash, txt) => {
+    g.beginPath(); if (dash) g.setLineDash([6, 4]);
+    g.moveTo(lx, ly); g.lineTo(lx + 26, ly);
+    g.strokeStyle = col; g.lineWidth = 3.2; g.stroke(); g.setLineDash([]);
+    g.fillStyle = '#374151'; g.fillText(txt, lx + 32, ly);
+    lx += 32 + g.measureText(txt).width + 22;
+  };
+  legend('#dc2626', true, 'L（左）');
+  legend('#1d4ed8', false, 'ω（左）');
+  legend('#ea580c', false, 'K（右）');
+}
+
+/* ================= UI 交互函数 ================= */
+function setPaused(p) { S.paused = p; $('btn-pause').textContent = p ? '继续' : '暂停'; }
+function startDemo() {
+  S.demo = true; S.demoT = 0; S.demoR0 = S.r;
+  $('btn-demo').classList.add('on'); $('btn-demo').textContent = '停止演示';
+}
+function stopDemo() {
+  if (!S.demo) return;
+  S.demo = false;
+  $('btn-demo').classList.remove('on'); $('btn-demo').textContent = '花滑演示';
+}
+function setR(v) {
+  S.r = clamp(v, 0.25, 1.0);
+  $('s-r').value = S.r.toFixed(2);
+  $('v-r').textContent = S.r.toFixed(2) + ' m';
+  paintSlider($('s-r'));
+}
+function resetSim() {                                // 重置：按当前滑块重建 L
+  S.L = inertia(S.r) * S.omega0;
+  S.omega = S.omega0;
+  S.Iref = inertia(S.r);
+  chartL0 = S.L;                                     // 双曲线按新 L 重画
+  hist.length = 0; lastPt = { i: -1, w: 1e9 }; chartDirty = true;
+  rotor.rotation.y = 0;
+  stopDemo();
+  setPaused(false);
+}
+
+$('btn-pause').addEventListener('click', () => setPaused(!S.paused));
+$('btn-reset').addEventListener('click', () => recordMode ? resetRecord() : resetSim());
+$('btn-demo').addEventListener('click', () => (S.demo ? stopDemo() : startDemo()));
+$('btn-record').addEventListener('click', expRecordA);
+$('btn-scan').addEventListener('click', expScanArm);
+$('btn-clear').addEventListener('click', expClearA);
+
+function paintSlider(el) {                           // 已填充轨道：linear-gradient(to right, #1d4ed8 p%, #e5e7eb p%)
+  const p = (+el.value - +el.min) / (+el.max - +el.min) * 100;
+  el.style.setProperty('--p', p + '%');
+}
+function bindSlider(id, valId, key, fmtFn, onChange) {
+  const el = $(id), lab = $(valId);
+  const apply = () => {
+    S[key] = parseFloat(el.value);
+    lab.textContent = fmtFn(S[key]);
+    paintSlider(el);
+    if (onChange) onChange();
+  };
+  el.addEventListener('input', apply);
+  apply();
+}
+bindSlider('s-w0', 'v-w0', 'omega0', x => x.toFixed(1) + ' rad/s', () => {
+  S.L = inertia(S.r) * S.omega0;                     // ω₀ 改变 = 重新给定初始角动量
+  S.omega = S.omega0;
+  S.Iref = inertia(S.r);
+  chartL0 = S.L;
+  hist.length = 0; lastPt = { i: -1, w: 1e9 }; chartDirty = true;
+});
+bindSlider('s-m', 'v-m', 'm', x => x.toFixed(2) + ' kg', () => {
+  S.Iref = inertia(S.r);
+  S.omega = S.L / inertia(S.r);                      // 暂停时拖动也保持约束 ω = L/I
+  chartDirty = true;
+});
+bindSlider('s-I0', 'v-I0', 'I0', x => x.toFixed(2) + ' kg·m²', () => {
+  S.Iref = inertia(S.r);
+  S.omega = S.L / inertia(S.r);
+  chartDirty = true;
+});
+bindSlider('s-r', 'v-r', 'r', x => x.toFixed(2) + ' m', () => {
+  stopDemo();
+  S.omega = S.L / inertia(S.r);
+  chartDirty = true;
+});
+bindSlider('s-M', 'v-M', 'M', x => (x >= 0 ? '+' : '') + x.toFixed(2) + ' N·m', () => { chartDirty = true; });
+bindSlider('s-b', 'v-b', 'b', x => x.toFixed(2) + ' N·m·s', () => { chartDirty = true; });
+
+function applyModeUI(m) {
+  S.mode = m;
+  $('modeA').classList.toggle('on', m === 'A');
+  $('modeB').classList.toggle('on', m === 'B');
+  const isB = m === 'B';
+  $('s-M').disabled = !isB;
+  $('s-b').disabled = !isB;
+  $('grpB').classList.toggle('off', !isB);
+  $('badge').style.display = isB ? 'none' : 'inline-block';
+  chartL0 = S.L;                                     // 冻结双曲线基准：B 模式下点将脱离双曲线
+  chartDirty = true;
+}
+document.querySelectorAll('input[name="mode"]').forEach(rd =>
+  rd.addEventListener('change', () => applyModeUI(rd.value)));
+
+[['c-L', 'showL'], ['c-w', 'showW'], ['c-v', 'showV'], ['c-ring', 'showRing']].forEach(([id, key]) =>
+  $(id).addEventListener('change', e => { S[key] = e.target.checked; }));
+
+/* ================= 面板折叠（左控制栏 ‹/› · 右上数据卡，小屏默认收起） ================= */
+const panelwrap = $('panelwrap'), datawrap = $('datawrap');
+const btnPanel = $('panelToggle'), btnData = $('dataToggle');
+
+function setPanelCollapsed(c) {
+  panelwrap.classList.toggle('collapsed', c);        // .collapsed → translateX(-110%)
+  document.body.classList.toggle('pclosed', c);      // 按钮移到屏幕左缘 + 标题让位
+  btnPanel.textContent = c ? '›' : '‹';
+  btnPanel.setAttribute('aria-expanded', String(!c));
+  btnPanel.setAttribute('aria-label', c ? '展开面板' : '收起面板');
+}
+function setDataCollapsed(c) {
+  datawrap.classList.toggle('collapsed', c);         // .collapsed → translateX(110%)
+  btnData.setAttribute('aria-expanded', String(!c));
+  btnData.setAttribute('aria-label', c ? '展开数据卡' : '收起数据卡');
+}
+btnPanel.addEventListener('click', () => setPanelCollapsed(!panelwrap.classList.contains('collapsed')));
+btnData.addEventListener('click', () => setDataCollapsed(!datawrap.classList.contains('collapsed')));
+
+window.addEventListener('resize', () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  sizeChart();
+});
+
+/* ================= 动画循环 ================= */
+const clock = new THREE.Clock();
+const tA = new THREE.Vector3(), tB = new THREE.Vector3(), tC = new THREE.Vector3();
+let prevR = S.r, lastExplain = '';
+
+function updateDemo(dt) {                            // 收臂 3s → 展臂 3s，往复（余弦平滑）
+  S.demoT += dt;
+  const EASE = 0.35;                                 // 先短暂平滑过渡到 0.90
+  if (S.demoT < EASE) {
+    setR(S.demoR0 + (0.90 - S.demoR0) * smooth(S.demoT / EASE));
+  } else {
+    setR(0.60 + 0.30 * Math.cos(Math.PI * 2 * (S.demoT - EASE) / 6));
+  }
+}
+
+/* ---- postMessage 接口：{type:'demo'} 自动收臂演示一次；{type:'reset'} 恢复初始 ---- */
+function runAutoDemo() {                             // 先把臂长拉回最大，再约 7s 平滑收到最短并保持
+  stopDemo();
+  if (recordMode) recClear();                        // 记录档：清掉旧轨迹，现场重画
+  setR(1.00);
+  S.omega = S.L / inertia(S.r);                      // 走与手动拖滑块相同的约束路径 ω = L/I
+  S.ademo = { t: 0, from: 1.00, to: 0.25, dur: 7 };
+}
+window.addEventListener('message', e => {
+  const d = e.data || {};
+  if (d.type === 'demo') runAutoDemo();
+  else if (d.type === 'reset') { S.ademo = null; recordMode ? resetRecord() : (setR(0.80), resetSim()); }
+});
+
+function axialArrow(arrow, value, k, minLen, maxLen, show) {   // 轴向矢量 L / ω
+  const a = Math.abs(value);
+  if (!show || a < 0.02) { arrow.visible = false; return; }
+  let len = clamp(a * k, minLen, maxLen);
+  const down = value < 0;
+  if (down) len = Math.min(len, 1.45);               // 向下时不穿出地面
+  arrow.visible = true;
+  arrow.setDirection(tA.set(0, down ? -1 : 1, 0));
+  arrow.setLength(len, Math.min(0.24, len * 0.4), Math.min(0.15, len * 0.24));
+}
+
+function updateVArrow(arr, db) {                     // 哑铃切向速度 v = ω × r
+  const speed = Math.abs(S.omega) * S.r;
+  if (!S.showV || speed < 0.05) { arr.visible = false; return; }
+  db.getWorldPosition(tB);
+  tC.set(S.omega * tB.z, 0, -S.omega * tB.x).normalize();
+  const len = clamp(speed * 0.14, 0.14, 1.1);
+  arr.visible = true;
+  arr.position.copy(tB);
+  arr.setDirection(tC);
+  arr.setLength(len, Math.min(0.17, len * 0.45), Math.min(0.11, len * 0.28));
+}
+
+function updateHUD() {
+  const I = inertia(S.r);
+  $('d-I').textContent = fmt(I);
+  $('d-w').textContent = fmt(S.omega);
+  $('d-rpm').textContent = fmt(Math.abs(S.omega) * 60 / (2 * Math.PI));
+  $('d-L').textContent = fmt(S.L);
+  $('d-Ek').textContent = fmt(0.5 * I * S.omega * S.omega);
+
+  let msg;
+  if (S.mode === 'A') {
+    if (S.demo) {
+      msg = S.rDir < 0
+        ? '花滑演示：收臂 → I 减小 → ω 增大，L = Iω 保持不变；动能增大来自收臂时做功'
+        : '花滑演示：展臂 → I 增大 → ω 减小，L = Iω 保持不变；动能减小因手臂对外做功';
+    } else if (I < S.Iref * 0.995) {
+      msg = '收臂 → I 减小 → ω 增大，L = Iω 保持不变；动能增大来自拉臂做功';
+    } else if (I > S.Iref * 1.005) {
+      msg = '伸臂 → I 增大 → ω 减小，L = Iω 保持不变；动能减小因手臂抵抗离心对外做功';
+    } else {
+      msg = '外力矩为零：L = Iω 守恒，I 与 ω 此消彼长，乘积不变';
+    }
+  } else if (Math.abs(S.M) > 1e-9) {
+    msg = 'M ≠ 0：dL/dt = M − bω，角动量随时间改变' + (S.b > 0 ? '（叠加摩擦衰减）' : '');
+  } else if (S.b > 1e-9) {
+    msg = '仅摩擦：dL/dt = −bω，L 指数衰减，转动逐渐减慢直至停止';
+  } else {
+    msg = 'M = 0 且 b = 0：退化为守恒情形，L = Iω 不变';
+  }
+  if (S.paused) msg += '（已暂停）';
+  if (msg !== lastExplain) { $('explain').textContent = msg; lastExplain = msg; }
+  if (recordMode) {                                // record 档：读数并入大卡标题行
+    $('recReadout').textContent =
+      `ω ${fmt(S.omega)} rad/s · L ${fmt(S.L)} 守恒 · K ${fmt(0.5 * I * S.omega * S.omega)} J`;
+  }
+}
+
+function fmt(x) {                                    // 3 位有效数字
+  if (!isFinite(x)) return '—';
+  if (Math.abs(x) < 1e-4) return '0.00';
+  let s = x.toPrecision(3);
+  if (s.indexOf('e') !== -1) s = x.toFixed(2);
+  return s;
+}
+
+function tick() {
+  const frameDt = Math.min(clock.getDelta(), 0.05);
+  const dt = S.paused ? 0 : frameDt;
+
+  if (dt > 0) {
+    if (S.demo) updateDemo(dt);
+    if (S.ademo) {                                   // 收臂演示：from→to 平滑插值，到底后保持
+      S.ademo.t += dt;
+      const k = Math.min(S.ademo.t / S.ademo.dur, 1);
+      setR(S.ademo.from + (S.ademo.to - S.ademo.from) * smooth(k));
+      if (k >= 1) S.ademo = null;
+    }
+    const I = inertia(S.r);
+    if (S.mode === 'B') {
+      const w = S.L / I;
+      S.L += (S.M - S.b * w) * dt;                   // 半隐式欧拉：先更新 L
+    }
+    S.omega = S.L / I;                               // 再取 ω = L / I
+    rotor.rotation.y += S.omega * dt;
+  }
+
+  /* 姿态相关尺寸全部用 scale / rotation / position 实现，无几何重建 → 无泄漏点 */
+  poseArms();                                        // 手臂抱拢姿态随 r 插值，哑铃端点精确落在半径 r
+  const dbs = Math.cbrt(S.m / 1.5);                  // 哑铃体积随质量变化
+  armR.dumb.scale.setScalar(dbs);
+  armL.dumb.scale.setScalar(dbs);
+  ring.scale.set(S.r, 1, S.r);
+  ring.visible = S.showRing;
+
+  axialArrow(arrowL, S.L, 0.085, 0.35, 2.3, S.showL);
+  axialArrow(arrowW, S.omega, 0.11, 0.30, 2.0, S.showW);
+  updateVArrow(arrowVR, armR.dumb);
+  updateVArrow(arrowVL, armL.dumb);
+
+  if (S.demo) S.rDir = Math.sign(S.r - prevR) || S.rDir;
+  prevR = S.r;
+
+  sampleChart(frameDt);
+  recSample(frameDt);                                // embed=record：现场记录 L/ω/K 轨迹
+  if (!S.paused || chartDirty) { drawChart(); chartDirty = false; }
+
+  controls.update();
+  renderer.render(scene, camera);
+  updateHUD();
+}
+
+/* 初始化 */
+resetSim();
+applyModeUI('A');
+sizeChart();
+if (window.innerWidth < 900) {                       // 小屏默认收起两栏
+  setPanelCollapsed(true);
+  setDataCollapsed(true);
+}
+sizeExpPlotA();
+drawExpA();
+
+/* ================= 截图 / 演示用 URL 参数 ================= */
+(function(){
+  const Q = new URLSearchParams(location.search);
+  const embedMode = Q.get('embed');                  // '1'=精简（p4）；'chart'=精简+双曲线图（p8）；'record'=精简+现场记录曲线（p10）
+  if (embedMode === '1' || embedMode === 'chart' || embedMode === 'record') {
+    camera.position.set(3.1, 2.1, 4.1);              // 嵌入模式：拉近相机，小人占场景视觉中心
+    controls.target.set(0, 0.95, 0);                 // 只调初始位姿，OrbitControls 从该点继续交互
+    controls.update();
+  }
+  if (embedMode === 'chart') { chartFontPx = 12; sizeChart(); }
+  if (embedMode === 'record') {
+    recordMode = true; sizeExpPlotA(); drawRec();
+    /* 小人让右：相机与目标点同向平移（dolly），转台移到画面约右 1/3 处，OrbitControls 交互不受影响 */
+    camera.position.set(2.2, 2.1, 4.1);
+    controls.target.set(-0.9, 0.95, 0);
+    controls.update();
+  }
+  if (Q.get('r') !== null) { setR(parseFloat(Q.get('r'))); S.omega = S.L / inertia(S.r); }
+  if (Q.get('w0') !== null) { const el = $('s-w0'); el.value = Q.get('w0'); el.dispatchEvent(new Event('input')); }
+  if (Q.get('cam')) { const v = Q.get('cam').split(',').map(Number);
+    camera.position.set(v[0], v[1], v[2]);
+    if (v.length >= 6) controls.target.set(v[3], v[4], v[5]);
+    controls.update(); }
+  if (Q.get('mode') === 'B') { const rd = document.querySelector('input[name="mode"][value="B"]'); rd.checked = true; applyModeUI('B'); }
+  if (Q.get('M') !== null) { const el = $('s-M'); el.value = Q.get('M'); el.dispatchEvent(new Event('input')); }
+  if (Q.get('b') !== null) { const el = $('s-b'); el.value = Q.get('b'); el.dispatchEvent(new Event('input')); }
+  if (Q.get('demo') === '1') startDemo();
+  if (Q.get('autodemo') === '1') setTimeout(runAutoDemo, 800);   // 自测：等价于收到 {type:'demo'}
+  if (Q.get('expfull') === '1') { document.body.classList.add('expfull'); sizeExpPlotA(); drawExpA(); }
+  if (Q.get('exp') === 'scan') setTimeout(expScanArm, 500);
+  if (Q.get('exp') === 'pts') { const seq = (Q.get('pts') || '1.00,0.80,0.60,0.45,0.32,0.25').split(',');
+    seq.forEach((rv, k) => setTimeout(() => { setR(parseFloat(rv)); S.omega = S.L / inertia(S.r); expRecordA(); }, 200 + k * 120));
+    if (Q.get('rend')) setTimeout(() => { setR(parseFloat(Q.get('rend'))); S.omega = S.L / inertia(S.r); }, 200 + seq.length * 120 + 120); }
+})();
+
+renderer.setAnimationLoop(tick);
+</script>
+</body>
+</html>

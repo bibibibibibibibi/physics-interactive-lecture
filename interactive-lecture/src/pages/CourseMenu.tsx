@@ -6,21 +6,60 @@ interface CourseEntry {
   desc?: string
 }
 
-/** 课程列表页：根路径无 ?course= 参数时显示，从 public/weblec/courses.json 读清单 */
-export default function CourseMenu() {
+interface CourseMenuProps {
+  /** 页面主标题 */
+  title?: string
+  /** 副标题 */
+  subtitle?: string
+  /** 课程清单 json 路径 */
+  src?: string
+  /** 头部右侧的系列入口链接（如主菜单挂「专题系列 →」） */
+  extraLink?: { href: string; label: string }
+  /** 头部左侧的返回链接（如专题菜单挂「← 返回」） */
+  backLink?: { href: string; label: string }
+}
+
+/** 课程列表页：根路径无 ?course= 参数时显示。
+ *  默认读 courses.json（第九章）；?menu=special 时读 courses_special.json（专题系列）。 */
+export default function CourseMenu({
+  title = '大学物理交互课堂',
+  subtitle = '选择一节课程进入',
+  src = '/weblec/courses.json',
+  extraLink,
+  backLink,
+}: CourseMenuProps) {
   const [courses, setCourses] = useState<CourseEntry[] | null>(null)
 
   useEffect(() => {
-    fetch('/weblec/courses.json')
+    fetch(src)
       .then(r => r.json())
       .then(setCourses)
       .catch(() => setCourses([]))
-  }, [])
+  }, [src])
 
   return (
     <div className="flex min-h-screen flex-col items-center bg-[#0b1f38] px-6 py-16 text-slate-100">
-      <h1 className="text-2xl font-bold">大学物理交互课堂</h1>
-      <p className="mt-2 text-sm text-slate-400">选择一节课程进入</p>
+      <div className="flex w-full max-w-3xl items-center justify-between">
+        <div className="w-24">
+          {backLink && (
+            <a href={backLink.href} className="text-sm text-slate-400 hover:text-slate-200">
+              {backLink.label}
+            </a>
+          )}
+        </div>
+        <div className="text-center">
+          <h1 className="text-2xl font-bold">{title}</h1>
+          <p className="mt-2 text-sm text-slate-400">{subtitle}</p>
+        </div>
+        <div className="w-24 text-right">
+          {extraLink && (
+            <a href={extraLink.href}
+              className="text-sm font-bold text-[#ffb703] hover:brightness-110">
+              {extraLink.label}
+            </a>
+          )}
+        </div>
+      </div>
       <div className="mt-10 grid w-full max-w-3xl gap-5">
         {courses === null && <p className="text-center text-slate-500">加载中…</p>}
         {courses?.length === 0 && <p className="text-center text-slate-500">暂无课程</p>}

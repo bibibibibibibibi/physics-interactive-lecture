@@ -1,10 +1,11 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { RefObject } from 'react'
 import katex from 'katex'
 import DIAGRAMS from './diagrams'
 import RatePill from './RatePill'
 import Teacher from './Teacher'
 import { renderMath, stripMath, VIDEO_H, VIDEO_W } from '@/lib/lecture'
+import { resolveTheme } from '@/lib/theme'
 import type { Bullet, LaserTarget, Pose, Slide } from '@/lib/lecture'
 import type { WebElement, WebLec, WebPage } from '@/lib/weblec'
 import { COURSE_BASE } from '@/lib/course'
@@ -77,7 +78,12 @@ export function measureContentRect(outer: Element) {
 }
 
 /** 单个元素渲染（SlidesOnly 静态导出也复用） */
-export function Element({ el, t }: { el: WebElement; t: number }) {
+export function Element({ el, t, iframeRef, onIframeLoad }: {
+  el: WebElement; t: number
+  /** html 元素用：iframe 引用回调与加载完成回调（步进消息补发兜底） */
+  iframeRef?: (node: HTMLIFrameElement | null) => void
+  onIframeLoad?: () => void
+}) {
   const base: React.CSSProperties = {
     position: 'absolute', left: el.x, top: el.y, width: el.w,
     height: el.h, display: 'flex', flexDirection: 'column',
@@ -92,6 +98,25 @@ export function Element({ el, t }: { el: WebElement; t: number }) {
     return (
       <div style={base}>
         <img src={el.src?.startsWith('data:') ? el.src : `${COURSE_BASE}${el.src}`} style={{ width: '100%', height: '100%', objectFit: 'contain' }} alt="" />
+      </div>
+    )
+  }
+  if (el.type === 'video') {
+    /** 嵌入短视频：静音自动循环，cover 充满；muted 无自动播放限制，随 step 挂载即播 */
+    return (
+      <div style={base}>
+        <video src={`${COURSE_BASE}${el.src}`} autoPlay muted loop playsInline
+          style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 8 }} />
+      </div>
+    )
+  }
+  if (el.type === 'html') {
+    /** 嵌入交互模拟页（iframe 自带事件边界，内部拖拽/缩放不会触发播放器手势） */
+    return (
+      <div style={base}>
+        <iframe ref={iframeRef} onLoad={onIframeLoad}
+          src={`${COURSE_BASE}${el.src}`} loading="lazy" title={el.label ?? '交互模拟'}
+          style={{ width: '100%', height: '100%', border: 'none', borderRadius: 12, background: '#fff' }} />
       </div>
     )
   }
@@ -118,7 +143,7 @@ export function Element({ el, t }: { el: WebElement; t: number }) {
             <span key={ri} style={{
               fontSize: r.size ?? 40, color: r.color ?? '#111',
               fontWeight: r.b ? 'bold' : 'normal',
-              fontFamily: 'SimSun, "Times New Roman", serif', lineHeight: 1.4,
+              fontFamily: r.font ?? 'SimSun, "Times New Roman", serif', lineHeight: 1.4,
             }} dangerouslySetInnerHTML={{ __html: renderMath(r.t) }} />
           ))}
         </div>
@@ -127,7 +152,7 @@ export function Element({ el, t }: { el: WebElement; t: number }) {
     return (
       <div style={{
         ...base, height: 'auto', minHeight: el.h, background: el.fill, border: `${el.lw ?? 3}px solid ${el.line}`,
-        borderRadius: el.radius ?? 0, padding: '8px 20px',
+        borderRadius: el.radius ?? 0, padding: el.pad ?? '8px 20px',
         alignItems: el.align === 'left' ? 'flex-start' : 'center',
       }}>{inner}</div>
     )
@@ -147,6 +172,19 @@ export default function SlideStage({
   const [blackout, setBlackout] = useState(false)
   const [playing, setPlaying] = useState(false)
   const [scale, setScale] = useState(0.5)
+
+  /** 全屏圆钮：鼠标在舞台上活动时显示，空闲 3s 自动收起（不挡页码/画面） */
+  const [fsBtnOn, setFsBtnOn] = useState(true)
+  const fsBtnTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const pokeFsBtn = useCallback(() => {
+    setFsBtnOn(true)
+    if (fsBtnTimer.current) clearTimeout(fsBtnTimer.current)
+    fsBtnTimer.current = setTimeout(() => setFsBtnOn(false), 3000)
+  }, [])
+  useEffect(() => {
+    pokeFsBtn()
+    return () => { if (fsBtnTimer.current) clearTimeout(fsBtnTimer.current) }
+  }, [pokeFsBtn])
 
   /** 整体容器全屏（小人/激光点/倍速条在全屏时仍然可见） */
   function toggleFs() {
@@ -177,6 +215,38 @@ export default function SlideStage({
     }
     return s
   }, [curPage, t])
+
+  /** html 元素的步进消息：步 reveal 时向 iframe postMessage({type})。
+      已发集合按「页:元素:步」记账，换页清空；seek 回退到该步之前则销账，
+      重放到该步会再发一次（模拟侧自行处理重复演示）。 */
+  const htmlRefs = useRef(new Map<number, HTMLIFrameElement>())
+  const firedMsgs = useRef(new Set<string>())
+  useEffect(() => { firedMsgs.current.clear() }, [curPage?.id])
+  useEffect(() => {
+    if (!curPage) return
+    curPage.elements.forEach((el, i) => {
+      if (el.type !== 'html' || !el.msgs) return
+      for (const [k, msg] of Object.entries(el.msgs)) {
+        const key = `${curPage.id}:${i}:${k}`
+        if (curStep >= +k) {
+          if (firedMsgs.current.has(key)) continue
+          firedMsgs.current.add(key)
+          htmlRefs.current.get(i)?.contentWindow?.postMessage({ type: msg }, '*')
+        } else {
+          firedMsgs.current.delete(key)
+        }
+      }
+    })
+  }, [curPage, curStep])
+  /** iframe 加载完成兜底：补发当前已 reveal 步的消息（懒加载晚于步进的场景） */
+  function flushHtmlMsgs(elIdx: number, el: WebElement) {
+    if (el.type !== 'html' || !el.msgs) return
+    const win = htmlRefs.current.get(elIdx)?.contentWindow
+    if (!win) return
+    for (const [k, msg] of Object.entries(el.msgs)) {
+      if (curStep >= +k) win.postMessage({ type: msg }, '*')
+    }
+  }
 
   /** 文本/公式实测内容宽度（设计坐标）：热区/红线/激光按真实内容画，
       忽略 author 里拍的宽盒子；box/图/表保持声明尺寸（边框本身就是视觉边界） */
@@ -210,6 +280,16 @@ export default function SlideStage({
 
   const pages = weblec?.slides ?? []
   const pageIdx = curPage ? pages.findIndex(p => p.id === curPage.id) : -1
+  /** 页面版式主题：缺省/未知回落 default（第九章逐像素不变） */
+  const th = resolveTheme(weblec?.theme)
+
+  /** 分段导航：slides 带 sections 时，页码按钮改为显示当前所在大段（如「02 · 角动量守恒定律」），
+      否则保持「页/总数 短名」逐页行为 */
+  const sections = weblec?.sections?.length ? weblec.sections : null
+  const curSectionIdx = sections && curPage
+    ? sections.reduce((acc, s, i) => (s.page <= curPage.id ? i : acc), -1)
+    : -1
+  const curSection = sections && curSectionIdx >= 0 ? sections[curSectionIdx] : null
   function seekTo(time: number, autoplay = false) {
     const a = mediaRef.current
     if (!a) return
@@ -268,8 +348,10 @@ export default function SlideStage({
         .laser-orbit{animation:laser-orbit 1.6s linear infinite;transform-origin:0 0}
       `}</style>
       <div ref={innerRef} className="group relative"
+        onMouseMove={pokeFsBtn} onMouseEnter={pokeFsBtn} onTouchStart={pokeFsBtn}
         style={fs ? { width: 'min(100vw, calc((100vh - 64px) * 16 / 9))' } : undefined}>
-        <div className={`relative w-full aspect-video overflow-hidden bg-white ${fs ? '' : 'rounded-xl shadow-2xl'}`}>
+        <div className={`relative w-full aspect-video overflow-hidden ${fs ? '' : 'rounded-xl shadow-2xl'}`}
+          style={{ background: th.background }}>
           <audio ref={mediaRef} src={`${COURSE_BASE}audio.mp3${weblec?.build_ts ? `?v=${weblec.build_ts}` : ''}`} preload="auto"
             onTimeUpdate={e => onTimeUpdate((e.target as HTMLAudioElement).currentTime)}
             onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} />
@@ -279,40 +361,47 @@ export default function SlideStage({
             transform: `scale(${scale})`, transformOrigin: 'top left',
             color: '#111',
           }}>
-            {/* 页面版式：课程 logo / 顶部导航 / 页脚 */}
+            {/* 页面版式：课程 logo / 顶部导航 / 页脚（按课程 theme 渲染） */}
             <img src={`${COURSE_BASE}logo.png${weblec?.build_ts ? `?v=${weblec.build_ts}` : ''}`} alt="" style={{
-              position: 'absolute', left: 24, top: 16,
+              ...th.logoStyle,
               height: 116 * (weblec?.logoScale ?? 1), width: 270 * (weblec?.logoScale ?? 1),
               objectFit: 'contain',
             }} />
-            <div style={{ position: 'absolute', right: 70, top: 26, textAlign: 'right' }}>
-              <span style={{ fontSize: 40, color: '#0000CD', fontFamily: 'SimSun, serif' }}>{weblec?.nav}</span>
-              <div style={{ height: 5, marginTop: 10, background: 'linear-gradient(90deg, transparent, #0000CD 30%)' }} />
-            </div>
-            <div style={{
-              position: 'absolute', left: 700, right: 700, bottom: 18, height: 3,
-              background: 'linear-gradient(90deg, transparent, #0000CD, transparent)',
-            }} />
+            {th.navStyle && (
+              <div style={th.navStyle}>
+                <span style={th.navText}>{weblec?.nav}</span>
+                <div style={th.navBar} />
+              </div>
+            )}
+            {th.headerRule && <div style={th.headerRule} />}
+            {th.bottomLine && (
+              <div style={{
+                position: 'absolute', left: 700, right: 700, bottom: 18, height: 3,
+                background: 'linear-gradient(90deg, transparent, #0000CD, transparent)',
+              }} />
+            )}
             <div style={{
               position: 'absolute', left: 0, right: 0, bottom: 26, textAlign: 'center',
-              fontSize: 26, color: '#0000CD', fontFamily: 'SimSun, serif',
-              zIndex: 20, pointerEvents: 'none',
+              zIndex: 20, pointerEvents: 'none', ...th.footerText,
             }}>
-              <span style={{
-                background: 'rgba(255,255,255,0.92)', padding: '2px 26px', borderRadius: 14,
-              }}>{weblec?.footer}</span>
+              <span style={th.footerPill ?? undefined}>{weblec?.footer}</span>
             </div>
-            <div style={{
-              position: 'absolute', right: 40, bottom: 22,
-              fontSize: 26, color: '#0000CD', fontFamily: 'SimSun, serif',
-              zIndex: 20, pointerEvents: 'none',
-              background: 'rgba(255,255,255,0.92)', padding: '2px 12px', borderRadius: 10,
-            }}>{curPage?.id}</div>
+            {!(th.pageNumSkipFirst && curPage?.id === 1) && (
+              <div style={{
+                position: 'absolute', right: 40, bottom: 22,
+                zIndex: 20, pointerEvents: 'none',
+                ...th.pageNumText, ...(th.pageNumPill ?? {}),
+              }}>{curPage?.id}</div>
+            )}
 
             {/* 页面元素：按步揭示 */}
             {curPage?.elements.map((el, i) => (
               el.step <= curStep
-                ? <div key={`${curPage.id}-${i}`} data-elidx={i} className="wl-in"><Element el={el} t={t} /></div>
+                ? <div key={`${curPage.id}-${i}`} data-elidx={i} className="wl-in">
+                    <Element el={el} t={t}
+                      iframeRef={el.type === 'html' ? (n => { n ? htmlRefs.current.set(i, n) : htmlRefs.current.delete(i) }) : undefined}
+                      onIframeLoad={el.type === 'html' && el.msgs ? () => flushHtmlMsgs(i, el) : undefined} />
+                  </div>
                 : null
             ))}
 
@@ -389,11 +478,11 @@ export default function SlideStage({
         </div>
 
         <RatePill rate={rate} onChange={onRateChange} containerRef={innerRef} />
-        {/* 全屏按钮：常驻在小人脚下 */}
+        {/* 全屏按钮：鼠标活动时显示，空闲 3s 自动收起 */}
         <button onClick={toggleFs}
-          className={`absolute z-20 rounded-full bg-black/45 px-1.5 py-0.5 text-base leading-none text-slate-100 backdrop-blur-sm transition hover:bg-black/70 ${
+          className={`absolute z-20 rounded-full bg-black/45 px-1.5 py-0.5 text-base leading-none text-slate-100 backdrop-blur-sm transition-opacity duration-300 hover:bg-black/70 ${
             fs ? 'bottom-24 right-1' : 'bottom-0.5 -right-1'
-          }`}
+          } ${fsBtnOn ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
           title={fs ? '退出全屏（F）' : '全屏（F），含讲师与标注'}>
           {fs ? '⤡' : '⛶'}
         </button>
@@ -422,6 +511,16 @@ export default function SlideStage({
           }}>
           <div className="absolute left-0 top-0 h-full rounded-full bg-[#ffb703]"
             style={{ width: `${weblec ? (t / weblec.duration) * 100 : 0}%` }} />
+          {/* 分段刻度：大段起点（= 该段第一页 t_start）处画竖刻线 */}
+          {weblec?.sections?.map(s => {
+            const pg = pages.find(p => p.id === s.page)
+            if (!pg || !weblec.duration) return null
+            return (
+              <div key={s.page} className="absolute top-[-2px] h-[14px] w-[2px] rounded bg-white/70"
+                style={{ left: `${(pg.t_start / weblec.duration) * 100}%` }}
+                title={`${s.title}`} />
+            )
+          })}
         </div>
         <span className="shrink-0 text-xs text-slate-400 tabular-nums">
           {fmt(t)} / {fmt(weblec?.duration ?? 0)}
@@ -432,7 +531,9 @@ export default function SlideStage({
               navOpen ? 'bg-[#ffb703] text-[#0b1f38] font-semibold' : 'bg-[#123a63] text-slate-300 hover:bg-[#1a4a7a]'
             }`}
             title={navOpen ? '收起章节导航' : '展开章节导航'}>
-            {curPage.id}/{pages.length} {curPage.heading}
+            {curSection
+              ? `${String(curSectionIdx + 1).padStart(2, '0')} · ${curSection.title}`
+              : `${curPage.id}/${pages.length} ${curPage.heading}`}
           </button>
         )}
       </div>

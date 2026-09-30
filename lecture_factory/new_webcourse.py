@@ -44,6 +44,11 @@ pages.append({
   # tex(2, 300, 700, 800, "x=A\\\\cos(\\\\omega t+\\\\varphi)", 44),
   # diagram(2, 300, 700, 800, 300, "spring_o"),
   # img(2, 1200, 500, 500, 400, "example.png"),   # 图片先放 assets/ 并复制到 public/weblec/<课名>/
+  # video(2, 1200, 500, 500, 400, "clip.mp4"),   # 可选：嵌入短视频（静音自动循环，cover 充满；
+                                                   # 适合引入页/演示页放实拍或 CG，文件放 public/weblec/<课名>/）
+  # html(2, 100, 300, 1200, 675, "sim_xxx.html"),  # 可选：嵌入交互模拟（iframe，随步进揭示；
+                                                     # html 文件+依赖放 public/weblec/<课名>/，依赖用相对路径，
+                                                     # 不要加 hotspot；详见 README「嵌入交互模拟」。无模拟的课不用）
   # table(2, 400, 700, 1000, [["列1", "列2"], ["甲", "1"]]),
  ]})
 

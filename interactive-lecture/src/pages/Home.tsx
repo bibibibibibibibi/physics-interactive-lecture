@@ -1,16 +1,24 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { ChapterNav, HotspotList, Sidebar, SlideStage } from '@/components/lecture'
+import { ChapterNav, HotspotList, QuizCard, Sidebar, SlideStage } from '@/components/lecture'
 import QaRunner from '@/components/lecture/QaRunner'
 import { aiAnswer } from '@/lib/qa'
 import type { AskContext } from '@/lib/qa'
 import { stripMath } from '@/lib/lecture'
 import type { Active, Bullet, Msg, Pose, Slide, Sub, Timeline } from '@/lib/lecture'
-import type { WebLec, WebPage } from '@/lib/weblec'
+import type { WebLec, WebPage, WebQuiz } from '@/lib/weblec'
 import { COURSE_BASE, COURSE_ID } from '@/lib/course'
 import CourseMenu from '@/pages/CourseMenu'
 
 export default function Home() {
-  if (!COURSE_ID) return <CourseMenu />
+  if (!COURSE_ID) {
+    // ?menu=special 显示专题系列目录（courses_special.json），否则显示第九章课程列表
+    if (new URLSearchParams(window.location.search).get('menu') === 'special') {
+      return <CourseMenu title="教学节段专题" subtitle="选择一讲进入"
+        src="/weblec/courses_special.json"
+        backLink={{ href: '/', label: '← 第九章课程' }} />
+    }
+    return <CourseMenu extraLink={{ href: '/?menu=special', label: '专题系列 →' }} />
+  }
   return <Lecture />
 }
 
@@ -164,6 +172,41 @@ function Lecture() {
     return () => clearTimeout(id)
   }, [pose, shownPose])
 
+  /** 随堂互动题：t 越过当前页某题时刻且未作答过 → 自动暂停弹出答题卡。
+      「已答/已跳过」集合按 `页id:题时刻` 键管理，seek 回退再播放到同一点不重复弹；
+      拖进度条一次跨过多道未答题时只弹最后越过的那道，前面的记为跳过（视为不触发）。
+      qa 质检模式（?qa=1）自动巡页时不触发，避免打断巡检。 */
+  const [answeredQuiz, setAnsweredQuiz] = useState<Record<string, boolean>>({})
+  const [activeQuiz, setActiveQuiz] = useState<{ pageId: number; quiz: WebQuiz } | null>(null)
+  useEffect(() => {
+    if (qaMode || activeQuiz || !curPage?.interactions?.length) return
+    const due = curPage.interactions.filter(q => t >= q.t && !answeredQuiz[`${curPage.id}:${q.t}`])
+    if (!due.length) return
+    const quiz = due[due.length - 1]
+    mediaRef.current?.pause()
+    if (due.length > 1) {
+      const skip: Record<string, boolean> = {}
+      for (const q of due.slice(0, -1)) skip[`${curPage.id}:${q.t}`] = true
+      setAnsweredQuiz(prev => ({ ...prev, ...skip }))
+    }
+    setActiveQuiz({ pageId: curPage.id, quiz })
+  }, [t, curPage, activeQuiz, answeredQuiz, qaMode])
+
+  /** 答题卡弹出期间：保持暂停（挡住空格键恢复）；换页则直接关卡车交给跳页动作 */
+  useEffect(() => {
+    if (!activeQuiz) return
+    mediaRef.current?.pause()
+    if (curPage && activeQuiz.pageId !== curPage.id) setActiveQuiz(null)
+  }, [activeQuiz, curPage, t])
+
+  /** 作答完成：记为已答、关掉答题卡、恢复播放 */
+  function finishQuiz() {
+    if (!activeQuiz) return
+    setAnsweredQuiz(prev => ({ ...prev, [`${activeQuiz.pageId}:${activeQuiz.quiz.t}`]: true }))
+    setActiveQuiz(null)
+    mediaRef.current?.play()
+  }
+
   /** 提问上下文：要点或字幕句，都归一到当前页 */
   function contextOf(a: Active): AskContext {
     const slideQa = a.slide.bullets.flatMap(b => b.qa.map(x => ({ ...x, _b: b })))
@@ -240,10 +283,23 @@ function Lecture() {
     await send(q, activeCtx, chatKey)
   }
 
+  /** 分段导航：slides 带 sections 时章节导航按大段列出（点段名跳该段首页），否则逐页 */
+  const sections = weblec?.sections?.length ? weblec.sections : null
   const chapters = useMemo(() => {
     if (!weblec) return []
+    if (sections) {
+      return sections.map((s, i) => ({
+        id: i + 1,
+        t_start: weblec.slides.find(p => p.id === s.page)?.t_start ?? 0,
+        heading: s.title,
+      }))
+    }
     return weblec.slides.map(p => ({ id: p.id, t_start: p.t_start, heading: p.heading }))
-  }, [weblec])
+  }, [weblec, sections])
+  /** 章节导航高亮：分段模式高亮当前段（序号），逐页模式高亮当前页 id */
+  const navCurrentId = sections && curPage
+    ? sections.reduce((acc, s, i) => (s.page <= curPage.id ? i + 1 : acc), 0)
+    : curTime?.id
 
   return (
     <div className="min-h-screen bg-[#0b1f38] text-slate-100">
@@ -276,8 +332,8 @@ function Lecture() {
             onToggleNav={() => setNavOpen(o => !o)}
           />
           {navOpen && (
-            <ChapterNav chapters={chapters} currentId={curTime?.id}
-              onSeek={time => { seekTo(time); setNavOpen(false) }} cols={8} />
+            <ChapterNav chapters={chapters} currentId={navCurrentId}
+              onSeek={time => { seekTo(time); setNavOpen(false) }} cols={sections ? 4 : 8} />
           )}
           {curPage && <HotspotList slide={curPage} onOpenBullet={openBullet} />}
         </div>
@@ -299,6 +355,9 @@ function Lecture() {
         />
       </main>
       {qaMode && <QaRunner mediaRef={mediaRef} weblec={weblec} />}
+      {activeQuiz && curPage?.id === activeQuiz.pageId && (
+        <QuizCard quiz={activeQuiz.quiz} onContinue={finishQuiz} />
+      )}
     </div>
   )
 }

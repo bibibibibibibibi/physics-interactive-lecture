@@ -119,9 +119,15 @@ export default function QaRunner({ mediaRef, weblec }: {
     async function run() {
       a!.pause()
       const all: QaIssue[] = []
-      /** 页面指示器（SlideStage 右下角「id/总数 标题」按钮）是否已翻到目标页 */
+      /** 页面指示器（SlideStage 右下角按钮）是否已翻到目标页；
+          分段课程（sections）按钮显示「NN · 段名」，按段名前缀核对 */
       const pageShown = (pageId: number) => {
-        const marker = `${pageId}/${weblec!.slides.length} `
+        let marker = `${pageId}/${weblec!.slides.length} `
+        const secs = weblec!.sections
+        if (secs?.length) {
+          const idx = secs.reduce((acc, s, i) => (s.page <= pageId ? i : acc), -1)
+          if (idx >= 0) marker = `${String(idx + 1).padStart(2, '0')} · ${secs[idx].title}`
+        }
         return Array.from(document.querySelectorAll('span,button')).some(s => s.textContent?.startsWith(marker))
       }
       for (const p of weblec!.slides) {

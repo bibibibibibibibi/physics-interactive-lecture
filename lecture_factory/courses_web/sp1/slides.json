@@ -1,0 +1,4110 @@
+{
+ "title": "角动量守恒定律",
+ "nav": "专题·第1学时　角动量守恒定律",
+ "footer": "专题　角动量守恒定律",
+ "character": "aqiang",
+ "logoScale": 0.67,
+ "theme": "special",
+ "sections": [
+  {
+   "title": "角动量与转动惯量",
+   "page": 4
+  },
+  {
+   "title": "角动量守恒定律",
+   "page": 7
+  },
+  {
+   "title": "角动量与动能",
+   "page": 10
+  },
+  {
+   "title": "应用与迁移",
+   "page": 12
+  }
+ ],
+ "pages": [
+  {
+   "id": 1,
+   "narration": "同学们好，欢迎来到大学物理课堂。[[1]]今天的内容是角动量守恒定律，它选自第四章刚体转动和流体运动的第三节。从冬奥赛场的空中转体，到太空中的空间站调姿，这些看似毫不相干的现象，背后藏着同一条物理规律。接下来这节课，我们就一起把它找出来。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 170,
+     "w": 1000,
+     "h": 300,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "角动量",
+        "size": 96,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "守恒定律",
+        "size": 96,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 500,
+     "w": 900,
+     "h": 60,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "LAW OF CONSERVATION OF ANGULAR MOMENTUM",
+        "size": 30,
+        "color": "#888888",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 610,
+     "w": 900,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "选自《大学物理》 第4章 刚体转动和流体运动 第3节",
+        "size": 34,
+        "color": "#0000CD",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 1150,
+     "y": 220,
+     "w": 620,
+     "h": 620,
+     "src": "station_cover.jpg",
+     "hotspot": true,
+     "label": "中国空间站",
+     "qa": [
+      {
+       "q": "空间站为什么要调姿？",
+       "a": "要让太阳能帆板对准太阳、天线对准地球，舱体姿态必须受控；太空中没有空气和地面可借力，只能靠内部的角动量交换装置（控制力矩陀螺）。"
+      }
+     ]
+    }
+   ],
+   "heading": "封面"
+  },
+  {
+   "id": 2,
+   "narration": "这节课分四段。[[1]]第一段，角动量与转动惯量：先把转动的语言建立起来。[[2]]第二段，角动量守恒定律，这是全课的重点，也是难点。[[3]]第三段，角动量与动能：守恒的角动量和不守恒的动能，是两本账，这一段也是重点。[[4]]第四段，应用与迁移：从课堂上的转台，一路用到空间站和脉冲星。好，我们正式开始。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 130,
+     "w": 500,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "目 录",
+        "size": 64,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 150,
+     "y": 360,
+     "w": 380,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "01",
+        "size": 48,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 150,
+     "y": 440,
+     "w": 56,
+     "h": 5,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 2,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 150,
+     "y": 490,
+     "w": 380,
+     "h": 150,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "角动量与",
+        "size": 42,
+        "color": "#273444",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "转动惯量",
+        "size": 42,
+        "color": "#273444",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 560,
+     "y": 360,
+     "w": 380,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02",
+        "size": 48,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 560,
+     "y": 440,
+     "w": 56,
+     "h": 5,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 2,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 560,
+     "y": 490,
+     "w": 380,
+     "h": 150,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "角动量",
+        "size": 42,
+        "color": "#273444",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "守恒定律",
+        "size": 42,
+        "color": "#273444",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 560,
+     "y": 660,
+     "w": 380,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "重点，难点",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 970,
+     "y": 360,
+     "w": 380,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "03",
+        "size": 48,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 970,
+     "y": 440,
+     "w": 56,
+     "h": 5,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 2,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 970,
+     "y": 490,
+     "w": 380,
+     "h": 150,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "角动量与",
+        "size": 42,
+        "color": "#273444",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "动能",
+        "size": 42,
+        "color": "#273444",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 970,
+     "y": 660,
+     "w": 380,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "重点",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1380,
+     "y": 360,
+     "w": 380,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04",
+        "size": 48,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 1380,
+     "y": 440,
+     "w": 56,
+     "h": 5,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 2,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1380,
+     "y": 490,
+     "w": 380,
+     "h": 150,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "应用与",
+        "size": 42,
+        "color": "#273444",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "迁移",
+        "size": 42,
+        "color": "#273444",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "目录"
+  },
+  {
+   "id": 3,
+   "narration": "先看两个真实的现象。[[1]]第一个，北京冬奥会单板大跳台，苏翊鸣完成了一千九百八十度转体，也就是在空中整整转了五周半。你注意看，他起跳时身体展开，转得并不快；可一旦把身体收紧，转速立刻就上来了。[[2]]想一想，空中没有支点，也没有第二次发力的机会，他靠什么越转越快？[[3]]第二个现象在太空。空间站大约九十分钟绕地球一圈，不管飞到哪个位置，它的姿态都能保持得很好。通信天线要对准地面，帆板要对准太阳，姿态控制必须精确而持久。[[4]]它又是怎么做到的呢？这两个问题，一个在空中，一个在太空，看上去毫不相干，其实答案是同一条规律。先别急着翻书，不妨自己猜一猜，答案就藏在这节课里。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "00　引入",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "video",
+     "step": 1,
+     "x": 120,
+     "y": 260,
+     "w": 560,
+     "h": 315,
+     "src": "snowboard.mp4",
+     "hotspot": true,
+     "label": "苏翊鸣 1980° 转体",
+     "qa": [
+      {
+       "q": "1980° 转体是什么意思？",
+       "a": "1980°÷360°=5.5，即空中转体五周半。运动员起跳后收拢身体，转动惯量减小，角动量守恒使角速度增大，于是越转越快。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 120,
+     "y": 610,
+     "w": 620,
+     "h": 60,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1980° 北京冬奥单板大跳台 · 苏翊鸣",
+        "size": 30,
+        "color": "#0000CD",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 120,
+     "y": 740,
+     "w": 720,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "空中转体五周半，靠什么越转越快？",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "video",
+     "step": 3,
+     "x": 1000,
+     "y": 270,
+     "w": 800,
+     "h": 370,
+     "src": "station_flight_30s.mp4",
+     "hotspot": true,
+     "label": "中国空间站在轨",
+     "qa": [
+      {
+       "q": "空间站靠什么保持朝向？",
+       "a": "靠控制力矩陀螺（CMG）：飞轮与舱体之间交换角动量，不喷推进剂就能调整姿态。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1000,
+     "y": 660,
+     "w": 300,
+     "h": 60,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "中国空间站",
+        "size": 30,
+        "color": "#0000CD",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 950,
+     "y": 840,
+     "w": 920,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "空间站转一圈 90 分钟，它怎么保持朝向？",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "interactions": [
+    {
+     "at": 4,
+     "q": "先猜一猜：运动员在空中收拢身体后，为什么会越转越快？",
+     "answer": 1,
+     "options": [
+      "空气阻力减小了，把他「推」得更快",
+      "收拢身体让转动惯量减小，角速度随之增大",
+      "起跳时储存的弹性势能，在空中释放成了转动"
+     ],
+     "explain": "空中没有支点，外力矩几乎为零，角动量 L=Iω 只能守恒；收拢身体让质量靠近转轴、I 变小，ω 必然变大。现在先记住你的猜想——接下来的转台演示，会让你亲眼看到同样的现象。"
+    }
+   ],
+   "heading": "两个现象"
+  },
+  {
+   "id": 4,
+   "narration": "先看一个经典演示，页面里嵌着一个可以动手玩的三维模拟。[[1]]你站在一个可以自由转动的转台中央，两只手里各握一个哑铃，让别人帮你转起来。一开始，把手臂完全伸开，转得不快，但是很稳。[[2]]注意看，我现在把臂长慢慢收回来——看到了吗？随着手臂收拢，转速肉眼可见地增大，右上角的角速度读数一路往上跳，而角动量 L 始终不变。如果没看清，拖回进度条，它会再演一遍。[[3]]整个过程没有人推你，轴承摩擦也很小，也就是说，外力矩几乎为零。可见，转速的变化不是外力造成的，而是你自己改变质量分布带来的。记住这个画面，它是整节课的锚点。你也可以暂停下来，亲手拖一拖左下角的臂长滑块，自己试一遍。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "01　角动量与转动惯量",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "html",
+     "step": 1,
+     "x": 60,
+     "y": 185,
+     "w": 1800,
+     "h": 815,
+     "src": "sim_turntable.html?embed=1",
+     "label": "转台收臂 3D 交互模拟",
+     "msgs": {
+      "2": "demo"
+     }
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1290,
+     "y": 46,
+     "w": 570,
+     "h": 110,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "▶ 自动演示中：",
+        "size": 30,
+        "color": "#C00000",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "收臂 → 转速明显增大",
+        "size": 30,
+        "color": "#C00000",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "转台演示"
+  },
+  {
+   "id": 5,
+   "narration": "要理解这个现象，先回忆一下平动里的老朋友，再认识它们在转动里的对应角色。[[1]]先看这两列：左边是平动，右边是转动，它们将一一对应。[[2]]首先是质量 m，它描述平动的惯性；转动里对应的角色叫转动惯量 I，等于每个质点的质量乘上它到转轴距离的平方，再求和。[[3]]速度 v 对应角速度 ω，离轴 r 处的线速度就等于 ω 乘 r。[[4]]动量 p 等于 m v，对应角动量 L 等于 I 乘 ω。[[5]]最后是力 F，对应力矩 M，大小等于力乘上力臂。这张表值得多看两眼：它不是死记硬背的清单，而是一套翻译规则。有了它，牛顿第二定律 F 等于 m a，就能直接翻译成转动形式 M 等于 I 乘角加速度，转动的语言你就全会了。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "01　角动量与转动惯量",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 250,
+     "y": 230,
+     "w": 320,
+     "h": 100,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 20,
+     "paras": [
+      [
+       {
+        "t": "平动",
+        "size": 48,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 1050,
+     "y": 230,
+     "w": 320,
+     "h": 100,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 20,
+     "paras": [
+      [
+       {
+        "t": "转动",
+        "size": 48,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 250,
+     "y": 400,
+     "w": 520,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质量 $m$（惯性）",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 700,
+     "y": 400,
+     "w": 120,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "→",
+        "size": 48,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1050,
+     "y": 400,
+     "w": 420,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "转动惯量 $I$",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 1420,
+     "y": 385,
+     "w": 440,
+     "h": 120,
+     "tex": "I=\\sum_i m_i r_i^2",
+     "size": 40,
+     "color": "#0000CD",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 250,
+     "y": 570,
+     "w": 520,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "速度 $v$",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 700,
+     "y": 570,
+     "w": 120,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "→",
+        "size": 48,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1050,
+     "y": 570,
+     "w": 420,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "角速度 $\\omega$",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 1420,
+     "y": 555,
+     "w": 440,
+     "h": 120,
+     "tex": "v=\\omega r",
+     "size": 40,
+     "color": "#0000CD",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 250,
+     "y": 740,
+     "w": 520,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "动量 $p=mv$",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 700,
+     "y": 740,
+     "w": 120,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "→",
+        "size": 48,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1050,
+     "y": 740,
+     "w": 420,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "角动量 $L$",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "important": true,
+     "hotspot": true,
+     "label": "动量→角动量",
+     "qa": [
+      {
+       "q": "角动量和动量怎么对应？",
+       "a": "p=mv 对应 L=Iω：质量 m 换成转动惯量 I，速度 v 换成角速度 ω，动量 p 就换成了角动量 L。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 1420,
+     "y": 725,
+     "w": 440,
+     "h": 120,
+     "tex": "L=I\\omega",
+     "size": 40,
+     "color": "#0000CD",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 250,
+     "y": 910,
+     "w": 520,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "力 $F$",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 700,
+     "y": 910,
+     "w": 120,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "→",
+        "size": 48,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1050,
+     "y": 910,
+     "w": 420,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "力矩 $M$",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 1420,
+     "y": 895,
+     "w": 440,
+     "h": 120,
+     "tex": "M=Fr",
+     "size": 40,
+     "color": "#0000CD",
+     "align": "left"
+    }
+   ],
+   "heading": "平动转动"
+  },
+  {
+   "id": 6,
+   "narration": "把这张表里最关键的两行展开。[[1]]角动量 L 等于 I 乘 ω，读作：角动量等于转动惯量乘角速度，它和动量 p 等于 m v 长得一模一样。[[2]]转动惯量 I 等于 r 方对 d m 的积分，也就是把每一小块质量乘上它到转轴距离的平方，再全部加起来。注意，这里的 r 是到转轴的距离，而且是平方：距离翻一倍，贡献翻四倍。所以说，转动惯量就是转动中的质量：它不只看有多少质量，更看质量离轴有多远。[[3]]记住三个常用结果：细圆环绕中心轴是 m R 方，均质圆盘是二分之一 m R 方，转台上的人加两个哑铃，可以写成 I 零加上二倍的 m r 方。同样重的圆盘和圆环，圆环更难转起来，因为它的质量全在最外圈。[[4]]方向怎么定？用右手螺旋定则：右手四指顺着转动方向弯曲，拇指指的方向，就是 ω 和 L 的方向。角动量的方向沿转轴，这一点后面有大用。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "01　角动量与转动惯量",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 240,
+     "y": 280,
+     "w": 560,
+     "h": 170,
+     "tex": "L=I\\omega",
+     "size": 72,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 240,
+     "y": 490,
+     "w": 660,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "角动量 = 转动惯量 × 角速度",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 240,
+     "y": 620,
+     "w": 600,
+     "h": 150,
+     "tex": "I=\\int r^2\\,dm",
+     "size": 56,
+     "color": "#111111",
+     "align": "left",
+     "hotspot": true,
+     "label": "转动惯量定义式",
+     "qa": [
+      {
+       "q": "转动惯量由什么决定？",
+       "a": "I=∫r²dm：既取决于总质量，更取决于质量相对转轴的分布；质量离轴越远，I 越大。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 240,
+     "y": 800,
+     "w": 720,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "转动惯量：转动中的",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "『质量』",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "important": true,
+     "hotspot": true,
+     "label": "转动惯量是转动中的质量",
+     "qa": [
+      {
+       "q": "为什么说转动惯量是转动中的质量？",
+       "a": "类比 p=mv 与 L=Iω：m 描述平动惯性，I 描述转动惯性，地位完全相当；但 I 还与质量分布有关。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1000,
+     "y": 290,
+     "w": 300,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "细圆环",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 1340,
+     "y": 280,
+     "w": 420,
+     "h": 110,
+     "tex": "I=mR^2",
+     "size": 42,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1000,
+     "y": 450,
+     "w": 300,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "均质圆盘",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 1340,
+     "y": 440,
+     "w": 420,
+     "h": 110,
+     "tex": "I=\\dfrac{1}{2}mR^2",
+     "size": 42,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1000,
+     "y": 610,
+     "w": 300,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "人+哑铃",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "hotspot": true,
+     "label": "人+哑铃模型",
+     "qa": [
+      {
+       "q": "人加哑铃的转动惯量怎么写？",
+       "a": "I=I₀+2mr²：I₀ 是人和转台本体的转动惯量，两个哑铃各贡献 mr²；收臂就是减小 r。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 1340,
+     "y": 600,
+     "w": 460,
+     "h": 110,
+     "tex": "I=I_0+2mr^2",
+     "size": 42,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "img",
+     "step": 4,
+     "x": 1040,
+     "y": 740,
+     "w": 260,
+     "h": 312,
+     "src": "righthand.png",
+     "hotspot": true,
+     "label": "右手螺旋定则",
+     "qa": [
+      {
+       "q": "角动量的方向怎么定？",
+       "a": "右手螺旋定则：右手四指顺着转动方向弯曲握拳，拇指指向就是角速度 ω 与角动量 L 的方向（沿转轴）。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1360,
+     "y": 760,
+     "w": 480,
+     "h": 180,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "右手螺旋定则：",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "四指顺转向，拇指即",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$\\omega$、$L$ 的方向",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "角动量"
+  },
+  {
+   "id": 7,
+   "narration": "回忆一下那张平动转动类比表，它还差最后一块拼图。[[1]]先看老知识：平动里，力等于动量的变化率，F 等于 d p 比 d t，这就是动量定理；合外力为零，动量就守恒。[[2]]按类比表把它搬到转动：力矩 M 等于角动量的变化率，M 等于 d L 比 d t——力矩，是角动量变化的原因。这就是转动里的牛顿第二定律，叫角动量定理。[[3]]关键一步来了：如果合外力矩为零，d L 比 d t 就是零，角动量保持不变。看到了吗？角动量守恒定律，就这样从定理里长出来了。[[4]]所以请记住：守恒不是一个孤立的结论，它是角动量定理在合外力矩为零时的特例。正因为如此，判断守恒的钥匙，永远是先看力矩。下一页，我们就把这把钥匙用好。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　角动量守恒定律",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 260,
+     "y": 230,
+     "w": 560,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "平动 · 动量定理（已学）",
+        "size": 40,
+        "color": "#0000CD",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 260,
+     "y": 310,
+     "w": 560,
+     "h": 150,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": null,
+     "tex": "\\vec{F}=\\dfrac{d\\vec{p}}{dt}",
+     "size": 52,
+     "align": "center",
+     "color": "#111111",
+     "hotspot": true,
+     "label": "动量定理 F=dp/dt",
+     "qa": [
+      {
+       "q": "动量定理的内容是什么？",
+       "a": "F=dp/dt：合外力等于动量的变化率；合外力为零时动量守恒。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 260,
+     "y": 490,
+     "w": 780,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\vec{F}=0\\Rightarrow\\vec{p}$ 守恒",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 850,
+     "y": 330,
+     "w": 160,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "⇒",
+        "size": 64,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 830,
+     "y": 450,
+     "w": 200,
+     "h": 60,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "类比",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1060,
+     "y": 230,
+     "w": 700,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "转动 · 角动量定理",
+        "size": 40,
+        "color": "#C00000",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 1060,
+     "y": 310,
+     "w": 620,
+     "h": 150,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": null,
+     "tex": "\\vec{M}=\\dfrac{d\\vec{L}}{dt}",
+     "size": 52,
+     "align": "center",
+     "color": "#111111",
+     "hotspot": true,
+     "label": "角动量定理 M=dL/dt",
+     "qa": [
+      {
+       "q": "角动量定理的内容是什么？",
+       "a": "M=dL/dt：合外力矩等于角动量的变化率——转动里的牛顿第二定律；力矩是角动量变化的原因。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1060,
+     "y": 490,
+     "w": 640,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "力矩是角动量变化的原因",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 1060,
+     "y": 620,
+     "w": 620,
+     "h": 130,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": null,
+     "tex": "\\vec{M}_{\\text{外}}=0\\;\\Rightarrow\\;\\vec{L}=I\\vec{\\omega}=\\text{常量}",
+     "size": 42,
+     "align": "center",
+     "color": "#111111",
+     "hotspot": true,
+     "label": "守恒从定理长出",
+     "qa": [
+      {
+       "q": "角动量守恒是怎么从定理推出来的？",
+       "a": "M=dL/dt 中取 M外=0，则 dL/dt=0，角动量 L=Iω 保持不变——守恒定律是定理的特例。"
+      }
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 260,
+     "y": 810,
+     "w": 1420,
+     "h": 140,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "角动量定理 = 转动里的牛顿第二定律；",
+        "size": 42,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "守恒定律是它在合外力矩为零时的特例",
+        "size": 42,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "important": true,
+     "hotspot": true,
+     "label": "定理与特例的关系",
+     "qa": [
+      {
+       "q": "守恒定律和角动量定理是什么关系？",
+       "a": "守恒定律（M外=0 时 L 不变）是角动量定理（M=dL/dt）的特例；因此判断守恒先看力矩。"
+      }
+     ]
+    }
+   ],
+   "heading": "动量定理"
+  },
+  {
+   "id": 8,
+   "narration": "上一页，守恒定律已经从角动量定理里长出来了。接下来，把它用对。[[1]]先强调前提：守恒定律是对定轴转动而言的。[[2]]这里有一个最容易掉进去的坑：守恒的条件是合外力矩为零，而不是合外力为零。力为零，力矩不一定为零，比如一对力偶；反过来，力不为零，力矩也可能为零，比如力正好通过转轴。[[3]]所以判断守恒，永远先看力矩，再看别的。[[4]]还要记住，L 是矢量，守恒意味着大小和方向同时保持不变。方向不变这一点，正是空间站保持朝向的物理根基。回到转台上的你：重力竖直向下，支持力竖直向上，两个力都通过转轴，力矩都是零，因此你的角动量守恒。课后不妨找个能转起来的椅子，亲自试一试刚才转台上的现象。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　角动量守恒定律",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 300,
+     "y": 240,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "➤ 前提：",
+        "size": 44,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "守恒定律对定轴转动成立",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 300,
+     "y": 400,
+     "w": 1500,
+     "h": 170,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "➤ 条件：",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "合外力矩为零　$\\vec{M}_{\\text{外}}=0$",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "　　注意：",
+        "size": 40,
+        "color": "#C00000",
+        "b": false
+       },
+       {
+        "t": "合外力为零 ≠ 合外力矩为零（$\\vec{F}=0 \\neq \\vec{M}=0$）",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "hotspot": true,
+     "label": "守恒条件：合外力矩为零",
+     "qa": [
+      {
+       "q": "合外力为零时角动量一定守恒吗？",
+       "a": "不一定。判据是合外力矩为零：力为零力矩未必为零（力偶），力不为零力矩也可能为零（力过转轴）。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 300,
+     "y": 630,
+     "w": 900,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "➤ 判断：",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "先看力矩，再谈守恒",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "hotspot": true,
+     "label": "先看力矩再判断",
+     "qa": [
+      {
+       "q": "判断角动量是否守恒的第一步是什么？",
+       "a": "先对转轴分析合外力矩：M外=0 才有 L 守恒；不要先看力，也不要先看速度。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 300,
+     "y": 760,
+     "w": 1150,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "➤ 方向：",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "$\\vec{L}$ 是矢量，大小与方向同时守恒",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true,
+     "hotspot": true,
+     "label": "L 是矢量",
+     "qa": [
+      {
+       "q": "角动量守恒包含哪两个层面？",
+       "a": "大小不变、方向也不变。方向不变意味着转轴指向固定——这正是陀螺和空间站稳姿的原理。"
+      }
+     ]
+    }
+   ],
+   "heading": "守恒定律"
+  },
+  {
+   "id": 9,
+   "narration": "守恒，不等于只有一个量不变。[[1]]看这个 ω 对 I 的守恒模拟：横轴是转动惯量，纵轴是角速度，蓝色曲线是 ω 等于 L 比 I，一条双曲线。收臂的时候，臂长 r 变小，I 沿横轴往左移，工作点就沿着双曲线往上爬；伸臂则反过来，工作点向右下滑。[[2]]整个过程里，I 在变，ω 在变，可它们的乘积 L 从头到尾纹丝不动。你可以盯着模拟里的那个蓝点看：它永远被钉在这条双曲线上。暂停下来，你还能亲手拖一拖它。[[3]]所以你能得出结论：守恒约束的不是某一个量，而是 I 与 ω 的乘积；一个减小多少倍，另一个就增大多少倍。这就是收臂加速的全部秘密，一句话：乘积不变，此消彼长。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　角动量守恒定律",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 300,
+     "y": 240,
+     "w": 1350,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "转动惯量 $I$ 在变，",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "角速度 $\\omega$ 在变，",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "角动量 $L$ 全程不变",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "html",
+     "step": 1,
+     "x": 100,
+     "y": 330,
+     "w": 1240,
+     "h": 690,
+     "src": "sim_turntable.html?embed=chart",
+     "label": "ω–I 双曲线守恒模拟"
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 1380,
+     "y": 380,
+     "w": 480,
+     "h": 140,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": null,
+     "tex": "L=I\\omega=\\text{常量}",
+     "size": 48,
+     "align": "center",
+     "color": "#111111",
+     "important": true,
+     "hotspot": true,
+     "label": "乘积守恒",
+     "qa": [
+      {
+       "q": "守恒的是 I 还是 ω？",
+       "a": "都不是。守恒的是乘积 L=Iω：I 与 ω 可以各自变化，但乘积保持不变。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1380,
+     "y": 570,
+     "w": 480,
+     "h": 120,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "一个减小多少倍，",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "另一个就增大多少倍",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1380,
+     "y": 730,
+     "w": 500,
+     "h": 60,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "▶ 可暂停后沿双曲线拖一拖工作点",
+        "size": 30,
+        "color": "#555555",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "守恒模拟"
+  },
+  {
+   "id": 10,
+   "narration": "把核心规律集中收到一页。[[1]]最上面还是那条主线：外力矩等于零，L 等于 I 乘 ω 等于常量。它是这一页的总开关。[[2]]第一，转动动能 K 等于二分之一 I ω 方。把 ω 等于 L 比 I 代入，整理一下就得到 K 等于 L 方比二 I。这个变形非常关键：它告诉我们，L 不变时，I 越小，K 反而越大。[[3]]第二，转动惯量怎么变？I 等于 I 零加二 m r 方，质量离轴越远，I 越大，收臂就是在减小 r。[[4]]第三，角速度 ω 等于 L 比 I，L 不变时，I 减小，ω 就上升。三个公式串起来，就是一条因果链：收臂，I 小，ω 大，K 更大。[[5]]底下这四组类比再读一遍：p 等于 m v 对应 L 等于 I ω，F 对应 M，m 对应 I，v 对应 ω。这一页，值得你截图保存。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "03　角动量与动能",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 260,
+     "y": 220,
+     "w": 1400,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": null,
+     "tex": "\\vec{M}_{\\text{外}}=0\\;\\Rightarrow\\; L=I\\omega=\\text{常量}",
+     "size": 44,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 160,
+     "y": 400,
+     "w": 520,
+     "h": 260,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "转动动能",
+        "size": 40,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$K=\\tfrac{1}{2}I\\omega^2=\\tfrac{L^2}{2I}$",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$L$ 不变时，$I$ 越小 $K$ 越大",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "important": true,
+     "hotspot": true,
+     "label": "转动动能 K=L²/2I",
+     "qa": [
+      {
+       "q": "L 不变时减小 I，动能怎么变？",
+       "a": "K=½Iω²=L²/2I：L 不变时 K 与 I 成反比，I 越小 K 越大。动能并不守恒。"
+      }
+     ]
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 700,
+     "y": 400,
+     "w": 520,
+     "h": 260,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "转动惯量",
+        "size": 40,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$I=I_0+2mr^2$",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "质量离轴越远，$I$ 越大",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 1240,
+     "y": 400,
+     "w": 520,
+     "h": 260,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "角速度",
+        "size": 40,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$\\omega=L/I$",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$L$ 不变时，$I\\downarrow\\Rightarrow\\omega\\uparrow$",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 160,
+     "y": 730,
+     "w": 600,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "平动 VS 转动 类比",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 160,
+     "y": 820,
+     "w": 400,
+     "h": 100,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": null,
+     "tex": "p=mv\\;\\leftrightarrow\\;L=I\\omega",
+     "size": 38,
+     "align": "center",
+     "color": "#111111",
+     "hotspot": true,
+     "label": "p 与 L 的类比",
+     "qa": [
+      {
+       "q": "为什么要背平动转动类比表？",
+       "a": "转动公式几乎都能从平动公式翻译得到：m→I、v→ω、p→L、F→M，记住映射就记住了整套公式。"
+      }
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 580,
+     "y": 820,
+     "w": 300,
+     "h": 100,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": null,
+     "tex": "F\\leftrightarrow M",
+     "size": 38,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 920,
+     "y": 820,
+     "w": 300,
+     "h": 100,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": null,
+     "tex": "m\\leftrightarrow I",
+     "size": 38,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1260,
+     "y": 820,
+     "w": 300,
+     "h": 100,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": null,
+     "tex": "v\\leftrightarrow\\omega",
+     "size": 38,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "核心规律"
+  },
+  {
+   "id": 11,
+   "narration": "口说无凭，这一回不看静态图，现场算给你看。[[1]]左边还是刚才那个转台模拟，左下角多了一张记录图：横轴是臂长，越往右手臂收得越紧；图上要画三条线——角动量 L、角速度 ω 和动能 K。[[2]]来，我们把臂长再收一次，盯住这三条线：红色虚线是角动量 L，从展臂到收臂一条平线，纹丝不动；蓝色是角速度 ω，橙色是动能 K，这两条线一起往上爬。[[3]]具体数字摆出来：L 始终是十一点六八，守恒；ω 从四弧度每秒涨到九点八四，放大了二点四六倍；I 从二点九二收到一点一九；动能 K 从二十三点四焦耳涨到五十七点五焦耳，多了三十四点一焦耳。问题来了：L 纹丝不动，动能却涨了差不多一点五倍，这多出来的差额，谁来补？[[4]]答案是：你收臂时肌肉在做功，把体内的化学能转成了转动动能。收臂要克服哑铃甩出去的离心趋势，肌肉确实在出力。角动量守恒，可动能并不守恒——这两本账，要分开记。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "03　角动量与动能",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "html",
+     "step": 1,
+     "x": 60,
+     "y": 185,
+     "w": 1800,
+     "h": 660,
+     "src": "sim_turntable.html?embed=record",
+     "label": "转台收臂现场记录模拟",
+     "msgs": {
+      "2": "demo"
+     }
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1050,
+     "y": 46,
+     "w": 800,
+     "h": 60,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "▶ 现场演示：收臂，曲线现场画出",
+        "size": 30,
+        "color": "#C00000",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 120,
+     "y": 872,
+     "w": 1050,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "➤ $L$ 纹丝不动，动能却涨 1.5 倍——差额谁补？",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "hotspot": true,
+     "label": "动能差额谁补",
+     "qa": [
+      {
+       "q": "L 不变时动能增大的差额谁来补？",
+       "a": "收臂的人：肌肉收缩做正功，把体内化学能转化为转动动能。角动量守恒不要求动能守恒。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 120,
+     "y": 958,
+     "w": 1150,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "✓ ",
+        "size": 40,
+        "color": "#2E8B57",
+        "b": true
+       },
+       {
+        "t": "来自收臂时肌肉做功（化学能 → 转动动能）",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true,
+     "hotspot": true,
+     "label": "动能来自肌肉做功",
+     "qa": [
+      {
+       "q": "角动量守恒和动能守恒矛盾吗？",
+       "a": "不矛盾。这是两本独立的账：L 守恒是外力矩为零的结果；K 增加是内力（肌肉）做功的结果。"
+      }
+     ]
+    }
+   ],
+   "interactions": [
+    {
+     "at": 3,
+     "q": "角动量 L 不变，转动动能却增加了 34.1 J。增加的能量从哪里来？",
+     "answer": 0,
+     "options": [
+      "收臂时肌肉做功，由体内化学能转化而来",
+      "由角动量转化而来",
+      "转轴支持力做功提供"
+     ],
+     "explain": "K=L²/2I，L 守恒而 I 减小，K 必然增大；能量来自肌肉收臂做的功。支持力过轴不做功，角动量也不是能量，不能「转化」出动能。"
+    }
+   ],
+   "heading": "两本账"
+  },
+  {
+   "id": 12,
+   "narration": "聊一个著名的悖论。[[1]]猫从高处落下，哪怕四脚朝天松手，也总能翻过身来四脚着地。可是，猫下落时只受重力，重力作用在质心上，对质心的外力矩是零，角动量应该守恒——猫的初角动量是零，它凭什么能翻过身来？这不违反守恒律吗？[[2]]讨论边界先划清楚：把猫看作一个系统，先判断外力矩，确实为零；再判断能不能把猫当成刚体，答案是，不能。这个判断是整个推理的转折点。[[3]]猫的脊柱极度柔韧，它把身体折成前后两截，前半身朝一个方向转，后半身朝反方向转，两截的角动量一正一负，加起来始终是零。也就是说，猫没有创造角动量，只是在身体内部重新分配了它。这一轮，守恒律完胜。顺便一提，航天员在舱外转身，用的也是同样的思路。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04　应用与迁移",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 120,
+     "y": 240,
+     "w": 880,
+     "h": 200,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "讨论",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "猫从高处落下总能四脚着地，",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "违反角动量守恒吗？",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "left",
+     "color": "#111111",
+     "hotspot": true,
+     "label": "猫翻身讨论题",
+     "qa": [
+      {
+       "q": "猫翻身违反角动量守恒吗？",
+       "a": "不违反。猫不是刚体：脊柱弯曲让前后半身反向转动，两部分角动量一正一负，总和始终为零。"
+      }
+     ]
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 1060,
+     "y": 200,
+     "w": 800,
+     "h": 450,
+     "src": "cat.png"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 120,
+     "y": 490,
+     "w": 880,
+     "h": 140,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "讨论边界：",
+        "size": 40,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "把猫看作系统，先判断外力矩；",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "再判断能不能把身体当作刚体。",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 120,
+     "y": 670,
+     "w": 940,
+     "h": 140,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "解答要点：",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "猫不是刚体——脊柱弯曲，",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "前后半身反向转动，角动量一正一负，总和为零。",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true,
+     "hotspot": true,
+     "label": "猫翻身不违反守恒",
+     "qa": [
+      {
+       "q": "猫靠什么在空中翻身？",
+       "a": "靠身体的形变：脊柱弯曲，前后半身绕不同方向转动，角动量内部重新分配，总和保持为零。"
+      }
+     ]
+    }
+   ],
+   "interactions": [
+    {
+     "at": 1,
+     "q": "猫从空中落下能翻身四脚着地，这违反角动量守恒吗？",
+     "answer": 2,
+     "options": [
+      "违反——翻过来需要角动量凭空产生",
+      "不违反——猫是刚体，外力矩为零所以整体不能转动",
+      "不违反——猫不是刚体：前后半身反向转动，角动量在内部重新分配，总和始终为零"
+     ],
+     "explain": "重力过质心，外力矩为零，总角动量守恒（始终为零）。猫靠极度柔韧的脊柱把身体折成前后两截、朝相反方向转动，一正一负互相抵消——角动量没有被创造，只是在体内重新分配。航天员在舱外转身，用的也是同样的思路。"
+    }
+   ],
+   "heading": "猫翻身"
+  },
+  {
+   "id": 13,
+   "narration": "现在回到开头的问题：空间站靠什么调姿？答案就在这两张图里。[[1]]左边是问天实验舱的研制现场；右边这个其貌不扬的方盒子，叫控制力矩陀螺，英文缩写 CMG，它就是空间站的方向盘。空间站上装了好几台，互为备份，坏了还能在轨更换。[[2]]原理和你收臂是同款：陀螺里有个高速飞轮，电机让飞轮加速，舱体就朝反方向转动；飞轮减速，舱体再转回来。角动量只是在轮子和舱体之间搬了个家。[[3]]请记住这句话：内力矩可以重新分配角动量，但不能创造角动量。[[4]]妙处在于，这套过程不喷推进剂，只花电，而电由太阳能帆板源源不断地提供。所以空间站才能十几年如一日地保持姿态，把宝贵的推进剂省给变轨和规避碎片。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04　应用与迁移",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 120,
+     "y": 250,
+     "w": 820,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "空间站的『方向盘』：",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "控制力矩陀螺 CMG",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "hotspot": true,
+     "label": "控制力矩陀螺 CMG",
+     "qa": [
+      {
+       "q": "控制力矩陀螺 CMG 是什么？",
+       "a": "空间站姿态控制装置：内置高速飞轮，电机改变飞轮转速，靠角动量交换让舱体反向转动，不消耗推进剂。"
+      }
+     ]
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 120,
+     "y": 360,
+     "w": 700,
+     "h": 339,
+     "src": "wentian.jpg",
+     "hotspot": true,
+     "label": "问天实验舱",
+     "qa": [
+      {
+       "q": "问天实验舱和 CMG 有什么关系？",
+       "a": "问天实验舱装有控制力矩陀螺，可在轨更换（图为研制现场与在轨更换画面）。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 120,
+     "y": 715,
+     "w": 700,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "问天实验舱 · 研制现场",
+        "size": 28,
+        "color": "#666666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 120,
+     "y": 790,
+     "w": 330,
+     "h": 225,
+     "src": "cmg.jpg",
+     "hotspot": true,
+     "label": "在轨更换 CMG",
+     "qa": [
+      {
+       "q": "CMG 坏了怎么办？",
+       "a": "CMG 设计为可更换单元，航天员出舱即可在轨更换，图为中国空间站在轨更换 CMG。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 470,
+     "y": 800,
+     "w": 380,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "在轨更换 CMG",
+        "size": 28,
+        "color": "#666666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 950,
+     "y": 360,
+     "w": 900,
+     "h": 130,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "➤ 轮子加速，舱体反向转动；",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "　角动量在轮与舱之间转移",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 950,
+     "y": 540,
+     "w": 880,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "内力矩可以重新分配角动量，",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "但不能创造角动量",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "important": true,
+     "hotspot": true,
+     "label": "内力矩只分配不创造",
+     "qa": [
+      {
+       "q": "内力矩能改变总角动量吗？",
+       "a": "不能。内力矩成对出现、相互抵消，只能在系统内部转移角动量；总角动量只由外力矩改变。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 950,
+     "y": 730,
+     "w": 880,
+     "h": 130,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "➤ 不喷推进剂，只耗电；",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "　电由太阳能帆板源源不断提供",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "方向盘"
+  },
+  {
+   "id": 14,
+   "narration": "再看一次真实的角动量管理。[[1]]先看场景：航天员出舱作业，一切都要系着安全绳。[[2]]在舱外拧一颗螺栓：扳手给螺栓一个力矩，螺栓就给航天员一个反力矩，于是先转起来的，是航天员自己。这在舱内是小事，在舱外就是大麻烦——人一旦转起来，身边没有任何东西可以抓。[[3]]怎么办？这时 CMG 上场：它把航天员带进来的多余角动量先存进飞轮，再找机会慢慢卸载，舱体姿态始终稳如泰山。你可能会问，为什么不直接喷气对抗？因为推进剂喷一点少一点，而角动量卸载只用电。[[4]]所以你看，出舱任务排计划的时候，角动量管理是要专门写进方案的。同一条守恒律，一头连着课堂上的转台，一头连着四百公里高的空间站。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04　应用与迁移",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 1180,
+     "y": 220,
+     "w": 480,
+     "h": 466,
+     "src": "station.jpg",
+     "hotspot": true,
+     "label": "中国空间站在轨",
+     "qa": [
+      {
+       "q": "出舱活动和角动量有什么关系？",
+       "a": "航天员拧螺栓时会受到反力矩而反向转动，舱体姿态受扰；CMG 负责暂存并卸载这部分角动量。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 120,
+     "y": 230,
+     "w": 900,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "出舱 · 一次真实的角动量管理",
+        "size": 44,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 120,
+     "y": 350,
+     "w": 1000,
+     "h": 140,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "➤ 舱外拧螺栓，先转起来的是航天员自己",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "　（扳手给力矩，螺栓还一个反力矩）",
+        "size": 34,
+        "color": "#555555",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 120,
+     "y": 530,
+     "w": 1000,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "➤ CMG 暂存并逐步卸载角动量，舱体姿态稳如泰山",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 120,
+     "y": 650,
+     "w": 1000,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "➤ 出舱任务排计划，角动量管理要写进方案",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 120,
+     "y": 790,
+     "w": 1000,
+     "h": 110,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "同一条守恒律，连接转台与空间站。",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "important": true,
+     "hotspot": true,
+     "label": "守恒律连接转台与空间站",
+     "qa": [
+      {
+       "q": "转台和空间站的共同点是什么？",
+       "a": "外力矩都近似为零，角动量守恒：转台上收臂加速，空间站里轮与舱交换角动量调姿。"
+      }
+     ]
+    }
+   ],
+   "heading": "出舱"
+  },
+  {
+   "id": 15,
+   "narration": "把尺度推到宇宙。[[1]]这是蟹状星云，公元一零五四年超新星爆发的遗迹，我国宋代的史书里有明确记载；中央那个亮点，是一颗每三十三毫秒就转一圈的脉冲星。[[2]]恒星坍缩时，半径从约七乘十的八次方米，缩到约十千米，尺度压缩了七万倍。[[3]]转动惯量正比于 R 方，于是急剧减小；而坍缩过程外力矩近似为零，L 守恒，ω 只能跟着暴涨。[[4]]目前已知转得最快的脉冲星，大约每秒七百一十六转——想一想，一个比城市还大的天体，转得比厨房里的搅拌机还快。[[5]]我国的 FAST 天眼，已经发现了超过一千一百七十颗脉冲星，还参与低频引力波探测。脉冲星的自转极其稳定，是宇宙里最准的钟。同一条守恒律，在宇宙尺度照样管用。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04　应用与迁移",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 120,
+     "y": 220,
+     "w": 720,
+     "h": 467,
+     "src": "crab.jpg",
+     "hotspot": true,
+     "label": "蟹状星云",
+     "qa": [
+      {
+       "q": "蟹状星云中央是什么？",
+       "a": "公元 1054 年超新星爆发的遗迹，中央亮点是一颗周期约 33 ms 的脉冲星（高速自转的中子星）。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 120,
+     "y": 700,
+     "w": 760,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "蟹状星云：中央亮点即 33 ms 脉冲星（NASA/CXC/STScI）",
+        "size": 26,
+        "color": "#666666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 920,
+     "y": 230,
+     "w": 960,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "➤ 半径：约 $7\\times10^8$ m $\\to$ 约 10 km",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 920,
+     "y": 340,
+     "w": 960,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "➤ 转动惯量 $I\\propto R^2$，急剧减小",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "hotspot": true,
+     "label": "I∝R² 急剧减小",
+     "qa": [
+      {
+       "q": "坍缩时转动惯量为什么急剧减小？",
+       "a": "I∝R²：半径缩为约 1/70000，I 缩为约 1/(5×10⁹)，平方关系把尺寸压缩剧烈放大。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 920,
+     "y": 450,
+     "w": 960,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "➤ $L$ 守恒，$\\omega$ 显著增大",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 920,
+     "y": 560,
+     "w": 960,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "➤ 观测：最快脉冲星约 716 转/秒",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 920,
+     "y": 690,
+     "w": 720,
+     "h": 130,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "1170+ 颗",
+        "size": 48,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "　FAST 已发现脉冲星",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "hotspot": true,
+     "label": "FAST 已发现 1170+ 颗脉冲星",
+     "qa": [
+      {
+       "q": "FAST 与脉冲星有什么关系？",
+       "a": "FAST（中国天眼）已发现超过 1170 颗脉冲星，并参与低频引力波探测；脉冲星计时依赖其极其稳定的自转。"
+      }
+     ]
+    }
+   ],
+   "interactions": [
+    {
+     "at": 3,
+     "q": "坍缩使恒星半径缩到原来的约 1/70000。由 I∝R² 与 L 守恒，自转角速度 ω 约变为原来的多少倍？",
+     "answer": 1,
+     "options": [
+      "约 $7\\times10^4$ 倍",
+      "约 $5\\times10^9$ 倍",
+      "几乎不变"
+     ],
+     "explain": "ω=L/I，而 I∝R²。R 缩为约 1/(7×10⁴)，I 缩为约 1/(4.9×10⁹)，L 不变故 ω 增大约 5×10⁹ 倍。平方关系让尺寸压缩被剧烈放大——这正是脉冲星每秒数百转的由来。"
+    }
+   ],
+   "heading": "脉冲星"
+  },
+  {
+   "id": 16,
+   "narration": "最后，把这节课串成一条线。[[1]]第一环，现象设问：苏翊鸣为何越转越快，空间站如何保持朝向，好问题是一切学习的起点。[[2]]第二环，概念建模：建立角动量 L 等于 I ω 的模型，用转动惯量描述转动的惯性。[[3]]第三环，守恒判据：先判外力矩，外力矩为零才有 L 守恒，这是全课的重点和难点。[[4]]第四环，机制辨析：I 的改变引起 ω 的响应，内部运动只能重新分配角动量，动能的账另算。[[5]]第五环，大国重器：中国空间站用控制力矩陀螺与舱体交换角动量，实现低耗调姿。[[6]]第六环，普适迁移：转台、猫、空间站、脉冲星，共用同一条规律——外力矩为零，L 等于常量。从课堂到太空再到宇宙深处，尺度差了多少个数量级，规律却是同一条。现在，回到这节课开头的两个问题：苏翊鸣为什么越转越快？他在空中收拢身体，转动惯量减小，角动量不变，角速度自然就上去了。空间站又为什么总能保持朝向？因为它肚子里装着控制力矩陀螺，在身体内部转移角动量，一滴推进剂都不用喷。两个问题，一个答案。大国重器根植基础规律，核心技术依靠自主创新，科技报国始于求真务实。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "小结",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 150,
+     "y": 260,
+     "w": 480,
+     "h": 170,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "① 现象设问",
+        "size": 42,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "苏翊鸣为何越转越快？",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "空间站如何保持朝向？",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 680,
+     "y": 260,
+     "w": 480,
+     "h": 170,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "② 概念建模",
+        "size": 42,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$L=I\\omega$",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 1210,
+     "y": 260,
+     "w": 480,
+     "h": 170,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "③ 守恒判据",
+        "size": 42,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "先判外力矩 $\\vec{M}_{\\text{外}}=0$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 150,
+     "y": 560,
+     "w": 480,
+     "h": 170,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "④ 机制辨析",
+        "size": 42,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$I$ 变引起 $\\omega$ 响应",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "内部运动重新分配角动量",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 680,
+     "y": 560,
+     "w": 480,
+     "h": 170,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "⑤ 大国重器",
+        "size": 42,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "空间站 CMG 低耗调姿",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1210,
+     "y": 560,
+     "w": 480,
+     "h": 170,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "⑥ 普适迁移",
+        "size": 42,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "转台·猫·空间站·脉冲星",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 150,
+     "y": 830,
+     "w": 1540,
+     "h": 110,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "大国重器根植基础规律 · 核心技术依靠自主创新 · 科技报国始于求真务实",
+        "size": 42,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "important": true,
+     "hotspot": true,
+     "label": "小结口号",
+     "qa": [
+      {
+       "q": "这节课的主线是什么？",
+       "a": "现象设问→概念建模→守恒判据→机制辨析→大国重器→普适迁移：同一条角动量守恒律，贯通课堂、工程与宇宙。"
+      }
+     ]
+    }
+   ],
+   "heading": "小结"
+  },
+  {
+   "id": 17,
+   "narration": "布置两件事。[[1]]第一，课后讨论题：角动量守恒时，增加的动能从哪里来？课上我们给过答案，但推导的细节留给你；欢迎去找 AI 助教做苏格拉底式对话，它不会直接给答案，而是用追问陪你把推理链走完整。[[2]]第二，预习第四章第五节：自行车轮在地面上纯滚动，轮子与地面接触的那个点，瞬时速度是多少？它和车轴前进的速度，是什么关系？不妨先凭直觉猜一个答案，再带着这个问题，进入下次课。[[3]]今天的课就到这里。这节课里的五道互动题，你都答对了吗？回去的路上，不妨再想一想：你在转台上收一次手臂，和头顶四百公里外的空间站调一次姿，其实是同一件事。同一条守恒律，跨越课堂、工程与宇宙。下次课见！",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "作业与预习",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 150,
+     "y": 240,
+     "w": 1500,
+     "h": 160,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "➤ 讨论题：",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "角动量守恒时，增加的动能从哪里来？",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "课后与 AI 助教做苏格拉底式讨论，把推理链走完整",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "left",
+     "color": "#111111",
+     "hotspot": true,
+     "label": "课后讨论题",
+     "qa": [
+      {
+       "q": "讨论题怎么思考？",
+       "a": "从 K=L²/2I 出发：L 不变、I 减小时 K 增大；再追问收臂是否需要肌肉用力——能量来自内力做功。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 150,
+     "y": 470,
+     "w": 1500,
+     "h": 170,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "➤ 预习 §4-5：",
+        "size": 40,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "自行车轮在地面上纯滚动，与地面接触的那个点，瞬时速度是多少？",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "　它和车轴前进的速度是什么关系？带着这个问题进入下次课。",
+        "size": 36,
+        "color": "#555555",
+        "b": false
+       }
+      ]
+     ],
+     "hotspot": true,
+     "label": "预习：纯滚动接地点速度",
+     "qa": [
+      {
+       "q": "纯滚动时接地点的瞬时速度是多少？",
+       "a": "零。纯滚动是无滑动的滚动，接触点瞬间静止；车轴速度 v=ωR，接地点的平动与转动速度正好抵消。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 150,
+     "y": 700,
+     "w": 800,
+     "h": 130,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "下次课见",
+        "size": 88,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 150,
+     "y": 870,
+     "w": 900,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同一条守恒律，跨越课堂、工程与宇宙。",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "img",
+     "step": 3,
+     "x": 1300,
+     "y": 500,
+     "w": 420,
+     "h": 408,
+     "src": "station.jpg"
+    }
+   ],
+   "heading": "作业预习"
+  }
+ ]
+}

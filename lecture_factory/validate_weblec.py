@@ -17,6 +17,7 @@ FACTORY = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, FACTORY)
 WEBLEC = os.path.normpath(os.path.join(FACTORY, "..", "interactive-lecture", "public", "weblec"))
 VIDEO_W, VIDEO_H = 1920, 1080
+KNOWN_THEMES = ("special",)  # 页面版式主题（前端 lib/theme.ts 的 THEMES 键）
 TIME_TOL = 0.6        # 时刻相对页面区间的容忍（秒）
 STEP_MIN_GAP = 0.8    # 相邻步进最小间隔，更小疑似同句多标记
 MAX_IMPORTANT = 3     # 每页 important 要点上限（引擎每页最多画 3 条红线）
@@ -81,6 +82,9 @@ def validate(path):
     for k in ("title", "nav", "footer", "duration", "slides", "subtitles"):
         if k not in d:
             rep.e(f"缺顶层字段 {k}")
+    th = d.get("theme")
+    if th is not None and th not in KNOWN_THEMES:
+        rep.e(f"未知页面版式主题 theme={th!r}（已知：{list(KNOWN_THEMES)}）")
     slides = d.get("slides", [])
     subs = d.get("subtitles", [])
     dur = d.get("duration", 0)
@@ -88,6 +92,20 @@ def validate(path):
     ids = [p.get("id") for p in slides]
     if ids != list(range(1, len(slides) + 1)):
         rep.w(f"页 id 不连续：{ids}")
+
+    # 分段导航：page 必须存在且严格递增，段名非空
+    secs = d.get("sections")
+    if secs is not None:
+        prev = 0
+        for si, s in enumerate(secs, 1):
+            if not str(s.get("title", "")).strip():
+                rep.e(f"sections#{si} 段名 title 为空")
+            pg = s.get("page")
+            if pg not in ids:
+                rep.e(f"sections#{si}「{s.get('title')}」指向不存在的页 id={pg}")
+            elif pg <= prev:
+                rep.e(f"sections#{si} page={pg} 未递增（上一段 page={prev}）")
+            prev = pg
 
     for p in slides:
         tag = f"p{p.get('id', '?')}「{p.get('heading', '')}」"
@@ -125,6 +143,19 @@ def validate(path):
                 src = e.get("src", "")
                 if not src.startswith("data:") and not os.path.exists(os.path.join(base, src)):
                     rep.e(f"{tag} 图片缺失：{src}")
+            if e.get("type") == "html":
+                src = e.get("src", "")
+                if not src or not os.path.exists(os.path.join(base, src.split("?")[0])):
+                    rep.e(f"{tag} html 模拟页缺失：{src}")
+                if e.get("w", 0) < 600 or (e.get("h") or 0) < 340:
+                    rep.w(f"{tag} html 模拟页尺寸 {e.get('w')}×{e.get('h')} 偏小，交互可读性差（建议 ≥1200×675）")
+                for k in (e.get("msgs") or {}):
+                    if int(k) not in {ee.get("step", 0) for ee in els}:
+                        rep.w(f"{tag} html 消息步进 [[{k}]] 不在本页元素 step 集合里，永远不会触发")
+            if e.get("type") == "video":
+                src = e.get("src", "").split("?")[0]
+                if not src or not os.path.exists(os.path.join(base, src)):
+                    rep.e(f"{tag} video 视频缺失：{src}")
             # 文字自然宽度估算：box 内换行后总高超过声明高度才会溢出框底（ERROR）；
             # text 换行仅提醒（WARN）
             et = e.get("type")
@@ -168,6 +199,21 @@ def validate(path):
                 rep.e(f"{tag} 激光指向不存在的要点 #{bi}")
             if not (ts - TIME_TOL <= m.get("start", 0) <= m.get("end", 0) <= te + TIME_TOL):
                 rep.e(f"{tag} 激光时刻 [{m.get('start')}, {m.get('end')}] 越界或倒置")
+
+        # 随堂互动题：时刻在页面区间内、选择题 answer 下标合法、q 非空
+        for qi, it in enumerate(p.get("interactions", []), 1):
+            qtag = f"{tag} 互动题#{qi}"
+            if not str(it.get("q", "")).strip():
+                rep.e(f"{qtag} 题干 q 为空")
+            tq = it.get("t")
+            if not isinstance(tq, (int, float)) or not (ts - TIME_TOL <= tq <= te + TIME_TOL):
+                rep.e(f"{qtag} 弹出时刻 t={tq} 越出页面区间 [{ts:.1f}, {te:.1f}]")
+            opts = it.get("options")
+            if opts is not None:
+                if not isinstance(it.get("answer"), int) or not (0 <= it["answer"] < len(opts)):
+                    rep.e(f"{qtag} 选择题 answer 下标 {it.get('answer')} 越出选项数 {len(opts)}")
+            elif not str(it.get("answer", "")).strip():
+                rep.e(f"{qtag} 开放题缺参考解答 answer 文本")
 
     # 字幕
     for n, s in enumerate(subs, 1):

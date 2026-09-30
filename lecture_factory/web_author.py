@@ -16,6 +16,10 @@
 - 图片白底建议转透明（见 README「座钟 gif 白底透明化」）
 - 图示在 interactive-lecture/src/components/lecture/diagrams.tsx 的 DIAGRAMS 里加，
   矢量符号用 Vec 组件（不要写 ⃗ 组合字符，缺字体会显方框）
+- page 可加 "interactions": [quiz(...)] 随堂互动题：播到 [[at]] 步揭示时刻
+  自动暂停弹答题卡，学生作答后点「继续」恢复播放
+- html(step,x,y,w,h,src) 元素用 iframe 嵌入交互模拟页（src 放在
+  public/weblec/<课名>/ 下，依赖用相对路径如 vendor/），随 step 揭示
 """
 
 RED = "#C00000"; BLUE = "#0000CD"; BLACK = "#111111"; MAGENTA = "#C000C0"
@@ -55,10 +59,46 @@ def img(step, x, y, w, h, src, **kw):
             "src": src, **kw}
 
 
+def video(step, x, y, w, h, src, **kw):
+    """嵌入短视频（静音自动循环，随步进揭示）：src 放 public/weblec/<课名>/ 下，
+    画面 objectFit cover 充满 w×h 框（超宽比例会裁两侧）。适合引入页/演示页放实拍或 CG。"""
+    return {"type": "video", "step": step, "x": x, "y": y, "w": w, "h": h,
+            "src": src, **kw}
+
+
+def html(step, x, y, w, h, src, msgs=None, **kw):
+    """嵌入交互模拟页（iframe）：src 是 public/weblec/<课名>/ 下的 html 文件，
+    依赖相对该 html 解析（如 vendor/ 目录）。尺寸按显示大小给，建议 ≥1200×675。
+    msgs={步进号: 消息字符串}：该步揭示时向 iframe postMessage({type: 消息}），
+    seek 回退后重放到该步会再次触发（模拟侧自行处理重复演示）。"""
+    el = {"type": "html", "step": step, "x": x, "y": y, "w": w, "h": h,
+          "src": src, **kw}
+    if msgs is not None:
+        el["msgs"] = msgs
+    return el
+
+
 def table(step, x, y, w, rows, rowh=90, size=40, fill=GREEN_FILL, **kw):
     return {"type": "table", "step": step, "x": x, "y": y, "w": w,
             "rows": rows, "rowh": rowh, "size": size, "fill": fill, **kw}
 
 
-def R(t, size=40, color=BLACK, b=False):
-    return {"t": t, "size": size, "color": color, "b": b}
+def quiz(at, q, options=None, answer=None, explain=None):
+    """随堂互动题：讲稿播到 [[at]] 步揭示时刻自动暂停并弹出答题卡。
+    给 options 是选择题（answer=正确项下标，从 0 数）；
+    不给 options 是开放题（answer=参考解答文字）。explain 为可选解析。
+    放进 page 的 "interactions" 列表里。"""
+    it = {"at": at, "q": q, "answer": answer}
+    if options is not None:
+        it["options"] = options
+    if explain is not None:
+        it["explain"] = explain
+    return it
+
+
+def R(t, size=40, color=BLACK, b=False, font=None):
+    """font：可选字体族覆盖（默认 SimSun 宋体；专题页眉等无衬线场景用）"""
+    r = {"t": t, "size": size, "color": color, "b": b}
+    if font is not None:
+        r["font"] = font
+    return r
