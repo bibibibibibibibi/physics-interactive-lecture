@@ -17,9 +17,9 @@
 
 | 目录 | 是什么 | 怎么用 |
 | --- | --- | --- |
-| `interactive-lecture/dist/` | **交互课堂部署版**（已打包，63 MB，含八节课配音与数据） | **Windows 双击 `启动交互课堂.bat`、Mac 双击 `启动交互课堂.command`**，自动起本地服务并打开浏览器（Mac 首次运行如被拦，到「系统设置 → 隐私与安全性」点允许）；也可整个拷到任意静态服务器。不能双击 index.html，课件 JSON 需走 http |
+| `interactive-lecture/dist/` | **交互课堂部署版**（含第九章八节课与专题课 sp1 的配音和数据） | **Windows 双击 `启动交互课堂-win.bat`、Mac 双击 `启动交互课堂-mac.command`**，自动起本地服务并打开浏览器（Mac 首次运行如被拦，到「系统设置 → 隐私与安全性」点允许）；也可整个拷到任意静态服务器。不能双击 index.html，课件 JSON 需走 http |
 | `interactive-lecture/slides-export/` | **静态幻灯片**（8 份单文件 HTML，自包含） | 双击即开，可翻页笔逐步揭示、课堂批注，直接拷给学生 |
-| 其余全部（`src/`、`public/`、`lecture_factory/`、各配置文件） | 制作与开发体系 | 只有要做新课／改代码时才需要：`npm install` 后进入开发模式 |
+| 其余全部（`src/`、`public/`、`lecture_factory/`、各配置文件） | 制作与开发体系 | 只有要做新课／改代码时才需要：`npm ci` 后进入开发模式 |
 
 一句话：**用课 = 取 `dist/` 或 `slides-export/`；做课 = 全部**。
 
@@ -38,7 +38,7 @@
 - [多课并存与课程参数化](#多课并存与课程参数化)
 - [批注闭环](#批注闭环)
 - [环境准备与迁移](#环境准备与迁移)
-- [Windows 与 Mac 版本共存](#windows-与-mac-版本共存)
+- [Windows 与 Mac 共用项目](#windows-与-mac-共用项目)
 - [版本控制约定](#版本控制约定)
 - [故障排查](#故障排查)
 
@@ -67,6 +67,7 @@ python lecture_factory/export_slides.py --build --course shm
 **energy**（9-4 简谐振动的能量）、**compose**（9-5 简谐振动的合成）、
 **damping**（9-6 阻尼振动 受迫振动 共振）、**emosc**（9-7 电磁振荡）、
 **nonlinear**（9-8 简述非线性系统，11 页，约 6 分钟）。第九章完结。
+专题系列另有 **sp1**《角动量守恒定律》，清单在 `public/weblec/courses_special.json`。
 
 ## 目录结构
 
@@ -92,6 +93,8 @@ python lecture_factory/export_slides.py --build --course shm
 │   │       ├── weblec.ts         # 课件数据类型定义
 │   │       └── qa.ts             # 答疑（在线 AI + 离线预设库）
 │   ├── slides.html               # 静态幻灯片入口
+│   ├── dist/                     # 已构建产品：含 -win.bat/-mac.command 两个启动入口
+│   ├── scripts/copy-launchers.mjs # 两个平台共用的启动器复制脚本
 │   └── vite.slides.config.ts     # 单文件构建配置（单 chunk + 字体内联）
 │
 ├── lecture_factory/              # 课程工厂（全部脚本，0 token）
@@ -106,8 +109,10 @@ python lecture_factory/export_slides.py --build --course shm
 │   └── README.md                 # 工厂细粒度约定
 │
 ├── docs/                         # 《大学物理交互课堂制作方案》.tex/.pdf（Tectonic 编译）
-├── tools/tectonic.exe            # LaTeX 编译器（.gitignore 排除，需自行安放）
-├── export_ppt.ps1 / parse_pptx.py / extract_geometry.py   # PPT 解析三件套（新课复用）
+├── tools/                        # 可放本机 Tectonic：Windows .exe、Mac 无后缀
+├── export_ppt_win.ps1            # Windows PowerPoint COM 导出原 PPT 的图片/备注/PPTX
+├── export_pdf_mac.py             # Mac 流程：PowerPoint 导出 PDF 后转逐页 PNG
+├── parse_pptx.py / extract_geometry.py  # 两个平台共用的 PPTX 动画与形状解析
 └── 待处理/                       # 归档区（.gitignore 排除）：旧视频方案、中间产物、
                                 #   调试图、9-1~9-4 源 PPT 与分析产物、logo 源图
 ```
@@ -120,7 +125,7 @@ python lecture_factory/export_slides.py --build --course shm
 
 ```powershell
 # Windows：原 PPT 逐页导出 PNG（调本机 PowerPoint）
-powershell -File export_ppt.ps1 <PPT路径>
+powershell -File export_ppt_win.ps1 <PPT路径>
 ```
 
 Mac：先在 PowerPoint 中把源文件导出为 **PDF，布局选择幻灯片（非讲义或备注页）**，
@@ -128,7 +133,7 @@ Mac：先在 PowerPoint 中把源文件导出为 **PDF，布局选择幻灯片�
 `brew install poppler` 安装，也可用 `--pdftoppm /完整路径/pdftoppm` 指定已有工具。
 
 ```bash
-python export_pdf.py "课程.pdf" "课程图片"
+python export_pdf_mac.py "课程.pdf" "课程图片"
 # → 课程图片/slide_01.png、slide_02.png …；宽 1920，保持原比例
 ```
 
@@ -220,8 +225,8 @@ git add -A && git commit -m "课程: …" && git push
 - `interactive-lecture/slides-export/`：单文件幻灯片，GitHub 上直接下载分发；
 - 注意 `interactive-lecture/.gitignore`（Vite 模板）原有的 `dist` 忽略已移除，
   新增课程/应用模板时不要再把 `dist`、`slides-export` 加回忽略；
-- 本地启动器母版在 `lecture_factory/assets/launcher/`：Windows 使用 `.bat` + `serve.ps1`，
-  Mac 使用 `.command` + `serve.py`。`npm run build` 后由 Node `postbuild` 脚本统一拷入 dist，
+- 本地启动器母版在 `lecture_factory/assets/launcher/`：Windows 使用 `启动交互课堂-win.bat` + `serve-win.ps1`，
+  Mac 使用 `启动交互课堂-mac.command` + `serve-mac.py`。`npm run build` 后由 Node `postbuild` 脚本统一拷入 dist，
   无需 Windows 的 `xcopy`；发布时保留全部启动器文件。
 
 ### 第 9 环：交付与课后闭环
@@ -353,7 +358,7 @@ IndexError——拿不准就把该页两个文件一起删。
 仅播放已有课件无需安装 Node 或配音工具。Mac 的 `.command` 启动器需要 Python 3.8+，
 从 8080 开始寻找可用端口（最多到 8090），服务启动后打开浏览器，只监听本机。
 ZIP 解压后若丢失执行权限，在 `interactive-lecture/dist/` 下执行
-`chmod +x 启动交互课堂.command`。Windows 继续双击 `.bat`。
+`chmod +x 启动交互课堂-mac.command`。Windows 继续双击 `启动交互课堂-win.bat`。
 
 开发环境：Node.js `^20.19.0 || >=22.12.0`、Python 3.9+。
 Windows 和 Mac 分别安装本机依赖，**不要互相复制 `node_modules/` 或 `.venv/`**。
@@ -418,21 +423,22 @@ AI_MODEL=moonshot-v1-8k                  # 可选
 **未入库**：`node_modules/`、`.venv/`、`.local-backups/`、`dist-slides/`（幻灯片中间构建产物）、
 `待处理/`（旧方案与各课源 PPT 归档）、`.env.local`、Tectonic 本机可执行文件。
 
-## Windows 与 Mac 版本共存
+## Windows 与 Mac 共用项目
 
-本次适配提交在 **`compat/macos` 分支**，原来的 **`main` 分支保留不变**。
-适配分支同时保留 Windows 支持：课程数据、音频、前端源代码共用，只有启动器和外部工具
-入口按系统区分。分支保留的是两个代码版本，不是强制绑定两种操作系统。
+`main` 是两种系统共用的项目分支。课程源文件、课件数据、音频、React 页面与构建命令
+保持一份；新增课程时改一次并提交到 `main`，两台电脑各自拉取更新与安装本机依赖。
+仅启动课件和从 PowerPoint 提取图片需要选择系统入口：
 
-```bash
-git fetch origin
-git switch compat/macos   # 使用支持 Mac/Windows 的适配版
-# git switch main        # 返回原版；切换前先提交或妥善保存工作区修改
-```
+| 操作 | Windows | Mac |
+| --- | --- | --- |
+| 播放 `dist/` | `启动交互课堂-win.bat`（需要时调用 `serve-win.ps1`） | `启动交互课堂-mac.command`（调用 `serve-mac.py`） |
+| 从 PPT 得到逐页 PNG | `export_ppt_win.ps1`，直接调用 Windows PowerPoint | 先在 PowerPoint 导出 PDF，再运行 `export_pdf_mac.py`；需要 `pdftoppm` |
+| 前端构建 | `npm ci && npm run build` | `npm ci && npm run build` |
+| 生成新配音 | Kimi 插件默认从当前用户 `APPDATA` 查找，或设置 `KIMI_AUDIO_TOOL` | 设置 `KIMI_AUDIO_TOOL` 指向 Mac 上可运行的插件 |
 
-两台电脑各自 clone 并安装各自的依赖，通过 Git 同步代码和课程产物。
-验证通过后可把 `compat/macos` 合并回 `main`，以后维护一套跨平台代码；无需将课程修改在
-Windows、Mac 两份代码里重复操作。合并前若两条分支都在更新，应通过 Git 合并同步，避免互相覆盖目录。
+两台电脑不要互相复制 `node_modules/` 或 `.venv/`。`export_pdf_mac.py` 的 PDF 转 PNG
+功能本身也能在 Windows 运行；文件名标明它在本项目中的 Mac PPT 工作流程。若需跨平台
+运行该工具，仍可以使用同一个文件，不需要复制实现。
 
 适配检查命令（Python 使用上述虚拟环境；PDF 渲染测试需 Poppler）：
 

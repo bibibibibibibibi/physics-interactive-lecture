@@ -1,5 +1,5 @@
 % !TeX program = tectonic
-\documentclass[11pt]{ctexart}
+\documentclass[11pt,fontset=fandol]{ctexart}
 
 \usepackage{graphicx}
 \usepackage{xcolor}
@@ -125,7 +125,8 @@
 \path{interactive-lecture/public/weblec/}〈课名〉\path{/} & 课件产物：\path{weblec.json}、\path{audio.mp3}、\path{logo.png}、插图 \\
 \path{interactive-lecture/public/weblec/courses.json} & 课程清单（课程列表页数据源） \\
 \path{interactive-lecture/dist-slides/} & 单文件幻灯片导出产物 \\
-\path{export_ppt.ps1} / \path{parse_pptx.py} / \path{extract_geometry.py} & PPT 解析三件套：逐页导出图、动画步序 JSON、形状几何 JSON，做新课的视觉基准 \\
+\path{export_ppt_win.ps1} / \path{parse_pptx.py} / \path{extract_geometry.py} & PPT 解析三件套：逐页导出图、动画步序 JSON、形状几何 JSON，做新课的视觉基准 \\
+\path{export_pdf_mac.py} & Mac PPT 流程：先在 PowerPoint 导出 PDF，再转逐页 PNG；动画步序仍解析原 PPTX \\
 待处理/ & 归档区：旧视频方案、调试中间产物、9-1\textasciitilde9-4 源 PPT 与分析产物（视觉基准翻归档） \\
 \bottomrule
 \end{tabular}

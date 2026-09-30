@@ -6,7 +6,7 @@ from pathlib import Path
 import unittest
 from unittest.mock import patch
 
-LAUNCHER = Path(__file__).resolve().parents[2] / "lecture_factory/assets/launcher/serve.py"
+LAUNCHER = Path(__file__).resolve().parents[2] / "lecture_factory/assets/launcher/serve-mac.py"
 SPEC = importlib.util.spec_from_file_location("lecture_launcher", LAUNCHER)
 launcher = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(launcher)

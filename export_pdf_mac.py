@@ -1,7 +1,7 @@
 """将 PowerPoint 导出的 PDF 转成逐页 PNG（macOS / Windows / Linux）。
 
 先在 PowerPoint 中导出「幻灯片」PDF（不要选备注页或讲义），再运行：
-    python3 export_pdf.py "课程.pdf" "课程图片"
+    python3 export_pdf_mac.py "课程.pdf" "课程图片"
 
 需要 Poppler 的 pdftoppm；macOS 可自行用 brew install poppler 安装。
 不负责 PPT→PDF 转换，也不提取动画或备注。动画结构仍可由项目脚本解析

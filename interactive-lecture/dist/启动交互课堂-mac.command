@@ -34,7 +34,7 @@ if [ -z "$PYTHON" ]; then
   exit 1
 fi
 
-"$PYTHON" "$SCRIPT_DIR/serve.py" "$@"
+"$PYTHON" "$SCRIPT_DIR/serve-mac.py" "$@"
 status=$?
 if [ "$status" -ne 0 ]; then
   pause_on_error

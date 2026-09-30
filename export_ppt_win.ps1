@@ -5,7 +5,7 @@
 )
 $ErrorActionPreference = 'Stop'
 if ($env:OS -ne 'Windows_NT') {
-    throw 'This exporter requires Windows PowerPoint. On macOS, export slides as PDF in PowerPoint and run python3 export_pdf.py input.pdf output_dir.'
+    throw 'This exporter requires Windows PowerPoint. On macOS, export slides as PDF in PowerPoint and run python3 export_pdf_mac.py input.pdf output_dir.'
 }
 function Resolve-ProjectPath([string]$path) {
     if ([System.IO.Path]::IsPathRooted($path)) {

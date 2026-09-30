@@ -6,7 +6,7 @@ import struct
 import tempfile
 import unittest
 
-from export_pdf import export_pdf
+from export_pdf_mac import export_pdf
 
 
 def make_pdf(path, empty=False):

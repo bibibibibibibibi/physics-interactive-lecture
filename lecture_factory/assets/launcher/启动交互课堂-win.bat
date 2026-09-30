@@ -28,6 +28,6 @@ goto :end
 
 :powershell
 echo 未检测到 Python，改用 Windows 自带 PowerShell 启动……
-powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0serve.ps1"
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0serve-win.ps1"
 
 :end
