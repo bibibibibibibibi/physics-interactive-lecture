@@ -10,31 +10,59 @@
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
+from pathlib import Path
 
 import imageio_ffmpeg
 
 FACTORY = os.path.dirname(os.path.abspath(__file__))
 STYLE = json.load(open(os.path.join(FACTORY, "style.json"), encoding="utf-8"))
-AUDIO_TOOL = (r"C:\Users\Administrator\AppData\Roaming\kimi-desktop\daimon-share"
-              r"\daimon\runtime\kimi-code\home\plugins\managed\audio_generation"
-              r"\scripts\audio_generation_tool.py")
 FF = imageio_ffmpeg.get_ffmpeg_exe()
 
 GAP_NORMAL = 0.4    # 句号后的停顿
 GAP_EMOT = 0.65     # ？！后的停顿
 
 
+def audio_tool_command():
+    """按需解析 Kimi 配音工具；复用音频缓存时不要求安装或配置 TTS。"""
+    configured = os.environ.get("KIMI_AUDIO_TOOL", "").strip()
+    if configured:
+        tool = Path(os.path.expandvars(configured)).expanduser()
+    else:
+        # 沿用 Windows Kimi 插件布局，但不绑定某台机器的用户名。
+        appdata = os.environ.get("APPDATA")
+        tool = (Path(appdata) / "kimi-desktop" / "daimon-share" / "daimon"
+                / "runtime" / "kimi-code" / "home" / "plugins" / "managed"
+                / "audio_generation" / "scripts" / "audio_generation_tool.py"
+                if appdata else None)
+    if tool is None or not tool.is_file():
+        raise SystemExit(
+            "未找到 Kimi 配音工具。请将 KIMI_AUDIO_TOOL 设置为已安装的 "
+            "audio_generation_tool.py 完整路径（Mac/Windows 均支持）。"
+            "已有页面音频缓存无需配置；生成新配音仍需可用的 Kimi TTS 环境。"
+        )
+    configured_python = os.environ.get("KIMI_AUDIO_PYTHON", "").strip()
+    if configured_python:
+        interpreter = shutil.which(os.path.expanduser(os.path.expandvars(configured_python)))
+        if not interpreter:
+            raise SystemExit("KIMI_AUDIO_PYTHON 未指向可用的 Python 解释器。请设置完整路径或 PATH 中的命令名。")
+    else:
+        interpreter = sys.executable
+    return [interpreter, str(tool.resolve())]
+
+
 def tts(text, voice, out):
     if os.path.exists(out):
         return
-    r = subprocess.run([sys.executable, AUDIO_TOOL, "speech",
+    r = subprocess.run(audio_tool_command() + ["speech",
                         "--text", text, "--voice-id", voice, "--output", out],
                        capture_output=True, text=True, encoding="utf-8",
                        errors="replace", timeout=280)
     if r.returncode != 0 or not os.path.exists(out):
-        raise SystemExit(f"TTS failed: {text[:30]}...\n{r.stdout[-300:]}")
+        detail = (r.stderr or r.stdout or "配音工具未生成输出文件").strip()
+        raise SystemExit(f"TTS failed: {text[:30]}...\n{detail[-600:]}")
 
 
 def probe(path):

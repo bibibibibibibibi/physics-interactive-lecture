@@ -3,13 +3,17 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "build:slides": "vite build --config vite.slides.config.ts",
-    "postbuild": "xcopy /Y /Q \"..\\lecture_factory\\assets\\launcher\\*\" \"dist\\\" >nul"
+    "postbuild": "node scripts/copy-launchers.mjs",
+    "test:launchers": "node --test scripts/copy-launchers.test.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

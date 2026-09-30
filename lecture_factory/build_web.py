@@ -11,9 +11,8 @@ import json, os, re, subprocess, sys, time
 FACTORY = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, FACTORY)
 import gen_audio  # 复用 tts/probe/silence
-import imageio_ffmpeg
 
-FF = imageio_ffmpeg.get_ffmpeg_exe()
+FF = gen_audio.FF
 STYLE = json.load(open(os.path.join(FACTORY, "style.json"), encoding="utf-8"))
 WEB_PUBLIC = os.path.normpath(os.path.join(FACTORY, "..", "interactive-lecture", "public", "weblec"))
 PAGE_GAP = 0.8
@@ -44,12 +43,20 @@ def split_sentences(narration):
 
 def main():
     course = os.path.abspath(sys.argv[1])
-    doc = json.load(open(os.path.join(course, "slides.json"), encoding="utf-8"))
+    with open(os.path.join(course, "slides.json"), encoding="utf-8") as source:
+        doc = json.load(source)
     char = doc.get("character") or STYLE.get("character", "aqiang")
     voice = STYLE.get("voices", {}).get(char, STYLE["voice_id"])
     print("character:", char, "voice:", voice)
 
     adir = os.path.join(course, "audio")
+    # 需要重配时先检查工具配置，避免配置缺失时先删除已有句音频。
+    for pg in doc["pages"]:
+        n = pg["id"]
+        if not (os.path.exists(os.path.join(adir, f"page{n}.mp3"))
+                and os.path.exists(os.path.join(course, f"page{n}.times.json"))):
+            gen_audio.audio_tool_command()
+            break
     os.makedirs(adir, exist_ok=True)
     sil_n = os.path.join(adir, "_sil_n.mp3")
     sil_e = os.path.join(adir, "_sil_e.mp3")

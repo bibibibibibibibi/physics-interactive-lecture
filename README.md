@@ -38,6 +38,7 @@
 - [多课并存与课程参数化](#多课并存与课程参数化)
 - [批注闭环](#批注闭环)
 - [环境准备与迁移](#环境准备与迁移)
+- [Windows 与 Mac 版本共存](#windows-与-mac-版本共存)
 - [版本控制约定](#版本控制约定)
 - [故障排查](#故障排查)
 
@@ -48,7 +49,7 @@
 ```bash
 # 1. 启动网页应用（开发模式）
 cd interactive-lecture
-npm install          # 首次
+npm ci               # 首次，按锁文件安装当前系统所需的依赖
 npm run dev          # → http://localhost:3000（本机由 Kimi Work 托管时映射为 7100）
 
 # 2. 浏览器打开
@@ -57,6 +58,7 @@ npm run dev          # → http://localhost:3000（本机由 Kimi Work 托管时
 #    http://localhost:7100/slides.html?course=shm   静态幻灯片
 
 # 3. 导出单文件幻灯片（双击即开，可拷给学生）
+cd ..               # 回到仓库根目录；python 使用下文的虚拟环境
 python lecture_factory/export_slides.py --build --course shm
 #    → interactive-lecture/slides-export/大学物理-<标题>-幻灯片.html
 ```
@@ -117,9 +119,22 @@ python lecture_factory/export_slides.py --build --course shm
 ### 第 1 环：PPT 解析（0 token）
 
 ```powershell
-# 原 PPT 逐页导出 PNG（调本机 PowerPoint）
+# Windows：原 PPT 逐页导出 PNG（调本机 PowerPoint）
 powershell -File export_ppt.ps1 <PPT路径>
 ```
+
+Mac：先在 PowerPoint 中把源文件导出为 **PDF，布局选择幻灯片（非讲义或备注页）**，
+再运行以下命令。需要 Poppler 的 `pdftoppm`；若使用 Homebrew，可通过
+`brew install poppler` 安装，也可用 `--pdftoppm /完整路径/pdftoppm` 指定已有工具。
+
+```bash
+python export_pdf.py "课程.pdf" "课程图片"
+# → 课程图片/slide_01.png、slide_02.png …；宽 1920，保持原比例
+```
+
+默认拒绝覆盖已有图片；确认需要重导出时加 `--overwrite`，若旧目录有多余页请改用新目录。
+PDF 只提供静态视觉基准，不包含动画步序和备注。若原文件是 `.ppt`，请先在 PowerPoint
+另存为 `.pptx`，再在两种系统上运行相同的解析命令：
 
 ```bash
 python parse_pptx.py <PPT路径>        # 点击动画步序 → ppt_structure.json
@@ -205,8 +220,9 @@ git add -A && git commit -m "课程: …" && git push
 - `interactive-lecture/slides-export/`：单文件幻灯片，GitHub 上直接下载分发；
 - 注意 `interactive-lecture/.gitignore`（Vite 模板）原有的 `dist` 忽略已移除，
   新增课程/应用模板时不要再把 `dist`、`slides-export` 加回忽略；
-- 本地启动器（`启动交互课堂.bat` + `serve.ps1`）母版在 `lecture_factory/assets/launcher/`，
-  `npm run build` 后由 `postbuild` 自动拷入 dist，重建不会丢。
+- 本地启动器母版在 `lecture_factory/assets/launcher/`：Windows 使用 `.bat` + `serve.ps1`，
+  Mac 使用 `.command` + `serve.py`。`npm run build` 后由 Node `postbuild` 脚本统一拷入 dist，
+  无需 Windows 的 `xcopy`；发布时保留全部启动器文件。
 
 ### 第 9 环：交付与课后闭环
 
@@ -334,29 +350,103 @@ IndexError——拿不准就把该页两个文件一起删。
 
 ## 环境准备与迁移
 
-**本机已就绪**：Node.js、Python（含 imageio-ffmpeg，ffmpeg 内置）、
-Kimi 桌面端配音插件（TTS 通道，密钥在 Kimi 运行时）、Tectonic（`tools/`）。
+仅播放已有课件无需安装 Node 或配音工具。Mac 的 `.command` 启动器需要 Python 3.8+，
+从 8080 开始寻找可用端口（最多到 8090），服务启动后打开浏览器，只监听本机。
+ZIP 解压后若丢失执行权限，在 `interactive-lecture/dist/` 下执行
+`chmod +x 启动交互课堂.command`。Windows 继续双击 `.bat`。
 
-**迁移到新机器**：
+开发环境：Node.js `^20.19.0 || >=22.12.0`、Python 3.9+。
+Windows 和 Mac 分别安装本机依赖，**不要互相复制 `node_modules/` 或 `.venv/`**。
 
-1. 克隆本仓库；
-2. `cd interactive-lecture && npm install`；
-3. 安装 Python 依赖：`pip install imageio-ffmpeg`（TTS 走 Kimi 配音插件，
-   或自行替换 `gen_audio.py` 的 `tts()` 通道）；
-4. AI 答疑：新建 `interactive-lecture/.env.local`（**不入库**）：
-   ```
-   AI_API_KEY=sk-...
-   AI_BASE_URL=https://api.moonshot.cn/v1   # 可选
-   AI_MODEL=moonshot-v1-8k                  # 可选
-   ```
-   不配 key 时答疑自动退回离线预设库，不影响放映；
-5. 需要编译方案文档时，安放 Tectonic 到 `tools/tectonic.exe`
-   （<https://github.com/tectonic-typesetting/tectonic/releases>）。
+```bash
+# Mac：在仓库根目录建立独立 Python 环境
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+```
+
+```powershell
+# Windows PowerShell：在仓库根目录执行
+py -3 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+# 后续 python 命令可替换为 .\.venv\Scripts\python.exe，无需修改执行策略
+```
+
+```bash
+# 两种系统的前端命令一致
+cd interactive-lecture
+npm ci
+npm run dev          # http://localhost:3000
+# 发布前运行 npm run build（TypeScript 检查 + Vite + 双平台启动器）
+```
+
+配音继续使用 Kimi 的 `audio_generation_tool.py`，通过环境变量指定，项目不再绑定某位
+Windows 用户的目录。Mac 在运行构建的同一个终端设置：
+
+```bash
+export KIMI_AUDIO_TOOL="/实际安装路径/audio_generation_tool.py"
+# 可选：插件需要独立运行环境时，指定该环境的 Python
+export KIMI_AUDIO_PYTHON="/实际安装路径/python3"
+```
+
+Windows PowerShell 对应设置 `$env:KIMI_AUDIO_TOOL = 'C:\实际路径\audio_generation_tool.py'`；
+`KIMI_AUDIO_PYTHON` 同理。未配置路径时，Windows 会尝试当前用户 `%APPDATA%` 下原有 Kimi
+插件目录。默认用运行工厂脚本的 Python。工具及其依赖、认证需在本机可用；**设置路径本身
+不等于已安装配音服务**。完整页面音频缓存可直接复用，无需配置 TTS；需要重配时会先检查
+配置，再处理句音频缓存。以上环境变量由终端提供，不会自动读取 `.env.local`。
+
+AI 答疑：新建 `interactive-lecture/.env.local`（**不入库**）：
+
+```dotenv
+AI_API_KEY=sk-...
+AI_BASE_URL=https://api.moonshot.cn/v1   # 可选
+AI_MODEL=moonshot-v1-8k                  # 可选
+```
+
+不配 key 时答疑自动退回离线预设库，不影响放映。
+
+编译方案文档时使用对应系统的 Tectonic：Windows 可用 `tools/tectonic.exe`，Mac 使用
+已安装的 `tectonic` 或 `tools/tectonic`，在 `docs/` 下执行
+`tectonic -X compile 大学物理交互课堂制作方案.tex`。该工具不参与课件播放或网页构建。
+
+字体：课件含宋体（SimSun）设置；Mac 若缺该字体会使用回退字体，可能改变换行。
+导入 PPT、换机器制作或换字体后应在 `?course=<课名>&qa=1` 下检查版式，勿仅凭构建成功验收排版。
 
 **已提交的产物**：各课的 `public/weblec/<课名>/`（含合并音频）、TTS 缓存、
 姿态图，以及**最终产品** `interactive-lecture/dist/`（交互课堂部署版）与
 `interactive-lecture/slides-export/`（8 份单文件幻灯片）——克隆后无需重新构建即可运行、部署、分发。
-**未入库**：`node_modules/`、`dist-slides/`（幻灯片中间构建产物）、`待处理/`（旧方案与各课源 PPT 归档）、`.env.local`、`tools/tectonic.exe`。
+**未入库**：`node_modules/`、`.venv/`、`.local-backups/`、`dist-slides/`（幻灯片中间构建产物）、
+`待处理/`（旧方案与各课源 PPT 归档）、`.env.local`、Tectonic 本机可执行文件。
+
+## Windows 与 Mac 版本共存
+
+本次适配提交在 **`compat/macos` 分支**，原来的 **`main` 分支保留不变**。
+适配分支同时保留 Windows 支持：课程数据、音频、前端源代码共用，只有启动器和外部工具
+入口按系统区分。分支保留的是两个代码版本，不是强制绑定两种操作系统。
+
+```bash
+git fetch origin
+git switch compat/macos   # 使用支持 Mac/Windows 的适配版
+# git switch main        # 返回原版；切换前先提交或妥善保存工作区修改
+```
+
+两台电脑各自 clone 并安装各自的依赖，通过 Git 同步代码和课程产物。
+验证通过后可把 `compat/macos` 合并回 `main`，以后维护一套跨平台代码；无需将课程修改在
+Windows、Mac 两份代码里重复操作。合并前若两条分支都在更新，应通过 Git 合并同步，避免互相覆盖目录。
+
+适配检查命令（Python 使用上述虚拟环境；PDF 渲染测试需 Poppler）：
+
+```bash
+python -B -m unittest discover -s tests -v
+python -B interactive-lecture/scripts/test-launchers.py
+cd interactive-lecture
+npm run test:launchers
+npm run build
+npm run build:slides
+```
+
+本次在 Mac 上验证了上述检查、启动器 HTTP 访问、已有音频缓存重建和 9 门课程数据校验。
+未在 Windows 实机运行 PowerPoint COM，也未调用真实 TTS 服务；这两项仍依赖对应机器上的外部工具。
 
 ## 版本控制约定
 
