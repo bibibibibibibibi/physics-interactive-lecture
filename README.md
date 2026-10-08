@@ -469,6 +469,8 @@ npm run build:slides
 
 此前在Mac完成的检查保留原有范围。当前跨平台验收入口如下；Windows测试在Mac会明确跳过，不能计为Windows通过。CI结果以对应提交的GitHub Actions记录为准。
 
+**2026-10-08实测通过**：[提交283c7d2的Windows/macOS验证](https://github.com/bibibibibibibibi/physics-interactive-lecture/actions/runs/37721897581)。Windows使用PowerShell5.1和Edge153：中文/空格路径启动、端口回退、媒体Range传输、八课目录/音轨元数据、special及普通入口首次持续播放、迟载/读取失败重试、第1学时首题2.5倍暂停与继续、原生视频和WebGL回拖通过。首次播放换源竞态已定位并最小修复，原失败保留于既有复盘。用课只需双击`dist/启动交互课堂-win.bat`，无需Python、Node或管理员权限；开发和测试才需要安装上述依赖。此范围不代替八课全套用户操作、完整听审及教师核准。
+
 ```powershell
 # 真实Windows：PowerShell5.1、中文/空格路径、端口回退、206/HEAD/416和并发
 py -3 -B interactive-lecture/scripts/test-windows-launcher.py
