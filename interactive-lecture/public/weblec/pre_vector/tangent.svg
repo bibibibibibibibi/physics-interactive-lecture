@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="曲线运动中，P 点到 Q 点的位移增量沿割线，P 点的瞬时导数沿切线">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fafdff"/><stop offset="1" stop-color="#eaf3ff"/></linearGradient>
+  <marker id="o" markerWidth="23" markerHeight="27" refX="2" refY="13.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M2 1 L19 13.5 L2 26 Z" fill="#c75d1c"/></marker>
+  <marker id="g" markerWidth="23" markerHeight="27" refX="2" refY="13.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M2 1 L19 13.5 L2 26 Z" fill="#137d5d"/></marker>
+  <style>
+    text{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;fill:#244B88}
+    .time{font-size:27px;font-weight:700}.vector{font-size:29px;font-weight:700}.note{font-size:24px;font-weight:600}
+    .curve{fill:none;stroke:#275890;stroke-width:9;stroke-linecap:round}
+    .tangent-guide{fill:none;stroke:#137d5d;stroke-width:3;stroke-dasharray:9 8;opacity:.7}
+    .displacement{fill:none;stroke:#c75d1c;stroke-width:8;stroke-linecap:butt;marker-end:url(#o)}
+    .derivative{fill:none;stroke:#137d5d;stroke-width:8;stroke-linecap:butt;marker-end:url(#g)}
+    .point{fill:#244B88;stroke:#fff;stroke-width:3}
+  </style>
+</defs>
+<rect width="800" height="600" rx="28" fill="url(#bg)"/>
+
+<!-- The second cubic begins at P; its first control point fixes the tangent there. -->
+<path d="M90 442 C168 434 215 385 260 330 C350 220 440 200 690 170" class="curve"/>
+<text x="624" y="237" class="time">轨迹</text>
+<path d="M647 213 L653 180" fill="none" stroke="#275890" stroke-width="2.5"/>
+
+<!-- Q is the point at t=.75 on the second cubic: (530, 192.2). -->
+<path d="M216 384 L420 134" class="tangent-guide"/>
+<path d="M260 330 L514.9 199.7" class="displacement"/>
+<path d="M260 330 L364.3 202.2" class="derivative"/>
+
+<circle cx="260" cy="330" r="8" class="point"/>
+<text x="172" y="305" class="time">P(t)</text>
+<text x="544" y="173" class="time">Q(t+Δt)</text>
+
+<rect x="285" y="73" width="275" height="53" rx="15" fill="#e8f7f0" stroke="#addac8" stroke-width="2"/>
+<text x="302" y="108" class="vector" style="fill:#137d5d">dr/dt　切线方向</text>
+<rect x="359" y="286" width="240" height="53" rx="15" fill="#fff1e7" stroke="#efc7a8" stroke-width="2"/>
+<text x="376" y="322" class="vector" style="fill:#b95519">Δr　割线方向</text>
+
+<rect x="87" y="496" width="626" height="69" rx="18" fill="#fff" stroke="#d2e1f1" stroke-width="2"/>
+<text x="400" y="539" text-anchor="middle" class="note">Δt → 0：Q 靠近 P，割线方向趋于切线方向</text>
+</svg>

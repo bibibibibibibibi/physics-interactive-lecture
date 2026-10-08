@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="模长增长时导数与矢量平行，匀速改变方向时导数与矢量垂直">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fafdff"/><stop offset="1" stop-color="#eaf3ff"/></linearGradient>
+  <marker id="b" markerWidth="23" markerHeight="27" refX="2" refY="13.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M2 1 L19 13.5 L2 26 Z" fill="#244B88"/></marker>
+  <marker id="o" markerWidth="23" markerHeight="27" refX="2" refY="13.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M2 1 L19 13.5 L2 26 Z" fill="#d16b2b"/></marker>
+  <marker id="g" markerWidth="23" markerHeight="27" refX="2" refY="13.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M2 1 L19 13.5 L2 26 Z" fill="#168365"/></marker>
+  <style>
+  text{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;fill:#244B88}
+  .title{font-size:32px;font-weight:700}.label{font-size:31px;font-weight:700}.small{font-size:24px;font-weight:600}.formula{font-size:35px;font-weight:700}
+  .blue{fill:#244B88}.orange{fill:#d16b2b}.green{fill:#168365}.muted{fill:#6d829a}
+  .axis{stroke:#9fb2c9;stroke-width:3;stroke-linecap:round}.dash{stroke:#a6b8cb;stroke-width:3;stroke-dasharray:10 10;fill:none}
+  .vb{stroke:#244B88;stroke-width:8;stroke-linecap:butt;fill:none;marker-end:url(#b)}
+  .vo{stroke:#d16b2b;stroke-width:8;stroke-linecap:butt;fill:none;marker-end:url(#o)}
+  .vg{stroke:#168365;stroke-width:8;stroke-linecap:butt;fill:none;marker-end:url(#g)}
+  .point{fill:#244B88;stroke:#fff;stroke-width:4}
+  </style>
+</defs>
+<rect width="800" height="600" rx="28" fill="url(#bg)"/>
+
+<rect x="38" y="50" width="344" height="500" rx="24" fill="#fff" stroke="#d5e7f7" stroke-width="3"/>
+<rect x="418" y="50" width="344" height="500" rx="24" fill="#fff" stroke="#d5e7f7" stroke-width="3"/>
+<text x="72" y="109" class="title blue">模长增大</text>
+<text x="453" y="109" class="title orange">匀速转向</text>
+<path d="M95 282 H310" class="vb"/>
+<path d="M95 363 H255" class="vo"/>
+<text x="210" y="254" class="label blue">A</text><text x="167" y="399" class="label orange">A′</text>
+<text x="209" y="493" text-anchor="middle" class="formula green">A′ ∥ A</text>
+<path d="M564 354 H690" class="vb"/>
+<path d="M564 354 V213" class="vo"/>
+<path d="M564 326 H592 V354" fill="none" stroke="#168365" stroke-width="4"/>
+<path d="M665 318 A102 102 0 0 0 592 250" fill="none" stroke="#9fb2c9" stroke-width="4" stroke-dasharray="8 8"/>
+<text x="641" y="397" class="label blue">A</text><text x="485" y="250" class="label orange">A′</text>
+<text x="591" y="493" text-anchor="middle" class="formula green">A′ ⊥ A</text>
+
+</svg>

@@ -1,0 +1,83 @@
+{
+  "title": "矢量代数开场：约两分钟教学语音 demo",
+  "request_file": "minimax_pre_vector_first2min.json",
+  "pasteable_text_file": "minimax_pre_vector_first2min.txt",
+  "status": "generated_audio",
+  "duration_note": "沿用课堂开头约两分钟的内容；新增停顿并调整一句叉积说明，实际时长须以合成结果为准。",
+  "synthesis": {
+    "model": "speech-2.8-hd",
+    "voice_id": "Chinese (Mandarin)_Gentleman",
+    "voice_name": "温润男声",
+    "voice_selection_note": "根据官方目录所述温和、文雅的成年男声特点，选作教师讲解样片；不是官方名为教师的专属音色。",
+    "speed": 1,
+    "emotion_mode": "auto",
+    "emotion_implementation": "请求省略 voice_setting.emotion，让模型根据正文自动匹配情绪；不在正文中加入情绪备注。",
+    "chunking": "四个自然段一次合成，保留段内上下文。",
+    "pause_implementation": "仅在转场、概念对比和留给学生思考的位置插入官方 <#x#> 格式；普通断句交给标点。"
+  },
+  "paragraphs": [
+    {
+      "paragraph": 1,
+      "teaching_intent": "温和欢迎，清楚介绍这节课为什么有用。",
+      "focus": [
+        "矢量代数",
+        "运动、电场和力矩"
+      ],
+      "realization": "开场后停顿 0.35 秒，课程用途讲完后停顿 0.7 秒。"
+    },
+    {
+      "paragraph": 2,
+      "teaching_intent": "用清晰的层次带学生建立学习路线。",
+      "focus": [
+        "标量和矢量",
+        "点积和叉积",
+        "求导、积分"
+      ],
+      "realization": "保留先、接着、然后、最后的口语结构；第一个提问后停顿 0.4 秒，转场停顿 0.7 秒。"
+    },
+    {
+      "paragraph": 3,
+      "teaching_intent": "通过多少与朝哪边的对比突出核心概念，最后用问题检验理解。",
+      "focus": [
+        "多少",
+        "朝哪边",
+        "大小和方向",
+        "自由矢量",
+        "位置矢量"
+      ],
+      "realization": "概念对比前停顿 0.25 秒，标量与矢量之间停顿 0.45 秒；结尾问题后停顿 0.8 秒。"
+    },
+    {
+      "paragraph": 4,
+      "teaching_intent": "自然提出辨认题，给出思考时间，再明确公布答案。",
+      "focus": [
+        "哪些必须同时给出大小和方向",
+        "速度、位移和电场强度"
+      ],
+      "realization": "问题后停顿 0.35 秒；先自己选之后停顿 2 秒；答案引导词后停顿 0.3 秒。"
+    }
+  ],
+  "control_limits": [
+    "上述 teaching_intent 与 focus 是制作备注，不是 MiniMax 朗读指令，不发送给 API。",
+    "官方 API 示例表明 2.8 HD 可设置全请求的 voice_setting.emotion；若将来需要不同段落指定不同情绪，应分别合成自然段。",
+    "当前公开文档未列出逐词重音或自由自然语言 instruction 参数；重点词是否被加重以及问句语调的实现仍须听成品确认。",
+    "发音词典只纠正读音，不等于重音控制。",
+    "不把中文括号备注、[emphasis] 或 <strong> 当成已支持的语音控制格式。"
+  ],
+  "sources_checked_on": "2026-10-01",
+  "sources": [
+    "https://platform.minimax.cn/docs/api-reference/speech-t2a-http",
+    "https://solutions.minimaxi.com/debug/speech",
+    "https://github.com/MiniMax-AI/skills/blob/main/skills/frontend-dev/references/minimax-tts-guide.md",
+    "https://github.com/MiniMax-AI/skills/blob/main/skills/frontend-dev/references/minimax-voice-catalog.md"
+  ],
+  "audio_file_from_project_root": ".local-backups/pre-vector-minimax-stage/audio/first2min-teacher-1x.mp3",
+  "audio_duration_seconds": 110.736,
+  "verification": {
+    "request_and_audio_hashes_match": true,
+    "native_mp3_to_pcm_decode": "passed",
+    "decoded_frames": 3543552,
+    "sample_rate": 32000,
+    "channels": 1
+  }
+}

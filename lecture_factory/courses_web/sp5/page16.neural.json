@@ -1,0 +1,39 @@
+{
+  "recipe_sha256": "b9aa5bb0f2db7297281fe2379cb08345385230cf745cfbd746f679dd4ec61368",
+  "engine": "node-edge-tts",
+  "voice": "zh-CN-YunxiNeural",
+  "volume": "+30%",
+  "format": "audio-24khz-96kbitrate-mono-mp3",
+  "sample_rate": 24000,
+  "gaps": [
+    0.4,
+    0.65
+  ],
+  "tempo": 1.0,
+  "sentences": [
+    "先做一项仪器改进的决策。",
+    "两颗亮度相近的恒星角间距很小，现有理想望远镜不能把它们分开。",
+    "有人建议只换一个放大倍率更高的目镜，另一人建议增大物镜的有效孔径。",
+    "如果波长不变，你会选择哪一种，并说明控制量是什么？",
+    "请先回忆最小可分辨角由哪些量决定，而不要被“画面更大”吸引。",
+    "增大有效孔径会缩小衍射像的角宽度，有机会把这对星分开。",
+    "单纯提高放大倍率，只会放大已有的模糊图样，没有缩小物镜对应的角分辨门槛。",
+    "真实望远镜当然还受到像差、大气扰动和探测器采样影响，但这些条件不改变这道理想模型题的结论。",
+    "合理的改进，应该先对准真正的限制因素，再选择工程措施。"
+  ],
+  "gap_policy": {
+    "schema": "sp5-quiz-sampling-margin/v1",
+    "base_normal_seconds": 0.4,
+    "base_emotive_seconds": 0.65,
+    "overrides": [
+      {
+        "after_sentence_index_zero_based": 3,
+        "after_sentence": "如果波长不变，你会选择哪一种，并说明控制量是什么？",
+        "seconds": 1.35
+      }
+    ],
+    "trigger_offset_seconds": 0.1,
+    "minimum_trigger_to_next_sentence_seconds": 1.2
+  },
+  "file_sha256": "d6f1741f771da7f1d5120e2d31c7c4fc58dd08305a373428eb478e30f9c5cbf1"
+}

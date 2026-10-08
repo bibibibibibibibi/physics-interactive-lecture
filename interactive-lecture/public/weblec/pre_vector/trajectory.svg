@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="沿曲线运动时不同时刻的位置矢量">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fafdff"/><stop offset="1" stop-color="#eaf3ff"/></linearGradient>
+  <marker id="b" markerWidth="23" markerHeight="27" refX="2" refY="13.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M2 1 L19 13.5 L2 26 Z" fill="#244B88"/></marker>
+  <marker id="o" markerWidth="23" markerHeight="27" refX="2" refY="13.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M2 1 L19 13.5 L2 26 Z" fill="#d16b2b"/></marker>
+  <marker id="g" markerWidth="23" markerHeight="27" refX="2" refY="13.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M2 1 L19 13.5 L2 26 Z" fill="#168365"/></marker>
+  <style>
+  text{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;fill:#244B88}
+  .title{font-size:32px;font-weight:700}.label{font-size:31px;font-weight:700}.small{font-size:24px;font-weight:600}.formula{font-size:35px;font-weight:700}
+  .blue{fill:#244B88}.orange{fill:#d16b2b}.green{fill:#168365}.muted{fill:#6d829a}
+  .axis{stroke:#9fb2c9;stroke-width:3;stroke-linecap:round}.dash{stroke:#a6b8cb;stroke-width:3;stroke-dasharray:10 10;fill:none}
+  .vb{stroke:#244B88;stroke-width:8;stroke-linecap:butt;fill:none;marker-end:url(#b)}
+  .vo{stroke:#d16b2b;stroke-width:8;stroke-linecap:butt;fill:none;marker-end:url(#o)}
+  .vg{stroke:#168365;stroke-width:8;stroke-linecap:butt;fill:none;marker-end:url(#g)}
+  .point{fill:#244B88;stroke:#fff;stroke-width:4}
+  </style>
+</defs>
+<rect width="800" height="600" rx="28" fill="url(#bg)"/>
+
+<path d="M120 510 H730 M135 530 V85" class="axis" opacity=".6"/>
+<path d="M165 430 Q245 400 305 330 Q385 250 475 260 Q560 270 650 160" fill="none" stroke="#244B88" stroke-width="7" stroke-linecap="round"/>
+<path d="M135 490 L292.6 341.6" class="vo"/>
+<path d="M135 490 L635.7 169.2" class="vg"/>
+<text x="92" y="478" class="small muted">O</text>
+<text x="185" y="375" class="label orange">r(t₁)</text><text x="415" y="278" class="label green">r(t₂)</text>
+<text x="281" y="307" class="small orange">t₁</text><text x="656" y="151" class="small green">t₂</text>
+<text x="473" y="495" class="small muted">轨迹由各时刻的位置串起</text>
+
+</svg>

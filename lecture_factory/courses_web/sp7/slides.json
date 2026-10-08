@@ -1,0 +1,4255 @@
+{
+ "title": "气液相变",
+ "nav": "专题·第7学时　气液相变",
+ "footer": "专题　气液相变",
+ "character": "aqiang",
+ "logoScale": 0.67,
+ "theme": "special",
+ "sections": [
+  {
+   "title": "安德鲁斯实验",
+   "page": 4
+  },
+  {
+   "title": "范德瓦尔斯等温线",
+   "page": 7
+  },
+  {
+   "title": "过冷、过热及其应用",
+   "page": 16
+  },
+  {
+   "title": "小结与迁移",
+   "page": 22
+  }
+ ],
+ "pages": [
+  {
+   "id": 1,
+   "heading": "封面",
+   "source_pages": [
+    1
+   ],
+   "narration": "同学们好，欢迎来到大学物理课堂。今天我们学习[[1]]气液相变。我们从恒温压缩气体出发，看看实验怎样检验模型，再用相平衡和成核的认识，解释生活现象与粒子探测。",
+   "elements": [
+    {
+     "type": "img",
+     "step": 0,
+     "x": 0,
+     "y": 0,
+     "w": 1920,
+     "h": 1080,
+     "src": "source/image1.png",
+     "overlay": true
+    },
+    {
+     "type": "img",
+     "step": 0,
+     "x": 1695,
+     "y": 24,
+     "w": 181,
+     "h": 78,
+     "src": "logo.png",
+     "overlay": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 110,
+     "y": 310,
+     "w": 1100,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "气液相变",
+        "size": 108,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "overlay": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 118,
+     "y": 485,
+     "w": 1250,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "PHASE TRANSITION BETWEEN LIQUID AND GAS",
+        "size": 30,
+        "color": "#6683AD",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "overlay": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 118,
+     "y": 770,
+     "w": 1300,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "选自《大学物理》第13章 热力学基础 第7节",
+        "size": 38,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "overlay": true
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "heading": "目录",
+   "source_pages": [
+    3
+   ],
+   "narration": "这节课分四段。第一段是[[1]]安德鲁斯实验，重点读懂恒温压缩的共存平台。第二段是[[2]]范德瓦尔斯等温线，从分子模型走到机械稳定性和麦克斯韦等面积法，这是全课的难点。第三段是[[3]]过冷、过热及其应用，把亚稳态和成核联系到尾迹云、云室和泡室。最后是[[4]]小结与迁移，用新的问题检查理解。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 150,
+     "w": 1000,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "目 录",
+        "size": 68,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 130,
+     "y": 350,
+     "w": 350,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "01",
+        "size": 52,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 130,
+     "y": 490,
+     "w": 380,
+     "h": 152.0,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "安德鲁斯",
+        "size": 44,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "实验",
+        "size": 44,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 130,
+     "y": 670,
+     "w": 360,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "重点：共存平台",
+        "size": 30,
+        "color": "#C00000",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 550,
+     "y": 350,
+     "w": 350,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02",
+        "size": 52,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 550,
+     "y": 490,
+     "w": 420,
+     "h": 152.0,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "范德瓦尔斯",
+        "size": 44,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "等温线",
+        "size": 44,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 550,
+     "y": 670,
+     "w": 440,
+     "h": 110.0,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "重点：相平衡",
+        "size": 30,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "难点：等面积法",
+        "size": 30,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 990,
+     "y": 350,
+     "w": 350,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "03",
+        "size": 52,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 990,
+     "y": 490,
+     "w": 430,
+     "h": 152.0,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "过冷、过热",
+        "size": 44,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "及其应用",
+        "size": 44,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1430,
+     "y": 350,
+     "w": 350,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04",
+        "size": 52,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1430,
+     "y": 490,
+     "w": 360,
+     "h": 152.0,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "小结与",
+        "size": 44,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "迁移",
+        "size": 44,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "heading": "开场现象",
+   "source_pages": [
+    2
+   ],
+   "narration": "先看两个画面。飞机飞过后，留下[[1]]白色尾迹。可见的白色物质，和不可见的水蒸气是什么关系？另一个画面来自[[2]]云室，突然出现一条条细线。微观带电粒子为什么能留下肉眼可见的路径？请先做一道[[3]]预测题，选出你认为最合理的解释。我们先留下问题：相变何时发生，又怎样在特定位置被触发？小结时逐一回答。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "00　引入",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "video",
+     "step": 1,
+     "x": 105,
+     "y": 300,
+     "w": 790,
+     "h": 360,
+     "src": "source/media1.mp4",
+     "hotspot": true,
+     "label": "飞机尾迹的原稿视频",
+     "qa": [
+      {
+       "q": "尾迹云能直接等同于水蒸气吗？",
+       "a": "水蒸气本身不可见。飞机凝结尾迹的可见部分主要是冰晶；形成过程涉及排气水汽与冷空气混合、凝结和冻结。"
+      }
+     ],
+     "timelineSync": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 105,
+     "y": 740,
+     "w": 790,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "飞机为何留下白色云线？",
+        "size": 42,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "video",
+     "step": 2,
+     "x": 1010,
+     "y": 260,
+     "w": 790,
+     "h": 451,
+     "src": "source/media2.mp4",
+     "hotspot": true,
+     "label": "云室的原稿视频",
+     "qa": [
+      {
+       "q": "云室里看到的是粒子本身吗？",
+       "a": "看到的是带电粒子电离所形成的离子附近凝结出的微小液滴。液滴散射光，让路径可见。"
+      }
+     ],
+     "timelineSync": true
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1010,
+     "y": 740,
+     "w": 790,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "微观粒子为何留下可见轨迹？",
+        "size": 42,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 105,
+     "y": 880,
+     "w": 1600,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "先预测，再用实验与模型检验",
+        "size": 38,
+        "color": "#C00000",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    }
+   ],
+   "interactions": [
+    {
+     "at": 3,
+     "q": "云室中的可见细线，最可能是什么？",
+     "answer": 1,
+     "options": [
+      "带电粒子自身持续发出的亮光",
+      "沿粒子路径形成的许多微小液滴",
+      "粒子把空气永久染成了白色"
+     ],
+     "explain": "云室先提供过饱和蒸气，粒子沿途电离产生离子，微小液滴在这些位置成核并散射光。可见的是相变形成的液滴串。接下来要解释蒸气为什么能等待这种局部触发。",
+     "after_sentence": "请先做一道预测题，选出你认为最合理的解释。",
+     "pause_offset": 0.1
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "heading": "恒温压缩",
+   "source_pages": [
+    4,
+    5,
+    6,
+    7
+   ],
+   "narration": "安德鲁斯研究二氧化碳的等温压缩。这里用[[1]]本地模型演示实验思路：左边是一定量物质的气缸，右边记录压强与摩尔体积。实验要保持温度不变，缓慢移动活塞，使状态接近平衡。现在看[[2]]自动压缩。起初体积减小、压强升高。进入一段区间后，液体逐渐增多，压强却不变。全部液化后，少量压缩又使压强明显升高。三个阶段出现在同一温度下。模型用临界量作单位，是无量纲示意，不是原实验的测量值。暂停后可拖动体积滑块，比较状态和两相比例。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "01　安德鲁斯实验",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 105,
+     "y": 190,
+     "w": 1010,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "温度固定，缓慢压缩，同步记录状态",
+        "size": 36,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1150,
+     "y": 190,
+     "w": 660,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "自动演示：气态、共存、液态",
+        "size": 30,
+        "color": "#C00000",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "html",
+     "step": 1,
+     "x": 60,
+     "y": 270,
+     "w": 1800,
+     "h": 710,
+     "src": "sim_phase.html?embed=andrews",
+     "label": "恒温压缩模型",
+     "msgs": {
+      "1": "reset",
+      "2": "demo:18"
+     },
+     "timelineSync": true
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "heading": "三段实验事实",
+   "source_pages": [
+    5,
+    6,
+    7
+   ],
+   "narration": "把过程分成三段。视频依次展示[[1]]气态、气液共存和液态。气态段体积减小时压强增大。第二段出现[[2]]共存平台：继续压缩主要改变两相比例，压强维持在同一温度的饱和压强附近。两端分别是饱和蒸气与饱和液体，中间是两相混合物。第三段进入[[3]]液态，减少很少的体积便要显著增压，说明液体难压缩。平台上不是所有分子都在同一均匀气体里挤近一些，而是部分蒸气变成液体。理想气体双曲线没有提供这一相变信息。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "01　安德鲁斯实验",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "video",
+     "step": 1,
+     "x": 105,
+     "y": 305,
+     "w": 520,
+     "h": 360,
+     "src": "source/media3.mp4",
+     "timelineSync": true
+    },
+    {
+     "type": "video",
+     "step": 1,
+     "x": 700,
+     "y": 305,
+     "w": 520,
+     "h": 360,
+     "src": "source/media4.mp4",
+     "timelineSync": true
+    },
+    {
+     "type": "video",
+     "step": 1,
+     "x": 1295,
+     "y": 305,
+     "w": 520,
+     "h": 360,
+     "src": "source/media5.mp4",
+     "timelineSync": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 105,
+     "y": 725,
+     "w": 520,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "气态：易压缩",
+        "size": 38,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 700,
+     "y": 725,
+     "w": 520,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "共存：相比例改变",
+        "size": 36,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "共存：相比例改变",
+     "qa": [
+      {
+       "q": "平台上的体积为什么还能变化？",
+       "a": "压缩使更多蒸气变成液体。相比例改变，而平衡的共存压强由温度决定。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1295,
+     "y": 725,
+     "w": 520,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "液态：难压缩",
+        "size": 36,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "液态：难压缩",
+     "qa": [
+      {
+       "q": "液态段很陡说明什么？",
+       "a": "液体的等温压缩率很小。要使体积减少一点，就需要显著提高压强。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 105,
+     "y": 900,
+     "w": 1650,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "共存平台记录了相的变化，而不只是气体的压缩",
+        "size": 38,
+        "color": "#C00000",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "heading": "理想模型的边界",
+   "source_pages": [
+    8,
+    9,
+    10
+   ],
+   "narration": "回到理想模型。先做[[1]]探究：它省略了分子的哪些特征？主要是分子有限体积与相互作用。在较稀薄的高温低压气态，这两个近似常常有用。现在冷却并压缩一份气体，请做一道[[2]]选择题，判断哪些假设需要重查。降低温度，吸引作用相对更重要；提高密度，分子占据的空间不能忽略。这就是[[3]]适用边界：理想方程可以描述一定范围的气态，却没有包含液化与两相共存的机制。模型是否有效，仍要由实验判断。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "01　安德鲁斯实验",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 135,
+     "y": 270,
+     "w": 1480,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "探究：理想气体模型省略了什么？",
+        "size": 42,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "探究：理想气体模型省略了什么？",
+     "qa": [
+      {
+       "q": "理想气体的两个主要近似是什么？",
+       "a": "分子体积相对总体积可忽略，分子间相互作用可忽略。近似常用于较稀薄的高温低压气态。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 135,
+     "y": 410,
+     "w": 1500,
+     "h": 152.0,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "分子自身占有空间",
+        "size": 44,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "分子之间存在相互作用",
+        "size": 44,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 135,
+     "y": 640,
+     "w": 1520,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "冷却并压缩气体，哪些近似需要重新检查？",
+        "size": 42,
+        "color": "#C00000",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 135,
+     "y": 850,
+     "w": 1500,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "模型的有效范围需要由实验判断",
+        "size": 40,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "模型的有效范围需要由实验判断",
+     "qa": [
+      {
+       "q": "理想气体方程为何不给出共存平台？",
+       "a": "它未包含分子间吸引和有限体积等真实气体特征，无法提供气液相变及两相共存的信息。"
+      }
+     ]
+    }
+   ],
+   "interactions": [
+    {
+     "at": 2,
+     "q": "对同一份气体降温并大幅压缩，最合理的模型判断是什么？",
+     "answer": 1,
+     "options": [
+      "只要物质的量固定，理想气体近似就始终精确",
+      "相互作用和分子占据的空间都可能变得不可忽略",
+      "温度降低后，分子就不再运动"
+     ],
+     "explain": "模型适用性取决于状态。降低温度会提高吸引作用的相对重要性，压缩则提高密度，使分子有限体积的影响更明显；不能仅凭物质的量固定就保证理想近似。",
+     "after_sentence": "现在冷却并压缩一份气体，请做一道选择题，判断哪些假设需要重查。",
+     "pause_offset": 0.1
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "heading": "范德瓦尔斯修正",
+   "source_pages": [
+    11
+   ],
+   "narration": "范德瓦尔斯把两个特征补回来。取一摩尔物质，理想方程是[[1]]压强乘摩尔体积，等于气体常量乘温度。先考虑[[2]]吸引作用：它降低分子撞击器壁产生的压强，所以给实际压强补上修正项，常量阿除以摩尔体积的平方。再考虑[[3]]有限分子尺度：可用体积要从摩尔体积中扣去贝。贝是排除体积参数，并非分子实体积的简单总和。合并得到[[4]]范德瓦尔斯方程：第一括号是压强加阿除以摩尔体积的平方，第二括号是摩尔体积减贝，两括号相乘，等于气体常量乘温度。这仍是平均场近似，不能先假定每段曲线都是可实现的平衡态。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　范德瓦尔斯等温线",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 140,
+     "y": 240,
+     "w": 750,
+     "h": 110,
+     "tex": "p\\,v_m=RT",
+     "size": 60,
+     "color": "#16283F",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 140,
+     "y": 440,
+     "w": 750,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "吸引作用：修正压强",
+        "size": 40,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "吸引作用：修正压强",
+     "qa": [
+      {
+       "q": "压强修正项为什么是加号？",
+       "a": "实际分子间吸引会降低器壁所承受的压强。p+a/v_m²补回这部分平均场修正。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 140,
+     "y": 530,
+     "w": 750,
+     "h": 120,
+     "tex": "p\\ \\mapsto\\ p+\\frac{a}{v_m^2}",
+     "size": 46,
+     "color": "#244B88",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1060,
+     "y": 440,
+     "w": 700,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "排除体积：修正空间",
+        "size": 40,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "排除体积：修正空间",
+     "qa": [
+      {
+       "q": "b就是分子实体积吗？",
+       "a": "b是有效的排除体积参数。它反映有限分子尺度对可用空间的影响，不能简单等同于分子实体积的总和。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 1060,
+     "y": 530,
+     "w": 700,
+     "h": 120,
+     "tex": "v_m\\ \\mapsto\\ v_m-b",
+     "size": 46,
+     "color": "#244B88",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 140,
+     "y": 770,
+     "w": 1560,
+     "h": 160,
+     "tex": "\\left(p+\\frac{a}{v_m^2}\\right)(v_m-b)=RT",
+     "size": 58,
+     "color": "#16283F",
+     "align": "left",
+     "hotspot": true,
+     "important": true,
+     "label": "一摩尔范德瓦尔斯方程",
+     "qa": [
+      {
+       "q": "范德瓦尔斯方程修正了什么？",
+       "a": "它以a描述分子间平均吸引对压强的修正，以b描述有限分子尺度造成的排除体积。仍属于近似模型。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "heading": "温度与等温线",
+   "source_pages": [
+    11,
+    12
+   ],
+   "narration": "现在改变温度。图上用临界量作单位，[[1]]温度比等于一就是模型的临界温度，坐标是约化体积和压强。看[[2]]温度扫描：低于临界温度，回弯出现极小值和极大值；临界温度时两处极值并合，形成临界拐点；超过临界温度，回弯消失，等温压缩不再经过气液共存平台。低温曲线在气态和液态区域给出合理趋势，中间却与实验不同。可以拖温度滑块比较。下一步先判断机械稳定性，再确定平台怎样替代回弯。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　范德瓦尔斯等温线",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 105,
+     "y": 190,
+     "w": 1020,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "临界量归一化：比较曲线形状",
+        "size": 36,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1210,
+     "y": 190,
+     "w": 580,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "自动扫描：低温至高温",
+        "size": 32,
+        "color": "#C00000",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "html",
+     "step": 1,
+     "x": 60,
+     "y": 270,
+     "w": 1800,
+     "h": 710,
+     "src": "sim_phase.html?embed=family",
+     "label": "范德瓦尔斯等温线家族",
+     "msgs": {
+      "1": "reset",
+      "2": "demo:12"
+     },
+     "timelineSync": true
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "heading": "机械稳定性",
+   "source_pages": [
+    13,
+    14
+   ],
+   "narration": "为什么回弯中段不能是稳定均匀相？保持外压不变，让物质轻微膨胀。若内压随之降低，外界会把它压回，具有恢复作用。因此局部稳定相满足[[1]]负斜率：温度固定时，压强对摩尔体积的偏导数小于零。等价地，[[2]]等温压缩率等于负的一除以摩尔体积，乘摩尔体积对压强的等温偏导数，并且大于零。再看[[3]]正斜率区：膨胀后内压反而升高，推动进一步膨胀；压缩后内压下降，外界继续压缩。扰动被放大。极大点西与极小点伊之间，正是机械不稳定区。负斜率只保证局部稳定，还不能判定全局相平衡。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　范德瓦尔斯等温线",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 135,
+     "y": 250,
+     "w": 1500,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "局部稳定：小扰动引起恢复作用",
+        "size": 42,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 135,
+     "y": 345,
+     "w": 1510,
+     "h": 130,
+     "tex": "\\left(\\frac{\\partial p}{\\partial v_m}\\right)_T<0",
+     "size": 60,
+     "color": "#16283F",
+     "align": "left",
+     "hotspot": true,
+     "label": "负斜率与局部稳定",
+     "qa": [
+      {
+       "q": "负斜率为什么对应局部机械稳定？",
+       "a": "微小膨胀导致内部压强下降，外界压强提供恢复压缩；微小压缩使内部压强升高，提供恢复膨胀。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 135,
+     "y": 530,
+     "w": 1510,
+     "h": 150,
+     "tex": "\\kappa_T=-\\frac{1}{v_m}\\left(\\frac{\\partial v_m}{\\partial p}\\right)_T>0",
+     "size": 54,
+     "color": "#16283F",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 135,
+     "y": 755,
+     "w": 1550,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "C–E 正斜率区：小扰动被放大",
+        "size": 42,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "C–E 正斜率区：小扰动被放大",
+     "qa": [
+      {
+       "q": "C–E段为什么机械不稳定？",
+       "a": "它的等温压强随体积增大而升高。体积小扰动造成的压力差会放大原扰动，使均匀状态无法维持。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 135,
+     "y": 885,
+     "w": 1580,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "局部稳定性与全局相平衡，是两个判断层次",
+        "size": 36,
+        "color": "#C00000",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "heading": "寻找共存压强",
+   "source_pages": [
+    15,
+    16
+   ],
+   "narration": "实验是平台，模型却有回弯。擦掉不稳定段还不够，连接气态与液态的[[1]]水平线该画在哪个压强？图中左交点艾弗是液端，右交点贝是气端，中间是迪。看[[2]]候选压强变化：水平线升降，两块面积随之变化。只有满足相平衡的那条线，两端才是饱和液体和蒸气。拖压强滑块可比较，等面积按钮则计算模型的共存压强。下面解释面积条件从哪里来。它要由热力学决定，不能凭图形对称或好看选一条线。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　范德瓦尔斯等温线",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 105,
+     "y": 190,
+     "w": 1060,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "水平线的高度，需要热力学判据",
+        "size": 36,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1210,
+     "y": 190,
+     "w": 580,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "观察两面积随候选压强变化",
+        "size": 30,
+        "color": "#C00000",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "html",
+     "step": 1,
+     "x": 60,
+     "y": 270,
+     "w": 1800,
+     "h": 710,
+     "src": "sim_phase.html?embed=maxwell",
+     "label": "共存压强与两块面积",
+     "msgs": {
+      "1": "reset",
+      "2": "demo:8"
+     },
+     "timelineSync": true
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "heading": "相平衡的来源",
+   "source_pages": [
+    16,
+    17,
+    18,
+    19
+   ],
+   "narration": "取一摩尔纯物质。先写[[1]]内能关系：优的微分等于温度乘熵的微分，减压强乘摩尔体积的微分。定义[[2]]亥姆霍兹自由能，艾弗等于优减温度乘熵。求微分并固定温度，温度乘熵的微分项相消，得到艾弗的微分等于负的压强乘摩尔体积的微分。曲线积分就与自由能差相连。再定义[[3]]每摩尔吉布斯自由能：吉等于艾弗加压强乘摩尔体积，对纯物质也就是化学势。在同一温度和压强下，若两相化学势不同，少量物质转入较低的一相还会降低总自由能。只有[[4]]液相与气相化学势相等，物质转移才没有继续降低自由能的方向；这就是共存判据。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　范德瓦尔斯等温线",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 135,
+     "y": 235,
+     "w": 1550,
+     "h": 120,
+     "tex": "du=T\\,ds-p\\,dv_m",
+     "size": 56,
+     "color": "#16283F",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 135,
+     "y": 410,
+     "w": 1550,
+     "h": 130,
+     "tex": "f=u-Ts,\\qquad df\\big|_T=-p\\,dv_m",
+     "size": 54,
+     "color": "#16283F",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 135,
+     "y": 590,
+     "w": 1550,
+     "h": 130,
+     "tex": "g=f+p\\,v_m=\\mu\\quad\\text{（纯物质，每摩尔）}",
+     "size": 48,
+     "color": "#16283F",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 135,
+     "y": 770,
+     "w": 1550,
+     "h": 110,
+     "tex": "\\mu_l(T,p_s)=\\mu_g(T,p_s)",
+     "size": 56,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": true,
+     "label": "相平衡：两相化学势相等",
+     "qa": [
+      {
+       "q": "相平衡为什么要求化学势相等？",
+       "a": "在同一温度和压强下，若两相化学势不同，少量物质转入较低化学势的一相会降低总吉布斯自由能，系统仍有演化方向。共存平衡要求温度、压强及化学势都相等。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 135,
+     "y": 910,
+     "w": 1590,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两相之间再转移一点物质，总自由能不再下降",
+        "size": 34,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "heading": "等面积的推导",
+   "source_pages": [
+    16,
+    17,
+    18,
+    19
+   ],
+   "narration": "用液体和蒸气下标标记平台两端。两相吉布斯自由能相等，整理得到[[1]]气相艾弗减液相艾弗，等于负的共存压强，乘两端摩尔体积之差。另一方面，固定温度的自由能差等于[[2]]负的压强积分，从液端积到气端。这里计算的是模型自由能的数学延拓，并非真实经过不稳定态的实验路径。把两式相等并移项，就有[[3]]范德瓦尔斯压强减共存压强，从液端到气端的积分等于零。线上方有正贡献，下方有负贡献，两块面积因此[[4]]相等。面积条件正是相平衡条件的积分表达。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　范德瓦尔斯等温线",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 135,
+     "y": 230,
+     "w": 1630,
+     "h": 105,
+     "tex": "f_g-f_l=-p_s(v_g-v_l)",
+     "size": 54,
+     "color": "#16283F",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 135,
+     "y": 385,
+     "w": 1630,
+     "h": 135,
+     "tex": "f_g-f_l=-\\int_{v_l}^{v_g}p_{\\mathrm{vdW}}(v_m,T)\\,dv_m",
+     "size": 50,
+     "color": "#16283F",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 135,
+     "y": 590,
+     "w": 1630,
+     "h": 145,
+     "tex": "\\int_{v_l}^{v_g}\\left[p_{\\mathrm{vdW}}(v_m,T)-p_s\\right]dv_m=0",
+     "size": 55,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": true,
+     "label": "Maxwell等面积条件",
+     "qa": [
+      {
+       "q": "等面积为何能确定共存压强？",
+       "a": "等面积条件是两相化学势相等的积分形式。它让均匀模型自由能与两相共存的共同切线相匹配，确定饱和液端、气端及共存压强。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 135,
+     "y": 835,
+     "w": 1510,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "面积相等，是相平衡的结果",
+        "size": 42,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "面积相等，是相平衡的结果",
+     "qa": [
+      {
+       "q": "这是不是一条可实际走过的闭合实验回路？",
+       "a": "不是。正斜率段机械不稳定，不能作为真实准静态路径。积分是在范德瓦尔斯自由能模型上的数学构造。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 13,
+   "heading": "麦克斯韦的构造",
+   "source_pages": [
+    15,
+    17,
+    18,
+    19
+   ],
+   "narration": "麦克斯韦在一八七五年的论文中，用[[1]]图形构造考察气液转变。源图两块面积记作贝西迪与伊迪艾弗。它们的[[2]]有向面积相消，也就是面积贝西迪等于面积伊迪艾弗。源稿还用闭合曲线的做功提供直觉，但经过不稳定段的回路只是假想模型图形，不能称为真实可逆循环。严格依据是前两页的自由能关系与化学势相等。于是实验平台、积分条件与相平衡，确定[[3]]同一条共存线。模型既要解释曲线，也要满足热力学约束。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　范德瓦尔斯等温线",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 110,
+     "y": 230,
+     "w": 330,
+     "h": 430,
+     "src": "source/image24.jpeg"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 110,
+     "y": 700,
+     "w": 430,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "J. Clerk Maxwell",
+        "size": 34,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 110,
+     "y": 760,
+     "w": 430,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "Nature 11, 357–359 (1875)",
+        "size": 25,
+        "color": "#586A82",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 565,
+     "y": 235,
+     "w": 1220,
+     "h": 320,
+     "src": "source/image22.png"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 585,
+     "y": 595,
+     "w": 1170,
+     "h": 110,
+     "tex": "S_{BCD}=S_{EDF}",
+     "size": 56,
+     "color": "#244B88",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 585,
+     "y": 745,
+     "w": 1200,
+     "h": 134.0,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "图形构造用于说明有向面积",
+        "size": 38,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "严格判据来自两相化学势相等",
+        "size": 38,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 110,
+     "y": 910,
+     "w": 1630,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "实验平台、积分条件与相平衡相互吻合",
+        "size": 36,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "实验平台、积分条件与相平衡相互吻合",
+     "qa": [
+      {
+       "q": "Maxwell构造修正了模型的哪一部分？",
+       "a": "它以共存平台替代两相区内的均匀模型回线，使实际相平衡压强与自由能条件一致；亚稳分支仍可作为局部状态讨论。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 14,
+   "heading": "共存与相比例",
+   "source_pages": [
+    7,
+    16,
+    19,
+    20
+   ],
+   "narration": "平台中间是[[1]]饱和液体与饱和蒸气共存，温度、压强相同，摩尔体积不同。低于临界温度，两相摩尔体积和熵存在差别，转变伴随潜热，属于一级相变。把蒸气物质的量分数记作艾克斯吉，平均体积满足[[2]]杠杆关系：一减艾克斯吉，乘液体摩尔体积，再加艾克斯吉乘蒸气摩尔体积。解得蒸气分数，等于平均摩尔体积与液端之差，除以气端与液端之差。现在做[[3]]迁移题：平均体积位于两端之间的四分之一处，蒸气分数是多少？注意这是物质的量分数，并非图中高度或体积分数；少量蒸气仍可能占很大空间。临界点两相区别消失，一级相变线终止，普通两端点杠杆关系便不能直接套用。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　范德瓦尔斯等温线",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 135,
+     "y": 260,
+     "w": 1570,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "平台中间：饱和液体与饱和蒸气共存",
+        "size": 42,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "平台中间：饱和液体与饱和蒸气共存",
+     "qa": [
+      {
+       "q": "平台上的状态是均匀气体吗？",
+       "a": "不是。总体积由共存的饱和液体和饱和蒸气共同贡献，压缩主要改变两相物质的量比例。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 135,
+     "y": 450,
+     "w": 1620,
+     "h": 115,
+     "tex": "\\bar v=(1-x_g)v_l+x_gv_g",
+     "size": 57,
+     "color": "#16283F",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 135,
+     "y": 610,
+     "w": 1620,
+     "h": 140,
+     "tex": "x_g=\\frac{\\bar v-v_l}{v_g-v_l}",
+     "size": 54,
+     "color": "#244B88",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 135,
+     "y": 835,
+     "w": 1610,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "迁移：物质的量分数，不等于体积分数",
+        "size": 38,
+        "color": "#C00000",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 135,
+     "y": 940,
+     "w": 1610,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "低于临界温度：一级相变；临界点两相差别消失",
+        "size": 30,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    }
+   ],
+   "interactions": [
+    {
+     "at": 3,
+     "q": "若平均摩尔体积为 $\\bar v=v_l+0.25(v_g-v_l)$，蒸气的物质的量分数为多少？",
+     "answer": 0,
+     "options": [
+      "25%",
+      "50%",
+      "75%"
+     ],
+     "explain": "由平均体积的两相加权关系，蒸气的物质的量分数为 $x_g=\\frac{\\bar v-v_l}{v_g-v_l}=0.25$。由于蒸气的摩尔体积通常远大于液体，25%的蒸气仍可能占据大部分可见空间。",
+     "after_sentence": "现在做迁移题：平均体积位于两端之间的四分之一处，蒸气分数是多少？",
+     "pause_offset": 0.1
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "heading": "亚稳与不稳定",
+   "source_pages": [
+    20
+   ],
+   "narration": "原来两条负斜率分支还有什么意义？它们给出[[1]]亚稳态延伸：右边贝到西是越过凝结条件仍未凝结的蒸气，可称过饱和或过冷蒸气；左边艾弗到伊是越过汽化条件仍未汽化的过热液体。这两段斜率仍为负，小扰动可被恢复。但转成两相或另一相，整体自由能能够更低，所以它们是[[2]]局部稳定，而非全局平衡。西与伊之间正斜率区则会放大小扰动，两端是旋节点。请分清[[3]]亚稳与不稳定：亚稳态可以等待有效成核事件；不稳定态连小扰动也不能恢复。这里过冷蒸气是相对气液饱和条件，不等同于零摄氏度以下的过冷液态水。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　范德瓦尔斯等温线",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 105,
+     "y": 190,
+     "w": 980,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "B–C：亚稳蒸气　F–E：亚稳液体",
+        "size": 34,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1120,
+     "y": 190,
+     "w": 690,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "局部稳定 ≠ 全局相平衡",
+        "size": 32,
+        "color": "#C00000",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "html",
+     "step": 1,
+     "x": 60,
+     "y": 270,
+     "w": 1800,
+     "h": 710,
+     "src": "sim_phase.html?embed=meta",
+     "label": "稳定亚稳与不稳定分区",
+     "msgs": {
+      "1": "reset"
+     },
+     "timelineSync": true
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 105,
+     "y": 230,
+     "w": 1690,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "亚稳态可等待成核；正斜率区的小扰动会增长",
+        "size": 27,
+        "color": "#546982",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": 16,
+   "heading": "成核条件",
+   "source_pages": [
+    20
+   ],
+   "narration": "越过平衡条件为何还能等待？因为[[1]]形成新相有界面代价。小液滴或小汽泡先要建立界面，增加自由能；新相体积增大又可能带来自由能收益。小胚胎可能消失，足够大的胚胎才持续长大，这构成[[2]]成核势垒。器壁、微粒、已有汽泡或离子等，能在适合体系中提供异质成核条件，降低势垒。但外来灰尘不是所有相变的绝对必要条件。热涨落也可能造成[[3]]均质成核。等待时间由状态、界面代价与动力学共同决定，接近旋节边界时，均匀相的局部稳定性也会消失。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "03　过冷、过热及其应用",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 140,
+     "y": 245,
+     "w": 1570,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "新相有体积收益，也有界面代价",
+        "size": 42,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "新相有体积收益，也有界面代价",
+     "qa": [
+      {
+       "q": "越过平衡条件为什么未必立刻相变？",
+       "a": "新相胚胎先要创建界面，界面自由能造成成核势垒。只有有效成核事件发生后，新相才可能持续长大。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 140,
+     "y": 410,
+     "w": 1560,
+     "h": 140.0,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "小胚胎：界面代价占优势，可能消失",
+        "size": 40,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "有效核：越过势垒后，新相可以长大",
+        "size": 40,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 140,
+     "y": 640,
+     "w": 1560,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "异质成核：器壁、微粒、离子等提供条件",
+        "size": 38,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "异质成核：器壁、微粒、离子等提供条件",
+     "qa": [
+      {
+       "q": "凝结核或汽化核有什么作用？",
+       "a": "适合的界面、微粒或局部扰动可以降低成核势垒，缩短亚稳态等待时间。不同体系的有效成核机制不同。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 140,
+     "y": 845,
+     "w": 1560,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "均质成核：热涨落也可能触发相变",
+        "size": 38,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "均质成核：热涨落也可能触发相变",
+     "qa": [
+      {
+       "q": "没有外来微粒就绝不可能相变吗？",
+       "a": "不是。均质成核可以由热涨落形成新相胚胎。不能把外来凝结核说成所有相变绝对必需的条件。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 17,
+   "heading": "尾迹云的形成",
+   "source_pages": [
+    2,
+    20
+   ],
+   "narration": "回到飞机视频。发动机排气带来[[1]]水汽，与高空冷空气混合；排气与环境中的微粒也可参与成核。在合适的过饱和条件下，水汽凝结，液滴随后冻结，形成可见的[[2]]冰晶尾迹。水蒸气本身看不见，看到的是颗粒散射光。不能只说飞机给原有空气补了凝结核，忽略排气水汽和混合冷却。能否持续，还受周围空气对冰的饱和程度影响。尾迹包含凝结和冻结，简单气液模型不能代替全部大气过程；可迁移的是[[3]]同时判断状态条件与成核过程的方法。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "03　过冷、过热及其应用",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "video",
+     "step": 1,
+     "x": 105,
+     "y": 315,
+     "w": 990,
+     "h": 450,
+     "src": "source/media1.mp4",
+     "timelineSync": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 1180,
+     "y": 255,
+     "w": 625,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "排气水汽与冷空气混合",
+        "size": 36,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "排气水汽与冷空气混合",
+     "qa": [
+      {
+       "q": "尾迹云的水汽只来自周围空气吗？",
+       "a": "发动机排气本身含水汽。它与高空冷空气混合，配合环境条件和成核微粒，产生凝结与冻结。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1180,
+     "y": 390,
+     "w": 625,
+     "h": 182.0,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "合适的过饱和条件",
+        "size": 36,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "微粒参与成核",
+        "size": 36,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "凝结、冻结形成冰晶",
+        "size": 36,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1180,
+     "y": 635,
+     "w": 625,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "可见白线主要由冰晶形成",
+        "size": 35,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "可见白线主要由冰晶形成",
+     "qa": [
+      {
+       "q": "为什么白色尾迹不是可见水蒸气？",
+       "a": "水蒸气是不可见的气态水。微小液滴或冰晶散射光才能形成可见白色云雾，凝结尾迹的可见部分主要是冰晶。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 105,
+     "y": 900,
+     "w": 1680,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "判断相变，需要同时考察状态与成核过程",
+        "size": 38,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": 18,
+   "heading": "云室显迹",
+   "source_pages": [
+    2,
+    21
+   ],
+   "narration": "云室先准备[[1]]过饱和蒸气。早期膨胀云室通过膨胀冷却，扩散云室利用温度梯度；共同点是产生适合显迹的过饱和区。看视频中的细线。带电粒子沿途使介质[[2]]电离，生成一串离子；离子附近液滴更容易成核、生长并散射光，路径被放大为可见线迹。看到的是液滴串。威尔逊在一九一一年展示粒子径迹，安德森一九三二年的正电子发现也使用云室。磁场中路径的弯曲还能提供电荷与动量信息，但需要明确运动和磁场条件。本课的[[3]]关键是让背景等待局部触发，把电离转成可见相变。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "03　过冷、过热及其应用",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "video",
+     "step": 1,
+     "x": 105,
+     "y": 270,
+     "w": 1000,
+     "h": 570,
+     "src": "source/media2.mp4",
+     "timelineSync": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 1190,
+     "y": 265,
+     "w": 610,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "准备过饱和蒸气",
+        "size": 36,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "准备过饱和蒸气",
+     "qa": [
+      {
+       "q": "云室一定都是用同一种冷却方法吗？",
+       "a": "不是。膨胀云室通过膨胀冷却，扩散云室可利用温度梯度。共同教学要点是形成适合成核显迹的过饱和蒸气。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1190,
+     "y": 420,
+     "w": 610,
+     "h": 182.0,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "带电粒子沿途电离",
+        "size": 36,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "离子附近形成微小液滴",
+        "size": 36,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "液滴散射光，路径可见",
+        "size": 36,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1190,
+     "y": 705,
+     "w": 610,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "把局部电离转为可见相变",
+        "size": 35,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "把局部电离转为可见相变",
+     "qa": [
+      {
+       "q": "云室看到的是粒子直接发光吗？",
+       "a": "看到的是粒子沿途电离所触发的液滴成核与生长。微小液滴散射光，组成可见径迹。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 105,
+     "y": 900,
+     "w": 1650,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "Wilson：1911年粒子径迹；Anderson：1932年正电子发现",
+        "size": 31,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": 19,
+   "heading": "过热液体",
+   "source_pages": [
+    20,
+    22
+   ],
+   "narration": "把相变方向反过来。在一定压强下，液体超过平衡沸点却仍为液态，就是[[1]]过热状态。它可以局部稳定，但产生持续长大的汽泡要跨越成核势垒。现在[[2]]看过热水视频：有效汽化核出现，汽泡迅速长大，亚稳液体开始汽化。扰动主要触发成核，不是提供了全部汽化热量。汽化消耗潜热，能量来自过热液体及周围交换，局部温度也会变化。可见[[3]]越过平衡条件，并不等于相变立即发生；实际过程还涉及成核与时间尺度。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "03　过冷、过热及其应用",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "video",
+     "step": 2,
+     "x": 105,
+     "y": 270,
+     "w": 970,
+     "h": 546,
+     "src": "source/media7.mp4",
+     "timelineSync": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 1180,
+     "y": 270,
+     "w": 620,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "越过平衡沸点，仍维持液态",
+        "size": 35,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "越过平衡沸点，仍维持液态",
+     "qa": [
+      {
+       "q": "过热液体的温度意味着什么？",
+       "a": "在给定压强下，液体温度高于该压强对应的平衡沸点，却暂时维持液态，属于亚稳状态。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1180,
+     "y": 435,
+     "w": 620,
+     "h": 182.0,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "有效汽化核出现",
+        "size": 36,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "汽泡越过成核势垒",
+        "size": 36,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "迅速长大，触发汽化",
+        "size": 36,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1180,
+     "y": 695,
+     "w": 620,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "平衡条件与发生时间要区分",
+        "size": 34,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "平衡条件与发生时间要区分",
+     "qa": [
+      {
+       "q": "扰动是否提供了汽化所需的全部能量？",
+       "a": "不是。扰动主要可能触发成核。汽化潜热来自液体及其周围的能量交换，过热液体的局部温度也会随汽化降低。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 105,
+     "y": 900,
+     "w": 1650,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "源稿过热水视频：用于分析机制",
+        "size": 32,
+        "color": "#586A82",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": 20,
+   "heading": "泡室显迹",
+   "source_pages": [
+    22
+   ],
+   "narration": "泡室利用亚稳液体。通过[[1]]快速减压降低平衡沸点，使现有温度的液体进入过热状态。在敏感时间窗内，粒子沿途电离与局部能量沉积，帮助[[2]]触发汽泡成核。汽泡沿径迹长大，照明和拍照后可分析；重新加压抑制汽化，汽泡消失，为下一次观测复位。原图是泡室实物。格拉泽因发明泡室获得一九六零年诺贝尔物理学奖，阿尔瓦雷茨的相关实验技术和发现获得一九六八年奖项。把[[3]]两种探测器比较：云室从蒸气里形成液滴，泡室从液体里形成汽泡，都把局部粒子作用转成可见路径。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "03　过冷、过热及其应用",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 120,
+     "y": 240,
+     "w": 830,
+     "h": 500,
+     "src": "source/image41.jpeg"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 1080,
+     "y": 235,
+     "w": 720,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "快速减压，制备过热液体",
+        "size": 36,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "快速减压，制备过热液体",
+     "qa": [
+      {
+       "q": "泡室为什么先减压？",
+       "a": "减压使平衡沸点降低，让液体在现有温度下进入过热亚稳状态，提供可被局部能量沉积触发的敏感时间窗。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1080,
+     "y": 420,
+     "w": 720,
+     "h": 182.0,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "粒子电离、局部能量沉积",
+        "size": 36,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "沿径迹成核、生长成汽泡",
+        "size": 36,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "拍照后重新加压复位",
+        "size": 36,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1080,
+     "y": 720,
+     "w": 720,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "可见线迹由汽泡组成",
+        "size": 36,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "可见线迹由汽泡组成",
+     "qa": [
+      {
+       "q": "泡室与云室的新相相同吗？",
+       "a": "不同。云室的可见径迹由蒸气中形成的液滴组成，泡室的径迹由液体中形成的汽泡组成。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 120,
+     "y": 810,
+     "w": 830,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "原稿泡室图像",
+        "size": 32,
+        "color": "#586A82",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 120,
+     "y": 915,
+     "w": 1670,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "Glaser（1960）与 Alvarez（1968）的实验技术贡献",
+        "size": 30,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": 21,
+   "heading": "应用迁移",
+   "source_pages": [
+    21,
+    22,
+    26
+   ],
+   "narration": "现在做两道迁移题。第一题[[1]]问云室背景：若到处同时凝结出大量液滴，粒子径迹还能清楚吗？请先选择，再看解析。探测器需要局部变化相对背景有足够对比。第二题[[2]]问回南天：温暖潮湿空气进入冷室内，瓷砖出现水珠，首先该比较哪个温度？请区别空气温度、露点与瓷砖温度。水来自空气中的水汽，凝结还利用了冷表面的条件。两题都要求从[[3]]状态、成核和观察效果三个层次组织解释。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "03　过冷、过热及其应用",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 140,
+     "y": 270,
+     "w": 1600,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "探测器：背景到处凝结，线迹还清楚吗？",
+        "size": 44,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 140,
+     "y": 405,
+     "w": 1580,
+     "h": 134.0,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "相变能发生，还要让局部变化可辨认",
+        "size": 38,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "状态控制影响敏感性，也影响背景",
+        "size": 38,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 140,
+     "y": 630,
+     "w": 1600,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "回南天：先比较瓷砖温度与哪一个温度？",
+        "size": 44,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 140,
+     "y": 875,
+     "w": 1570,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "用状态、成核和观察效果组织解释",
+        "size": 38,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "用状态、成核和观察效果组织解释",
+     "qa": [
+      {
+       "q": "为什么应用时不能只背过冷或过热？",
+       "a": "还要判断实际温度和压强是否支持相变，成核过程如何被触发，以及产生的新相能否被观察或利用。"
+      }
+     ]
+    }
+   ],
+   "interactions": [
+    {
+     "at": 1,
+     "q": "若云室背景中到处都同时凝结出大量液滴，粒子径迹的可辨认性通常怎样变化？",
+     "answer": 1,
+     "options": [
+      "更容易看清每一条路径",
+      "背景增强，路径通常更难分辨",
+      "只要粒子带电，背景绝不影响观测"
+     ],
+     "explain": "可见径迹要有相对于背景的对比。背景处处凝结会产生大量散射光和杂乱液滴，掩盖沿粒子路径形成的局部结构。状态控制既要保证敏感性，也要控制背景。",
+     "after_sentence": "请先选择，再看解析。",
+     "pause_offset": 0.1
+    },
+    {
+     "at": 2,
+     "q": "温暖潮湿空气进入较冷室内，判断瓷砖是否凝结水珠，首先应比较什么？",
+     "answer": 0,
+     "options": [
+      "瓷砖表面温度与空气露点",
+      "瓷砖表面温度与空气温度",
+      "空气温度与零摄氏度"
+     ],
+     "explain": "表面温度低于空气露点时，附近水汽可达到凝结条件。仅低于空气温度还不充分，零摄氏度也不是凝结水珠的判据。水主要来自空气水汽，表面提供异质成核条件。",
+     "after_sentence": "第二题问回南天：温暖潮湿空气进入冷室内，瓷砖出现水珠，首先该比较哪个温度？",
+     "pause_offset": 0.1
+    }
+   ]
+  },
+  {
+   "id": 22,
+   "heading": "小结",
+   "source_pages": [
+    25
+   ],
+   "narration": "把全课连起来。[[1]]安德鲁斯实验给出平台；范德瓦尔斯补入吸引和排除体积，却出现回弯。[[2]]机械稳定性排除正斜率均匀态，相平衡条件通过等面积法确定平台。[[3]]亚稳态与成核则解释越过平衡条件为何仍能等待。回答开场两问：尾迹由排气水汽混合冷却、凝结和冻结形成可见冰晶，持续与环境有关。云室让过饱和蒸气在粒子沿途电离的位置形成散光液滴，显出路径。实验提出问题，模型解释，热力学约束修正模型，应用继续检验。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04　小结与迁移",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 130,
+     "y": 245,
+     "w": 1560,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "实验事实：气液共存平台",
+        "size": 42,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "实验事实：气液共存平台",
+     "qa": [
+      {
+       "q": "本课从什么实验事实开始？",
+       "a": "一定温度下缓慢压缩低于临界温度的物质，可以观察到气态、两相共存平台和液态三个阶段。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 130,
+     "y": 410,
+     "w": 1560,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "模型检验：局部稳定性与相平衡",
+        "size": 42,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "模型检验：局部稳定性与相平衡",
+     "qa": [
+      {
+       "q": "等面积法与机械稳定性各判断什么？",
+       "a": "机械稳定性判断均匀状态是否恢复小扰动。等面积法是相平衡的积分条件，确定饱和两端及共存压强。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 130,
+     "y": 575,
+     "w": 1560,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "过程解释：亚稳态等待成核",
+        "size": 42,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "过程解释：亚稳态等待成核",
+     "qa": [
+      {
+       "q": "亚稳态为什么可以等待？",
+       "a": "微小扰动可以被恢复，但新相形成还要跨越界面相关的成核势垒，等待有效的成核事件。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 130,
+     "y": 760,
+     "w": 1590,
+     "h": 134.0,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "尾迹云：水汽混合冷却，凝结、冻结形成冰晶",
+        "size": 38,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "云室：局部电离触发液滴成核，径迹可见",
+        "size": 38,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 130,
+     "y": 940,
+     "w": 1590,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "实验提出问题，理论解释与预测，实验继续检验",
+        "size": 31,
+        "color": "#586A82",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": 23,
+   "heading": "作业与结尾",
+   "source_pages": [
+    23,
+    24,
+    26,
+    27
+   ],
+   "narration": "课后完成[[1]]回南天讨论：判断表面温度与露点，解释水的来源与表面成核。原稿讨论入口保留在屏幕上。第二项[[2]]任务是调本地模拟温度，比较临界温度上下的曲线、共存平台与亚稳分支。原稿宇宙演化和重离子碰撞图作为课外拓展保留，它们需要不同体系的模型与证据，不能直接套用本课气液方程。今天到这里，[[3]]下次课见。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04　作业与结尾",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 125,
+     "y": 235,
+     "w": 1660,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "课后讨论：回南天，瓷砖为何冒汗？",
+        "size": 42,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "课后讨论：回南天，瓷砖为何冒汗？",
+     "qa": [
+      {
+       "q": "课后讨论应按什么顺序展开？",
+       "a": "先写自己关于瓷砖表面温度与露点的解释，再到原课程平台与AI助教逐步追问水汽来源、状态条件与成核，最后用自己的话整理理由。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 125,
+     "y": 320,
+     "w": 1670,
+     "h": 120,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "先写自己的解释：比较瓷砖表面温度与空气露点。",
+        "size": 30,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "再到原课程平台与 AI 助教逐步追问：水汽来源、状态条件与成核。",
+        "size": 30,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "最后用自己的话整理理由。",
+        "size": 30,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 125,
+     "y": 455,
+     "w": 1670,
+     "h": 77,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "原稿讨论入口：up.physxuanmin.cloud",
+        "size": 29,
+        "color": "#586A82",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "thermodynamics/phase-change/gas-liquid/",
+        "size": 29,
+        "color": "#586A82",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 125,
+     "y": 540,
+     "w": 1690,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本地实验：比较临界温度上下的曲线与相变路径",
+        "size": 38,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "img",
+     "step": 2,
+     "x": 125,
+     "y": 655,
+     "w": 530,
+     "h": 230,
+     "src": "source/image48.jpeg"
+    },
+    {
+     "type": "img",
+     "step": 2,
+     "x": 720,
+     "y": 655,
+     "w": 530,
+     "h": 230,
+     "src": "source/image49.jpeg"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1320,
+     "y": 670,
+     "w": 470,
+     "h": 164.0,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "原稿课外拓展",
+        "size": 32,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "不同体系需要",
+        "size": 32,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "不同模型与证据",
+        "size": 32,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 920,
+     "w": 1530,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "下次课见",
+        "size": 56,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

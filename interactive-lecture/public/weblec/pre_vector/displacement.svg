@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="曲线路径上的连续小位移首尾相接，合成为总位移">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fafdff"/><stop offset="1" stop-color="#eaf3ff"/></linearGradient>
+  <marker id="b" markerWidth="23" markerHeight="27" refX="2" refY="13.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M2 1 L19 13.5 L2 26 Z" fill="#244B88"/></marker>
+  <marker id="o" markerWidth="23" markerHeight="27" refX="2" refY="13.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M2 1 L19 13.5 L2 26 Z" fill="#d16b2b"/></marker>
+  <marker id="g" markerWidth="23" markerHeight="27" refX="2" refY="13.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M2 1 L19 13.5 L2 26 Z" fill="#168365"/></marker>
+  <style>
+  text{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;fill:#244B88}
+  .title{font-size:32px;font-weight:700}.label{font-size:31px;font-weight:700}.small{font-size:24px;font-weight:600}.formula{font-size:35px;font-weight:700}
+  .blue{fill:#244B88}.orange{fill:#d16b2b}.green{fill:#168365}.muted{fill:#6d829a}
+  .axis{stroke:#9fb2c9;stroke-width:3;stroke-linecap:round}.dash{stroke:#a6b8cb;stroke-width:3;stroke-dasharray:10 10;fill:none}
+  .vb{stroke:#244B88;stroke-width:8;stroke-linecap:butt;fill:none;marker-end:url(#b)}
+  .vo{stroke:#d16b2b;stroke-width:8;stroke-linecap:butt;fill:none;marker-end:url(#o)}
+  .vg{stroke:#168365;stroke-width:8;stroke-linecap:butt;fill:none;marker-end:url(#g)}
+  .point{fill:#244B88;stroke:#fff;stroke-width:4}
+  </style>
+</defs>
+<rect width="800" height="600" rx="28" fill="url(#bg)"/>
+
+<path d="M130 472 C225 432 235 355 325 318 C415 278 470 315 540 247 C606 180 635 158 698 120" fill="none" stroke="#9fb2c9" stroke-width="5" stroke-dasharray="10 10"/>
+<path d="M618 167 L683.3 128.6" class="vo"/>
+<path d="M548 238 L606.1 179.1" class="vo"/>
+<path d="M463 284 L533.0 246.1" class="vo"/>
+<path d="M370 300 L446.2 286.9" class="vo"/>
+<path d="M283 352 L355.4 308.7" class="vo"/>
+<path d="M225 395 L269.3 362.1" class="vo"/>
+<path d="M130 472 L211.8 405.7" class="vo"/>
+<path d="M130 472 L683.5 129.0" class="vg"/>
+<text x="69" y="480" class="small muted">起点</text><text x="696" y="105" class="small muted">终点</text>
+<text x="285" y="405" class="small orange">v Δt</text>
+<text x="395" y="183" class="formula green">Δr</text>
+<rect x="160" y="510" width="485" height="57" rx="16" fill="#fff" stroke="#dce8f5" stroke-width="2"/>
+<text x="402" y="548" text-anchor="middle" class="small muted">小位移首尾相接，得到总位移</text>
+
+</svg>

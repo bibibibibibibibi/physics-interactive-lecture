@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>圆孔衍射 · 本地教学模拟</title>
+
+<!-- KaTeX（defer，与 three 模块互不阻塞）：CSS + katex.min.js + auto-render -->
+<link rel="stylesheet" href="./vendor/katex.min.css">
+<script defer src="./vendor/katex.min.js"></script>
+<script defer src="./vendor/katex-contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}],throwOnError:false});"></script>
+
+<style>
+  *{box-sizing:border-box}
+  :root{
+    --serif:"Songti SC","STSong","SimSun",serif;
+    --sans:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    --acc:#b91c1c;
+  }
+  html,body{margin:0;height:100%;overflow:hidden;background:#ffffff;color:#111827;font-family:var(--sans)}
+  #scene3d{position:fixed;inset:0;display:block;touch-action:none}
+  .card{position:fixed;background:rgba(255,255,255,.92);border:1px solid #e5e7eb;border-radius:8px;
+    box-shadow:0 2px 10px rgba(15,23,42,.05);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:10}
+
+  /* —— 页面标题条（小屏压缩不隐藏） —— */
+  #titlebar{top:12px;left:50%;transform:translateX(-50%);display:flex;align-items:baseline;gap:14px;
+    padding:9px 18px 8px;white-space:nowrap}
+  #titlebar .tt{font-family:var(--serif);font-size:21px;font-weight:700;letter-spacing:.08em;color:#111827}
+  #titlebar .ts{font-size:11.5px;color:#6b7280;letter-spacing:.02em}
+  #titlebar .tag{font-size:10.5px;color:var(--acc);border:1px solid #f0d4d4;background:#fdf6f6;
+    border-radius:999px;padding:2px 10px;margin-left:4px;letter-spacing:.05em}
+
+  /* —— 左侧控制面板 + 折叠按钮（fixed 定位 + transition：开时贴面板右缘，收起时贴屏幕左缘） —— */
+  #panel{left:12px;top:12px;width:360px;max-height:calc(100vh - 24px);overflow:auto;padding:12px 14px 10px;
+    scrollbar-width:thin;scrollbar-color:#d6d9de transparent;transition:transform .28s ease}
+  #panel.collapsed{transform:translateX(-110%)}
+  #panelToggle{position:fixed;left:374px;top:10px;width:36px;height:36px;border-radius:50%;
+    background:#fff;border:1px solid #e5e7eb;color:#6b7280;font-size:17px;line-height:1;
+    display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:30;
+    flex:none;letter-spacing:0;padding:0;box-shadow:0 1px 4px rgba(15,23,42,.10);transition:left .28s ease}
+  #panelToggle:hover{border-color:var(--acc);color:var(--acc);background:#fff}
+  #panelToggle.closed{left:10px}
+  .sec{border-top:1px solid #f1f2f4;padding:9px 0 7px}
+  .secTitle{font-size:11px;color:#9ca3af;letter-spacing:.08em;margin:0 0 6px}
+  .ctl{margin:6px 0 10px}
+  .ctl:last-child{margin-bottom:2px}
+  .ctl .row{display:flex;justify-content:space-between;align-items:baseline;font-size:12px;color:#374151;margin-bottom:3px}
+  .val{font-family:var(--mono);font-size:11.5px;font-weight:600;color:var(--acc);background:#f3f4f6;
+    border-radius:4px;padding:1px 7px}
+  .hint{font-size:10.5px;color:#9ca3af;line-height:1.5;margin-top:2px}
+
+  /* —— 滑块：4px 轨道 + 强调色已填充段 + 14px 白圆头描边 —— */
+  input[type=range]{--fill:50%;-webkit-appearance:none;appearance:none;width:100%;height:18px;background:transparent;cursor:pointer;margin:0}
+  input[type=range]::-webkit-slider-runnable-track{height:4px;border-radius:2px;
+    background:var(--trk,linear-gradient(to right,#b91c1c var(--fill),#e5e7eb var(--fill)))}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;
+    background:#fff;border:2px solid var(--acc);box-shadow:0 1px 3px rgba(15,23,42,.22);margin-top:-7px}
+  input[type=range]::-moz-range-track{height:4px;border-radius:2px;
+    background:var(--trk,linear-gradient(to right,#b91c1c var(--fill),#e5e7eb var(--fill)))}
+  input[type=range]::-moz-range-thumb{width:10px;height:10px;border-radius:50%;background:#fff;
+    border:2px solid var(--acc);box-shadow:0 1px 3px rgba(15,23,42,.22)}
+
+  .chk{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:#374151}
+  .chk label{display:flex;align-items:center;gap:5px;cursor:pointer;user-select:none}
+  input[type=checkbox],input[type=radio]{accent-color:var(--acc);width:13px;height:13px;margin:0;cursor:pointer}
+  .btnRow{display:flex;gap:8px;margin-top:2px}
+  button{flex:1;font-family:var(--sans);font-size:12px;font-weight:600;padding:7px 0;background:#fff;
+    border:1px solid #e5e7eb;border-radius:8px;color:var(--acc);cursor:pointer;letter-spacing:.18em}
+  button:hover{border-color:var(--acc);background:#fef2f2}
+
+  /* —— KaTeX 公式卡 —— */
+  .lawCard{margin:0 0 4px;padding:10px 8px 8px;background:#fdf7f7;border:1px solid #f2dddd;border-radius:8px;text-align:center}
+  .lawCard .lt{font-family:var(--serif);font-size:12.5px;font-weight:700;color:var(--acc);letter-spacing:.4em;margin-bottom:3px}
+  .lawCard .katex{font-size:14.5px}
+  .fCard{margin:9px 0 2px;padding:8px 9px 5px;background:#fafbfc;border:1px solid #eceff2;border-radius:8px;
+    overflow-x:auto;overflow-y:hidden;scrollbar-width:thin}
+  .fCard.wide{margin-left:-8px;margin-right:-8px;padding-left:6px;padding-right:6px}
+  .fCard .cap{font-size:10.5px;color:#9ca3af;letter-spacing:.08em;margin-bottom:1px}
+  .fCard .katex{font-size:12px}
+  .katex-display{margin:.4em 0 .25em}
+
+  .note{font-size:10.5px;color:#9ca3af;line-height:1.6;margin-top:8px}
+  .note.fast{margin-top:6px;padding-top:6px;border-top:1px dashed #e5e7eb;color:#8b93a1}
+
+  /* —— 实验记录（数据点 → θ₀–1/D 直线） —— */
+  .expRow{display:flex;gap:6px;margin:2px 0 6px}
+  .expRow button{flex:1;padding:6px 0;letter-spacing:.06em;font-size:11.5px}
+  .expRow button.acc{background:#b91c1c;color:#fff;border-color:#b91c1c}
+  .expRow button.acc:hover{background:#991b1b}
+  #expPlot{display:block;width:100%;height:132px;margin-top:4px;border:1px solid #f1f2f4;border-radius:6px;background:#fff}
+  .expConc{font-size:11px;color:#374151;line-height:1.55;margin-top:6px;padding:6px 8px;border-radius:6px;background:#fafbfc;border:1px solid #eef0f3}
+  .expConc b{color:#b91c1c}
+  .expConc .dim{color:#9ca3af}
+  .expTag{display:inline-block;font-size:10px;color:#b91c1c;background:#fdf6f6;border:1px solid #f2dddd;
+    border-radius:999px;padding:0 7px;margin-left:4px}
+
+  /* —— 实验大图模式（?expfull=1）：只留记录面板，供截图 —— */
+  body.expfull #scene3d,body.expfull #titlebar,body.expfull #hud,body.expfull #curveBox,
+  body.expfull #panelToggle,body.expfull #panel > *:not(.expsec){display:none!important}
+  body.expfull #panel{left:50%;top:50%;transform:translate(-50%,-50%);width:min(1180px,94vw);
+    max-height:none;overflow:visible;padding:26px 34px 22px;border-radius:14px;box-shadow:0 10px 40px rgba(15,23,42,.10)}
+  body.expfull .expsec{border-top:none;padding:0}
+  body.expfull .expsec .secTitle{font-size:17px;letter-spacing:.06em;margin-bottom:12px}
+  body.expfull .expsec .expTag{font-size:13px;padding:2px 12px;margin-left:8px}
+  body.expfull .expsec .expRow{max-width:420px;margin-bottom:12px}
+  body.expfull .expsec .expRow button{font-size:15px;padding:11px 0;border-radius:10px}
+  body.expfull .expsec .hint{font-size:14px;line-height:1.7;margin:0 0 12px;max-width:900px}
+  body.expfull .expsec #expPlot{height:400px;border-color:#e5e7eb}
+  body.expfull .expsec .expConc{font-size:16px;line-height:1.75;padding:14px 18px;margin-top:14px;border-radius:10px}
+
+  /* —— 右上数据卡 + 折叠按钮 —— */
+  #hud{right:12px;top:12px;padding:10px 12px;min-width:238px}
+  #hudToggle{position:absolute;top:7px;right:7px;flex:none;width:auto;padding:2px 10px;
+    font-size:10.5px;letter-spacing:.08em;border-radius:999px;color:#6b7280}
+  #hudToggle:hover{border-color:var(--acc);color:var(--acc);background:#fef2f2}
+  #hud.collapsed #hudBody{display:none}
+  #hud.collapsed{min-width:0;padding:6px 7px}
+  #hud .t{font-size:11px;color:#9ca3af;letter-spacing:.08em;margin-bottom:6px;padding-right:52px}
+  #hud .r{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:11.5px;color:#6b7280;margin:4px 0}
+  #hud .v{font-family:var(--mono);font-weight:600;font-size:12px;color:#111827;text-align:right}
+  #hud .v.small{font-size:11px}
+  #hud .v.ok{color:var(--acc)}
+  #hud .v.dim{color:#6b7280}
+  #hud .rnote{font-size:10px;color:#9ca3af;margin:3px 0 1px;line-height:1.5}
+
+  /* —— 底部：强度剖面曲线 —— */
+  #curveBox{left:50%;transform:translateX(-50%);bottom:12px;padding:8px 10px 8px;
+    width:min(1000px, calc(100vw - 24px))}
+  #curveBox .cap{font-size:10.5px;color:#9ca3af;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  canvas#curve{display:block;width:100%;height:138px}
+  @media (max-width:820px){
+    #curveBox{bottom:8px}
+    canvas#curve{height:150px}
+  }
+  @media (max-width:1180px){
+    #titlebar{padding:6px 12px;gap:9px}
+    #titlebar .tt{font-size:15px;letter-spacing:.06em}
+    #titlebar .ts,#titlebar .tag{display:none}
+  }
+  @media (max-width:760px){
+    #panel{width:calc(100vw - 24px)}
+    #panelToggle{left:calc(100vw - 42px)}
+  }
+
+/* sp5 的局部教学视图：原有控制面板保留绑定，显示由本页精简控件接管。 */
+body{background:linear-gradient(135deg,#f5faff,#edf5ff);font-size:28px;color:#173650}
+#titlebar,#panel,#panelToggle,#hud,#curveBox{display:none!important}
+#scene3d{position:absolute;left:0;top:0;width:calc(100% - 370px);height:calc(100% - 166px)}
+#teaching{position:absolute;inset:0;z-index:5;pointer-events:none}
+#viewport{position:absolute;top:0;left:0;right:370px;bottom:166px;pointer-events:none}
+.teach-card{background:rgba(255,255,255,.93);border:1px solid #cbdced;border-radius:14px;padding:16px}
+.teach-title{font-size:32px;font-weight:700;color:#194c79;margin:0 0 8px;line-height:1.2;flex-shrink:0}
+.teach-note{font-size:26px;line-height:1.3;color:#4b6277;flex-shrink:0}
+.aperture-card{position:absolute;right:10px;top:10px;bottom:176px;width:350px;display:flex;flex-direction:column}
+#patternView{width:100%;height:0;flex:1 1 0%;min-height:0;background:#050a0f;border-radius:10px;object-fit:contain}
+#opticsNote{position:absolute;left:16px;bottom:184px;font-size:26px;line-height:1.35;max-width:calc(100% - 410px);background:#ffffffdc;border-radius:8px;padding:8px 12px}
+.dual-main,.record-main{position:absolute;left:10px;right:10px;top:10px;bottom:176px;display:none;gap:14px}
+.dual-main{grid-template-columns:minmax(0,42fr) minmax(0,58fr)}
+.pattern-card{min-height:0;display:flex;flex-direction:column;align-items:center}
+.pattern-card .teach-title{align-self:flex-start}
+#dualPattern{width:100%;height:0;flex:1 1 0%;min-height:0;object-fit:contain;max-width:100%;background:#050a0f;border-radius:10px}
+.profile-card{min-width:0;min-height:0;display:flex;flex-direction:column}
+#profileView{display:block;width:100%;height:0;flex:1 1 0%;min-height:0}
+#profileStatus{font-size:32px;line-height:1.2;flex:0 0 84px;min-height:84px;margin-top:6px;display:flex;align-items:center;color:#1c5082}
+.record-main{grid-template-columns:minmax(0,38fr) minmax(0,62fr)}
+.record-card{display:flex;flex-direction:column;min-width:0;min-height:0}
+#recordTable{width:100%;border-collapse:collapse;margin:4px 0;font-size:28px;font-variant-numeric:tabular-nums;flex-shrink:0}
+#recordTable th,#recordTable td{padding:1px 4px;border-bottom:1px solid #dce7f2;text-align:center;line-height:1.08}
+#recordTable th{font-size:26px;color:#3e5971;font-weight:600}
+#modelPlot{display:block;width:100%;height:0;flex:1 1 0%;min-height:0}
+#recordStatus{font-size:32px;line-height:1.2;color:#2f5578;min-height:78px;margin-top:8px;flex-shrink:0}
+#controlsBar{position:absolute;left:10px;right:10px;bottom:10px;height:156px;display:flex;align-items:center;gap:24px;pointer-events:auto}
+#parameterBox{flex:1;min-width:0}
+#paramLabel{display:flex;justify-content:space-between;align-items:center;font-size:34px;line-height:1.2;font-weight:650;margin-bottom:8px;gap:20px}
+#paramValue{color:#b42629;font-variant-numeric:tabular-nums;white-space:nowrap}
+#teachSlider{height:30px;width:100%;accent-color:#bb2e30;--fill:20%}
+#teachSlider::-webkit-slider-runnable-track{height:7px;background:linear-gradient(to right,#bb2e30 var(--fill),#c8d8e8 var(--fill))}
+#teachSlider::-webkit-slider-thumb{width:25px;height:25px;margin-top:-9px;border:3px solid #bb2e30}
+#paramHint{font-size:26px;color:#4b6277;line-height:1.3;margin-top:4px}
+.teach-buttons{display:flex;gap:10px;flex-shrink:0}
+.teach-buttons button{font-size:28px;line-height:1.2;letter-spacing:0;padding:12px 16px;color:#1d507d;border-color:#b2cce1;border-radius:10px;font-weight:650;white-space:nowrap}
+.teach-buttons button:first-child{background:#e7f2ff}
+body.mode-dual #scene3d,body.mode-profiles #scene3d,body.mode-rayleigh #scene3d,body.mode-record #scene3d,
+body:not(.mode-aperture) .aperture-card,body:not(.mode-aperture) #opticsNote{display:none!important}
+body.mode-dual .dual-main,body.mode-profiles .dual-main,body.mode-rayleigh .dual-main{display:grid}
+body.mode-record .record-main{display:grid}
+body.mode-record #recordButton{display:block}
+#recordButton{display:none}
+@media(max-width:950px){
+ #scene3d{width:calc(100% - 310px)} #viewport{right:310px}.aperture-card{width:290px}
+ #controlsBar{gap:12px}.teach-buttons{gap:7px}.teach-buttons button{font-size:28px;padding:10px}
+ .teach-card{padding:12px}.teach-title{font-size:32px}.record-main{grid-template-columns:minmax(0,40fr) minmax(0,60fr)}
+ #recordTable{font-size:28px}#recordTable td,#recordTable th{padding:1px 2px}
+}
+
+</style>
+</head>
+<body>
+
+<!-- 折叠按钮（固定左上：面板打开时贴其右缘，收起时贴屏幕左缘） -->
+<button id="panelToggle" aria-label="收起面板" title="收起 / 展开控制面板">‹</button>
+
+<!-- ================= 页面标题条 ================= -->
+<div id="titlebar" class="card">
+  <span class="tt">圆孔衍射</span>
+  <span class="ts">夫琅禾费衍射 · 艾里斑 · θ₀ = 1.22 λ/D</span>
+  <span class="tag">大学物理 · 演示实验</span>
+</div>
+
+<!-- ================= 左侧控制面板 ================= -->
+<div id="panel" class="card">
+
+  <div class="lawCard">
+    <div class="lt">核心规律</div>
+    <div>$$\theta_0=1.22\,\frac{\lambda}{D}\quad\text{（第一暗环角半径）}$$</div>
+  </div>
+
+  <div class="sec">
+    <div class="secTitle">参数</div>
+    <div class="ctl">
+      <div class="row"><span>波长 λ</span><span class="val" id="vLambda">550 nm</span></div>
+      <input id="rLambda" type="range" min="400" max="700" step="1" value="550">
+    </div>
+    <div class="ctl">
+      <div class="row"><span>孔直径 D</span><span class="val" id="vD">0.20 mm</span></div>
+      <input id="rD" type="range" min="0.05" max="0.60" step="0.01" value="0.20">
+    </div>
+    <div class="ctl">
+      <div class="row"><span>屏距 f</span><span class="val" id="vF">0.60 m</span></div>
+      <input id="rF" type="range" min="0.30" max="1.50" step="0.01" value="0.60">
+    </div>
+    <div class="ctl">
+      <div class="row"><span>曲面高度增益</span><span class="val" id="vGain">×1.00</span></div>
+      <input id="rGain" type="range" min="0.2" max="3" step="0.05" value="1">
+    </div>
+    <div class="ctl">
+      <div class="row"><span>波前速度</span><span class="val" id="vSpeed">×1.00</span></div>
+      <input id="rSpeed" type="range" min="0" max="2" step="0.05" value="1">
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="secTitle">图样模式</div>
+    <div class="chk">
+      <label><input type="radio" name="pmode" value="single" checked>单点</label>
+      <label><input type="radio" name="pmode" value="dual">双点 · 瑞利判据</label>
+    </div>
+    <div id="dualUI" style="display:none">
+      <div class="ctl">
+        <div class="row"><span>角间距 \(d = c\,\theta_0\)</span><span class="val" id="vC">×1.00</span></div>
+        <input id="rC" type="range" min="0.4" max="2" step="0.01" value="1">
+      </div>
+      <div class="hint">两个点源各成一束入射光，穿过同一圆孔，在屏上各成一个艾里斑（非相干叠加）；c = 1 即瑞利判据。</div>
+    </div>
+  </div>
+
+  <div class="fCard wide">
+    <div class="cap">瑞利判据 · 本讲难点</div>
+    <div>$$\theta_{\min}=\theta_0=1.22\,\frac{\lambda}{D}$$</div>
+    <div class="cap" style="letter-spacing:.02em;color:#6b7280">判据：一个斑的中心恰好落在另一个斑的第一暗环上 → 恰可分辨</div>
+  </div>
+
+  <div class="sec">
+    <div class="secTitle">显示开关</div>
+    <div class="chk">
+      <label><input id="cWave" type="checkbox" checked>波前动画</label>
+      <label><input id="cSurf" type="checkbox" checked>强度曲面</label>
+      <label><input id="cWire" type="checkbox">曲面线框</label>
+      <label><input id="cLbl" type="checkbox" checked>标注文字</label>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="secTitle">强度显示</div>
+    <div class="chk">
+      <label><input type="radio" name="ilog" value="lin" checked>线性（\(I^{0.85}\) 提升）</label>
+      <label><input type="radio" name="ilog" value="log">\(\log_{10}(1+9I)\)</label>
+    </div>
+    <div class="secTitle" style="margin-top:9px">图样配色</div>
+    <div class="chk">
+      <label><input type="radio" name="pal" value="gray" checked>灰度</label>
+      <label><input type="radio" name="pal" value="pseudo">伪彩</label>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="btnRow">
+      <button id="btnPause">暂 停</button>
+      <button id="btnReset">重置参数</button>
+    </div>
+  </div>
+
+  <div class="fCard wide">
+    <div class="cap">艾里图样 · 强度分布与线径</div>
+    <div>$$I(\theta)=I_0\Big[\frac{2J_1(u)}{u}\Big]^2,\qquad u=\frac{\pi D\sin\theta}{\lambda},\qquad r_1=1.22\,\frac{\lambda f}{D}$$</div>
+  </div>
+
+  <div class="sec expsec">
+    <div class="secTitle">实验 · 数据记录 <span class="expTag">θ₀ ∝ 1/D</span></div>
+    <div class="expRow">
+      <button id="btnRec" class="acc">记录本点</button>
+      <button id="btnScan">自动扫 D</button>
+      <button id="btnClr">清空</button>
+    </div>
+    <div class="hint" id="expHint">把 D 依次调到 0.60 → 0.50 → 0.40 → 0.30 → 0.20 → 0.10 mm，每档点一次『记录本点』；看 θ₀ 是不是随 1/D 走成一条过原点的直线。</div>
+    <canvas id="expPlot" width="330" height="132"></canvas>
+    <div class="expConc" id="expConc">尚未记录数据点。<span class="dim">理论：θ₀·D = 1.22λ。</span></div>
+  </div>
+
+  <div class="note">
+    说明：屏上图样严格按物理尺度计算（固定屏半宽 ±6 mm，r₁ 随 λ、D、f 真实缩放）；
+    三维几何（孔半径 = D×2.2、D≳0.43 mm 后孔径截断、板、波前间距）经放大以便观察。
+    双点模式中两斑按强度（非相干）叠加并按整体最大值归一。拖拽旋转 · 滚轮缩放 · 右键平移。
+  </div>
+</div>
+
+<!-- ================= 右上数据卡 ================= -->
+<div id="hud" class="card">
+  <button id="hudToggle" aria-label="收起数据卡" title="收起 / 展开数据卡">数据</button>
+  <div id="hudBody">
+    <div class="t">衍射参量（实时）</div>
+    <div class="r"><span>\(\theta_0 = 1.22\,\lambda/D\)</span><span class="v" id="hTheta">—</span></div>
+    <div class="r"><span>\(\theta_0\) 换算角秒</span><span class="v" id="hArcsec">—</span></div>
+    <div class="r"><span>艾里斑半径 \(r_1\)</span><span class="v" id="hR1">—</span></div>
+    <div class="r"><span>中央斑能量占比</span><span class="v">83.8%</span></div>
+    <div class="r"><span>第一暗环 \(u_1\)</span><span class="v">3.8317</span></div>
+    <div class="r"><span>\(\lambda \cdot D \cdot f\)</span><span class="v small" id="hParam">—</span></div>
+    <div id="dualRows" style="display:none">
+      <div class="r"><span>角间距 \(d/\theta_0\)</span><span class="v" id="hC">—</span></div>
+      <div class="r"><span>分辨状态</span><span class="v" id="hStatus">—</span></div>
+      <div class="r"><span>鞍点 / 峰值</span><span class="v small" id="hSaddle">—</span></div>
+      <div class="rnote">恰可分辨时鞍点 ≈ 73.5%（\(c = 1\)，中点强度 / 斑心强度）</div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= 底部：强度剖面 ================= -->
+<div id="curveBox" class="card">
+  <div class="cap" id="curveCap">屏上强度横向分布 I(r)（归一化）· 竖虚线 = 第一暗环（u₁ = 3.83）</div>
+  <canvas id="curve" width="520" height="138"></canvas>
+</div>
+
+
+<div id="teaching">
+ <output id="sp5ClockState" hidden aria-hidden="true"></output>
+ <div id="viewport"></div>
+ <section class="teach-card aperture-card">
+  <h2 class="teach-title">屏上艾里图样</h2>
+  <canvas id="patternView" width="360" height="360" role="img" aria-label="圆孔衍射的艾里图样"></canvas>
+  <div class="teach-note">亮度增强显示<br>图样位置按模型比例计算</div>
+ </section>
+ <div id="opticsNote">理想远场模型 · λ = 550 nm · 屏距参数 = 1.00 m<br>装置几何已放大示意；拖拽可旋转观察</div>
+ <section class="dual-main">
+  <div class="teach-card pattern-card">
+   <h2 class="teach-title" id="dualTitle">两点像的叠加图样</h2>
+   <canvas id="dualPattern" width="360" height="360" role="img" aria-label="两点像的非相干叠加衍射图样"></canvas>
+  </div>
+  <div class="teach-card profile-card">
+   <h2 class="teach-title">通过两像中心的水平剖面</h2>
+   <canvas id="profileView" role="img" aria-label="两点像的水平线性强度剖面"></canvas>
+   <div id="profileStatus"></div>
+  </div>
+ </section>
+ <section class="record-main">
+  <div class="teach-card record-card">
+   <h2 class="teach-title">孔径扫描 · 模型计算</h2>
+   <div class="teach-note">固定 λ = 550 nm<br>θ₀ 由理论模型计算</div>
+   <table id="recordTable"><thead><tr><th>D / mm</th><th>1/D / mm⁻¹</th><th>θ₀ / mrad</th></tr></thead><tbody></tbody></table>
+   <div id="recordStatus"></div>
+  </div>
+  <div class="teach-card record-card">
+   <h2 class="teach-title">θ₀ 对 1/D 的模型计算图</h2>
+   <canvas id="modelPlot" role="img" aria-label="第一暗环角半径对孔径倒数的模型计算图"></canvas>
+   <div class="teach-note">由同一公式生成的点，仅说明模型关系；不能当作独立实验验证。</div>
+  </div>
+ </section>
+ <section id="controlsBar" class="teach-card">
+  <div id="parameterBox">
+   <div id="paramLabel"><label for="teachSlider" id="parameterName">孔直径 D</label><output id="paramValue">0.20 mm</output></div>
+   <input id="teachSlider" type="range" min="0.10" max="0.60" step="0.01" value="0.20" aria-label="教学参数滑块">
+   <div id="paramHint"></div>
+  </div>
+  <div class="teach-buttons"><button id="demoButton">演示</button><button id="recordButton">记录本点</button><button id="resetButton">重置</button></div>
+ </section>
+</div>
+
+<script type="importmap">
+{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/addons/"}}
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+const Q = new URLSearchParams(location.search);
+const EMBED = ['aperture','dual','profiles','rayleigh','record'].includes(Q.get('embed')) ? Q.get('embed') : 'aperture';
+document.body.classList.add('mode-' + EMBED);
+const IS_DUAL = ['dual','profiles','rayleigh'].includes(EMBED);
+
+/* ================= 物理核心函数（多项式逼近的 J1，精度 ~1e-7，已数值验证） ================= */
+function besselJ1(x){
+  const ax=Math.abs(x);
+  if(ax<8){
+    const y=x*x;
+    const num=x*(72362614232.0+y*(-7895059235.0+y*(242396853.1+y*(-2972611.439+y*(15704.48260+y*(-30.16036606))))));
+    const den=144725228442.0+y*(2300535178.0+y*(18583304.74+y*(99447.43394+y*(376.9991397+y))));
+    return num/den;
+  }
+  const z=8.0/ax,y=z*z,xx=ax-2.356194491;
+  const p=1.0+y*(0.183105e-2+y*(-0.3516396496e-4+y*(0.2457520174e-5+y*(-0.240337019e-6))));
+  const q=0.04687499995+y*(-0.2002690873e-3+y*(0.8449199096e-5+y*(-0.88228987e-6+y*0.105787412e-6)));
+  const ans=Math.sqrt(0.636619772/ax)*(Math.cos(xx)*p-z*Math.sin(xx)*q);
+  return x<0?-ans:ans;
+}
+function airy(u){ return Math.abs(u)<1e-9?1:Math.pow(2*besselJ1(u)/u,2); }
+function wavelengthToRGB(wl){ // 380–780nm 近似可见光谱色
+  let r=0,g=0,b=0;
+  if(wl<440){r=-(wl-440)/60;b=1;}else if(wl<490){g=(wl-440)/50;b=1;}
+  else if(wl<510){g=1;b=-(wl-510)/20;}else if(wl<580){r=(wl-510)/70;g=1;}
+  else if(wl<645){r=1;g=-(wl-645)/65;}else if(wl<=780){r=1;}
+  let f=1; if(wl<420)f=0.3+0.7*(wl-380)/40; else if(wl>700)f=0.3+0.7*(780-wl)/80;
+  const c=v=>Math.round(255*Math.pow(Math.max(v*f,0),0.8));
+  return [c(r),c(g),c(b)];
+}
+
+/* —— airy 查找表：u 网格 4096 点 + 线性插值（纹理 / 曲面 / 剖面共用，仅构建一次） —— */
+const LUT_N = 4096, LUT_UMAX = 160;
+const AIRY_LUT = new Float64Array(LUT_N + 1);
+for(let i=0;i<=LUT_N;i++) AIRY_LUT[i] = airy(i * LUT_UMAX / LUT_N);
+function airyFast(u){
+  if(!(u > 0)) return 1;
+  if(u >= LUT_UMAX) return AIRY_LUT[LUT_N];
+  const t = u * LUT_N / LUT_UMAX, i = t|0, f = t - i;
+  return AIRY_LUT[i] + (AIRY_LUT[i+1] - AIRY_LUT[i]) * f;
+}
+
+/* ================= 常量：物理量 ↔ 世界坐标换算 ================= */
+const SCREEN_HALF_MM = 10.0;                    // 观察屏物理半宽（固定）
+const SCREEN_HALF_WORLD = 1.55;                // 屏世界半宽（拟物比例）
+const WORLD_PER_MM = SCREEN_HALF_WORLD / SCREEN_HALF_MM;   // 世界单位/mm
+const WAVE_Z0 = -2.3;                          // 平面波前起点（激光器前方），向孔（z=0）传播
+const N_WAVES = 7;                             // 7 片平面波前
+const WAVE_SPAN = -WAVE_Z0;                    // 传播总行程（z=0 孔屏前淡出）
+const LAMBDA_WORLD = WAVE_SPAN / N_WAVES;      // 波前平面间距（放大示意）
+const F_PER_M = 2.0;                           // 屏距 1 m → 2.0 世界单位（屏 z 位置随 f 移动）
+const HOLE_PER_MM = 1.45, HOLE_MAX = 0.95, PLATE_HALF = 1.05; // 孔半径 = D(mm)×2.2（放大示意，超大孔截断）
+const SURF_H = 1.05;                           // 曲面高度比例（×增益）
+const AXIS_Y = 1.35;                           // 光轴高度（导轨上方，拟物支杆高度）
+const RAIL_Y = -0.55, RAIL_TOP = RAIL_Y + 0.05, RAIL_TOP_L = RAIL_TOP - AXIS_Y; // 导轨顶面（rig 局部坐标）
+const TAU = Math.PI * 2;
+const ARCSEC_PER_RAD = 206264.806;
+const ACCENT = 0xb91c1c;
+const MONO = 'ui-monospace,Menlo,Consolas,monospace';
+
+/* ================= 可调状态 ================= */
+const DEFAULTS = { lambdaNm:550, dMm:EMBED === 'aperture' ? .60 : .20, fM:1.00, gain:1.0, speed:1.0, dual:IS_DUAL, cSep:EMBED === 'rayleigh' ? 1 : 1.6 };
+const state = { ...DEFAULTS,
+  showWave:true, showSurface:false, wireframe:false, showLabels:true,
+  logScale:false, pseudo:false, paused:false };
+
+/* —— 派生物理量 —— */
+const lambdaM   = () => state.lambdaNm * 1e-9;
+const dM        = () => state.dMm * 1e-3;
+const theta0rad = () => 1.22 * lambdaM() / dM();                 // θ₀：第一暗环角半径
+const r1mm      = () => 1.22 * lambdaM() * state.fM / dM() * 1e3; // 屏上艾里斑半径
+const screenZnow= () => state.fM * F_PER_M;                      // 观察屏世界 z
+const uOfR      = (rM) => Math.PI * dM() * rM / (lambdaM() * state.fM); // 无量纲 u = πD·r/(λf)
+const sepMm     = () => state.dual ? state.cSep * theta0rad() * state.fM * 1e3 : 0; // 两斑角间距 d = c·θ₀ 投到屏上(mm)
+
+function displayIntensity(I){ return state.logScale ? Math.log10(1 + 9*I) : Math.pow(I, 0.85); }
+
+/* —— 伪彩 ramp：深蓝 #1e3a8a → 青 #22d3ee → 白（曲面与屏纹理一致） —— */
+const RAMP = [[0,[30,58,138]],[0.5,[34,211,238]],[1,[255,255,255]]];
+function rampColor(t){
+  t = Math.max(0, Math.min(1, t));
+  for(let i=1;i<RAMP.length;i++){
+    const t1 = RAMP[i][0];
+    if(t <= t1){
+      const t0 = RAMP[i-1][0], c0 = RAMP[i-1][1], c1 = RAMP[i][1];
+      const k = (t - t0) / ((t1 - t0) || 1);
+      return [c0[0]+(c1[0]-c0[0])*k, c0[1]+(c1[1]-c0[1])*k, c0[2]+(c1[2]-c0[2])*k];
+    }
+  }
+  return RAMP[RAMP.length-1][1].slice();
+}
+let LC_RGB = wavelengthToRGB(550); // 当前 λ 色（灰度拟真纹理用，applyFast 内随 λ 刷新）
+function displayColor(v){          // v ∈ [0,1] 显示强度 → RGB
+  if(state.pseudo) return rampColor(v);
+  /* 灰度 = 屏上实拍拟真：背景近黑 #05060a + λ色×I_disp，中心饱和区（>0.9）向白插值 */
+  const mix = v > 0.9 ? (v - 0.9) / 0.1 : 0;
+  const out = [5, 6, 10];
+  for(let k=0;k<3;k++){
+    const base = out[k] + LC_RGB[k]*v;
+    out[k] = base + (255 - base)*mix;
+  }
+  return out;
+}
+/* —— 双点模式：屏坐标(mm) 处的叠加强度（单点即普通艾里图样） —— */
+function intensityAt(mmX, mmY){
+  if(!state.dual) return airyFast(uOfR(Math.hypot(mmX, mmY) * 1e-3));
+  const half = sepMm() / 2;
+  return airyFast(uOfR(Math.hypot(mmX - half, mmY) * 1e-3))
+       + airyFast(uOfR(Math.hypot(mmX + half, mmY) * 1e-3));
+}
+
+/* ================= 渲染器 / 场景 / 相机（白底页面透出：alpha 画布 + ACES + PCFSoft 阴影） ================= */
+const renderer = new THREE.WebGLRenderer({ antialias:true, alpha:true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.setSize(Math.max(1, document.getElementById('viewport').clientWidth), Math.max(1, document.getElementById('viewport').clientHeight));
+renderer.setClearAlpha(0);
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.05;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.domElement.id = 'scene3d';
+document.body.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();                 // 不设 background → 透明白色页面
+
+const camera = new THREE.PerspectiveCamera(45, innerWidth/innerHeight, 0.1, 200);
+camera.position.set(-5.1, 4.2, 4.6);              // 初始斜俯视：自激光侧望去，激光→波前→圆孔→屏幕全入画
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.target.set(0, 1.0, -0.1);              // 看向光具座中段
+controls.enableDamping = true;
+controls.dampingFactor = 0.08;
+controls.minDistance = 1.2;
+controls.maxDistance = 30;
+controls.update();
+window.__dbg = { camera, controls, screenZnow, state };        // 调试/演示用句柄（勿引用下方才定义的量）
+
+/* —— 环境光：RoomEnvironment → PMREM（只生成一次）+ 低强度半球 + 一盏投影平行光 —— */
+{
+  const pmrem = new THREE.PMREMGenerator(renderer);
+  scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+  scene.environmentIntensity = 0.9;
+  pmrem.dispose();
+}
+scene.add(new THREE.HemisphereLight(0xffffff, 0xdfe4ea, 0.5));
+const sun = new THREE.DirectionalLight(0xffffff, 1.6);
+sun.position.set(3.5, 6.5, 4.5);
+sun.castShadow = true;
+sun.shadow.mapSize.set(2048, 2048);
+sun.shadow.radius = 4;
+sun.shadow.bias = -0.0004;
+sun.shadow.normalBias = 0.02;
+sun.shadow.camera.left = -6.5; sun.shadow.camera.right = 6.5;
+sun.shadow.camera.top = 6.5;   sun.shadow.camera.bottom = -6.5;
+sun.shadow.camera.near = 1;    sun.shadow.camera.far = 25;
+sun.shadow.camera.updateProjectionMatrix();
+scene.add(sun);
+
+/* ================= 光学导轨拟物：全部光学元件装在 rig（光轴 y=AXIS_Y）内 ================= */
+const rig = new THREE.Group();
+rig.position.y = AXIS_Y;
+scene.add(rig);
+
+/* —— 导轨本体：沿 z 的阳极氧化铝轨 + 顶面两条 T 型槽深色凹槽（scene 直属，不随参数动） —— */
+const railMat = new THREE.MeshStandardMaterial({ color:0x3b3f45, metalness:0.6, roughness:0.5 });
+const slotMat = new THREE.MeshStandardMaterial({ color:0x1f2226, metalness:0.4, roughness:0.7 });
+const RAIL_LEN = 7.0;
+{
+  const rail = new THREE.Mesh(new THREE.BoxGeometry(0.26, 0.1, RAIL_LEN), railMat);
+  rail.position.set(0, RAIL_Y, -0.05);
+  rail.receiveShadow = true;
+  scene.add(rail);
+  for(const sx of [-0.062, 0.062]){
+    const slot = new THREE.Mesh(new THREE.BoxGeometry(0.034, 0.012, RAIL_LEN - 0.06), slotMat);
+    slot.position.set(sx, RAIL_TOP + 0.004, -0.05);
+    slot.receiveShadow = true;
+    scene.add(slot);
+  }
+}
+
+/* —— 支杆 / 滑座 / 叉式镜架共用材质与小构件工厂 —— */
+const postMat = new THREE.MeshStandardMaterial({ color:0xaab2bc, metalness:0.85, roughness:0.35 });
+const forkMat = new THREE.MeshStandardMaterial({ color:0x878f99, metalness:0.8,  roughness:0.4  });
+function makeBase(len){                          // 底部滑座小块（坐在导轨顶面）
+  const m = new THREE.Mesh(new THREE.BoxGeometry(0.2, 0.055, len), postMat);
+  m.position.y = RAIL_TOP_L + 0.0275;
+  m.castShadow = m.receiveShadow = true;
+  return m;
+}
+function makePost(h, r = 0.034){                 // 金属支杆
+  const m = new THREE.Mesh(new THREE.CylinderGeometry(r, r + 0.004, h, 20), postMat);
+  m.castShadow = true;
+  return m;
+}
+function makeForkCol(w, h, d){                   // 叉式镜架方柱
+  const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), forkMat);
+  m.castShadow = m.receiveShadow = true;
+  return m;
+}
+
+/* —— 光轴示意虚线 —— */
+{
+  const axGeo = new THREE.BufferGeometry().setFromPoints(
+    [new THREE.Vector3(0, 0, -3.4), new THREE.Vector3(0, 0, 3.6)]);
+  const axis = new THREE.Line(axGeo, new THREE.LineDashedMaterial({ color:0xcbd2da, dashSize:0.14, gapSize:0.10 }));
+  axis.computeLineDistances();
+  rig.add(axis);
+}
+
+/* ================= 激光器（−z 端）：黑阳极筒身 + 散热鳍 + λ 色出光点/描边 + 支杆镜架 ================= */
+const LZ = -3.0;
+const darkAnoMat = new THREE.MeshStandardMaterial({ color:0x2a2d31, metalness:0.7, roughness:0.45 });
+const laserMats = [];                              // 所有激光器的 [dotMat, stripeMat]，λ 变色统一更新
+function makeLaserDevice(x0){                      // 可复用：单点主机一台；双点模式两台
+  const g = new THREE.Group(); g.position.x = x0; rig.add(g);
+  const body = new THREE.Mesh(new THREE.CylinderGeometry(0.088, 0.088, 0.55, 32), darkAnoMat);
+  body.rotation.x = Math.PI/2; body.position.set(0, 0, LZ); body.castShadow = true; g.add(body);
+  for(const fz of [-0.16, 0, 0.16]){
+    const fin = new THREE.Mesh(new THREE.CylinderGeometry(0.108, 0.108, 0.018, 32), darkAnoMat);
+    fin.rotation.x = Math.PI/2; fin.position.set(0, 0, LZ + fz); fin.castShadow = true; g.add(fin);
+  }
+  const nose = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.062, 0.1, 24), darkAnoMat);
+  nose.rotation.x = Math.PI/2; nose.position.set(0, 0, LZ + 0.325); nose.castShadow = true; g.add(nose);
+  const dotMat = new THREE.MeshStandardMaterial({ color:0x0a0a0a, emissive:0xff0000, emissiveIntensity:2.2, roughness:0.4, metalness:0.1 });
+  const dot = new THREE.Mesh(new THREE.CylinderGeometry(0.016, 0.016, 0.02, 16), dotMat);
+  dot.rotation.x = Math.PI/2; dot.position.set(0, 0, LZ + 0.382); g.add(dot);
+  const stripeMat = new THREE.MeshBasicMaterial({ color:0xff0000 });
+  const stripe = new THREE.Mesh(new THREE.CylinderGeometry(0.0895, 0.0895, 0.03, 32), stripeMat);
+  stripe.rotation.x = Math.PI/2; stripe.position.set(0, 0, LZ + 0.22); g.add(stripe);
+  { // 支杆 + 滑座 + 叉式镜架
+    const base = makeBase(0.3);  base.position.z = LZ; g.add(base);
+    const post = makePost(-0.14 - RAIL_TOP_L); post.position.set(0, (RAIL_TOP_L - 0.14)/2, LZ); g.add(post);
+    const bar  = makeForkCol(0.36, 0.05, 0.1); bar.position.set(0, -0.115, LZ); g.add(bar);
+    for(const sx of [-0.135, 0.135]){
+      const c = makeForkCol(0.045, 0.24, 0.09); c.position.set(sx, 0, LZ); g.add(c);
+    }
+  }
+  laserMats.push([dotMat, stripeMat]);
+  return g;
+}
+const laser    = makeLaserDevice(0);               // 主机（单点模式）
+const laserA   = makeLaserDevice(-0.34);           // 双点模式：点源 1
+const laserB   = makeLaserDevice( 0.34);           // 双点模式：点源 2
+laserA.visible = laserB.visible = false;
+
+/* —— 光束：激光 → 圆孔 极淡 λ 色圆柱（additive）；孔 → 屏 沿轴向锥形淡光 —— */
+const beamMat = new THREE.MeshBasicMaterial({ transparent:true, opacity:0.07, blending:THREE.AdditiveBlending, depthWrite:false });
+const beam = new THREE.Mesh(new THREE.CylinderGeometry(0.02, 0.02, 2.58, 16), beamMat);
+beam.rotation.x = Math.PI/2; beam.position.set(0, 0, -1.31); rig.add(beam);
+const coneMat = new THREE.MeshBasicMaterial({ transparent:true, opacity:0.045, blending:THREE.AdditiveBlending, depthWrite:false, side:THREE.DoubleSide });
+const cone = new THREE.Mesh(new THREE.CylinderGeometry(0.55, 0.025, 1, 40, 1, true), coneMat);
+cone.rotation.x = Math.PI/2; rig.add(cone);
+function updateCone(){
+  const z = screenZnow();
+  cone.scale.y = Math.max(z - 0.05, 0.05);
+  cone.position.z = z/2 + 0.02;
+}
+
+/* ================= 入射平面波前：7 片方形平面沿 +z 传播（准直平行光；EdgesGeometry 描边增强平面感，近孔淡出） ================= */
+/* —— 双点模式：两个点源（两束方向不同的入射光）穿过同一圆孔，落到屏上 ±d/2 两斑 —— */
+const dualBeamGroup = new THREE.Group(); rig.add(dualBeamGroup); dualBeamGroup.visible = false;
+function addDualBeamSeg(from, to, rgb){
+  const dir = new THREE.Vector3().subVectors(to, from);
+  const len = dir.length();
+  const mat = new THREE.MeshBasicMaterial({ color:new THREE.Color(rgb[0]/255, rgb[1]/255, rgb[2]/255),
+    transparent:true, opacity:0.5, blending:THREE.AdditiveBlending, depthWrite:false, toneMapped:false });
+  const cyl = new THREE.Mesh(new THREE.CylinderGeometry(0.013, 0.013, Math.max(len, 0.01), 8), mat);
+  cyl.position.copy(from).addScaledVector(dir, 0.5);
+  cyl.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0), dir.clone().normalize());
+  dualBeamGroup.add(cyl);
+}
+function updateDualBeams(){
+  for(const c of dualBeamGroup.children){ c.geometry.dispose(); c.material.dispose(); }
+  dualBeamGroup.clear();
+  dualBeamGroup.visible = state.dual;
+  if(!state.dual) return;
+  const rgb = wavelengthToRGB(state.lambdaNm);
+  const sepW = sepMm() * WORLD_PER_MM;              // 屏上两斑间距（世界单位）
+  const Sz  = screenZnow();
+  const O   = new THREE.Vector3(0, 0, 0);           // 圆孔
+  const S1  = new THREE.Vector3( sepW/2, 0, Sz);    // 斑 1
+  const S2  = new THREE.Vector3(-sepW/2, 0, Sz);    // 斑 2
+  const A1  = new THREE.Vector3(-0.34, 0, LZ + 0.42);  // 激光器 A 出光口
+  const A2  = new THREE.Vector3( 0.34, 0, LZ + 0.42);  // 激光器 B 出光口
+  addDualBeamSeg(A1, O, rgb); addDualBeamSeg(O, S1, rgb);
+  addDualBeamSeg(A2, O, rgb); addDualBeamSeg(O, S2, rgb);
+}
+
+const waveGroup = new THREE.Group(); rig.add(waveGroup);
+const planeGeo = new THREE.PlaneGeometry(1.5, 1.5);          // 世界单位正方形，默认朝 +z，无需旋转
+const planeEdgeGeo = new THREE.EdgesGeometry(planeGeo);
+const waves = [];
+for(let i=0;i<N_WAVES;i++){
+  const mat = new THREE.MeshBasicMaterial({ color:0xff0000, transparent:true, opacity:0.15,
+    side:THREE.DoubleSide, depthWrite:false });
+  const edgeMat = new THREE.LineBasicMaterial({ color:0xff0000, transparent:true, opacity:0.4, depthWrite:false });
+  const m = new THREE.Mesh(planeGeo, mat);
+  m.add(new THREE.LineSegments(planeEdgeGeo, edgeMat));      // 同色描边：斜视角下仍可读出「平面」
+  m.position.z = WAVE_Z0 + i*LAMBDA_WORLD;
+  waveGroup.add(m);
+  waves.push({ mesh:m, mat, edgeMat });
+}
+
+/* ================= 圆孔屏（z=0）：方形孔板 + 金属圆框 + 孔缘强调环 + 支杆镜架 ================= */
+const aperture = new THREE.Group(); rig.add(aperture);
+const plateMat = new THREE.MeshStandardMaterial({ color:0xe8eaee, roughness:0.6, metalness:0.15,
+  side:THREE.DoubleSide, shadowSide:THREE.DoubleSide });
+const ringMat  = new THREE.MeshStandardMaterial({ color:0xb9c0c8, metalness:0.8, roughness:0.3 });
+const rimMat   = new THREE.LineBasicMaterial({ color:ACCENT });
+const rimGroup = new THREE.Group(); aperture.add(rimGroup);
+let plateMesh = null, rimGeo = null, holeRingMesh = null;
+function holeRadiusWorld(){ return Math.min(state.dMm * HOLE_PER_MM, HOLE_MAX); }
+function rebuildAperture(){
+  if(plateMesh){ aperture.remove(plateMesh); plateMesh.geometry.dispose(); plateMesh = null; }
+  if(holeRingMesh){ aperture.remove(holeRingMesh); holeRingMesh.geometry.dispose(); holeRingMesh = null; }
+  rimGroup.clear();
+  if(rimGeo){ rimGeo.dispose(); rimGeo = null; }
+  const hr = holeRadiusWorld();
+  const shape = new THREE.Shape();                      // 外方
+  shape.moveTo(-PLATE_HALF, -PLATE_HALF);
+  shape.lineTo( PLATE_HALF, -PLATE_HALF);
+  shape.lineTo( PLATE_HALF,  PLATE_HALF);
+  shape.lineTo(-PLATE_HALF,  PLATE_HALF);
+  shape.closePath();
+  const hole = new THREE.Path();                        // 圆孔
+  hole.absarc(0, 0, hr, 0, TAU, true);
+  shape.holes.push(hole);
+  plateMesh = new THREE.Mesh(new THREE.ShapeGeometry(shape, 72), plateMat);
+  plateMesh.castShadow = plateMesh.receiveShadow = true;
+  aperture.add(plateMesh);
+  holeRingMesh = new THREE.Mesh(new THREE.TorusGeometry(hr + 0.035, 0.028, 12, 72), ringMat); // 金属圆框夹持孔板
+  holeRingMesh.castShadow = true;
+  aperture.add(holeRingMesh);
+  const pts = [];                                       // 孔缘强调色细环（前后两面）
+  for(let k=0;k<=128;k++){ const a = k/128*TAU; pts.push(new THREE.Vector3(hr*Math.cos(a), hr*Math.sin(a), 0)); }
+  rimGeo = new THREE.BufferGeometry().setFromPoints(pts);
+  for(const dz of [0.016, -0.016]){
+    const loop = new THREE.LineLoop(rimGeo, rimMat);
+    loop.position.z = dz; rimGroup.add(loop);
+  }
+}
+{ // 圆孔屏支杆 + 滑座 + 叉式镜架（方柱夹持孔板下缘）
+  const base = makeBase(0.26); base.position.z = 0; aperture.add(base);
+  const post = makePost(-1.07 - RAIL_TOP_L); post.position.set(0, (RAIL_TOP_L - 1.07)/2, 0); aperture.add(post);
+  for(const sx of [-0.16, 0.16]){
+    const c = makeForkCol(0.05, -0.98 - RAIL_TOP_L, 0.09);
+    c.position.set(sx, (RAIL_TOP_L - 0.98)/2, 0); aperture.add(c);
+  }
+}
+
+/* ================= 观察屏（+z，位置随 f）：深色面板 + 薄金属边框 + CanvasTexture 艾里图样 ================= */
+const screenGroup = new THREE.Group(); rig.add(screenGroup);
+const SHW = SCREEN_HALF_WORLD;
+{
+  const bezelMat = new THREE.MeshStandardMaterial({ color:0x14171b, roughness:0.5, metalness:0.25 });
+  const bezel = new THREE.Mesh(new THREE.BoxGeometry(2*SHW + 0.02, 2*SHW + 0.02, 0.06), bezelMat);
+  bezel.position.z = -0.04; bezel.castShadow = bezel.receiveShadow = true;
+  screenGroup.add(bezel);
+  const frameMat = new THREE.MeshStandardMaterial({ color:0x9aa2ab, metalness:0.7, roughness:0.35 });
+  const fv = 2*SHW + 0.07, fh = 2*SHW + 0.09;
+  for(const sx of [-(SHW + 0.028), SHW + 0.028]){
+    const f = new THREE.Mesh(new THREE.BoxGeometry(0.035, fv, 0.055), frameMat);
+    f.position.set(sx, 0, -0.02); f.castShadow = true; screenGroup.add(f);
+  }
+  for(const sy of [-(SHW + 0.028), SHW + 0.028]){
+    const f = new THREE.Mesh(new THREE.BoxGeometry(fh, 0.035, 0.055), frameMat);
+    f.position.set(0, sy, -0.02); f.castShadow = true; screenGroup.add(f);
+  }
+}
+const screenMat = new THREE.MeshBasicMaterial({ color:0xffffff, side:THREE.DoubleSide, toneMapped:false });
+const screenMesh = new THREE.Mesh(new THREE.PlaneGeometry(2*SHW, 2*SHW), screenMat);
+screenGroup.add(screenMesh);
+/* —— 屏背面（朝激光/圆孔一侧）的平面实拍图样：与 +z 侧的 3D 强度曲面分居两面，互不遮挡 —— */
+const flatMat = new THREE.MeshBasicMaterial({ color:0xffffff, side:THREE.FrontSide, toneMapped:false });
+const flatMesh = new THREE.Mesh(new THREE.PlaneGeometry(2*SHW, 2*SHW), flatMat);
+flatMesh.rotation.y = Math.PI;                  // 面朝 −z（激光一侧）
+flatMesh.position.z = -0.08;                    // 必须在 bezel 前脸（-0.07）之外，否则被挡成黑屏
+screenGroup.add(flatMesh);
+{ // 观察屏支杆 + 滑座 + 双柱夹持底框（短支架，屏坐于导轨上方）
+  const base = makeBase(0.26); screenGroup.add(base);
+  const post = makePost(-1.60 - RAIL_TOP_L); post.position.set(0, (RAIL_TOP_L - 1.60)/2, 0); screenGroup.add(post);
+  for(const sx of [-0.55, 0.55]){
+    const c = makeForkCol(0.05, 0.3, 0.09); c.position.set(sx, -1.71, 0); screenGroup.add(c);
+  }
+}
+
+const texCanvas = document.createElement('canvas');
+texCanvas.width = texCanvas.height = 360;      // 纹理 480×480
+let screenTex = null;
+/* —— 屏背面平面图样与纹理共用同一 CanvasTexture，更新即同步 —— */
+
+function drawPattern(){
+  const N = 360, ctx = texCanvas.getContext('2d'), img = ctx.createImageData(N,N), values=new Float32Array(N*N);
+  let imax=0;
+  for(let y=0;y<N;y++) for(let x=0;x<N;x++){
+    const mmX=(x-(N-1)/2)/(N/2)*SCREEN_HALF_MM, mmY=(y-(N-1)/2)/(N/2)*SCREEN_HALF_MM;
+    const I=intensityAt(mmX,mmY);values[y*N+x]=I;if(I>imax)imax=I;
+  }
+  for(let i=0;i<values.length;i++){
+    const v=Math.pow(values[i]/(imax||1),.58), k=i*4;
+    img.data[k]=Math.min(255,5+200*v);img.data[k+1]=Math.min(255,8+247*v);img.data[k+2]=Math.min(255,14+205*v);img.data[k+3]=255;
+  }
+  ctx.putImageData(img,0,0);
+  if(EMBED==='rayleigh'){
+    const half=sepMm()/2, px=N/(2*SCREEN_HALF_MM), r=r1mm()*px;
+    ctx.lineWidth=2;ctx.strokeStyle='#ffbf5c';ctx.setLineDash([8,5]);
+    for(const x of [-half,half]){ctx.beginPath();ctx.arc(N/2+x*px,N/2,r,0,TAU);ctx.stroke();}
+    ctx.setLineDash([]);ctx.strokeStyle='#fff';
+    for(const x of [-half,half]){const cx=N/2+x*px;ctx.beginPath();ctx.moveTo(cx-6,N/2);ctx.lineTo(cx+6,N/2);ctx.moveTo(cx,N/2-6);ctx.lineTo(cx,N/2+6);ctx.stroke();}
+  }
+  const old=screenTex;screenTex=new THREE.CanvasTexture(texCanvas);screenTex.colorSpace=THREE.SRGBColorSpace;
+  screenMat.map=screenTex;screenMat.needsUpdate=true;flatMat.map=screenTex;flatMat.needsUpdate=true;if(old)old.dispose();
+  for(const id of ['patternView','dualPattern']){const cv=document.getElementById(id);cv.getContext('2d').drawImage(texCanvas,0,0,cv.width,cv.height);}
+  updateDualBeams();
+}
+
+/* ================= 强度曲面（屏前方“山丘”：I 为高度；单点极坐标 / 双点笛卡尔网格） ================= */
+const surfGroup = new THREE.Group(); rig.add(surfGroup);
+const RMAX = SHW;
+{ // 零高度基线环（贴屏面，细扁圆环体）
+  const baseRing = new THREE.Mesh(new THREE.TorusGeometry(RMAX - 0.014, 0.014, 10, 96),
+    new THREE.MeshBasicMaterial({ color:0x64748b, transparent:true, opacity:0.85, toneMapped:false }));
+  baseRing.position.z = 0.004;
+  surfGroup.add(baseRing);
+}
+const surfMat = new THREE.MeshStandardMaterial({ vertexColors:true, side:THREE.DoubleSide,
+  transparent:true, opacity:0.95, roughness:0.55, metalness:0.05 });
+let surfMesh = null;
+function surfVertexColor(v, col, k){
+  const c = rampColor(v);                        // 深蓝 → 青 → 白（与屏纹理 ramp 一致）
+  col[k]   = Math.pow(c[0]/255, 2.2);
+  col[k+1] = Math.pow(c[1]/255, 2.2);
+  col[k+2] = Math.pow(c[2]/255, 2.2);
+}
+function rebuildSurface(){
+  if(surfMesh){ surfGroup.remove(surfMesh); surfMesh.geometry.dispose(); surfMesh = null; }
+  const pos = [], col = [], idx = [];
+  if(!state.dual){
+    /* —— 单点：极坐标网格（v1 逻辑） —— */
+    const NR = 72, NP = 120;
+    for(let i=0;i<=NR;i++){
+      const rr = (i === 0) ? 1e-4 : RMAX * i / NR;       // 极小中心半径避免退化法线
+      const rM = rr / WORLD_PER_MM * 1e-3;               // 世界 → 物理米
+      const v  = displayIntensity(airyFast(uOfR(rM)));
+      const c  = rampColor(v);
+      const cr = Math.pow(c[0]/255, 2.2), cg = Math.pow(c[1]/255, 2.2), cb = Math.pow(c[2]/255, 2.2);
+      const h  = state.gain * SURF_H * v;
+      for(let j=0;j<=NP;j++){
+        const phi = j / NP * TAU;
+        pos.push(rr*Math.cos(phi), rr*Math.sin(phi), h);
+        col.push(cr, cg, cb);
+      }
+    }
+    for(let i=0;i<NR;i++) for(let j=0;j<NP;j++){
+      const a = i*(NP+1) + j, b = a + NP + 1;
+      idx.push(a, b, a+1, a+1, b, b+1);
+    }
+  }else{
+    /* —— 双点：笛卡尔网格，采样两斑叠加强度（按网格最大值归一） —— */
+    const NG = 110;
+    const I = new Float64Array((NG+1)*(NG+1));
+    let gmax = 0;
+    for(let i=0;i<=NG;i++){
+      const wx = -RMAX + 2*RMAX*i/NG;
+      for(let j=0;j<=NG;j++){
+        const wy = -RMAX + 2*RMAX*j/NG;
+        const mmX = wx / WORLD_PER_MM, mmY = wy / WORLD_PER_MM;
+        const Iv = intensityAt(mmX, mmY);
+        I[i*(NG+1)+j] = Iv;
+        if(Iv > gmax) gmax = Iv;
+      }
+    }
+    const inv = gmax > 0 ? 1/gmax : 1;
+    for(let i=0;i<=NG;i++){
+      const wx = -RMAX + 2*RMAX*i/NG;
+      for(let j=0;j<=NG;j++){
+        const v = displayIntensity(I[i*(NG+1)+j]*inv);
+        pos.push(wx, -RMAX + 2*RMAX*j/NG, state.gain * SURF_H * v);
+        surfVertexColor(v, col, col.length);
+      }
+    }
+    for(let i=0;i<NG;i++) for(let j=0;j<NG;j++){
+      const a = i*(NG+1) + j, b = a + NG + 1;
+      idx.push(a, b, a+1, a+1, b, b+1);
+    }
+  }
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  geo.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
+  geo.setIndex(idx);
+  geo.computeVertexNormals();                    // 平滑着光
+  surfMesh = new THREE.Mesh(geo, surfMat);
+  surfMesh.position.z = 0.006;
+  surfMesh.visible = state.showSurface;
+  surfGroup.add(surfMesh);
+}
+
+/* ================= Sprite 文字标注（canvas 生成，衬线灰字） ================= */
+function makeLabel(text){
+  const c = document.createElement('canvas'); c.width = 256; c.height = 96;
+  const g = c.getContext('2d');
+  g.font = '600 46px "Songti SC","STSong","SimSun",serif';
+  g.fillStyle = '#475569'; g.textAlign = 'center'; g.textBaseline = 'middle';
+  g.fillText(text, 128, 50);
+  const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace;
+  const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map:tex, transparent:true, depthWrite:false }));
+  sp.scale.set(1.15, 0.43, 1);
+  return sp;
+}
+const lblHole = makeLabel('圆孔 D');     lblHole.position.set(0, 1.5, 0);       rig.add(lblHole);
+const lblScreen = makeLabel('观察屏');   lblScreen.position.set(0, 2.35, screenZnow() + 0.2); rig.add(lblScreen);
+const lblLaser = makeLabel('激光器 λ');  lblLaser.position.set(0, 0.55, LZ);    rig.add(lblLaser);
+
+/* ================= HUD 数据卡 ================= */
+function rayleighWord(c){
+  if(Math.abs(c - 1) < 0.05) return ['恰可分辨（瑞利）', true];
+  return c < 1 ? ['分不清', false] : ['分得清', false];
+}
+function updateHUD(){
+  const th = theta0rad();
+  $('hTheta').textContent  = (th*1e3).toFixed(2) + ' mrad';
+  $('hArcsec').textContent = Math.round(th*ARCSEC_PER_RAD).toLocaleString('en-US') + '″';
+  $('hR1').textContent     = r1mm().toFixed(2) + ' mm';
+  $('hParam').textContent  = state.lambdaNm + ' nm · ' + state.dMm.toFixed(2) + ' mm · ' + state.fM.toFixed(2) + ' m';
+  if(state.dual){
+    $('dualRows').style.display = '';
+    $('hC').textContent = state.cSep.toFixed(2) + '（d = ' + sepMm().toFixed(2) + ' mm）';
+    const [w, ok] = rayleighWord(state.cSep);
+    const st = $('hStatus');
+    st.textContent = w;
+    st.classList.toggle('ok', ok);
+    st.classList.toggle('dim', !ok);
+    $('hSaddle').textContent = lastSaddle != null ? (lastSaddle*100).toFixed(1) + '%' : '—';
+  }else{
+    $('dualRows').style.display = 'none';
+  }
+  drawExp();
+}
+
+/* ================= 底部剖面曲线（单点：I–r；双点：通过两斑中心的水平剖面；宽度自适应剩余空间） ================= */
+const curveCv = document.getElementById('curve');
+let CURVE_W = 520, CURVE_H = 138;                // 逻辑尺寸（fitCurve 按容器实测刷新）
+let lastSaddle = null;
+function fitCurve(){                             // 剖面 canvas 宽度自适应面板剩余空间
+  const dpr = Math.min(devicePixelRatio, 2);
+  const cssW = Math.max(240, curveCv.clientWidth || 520);
+  const cssH = Math.max(100, curveCv.clientHeight || 138);
+  CURVE_W = Math.round(cssW);
+  CURVE_H = Math.round(cssH);
+  curveCv.width = Math.round(cssW*dpr);
+  curveCv.height = Math.round(cssH*dpr);
+}
+function drawCurve(){
+  fitCurve();
+  const dpr = Math.min(devicePixelRatio, 2);
+  const g = curveCv.getContext('2d');
+  g.setTransform(dpr, 0, 0, dpr, 0, 0);
+  g.clearRect(0, 0, CURVE_W, CURVE_H);
+  const L = 44, R = 12, T = 12, B = 26;
+  const pw = CURVE_W - L - R, ph = CURVE_H - T - B;
+  /* 网格与坐标轴（公共部分） */
+  g.strokeStyle = '#f1f2f4'; g.lineWidth = 1;
+  for(const gv of [0.5, 1.0]){
+    const y = T + ph - gv*ph;
+    g.beginPath(); g.moveTo(L, y); g.lineTo(L+pw, y); g.stroke();
+  }
+  g.strokeStyle = '#d6d9de';
+  g.beginPath(); g.moveTo(L, T); g.lineTo(L, T+ph); g.lineTo(L+pw, T+ph); g.stroke();
+  g.fillStyle = '#6b7280'; g.font = '10px ' + MONO;
+  g.textAlign = 'right'; g.textBaseline = 'alphabetic';
+  g.fillText('1.0', L-5, T + ph - 1.0*ph + 3);
+  g.fillText('0.5', L-5, T + ph - 0.5*ph + 3);
+  g.fillText('0',  L-5, T + ph + 3);
+  g.save(); g.translate(12, T + ph/2); g.rotate(-Math.PI/2);
+  g.fillText(state.dual ? 'I / I峰值' : 'I / I₀', 0, 0); g.restore();
+  g.textAlign = 'center';
+
+  if(!state.dual){
+    /* —— 单点：I–r（0…6 mm），与 v1 相同 —— */
+    const X = mm => L + mm/SCREEN_HALF_MM*pw;
+    for(let mm=0; mm<=SCREEN_HALF_MM; mm+=2){
+      const x = X(mm);
+      g.beginPath(); g.strokeStyle = '#9ca3af'; g.moveTo(x, T+ph); g.lineTo(x, T+ph+4); g.stroke();
+      g.fillText(String(mm), x, T+ph+14);
+    }
+    g.fillText('r / mm', L + pw/2, CURVE_H - 3);
+    g.beginPath(); g.strokeStyle = '#b91c1c'; g.lineWidth = 1.8;
+    const N = 480;
+    for(let k=0;k<=N;k++){
+      const mm = SCREEN_HALF_MM * k / N;
+      const v = displayIntensity(airyFast(uOfR(mm*1e-3)));
+      const x = X(mm), y = T + ph - v*ph;
+      if(k === 0) g.moveTo(x, y); else g.lineTo(x, y);
+    }
+    g.stroke();
+    const r1 = r1mm();
+    if(r1 <= SCREEN_HALF_MM){
+      const x = X(r1);
+      g.setLineDash([4,3]); g.strokeStyle = '#374151'; g.lineWidth = 1;
+      g.beginPath(); g.moveTo(x, T); g.lineTo(x, T+ph); g.stroke(); g.setLineDash([]);
+      g.fillStyle = '#374151'; g.textAlign = 'left';
+      g.fillText('u₁ = 3.83', Math.min(x+5, CURVE_W-78), T+11);
+      g.fillText('r₁ = ' + r1.toFixed(2) + ' mm', Math.min(x+5, CURVE_W-108), T+24);
+    }else{
+      g.fillStyle = '#9ca3af'; g.textAlign = 'right';
+      g.fillText('r₁ = ' + r1.toFixed(1) + ' mm（超出屏半宽，视野内仅中央斑）', CURVE_W-R, T+11);
+    }
+    lastSaddle = null;
+  }else{
+    /* —— 双点：通过两斑中心的水平剖面（双峰 + 鞍点） —— */
+    const X = mm => L + (mm + SCREEN_HALF_MM)/(2*SCREEN_HALF_MM)*pw;
+    for(let mm=-SCREEN_HALF_MM; mm<=SCREEN_HALF_MM; mm+=2){
+      const x = X(mm);
+      g.beginPath(); g.strokeStyle = '#9ca3af'; g.moveTo(x, T+ph); g.lineTo(x, T+ph+4); g.stroke();
+      g.fillText(String(mm), x, T+ph+14);
+    }
+    g.fillText('x / mm', L + pw/2, CURVE_H - 3);
+    const halfMm = sepMm()/2;
+    const M = 560, prof = new Float64Array(M+1);
+    let imax = 0;
+    for(let k=0;k<=M;k++){
+      const xm = -SCREEN_HALF_MM + 2*SCREEN_HALF_MM*k/M;
+      const Iv = intensityAt(xm, 0);
+      prof[k] = Iv;
+      if(Iv > imax) imax = Iv;
+    }
+    const inv = imax > 0 ? 1/imax : 1;
+    /* 两斑中心虚线 */
+    g.setLineDash([4,3]); g.strokeStyle = '#9aa2ab'; g.lineWidth = 1;
+    for(const cm of [halfMm, -halfMm]){
+      if(Math.abs(cm) <= SCREEN_HALF_MM){
+        const x = X(cm);
+        g.beginPath(); g.moveTo(x, T+4); g.lineTo(x, T+ph); g.stroke();
+      }
+    }
+    g.setLineDash([]);
+    /* 剖面曲线 */
+    g.beginPath(); g.strokeStyle = '#b91c1c'; g.lineWidth = 1.8;
+    for(let k=0;k<=M;k++){
+      const xm = -SCREEN_HALF_MM + 2*SCREEN_HALF_MM*k/M;
+      const x = X(xm), y = T + ph - prof[k]*inv*ph;
+      if(k === 0) g.moveTo(x, y); else g.lineTo(x, y);
+    }
+    g.stroke();
+    /* 斑心峰点 */
+    lastSaddle = prof[M/2] * inv;
+    if(Math.abs(halfMm) <= SCREEN_HALF_MM){
+      const vpk = intensityAt(halfMm, 0) * inv;
+      g.fillStyle = '#b91c1c';
+      for(const cm of [halfMm, -halfMm]){
+        g.beginPath(); g.arc(X(cm), T + ph - vpk*ph, 2.6, 0, TAU); g.fill();
+      }
+    }
+    /* 鞍点标注（两斑中点） */
+    const sx = X(0), sy = T + ph - lastSaddle*ph;
+    g.fillStyle = '#1d4ed8';
+    g.beginPath(); g.arc(sx, sy, 3.2, 0, TAU); g.fill();
+    g.fillStyle = '#1d4ed8'; g.textAlign = 'center';
+    g.fillText('鞍点 ' + (lastSaddle*100).toFixed(1) + '%', sx, Math.max(sy - 9, T + 9));
+  }
+}
+
+/* ================= 参数应用 / 防抖重建 ================= */
+function applyFast(){   // 低开销即时更新：颜色、位置、孔几何、锥形光、HUD、剖面
+  const c = wavelengthToRGB(state.lambdaNm);
+  LC_RGB = c;
+  const cr = c[0]/255, cg = c[1]/255, cb = c[2]/255;
+  for(const [dm, sm] of laserMats){ dm.emissive.setRGB(cr, cg, cb); sm.color.setRGB(cr, cg, cb); }
+  beamMat.color.setRGB(cr, cg, cb);
+  coneMat.color.setRGB(cr, cg, cb);
+  for(const w of waves){ w.mat.color.setRGB(cr, cg, cb); w.edgeMat.color.setRGB(cr, cg, cb); }
+  screenGroup.position.z = screenZnow();
+  lblScreen.position.z = screenZnow() + 0.2;
+  surfGroup.position.z = screenZnow() + 0.06;
+  updateCone();
+  rebuildAperture();
+  drawCurve();
+  updateHUD();
+}
+let regenTimer = null;
+function scheduleRegen(){   // 80 ms 防抖：纹理 + 曲面重建
+  if(regenTimer !== null)return;
+  regenTimer = setTimeout(() => { regenTimer=null; drawPattern(); if(state.showSurface)rebuildSurface(); }, 80);
+}
+function onParam(){ applyFast(); scheduleRegen(); if(typeof updateTeaching === 'function')updateTeaching(); }
+
+/* ================= 实验记录：验证 θ₀ ∝ 1/D ================= */
+const EXP = [];                                   // {D(mm), th(mrad)}
+const expCv = document.getElementById('expPlot');
+const THEORY_K = () => 1.22 * state.lambdaNm * 1e-9 * 1e6;   // mrad·mm（θ₀[mrad] = k / D[mm]）
+let expScanning = false;
+
+function expRecord(){
+  const D = state.dMm, th = theta0rad() * 1e3;
+  const hit = EXP.find(p => Math.abs(p.D - D) < 1e-6);
+  if(hit) hit.th = th; else EXP.push({D, th});
+  EXP.sort((a, b) => a.D - b.D);
+  drawExp();
+}
+function expClear(){ EXP.length = 0; drawExp(); }
+function expScan(){
+  if(expScanning) return;
+  expScanning = true;
+  const seq = [0.60, 0.52, 0.44, 0.36, 0.28, 0.20, 0.14, 0.10];
+  let i = 0;
+  const step = () => {
+    if(i >= seq.length){ expScanning = false; return; }
+    state.dMm = seq[i++];
+    $('rD').value = state.dMm;
+    $('vD').textContent = state.dMm.toFixed(2) + ' mm';
+    updateFill($('rD'));
+    onParam();
+    expRecord();
+    setTimeout(step, 300);
+  };
+  step();
+}
+/* 拟合过原点直线：θ = k/x（x = 1/D）→ k = Σθx / Σx² */
+function expFit(){
+  if(EXP.length < 2) return null;
+  let sx2 = 0, sxy = 0, sy2 = 0;
+  for(const p of EXP){ const x = 1 / p.D; sx2 += x * x; sxy += x * p.th; sy2 += p.th * p.th; }
+  const k = sxy / sx2;
+  let ssRes = 0;
+  for(const p of EXP){ const e = p.th - k / p.D; ssRes += e * e; }
+  const r2 = sy2 > 0 ? 1 - ssRes / sy2 : 1;
+  const kT = THEORY_K();
+  return {k, r2, kT, dev: kT ? (k - kT) / kT * 100 : 0};
+}
+function drawExp(){
+  const dpr = Math.min(devicePixelRatio, 2);
+  const cssW = Math.max(200, expCv.clientWidth || 330);
+  const cssH = Math.max(100, expCv.clientHeight || 132);
+  expCv.width = Math.round(cssW * dpr); expCv.height = Math.round(cssH * dpr);
+  const g = expCv.getContext('2d');
+  g.setTransform(dpr, 0, 0, dpr, 0, 0);
+  g.clearRect(0, 0, cssW, cssH);
+  const L = 40, R = 12, T = 10, B = 24;
+  const pw = cssW - L - R, ph = cssH - T - B;
+  const xMax = 11.0;                                    // 1/D 轴上界（mm⁻¹）
+  const yMax = Math.max(1e-6, THEORY_K() * xMax * 1.08); // θ₀ 轴上界（mrad）
+  const px = x => L + x / xMax * pw;
+  const py = y => T + ph - y / yMax * ph;
+  /* 网格 */
+  g.strokeStyle = '#f1f2f4'; g.lineWidth = 1;
+  for(let i = 1; i <= 4; i++){ const y = T + ph - i / 4 * ph;
+    g.beginPath(); g.moveTo(L, y); g.lineTo(L + pw, y); g.stroke(); }
+  g.strokeStyle = '#d6d9de';
+  g.beginPath(); g.moveTo(L, T); g.lineTo(L, T + ph); g.lineTo(L + pw, T + ph); g.stroke();
+  /* 理论直线 */
+  g.strokeStyle = '#c9ced6'; g.lineWidth = 1.4; g.setLineDash([5, 4]);
+  g.beginPath(); g.moveTo(px(0), py(0)); g.lineTo(px(xMax), py(THEORY_K() * xMax)); g.stroke();
+  g.setLineDash([]);
+  /* 拟合直线 */
+  const fit = expFit();
+  if(fit){
+    g.strokeStyle = '#b91c1c'; g.lineWidth = 1.8;
+    g.beginPath(); g.moveTo(px(0), py(0)); g.lineTo(px(xMax), py(fit.k * xMax)); g.stroke();
+  }
+  /* 数据点 */
+  for(const p of EXP){
+    const x = 1 / p.D;
+    if(x > xMax) continue;
+    g.fillStyle = '#b91c1c';
+    g.beginPath(); g.arc(px(x), py(p.th), 3.4, 0, TAU); g.fill();
+    g.fillStyle = '#fff';
+    g.beginPath(); g.arc(px(x), py(p.th), 1.3, 0, TAU); g.fill();
+  }
+  /* 轴标注 */
+  g.fillStyle = '#9ca3af'; g.font = '9.5px ' + MONO;
+  g.textAlign = 'right'; g.textBaseline = 'middle';
+  g.fillText(yMax.toFixed(1), L - 5, T + 3);
+  g.fillText('0', L - 5, T + ph);
+  g.textAlign = 'center'; g.textBaseline = 'top';
+  g.fillText('0', L, T + ph + 4);
+  g.fillText(xMax.toFixed(0), L + pw, T + ph + 4);
+  g.fillStyle = '#6b7280'; g.font = '9.5px ' + MONO;
+  g.textAlign = 'left';
+  g.fillText('θ₀ / mrad', L - 34, T - 8 + 0);
+  g.textAlign = 'right';
+  g.fillText('1/D  (mm⁻¹)', L + pw, T + ph + 11);
+  /* 结论行 */
+  const conc = $('expConc');
+  if(EXP.length === 0){
+    conc.innerHTML = '尚未记录数据点。<span class="dim">理论：θ₀·D = 1.22λ。</span>';
+  }else if(!fit){
+    conc.innerHTML = '已记录 <b>1</b> 点（D = ' + EXP[0].D.toFixed(2) + ' mm，θ₀ = ' + EXP[0].th.toFixed(2) +
+      ' mrad）。<span class="dim">再记录 ≥2 点即可拟合。</span>';
+  }else{
+    const sgn = fit.dev >= 0 ? '+' : '';
+    conc.innerHTML = '过原点拟合：<b>θ₀ = ' + fit.k.toFixed(3) + ' / D</b>　R² = ' + fit.r2.toFixed(4) +
+      '<br>理论 1.22λ = <b>' + fit.kT.toFixed(3) + '</b>（mrad·mm）　相对偏差 ' + sgn + fit.dev.toFixed(2) + '%' +
+      '<br><span class="dim">' + EXP.length + ' 点 · θ₀ 与 1/D 成正比，比例系数只由 λ 决定。</span>';
+  }
+}
+
+/* ================= 控制面板绑定 ================= */
+const $ = id => document.getElementById(id);
+function bindSlider(id, key, fmt){
+  const el = $(id), lab = $('v' + id.slice(1));
+  el.addEventListener('input', () => {
+    state[key] = parseFloat(el.value);
+    lab.textContent = fmt(state[key]);
+    onParam();
+  });
+}
+bindSlider('rLambda', 'lambdaNm', v => v + ' nm');
+bindSlider('rD',   'dMm',   v => v.toFixed(2) + ' mm');
+bindSlider('rF',   'fM',    v => v.toFixed(2) + ' m');
+bindSlider('rGain','gain',  v => '×' + v.toFixed(2));
+bindSlider('rSpeed','speed', v => '×' + v.toFixed(2));
+bindSlider('rC',   'cSep',  v => '×' + v.toFixed(2));
+
+/* —— 滑块已填充轨道（λ 滑块保留光谱渐变，其余按 p% 填充强调色） —— */
+function updateFill(el){
+  const min = +el.min, max = +el.max;
+  el.style.setProperty('--fill', ((el.value - min)/(max - min)*100) + '%');
+}
+document.querySelectorAll('input[type=range]').forEach(el => {
+  updateFill(el);
+  el.addEventListener('input', () => updateFill(el));
+});
+{ // λ 滑块轨道：光谱渐变色
+  const stops = [];
+  for(let wl=400; wl<=700; wl+=50){
+    const c = wavelengthToRGB(wl);
+    stops.push('rgb(' + c[0] + ',' + c[1] + ',' + c[2] + ')');
+  }
+  $('rLambda').style.setProperty('--trk', 'linear-gradient(to right,' + stops.join(',') + ')');
+}
+
+/* —— 图样模式：单点 / 双点 · 瑞利判据 —— */
+function updateCaption(){
+  $('curveCap').textContent = state.dual
+    ? '双点模式 · 通过两斑中心的水平剖面 I(x)（按整体峰值归一）· 蓝点 = 鞍点'
+    : '屏上强度横向分布 I(r)（归一化）· 竖虚线 = 第一暗环（u₁ = 3.83）';
+}
+document.querySelectorAll('input[name="pmode"]').forEach(el => el.addEventListener('change', () => {
+  state.dual = document.querySelector('input[name="pmode"]:checked').value === 'dual';
+  $('dualUI').style.display = state.dual ? '' : 'none';
+  dualBeamGroup.visible = state.dual;
+  laser.visible = !state.dual;            laserA.visible = state.dual;  laserB.visible = state.dual;
+  beam.visible = cone.visible = !state.dual;
+  updateCaption();
+  onParam();
+}));
+
+function applyToggles(){
+  waveGroup.visible = state.showWave;
+  if(surfMesh) surfMesh.visible = state.showSurface;
+  surfMat.wireframe = state.wireframe;
+  lblHole.visible = lblScreen.visible = lblLaser.visible = state.showLabels;
+}
+$('cWave').addEventListener('change', e => { state.showWave = e.target.checked; applyToggles(); });
+$('cSurf').addEventListener('change', e => { state.showSurface = e.target.checked; applyToggles(); });
+$('cWire').addEventListener('change', e => { state.wireframe = e.target.checked; applyToggles(); });
+$('cLbl').addEventListener('change',  e => { state.showLabels = e.target.checked; applyToggles(); });
+
+document.querySelectorAll('input[name="ilog"]').forEach(el => el.addEventListener('change', () => {
+  state.logScale = document.querySelector('input[name="ilog"]:checked').value === 'log';
+  drawCurve(); scheduleRegen();
+}));
+document.querySelectorAll('input[name="pal"]').forEach(el => el.addEventListener('change', () => {
+  state.pseudo = document.querySelector('input[name="pal"]:checked').value === 'pseudo';
+  scheduleRegen();
+}));
+
+/* —— 侧栏 / 数据卡折叠（<900px 小屏默认收起） —— */
+const panelEl = $('panel'), panelToggle = $('panelToggle');
+const hudEl = $('hud'), hudToggle = $('hudToggle');
+function setPanelCollapsed(c){
+  panelEl.classList.toggle('collapsed', c);
+  panelToggle.classList.toggle('closed', c);
+  panelToggle.textContent = c ? '›' : '‹';
+  panelToggle.setAttribute('aria-label', c ? '展开面板' : '收起面板');
+}
+function setHudCollapsed(c){
+  hudEl.classList.toggle('collapsed', c);
+  hudToggle.setAttribute('aria-label', c ? '展开数据卡' : '收起数据卡');
+}
+panelToggle.addEventListener('click', () => setPanelCollapsed(!panelEl.classList.contains('collapsed')));
+hudToggle.addEventListener('click', () => setHudCollapsed(!hudEl.classList.contains('collapsed')));
+if(innerWidth < 900){ setPanelCollapsed(true); setHudCollapsed(true); }
+
+$('btnPause').addEventListener('click', () => {
+  state.paused = !state.paused;
+  $('btnPause').textContent = state.paused ? '继 续' : '暂 停';
+});
+$('btnRec').addEventListener('click', expRecord);
+$('btnScan').addEventListener('click', expScan);
+$('btnClr').addEventListener('click', expClear);
+$('btnReset').addEventListener('click', () => {
+  Object.assign(state, DEFAULTS);
+  syncUI(); applyToggles(); onParam();
+});
+function syncUI(){
+  const rows = [
+    ['rLambda','lambdaNm', v => v + ' nm'],
+    ['rD','dMm',   v => v.toFixed(2) + ' mm'],
+    ['rF','fM',    v => v.toFixed(2) + ' m'],
+    ['rGain','gain',  v => '×' + v.toFixed(2)],
+    ['rSpeed','speed', v => '×' + v.toFixed(2)],
+    ['rC','cSep',  v => '×' + v.toFixed(2)]
+  ];
+  for(const [id, key, fmt] of rows){
+    $(id).value = state[key];
+    $('v' + id.slice(1)).textContent = fmt(state[key]);
+    updateFill($(id));
+  }
+  $('cWave').checked = state.showWave; $('cSurf').checked = state.showSurface;
+  $('cWire').checked = state.wireframe; $('cLbl').checked = state.showLabels;
+  document.querySelector('input[name="ilog"][value="' + (state.logScale ? 'log' : 'lin') + '"]').checked = true;
+  document.querySelector('input[name="pal"][value="' + (state.pseudo ? 'pseudo' : 'gray') + '"]').checked = true;
+  document.querySelector('input[name="pmode"][value="' + (state.dual ? 'dual' : 'single') + '"]').checked = true;
+  $('dualUI').style.display = state.dual ? '' : 'none';
+  updateCaption();
+}
+
+/* ================= 自适应 ================= */
+addEventListener('resize', () => {
+  camera.aspect = Math.max(1,$('viewport').clientWidth) / Math.max(1,$('viewport').clientHeight);
+  camera.updateProjectionMatrix();
+  renderer.setSize(Math.max(1, document.getElementById('viewport').clientWidth), Math.max(1, document.getElementById('viewport').clientHeight));
+  drawCurve(); updateTeaching();                    // 本页图表随视口重绘
+});
+
+/* ================= 动画循环（平面波前传播：z = zStart + (t·speed·λ_world·7) mod (7·λ_world)；近孔最后 12% 行程线性淡出） ================= */
+const clock = new THREE.Clock();
+let phase = 0;
+const SPAN = N_WAVES * LAMBDA_WORLD;             // = 传播总行程
+function tick(){
+  const dt = Math.min(clock.getDelta(), 0.05);
+  if(localDemo) driveLocalDemo();
+  if(!lastTimeline && !state.paused && state.showWave) phase = (phase + dt*state.speed) % SPAN;
+  for(let i=0;i<N_WAVES;i++){
+    const z = WAVE_Z0 + ((i*LAMBDA_WORLD + phase) % SPAN);   // (t·speed·λ_world·7) mod (7·λ_world)
+    const w = waves[i];
+    w.mesh.position.z = z;
+    const prog = (z - WAVE_Z0) / SPAN;                       // 行程进度 0→1
+    const fout = prog < 0.88 ? 1 : Math.max(0, 1 - (prog - 0.88) / 0.12); // 最后 12% 行程线性淡出
+    w.mat.opacity = 0.15 * fout;
+    w.edgeMat.opacity = 0.4 * fout;
+  }
+  controls.update();
+  if(EMBED==='aperture')renderer.render(scene, camera);
+}
+
+/* sp5 教学适配层。所有手动参数、按钮演示和播放器时间派生均调用 setTeachingParams。 */
+const teachSlider = document.getElementById('teachSlider');
+const profileView = document.getElementById('profileView');
+const modelPlot = document.getElementById('modelPlot');
+const MODEL_POINTS = [];
+const SCAN_D = [.60,.50,.40,.30,.20,.10];
+const baselineCamera = {position:new THREE.Vector3(-5.1,4.2,4.6),target:new THREE.Vector3(0,1.0,-.1)};
+let localDemo = null;
+let lastTimeline = null;
+let lastClockAudit = null;
+let manualOverride = false;
+let teachingReady = false;
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const lerp=(a,b,p)=>a+(b-a)*clamp(p,0,1);
+const isDMode=()=>EMBED==='aperture'||EMBED==='record';
+const demoType=()=>EMBED==='record'?'demoRecord':EMBED==='rayleigh'?'demoRayleigh':IS_DUAL?'demoDual':'demoD';
+// 与本课现有 msgs 对应；rayleigh 没有自动演示，基准始终为 c=1。
+const CLOCK_SPECS={aperture:{step:2,type:'demoD'},record:{step:1,type:'demoRecord'},dual:{step:2,type:'demoDual'},profiles:{step:2,type:'demoDual'}};
+function clockSnapshot(){
+  return {...(lastClockAudit??{protocol:null}),embed:EMBED,dMm:state.dMm,cSep:state.cSep,records:MODEL_POINTS.map(p=>({...p})),manualOverride,localDemo:localDemo?.type??null};
+}
+function updateClockAudit(){
+  const out=document.getElementById('sp5ClockState');
+  if(out)out.textContent=JSON.stringify(clockSnapshot());
+}
+
+function fitTeachingViewport(){
+  const vp=document.getElementById('viewport'),w=Math.max(1,vp.clientWidth),h=Math.max(1,vp.clientHeight);
+  camera.aspect=w/h;camera.updateProjectionMatrix();renderer.setSize(w,h);
+  drawProfile();drawModelPlot();
+}
+function canvasContext(cv){
+  const rect=cv.getBoundingClientRect(),dpr=Math.min(devicePixelRatio||1,2);
+  const w=Math.max(100,Math.round(rect.width)),h=Math.max(100,Math.round(rect.height));
+  if(cv.width!==Math.round(w*dpr)||cv.height!==Math.round(h*dpr)){cv.width=Math.round(w*dpr);cv.height=Math.round(h*dpr);}
+  const g=cv.getContext('2d');g.setTransform(dpr,0,0,dpr,0,0);g.clearRect(0,0,w,h);
+  return {g,w,h};
+}
+function setTeachingParams(params,{manual=false,immediate=false}={}){
+  if(manual){manualOverride=true;localDemo=null;}
+  const nextD=clamp(params.dMm??state.dMm,.10,.60),nextC=clamp(params.cSep??state.cSep,.6,1.6);
+  const changed=Math.abs(nextD-state.dMm)>1e-6||Math.abs(nextC-state.cSep)>1e-6;
+  state.dMm=nextD;state.cSep=nextC;state.lambdaNm=550;state.fM=1;state.dual=IS_DUAL;
+  syncUI();updateTeaching();
+  if(changed){onParam();if(immediate){clearTimeout(regenTimer);regenTimer=null;drawPattern();}}
+}
+function resetTeaching(manual=true){
+  localDemo=null;manualOverride=manual;MODEL_POINTS.length=0;phase=0;
+  camera.position.copy(baselineCamera.position);controls.target.copy(baselineCamera.target);controls.update();
+  setTeachingParams({...DEFAULTS},{immediate:true});
+  state.paused=false;state.showWave=EMBED==='aperture';state.showSurface=false;applyToggles();
+  updateTeaching();drawPattern();
+}
+function recordModelPoint(D=state.dMm){
+  const th=1.22*550e-9/(D*1e-3)*1e3;
+  const hit=MODEL_POINTS.find(p=>Math.abs(p.D-D)<1e-6);
+  if(hit)hit.th=th;else MODEL_POINTS.push({D,th});
+  MODEL_POINTS.sort((a,b)=>b.D-a.D);drawModelPlot();updateRecordTable();
+}
+function updateRecordTable(){
+  if(EMBED!=='record')return;
+  const rows=MODEL_POINTS.map(p=>`<tr><td>${p.D.toFixed(2)}</td><td>${(1/p.D).toFixed(2)}</td><td>${p.th.toFixed(3)}</td></tr>`);
+  while(rows.length<6)rows.push('<tr><td>—</td><td>—</td><td>—</td></tr>');
+  document.querySelector('#recordTable tbody').innerHTML=rows.join('');
+  document.getElementById('recordStatus').textContent=MODEL_POINTS.length?`已计算 ${MODEL_POINTS.length} 点；θ₀ · D = 0.671 mrad·mm`:'可逐点记录，或按“演示”进行孔径扫描。';
+}
+function updateTeaching(){
+  if(!teachingReady)return;
+  const Dmode=isDMode();teachSlider.min=Dmode?'.10':'.60';teachSlider.max=Dmode?'.60':'1.60';teachSlider.step='.01';
+  teachSlider.value=Dmode?state.dMm:state.cSep;
+  teachSlider.style.setProperty('--fill',((Number(teachSlider.value)-Number(teachSlider.min))/(Number(teachSlider.max)-Number(teachSlider.min))*100)+'%');
+  document.getElementById('parameterName').textContent=Dmode?'孔直径 D':'两点像间距系数 c';
+  document.getElementById('paramValue').textContent=Dmode?state.dMm.toFixed(2)+' mm':state.cSep.toFixed(2);
+  document.getElementById('paramHint').textContent=EMBED==='aperture'?'固定波长与屏距，先拖动 D 观察中央亮斑的变化。':EMBED==='record'?'在同一理论模型内，比较孔径改变时的角半径。':EMBED==='rayleigh'?'虚线表示第一暗环；十字表示两个图样的中心。':'c = 两像角间距 / 第一暗环角半径；拖小 c，观察凹陷怎样变化。';
+  drawProfile();drawModelPlot();updateRecordTable();
+  updateClockAudit();
+  if(Q.get('qa')==='1'&&window.parent!==window)window.parent.postMessage({type:'sp5-sim-state',mode:EMBED,dMm:state.dMm,cSep:state.cSep,records:MODEL_POINTS.map(p=>({...p})),metrics:window.__sp5Metrics??null},'*');
+}
+function drawProfile(){
+  if(!teachingReady||!IS_DUAL)return;
+  const {g,w,h}=canvasContext(profileView),L=82,R=24,T=(EMBED==='profiles'||EMBED==='rayleigh')?96:48,B=82,pw=w-L-R,ph=h-T-B;
+  const N=600,xmax=2.4,half=state.cSep/2,k=1.22*Math.PI;
+  const one=(x,c)=>airy(k*Math.abs(x-c));
+  const vals=Array.from({length:N+1},(_,i)=>{const x=-xmax+2*xmax*i/N;return one(x,-half)+one(x,half);});
+  const max=Math.max(...vals),X=x=>L+(x+xmax)/(2*xmax)*pw,Y=v=>T+ph-v/max*ph;
+  g.font='26px -apple-system,"PingFang SC",sans-serif';g.textBaseline='middle';
+  g.strokeStyle='#e0e9f1';g.lineWidth=1;
+  for(const y of [0,.5,1]){g.beginPath();g.moveTo(L,T+ph-y*ph);g.lineTo(L+pw,T+ph-y*ph);g.stroke();g.fillStyle='#51697e';g.textAlign='right';g.fillText(y.toFixed(1),L-9,T+ph-y*ph);}
+  g.strokeStyle='#819bb2';g.beginPath();g.moveTo(L,T);g.lineTo(L,T+ph);g.lineTo(L+pw,T+ph);g.stroke();
+  g.fillStyle='#3d5d77';g.textAlign='center';
+  for(const x of [-2,-1,0,1,2]){g.fillText(String(x),X(x),T+ph+26);}
+  g.fillText('位置 / 单点像第一暗环半径',L+pw/2,h-20);
+  g.textAlign='left';g.fillText('I / 叠加峰值',L,20);
+  g.setLineDash([5,5]);g.strokeStyle='#aabac7';
+  for(const x of [-half,half]){g.beginPath();g.moveTo(X(x),T);g.lineTo(X(x),T+ph);g.stroke();}g.setLineDash([]);
+  if(EMBED==='profiles'||EMBED==='rayleigh'){
+    for(const [c,color] of [[-half,'#267ea8'],[half,'#e0962c']]){
+      g.strokeStyle=color;g.lineWidth=2;g.setLineDash([6,4]);g.beginPath();
+      for(let i=0;i<=N;i++){const x=-xmax+2*xmax*i/N,y=Y(one(x,c));if(i===0)g.moveTo(X(x),y);else g.lineTo(X(x),y);}g.stroke();g.setLineDash([]);
+    }
+  }
+  g.strokeStyle='#b52930';g.lineWidth=3.2;g.beginPath();
+  for(let i=0;i<=N;i++){const x=-xmax+2*xmax*i/N;if(i===0)g.moveTo(X(x),Y(vals[i]));else g.lineTo(X(x),Y(vals[i]));}g.stroke();
+  const ratio=vals[N/2]/max,centerIsMax=vals[N/2]>=vals[N/2+3],y=Y(vals[N/2]);
+  g.fillStyle='#235daa';g.beginPath();g.arc(X(0),y,4,0,TAU);g.fill();
+  const status=document.getElementById('profileStatus');
+  if(EMBED==='rayleigh'&&Math.abs(state.cSep-1)<.005){status.textContent='c = 1：一个像的中心，落在另一个像的第一暗环上。';}
+  else status.textContent=centerIsMax?'中点已接近最高处；中央凹陷消失。':`中点 / 叠加峰值 = ${(ratio*100).toFixed(1)}%；凹陷深度随间距变化。`;
+  if(EMBED==='profiles'||EMBED==='rayleigh'){
+    g.font='26px -apple-system,"PingFang SC",sans-serif';g.textAlign='right';g.fillStyle='#b52930';g.fillText('红线：强度相加',w-R,26);
+    g.fillStyle='#526e83';g.fillText('虚线：各自的单点像',w-R,58);
+  }
+  window.__sp5Metrics={c:state.cSep,midpointRatio:ratio,centralDip:!centerIsMax,theta0:theta0rad(),radiusMm:r1mm()};
+}
+function drawModelPlot(){
+  if(!teachingReady||EMBED!=='record')return;
+  const {g,w,h}=canvasContext(modelPlot),L=92,R=36,T=58,B=82,pw=w-L-R,ph=h-T-B;
+  const xmax=11,ymax=7.5,X=x=>L+x/xmax*pw,Y=y=>T+ph-y/ymax*ph;
+  g.font='26px -apple-system,"PingFang SC",sans-serif';g.textBaseline='middle';g.textAlign='right';
+  for(const y of [0,2,4,6]){g.strokeStyle='#e0e9f1';g.beginPath();g.moveTo(L,Y(y));g.lineTo(L+pw,Y(y));g.stroke();g.fillStyle='#526e83';g.fillText(String(y),L-12,Y(y));}
+  g.strokeStyle='#819bb2';g.beginPath();g.moveTo(L,T);g.lineTo(L,T+ph);g.lineTo(L+pw,T+ph);g.stroke();g.fillStyle='#3d5d77';g.textAlign='center';
+  for(const x of [0,2,4,6,8,10])g.fillText(String(x),X(x),T+ph+27);
+  g.fillText('1/D / mm⁻¹',L+pw/2,h-21);g.textAlign='left';g.fillText('θ₀ / mrad',L-45,20);
+  g.strokeStyle='#afbfcf';g.setLineDash([7,5]);g.lineWidth=2;g.beginPath();g.moveTo(X(0),Y(0));g.lineTo(X(11),Y(.671*11));g.stroke();g.setLineDash([]);
+  for(const p of MODEL_POINTS){g.fillStyle='#b52930';g.beginPath();g.arc(X(1/p.D),Y(p.th),6,0,TAU);g.fill();}
+  g.font='26px -apple-system,"PingFang SC",sans-serif';g.fillStyle='#5a7286';g.textAlign='right';g.fillText('虚线：理论关系',w-R,24);
+}
+function modelAt(type,elapsed){
+  const e=clamp(elapsed,0,8),params={...DEFAULTS};
+  if(type==='demoD')params.dMm=lerp(.60,.10,e/8);
+  if(type==='demoDual')params.cSep=e<4?lerp(1.6,1,e/4):lerp(1,.6,(e-4)/4);
+  if(type==='demoRayleigh')params.cSep=lerp(1.6,1,e/8);
+  if(type==='demoRecord')params.dMm=SCAN_D[Math.min(SCAN_D.length-1,Math.floor(e/1.3))];
+  return params;
+}
+function applyCommand(type,elapsed,{resetCamera=false}={}){
+  if(resetCamera){phase=0;camera.position.copy(baselineCamera.position);controls.target.copy(baselineCamera.target);controls.update();}
+  if(type==='demoRecord'){
+    MODEL_POINTS.length=0;
+    const n=Math.min(SCAN_D.length,Math.max(1,Math.floor(clamp(elapsed,0,8)/1.3)+1));
+    for(let i=0;i<n;i++)recordModelPoint(SCAN_D[i]);
+  }else MODEL_POINTS.length=0;
+  setTeachingParams(type?.startsWith('demo')?modelAt(type,elapsed):{...DEFAULTS});
+  updateRecordTable();drawModelPlot();
+}
+function beginLocalDemo(type){resetTeaching(true);localDemo={type,start:performance.now()};applyCommand(type,0,{resetCamera:true});}
+function driveLocalDemo(){
+  const e=(performance.now()-localDemo.start)/1000;applyCommand(localDemo.type,e);if(e>=8)localDemo=null;updateClockAudit();
+}
+function acceptLectureTime(data){
+  if(!Number.isFinite(data.pageTime)||!Array.isArray(data.commands))return;
+  const allowed=new Set(['demoD','demoDual','demoRayleigh','demoRecord','resetD','resetDual','resetRayleigh','resetRecord','reset']);
+  const commands=data.commands.filter(c=>Number.isFinite(c.time)&&allowed.has(c.type)).sort((a,b)=>a.time-b.time);
+  const key=JSON.stringify([data.contextKey??null,commands]),time=Math.max(0,data.pageTime),playing=data.playing===true;
+  lastClockAudit={...(lastClockAudit??{}),...(data.audit??{protocol:'lecture-time',pageTime:time,playing})};
+  const unchanged=lastTimeline&&Math.abs(time-lastTimeline.time)<.005&&key===lastTimeline.key;
+  const jump=!lastTimeline||key!==lastTimeline.key||time<lastTimeline.time-.03||Math.abs(time-lastTimeline.time)>.8||(playing&&(!lastTimeline.playing||manualOverride))||(!playing&&data.audit?.protocol==='lecture-state'&&!unchanged);
+  // 课堂暂停时只有时间未变才保留手动参数；静态放映的自由钟例外。
+  if(!jump&&!playing&&manualOverride&&(unchanged||data.source==='slides')){lastTimeline={time,key,playing};updateClockAudit();return;}
+  if(!jump&&unchanged&&!playing){updateClockAudit();return;}
+  localDemo=null;manualOverride=false;
+  const active=commands.filter(c=>c.time<=time+.001).at(-1);
+  lastClockAudit={...(data.audit??{protocol:'lecture-time',pageTime:time,playing}),activeCommand:active?.type??'reset',derivedElapsed:active?clamp(time-active.time,0,8):0};
+  applyCommand(active?.type??'reset',active?time-active.time:0,{resetCamera:jump});
+  // 传播相位亦由时间确定，拖动进度不会累积旧相位。
+  phase=(time*state.speed)%SPAN;lastTimeline={time,key,playing};updateClockAudit();
+}
+function acceptLectureState(data){
+  if(!['interactive','static'].includes(data.mode)||!Number.isFinite(data.pageTime)||!Number.isInteger(data.step)||data.step<0)return;
+  const spec=CLOCK_SPECS[EMBED],steps=data.steps&&typeof data.steps==='object'?data.steps:{};
+  const start=spec?steps[String(spec.step)]:undefined;
+  const hasStepClock=Number.isFinite(start)&&start>=0;
+  // 静态页按选中步直接展示演示末态，不使用自由动画钟。
+  const isStatic=data.mode==='static';
+  const commands=spec?(isStatic?(data.step>=spec.step?[{time:0,type:spec.type}]:[]):(hasStepClock?[{time:start,type:spec.type}]:[])):[];
+  const time=isStatic?(commands.length?8:0):Math.max(0,data.pageTime);
+  acceptLectureTime({pageTime:time,playing:!isStatic&&data.playing===true,commands,
+    contextKey:JSON.stringify(['lecture-state',data.mode,data.pageId??null,data.step]),
+    audit:{protocol:'lecture-state',mode:data.mode,pageId:data.pageId??null,pageTime:Math.max(0,data.pageTime),step:data.step,playing:!isStatic&&data.playing===true,
+      demoStep:spec?.step??null,commandStart:commands[0]?.time??null,missingStepClock:!isStatic&&!!spec&&!hasStepClock}});
+}
+window.addEventListener('message',event=>{
+  if(event.source!==window.parent)return;
+  const data=event.data;if(!data||typeof data!=='object')return;
+  if(data.type==='lecture-state'){
+    if(event.origin!==location.origin)return;
+    acceptLectureState(data);return;
+  }
+  if(data.type==='lecture-time'){acceptLectureTime(data);return;}
+  if(['demoD','demoDual','demoRayleigh','demoRecord'].includes(data.type))beginLocalDemo(data.type);
+  if(['resetD','resetDual','resetRayleigh','resetRecord','reset'].includes(data.type))resetTeaching(false);
+});
+teachSlider.addEventListener('input',()=>setTeachingParams(isDMode()?{dMm:Number(teachSlider.value)}:{cSep:Number(teachSlider.value)},{manual:true}));
+document.getElementById('demoButton').addEventListener('click',()=>beginLocalDemo(demoType()));
+document.getElementById('resetButton').addEventListener('click',()=>resetTeaching(true));
+document.getElementById('recordButton').addEventListener('click',()=>{manualOverride=true;localDemo=null;recordModelPoint();updateClockAudit();});
+controls.addEventListener('start',()=>{manualOverride=true;localDemo=null;updateClockAudit();});
+addEventListener('resize',fitTeachingViewport);
+teachingReady=true;
+// 供同源候选 QA 读取；不伪造实验数据或学生提交。
+window.__sp5={state,reset:resetTeaching,set:setTeachingParams,modelAt,acceptLectureTime,acceptLectureState,clockSnapshot,records:MODEL_POINTS,airy,besselJ1};
+
+/* ================= 初始化 ================= */
+syncUI();
+applyToggles();
+applyFast();        // 颜色 / 位置 / 孔几何 / 锥形光 / HUD / 剖面
+drawPattern();      // 观察屏艾里图样（含双点叠加）+ 底部实拍面板
+rebuildSurface();   // 强度曲面（单点极坐标 / 双点笛卡尔）
+
+
+fitTeachingViewport();resetTeaching(false);
+renderer.setAnimationLoop(tick);
+</script>
+</body>
+</html>

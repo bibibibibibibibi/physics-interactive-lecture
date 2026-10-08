@@ -1,0 +1,38 @@
+{
+  "recipe_sha256": "22f44a13a82a556a9576ac91caa8dd73a71c0aa8ccd3ce677bf01e68b01c9b56",
+  "engine": "node-edge-tts",
+  "voice": "zh-CN-YunxiNeural",
+  "volume": "+30%",
+  "format": "audio-24khz-96kbitrate-mono-mp3",
+  "sample_rate": 24000,
+  "gaps": [
+    0.4,
+    0.65
+  ],
+  "tempo": 1.12,
+  "sentences": [
+    "用一道情境题检查我们有没有把角度和长度分清。",
+    "某同学保持波长和孔径不变，只把远场观察屏的距离增大到原来的两倍。",
+    "他看到屏上艾里斑半径变大了，便说仪器的角分辨能力也下降了一半。",
+    "请判断这种说法，并选择最合理的结果。",
+    "作答时先找出哪些量真正控制角半径，再看哪个量改变了屏上的投影尺度。",
+    "屏距只改变角度映射成长度的比例，所以屏上半径变为两倍，而第一暗环角半径不变。",
+    "若用放大镜把现有图样再放大，也有类似区别：画面尺寸改变，不等于新出现了能分开的细节。",
+    "这个区别，稍后会帮助我们判断光学仪器该增大孔径，还是只提高放大倍率。"
+  ],
+  "gap_policy": {
+    "schema": "sp5-quiz-sampling-margin/v1",
+    "base_normal_seconds": 0.4,
+    "base_emotive_seconds": 0.65,
+    "overrides": [
+      {
+        "after_sentence_index_zero_based": 3,
+        "after_sentence": "请判断这种说法，并选择最合理的结果。",
+        "seconds": 1.35
+      }
+    ],
+    "trigger_offset_seconds": 0.1,
+    "minimum_trigger_to_next_sentence_seconds": 1.2
+  },
+  "file_sha256": "c97be94d8ba8369b03fce5f8250293f55c7e99252c1f848dc11814c44b5c1b17"
+}

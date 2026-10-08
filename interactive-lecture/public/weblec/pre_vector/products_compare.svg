@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="点积交换次序数值相同，叉积交换次序方向相反">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fafdff"/><stop offset="1" stop-color="#eaf3ff"/></linearGradient>
+  <marker id="b" markerWidth="23" markerHeight="27" refX="2" refY="13.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M2 1 L19 13.5 L2 26 Z" fill="#244B88"/></marker>
+  <marker id="o" markerWidth="23" markerHeight="27" refX="2" refY="13.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M2 1 L19 13.5 L2 26 Z" fill="#d16b2b"/></marker>
+  <marker id="g" markerWidth="23" markerHeight="27" refX="2" refY="13.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M2 1 L19 13.5 L2 26 Z" fill="#168365"/></marker>
+  <style>
+  text{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;fill:#244B88}
+  .title{font-size:32px;font-weight:700}.label{font-size:31px;font-weight:700}.small{font-size:24px;font-weight:600}.formula{font-size:35px;font-weight:700}
+  .blue{fill:#244B88}.orange{fill:#d16b2b}.green{fill:#168365}.muted{fill:#6d829a}
+  .axis{stroke:#9fb2c9;stroke-width:3;stroke-linecap:round}.dash{stroke:#a6b8cb;stroke-width:3;stroke-dasharray:10 10;fill:none}
+  .vb{stroke:#244B88;stroke-width:8;stroke-linecap:butt;fill:none;marker-end:url(#b)}
+  .vo{stroke:#d16b2b;stroke-width:8;stroke-linecap:butt;fill:none;marker-end:url(#o)}
+  .vg{stroke:#168365;stroke-width:8;stroke-linecap:butt;fill:none;marker-end:url(#g)}
+  .point{fill:#244B88;stroke:#fff;stroke-width:4}
+  </style>
+</defs>
+<rect width="800" height="600" rx="28" fill="url(#bg)"/>
+
+<rect x="35" y="45" width="345" height="510" rx="24" fill="#fff" stroke="#d5e7f7" stroke-width="3"/>
+<rect x="420" y="45" width="345" height="510" rx="24" fill="#fff" stroke="#d5e7f7" stroke-width="3"/>
+<text x="69" y="107" class="title blue">点积 ·</text><text x="455" y="107" class="title orange">叉积 ×</text>
+<text x="69" y="153" class="small muted">交换次序，数值相同</text>
+<text x="455" y="153" class="small muted">交换次序，方向相反</text>
+<path d="M115 335 H282" class="vb"/><path d="M115 335 L220.9 230.9" class="vo"/>
+<path d="M149 335 A34 34 0 0 0 140 311" fill="none" stroke="#168365" stroke-width="4"/>
+<text x="293" y="370" class="small blue">A</text><text x="247" y="207" class="small orange">B</text>
+<text x="207" y="480" text-anchor="middle" class="formula green">A·B = B·A</text>
+<path d="M480 327 H533" class="vb"/><path d="M480 327 L513.3 271.6" class="vo"/>
+<circle cx="571" cy="274" r="24" fill="#e9f8f2" stroke="#168365" stroke-width="4"/><circle cx="571" cy="274" r="6" fill="#168365"/>
+<text x="479" y="376" class="small green">A×B</text>
+<path d="M647 327 H700" class="vb"/><path d="M647 327 L680.3 271.6" class="vo"/>
+<circle cx="738" cy="274" r="23" fill="#fff2ea" stroke="#d16b2b" stroke-width="4"/>
+<path d="M728 264 L748 284 M748 264 L728 284" stroke="#d16b2b" stroke-width="4"/>
+<text x="635" y="376" class="small orange">B×A</text>
+<text x="592" y="483" text-anchor="middle" class="formula green">B×A = −(A×B)</text>
+
+</svg>
