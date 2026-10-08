@@ -1,15 +1,20 @@
 import assert from 'node:assert/strict'
 import { execFileSync } from 'node:child_process'
-import { mkdtemp, mkdir, readFile, readdir, rm, stat, writeFile } from 'node:fs/promises'
-import os from 'node:os'
+import { mkdtemp, mkdir, readFile, readdir, stat, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { test } from 'node:test'
 import { fileURLToPath } from 'node:url'
 import { copyLaunchers } from './copy-launchers.mjs'
 
-test('copies named Windows and Mac launchers, replacing only legacy launcher names', async (t) => {
-  const root = await mkdtemp(path.join(os.tmpdir(), '课堂 launchers '))
-  t.after(() => rm(root, { recursive: true, force: true }))
+const workDirectory = fileURLToPath(new URL('../../work/launcher-tests/', import.meta.url))
+
+async function testDirectory(prefix) {
+  await mkdir(workDirectory, { recursive: true })
+  return mkdtemp(path.join(workDirectory, prefix))
+}
+
+test('copies named Windows and Mac launchers while preserving existing files', async () => {
+  const root = await testDirectory('课堂 launchers ')
   const source = path.join(root, '源目录')
   const destination = path.join(root, '输出 目录')
   await mkdir(source)
@@ -34,15 +39,15 @@ test('copies named Windows and Mac launchers, replacing only legacy launcher nam
   assert.equal(await readFile(path.join(destination, 'index.html'), 'utf8'), 'existing build')
   assert.deepEqual((await readdir(destination)).sort(), [
     'index.html', '启动交互课堂-win.bat', 'serve-win.ps1', '启动交互课堂-mac.command', 'serve-mac.py',
+    '启动交互课堂.bat', 'serve.ps1', '启动交互课堂.command', 'serve.py',
   ].sort())
   if (process.platform !== 'win32') {
     assert.equal((await stat(path.join(destination, '启动交互课堂-mac.command'))).mode & 0o777, 0o755)
   }
 })
 
-test('CLI finds the real launcher assets from another working directory', async (t) => {
-  const root = await mkdtemp(path.join(os.tmpdir(), '课堂 CLI '))
-  t.after(() => rm(root, { recursive: true, force: true }))
+test('CLI finds the real launcher assets from another working directory', async () => {
+  const root = await testDirectory('课堂 CLI ')
   const destination = path.join(root, '带 空格的发布目录')
   const script = fileURLToPath(new URL('./copy-launchers.mjs', import.meta.url))
   execFileSync(process.execPath, [script, destination], { cwd: root })

@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { ChapterNav, HotspotList, QuizCard, Sidebar, SlideStage } from '@/components/lecture'
 import QaRunner from '@/components/lecture/QaRunner'
 import { aiAnswer } from '@/lib/qa'
@@ -11,19 +12,88 @@ import CourseMenu from '@/pages/CourseMenu'
 
 export default function Home() {
   if (!COURSE_ID) {
-    // ?menu=special 显示专题系列目录（courses_special.json），否则显示第九章课程列表
-    if (new URLSearchParams(window.location.search).get('menu') === 'special') {
+    // 课前基础、专题和第九章各用独立清单，课程数据仍按 ?course=<id> 加载。
+    const menu = new URLSearchParams(window.location.search).get('menu')
+    if (menu === 'foundation') {
+      return <CourseMenu title="课前数学基础" subtitle="进入正式课程前先复习常用数学工具"
+        src="/weblec/courses_foundation.json"
+        backLink={{ href: '/', label: '← 第九章课程' }} />
+    }
+    if (menu === 'special') {
       return <CourseMenu title="教学节段专题" subtitle="选择一讲进入"
         src="/weblec/courses_special.json"
         backLink={{ href: '/', label: '← 第九章课程' }} />
     }
-    return <CourseMenu extraLink={{ href: '/?menu=special', label: '专题系列 →' }} />
+    return <CourseMenu extraLinks={[
+      { href: '/?menu=foundation', label: '课前数学基础 →' },
+      { href: '/?menu=special', label: '专题系列 →' },
+    ]} />
   }
+  if (/^sp[1-8]$/.test(COURSE_ID)) return <SpecialLecture />
   return <Lecture />
+}
+
+interface SpecialCourseStatus {
+  id: string
+  title: string
+  desc?: string
+  lectureAvailable?: boolean
+  slidesUrl?: string
+}
+
+/** Check the same status as the menu before mounting an unfinished classroom. */
+function SpecialLecture() {
+  const [course, setCourse] = useState<SpecialCourseStatus | null>(null)
+  const [failed, setFailed] = useState(false)
+  useEffect(() => {
+    const controller = new AbortController()
+    fetch('/weblec/courses_special.json', { cache: 'no-store', signal: controller.signal })
+      .then(r => {
+        if (!r.ok) throw new Error('Course status unavailable')
+        return r.json() as Promise<SpecialCourseStatus[]>
+      })
+      .then(courses => {
+        const current = courses.find(c => c.id === COURSE_ID)
+        if (!current) throw new Error('Course status missing')
+        setCourse(current)
+      })
+      .catch(() => { if (!controller.signal.aborted) setFailed(true) })
+    return () => controller.abort()
+  }, [])
+
+  if (course && course.lectureAvailable !== false) return <Lecture />
+  return (
+    <div className="flex min-h-screen flex-col items-center justify-center gap-5 bg-[#0b1f38] px-6 text-center text-slate-100">
+      <h1 className="text-2xl font-bold">{course?.title ?? '教学节段专题'}</h1>
+      <p className="max-w-xl text-slate-300">
+        {course ? course.desc ?? '本课有声课堂尚待验收，可先查看静态课件。'
+          : failed ? '暂时无法读取课程状态，请刷新后重试。' : '正在读取课程状态…'}
+      </p>
+      {course && <a href={course.slidesUrl ?? `/slides.html?course=${course.id}`}
+        className="rounded-lg bg-[#ffb703] px-4 py-2 font-bold text-[#0b1f38]">
+        查看静态审阅稿
+      </a>}
+      <a href="/?menu=special" className="text-slate-400 hover:text-slate-200">← 专题系列</a>
+    </div>
+  )
 }
 
 function Lecture() {
   const mediaRef = useRef<HTMLAudioElement>(null)
+  /** Move one stable portal host so fullscreen changes preserve quiz answers. */
+  const [quizHost] = useState(() => document.createElement('div'))
+  useEffect(() => {
+    const updateHost = () => {
+      const parent = document.fullscreenElement ?? document.body
+      if (quizHost.parentNode !== parent) parent.appendChild(quizHost)
+    }
+    updateHost()
+    document.addEventListener('fullscreenchange', updateHost)
+    return () => {
+      document.removeEventListener('fullscreenchange', updateHost)
+      quizHost.remove()
+    }
+  }, [quizHost])
   const [weblec, setWeblec] = useState<WebLec | null>(null)
   /** 版式质检模式：地址栏带 ?qa=1 时自动巡检全部页面 */
   const qaMode = useMemo(() => new URLSearchParams(window.location.search).has('qa'), [])
@@ -38,7 +108,7 @@ function Lecture() {
 
   /** 卡通讲师可切换：记住用户选择，默认用课程指定的角色 */
   const [character, setCharacter] = useState<string>(
-    () => localStorage.getItem('teacher-character') ?? '')
+    () => localStorage.getItem('teacher-character') || 'aqiang')
   useEffect(() => {
     if (!weblec?.characters?.length) return
     const valid = weblec.characters.some(c => c.id === character)
@@ -59,6 +129,7 @@ function Lecture() {
   }
 
   function seekTo(time: number) {
+    if (activeQuiz) return
     if (mediaRef.current) {
       mediaRef.current.currentTime = time
       mediaRef.current.play()
@@ -85,9 +156,20 @@ function Lecture() {
     })),
   } : null, [weblec])
 
-  const curTime = timeline?.slides.find(s => t >= s.t_start && t < s.t_end) ?? null
+  const finalTime = timeline?.slides.length ? timeline.slides[timeline.slides.length - 1] : null
+  const curTime = timeline?.slides.find(s => t >= s.t_start && t < s.t_end)
+    ?? (finalTime && t >= finalTime.t_end ? finalTime : null)
   const curPage: WebPage | null = weblec?.slides.find(s => s.id === curTime?.id) ?? null
   const curSub = weblec?.subtitles.find(s => t >= s.start && t < s.end) ?? null
+  /** Reveal the lower hotspot list at the same time as its stage element. */
+  const hotspotPage: WebPage | null = curPage ? {
+    ...curPage,
+    bullets: curPage.bullets.filter(b => {
+      const el = curPage.elements[b.elIdx]
+      if (!el) return false
+      return el.step === 0 || t >= (curPage.stepTimes[String(el.step)] ?? Infinity)
+    }),
+  } : null
   const subs = useMemo(() => weblec?.subtitles ?? [], [weblec])
 
   /** 网页小人姿态与时间轴、讲稿语义联动。全部纯派生（由 t 与各时刻直接算出），
@@ -209,7 +291,11 @@ function Lecture() {
 
   /** 提问上下文：要点或字幕句，都归一到当前页 */
   function contextOf(a: Active): AskContext {
-    const slideQa = a.slide.bullets.flatMap(b => b.qa.map(x => ({ ...x, _b: b })))
+    const slidePage = weblec?.slides.find(page => page.id === a.slide.id)
+    const slideQa = (slidePage?.bullets ?? []).filter(b => {
+      const el = slidePage?.elements[b.elIdx]
+      return !!el && (el.step === 0 || t >= (slidePage!.stepTimes[String(el.step)] ?? Infinity))
+    }).flatMap(b => b.qa.map(x => ({ ...x, _b: b })))
     return {
       slide: a.slide,
       label: a.kind === 'bullet' ? a.bullet.text : a.sub.text,
@@ -226,8 +312,8 @@ function Lecture() {
       ? {
           slide: curPage,
           label: curSub?.text ?? curPage.heading,
-          qa: curPage.bullets.flatMap(b => b.qa).slice(0, 4),
-          qaAll: curPage.bullets.flatMap(b => b.qa),
+          qa: (hotspotPage?.bullets ?? []).flatMap(b => b.qa).slice(0, 4),
+          qaAll: (hotspotPage?.bullets ?? []).flatMap(b => b.qa),
           contextText: curSub?.text ?? curPage.heading,
         }
       : null
@@ -237,31 +323,46 @@ function Lecture() {
     : `g-${curPage?.id ?? 0}`
   const messages = chats[chatKey] ?? []
 
-  function openBullet(slide: Slide, bullet: Bullet, idx: number) {
-    mediaRef.current?.pause()
-    const a: Active = { kind: 'bullet', slide, bullet, bulletIdx: idx }
-    setActive(a)
-    const key = `b-${slide.id}-${idx}`
-    if (!(chats[key]?.length)) {
-      send(`请讲解这个知识点：${bullet.text}`, contextOf(a), key)
+  const [sidebarRevealVersion, setSidebarRevealVersion] = useState(0)
+
+  /** The sidebar is outside the stage fullscreen subtree. Reveal it before asking. */
+  function openInSidebar(open: () => void, pause = true) {
+    setSidebarRevealVersion(version => version + 1)
+    if (pause) mediaRef.current?.pause()
+    if (document.fullscreenElement) {
+      void document.exitFullscreen().then(open)
+    } else {
+      open()
     }
+  }
+
+  function openBullet(slide: Slide, bullet: Bullet, idx: number) {
+    openInSidebar(() => {
+      const a: Active = { kind: 'bullet', slide, bullet, bulletIdx: idx }
+      setActive(a)
+      const key = `b-${slide.id}-${idx}`
+      if (!(chats[key]?.length)) {
+        send(`请讲解这个知识点：${bullet.text}`, contextOf(a), key)
+      }
+    })
   }
 
   function openSubtitle(sub: Sub) {
     const slide = weblec?.slides.find(s => s.id === sub.slide)
     if (!slide) return
-    mediaRef.current?.pause()
-    const a: Active = { kind: 'subtitle', slide, sub }
-    setActive(a)
-    const key = `s-${sub.start}`
-    if (!(chats[key]?.length)) {
-      send(`请讲解这句话：${sub.text}`, contextOf(a), key)
-    }
+    openInSidebar(() => {
+      const a: Active = { kind: 'subtitle', slide, sub }
+      setActive(a)
+      const key = `s-${sub.start}`
+      if (!(chats[key]?.length)) {
+        send(`请讲解这句话：${sub.text}`, contextOf(a), key)
+      }
+    })
   }
 
   function clearContext(resume: boolean) {
     setActive(null)
-    if (resume) mediaRef.current?.play()
+    if (resume && !activeQuiz) mediaRef.current?.play()
   }
 
   async function send(q: string, ctx: AskContext, key: string) {
@@ -314,6 +415,7 @@ function Lecture() {
         <div>
           <SlideStage
             mediaRef={mediaRef}
+            playbackLocked={!!activeQuiz}
             weblec={weblec}
             curPage={curPage}
             t={t}
@@ -329,18 +431,21 @@ function Lecture() {
             charactersSwitchable={!!weblec?.characters?.length}
             onSwitchCharacter={switchCharacter}
             navOpen={navOpen}
-            onToggleNav={() => setNavOpen(o => !o)}
+            onToggleNav={() => navOpen ? setNavOpen(false) : openInSidebar(() => setNavOpen(true), false)}
           />
           {navOpen && (
             <ChapterNav chapters={chapters} currentId={navCurrentId}
               onSeek={time => { seekTo(time); setNavOpen(false) }} cols={sections ? 4 : 8} />
           )}
-          {curPage && <HotspotList slide={curPage} onOpenBullet={openBullet} />}
+          {curPage && hotspotPage && <HotspotList slide={hotspotPage}
+            onOpenBullet={(_slide, bullet) => openBullet(curPage, bullet,
+              curPage.bullets.findIndex(original => original === bullet))} />}
         </div>
 
         {/* 右侧：可滚动字幕列表 + 常驻聊天框 */}
         <Sidebar
-          subs={subs}
+          revealVersion={sidebarRevealVersion}
+          subs={/^sp\d+$/.test(COURSE_ID ?? '') ? subs.filter(s => s.start <= t) : subs}
           curSubStart={curSub?.start ?? null}
           t={t}
           onOpenSubtitle={openSubtitle}
@@ -355,8 +460,8 @@ function Lecture() {
         />
       </main>
       {qaMode && <QaRunner mediaRef={mediaRef} weblec={weblec} />}
-      {activeQuiz && curPage?.id === activeQuiz.pageId && (
-        <QuizCard quiz={activeQuiz.quiz} onContinue={finishQuiz} />
+      {activeQuiz && curPage?.id === activeQuiz.pageId && createPortal(
+        <QuizCard quiz={activeQuiz.quiz} onContinue={finishQuiz} />, quizHost
       )}
     </div>
   )

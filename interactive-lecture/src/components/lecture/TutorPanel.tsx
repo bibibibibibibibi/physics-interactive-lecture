@@ -86,7 +86,7 @@ export default function TutorPanel({ messages, thinking, input, onInputChange, o
             提问
           </button>
         </div>
-        <div className="mt-2 text-xs text-slate-500">AI 助教已接入 · 未连通时使用离线答疑库</div>
+        <div className="mt-2 text-xs text-slate-500">支持知识点提问 · 优先使用本课预设问答</div>
       </div>
     </>
   )

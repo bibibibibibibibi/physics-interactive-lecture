@@ -90,6 +90,8 @@ export default defineConfig(({ mode }) => {
       port: 3000,
     },
     build: {
+      // Preserve old hashed assets and revision candidates; no permanent cleanup.
+      emptyOutDir: false,
       // 多页构建：交互课堂 index.html + 静态幻灯片 slides.html 都要进 dist
       rollupOptions: {
         input: {

@@ -1,73 +1,40 @@
-# React + TypeScript + Vite
+# 大学物理网页课堂
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+本目录是交互课堂与教师静态放映页共用的 React、TypeScript、Vite 应用。项目入口、环境准备和课程说明见[根目录 README](../README.md)；special 专题的制作、分工、交接与验收统一执行[专题课件制作规范](../lecture_factory/专题课件制作经验.md)。
 
-Currently, two official plugins are available:
+## 使用已构建课堂
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Windows：双击 `dist/启动交互课堂-win.bat`。
+- Mac：双击 `dist/启动交互课堂-mac.command`；首次运行的系统许可处理见根目录 README。
+- 启动器提供本地 HTTP 服务。交互课堂需要通过服务访问，不能用 `file://` 或双击 `dist/index.html`。
+- special 八个学时的静态课件含媒体或模拟，统一通过 HTTP 放映；菜单里的 `slidesUrl` 指向对应入口。旧书签和静态审阅入口保留其兼容用途。
 
-## React Compiler
+技术入口可用与范围明确的技术验收，不能代替完整人工听审和最终教师教学核准。逐课完成情况及证据边界见[专题系列复盘](../docs/special-series-review.md)。
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 文件归属
 
-## Expanding the ESLint configuration
+| 路径 | 用途与保留要求 |
+| --- | --- |
+| `src/` | 正式应用代码，共用播放器及目录页面。 |
+| `public/` | 应用构建输入，含正式课件数据、媒体和讲师素材；与单课创作源码的职责不同。 |
+| `dist/` | 已构建的部署产品，有意纳入 Git，克隆后可启动使用。 |
+| `slides-export/` | 正式静态交付文件，有意纳入 Git；专题 HTTP 版本还依赖同源课件媒体。 |
+| `dist-slides/` | 静态导出的中间构建目录，由 `.gitignore` 排除。 |
+| `scripts/` | 启动器复制与检查等应用工具。 |
+| `../lecture_factory/` | 课程创作源码、素材及制作工具。 |
+| `../work/` | 本机候选、授权记录、缓存、历史证据与临时构建，默认不随 Git 同步。 |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+`dist/` 和 `slides-export/` 是本项目保留的正式产物例外，不按普通临时构建目录清理。默认构建配置使用 `emptyOutDir: false`，保留旧 chunks；启动器复制也保留已有旧名称。这些措施降低旧页面与书签失效的风险，仍不构成整课多文件发布事务。special 的候选晋级和中央发布须按专题规范执行。
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 本机开发
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+在本机安装符合 `package.json` 要求的 Node.js 后，在本目录执行：
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm ci
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+开发地址以终端实际输出为准。`node_modules/` 与项目根目录 `.venv/` 是本机依赖环境，不复制到其他电脑，也不提交 Git；Python 制作环境按根目录 README 安装。
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+部分 special 的重建仍依赖本机 `work/` 中的管线、有效配音授权及精确缓存。正式产物可直接运行，不表示所有课程已能在新克隆中完整重建；缺失输入时应停止并由中央补齐，不能上传整个临时目录或重复发送配音来替代交接。

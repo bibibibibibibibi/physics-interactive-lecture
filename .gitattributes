@@ -1,4 +1,6 @@
-# 脚本换行符约定（启动器跨平台必须严格遵守）
+# 文本默认LF，保留JSON/HTML等输入的跨平台字节；二进制由Git自动识别。
+* text=auto eol=lf
+# Windows启动脚本CRLF；Mac shell脚本LF。
 *.command text eol=lf
 *.sh      text eol=lf
 *.bat     text eol=crlf

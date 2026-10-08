@@ -3,8 +3,8 @@
 from pathlib import Path
 import shutil
 import struct
-import tempfile
 import unittest
+from work_directory import make_test_directory
 
 from export_pdf_mac import export_pdf
 
@@ -35,9 +35,7 @@ def make_pdf(path, empty=False):
 
 class ExportPdfTest(unittest.TestCase):
     def setUp(self):
-        self.temporary = tempfile.TemporaryDirectory(prefix="讲义 空格-")
-        self.addCleanup(self.temporary.cleanup)
-        self.root = Path(self.temporary.name)
+        self.root = make_test_directory("pdf-export-")
         self.pdf = self.root / "物理 课件.pdf"
         make_pdf(self.pdf)
         self.output = self.root / "导出 图片"

@@ -1,0 +1,71 @@
+name: Cross-platform deployment
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deployment:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    defaults:
+      run:
+        shell: bash
+    env:
+      PYTHONUTF8: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: interactive-lecture/package-lock.json
+      - name: Formal deployment dependencies and Git tracking
+        run: python -B interactive-lecture/scripts/check-release.py --report work/ci/release-integrity.json
+      - name: Install locked development dependencies
+        working-directory: interactive-lecture
+        run: npm ci --no-audit --no-fund
+      - name: Install platform-specific Python tools
+        run: python -m pip install -r requirements.txt
+      - name: Unit and launcher retention checks
+        run: |
+          python -B -m unittest discover -s tests -v
+          python -B interactive-lecture/scripts/test-launchers.py
+          node --test interactive-lecture/scripts/copy-launchers.test.mjs
+      - name: Isolated source builds
+        working-directory: interactive-lecture
+        run: |
+          npx tsc -b
+          npx vite build --outDir ../work/ci/app-stage --emptyOutDir false
+          npx vite build --config vite.slides.config.ts --outDir ../work/ci/slides-stage --emptyOutDir false
+      - name: Real Windows PowerShell 5.1 transport
+        if: runner.os == 'Windows'
+        run: python -B interactive-lecture/scripts/test-windows-launcher.py
+      - name: Real Windows Edge deployment
+        if: runner.os == 'Windows'
+        run: node interactive-lecture/scripts/test-windows-browser.mjs
+      - name: Retain logs, reports and browser screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: portability-${{ runner.os }}
+          path: |
+            work/ci/*.json
+            work/project-sync/windows-launcher-tests
+            work/project-sync/browser-smoke
+            work/tests/**/build.log
+            work/audio-build/**/_list*.txt
+          if-no-files-found: ignore

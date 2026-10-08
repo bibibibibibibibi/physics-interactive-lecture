@@ -1,10 +1,12 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import type { CSSProperties } from 'react'
 import SubtitlePanel from './SubtitlePanel'
 import TutorPanel from './TutorPanel'
 import type { Msg, QA, Sub } from '@/lib/lecture'
 
 interface Props {
+  /** Increment for every external request, including an already selected hotspot. */
+  revealVersion?: number
   subs: Sub[]
   curSubStart: number | null
   t: number
@@ -21,12 +23,16 @@ interface Props {
 
 /** 右侧栏：可滚动字幕列表 + 常驻聊天框，宽度与分区高度均可拖拽，可整体收起 */
 export default function Sidebar({
-  subs, curSubStart, t, onOpenSubtitle,
+  revealVersion = 0, subs, curSubStart, t, onOpenSubtitle,
   messages, thinking, input, onInputChange, onAsk, suggestions, contextLabel, onClearContext,
 }: Props) {
   const [sideW, setSideW] = useState(380)
   const [subH, setSubH] = useState(240)
   const [collapsed, setCollapsed] = useState(false)
+
+  useEffect(() => {
+    if (revealVersion > 0) setCollapsed(false)
+  }, [revealVersion])
 
   /** 拖拽调整侧栏宽度 / 字幕区高度 */
   function startDrag(e: React.MouseEvent, mode: 'width' | 'subH') {

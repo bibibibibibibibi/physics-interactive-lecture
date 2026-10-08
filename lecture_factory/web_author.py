@@ -12,7 +12,8 @@
 
 元素通用约定（本轮打磨固化）：
 - 所有元素带 step（0=页面常驻），hotspot=可点击提问，important=激光下划红线
-- img 元素会充满 w×h 框（objectFit contain），尺寸直接按想要的显示大小给
+- img 元素默认在 w×h 框内完整显示（objectFit contain）；要裁边时可传
+  fit="cover", objectPosition="right center" 等参数
 - 图片白底建议转透明（见 README「座钟 gif 白底透明化」）
 - 图示在 interactive-lecture/src/components/lecture/diagrams.tsx 的 DIAGRAMS 里加，
   矢量符号用 Vec 组件（不要写 ⃗ 组合字符，缺字体会显方框）

@@ -7,9 +7,9 @@ import os
 from pathlib import Path
 import subprocess
 import sys
-import tempfile
 import unittest
 from unittest.mock import Mock, patch
+from work_directory import make_test_directory
 
 
 FACTORY = Path(__file__).resolve().parents[1] / "lecture_factory"
@@ -23,9 +23,7 @@ with patch.dict(sys.modules, {"imageio_ffmpeg": Mock(get_ffmpeg_exe=lambda: "ffm
 
 class AudioConfigTests(unittest.TestCase):
     def setUp(self):
-        self.temp = tempfile.TemporaryDirectory(prefix="配音 测试 ")
-        self.addCleanup(self.temp.cleanup)
-        self.root = Path(self.temp.name)
+        self.root = make_test_directory("audio-config-")
         self.tool = self.root / "audio_generation_tool.py"
         self.tool.write_text("# mocked TTS tool\n", encoding="utf-8")
         self.env = patch.dict(os.environ, {}, clear=True)
@@ -99,7 +97,7 @@ class AudioConfigTests(unittest.TestCase):
         audio.mkdir()
         sentence = audio / "p1_00.mp3"
         sentence.write_bytes(b"keep existing cache")
-        (self.root / "slides.json").write_text(json.dumps({"pages": [{"id": 1}]}), encoding="utf-8")
+        (self.root / "slides.json").write_text(json.dumps({"pages": [{"id": 1, "narration": "讲稿。", "elements": []}]}), encoding="utf-8")
         with patch.object(sys, "argv", ["build_web.py", str(self.root)]), \
                 patch.object(gen_audio, "silence") as silence, contextlib.redirect_stdout(io.StringIO()):
             with self.assertRaisesRegex(SystemExit, "KIMI_AUDIO_TOOL"):

@@ -1,0 +1,3401 @@
+{
+ "title": "0-1 矢量代数",
+ "nav": "课前数学基础　0-1 矢量代数",
+ "footer": "课前数学基础　矢量代数",
+ "character": "aqiang",
+ "logoScale": 0.67,
+ "theme": "special",
+ "sections": [
+  {
+   "title": "导入",
+   "page": 1
+  },
+  {
+   "title": "标量与矢量",
+   "page": 3
+  },
+  {
+   "title": "合成与分解",
+   "page": 5
+  },
+  {
+   "title": "标积与矢积",
+   "page": 10
+  },
+  {
+   "title": "导数与积分",
+   "page": 14
+  }
+ ],
+ "pages": [
+  {
+   "id": 1,
+   "heading": "矢量代数",
+   "narration": "欢迎来到大学物理课前的数学基础节。[[1]]今天我们用一节课把矢量代数中最常用的工具串起来：矢量怎样相加和分解，点积与叉积各表示什么，以及一个随时间变化的矢量怎样求导、怎样积分。后面研究运动、电场和力矩时，这些方法都会反复出现。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 120,
+     "y": 245,
+     "w": 820,
+     "h": 145,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "0-1　矢量代数",
+        "size": 94,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 124,
+     "y": 390,
+     "w": 820,
+     "h": 78,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "大学物理 · 课前数学基础",
+        "size": 43,
+        "color": "#52647A",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 125,
+     "y": 545,
+     "w": 790,
+     "h": 105,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "从箭头看方向，从分量算结果。",
+        "size": 47,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 130,
+     "y": 645,
+     "w": 800,
+     "h": 110,
+     "tex": "\\vec A+\\vec B\\quad\\vec A\\cdot\\vec B\\quad\\vec A\\times\\vec B",
+     "size": 47,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 130,
+     "y": 805,
+     "w": 800,
+     "h": 105,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "位移 · 速度 · 力 · 电场",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 980,
+     "y": 205,
+     "w": 825,
+     "h": 685,
+     "src": "hero_vectors.svg"
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "heading": "本节路线：四把工具",
+   "narration": "把这节课看成四步。[[1]]先辨认标量和矢量：一个数能否说明物理量，还是必须交代方向？[[2]]接着学会画箭头、合成与分解，并用坐标分量计算。[[3]]然后区分点积和叉积：前者得到数，后者得到垂直矢量。[[4]]最后处理随时间变化的矢量，求变化率和累计变化量。后面的运动、电场和力矩会反复用到这四把工具。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "00　本节路线：四把工具",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 120,
+     "y": 230,
+     "w": 800,
+     "h": 275,
+     "fill": "#E9F1FB",
+     "line": "#BCD0EC",
+     "lw": 3,
+     "radius": 20,
+     "paras": [
+      [
+       {
+        "t": "01　标量与矢量",
+        "size": 49,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "大小够不够？还需要交代空间方向吗？",
+        "size": 36,
+        "color": "#16283F",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "速率 ↔ 速度",
+        "size": 36,
+        "color": "#52647A",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": "20px 30px"
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 1000,
+     "y": 230,
+     "w": 800,
+     "h": 275,
+     "fill": "#EAF6F2",
+     "line": "#B7DECf",
+     "lw": 3,
+     "radius": 20,
+     "paras": [
+      [
+       {
+        "t": "02　合成与分解",
+        "size": 49,
+        "color": "#146F58",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "从箭头到坐标，再逐个分量完成运算",
+        "size": 36,
+        "color": "#16283F",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "加法 · 减法 · 投影",
+        "size": 36,
+        "color": "#52647A",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": "20px 30px"
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 120,
+     "y": 565,
+     "w": 800,
+     "h": 275,
+     "fill": "#FFF2E8",
+     "line": "#EAC8AB",
+     "lw": 3,
+     "radius": 20,
+     "paras": [
+      [
+       {
+        "t": "03　标积与矢积",
+        "size": 49,
+        "color": "#A75A25",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "点积看投影，叉积看面积与方向",
+        "size": 36,
+        "color": "#16283F",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "结果是数，还是矢量？",
+        "size": 36,
+        "color": "#52647A",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": "20px 30px"
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 1000,
+     "y": 565,
+     "w": 800,
+     "h": 275,
+     "fill": "#F0ECF8",
+     "line": "#CDC3E5",
+     "lw": 3,
+     "radius": 20,
+     "paras": [
+      [
+       {
+        "t": "04　导数与积分",
+        "size": 49,
+        "color": "#7049A0",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "变化有多快？累积变化是多少？",
+        "size": 36,
+        "color": "#16283F",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "轨迹 · 速度 · 位移",
+        "size": 36,
+        "color": "#52647A",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": "20px 30px"
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "heading": "标量与矢量：差一个方向",
+   "narration": "一个量只给出数值够不够，要看它描述什么。[[1]]说路程三米或速率每秒三米，只说明多少，不回答朝哪边；负温度的负号也不是空间方向，这些是标量。[[2]]若说位移三米向东或速度每秒三米向东，大小和方向要一起给，才是矢量。速度、位移、力和电场强度都是矢量。[[3]]图中两个箭头平移后重合，表示相同的自由矢量；位置矢量则必须从选定原点出发。判断时先问：只改变朝向，物理量会不会变？",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "01　标量与矢量：差一个方向",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 120,
+     "y": 240,
+     "w": 790,
+     "h": 235,
+     "fill": "#EFF3F8",
+     "line": "#CCD7E6",
+     "lw": 3,
+     "radius": 20,
+     "paras": [
+      [
+       {
+        "t": "标量　只有大小",
+        "size": 50,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "路程 3 m · 速率 3 m/s · 质量 2 kg",
+        "size": 38,
+        "color": "#16283F",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "负号不等于空间方向",
+        "size": 32,
+        "color": "#52647A",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "hotspot": true,
+     "label": "标量的定义",
+     "qa": [
+      {
+       "q": "温度为负，为什么仍是标量？",
+       "a": "负号表示相对零点的数值，不表示空间方向。"
+      }
+     ]
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 120,
+     "y": 510,
+     "w": 790,
+     "h": 235,
+     "fill": "#EAF6F2",
+     "line": "#B7DCCF",
+     "lw": 3,
+     "radius": 20,
+     "paras": [
+      [
+       {
+        "t": "矢量　大小 + 方向",
+        "size": 50,
+        "color": "#146F58",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "位移 3 m 向东 · 速度 3 m/s 向东",
+        "size": 35,
+        "color": "#16283F",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "换方向，就换了矢量",
+        "size": 32,
+        "color": "#52647A",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "hotspot": true,
+     "label": "矢量的定义",
+     "qa": [
+      {
+       "q": "怎样判断两个自由矢量相等？",
+       "a": "模相等且方向相同，平移箭头不影响它们相等。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 180,
+     "y": 810,
+     "w": 755,
+     "h": 95,
+     "tex": "\\vec A=A\\hat e_A,\\qquad |\\vec A|=A",
+     "size": 48,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "img",
+     "step": 2,
+     "x": 1000,
+     "y": 230,
+     "w": 800,
+     "h": 655,
+     "src": "scalar_vector.svg"
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "heading": "辨认矢量",
+   "narration": "来做一道辨认题。[[1]]速度、速率、位移、路程、电场强度、温度、质量，这七个量里哪些必须同时给出大小和方向？先自己选。[[2]]答案是速度、位移和电场强度。速率与路程只说多少，不说朝向；温度、质量也没有空间方向。尤其要把速度和速率分开，它们不是同一个量。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "01　辨认矢量",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 120,
+     "y": 215,
+     "w": 1500,
+     "h": 105,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "下面七个物理量，哪些是矢量？",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 120,
+     "y": 340,
+     "w": 350,
+     "h": 125,
+     "fill": "#EDF3FA",
+     "line": "#C5D6E9",
+     "lw": 3,
+     "radius": 20,
+     "paras": [
+      [
+       {
+        "t": "速度",
+        "size": 47,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": "26px 24px"
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 565,
+     "y": 340,
+     "w": 350,
+     "h": 125,
+     "fill": "#EDF3FA",
+     "line": "#C5D6E9",
+     "lw": 3,
+     "radius": 20,
+     "paras": [
+      [
+       {
+        "t": "速率",
+        "size": 47,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": "26px 24px"
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 1010,
+     "y": 340,
+     "w": 350,
+     "h": 125,
+     "fill": "#EDF3FA",
+     "line": "#C5D6E9",
+     "lw": 3,
+     "radius": 20,
+     "paras": [
+      [
+       {
+        "t": "位移",
+        "size": 47,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": "26px 24px"
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 1455,
+     "y": 340,
+     "w": 350,
+     "h": 125,
+     "fill": "#EDF3FA",
+     "line": "#C5D6E9",
+     "lw": 3,
+     "radius": 20,
+     "paras": [
+      [
+       {
+        "t": "路程",
+        "size": 47,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": "26px 24px"
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 340,
+     "y": 520,
+     "w": 350,
+     "h": 125,
+     "fill": "#EDF3FA",
+     "line": "#C5D6E9",
+     "lw": 3,
+     "radius": 20,
+     "paras": [
+      [
+       {
+        "t": "电场强度",
+        "size": 47,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": "26px 24px"
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 785,
+     "y": 520,
+     "w": 350,
+     "h": 125,
+     "fill": "#EDF3FA",
+     "line": "#C5D6E9",
+     "lw": 3,
+     "radius": 20,
+     "paras": [
+      [
+       {
+        "t": "温度",
+        "size": 47,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": "26px 24px"
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 1230,
+     "y": 520,
+     "w": 350,
+     "h": 125,
+     "fill": "#EDF3FA",
+     "line": "#C5D6E9",
+     "lw": 3,
+     "radius": 20,
+     "paras": [
+      [
+       {
+        "t": "质量",
+        "size": 47,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": "26px 24px"
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 485,
+     "y": 730,
+     "w": 950,
+     "h": 150,
+     "fill": "#EAF6F2",
+     "line": "#A9D7C6",
+     "lw": 3,
+     "radius": 20,
+     "paras": [
+      [
+       {
+        "t": "答案：速度 · 位移 · 电场强度",
+        "size": 48,
+        "color": "#146F58",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "速率是速度的大小，所以是标量。",
+        "size": 34,
+        "color": "#52647A",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": "20px 30px",
+     "hotspot": true,
+     "label": "矢量辨认",
+     "qa": [
+      {
+       "q": "速度与速率有什么区别？",
+       "a": "速度是矢量，包含方向；速率是速度的大小，是标量。"
+      }
+     ]
+    }
+   ],
+   "interactions": [
+    {
+     "at": 1,
+     "q": "以下哪一组全是矢量？",
+     "answer": 0,
+     "options": [
+      "速度、位移、电场强度",
+      "速率、位移、温度",
+      "速度、路程、质量",
+      "速率、路程、电场强度"
+     ],
+     "explain": "速度、位移、电场强度都有大小和方向；速率、路程、温度和质量没有空间方向。"
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "heading": "矢量的加法与减法",
+   "narration": "两个矢量怎样相加？[[1]]把 B 的起点接到 A 的终点，从 A 的起点指向 B 的终点，就是 A 加 B。也可以从同一个起点画平行四边形，取对角线。[[2]]减去 B 等于加上反向的 B，即 A 减 B 等于 A 加负 B。拖动右边两个箭头，观察和矢量、差矢量如何变化。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　矢量的加法与减法",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 120,
+     "y": 235,
+     "w": 810,
+     "h": 105,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "首尾相接：从第一个起点指向最后一个终点。",
+        "size": 39,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 150,
+     "y": 390,
+     "w": 780,
+     "h": 125,
+     "tex": "\\vec C=\\vec A+\\vec B",
+     "size": 58,
+     "color": "#111111",
+     "align": "left",
+     "hotspot": true,
+     "label": "矢量首尾相接求和",
+     "qa": [
+      {
+       "q": "多段矢量首尾相接后，总和从哪里指向哪里？",
+       "a": "从第一段的起点指向最后一段的终点。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 145,
+     "y": 565,
+     "w": 790,
+     "h": 125,
+     "tex": "\\vec A-\\vec B=\\vec A+(-\\vec B)",
+     "size": 48,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "html",
+     "step": 1,
+     "x": 1010,
+     "y": 235,
+     "w": 790,
+     "h": 690,
+     "src": "sim_vectors.html?mode=add&embed=1",
+     "label": "拖动矢量观察和与差"
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "heading": "矢量分解",
+   "narration": "合成反过来就是分解。[[1]]只规定 A 等于 B 加 C 时，分解并不唯一；你可以选出无穷多对 B、C。[[2]]一旦指定两条相互垂直的坐标轴，沿 x 和 y 轴的分量便确定了。拖动右侧的 A，看看它在两个轴上的投影如何跟着变化。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　矢量分解",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 245,
+     "w": 780,
+     "h": 125,
+     "tex": "\\vec A=\\vec B+\\vec C",
+     "size": 58,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 120,
+     "y": 390,
+     "w": 780,
+     "h": 105,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "不指定分解方向：有无穷多种分法。",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 150,
+     "y": 560,
+     "w": 800,
+     "h": 125,
+     "tex": "\\vec A=A_x\\hat{\\imath}+A_y\\hat{\\jmath}",
+     "size": 50,
+     "color": "#111111",
+     "align": "left",
+     "hotspot": true,
+     "label": "直角坐标分解",
+     "qa": [
+      {
+       "q": "为什么正交分量是确定的？",
+       "a": "坐标轴方向一旦指定，投影 Ax 和 Ay 都唯一确定。"
+      }
+     ]
+    },
+    {
+     "type": "html",
+     "step": 2,
+     "x": 1010,
+     "y": 235,
+     "w": 790,
+     "h": 690,
+     "src": "sim_vectors.html?mode=components&embed=1",
+     "label": "拖动矢量观察正交分量"
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "heading": "三维正交分解",
+   "narration": "把刚才的二维坐标扩展到三维。[[1]]矢量 A 等于它在 x、y、z 三个轴上的分量之和。[[2]]模长由三维勾股关系求得。[[3]]方向余弦把三个分量和方向联系起来：每个分量除以模长，就等于它与该轴夹角的余弦。注意模长为零时不能这样除。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　三维正交分解",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 125,
+     "y": 235,
+     "w": 835,
+     "h": 125,
+     "tex": "\\vec A=A_x\\hat{\\imath}+A_y\\hat{\\jmath}+A_z\\hat{k}",
+     "size": 48,
+     "color": "#111111",
+     "align": "left",
+     "hotspot": true,
+     "label": "三维矢量的分量表达",
+     "qa": [
+      {
+       "q": "三维矢量怎样用单位基矢表示？",
+       "a": "A=Ax î+Ay ĵ+Az k̂，系数就是各轴方向的分量。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 160,
+     "y": 430,
+     "w": 770,
+     "h": 125,
+     "tex": "A=\\sqrt{A_x^2+A_y^2+A_z^2}",
+     "size": 55,
+     "color": "#111111",
+     "align": "left",
+     "important": true
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 105,
+     "y": 615,
+     "w": 860,
+     "h": 125,
+     "tex": "\\cos\\alpha=\\frac{A_x}{A},\\quad\\cos\\beta=\\frac{A_y}{A},\\quad\\cos\\gamma=\\frac{A_z}{A}",
+     "size": 43,
+     "color": "#111111",
+     "align": "left",
+     "hotspot": true,
+     "label": "方向余弦",
+     "qa": [
+      {
+       "q": "方向余弦的分母是什么？",
+       "a": "矢量的模 A；只有非零矢量才有确定方向。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 805,
+     "w": 830,
+     "h": 105,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "因此 cos²α + cos²β + cos²γ = 1。",
+        "size": 37,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 1005,
+     "y": 235,
+     "w": 785,
+     "h": 650,
+     "src": "axes3d.svg"
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "heading": "分量法求和与差",
+   "narration": "画图帮我们理解，算题时分量法更直接。[[1]]A 加 B，就让对应的 x、y、z 分量分别相加；A 减 B，则逐项相减。[[2]]例如 A 是三、二、负一，B 是负一、四、二，和就是二、六、一，差是四、负二、负三。[[3]]若要求和矢量的模，再把二、六、一代入三维勾股关系，得到根号四十一。先算分量，再求模，通常比在空间里量角度更稳。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　分量法求和与差",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 130,
+     "y": 218,
+     "w": 1660,
+     "h": 145,
+     "tex": "\\vec A\\pm\\vec B=(A_x\\pm B_x)\\hat{\\imath}+(A_y\\pm B_y)\\hat{\\jmath}+(A_z\\pm B_z)\\hat{k}",
+     "size": 44,
+     "color": "#111111",
+     "align": "left",
+     "hotspot": true,
+     "label": "矢量和差逐分量计算",
+     "qa": [
+      {
+       "q": "三维矢量相加时 z 分量怎么处理？",
+       "a": "和 x、y 分量一样，两个矢量的 z 分量直接相加。"
+      }
+     ]
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 125,
+     "y": 420,
+     "w": 790,
+     "h": 170,
+     "fill": "#E9F1FB",
+     "line": "#BCD0EC",
+     "lw": 3,
+     "radius": 18,
+     "paras": [
+      [
+       {
+        "t": "给定",
+        "size": 35,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "A = (3, 2, −1)   B = (−1, 4, 2)",
+        "size": 37,
+        "color": "#16283F",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": "17px 26px"
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 1025,
+     "y": 420,
+     "w": 750,
+     "h": 170,
+     "fill": "#EAF6F2",
+     "line": "#B7DCCF",
+     "lw": 3,
+     "radius": 18,
+     "paras": [
+      [
+       {
+        "t": "逐项运算",
+        "size": 35,
+        "color": "#146F58",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "和 (2, 6, 1)   差 (4, −2, −3)",
+        "size": 37,
+        "color": "#16283F",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": "17px 26px"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 200,
+     "y": 665,
+     "w": 1500,
+     "h": 125,
+     "tex": "|\\vec A+\\vec B|=\\sqrt{2^2+6^2+1^2}=\\sqrt{41}",
+     "size": 56,
+     "color": "#111111",
+     "align": "left",
+     "important": true
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 340,
+     "y": 820,
+     "w": 1250,
+     "h": 105,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "先求分量，再按需要求模或方向。",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "heading": "判断差矢量方向",
+   "narration": "再用一道题检查你是否真的会减法。[[1]]让 A 和 B 从同一个起点出发。A 减 B，应该从哪个箭头的终点指向哪个终点？先选。[[2]]因为 A 减 B 加上 B 等于 A，差矢量必须从 B 的终点指向 A 的终点。方向反过来得到的是 B 减 A。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　判断差矢量方向",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 120,
+     "y": 235,
+     "w": 900,
+     "h": 105,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "同起点的 A、B：差矢量怎样画？",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 105,
+     "y": 485,
+     "w": 900,
+     "h": 125,
+     "tex": "\\vec A-\\vec B:\\quad B\\text{ 的终点}\\longrightarrow A\\text{ 的终点}",
+     "size": 40,
+     "color": "#111111",
+     "align": "left",
+     "important": true,
+     "hotspot": true,
+     "label": "差矢量的几何方向",
+     "qa": [
+      {
+       "q": "同起点时 A−B 的箭头怎样画？",
+       "a": "从 B 的终点画到 A 的终点；反向箭头是 B−A。"
+      }
+     ]
+    },
+    {
+     "type": "img",
+     "step": 2,
+     "x": 1005,
+     "y": 235,
+     "w": 785,
+     "h": 650,
+     "src": "difference.svg"
+    }
+   ],
+   "interactions": [
+    {
+     "at": 1,
+     "q": "A 与 B 有同一个起点。哪个箭头表示 A−B？",
+     "answer": 2,
+     "options": [
+      "从 A 终点指向 B 终点",
+      "从共同起点指向两终点中点",
+      "从 B 终点指向 A 终点",
+      "与 A 和 B 都垂直"
+     ],
+     "explain": "(A−B)+B=A，因此从 B 的终点接上差矢量应到达 A 的终点。"
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "heading": "标量乘矢量",
+   "narration": "先看最简单的乘法：用一个数 m 乘矢量 A。[[1]]模长乘上 m 的绝对值；m 为正时方向不变，m 为负时方向反过来，m 为零时得到零矢量。[[2]]例如 A 的分量是二、一，乘二变成四、二，乘负一变成负二、负一。[[3]]数乘满足分配律，因此 m 乘括号 A 加 B，可以分别乘再相加。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "03　标量乘矢量",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 135,
+     "y": 220,
+     "w": 830,
+     "h": 125,
+     "tex": "\\vec B=m\\vec A,\\qquad B=|m|A",
+     "size": 50,
+     "color": "#111111",
+     "align": "left",
+     "hotspot": true,
+     "label": "矢量的数乘",
+     "qa": [
+      {
+       "q": "负数乘矢量会发生什么？",
+       "a": "模按该数的绝对值缩放，方向反向。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 145,
+     "y": 375,
+     "w": 730,
+     "h": 105,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "m > 0：同向",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 145,
+     "y": 455,
+     "w": 730,
+     "h": 105,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "m < 0：反向",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 145,
+     "y": 535,
+     "w": 730,
+     "h": 105,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "m = 0：零矢量",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 130,
+     "y": 665,
+     "w": 860,
+     "h": 125,
+     "tex": "(2,1)\\xrightarrow{\\times 2}(4,2),\\quad(2,1)\\xrightarrow{\\times(-1)}(-2,-1)",
+     "size": 40,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 135,
+     "y": 790,
+     "w": 845,
+     "h": 125,
+     "tex": "m(\\vec A+\\vec B)=m\\vec A+m\\vec B",
+     "size": 44,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 1005,
+     "y": 235,
+     "w": 785,
+     "h": 650,
+     "src": "scale.svg"
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "heading": "标积：得到一个数",
+   "narration": "两矢量之间还可以做标积，也叫点积。[[1]]A 点乘 B 等于两个模相乘，再乘夹角的余弦，结果是一个数。它衡量一个矢量沿另一个方向的投影有多少。[[2]]直角坐标里，对应分量相乘后相加就行。A 点乘自己等于模长的平方，点积也对加法满足分配律。两非零矢量互相垂直时，标积为零。拖动右边箭头，观察夹角变化时点积怎样变号。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "03　标积：得到一个数",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 130,
+     "y": 235,
+     "w": 790,
+     "h": 125,
+     "tex": "\\vec A\\cdot\\vec B=AB\\cos\\theta",
+     "size": 56,
+     "color": "#111111",
+     "align": "left",
+     "important": true,
+     "hotspot": true,
+     "label": "标积的几何定义",
+     "qa": [
+      {
+       "q": "A·B 为什么可能是负数？",
+       "a": "夹角大于 90° 时 cosθ 为负，点积就为负。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 130,
+     "y": 415,
+     "w": 820,
+     "h": 125,
+     "tex": "\\vec A\\cdot\\vec B=A_xB_x+A_yB_y+A_zB_z",
+     "size": 43,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 120,
+     "y": 595,
+     "w": 850,
+     "h": 105,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "非零矢量垂直时，点积为 0。",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 140,
+     "y": 685,
+     "w": 820,
+     "h": 90,
+     "tex": "\\vec A\\cdot\\vec A=A^2",
+     "size": 45,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 120,
+     "y": 790,
+     "w": 860,
+     "h": 100,
+     "tex": "\\vec A\\cdot(\\vec B+\\vec C)=\\vec A\\cdot\\vec B+\\vec A\\cdot\\vec C",
+     "size": 37,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "html",
+     "step": 1,
+     "x": 1010,
+     "y": 235,
+     "w": 790,
+     "h": 690,
+     "src": "sim_vectors.html?mode=products&embed=1",
+     "label": "拖动矢量比较点积与叉积"
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "heading": "矢积：得到垂直矢量",
+   "narration": "叉积与点积不同。[[1]]A 叉乘 B 的结果是矢量，模等于 A 乘 B 乘夹角的正弦。叉积非零时，它的方向同时垂直于 A 和 B，用右手定则判定。[[2]]交换 A、B 的次序会使方向反向，因此叉积不满足交换律。三维坐标计算时，把两矢量的分量排成行列式。两非零矢量平行时，叉积是零矢量；它的模也对应两矢量张成的平行四边形面积。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "03　矢积：得到垂直矢量",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 135,
+     "y": 230,
+     "w": 840,
+     "h": 125,
+     "tex": "|\\vec A\\times\\vec B|=AB\\sin\\theta",
+     "size": 55,
+     "color": "#111111",
+     "align": "left",
+     "important": true,
+     "hotspot": true,
+     "label": "矢积的模与方向",
+     "qa": [
+      {
+       "q": "叉积方向怎么判断？",
+       "a": "右手四指从 A 弯向 B，拇指所指是 A×B 的方向。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 135,
+     "y": 420,
+     "w": 860,
+     "h": 125,
+     "tex": "\\vec B\\times\\vec A=-(\\vec A\\times\\vec B)",
+     "size": 48,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 125,
+     "y": 620,
+     "w": 860,
+     "h": 195,
+     "tex": "\\vec A\\times\\vec B=\\begin{vmatrix}\\hat{\\imath}&\\hat{\\jmath}&\\hat{k}\\\\A_x&A_y&A_z\\\\B_x&B_y&B_z\\end{vmatrix}",
+     "size": 40,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 120,
+     "y": 845,
+     "w": 850,
+     "h": 75,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "模长 = 平行四边形面积；非零结果有方向。",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "html",
+     "step": 1,
+     "x": 1010,
+     "y": 235,
+     "w": 790,
+     "h": 690,
+     "src": "sim_vectors.html?mode=products&embed=1",
+     "label": "拖动矢量比较点积与叉积"
+    }
+   ]
+  },
+  {
+   "id": 13,
+   "heading": "检验叉积运算",
+   "narration": "现在把点积和叉积放在一起辨析。[[1]]下面四个等式，哪一个是错的？先看运算符：点积可以交换次序，叉积交换次序却要加负号。[[2]]所以 A 叉 B 等于 B 叉 A 是错式。其余三式分别是点积交换律、混合积的循环关系和叉积对加法的分配律。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "03　检验叉积运算",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 120,
+     "y": 230,
+     "w": 880,
+     "h": 105,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "判断错误的等式",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 125,
+     "y": 360,
+     "w": 850,
+     "h": 125,
+     "tex": "\\vec A\\cdot\\vec B=\\vec B\\cdot\\vec A",
+     "size": 46,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 125,
+     "y": 485,
+     "w": 850,
+     "h": 125,
+     "tex": "\\vec A\\times\\vec B=\\vec B\\times\\vec A\\quad\\text{?}",
+     "size": 44,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 105,
+     "y": 705,
+     "w": 900,
+     "h": 125,
+     "tex": "\\vec A\\times\\vec B=-(\\vec B\\times\\vec A)",
+     "size": 42,
+     "color": "#111111",
+     "align": "left",
+     "important": true,
+     "hotspot": true,
+     "label": "叉积反交换律",
+     "qa": [
+      {
+       "q": "为什么交换叉积次序要变号？",
+       "a": "模不变，右手定则给出的垂直方向反向，因此向量整体取负。"
+      }
+     ]
+    },
+    {
+     "type": "img",
+     "step": 2,
+     "x": 1005,
+     "y": 235,
+     "w": 785,
+     "h": 650,
+     "src": "products_compare.svg"
+    }
+   ],
+   "interactions": [
+    {
+     "at": 1,
+     "q": "以下哪个等式通常不成立？",
+     "answer": 1,
+     "options": [
+      "$\\vec A\\cdot\\vec B=\\vec B\\cdot\\vec A$",
+      "$\\vec A\\times\\vec B=\\vec B\\times\\vec A$",
+      "$(\\vec A\\times\\vec B)\\cdot\\vec C=(\\vec C\\times\\vec A)\\cdot\\vec B$",
+      "$\\vec C\\times(\\vec A+\\vec B)=\\vec C\\times\\vec A+\\vec C\\times\\vec B$"
+     ],
+     "explain": "叉积满足反交换律：A×B=−(B×A)。"
+    }
+   ]
+  },
+  {
+   "id": 14,
+   "heading": "矢量函数",
+   "narration": "物理中的位移、速度和力往往随时间变。[[1]]当矢量 A 的分量或方向依赖于时间 t，就写成 A 括号 t，称为矢量函数。[[2]]例如位置矢量 r 括号 t 从选定的原点出发，可以用三个随时间变化的坐标分量表示。它的端点随时间移动，描出物体的轨迹。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04　矢量函数",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 120,
+     "y": 235,
+     "w": 820,
+     "h": 230,
+     "fill": "#EDF4FD",
+     "line": "#C8D8EF",
+     "lw": 3,
+     "radius": 18,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 265,
+     "w": 735,
+     "h": 105,
+     "tex": "\\vec A=\\vec A(t)",
+     "size": 61,
+     "color": "#111111",
+     "align": "left",
+     "hotspot": true,
+     "label": "矢量函数的定义",
+     "qa": [
+      {
+       "q": "矢量函数随时间变化，可能变的是什么？",
+       "a": "模、方向，或两者都可以随时间改变。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 165,
+     "y": 395,
+     "w": 730,
+     "h": 65,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "大小、方向，或两者都可以随时间改变。",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 140,
+     "y": 555,
+     "w": 810,
+     "h": 125,
+     "tex": "\\vec r(t)=x(t)\\hat{\\imath}+y(t)\\hat{\\jmath}+z(t)\\hat{k}",
+     "size": 43,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 120,
+     "y": 735,
+     "w": 825,
+     "h": 105,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "端点的位置连续变化，就构成一条轨迹。",
+        "size": 39,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "img",
+     "step": 2,
+     "x": 1000,
+     "y": 220,
+     "w": 800,
+     "h": 680,
+     "src": "trajectory.svg"
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "heading": "矢量函数的导数",
+   "narration": "怎样给一个变化中的矢量求导？[[1]]比较时刻 t 和 t 加 Δt 的两个矢量，后者减前者得到 ΔA。[[2]]先用 ΔA 除以 Δt，再让 Δt 越来越小，得到瞬时导数。注意，ΔA 的方向不一定沿着原来的 A；矢量即使模不变，只要方向转动，导数也可能不为零。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04　矢量函数的导数",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 130,
+     "y": 245,
+     "w": 820,
+     "h": 125,
+     "tex": "\\Delta\\vec A=\\vec A(t+\\Delta t)-\\vec A(t)",
+     "size": 44,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 145,
+     "y": 440,
+     "w": 815,
+     "h": 125,
+     "tex": "\\frac{d\\vec A}{dt}=\\lim_{\\Delta t\\to0}\\frac{\\Delta\\vec A}{\\Delta t}",
+     "size": 52,
+     "color": "#111111",
+     "align": "left",
+     "important": true,
+     "hotspot": true,
+     "label": "矢量导数的定义",
+     "qa": [
+      {
+       "q": "矢量模不变，导数一定是零吗？",
+       "a": "不一定。方向改变也会产生非零的矢量变化量与导数。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 120,
+     "y": 680,
+     "w": 820,
+     "h": 145,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "例：圆周运动中，速度大小不变，方向仍在变。",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 230,
+     "y": 835,
+     "w": 600,
+     "h": 82,
+     "fill": "#FFF1E8",
+     "line": "#E9CCB6",
+     "lw": 3,
+     "radius": 16,
+     "paras": [
+      [
+       {
+        "t": "模不变，不代表导数为零",
+        "size": 37,
+        "color": "#98501D",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 1000,
+     "y": 220,
+     "w": 800,
+     "h": 680,
+     "src": "tangent.svg"
+    }
+   ]
+  },
+  {
+   "id": 16,
+   "heading": "逐分量求导",
+   "narration": "实际计算时，在固定的直角坐标系里最方便。[[1]]对 A 的 x、y、z 三个分量分别求导，再乘各自的单位基矢，就是矢量导数。[[2]]和差逐项求导；若数乘系数 m 也随时间变，先对 m 求导乘 A，再加 m 乘 A 的导数。点积和叉积也有乘积法则。叉积的两项不能换顺序，因为换序会变号。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04　逐分量求导",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 165,
+     "y": 210,
+     "w": 1580,
+     "h": 125,
+     "tex": "\\frac{d\\vec A}{dt}=\\frac{dA_x}{dt}\\hat{\\imath}+\\frac{dA_y}{dt}\\hat{\\jmath}+\\frac{dA_z}{dt}\\hat{k}",
+     "size": 48,
+     "color": "#111111",
+     "align": "left",
+     "important": true,
+     "hotspot": true,
+     "label": "矢量逐分量求导",
+     "qa": [
+      {
+       "q": "固定直角坐标系中如何求 A 的导数？",
+       "a": "Ax、Ay、Az 各自对 t 求导，再组合到三个固定基矢方向。"
+      }
+     ]
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 120,
+     "y": 410,
+     "w": 820,
+     "h": 495,
+     "fill": "#EDF4FD",
+     "line": "#C9D8EB",
+     "lw": 3,
+     "radius": 18,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 980,
+     "y": 410,
+     "w": 820,
+     "h": 495,
+     "fill": "#EAF6F2",
+     "line": "#BEDDCE",
+     "lw": 3,
+     "radius": 18,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 155,
+     "y": 438,
+     "w": 745,
+     "h": 65,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "和差与数乘",
+        "size": 37,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 155,
+     "y": 525,
+     "w": 755,
+     "h": 86,
+     "tex": "(\\vec A\\pm\\vec B)'=\\vec A'\\pm\\vec B'",
+     "size": 38,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 155,
+     "y": 650,
+     "w": 755,
+     "h": 86,
+     "tex": "(m\\vec A)'=m'\\vec A+m\\vec A'",
+     "size": 38,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 155,
+     "y": 780,
+     "w": 745,
+     "h": 100,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "m=m(t)；如 m=t、A=(t,0,0)，则 (mA)′=(2t,0,0)。",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1015,
+     "y": 438,
+     "w": 745,
+     "h": 65,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "点积与叉积",
+        "size": 37,
+        "color": "#146F58",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 1015,
+     "y": 525,
+     "w": 755,
+     "h": 86,
+     "tex": "(\\vec A\\cdot\\vec B)'=\\vec A'\\cdot\\vec B+\\vec A\\cdot\\vec B'",
+     "size": 36,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 1015,
+     "y": 650,
+     "w": 755,
+     "h": 86,
+     "tex": "(\\vec A\\times\\vec B)'=\\vec A'\\times\\vec B+\\vec A\\times\\vec B'",
+     "size": 35,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1015,
+     "y": 780,
+     "w": 745,
+     "h": 105,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "叉积的两项保留原次序。",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": 17,
+   "heading": "矢量函数的积分",
+   "narration": "积分可以看成求导的逆过程。[[1]]如果 B 对 t 的导数等于 A，那么 B 是 A 的一个原函数。所有原函数只差一个常矢量 C，所以不定积分要写加 C。[[2]]物理里常用的定积分是：把速度矢量从 t 一到 t 二积分，得到这段时间的位置变化，也就是位移矢量。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04　矢量函数的积分",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 160,
+     "y": 230,
+     "w": 805,
+     "h": 125,
+     "tex": "\\frac{d\\vec B}{dt}=\\vec A(t)",
+     "size": 52,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 150,
+     "y": 365,
+     "w": 810,
+     "h": 125,
+     "tex": "\\int\\vec A(t)\\,dt=\\vec B(t)+\\vec C",
+     "size": 47,
+     "color": "#111111",
+     "align": "left",
+     "important": true,
+     "hotspot": true,
+     "label": "矢量不定积分",
+     "qa": [
+      {
+       "q": "矢量不定积分为什么要加常矢量？",
+       "a": "任意常矢量的导数都是零，所以同一被积函数有相差常矢量的原函数。"
+      }
+     ]
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 215,
+     "y": 505,
+     "w": 620,
+     "h": 90,
+     "fill": "#EDF4FD",
+     "line": "#C9D8EB",
+     "lw": 3,
+     "radius": 14,
+     "paras": [
+      [
+       {
+        "t": "C 是不随时间变化的常矢量",
+        "size": 34,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 145,
+     "y": 625,
+     "w": 820,
+     "h": 125,
+     "tex": "\\Delta\\vec r=\\int_{t_1}^{t_2}\\vec v(t)\\,dt",
+     "size": 54,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 120,
+     "y": 805,
+     "w": 815,
+     "h": 105,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "累积速度，得到有大小和方向的位移。",
+        "size": 37,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "img",
+     "step": 2,
+     "x": 1000,
+     "y": 220,
+     "w": 800,
+     "h": 680,
+     "src": "displacement.svg"
+    }
+   ]
+  },
+  {
+   "id": 18,
+   "heading": "逐分量积分",
+   "narration": "和求导一样，矢量积分也可以逐分量算。[[1]]A 加 B 的积分，等于两个积分相加；常数可以提出积分号。[[2]]在固定坐标系中，分别积分 Ax、Ay、Az，再按三个基矢合成。对于定积分，若 C 是不随时间变化的常矢量，它也可以从点积或叉积的积分号中提出。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04　逐分量积分",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 120,
+     "y": 205,
+     "w": 820,
+     "h": 300,
+     "fill": "#EDF4FD",
+     "line": "#C9D8EB",
+     "lw": 3,
+     "radius": 18,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 980,
+     "y": 205,
+     "w": 820,
+     "h": 300,
+     "fill": "#EAF6F2",
+     "line": "#BEDDCE",
+     "lw": 3,
+     "radius": 18,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 155,
+     "y": 230,
+     "w": 750,
+     "h": 105,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "和的积分：逐项拆开",
+        "size": 35,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 1015,
+     "y": 230,
+     "w": 750,
+     "h": 105,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "常数因子：提出积分号",
+        "size": 35,
+        "color": "#146F58",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 150,
+     "y": 340,
+     "w": 760,
+     "h": 120,
+     "tex": "\\int(\\vec A+\\vec B)\\,dt=\\int\\vec A\\,dt+\\int\\vec B\\,dt",
+     "size": 37,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 1010,
+     "y": 340,
+     "w": 760,
+     "h": 120,
+     "tex": "\\int m\\vec A\\,dt=m\\int\\vec A\\,dt\\quad(m\\text{ 为常数})",
+     "size": 37,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 155,
+     "y": 550,
+     "w": 1610,
+     "h": 125,
+     "tex": "\\int\\vec A\\,dt=\\left(\\int A_xdt\\right)\\hat{\\imath}+\\left(\\int A_ydt\\right)\\hat{\\jmath}+\\left(\\int A_zdt\\right)\\hat{k}+\\vec C",
+     "size": 42,
+     "color": "#111111",
+     "align": "left",
+     "important": true,
+     "hotspot": true,
+     "label": "矢量逐分量积分",
+     "qa": [
+      {
+       "q": "矢量积分怎样拆成普通积分？",
+       "a": "在固定坐标系中分别积分 Ax、Ay、Az，再按各基矢方向相加。"
+      }
+     ]
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 120,
+     "y": 740,
+     "w": 820,
+     "h": 165,
+     "fill": "#F5F8FC",
+     "line": "#D4DEEA",
+     "lw": 3,
+     "radius": 16,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 980,
+     "y": 740,
+     "w": 820,
+     "h": 165,
+     "fill": "#F5F8FC",
+     "line": "#D4DEEA",
+     "lw": 3,
+     "radius": 16,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 150,
+     "y": 770,
+     "w": 760,
+     "h": 110,
+     "tex": "\\int_{t_1}^{t_2}(\\vec C\\cdot\\vec A)dt=\\vec C\\cdot\\int_{t_1}^{t_2}\\vec A\\,dt",
+     "size": 33,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 1010,
+     "y": 770,
+     "w": 760,
+     "h": 110,
+     "tex": "\\int_{t_1}^{t_2}(\\vec C\\times\\vec A)dt=\\vec C\\times\\int_{t_1}^{t_2}\\vec A\\,dt",
+     "size": 33,
+     "color": "#111111",
+     "align": "left"
+    }
+   ]
+  },
+  {
+   "id": 19,
+   "heading": "检查导数方向",
+   "narration": "最后用一个判断题收束。[[1]]矢量函数 A 的导数，方向是否总沿 A？是否一定垂直 A？都不一定。先选择你认为最准确的说法。[[2]]导数取决于矢量随时间怎样变化：模变会带来沿 A 的分量，方向变会带来转向的分量。只看某一时刻的 A，不能直接确定导数。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04　检查导数方向",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 120,
+     "y": 235,
+     "w": 850,
+     "h": 105,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "矢量导数的方向由什么决定？",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 150,
+     "y": 415,
+     "w": 810,
+     "h": 125,
+     "tex": "\\frac{d\\vec A}{dt}=\\lim_{\\Delta t\\to0}\\frac{\\Delta\\vec A}{\\Delta t}",
+     "size": 52,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 120,
+     "y": 690,
+     "w": 820,
+     "h": 195,
+     "fill": "#EDF4FD",
+     "line": "#C9D8EB",
+     "lw": 3,
+     "radius": 18,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 155,
+     "y": 715,
+     "w": 755,
+     "h": 145,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "关键：导数由模和方向的变化共同决定。",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "矢量导数方向的判断",
+     "qa": [
+      {
+       "q": "若 A 的模不变但方向改变，导数是什么情况？",
+       "a": "导数一般不为零，方向由 A 的转向决定；在模恒定时，导数与 A 垂直。"
+      }
+     ]
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 1000,
+     "y": 220,
+     "w": 800,
+     "h": 680,
+     "src": "direction.svg"
+    }
+   ],
+   "interactions": [
+    {
+     "at": 1,
+     "q": "关于矢量函数 A(t) 的导数方向，哪项最准确？",
+     "answer": 3,
+     "options": [
+      "一定与 A 同向",
+      "一定与 A 垂直",
+      "只取决于 A 此刻的方向",
+      "取决于 A 的模和方向怎样随时间变化"
+     ],
+     "explain": "导数是变化量的极限；模的变化和方向的变化都可能作出贡献。"
+    }
+   ]
+  }
+ ]
+}

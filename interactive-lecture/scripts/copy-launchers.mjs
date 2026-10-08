@@ -1,16 +1,15 @@
-import { chmod, cp, mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises'
+import { chmod, cp, mkdir, readFile, readdir, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 
 const sourceDirectory = fileURLToPath(new URL('../../lecture_factory/assets/launcher/', import.meta.url))
 const distDirectory = fileURLToPath(new URL('../dist/', import.meta.url))
-const legacyLaunchers = ['启动交互课堂.bat', 'serve.ps1', '启动交互课堂.command', 'serve.py']
 
 /** Resolve paths from this script so spaces, Chinese names and the caller's cwd are safe. */
 export async function copyLaunchers({ source = sourceDirectory, destination = distDirectory } = {}) {
   await mkdir(destination, { recursive: true })
   await cp(source, destination, { recursive: true })
-  await Promise.all(legacyLaunchers.map((name) => rm(path.join(destination, name), { force: true })))
+  // Preserve existing launchers and old links; organization never permanently deletes them.
   for (const entry of await readdir(destination, { withFileTypes: true })) {
     if (!entry.isFile() || !entry.name.endsWith('.command')) continue
     const filename = path.join(destination, entry.name)

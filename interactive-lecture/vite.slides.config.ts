@@ -17,6 +17,8 @@ export default defineConfig({
     },
   },
   build: {
+    // The temporary build directory is reusable; cleanup is explicit and recoverable.
+    emptyOutDir: false,
     outDir: 'dist-slides',
     assetsInlineLimit: 100 * 1024 * 1024,
     rollupOptions: {

@@ -1,33 +1,10 @@
 @echo off
-cd /d %~dp0
-title 大学物理交互课堂 · 本地服务
-
-echo ============================================
-echo   大学物理交互课堂 · 本地启动器
-echo   关闭本窗口即停止服务
-echo ============================================
-echo.
-
-where python >nul 2>nul
-if %errorlevel%==0 goto :python
-where py >nul 2>nul
-if %errorlevel%==0 goto :py
-goto :powershell
-
-:python
-echo 使用 Python 启动：http://localhost:8080/
-start "" http://localhost:8080/
-python -m http.server 8080
-goto :end
-
-:py
-echo 使用 Python 启动：http://localhost:8080/
-start "" http://localhost:8080/
-py -m http.server 8080
-goto :end
-
-:powershell
-echo 未检测到 Python，改用 Windows 自带 PowerShell 启动……
-powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0serve-win.ps1"
-
-:end
+setlocal
+cd /d "%~dp0"
+title Physics interactive classroom - local server
+echo Starting the local classroom. Keep this window open while teaching.
+echo A free loopback port in 8080-8090 will be selected by the server.
+powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File "%~dp0serve-win.ps1" %*
+set "launcher_status=%errorlevel%"
+if not "%launcher_status%"=="0" echo Local server failed. Read the error above before retrying.
+exit /b %launcher_status%

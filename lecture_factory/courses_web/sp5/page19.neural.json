@@ -1,0 +1,39 @@
+{
+  "recipe_sha256": "424e88fb11df63968d5dea3b8223c213b1881a5bbd7bf6b1ba4f44610b03940f",
+  "engine": "node-edge-tts",
+  "voice": "zh-CN-YunxiNeural",
+  "volume": "+30%",
+  "format": "audio-24khz-96kbitrate-mono-mp3",
+  "sample_rate": 24000,
+  "gaps": [
+    0.4,
+    0.65
+  ],
+  "tempo": 1.0,
+  "sentences": [
+    "继续用同一台仪器，做另一项工程判断。",
+    "假设仪器的最小可分辨角已经固定，原来恰好达到瑞利边界，能分开同一物平面中相隔一点零毫米的两个目标。",
+    "观察距离增大到原来的两倍，又希望仍然分开同样一点零毫米的间距。",
+    "在波长不变、模型条件相同的情况下，有效孔径至少应当怎样调整？",
+    "这次不能只盯着角公式，还要把目标角间距随距离的变化算进去。",
+    "距离加倍后，同一目标间距对应的角度减半，所以需要把最小可分辨角也降到一半。",
+    "因此有效孔径应加倍。",
+    "这个推理同时用到了衍射角宽度和物方几何，体现了从公式到设计的完整链条。",
+    "若条件允许缩短波长，也能降低衍射角宽度；但选波长还要兼顾目标辐射、介质透过和探测器响应，不能只优化一个比值就宣称工程问题全部解决。"
+  ],
+  "gap_policy": {
+    "schema": "sp5-quiz-sampling-margin/v1",
+    "base_normal_seconds": 0.4,
+    "base_emotive_seconds": 0.65,
+    "overrides": [
+      {
+        "after_sentence_index_zero_based": 3,
+        "after_sentence": "在波长不变、模型条件相同的情况下，有效孔径至少应当怎样调整？",
+        "seconds": 1.35
+      }
+    ],
+    "trigger_offset_seconds": 0.1,
+    "minimum_trigger_to_next_sentence_seconds": 1.2
+  },
+  "file_sha256": "5c5169cc9ff76d6d146886cfb56abf91bb9113a3ecbde0803fce8d9485a978e6"
+}

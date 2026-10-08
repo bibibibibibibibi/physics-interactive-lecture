@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="同起点矢量 A 减 B 的几何方向">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fafdff"/><stop offset="1" stop-color="#eaf3ff"/></linearGradient>
+  <marker id="b" markerWidth="22" markerHeight="22" refX="2.5" refY="11" orient="auto" markerUnits="userSpaceOnUse"><path d="M2.5 3 L19.5 11 L2.5 19 Z" fill="#244B88"/></marker>
+  <marker id="o" markerWidth="22" markerHeight="22" refX="2.5" refY="11" orient="auto" markerUnits="userSpaceOnUse"><path d="M2.5 3 L19.5 11 L2.5 19 Z" fill="#d16b2b"/></marker>
+  <marker id="g" markerWidth="22" markerHeight="22" refX="2.5" refY="11" orient="auto" markerUnits="userSpaceOnUse"><path d="M2.5 3 L19.5 11 L2.5 19 Z" fill="#168365"/></marker>
+  <style>
+  text{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;fill:#244B88}
+  .title{font-size:32px;font-weight:700}.label{font-size:31px;font-weight:700}.small{font-size:24px;font-weight:600}.formula{font-size:35px;font-weight:700}
+  .blue{fill:#244B88}.orange{fill:#d16b2b}.green{fill:#168365}.muted{fill:#6d829a}
+  .axis{stroke:#9fb2c9;stroke-width:3;stroke-linecap:round}.dash{stroke:#a6b8cb;stroke-width:3;stroke-dasharray:10 10;fill:none}
+  .vb{stroke:#244B88;stroke-width:8;stroke-linecap:butt;fill:none;marker-end:url(#b)}
+  .vo{stroke:#d16b2b;stroke-width:8;stroke-linecap:butt;fill:none;marker-end:url(#o)}
+  .vg{stroke:#168365;stroke-width:8;stroke-linecap:butt;fill:none;marker-end:url(#g)}
+  .point{fill:#244B88}
+  </style>
+</defs>
+<rect width="800" height="600" rx="28" fill="url(#bg)"/>
+
+<path d="M95 438 H740 M175 540 V105" class="axis" opacity=".5"/>
+<path d="M175 438 L628.97 277.66" class="vb"/>
+<path d="M175 438 L355.52 169.11" class="vo"/>
+<path d="M365 155 L629.31 265.45" class="vg"/>
+<circle cx="175" cy="438" r="5" class="point"/>
+<text x="123" y="478" class="small muted">O</text>
+<text x="486" y="370" class="label blue">A</text>
+<text x="215" y="264" class="label orange">B</text>
+<text x="493" y="170" class="formula green">A − B</text>
+<text x="160" y="550" class="small muted">从 B 的终点指向 A 的终点</text>
+
+</svg>

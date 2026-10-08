@@ -1,0 +1,3987 @@
+{
+ "title": "驻波",
+ "nav": "专题·第4学时　驻波",
+ "footer": "专题　驻波",
+ "character": "aqiang",
+ "logoScale": 0.67,
+ "theme": "special",
+ "sections": [
+  {
+   "title": "驻波的形成",
+   "page": 4
+  },
+  {
+   "title": "特征与边界",
+   "page": 8
+  },
+  {
+   "title": "应用与迁移",
+   "page": 17
+  },
+  {
+   "title": "小结与探究",
+   "page": 22
+  }
+ ],
+ "pages": [
+  {
+   "id": 1,
+   "heading": "封面",
+   "narration": "同学们好，欢迎来到大学物理课堂。今天我们学习第十章波动中的[[1]]驻波。我们会亲手改变两列波的条件，用叠加原理推出驻波方程，再把波节和波腹当作一把空间标尺，解释生活中的现象。请准备好观察、计算，也准备好修正自己的第一印象。",
+   "elements": [
+    {
+     "type": "img",
+     "step": 0,
+     "x": 0,
+     "y": 0,
+     "w": 1920,
+     "h": 1080,
+     "src": "cover.png",
+     "decorative": true
+    },
+    {
+     "type": "img",
+     "step": 0,
+     "x": 1715,
+     "y": 16,
+     "w": 181,
+     "h": 78,
+     "src": "logo.png",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 155,
+     "y": 345,
+     "w": 680,
+     "h": 160,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "驻 波",
+        "size": 112,
+        "color": "#244B88",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 560,
+     "w": 730,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "STANDING WAVE",
+        "size": 40,
+        "color": "#244B88",
+        "b": false
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 775,
+     "w": 1100,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "选自《大学物理》第10章 波动 第3节",
+        "size": 36,
+        "color": "#273444",
+        "b": false
+       }
+      ]
+     ],
+     "important": false
+    }
+   ],
+   "source_pages": [
+    1
+   ]
+  },
+  {
+   "id": 2,
+   "heading": "目录",
+   "narration": "本课有四个教学段。先看[[1]]驻波的形成，明确两列波怎样组合，这是重点。然后研究[[2]]驻波的特征与边界条件，尤其是空间振幅和相位分区，这是难点。第三段是[[3]]应用与迁移，我们用热斑估算光速，再看鱼洗和粒子加速器。最后用[[4]]小结与探究，把形成条件、空间图样和工程应用连成一条推理链。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 130,
+     "w": 800,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "目 录",
+        "size": 64,
+        "color": "#244B88",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 140,
+     "y": 370,
+     "w": 360,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "01",
+        "size": 48,
+        "color": "#244B88",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 140,
+     "y": 465,
+     "w": 56,
+     "h": 5,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 140,
+     "y": 525,
+     "w": 400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "驻波的形成",
+        "size": 40,
+        "color": "#16283F",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 140,
+     "y": 665,
+     "w": 380,
+     "h": 60,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "重点",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 575,
+     "y": 370,
+     "w": 360,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02",
+        "size": 48,
+        "color": "#244B88",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 575,
+     "y": 465,
+     "w": 56,
+     "h": 5,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 575,
+     "y": 525,
+     "w": 400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "特征与边界",
+        "size": 40,
+        "color": "#16283F",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 575,
+     "y": 665,
+     "w": 380,
+     "h": 60,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "重点、难点",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 370,
+     "w": 360,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "03",
+        "size": 48,
+        "color": "#244B88",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 1010,
+     "y": 465,
+     "w": 56,
+     "h": 5,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 525,
+     "w": 400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "应用与迁移",
+        "size": 40,
+        "color": "#16283F",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 665,
+     "w": 380,
+     "h": 60,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1445,
+     "y": 370,
+     "w": 360,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04",
+        "size": 48,
+        "color": "#244B88",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 1445,
+     "y": 465,
+     "w": 56,
+     "h": 5,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1445,
+     "y": 525,
+     "w": 400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "小结与探究",
+        "size": 40,
+        "color": "#16283F",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1445,
+     "y": 665,
+     "w": 380,
+     "h": 60,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    }
+   ],
+   "source_pages": [
+    3
+   ]
+  },
+  {
+   "id": 3,
+   "heading": "厨房里的悬念",
+   "narration": "先看原课件里的微波炉和巧克力示意。经过短时间加热，巧克力有些位置先熔化，有些位置还保持原样。值得注意的是，[[1]]先熔化的位置呈现相对稳定的间隔。这个间隔能告诉我们什么？微波在炉腔中反射，可能让空间中有些位置一直振动得强，有些位置一直振动得弱。于是有了今天的悬念：[[2]]一台微波炉加一块巧克力，能否估算光速？先把答案留住。我们需要弄清楚这些位置为什么固定，以及相邻强振动位置相隔多远，才能把这次观察变成测量。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "00　引入",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 120,
+     "y": 250,
+     "w": 730,
+     "h": 350,
+     "src": "microwave.png"
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 990,
+     "y": 285,
+     "w": 760,
+     "h": 306,
+     "src": "chocolate.png"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 125,
+     "y": 690,
+     "w": 1570,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "规律热斑的间距，能告诉我们什么？",
+        "size": 44,
+        "color": "#244B88",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 125,
+     "y": 820,
+     "w": 1620,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一台微波炉 + 一块巧克力，能否估算光速？",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "important": false,
+     "hotspot": true,
+     "label": "一台微波炉 + 一块巧克力，能否估算光速？",
+     "qa": [
+      {
+       "q": "热斑图片是实测数据吗？",
+       "a": "这是原课件的教学示意。后续使用原稿给定的频率和斑距作为估算示例，不把图像当作本课堂实际测量数据。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 120,
+     "y": 620,
+     "w": 780,
+     "h": 60,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "原课件示意：空间分布值得观察",
+        "size": 28,
+        "color": "#273444",
+        "b": false
+       }
+      ]
+     ],
+     "important": false
+    }
+   ],
+   "source_pages": [
+    2
+   ]
+  },
+  {
+   "id": 4,
+   "heading": "相干与固定点振动",
+   "narration": "先把判断驻波之前的基础补齐。两列波在同一个质点相遇，位移按线性叠加原理相加。它们能形成稳定的干涉图样，需要[[1]]频率相同、振动方向相同，并且相位差不随时间改变。振动方向指质点上下振动的方向，传播方向则是图样沿绳子前进的方向，这两件事要分清。源稿用希腊字母纽表示频率，本课统一写成艾弗。[[2]]角频率欧米伽等于二派乘频率，波数凯等于二派除以波长，波速等于频率乘波长。再固定一个位置观察。[[3]]相位差恒定时，这个点的合振幅也确定，平方等于两个分振幅的平方之和，再加两倍振幅乘积乘相位差的余弦。这解释了稳定的强弱分布，但还没有保证最弱的地方振幅恰好为零。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "01　相干条件与叠加",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 150,
+     "y": 245,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同频率　同振动方向　相位差对时间恒定",
+        "size": 46,
+        "color": "#244B88",
+        "b": true
+       }
+      ]
+     ],
+     "important": true,
+     "hotspot": true,
+     "label": "同频率　同振动方向　相位差对时间恒定",
+     "qa": [
+      {
+       "q": "相位差一定要是零吗？",
+       "a": "不需要。相干要求相位差对时间恒定，零只是便于推导的一种取值。恒定的非零初相位差会平移理想驻波的波节位置。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 150,
+     "y": 395,
+     "w": 1550,
+     "h": 120,
+     "tex": "\\nu=f,\\qquad\\omega=2\\pi f,\\qquad k=\\frac{2\\pi}{\\lambda},\\qquad v=f\\lambda",
+     "size": 48,
+     "color": "#16283F",
+     "align": "left",
+     "important": false
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 150,
+     "y": 615,
+     "w": 1600,
+     "h": 125,
+     "tex": "B^2=A_1^2+A_2^2+2A_1A_2\\cos\\Delta\\varphi",
+     "size": 56,
+     "color": "#16283F",
+     "align": "left",
+     "important": false,
+     "hotspot": true,
+     "label": "固定点合振幅",
+     "qa": [
+      {
+       "q": "固定点合振幅为什么不随时间改变？",
+       "a": "同频且相位差不随时间变化时，合振幅公式右边只含固定的振幅和该点的相位差。因此B对时间不变，但不同位置的B可以不同。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 150,
+     "y": 825,
+     "w": 1600,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "稳定的干涉强弱分布，还不等于有零振幅波节",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    }
+   ],
+   "source_pages": [
+    4,
+    5,
+    6
+   ]
+  },
+  {
+   "id": 5,
+   "heading": "传播方向的判据",
+   "narration": "看同一介质中的两列简谐行波。第一列写成[[1]]y一等于A一乘余弦，括号里是欧米伽t减凯x。怎样判断方向？盯住同一个波峰，它对应的相位不变。因此欧米伽t减凯x等于常数，解出x随时间增大，所以图样向右传播。第二列写成[[2]]欧米伽t加凯x，它的等相位位置随时间减小，所以向左传播。请注意，两个式子里的y都表示质点的竖直位移，正负号在相位里决定的是水平方向的传播。由此我们才确认：[[3]]两列波相向传播。下一步还要比较振幅，不能只凭方向就宣布形成了理想驻波。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "01　两列相向行波",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 150,
+     "y": 250,
+     "w": 1500,
+     "h": 115,
+     "tex": "y_1=A_1\\cos(\\omega t-kx)",
+     "size": 62,
+     "color": "#16283F",
+     "align": "left",
+     "important": false
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 150,
+     "y": 390,
+     "w": 1600,
+     "h": 100,
+     "tex": "\\omega t-kx=C\\quad\\Rightarrow\\quad x=\\frac{\\omega}{k}t-\\frac Ck",
+     "size": 45,
+     "color": "#16283F",
+     "align": "left",
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 150,
+     "y": 495,
+     "w": 1550,
+     "h": 75,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "等相位位置向 +x 移动：向右传播",
+        "size": 38,
+        "color": "#0000CD",
+        "b": false
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 150,
+     "y": 625,
+     "w": 1500,
+     "h": 115,
+     "tex": "y_2=A_2\\cos(\\omega t+kx)",
+     "size": 62,
+     "color": "#16283F",
+     "align": "left",
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 150,
+     "y": 750,
+     "w": 1550,
+     "h": 75,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "等相位位置向 −x 移动：向左传播",
+        "size": 38,
+        "color": "#B56206",
+        "b": false
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 150,
+     "y": 880,
+     "w": 1550,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "振动方向相同，传播方向相反",
+        "size": 42,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "important": true,
+     "hotspot": true,
+     "label": "振动方向相同，传播方向相反",
+     "qa": [
+      {
+       "q": "同振动方向和反传播方向矛盾吗？",
+       "a": "不矛盾。横波中质点可以都沿竖直方向振动，而两列波的图样分别沿水平方向向右、向左传播。"
+      }
+     ]
+    }
+   ],
+   "source_pages": [
+    7,
+    8
+   ]
+  },
+  {
+   "id": 6,
+   "heading": "改变条件的对照实验",
+   "narration": "现在进入实验室。蓝线是向右的第一列波，橙线是第二列波，红线是它们的和。先看[[1]]等幅、同频、反向这一组，红线有些位置始终穿过零点，整体图样没有往前走。注意看自动对照：[[2]]把第二列波的振幅调小，最小振幅不再为零，这属于部分驻波。再让两列波同向，合成图样就向前移动。最后恢复等幅反向，固定波节重新出现。请暂停下来，亲手点选对照条件或调整振幅，验证这一点。接下来作一个迁移判断：[[3]]若两列波频率相同且反向传播，只把一个源的初相位稳定地改成二分之一派，理想驻波会怎样？回答时要区分恒定的初相变化与持续变化的频率差。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "01　形成条件的对照实验",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "html",
+     "step": 1,
+     "x": 80,
+     "y": 230,
+     "w": 1760,
+     "h": 720,
+     "src": "sim_standing.html?embed=formation",
+     "label": "驻波实验室：formation",
+     "msgs": {
+      "1": "reset",
+      "2": "demo-standing"
+     }
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 140,
+     "y": 963,
+     "w": 1600,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "迁移判断：恒定初相变化会怎样？",
+        "size": 32,
+        "color": "#244B88",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    }
+   ],
+   "interactions": [
+    {
+     "at": 3,
+     "q": "保持等幅、同频、反向，把第二列波初相固定为 π/2，结果如何？",
+     "answer": 1,
+     "options": [
+      "所有点都成为波节",
+      "理想驻波仍存在，波节位置平移",
+      "频率自动改变，图样无法稳定"
+     ],
+     "explain": "恒定初相位差满足相干条件。和差化积仍能把波写成空间因子乘时间因子，波节位置改变但仍固定。频率不同才会使相位差随时间改变。"
+    }
+   ],
+   "source_pages": [
+    7,
+    8,
+    9
+   ]
+  },
+  {
+   "id": 7,
+   "heading": "理想驻波的定义",
+   "narration": "把实验结果整理成概念。在线性、无耗散的同一介质中，两列[[1]]等幅、同频、同振动方向，并沿相反方向传播的简谐波，能够组成理想纯驻波。它的特点不是整根绳子不动，而是波节和波腹的空间位置固定。波腹上的质点照样上下振动。源稿说波形稳定，这里应理解为振幅包络和节点图样稳定，瞬时位移仍随时间改变。若两列波只有相干而振幅不相等，叠加仍有稳定包络，却还有净行波成分。我们在实验中见到的最小振幅不为零，就是提醒。接下来用[[2]]位移叠加，把理想驻波的空间因子和时间因子真正推出来，看看这些固定的位置究竟从哪来。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "01　理想纯驻波",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 160,
+     "y": 265,
+     "w": 1550,
+     "h": 95,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "等幅、同频、同振动方向、反向传播",
+        "size": 46,
+        "color": "#244B88",
+        "b": true
+       }
+      ]
+     ],
+     "important": true,
+     "hotspot": true,
+     "label": "等幅、同频、同振动方向、反向传播",
+     "qa": [
+      {
+       "q": "驻波的波形稳定，是不是整根绳子都静止？",
+       "a": "不是。稳定的是振幅包络以及波节、波腹的位置。除波节外的质点仍随时间振动，瞬时曲线会伸展、变平、反向。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 160,
+     "y": 445,
+     "w": 1490,
+     "h": 95,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "波节、波腹位置固定",
+        "size": 48,
+        "color": "#16283F",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 160,
+     "y": 610,
+     "w": 1490,
+     "h": 95,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "非波节点仍然振动，瞬时曲线随时间改变",
+        "size": 40,
+        "color": "#273444",
+        "b": false
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 160,
+     "y": 805,
+     "w": 1490,
+     "h": 95,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "用位移叠加解释固定图样",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    }
+   ],
+   "source_pages": [
+    10
+   ]
+  },
+  {
+   "id": 8,
+   "heading": "和差化积推导",
+   "narration": "为让推导清楚，取两列波初相为零，并把两个振幅都写成A。首先按[[1]]位移叠加，y等于A乘余弦欧米伽t减凯x，再加A乘余弦欧米伽t加凯x。接着用[[2]]和差化积，余弦u加余弦v，等于二乘余弦的平均角，再乘余弦的半差角。这里u是欧米伽t减凯x，v是欧米伽t加凯x。相加再除以二得到欧米伽t，相减再除以二得到负凯x。因为余弦是偶函数，负凯x的余弦等于凯x的余弦。因此得到[[3]]y等于二A乘余弦凯x，再乘余弦欧米伽t。请读懂结构：固定x后，第一个因子只决定这个点怎样振动，第二个因子给出共同的时间节奏。[[4]]空间和时间分离，正是固定图样的数学来源。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　驻波方程的来源",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 145,
+     "y": 235,
+     "w": 1630,
+     "h": 120,
+     "tex": "y=A\\cos(\\omega t-kx)+A\\cos(\\omega t+kx)",
+     "size": 46,
+     "color": "#16283F",
+     "align": "left",
+     "important": false
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 145,
+     "y": 410,
+     "w": 1660,
+     "h": 115,
+     "tex": "\\cos u+\\cos v=2\\cos\\frac{u+v}{2}\\cos\\frac{u-v}{2}",
+     "size": 48,
+     "color": "#16283F",
+     "align": "left",
+     "important": false
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 145,
+     "y": 565,
+     "w": 1650,
+     "h": 105,
+     "tex": "\\frac{u+v}{2}=\\omega t,\\qquad\\frac{u-v}{2}=-kx,\\qquad\\cos(-kx)=\\cos(kx)",
+     "size": 41,
+     "color": "#16283F",
+     "align": "left",
+     "important": false
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 145,
+     "y": 745,
+     "w": 1630,
+     "h": 125,
+     "tex": "y(x,t)=2A\\cos(kx)\\cos(\\omega t)",
+     "size": 64,
+     "color": "#16283F",
+     "align": "left",
+     "important": true,
+     "hotspot": true,
+     "label": "驻波方程推导",
+     "qa": [
+      {
+       "q": "为什么空间因子前面出现2A？",
+       "a": "两个等幅波的位移相加，利用和差化积时产生因子2。它只说明波腹的最大振幅为2A，并不表示每一个位置都以2A振动。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 145,
+     "y": 918,
+     "w": 1600,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "空间因子确定图样，时间因子确定振动节奏",
+        "size": 36,
+        "color": "#244B88",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    }
+   ],
+   "source_pages": [
+    11
+   ]
+  },
+  {
+   "id": 9,
+   "heading": "振幅与波节波腹",
+   "narration": "上一页的空间系数可能为正，也可能为负，但振幅必须非负。因此固定质点的[[1]]振幅B等于二A乘余弦凯x的绝对值。要找波节，就令B为零。A不为零，所以余弦凯x必须为零。于是[[2]]凯x等于二n加一乘二分之一派，再代入凯等于二派除以波长，得到x等于二n加一乘四分之一波长。波节不是某一瞬间恰好经过零位移的点，而是始终不振动的点。找波腹时，绝对值余弦等于一，所以[[3]]凯x等于n派，位置是n乘二分之一波长，振幅为二A。这里原点取在波腹，n取整数。换一个原点，绝对位置表达式会平移，但相邻间距不会改变。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　振幅、波节与波腹",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 150,
+     "y": 245,
+     "w": 1590,
+     "h": 115,
+     "tex": "B(x)=|2A\\cos(kx)|",
+     "size": 62,
+     "color": "#16283F",
+     "align": "left",
+     "important": true,
+     "hotspot": true,
+     "label": "振幅取绝对值",
+     "qa": [
+      {
+       "q": "空间系数为负是不是负振幅？",
+       "a": "振幅是非负的B=|2Acos(kx)|。空间系数的负号表示该区段振动相位相对正系数区段差π。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 150,
+     "y": 425,
+     "w": 320,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "波节",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 505,
+     "y": 410,
+     "w": 1260,
+     "h": 135,
+     "tex": "\\cos(kx)=0\\Rightarrow kx=\\frac{(2n+1)\\pi}{2}\\Rightarrow x=\\frac{(2n+1)\\lambda}{4}",
+     "size": 40,
+     "color": "#16283F",
+     "align": "left",
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 150,
+     "y": 570,
+     "w": 1500,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "B = 0，始终静止",
+        "size": 40,
+        "color": "#273444",
+        "b": false
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 150,
+     "y": 715,
+     "w": 320,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "波腹",
+        "size": 44,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 505,
+     "y": 695,
+     "w": 1250,
+     "h": 135,
+     "tex": "|\\cos(kx)|=1\\Rightarrow kx=n\\pi\\Rightarrow x=\\frac{n\\lambda}{2}",
+     "size": 45,
+     "color": "#16283F",
+     "align": "left",
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 150,
+     "y": 885,
+     "w": 1500,
+     "h": 75,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "B = 2A；本页原点取在波腹，n 为整数",
+        "size": 36,
+        "color": "#273444",
+        "b": false
+       }
+      ]
+     ],
+     "important": false
+    }
+   ],
+   "source_pages": [
+    12
+   ]
+  },
+  {
+   "id": 10,
+   "heading": "驻波的空间标尺",
+   "narration": "现在只比较位置，不再抄上一页的整个方程。相邻两个波节的编号相差一，把它们的位置相减，得到[[1]]二分之一波长。相邻两个波腹同样如此。波节与最近波腹的空间相位相差二分之一派，所以它们相隔[[2]]四分之一波长。请留意，曲线上相邻两个向上的波峰相隔一个波长，而驻波中相邻波腹可以在同一时刻一个向上、一个向下，因此只相隔半个波长。把这把尺子用一次：[[3]]如果测得相邻波节间距十二厘米，同一介质中的波速为每秒六米，波的频率是多少？先由空间间距求波长，再由波速除以波长，别把半波长当成完整波长。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　相邻位置与波长",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 180,
+     "y": 290,
+     "w": 930,
+     "h": 95,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "相邻波节 / 相邻波腹",
+        "size": 44,
+        "color": "#16283F",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 1210,
+     "y": 275,
+     "w": 470,
+     "h": 120,
+     "tex": "d=\\lambda/2",
+     "size": 58,
+     "color": "#16283F",
+     "align": "left",
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 180,
+     "y": 500,
+     "w": 980,
+     "h": 95,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "波节到最近波腹",
+        "size": 44,
+        "color": "#16283F",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 1210,
+     "y": 485,
+     "w": 470,
+     "h": 120,
+     "tex": "d=\\lambda/4",
+     "size": 58,
+     "color": "#16283F",
+     "align": "left",
+     "important": false,
+     "hotspot": true,
+     "label": "最近节腹间距",
+     "qa": [
+      {
+       "q": "任意波节和任意波腹都相距λ/4吗？",
+       "a": "不是。λ/4只指波节到最近的波腹。更远的波节与波腹可以相隔3λ/4、5λ/4等奇数个四分之一波长。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 180,
+     "y": 755,
+     "w": 1480,
+     "h": 115,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "测得节—节 12 cm，波速 6 m/s，求频率",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 180,
+     "y": 905,
+     "w": 1400,
+     "h": 65,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "先辨认间距，再求波长和频率",
+        "size": 34,
+        "color": "#273444",
+        "b": false
+       }
+      ]
+     ],
+     "important": false
+    }
+   ],
+   "interactions": [
+    {
+     "at": 3,
+     "q": "相邻波节间距12 cm，波速6 m/s，频率为多少？",
+     "answer": 2,
+     "options": [
+      "50 Hz",
+      "12.5 Hz",
+      "25 Hz"
+     ],
+     "explain": "相邻波节间距等于λ/2，因此λ=24 cm=0.24 m，f=v/λ=6/0.24=25 Hz。"
+    }
+   ],
+   "source_pages": [
+    13
+   ]
+  },
+  {
+   "id": 11,
+   "heading": "空间符号与相位",
+   "narration": "波节两边的振动方向为什么会相反？把空间系数记作C。先看[[1]]C大于零的区段，固定质点的位移就是振幅B乘余弦欧米伽t。再看[[2]]C小于零的区段，负的余弦可以写成余弦欧米伽t加派，因此这些质点比前一类差半个周期，也就是相位差派。两个相邻波节之间，余弦凯x的符号不改变，所有非波节点就[[3]]同相振动，尽管它们的振幅大小不同。跨过一个波节，符号翻转，相邻区段反相。特别提醒：波节振幅为零，无法为它定义这类振动相位。比较相位时，先排除波节，不能说波节也和旁边的点同相。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　空间系数决定相位分区",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 150,
+     "y": 255,
+     "w": 1600,
+     "h": 125,
+     "tex": "C(x)>0:\\qquad y=B\\cos(\\omega t)",
+     "size": 56,
+     "color": "#16283F",
+     "align": "left",
+     "important": false
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 150,
+     "y": 460,
+     "w": 1600,
+     "h": 125,
+     "tex": "C(x)<0:\\qquad y=-B\\cos(\\omega t)=B\\cos(\\omega t+\\pi)",
+     "size": 49,
+     "color": "#16283F",
+     "align": "left",
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 150,
+     "y": 670,
+     "w": 1620,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同一区段非波节点同相，相邻区段非波节点反相",
+        "size": 40,
+        "color": "#244B88",
+        "b": true
+       }
+      ]
+     ],
+     "important": true,
+     "hotspot": true,
+     "label": "同一区段非波节点同相，相邻区段非波节点反相",
+     "qa": [
+      {
+       "q": "同相的两个点，位移大小必须相同吗？",
+       "a": "不必须。同相表示同一时刻沿相同振动节奏运动。驻波同一区段各点的振幅B(x)不同，位移大小通常不同，但相位相同。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 150,
+     "y": 855,
+     "w": 1500,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "波节振幅为零，振动相位无定义",
+        "size": 42,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "important": false,
+     "hotspot": true,
+     "label": "波节振幅为零，振动相位无定义",
+     "qa": [
+      {
+       "q": "为什么波节没有振动相位？",
+       "a": "零振幅点的位移恒为零，任意相位都会给出同一个零结果。因此无法从它的运动定义振动相位。"
+      }
+     ]
+    }
+   ],
+   "source_pages": [
+    14
+   ]
+  },
+  {
+   "id": 12,
+   "heading": "测量点跨越波节",
+   "narration": "用实验室检验刚才的解释。波长设为两米，蓝色曲线是瞬时位移，虚线是振幅包络。先看[[1]]紫色和绿色测量点与右侧读数，不要把包络当成另一次振动。自动演示会让[[2]]第二个测量点逐渐跨过一个波节。它靠近波节时振幅减小，到波节振幅为零，穿过波节后振幅再增大，相位标记从零变成派。暂停后也可以亲手拖动测量点或滑块。现在请作判断：[[3]]波长仍是两米，取x一等于零点二米，x二等于零点四米，两个点的相位和振幅怎样比较？请先根据空间因子确定波节位置，再分别比较符号与绝对值。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　相位分区的可测检验",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "html",
+     "step": 1,
+     "x": 80,
+     "y": 230,
+     "w": 1760,
+     "h": 720,
+     "src": "sim_standing.html?embed=phase",
+     "label": "驻波实验室：phase",
+     "msgs": {
+      "1": "reset",
+      "2": "demo-phase"
+     }
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 140,
+     "y": 963,
+     "w": 1640,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "λ = 2 m：比较 x₁ = 0.2 m 与 x₂ = 0.4 m",
+        "size": 30,
+        "color": "#244B88",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    }
+   ],
+   "interactions": [
+    {
+     "at": 3,
+     "q": "在y=2Acos(kx)cos(ωt)、λ=2 m中，x=0.2 m和x=0.4 m两点如何振动？",
+     "answer": 0,
+     "options": [
+      "同相，0.2 m处振幅更大",
+      "反相，0.4 m处振幅更大",
+      "其中一点是波节"
+     ],
+     "explain": "k=π m⁻¹，两点的cos(kx)都为正，故同相。cos(0.2π)>cos(0.4π)>0，因而B(0.2 m)>B(0.4 m)，两点均不是波节。"
+    }
+   ],
+   "source_pages": [
+    12,
+    14
+   ]
+  },
+  {
+   "id": 13,
+   "heading": "固定与自由边界",
+   "narration": "实际驻波常来自入射波和反射波。边界怎样约束它们？对横向振动的理想弦，[[1]]固定端不能产生位移，所以该端始终是位移波节。为了相互抵消位移，固定端的反射波发生相位翻转。[[2]]理想自由端可以移动，但横向力为零，这对应位移曲线在端点的斜率为零，非零简谐模式在该端形成位移波腹，反射位移不翻转。这里的自由端是理想零横向力边界，不是随便把弦松开就能稳定演示的实际装置。还要限定比较的量：我们谈的是位移波节和波腹。声管中的声压、电磁腔中的电场，需要先说明是哪一个场量，不能把这套名字直接混用。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　边界条件与反射",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 150,
+     "y": 240,
+     "w": 760,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "固定端：位移波节",
+        "size": 46,
+        "color": "#244B88",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 150,
+     "y": 390,
+     "w": 720,
+     "h": 125,
+     "tex": "y(0,t)=0",
+     "size": 60,
+     "color": "#16283F",
+     "align": "left",
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 150,
+     "y": 595,
+     "w": 735,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "反射位移翻转",
+        "size": 40,
+        "color": "#273444",
+        "b": false
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1050,
+     "y": 240,
+     "w": 760,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "理想自由端：位移波腹",
+        "size": 42,
+        "color": "#244B88",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 1050,
+     "y": 390,
+     "w": 720,
+     "h": 130,
+     "tex": "\\frac{\\partial y}{\\partial x}=0",
+     "size": 60,
+     "color": "#16283F",
+     "align": "left",
+     "important": false,
+     "hotspot": true,
+     "label": "自由端零斜率条件",
+     "qa": [
+      {
+       "q": "为什么自由端对应斜率为零？",
+       "a": "理想弦端没有横向外力，弦张力的横向分量必须为零。在线性小振幅模型中，这要求端点位移曲线的空间导数为零。非零简谐模式在该端形成位移波腹。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1050,
+     "y": 595,
+     "w": 720,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "反射位移不翻转",
+        "size": 40,
+        "color": "#273444",
+        "b": false
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 150,
+     "y": 835,
+     "w": 1570,
+     "h": 95,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "先明确场量，再判断边界上的波节与波腹",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "important": true,
+     "hotspot": true,
+     "label": "先明确场量，再判断边界上的波节与波腹",
+     "qa": [
+      {
+       "q": "开口声管的波腹和这里完全一样吗？",
+       "a": "需要区分质点位移和声压。理想开口端近似是位移波腹、声压波节，不能只说“波腹”而省略场量。"
+      }
+     ]
+    }
+   ],
+   "source_pages": [
+    20,
+    21
+   ]
+  },
+  {
+   "id": 14,
+   "heading": "边界选择允许模式",
+   "narration": "用空间标尺推导允许的频率。长度为L的弦若两端固定，两个端点都必须是波节，中间只能容纳整数个半波长。因此[[1]]L等于n乘二分之一波长，n从一开始。解出波长，再用波速除以波长，得到[[2]]第n阶频率等于n倍波速除以二L，最低非零频率就是基频。此时把原点移到左端波节，空间函数用正弦，和前面原点在波腹的余弦形式并不矛盾。若左端固定、右端理想自由，长度要容纳奇数个四分之一波长，所以[[3]]L等于二n减一乘四分之一波长，允许频率是基频的奇数倍。边界不是额外记忆的标签，它是在整根弦上筛选能同时满足两端条件的模式。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　允许波长与频率的推导",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 150,
+     "y": 230,
+     "w": 1600,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两端固定：长度包含整数个半波长",
+        "size": 42,
+        "color": "#244B88",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 150,
+     "y": 345,
+     "w": 1650,
+     "h": 125,
+     "tex": "L=n\\frac{\\lambda_n}{2}\\Rightarrow\\lambda_n=\\frac{2L}{n}\\qquad(n=1,2,\\ldots)",
+     "size": 50,
+     "color": "#16283F",
+     "align": "left",
+     "important": false
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 150,
+     "y": 530,
+     "w": 1620,
+     "h": 125,
+     "tex": "f_n=\\frac{v}{\\lambda_n}=\\frac{nv}{2L}=nf_1",
+     "size": 60,
+     "color": "#16283F",
+     "align": "left",
+     "important": true,
+     "hotspot": true,
+     "label": "两端固定允许频率",
+     "qa": [
+      {
+       "q": "弦长减半为什么基频升高？",
+       "a": "保持波速v不变，f₁=v/(2L)。L减半，允许基频变为原来的2倍。实际按弦也可能微调张力，本课比较明确保持波速不变。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 150,
+     "y": 735,
+     "w": 1620,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一端固定、一端自由：奇数个四分之一波长",
+        "size": 40,
+        "color": "#244B88",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 150,
+     "y": 850,
+     "w": 1650,
+     "h": 120,
+     "tex": "L=\\frac{(2n-1)\\lambda_n}{4}\\Rightarrow f_n=\\frac{(2n-1)v}{4L}",
+     "size": 48,
+     "color": "#16283F",
+     "align": "left",
+     "important": false
+    }
+   ],
+   "source_pages": [
+    20,
+    21
+   ]
+  },
+  {
+   "id": 15,
+   "heading": "边界模式实验",
+   "narration": "现在让推导接受边界检查。图中三条曲线代表分别存在的前三阶模式，不是把三阶同时加起来。先看[[1]]两端固定，端点都标成位移波节，阶数增加时中间的波腹数增加。接着[[2]]自动切换成左波节右波腹，留意右端的振动和频率序列如何改变，再恢复两端固定。暂停下来可以切换边界或改变长度。若选择两端位移波腹，非零模式频率和两端波节相同，但空间函数变成余弦；零频率均匀位移不列入本页前三阶。请作一次实际迁移：[[3]]两根弦的长度与波速相同，比较两端固定的第一阶和一端固定、一端自由的第二阶，它们的频率比是多少？先检查各自允许的波长，再决定哪一个频率更高。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　边界条件筛选模式",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "html",
+     "step": 1,
+     "x": 80,
+     "y": 230,
+     "w": 1760,
+     "h": 720,
+     "src": "sim_standing.html?embed=modes",
+     "label": "驻波实验室：modes",
+     "msgs": {
+      "1": "reset",
+      "2": "demo-modes"
+     }
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 135,
+     "y": 963,
+     "w": 1640,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同长度、同波速：跨边界比较允许频率",
+        "size": 32,
+        "color": "#244B88",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    }
+   ],
+   "interactions": [
+    {
+     "at": 3,
+     "q": "甲、乙两弦长度与波速相同。甲两端固定取第一阶，乙一端固定、一端自由取第二阶。f乙/f甲为多少？",
+     "answer": 2,
+     "options": [
+      "2",
+      "1/2",
+      "3/2"
+     ],
+     "explain": "甲第一阶λ甲=2L，f甲=v/(2L)；乙第二阶λ乙=4L/3，f乙=3v/(4L)。因此f乙/f甲=3/2。不同边界下的“第二阶”不能直接当作基频的2倍。"
+    }
+   ],
+   "source_pages": [
+    21
+   ]
+  },
+  {
+   "id": 16,
+   "heading": "能量储存与平均能流",
+   "narration": "波形没有向前传播，是否表示驻波没有能量？先区分储存与传输。绳上的非波节点有速度，就有动能；绳子发生形变，也有弹性势能，所以[[1]]驻波仍储存能量。再看平均净能流。同一理想介质中，两个等幅反向行波分别向左右输送等大的周期平均功率，方向相反，因此[[2]]周期平均净能流为零。这里的平均很关键，局部能量可以随时间交换，瞬时功率不必处处为零。对理想弦，功率等于负的张力乘空间导数再乘时间导数。代入驻波后，时间因子是余弦欧米伽t乘正弦欧米伽t，一周期平均为零。[[3]]振幅最大不等于任何时刻、任何场量的总能量都最大。到微波炉和加速腔时，还要考虑供能、吸收和粒子取走能量。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　储能与平均净能流",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 150,
+     "y": 245,
+     "w": 1560,
+     "h": 95,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "驻波有动能与势能，仍然储存能量",
+        "size": 44,
+        "color": "#244B88",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 150,
+     "y": 420,
+     "w": 1580,
+     "h": 130,
+     "tex": "\\langle P_{\\rm net}\\rangle=\\langle P_{\\rightarrow}\\rangle-\\langle P_{\\leftarrow}\\rangle=0",
+     "size": 54,
+     "color": "#16283F",
+     "align": "left",
+     "important": true,
+     "hotspot": true,
+     "label": "理想纯驻波平均净能流",
+     "qa": [
+      {
+       "q": "平均净能流为零，为什么还能加热或加速？",
+       "a": "零平均净能流说的是理想、无耗散、等幅反向波构成的纯驻波。真实装置由外部源供能，材料吸收或粒子取能，需要讨论供能和负载，不能把理想结论解释成装置中没有能量流动。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 150,
+     "y": 615,
+     "w": 1570,
+     "h": 130,
+     "tex": "P=-F_T\\,\\frac{\\partial y}{\\partial x}\\frac{\\partial y}{\\partial t},\\qquad\\langle\\cos\\omega t\\sin\\omega t\\rangle=0",
+     "size": 42,
+     "color": "#16283F",
+     "align": "left",
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 150,
+     "y": 850,
+     "w": 1580,
+     "h": 95,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "波腹描述振幅，不能笼统代表总能量最大",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    }
+   ],
+   "source_pages": [
+    15
+   ]
+  },
+  {
+   "id": 17,
+   "heading": "微波炉的规律热斑",
+   "narration": "回到开头的巧克力。金属炉腔边界会反射微波，入射场和反射场叠加，可以建立相对稳定的电磁场空间分布。对吸收微波的材料，[[1]]电场振幅较大的区域通常有较大的吸收功率，因而先出现熔化热斑。请注意，我们比较的是电场振幅和材料吸收功率，不是在宣布一切驻波的波腹总能量最大。在[[2]]一维近似成立、同一方向热斑相邻且连续的条件下，电场波腹间距约等于半个波长。因此测得斑距，就可以估计波长。实际炉腔是三维多模场，材料、转盘和加热时间都影响热斑。转盘的作用就是让食物经过不同的场强区域。实验只能短时间加热，并遵守设备使用要求，不能把不规则熔化区域随便当作一串波腹。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "03　微波热斑的物理解释",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 120,
+     "y": 240,
+     "w": 800,
+     "h": 390,
+     "src": "microwave.png"
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 1020,
+     "y": 310,
+     "w": 780,
+     "h": 314,
+     "src": "chocolate.png"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 120,
+     "y": 720,
+     "w": 1660,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电场振幅较大处，材料通常吸收更快",
+        "size": 42,
+        "color": "#244B88",
+        "b": true
+       }
+      ]
+     ],
+     "important": true,
+     "hotspot": true,
+     "label": "电场振幅较大处，材料通常吸收更快",
+     "qa": [
+      {
+       "q": "为什么不能说所有波腹总能量最大？",
+       "a": "波腹指所指定场量的振幅最大。机械波的动能与势能、电磁波的电场与磁场分布并不相同。微波加热这里关注材料吸收与电场强度，不能把它推广成所有驻波总能量的通则。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 120,
+     "y": 855,
+     "w": 1650,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同一方向、连续相邻热斑：仅在适用近似下 d ≈ λ/2",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 120,
+     "y": 660,
+     "w": 760,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "原课件教学示意；实际炉腔为多模场",
+        "size": 27,
+        "color": "#273444",
+        "b": false
+       }
+      ]
+     ],
+     "important": false
+    }
+   ],
+   "source_pages": [
+    15
+   ]
+  },
+  {
+   "id": 18,
+   "heading": "光速估算与测量误差",
+   "narration": "现在把悬念变成计算。原稿给出的估算示例是[[1]]频率二点四五吉赫兹，相邻热斑平均间距六点一厘米。先把厘米换成米，得到零点零六一米。由半波长关系可知波长约为二倍斑距，再利用波速等于频率乘波长，得到[[2]]估算速度等于二乘频率乘斑距。计算值为每秒二点九八九乘十的八次方米。按斑距的两位有效数字报告，是每秒三点零乘十的八次方米，与真空光速接近。这是受近似和误差限制的估算，不是精密光速测量。实验室允许用总长度除以间隔数，[[3]]测多个连续间隔后求平均，能减小单个热斑中心定位带来的影响。请注意，数的是间隔，不是热斑数量；五个热斑只有四个间隔。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "03　由热斑间距估算光速",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "html",
+     "step": 1,
+     "x": 95,
+     "y": 215,
+     "w": 1000,
+     "h": 740,
+     "src": "sim_standing.html?embed=microwave",
+     "label": "驻波实验室：microwave",
+     "msgs": {
+      "1": "reset",
+      "3": "demo-microwave"
+     }
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 1160,
+     "y": 245,
+     "w": 610,
+     "h": 75,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "原稿估算示例",
+        "size": 36,
+        "color": "#244B88",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 1160,
+     "y": 355,
+     "w": 610,
+     "h": 95,
+     "tex": "f=2.45\\times10^9\\,\\mathrm{Hz}",
+     "size": 38,
+     "color": "#16283F",
+     "align": "left",
+     "important": false
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 1160,
+     "y": 475,
+     "w": 610,
+     "h": 95,
+     "tex": "d=0.061\\,\\mathrm m",
+     "size": 43,
+     "color": "#16283F",
+     "align": "left",
+     "important": false
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 1160,
+     "y": 620,
+     "w": 640,
+     "h": 110,
+     "tex": "c\\approx2fd",
+     "size": 56,
+     "color": "#16283F",
+     "align": "left",
+     "important": true,
+     "hotspot": true,
+     "label": "斑距估算光速",
+     "qa": [
+      {
+       "q": "为什么公式里有2？",
+       "a": "因为连续相邻热斑在一维近似下对应相邻电场波腹，d≈λ/2，因此λ≈2d，再由c≈fλ得到c≈2fd。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 1150,
+     "y": 770,
+     "w": 655,
+     "h": 100,
+     "tex": "c\\approx3.0\\times10^8\\,\\mathrm{m/s}",
+     "size": 43,
+     "color": "#16283F",
+     "align": "left",
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1160,
+     "y": 900,
+     "w": 620,
+     "h": 65,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五个热斑 = 四个间隔",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    }
+   ],
+   "source_pages": [
+    16
+   ]
+  },
+  {
+   "id": 19,
+   "heading": "二维驻波与鱼洗",
+   "narration": "把视线移到原稿中的鱼洗。摩擦器耳可以激发器壁与水面的振动，水花从振动较强的区域跃起。这个现象把固定的强弱分布直观地显现出来。但水面是二维的，[[1]]原来一维绳上的波节可以扩展为节线，振幅分布还要受器形和边界影响。右侧是一个矩形水面的理想模式示意，白色虚线标出节线，颜色表示瞬时位移的正负与大小。请看[[2]]空间图样固定，而各区域仍随时间起伏。它并不是对真实圆形鱼洗的完整定量模型。原稿还给出李约瑟《中国古代科技史》作为阅读线索。我们保留观察与阅读，但分析真实器具时，需要比一维模型更完整的边界和耦合振动知识。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "03　二维驻波：鱼洗",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 100,
+     "y": 275,
+     "w": 790,
+     "h": 598,
+     "src": "fish-basin.jpg"
+    },
+    {
+     "type": "html",
+     "step": 1,
+     "x": 965,
+     "y": 250,
+     "w": 880,
+     "h": 610,
+     "src": "sim_standing.html?embed=basin",
+     "label": "驻波实验室：basin",
+     "msgs": {
+      "1": "reset"
+     }
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 120,
+     "y": 895,
+     "w": 750,
+     "h": 65,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "原稿素材：鱼洗的器壁与水面振动",
+        "size": 30,
+        "color": "#244B88",
+        "b": false
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 980,
+     "y": 890,
+     "w": 850,
+     "h": 65,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "矩形水面模式示意；不等同真实鱼洗",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "important": false,
+     "hotspot": true,
+     "label": "矩形水面模式示意；不等同真实鱼洗",
+     "qa": [
+      {
+       "q": "二维节线和一维波节有什么联系？",
+       "a": "它们都对应指定振动场量的零振幅位置。一维中常表现为离散点，二维中常形成曲线；具体形状由边界和模式决定。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 120,
+     "y": 973,
+     "w": 1520,
+     "h": 45,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "延伸阅读线索：李约瑟《中国古代科技史》",
+        "size": 26,
+        "color": "#273444",
+        "b": false
+       }
+      ]
+     ],
+     "important": false
+    }
+   ],
+   "source_pages": [
+    17
+   ]
+  },
+  {
+   "id": 20,
+   "heading": "HIAF射频驻波加速",
+   "narration": "再看原稿中的HIAF超导直线注入器。照片展示集成的加速单元，超导腔在装置内部。先追踪能量来源：[[1]]射频源提供能量，输入耦合器把功率送入腔体。腔内建立的是[[2]]三维驻波本征模，驻波存在于整个腔内，不是从加速间隙向外发射的波。间隙是轴向电场较强的有限三维区域，不是一个几何点。束团通过这里时，轴向电场可以对带电粒子做功。关键还在[[3]]射频相位：这一瞬间若要增加动能，电荷量乘电场，再与速度做内积，必须为正。整个有限间隙中的净获能，还要把通过过程中的电场做功累加。场会随时间反向，因此同样的空间路径、不同的到达时刻，可以加速，也可能减速。[[4]]粒子动能来自射频源，超导腔高效储能并组织场分布。稳定空间图样与时间相位控制，都不能少。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "03　射频驻波与粒子加速",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 105,
+     "y": 270,
+     "w": 840,
+     "h": 630,
+     "src": "hiaf.jpg"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 1030,
+     "y": 235,
+     "w": 755,
+     "h": 105,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "射频源供能，经耦合器馈入腔体",
+        "size": 34,
+        "color": "#244B88",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1030,
+     "y": 390,
+     "w": 755,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "超导腔建立三维驻波本征模",
+        "size": 38,
+        "color": "#16283F",
+        "b": true
+       }
+      ]
+     ],
+     "important": false,
+     "hotspot": true,
+     "label": "超导腔建立三维驻波本征模",
+     "qa": [
+      {
+       "q": "加速间隙就是一个波腹点吗？",
+       "a": "不是。驻波存在于整个三维腔体，加速间隙是轴向电场较强的有限三维区域。不能把整段区域等同于一个几何波腹点，也不能说驻波从间隙向外发射。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 1030,
+     "y": 565,
+     "w": 740,
+     "h": 130,
+     "tex": "\\frac{dK}{dt}=q\\,\\vec E\\cdot\\vec v>0",
+     "size": 43,
+     "color": "#16283F",
+     "align": "left",
+     "important": true,
+     "hotspot": true,
+     "label": "射频相位决定做功",
+     "qa": [
+      {
+       "q": "强场区域中的粒子一定加速吗？",
+       "a": "不一定。还取决于电荷符号、场方向、速度方向和到达时的射频相位。qE·v>0表示这一瞬间动能增加；整个有限间隙的净获能要由通过过程中的总电场做功确定。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1030,
+     "y": 765,
+     "w": 755,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "粒子获能来自射频源",
+        "size": 42,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 110,
+     "y": 931,
+     "w": 1550,
+     "h": 55,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "照片来源：中国科学院近代物理研究所，2025-06 QWR 超导段运行报道",
+        "size": 24,
+        "color": "#273444",
+        "b": false
+       }
+      ]
+     ],
+     "important": false
+    }
+   ],
+   "source_pages": [
+    18
+   ]
+  },
+  {
+   "id": 21,
+   "heading": "三类应用的共同规律",
+   "narration": "鱼洗、微波炉和超导加速腔，振动的对象不同，却都要求我们先明确边界与模式。[[1]]鱼洗让我们观察机械振动的固定强弱分布，微波炉利用电磁场与材料吸收，而HIAF还需要把束团到达时刻和射频相位配合起来。不能把三者简化成同一种一维绳波，更不能仅凭波腹两个字就解释所有能量现象。请再判断一个未直接演示过的情境：[[2]]正电粒子沿轴向进入同一强场区，第一次电场与速度同向，第二次到达时电场恰好反向，哪一次能增加动能？这个判断把固定的空间场分布和随时间变化的场区分开。基础规律走向大科学装置，需要准确的概念、长期积累与自主攻关；这种求真精神也应体现在我们自己的每一次建模和解释中。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "03　模式、场量与能量交换",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 120,
+     "y": 245,
+     "w": 490,
+     "h": 370,
+     "src": "fish-basin.jpg"
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 710,
+     "y": 275,
+     "w": 490,
+     "h": 276,
+     "src": "microwave.png"
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 1300,
+     "y": 245,
+     "w": 490,
+     "h": 370,
+     "src": "hiaf.jpg"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 135,
+     "y": 675,
+     "w": 520,
+     "h": 75,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "鱼洗：机械振动",
+        "size": 36,
+        "color": "#244B88",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 720,
+     "y": 675,
+     "w": 550,
+     "h": 75,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "微波炉：吸收微波",
+        "size": 36,
+        "color": "#244B88",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 1310,
+     "y": 675,
+     "w": 480,
+     "h": 75,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "HIAF：同步获能",
+        "size": 34,
+        "color": "#244B88",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 125,
+     "y": 850,
+     "w": 1660,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同一强场区，电场反向后仍然加速吗？",
+        "size": 42,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 125,
+     "y": 965,
+     "w": 1630,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "准确理解基础规律，才能把模式控制转化为工程能力",
+        "size": 28,
+        "color": "#273444",
+        "b": false
+       }
+      ]
+     ],
+     "important": false
+    }
+   ],
+   "interactions": [
+    {
+     "at": 2,
+     "q": "正电粒子速度向右。在同一强场区域，第一次电场向右，第二次电场向左，哪次动能增加？",
+     "answer": 1,
+     "options": [
+      "两次都增加，因为都在强场区",
+      "第一次增加，第二次减少",
+      "两次都不变，因为驻波无能量"
+     ],
+     "explain": "功率qE·v决定动能变化。q>0时第一次内积为正，第二次为负。空间场强分布固定不代表时间相位不变，也不代表粒子必然加速。"
+    }
+   ],
+   "source_pages": [
+    19
+   ]
+  },
+  {
+   "id": 22,
+   "heading": "回答开头的悬念",
+   "narration": "回顾这条认识主线。先要求[[1]]等幅、同频、反向的相干叠加，再由位移相加推出空间因子乘时间因子的表达式。空间因子的零点给出固定波节，绝对值最大处给出波腹，符号变化给出相位分区。然后用[[2]]相邻节节或腹腹的半波长间距，把固定图样变成空间标尺。边界条件又筛选出允许的模式与频率。现在可以当面回答开头的问题：[[3]]在适用的一维近似下，测连续相邻微波热斑的平均间距，结合铭牌频率，确实可以估算光速；原稿的六点一厘米与二点四五吉赫兹给出约每秒三点零乘十的八次方米。最后别丢掉[[4]]模型边界：波腹是振幅概念，真实装置的供能、吸收和射频相位，需要分别分析。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04　小结：由固定图样走向测量与控制",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 150,
+     "y": 240,
+     "w": 1550,
+     "h": 95,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "相干叠加：条件明确，推导有来源",
+        "size": 44,
+        "color": "#244B88",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 150,
+     "y": 420,
+     "w": 1550,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "空间标尺：节—节 / 腹—腹 λ/2，最近节—腹 λ/4",
+        "size": 40,
+        "color": "#273444",
+        "b": false
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 150,
+     "y": 585,
+     "w": 1550,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "边界筛选模式；区段内同相，跨相邻区段反相",
+        "size": 40,
+        "color": "#273444",
+        "b": false
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 150,
+     "y": 760,
+     "w": 1550,
+     "h": 105,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "微波炉 + 巧克力：在适用近似下可以估算光速",
+        "size": 42,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "important": true,
+     "hotspot": true,
+     "label": "微波炉 + 巧克力：在适用近似下可以估算光速",
+     "qa": [
+      {
+       "q": "今天的悬念怎样得到回答？",
+       "a": "相干叠加产生稳定场强分布；相邻电场波腹约相隔λ/2；在热斑近似可识别的条件下测d，再用c≈2df估算光速。这个结论保留炉腔多模和材料影响等限制。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 150,
+     "y": 928,
+     "w": 1550,
+     "h": 65,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "储能与净能流有区别，真实应用还要分析能量交换",
+        "size": 32,
+        "color": "#273444",
+        "b": false
+       }
+      ]
+     ],
+     "important": false
+    }
+   ],
+   "source_pages": [
+    20
+   ]
+  },
+  {
+   "id": 23,
+   "heading": "课后探究与结尾",
+   "narration": "课后请用边界模式实验室完成一份记录。[[1]]选择两端固定，保持波速不变，把弦长由一米改成半米，记录前三阶允许频率，再解释吉他按弦后音调为什么升高。先写自己的解释，再和助教或同学用追问检验推理，不预设任何已提交记录。原稿的延伸估算也可以做：[[2]]弦长六十五厘米、基频三百三十赫兹，在两端固定模型下估算波速，并写清假设。若开展微波观察，还要记录斑距、频率和误差来源。今天我们用叠加解释驻波，用边界选择模式，用测量检验近似。[[3]]从厨房到前沿装置，准确的物理概念始终是起点。下次课见。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1500,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "课后探究",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 150,
+     "y": 250,
+     "w": 1580,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "边界实验：弦长减半，记录前三阶允许频率",
+        "size": 42,
+        "color": "#244B88",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 150,
+     "y": 430,
+     "w": 1570,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "先写解释，再用追问检验：吉他按弦后为何音调升高？",
+        "size": 38,
+        "color": "#273444",
+        "b": false
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 150,
+     "y": 610,
+     "w": 1570,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "延伸估算：L = 65 cm，f₁ = 330 Hz，求波速",
+        "size": 42,
+        "color": "#273444",
+        "b": false
+       }
+      ]
+     ],
+     "important": false,
+     "hotspot": true,
+     "label": "延伸估算：L = 65 cm，f₁ = 330 Hz，求波速",
+     "qa": [
+      {
+       "q": "这道估算题如何入手？",
+       "a": "两端固定基频满足f₁=v/(2L)。L=0.65 m，v=2Lf₁=2×0.65×330=429 m/s，按所给精度约4.3×10² m/s。应注明均匀弦、固定端和理想波速的模型假设。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 150,
+     "y": 770,
+     "w": 1530,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "记录变量、假设与误差，不把模拟读数冒充实测",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 150,
+     "y": 915,
+     "w": 1550,
+     "h": 95,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "下次课见",
+        "size": 64,
+        "color": "#244B88",
+        "b": true
+       }
+      ]
+     ],
+     "important": false
+    }
+   ],
+   "source_pages": [
+    21,
+    22
+   ]
+  }
+ ]
+}

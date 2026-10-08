@@ -10,8 +10,67 @@ import threading
 import webbrowser
 
 
+class RangeRequestHandler(SimpleHTTPRequestHandler):
+    """Serve one byte range so browsers can seek MP3 and MP4 files."""
+    def end_headers(self):
+        self.send_header("Accept-Ranges", "bytes")
+        super().end_headers()
+
+    def send_head(self):
+        self.byte_range = None
+        header = self.headers.get("Range")
+        filename = Path(self.translate_path(self.path))
+        if not header or not filename.is_file():
+            return super().send_head()
+        import re
+        match = re.fullmatch(r"bytes=(\d*)-(\d*)", header.strip())
+        stream = filename.open("rb")
+        import os
+        size = os.fstat(stream.fileno()).st_size
+        try:
+            if not match or not any(match.groups()) or size == 0:
+                raise ValueError()
+            left, right = match.groups()
+            if left:
+                start = int(left)
+                end = min(int(right), size - 1) if right else size - 1
+            else:
+                suffix = int(right)
+                if suffix <= 0:
+                    raise ValueError()
+                start, end = max(0, size - suffix), size - 1
+            if start >= size or start > end:
+                raise ValueError()
+        except ValueError:
+            stream.close()
+            self.send_response(416)
+            self.send_header("Content-Range", f"bytes */{size}")
+            self.send_header("Content-Length", "0")
+            self.end_headers()
+            return None
+        stream.seek(start)
+        self.byte_range = (start, end)
+        self.send_response(206)
+        self.send_header("Content-Type", self.guess_type(str(filename)))
+        self.send_header("Content-Range", f"bytes {start}-{end}/{size}")
+        self.send_header("Content-Length", str(end - start + 1))
+        self.end_headers()
+        return stream
+
+    def copyfile(self, source, outputfile):
+        if self.byte_range is None:
+            return super().copyfile(source, outputfile)
+        remaining = self.byte_range[1] - self.byte_range[0] + 1
+        while remaining > 0:
+            data = source.read(min(65536, remaining))
+            if not data:
+                break
+            outputfile.write(data)
+            remaining -= len(data)
+
+
 def create_server(directory, first_port=8080, last_port=8090):
-    handler = partial(SimpleHTTPRequestHandler, directory=str(directory))
+    handler = partial(RangeRequestHandler, directory=str(directory))
     for port in range(first_port, last_port + 1):
         try:
             return ThreadingHTTPServer(("127.0.0.1", port), handler)

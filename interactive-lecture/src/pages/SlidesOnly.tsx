@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Element } from '@/components/lecture/SlideStage'
+import QuizCard from '@/components/lecture/QuizCard'
 import { stripMath, VIDEO_H, VIDEO_W } from '@/lib/lecture'
 import { resolveTheme } from '@/lib/theme'
 import type { WebElement, WebLec, WebPage } from '@/lib/weblec'
@@ -12,6 +13,19 @@ declare global {
     /** 单文件导出时注入的图片 data URL 表：文件名 → data:image/... */
     __WEBLEC_MEDIA__?: Record<string, string>
   }
+}
+
+/** Only opt-in iframe commands add otherwise invisible presentation steps. */
+function presentationSteps(page: WebPage): number[] {
+  const values = page.elements.map(el => el.step)
+  page.elements.forEach(el => {
+    if (el.type !== 'html' || !el.timelineSync || !el.msgs) return
+    Object.keys(el.msgs).forEach(key => {
+      if (/^\d+$/.test(key)) values.push(Number(key))
+    })
+  })
+  return [...new Set(values.filter(step => Number.isSafeInteger(step) && step >= 0))]
+    .sort((a, b) => a - b)
 }
 
 /** 把 img 元素的 src 替换成内联 data URL（仅在单文件导出包里生效） */
@@ -78,6 +92,8 @@ export default function SlidesOnly() {
   const [stepIdx, setStepIdx] = useState(0)
   const [scale, setScale] = useState(0.5)
   const [animT, setAnimT] = useState(0)
+  const [quizIdx, setQuizIdx] = useState<number | null>(null)
+  const htmlRefs = useRef(new Map<number, HTMLIFrameElement>())
 
   /* 批注状态 */
   const [annotate, setAnnotate] = useState(false)
@@ -85,6 +101,14 @@ export default function SlidesOnly() {
   const [ann, setAnn] = useState<AnnStore>(loadAnn)
   const [cur, setCur] = useState<Stroke | null>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const [noteDraft, setNoteDraft] = useState<string | null>(null)
+  const noteDialogRef = useRef<HTMLDialogElement>(null)
+  useEffect(() => {
+    const dialog = noteDialogRef.current
+    if (!dialog) return
+    if (noteDraft !== null && !dialog.open) dialog.showModal()
+    else if (noteDraft === null && dialog.open) dialog.close()
+  }, [noteDraft])
 
   /* 底部操作提示：浮动显示——动鼠标时出现，静止 2.6 秒后自动隐去，不遮挡页脚 */
   const [hintOn, setHintOn] = useState(true)
@@ -142,10 +166,26 @@ export default function SlidesOnly() {
   const page: WebPage | null = pages[pageIdx] ?? null
   const pageKey = page ? String(page.id) : ''
   const steps = useMemo(
-    () => (page ? [...new Set(page.elements.map(e => e.step))].sort((a, b) => a - b) : [0]),
+    () => (page ? presentationSteps(page) : [0]),
     [page],
   )
   const curStep = steps[Math.min(stepIdx, steps.length - 1)] ?? 0
+  const activeQuiz = quizIdx === null ? null : page?.interactions?.[quizIdx] ?? null
+
+  /** Static presentation uses the chosen step, never a free-running demo clock. */
+  function sendHtmlTimeline(elIdx: number, el: WebElement) {
+    if (el.type !== 'html' || !el.timelineSync || !page) return
+    htmlRefs.current.get(elIdx)?.contentWindow?.postMessage({
+      type: 'lecture-state', mode: 'static', pageId: page.id,
+      pageTime: Math.max(0, (page.stepTimes[String(curStep)] ?? page.t_start) - page.t_start),
+      step: curStep, playing: false,
+      steps: Object.fromEntries(Object.entries(page.stepTimes)
+        .map(([k, v]) => [k, v - page.t_start])),
+    }, window.location.origin)
+  }
+  useEffect(() => {
+    page?.elements.forEach((el, i) => sendHtmlTimeline(i, el))
+  }, [page, curStep])
 
   /** 步进：前进先走当前页的步，步尽翻下一页；后退对称，页首回上一页最后一步 */
   const nav = useCallback(
@@ -161,7 +201,7 @@ export default function SlidesOnly() {
         if (stepIdx > 0) setStepIdx(stepIdx - 1)
         else if (pageIdx > 0) {
           const prev = pages[pageIdx - 1]
-          const ps = [...new Set(prev.elements.map(e => e.step))].sort((a, b) => a - b)
+          const ps = presentationSteps(prev)
           setPageIdx(pageIdx - 1)
           setStepIdx(ps.length - 1)
         }
@@ -189,6 +229,12 @@ export default function SlidesOnly() {
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
+      if (noteDraft !== null) return
+      if (activeQuiz) {
+        if (e.key === 'Escape') setQuizIdx(null)
+        if (e.key === ' ' || e.key.startsWith('Arrow') || ['PageUp', 'PageDown', 'Home', 'End'].includes(e.key)) e.preventDefault()
+        return
+      }
       if (e.key === 'ArrowRight' || e.key === ' ') {
         e.preventDefault()
         nav(1)
@@ -202,12 +248,13 @@ export default function SlidesOnly() {
         setPageIdx(pages.length - 1)
         setStepIdx(0)
       } else if (e.key === 'f' || e.key === 'F') toggleFs()
+      else if ((e.key === 'q' || e.key === 'Q') && page?.interactions?.length) setQuizIdx(0)
       else if (e.key === 'a' || e.key === 'A') setAnnotate(v => !v)
       else if (e.key === 'Escape') setAnnotate(false)
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [nav, jumpPage, pages.length, toggleFs])
+  }, [nav, jumpPage, pages.length, toggleFs, noteDraft, activeQuiz, page])
 
   /* ---------- 批注绘制 ---------- */
 
@@ -265,14 +312,16 @@ export default function SlidesOnly() {
     }))
   const clearPage = () =>
     setAnn(a => ({ ...a, strokes: { ...a.strokes, [pageKey]: [] } }))
-  const addNote = () => {
-    const text = window.prompt(`第 ${pageKey} 页备注（会随批注一起导出）：`)
-    if (text?.trim()) {
+  const addNote = () => setNoteDraft('')
+  const saveNote = () => {
+    const text = noteDraft?.trim()
+    if (text) {
       setAnn(a => ({
         ...a,
-        notes: { ...a.notes, [pageKey]: [...(a.notes[pageKey] ?? []), text.trim()] },
+        notes: { ...a.notes, [pageKey]: [...(a.notes[pageKey] ?? []), text] },
       }))
     }
+    setNoteDraft(null)
   }
 
   /** 导出批注 JSON：每笔自动标注与哪些页面元素重叠，直接指导后续修改 weblec.json */
@@ -331,10 +380,10 @@ export default function SlidesOnly() {
     <div
       className="flex h-screen w-screen select-none items-center justify-center overflow-hidden bg-white"
       style={{ cursor: annotate ? 'crosshair' : 'pointer' }}
-      onClick={() => !annotate && nav(1)}
+      onClick={() => !annotate && !activeQuiz && nav(1)}
       onContextMenu={e => {
         e.preventDefault()
-        if (!annotate) nav(-1)
+        if (!annotate && !activeQuiz) nav(-1)
       }}
     >
       <style>{`
@@ -354,7 +403,7 @@ export default function SlidesOnly() {
             transform: `scale(${scale})`, transformOrigin: 'top left',
             color: '#111', background: th.background, overflow: 'hidden',
           }}
-          onClick={() => !annotate && nav(1)}
+          onClick={() => !annotate && !activeQuiz && nav(1)}
         >
           {/* 页面版式：课程 logo / 顶部导航 / 页脚 / 页码（与交互课堂一致，按课程 theme 渲染） */}
           <img src={logoSrc} alt="" style={{
@@ -392,7 +441,9 @@ export default function SlidesOnly() {
           {/* 页面元素：按步揭示（与交互课堂同一渲染组件，t 驱动动画图示） */}
           {page.elements.map((el, i) =>
             el.step <= curStep
-              ? <div key={`${page.id}-${i}`} className="wl-in"><Element el={el} t={animT} /></div>
+              ? <div key={`${page.id}-${i}`} className="wl-in"><Element el={el} t={animT}
+                  iframeRef={node => { if (node) htmlRefs.current.set(i, node); else htmlRefs.current.delete(i) }}
+                  onIframeLoad={() => sendHtmlTimeline(i, el)} /></div>
               : null,
           )}
 
@@ -413,6 +464,26 @@ export default function SlidesOnly() {
           )}
         </div>
       </div>
+
+      {/* Teacher-operated questions remain available without narration. */}
+      {!annotate && !activeQuiz && !!page.interactions?.length && (
+        <div className="fixed bottom-16 right-3 z-40 flex gap-2 transition-opacity"
+          style={{ opacity: hintOn ? 1 : 0, pointerEvents: hintOn ? 'auto' : 'none' }}
+          onClick={e => e.stopPropagation()}>
+          {page.interactions.map((_, i) => (
+            <button key={i} onClick={() => setQuizIdx(i)}
+              className="rounded-full bg-[#0b1f38] px-4 py-2 text-sm text-white shadow-lg">
+              互动题{page.interactions!.length > 1 ? ` ${i + 1}` : ''}
+            </button>
+          ))}
+        </div>
+      )}
+      {activeQuiz && (
+        <div onClick={e => e.stopPropagation()} onContextMenu={e => { e.preventDefault(); e.stopPropagation() }}>
+          <QuizCard key={`${pageKey}-${quizIdx}`} quiz={activeQuiz}
+            continueLabel="返回幻灯片" onContinue={() => setQuizIdx(null)} />
+        </div>
+      )}
 
       {/* 批注工具条 */}
       {annotate && (
@@ -443,12 +514,33 @@ export default function SlidesOnly() {
         </div>
       )}
 
+      {/* HTML dialog remains inspectable when the host suppresses window.prompt. */}
+      <dialog ref={noteDialogRef}
+        aria-labelledby="slide-note-title"
+        onCancel={e => { e.preventDefault(); setNoteDraft(null) }}
+        onClick={e => e.stopPropagation()}
+        onContextMenu={e => e.stopPropagation()}
+        style={{ width: 'min(560px,92vw)', borderRadius: 12, padding: 24, color: '#111', background: '#fff' }}>
+        <form onSubmit={e => { e.preventDefault(); saveNote() }}>
+          <h2 id="slide-note-title" style={{ fontSize: 20, fontWeight: 700, marginBottom: 12 }}>第 {pageKey} 页备注</h2>
+          <label htmlFor="slide-note-text" style={{ display: 'block', marginBottom: 8 }}>备注文字（随批注导出）</label>
+          <textarea id="slide-note-text" autoFocus value={noteDraft ?? ''}
+            onChange={e => setNoteDraft(e.target.value)}
+            style={{ width: '100%', minHeight: 120, border: '1px solid #94a3b8', borderRadius: 6, padding: 8, fontSize: 16, userSelect: 'text' }} />
+          <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 12, marginTop: 12 }}>
+            <button type="button" onClick={() => setNoteDraft(null)} style={{ padding: '8px 16px' }}>取消</button>
+            <button type="submit" style={{ padding: '8px 16px', borderRadius: 6, background: '#1971c2', color: '#fff' }}>保存备注</button>
+          </div>
+        </form>
+      </dialog>
+
       {/* 底部操作提示：浮动胶囊，静止时自动隐去 */}
       <div
-        className="pointer-events-none fixed bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white/90 px-4 py-1 text-xs text-slate-500 shadow-md ring-1 ring-slate-200 transition-opacity duration-500"
+        className="pointer-events-none fixed bottom-0 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white/90 px-4 py-0 text-[11px] leading-[14px] text-slate-500 shadow-md ring-1 ring-slate-200 transition-opacity duration-500"
         style={{ opacity: hintOn ? 1 : 0 }}
       >
         → / 空格 / 单击 下一步 · ← / 右键 上一步 · PgUp / PgDn 翻页 · F 全屏 · A 批注
+        {!!page.interactions?.length && <span> · Q 互动题</span>}
         {pageStrokeCount > 0 && <span className="ml-2 text-[#e03131]">●{pageStrokeCount} 笔</span>}
         <span className="ml-3 text-slate-500">{pageIdx + 1} / {pages.length}</span>
       </div>

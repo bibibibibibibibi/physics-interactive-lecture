@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>共振·源视频</title><style>html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#fff}video{width:100%;height:100%;object-fit:contain;display:block}</style></head>
+<body><video muted playsinline loop preload="auto" controls aria-label="源视频"></video>
+<script>
+const query=new URLSearchParams(location.search),video=document.querySelector('video');
+const files=new Set(['humen-bridge.mp4','free-oscillation.mp4','damped-oscillation.mp4','vortex-street.mp4','bridge-damping.mp4','mri-cine.mp4']);
+const file=query.get('file'),page=Number(query.get('page')),anchorStep=Number(query.get('step'));
+if(!files.has(file)||!Number.isInteger(page)||page<1||!Number.isInteger(anchorStep)||anchorStep<1)throw Error('Invalid local video binding');
+video.src=file;
+let state=null,seeks=0,lastSample=null,manualStatic=false;
+function expose(target,anchor){document.body.dataset.mode=state?.mode||'standalone';document.body.dataset.targetTime=String(target);document.body.dataset.anchor=String(anchor);document.body.dataset.seekCount=String(seeks);}
+function sync(force=false){
+ if(!state)return;
+ const anchor=Number(state.steps[String(anchorStep)]);
+ if(!Number.isFinite(anchor)||anchor<0||state.step<anchorStep||state.pageTime<anchor){video.pause();if(video.readyState>=1)video.currentTime=0;expose(0,NaN);return;}
+ const elapsed=Math.max(0,state.pageTime-anchor),duration=video.duration;
+ const target=Number.isFinite(duration)&&duration>0?elapsed%duration:0;
+ expose(target,anchor);
+ if(video.readyState<1)return;
+ if(state.mode==='static'&&manualStatic&&!force)return;
+ let drift=Math.abs(video.currentTime-target);if(duration>0)drift=Math.min(drift,duration-drift);
+ if(force||drift>.12){video.currentTime=target;seeks++;expose(target,anchor);}
+ if(state.mode==='interactive'&&state.playing){video.play().catch(()=>{});}else video.pause();
+}
+addEventListener('message',event=>{
+ const data=event.data;
+ if(event.source!==parent||event.origin!==location.origin||!data||data.type!=='lecture-state'||data.pageId!==page||!['interactive','static'].includes(data.mode)||!Number.isFinite(data.pageTime)||data.pageTime<0||!Number.isInteger(data.step)||data.step<0||typeof data.playing!=='boolean'||!data.steps||typeof data.steps!=='object')return;
+ const anchor=data.steps[String(anchorStep)];if(!Number.isFinite(anchor)||anchor<0)return;
+ const changed=!state||state.mode!==data.mode||state.step!==data.step;
+ if(changed)manualStatic=false;
+ video.controls=data.mode==='static';
+ let keepSample=false;
+ if(data.mode==='interactive'&&data.playing&&lastSample&&lastSample.playing&&data.pageTime>=lastSample.pageTime){
+  const dt=(performance.now()-lastSample.wall)/1000,da=data.pageTime-lastSample.pageTime;
+  if(dt>.08&&dt<1.5&&da>0&&da<1.5){const rate=da/dt;if(rate>=.25&&rate<=4)video.playbackRate=rate;}
+  else if(dt<=.08)keepSample=true;
+ }
+ if(!keepSample)lastSample={pageTime:data.pageTime,playing:data.playing,wall:performance.now()};state=data;
+ sync(changed||(data.mode==='interactive'&&!data.playing));
+});
+video.addEventListener('loadedmetadata',()=>sync(true));
+video.addEventListener('canplay',()=>sync(false));
+video.addEventListener('pointerdown',()=>{if(state?.mode==='static')manualStatic=true;});
+video.addEventListener('play',()=>{if(state?.mode==='interactive'&&!state.playing)video.pause();});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)video.pause();else sync(true);});
+document.body.dataset.mode='standalone';
+</script></body></html>

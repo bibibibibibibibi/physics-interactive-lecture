@@ -1,0 +1,3543 @@
+{
+ "title": "圆孔衍射与光学仪器的分辨本领",
+ "nav": "专题系列 · 第5学时",
+ "footer": "大学物理　圆孔衍射与光学仪器的分辨本领",
+ "theme": "special",
+ "logoScale": 0.67,
+ "character": "aqiang",
+ "sections": [
+  {
+   "title": "圆孔衍射与艾里斑",
+   "page": 4
+  },
+  {
+   "title": "第一暗环角半径",
+   "page": 6
+  },
+  {
+   "title": "瑞利判据与分辨",
+   "page": 12
+  },
+  {
+   "title": "应用与迁移",
+   "page": 16
+  }
+ ],
+ "pages": [
+  {
+   "id": 1,
+   "heading": "圆孔衍射与光学仪器的分辨本领",
+   "narration": "同学们好。今天学习[[1]]圆孔衍射与光学仪器的分辨本领，选自大学物理光学部分。我们会先亲手改变圆孔，观察一个点的像，再研究两个点什么时候还能分开。把看到的现象与推导联系起来，最后用它解释日常观察和光学仪器的设计。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 200,
+     "w": 1120,
+     "h": 130,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "圆孔衍射与",
+        "size": 86,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 350,
+     "w": 1130,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "光学仪器的分辨本领",
+        "size": 72,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 540,
+     "w": 1080,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "CIRCULAR APERTURE DIFFRACTION\nAND OPTICAL RESOLUTION",
+        "size": 29,
+        "color": "#65768E",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 110,
+     "y": 730,
+     "w": 1080,
+     "h": 75,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "《大学物理》　第11章 光学　第6节",
+        "size": 34,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "img",
+     "step": 0,
+     "x": 1280,
+     "y": 220,
+     "w": 520,
+     "h": 620,
+     "src": "airy-hero.svg"
+    }
+   ],
+   "source_pages": [
+    1
+   ]
+  },
+  {
+   "id": 2,
+   "heading": "学习路线",
+   "narration": "这节课沿着四段内容前进。第一段是[[1]]圆孔衍射与艾里斑，重点在于把图样看准确。第二段研究[[2]]第一暗环的角半径，重点是量的定义和公式的来源。第三段是[[3]]瑞利判据与分辨，难点是把一个点的像和两个点的分辨条件接起来。最后进入[[4]]应用与迁移，把角度、距离和孔径放到同一个问题里。先观察，再提出定量描述，这个顺序贯穿今天的课堂。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 130,
+     "w": 900,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "学习路线",
+        "size": 64,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 130,
+     "y": 360,
+     "w": 360,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "01",
+        "size": 48,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 130,
+     "y": 455,
+     "w": 56,
+     "h": 5,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 130,
+     "y": 510,
+     "w": 360,
+     "h": 180,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "圆孔衍射\n与艾里斑",
+        "size": 42,
+        "color": "#273444",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 130,
+     "y": 730,
+     "w": 360,
+     "h": 65,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "重点",
+        "size": 30,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 560,
+     "y": 360,
+     "w": 360,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02",
+        "size": 48,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 560,
+     "y": 455,
+     "w": 56,
+     "h": 5,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 560,
+     "y": 510,
+     "w": 360,
+     "h": 180,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "第一暗环\n角半径",
+        "size": 42,
+        "color": "#273444",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 560,
+     "y": 730,
+     "w": 360,
+     "h": 65,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "重点",
+        "size": 30,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 990,
+     "y": 360,
+     "w": 360,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "03",
+        "size": 48,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 990,
+     "y": 455,
+     "w": 56,
+     "h": 5,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 990,
+     "y": 510,
+     "w": 360,
+     "h": 180,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "瑞利判据\n与分辨",
+        "size": 42,
+        "color": "#273444",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 990,
+     "y": 730,
+     "w": 360,
+     "h": 65,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "难点",
+        "size": 30,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1420,
+     "y": 360,
+     "w": 360,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04",
+        "size": 48,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 1420,
+     "y": 455,
+     "w": 56,
+     "h": 5,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1420,
+     "y": 510,
+     "w": 360,
+     "h": 180,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "应用\n与迁移",
+        "size": 42,
+        "color": "#273444",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1420,
+     "y": 730,
+     "w": 360,
+     "h": 65,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "",
+        "size": 30,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    }
+   ],
+   "source_pages": [
+    3
+   ]
+  },
+  {
+   "id": 3,
+   "heading": "两盏车灯与中国天眼",
+   "narration": "夜晚看远处的一辆车，近一些时，能看到[[1]]两盏分开的车灯。车越来越远，两盏灯在视野中的夹角减小，最后可能只剩一个亮点。车灯并没有消失，眼睛也仍然接收到光，可我们失去了分开它们的能力。再看右边的[[2]]中国天眼。它接收遥远天体的无线电波，也面对类似的问题：接收到两个目标的信号，就一定能区分两个目标吗？这给我们留下[[3]]两个悬念：为什么一个点经过有限孔径会形成有宽度的像，为什么把像放大也未必能把两个点分开。今天先从一个圆孔出发，找到限制的来源，最后再回到车灯和天眼。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1460,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "00　引入",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 130,
+     "y": 240,
+     "w": 750,
+     "h": 420,
+     "src": "headlights.png"
+    },
+    {
+     "type": "img",
+     "step": 2,
+     "x": 1040,
+     "y": 240,
+     "w": 750,
+     "h": 420,
+     "src": "fast.jpg"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 130,
+     "y": 690,
+     "w": 750,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "距离增大，两灯的夹角减小",
+        "size": 38,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1040,
+     "y": 690,
+     "w": 750,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "接收到信号，就一定能分开目标？",
+        "size": 38,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 180,
+     "y": 875,
+     "w": 1560,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "有限孔径为什么会限制“分开两个目标”？",
+        "size": 42,
+        "color": "#C00000",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "接收到光与分辨出目标是一回事吗？",
+     "qa": [
+      {
+       "q": "接收到光与分辨出目标是一回事吗？",
+       "a": "接收说明存在可检测信号，分辨还要求两个目标的成像响应能区分。两个扩展像重叠时，可能接收到信号却不能分开目标。"
+      }
+     ]
+    }
+   ],
+   "source_pages": [
+    2
+   ]
+  },
+  {
+   "id": 4,
+   "heading": "改变孔径，先看图样",
+   "narration": "现在做第一个探究。屏上只有一个点源的衍射图样，先固定波长和屏的位置，只改变[[1]]孔径直径，读作大写的迪。请注意模拟底部的孔径滑块，起点是零点六毫米。[[2]]点击演示，或者暂停课堂，自己将孔径慢慢减到零点一毫米。不要急着套公式，先盯住中央亮斑与外围的环。你会看到，孔径变小，中央亮斑反而变宽，第一条暗环向外移。滑块拖回去，亮斑又收缩，变化能够重复。这里比较的是归一化图样的几何宽度，屏幕显示亮度经过增强，不能拿显示亮暗直接比较总能量。[[3]]请给出你的观察：孔径变小，中央亮斑变大。一个更小的孔竟然带来一个更宽的像，这个看起来反直觉的现象，正是我们后面要解释的。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1460,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "01　圆孔衍射与艾里斑",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "html",
+     "step": 1,
+     "x": 80,
+     "y": 215,
+     "w": 1760,
+     "h": 675,
+     "src": "sim_aperture.html?embed=aperture",
+     "label": "孔径变化探究",
+     "msgs": {
+      "2": "demoD"
+     }
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 130,
+     "y": 905,
+     "w": 1620,
+     "h": 60,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "暂停后可拖动 D；只改变孔径，比较第一暗环的位置",
+        "size": 34,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 130,
+     "y": 970,
+     "w": 1450,
+     "h": 55,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "观察：D 减小，中央亮斑变宽",
+        "size": 34,
+        "color": "#C00000",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    }
+   ],
+   "source_pages": [
+    4
+   ]
+  },
+  {
+   "id": 5,
+   "heading": "艾里图样与艾里斑",
+   "narration": "把刚才的观察整理一下。圆孔后面的图样具有[[1]]轴对称性：中心最亮，外围出现明暗相间的同心圆环。整个图样叫艾里图样，其中由第一条暗环围住的[[2]]中央亮斑，叫艾里斑。艾里斑只指中央这一块，不能把外面的亮环也算进它的半径。我们已经看到[[3]]孔径越小，中央亮斑越宽，但“看起来大一些”还不够精确。下一步需要规定量到哪里：从中央亮斑中心，量到第一暗环。这样，不同孔径下的图样才能用同一标准比较。想一想，原来理想几何光学中的一个点，经过有限圆孔之后变成了一个有宽度的亮斑；两个这样的亮斑靠近时，就必然存在重叠。这也为第二个探究埋下了线索。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1460,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "01　圆孔衍射与艾里斑",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 120,
+     "y": 250,
+     "w": 780,
+     "h": 600,
+     "src": "airy-label.svg"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 1030,
+     "y": 280,
+     "w": 750,
+     "h": 120,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "艾里图样：中央亮斑与同心圆环",
+        "size": 40,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "艾里图样的轴对称性来自哪里？",
+     "qa": [
+      {
+       "q": "艾里图样的轴对称性来自哪里？",
+       "a": "在均匀照明的理想圆孔远场衍射模型中，孔径对转轴旋转后不变，因此强度只取决于离轴角，不取决于方位角。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1030,
+     "y": 490,
+     "w": 750,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "艾里斑：第一暗环围住的中央亮斑",
+        "size": 40,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "艾里斑包含外围亮环吗？",
+     "qa": [
+      {
+       "q": "艾里斑包含外围亮环吗？",
+       "a": "不包含。艾里斑指第一暗环以内的中央亮斑，艾里图样才包括中央亮斑及外围环。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1030,
+     "y": 720,
+     "w": 750,
+     "h": 120,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "定量比较：中心量到第一暗环",
+        "size": 40,
+        "color": "#C00000",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    }
+   ],
+   "source_pages": [
+    5
+   ]
+  },
+  {
+   "id": 6,
+   "heading": "角半径与屏上半径",
+   "narration": "先把几何量定义清楚。孔径所在位置到第一暗环的方向，与光轴之间的夹角，是[[1]]第一暗环角半径，记作西塔零。它是一个角度，通常用弧度表示。屏幕上从光轴交点量到第一暗环的距离，是[[2]]中央亮斑的屏上半径，记作阿尔一。两者单位不同，一个是角，一个是长度，不能混用。对于距离圆孔很远的观察屏，设孔到屏的距离为大写艾勒，由直角三角形得到阿尔一等于艾勒乘西塔零的正切。[[3]]小角度时，正切近似等于角度本身，于是屏上半径约等于艾勒乘西塔零。若用透镜在后焦面观察，把这里的艾勒换成焦距艾弗即可。把屏移远，屏上光斑会变大；这一变化来自投影距离，不能据此说圆孔的角分辨能力变差。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1460,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　第一暗环角半径",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "img",
+     "step": 0,
+     "x": 105,
+     "y": 280,
+     "w": 900,
+     "h": 580,
+     "src": "angle-geometry.svg"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 1100,
+     "y": 275,
+     "w": 680,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\theta_0$：第一暗环角半径",
+        "size": 40,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "角半径的单位是什么？",
+     "qa": [
+      {
+       "q": "角半径的单位是什么？",
+       "a": "角半径用弧度表示，是中心方向与第一暗环方向之间的夹角。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1100,
+     "y": 435,
+     "w": 680,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$r_1$：屏上中央亮斑半径",
+        "size": 40,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "屏上半径变大一定说明角半径变大吗？",
+     "qa": [
+      {
+       "q": "屏上半径变大一定说明角半径变大吗？",
+       "a": "不一定。r1=L tanθ0，屏距L增大也会使屏上半径变大。需要固定观察几何才能比较角半径。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 1090,
+     "y": 610,
+     "w": 650,
+     "h": 160,
+     "tex": "r_1=L\\tan\\theta_0\\approx L\\theta_0",
+     "size": 42,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 180,
+     "y": 905,
+     "w": 1530,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "小角度用弧度；透镜后焦面用 f 代替 L",
+        "size": 36,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    }
+   ],
+   "source_pages": [
+    6
+   ]
+  },
+  {
+   "id": 7,
+   "heading": "子波如何叠加",
+   "narration": "公式从哪里来？我们采用均匀照明、单色光和理想圆孔的[[1]]远场衍射模型，也称夫琅禾费衍射。按惠更斯菲涅耳思想，圆孔中各处都贡献子波，观察方向上的场是这些子波振幅的相干叠加。把孔半径记为小写诶，等于孔直径的一半；孔内一点用极坐标阿尔和斐描述。[[2]]在离轴角西塔的方向，这一点相对孔心的光程差为阿尔乘正弦西塔，再乘余弦斐。光程差除以波长，再乘二派，就得到相位差。把波数记为开，等于二派除以波长，子波的复振幅便带有这个指数相位因子。[[3]]对整个圆孔积分，就是对所有子波求和。轴上角度为零，各点同相，所以中心最亮；离开光轴后，正负相位逐渐相消，形成暗环。圆孔的几何形状因此直接进入衍射规律，不能把单缝公式原封不动搬过来。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1460,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　子波叠加与圆孔几何",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 135,
+     "y": 235,
+     "w": 1620,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "模型：单色光、均匀圆孔、远场（或透镜后焦面）",
+        "size": 38,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "为什么要说明远场和均匀照明？",
+     "qa": [
+      {
+       "q": "为什么要说明远场和均匀照明？",
+       "a": "艾里公式建立在理想圆孔的夫琅禾费衍射模型中。近场或照明振幅不均匀时，图样及数值系数可能改变。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 160,
+     "y": 410,
+     "w": 1400,
+     "h": 100,
+     "tex": "a=\\frac D2,\\quad k=\\frac{2\\pi}{\\lambda},\\quad \\Delta\\ell=r\\sin\\theta\\cos\\varphi",
+     "size": 46,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 150,
+     "y": 615,
+     "w": 1600,
+     "h": 170,
+     "tex": "E(\\theta)=C\\int_0^a\\int_0^{2\\pi}e^{-ikr\\sin\\theta\\cos\\varphi}\\,r\\,d\\varphi\\,dr",
+     "size": 43,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 160,
+     "y": 870,
+     "w": 1540,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "轴上同相相加；离轴时发生相消",
+        "size": 40,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    }
+   ],
+   "source_pages": [
+    6
+   ]
+  },
+  {
+   "id": 8,
+   "heading": "轴对称积分与强度分布",
+   "narration": "现在按方位角先求和。对一个半径固定的小圆环，绕一圈的相位积分可以用[[1]]零阶贝塞尔函数，记作杰零，来表示。这里的函数是圆周积分的数学记号。再把从孔心到孔边的所有圆环加起来。换元令艾克斯等于开乘阿尔乘正弦西塔，积分上限变成乌。令无量纲变量乌等于开乘诶乘正弦西塔，等价于派乘孔径乘正弦西塔，再除以波长。[[2]]利用恒等式：乘积艾克斯乘杰一艾克斯，对艾克斯求导，等于艾克斯乘杰零艾克斯。先得到积分结果乌乘杰一乌，再除以轴上场，就得到归一化场振幅二倍杰一乌除以乌。轴上振幅是孔面积乘常数，因此在乌趋于零时，这个比值趋于一。最后，探测到的光强与场振幅模的平方成正比，于是[[3]]强度分布是这个比值的平方。我们无需背下贝塞尔函数的所有性质，只要明白：先叠加振幅，再平方得到强度；第一暗环将由振幅的第一个零点决定。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1460,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　轴对称积分",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 135,
+     "y": 250,
+     "w": 1600,
+     "h": 115,
+     "tex": "\\int_0^{2\\pi}e^{-iv\\cos\\varphi}\\,d\\varphi=2\\pi J_0(v)",
+     "size": 44,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 135,
+     "y": 420,
+     "w": 1600,
+     "h": 160,
+     "tex": "\\frac{E(\\theta)}{E(0)}=\\frac{2}{a^2}\\int_0^a rJ_0(kr\\sin\\theta)\\,dr=\\frac{2J_1(u)}{u}",
+     "size": 43,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 135,
+     "y": 615,
+     "w": 1600,
+     "h": 100,
+     "tex": "u=ka\\sin\\theta,\\quad \\frac{d}{dx}[xJ_1(x)]=xJ_0(x)",
+     "size": 40,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 135,
+     "y": 775,
+     "w": 1280,
+     "h": 140,
+     "tex": "\\frac{I(\\theta)}{I(0)}=\\left[\\frac{2J_1(u)}{u}\\right]^2",
+     "size": 49,
+     "color": "#111111",
+     "align": "left",
+     "hotspot": true,
+     "important": true,
+     "label": "为什么先加振幅再平方？",
+     "qa": [
+      {
+       "q": "为什么先加振幅再平方？",
+       "a": "同一入射波穿过圆孔的各处子波相干，必须叠加复振幅后取模平方。直接把各处强度相加，会丢失相位相消，因此得不到暗环。"
+      }
+     ]
+    }
+   ],
+   "source_pages": [
+    6
+   ]
+  },
+  {
+   "id": 9,
+   "heading": "第一零点与小角度近似",
+   "narration": "把强度曲线画出来，就能确定中央亮斑的边界。杰一在正方向的[[1]]第一个零点约为三点八三一七，所以第一暗环满足乌零等于这个数。将乌的定义代入，得到派乘孔径乘正弦西塔零，除以波长，等于三点八三一七。把派和孔径移到另一侧，就得到[[2]]正弦西塔零约等于一点二二乘波长除以孔径。这个一点二二来自圆孔积分的第一个零点，不是凭经验随手设定的常数。通常波长远小于孔径，角度很小，正弦西塔零近似等于西塔零，于是得到常用的[[3]]角半径公式。它说明波长固定时孔径越小，角半径越大，正好解释刚才的观察。还要留意，它给的是半径对应的角，不是艾里斑的角直径；角直径要再乘二。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1460,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　第一暗环与小角度近似",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "img",
+     "step": 0,
+     "x": 1020,
+     "y": 265,
+     "w": 760,
+     "h": 510,
+     "src": "airy-curve.svg"
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 135,
+     "y": 285,
+     "w": 850,
+     "h": 110,
+     "tex": "J_1(u_0)=0,\\quad u_0\\approx3.8317",
+     "size": 45,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 135,
+     "y": 455,
+     "w": 850,
+     "h": 130,
+     "tex": "\\sin\\theta_0\\approx1.22\\frac{\\lambda}{D}",
+     "size": 49,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 135,
+     "y": 660,
+     "w": 850,
+     "h": 140,
+     "tex": "\\boxed{\\theta_0\\approx1.22\\frac{\\lambda}{D}}",
+     "size": 55,
+     "color": "#111111",
+     "align": "left",
+     "hotspot": true,
+     "important": true,
+     "label": "1.22的来源与适用条件是什么？",
+     "qa": [
+      {
+       "q": "1.22的来源与适用条件是什么？",
+       "a": "3.8317是J1的第一正零点，除以π约为1.22。θ0≈1.22λ/D还使用小角度sinθ≈θ，角度必须用弧度，并基于均匀圆孔远场模型。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 180,
+     "y": 885,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "λ ≪ D　　角度用弧度　　θ₀ 是角半径",
+        "size": 37,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    }
+   ],
+   "source_pages": [
+    6
+   ]
+  },
+  {
+   "id": 10,
+   "heading": "孔径扫描与模型计算",
+   "narration": "再把公式与刚才的扫描放在一起。保持波长为五百五十纳米，对几个孔径计算第一暗环角半径。[[1]]点击演示，进行扫描，观察孔径从零点六毫米减小到零点一毫米时，图样怎样展开。左侧记录表和右侧曲线使用同一个艾里模型生成，因此我们把它明确称为模型计算。它能够检验参数联动和数量级，不能充当独立实测数据来证明公式正确。以零点六毫米为例，五百五十纳米先换成米，孔径也换成米，计算得到[[2]]一点一二毫弧度左右。孔径减到三分之一，角半径就增大到三倍。把横轴改为孔径的倒数，理论上得到过原点的直线，乘积西塔零乘孔径保持不变。如果要做真正的实验验证，还需要测量暗环位置、屏距与孔径，给出误差和模型条件，然后把测量结果与预测比较。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1460,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　孔径扫描：模型预测",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "html",
+     "step": 0,
+     "x": 80,
+     "y": 220,
+     "w": 1760,
+     "h": 665,
+     "src": "sim_aperture.html?embed=record",
+     "label": "孔径扫描与模型记录",
+     "msgs": {
+      "1": "demoRecord"
+     }
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 130,
+     "y": 900,
+     "w": 1500,
+     "h": 60,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "记录来自模型计算，不冒充独立实测",
+        "size": 34,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 130,
+     "y": 965,
+     "w": 1550,
+     "h": 60,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "λ = 550 nm，D = 0.60 mm 时，θ₀ ≈ 1.12 mrad",
+        "size": 34,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    }
+   ],
+   "source_pages": [
+    7
+   ]
+  },
+  {
+   "id": 11,
+   "heading": "角度与长度的迁移判断",
+   "narration": "用一道情境题检查我们有没有把角度和长度分清。某同学保持波长和孔径不变，只把远场观察屏的距离增大到原来的两倍。他看到屏上艾里斑半径变大了，便说仪器的角分辨能力也下降了一半。[[1]]请判断这种说法，并选择最合理的结果。作答时先找出哪些量真正控制角半径，再看哪个量改变了屏上的投影尺度。[[2]]屏距只改变角度映射成长度的比例，所以屏上半径变为两倍，而第一暗环角半径不变。若用放大镜把现有图样再放大，也有类似区别：画面尺寸改变，不等于新出现了能分开的细节。这个区别，稍后会帮助我们判断光学仪器该增大孔径，还是只提高放大倍率。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1460,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　角度与长度",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 140,
+     "y": 270,
+     "w": 1590,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同一波长、同一圆孔，远场屏距变为 2L",
+        "size": 46,
+        "color": "#273444",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 140,
+     "y": 475,
+     "w": 1510,
+     "h": 150,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "屏上半径与第一暗环角半径分别怎样变化？",
+        "size": 42,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 140,
+     "y": 765,
+     "w": 1510,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "改变投影尺度，需要与改变角宽度区分",
+        "size": 40,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "为什么移动屏幕不改变圆孔的角半径？",
+     "qa": [
+      {
+       "q": "为什么移动屏幕不改变圆孔的角半径？",
+       "a": "固定λ与D时，角分布由孔径决定。屏上半径r1≈Lθ0随屏距L变化，θ0保持不变。"
+      }
+     ]
+    }
+   ],
+   "source_pages": [
+    6,
+    7
+   ],
+   "interactions": [
+    {
+     "at": 1,
+     "q": "屏距变成2L，其他条件不变。正确结果是？",
+     "answer": 0,
+     "options": [
+      "r₁变为2倍，θ₀不变",
+      "r₁不变，θ₀变为2倍",
+      "r₁与θ₀都变为2倍"
+     ],
+     "explain": "θ₀由λ/D决定；r₁≈Lθ₀。屏距变为两倍只使长度投影变为两倍。",
+     "after_sentence": "请判断这种说法，并选择最合理的结果。",
+     "pause_offset": 0.1
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "heading": "双点像：先寻找临界",
+   "narration": "现在进入第二个探究。我们让两个等强、彼此非相干的点源，分别通过同一个圆孔成像。各自形成一个艾里图样，屏上的[[1]]总强度等于两个强度相加。这里点源彼此非相干，所以与前面圆孔内子波的相干叠加不同。滑块里的小写西，表示两点角间距除以一个艾里斑的第一暗环角半径。[[2]]点击演示，或者暂停后拖动滑块，让西从一点六减到零点六。注意右侧的水平剖面：开始有两个明显的峰，中间有一个低谷；两像靠近后，中间低谷逐渐被填高，双峰越来越不明显。[[3]]请先凭观察判断“容易分开”与“难以分开”，再追问：这种变化是连续的，应该把哪个位置约定为恰可分辨？先有这个问题，我们再给出常用的瑞利判据。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1460,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "03　瑞利判据与分辨",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "html",
+     "step": 1,
+     "x": 80,
+     "y": 215,
+     "w": 1760,
+     "h": 685,
+     "src": "sim_aperture.html?embed=dual",
+     "label": "双点像与水平强度剖面",
+     "msgs": {
+      "2": "demoDual"
+     }
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 130,
+     "y": 915,
+     "w": 1600,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "先观察双峰与鞍点的连续变化，再讨论分辨边界",
+        "size": 36,
+        "color": "#C00000",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    }
+   ],
+   "source_pages": [
+    8
+   ]
+  },
+  {
+   "id": 13,
+   "heading": "双峰靠近，凹陷变浅",
+   "narration": "将扫描的三个位置并排比较。[[1]]西等于一点六时，两像间距较大，两个峰容易区分，中间低谷明显。[[2]]西减到一时，低谷已抬高，双峰仍能看见；继续减到零点六，中央可能合并成一个峰。这里要把用词说准确：西减小时，鞍点处的相对强度上升，中间的凹陷变浅，不能说低谷越来越深。[[3]]整个过程是连续变化的，图像并没有突然跳变的分界线。我们需要约定一个可沟通的标准，让不同仪器和不同观察者能够比较。判据的选取还会受到噪声、两点亮度差和数据处理方法影响。本课先在等强非相干点源的理想模型中，采用瑞利判据。你不必凭一个鞍点百分数背结论，关键是看两个像的中心与第一暗环之间的几何关系。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1460,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "03　双峰与鞍点",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 115,
+     "y": 300,
+     "w": 530,
+     "h": 480,
+     "src": "profile-16.svg"
+    },
+    {
+     "type": "img",
+     "step": 2,
+     "x": 695,
+     "y": 300,
+     "w": 530,
+     "h": 480,
+     "src": "profile-10.svg"
+    },
+    {
+     "type": "img",
+     "step": 2,
+     "x": 1275,
+     "y": 300,
+     "w": 530,
+     "h": 480,
+     "src": "profile-06.svg"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 130,
+     "y": 225,
+     "w": 510,
+     "h": 75,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "c = 1.6",
+        "size": 41,
+        "color": "#273444",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 710,
+     "y": 225,
+     "w": 510,
+     "h": 75,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "c = 1.0",
+        "size": 41,
+        "color": "#273444",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1290,
+     "y": 225,
+     "w": 510,
+     "h": 75,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "c = 0.6",
+        "size": 41,
+        "color": "#273444",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 140,
+     "y": 870,
+     "w": 1580,
+     "h": 115,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "间距减小：鞍点强度上升，凹陷变浅",
+        "size": 42,
+        "color": "#C00000",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "“鞍点变深”为什么容易造成误解？",
+     "qa": [
+      {
+       "q": "“鞍点变深”为什么容易造成误解？",
+       "a": "两像靠近时，中间强度升高，两个峰之间的凹陷变浅。应说明比较的是鞍点强度还是相对峰值的凹陷深度，避免把两者反着描述。"
+      }
+     ]
+    }
+   ],
+   "source_pages": [
+    9
+   ]
+  },
+  {
+   "id": 14,
+   "heading": "瑞利判据的几何意义",
+   "narration": "现在给这个常用边界命名。瑞利判据约定：当一个点像的中央极大，恰好落在另一个点像的[[1]]第一暗环上时，两个点恰可分辨。在模拟中把西调到一，就能对照看到这一位置关系。请沿着两个像的中心连线看，中心之间的距离正好等于一个艾里斑的半径。于是两点的最小可分辨角，等于单个点像的第一暗环角半径，记作[[2]]西塔最小。它与西塔零数值相同，但物理含义不同：一个描述单点像的角宽度，一个描述两个目标的角间距门槛。[[3]]瑞利判据是约定，不是图样突然变化的自然开关。我们可以采用其他判据，但不能因此消除有限孔径造成的衍射扩展。对于亮度不等、噪声较强的实际图像，判断可分辨还需要更多条件；今天的公式用于理想等强非相干双点模型。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1460,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "03　瑞利判据",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "html",
+     "step": 0,
+     "x": 90,
+     "y": 235,
+     "w": 1050,
+     "h": 640,
+     "src": "sim_aperture.html?embed=rayleigh",
+     "label": "中心与第一暗环位置对照"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 1200,
+     "y": 265,
+     "w": 560,
+     "h": 190,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一个斑的中心\n落在另一个斑的第一暗环",
+        "size": 38,
+        "color": "#273444",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "瑞利判据中的中心与暗环属于同一个像吗？",
+     "qa": [
+      {
+       "q": "瑞利判据中的中心与暗环属于同一个像吗？",
+       "a": "属于不同的点像：一个像的中央极大落在另一个像的第一暗环处。两中心间距因此等于单个艾里斑的第一暗环半径。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 1200,
+     "y": 560,
+     "w": 575,
+     "h": 150,
+     "tex": "\\theta_{\\min}\\approx1.22\\frac\\lambda D",
+     "size": 48,
+     "color": "#111111",
+     "align": "left",
+     "hotspot": true,
+     "important": true,
+     "label": "θmin越大，分辨本领越好吗？",
+     "qa": [
+      {
+       "q": "θmin越大，分辨本领越好吗？",
+       "a": "不是。θmin是最小可分辨角，越小表示能分开越接近的目标，角分辨本领越高。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 150,
+     "y": 905,
+     "w": 1560,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "判据可以约定，有限孔径的衍射扩展仍客观存在",
+        "size": 36,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    }
+   ],
+   "source_pages": [
+    10,
+    11
+   ]
+  },
+  {
+   "id": 15,
+   "heading": "角分辨率与空间分辨率",
+   "narration": "把判据转换成工程中可用的语言。仪器能够分开的最小角间距，称为[[1]]角分辨率，常用最小可分辨角表示。这个角越小，角分辨本领越高。若两个目标位于同一远处物平面，距离仪器为大写艾勒，彼此间距为小写迪，在小角度下，目标角间距约等于迪除以艾勒。[[2]]将它与最小可分辨角比较，得到目标的最小可分辨间距，约等于艾勒乘西塔最小。它是物方的空间分辨尺度，必须同时说明观察距离。[[3]]同一个仪器观察更远的目标时，角分辨率可以不变，能分开的实际间距却增大。请不要把这里的物方间距，与上一段屏上艾里斑半径混成同一个量。屏上像距由成像几何决定，物方间距描述真实目标的位置。解题时先画清目标、孔径和像平面，再给每个量加上单位，错误通常就能避免。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1460,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "03　角分辨与空间分辨",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 135,
+     "y": 260,
+     "w": 1560,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "角分辨率：最小可分辨角 θmin（rad）",
+        "size": 44,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "“分辨本领高”为什么意味着角分辨率数值更小？",
+     "qa": [
+      {
+       "q": "“分辨本领高”为什么意味着角分辨率数值更小？",
+       "a": "角分辨率这里用最小可分辨角表示。数值越小，能区分的角间距越小，因此分辨本领越高。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 150,
+     "y": 465,
+     "w": 1450,
+     "h": 160,
+     "tex": "\\Delta\\theta\\approx\\frac dL,\\qquad d_{\\min}\\approx L\\theta_{\\min}",
+     "size": 56,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 150,
+     "y": 660,
+     "w": 1510,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "空间分辨尺度 dmin（m）：必须注明物距 L",
+        "size": 41,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "只给dmin而不说观察距离，信息充分吗？",
+     "qa": [
+      {
+       "q": "只给dmin而不说观察距离，信息充分吗？",
+       "a": "不充分。相同角分辨率下dmin≈Lθmin随距离改变。比较物方空间分辨尺度时，需要说明距离或成像几何。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 150,
+     "y": 845,
+     "w": 1500,
+     "h": 130,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "物方目标间距 d　与　像面亮斑半径 r₁，分别描述不同位置",
+        "size": 36,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    }
+   ],
+   "source_pages": [
+    10,
+    12,
+    14
+   ]
+  },
+  {
+   "id": 16,
+   "heading": "孔径还是放大倍率",
+   "narration": "先做一项仪器改进的决策。两颗亮度相近的恒星角间距很小，现有理想望远镜不能把它们分开。有人建议只换一个放大倍率更高的目镜，另一人建议增大物镜的有效孔径。[[1]]如果波长不变，你会选择哪一种，并说明控制量是什么？请先回忆最小可分辨角由哪些量决定，而不要被“画面更大”吸引。[[2]]增大有效孔径会缩小衍射像的角宽度，有机会把这对星分开。单纯提高放大倍率，只会放大已有的模糊图样，没有缩小物镜对应的角分辨门槛。真实望远镜当然还受到像差、大气扰动和探测器采样影响，但这些条件不改变这道理想模型题的结论。合理的改进，应该先对准真正的限制因素，再选择工程措施。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1460,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04　应用与迁移",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 140,
+     "y": 255,
+     "w": 1510,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "情境：两颗近邻恒星，现有理想望远镜分不开",
+        "size": 45,
+        "color": "#273444",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 140,
+     "y": 480,
+     "w": 1510,
+     "h": 150,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "波长不变，哪种改进能降低衍射角宽度？",
+        "size": 42,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 140,
+     "y": 785,
+     "w": 1490,
+     "h": 135,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "提高有效孔径，才能降低理想圆孔的分辨门槛",
+        "size": 40,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "提高放大倍率能突破物镜的衍射限制吗？",
+     "qa": [
+      {
+       "q": "提高放大倍率能突破物镜的衍射限制吗？",
+       "a": "单纯提高放大倍率只能放大已有图像，不能缩小物镜的衍射角宽度。要改进理想模型下的角分辨率，应增大有效孔径或缩短波长。"
+      }
+     ]
+    }
+   ],
+   "source_pages": [
+    12,
+    13
+   ],
+   "interactions": [
+    {
+     "at": 1,
+     "q": "波长不变，理想望远镜可怎样改善两星分辨？",
+     "answer": 1,
+     "options": [
+      "只把目镜放大倍率加倍",
+      "把有效孔径加倍",
+      "只把显示图像放大加倍"
+     ],
+     "explain": "有效孔径加倍使最小可分辨角减半；放大倍率或显示缩放不改变物镜的衍射角宽度。",
+     "after_sentence": "如果波长不变，你会选择哪一种，并说明控制量是什么？",
+     "pause_offset": 0.1
+    }
+   ]
+  },
+  {
+   "id": 17,
+   "heading": "车灯能在多远处分开",
+   "narration": "回到车灯的问题。我们取一个理想估算：两盏灯相距一点五米，波长用五百五十纳米，眼睛的有效瞳孔直径取五毫米。这里把眼睛简化为一个圆孔，暂不考虑像差、视网膜采样、背景光和个人视觉差异。[[1]]先求最小可分辨角，得到一点三四二乘十的负四次方弧度，约为零点一三四毫弧度。灯距固定，车越远，角间距越小。恰可分辨时，灯距除以观察距离等于这个最小角，于是[[2]]理想边界距离约为十一点二千米。这个数字只说明模型的数量级，不能当作夜间驾驶中发现或辨认车辆的实际距离。实际的亮度、天气、眩光和观察条件都非常重要。[[3]]我们真正解释的是趋势：两灯越来越远，角间距最终小于仪器的分辨门槛，所以接收到光也可能只看见一个亮点。引入里的第一问，现在有了清楚的物理回答。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1460,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04　车灯：理想模型估算",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 135,
+     "y": 235,
+     "w": 1570,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "灯距 d = 1.5 m；λ = 550 nm；瞳孔 D = 5 mm",
+        "size": 42,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 150,
+     "y": 425,
+     "w": 1510,
+     "h": 135,
+     "tex": "\\theta_{\\min}\\approx\\frac{1.22\\times550\\times10^{-9}}{5\\times10^{-3}}=1.342\\times10^{-4}\\ \\mathrm{rad}",
+     "size": 42,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 150,
+     "y": 635,
+     "w": 1300,
+     "h": 135,
+     "tex": "L_{\\max}\\approx\\frac d{\\theta_{\\min}}\\approx1.12\\times10^4\\ \\mathrm{m}",
+     "size": 48,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 150,
+     "y": 855,
+     "w": 1510,
+     "h": 135,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "结果属于理想衍射估算，实际视觉还受亮度、像差、天气等影响",
+        "size": 36,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "11.2km是实际驾驶能分辨车灯的距离吗？",
+     "qa": [
+      {
+       "q": "11.2km是实际驾驶能分辨车灯的距离吗？",
+       "a": "不是。这是选定λ、瞳孔直径和灯距后得到的理想衍射数量级估算，没有计入亮度、背景、天气、像差和视觉系统等实际限制。"
+      }
+     ]
+    }
+   ],
+   "source_pages": [
+    2,
+    14
+   ]
+  },
+  {
+   "id": 18,
+   "heading": "中国天眼：有效口径与波长",
+   "narration": "再回到中国天眼。FAST的反射面直径为五百米，但观测时形成的[[1]]有效照明口径约为三百米，不能在每个估算里直接把五百米当作有效孔径。再选二十一厘米的无线电波长，用均匀圆孔模型做一个数量级估算。将波长除以三百米，再乘一点二二，得到[[2]]约零点八五四毫弧度，换算约为二点九角分。这是我们用选定参数做出的瑞利模型估算，不能把它直接等同于仪器在整个L波段的实测波束半高全宽。实际照明分布和观测频率会影响波束。[[3]]同样是电磁波，无线电波的波长比可见光长得多，要获得较小的角宽度，就需要很大的口径。天眼把基础物理规律转化为工程设计，也提醒我们：接收到遥远信号，与把近邻目标区分开，是两个需要分别评价的能力。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1460,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04　FAST：有效口径与波长",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "img",
+     "step": 0,
+     "x": 100,
+     "y": 270,
+     "w": 800,
+     "h": 590,
+     "src": "fast.jpg"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 1030,
+     "y": 270,
+     "w": 750,
+     "h": 150,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "500 m 反射面\n约 300 m 有效照明口径",
+        "size": 40,
+        "color": "#273444",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1030,
+     "y": 505,
+     "w": 750,
+     "h": 170,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "取 λ = 0.21 m\n圆孔模型估算 ≈ 2.9′",
+        "size": 40,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "为什么不能直接用500m代入所有FAST分辨率估算？",
+     "qa": [
+      {
+       "q": "为什么不能直接用500m代入所有FAST分辨率估算？",
+       "a": "应使用对应观测和模型的有效照明口径，FAST通常形成约300m的照明抛物面。反射面总直径与有效照明口径不是同一量。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1030,
+     "y": 770,
+     "w": 750,
+     "h": 145,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "接收能力与角分辨能力，需要分别评价",
+        "size": 38,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 945,
+     "w": 1630,
+     "h": 65,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "数值为选定参数的模型估算；瑞利角间距与波束半高全宽定义不同",
+        "size": 29,
+        "color": "#556B8D",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    }
+   ],
+   "source_pages": [
+    12
+   ]
+  },
+  {
+   "id": 19,
+   "heading": "观察距离也属于设计条件",
+   "narration": "继续用同一台仪器，做另一项工程判断。假设仪器的最小可分辨角已经固定，原来恰好达到瑞利边界，能分开同一物平面中相隔一点零毫米的两个目标。观察距离增大到原来的两倍，又希望仍然分开同样一点零毫米的间距。[[1]]在波长不变、模型条件相同的情况下，有效孔径至少应当怎样调整？这次不能只盯着角公式，还要把目标角间距随距离的变化算进去。距离加倍后，同一目标间距对应的角度减半，所以需要把最小可分辨角也降到一半。[[2]]因此有效孔径应加倍。这个推理同时用到了衍射角宽度和物方几何，体现了从公式到设计的完整链条。若条件允许缩短波长，也能降低衍射角宽度；但选波长还要兼顾目标辐射、介质透过和探测器响应，不能只优化一个比值就宣称工程问题全部解决。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1460,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04　设计条件：距离、波长与孔径",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 145,
+     "y": 260,
+     "w": 1530,
+     "h": 135,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "任务：原来恰可分辨；距离变成 2L，目标间距不变",
+        "size": 45,
+        "color": "#273444",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 145,
+     "y": 480,
+     "w": 1510,
+     "h": 145,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "固定波长时，有效孔径至少应怎样变化？",
+        "size": 43,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 145,
+     "y": 785,
+     "w": 1510,
+     "h": 145,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "先算目标角间距，再匹配仪器的分辨门槛",
+        "size": 41,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "设计孔径时为什么必须说明观察距离？",
+     "qa": [
+      {
+       "q": "设计孔径时为什么必须说明观察距离？",
+       "a": "给定目标间距d时，角间距约为d/L。距离越大，目标角间距越小，需要更小的最小可分辨角，因此对孔径或波长的要求更高。"
+      }
+     ]
+    }
+   ],
+   "source_pages": [
+    12,
+    14
+   ],
+   "interactions": [
+    {
+     "at": 1,
+     "q": "原来恰可分辨，物距加倍而目标间距不变，要保持恰可分辨，λ固定时应怎样调整D？",
+     "answer": 2,
+     "options": [
+      "D减半",
+      "D不变",
+      "D加倍"
+     ],
+     "explain": "目标角间距d/L减半。要使θmin减半，在λ固定时D必须加倍。",
+     "after_sentence": "在波长不变、模型条件相同的情况下，有效孔径至少应当怎样调整？",
+     "pause_offset": 0.1
+    }
+   ]
+  },
+  {
+   "id": 20,
+   "heading": "工程改进与规律的边界",
+   "narration": "我们能怎样改进仪器？对于单个理想圆孔，在条件允许时，[[1]]增大有效孔径或缩短波长，都能缩小衍射角宽度。这是可以从本课模型直接得到的设计方向。但真实仪器还需要控制像差、保持稳定，提供足够信噪比，让探测器能够采样已有的细节。[[2]]阵列与干涉测量利用相距较远的接收单元，获得与基线和波长有关的高角分辨信息；它的响应与图像重建不能简单套成一个直径等于基线的完整圆孔。为什么强调这一点？因为利用规律，需要同时尊重模型的边界。[[3]]从课堂上一个小圆孔，到大型观测仪器，基础研究、精密工程与长期积累共同支撑探索。我们可以改变设备和判据，也可以采用新的测量方法，但每一项改进都应说明它改变了什么物理量、依赖什么条件，而不能把“突破”当作不需要解释的口号。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1460,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04　工程改进与模型边界",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 140,
+     "y": 275,
+     "w": 1560,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "单圆孔：增大有效口径，或缩短波长",
+        "size": 45,
+        "color": "#273444",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "缩短波长一定是所有观测的最佳选择吗？",
+     "qa": [
+      {
+       "q": "缩短波长一定是所有观测的最佳选择吗？",
+       "a": "不一定。理想圆孔衍射角宽度随λ减小，但观测还必须考虑目标信号、透过率、探测器与噪声等条件。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 140,
+     "y": 505,
+     "w": 1560,
+     "h": 150,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "阵列：利用基线；响应与重建需要新的模型",
+        "size": 43,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 140,
+     "y": 805,
+     "w": 1560,
+     "h": 130,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "工程创新建立在对规律与适用条件的理解之上",
+        "size": 41,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "阵列基线可以直接视作一个完整圆孔直径吗？",
+     "qa": [
+      {
+       "q": "阵列基线可以直接视作一个完整圆孔直径吗？",
+       "a": "不能直接等同。阵列角分辨信息与λ和基线有关，但其孔径覆盖、响应和重建与均匀完整圆孔不同，不能无条件照搬艾里图样。"
+      }
+     ]
+    }
+   ],
+   "source_pages": [
+    13
+   ]
+  },
+  {
+   "id": 21,
+   "heading": "小结：逐一回答引入的问题",
+   "narration": "把今天的线索收回来。[[1]]一个点为什么形成有宽度的像？因为有限圆孔各处的子波在不同方向具有不同相位，叠加后形成艾里图样，第一暗环给中央亮斑规定了边界。圆孔积分的第一零点，再加小角度近似，给出角宽度随波长与孔径的关系。[[2]]两个点怎样判断恰可分辨？在等强非相干双点模型中，瑞利判据把一个像的中心落到另一个像第一暗环的位置，约定为常用边界。变化本身是连续的，判据帮助我们沟通和比较。[[3]]车灯为什么远了会合并？它们的角间距随距离增大而减小，最后可能小于眼睛的分辨门槛。天眼为什么需要巨大有效口径？较长的无线电波长，需要较大口径来获得较小角宽度。最后，单纯放大画面为何不能保证看清？因为放大比例没有改变孔径造成的衍射扩展。两个悬念都有了回答，判断问题时记住目标几何、仪器门槛与模型条件。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1460,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "　小结",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 140,
+     "y": 255,
+     "w": 1510,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "单点：子波叠加形成艾里图样",
+        "size": 43,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "圆孔衍射的推导链是什么？",
+     "qa": [
+      {
+       "q": "圆孔衍射的推导链是什么？",
+       "a": "孔内子波振幅叠加，轴对称积分得到2J1(u)/u，强度取模平方，第一零点确定暗环，小角度近似得到θ0≈1.22λ/D。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 140,
+     "y": 465,
+     "w": 1510,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "双点：瑞利判据规定常用分辨边界",
+        "size": 43,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 140,
+     "y": 685,
+     "w": 1530,
+     "h": 160,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "车灯：距离增大，角间距缩小\n天眼：长波长需要更大有效口径",
+        "size": 41,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 140,
+     "y": 905,
+     "w": 1500,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "放大画面，不会自动增加已分开的细节",
+        "size": 38,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    }
+   ],
+   "source_pages": [
+    2,
+    12,
+    13
+   ]
+  },
+  {
+   "id": 22,
+   "heading": "作业与探究",
+   "narration": "课后做两项练习。第一项是[[1]]定量估算：取波长五百五十纳米，瞳孔直径五毫米，计算十米外同一物平面中的最小可分辨间距。请先把纳米和毫米统一换成米，先求角门槛，再换成物方长度，并在答案里写出理想圆孔、小角度和瑞利判据这些条件。第二项是[[2]]探究讨论：瑞利判据为什么是一种约定？如果两点亮度差很大，或背景噪声增强，你会怎样检验“恰可分辨”的判断？你可以与同学讨论，也可以自愿向AI助教提出三轮逐步深入的追问，最后留下自己的判断和理由。这是课后探究建议，本网页不模拟后台提交，也不代写学生对话。[[3]]下次预习衍射光栅：多个缝的振幅怎样叠加，为什么主要亮纹会更窄？带着今天“孔径结构决定角分布”的思路，我们下次继续。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1460,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "　作业与预习",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 140,
+     "y": 260,
+     "w": 1530,
+     "h": 175,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "估算：λ = 550 nm，D = 5 mm，L = 10 m\n求物方最小可分辨间距，并写清适用条件",
+        "size": 42,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "课后估算的检查结果是什么？",
+     "qa": [
+      {
+       "q": "课后估算的检查结果是什么？",
+       "a": "θmin≈1.342×10⁻⁴ rad，dmin≈10×θmin m≈1.34mm。这是选定参数下的理想衍射估算。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 140,
+     "y": 520,
+     "w": 1530,
+     "h": 250,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "探究：瑞利判据为何是约定？亮度差或噪声增强时怎样检验？\n先写自己的判断，到 up.physxuanmin.cloud 与 AI 至少对话3轮\nAI 只追问；卡住时可请求1次提示\n将3轮对话记录与最终判断提交到原平台（或交教师）",
+        "size": 34,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 140,
+     "y": 805,
+     "w": 1530,
+     "h": 125,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "预习衍射光栅：多缝叠加与主要亮纹的宽度",
+        "size": 40,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    }
+   ],
+   "source_pages": [
+    14
+   ]
+  },
+  {
+   "id": 23,
+   "heading": "下次课见",
+   "narration": "今天我们从观察开始，经过推导，又用模型回到观察。愿大家保留这种[[1]]先问依据，再作判断的习惯。下次课见。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 350,
+     "y": 360,
+     "w": 1230,
+     "h": 220,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "下次课见",
+        "size": 92,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 350,
+     "y": 665,
+     "w": 1230,
+     "h": 120,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "理论与观察相互检验",
+        "size": 43,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    }
+   ],
+   "source_pages": [
+    15
+   ]
+  }
+ ]
+}

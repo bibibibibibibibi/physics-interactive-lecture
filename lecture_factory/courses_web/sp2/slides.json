@@ -1,0 +1,4163 @@
+{
+ "title": "电磁感应定律",
+ "nav": "专题·第2学时　电磁感应定律",
+ "footer": "专题　电磁感应定律",
+ "character": "aqiang",
+ "logoScale": 0.67,
+ "theme": "special",
+ "sections": [
+  {
+   "title": "电磁感应现象",
+   "page": 4
+  },
+  {
+   "title": "法拉第定律",
+   "page": 8
+  },
+  {
+   "title": "楞次定律",
+   "page": 11
+  },
+  {
+   "title": "应用与迁移",
+   "page": 15
+  },
+  {
+   "title": "小结与课后思考",
+   "page": 20
+  }
+ ],
+ "pages": [
+  {
+   "id": 1,
+   "heading": "封面",
+   "narration": "同学们好，欢迎来到大学物理课堂。今天我们学习[[1]]电磁感应定律，它选自第八章电磁感应、电磁场。这节课要完成一件事：从可以看见的实验现象出发，找到计算感应电动势、判断感应电流方向的方法。准备好纸和笔，我们一起把现象背后的规律写出来。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 260,
+     "w": 1020,
+     "h": 270,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "电磁感应",
+        "size": 96,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "定律",
+        "size": 96,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 115,
+     "y": 575,
+     "w": 950,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "FARADAY'S LAW OF INDUCTION",
+        "size": 29,
+        "color": "#556B8D",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "FARADAY'S LAW OF INDUCTION",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 115,
+     "y": 700,
+     "w": 1080,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "大学物理　第8章 电磁感应、电磁场　第1节",
+        "size": 32,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "大学物理　第8章 电磁感应、电磁场　第1节",
+     "qa": []
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 1200,
+     "y": 260,
+     "w": 560,
+     "h": 580,
+     "src": "cover.svg"
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "heading": "学习路线",
+   "narration": "我们的学习分四段。第一段，[[1]]电磁感应现象，比较改变磁场、改变回路面积时的实验结果，找出共同条件。这是本课的重点。第二段，[[2]]法拉第定律，把变化快慢写成可以计算的公式。第三段，[[3]]楞次定律，把公式里的负号翻译成电流方向，这是本课的重点和难点。第四段，[[4]]应用与迁移，用铜管实验和无线充电检验我们是否真正理解了规律。每遇到一道随堂题，先独立选择，再看解析。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 150,
+     "w": 600,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "目 录",
+        "size": 64,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 150,
+     "y": 365,
+     "w": 330,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "01",
+        "size": 48,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "01",
+     "qa": []
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 150,
+     "y": 465,
+     "w": 56,
+     "h": 5,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 150,
+     "y": 520,
+     "w": 380,
+     "h": 150,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "电磁感应现象",
+        "size": 40,
+        "color": "#273444",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 150,
+     "y": 705,
+     "w": 380,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "重点",
+        "size": 28,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "重点",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 565,
+     "y": 365,
+     "w": 330,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02",
+        "size": 48,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "02",
+     "qa": []
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 565,
+     "y": 465,
+     "w": 56,
+     "h": 5,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 565,
+     "y": 520,
+     "w": 380,
+     "h": 150,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "法拉第定律",
+        "size": 40,
+        "color": "#273444",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 565,
+     "y": 705,
+     "w": 380,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "大小与变化率",
+        "size": 28,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "大小与变化率",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 980,
+     "y": 365,
+     "w": 330,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "03",
+        "size": 48,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "03",
+     "qa": []
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 980,
+     "y": 465,
+     "w": 56,
+     "h": 5,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 980,
+     "y": 520,
+     "w": 380,
+     "h": 150,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "楞次定律",
+        "size": 40,
+        "color": "#273444",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 980,
+     "y": 705,
+     "w": 380,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "重点、难点",
+        "size": 28,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "重点、难点",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1395,
+     "y": 365,
+     "w": 330,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04",
+        "size": 48,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "04",
+     "qa": []
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 1395,
+     "y": 465,
+     "w": 56,
+     "h": 5,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1395,
+     "y": 520,
+     "w": 380,
+     "h": 150,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "应用与迁移",
+        "size": 40,
+        "color": "#273444",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1395,
+     "y": 705,
+     "w": 380,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "铜管与无线充电",
+        "size": 28,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "铜管与无线充电",
+     "qa": []
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "heading": "两个悬念",
+   "narration": "先看[[1]]列车缓缓进站。速度降下来了，动能去了哪里？先记住这个能量问题，具体车辆可以采用多种制动方式。再看右边的[[2]]两根管子：同一块磁铁，在塑料管里很快落下，在铜管里却慢了下来。铜并不像铁那样明显吸引磁铁，这只看不见的“手”从哪里来？还有[[3]]手机无线充电：导线没有接到手机，电能怎样跨过间隙？一个在减速，一个在传能，看起来相隔很远，会不会藏着同一条规律？想一想，先把你的猜测记下来。接下来，我们用实验一层层揭开答案。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "00　从现象提出问题",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "video",
+     "step": 1,
+     "x": 115,
+     "y": 230,
+     "w": 890,
+     "h": 500,
+     "src": "train.mp4"
+    },
+    {
+     "type": "img",
+     "step": 2,
+     "x": 1120,
+     "y": 225,
+     "w": 645,
+     "h": 510,
+     "src": "tube-pair.svg"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 120,
+     "y": 760,
+     "w": 850,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "减速时，动能去了哪里？",
+        "size": 38,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "减速时，动能去了哪里？",
+     "qa": [
+      {
+       "q": "列车的动能一定变成热吗？",
+       "a": "减速时动能减少，可转为热或其他形式的能量。例如发电制动可把一部分机械能转为电能。本页画面用于提出能量问题，不据此判断具体车辆的制动设备。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1090,
+     "y": 760,
+     "w": 720,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "铜管为什么让磁铁慢下来？",
+        "size": 36,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "铜管为什么让磁铁慢下来？",
+     "qa": [
+      {
+       "q": "铜管是靠像铁一样吸住磁铁来减速吗？",
+       "a": "课堂中的主要作用来自变化磁通量在导电铜管中产生涡流，涡流的磁场阻碍磁铁运动。普通铜不是铁磁材料。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 890,
+     "w": 1500,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "无线充电：电能怎样跨过间隙？",
+        "size": 38,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "无线充电：电能怎样跨过间隙？",
+     "qa": [
+      {
+       "q": "无线充电靠什么跨过间隙？",
+       "a": "发射线圈中的交流电产生变化磁场，使接收线圈磁通量变化并产生感应电动势。后级电路将能量送入电池。后面会完整分析。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "heading": "磁能生电吗",
+   "narration": "我们已经知道，[[1]]电流能够激发磁场。反过来，磁场能不能产生电流？敢于这样追问，是探索的起点；答案还要交给实验。[[2]]一八三一年，法拉第发现电磁感应。请看他的肖像与实验日记，科学发现需要把细微现象认真记录下来。[[3]]两个彼此绝缘的线圈，一个接电源，一个接检流计。第一个线圈保持稳定电流，第二个线圈却没有持续电流。看似“没有反应”的结果，也是一条重要证据！在接通或断开的过程中，指针反而会偏转。差别究竟在哪里？下一页，我们亲手比较。请带着这样的态度观察：尊重事实，让证据修正猜想。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "01　电磁感应现象",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 115,
+     "y": 230,
+     "w": 600,
+     "h": 635,
+     "src": "faraday.png"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 115,
+     "y": 880,
+     "w": 610,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "法拉第（1791—1867）",
+        "size": 30,
+        "color": "#556B8D",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "法拉第（1791—1867）",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 825,
+     "y": 250,
+     "w": 950,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电流能够激发磁场",
+        "size": 40,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "电流能够激发磁场",
+     "qa": [
+      {
+       "q": "电流生磁的事实能直接推出磁场生电吗？",
+       "a": "不能。逆向提问只是提出假说，仍需要实验检验。稳恒磁场和变化磁场必须区分。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 825,
+     "y": 400,
+     "w": 950,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1831：实验发现电磁感应",
+        "size": 40,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "1831：实验发现电磁感应",
+     "qa": [
+      {
+       "q": "这个历史时间的依据是什么？",
+       "a": "法拉第1831年的电磁感应实验是电磁学史上的关键发现。可查英国皇家研究院保存的法拉第实验与日记材料。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 825,
+     "y": 570,
+     "w": 950,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "比较：稳恒状态与变化过程",
+        "size": 40,
+        "color": "#273444",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "比较：稳恒状态与变化过程",
+     "qa": [
+      {
+       "q": "实验中最值得比较的是什么？",
+       "a": "比较稳恒与变化的过程，控制其他条件。没有响应的结果同样是证据，不能为了支持猜想而忽略它。两个回路没有直接电连接。"
+      }
+     ]
+    },
+    {
+     "type": "img",
+     "step": 2,
+     "x": 840,
+     "y": 735,
+     "w": 520,
+     "h": 200,
+     "src": "diary.png"
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "heading": "开关实验",
+   "narration": "先看这个可以操作的[[1]]实验台。左边调节开关和参数，中间两个回路彼此绝缘，右边上图记录磁通量，下图记录感应电动势。检流计接在感应回路里，没有接到励磁电源。开关闭合以后，指针会一直偏转，还是只动一下？先作预测。注意看，现在[[2]]闭合开关！指针偏转，随后向零回落。[[3]]再断开，指针向反方向偏转。把这两次短暂偏转，与右边曲线的上升和下降对应起来。[[4]]关键找到了：在这组位置固定的线圈中，励磁电流建立或减弱时，才有感应响应；稳定以后，磁通量不变，电动势趋近零。模拟把开关过渡放慢，便于观察。你可以暂停，亲手重做一次，再改变感应回路电阻：同样的电动势，为什么电流会不同？",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "01　开关实验：稳定与变化",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 110,
+     "y": 170,
+     "w": 1630,
+     "h": 28,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "自动演示：接通、保持、断开",
+        "size": 24,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "html",
+     "step": 1,
+     "x": 80,
+     "y": 200,
+     "w": 1760,
+     "h": 680,
+     "src": "sim_induction.html?embed=1&mode=field&page=5",
+     "msgs": {
+      "1": "reset",
+      "2": "demo"
+     }
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 110,
+     "y": 895,
+     "w": 1630,
+     "h": 30,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "断开：指针反向偏转",
+        "size": 24,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 125,
+     "y": 940,
+     "w": 900,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁通量不变，电动势为零",
+        "size": 30,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "磁通量不变，电动势为零",
+     "qa": [
+      {
+       "q": "开关闭合后为什么不会一直有感应电流？",
+       "a": "励磁电流稳定后，穿过感应回路的磁通量不再变化，感应电动势消失。在本课忽略暂态自感的电阻回路中，感应电流也随之消失。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1050,
+     "y": 940,
+     "w": 760,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电流还取决于回路电阻",
+        "size": 30,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "电流还取决于回路电阻",
+     "qa": [
+      {
+       "q": "感应回路电阻影响哪个读数？",
+       "a": "同一磁通量变化产生相同感应电动势。忽略自感及磁场反作用，电流等于电动势除以回路电阻。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "heading": "怎样改变磁场",
+   "narration": "开关改变了磁场的建立和消失。如果一直通电，还能让检流计偏转吗？左边演示中，[[1]]插入、拔出线圈，改变相对位置，指针又动了。可见，关键是穿过感应回路的磁场是否改变。右边再试另一种操作：[[2]]移动变阻器滑片。请沿着因果链往下想：励磁回路电阻改变，励磁电流改变，磁场改变，感应回路才有响应。这里有两种电阻，作用不能混淆。[[3]]励磁回路电阻影响磁场源；感应回路电阻影响感应电流。在忽略自感和磁场反作用时，同样的磁通量变化给出相同电动势，感应回路电阻越大，电流越小。现在我们找到了几种改变磁场的办法。那磁场保持不变时呢？",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "01　改变位置与励磁电流",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "video",
+     "step": 1,
+     "x": 110,
+     "y": 235,
+     "w": 770,
+     "h": 660,
+     "src": "move-coil.mp4"
+    },
+    {
+     "type": "video",
+     "step": 2,
+     "x": 1040,
+     "y": 235,
+     "w": 770,
+     "h": 660,
+     "src": "change-current.mp4"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 125,
+     "y": 910,
+     "w": 700,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "改变相对位置",
+        "size": 33,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "改变相对位置",
+     "qa": [
+      {
+       "q": "移动线圈为什么会感应？",
+       "a": "相对位置改变会改变两线圈的磁耦合，使感应回路的磁通量变化。静止的位置本身不决定有没有感应，变化才是关键。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1060,
+     "y": 910,
+     "w": 700,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "改变励磁电流",
+        "size": 33,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "改变励磁电流",
+     "qa": [
+      {
+       "q": "变阻器滑片为什么能使检流计偏转？",
+       "a": "它改变励磁回路的电阻，励磁电流和磁场随之改变。感应回路的磁通量改变，产生感应电动势。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 980,
+     "w": 1660,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电动势由磁通量变化决定；电流还取决于回路电阻",
+        "size": 27,
+        "color": "#556B8D",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "label": "电动势与电流的区别",
+     "qa": [
+      {
+       "q": "感应回路的电阻改变感应电动势吗？",
+       "a": "在忽略感应电流反过来影响磁场源的近似中，同一磁通量变化给出相同感应电动势。电阻通过欧姆定律改变电流。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "heading": "恒定磁场也能感应",
+   "narration": "磁场不变，也会有感应吗？左边演示中，磁铁保持不动，[[1]]导体棒一运动，检流计就偏转。我们的判断需要再向前走一步。看右图，[[2]]磁场垂直纸面向里，棒向右移动，回路面积增大。先看这个简单情形：垂直穿过回路的匀强磁场，磁感应强度乘面积就是磁通量的大小。磁感应强度虽然不变，面积却在变！棒长为小写艾勒，移动一小段距离，增加的面积就等于棒长乘这段距离。除以所用时间，面积每秒增加的大小就是棒长乘速度。[[3]]再乘磁感应强度，磁通量变化率的大小便是磁感应强度乘棒长再乘速度。这就把“磁场不变仍能感应”解释通了。下一页，我们把磁通量定义得更完整，把方向和夹角也纳入进来。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "01　恒定磁场中的运动导体",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "video",
+     "step": 1,
+     "x": 110,
+     "y": 245,
+     "w": 760,
+     "h": 570,
+     "src": "moving-rod.mp4"
+    },
+    {
+     "type": "img",
+     "step": 2,
+     "x": 1000,
+     "y": 235,
+     "w": 760,
+     "h": 530,
+     "src": "rod.svg"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 990,
+     "y": 800,
+     "w": 790,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "面积增加：$\\Delta S=\\ell\\,\\Delta x$",
+        "size": 38,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "面积增加：$\\Delta S=\\ell\\,\\Delta x$",
+     "qa": [
+      {
+       "q": "恒定磁场为什么还能产生感应？",
+       "a": "导体棒运动使回路面积改变，即使磁感应强度恒定，回路磁通量仍会变化。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 990,
+     "y": 900,
+     "w": 790,
+     "h": 115,
+     "tex": "\\left|\\frac{d\\Phi}{dt}\\right|=B\\ell v",
+     "size": 42,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": true,
+     "label": "磁通量变化率的大小",
+     "qa": [
+      {
+       "q": "这个关系有什么条件？",
+       "a": "棒与速度垂直，棒和速度都垂直于匀强磁场，磁场覆盖所讨论的回路面积。一般情况先计算磁通量。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 110,
+     "y": 860,
+     "w": 760,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "源课件演示：导体切割磁感线",
+        "size": 29,
+        "color": "#556B8D",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "源课件演示：导体切割磁感线",
+     "qa": [
+      {
+       "q": "运动方向反过来会怎样？",
+       "a": "面积变化率变号，磁通量变化率变号，感应电动势及电流方向也相反。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "heading": "磁通量",
+   "narration": "现在把刚才的共同条件写准确。看右图，先选定回路所围表面的[[1]]单位法向量，它垂直于这个表面。磁通量等于磁感应强度在法向上的分量，对整个表面积分，也就是图中这条积分表达式。对于匀强磁场和平面回路，[[2]]磁通量等于磁感应强度乘面积，再乘角度的余弦。注意，这个角度是磁场与法向的夹角，不是磁场与平面的夹角。磁场沿法向时磁通量为正，反向时为负，与表面平行时为零。[[3]]所以，改变磁场大小，改变面积，或者转动回路改变夹角，都可以改变磁通量。刚才的两个实验，一个改变磁场，一个改变面积，终于有了统一语言。磁通量的单位是韦伯，一个韦伯等于一特斯拉乘一平方米。这里的正负是定向后的代数符号，不是磁场强弱的评价。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　磁通量：统一实验语言",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 1050,
+     "y": 250,
+     "w": 720,
+     "h": 520,
+     "src": "flux.svg"
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 125,
+     "y": 270,
+     "w": 830,
+     "h": 115,
+     "tex": "\\Phi=\\int_S\\vec B\\cdot\\hat n\\,dS",
+     "size": 46,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": true,
+     "label": "有向磁通量",
+     "qa": [
+      {
+       "q": "磁通量为什么有正负？",
+       "a": "选定法向后，磁感应强度沿法向的分量有正负，因此磁通量是有向的代数量。反选法向使磁通量变号。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 125,
+     "y": 440,
+     "w": 830,
+     "h": 115,
+     "tex": "\\Phi=BS\\cos\\theta",
+     "size": 46,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": true,
+     "label": "匀强磁场的磁通量",
+     "qa": [
+      {
+       "q": "θ是哪个角？",
+       "a": "θ是磁感应强度与表面法向的夹角。磁场垂直平面时θ为0或π，磁场平行平面时θ为π/2。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 670,
+     "w": 860,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "改变 $B$、$S$ 或 $\\theta$",
+        "size": 39,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "改变 $B$、$S$ 或 $\\theta$",
+     "qa": [
+      {
+       "q": "转动线圈能发电吗？",
+       "a": "转动改变磁场与线圈法向的夹角，磁通量随时间变化，因而产生感应电动势。这是交流发电机的基本原理。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 845,
+     "w": 1600,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "单位：$1\\,\\mathrm{Wb}=1\\,\\mathrm{T\\,m^2}$",
+        "size": 35,
+        "color": "#556B8D",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "单位：$1\\,\\mathrm{Wb}=1\\,\\mathrm{T\\,m^2}$",
+     "qa": []
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "heading": "法拉第定律",
+   "narration": "我们已经找到共同条件：磁通量变化。接着追问，变化得快慢，会有什么不同？实验表明，同样的磁通量改变，完成得越快，感应电动势的绝对值越大。先看一段时间，[[1]]平均感应电动势等于磁通量改变量除以时间间隔，再取负号。改变量要用末值减初值。让时间间隔越来越小，就得到[[2]]瞬时关系：感应电动势等于磁通量对时间导数的负值。这就是法拉第电磁感应定律。几种不同的实验，终于汇到同一个表达式里！这里读作负的变化率，不能理解成电动势永远为负。对于紧密绕制、每匝磁通量相同的[[3]]恩匝线圈，各匝电动势串联相加，结果是负的恩乘单匝磁通量变化率。各匝磁通量不同时，要先相加得到磁通链，再求负的时间导数。大小有了计算依据，负号怎样告诉我们方向？先算一题，再来解开它。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　法拉第电磁感应定律",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 125,
+     "y": 245,
+     "w": 1500,
+     "h": 115,
+     "tex": "\\overline{\\mathcal E}=-\\frac{\\Delta\\Phi}{\\Delta t}",
+     "size": 46,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": true,
+     "label": "平均感应电动势",
+     "qa": [
+      {
+       "q": "平均值和瞬时值有什么区别？",
+       "a": "平均值描述有限时间间隔内的总体变化。瞬时值对应导数，描述某个时刻的变化快慢。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 125,
+     "y": 440,
+     "w": 1500,
+     "h": 115,
+     "tex": "\\mathcal E=-\\frac{d\\Phi}{dt}",
+     "size": 46,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": true,
+     "label": "法拉第定律",
+     "qa": [
+      {
+       "q": "负号表示电动势总为负吗？",
+       "a": "不是。正负相对于选定回路方向。磁通量变化率为正时电动势为负，变化率为负时电动势为正。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 125,
+     "y": 650,
+     "w": 1500,
+     "h": 115,
+     "tex": "\\mathcal E=-\\frac{d\\lambda}{dt}=-N\\frac{d\\Phi}{dt}\\quad(\\lambda=N\\Phi)",
+     "size": 43,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": true,
+     "label": "多匝线圈",
+     "qa": [
+      {
+       "q": "什么时候可以直接乘N？",
+       "a": "每匝穿过的磁通量相同时，磁通链λ=NΦ，Φ是单匝磁通量。各匝不同时，应先求各匝磁通量之和。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 855,
+     "w": 1700,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁通链：各匝有向磁通量之和　　$1\\,\\mathrm{V}=1\\,\\mathrm{Wb/s}$",
+        "size": 32,
+        "color": "#556B8D",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "磁通链：各匝有向磁通量之和　　$1\\,\\mathrm{V}=1\\,\\mathrm{Wb/s}$",
+     "qa": []
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "heading": "看斜率算电动势",
+   "narration": "用一条磁通量曲线检验公式。图中是单匝回路，每段都是直线。[[1]]第一段，零到零点二秒，磁通量从零增加到零点零四韦伯。改变量是零点零四韦伯，时间间隔是零点二秒，相除得到正的零点二韦伯每秒。带上负号，电动势就是负零点二伏特。[[2]]第二段，零点二到零点五秒，磁通量虽然不为零，却保持不变，斜率为零，电动势也为零。[[3]]第三段，零点五到零点六秒，磁通量从零点零四韦伯降回零。改变量是负零点零四韦伯，除以零点一秒，变化率为负零点四韦伯每秒，因此电动势为正零点四伏特。你看，同样大小的磁通量改变量，用更短时间完成，电动势的绝对值更大。拐点处的理想折线斜率突变，我们只讨论各段内部。[[4]]请做一道迁移题：把回路电阻增大一倍，保持这条磁通量曲线不变，会怎样？",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　磁通量曲线与感应电动势",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "img",
+     "step": 0,
+     "x": 100,
+     "y": 230,
+     "w": 850,
+     "h": 600,
+     "src": "flux-graph.svg"
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 1040,
+     "y": 245,
+     "w": 720,
+     "h": 115,
+     "tex": "\\mathcal E_1=-0.20\\,\\mathrm V",
+     "size": 42,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": true,
+     "label": "第一段：磁通量增加",
+     "qa": [
+      {
+       "q": "负零点二伏怎么计算？",
+       "a": "ΔΦ=0.04 Wb，Δt=0.2 s。平均电动势=-ΔΦ/Δt=-0.20 V。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 1040,
+     "y": 425,
+     "w": 720,
+     "h": 115,
+     "tex": "\\mathcal E_2=0",
+     "size": 42,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": true,
+     "label": "第二段：磁通量不变",
+     "qa": [
+      {
+       "q": "磁通量不为零，为什么电动势可以为零？",
+       "a": "电动势取决于磁通量的变化率。非零但恒定的磁通量，其导数仍为零。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 1040,
+     "y": 605,
+     "w": 720,
+     "h": 115,
+     "tex": "\\mathcal E_3=+0.40\\,\\mathrm V",
+     "size": 42,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": true,
+     "label": "第三段：磁通量减少",
+     "qa": [
+      {
+       "q": "第三段为什么电动势更大？",
+       "a": "同样0.04 Wb的变化只用0.1 s，变化率绝对值为0.40 Wb/s，比第一段大一倍。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 125,
+     "y": 880,
+     "w": 1700,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "迁移：同一变化过程，回路电阻增大一倍",
+        "size": 36,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "迁移：同一变化过程，回路电阻增大一倍",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 125,
+     "y": 975,
+     "w": 1690,
+     "h": 40,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "A 电动势、电流都减半　　B 电动势不变、电流减半　　C 电动势加倍",
+        "size": 28,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    }
+   ],
+   "interactions": [
+    {
+     "at": 4,
+     "q": "忽略回路自感和磁场反作用。磁通量曲线不变，回路电阻增大一倍，哪项正确？",
+     "answer": 1,
+     "options": [
+      "电动势与电流都减半",
+      "电动势不变，电流减半",
+      "电动势加倍，电流不变"
+     ],
+     "explain": "法拉第定律给出同一电动势；在电阻回路中 i=ℰ/R，因此电流减半。"
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "heading": "回路怎样定向",
+   "narration": "现在解释负号。先为图中的回路选定[[1]]向外的法向，用圆点表示。请伸出右手，拇指朝向自己；四指弯曲的方向，就是从纸面前方看的逆时针正向。法向和回路正向，要作为一组约定。[[2]]电动势为正，表示沿逆时针驱动电荷；电动势为负，则沿顺时针。对于本课的纯电阻闭合回路，电流方向与电动势方向一致。接下来，请在纸上[[3]]把两个方向一起反选：法向向里，正向就改为顺时针。右图仍保留原约定，便于比较。磁通量变号，电动势的代数值也变号，真实电流方向却不变。我们改变的是描述方式，实际物理过程并没有改变。把这一步想透，负号就不再是需要死记的手势。先定向，再看磁通量增减，最后翻译成实际电流方向。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "03　负号之前：法向与回路正向",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 1050,
+     "y": 230,
+     "w": 740,
+     "h": 620,
+     "src": "orientation.svg"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 125,
+     "y": 270,
+     "w": 890,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "法向向外：$\\hat n$ 为圆点 $\\odot$",
+        "size": 40,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "法向向外：$\\hat n$ 为圆点 $\\odot$",
+     "qa": [
+      {
+       "q": "圆点和叉号表示什么？",
+       "a": "圆点表示箭头朝向观察者，即纸面向外；叉号表示箭尾朝向观察者，即纸面向里。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 125,
+     "y": 425,
+     "w": 890,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "右手螺旋：正向为逆时针",
+        "size": 40,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "右手螺旋：正向为逆时针",
+     "qa": [
+      {
+       "q": "如何把法向和回路正向联系起来？",
+       "a": "右手拇指沿法向，四指弯曲方向就是回路正向。两者必须作为一组约定。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 125,
+     "y": 585,
+     "w": 900,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\mathcal E>0$ 逆时针；$\\mathcal E<0$ 顺时针",
+        "size": 37,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "$\\mathcal E>0$ 逆时针；$\\mathcal E<0$ 顺时针",
+     "qa": [
+      {
+       "q": "正负电动势怎样翻译成电流方向？",
+       "a": "先选回路正向。纯电阻闭合回路中，正电动势对应正向电流，负值对应反向电流。含自感的暂态电流要结合电路方程。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 875,
+     "w": 1620,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "改记号不会改变真实电流方向",
+        "size": 39,
+        "color": "#C00000",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "改记号不会改变真实电流方向",
+     "qa": [
+      {
+       "q": "把法向反过来会改变物理结果吗？",
+       "a": "不会。磁通量和回路正向同时反转，电动势的符号随之反转，换算到实际方向得到同一个电流。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "heading": "靠近与远离",
+   "narration": "把刚才的定向方法用起来。两幅图中，磁铁的恩极都朝向线圈。这次选法向向下，回路正向从上方看为顺时针。左图，恩极[[1]]靠近，原磁场向下，正磁通量增加。负号给出负电动势，电流从上方看为逆时针。它产生向上磁场，线圈上端相当于恩极，排斥靠近的磁铁。再看右图，恩极[[2]]远离。原磁场仍向下，正磁通量却在减少。电动势为正，电流从上方看为顺时针，产生向下磁场。线圈上端相当于艾斯极，吸引远离的磁铁。请停一下，把两图并排比较。一个排斥，一个吸引；感应场一个向上，一个向下。[[3]]共同点究竟是什么？它们都在阻碍原磁通量的变化。靠近时阻碍增加，远离时减缓减少。抓住“变化”这两个字，方向题就有了可靠的依据。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "03　同一个N极：靠近与远离",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "img",
+     "step": 0,
+     "x": 115,
+     "y": 210,
+     "w": 1680,
+     "h": 510,
+     "src": "lenz-pair.svg"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 115,
+     "y": 745,
+     "w": 780,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "靠近：正磁通量增加，感应场向上",
+        "size": 35,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "靠近：正磁通量增加，感应场向上",
+     "qa": [
+      {
+       "q": "N极靠近时，线圈为什么排斥它？",
+       "a": "向下的正磁通量增加。感应电流产生向上磁场，线圈靠近磁铁的一面等效为N极，排斥靠近的N极。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1000,
+     "y": 745,
+     "w": 780,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "远离：正磁通量减少，感应场向下",
+        "size": 35,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "远离：正磁通量减少，感应场向下",
+     "qa": [
+      {
+       "q": "N极远离时为什么变成吸引？",
+       "a": "向下磁通量减少，感应场向下以减缓减少，线圈上表面等效为S极，吸引正在远离的N极。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 915,
+     "w": 1700,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "楞次定律反抗的是磁通量的变化",
+        "size": 44,
+        "color": "#C00000",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "楞次定律反抗的是磁通量的变化",
+     "qa": [
+      {
+       "q": "感应磁场一定与原磁场方向相反吗？",
+       "a": "不一定。原磁通量增大时感应场反向，原磁通量减小时感应场同向。它总是阻碍磁通量变化。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 13,
+   "heading": "楞次定律",
+   "narration": "现在可以把规律说完整了：[[1]]闭合回路中的感应电流所激发的磁场，总是阻碍引起该感应电流的磁通量变化。这就是楞次定律，是法拉第定律负号的物理解释。阻碍不等于完全阻止；有外力推动，磁铁仍可继续靠近。做题时，按这条顺序：[[2]]原磁场指向哪里，原磁通量增大还是减小，感应磁场怎样阻碍变化，最后用右手规则确定电流。我们再追问一步：回路中的电流会发热，这份能量由谁提供？[[3]]这里的线圈回路没有外接电源。设想用手让磁铁匀速靠近，感应磁力反抗靠近，手就需要持续做功。忽略自感储能等影响时，输入的机械能转化为焦耳热。一个负号，把电流方向和能量去向联系起来了。方向判断与能量分析能相互检验，结论就更有说服力。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "03　楞次定律与能量检查",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 125,
+     "y": 245,
+     "w": 1680,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "感应电流的磁场阻碍原磁通量变化",
+        "size": 46,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "感应电流的磁场阻碍原磁通量变化",
+     "qa": [
+      {
+       "q": "阻碍意味着完全阻止变化吗？",
+       "a": "不是。感应效应反抗变化，但变化通常仍会发生。存在外力做功或外部电源输入时，可以继续改变磁通量。"
+      }
+     ]
+    },
+    {
+     "type": "img",
+     "step": 2,
+     "x": 130,
+     "y": 420,
+     "w": 1620,
+     "h": 210,
+     "src": "lenz-flow.svg"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 125,
+     "y": 670,
+     "w": 1650,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "先判磁通量变化，再判感应磁场与电流",
+        "size": 38,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "先判磁通量变化，再判感应磁场与电流",
+     "qa": [
+      {
+       "q": "判断感应电流方向的步骤是什么？",
+       "a": "确定原场方向，判断原磁通量增减，确定阻碍该变化所需的感应场方向，用右手螺旋规则确定电流。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 835,
+     "w": 1660,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "外力克服感应磁力做功，为焦耳热提供能量",
+        "size": 37,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "外力克服感应磁力做功，为焦耳热提供能量",
+     "qa": [
+      {
+       "q": "为什么楞次定律与能量守恒一致？",
+       "a": "在本课的无外接电源、忽略自感储能等影响的电阻回路近似下，感应磁力阻碍引起磁通量变化的运动，外力做功或机械能减少可供给焦耳热。方向判断还需先规定定向并判断磁通量变化。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 14,
+   "heading": "方向迁移题",
+   "narration": "现在换一个情境，检验我们能不能独立判断。回路固定，[[1]]匀强磁场垂直纸面向里，但磁场大小均匀减小。面积和方向都不变。候选答案是顺时针、逆时针和零。[[2]]想一想，先独立选择，再说出理由：原磁通量怎样变化，感应磁场应当怎样？[[3]]一起核对。向里的磁通量减少，感应场应向里，减缓这个减少，电流从纸面前方看就是顺时针。如果选向外为法向，原磁通量为负；它向零靠近，导数为正，负号给出负电动势，也对应顺时针。两条推理走到了同一个答案。即使刚才选错了，也请找出具体错在哪一步，再沿着证据修正。能够解释为什么，比一次猜对更重要。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "03　迁移：磁场减弱时",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 1120,
+     "y": 235,
+     "w": 630,
+     "h": 580,
+     "src": "weak-field.svg"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 125,
+     "y": 260,
+     "w": 980,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "回路固定，$B$ 向里且均匀减小",
+        "size": 40,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "回路固定，$B$ 向里且均匀减小",
+     "qa": [
+      {
+       "q": "此题哪些量没有变？",
+       "a": "回路面积、位置和法向没有变化，只有磁场大小减小。磁通量随之变化。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 125,
+     "y": 470,
+     "w": 950,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "从纸面前方看，电流怎样流？",
+        "size": 42,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "从纸面前方看，电流怎样流？",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 125,
+     "y": 575,
+     "w": 960,
+     "h": 60,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "A 顺时针　　B 逆时针　　C 没有电流",
+        "size": 31,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 675,
+     "w": 980,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "感应场向里，电流为顺时针",
+        "size": 40,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "感应场向里，电流为顺时针",
+     "qa": [
+      {
+       "q": "为什么是顺时针？",
+       "a": "原来向里的磁通量减少，感应场向里以减缓减少。右手拇指向里，四指弯曲为顺时针。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 870,
+     "w": 1590,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同向感应场也能阻碍变化",
+        "size": 38,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "同向感应场也能阻碍变化",
+     "qa": [
+      {
+       "q": "本题感应场和原场为什么同向？",
+       "a": "原磁场正在减弱，同向感应场反抗的是这个减弱过程。"
+      }
+     ]
+    }
+   ],
+   "interactions": [
+    {
+     "at": 2,
+     "q": "回路固定，匀强磁场垂直纸面向里，大小正在均匀减小。从纸面前方看，感应电流方向是？",
+     "answer": 0,
+     "options": [
+      "顺时针",
+      "逆时针",
+      "没有感应电流"
+     ],
+     "explain": "向里的磁通量减少，感应磁场应向里。右手螺旋规则给出顺时针电流。后续讲解还会用负号复核。"
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "heading": "铜管切片",
+   "narration": "现在回到开头的悬念。把导电铜管想象成许多[[1]]首尾闭合的圆环，就像图中的薄切片。这是理解涡流路径的近似，不需要真的把管子切开。磁铁向下运动，对下方某个圆环来说，磁铁正在靠近，穿过圆环的磁通量变化，于是产生感应电流。[[2]]下方圆环产生排斥作用，给磁铁向上的力。对已经经过的上方圆环来说，磁铁正在远离，感应电流改变方向，圆环吸引磁铁，作用力仍然向上。你看，一处排斥，一处吸引，最后都反抗下落。[[3]]实际铜管中电流在导体内部形成回旋的路径，我们把它叫作涡流。铜管导电，闭合电流路径让这个作用显著；磁铁不必接触管壁，也能受到电磁阻力。和开头的问题一样，这种减速必须有能量去向。下一页先用对照模拟区分导电与闭合路径，再来计算能量。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04　铜管：许多闭合电流路径",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 110,
+     "y": 220,
+     "w": 780,
+     "h": 610,
+     "src": "tube-slices.svg"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 925,
+     "y": 260,
+     "w": 920,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "铜管切片可近似看成闭合圆环",
+        "size": 38,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "铜管切片可近似看成闭合圆环",
+     "qa": [
+      {
+       "q": "把铜管看成圆环是精确分割吗？",
+       "a": "这是用于说明涡流方向的近似。实际电流分布连续存在于铜管内部。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 925,
+     "y": 465,
+     "w": 920,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "下方排斥，上方吸引：都向上",
+        "size": 38,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "下方排斥，上方吸引：都向上",
+     "qa": [
+      {
+       "q": "上下两处为什么都能阻碍下落？",
+       "a": "磁铁靠近下方圆环时受到排斥，远离上方圆环时受到吸引。两种作用力都指向上方。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 925,
+     "y": 665,
+     "w": 920,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "涡流：导体内部回旋的电流",
+        "size": 38,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "涡流：导体内部回旋的电流",
+     "qa": [
+      {
+       "q": "涡流需要外接电源吗？",
+       "a": "不需要。变化的磁通量在导体内产生感应电动势，驱动回旋电流，能量来自引起变化的机械运动或外部电源。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 895,
+     "w": 1670,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "减速的关键：导电性与闭合路径",
+        "size": 39,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "减速的关键：导电性与闭合路径",
+     "qa": []
+    }
+   ]
+  },
+  {
+   "id": 16,
+   "heading": "铜管对照模拟",
+   "narration": "用[[1]]对照模拟来检验解释。左边可以选完整铜管、塑料管和纵向开缝铜管，中间看磁铁，右边看速度与热量。先选完整铜管。注意看，现在[[2]]释放磁铁！速度先增大，随后增长变缓，热量则在增加。模型把低速电磁阻力近似写成与速度成正比；这里的曲线展示模型趋势，不能当作真实铜管的测量结果。接下来，[[3]]请暂停课堂，换成开缝铜管再释放。纵向切口破坏主要环形电流路径，阻力为什么会减弱，现在你能解释了。模型把开缝管和塑料管理想化为零阻尼，真实切缝仍可能有局部涡流。比较时只改变材料或闭合路径，其他条件保持一致，这样证据才有说服力。[[4]]最后再变一个条件：完整铜管不变，只把磁铁上下翻转，慢落机制会消失吗？",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04　对照：材料与电流路径",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 110,
+     "y": 170,
+     "w": 1630,
+     "h": 28,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "自动演示：释放磁铁（慢放）",
+        "size": 24,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "html",
+     "step": 1,
+     "x": 80,
+     "y": 200,
+     "w": 1760,
+     "h": 660,
+     "src": "sim_induction.html?embed=1&mode=tube&page=16",
+     "msgs": {
+      "1": "reset",
+      "2": "demo"
+     }
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 880,
+     "w": 900,
+     "h": 35,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "开缝破坏主要涡流路径",
+        "size": 28,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "label": "开缝与闭合路径",
+     "qa": [
+      {
+       "q": "开缝后为什么阻力减弱？",
+       "a": "纵向开缝切断主要环形涡流路径，阻力显著减弱；真实管体仍可能出现局部涡流。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1080,
+     "y": 880,
+     "w": 760,
+     "h": 35,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "低速示意模型：非实测",
+        "size": 28,
+        "color": "#556B8D",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "label": "模型适用条件",
+     "qa": [
+      {
+       "q": "模拟能精确预测下落时间吗？",
+       "a": "不能。这里是线性阻力低速示意模型，开缝理想化为零阻尼，用于解释趋势。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 125,
+     "y": 930,
+     "w": 1650,
+     "h": 35,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "迁移：翻转磁极，慢落机制会消失吗？",
+        "size": 27,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 125,
+     "y": 975,
+     "w": 1660,
+     "h": 35,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "A 电流反转，仍阻碍下落　　B 感应力向下　　C 恢复自由落体",
+        "size": 26,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    }
+   ],
+   "interactions": [
+    {
+     "at": 4,
+     "q": "完整铜管与其他条件保持不变，只把磁铁上下翻转，下落会怎样？",
+     "answer": 0,
+     "options": [
+      "电流方向反转，但仍阻碍下落",
+      "感应力改为向下，磁铁加速",
+      "不再有磁通量变化，恢复自由落体"
+     ],
+     "explain": "翻转磁极改变磁通量与感应电流的方向，但感应作用仍阻碍引起变化的下落。慢落机制不会因此消失。"
+    }
+   ]
+  },
+  {
+   "id": 17,
+   "heading": "能量去了哪里",
+   "narration": "开头的能量问题，现在可以回答了。看[[1]]能量账本：重力势能减少，一部分变为动能，一部分通过感应电流变为铜管中的焦耳热。我们没有让重力消失，而是找到了机械能传递的另一条路径。在低速模型中，阻力大小等于阻尼系数乘速度，转为热的功率就是阻力乘速度。[[2]]下落初期，速度小，阻力小，磁铁继续加速。速度增大，阻力随之增大。若下落区间足够长、线性模型仍适用，阻力趋近重力，速度便趋于稳定。此时动能几乎不再增加，重力做功仍持续转为热。[[3]]把眼光再放远一点：工程中还可借助合适的电路回收部分机械能。看清能量去向，才能判断哪里需要散热、哪里有望回收。节约能源、改进设计，正需要这样算清每一笔能量的严谨态度。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04　磁铁、铜管与能量账本",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 100,
+     "y": 240,
+     "w": 820,
+     "h": 520,
+     "src": "energy.svg"
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 1020,
+     "y": 260,
+     "w": 760,
+     "h": 115,
+     "tex": "-\\Delta U_g=\\Delta K+Q",
+     "size": 42,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": true,
+     "label": "铜管实验的能量关系",
+     "qa": [
+      {
+       "q": "慢落时重力势能去哪了？",
+       "a": "在忽略其他能量交换的近似下，重力势能减少量等于动能增加量与焦耳热之和。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 1020,
+     "y": 470,
+     "w": 760,
+     "h": 115,
+     "tex": "m\\frac{dv}{dt}=mg-kv",
+     "size": 42,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": true,
+     "label": "低速线性阻力模型",
+     "qa": [
+      {
+       "q": "终端速度何时出现？",
+       "a": "在足够长的下落区间内、线性阻力近似适用时，速度趋向mg/k。有限长度铜管内不一定充分达到终端速度。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1020,
+     "y": 660,
+     "w": 790,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "若 $kv=mg$：速度趋于稳定",
+        "size": 36,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "若 $kv=mg$：速度趋于稳定",
+     "qa": [
+      {
+       "q": "匀速下落说明能量停止转化了吗？",
+       "a": "没有。动能不再增加，但重力势能仍减少，并持续转为焦耳热。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 875,
+     "w": 1660,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "看清能量去向，才能减少浪费、改进设计",
+        "size": 39,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "看清能量去向，才能减少浪费、改进设计",
+     "qa": []
+    }
+   ]
+  },
+  {
+   "id": 18,
+   "heading": "无线充电",
+   "narration": "再来解开无线充电的悬念。请沿着图从左向右，把能量传递链亲口说出来。[[1]]发射线圈中有交变电流，产生变化磁场，其中一部分穿过接收线圈。于是[[2]]接收线圈的磁通量变化，产生感应电动势。电能跨过了间隙，靠的是磁场耦合。到这里，手机电池就能直接充电了吗？还差关键一步：[[3]]接收线圈产生交变电信号，需要经过整流、稳压和充电管理，才能送入电池。电源始终是能量的来源。这条链少讲一步，工程解释就不完整。线圈为什么要对准？位置影响耦合，也影响有效能量传递。从“能不能充电”继续追问到“怎样高效、可靠地充电”，正是把物理规律变成有用技术时应有的责任。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04　无线充电：两个线圈之间",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "img",
+     "step": 0,
+     "x": 125,
+     "y": 230,
+     "w": 1640,
+     "h": 440,
+     "src": "wireless.svg"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 135,
+     "y": 730,
+     "w": 500,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "发射线圈：交变电流",
+        "size": 36,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "发射线圈：交变电流",
+     "qa": [
+      {
+       "q": "发射线圈为什么要有变化电流？",
+       "a": "变化电流产生变化磁场，使接收线圈磁通量随时间变化，从而产生感应电动势。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 700,
+     "y": 730,
+     "w": 620,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "接收线圈：变化磁通量",
+        "size": 36,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "接收线圈：变化磁通量",
+     "qa": [
+      {
+       "q": "位置不准会影响充电吗？",
+       "a": "线圈相对位置会影响磁耦合和接收磁通量。对准通常有助于有效能量传递，具体控制由设备电路实现。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 880,
+     "w": 1690,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "感应电信号经整流与充电管理，再给电池充电",
+        "size": 38,
+        "color": "#273444",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "感应电信号经整流与充电管理，再给电池充电",
+     "qa": [
+      {
+       "q": "接收线圈的电流直接流入电池吗？",
+       "a": "通常需要整流、稳压和充电管理等电路。线圈产生的交变信号不能直接等同于电池的充电电流。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 19,
+   "heading": "恒定直流能充电吗",
+   "narration": "最后做一次条件变化的检验。两线圈都固定，把发射端驱动改成[[1]]恒定直流。接通时电流从零上升，随后稳定。请把“刚接通”和“稳定以后”分开。[[2]]稳定阶段，接收线圈还能持续得到感应电动势吗？先选择，再用法拉第定律给出理由。[[3]]核对答案：不能。开关过程中，电流、磁场和磁通量变化，可有暂态感应；稳定以后，几何条件不变，磁通量的时间导数为零。若仍认为可以持续供能，就沿着能量链回查：持续变化的磁通量来自哪里？能够明确适用条件，才能判断一种技术方案是否成立。请点开助教热点，用自己的话说明这条链。今天，我们要带走的是可以检验的推理方法。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04　迁移：把交流换成恒定直流",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 125,
+     "y": 265,
+     "w": 1700,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "线圈固定；发射电流最终保持恒定",
+        "size": 43,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "线圈固定；发射电流最终保持恒定",
+     "qa": [
+      {
+       "q": "接通瞬间和稳定以后有什么区别？",
+       "a": "接通瞬间电流变化，磁场与磁通量变化，有暂态感应。稳定以后，这些量不再随时间改变。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 125,
+     "y": 475,
+     "w": 1700,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "稳定以后，接收线圈还有持续感应吗？",
+        "size": 43,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "稳定以后，接收线圈还有持续感应吗？",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 125,
+     "y": 575,
+     "w": 1700,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "A 磁场存在，可以持续　　B 只有开关暂态感应　　C 增大恒定电流即可",
+        "size": 30,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 125,
+     "y": 650,
+     "w": 1500,
+     "h": 115,
+     "tex": "\\frac{d\\Phi}{dt}=0\\quad\\Longrightarrow\\quad\\mathcal E=0",
+     "size": 48,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": true,
+     "label": "恒定直流的稳定阶段",
+     "qa": [
+      {
+       "q": "恒定直流能持续进行本课的感应供能吗？",
+       "a": "固定几何条件下不能。稳恒磁场使接收磁通量恒定，只有开关等过渡过程可能有暂态感应。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 865,
+     "w": 1630,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "助教追问：请逐项说明能量传递链",
+        "size": 37,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "助教追问：请逐项说明能量传递链",
+     "qa": [
+      {
+       "q": "怎样组织无线充电的完整推理？",
+       "a": "先说明发射线圈电流是否变化，再说明磁场是否变化及其如何穿过接收线圈，接着用法拉第定律判断电动势，最后说明整流与充电管理如何把能量送入电池。"
+      }
+     ]
+    }
+   ],
+   "interactions": [
+    {
+     "at": 2,
+     "q": "线圈位置固定，发射线圈的直流电流已稳定。以下判断正确的是？",
+     "answer": 1,
+     "options": [
+      "磁场存在，所以可以持续感应供能",
+      "稳定后无持续感应；开关过程可有暂态感应",
+      "只要增大恒定电流，始终能持续感应"
+     ],
+     "explain": "固定几何条件下，稳定直流产生稳恒磁场，接收磁通量不变，感应电动势为零。接通或断开时磁通量变化，可出现暂态感应。"
+    }
+   ]
+  },
+  {
+   "id": 20,
+   "heading": "小结与呼应",
+   "narration": "回到开头，两个悬念现在有了共同的解释。铜管中，磁铁运动引起涡流，机械能的一部分变为热；无线充电中，电源的能量经磁场耦合和后级电路传到电池。先选定法向和回路正向，再走三步：[[1]]先找磁通量怎样变化，[[2]]再用变化率和匝数计算电动势，[[3]]最后把代数正负转换成实际电流方向，并用楞次定律核对。列车进站提出的能量问题，也提醒我们继续追问能量去了哪里。一根铜管、两个线圈，让看不见的场成为可观察、可计算的事实。基础研究的价值，正在于把这样的认识变成能够迁移的方法。面向科技自立自强的需要，我们今天能做的，是把基本概念学准确，把实验和计算做扎实，逐步积累解决实际问题的能力。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "05　从实验规律回到两个悬念",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 125,
+     "y": 245,
+     "w": 1700,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "共同条件：穿过回路的磁通量变化",
+        "size": 44,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "共同条件：穿过回路的磁通量变化",
+     "qa": [
+      {
+       "q": "电磁感应的共同条件是什么？",
+       "a": "有向磁通量随时间变化。磁场存在或磁通量非零，都不能单独保证有感应电动势。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 125,
+     "y": 430,
+     "w": 1650,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "计算大小：磁通量变化率与匝数",
+        "size": 44,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "计算大小：磁通量变化率与匝数",
+     "qa": [
+      {
+       "q": "解计算题先做什么？",
+       "a": "根据几何和磁场算出单匝有向磁通量，再求时间导数。多匝应明确磁通量是单匝量还是磁通链。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 615,
+     "w": 1670,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "判断方向：阻碍变化，遵守定向约定",
+        "size": 44,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "判断方向：阻碍变化，遵守定向约定",
+     "qa": [
+      {
+       "q": "最容易犯的方向错误是什么？",
+       "a": "把阻碍磁通量变化误说成总与原磁场反向，或在改法向后忘记同步改变回路正向。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 805,
+     "w": 1720,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "铜管：机械能转为热　　无线充电：电源能量经磁场传递",
+        "size": 31,
+        "color": "#556B8D",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "铜管：机械能转为热　　无线充电：电源能量经磁场传递",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 925,
+     "w": 1720,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "夯实基础、求真创新，回应科技自立自强的需要",
+        "size": 35,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "夯实基础、求真创新，回应科技自立自强的需要",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 730,
+     "w": 1720,
+     "h": 65,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "先独立作答：充电板电流→接收线圈磁通量→感应电信号与后级电路→电池供能",
+        "size": 31,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": 21,
+   "heading": "课后思考",
+   "narration": "课后继续追问两个问题。第一，[[1]]把金属环换成塑料环，没有导电电流，还存在变化磁场产生的感应电场吗？请从感应电场是否依赖导体来推理。第二，[[2]]预习自感与互感：断开线圈时，为什么可能出现很大的瞬时电压？储存的能量怎样释放？把今天的负号和能量分析带过去。作业与预习材料仍在原有学习平台。[[3]]愿大家带着这份好奇走出课堂：遇到现象多问一句为什么，面对结论多找一份证据，把扎实的本领用在国家需要、人民生活的地方。同学们，下次课见。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "05　作业与预习",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 3,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 125,
+     "y": 210,
+     "w": 1680,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "课后思考：塑料环里没有电流，还存在感应电场吗？",
+        "size": 40,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "课后思考：塑料环里没有电流，还存在感应电场吗？",
+     "qa": [
+      {
+       "q": "没有导体还存在感应电场吗？",
+       "a": "变化磁场可在空间激发有旋电场，不依赖是否放入导体。导体提供载流子和电流路径，感应电场本身是电磁场的性质。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 125,
+     "y": 300,
+     "w": 1650,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "线索：变化磁场、空间中的有旋电场、导电电流",
+        "size": 34,
+        "color": "#556B8D",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "线索：变化磁场、空间中的有旋电场、导电电流",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 125,
+     "y": 400,
+     "w": 1630,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "预习：自感、互感与线圈储能",
+        "size": 41,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "预习：自感、互感与线圈储能",
+     "qa": [
+      {
+       "q": "断开线圈为什么可能有较大电压？",
+       "a": "电流迅速减小会产生阻碍该减小的自感电动势。电流变化越快，感应电动势越大。线圈磁场储能通过电路或放电路径释放。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 125,
+     "y": 485,
+     "w": 1590,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "学习平台：up.physxuanmin.cloud",
+        "size": 32,
+        "color": "#556B8D",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "学习平台：up.physxuanmin.cloud",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 835,
+     "w": 1700,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "求真知，练本领，服务国家与人民",
+        "size": 40,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "求真知，练本领，服务国家与人民",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 950,
+     "w": 1200,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同学们，下次课见",
+        "size": 34,
+        "color": "#556B8D",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "同学们，下次课见",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 125,
+     "y": 590,
+     "w": 1720,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "课后 AI 对话：向教师指定的可用 AI 作苏格拉底式追问",
+        "size": 32,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 125,
+     "y": 650,
+     "w": 1720,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "提示：每次只问一个问题，追问三段因果理由，先不直接给答案。",
+        "size": 30,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 125,
+     "y": 710,
+     "w": 1720,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "核查：线圈固定，发射电流最终恒定，还能持续为电池供能吗？",
+        "size": 30,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 125,
+     "y": 770,
+     "w": 1720,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "记录：初答、关键追问、物理依据与修订结论；用本课定律核对 AI 回答。",
+        "size": 30,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

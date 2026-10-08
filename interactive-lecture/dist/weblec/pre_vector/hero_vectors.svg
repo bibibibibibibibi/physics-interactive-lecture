@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="矢量 A 与 B 首尾相接得到 A 加 B">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fafdff"/><stop offset="1" stop-color="#eaf3ff"/></linearGradient>
+  <marker id="b" markerWidth="22" markerHeight="22" refX="2.5" refY="11" orient="auto" markerUnits="userSpaceOnUse"><path d="M2.5 3 L19.5 11 L2.5 19 Z" fill="#244B88"/></marker>
+  <marker id="o" markerWidth="22" markerHeight="22" refX="2.5" refY="11" orient="auto" markerUnits="userSpaceOnUse"><path d="M2.5 3 L19.5 11 L2.5 19 Z" fill="#d16b2b"/></marker>
+  <marker id="g" markerWidth="22" markerHeight="22" refX="2.5" refY="11" orient="auto" markerUnits="userSpaceOnUse"><path d="M2.5 3 L19.5 11 L2.5 19 Z" fill="#168365"/></marker>
+  <style>
+  text{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;fill:#244B88}
+  .title{font-size:32px;font-weight:700}.label{font-size:31px;font-weight:700}.small{font-size:24px;font-weight:600}.formula{font-size:35px;font-weight:700}
+  .blue{fill:#244B88}.orange{fill:#d16b2b}.green{fill:#168365}.muted{fill:#6d829a}
+  .axis{stroke:#9fb2c9;stroke-width:3;stroke-linecap:round}.dash{stroke:#a6b8cb;stroke-width:3;stroke-dasharray:10 10;fill:none}
+  .vb{stroke:#244B88;stroke-width:8;stroke-linecap:butt;fill:none;marker-end:url(#b)}
+  .vo{stroke:#d16b2b;stroke-width:8;stroke-linecap:butt;fill:none;marker-end:url(#o)}
+  .vg{stroke:#168365;stroke-width:8;stroke-linecap:butt;fill:none;marker-end:url(#g)}
+  .point{fill:#244B88}
+  </style>
+</defs>
+<rect width="800" height="600" rx="28" fill="url(#bg)"/>
+
+<circle cx="95" cy="85" r="80" fill="#dceeff" opacity=".45"/><circle cx="720" cy="525" r="100" fill="#dceeff" opacity=".42"/>
+<path d="M95 435 H730 M165 530 V85" class="axis" opacity=".65"/>
+<path d="M165 435 L425 530 M425 530 L665 335" class="dash" opacity=".65"/>
+<path d="M165 435 L648.33 338.33" class="vg"/>
+<path d="M165 435 L391.81 250.72" class="vb"/>
+<path d="M405 240 L649.03 329.17" class="vo"/>
+<circle cx="165" cy="435" r="5" class="point"/>
+<text x="112" y="485" class="small muted">O</text>
+<text x="265" y="298" class="label blue">A</text>
+<text x="530" y="245" class="label orange">B</text>
+<text x="420" y="420" class="formula green">A + B</text>
+
+</svg>

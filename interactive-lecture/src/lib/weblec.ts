@@ -20,14 +20,22 @@ export interface WebElement {
   rowh?: number
   name?: string
   src?: string
+  /** 图片在框内的显示方式；cover 可按框的比例裁切边缘 */
+  fit?: 'contain' | 'cover'
+  /** 图片裁切时保留哪一侧，例如 'right center' */
+  objectPosition?: string
   hotspot?: boolean
   important?: boolean
   /** 故意的图上叠加标注：与图重叠属设计意图，质检跳过 */
   overlay?: boolean
+  /** 只作卡片底色的 box；质检不把内部文字/公式视为与底色重叠 */
+  decorative?: boolean
   /** box 内边距覆盖（默认 '8px 20px'；装饰条等零内容 box 传 0） */
   pad?: number | string
   /** html 元素：步进揭示时向 iframe postMessage({type: 消息})（键为步号） */
   msgs?: Record<string, string>
+  /** Opt-in deterministic iframe clock: lecture-state on time/step/seek/load. */
+  timelineSync?: boolean
   qa?: { q: string; a: string }[]
   label?: string
 }

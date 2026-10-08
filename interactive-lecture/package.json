@@ -13,7 +13,10 @@
     "preview": "vite preview",
     "build:slides": "vite build --config vite.slides.config.ts",
     "postbuild": "node scripts/copy-launchers.mjs",
-    "test:launchers": "node --test scripts/copy-launchers.test.mjs"
+    "test:launchers": "node --test scripts/copy-launchers.test.mjs",
+    "check:release": "python scripts/check-release.py",
+    "test:windows": "python scripts/test-windows-launcher.py",
+    "test:browser": "node scripts/test-windows-browser.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -76,6 +79,8 @@
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
     "kimi-plugin-inspect-react": "^1.0.3",
+    "node-edge-tts": "^1.2.10",
+    "playwright": "1.64.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.19",
     "tailwindcss-animate": "^1.0.7",

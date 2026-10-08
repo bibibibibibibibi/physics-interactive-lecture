@@ -70,6 +70,22 @@ class Rep:
         return not self.errors
 
 
+def expected_steps(elements, rep, tag):
+    """Clock-driven HTML may have a cue that changes no visible slide element."""
+    steps = {e.get('step', 0) for e in elements} - {0}
+    for el in elements:
+        if 'timelineSync' in el and type(el['timelineSync']) is not bool:
+            rep.e(f'{tag} timelineSync 必须为布尔值')
+        if el.get('type') != 'html' or el.get('timelineSync') is not True:
+            continue
+        for key in (el.get('msgs') or {}):
+            if not str(key).isdecimal() or int(key) <= 0:
+                rep.e(f'{tag} html 时间轴消息步进非法：{key}')
+                continue
+            steps.add(int(key))
+    return steps
+
+
 def validate(path):
     rep = Rep()
     base = os.path.dirname(os.path.abspath(path))
@@ -120,11 +136,11 @@ def validate(path):
         if te - ts < 2:
             rep.w(f"{tag} 页面时长 {te - ts:.1f}s 过短")
 
-        # 步进时刻：键集 == 元素 step 集（去掉恒显的基底 step 0）
-        want = {e.get("step", 0) for e in els} - {0}
+        # Include explicit clock-driven HTML cues, which the renderer also advances.
+        want = expected_steps(els, rep, tag)
         got = {int(k) for k in st.keys()}
         if want != got:
-            rep.e(f"{tag} stepTimes 键 {sorted(got)} ≠ 元素 step 集 {sorted(want)}")
+            rep.e(f"{tag} stepTimes 键 {sorted(got)} ≠ 元素/时间轴模拟 step 集 {sorted(want)}")
         times = sorted(float(v) for v in st.values())
         for v in times:
             if not (ts - TIME_TOL <= v <= te + TIME_TOL):
@@ -150,7 +166,11 @@ def validate(path):
                 if e.get("w", 0) < 600 or (e.get("h") or 0) < 340:
                     rep.w(f"{tag} html 模拟页尺寸 {e.get('w')}×{e.get('h')} 偏小，交互可读性差（建议 ≥1200×675）")
                 for k in (e.get("msgs") or {}):
-                    if int(k) not in {ee.get("step", 0) for ee in els}:
+                    if not str(k).isdecimal() or int(k) <= 0:
+                        if e.get("timelineSync") is not True:
+                            rep.e(f"{tag} html 消息步进非法：{k}")
+                        continue
+                    if int(k) not in want:
                         rep.w(f"{tag} html 消息步进 [[{k}]] 不在本页元素 step 集合里，永远不会触发")
             if e.get("type") == "video":
                 src = e.get("src", "").split("?")[0]

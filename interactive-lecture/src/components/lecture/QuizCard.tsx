@@ -6,11 +6,12 @@ interface Props {
   quiz: WebQuiz
   /** 作答完成后点「继续播放」：恢复播放并记为已答 */
   onContinue: () => void
+  continueLabel?: string
 }
 
 /** 随堂互动答题卡弹层：选择题点选项后标对/错并显示解析；
     开放题先「查看参考答案」再显示解答；两种都答完才放行「继续播放」 */
-export default function QuizCard({ quiz, onContinue }: Props) {
+export default function QuizCard({ quiz, onContinue, continueLabel = '继续播放 ▶' }: Props) {
   const isChoice = Array.isArray(quiz.options)
   const [picked, setPicked] = useState<number | null>(null)
   const [revealed, setRevealed] = useState(false)
@@ -73,7 +74,7 @@ export default function QuizCard({ quiz, onContinue }: Props) {
 
         <button onClick={onContinue} disabled={!done}
           className="mt-5 w-full rounded-lg bg-[#ffb703] py-2.5 text-base font-bold text-[#0b1f38] hover:brightness-110 disabled:opacity-40">
-          继续播放 ▶
+          {continueLabel}
         </button>
       </div>
     </div>

@@ -3,10 +3,10 @@
 把传统 PPT 课件升级为**网页课件**：一次制作、两种产品——
 
 - **交互课堂**：带配音、卡通讲师、激光笔指点、知识点热点与 AI 答疑的网页课堂；
-- **静态幻灯片**：自包含单文件 HTML，双击即开，支持翻页笔逐步揭示、动画图示与课堂批注。
+- **静态幻灯片**：HTML 放映页，支持翻页笔逐步揭示、动画图示与课堂批注；第九章单文件可双击，special 八课和含嵌入实验的基础课使用本地 HTTP 服务。
 
 两个产品共用同一份课件数据（`weblec.json`）与同一个渲染组件，版式、公式、步进顺序逐帧一致。
-除内容创作外，构建、导出、校验等环节全部脚本化，**不消耗 AI token**（TTS 配音只产生 API 费用）。
+除内容创作外，构建、导出、校验等环节全部脚本化，**不消耗 AI token**（已有课程的在线 TTS 可能产生 API 费用；`pre_vector` 当前使用在线神经语音，也保留 Mac 系统语音离线配音脚本）。
 
 > 正式的《制作方案》见 `docs/大学物理交互课堂制作方案.pdf`（LaTeX 源文件同目录）；
 > 工厂脚本的细粒度约定见 `lecture_factory/README.md`。
@@ -17,8 +17,8 @@
 
 | 目录 | 是什么 | 怎么用 |
 | --- | --- | --- |
-| `interactive-lecture/dist/` | **交互课堂部署版**（含第九章八节课与专题课 sp1 的配音和数据） | **Windows 双击 `启动交互课堂-win.bat`、Mac 双击 `启动交互课堂-mac.command`**，自动起本地服务并打开浏览器（Mac 首次运行如被拦，到「系统设置 → 隐私与安全性」点允许）；也可整个拷到任意静态服务器。不能双击 index.html，课件 JSON 需走 http |
-| `interactive-lecture/slides-export/` | **静态幻灯片**（8 份单文件 HTML，自包含） | 双击即开，可翻页笔逐步揭示、课堂批注，直接拷给学生 |
+| `interactive-lecture/dist/` | **本地课堂部署版**（第九章八课、基础课 `pre_vector`、专题 sp1–sp8；菜单保留技术复核与人工核准的状态说明） | **Windows 双击 `启动交互课堂-win.bat`、Mac 双击 `启动交互课堂-mac.command`**，自动起本地服务并打开浏览器；也可整个拷到静态服务器。不能双击 index.html，课件 JSON 需走 HTTP |
+| `interactive-lecture/slides-export/` | **静态幻灯片**（第九章8份单文件、专题8份HTTP媒体版及2份旧审阅兼容入口） | 第九章双击即开；专题媒体版需通过本地HTTP服务，支持翻页笔与课堂批注 |
 | 其余全部（`src/`、`public/`、`lecture_factory/`、各配置文件） | 制作与开发体系 | 只有要做新课／改代码时才需要：`npm ci` 后进入开发模式 |
 
 一句话：**用课 = 取 `dist/` 或 `slides-export/`；做课 = 全部**。
@@ -67,7 +67,11 @@ python lecture_factory/export_slides.py --build --course shm
 **energy**（9-4 简谐振动的能量）、**compose**（9-5 简谐振动的合成）、
 **damping**（9-6 阻尼振动 受迫振动 共振）、**emosc**（9-7 电磁振荡）、
 **nonlinear**（9-8 简述非线性系统，11 页，约 6 分钟）。第九章完结。
-专题系列另有 **sp1**《角动量守恒定律》，清单在 `public/weblec/courses_special.json`。
+专题系列入口为 `/?menu=special`，清单在 `public/weblec/courses_special.json`，包含 **sp1–sp8** 八个学时，**8个交互课堂入口均已开放**。各课已有真实配音及范围明确的统一技术复核；全课人工完整听感和最终教师教学核准仍待确认。**sp1修订版**为17页、170句Yunxi配音，真实音轨19分15.108秒；原PPT内容/任务、物理与媒体已独立复核，字幕、5题、3模拟、2视频、热点、全屏和两静态入口已验；用户原有浏览器已刷新，从目录进入并真实播放/暂停。**sp3**为25页、20分43.436秒，原用户环境的局部播放记录仍保留其原范围。不能把菜单可见、技术通过或局部播放等同于完整人工教学交付。逐课事实、根因和下一批方案见 [专题系列复盘](docs/special-series-review.md)；执行规则、单课清单与子任务/中央模板统一见 [专题制作规范](lecture_factory/专题课件制作经验.md)。各课静态入口由 `slidesUrl` 指定，含模拟/视频使用本地HTTP服务；sp1旧纠错静态书签也已接到当前修订稿，原文件保留。
+sp2 修订版为 21 页、实测 21 分 03 秒，包含 4 道随堂选择题、源课件实验视频和开关／铜管两个可操作模拟；交互入口 `/?course=sp2`，教师放映入口 `slides.html?course=sp2`。导出文件 `slides-export/大学物理-电磁感应定律-幻灯片-HTTP.html` 内联公式、字体和图片，视频及模拟通过 `/weblec/sp2/` 加载，须走 HTTP。创作与重建说明见 `lecture_factory/courses_web/sp2/README.md`。
+课前数学基础另有 **pre_vector**《0-1 矢量代数》（19 页），入口 `/?menu=foundation`；第 5、6、11、12 页带可拖动矢量实验，第 4、9、13、19 页有课堂互动题。目前交互课堂使用 `zh-CN-YunxiNeural` 配音。嵌入实验依赖 HTTP 服务，静态放映请打开 `slides.html?course=pre_vector`。
+
+修改讲稿后，先运行 `lecture_factory/courses_web/pre_vector/author.py`，再从项目根目录运行 `.venv/bin/python lecture_factory/courses_web/pre_vector/make_audio_neural.py --pages 1`（把 `1` 换成改动页；省略 `--pages` 则生成全部 19 页）。需先在 `interactive-lecture/` 运行 `npm ci`，并保持联网。脚本把 24 kHz／96 kbps 单声道 MP3、逐句时间轴暂存到 `.local-backups/pre-vector-neural-stage/`，不会直接覆盖当前课堂；可用 `--volume '+30%'` 和 `--output-dir` 调整。试听后，备份并将暂存目录内对应页的 `audio/page<n>.mp3` 和 `page<n>.times.json` **一起**复制到 `lecture_factory/courses_web/pre_vector/`，再运行 `.venv/bin/python lecture_factory/build_web.py lecture_factory/courses_web/pre_vector`，最后在 `interactive-lecture/` 运行 `npm run build`。原 Mac 系统语音脚本 `make_audio_mac.py` 可用于离线配音，但音色不同。
 
 ## 目录结构
 
@@ -105,10 +109,12 @@ python lecture_factory/export_slides.py --build --course shm
 │   ├── export_slides.py          # 单文件幻灯片导出（--build 一条命令）
 │   ├── gen_audio.py              # 逐句 TTS + 句级时间轴
 │   ├── style.json                # 音色/角色配置
-│   ├── courses_web/<课名>/       # 单课创作目录：author.py + assets/ + audio/（TTS 缓存）
+│   ├── courses_web/<课名>/       # author.py、slides.json、assets、页音频与逐句时间/来源元数据
 │   └── README.md                 # 工厂细粒度约定
 │
-├── docs/                         # 《大学物理交互课堂制作方案》.tex/.pdf（Tectonic 编译）
+├── docs/                         # 制作方案.tex/.pdf、special系列证据复盘
+├── .github/workflows/             # Windows/macOS自动验证配置
+├── work/                         # 候选、构建缓存、QA证据、整理保留记录和服务PID（不入Git）
 ├── tools/                        # 可放本机 Tectonic：Windows .exe、Mac 无后缀
 ├── export_ppt_win.ps1            # Windows PowerPoint COM 导出原 PPT 的图片/备注/PPTX
 ├── export_pdf_mac.py             # Mac 流程：PowerPoint 导出 PDF 后转逐页 PNG
@@ -118,6 +124,8 @@ python lecture_factory/export_slides.py --build --course shm
 ```
 
 ## 做一门新课的完整流程
+
+本节九环是常规课的既有接口说明。**special专题执行[11阶段制作、分工与验收规则](lecture_factory/专题课件制作经验.md)**：配音前独立冻结、私有候选隔离、中央串行集成及实际用户/人工核准；本节直接build/public登记、qa巡页、默认npm构建和入库命令不能代替专题晋级。`qa=1`只作诊断，不与普通课堂自然播放/手动验收并跑；`qa=0`也会开启当前自动巡页。
 
 以「9-2 旋转矢量」为例，九环链路（◆=AI 教学判断环节，其余全脚本）：
 
@@ -213,12 +221,17 @@ python lecture_factory/export_slides.py --build --course 旋转矢量
 ### 第 8 环：产品同步入库（0 token）
 
 两种最终产品**有意纳入 git 跟踪**，每次课程定稿（含任何版式/讲稿修改）后都要重建并提交，
-保证 GitHub 私有库上的产品永远是最新版：
+GitHub同步以本次核准的正式产品为准；不得以重建或提交代替课程教学验收：
 
 ```bash
 cd interactive-lecture && npm run build && cd ..   # 重建 dist/（交互课堂部署版）
 python lecture_factory/export_slides.py --build    # 重导出 slides-export/（静态幻灯片）
-git add -A && git commit -m "课程: …" && git push
+python -B interactive-lecture/scripts/check-release.py --no-git-check
+# 核对改动清单后只暂存本次正式范围
+git add <核准的路径>
+python -B interactive-lecture/scripts/check-release.py --check-index
+git commit -m "课程: …"
+git push origin main
 ```
 
 - `interactive-lecture/dist/`：交互课堂部署版，拷到任意静态服务器即跑；
@@ -227,7 +240,7 @@ git add -A && git commit -m "课程: …" && git push
   新增课程/应用模板时不要再把 `dist`、`slides-export` 加回忽略；
 - 本地启动器母版在 `lecture_factory/assets/launcher/`：Windows 使用 `启动交互课堂-win.bat` + `serve-win.ps1`，
   Mac 使用 `启动交互课堂-mac.command` + `serve-mac.py`。`npm run build` 后由 Node `postbuild` 脚本统一拷入 dist，
-  无需 Windows 的 `xcopy`；发布时保留全部启动器文件。
+  无需 Windows 的 `xcopy`；发布时保留全部启动器文件。Vite设置 `emptyOutDir:false`，启动器复制保留旧名称，避免构建永久删除旧资源；这不等于整课多文件事务或统一发布锁，专题仍须隔离候选、串行集成和失败回滚。
 
 ### 第 9 环：交付与课后闭环
 
@@ -235,6 +248,8 @@ git add -A && git commit -m "课程: …" && git push
 （每笔自动标注圈住了哪个元素）→ 回改数据源 → 重跑第 4、7 环。
 
 ## 日常使用命令
+
+下表是常规接口速查；专题按唯一规范核对实际入口的授权守卫、暂存输出与保留策略，未审默认构建不用于专题发布。既有可用课堂维持到修订候选验收替换，不以改稿开始为下架条件。
 
 | 目的 | 命令 |
 | --- | --- |
@@ -246,12 +261,13 @@ git add -A && git commit -m "课程: …" && git push
 | 生产构建（应用） | `cd interactive-lecture && npm run build` |
 | 编译方案文档 | `cd docs && ../tools/tectonic.exe -X compile 大学物理交互课堂制作方案.tex` |
 
-**改讲稿的正确姿势**：改 `author.py` → 运行它重新生成 `slides.json` →
-删掉该课的 `audio/page<n>.mp3` 和 **课程根目录**的 `page<n>.times.json`（只删改动页）→ 重跑 `build_web.py`。
-重配时构建器会自动清掉该页旧句音频，不会按旧下标错配。
-注意 sidecar 在 `courses_web/<课>/page<n>.times.json`（不在 audio/ 下）；若只删 mp3 漏删 sidecar，
-构建器会因两个文件不同时存在而整体重配该页，仍能自愈；但句数失配的陈旧 sidecar + 旧 mp3 并存时会
-IndexError——拿不准就把该页两个文件一起删。
+**改讲稿的正确姿势**：先保留当前候选及其版本绑定，再改 `author.py` 并生成 `slides.json`。
+逐句核对讲稿、声音参数、MP3 与 times 的签名；在本课暂存目录重配确有变化的句子，
+同步重建受影响页、整轨、字幕、步进和题卡时刻。缓存不成对、文字不符或实际留白不足时应拒绝复用，
+不能按旧页码或句下标强行套用，也不能以删除缓存代替版本检查。
+网页课程的 times 通常位于 `courses_web/<课>/page<n>.times.json`，以本课实际管线为准。
+暂存候选验收后由集成负责人增量替换正式成果；确需删除文件时使用系统回收站。
+专题课按 [专题制作规则与交接清单](lecture_factory/专题课件制作经验.md) 执行，外发配音先核对已有授权范围。
 
 **讲稿写作的语义词约定**（小人姿态由讲稿文本驱动，见「课件数据规范」小人姿态行）：
 设问句结尾写「？」、结论句写「所以/得到/也就是说」、引导句写「想一想/不妨」、推演句写「推导/代入/写成」。
@@ -358,7 +374,7 @@ IndexError——拿不准就把该页两个文件一起删。
 仅播放已有课件无需安装 Node 或配音工具。Mac 的 `.command` 启动器需要 Python 3.8+，
 从 8080 开始寻找可用端口（最多到 8090），服务启动后打开浏览器，只监听本机。
 ZIP 解压后若丢失执行权限，在 `interactive-lecture/dist/` 下执行
-`chmod +x 启动交互课堂-mac.command`。Windows 继续双击 `启动交互课堂-win.bat`。
+`chmod +x 启动交互课堂-mac.command`。Windows 双击 `启动交互课堂-win.bat`，固定调用 Windows 自带 PowerShell 5.1，无需 Python、Node 或管理员权限。启动器仅监听本机，支持媒体分段读取、拖动和并行加载；从8080寻找可用端口至8090。启动器与完整dist保持在一起，路径可含中文和空格。
 
 开发环境：Node.js `^20.19.0 || >=22.12.0`、Python 3.9+。
 Windows 和 Mac 分别安装本机依赖，**不要互相复制 `node_modules/` 或 `.venv/`**。
@@ -419,8 +435,8 @@ AI_MODEL=moonshot-v1-8k                  # 可选
 
 **已提交的产物**：各课的 `public/weblec/<课名>/`（含合并音频）、TTS 缓存、
 姿态图，以及**最终产品** `interactive-lecture/dist/`（交互课堂部署版）与
-`interactive-lecture/slides-export/`（8 份单文件幻灯片）——克隆后无需重新构建即可运行、部署、分发。
-**未入库**：`node_modules/`、`.venv/`、`.local-backups/`、`dist-slides/`（幻灯片中间构建产物）、
+`interactive-lecture/slides-export/`（第九章8份单文件、专题8份HTTP版及2份旧审阅兼容入口）——克隆后无需重新构建即可运行、部署、分发。
+**未入库**：`node_modules/`、`.venv/`、`.local-backups/`、`work/`、`dist-slides/`（幻灯片中间构建产物）、
 `待处理/`（旧方案与各课源 PPT 归档）、`.env.local`、Tectonic 本机可执行文件。
 
 ## Windows 与 Mac 共用项目
@@ -431,7 +447,7 @@ AI_MODEL=moonshot-v1-8k                  # 可选
 
 | 操作 | Windows | Mac |
 | --- | --- | --- |
-| 播放 `dist/` | `启动交互课堂-win.bat`（需要时调用 `serve-win.ps1`） | `启动交互课堂-mac.command`（调用 `serve-mac.py`） |
+| 播放 `dist/` | `启动交互课堂-win.bat`（始终调用 `serve-win.ps1`） | `启动交互课堂-mac.command`（调用 `serve-mac.py`） |
 | 从 PPT 得到逐页 PNG | `export_ppt_win.ps1`，直接调用 Windows PowerPoint | 先在 PowerPoint 导出 PDF，再运行 `export_pdf_mac.py`；需要 `pdftoppm` |
 | 前端构建 | `npm ci && npm run build` | `npm ci && npm run build` |
 | 生成新配音 | Kimi 插件默认从当前用户 `APPDATA` 查找，或设置 `KIMI_AUDIO_TOOL` | 设置 `KIMI_AUDIO_TOOL` 指向 Mac 上可运行的插件 |
@@ -451,8 +467,18 @@ npm run build
 npm run build:slides
 ```
 
-本次在 Mac 上验证了上述检查、启动器 HTTP 访问、已有音频缓存重建和 9 门课程数据校验。
-未在 Windows 实机运行 PowerPoint COM，也未调用真实 TTS 服务；这两项仍依赖对应机器上的外部工具。
+此前在Mac完成的检查保留原有范围。当前跨平台验收入口如下；Windows测试在Mac会明确跳过，不能计为Windows通过。CI结果以对应提交的GitHub Actions记录为准。
+
+```powershell
+# 真实Windows：PowerShell5.1、中文/空格路径、端口回退、206/HEAD/416和并发
+py -3 -B interactive-lecture/scripts/test-windows-launcher.py
+# 两系统均可：正式资源、数据/音频一致性与Git跟踪完整性
+py -3 -B interactive-lecture/scripts/check-release.py
+# Windows Edge课堂冒烟；先在interactive-lecture执行npm ci
+node interactive-lecture/scripts/test-windows-browser.mjs
+```
+
+浏览器测试只证明指定提交的目录、课堂播放/暂停和媒体加载/seek技术行为，不能代替完整人工听审、教师核准或全部真实操作。PowerPoint COM、外发TTS和完整重新制作仍需本机工具、素材和有效授权。部分special重建依赖被忽略的work脚本/缓存，sp2历史素材脚本仍有Mac来源路径；正式播放产物与公共开发工具随Git提供，八课一键完整重建尚未实现。
 
 ## 版本控制约定
 
@@ -460,16 +486,19 @@ npm run build:slides
 - **提交信息**：`课程: <课名> <改动>` 或 `工厂: <改动>` / `应用: <改动>`；
 - **author.py 与 weblec.json 一起提交**（数据源与产物同步，便于回溯）；
 - **大返工前先打标签**：如 `git tag shm-v1`（某课定稿）；
-- `.gitignore` 已排除依赖、构建产物、密钥与归档目录，勿强行 `git add -f`。
+- `.gitignore` 排除依赖、中间产物、密钥、work与归档；dist、slides-export是正式交付例外，继续跟踪，不强行 `git add -f`。
+- 整理前保存Git差异及待移文件的可恢复记录。FFmpeg清单归入work，不提交陈旧本机绝对路径；页音频、句缓存、times和来源元数据按制作需要保留。
+- 提交前核对真实入口、public/dist、导出及旧书签依赖；旧哈希资源保留兼容，不凭文件名或mtime删除。前置检查失败即停止后续动作，避免全量候选误入库。
+- `.github/workflows/portability.yml` 在Windows/macOS检查正式资源、构建和启动器；Windows使用PowerShell5.1及真实Edge。技术结果与人工听审、教师核准分开记录。
 
 ## 故障排查
 
 | 症状 | 排查 |
 | --- | --- |
 | 页面空白/一直加载 | 终端确认 dev server 在跑；浏览器控制台看 `weblec.json` 是否 404（多为 `?course=` 与目录名不一致） |
-| 步进重合/一跳多步 | 讲稿同句有多个 `[[n]]`，拆句后删该页音频缓存重跑构建 |
+| 步进重合/一跳多步 | 讲稿同句有多个 `[[n]]`；拆句后保留旧候选，在本课暂存目录重配并同步重建音频、逐句时间和步进 |
 | 公式显示方框/源码 | 用了组合字符矢量符号（改用 `Vec`）；或 KaTeX 语法错误（控制台有告警） |
-| 配音没更新 | 忘了删 `课程/audio/` 缓存；删后重跑 `build_web.py` |
+| 配音没更新 | 检查当前讲稿与 times 的逐句全文和声音参数；保留旧缓存，在本课暂存目录重配。`build_web.py` 会拒绝复用文字不符或不成对的页缓存 |
 | 构建末尾报错退出 | 读 `validate_weblec.py` 的 ERROR 列表逐条修（WARN 不阻塞） |
 | 单文件里图片裂了 | 图片没放进 `public/weblec/<课名>/` 或文件名与元素 `src` 不一致 |
 | 答疑 503 | `.env.local` 未配 `AI_API_KEY`（已自动退回离线答疑库，属正常降级） |

@@ -1,0 +1,4773 @@
+{
+ "title": "衍射光栅",
+ "nav": "专题·第6学时　衍射光栅",
+ "footer": "专题　衍射光栅",
+ "character": "aqiang",
+ "logoScale": 0.67,
+ "theme": "special",
+ "sections": [
+  {
+   "title": "多缝干涉",
+   "page": 4
+  },
+  {
+   "title": "光栅方程",
+   "page": 6
+  },
+  {
+   "title": "包络与缺级",
+   "page": 11
+  },
+  {
+   "title": "应用与迁移",
+   "page": 14
+  },
+  {
+   "title": "小结与课后任务",
+   "page": 21
+  }
+ ],
+ "pages": [
+  {
+   "id": 1,
+   "heading": "衍射光栅",
+   "narration": "同学们好，欢迎来到大学物理课堂。今天学习[[1]]衍射光栅，选自第十一章第七节。我们将从多缝光波的叠加出发，推导光栅方程，认识衍射包络与缺级，再把这些规律用于光盘测量和光谱分辨。请准备纸笔，把关键推导和实验条件一起记下来。",
+   "elements": [
+    {
+     "type": "img",
+     "step": 0,
+     "x": 0,
+     "y": 0,
+     "w": 1920,
+     "h": 1080,
+     "src": "cover.png",
+     "fit": "cover",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 110,
+     "y": 300,
+     "w": 990,
+     "h": 150,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "衍射光栅",
+        "size": 96,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 115,
+     "y": 505,
+     "w": 990,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "DIFFRACTION GRATING",
+        "size": 38,
+        "color": "#556B8D",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "DIFFRACTION GRATING",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 115,
+     "y": 700,
+     "w": 1000,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "大学物理　第11章　第7节",
+        "size": 34,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "大学物理　第11章　第7节",
+     "qa": []
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "heading": "学习路线",
+   "narration": "[[1]]先比较多缝干涉的位置、峰宽与亮度。[[2]]由光程差推导光栅方程。[[3]]加入单缝包络，解释缺级。[[4]]再测波长、分辨近邻谱线。选择题先独立判断，模拟可暂停后调参。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 150,
+     "w": 600,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "目 录",
+        "size": 64,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 150,
+     "y": 360,
+     "w": 330,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "01",
+        "size": 48,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "01",
+     "qa": []
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 150,
+     "y": 455,
+     "w": 56,
+     "h": 5,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 150,
+     "y": 505,
+     "w": 370,
+     "h": 160,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "多缝干涉",
+        "size": 40,
+        "color": "#273444",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 150,
+     "y": 700,
+     "w": 370,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "重点",
+        "size": 29,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "重点",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 565,
+     "y": 360,
+     "w": 330,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02",
+        "size": 48,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "02",
+     "qa": []
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 565,
+     "y": 455,
+     "w": 56,
+     "h": 5,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 565,
+     "y": 505,
+     "w": 370,
+     "h": 160,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "光栅方程",
+        "size": 40,
+        "color": "#273444",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 565,
+     "y": 700,
+     "w": 370,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "从光程差到相位",
+        "size": 29,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "从光程差到相位",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 980,
+     "y": 360,
+     "w": 330,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "03",
+        "size": 48,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "03",
+     "qa": []
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 980,
+     "y": 455,
+     "w": 56,
+     "h": 5,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 980,
+     "y": 505,
+     "w": 370,
+     "h": 160,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "包络与缺级",
+        "size": 40,
+        "color": "#273444",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 980,
+     "y": 700,
+     "w": 370,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "难点",
+        "size": 29,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "难点",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1395,
+     "y": 360,
+     "w": 330,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04",
+        "size": 48,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "04",
+     "qa": []
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 1395,
+     "y": 455,
+     "w": 56,
+     "h": 5,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1395,
+     "y": 505,
+     "w": 370,
+     "h": 160,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "应用与迁移",
+        "size": 40,
+        "color": "#273444",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1395,
+     "y": 700,
+     "w": 370,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "测量与分辨",
+        "size": 29,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "测量与分辨",
+     "qa": []
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "heading": "光盘上的光点与彩色",
+   "narration": "[[1]]原课件的光盘与激光实验示意图中，单色激光出现分开的光点。为什么同一波长有多个方向？[[2]]换成白光，颜色又随观察方向变化，这是第二个问题。[[3]]若受照明刻纹更多，光点会变宽还是变窄？今天用同一个叠加模型回答方向、颜色和宽度。示意图只提示关系，不能当作实际测量读数。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "00　从光盘提出三个问题",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 115,
+     "y": 220,
+     "w": 870,
+     "h": 650,
+     "src": "cd-laser.png"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 1070,
+     "y": 255,
+     "w": 740,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "为什么出现分开的光点？",
+        "size": 39,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "为什么出现分开的光点？",
+     "qa": [
+      {
+       "q": "激光光点是白光分色产生的吗？",
+       "a": "激光在本课近似为单色。多个光点对应不同衍射级次，不能把它们解释为不同颜色。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1070,
+     "y": 455,
+     "w": 740,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "白光为什么呈现彩色？",
+        "size": 39,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "白光为什么呈现彩色？",
+     "qa": [
+      {
+       "q": "光盘本身是不是发出了彩色光？",
+       "a": "光盘的周期结构对不同波长给出不同的衍射方向。观察到的颜色来自入射光的不同波长成分。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1070,
+     "y": 655,
+     "w": 740,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "更多刻纹，会使光点更锐利吗？",
+        "size": 38,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "更多刻纹，会使光点更锐利吗？",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 900,
+     "w": 1660,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "示意图提示现象；测量还需角度、级次与入射条件",
+        "size": 33,
+        "color": "#556B8D",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "示意图提示现象；测量还需角度、级次与入射条件",
+     "qa": []
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "heading": "从双缝到多缝",
+   "narration": "把复杂的光盘先换成理想模型。[[1]]平行、等宽、等间距的狭缝由单色平面波垂直照明，在远场观察，或用透镜在焦平面观察。图中小写的阿是每条缝的宽度，小写的迪是相邻缝中心的距离，大写恩是受照明的缝数，三者不能混淆。[[2]]回忆双缝：相邻光束的光程差为整数倍波长时，能够同相加强。但双缝只有两束光，若有一百条缝呢？不能简单把双缝图样复制一百次，而要叠加每一缝的电场。[[3]]我们先把缝很窄的模型拿出来，研究多缝干涉因子，暂时把单缝的方向性放在一边。这样先分清缝间叠加，再补回缝内叠加，两个尺度就不会混在一起。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "01　建立理想光栅模型",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 120,
+     "y": 230,
+     "w": 930,
+     "h": 635,
+     "src": "geometry.svg"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 1110,
+     "y": 255,
+     "w": 720,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$a$：缝宽　$d$：中心间距",
+        "size": 37,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "$a$：缝宽　$d$：中心间距",
+     "qa": [
+      {
+       "q": "光栅常量是缝宽吗？",
+       "a": "不是。光栅常量d是相邻缝或刻纹中心的距离，缝宽a影响单缝衍射包络。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 1110,
+     "y": 405,
+     "w": 720,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$N$：实际受照明的缝数",
+        "size": 37,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "$N$：实际受照明的缝数",
+     "qa": [
+      {
+       "q": "N是整片光栅的总刻纹数吗？",
+       "a": "应取参与相干叠加、实际受照明的有效缝数。光束只照亮一部分时，不能直接用整片光栅的刻纹总数。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1110,
+     "y": 570,
+     "w": 720,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "双缝已知：整数波长差时同相",
+        "size": 34,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "双缝已知：整数波长差时同相",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1110,
+     "y": 745,
+     "w": 720,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "先研究缝间干涉，再加入缝内衍射",
+        "size": 34,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "先研究缝间干涉，再加入缝内衍射",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 125,
+     "y": 930,
+     "w": 1690,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "条件：正入射、相干等幅、远场；角度从光栅法线量起",
+        "size": 31,
+        "color": "#556B8D",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "条件：正入射、相干等幅、远场；角度从光栅法线量起",
+     "qa": []
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "heading": "预测缝数的作用",
+   "narration": "请看[[1]]左侧模拟。固定中心间距和波长，只改变受照明缝数。纵轴是归一化后的多缝干涉因子，单缝包络暂时没有乘进去。初始为五缝。请同时盯住一级峰的横坐标和两侧第一暗点之间的距离。[[2]]把缝数增加到八十，哪一项预测正确？先选择。[[3]]现在开始比较：五、十、二十、四十、八十条缝依次出现。峰的位置保持，峰却越来越窄，附近的小峰也变得更不显眼。[[4]]正确的是位置不变、宽度变窄。注意，各条曲线都把自己的峰值归一到一，所以不能依据这幅图比较绝对亮度。接下来要分别回答两个问题：为什么峰的位置不含缝数？为什么第一暗点越来越靠近主峰？",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "01　控制变量：只增加缝数",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "html",
+     "step": 1,
+     "x": 100,
+     "y": 210,
+     "w": 1240,
+     "h": 725,
+     "src": "sim_grating.html?embed=chart&mode=basic&page=5&demoStep=3",
+     "timelineSync": true,
+     "msgs": {
+      "1": "reset",
+      "3": "demo"
+     }
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 110,
+     "y": 178,
+     "w": 1230,
+     "h": 28,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "演示：逐步增加受照明缝数",
+        "size": 24,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "演示：逐步增加受照明缝数",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 1435,
+     "y": 235,
+     "w": 355,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "固定 $d$ 与 $\\lambda$",
+        "size": 30,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "固定 $d$ 与 $\\lambda$",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1435,
+     "y": 335,
+     "w": 355,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$N:5\\rightarrow80$，预测？",
+        "size": 33,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "$N:5\\rightarrow80$，预测？",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1420,
+     "y": 440,
+     "w": 350,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "A　位置不变，峰变窄",
+        "size": 30,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "A　位置不变，峰变窄",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1420,
+     "y": 555,
+     "w": 350,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "B　位置移动，峰变宽",
+        "size": 30,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "B　位置移动，峰变宽",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1420,
+     "y": 670,
+     "w": 350,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "C　位置不变，峰变宽",
+        "size": 30,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "C　位置不变，峰变宽",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1435,
+     "y": 850,
+     "w": 355,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "核对：A",
+        "size": 33,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "核对：A",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 125,
+     "y": 955,
+     "w": 1650,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "纵轴归一化：比较峰位置与峰宽。暂停手调 N，记录峰位置与宽度。",
+        "size": 28,
+        "color": "#556B8D",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "纵轴归一化：比较峰位置与峰宽。暂停手调 N，记录峰位置与宽度。",
+     "qa": []
+    }
+   ],
+   "sentence_gap_overrides": [
+    {
+     "after_sentence": "先选择。",
+     "gap_seconds": 1.51
+    }
+   ],
+   "interactions": [
+    {
+     "at": 2,
+     "q": "固定d和λ，比较归一化多缝干涉因子。N从5增到80，主极大的方向和峰宽怎样变化？",
+     "answer": 0,
+     "options": [
+      "方向不变，峰变窄",
+      "方向移动，峰变宽",
+      "方向不变，峰变宽"
+     ],
+     "explain": "主极大满足d sinθ=mλ，与N无关；第一暗点相对主峰的sinθ间隔为λ/(Nd)，N增大使峰变窄。归一化曲线不反映绝对亮度。",
+     "after_sentence": "先选择。",
+     "pause_offset": 0.01,
+     "pause_margin": 1.5
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "heading": "光程差的几何来源",
+   "narration": "现在从几何出发。[[1]]垂直入射时，相邻缝中心处的入射相位相同；远场中指向同一观察方向的两束光近似平行。角西塔是这个观察方向与光栅法线的夹角。把相邻中心的连线向光的传播方向投影，就得到两束出射光的路程差。[[2]]因此德尔塔等于迪乘正弦西塔。这里用的是中心间距迪，不能把它换成缝宽阿。若观察方向回到法线，正弦为零，光程差也为零。[[3]]路程差还不是相位差：走一个波长相位变化二派，所以相邻缝的相位差，等于二派乘光程差再除以波长。请把这两行连起来写：几何确定路程，波长把路程转换成相位。后面的加强与相消，都要通过这个转换判断。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　先把几何转换成相位",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 115,
+     "y": 215,
+     "w": 970,
+     "h": 670,
+     "src": "geometry.svg"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 1140,
+     "y": 300,
+     "w": 650,
+     "h": 110,
+     "tex": "\\Delta=d\\sin\\theta",
+     "size": 49,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": true,
+     "label": "相邻缝的光程差",
+     "qa": [
+      {
+       "q": "为什么是d sinθ？",
+       "a": "正入射时相邻缝入射相位相同。远场观察方向上，两缝中心连线在传播方向的投影是d sinθ。θ从光栅法线量起。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 1140,
+     "y": 565,
+     "w": 650,
+     "h": 110,
+     "tex": "\\varphi=\\frac{2\\pi\\Delta}{\\lambda}",
+     "size": 47,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": true,
+     "label": "由光程差到相位差",
+     "qa": [
+      {
+       "q": "走一个波长，相位差是多少？",
+       "a": "相位变化2π弧度。故相邻缝相位差φ=2πΔ/λ。相差2π的整数倍等价于同相。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1140,
+     "y": 790,
+     "w": 650,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "几何 → 光程差 → 相位差",
+        "size": 34,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "几何 → 光程差 → 相位差",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 125,
+     "y": 940,
+     "w": 1680,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\theta$ 从法线量起；$d$ 是相邻缝中心间距",
+        "size": 33,
+        "color": "#556B8D",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "$\\theta$ 从法线量起；$d$ 是相邻缝中心间距",
+     "qa": []
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "heading": "光栅方程",
+   "narration": "相邻缝同相，就能让每一缝都同相。[[1]]相邻相位差等于二派乘整数艾姆，这样第一缝与第二缝、第二缝与第三缝，依次都相差整圈。把前页的相位表达式代入，约去二派，便得到[[2]]光栅方程：迪乘正弦西塔，等于艾姆乘拉姆达。艾姆是整数衍射级次，可以是零、正一、负一，依此类推。垂直入射的理想模型中，正负级次关于法线对称。[[3]]方向为什么不含缝数？因为只要相邻同相，任意数目的等幅缝都能同相；缝数改变叠加的锐利程度，并不改变这个相位条件。还有一个必须核对的约束：[[4]]正弦的绝对值不能超过一，因此级次绝对值乘波长不能大于迪。满足整数条件却没有可实现角度的级次，不能画成实际光束。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　由相邻同相推出主极大方向",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 125,
+     "y": 240,
+     "w": 1660,
+     "h": 110,
+     "tex": "\\varphi=2\\pi m,\\qquad m\\in\\mathbb Z",
+     "size": 46,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": true,
+     "label": "同相条件",
+     "qa": [
+      {
+       "q": "为什么相邻同相就够了？",
+       "a": "相邻缝相位差为2πm，任意两缝的相位差也是2π的整数倍，所有缝的场在该方向同相叠加。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 125,
+     "y": 425,
+     "w": 1660,
+     "h": 110,
+     "tex": "d\\sin\\theta_m=m\\lambda",
+     "size": 61,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": true,
+     "label": "光栅方程",
+     "qa": [
+      {
+       "q": "光栅方程的适用条件是什么？",
+       "a": "本课采用单色相干平面波正入射、等距光栅和远场条件。斜入射时必须加入入射波在相邻刻纹间的相位差。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 615,
+     "w": 1670,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "位置由 $d,\\lambda,m$ 决定；锐利程度还取决于 $N$",
+        "size": 39,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "位置由 $d,\\lambda,m$ 决定；锐利程度还取决于 $N$",
+     "qa": [
+      {
+       "q": "主极大的方向为何不含N？",
+       "a": "方向由相邻场的同相条件决定。增大N不改变相邻光程差，却使偏离同相方向后的相消更显著。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 125,
+     "y": 785,
+     "w": 1660,
+     "h": 110,
+     "tex": "|m|\\lambda\\le d",
+     "size": 46,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": true,
+     "label": "可达级次",
+     "qa": [
+      {
+       "q": "等号表示什么？",
+       "a": "等号给出|θ|=90°的掠射极限。常规屏幕实验只能接收非掠射方向，实际还受光路和单缝包络限制。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 125,
+     "y": 965,
+     "w": 1660,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "零级：$\\theta=0$；正负级次在此模型中对称",
+        "size": 31,
+        "color": "#556B8D",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "零级：$\\theta=0$；正负级次在此模型中对称",
+     "qa": []
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "heading": "把N个电场加起来",
+   "narration": "方程给了峰的位置，峰形还要计算。[[1]]取第一缝在观察方向的复振幅为单缝振幅，相邻缝相位依次增加二贝塔，其中贝塔等于派乘迪乘正弦西塔再除以波长。这里复数只是记相位的工具，最后强度一定是实数。[[2]]把恩项指数相加，得到等比数列：首项为一，公比为相位因子。先乘一减公比，再作相减，中间的项都抵消，只剩首项与末项。这就得到了分子一减公比的恩次方，除以一减公比。[[3]]再利用指数差的模等于两倍正弦的绝对值，振幅模之比化为正弦恩贝塔除以正弦贝塔的绝对值。强度与振幅模平方成正比，所以得到多缝干涉因子。[[4]]当贝塔等于整数倍派时，式子看似零除零；要回到原来的场叠加，恩个同相振幅相加，因子为恩的平方。不是把峰当成计算故障删掉。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　由等比数列得到多缝干涉因子",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 125,
+     "y": 220,
+     "w": 1660,
+     "h": 110,
+     "tex": "E_N=E_1\\sum_{j=0}^{N-1}e^{2ij\\beta},\\quad\\beta=\\frac{\\pi d\\sin\\theta}{\\lambda}",
+     "size": 41,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": false,
+     "label": "N缝场叠加",
+     "qa": [
+      {
+       "q": "为什么要加电场，而不是直接加光强？",
+       "a": "相干光的相位相关，必须先把各缝电场相加，再取模平方；直接加光强会漏掉干涉项。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 125,
+     "y": 405,
+     "w": 1660,
+     "h": 110,
+     "tex": "\\sum_{j=0}^{N-1}q^j=\\frac{1-q^N}{1-q},\\qquad q=e^{2i\\beta}",
+     "size": 43,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": false,
+     "label": "等比数列求和",
+     "qa": [
+      {
+       "q": "这个式子在q=1时怎么办？",
+       "a": "q=1时右边是0/0。左边有N个1相加，等于N。该点应取连续极限，不能机械代入分母。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 125,
+     "y": 605,
+     "w": 1660,
+     "h": 110,
+     "tex": "F_N(\\beta)=\\left[\\frac{\\sin(N\\beta)}{\\sin\\beta}\\right]^2",
+     "size": 52,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": true,
+     "label": "多缝干涉因子",
+     "qa": [
+      {
+       "q": "双缝是否能从这里得到？",
+       "a": "N=2时sin(2β)/sinβ=2cosβ，故F₂=4cos²β，与等幅双缝干涉一致。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 125,
+     "y": 805,
+     "w": 1660,
+     "h": 110,
+     "tex": "F_N(m\\pi)=N^2",
+     "size": 45,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": true,
+     "label": "主极大处取极限",
+     "qa": [
+      {
+       "q": "0/0意味着没有光吗？",
+       "a": "不意味着。该点各缝同相，场振幅是单缝的N倍，强度因子为N²；也可用极限求出。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 125,
+     "y": 960,
+     "w": 1600,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "自检：$N=2\\Rightarrow F_2=4\\cos^2\\beta$",
+        "size": 31,
+        "color": "#556B8D",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "自检：$N=2\\Rightarrow F_2=4\\cos^2\\beta$",
+     "qa": []
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "heading": "为什么峰会变窄",
+   "narration": "取艾姆级主峰附近，令贝塔等于艾姆派加一个很小的偏移。[[1]]主峰处偏移为零；离开主峰后，分子第一次为零，需要恩乘这个偏移等于正派或负派，而此时分母不为零。于是两侧第一暗点满足贝塔等于艾姆派加减派除以恩。[[2]]换回角度，两侧暗点的正弦，与主峰正弦之差，恰好是正负拉姆达除以恩迪。这个正弦形式比小角近似更基本。[[3]]在主峰附近且不接近掠射方向时，正弦的变化约等于余弦西塔艾姆乘角度变化，所以主峰到单侧第一暗点的角半宽，约为波长除以恩迪余弦西塔艾姆，单位是弧度。缝数越多，偏离同相后越快相消，峰就越窄。[[4]]相邻主峰之间还有恩减一个暗点、恩减两个次极大；双缝的恩等于二，因此没有中间次极大。峰的位置与峰宽至此都有了各自的推导。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　从第一暗点推导角半宽",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 125,
+     "y": 230,
+     "w": 1660,
+     "h": 110,
+     "tex": "\\beta_{\\pm}=m\\pi\\pm\\frac{\\pi}{N}",
+     "size": 49,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": false,
+     "label": "主峰两侧的第一暗点",
+     "qa": [
+      {
+       "q": "分子为零就一定是暗点吗？",
+       "a": "还要确认分母不同时为零。β=mπ的点是主极大，应取极限。主峰两侧β=mπ±π/N的点对N≥2分母不为零。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 125,
+     "y": 420,
+     "w": 1660,
+     "h": 110,
+     "tex": "\\sin\\theta_{\\pm}-\\sin\\theta_m=\\pm\\frac{\\lambda}{Nd}",
+     "size": 47,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": true,
+     "label": "暗点的正弦间隔",
+     "qa": [
+      {
+       "q": "这个关系使用了小角近似吗？",
+       "a": "没有。它由β的定义直接得到。需要两个暗点方向本身在可达角度范围内。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 125,
+     "y": 620,
+     "w": 1660,
+     "h": 110,
+     "tex": "\\delta\\theta\\simeq\\frac{\\lambda}{Nd\\cos\\theta_m}\\propto\\frac1N",
+     "size": 50,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": true,
+     "label": "角半宽",
+     "qa": [
+      {
+       "q": "δθ是全宽还是半宽？",
+       "a": "这里是主峰到单侧第一暗点的角半宽。两侧第一暗点之间的全宽约为2δθ；近似在峰窄且远离掠射方向时适用。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 125,
+     "y": 845,
+     "w": 1650,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两主峰之间：$N-1$ 个暗点，$N-2$ 个次极大",
+        "size": 36,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "两主峰之间：$N-1$ 个暗点，$N-2$ 个次极大",
+     "qa": [
+      {
+       "q": "双缝两主峰之间有几个次极大？",
+       "a": "N=2，所以N−2=0。多缝才会在两个主极大之间出现弱次极大。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 965,
+     "w": 1660,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "固定 $d,\\lambda,m$：增加 $N$，使第一暗点靠近主峰",
+        "size": 30,
+        "color": "#556B8D",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "固定 $d,\\lambda,m$：增加 $N$，使第一暗点靠近主峰",
+     "qa": []
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "heading": "峰更高意味着什么",
+   "narration": "刚才峰值因子为恩的平方，这容易引出一个误解。[[1]]比较必须固定每条缝的入射照度、缝宽、间距和波长，保证同一方向的单缝场振幅不变。在这些条件下，主峰的场是恩倍，强度是恩平方倍。与此同时，受照明区域和入射总功率也随缝数增加，不能说无条件地创造了能量。[[2]]现在只给你两条峰值都归一到一的曲线，能否据此判断八十缝主峰的绝对强度？先选择。[[3]]答案是不能。归一化保留形状，抹去了强度尺度；它能支持峰变窄的判断，却不足以说明仪器实际收到多少光。实际亮度还与光源、照明范围、缝宽和探测条件有关。科学图像要先读纵轴，再解释曲线；漂亮的高峰，也必须有可比较的条件。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "02　把相对峰形与绝对亮度分开",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 125,
+     "y": 240,
+     "w": 1660,
+     "h": 110,
+     "tex": "I_{\\mathrm{peak}}=N^2 I_1(\\theta_m)",
+     "size": 51,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": true,
+     "label": "同相叠加的峰值",
+     "qa": [
+      {
+       "q": "N²增亮是否违反能量守恒？",
+       "a": "不违反。比较固定单缝入射条件时，增加受照明缝数也增加输入总功率；干涉使角分布更集中。若总输入功率固定，单缝场强会变化，不能原样套用N²倍率。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 125,
+     "y": 430,
+     "w": 1670,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "条件：单缝场幅不变；照明总功率可随 $N$ 增加",
+        "size": 37,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "条件：单缝场幅不变；照明总功率可随 $N$ 增加",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 125,
+     "y": 600,
+     "w": 1680,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "仅有峰值归一到1的曲线，能判断绝对亮度吗？",
+        "size": 42,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "仅有峰值归一到1的曲线，能判断绝对亮度吗？",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 125,
+     "y": 715,
+     "w": 1680,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "A 可以　　B 不可以　　C 峰更窄就一定更暗",
+        "size": 35,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "A 可以　　B 不可以　　C 峰更窄就一定更暗",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 870,
+     "w": 1680,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "核对：B。先读纵轴，再解释曲线",
+        "size": 39,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "核对：B。先读纵轴，再解释曲线",
+     "qa": [
+      {
+       "q": "归一化曲线仍能比较什么？",
+       "a": "在同一横轴与模型条件下，可以比较峰位置、峰宽与相对形状；不能独立推断绝对光强。"
+      }
+     ]
+    }
+   ],
+   "sentence_gap_overrides": [
+    {
+     "after_sentence": "先选择。",
+     "gap_seconds": 1.51
+    }
+   ],
+   "interactions": [
+    {
+     "at": 2,
+     "q": "两条曲线分别把各自主峰归一到1。能仅凭这幅图判断实际主峰的绝对光强吗？",
+     "answer": 1,
+     "options": [
+      "可以，归一化不影响绝对光强",
+      "不可以，归一化去掉了强度尺度",
+      "峰更窄，所以一定更暗"
+     ],
+     "explain": "归一化只保留相对形状。N²峰值倍率需要固定单缝场幅等条件；实际亮度还需要输入功率、照明面积和探测条件。",
+     "after_sentence": "先选择。",
+     "pause_offset": 0.01,
+     "pause_margin": 1.5
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "heading": "把单缝衍射放回来",
+   "narration": "真实的缝有宽度，同一条缝内部的各点也会叠加。[[1]]定义阿尔法为派乘缝宽阿乘正弦西塔，再除以波长。若缝两边的光程差等于一个波长，把缝分成上下两半，每一对对应点相差半波长，恰好相消。更一般地，可分成二倍整数份进行配对，得到非零整数倍波长处的单缝暗纹。[[2]]均匀照明的单缝在远场给出平方的正弦阿尔法除以阿尔法，形成宽缓的衍射包络。阿尔法为零时要取极限，中央不是暗纹。[[3]]现在把两个层次相乘：单缝强度决定每条缝向不同方向送出多少光，多缝干涉因子决定各条缝怎样相加。图中的尖峰被包络调制，因此不同级次的高度通常不同。缝数改变细峰宽度，缝宽改变包络；不能把两个作用只归给一个参数。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "03　缝内叠加决定衍射包络",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 110,
+     "y": 220,
+     "w": 925,
+     "h": 650,
+     "src": "envelope.svg"
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 1090,
+     "y": 235,
+     "w": 695,
+     "h": 110,
+     "tex": "\\alpha=\\frac{\\pi a\\sin\\theta}{\\lambda}",
+     "size": 42,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": false,
+     "label": "单缝的相位变量",
+     "qa": [
+      {
+       "q": "α与β分别用哪个长度？",
+       "a": "本课统一α=πa sinθ/λ，控制单缝包络；β=πd sinθ/λ，控制缝间干涉。不要交换缝宽a与中心间距d。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 1090,
+     "y": 430,
+     "w": 695,
+     "h": 110,
+     "tex": "I_1(\\theta)=I_0\\left(\\frac{\\sin\\alpha}{\\alpha}\\right)^2",
+     "size": 40,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": true,
+     "label": "单缝衍射包络",
+     "qa": [
+      {
+       "q": "α=0时怎样处理？",
+       "a": "取极限sinα/α→1，所以I₁(0)=I₀。单缝暗纹对应非零整数倍π，不能把p=0当作暗纹。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 1090,
+     "y": 645,
+     "w": 695,
+     "h": 110,
+     "tex": "I(\\theta)=I_1(\\theta)F_N(\\beta)",
+     "size": 43,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": true,
+     "label": "总强度的两层结构",
+     "qa": [
+      {
+       "q": "真实图样中主峰方向一定完全不变吗？",
+       "a": "光栅方程给出缝间同相方向。有限宽包络有斜率时，乘积的局部峰可能有微小位移，尤其N较小时。本课先比较干涉因子，N大时尖峰方向接近光栅方程。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 865,
+     "w": 1690,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$a$ 管包络，$d$ 管级次，$N$ 管锐利程度",
+        "size": 36,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "$a$ 管包络，$d$ 管级次，$N$ 管锐利程度",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 125,
+     "y": 965,
+     "w": 1690,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "均匀等宽矩形缝的远场模型；不等同于任意刻槽效率曲线",
+        "size": 29,
+        "color": "#556B8D",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "均匀等宽矩形缝的远场模型；不等同于任意刻槽效率曲线",
+     "qa": []
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "heading": "缺级从哪里来",
+   "narration": "观察包络图，有些本来应出现的级次却不见了。[[1]]先写多缝同相条件：迪乘正弦西塔等于艾姆乘波长。[[2]]再写单缝暗纹条件：阿乘正弦西塔等于小写皮乘波长，皮必须是非零整数。如果两个条件指向同一方向，每条缝自身在这个方向的场就已经相消；缝间再同相，也无场可加强，这叫缺级。[[3]]把两个等式相除，消去角度和波长，得到艾姆等于皮乘迪除以阿。它必须同时是整数，还必须有实际可达的衍射方向。若迪除以阿为三，则正负三级、六级等可能缺失；其中超出可达范围的级次本来就不存在。[[4]]零级不会因这个机制缺失，因为皮不能为零。缺级处的光也不是凭空消灭，理想模型中的场在特定方向相消，能量在其他方向重新分布。若改变缝宽，透过的总功率也可能改变，归一化图不能直接当能量计。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "03　两条条件相遇：同相方向落在包络零点",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 125,
+     "y": 225,
+     "w": 1660,
+     "h": 110,
+     "tex": "d\\sin\\theta=m\\lambda",
+     "size": 46,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": false,
+     "label": "多缝同相条件",
+     "qa": [
+      {
+       "q": "同相方向一定能观察到亮纹吗？",
+       "a": "还要看单缝场幅与可达角度。单缝包络在该方向为零时会缺级。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 125,
+     "y": 400,
+     "w": 1660,
+     "h": 110,
+     "tex": "a\\sin\\theta=p\\lambda,\\quad p\\in\\mathbb Z\\setminus\\{0\\}",
+     "size": 46,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": false,
+     "label": "单缝暗纹条件",
+     "qa": [
+      {
+       "q": "为什么排除p=0？",
+       "a": "p=0对应中央方向，sinα/α的极限为1，单缝中央强度不为零。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 125,
+     "y": 590,
+     "w": 1660,
+     "h": 110,
+     "tex": "m=p\\frac da\\quad(m\\in\\mathbb Z,\\ |m|\\lambda\\le d)",
+     "size": 50,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": true,
+     "label": "缺级条件",
+     "qa": [
+      {
+       "q": "d/a不为整数时怎么办？",
+       "a": "寻找非零整数p，使p(d/a)恰为整数m，再检查级次可达。不能直接把非整数d/a当作衍射级次。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 125,
+     "y": 805,
+     "w": 1670,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "零级不缺失；特定方向相消，能量向其他方向分布",
+        "size": 37,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "零级不缺失；特定方向相消，能量向其他方向分布",
+     "qa": [
+      {
+       "q": "缺级处的能量去哪了？",
+       "a": "相干叠加改变空间角分布，该方向场相消，其他方向有加强。在改变缝宽的比较中，总透光功率也会变化，不能只从归一化曲线推断能量收支。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 960,
+     "w": 1640,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例：$d/a=3$ → 可达的 $m=\\pm3,\\pm6,\\ldots$ 缺级",
+        "size": 31,
+        "color": "#556B8D",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "例：$d/a=3$ → 可达的 $m=\\pm3,\\pm6,\\ldots$ 缺级",
+     "qa": []
+    }
+   ]
+  },
+  {
+   "id": 13,
+   "heading": "迁移：间距缝宽比不是整数",
+   "narration": "模拟初始为[[1]]迪除以阿等于三，三级同相方向恰好落在包络暗点上。现在改变条件：固定迪为四微米，波长为五百纳米，把迪除以阿改成二点五。[[2]]第一正缺级是几级？这次不能照抄整数比的答案，要让皮乘二点五成为整数。请先选择。[[3]]演示把缝宽调整到中心间距的零点四倍。第一个单缝暗点在相当于二点五级的位置，那里本来就没有整数级的多缝主极大；第二个单缝暗点才与五级相遇。[[4]]所以第一正缺级是五级，此时皮等于二。再核对可达性：五乘五百纳米为二点五微米，小于四微米，方向存在。一个正确结论至少要过三关：单缝暗点条件、整数级次条件和可达角度条件。改变一个参数，重新检查全部条件，才能做到真正的迁移。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "03　条件改变以后，重新推导",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "html",
+     "step": 1,
+     "x": 100,
+     "y": 210,
+     "w": 1240,
+     "h": 725,
+     "src": "sim_grating.html?embed=chart&mode=missing&page=13&demoStep=3",
+     "timelineSync": true,
+     "msgs": {
+      "1": "reset",
+      "3": "demo"
+     }
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 110,
+     "y": 178,
+     "w": 1230,
+     "h": 28,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "演示：把中心间距与缝宽之比改为2.5",
+        "size": 24,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "演示：把中心间距与缝宽之比改为2.5",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 1435,
+     "y": 225,
+     "w": 355,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$d=4\\,\\mu\\mathrm m$",
+        "size": 31,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "$d=4\\,\\mu\\mathrm m$",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 1435,
+     "y": 300,
+     "w": 355,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\lambda=500\\,\\mathrm{nm}$",
+        "size": 31,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "$\\lambda=500\\,\\mathrm{nm}$",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1435,
+     "y": 385,
+     "w": 355,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$d/a=2.5$，首缺级？",
+        "size": 30,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "$d/a=2.5$，首缺级？",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1420,
+     "y": 485,
+     "w": 350,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "A　二级",
+        "size": 30,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "A　二级",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1420,
+     "y": 600,
+     "w": 350,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "B　二点五级",
+        "size": 30,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "B　二点五级",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1420,
+     "y": 715,
+     "w": 350,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "C　五级",
+        "size": 30,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "C　五级",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1435,
+     "y": 855,
+     "w": 355,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "核对：C，$p=2$",
+        "size": 30,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "核对：C，$p=2$",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 125,
+     "y": 955,
+     "w": 1640,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "整数条件与可达条件必须同时满足",
+        "size": 30,
+        "color": "#556B8D",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "整数条件与可达条件必须同时满足",
+     "qa": []
+    }
+   ],
+   "sentence_gap_overrides": [
+    {
+     "after_sentence": "请先选择。",
+     "gap_seconds": 1.51
+    }
+   ],
+   "interactions": [
+    {
+     "at": 2,
+     "q": "正入射，d=4 μm、λ=500 nm。将d/a改为2.5，第一正缺级是？",
+     "answer": 2,
+     "options": [
+      "m=2",
+      "m=2.5",
+      "m=5"
+     ],
+     "explain": "缺级需m=p(d/a)，p为非零整数且m为整数。p=1给2.5，不是级次；p=2给m=5，并且mλ=2.5 μm<4 μm，方向可达。",
+     "after_sentence": "请先选择。",
+     "pause_offset": 0.01,
+     "pause_margin": 1.5
+    }
+   ]
+  },
+  {
+   "id": 14,
+   "heading": "光盘为什么能测波长",
+   "narration": "回到光盘。[[1]]光盘表面的细密轨道在局部近似一组平行周期刻纹，可以作为反射光栅。原课件的显微图提示了这个周期结构，不能把照片中的放大倍数当作现场标定值。标准光盘的名义轨道间距约为一点六微米，我们在本例中用这个名义值。[[2]]反射光栅也要检查入射相位。若光正入射，相邻刻纹被同相照明，出射方向仍满足相邻光程差为整数波长的条件。角度应从表面法线量起，而不是从光盘表面量起。[[3]]这里的示意图专门规定入射方向、法线和一级出射角。若光盘倾斜，入射不再垂直，就必须把入射波到达相邻刻纹的路程差一起计算；不能继续无条件套用正入射公式。选对模型，往往比把计算器按得更快更重要。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04　反射光栅：先确认入射几何",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 110,
+     "y": 230,
+     "w": 720,
+     "h": 490,
+     "src": "cd-tracks.png"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 115,
+     "y": 755,
+     "w": 750,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "局部周期刻纹：名义间距约 $1.6\\,\\mu\\mathrm m$",
+        "size": 31,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "局部周期刻纹：名义间距约 $1.6\\,\\mu\\mathrm m$",
+     "qa": [
+      {
+       "q": "1.6 μm是什么性质的数值？",
+       "a": "这是标准CD的名义轨道间距，本例用作教学计算。ECMA-130还规定容差；真实测量需考虑光盘型号、轨道间距和对准误差。"
+      }
+     ]
+    },
+    {
+     "type": "img",
+     "step": 2,
+     "x": 900,
+     "y": 220,
+     "w": 890,
+     "h": 650,
+     "src": "cd-measure.svg"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 930,
+     "w": 1680,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本例限定正入射；光盘倾斜后要重新计算入射相位差",
+        "size": 32,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "本例限定正入射；光盘倾斜后要重新计算入射相位差",
+     "qa": [
+      {
+       "q": "转动光盘，光点间距一定不变吗？",
+       "a": "不能作一般结论。转动会改变入射与观察几何，衍射方向相对实验室坐标可能变化。应明确转轴、入射角和屏幕位置。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "heading": "例题：由角度反推波长",
+   "narration": "采用前页规定的[[1]]正入射模型。名义间距一点六微米，观察到一级出射方向与法线夹角二十四度。题中的角度是给定的教学数据，我们现在完成理论反推，并不把它说成已经测出的课堂记录。[[2]]从光栅方程解出波长：迪乘正弦西塔，再除以级次艾姆。先代符号，再代单位；一点六微米等于一千六百纳米。[[3]]正弦二十四度约为零点四零七，一级的艾姆为一，因此波长约六百五十一纳米，属于可见红光附近，与原稿约六百五十纳米的结果一致。有效数字不要超过输入数据的精度。[[4]]再作数量级检查：波长必须小于间距，一级角度才可达。若得出六百五十微米，就说明单位处理错了。一个数值答案应连着几何、级次、单位和合理性核对，才是可以复查的测量推理。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04　例题：正入射、一级、24°",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 125,
+     "y": 225,
+     "w": 1660,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "给定：$d=1.6\\,\\mu\\mathrm m$，$m=1$，$\\theta=24^\\circ$",
+        "size": 44,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "给定：$d=1.6\\,\\mu\\mathrm m$，$m=1$，$\\theta=24^\\circ$",
+     "qa": [
+      {
+       "q": "本页是真实实验记录吗？",
+       "a": "不是。本页沿用源稿的给定教学数据进行计算。真实实验应记录仪器、角度读数、级次判断与不确定度。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 125,
+     "y": 415,
+     "w": 1660,
+     "h": 110,
+     "tex": "\\lambda=\\frac{d\\sin\\theta}{m}",
+     "size": 56,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": true,
+     "label": "由角度反推波长",
+     "qa": [
+      {
+       "q": "二级也能用这个式子吗？",
+       "a": "正入射条件满足且级次判定正确时可以。二级须除以m=2，不能把所有非零亮纹都当一级。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 125,
+     "y": 625,
+     "w": 1660,
+     "h": 110,
+     "tex": "\\lambda\\approx1600\\sin24^\\circ\\ \\mathrm{nm}\\approx651\\ \\mathrm{nm}",
+     "size": 45,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": true,
+     "label": "代入数值与单位",
+     "qa": [
+      {
+       "q": "为什么与650 nm略有差别？",
+       "a": "sin24°的数值代入约得到650.8 nm。650 nm是按给定数据精度取近似值，差异来自舍入。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 125,
+     "y": 850,
+     "w": 1690,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "复查：$\\lambda<d$；级次、角度和单位一致",
+        "size": 39,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "复查：$\\lambda<d$；级次、角度和单位一致",
+     "qa": [
+      {
+       "q": "先检查哪些错误？",
+       "a": "确认正入射、角度从法线量起、级次m正确，并把微米与纳米统一。最后检查|m|λ≤d以及有效数字。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 16,
+   "heading": "迁移：更小的刻纹间距",
+   "narration": "原稿提出：换成轨道更密的光盘，会怎样？[[1]]假设波长、级次与正入射条件都相同，只减小中心间距迪。请先自己用光栅方程推理：哪些量固定，哪个量需要改变？[[2]]非零级次的角度绝对值怎样变化？先选择这个趋势，不需要猜一个未经核实的光盘型号参数。[[3]]核对答案：角度绝对值增大。因为减小迪，必须增大正弦西塔，才能保持艾姆波长不变；过小时该级次可能不再可达。再回到真实测量，可以重复对准，比较正负一级，在条件允许时用另一可达级次交叉检查。零级可帮助标定法线，但实际对准误差不能靠公式消除。[[4]]名义间距、角度读数和级次误判都会影响结果。观测与预测不一致时，应先检查模型和标定。把测量的不确定性写出来，是说明结论在什么范围内值得信赖。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04　迁移与测量复核",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 125,
+     "y": 235,
+     "w": 1700,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "固定 $\\lambda,m\\ne0$，正入射；减小 $d$",
+        "size": 43,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "固定 $\\lambda,m\\ne0$，正入射；减小 $d$",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 125,
+     "y": 405,
+     "w": 1690,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "非零级次的 $|\\theta|$ 怎样变化？",
+        "size": 44,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "非零级次的 $|\\theta|$ 怎样变化？",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 125,
+     "y": 540,
+     "w": 1660,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "A 增大　　B 减小　　C 与间距无关",
+        "size": 35,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "A 增大　　B 减小　　C 与间距无关",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 680,
+     "w": 1680,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "核对：A；过小时，该级次可能不再可达",
+        "size": 38,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "核对：A；过小时，该级次可能不再可达",
+     "qa": [
+      {
+       "q": "减小间距为何可能使某级次消失？",
+       "a": "|sinθ|=|m|λ/d随d减小而增大；若|m|λ>d，该整数级次没有可达角度。它与单缝包络造成的缺级是不同机制。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 125,
+     "y": 845,
+     "w": 1700,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "复核链：对准 → 判级 → 统一单位 → 重复与交叉检查",
+        "size": 36,
+        "color": "#273444",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "复核链：对准 → 判级 → 统一单位 → 重复与交叉检查",
+     "qa": [
+      {
+       "q": "怎样避免把给定例题当真实实验？",
+       "a": "明确区分给定数据、模型预测和现场读数。真实测量应保留读数、标定方法及不确定度，再与模型比较。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 125,
+     "y": 965,
+     "w": 1660,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "名义间距与角度都有误差；报告精度应与证据相称",
+        "size": 29,
+        "color": "#556B8D",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "名义间距与角度都有误差；报告精度应与证据相称",
+     "qa": []
+    }
+   ],
+   "sentence_gap_overrides": [
+    {
+     "after_sentence": "先选择这个趋势，不需要猜一个未经核实的光盘型号参数。",
+     "gap_seconds": 1.51
+    }
+   ],
+   "interactions": [
+    {
+     "at": 2,
+     "q": "正入射，固定波长和同一非零级次。将中心间距d减小，该级次的|θ|如何变化？",
+     "answer": 0,
+     "options": [
+      "增大；过小时可能没有可达角度",
+      "减小",
+      "与d无关"
+     ],
+     "explain": "由|sinθ|=|m|λ/d可知d减小时角度绝对值增大。若|m|λ>d，该级次不可达。这里改变的是级次几何，不是单缝缺级条件。",
+     "after_sentence": "先选择这个趋势，不需要猜一个未经核实的光盘型号参数。",
+     "pause_offset": 0.01,
+     "pause_margin": 1.5
+    }
+   ]
+  },
+  {
+   "id": 17,
+   "heading": "颜色如何分开",
+   "narration": "前面的激光近似单色，白光则含有许多波长。[[1]]在同一个正级次中，波长越长，正弦西塔越大，出射角也越大；因此红光通常离零级更远，紫光更近。负级次的方向对称，我们比较的是角度的绝对值。[[2]]零级的艾姆为零，各波长都满足西塔为零，所以这里不会按波长分开。至此，光盘彩色的悬念得到了回答。[[3]]光源含有连续波长，就形成连续光谱；若只在若干波长有较强发射，就可能形成线状光谱；分子光谱还常出现带状结构。原稿的光谱图用于说明连续谱与线状谱的形态差别。要进一步判断成分，还需标定波长、比较已知谱线，并考虑仪器响应和适用模型；不能看到一个彩色条带就宣布知道所有物质。光栅让不同波长走向不同方向，却还要回答下一问：两条非常接近的谱线，仪器能否分开？",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04　光谱：从颜色到波长信息",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "img",
+     "step": 3,
+     "x": 105,
+     "y": 560,
+     "w": 1680,
+     "h": 290,
+     "src": "spectra.png"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 125,
+     "y": 235,
+     "w": 1690,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同一正级次：$\\lambda$ 越长，$\\theta$ 越大",
+        "size": 43,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "同一正级次：$\\lambda$ 越长，$\\theta$ 越大",
+     "qa": [
+      {
+       "q": "红光一定离中央更远吗？",
+       "a": "正入射、同一非零级次且角度可达时，红光波长较长，角度绝对值较大。不同级次可能重叠，比较时必须明确级次。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 125,
+     "y": 395,
+     "w": 1690,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "零级：各波长在 $\\theta=0$ 重合",
+        "size": 40,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "零级：各波长在 $\\theta=0$ 重合",
+     "qa": [
+      {
+       "q": "零级为什么没有分色？",
+       "a": "m=0使d sinθ=0，与λ无关。在本模型中各波长零级方向相同。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 885,
+     "w": 1670,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "识别谱线还需波长标定、参考谱线与仪器响应",
+        "size": 35,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "识别谱线还需波长标定、参考谱线与仪器响应",
+     "qa": [
+      {
+       "q": "光谱能直接给出全部成分吗？",
+       "a": "不能。成分识别需要可靠的波长标定、参考谱线和物理模型，还受信噪比、覆盖范围、温度及仪器响应等影响。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 18,
+   "heading": "由峰宽推到分辨本领",
+   "narration": "两条波长很接近的谱线，各自都有有限宽度。[[1]]先看角间距：同一级次的光栅方程对波长作小变化，在角度不接近九十度时，角间距约为艾姆乘波长差，除以迪余弦西塔。[[2]]再看刚推导的单峰半宽，约为波长除以恩迪余弦西塔。两种变化都涉及同一几何因子，所以可以相比较。[[3]]瑞利判据把一条谱线的主峰与另一条的第一暗点重合，作为恰能分辨的约定。在大恩、均匀照明、近邻谱线以及可观察非缺级的条件下，把角间距与半宽相等，就得到波长除以最小波长差，约等于级次绝对值乘受照明刻纹数。[[4]]这叫理论分辨本领。它说明增加有效刻纹数或使用更高级次有助于分开近邻谱线，但不能无条件提高测量准确度；实际仪器还受到入射狭缝宽度、探测采样和噪声等因素限制。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04　用瑞利判据连接间距与峰宽",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 125,
+     "y": 215,
+     "w": 1660,
+     "h": 110,
+     "tex": "\\Delta\\theta\\simeq\\frac{|m|\\Delta\\lambda}{d\\cos\\theta_m}",
+     "size": 44,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": false,
+     "label": "近邻谱线的角间距",
+     "qa": [
+      {
+       "q": "为什么用近似式？",
+       "a": "它来自光栅方程在同一可达级次附近的线性化，要求波长差小且方向远离掠射。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 125,
+     "y": 385,
+     "w": 1660,
+     "h": 110,
+     "tex": "\\delta\\theta\\simeq\\frac{\\lambda}{Nd\\cos\\theta_m}",
+     "size": 44,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": false,
+     "label": "单峰角半宽",
+     "qa": [
+      {
+       "q": "这里哪个宽度参与比较？",
+       "a": "主峰到第一暗点的单侧半宽，瑞利判据把另一条主峰放到这里，而不是与两暗点之间的全宽比较。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 555,
+     "w": 1690,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "瑞利判据：一条主峰落在另一条第一暗点处",
+        "size": 37,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "瑞利判据：一条主峰落在另一条第一暗点处",
+     "qa": []
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 125,
+     "y": 665,
+     "w": 1660,
+     "h": 110,
+     "tex": "R\\equiv\\frac{\\lambda}{\\Delta\\lambda_{\\min}}\\simeq |m|N",
+     "size": 50,
+     "color": "#244B88",
+     "align": "left",
+     "hotspot": true,
+     "important": true,
+     "label": "理想光栅分辨本领",
+     "qa": [
+      {
+       "q": "N具体指什么？",
+       "a": "有效受照明、参与相干叠加的刻纹数。它不是望远镜光纤数量，也不能简单换成整片未被照亮的光栅总刻纹数。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 125,
+     "y": 860,
+     "w": 1670,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "能分开两线 ≠ 波长测量没有误差",
+        "size": 38,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "能分开两线 ≠ 波长测量没有误差",
+     "qa": [
+      {
+       "q": "分辨本领与测量准确度相同吗？",
+       "a": "不同。分辨本领描述能否区分近邻谱线；波长准确度还依赖标定、对准、仪器稳定性和数据处理。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 965,
+     "w": 1670,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "条件：大 $N$、均匀照明、近邻谱线、可达且非缺级",
+        "size": 28,
+        "color": "#556B8D",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "条件：大 $N$、均匀照明、近邻谱线、可达且非缺级",
+     "qa": []
+    }
+   ]
+  },
+  {
+   "id": 19,
+   "heading": "两条近邻谱线能分开吗",
+   "narration": "用[[1]]两条教学近邻谱线作检验：五百八十九点零与五百八十九点六纳米，在一级观察。它们的平均波长约五百八十九点三纳米，差为零点六纳米。先把这两项代入刚推导的分辨本领关系，自己计算需要多少受照明刻纹。[[2]]若只能选择二百、五百、一千，哪组最可能达到这个理想阈值？先选。[[3]]现在模拟依次改变缝数，波长保持不变。增加缝数主要让每个峰变窄，于是两条近邻谱线更容易分开。[[4]]核对答案是一千：平均波长除以波长差，约为九百八十二点二，因此刻纹数取整数，至少约九百八十三条。这个数是本模型的理论阈值，不能直接当作真实仪器验收值。不要把两条谱线的方向与峰宽混成一个作用，也不要忽略组成合成曲线的两条单线。模拟帮助检验推理，真正的仪器还需要考虑入射狭缝、探测器与信噪比。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04　分辨检验：只改变有效刻纹数",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "html",
+     "step": 1,
+     "x": 100,
+     "y": 210,
+     "w": 1240,
+     "h": 725,
+     "src": "sim_grating.html?embed=chart&mode=doublet&page=19&demoStep=3",
+     "timelineSync": true,
+     "msgs": {
+      "1": "reset",
+      "3": "demo"
+     }
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 110,
+     "y": 178,
+     "w": 1230,
+     "h": 28,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "演示：200 → 500 → 1000条受照明刻纹",
+        "size": 24,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "演示：200 → 500 → 1000条受照明刻纹",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 1420,
+     "y": 225,
+     "w": 370,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "589.0 / 589.6 nm",
+        "size": 30,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "589.0 / 589.6 nm",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1420,
+     "y": 300,
+     "w": 370,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一级：$N_{\\min}\\approx983$",
+        "size": 29,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "一级：$N_{\\min}\\approx983$",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1425,
+     "y": 385,
+     "w": 365,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "哪组达到理想阈值？",
+        "size": 30,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "哪组达到理想阈值？",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1420,
+     "y": 485,
+     "w": 350,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "A　200条",
+        "size": 30,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "A　200条",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1420,
+     "y": 600,
+     "w": 350,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "B　500条",
+        "size": 30,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "B　500条",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1420,
+     "y": 715,
+     "w": 350,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "C　1000条",
+        "size": 30,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "C　1000条",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1425,
+     "y": 850,
+     "w": 365,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "核对：C",
+        "size": 32,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "核对：C",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 125,
+     "y": 955,
+     "w": 1690,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "教学模型：等强非相干谱线，强度相加；不代表实测数据",
+        "size": 29,
+        "color": "#556B8D",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "教学模型：等强非相干谱线，强度相加；不代表实测数据",
+     "qa": []
+    }
+   ],
+   "sentence_gap_overrides": [
+    {
+     "after_sentence": "先选。",
+     "gap_seconds": 1.51
+    }
+   ],
+   "interactions": [
+    {
+     "at": 2,
+     "q": "一级，近邻谱线589.0与589.6 nm。在理想光栅瑞利模型中，N=200、500、1000，哪组最可能分开这两条谱线？",
+     "answer": 2,
+     "options": [
+      "200",
+      "500",
+      "1000"
+     ],
+     "explain": "R≈|m|N，平均λ/Δλ≈589.3/0.6≈982.2。N为整数，约需983或更多；1000满足这个教学模型的阈值，真实仪器仍受其他因素限制。",
+     "after_sentence": "先选。",
+     "pause_offset": 0.01,
+     "pause_margin": 1.5
+    }
+   ]
+  },
+  {
+   "id": 20,
+   "heading": "从一片光盘到LAMOST",
+   "narration": "[[1]]郭守敬望远镜，也就是拉莫斯特，据官方资料，配置四千根光纤与十六台光谱仪。光纤传送不同目标的光；四千根光纤不是光栅刻纹数，不能代入分辨本领。[[2]]可靠光谱经过收光、传送、分光、探测，再到波长标定与分析；性能由整个系统共同决定。[[3]]基础规律、精密制造和可复核标定相互联系。记录条件，核对级次和单位，保留标定证据，让结果能够复查。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "04　LAMOST：规律、制造与标定相连接",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "img",
+     "step": 1,
+     "x": 110,
+     "y": 225,
+     "w": 850,
+     "h": 585,
+     "src": "lamost.png"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 1040,
+     "y": 260,
+     "w": 760,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4000根光纤　16台光谱仪",
+        "size": 39,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "4000根光纤　16台光谱仪",
+     "qa": [
+      {
+       "q": "4000根光纤能代入R=mN吗？",
+       "a": "不能。光纤数表示光送入光谱仪的通道数，N表示一个光栅上有效受照明的刻纹数。两个数量描述不同对象。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1040,
+     "y": 455,
+     "w": 730,
+     "h": 155,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "收光 → 光纤传送 → 分光",
+        "size": 35,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "探测 → 标定 → 分析",
+        "size": 35,
+        "color": "#273444",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 825,
+     "w": 1670,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "基础规律 + 精密制造 + 可复核标定",
+        "size": 42,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "基础规律 + 精密制造 + 可复核标定",
+     "qa": [
+      {
+       "q": "为什么只知道光栅方程还不够？",
+       "a": "仪器性能还依赖光路、狭缝、光栅效率、探测采样、噪声和标定。公式给出理想关系，可靠结论需要完整系统证据。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 910,
+     "w": 1680,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "把条件记清，把计算做准，让结果经得起复查",
+        "size": 35,
+        "color": "#C00000",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "把条件记清，把计算做准，让结果经得起复查",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 125,
+     "y": 985,
+     "w": 1700,
+     "h": 32,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "数据来源：LAMOST官方仪器介绍；照片来自源课件",
+        "size": 24,
+        "color": "#556B8D",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "数据来源：LAMOST官方仪器介绍；照片来自源课件",
+     "qa": []
+    }
+   ]
+  },
+  {
+   "id": 21,
+   "heading": "小结：回到三个悬念",
+   "narration": "沿原稿顺序回顾。[[1]]相邻光程差转为相位差，同相条件给出光栅方程，解释离散方向。[[2]]恩个场相加，第一暗点随缝数增多靠近主峰，光点更锐利；比较亮度还需固定单缝场。[[3]]单缝包络的零点与主极大重合时缺级，零级不缺。白光各波长的非零级次分开，形成彩色。[[4]]反推波长、分辨近邻谱线时，要对准、判级、标定。读曲线先看坐标与条件，报数字须区分给定数据和实测记录。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "05　现象 → 方程 → 峰宽 → 包络 → 缺级 → 测量复核",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 125,
+     "y": 235,
+     "w": 1680,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "离散方向：相邻同相，确定衍射级次",
+        "size": 42,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "离散方向：相邻同相，确定衍射级次",
+     "qa": [
+      {
+       "q": "方向由什么决定？",
+       "a": "正入射时由d sinθ=mλ决定，需核对整数级次和可达角度。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 125,
+     "y": 410,
+     "w": 1690,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "锐利程度：第一暗点靠近，峰宽约与 $1/N$ 成正比",
+        "size": 39,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "锐利程度：第一暗点靠近，峰宽约与 $1/N$ 成正比",
+     "qa": [
+      {
+       "q": "光点更锐利的依据是什么？",
+       "a": "N增大使主峰与第一暗点的sinθ间隔λ/(Nd)减小，非掠射方向的角半宽近似与1/N成正比。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 585,
+     "w": 1690,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "包络与缺级：缝内相消，检验两个条件是否相遇",
+        "size": 39,
+        "color": "#244B88",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": true,
+     "label": "包络与缺级：缝内相消，检验两个条件是否相遇",
+     "qa": [
+      {
+       "q": "零级为什么不缺级？",
+       "a": "单缝暗纹条件中的p必须非零。中央方向单缝场的极限不为零。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 125,
+     "y": 775,
+     "w": 1690,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "测量与分辨：对准、判级、标定，让结论可复核",
+        "size": 40,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "测量与分辨：对准、判级、标定，让结论可复核",
+     "qa": [
+      {
+       "q": "三个开场问题的答案是什么？",
+       "a": "分开的光点对应不同衍射级次；白光不同波长的非零级次方向不同形成颜色分离；有效刻纹数增加使峰变窄。亮度比较和实际测量还需明确条件。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 125,
+     "y": 955,
+     "w": 1690,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "规律给预测，证据定可信度",
+        "size": 32,
+        "color": "#556B8D",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "规律给预测，证据定可信度",
+     "qa": []
+    }
+   ]
+  },
+  {
+   "id": 22,
+   "heading": "课后任务与预习",
+   "narration": "[[1]]独立写约一百五十字解释缺级与能量，注明理想模型和比较条件。使用智能助手时保留初稿、查证依据与修订，不能用对话截图替代推理。[[2]]观察白光下的光盘彩色，记录光源和方向，未经标定的照片只作定性材料。可拓展阅读光谱分析、拉曼光谱。[[3]]下一节预习偏振，思考光的方向性还有哪些信息。同学们，下次课见。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 40,
+     "w": 1480,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "05　作业与预习",
+        "size": 44,
+        "color": "#16283F",
+        "b": true,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 118,
+     "w": 96,
+     "h": 6,
+     "fill": "#244B88",
+     "line": "#244B88",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 160,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "pad": 0,
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 125,
+     "y": 205,
+     "w": 1680,
+     "h": 75,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "必做·讨论150字：独立初稿 → 物理依据 → 修订",
+        "size": 37,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": true,
+     "important": false,
+     "label": "必做·讨论150字：独立初稿 → 物理依据 → 修订",
+     "qa": [
+      {
+       "q": "使用智能助手时怎样保留学习证据？",
+       "a": "先独立推理，再核对可信资料，保留初稿、依据和修订。助手的回答不自动等于事实，也不能替代个人判断。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 125,
+     "y": 300,
+     "w": 1680,
+     "h": 115,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "缺级的主极大消失，能量去哪了？用“调制”语言说明；写明理想模型与比较条件，保留初稿、物理依据及修订理由。",
+        "size": 31,
+        "color": "#556B8D",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "缺级的主极大消失，能量去哪了？用“调制”语言说明；写明理想模型与比较条件，保留初稿、物理依据及修订理由。",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 125,
+     "y": 435,
+     "w": 1680,
+     "h": 75,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "必做·手机拍 CD 彩虹照片，记录光源、入射与观察方向",
+        "size": 35,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "必做·手机拍 CD 彩虹照片，记录光源、入射与观察方向",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 125,
+     "y": 540,
+     "w": 1680,
+     "h": 150,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "若有离散谱线且有波长/角度标定：估测主要谱线并报告不确定度。",
+        "size": 31,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "连续谱：仅定性记录谱带。",
+        "size": 31,
+        "color": "#556B8D",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "无标定：照片仅作定性观察，不可定量估测。",
+        "size": 31,
+        "color": "#556B8D",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "label": "离散谱线且标定后估谱；连续谱与无标定仅定性",
+     "hotspot": false,
+     "important": false,
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 705,
+     "w": 1680,
+     "h": 75,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "选做·拉曼光谱在药物检测中的应用（200字），给出资料依据。",
+        "size": 32,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "hotspot": false,
+     "important": false,
+     "label": "选做·拉曼光谱在药物检测中的应用（200字），给出资料依据。",
+     "qa": []
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 125,
+     "y": 805,
+     "w": 1680,
+     "h": 200,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "提交：up.physxuanmin.cloud → 光学 → 衍射光栅 → 讨论",
+        "size": 30,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "阅读：《费曼物理学讲义》I · 光学章",
+        "size": 28,
+        "color": "#556B8D",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ],
+      [
+       {
+        "t": "预习：偏振——光是横波还是纵波，怎样证明？（第11章第9节）",
+        "size": 29,
+        "color": "#244B88",
+        "b": false,
+        "font": "Microsoft YaHei, PingFang SC, sans-serif"
+       }
+      ]
+     ],
+     "label": "提交路径、光学阅读与偏振预习",
+     "hotspot": false,
+     "important": false,
+     "qa": []
+    }
+   ]
+  }
+ ]
+}

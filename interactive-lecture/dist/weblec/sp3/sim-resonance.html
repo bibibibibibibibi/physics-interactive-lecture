@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>受迫振动与共振 · sp3</title>
+<style>
+:root{--ink:#17324d;--blue:#245ea0;--orange:#b85c0b;--muted:#586e84;--line:#d4e2ef;--bg:#f2f8ff}*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;background:var(--bg);color:var(--ink);font:24px/1.38 "PingFang SC","Microsoft YaHei",sans-serif}body{padding:12px}button,input{font:inherit}button{border:1px solid #8aa8c9;border-radius:9px;background:#fff;color:var(--blue);padding:8px 10px;cursor:pointer}button:hover{background:#e8f2ff}button.active{background:var(--blue);color:white}button:focus-visible,input:focus-visible{outline:3px solid #d27b10;outline-offset:3px}.lab{height:100%;display:grid;grid-template-columns:290px minmax(0,1fr);gap:14px}.controls,.view{border:1px solid var(--line);border-radius:14px;background:#fff;min-height:0}.controls{padding:18px;overflow-y:auto}.view{padding:16px 18px;display:flex;flex-direction:column;overflow:hidden}h1,h2{margin:0 0 10px;font-size:27px;color:var(--blue)}label{display:block;font-size:22px;margin:14px 0 4px}output,.value{font-weight:700;color:var(--blue);font-variant-numeric:tabular-nums}input[type=range]{display:block;width:100%;accent-color:var(--blue);height:27px;cursor:pointer}.presets{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:8px 0 12px}.presets button{font-size:22px}.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:16px 0}.actions button:first-child{grid-column:1/-1;background:#edf5ff}.note{margin:10px 0;font-size:19px;color:var(--muted)}.readout{padding:9px 12px;background:#edf5ff;border-radius:9px;font-size:22px;line-height:1.55;min-height:74px}.status{font-size:21px;color:var(--muted);margin:8px 0 0;min-height:30px}.legend{display:flex;flex-wrap:wrap;gap:6px 20px;font-size:21px;margin:0 0 6px;min-height:30px}.legend span{white-space:nowrap}.swatch{display:inline-block;width:23px;height:5px;vertical-align:middle;margin:0 6px 4px 0;border-radius:3px}.canvaswrap{flex:1;min-height:0;position:relative}.canvaswrap canvas{width:100%;height:100%;display:block}.springwrap{height:130px;flex:none;display:none;margin:0 0 4px}.springwrap canvas{width:100%;height:100%;display:block}.subhead{font-size:22px;color:var(--muted);margin:0 0 6px}.time-control{margin:9px 0 0;display:flex;align-items:center;gap:12px;font-size:21px}.time-control input{flex:1}.time-control output{white-space:nowrap}.view-foot{font-size:20px;color:var(--muted);margin:6px 0 0;min-height:29px}body[data-mode=response] .springwrap{display:block}body[data-mode=phase] .springwrap{display:none}@media(max-width:1300px){html,body{font-size:21px}.lab{grid-template-columns:255px minmax(0,1fr);gap:10px}.controls{padding:12px}.view{padding:12px}h1,h2{font-size:25px}label,.presets button,.readout{font-size:20px}.note{font-size:18px}.legend{font-size:19px;gap:5px 12px}.springwrap{height:110px}}@media(max-width:800px){body{padding:7px}.lab{grid-template-columns:205px minmax(0,1fr);gap:7px}.controls,.view{padding:9px}h1,h2{font-size:21px}.presets{gap:5px}.presets button,label,.readout{font-size:17px}.actions button{font-size:17px}.note{font-size:15px}.legend,.subhead,.view-foot,.time-control,.status{font-size:16px}.springwrap{height:95px}}
+.controls{padding:14px}.controls h2{margin-bottom:5px;line-height:1.2}.controls label{font-size:21px;margin:8px 0 2px}.controls input[type=range]{height:24px}.presets{margin:6px 0 9px}.presets button{padding:6px 8px;font-size:21px}.actions{gap:6px;margin:10px 0}.actions button{padding:6px 8px;font-size:22px}.note{margin:6px 0;font-size:18px;line-height:1.3}.readout{padding:8px 10px;font-size:21px;line-height:1.42;min-height:0}.status{margin:3px 0;font-size:18px;line-height:1.25;min-height:0}body[data-mode=sweep] .actions button:first-child{display:none}body[data-mode=phase] #model-note+.note{display:none}
+.legend[hidden],.time-control[hidden]{display:none}body[data-mode=phase] .canvaswrap{min-height:376px;flex-shrink:0}body[data-mode=phase] .view{overflow-y:auto}body[data-compare="1"] .presets{grid-template-columns:repeat(3,minmax(0,1fr))}body[data-compare="1"] .actions{grid-template-columns:1fr}body[data-compare="1"] .legend{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));font-size:20px;gap:8px;margin-bottom:8px}body[data-compare="1"] .legend span{white-space:normal;line-height:1.38}body[data-compare="1"] .legend small{font:inherit}body[data-compare="1"] .canvaswrap{min-height:220px}body[data-compare="1"] #model-note,body[data-compare="1"] #status{display:none}
+</style></head>
+<body><main class="lab">
+<section class="controls"><h2 id="control-title">操作台</h2><div id="preset-label" class="subhead"></div><div class="presets" id="presets"></div>
+<div id="r-control"><label for="r">驱动频率 <output id="r-out"></output></label><input id="r" type="range" min="0.1" max="2" step="0.01" value="0.9"></div>
+<div id="z-control"><label for="z">阻尼系数 <output id="z-out"></output></label><input id="z" type="range" min="0" max="1.5" step="0.01" value="0.08"></div>
+<div class="actions"><button id="play">开始</button><button id="demo">重播演示</button><button id="reset">复位</button></div>
+<div class="readout" id="readout" aria-live="polite"></div><p class="note" id="model-note"></p><p class="note">设定：ω₀=2π rad/s<br>A<sub>st</sub>=f₀/ω₀²=1 cm</p><p class="status" id="status"></p>
+</section>
+<section class="view"><h1 id="view-title"></h1><p class="subhead" id="description"></p><div class="legend" id="legend"></div><div class="springwrap"><canvas id="spring" aria-label="弹簧振子位置示意"></canvas></div><div class="canvaswrap"><canvas id="plot" aria-label="受迫振动函数图"></canvas></div><div class="time-control" id="time-control"><span id="time-label">演示时间</span><input id="time" type="range" min="0" max="8" step="0.01" value="0"><output id="time-out">0.00 s</output></div><p class="view-foot" id="view-foot"></p></section>
+</main>
+<script type="module">
+import {OMEGA0,DEFAULT_FORCE,responseAt,steadyState,displacementPeak,normalizedAmplitude} from './oscillator-model.mjs';
+const $=id=>document.getElementById(id),q=new URLSearchParams(location.search);
+const allowed=['response','frequency','damping','sweep','phase'],mode=allowed.includes(q.get('mode'))?q.get('mode'):'response';
+document.body.dataset.mode=mode;
+const colors=['#245ea0','#168279','#b85c0b','#744bb0','#ad3855','#2d728e'];
+const frequencies=[.3,.6,.9,1.2,1.5,1.8],dampings=[.05,.1,.2,.4];
+const compare=mode==='sweep'&&q.get('compare')==='1',sweepDampings=compare?[.35,.2,.1]:dampings,autoDemo=!compare&&q.get('autodemo')!=='0';
+document.body.dataset.compare=compare?'1':'0';
+const defaults={r:mode==='response'||mode==='damping'||mode==='phase'?1.1:.9,z:mode==='response'||mode==='damping'?.1:.08};
+if(Number.isFinite(+q.get('r'))&&q.has('r'))defaults.r=Math.max(.1,Math.min(2,+q.get('r')));
+if(Number.isFinite(+q.get('z'))&&q.has('z'))defaults.z=Math.max(0,Math.min(1.5,+q.get('z')));
+if(mode==='sweep')defaults.z=.1;
+if(mode==='frequency')defaults.z=.08;if(mode==='damping')defaults.r=1.1;
+const x0=mode==='response'?-.04:.03,v0=mode==='response'?-.3:0;
+const duration=mode==='frequency'?12:mode==='damping'?14:mode==='phase'?9:8;
+let cfg={...defaults},time=0,running=false,demo=false,manual=true,startStamp=performance.now(),held=0,lastAudio=null,anchor=null,lessonEnd=null,pageStart=null,lecture=null,clockSource='local';
+let lastReadout='',lastStatus='',plotGeometry={};
+const defs={
+ response:{title:'完整响应：暂态与同频受迫项',desc:'同一初态下，完整响应等于两部分之和',note:'初态：x₀=−4 cm；v₀=−30 cm/s。',foot:'右上振子表示完整位移；右下三条曲线使用同一时间与位移尺度。'},
+ frequency:{title:'频率对照：同一驱动力，不同响应',desc:'六组同时从 x₀=3 cm、v₀=0 出发；β=0.08ω₀',note:'点击左侧档位突出对应曲线。滑块可加入其他频率的完整响应。',foot:'细线为六个预设频率，粗线为左侧选中值；外力幅值与初态保持相同。'},
+ damping:{title:'阻尼对照：过渡过程与稳态',desc:'四组同时从 x₀=3 cm、v₀=0 出发；ω=1.1ω₀',note:'点击左侧档位突出对应曲线。滑块可探索 β=ω₀ 的临界阻尼和更大阻尼。',foot:'粗线为当前阻尼；欠阻尼、临界阻尼、过阻尼都由完整方程计算。'},
+ sweep:{title:'扫频：位移振幅的共振峰',desc:'曲线表示同频受迫项的振幅；β>0 时为长期稳态振幅',note:'拖动频率滑块移动竖线；拖动阻尼滑块观察峰的位置与宽度。',foot:'A/Ast 为无量纲振幅；β=0 的本征频率处无有限稳态，纵轴上方显示截断。'},
+ phase:{title:'相位：位移相对于外力的滞后',desc:'上图外力 f/f₀；下图位移 xₚ/A。两图共用时间轴',note:'点击 .6、1.0、1.5 ω₀ 对照。β>0 时：低频近同相，本征频率滞后π/2，高频近反相。',foot:'按各自振幅归一化以比较相位；图中距离不用于比较外力和位移的物理大小。'}
+};
+$('view-title').textContent=defs[mode].title;$('description').textContent=defs[mode].desc;$('model-note').textContent=defs[mode].note;$('view-foot').textContent=defs[mode].foot;
+if(compare){$('description').textContent='固定 Ast=1 cm；点击左侧阻尼预设突出对应曲线，滑块可比较其他阻尼。';$('view-foot').textContent='正频率位移峰条件：β＜ω₀/√2；ωᵣ=√(ω₀²−2β²)。A/Ast 为无量纲，β=0 的本征共振无有限稳态。';for(const id of ['r-control','time-control','play','demo'])$(id).hidden=true;}
+if(mode==='phase')$('legend').hidden=true;
+$('time').max=duration;
+if(mode==='frequency')$('z-control').hidden=true;if(mode==='damping')$('r-control').hidden=true;
+const presetValues=mode==='frequency'?frequencies:mode==='damping'?dampings:mode==='sweep'?sweepDampings:mode==='phase'?[.6,1,1.5]:[.6,.9,1,1.5];
+const presetKey=mode==='damping'||mode==='sweep'?'z':'r';
+$('preset-label').textContent=presetKey==='z'?'阻尼预设 β/ω₀':'频率预设 ω/ω₀';
+for(const val of presetValues){const b=document.createElement('button');b.textContent=val.toFixed(presetKey==='z'?2:1);b.dataset.value=val;b.onclick=()=>setParameters({[presetKey]:val},{restart:true});$('presets').append(b)}
+const legends=mode==='response'?[['完整响应',colors[0]],['暂态','#75869a'],['同频受迫项',colors[2]]]:mode==='frequency'?frequencies.map((r,i)=>[r.toFixed(1)+' ω₀ · A='+ (steadyState({r,z:.08}).A*100).toFixed(2)+' cm',colors[i]]):mode==='damping'?dampings.map((z,i)=>['β='+z.toFixed(2)+' ω₀ · A='+ (steadyState({r:1.1,z}).A*100).toFixed(2)+' cm',colors[i]]):mode==='sweep'?sweepDampings.map((z,i)=>['β='+z.toFixed(2)+' ω₀',colors[i]]):[['外力 f/f₀',colors[2]],['位移 xₚ/A',colors[0]]];
+$('legend').innerHTML=compare?sweepDampings.map((z,i)=>{const p=displacementPeak({z});return`<span><i class="swatch" style="background:${colors[i]}"></i>β=${z.toFixed(2)} ω₀ · ωᵣ=${p.r.toFixed(3)} ω₀<br><small>Amax/Ast=${(p.A/.01).toFixed(3)}</small></span>`}).join(''):legends.map(([label,color])=>`<span><i class="swatch" style="background:${color}"></i>${label}</span>`).join('');
+
+function model(extra={}){return{omega0:OMEGA0,f0:DEFAULT_FORCE,r:cfg.r,z:cfg.z,x0,v0,...extra}}
+function syncControls(){
+ $('r').value=cfg.r;$('z').value=cfg.z;$('r-out').textContent=cfg.r.toFixed(2)+' ω₀';$('z-out').textContent=cfg.z.toFixed(2)+' ω₀';
+ for(const b of $('presets').children)b.classList.toggle('active',Math.abs(+b.dataset.value-cfg[presetKey])<.0001);
+}
+// Manual controls, presets, parent parameter messages, and demo all share this path.
+function setParameters(p,{restart=false,fromDemo=false}={}){
+ const r=Number.isFinite(p.r)?Math.max(.1,Math.min(2,p.r)):cfg.r,z=Number.isFinite(p.z)?Math.max(0,Math.min(1.5,p.z)):cfg.z;
+ cfg={r:mode==='damping'?defaults.r:r,z:mode==='frequency'?.08:z};syncControls();
+ if(!fromDemo){manual=true;demo=false;if(restart){time=held=0;startStamp=performance.now();running=!compare;$('play').textContent=running?'暂停':'开始'}}
+ render();
+}
+function reset({lesson=false}={}){manual=!lesson;demo=false;running=false;time=held=0;startStamp=performance.now();setParameters(defaults,{fromDemo:true});$('play').textContent='开始';render()}
+function startDemo({lesson=false}={}){reset({lesson});if(compare)return;setParameters(defaults,{fromDemo:true});demo=true;running=true;manual=!lesson;startStamp=performance.now();$('play').textContent='暂停';render()}
+function demoParameters(t){
+ if(mode==='sweep')setParameters({r:.3+1.5*Math.min(1,t/8),z:defaults.z},{fromDemo:true});
+ else if(mode==='phase')setParameters({r:t<3?.6:t<6?1:1.5,z:defaults.z},{fromDemo:true});
+ else setParameters(defaults,{fromDemo:true});
+}
+$('r').oninput=e=>setParameters({r:+e.target.value},{restart:true});$('z').oninput=e=>setParameters({z:+e.target.value},{restart:true});
+$('reset').onclick=()=>reset();$('demo').onclick=()=>startDemo();
+$('play').onclick=()=>{manual=true;demo=false;if(running){held=time;running=false}else{if(time>=duration)time=held=0;startStamp=performance.now()-time*1000;running=true}$('play').textContent=running?'暂停':'继续';render()};
+$('time').oninput=e=>{manual=true;running=false;demo=false;time=held=+e.target.value;$('play').textContent='继续';render()};
+function audio(){if(parent===window)return null;try{return parent.document.querySelector('audio')}catch{return null}}
+if(q.has('page'))fetch('./weblec.json').then(r=>r.ok?r.json():Promise.reject()).then(data=>{
+ const p=data.slides.find(p=>p.id===+q.get('page'));anchor=p?.stepTimes?.[q.get('demoStep')||'2']??null;lessonEnd=p?.t_end??null;pageStart=p?.t_start??null;
+ if(Number.isFinite(anchor)&&autoDemo&&!lecture)manual=false;
+}).catch(()=>{});
+// Opt-in parent protocol supplies a complete snapshot, including on a late iframe load.
+// Relative message time is sufficient without audio or weblec fetch. With real parent
+// audio, matching absolute anchors permit smooth, exact audio-time rendering between messages.
+function receiveLectureState(d){
+ if(!autoDemo||!['interactive','static'].includes(d.mode)||!Number.isFinite(d.pageTime)||!Number.isInteger(d.step)||d.step<0)return;
+ if(q.has('page')&&Number(d.pageId)!==Number(q.get('page')))return;
+ const step=Number(q.get('demoStep')||'2'),start=d.steps?.[step],a=audio();
+ const next={mode:d.mode,pageId:d.pageId,pageTime:Math.max(0,d.pageTime),step:d.step,playing:!!d.playing,start:Number.isFinite(start)&&start>=0?start:null,audioTime:a?.currentTime??null};
+ const same=lecture&&lecture.mode===next.mode&&lecture.pageId===next.pageId&&lecture.step===next.step&&lecture.start===next.start&&Math.abs(lecture.pageTime-next.pageTime)<1e-9&&lecture.playing===next.playing;
+ lecture=next;clockSource='lecture-state';if(manual&&same&&!next.playing)return;
+ manual=false;applyLectureClock();render();
+}
+function applyLectureClock(){
+ if(!lecture)return;clockSource='lecture-state';
+ if(lecture.start===null){time=held=0;running=false;demo=false;setParameters(defaults,{fromDemo:true});$('play').textContent='开始';return}
+ const demoStep=Number(q.get('demoStep')||'2'),a=audio();let pageTime=lecture.pageTime;
+ if(lecture.mode==='interactive'&&a){
+  if(Number.isFinite(anchor)&&Number.isFinite(pageStart)&&Math.abs(anchor-pageStart-lecture.start)<.003)pageTime=a.currentTime-pageStart;
+  else if(lecture.playing&&Number.isFinite(lecture.audioTime))pageTime+=a.currentTime-lecture.audioTime;
+ }
+ demo=lecture.step>=demoStep&&(lecture.mode==='static'||pageTime>=lecture.start);
+ time=held=demo?(lecture.mode==='static'?duration:Math.max(0,Math.min(duration,pageTime-lecture.start))):0;
+ running=demo&&lecture.mode==='interactive'&&lecture.playing&&(!a||!a.paused)&&time<duration;
+ setParameters(defaults,{fromDemo:true});if(demo)demoParameters(time);$('play').textContent=running?'暂停':'开始';
+}
+function updateClock(){
+ if(compare){time=held=0;running=false;demo=false;manual=true;return}
+ if(lecture){if(lecture.playing)manual=false;if(!manual){applyLectureClock();return}}
+ const a=audio();
+ if(!lecture&&autoDemo&&a&&Number.isFinite(anchor)){
+  clockSource='parent-audio';
+  const seek=lastAudio!==null&&Math.abs(a.currentTime-lastAudio)>.35;
+  if(seek||!a.paused){manual=false;demo=true}
+  lastAudio=a.currentTime;
+  if(!manual){time=Math.max(0,Math.min(duration,a.currentTime-anchor));demo=a.currentTime>=anchor;running=!a.paused&&a.currentTime>=anchor&&time<duration;setParameters(defaults,{fromDemo:true});if(demo)demoParameters(time);$('play').textContent=running?'暂停':'开始';return}
+ }
+ if(running){time=Math.min(duration,(performance.now()-startStamp)/1000);if(time>=duration){running=false;held=duration;$('play').textContent='重播'}}
+ if(demo)demoParameters(time);
+}
+window.addEventListener('message',e=>{
+ if(e.source!==parent)return;const d=e.data;
+ if(d?.type==='lecture-state')receiveLectureState(d);
+ if(d?.type==='reset')reset({lesson:autoDemo&&(Number.isFinite(anchor)||!!lecture)});
+ if(d?.type==='demo')startDemo({lesson:autoDemo&&(Number.isFinite(anchor)||!!lecture)});
+ if(d?.type==='parameters')setParameters(d,{restart:true});
+ if(d?.type==='seek'&&Number.isFinite(d.time)&&!compare){manual=true;running=false;time=held=Math.max(0,Math.min(duration,d.time));if(d.demo){demo=true;demoParameters(time)}else demo=false;render()}
+});
+
+function context(canvas){const box=canvas.getBoundingClientRect(),dpr=Math.min(devicePixelRatio||1,2),w=Math.max(1,box.width),h=Math.max(1,box.height);if(canvas.width!==Math.round(w*dpr)||canvas.height!==Math.round(h*dpr)){canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr)}const c=canvas.getContext('2d');c.setTransform(dpr,0,0,dpr,0,0);c.clearRect(0,0,w,h);return{c,w,h}}
+const fontSize=()=>window.innerWidth>1300?24:window.innerWidth>800?21:17;
+function axes(c,w,h,{maxX=duration,minY=-1,maxY=1,xLabel='t / s',yLabel='x / cm',top=38,bottom=52,left=74}={}){
+ const right=23,xx=v=>left+v/maxX*(w-left-right),yy=v=>top+(maxY-v)/(maxY-minY)*(h-top-bottom);
+ c.font=fontSize()+'px "PingFang SC",sans-serif';c.lineWidth=1;c.textAlign='right';c.textBaseline='middle';
+ for(let j=0;j<=4;j++){const v=minY+(maxY-minY)*j/4,y=yy(v);c.strokeStyle='#e0e8f2';c.beginPath();c.moveTo(left,y);c.lineTo(w-right,y);c.stroke();c.fillStyle='#586e84';c.fillText(Math.abs(v)<1e-9?'0':Math.abs(v)>=10?v.toFixed(0):v.toFixed(1),left-9,y)}
+ for(let j=0;j<=4;j++){const v=maxX*j/4,x=xx(v);c.strokeStyle='#e0e8f2';c.beginPath();c.moveTo(x,top);c.lineTo(x,h-bottom);c.stroke();c.fillStyle='#586e84';c.textAlign='center';c.fillText(v.toFixed(maxX===2?1:maxX===3?2:maxX===14?1:0),x,h-bottom+19)}
+ c.strokeStyle='#778ca1';c.lineWidth=1.7;c.beginPath();c.moveTo(left,top);c.lineTo(left,h-bottom);c.lineTo(w-right,h-bottom);c.stroke();
+ c.fillStyle='#17324d';c.textAlign='left';c.fillText(yLabel,8,15);c.textAlign='center';c.fillText(xLabel,(left+w-right)/2,h-12);c.textAlign='left';
+ return{xx,yy,left,right,top,bottom,w,h,minY,maxY,maxX};
+}
+function curve(c,a,fn,color,{limit=a.maxX,lineWidth=3.2,dash=[],alpha=1,clip=true}={}){
+ c.save();if(clip){c.beginPath();c.rect(a.left,a.top,a.w-a.left-a.right,a.h-a.top-a.bottom);c.clip()}c.strokeStyle=color;c.lineWidth=lineWidth;c.setLineDash(dash);c.globalAlpha=alpha;c.beginPath();let open=false;
+ const count=Math.max(2,Math.ceil((a.w-a.left-a.right)*limit/a.maxX));
+ for(let i=0;i<=count;i++){const x=limit*i/count,y=fn(x);if(!Number.isFinite(y)||Math.abs(y)>1e6){open=false;continue}const X=a.xx(x),Y=a.yy(y);if(!open){c.moveTo(X,Y);open=true}else c.lineTo(X,Y)}c.stroke();c.restore();
+}
+function cursor(c,a,x){c.save();c.strokeStyle='#50657a';c.lineWidth=2;c.setLineDash([7,7]);c.beginPath();c.moveTo(a.xx(x),a.top);c.lineTo(a.xx(x),a.h-a.bottom);c.stroke();c.restore()}
+let extentCache={key:'',max:8};
+function extent(models){const key=JSON.stringify(models);if(extentCache.key===key)return extentCache.max;let m=1;for(const p of models)for(let i=0;i<=400;i++){const s=responseAt(duration*i/400,p);m=Math.max(m,Math.abs(s.x)*100);if(mode==='response')m=Math.max(m,Math.abs(s.particular)*100,Math.abs(s.transient)*100)}extentCache={key,max:Math.ceil(m*1.08*2)/2};return extentCache.max}
+function drawResponse(){const{c,w,h}=context($('plot'));const models=mode==='frequency'?frequencies.map(r=>model({r,z:.08})):mode==='damping'?dampings.map(z=>model({z,r:defaults.r})):[model()];if(mode!=='response')models.push(model());const mx=extent(models);const a=axes(c,w,h,{minY:-mx,maxY:mx});
+ if(mode==='response'){
+  curve(c,a,t=>responseAt(t,model()).particular*100,colors[2],{limit:time,lineWidth:3,dash:[10,6]});
+  curve(c,a,t=>responseAt(t,model()).transient*100,'#75869a',{limit:time,lineWidth:3,dash:[3,5]});
+  curve(c,a,t=>responseAt(t,model()).x*100,colors[0],{limit:time,lineWidth:4.5});
+ }else{
+  for(let i=0;i<models.length-1;i++)curve(c,a,t=>responseAt(t,models[i]).x*100,colors[i],{limit:time,lineWidth:2.7,alpha:.72});
+  const selected=(presetKey==='r'?frequencies:dampings).findIndex(v=>Math.abs(v-cfg[presetKey])<.0001);
+  curve(c,a,t=>responseAt(t,model()).x*100,selected>=0?colors[selected]:colors[0],{limit:time,lineWidth:5});
+ }
+ cursor(c,a,time);const s=responseAt(time,model());c.fillStyle=mode==='response'?'#bd2f39':colors[0];c.beginPath();c.arc(a.xx(time),a.yy(s.x*100),5.5,0,2*Math.PI);c.fill();
+}
+function drawSweep(){const{c,w,h}=context($('plot'));const maxY=compare?6:12,a=axes(c,w,h,{maxX:2,minY:0,maxY,xLabel:'ω / ω₀',yLabel:'A / Ast'});plotGeometry={canvasHeight:h,innerHeight:h-a.top-a.bottom,maxY};
+ for(let i=0;i<sweepDampings.length;i++)curve(c,a,r=>normalizedAmplitude(r,sweepDampings[i]),colors[i],{lineWidth:3,alpha:.72});
+ const selected=sweepDampings.findIndex(z=>Math.abs(z-cfg.z)<.0001),color=selected<0?colors[3]:colors[selected];curve(c,a,r=>normalizedAmplitude(r,cfg.z),color,{lineWidth:5});
+ const amp=normalizedAmplitude(cfg.r,cfg.z);if(!compare){cursor(c,a,cfg.r);c.fillStyle=color;c.beginPath();c.arc(a.xx(cfg.r),a.yy(Math.min(maxY-.3,amp)),7,0,2*Math.PI);c.fill();}
+ const peak=displacementPeak(model());if(peak.exists){c.strokeStyle=color;c.lineWidth=2;c.setLineDash([4,6]);c.beginPath();c.moveTo(a.xx(peak.r),a.top);c.lineTo(a.xx(peak.r),h-a.bottom);c.stroke();c.setLineDash([])}
+ if(compare)for(let i=0;i<sweepDampings.length;i++){const p=displacementPeak(model({z:sweepDampings[i]}));c.fillStyle=colors[i];c.beginPath();c.arc(a.xx(p.r),a.yy(p.A/.01),5,0,2*Math.PI);c.fill()}
+ if(amp>maxY||compare&&peak.A/.01>maxY){c.fillStyle='#b85c0b';c.textAlign='right';c.fillText(peak.finite?`当前峰超过纵轴 ${maxY}，曲线已截断`:'β=0：无有限稳态共振峰',w-30,28);c.textAlign='left'}
+}
+function drawPhase(){const{c,w,h}=context($('plot'));const gap=8,half=(h-gap)/2,phase=steadyState(model()),span=3,segment=demo?Math.floor(Math.min(time,8.999)/3)*3:0,local=demo?time-segment:Math.min(time,3);
+ plotGeometry={canvasHeight:h,phasePanelHeight:half,phaseInnerHeight:half-38-64};
+ c.save();const a=axes(c,w,half,{maxX:span,minY:-1.2,maxY:1.2,yLabel:'f / f₀',bottom:64});curve(c,a,t=>Math.cos(OMEGA0*cfg.r*t),colors[2],{lineWidth:4});cursor(c,a,Math.max(0,Math.min(span,local)));c.restore();
+ c.save();c.translate(0,half+gap);const b=axes(c,w,half,{maxX:span,minY:-1.2,maxY:1.2,yLabel:'xₚ / A',bottom:64});if(phase.boundedPeriodic&&!phase.resonant)curve(c,b,t=>phase.A===0?0:(phase.C*Math.cos(OMEGA0*cfg.r*t)+phase.S*Math.sin(OMEGA0*cfg.r*t))/phase.A,colors[0],{lineWidth:4});else{c.fillStyle='#b85c0b';c.fillText('无有限稳态，不能用 xₚ/A 归一化',b.left+10,half/2)}cursor(c,b,Math.max(0,Math.min(span,local)));c.restore();
+}
+function drawSpring(){if(mode!=='response')return;const{c,w,h}=context($('spring')),s=responseAt(time,model()),range=extent([model()])/100;const center=w*.55,scale=w*.27/range,block=center+s.x*scale,ground=h-28,y=ground-38;
+ c.fillStyle='#edf5fd';c.fillRect(0,0,w,h);c.strokeStyle='#667e97';c.lineWidth=3;c.beginPath();c.moveTo(34,15);c.lineTo(34,ground);c.moveTo(34,ground);c.lineTo(w-25,ground);c.stroke();
+ c.strokeStyle='#245ea0';c.lineWidth=4;c.beginPath();c.moveTo(34,y);c.lineTo(65,y);const start=65,end=block-40;for(let i=0;i<=18;i++){const x=start+(end-start)*i/18;c.lineTo(x,y+(i===0||i===18?0:i%2?17:-17))}c.lineTo(block-29,y);c.stroke();
+ c.fillStyle='#245ea0';c.fillRect(block-29,y-27,58,54);c.fillStyle='white';c.font='24px sans-serif';c.textAlign='center';c.fillText('m',block,y+8);
+ c.strokeStyle='#8094aa';c.lineWidth=2;c.setLineDash([5,5]);c.beginPath();c.moveTo(center,12);c.lineTo(center,ground+9);c.stroke();c.setLineDash([]);c.fillStyle='#586e84';c.font=fontSize()+'px sans-serif';c.fillText('x=0',center,ground+23);c.textAlign='left';c.fillStyle='#17324d';c.fillText('完整位移 '+(s.x*100).toFixed(2)+' cm',Math.max(75,w-320),23);
+}
+function render(){
+ const s=responseAt(time,model()),st=steadyState(model()),regime={underdamped:'欠阻尼',critical:'临界阻尼',overdamped:'过阻尼'}[s.regime];
+ let info='';if(mode==='sweep'){const p=displacementPeak(model());info=compare?`当前 β=${cfg.z.toFixed(2)} ω₀<br>`+(p.exists?`ωᵣ=${p.r.toFixed(3)} ω₀<br>Amax/Ast=${p.finite?(p.A/.01).toFixed(3):'无有限值'}`:'无正频率位移峰<br>最大值：ω=0，A/Ast=1')+(p.A/.01>6?'<br>超过纵轴 6，已截断':''):`当前 A/Ast：${Number.isFinite(st.A)?(st.A/.01).toFixed(2):'无有限值'}<br>`+(p.exists?`峰频率：${p.r.toFixed(3)} ω₀`:'无正频率位移峰（最大值在ω=0）');drawSweep()}
+ else if(mode==='phase'){info=`位移滞后 φ：${st.phi===null?'无有限稳态':(st.phi/Math.PI).toFixed(3)+' π'}<br>当前 ω=${cfg.r.toFixed(2)} ω₀`;drawPhase()}
+ else{info=`完整 x：${(s.x*100).toFixed(2)} cm<br>同频项 A：${Number.isFinite(st.A)?(st.A*100).toFixed(2)+' cm':'随时间增长'}`;drawResponse();drawSpring()}
+ if(info!==lastReadout){$('readout').innerHTML=info;lastReadout=info}
+ const status=lecture&&!manual&&lecture.start===null?'课堂演示锚点缺失：保持初态':cfg.z===0?(st.resonant?'无阻尼本征共振：响应包络随时间增长':'β=0：暂态不衰减，完整响应不收敛到同频项'):regime+' · '+(manual?'手动演示':'跟随课堂时钟');
+ if(status!==lastStatus){$('status').textContent=status;lastStatus=status}
+ $('time').value=time;$('time-out').textContent=time.toFixed(2)+' s';
+ window.sp3State={mode,compare,autoDemo,r:cfg.r,z:cfg.z,time,running,demo,manual,anchor,clockSource:manual?'local':clockSource,timelineMode:lecture?.mode??null,timelineAnchorStatus:lecture?(lecture.start===null?'missing':'ready'):'none',regime:s.regime,x:s.x,v:s.v,A:st.A,phi:st.phi,readout:$('readout').textContent,plotGeometry:{...plotGeometry}};
+}
+window.sp3Sim={setParameters,reset,startDemo,setTime(t){manual=true;running=false;demo=false;time=held=compare?0:Math.max(0,Math.min(duration,t));render()},getState:()=>({...window.sp3State})};
+function frame(){updateClock();render();requestAnimationFrame(frame)}syncControls();render();requestAnimationFrame(frame);
+</script></body></html>

@@ -1,0 +1,5622 @@
+{
+  "title": "共振",
+  "nav": "专题·第3学时",
+  "footer": "大学物理　专题·第3学时",
+  "character": "aqiang",
+  "characters": [
+    {
+      "id": "aqiang",
+      "name": "阿强"
+    },
+    {
+      "id": "professor",
+      "name": "博士讲师"
+    },
+    {
+      "id": "zhongshan",
+      "name": "中山装先生"
+    }
+  ],
+  "duration": 1243.436,
+  "slides": [
+    {
+      "id": 1,
+      "kind": "page",
+      "heading": "共振",
+      "narration": "同学们好。今天学习共振。我们先观察受迫运动，再把外力、阻尼和恢复力放进同一个模型，求出完整响应，最后检验它能解释什么。请把每个符号和运动联系起来，边听边操作模拟，尤其留意启动过程与长期响应的区别。",
+      "elements": [
+        {
+          "type": "text",
+          "step": 0,
+          "x": 120,
+          "y": 260,
+          "w": 850,
+          "h": 160,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "共振",
+                "size": 112,
+                "color": "#244B88",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 0,
+          "x": 125,
+          "y": 440,
+          "w": 850,
+          "h": 70,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "RESONANCE",
+                "size": 36,
+                "color": "#71829A",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 1,
+          "x": 125,
+          "y": 630,
+          "w": 950,
+          "h": 85,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "大学物理　第9章 振动　第4节",
+                "size": 38,
+                "color": "#244B88",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "img",
+          "step": 1,
+          "x": 1110,
+          "y": 270,
+          "w": 670,
+          "h": 420,
+          "src": "humen-bridge.png"
+        },
+        {
+          "type": "text",
+          "step": 1,
+          "x": 1110,
+          "y": 735,
+          "w": 700,
+          "h": 80,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "受迫响应与共振规律",
+                "size": 40,
+                "color": "#244B88",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        }
+      ],
+      "bullets": [],
+      "stepTimes": {
+        "1": 3.431
+      },
+      "t_start": 0.0,
+      "t_end": 23.2,
+      "duration": 23.2,
+      "laser": []
+    },
+    {
+      "id": 2,
+      "kind": "page",
+      "heading": "目录",
+      "narration": "这一节分四段。第一段是受迫振动，用控制变量比较频率和阻尼。第二段是解析求解，这是难点，要把初态与持续驱动分开。第三段是共振规律，这是重点，要连同存在条件理解峰位与峰高。第四段是工程与应用，在桥梁、磁共振成像和粒子实验中辨认共同规律，也检查模型边界。",
+      "elements": [
+        {
+          "type": "text",
+          "step": 1,
+          "x": 140,
+          "y": 330,
+          "w": 380,
+          "h": 90,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "01",
+                "size": 54,
+                "color": "#244B88",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "box",
+          "step": 1,
+          "x": 140,
+          "y": 445,
+          "w": 70,
+          "h": 6,
+          "fill": "#244B88",
+          "line": "#244B88",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "text",
+          "step": 1,
+          "x": 140,
+          "y": 500,
+          "w": 380,
+          "h": 130,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "受迫振动",
+                "size": 44,
+                "color": "#16283F",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 1,
+          "x": 140,
+          "y": 680,
+          "w": 380,
+          "h": 70,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "观察与建模",
+                "size": 32,
+                "color": "#C00000",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 2,
+          "x": 570,
+          "y": 330,
+          "w": 380,
+          "h": 90,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "02",
+                "size": 54,
+                "color": "#244B88",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "box",
+          "step": 2,
+          "x": 570,
+          "y": 445,
+          "w": 70,
+          "h": 6,
+          "fill": "#244B88",
+          "line": "#244B88",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "text",
+          "step": 2,
+          "x": 570,
+          "y": 500,
+          "w": 380,
+          "h": 130,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "解析求解",
+                "size": 44,
+                "color": "#16283F",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 2,
+          "x": 570,
+          "y": 680,
+          "w": 380,
+          "h": 70,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "难点",
+                "size": 32,
+                "color": "#C00000",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 3,
+          "x": 1000,
+          "y": 330,
+          "w": 380,
+          "h": 90,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "03",
+                "size": 54,
+                "color": "#244B88",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "box",
+          "step": 3,
+          "x": 1000,
+          "y": 445,
+          "w": 70,
+          "h": 6,
+          "fill": "#244B88",
+          "line": "#244B88",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "text",
+          "step": 3,
+          "x": 1000,
+          "y": 500,
+          "w": 380,
+          "h": 130,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "共振规律",
+                "size": 44,
+                "color": "#16283F",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 3,
+          "x": 1000,
+          "y": 680,
+          "w": 380,
+          "h": 70,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "重点",
+                "size": 32,
+                "color": "#C00000",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 4,
+          "x": 1430,
+          "y": 330,
+          "w": 380,
+          "h": 90,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "04",
+                "size": 54,
+                "color": "#244B88",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "box",
+          "step": 4,
+          "x": 1430,
+          "y": 445,
+          "w": 70,
+          "h": 6,
+          "fill": "#244B88",
+          "line": "#244B88",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "text",
+          "step": 4,
+          "x": 1430,
+          "y": 500,
+          "w": 380,
+          "h": 130,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "工程与应用",
+                "size": 44,
+                "color": "#16283F",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 4,
+          "x": 1430,
+          "y": 680,
+          "w": 380,
+          "h": 70,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "模型边界",
+                "size": 32,
+                "color": "#C00000",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        }
+      ],
+      "bullets": [],
+      "stepTimes": {
+        "1": 27.559,
+        "2": 32.895,
+        "3": 39.035,
+        "4": 46.238
+      },
+      "t_start": 24.0,
+      "t_end": 54.608,
+      "duration": 30.608,
+      "laser": []
+    },
+    {
+      "id": 3,
+      "kind": "page",
+      "heading": "虎门大桥的周期起伏",
+      "narration": "先看现场片段。二零二零年五月五日，虎门大桥桥面出现明显的周期起伏。没有人按节拍推动桥面，运动却在持续。先留下两个问题。第一个是桥面运动的能量从哪里来？第二个是什么条件会使起伏增强？有周期性外观，还不足以确定机制。我们先研究外力明确的弹簧振子，再回到风与结构的相互作用，用今天的推导检验开场判断。",
+      "elements": [
+        {
+          "type": "text",
+          "step": 0,
+          "x": 105,
+          "y": 40,
+          "w": 1500,
+          "h": 64,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "00　引入",
+                "size": 44,
+                "color": "#16283F",
+                "b": true,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 118,
+          "w": 96,
+          "h": 6,
+          "fill": "#244B88",
+          "line": "#244B88",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 160,
+          "w": 1710,
+          "h": 2,
+          "fill": "#D8E0EA",
+          "line": "#D8E0EA",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "html",
+          "step": 1,
+          "x": 120,
+          "y": 245,
+          "w": 1080,
+          "h": 610,
+          "src": "synced-video.html?file=humen-bridge.mp4&page=3&step=1",
+          "timelineSync": true
+        },
+        {
+          "type": "text",
+          "step": 1,
+          "x": 125,
+          "y": 885,
+          "w": 1050,
+          "h": 55,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "2020-05-05　原PPT内嵌现场片段",
+                "size": 28,
+                "color": "#273444",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 2,
+          "x": 1300,
+          "y": 330,
+          "w": 500,
+          "h": 120,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "能量从哪里来？",
+                "size": 46,
+                "color": "#C00000",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ],
+          "hotspot": true,
+          "label": "桥梁的能量来源",
+          "qa": [
+            {
+              "q": "桥面起伏的能量从哪里来？",
+              "a": "主要来自风流。气流对桥梁做功，结构的阻尼耗散能量。判断具体机制还要分析流固耦合，不能仅凭周期起伏就认定为规定外力下的线性共振。"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "step": 3,
+          "x": 1300,
+          "y": 570,
+          "w": 500,
+          "h": 170,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "什么条件使起伏增强？",
+                "size": 46,
+                "color": "#244B88",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        }
+      ],
+      "bullets": [
+        {
+          "text": "桥梁的能量来源",
+          "x": 1550,
+          "y": 462,
+          "qa": [
+            {
+              "q": "桥面起伏的能量从哪里来？",
+              "a": "主要来自风流。气流对桥梁做功，结构的阻尼耗散能量。判断具体机制还要分析流固耦合，不能仅凭周期起伏就认定为规定外力下的线性共振。"
+            }
+          ],
+          "hotspot": true,
+          "important": false,
+          "elIdx": 5
+        }
+      ],
+      "stepTimes": {
+        "1": 58.16,
+        "2": 72.89,
+        "3": 77.575
+      },
+      "t_start": 55.408,
+      "t_end": 94.34,
+      "duration": 38.932,
+      "laser": [
+        {
+          "bullet": 0,
+          "start": 72.89,
+          "end": 77.89
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "kind": "page",
+      "heading": "受迫振动的力学模型",
+      "narration": "左侧是理想自由振动，恢复力使质量块往复运动，没有持续外界供能。右侧是阻尼振动，机械能被消耗，振幅逐渐减小。要维持振动，加入周期驱动力，大写F零乘欧米伽t的余弦。恢复力为负k乘位移，阻力为负伽马乘速度。按牛顿第二定律移项并除以质量，得到位移二阶导数，加二贝塔乘一阶导数，加欧米伽零平方乘位移，等于小写f零乘驱动余弦。这里欧米伽零平方等于k除以m，贝塔等于伽马除以二m，小写f零等于大写F零除以m。模型假定弹簧线性，阻力正比速度，外力预先给定而不随运动改变。",
+      "elements": [
+        {
+          "type": "text",
+          "step": 0,
+          "x": 105,
+          "y": 40,
+          "w": 1500,
+          "h": 64,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "01　受迫振动",
+                "size": 44,
+                "color": "#16283F",
+                "b": true,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 118,
+          "w": 96,
+          "h": 6,
+          "fill": "#244B88",
+          "line": "#244B88",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 160,
+          "w": 1710,
+          "h": 2,
+          "fill": "#D8E0EA",
+          "line": "#D8E0EA",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "html",
+          "step": 1,
+          "x": 135,
+          "y": 205,
+          "w": 730,
+          "h": 410,
+          "src": "synced-video.html?file=free-oscillation.mp4&page=4&step=1",
+          "timelineSync": true
+        },
+        {
+          "type": "html",
+          "step": 2,
+          "x": 1030,
+          "y": 205,
+          "w": 730,
+          "h": 410,
+          "src": "synced-video.html?file=damped-oscillation.mp4&page=4&step=2",
+          "timelineSync": true
+        },
+        {
+          "type": "text",
+          "step": 1,
+          "x": 140,
+          "y": 625,
+          "w": 720,
+          "h": 50,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "自由：没有持续驱动",
+                "size": 32,
+                "color": "#273444",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 2,
+          "x": 1035,
+          "y": 625,
+          "w": 720,
+          "h": 50,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "阻尼：机械能不断耗散",
+                "size": 32,
+                "color": "#273444",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "tex",
+          "step": 3,
+          "x": 170,
+          "y": 685,
+          "w": 1580,
+          "h": 90,
+          "tex": "m\\ddot x+\\gamma\\dot x+kx=F_0\\cos\\omega t",
+          "size": 44,
+          "color": "#273444",
+          "align": "left"
+        },
+        {
+          "type": "tex",
+          "step": 3,
+          "x": 170,
+          "y": 800,
+          "w": 1580,
+          "h": 90,
+          "tex": "\\ddot x+2\\beta\\dot x+\\omega_0^2x=f_0\\cos\\omega t",
+          "size": 44,
+          "color": "#273444",
+          "align": "left",
+          "important": true,
+          "hotspot": true,
+          "label": "受迫方程",
+          "qa": [
+            {
+              "q": "这个方程假定了什么？",
+              "a": "m、k、γ恒定，恢复力为−kx，粘性阻力为−γẋ。驱动力F₀cosωt预先给定且独立于运动；β=γ/(2m)，f₀=F₀/m。"
+            }
+          ]
+        },
+        {
+          "type": "tex",
+          "step": 4,
+          "x": 170,
+          "y": 930,
+          "w": 1580,
+          "h": 80,
+          "tex": "\\omega_0=\\sqrt{k/m},\\qquad\\beta=\\gamma/(2m),\\qquad f_0=F_0/m",
+          "size": 34,
+          "color": "#273444",
+          "align": "left"
+        }
+      ],
+      "bullets": [
+        {
+          "text": "受迫方程",
+          "x": 960,
+          "y": 902,
+          "qa": [
+            {
+              "q": "这个方程假定了什么？",
+              "a": "m、k、γ恒定，恢复力为−kx，粘性阻力为−γẋ。驱动力F₀cosωt预先给定且独立于运动；β=γ/(2m)，f₀=F₀/m。"
+            }
+          ],
+          "hotspot": true,
+          "important": true,
+          "elIdx": 8
+        }
+      ],
+      "stepTimes": {
+        "1": 95.781,
+        "2": 102.894,
+        "3": 109.651,
+        "4": 131.677
+      },
+      "t_start": 95.14,
+      "t_end": 147.452,
+      "duration": 52.312,
+      "laser": [
+        {
+          "bullet": 0,
+          "start": 109.65,
+          "end": 114.65
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "kind": "page",
+      "heading": "完整响应的两个阶段",
+      "narration": "来看完整响应。固有角频率为二π弧度每秒，阻尼比零点一，驱动频率为固有频率的一点一倍。设静态位移一厘米，初始位移负四厘米，初速度每秒负三十厘米。现在从这个初态启动，红点沿蓝色曲线推进。前段振峰明显变化，后段逐渐重复。前面受初态影响的部分叫暂态，长期周期响应叫稳态。稳态跟随外力频率，暂态带着自由响应特征。请注意这两部分叠在一起，蓝线才是实际位移，不能把其中一部分单独当作完整运动。",
+      "elements": [
+        {
+          "type": "text",
+          "step": 0,
+          "x": 105,
+          "y": 40,
+          "w": 1500,
+          "h": 64,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "01　受迫振动",
+                "size": 44,
+                "color": "#16283F",
+                "b": true,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 118,
+          "w": 96,
+          "h": 6,
+          "fill": "#244B88",
+          "line": "#244B88",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 160,
+          "w": 1710,
+          "h": 2,
+          "fill": "#D8E0EA",
+          "line": "#D8E0EA",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "html",
+          "step": 1,
+          "x": 70,
+          "y": 195,
+          "w": 1780,
+          "h": 705,
+          "src": "sim-resonance.html?mode=response&embed=1&page=5&demoStep=2",
+          "timelineSync": true,
+          "msgs": {
+            "1": "reset",
+            "2": "demo"
+          }
+        },
+        {
+          "type": "text",
+          "step": 2,
+          "x": 120,
+          "y": 911,
+          "w": 1650,
+          "h": 43,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "开始演示：从给定初态观察完整运动",
+                "size": 29,
+                "color": "#273444",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 3,
+          "x": 120,
+          "y": 971,
+          "w": 1650,
+          "h": 45,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "暂态保留初态影响；稳态与外力同频",
+                "size": 34,
+                "color": "#244B88",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ],
+          "hotspot": true,
+          "label": "暂态与稳态",
+          "qa": [
+            {
+              "q": "暂态和稳态为什么能同时出现？",
+              "a": "线性方程的解由齐次解和特解相加。齐次解满足初值差并在β>0时衰减；持续驱动留下与外力同频的稳态特解。"
+            }
+          ]
+        }
+      ],
+      "bullets": [
+        {
+          "text": "暂态与稳态",
+          "x": 945,
+          "y": 1028,
+          "qa": [
+            {
+              "q": "暂态和稳态为什么能同时出现？",
+              "a": "线性方程的解由齐次解和特解相加。齐次解满足初值差并在β>0时衰减；持续驱动留下与外力同频的稳态特解。"
+            }
+          ],
+          "hotspot": true,
+          "important": false,
+          "elIdx": 5
+        }
+      ],
+      "stepTimes": {
+        "1": 148.903,
+        "2": 165.729,
+        "3": 177.961
+      },
+      "t_start": 148.252,
+      "t_end": 195.924,
+      "duration": 47.672,
+      "laser": [
+        {
+          "bullet": 0,
+          "start": 177.96,
+          "end": 182.96
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "kind": "page",
+      "heading": "驱动频率的对照实验",
+      "narration": "接着做频率对照。各组系统、驱动力和阻尼相同，都从三厘米位移、零初速度出发。六组驱动频率是固有频率的零点三、零点六、零点九、一点二、一点五和一点八倍。现在播放对照，请比较曲线后段，别只看刚启动的振峰。频率越高，运动越快，稳态振幅却没有一路增大，靠近固有频率时更明显，继续提高又减小。现在预测：同一个驱动下，若初始位移改得很大，长期振幅会不会变大？先选择，再用后面的解析解核对理由。",
+      "elements": [
+        {
+          "type": "text",
+          "step": 0,
+          "x": 105,
+          "y": 40,
+          "w": 1500,
+          "h": 64,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "01　受迫振动",
+                "size": 44,
+                "color": "#16283F",
+                "b": true,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 118,
+          "w": 96,
+          "h": 6,
+          "fill": "#244B88",
+          "line": "#244B88",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 160,
+          "w": 1710,
+          "h": 2,
+          "fill": "#D8E0EA",
+          "line": "#D8E0EA",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "html",
+          "step": 1,
+          "x": 70,
+          "y": 195,
+          "w": 1780,
+          "h": 705,
+          "src": "sim-resonance.html?mode=frequency&embed=1&page=6&demoStep=2",
+          "timelineSync": true,
+          "msgs": {
+            "1": "reset",
+            "2": "demo"
+          }
+        },
+        {
+          "type": "text",
+          "step": 2,
+          "x": 120,
+          "y": 911,
+          "w": 1650,
+          "h": 43,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "开始演示：比较各组曲线后段",
+                "size": 29,
+                "color": "#273444",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 3,
+          "x": 120,
+          "y": 971,
+          "w": 1650,
+          "h": 45,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "预测：同一个驱动下，初始位移很大，长期振幅会变大吗？",
+                "size": 34,
+                "color": "#244B88",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        }
+      ],
+      "bullets": [],
+      "stepTimes": {
+        "1": 197.615,
+        "2": 216.065,
+        "3": 231.371
+      },
+      "t_start": 196.724,
+      "t_end": 244.254,
+      "duration": 47.53,
+      "laser": [],
+      "interactions": [
+        {
+          "t": 243.054,
+          "q": "同一个驱动下，若初始位移改得很大，长期振幅会不会变大？",
+          "answer": 1,
+          "options": [
+            "会，初始位移越大，长期振幅一定越大",
+            "不会，长期振幅相同，暂态过程可以不同",
+            "会，初始位移越大，长期振动频率也越大"
+          ],
+          "explain": "固定模型参数和外力后，初值只改变齐次解。β>0时这部分逐渐衰减，稳态振幅与频率由同一个特解决定。"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "kind": "page",
+      "heading": "阻尼的对照实验",
+      "narration": "这次固定驱动频率为固有频率的一点一倍，保持外力、系统和初态相同，阻尼比依次取零点零五、零点一、零点二和零点四。现在播放对照。同时看初始扰动消失多快，以及最终振幅多大。在这组欠阻尼比较里，阻尼增大，暂态衰减更快，稳态振幅更小。前者描述建立过程，后者描述最终幅度，需要分别判断。观察以后还要问为什么。外力持续供能，阻尼持续耗能，稳态要求一周期的输入与耗散平衡。下面从方程解释这些规律。",
+      "elements": [
+        {
+          "type": "text",
+          "step": 0,
+          "x": 105,
+          "y": 40,
+          "w": 1500,
+          "h": 64,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "01　受迫振动",
+                "size": 44,
+                "color": "#16283F",
+                "b": true,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 118,
+          "w": 96,
+          "h": 6,
+          "fill": "#244B88",
+          "line": "#244B88",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 160,
+          "w": 1710,
+          "h": 2,
+          "fill": "#D8E0EA",
+          "line": "#D8E0EA",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "html",
+          "step": 1,
+          "x": 70,
+          "y": 195,
+          "w": 1780,
+          "h": 705,
+          "src": "sim-resonance.html?mode=damping&embed=1&page=7&demoStep=2",
+          "timelineSync": true,
+          "msgs": {
+            "1": "reset",
+            "2": "demo"
+          }
+        },
+        {
+          "type": "text",
+          "step": 2,
+          "x": 120,
+          "y": 911,
+          "w": 1650,
+          "h": 43,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "开始演示：同时比较衰减过程与最终振幅",
+                "size": 29,
+                "color": "#273444",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 3,
+          "x": 120,
+          "y": 971,
+          "w": 1650,
+          "h": 45,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "区分：暂态衰减的快慢与最终稳态振幅",
+                "size": 34,
+                "color": "#244B88",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ],
+          "hotspot": true,
+          "label": "阻尼的两种影响",
+          "qa": [
+            {
+              "q": "增加阻尼对这里的响应有什么影响？",
+              "a": "在固定驱动力幅值、非零驱动频率及其他参数时，增大β降低稳态位移振幅。在本页欠阻尼比较中，齐次解的e^(−βt)也衰减更快。"
+            }
+          ]
+        }
+      ],
+      "bullets": [
+        {
+          "text": "阻尼的两种影响",
+          "x": 945,
+          "y": 1028,
+          "qa": [
+            {
+              "q": "增加阻尼对这里的响应有什么影响？",
+              "a": "在固定驱动力幅值、非零驱动频率及其他参数时，增大β降低稳态位移振幅。在本页欠阻尼比较中，齐次解的e^(−βt)也衰减更快。"
+            }
+          ],
+          "hotspot": true,
+          "important": false,
+          "elIdx": 5
+        }
+      ],
+      "stepTimes": {
+        "1": 245.484,
+        "2": 257.924,
+        "3": 280.637
+      },
+      "t_start": 245.054,
+      "t_end": 292.87,
+      "duration": 47.816,
+      "laser": [
+        {
+          "bullet": 0,
+          "start": 280.63,
+          "end": 285.63
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "kind": "page",
+      "heading": "齐次解：初始扰动如何衰减",
+      "narration": "先用线性叠加，写成齐次解加特解。本页讨论零小于贝塔、小于欧米伽零的欠阻尼情形。对齐次方程尝试指数解，e的λt次方。求导一次带来λ，两次带来λ平方，代入得到λ平方加二贝塔λ加欧米伽零平方等于零。求根为负贝塔，加减i乘欧米伽d，欧米伽d是欧米伽零平方减贝塔平方的平方根。所以齐次解是e的负贝塔t次方，乘以C余弦欧米伽dt与D正弦欧米伽dt的和。C、D由初值决定，包络的衰减时间约一除以贝塔。欧米伽d是阻尼自由频率，不能和驱动频率、共振峰位混用。",
+      "elements": [
+        {
+          "type": "text",
+          "step": 0,
+          "x": 105,
+          "y": 40,
+          "w": 1500,
+          "h": 64,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "02　解析求解",
+                "size": 44,
+                "color": "#16283F",
+                "b": true,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 118,
+          "w": 96,
+          "h": 6,
+          "fill": "#244B88",
+          "line": "#244B88",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 160,
+          "w": 1710,
+          "h": 2,
+          "fill": "#D8E0EA",
+          "line": "#D8E0EA",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "tex",
+          "step": 1,
+          "x": 170,
+          "y": 205,
+          "w": 1580,
+          "h": 125,
+          "tex": "x=x_h+x_p,\\qquad 0<\\beta<\\omega_0",
+          "size": 44,
+          "color": "#273444",
+          "align": "left"
+        },
+        {
+          "type": "tex",
+          "step": 2,
+          "x": 170,
+          "y": 370,
+          "w": 1580,
+          "h": 125,
+          "tex": "x_h=e^{\\lambda t}\\quad\\Longrightarrow\\quad\\lambda^2+2\\beta\\lambda+\\omega_0^2=0",
+          "size": 43,
+          "color": "#273444",
+          "align": "left"
+        },
+        {
+          "type": "tex",
+          "step": 2,
+          "x": 170,
+          "y": 535,
+          "w": 1580,
+          "h": 125,
+          "tex": "\\lambda=-\\beta\\pm i\\omega_d,\\qquad\\omega_d=\\sqrt{\\omega_0^2-\\beta^2}",
+          "size": 45,
+          "color": "#273444",
+          "align": "left"
+        },
+        {
+          "type": "tex",
+          "step": 3,
+          "x": 170,
+          "y": 715,
+          "w": 1580,
+          "h": 125,
+          "tex": "x_h=e^{-\\beta t}(C\\cos\\omega_dt+D\\sin\\omega_dt)",
+          "size": 46,
+          "color": "#273444",
+          "align": "left",
+          "important": true,
+          "hotspot": true,
+          "label": "衰减的齐次解",
+          "qa": [
+            {
+              "q": "ωd、ω0、ω分别是什么意思？",
+              "a": "ω₀=√(k/m)是无阻尼固有角频率；ωd=√(ω₀²−β²)是欠阻尼自由响应的角频率；ω是外力的驱动角频率。三者不可混用。"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "step": 3,
+          "x": 170,
+          "y": 895,
+          "w": 1570,
+          "h": 70,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "C、D由初值决定；衰减时间尺度约为 1/β",
+                "size": 38,
+                "color": "#244B88",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        }
+      ],
+      "bullets": [
+        {
+          "text": "衰减的齐次解",
+          "x": 960,
+          "y": 852,
+          "qa": [
+            {
+              "q": "ωd、ω0、ω分别是什么意思？",
+              "a": "ω₀=√(k/m)是无阻尼固有角频率；ωd=√(ω₀²−β²)是欠阻尼自由响应的角频率；ω是外力的驱动角频率。三者不可混用。"
+            }
+          ],
+          "hotspot": true,
+          "important": true,
+          "elIdx": 6
+        }
+      ],
+      "stepTimes": {
+        "1": 294.189,
+        "2": 306.103,
+        "3": 327.825
+      },
+      "t_start": 293.67,
+      "t_end": 348.326,
+      "duration": 54.656,
+      "laser": [
+        {
+          "bullet": 0,
+          "start": 327.82,
+          "end": 332.82
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "kind": "page",
+      "heading": "同频特解：代入与比较系数",
+      "narration": "再求同频特解。阻尼含一阶导数，余弦求导会产生正弦，因此设特解为a余弦欧米伽t加b正弦欧米伽t。现在逐项求导。一阶导数是负a欧米伽乘正弦，加b欧米伽乘余弦；二阶导数两项都乘负欧米伽平方。代回受迫方程，把正弦、余弦各自归类。记德尔塔为欧米伽零平方减欧米伽平方，得到德尔塔a加二贝塔欧米伽b等于f零，德尔塔b减二贝塔欧米伽a等于零。第二行负号来自余弦的一阶导数。微分方程于是变成了两个代数方程。",
+      "elements": [
+        {
+          "type": "text",
+          "step": 0,
+          "x": 105,
+          "y": 40,
+          "w": 1500,
+          "h": 64,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "02　解析求解",
+                "size": 44,
+                "color": "#16283F",
+                "b": true,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 118,
+          "w": 96,
+          "h": 6,
+          "fill": "#244B88",
+          "line": "#244B88",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 160,
+          "w": 1710,
+          "h": 2,
+          "fill": "#D8E0EA",
+          "line": "#D8E0EA",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "tex",
+          "step": 1,
+          "x": 170,
+          "y": 215,
+          "w": 1580,
+          "h": 125,
+          "tex": "x_p=a\\cos\\omega t+b\\sin\\omega t",
+          "size": 50,
+          "color": "#273444",
+          "align": "left"
+        },
+        {
+          "type": "tex",
+          "step": 2,
+          "x": 170,
+          "y": 375,
+          "w": 1580,
+          "h": 125,
+          "tex": "\\dot x_p=-a\\omega\\sin\\omega t+b\\omega\\cos\\omega t",
+          "size": 45,
+          "color": "#273444",
+          "align": "left"
+        },
+        {
+          "type": "tex",
+          "step": 2,
+          "x": 170,
+          "y": 530,
+          "w": 1580,
+          "h": 125,
+          "tex": "\\ddot x_p=-a\\omega^2\\cos\\omega t-b\\omega^2\\sin\\omega t",
+          "size": 44,
+          "color": "#273444",
+          "align": "left"
+        },
+        {
+          "type": "tex",
+          "step": 3,
+          "x": 170,
+          "y": 700,
+          "w": 1580,
+          "h": 125,
+          "tex": "\\begin{cases}\\Delta a+2\\beta\\omega b=f_0\\\\\\Delta b-2\\beta\\omega a=0\\end{cases}\\quad\\Delta=\\omega_0^2-\\omega^2",
+          "size": 45,
+          "color": "#273444",
+          "align": "left",
+          "important": true,
+          "hotspot": true,
+          "label": "比较正弦余弦系数",
+          "qa": [
+            {
+              "q": "为什么特解要同时包含正弦和余弦？",
+              "a": "阻尼项含一次导数，余弦求导产生正弦。用a cosωt+b sinωt才能兼顾振幅和相位。代回方程后，独立的正弦、余弦系数分别相等。"
+            }
+          ]
+        }
+      ],
+      "bullets": [
+        {
+          "text": "比较正弦余弦系数",
+          "x": 960,
+          "y": 837,
+          "qa": [
+            {
+              "q": "为什么特解要同时包含正弦和余弦？",
+              "a": "阻尼项含一次导数，余弦求导产生正弦。用a cosωt+b sinωt才能兼顾振幅和相位。代回方程后，独立的正弦、余弦系数分别相等。"
+            }
+          ],
+          "hotspot": true,
+          "important": true,
+          "elIdx": 6
+        }
+      ],
+      "stepTimes": {
+        "1": 349.819,
+        "2": 362.361,
+        "3": 383.387
+      },
+      "t_start": 349.126,
+      "t_end": 398.766,
+      "duration": 49.64,
+      "laser": [
+        {
+          "bullet": 0,
+          "start": 383.39,
+          "end": 388.39
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "kind": "page",
+      "heading": "线性方程组与稳态振幅",
+      "narration": "系数方程的行列式Q，是德尔塔平方加二贝塔欧米伽的平方。解得a为f零德尔塔除以Q，b为二贝塔欧米伽f零除以Q。再用三角恒等式，合成A乘欧米伽t减δ的余弦，其中a等于A余弦δ，b等于A正弦δ。把a、b平方相加，得到A是a平方加b平方的平方根，也就是f零除以根号下，欧米伽零平方减欧米伽平方整体平方，加四贝塔平方欧米伽平方。初始位移与速度没有出现在这里，因此固定驱动条件下，初值影响暂态，不改变最终稳态振幅。",
+      "elements": [
+        {
+          "type": "text",
+          "step": 0,
+          "x": 105,
+          "y": 40,
+          "w": 1500,
+          "h": 64,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "02　解析求解",
+                "size": 44,
+                "color": "#16283F",
+                "b": true,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 118,
+          "w": 96,
+          "h": 6,
+          "fill": "#244B88",
+          "line": "#244B88",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 160,
+          "w": 1710,
+          "h": 2,
+          "fill": "#D8E0EA",
+          "line": "#D8E0EA",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "tex",
+          "step": 1,
+          "x": 170,
+          "y": 210,
+          "w": 1580,
+          "h": 125,
+          "tex": "Q=\\Delta^2+(2\\beta\\omega)^2,\\quad a=\\frac{f_0\\Delta}{Q},\\quad b=\\frac{2\\beta\\omega f_0}{Q}",
+          "size": 44,
+          "color": "#273444",
+          "align": "left"
+        },
+        {
+          "type": "tex",
+          "step": 2,
+          "x": 170,
+          "y": 410,
+          "w": 1580,
+          "h": 125,
+          "tex": "x_p=A\\cos(\\omega t-\\delta),\\quad a=A\\cos\\delta,\\quad b=A\\sin\\delta",
+          "size": 42,
+          "color": "#273444",
+          "align": "left"
+        },
+        {
+          "type": "tex",
+          "step": 3,
+          "x": 170,
+          "y": 620,
+          "w": 1580,
+          "h": 125,
+          "tex": "A=\\sqrt{a^2+b^2}=\\frac{f_0}{\\sqrt{(\\omega_0^2-\\omega^2)^2+4\\beta^2\\omega^2}}",
+          "size": 46,
+          "color": "#273444",
+          "align": "left",
+          "important": true,
+          "hotspot": true,
+          "label": "稳态振幅",
+          "qa": [
+            {
+              "q": "稳态振幅由初值决定吗？",
+              "a": "在固定线性模型和驱动条件且β>0时，稳态振幅由A=f₀/√[(ω₀²−ω²)²+4β²ω²]给出，与初值无关。初值改变的是衰减的齐次解。"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "step": 3,
+          "x": 170,
+          "y": 835,
+          "w": 1570,
+          "h": 95,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "初值改变暂态；固定驱动条件决定稳态",
+                "size": 42,
+                "color": "#244B88",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        }
+      ],
+      "bullets": [
+        {
+          "text": "稳态振幅",
+          "x": 960,
+          "y": 757,
+          "qa": [
+            {
+              "q": "稳态振幅由初值决定吗？",
+              "a": "在固定线性模型和驱动条件且β>0时，稳态振幅由A=f₀/√[(ω₀²−ω²)²+4β²ω²]给出，与初值无关。初值改变的是衰减的齐次解。"
+            }
+          ],
+          "hotspot": true,
+          "important": true,
+          "elIdx": 5
+        }
+      ],
+      "stepTimes": {
+        "1": 401.415,
+        "2": 413.381,
+        "3": 425.894
+      },
+      "t_start": 399.566,
+      "t_end": 447.694,
+      "duration": 48.128,
+      "laser": [
+        {
+          "bullet": 0,
+          "start": 425.9,
+          "end": 430.9
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "kind": "page",
+      "heading": "相位滞后与象限",
+      "narration": "还要理解相位滞后。写成欧米伽t减δ，表示位移比外力晚到同一相位。正切δ等于二贝塔欧米伽除以欧米伽零平方减欧米伽平方。但普通反正切会丢失象限，要用双参数反正切保留符号。正阻尼、正频率下，b为正。低于固有频率时a为正，δ小于九十度；等于固有频率时a为零，δ为九十度；高于它时a为负，δ进入第二象限，趋近一百八十度。现在拖动频率控件，比较外力和位移两条波形。高频端的负正切，并不表示负的滞后角。",
+      "elements": [
+        {
+          "type": "text",
+          "step": 0,
+          "x": 105,
+          "y": 40,
+          "w": 1500,
+          "h": 64,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "02　解析求解",
+                "size": 44,
+                "color": "#16283F",
+                "b": true,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 118,
+          "w": 96,
+          "h": 6,
+          "fill": "#244B88",
+          "line": "#244B88",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 160,
+          "w": 1710,
+          "h": 2,
+          "fill": "#D8E0EA",
+          "line": "#D8E0EA",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "tex",
+          "step": 1,
+          "x": 130,
+          "y": 205,
+          "w": 560,
+          "h": 130,
+          "tex": "\\tan\\delta=\\frac{2\\beta\\omega}{\\omega_0^2-\\omega^2}",
+          "size": 42,
+          "color": "#273444",
+          "align": "left"
+        },
+        {
+          "type": "tex",
+          "step": 2,
+          "x": 780,
+          "y": 215,
+          "w": 1040,
+          "h": 110,
+          "tex": "\\delta=\\operatorname{atan2}(2\\beta\\omega,\\omega_0^2-\\omega^2)\\in(0,\\pi)",
+          "size": 39,
+          "color": "#273444",
+          "align": "left",
+          "important": true,
+          "hotspot": true,
+          "label": "相位的正确象限",
+          "qa": [
+            {
+              "q": "ω大于ω0时，为什么不能取负的反正切角？",
+              "a": "此时a<0、b>0，δ应在第二象限(π/2,π)，才能同时满足a=Acosδ、b=Asinδ。atan2保留两个分量的符号。"
+            }
+          ]
+        },
+        {
+          "type": "html",
+          "step": 3,
+          "x": 110,
+          "y": 360,
+          "w": 1470,
+          "h": 660,
+          "src": "sim-resonance.html?mode=phase&embed=1&page=11&autodemo=0",
+          "msgs": {
+            "3": "reset"
+          }
+        }
+      ],
+      "bullets": [
+        {
+          "text": "相位的正确象限",
+          "x": 1300,
+          "y": 337,
+          "qa": [
+            {
+              "q": "ω大于ω0时，为什么不能取负的反正切角？",
+              "a": "此时a<0、b>0，δ应在第二象限(π/2,π)，才能同时满足a=Acosδ、b=Asinδ。atan2保留两个分量的符号。"
+            }
+          ],
+          "hotspot": true,
+          "important": true,
+          "elIdx": 4
+        }
+      ],
+      "stepTimes": {
+        "1": 449.55,
+        "2": 466.924,
+        "3": 487.904
+      },
+      "t_start": 448.494,
+      "t_end": 497.414,
+      "duration": 48.92,
+      "laser": [
+        {
+          "bullet": 0,
+          "start": 466.92,
+          "end": 471.92
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "kind": "page",
+      "heading": "完整解与初始条件",
+      "narration": "现在合成完整解。第一项是衰减的齐次响应，第二项是同频特解。代入初始时刻，初始位移等于C加a，所以C等于x零减a。求导后，初速度等于负贝塔C加欧米伽d乘D，再加b欧米伽，因此D等于v零减b欧米伽加贝塔C，整体除以欧米伽d。两个初值都满足了，响应不再少一块。对于正阻尼，指数项长期趋于零，这解释了不同初态却有相同稳态的预测题。临界、过阻尼要换齐次形式，稳态公式仍成立；无阻尼的初态影响不会这样衰减。",
+      "elements": [
+        {
+          "type": "text",
+          "step": 0,
+          "x": 105,
+          "y": 40,
+          "w": 1500,
+          "h": 64,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "02　解析求解",
+                "size": 44,
+                "color": "#16283F",
+                "b": true,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 118,
+          "w": 96,
+          "h": 6,
+          "fill": "#244B88",
+          "line": "#244B88",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 160,
+          "w": 1710,
+          "h": 2,
+          "fill": "#D8E0EA",
+          "line": "#D8E0EA",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "tex",
+          "step": 1,
+          "x": 170,
+          "y": 220,
+          "w": 1580,
+          "h": 125,
+          "tex": "x(t)=e^{-\\beta t}(C\\cos\\omega_dt+D\\sin\\omega_dt)+A\\cos(\\omega t-\\delta)",
+          "size": 39,
+          "color": "#273444",
+          "align": "left",
+          "important": true,
+          "hotspot": true,
+          "label": "完整响应",
+          "qa": [
+            {
+              "q": "为什么只写稳态特解不能描述刚启动的运动？",
+              "a": "一般给定的x₀、v₀不等于特解的初始位移和速度，必须补上齐次解来满足初值。欠阻尼时C=x₀−a，D=(v₀−bω+βC)/ωd。"
+            }
+          ]
+        },
+        {
+          "type": "tex",
+          "step": 2,
+          "x": 170,
+          "y": 420,
+          "w": 1580,
+          "h": 125,
+          "tex": "C=x_0-a,\\qquad D=\\frac{v_0-b\\omega+\\beta C}{\\omega_d}",
+          "size": 49,
+          "color": "#273444",
+          "align": "left"
+        },
+        {
+          "type": "text",
+          "step": 2,
+          "x": 170,
+          "y": 610,
+          "w": 1570,
+          "h": 100,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "同时满足 x(0)=x₀ 与 ẋ(0)=v₀",
+                "size": 42,
+                "color": "#273444",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 3,
+          "x": 170,
+          "y": 765,
+          "w": 1570,
+          "h": 120,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "β>0：暂态衰减，长期留下与外力同频的稳态",
+                "size": 41,
+                "color": "#244B88",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 3,
+          "x": 170,
+          "y": 915,
+          "w": 1550,
+          "h": 55,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "完整解上式适用：0<β<ω₀；临界、过阻尼需更换齐次项",
+                "size": 29,
+                "color": "#273444",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        }
+      ],
+      "bullets": [
+        {
+          "text": "完整响应",
+          "x": 960,
+          "y": 357,
+          "qa": [
+            {
+              "q": "为什么只写稳态特解不能描述刚启动的运动？",
+              "a": "一般给定的x₀、v₀不等于特解的初始位移和速度，必须补上齐次解来满足初值。欠阻尼时C=x₀−a，D=(v₀−bω+βC)/ωd。"
+            }
+          ],
+          "hotspot": true,
+          "important": true,
+          "elIdx": 3
+        }
+      ],
+      "stepTimes": {
+        "1": 498.826,
+        "2": 510.727,
+        "3": 529.896
+      },
+      "t_start": 498.214,
+      "t_end": 546.518,
+      "duration": 48.304,
+      "laser": [
+        {
+          "bullet": 0,
+          "start": 498.82,
+          "end": 503.82
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "kind": "page",
+      "heading": "稳态振幅的扫频曲线",
+      "narration": "把离散频率连起来，得到稳态振幅曲线。横轴是驱动频率比，纵轴是振幅除以静态位移。每一点代表在这个频率下等暂态衰减后的响应。现在扫过一系列频率，标记点先升高，到峰顶，再下降。改变驱动频率时，稳态位移振幅出现峰值，称为位移共振。阻尼比零点一时，峰位约零点九九倍固有频率，峰高约五点零三倍静态位移。请分清扫频曲线与位移时间轨迹，它们的横轴不同。峰位为什么略低于固有频率？下面研究振幅的分母。",
+      "elements": [
+        {
+          "type": "text",
+          "step": 0,
+          "x": 105,
+          "y": 40,
+          "w": 1500,
+          "h": 64,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "03　共振规律",
+                "size": 44,
+                "color": "#16283F",
+                "b": true,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 118,
+          "w": 96,
+          "h": 6,
+          "fill": "#244B88",
+          "line": "#244B88",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 160,
+          "w": 1710,
+          "h": 2,
+          "fill": "#D8E0EA",
+          "line": "#D8E0EA",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "html",
+          "step": 1,
+          "x": 70,
+          "y": 195,
+          "w": 1780,
+          "h": 705,
+          "src": "sim-resonance.html?mode=sweep&embed=1&page=13&demoStep=2",
+          "timelineSync": true,
+          "msgs": {
+            "1": "reset",
+            "2": "demo"
+          }
+        },
+        {
+          "type": "text",
+          "step": 2,
+          "x": 120,
+          "y": 911,
+          "w": 1650,
+          "h": 43,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "开始演示：扫过一系列驱动频率",
+                "size": 29,
+                "color": "#273444",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 3,
+          "x": 120,
+          "y": 971,
+          "w": 1650,
+          "h": 45,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "每个点：相应频率下，暂态衰减后的稳态振幅",
+                "size": 34,
+                "color": "#244B88",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ],
+          "hotspot": true,
+          "label": "扫频曲线的含义",
+          "qa": [
+            {
+              "q": "横轴是时间吗？",
+              "a": "不是。横轴是驱动角频率，纵轴是每个频率对应的稳态位移振幅；应在每个频率下等暂态衰减后比较，避免把启动瞬间的振峰误当共振峰。"
+            }
+          ]
+        }
+      ],
+      "bullets": [
+        {
+          "text": "扫频曲线的含义",
+          "x": 945,
+          "y": 1028,
+          "qa": [
+            {
+              "q": "横轴是时间吗？",
+              "a": "不是。横轴是驱动角频率，纵轴是每个频率对应的稳态位移振幅；应在每个频率下等暂态衰减后比较，避免把启动瞬间的振峰误当共振峰。"
+            }
+          ],
+          "hotspot": true,
+          "important": false,
+          "elIdx": 5
+        }
+      ],
+      "stepTimes": {
+        "1": 549.973,
+        "2": 563.685,
+        "3": 574.968
+      },
+      "t_start": 547.318,
+      "t_end": 596.912,
+      "duration": 49.594,
+      "laser": [
+        {
+          "bullet": 0,
+          "start": 574.97,
+          "end": 579.97
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "kind": "page",
+      "heading": "位移共振峰的存在条件",
+      "narration": "固定外力和系统参数，振幅最大对应分母最小，只需研究分母平方G。求导时，第一项是负四欧米伽，乘以欧米伽零平方与欧米伽平方的差；第二项是八贝塔平方欧米伽，合并成页面第二行。令导数为零，除零频率端点，还可能有正频率峰位，欧米伽零平方减二贝塔平方的平方根。它要求零小于贝塔、小于欧米伽零除以根号二。满足条件时，G先降后升，振幅取极大。由此得到共振频率及其存在条件。阻尼达到这个阈值后，位移振幅从静态值单调下降，没有正频率峰，却仍有受迫响应。",
+      "elements": [
+        {
+          "type": "text",
+          "step": 0,
+          "x": 105,
+          "y": 40,
+          "w": 1500,
+          "h": 64,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "03　共振规律",
+                "size": 44,
+                "color": "#16283F",
+                "b": true,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 118,
+          "w": 96,
+          "h": 6,
+          "fill": "#244B88",
+          "line": "#244B88",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 160,
+          "w": 1710,
+          "h": 2,
+          "fill": "#D8E0EA",
+          "line": "#D8E0EA",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "tex",
+          "step": 1,
+          "x": 170,
+          "y": 210,
+          "w": 1580,
+          "h": 125,
+          "tex": "G(\\omega)=(\\omega_0^2-\\omega^2)^2+4\\beta^2\\omega^2",
+          "size": 48,
+          "color": "#273444",
+          "align": "left"
+        },
+        {
+          "type": "tex",
+          "step": 1,
+          "x": 170,
+          "y": 385,
+          "w": 1580,
+          "h": 125,
+          "tex": "\\frac{dG}{d\\omega}=4\\omega(\\omega^2-\\omega_0^2+2\\beta^2)",
+          "size": 50,
+          "color": "#273444",
+          "align": "left"
+        },
+        {
+          "type": "tex",
+          "step": 2,
+          "x": 170,
+          "y": 565,
+          "w": 1580,
+          "h": 125,
+          "tex": "\\omega_r=\\sqrt{\\omega_0^2-2\\beta^2},\\qquad 0<\\beta<\\frac{\\omega_0}{\\sqrt2}",
+          "size": 49,
+          "color": "#273444",
+          "align": "left",
+          "important": true,
+          "hotspot": true,
+          "label": "位移共振条件",
+          "qa": [
+            {
+              "q": "欠阻尼一定会有位移共振峰吗？",
+              "a": "不一定。欠阻尼只要求β<ω₀，而正频率位移共振峰还要求β<ω₀/√2。ω₀/√2≤β<ω₀时，自由响应仍有衰减振荡，但位移扫频曲线没有正频率峰。"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "step": 3,
+          "x": 170,
+          "y": 780,
+          "w": 1550,
+          "h": 140,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "峰位存在才可使用 ωᵣ；强阻尼时没有正频率位移峰",
+                "size": 40,
+                "color": "#244B88",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        }
+      ],
+      "bullets": [
+        {
+          "text": "位移共振条件",
+          "x": 960,
+          "y": 702,
+          "qa": [
+            {
+              "q": "欠阻尼一定会有位移共振峰吗？",
+              "a": "不一定。欠阻尼只要求β<ω₀，而正频率位移共振峰还要求β<ω₀/√2。ω₀/√2≤β<ω₀时，自由响应仍有衰减振荡，但位移扫频曲线没有正频率峰。"
+            }
+          ],
+          "hotspot": true,
+          "important": true,
+          "elIdx": 5
+        }
+      ],
+      "stepTimes": {
+        "1": 603.151,
+        "2": 619.713,
+        "3": 637.014
+      },
+      "t_start": 597.712,
+      "t_end": 648.92,
+      "duration": 51.208,
+      "laser": [
+        {
+          "bullet": 0,
+          "start": 619.71,
+          "end": 624.71
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "kind": "page",
+      "heading": "阻尼怎样改变共振峰",
+      "narration": "把峰位代回分母平方，得到四贝塔平方，乘以欧米伽零平方与贝塔平方的差。因此峰高为f零除以二贝塔，再除以欧米伽零平方减贝塔平方的平方根，仍须满足正频率峰存在条件。比较三条曲线，阻尼比零点三五、零点二、零点一，峰高约一点五三、二点五五、五点零三倍静态位移。阻尼越小，峰越高越尖，峰位越接近固有频率。尖峰意味着对失谐敏感，偏离峰位，响应下降明显。最后看弱阻尼近似，只有贝塔远小于欧米伽零，才可近似说共振频率等于固有频率。",
+      "elements": [
+        {
+          "type": "text",
+          "step": 0,
+          "x": 105,
+          "y": 40,
+          "w": 1500,
+          "h": 64,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "03　共振规律",
+                "size": 44,
+                "color": "#16283F",
+                "b": true,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 118,
+          "w": 96,
+          "h": 6,
+          "fill": "#244B88",
+          "line": "#244B88",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 160,
+          "w": 1710,
+          "h": 2,
+          "fill": "#D8E0EA",
+          "line": "#D8E0EA",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "tex",
+          "step": 1,
+          "x": 170,
+          "y": 215,
+          "w": 1580,
+          "h": 125,
+          "tex": "G(\\omega_r)=4\\beta^2(\\omega_0^2-\\beta^2),\\quad A_r=\\frac{f_0}{2\\beta\\sqrt{\\omega_0^2-\\beta^2}}",
+          "size": 42,
+          "color": "#273444",
+          "align": "left",
+          "hotspot": true,
+          "label": "峰高与阻尼",
+          "qa": [
+            {
+              "q": "为什么阻尼越小，峰越高？",
+              "a": "在正频率位移峰存在范围内，Aᵣ=f₀/[2β√(ω₀²−β²)]。减小β降低峰处分母，使峰升高；峰位也逐渐趋近ω₀。"
+            }
+          ]
+        },
+        {
+          "type": "html",
+          "step": 2,
+          "x": 100,
+          "y": 430,
+          "w": 1720,
+          "h": 555,
+          "src": "sim-resonance.html?mode=sweep&compare=1&embed=1&page=15&autodemo=0",
+          "msgs": {
+            "2": "reset"
+          }
+        },
+        {
+          "type": "tex",
+          "step": 3,
+          "x": 170,
+          "y": 345,
+          "w": 1580,
+          "h": 65,
+          "tex": "\\beta\\ll\\omega_0\\quad\\Longrightarrow\\quad\\omega_r\\approx\\omega_0",
+          "size": 36,
+          "color": "#273444",
+          "align": "left"
+        }
+      ],
+      "bullets": [
+        {
+          "text": "峰高与阻尼",
+          "x": 960,
+          "y": 352,
+          "qa": [
+            {
+              "q": "为什么阻尼越小，峰越高？",
+              "a": "在正频率位移峰存在范围内，Aᵣ=f₀/[2β√(ω₀²−β²)]。减小β降低峰处分母，使峰升高；峰位也逐渐趋近ω₀。"
+            }
+          ],
+          "hotspot": true,
+          "important": false,
+          "elIdx": 3
+        }
+      ],
+      "stepTimes": {
+        "1": 652.295,
+        "2": 668.223,
+        "3": 690.587
+      },
+      "t_start": 649.72,
+      "t_end": 698.728,
+      "duration": 49.008,
+      "laser": [
+        {
+          "bullet": 0,
+          "start": 652.3,
+          "end": 657.3
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "kind": "page",
+      "heading": "振幅能一直增长吗",
+      "narration": "现在探究：贝塔很小但仍大于零，驱动频率等于固有频率，从静止初态、位移和速度都为零启动，振幅会立刻达到巨大稳态值吗？先判断，再说明条件。写出机械能，动能二分之一m乘速度平方，加弹性势能二分之一k乘位移平方。将方程乘速度，得到能量变化率为外力功率减阻尼耗散功率。稳态一周期能量变化为零，平均输入等于平均耗散，后者为伽马A平方欧米伽平方除以二。正阻尼的最终振幅有限。从静止初态启动，阻尼很小，最终振幅可以很大，但建立时间约一除以贝塔，也会变长。再看理想无阻尼且精确共振，普通有界特解失效，要写成f零除以二欧米伽零，乘t正弦欧米伽零t，包络线性增长。无限增长依赖理想线性、无耗散和持续精确驱动，现实中的阻尼、非线性和强度限制会改变它。",
+      "elements": [
+        {
+          "type": "text",
+          "step": 0,
+          "x": 105,
+          "y": 40,
+          "w": 1500,
+          "h": 64,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "03　共振规律",
+                "size": 44,
+                "color": "#16283F",
+                "b": true,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 118,
+          "w": 96,
+          "h": 6,
+          "fill": "#244B88",
+          "line": "#244B88",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 160,
+          "w": 1710,
+          "h": 2,
+          "fill": "#D8E0EA",
+          "line": "#D8E0EA",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "text",
+          "step": 1,
+          "x": 170,
+          "y": 230,
+          "w": 1550,
+          "h": 140,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "探究：β很小且ω=ω₀，从静止启动就达到巨大稳态振幅吗？",
+                "size": 42,
+                "color": "#C00000",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "tex",
+          "step": 2,
+          "x": 170,
+          "y": 375,
+          "w": 1580,
+          "h": 65,
+          "tex": "E=\\frac12m\\dot x^2+\\frac12kx^2",
+          "size": 36,
+          "color": "#273444",
+          "align": "left"
+        },
+        {
+          "type": "tex",
+          "step": 2,
+          "x": 170,
+          "y": 460,
+          "w": 1580,
+          "h": 125,
+          "tex": "\\frac{dE}{dt}=F_0\\cos\\omega t\\,\\dot x-\\gamma\\dot x^2",
+          "size": 50,
+          "color": "#273444",
+          "align": "left",
+          "important": true,
+          "hotspot": true,
+          "label": "共振的能量收支",
+          "qa": [
+            {
+              "q": "为什么有阻尼时能保持有限的稳态振幅？",
+              "a": "外力持续供能，粘性阻尼持续耗能。稳态一周期平均机械能变化为零，平均输入功率等于平均耗散功率γA²ω²/2。β小会增加振幅，也延长暂态衰减时间。"
+            }
+          ]
+        },
+        {
+          "type": "tex",
+          "step": 2,
+          "x": 170,
+          "y": 625,
+          "w": 1580,
+          "h": 125,
+          "tex": "\\langle P_{\\rm in}\\rangle=\\langle P_{\\rm loss}\\rangle=\\frac{\\gamma A^2\\omega^2}{2}",
+          "size": 44,
+          "color": "#273444",
+          "align": "left"
+        },
+        {
+          "type": "tex",
+          "step": 3,
+          "x": 170,
+          "y": 805,
+          "w": 1580,
+          "h": 125,
+          "tex": "\\beta=0,\\ \\omega=\\omega_0:\\qquad x_p=\\frac{f_0}{2\\omega_0}\\,t\\sin\\omega_0t",
+          "size": 46,
+          "color": "#273444",
+          "align": "left"
+        }
+      ],
+      "bullets": [
+        {
+          "text": "共振的能量收支",
+          "x": 960,
+          "y": 597,
+          "qa": [
+            {
+              "q": "为什么有阻尼时能保持有限的稳态振幅？",
+              "a": "外力持续供能，粘性阻尼持续耗能。稳态一周期平均机械能变化为零，平均输入功率等于平均耗散功率γA²ω²/2。β小会增加振幅，也延长暂态衰减时间。"
+            }
+          ],
+          "hotspot": true,
+          "important": true,
+          "elIdx": 5
+        }
+      ],
+      "stepTimes": {
+        "1": 700.392,
+        "2": 717.325,
+        "3": 753.376
+      },
+      "t_start": 699.528,
+      "t_end": 774.57,
+      "duration": 75.042,
+      "laser": [
+        {
+          "bullet": 0,
+          "start": 717.33,
+          "end": 722.33
+        }
+      ],
+      "interactions": [
+        {
+          "t": 715.682,
+          "q": "β很小但仍大于零，驱动频率恰为ω₀，从静止初态x₀=v₀=0启动。下面哪项判断最合理？",
+          "answer": 0,
+          "options": [
+            "需要建立过程，最终稳态振幅有限",
+            "立刻达到巨大的稳态振幅",
+            "只要频率匹配，振幅必定永远线性增长"
+          ],
+          "explain": "β>0时齐次项逐渐衰减，稳态振幅有限；β很小时建立时间约1/β也较长。t sinω₀t的持续线性增长属于β=0且精确共振的理想特例。"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "kind": "page",
+      "heading": "规律辨析与迁移",
+      "narration": "某装置的贝塔是欧米伽零的零点八倍，自由响应仍能看到衰减振荡。有同学断言，扫频一定出现位移共振峰。现在请选择判断。这里有两个不同条件：自由振荡要求贝塔小于欧米伽零，位移峰要求贝塔小于欧米伽零除以根号二。零点八满足前者，不满足后者。所以自由振荡存在，并不能保证正频率位移峰存在。它仍然响应周期外力，只是振幅随频率单调下降。实验中应把启动衰减和长期扫频分开测量，用明确现象核对明确条件，避免把所有周期运动都叫共振。",
+      "elements": [
+        {
+          "type": "text",
+          "step": 0,
+          "x": 105,
+          "y": 40,
+          "w": 1500,
+          "h": 64,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "03　共振规律",
+                "size": 44,
+                "color": "#16283F",
+                "b": true,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 118,
+          "w": 96,
+          "h": 6,
+          "fill": "#244B88",
+          "line": "#244B88",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 160,
+          "w": 1710,
+          "h": 2,
+          "fill": "#D8E0EA",
+          "line": "#D8E0EA",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "text",
+          "step": 1,
+          "x": 170,
+          "y": 235,
+          "w": 1550,
+          "h": 110,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "β=0.80ω₀：自由响应仍有衰减振荡",
+                "size": 48,
+                "color": "#16283F",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 1,
+          "x": 170,
+          "y": 405,
+          "w": 1550,
+          "h": 120,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "能否据此断言存在正频率位移共振峰？",
+                "size": 46,
+                "color": "#C00000",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 2,
+          "x": 170,
+          "y": 650,
+          "w": 1550,
+          "h": 150,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "自由响应看特征根；位移共振看振幅分母的极小",
+                "size": 42,
+                "color": "#244B88",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ],
+          "hotspot": true,
+          "label": "两个条件不能混淆",
+          "qa": [
+            {
+              "q": "β=0.8ω₀时有哪些响应？",
+              "a": "它是欠阻尼，ωd=0.6ω₀，自由响应呈衰减振荡。由于β>ω₀/√2，位移响应A(ω)在ω>0没有共振峰；持续周期外力仍能产生同频稳态响应。"
+            }
+          ]
+        }
+      ],
+      "bullets": [
+        {
+          "text": "两个条件不能混淆",
+          "x": 945,
+          "y": 812,
+          "qa": [
+            {
+              "q": "β=0.8ω₀时有哪些响应？",
+              "a": "它是欠阻尼，ωd=0.6ω₀，自由响应呈衰减振荡。由于β>ω₀/√2，位移响应A(ω)在ω>0没有共振峰；持续周期外力仍能产生同频稳态响应。"
+            }
+          ],
+          "hotspot": true,
+          "important": false,
+          "elIdx": 5
+        }
+      ],
+      "stepTimes": {
+        "1": 788.044,
+        "2": 804.964
+      },
+      "t_start": 775.37,
+      "t_end": 826.626,
+      "duration": 51.256,
+      "laser": [
+        {
+          "bullet": 0,
+          "start": 804.96,
+          "end": 809.96
+        }
+      ],
+      "interactions": [
+        {
+          "t": 789.826,
+          "q": "β=0.80ω₀时，自由响应仍有衰减振荡。关于位移扫频曲线，哪项正确？",
+          "answer": 2,
+          "options": [
+            "因此一定有正频率共振峰",
+            "阻尼使任何周期外力都无法引起振动",
+            "没有正频率位移共振峰，但仍有受迫稳态响应"
+          ],
+          "explain": "欠阻尼条件β<ω₀与位移峰条件β<ω₀/√2不同。0.80超过约0.707，因此没有正频率位移峰，但受迫特解仍存在。"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "kind": "page",
+      "heading": "桥梁涡振与流固耦合",
+      "narration": "回到桥梁。涡街视频中，圆柱后两侧旋涡交替脱落，产生变化的气动力。固定几何和一定流动条件下，可用脱涡频率约等于斯特劳哈尔数，乘来流速度、除以特征尺寸估计。风速和外形会改变激励时间尺度。虎门大桥事件中，水马改变气动外形，特定风况下出现较大涡振。开场问题的能量答案是风流做功。但结构运动也会改变流场，出现锁定时，脱涡与运动互相影响。因此涡振需要流固耦合分析，气动力不能直接当作独立规定外力。线性模型提供供能和阻尼认识，工程判断还要风洞试验与现场监测。",
+      "elements": [
+        {
+          "type": "text",
+          "step": 0,
+          "x": 105,
+          "y": 40,
+          "w": 1500,
+          "h": 64,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "04　工程与应用",
+                "size": 44,
+                "color": "#16283F",
+                "b": true,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 118,
+          "w": 96,
+          "h": 6,
+          "fill": "#244B88",
+          "line": "#244B88",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 160,
+          "w": 1710,
+          "h": 2,
+          "fill": "#D8E0EA",
+          "line": "#D8E0EA",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "html",
+          "step": 1,
+          "x": 115,
+          "y": 250,
+          "w": 900,
+          "h": 505,
+          "src": "synced-video.html?file=vortex-street.mp4&page=18&step=1",
+          "timelineSync": true
+        },
+        {
+          "type": "text",
+          "step": 1,
+          "x": 120,
+          "y": 800,
+          "w": 900,
+          "h": 90,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "圆柱后两侧旋涡交替脱落",
+                "size": 36,
+                "color": "#273444",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "tex",
+          "step": 2,
+          "x": 1110,
+          "y": 230,
+          "w": 685,
+          "h": 130,
+          "tex": "f_s\\approx St\\,\\frac{U}{D}",
+          "size": 49,
+          "color": "#16283F",
+          "align": "left"
+        },
+        {
+          "type": "text",
+          "step": 2,
+          "x": 1110,
+          "y": 395,
+          "w": 685,
+          "h": 150,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "U：来流速度　D：特征尺寸\nSt：斯特劳哈尔数",
+                "size": 35,
+                "color": "#273444",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 3,
+          "x": 1100,
+          "y": 650,
+          "w": 710,
+          "h": 170,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "结构运动会反馈流场\n涡振需要流固耦合分析",
+                "size": 40,
+                "color": "#C00000",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ],
+          "hotspot": true,
+          "label": "桥梁涡振的模型边界",
+          "qa": [
+            {
+              "q": "能直接把桥梁涡振套进F₀cosωt模型吗？",
+              "a": "不能直接等同。结构运动改变脱涡与气动力，可能出现锁定，激励与运动相互耦合。线性规定外力模型提供供能、阻尼和频率响应的直觉，定量工程判断仍需流固耦合分析与验证。"
+            }
+          ]
+        }
+      ],
+      "bullets": [
+        {
+          "text": "桥梁涡振的模型边界",
+          "x": 1455,
+          "y": 832,
+          "qa": [
+            {
+              "q": "能直接把桥梁涡振套进F₀cosωt模型吗？",
+              "a": "不能直接等同。结构运动改变脱涡与气动力，可能出现锁定，激励与运动相互耦合。线性规定外力模型提供供能、阻尼和频率响应的直觉，定量工程判断仍需流固耦合分析与验证。"
+            }
+          ],
+          "hotspot": true,
+          "important": false,
+          "elIdx": 7
+        }
+      ],
+      "stepTimes": {
+        "1": 829.794,
+        "2": 839.765,
+        "3": 869.272
+      },
+      "t_start": 827.426,
+      "t_end": 883.202,
+      "duration": 55.776,
+      "laser": [
+        {
+          "bullet": 0,
+          "start": 869.28,
+          "end": 874.28
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "kind": "page",
+      "heading": "增加耗能与工程责任",
+      "narration": "工程上既要优化外形，也要管理能量。这里是央视超级工程的源片段，关注港珠澳大桥耗能装置，视频静音播放。在线性规定外力模型里，当驱动频率等于固有频率，振幅为f零除以二贝塔欧米伽零。外力、固有频率都相同，将贝塔加倍，这个频率处振幅减半。比较的是同一驱动频率，不能把比例直接当作真实桥梁的安全保证。装置的材料、连接和工况都要验证。由此理解工程责任：计算给出方向，试验检验响应，长期监测检查状态，让物理知识具体服务公共安全。",
+      "elements": [
+        {
+          "type": "text",
+          "step": 0,
+          "x": 105,
+          "y": 40,
+          "w": 1500,
+          "h": 64,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "04　工程与应用",
+                "size": 44,
+                "color": "#16283F",
+                "b": true,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 118,
+          "w": 96,
+          "h": 6,
+          "fill": "#244B88",
+          "line": "#244B88",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 160,
+          "w": 1710,
+          "h": 2,
+          "fill": "#D8E0EA",
+          "line": "#D8E0EA",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "html",
+          "step": 1,
+          "x": 110,
+          "y": 245,
+          "w": 900,
+          "h": 620,
+          "src": "synced-video.html?file=bridge-damping.mp4&page=19&step=1",
+          "timelineSync": true
+        },
+        {
+          "type": "text",
+          "step": 1,
+          "x": 115,
+          "y": 900,
+          "w": 950,
+          "h": 60,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "央视《超级工程》港珠澳大桥减震方案（源片段）",
+                "size": 27,
+                "color": "#273444",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "tex",
+          "step": 2,
+          "x": 1140,
+          "y": 280,
+          "w": 640,
+          "h": 170,
+          "tex": "A(\\omega_0)=\\frac{f_0}{2\\beta\\omega_0}",
+          "size": 48,
+          "color": "#16283F",
+          "align": "left",
+          "important": true,
+          "hotspot": true,
+          "label": "同频比较阻尼作用",
+          "qa": [
+            {
+              "q": "β加倍为什么这里的A减半？",
+              "a": "在ω=ω₀、f₀和ω₀固定时，A(ω₀)=f₀/(2βω₀)，因此β加倍使这一驱动频率处的振幅减半。该式是规定外力线性模型的结果，不代替真实工程验证。"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "step": 2,
+          "x": 1140,
+          "y": 505,
+          "w": 640,
+          "h": 150,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "固定同一外力与频率\nβ加倍，A(ω₀)减半",
+                "size": 39,
+                "color": "#244B88",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 3,
+          "x": 1140,
+          "y": 735,
+          "w": 640,
+          "h": 150,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "设计、试验与监测共同守护公共安全",
+                "size": 38,
+                "color": "#C00000",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        }
+      ],
+      "bullets": [
+        {
+          "text": "同频比较阻尼作用",
+          "x": 1460,
+          "y": 462,
+          "qa": [
+            {
+              "q": "β加倍为什么这里的A减半？",
+              "a": "在ω=ω₀、f₀和ω₀固定时，A(ω₀)=f₀/(2βω₀)，因此β加倍使这一驱动频率处的振幅减半。该式是规定外力线性模型的结果，不代替真实工程验证。"
+            }
+          ],
+          "hotspot": true,
+          "important": true,
+          "elIdx": 5
+        }
+      ],
+      "stepTimes": {
+        "1": 889.189,
+        "2": 901.161,
+        "3": 923.851
+      },
+      "t_start": 884.002,
+      "t_end": 933.17,
+      "duration": 49.168,
+      "laser": [
+        {
+          "bullet": 0,
+          "start": 901.16,
+          "end": 906.16
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "kind": "page",
+      "heading": "磁共振成像",
+      "narration": "共振也能帮助获取信息。源片段展示心脏动态磁共振成像，并不是射频激发动画。氢核具有磁矩，强静磁场下群体形成净磁化。合适的射频脉冲使它偏离主磁场方向，产生横向磁化。射频关闭后，它进动并弛豫，在接收线圈中留下衰减电信号。还需要梯度磁场编码空间位置，再经过重建，才能得到图像。这里的物理对象是许多核磁矩的统计净磁化，不是质量块的机械位移。下一页只展开频率匹配，区分主磁场决定的进动频率与可调射频，并保留磁共振模型本身。",
+      "elements": [
+        {
+          "type": "text",
+          "step": 0,
+          "x": 105,
+          "y": 40,
+          "w": 1500,
+          "h": 64,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "04　工程与应用",
+                "size": 44,
+                "color": "#16283F",
+                "b": true,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 118,
+          "w": 96,
+          "h": 6,
+          "fill": "#244B88",
+          "line": "#244B88",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 160,
+          "w": 1710,
+          "h": 2,
+          "fill": "#D8E0EA",
+          "line": "#D8E0EA",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "html",
+          "step": 1,
+          "x": 120,
+          "y": 240,
+          "w": 1060,
+          "h": 600,
+          "src": "synced-video.html?file=mri-cine.mp4&page=20&step=1",
+          "timelineSync": true
+        },
+        {
+          "type": "text",
+          "step": 1,
+          "x": 125,
+          "y": 870,
+          "w": 1050,
+          "h": 85,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "NIBIB/NIH（CC BY 3.0）\nBiomedizinische NMR Forschungs GmbH（CC BY-SA 3.0）",
+                "size": 25,
+                "color": "#273444",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 2,
+          "x": 1220,
+          "y": 295,
+          "w": 360,
+          "h": 250,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "静磁场建立净磁化\n射频脉冲激发\n接收与空间编码",
+                "size": 39,
+                "color": "#244B88",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 3,
+          "x": 1220,
+          "y": 650,
+          "w": 360,
+          "h": 180,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "核磁共振的对象是磁矩与净磁化",
+                "size": 41,
+                "color": "#C00000",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ],
+          "hotspot": true,
+          "label": "MRI的类比边界",
+          "qa": [
+            {
+              "q": "MRI与弹簧振子的共振完全相同吗？",
+              "a": "不相同。MRI涉及核磁矩的共振激发、净磁化进动与弛豫，以及梯度编码和重建。可类比频率匹配与能量转移，不能把机械位移振幅公式直接用于MRI。"
+            }
+          ]
+        }
+      ],
+      "bullets": [
+        {
+          "text": "MRI的类比边界",
+          "x": 1400,
+          "y": 842,
+          "qa": [
+            {
+              "q": "MRI与弹簧振子的共振完全相同吗？",
+              "a": "不相同。MRI涉及核磁矩的共振激发、净磁化进动与弛豫，以及梯度编码和重建。可类比频率匹配与能量转移，不能把机械位移振幅公式直接用于MRI。"
+            }
+          ],
+          "hotspot": true,
+          "important": false,
+          "elIdx": 6
+        }
+      ],
+      "stepTimes": {
+        "1": 937.322,
+        "2": 962.81,
+        "3": 976.466
+      },
+      "t_start": 933.97,
+      "t_end": 984.21,
+      "duration": 50.24,
+      "laser": [
+        {
+          "bullet": 0,
+          "start": 976.47,
+          "end": 981.47
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "kind": "page",
+      "heading": "拉莫尔频率与射频匹配",
+      "narration": "写清拉莫尔频率，等于旋磁比乘主磁场，再除以二π。这里伽马N是旋磁比，与前面的阻力系数不同。同一种核，主磁场越大，匹配频率越高。现在播放净磁化对照。主磁场、射频强度和脉冲时长相同。左图匹配，使用九十度脉冲；右图明显失谐，脉冲末的横向磁化较小。激发时在旋转参考系观察，射频关闭后切到实验室参考系，慢放进动与信号衰减。图像还需要梯度编码和重建。这个类比的边界是：频率匹配有助激发，但净磁化遵循磁共振进动与弛豫规律，机械振子的位移峰公式不能原样搬来。",
+      "elements": [
+        {
+          "type": "text",
+          "step": 0,
+          "x": 105,
+          "y": 40,
+          "w": 1500,
+          "h": 64,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "04　工程与应用",
+                "size": 44,
+                "color": "#16283F",
+                "b": true,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 118,
+          "w": 96,
+          "h": 6,
+          "fill": "#244B88",
+          "line": "#244B88",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 160,
+          "w": 1710,
+          "h": 2,
+          "fill": "#D8E0EA",
+          "line": "#D8E0EA",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "tex",
+          "step": 1,
+          "x": 170,
+          "y": 210,
+          "w": 1580,
+          "h": 125,
+          "tex": "f_{\\rm RF}=f_L=\\frac{\\gamma_N}{2\\pi}B_0",
+          "size": 55,
+          "color": "#273444",
+          "align": "left",
+          "important": true,
+          "hotspot": true,
+          "label": "MRI频率匹配",
+          "qa": [
+            {
+              "q": "增大主磁场会怎样改变匹配频率？",
+              "a": "对同一种核，旋磁比γN固定，拉莫尔频率fL=(γN/2π)B₀随主磁场增加。射频需围绕新的拉莫尔频率激发。这里γN是旋磁比，不是机械振子的阻力系数。"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "step": 1,
+          "x": 170,
+          "y": 365,
+          "w": 1570,
+          "h": 65,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "γN：旋磁比　B₀：主磁场强度",
+                "size": 34,
+                "color": "#273444",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "html",
+          "step": 2,
+          "x": 110,
+          "y": 460,
+          "w": 1700,
+          "h": 440,
+          "src": "sim-mri.html?page=21&demoStep=2",
+          "timelineSync": true,
+          "msgs": {
+            "2": "reset"
+          }
+        },
+        {
+          "type": "text",
+          "step": 3,
+          "x": 170,
+          "y": 940,
+          "w": 1570,
+          "h": 55,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "频率匹配的类比；磁矩与净磁化的独立物理模型",
+                "size": 31,
+                "color": "#244B88",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        }
+      ],
+      "bullets": [
+        {
+          "text": "MRI频率匹配",
+          "x": 960,
+          "y": 347,
+          "qa": [
+            {
+              "q": "增大主磁场会怎样改变匹配频率？",
+              "a": "对同一种核，旋磁比γN固定，拉莫尔频率fL=(γN/2π)B₀随主磁场增加。射频需围绕新的拉莫尔频率激发。这里γN是旋磁比，不是机械振子的阻力系数。"
+            }
+          ],
+          "hotspot": true,
+          "important": true,
+          "elIdx": 3
+        }
+      ],
+      "stepTimes": {
+        "1": 985.464,
+        "2": 1001.532,
+        "3": 1029.745
+      },
+      "t_start": 985.01,
+      "t_end": 1040.114,
+      "duration": 55.104,
+      "laser": [
+        {
+          "bullet": 0,
+          "start": 985.46,
+          "end": 990.46
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "kind": "page",
+      "heading": "Higgs粒子的共振峰",
+      "narration": "再看希格斯发现质量谱。测量双光子能量和方向，重建不变质量，在约一百二十五吉电子伏附近发现高于本底的事件过量。右侧共振振幅模方示意峰形，分母含s减质量平方整体平方，加质量平方乘衰变宽度平方。s为双光子不变质量平方，扫描的是质量或能量变量，不能当作弹簧的驱动角频率。伽马H是衰变宽度，实验峰宽还含探测器分辨率效应。二零一三年，希格斯与恩格勒获诺贝尔物理学奖。可靠发现需要本底分析、统计检验、多通道与独立实验复核，峰是线索，交叉证据支撑结论。",
+      "elements": [
+        {
+          "type": "text",
+          "step": 0,
+          "x": 105,
+          "y": 40,
+          "w": 1500,
+          "h": 64,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "04　工程与应用",
+                "size": 44,
+                "color": "#16283F",
+                "b": true,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 118,
+          "w": 96,
+          "h": 6,
+          "fill": "#244B88",
+          "line": "#244B88",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 160,
+          "w": 1710,
+          "h": 2,
+          "fill": "#D8E0EA",
+          "line": "#D8E0EA",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "img",
+          "step": 1,
+          "x": 115,
+          "y": 225,
+          "w": 760,
+          "h": 710,
+          "src": "higgs-mass-spectrum.png",
+          "hotspot": true,
+          "label": "Higgs质量谱",
+          "qa": [
+            {
+              "q": "谱上的峰与机械位移共振有什么区别？",
+              "a": "该图横轴为双光子不变质量，峰是粒子产生及衰变的实验线索。它不是周期力驱动下的机械位移振幅；可比较共振结构，不能等同物理机制或变量。"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "step": 1,
+          "x": 120,
+          "y": 950,
+          "w": 760,
+          "h": 45,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "ATLAS Experiment © CERN　2012发现报告",
+                "size": 23,
+                "color": "#273444",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "tex",
+          "step": 2,
+          "x": 970,
+          "y": 265,
+          "w": 825,
+          "h": 210,
+          "tex": "|T(s)|^2\\propto\\frac{1}{(s-m_H^2)^2+m_H^2\\Gamma_H^2}",
+          "size": 38,
+          "color": "#16283F",
+          "align": "left"
+        },
+        {
+          "type": "tex",
+          "step": 2,
+          "x": 970,
+          "y": 520,
+          "w": 825,
+          "h": 100,
+          "tex": "s=m_{\\gamma\\gamma}^2,\\quad m_H\\approx125\\ {\\rm GeV}",
+          "size": 36,
+          "color": "#16283F",
+          "align": "left"
+        },
+        {
+          "type": "text",
+          "step": 2,
+          "x": 975,
+          "y": 650,
+          "w": 810,
+          "h": 120,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "ΓH：本征衰变宽度\n自然单位制；实验峰宽还含分辨率效应",
+                "size": 31,
+                "color": "#273444",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 3,
+          "x": 975,
+          "y": 825,
+          "w": 810,
+          "h": 135,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "本底分析与多通道复核支撑可靠结论",
+                "size": 37,
+                "color": "#C00000",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        }
+      ],
+      "bullets": [
+        {
+          "text": "Higgs质量谱",
+          "x": 495,
+          "y": 947,
+          "qa": [
+            {
+              "q": "谱上的峰与机械位移共振有什么区别？",
+              "a": "该图横轴为双光子不变质量，峰是粒子产生及衰变的实验线索。它不是周期力驱动下的机械位移振幅；可比较共振结构，不能等同物理机制或变量。"
+            }
+          ],
+          "hotspot": true,
+          "important": false,
+          "elIdx": 3
+        }
+      ],
+      "stepTimes": {
+        "1": 1041.42,
+        "2": 1053.634,
+        "3": 1084.897
+      },
+      "t_start": 1040.914,
+      "t_end": 1093.082,
+      "duration": 52.168,
+      "laser": [
+        {
+          "bullet": 0,
+          "start": 1041.42,
+          "end": 1046.42
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "kind": "page",
+      "heading": "应用中的模型判断",
+      "narration": "再做一次模型判断。只测桥梁固有频率和阻尼，就直接套弹簧振子的振幅公式，信息足够吗？应先核查外力能否预先给定而独立于结构运动。风与桥梁可能相互反馈，外形和流态会改变激励，因此仅凭结构参数还不够。回顾应用，桥梁要分析气流与结构，MRI要研究磁矩和净磁化，粒子实验要分析质量谱和统计证据。类比帮助提出问题，验证决定可用结论。每次迁移都要重新确定物理对象、测量变量和模型条件，才能让公式进入真实问题。",
+      "elements": [
+        {
+          "type": "text",
+          "step": 0,
+          "x": 105,
+          "y": 40,
+          "w": 1500,
+          "h": 64,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "04　工程与应用",
+                "size": 44,
+                "color": "#16283F",
+                "b": true,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 118,
+          "w": 96,
+          "h": 6,
+          "fill": "#244B88",
+          "line": "#244B88",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 160,
+          "w": 1710,
+          "h": 2,
+          "fill": "#D8E0EA",
+          "line": "#D8E0EA",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "text",
+          "step": 1,
+          "x": 170,
+          "y": 235,
+          "w": 1550,
+          "h": 150,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "只测桥梁固有频率和阻尼，就直接套振幅公式，信息足够吗？",
+                "size": 45,
+                "color": "#C00000",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 2,
+          "x": 170,
+          "y": 465,
+          "w": 1550,
+          "h": 105,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "桥梁：气流与结构反馈，试验和监测",
+                "size": 43,
+                "color": "#16283F",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 2,
+          "x": 170,
+          "y": 635,
+          "w": 1550,
+          "h": 105,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "MRI：磁矩与净磁化，共振激发和空间编码",
+                "size": 43,
+                "color": "#244B88",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 2,
+          "x": 170,
+          "y": 805,
+          "w": 1550,
+          "h": 105,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "Higgs：不变质量谱，本底与统计复核",
+                "size": 43,
+                "color": "#16283F",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        }
+      ],
+      "bullets": [],
+      "stepTimes": {
+        "1": 1094.917,
+        "2": 1119.357
+      },
+      "t_start": 1093.882,
+      "t_end": 1141.618,
+      "duration": 47.736,
+      "laser": [],
+      "interactions": [
+        {
+          "t": 1103.834,
+          "q": "只测桥梁固有频率和阻尼，就直接套弹簧振子的振幅公式，信息足够吗？",
+          "answer": 1,
+          "options": [
+            "足够，桥梁足够重即可",
+            "不足，还需核查气动力能否预先给定且独立于结构运动",
+            "足够，视频中振动有规律即可"
+          ],
+          "explain": "规定外力线性振子假定外力独立于运动。桥梁涡振可能涉及流固耦合和频率锁定，仅有周期性外观、质量或固有频率都不足以满足这个假设。"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "kind": "page",
+      "heading": "小结与开场问题的回答",
+      "narration": "把这一节接起来。受迫运动有暂态与稳态，正阻尼使初态影响衰减，长期响应跟随外力。振幅和相位由系统与驱动决定，位移峰有额外阻尼条件。回到开场，桥梁运动的能量来自风流做功，增强机制还涉及外形、风况、结构特性和流固耦合。优化外形、增加耗能，需要实验检验。从桥梁到成像、粒子实验，我们迁移共振认识，同时检查模型边界和证据。完整推导、控制变量与独立复核，是今天希望大家带走的习惯。",
+      "elements": [
+        {
+          "type": "text",
+          "step": 0,
+          "x": 105,
+          "y": 40,
+          "w": 1500,
+          "h": 64,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "05　小结",
+                "size": 44,
+                "color": "#16283F",
+                "b": true,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 118,
+          "w": 96,
+          "h": 6,
+          "fill": "#244B88",
+          "line": "#244B88",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 160,
+          "w": 1710,
+          "h": 2,
+          "fill": "#D8E0EA",
+          "line": "#D8E0EA",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "text",
+          "step": 1,
+          "x": 165,
+          "y": 230,
+          "w": 1570,
+          "h": 120,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "完整响应：初态留下暂态，持续驱动留下稳态",
+                "size": 43,
+                "color": "#16283F",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 1,
+          "x": 165,
+          "y": 405,
+          "w": 1570,
+          "h": 120,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "位移共振：峰位公式必须连同存在条件使用",
+                "size": 43,
+                "color": "#244B88",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 2,
+          "x": 165,
+          "y": 580,
+          "w": 1570,
+          "h": 120,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "桥梁：风流供能；增强机制需考虑流固耦合",
+                "size": 43,
+                "color": "#16283F",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ],
+          "hotspot": true,
+          "label": "回答开场问题",
+          "qa": [
+            {
+              "q": "虎门大桥的两个开场问题如何回答？",
+              "a": "能量主要来自风流对结构做功。起伏增强与气动外形、风况、结构性质和流固耦合有关。规定外力模型可帮助理解频率响应和阻尼，不能直接替代涡振机制分析。"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "step": 3,
+          "x": 165,
+          "y": 755,
+          "w": 1570,
+          "h": 120,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "可靠应用：模型推导、控制变量、实验与独立复核",
+                "size": 43,
+                "color": "#244B88",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        }
+      ],
+      "bullets": [
+        {
+          "text": "回答开场问题",
+          "x": 950,
+          "y": 712,
+          "qa": [
+            {
+              "q": "虎门大桥的两个开场问题如何回答？",
+              "a": "能量主要来自风流对结构做功。起伏增强与气动外形、风况、结构性质和流固耦合有关。规定外力模型可帮助理解频率响应和阻尼，不能直接替代涡振机制分析。"
+            }
+          ],
+          "hotspot": true,
+          "important": false,
+          "elIdx": 5
+        }
+      ],
+      "stepTimes": {
+        "1": 1146.095,
+        "2": 1161.129,
+        "3": 1179.478
+      },
+      "t_start": 1142.418,
+      "t_end": 1188.25,
+      "duration": 45.832,
+      "laser": [
+        {
+          "bullet": 0,
+          "start": 1161.13,
+          "end": 1166.13
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "kind": "page",
+      "heading": "作业与继续探索",
+      "narration": "课后先做计算。固有角频率每秒十弧度，贝塔每秒一，小写f零为零点二米每平方秒，驱动频率等于固有频率。求共振频率、当前稳态振幅，再把贝塔加倍，比较同一频率处振幅。写清条件、过程和单位。再做探究：弱阻尼下，从静止启动，为什么不能立即达到巨大稳态振幅？先独立作答，让AI围绕模型、能量与暂态连续追问不少于三轮，再写约一百五十字修订结论。最后预习机械波，画相邻时刻波形，标出传播方向，思考相位差、波长和波速，并带来一个问题。今天到这里，下次见。",
+      "elements": [
+        {
+          "type": "text",
+          "step": 0,
+          "x": 105,
+          "y": 40,
+          "w": 1500,
+          "h": 64,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "05　作业",
+                "size": 44,
+                "color": "#16283F",
+                "b": true,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 118,
+          "w": 96,
+          "h": 6,
+          "fill": "#244B88",
+          "line": "#244B88",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "box",
+          "step": 0,
+          "x": 105,
+          "y": 160,
+          "w": 1710,
+          "h": 2,
+          "fill": "#D8E0EA",
+          "line": "#D8E0EA",
+          "lw": 0,
+          "radius": 0,
+          "paras": null,
+          "tex": null,
+          "size": 40,
+          "align": "center",
+          "color": "#111111",
+          "pad": 0
+        },
+        {
+          "type": "tex",
+          "step": 1,
+          "x": 170,
+          "y": 205,
+          "w": 1580,
+          "h": 125,
+          "tex": "\\omega_0=10\\ {\\rm rad/s},\\quad\\beta=1\\ {\\rm s^{-1}},\\quad f_0=0.20\\ {\\rm m/s^2},\\quad\\omega=\\omega_0",
+          "size": 36,
+          "color": "#273444",
+          "align": "left"
+        },
+        {
+          "type": "text",
+          "step": 1,
+          "x": 170,
+          "y": 350,
+          "w": 1550,
+          "h": 80,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "计算：ωᵣ；A(ω₀)；β加倍后的A(ω₀)",
+                "size": 40,
+                "color": "#16283F",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 1,
+          "x": 170,
+          "y": 440,
+          "w": 1550,
+          "h": 55,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "提交：完整计算过程＋一句物理解释，说明阻尼作用",
+                "size": 30,
+                "color": "#244B88",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 2,
+          "x": 170,
+          "y": 535,
+          "w": 1550,
+          "h": 75,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "探究：从静止启动，弱阻尼响应怎样建立？",
+                "size": 40,
+                "color": "#C00000",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 2,
+          "x": 170,
+          "y": 630,
+          "w": 1550,
+          "h": 130,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "先独立作答 → AI连续追问不少于3轮 → 自行修订\n证据：能量输入与耗散、暂态衰减；写明模型假设\nAI只负责追问，最终判断由学生完成；提交约150字修订结论",
+                "size": 30,
+                "color": "#244B88",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 3,
+          "x": 170,
+          "y": 790,
+          "w": 1550,
+          "h": 70,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "预习：振子的运动怎样经相邻振子传播到空间？",
+                "size": 35,
+                "color": "#16283F",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 3,
+          "x": 170,
+          "y": 875,
+          "w": 1550,
+          "h": 80,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "复习相位差、波长与波速；同一列简谐波两个相邻时刻的波形\n标注传播方向；提交波形草图＋问题清单",
+                "size": 27,
+                "color": "#244B88",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "step": 3,
+          "x": 170,
+          "y": 970,
+          "w": 1550,
+          "h": 32,
+          "align": "left",
+          "valign": "center",
+          "paras": [
+            [
+              {
+                "t": "课程平台：up.physxuanmin.cloud（登录与提交按教师安排）",
+                "size": 23,
+                "color": "#244B88",
+                "b": false,
+                "font": "Microsoft YaHei, PingFang SC, sans-serif"
+              }
+            ]
+          ]
+        }
+      ],
+      "bullets": [],
+      "stepTimes": {
+        "1": 1190.312,
+        "2": 1212.672,
+        "3": 1230.604
+      },
+      "t_start": 1189.05,
+      "t_end": 1242.636,
+      "duration": 53.586,
+      "laser": []
+    }
+  ],
+  "subtitles": [
+    {
+      "slide": 1,
+      "start": 0.0,
+      "end": 1.728,
+      "text": "同学们好。"
+    },
+    {
+      "slide": 1,
+      "start": 2.128,
+      "end": 4.408,
+      "text": "今天学习共振。"
+    },
+    {
+      "slide": 1,
+      "start": 4.808,
+      "end": 14.336,
+      "text": "我们先观察受迫运动，再把外力、阻尼和恢复力放进同一个模型，求出完整响应，最后检验它能解释什么。"
+    },
+    {
+      "slide": 1,
+      "start": 14.736,
+      "end": 22.8,
+      "text": "请把每个符号和运动联系起来，边听边操作模拟，尤其留意启动过程与长期响应的区别。"
+    },
+    {
+      "slide": 2,
+      "start": 24.0,
+      "end": 26.256,
+      "text": "这一节分四段。"
+    },
+    {
+      "slide": 2,
+      "start": 26.656,
+      "end": 31.624,
+      "text": "第一段是受迫振动，用控制变量比较频率和阻尼。"
+    },
+    {
+      "slide": 2,
+      "start": 32.024,
+      "end": 37.688,
+      "text": "第二段是解析求解，这是难点，要把初态与持续驱动分开。"
+    },
+    {
+      "slide": 2,
+      "start": 38.088,
+      "end": 44.952,
+      "text": "第三段是共振规律，这是重点，要连同存在条件理解峰位与峰高。"
+    },
+    {
+      "slide": 2,
+      "start": 45.352,
+      "end": 54.208,
+      "text": "第四段是工程与应用，在桥梁、磁共振成像和粒子实验中辨认共同规律，也检查模型边界。"
+    },
+    {
+      "slide": 3,
+      "start": 55.408,
+      "end": 57.76,
+      "text": "先看现场片段。"
+    },
+    {
+      "slide": 3,
+      "start": 58.16,
+      "end": 64.064,
+      "text": "二零二零年五月五日，虎门大桥桥面出现明显的周期起伏。"
+    },
+    {
+      "slide": 3,
+      "start": 64.464,
+      "end": 68.88,
+      "text": "没有人按节拍推动桥面，运动却在持续。"
+    },
+    {
+      "slide": 3,
+      "start": 69.28,
+      "end": 71.512,
+      "text": "先留下两个问题。"
+    },
+    {
+      "slide": 3,
+      "start": 71.912,
+      "end": 75.824,
+      "text": "第一个是桥面运动的能量从哪里来？"
+    },
+    {
+      "slide": 3,
+      "start": 76.474,
+      "end": 80.602,
+      "text": "第二个是什么条件会使起伏增强？"
+    },
+    {
+      "slide": 3,
+      "start": 81.252,
+      "end": 85.308,
+      "text": "有周期性外观，还不足以确定机制。"
+    },
+    {
+      "slide": 3,
+      "start": 85.708,
+      "end": 93.94,
+      "text": "我们先研究外力明确的弹簧振子，再回到风与结构的相互作用，用今天的推导检验开场判断。"
+    },
+    {
+      "slide": 4,
+      "start": 95.14,
+      "end": 101.764,
+      "text": "左侧是理想自由振动，恢复力使质量块往复运动，没有持续外界供能。"
+    },
+    {
+      "slide": 4,
+      "start": 102.164,
+      "end": 107.516,
+      "text": "右侧是阻尼振动，机械能被消耗，振幅逐渐减小。"
+    },
+    {
+      "slide": 4,
+      "start": 107.916,
+      "end": 113.772,
+      "text": "要维持振动，加入周期驱动力，大写F零乘欧米伽t的余弦。"
+    },
+    {
+      "slide": 4,
+      "start": 114.172,
+      "end": 118.924,
+      "text": "恢复力为负k乘位移，阻力为负伽马乘速度。"
+    },
+    {
+      "slide": 4,
+      "start": 119.324,
+      "end": 130.844,
+      "text": "按牛顿第二定律移项并除以质量，得到位移二阶导数，加二贝塔乘一阶导数，加欧米伽零平方乘位移，等于小写f零乘驱动余弦。"
+    },
+    {
+      "slide": 4,
+      "start": 131.244,
+      "end": 139.908,
+      "text": "这里欧米伽零平方等于k除以m，贝塔等于伽马除以二m，小写f零等于大写F零除以m。"
+    },
+    {
+      "slide": 4,
+      "start": 140.308,
+      "end": 147.052,
+      "text": "模型假定弹簧线性，阻力正比速度，外力预先给定而不随运动改变。"
+    },
+    {
+      "slide": 5,
+      "start": 148.252,
+      "end": 150.532,
+      "text": "来看完整响应。"
+    },
+    {
+      "slide": 5,
+      "start": 150.932,
+      "end": 158.3,
+      "text": "固有角频率为二π弧度每秒，阻尼比零点一，驱动频率为固有频率的一点一倍。"
+    },
+    {
+      "slide": 5,
+      "start": 158.7,
+      "end": 164.844,
+      "text": "设静态位移一厘米，初始位移负四厘米，初速度每秒负三十厘米。"
+    },
+    {
+      "slide": 5,
+      "start": 165.244,
+      "end": 170.092,
+      "text": "现在从这个初态启动，红点沿蓝色曲线推进。"
+    },
+    {
+      "slide": 5,
+      "start": 170.492,
+      "end": 174.932,
+      "text": "前段振峰明显变化，后段逐渐重复。"
+    },
+    {
+      "slide": 5,
+      "start": 175.332,
+      "end": 181.068,
+      "text": "前面受初态影响的部分叫暂态，长期周期响应叫稳态。"
+    },
+    {
+      "slide": 5,
+      "start": 181.468,
+      "end": 186.58,
+      "text": "稳态跟随外力频率，暂态带着自由响应特征。"
+    },
+    {
+      "slide": 5,
+      "start": 186.98,
+      "end": 195.524,
+      "text": "请注意这两部分叠在一起，蓝线才是实际位移，不能把其中一部分单独当作完整运动。"
+    },
+    {
+      "slide": 6,
+      "start": 196.724,
+      "end": 199.1,
+      "text": "接着做频率对照。"
+    },
+    {
+      "slide": 6,
+      "start": 199.5,
+      "end": 206.58,
+      "text": "各组系统、驱动力和阻尼相同，都从三厘米位移、零初速度出发。"
+    },
+    {
+      "slide": 6,
+      "start": 206.98,
+      "end": 215.212,
+      "text": "六组驱动频率是固有频率的零点三、零点六、零点九、一点二、一点五和一点八倍。"
+    },
+    {
+      "slide": 6,
+      "start": 215.612,
+      "end": 221.276,
+      "text": "现在播放对照，请比较曲线后段，别只看刚启动的振峰。"
+    },
+    {
+      "slide": 6,
+      "start": 221.676,
+      "end": 230.532,
+      "text": "频率越高，运动越快，稳态振幅却没有一路增大，靠近固有频率时更明显，继续提高又减小。"
+    },
+    {
+      "slide": 6,
+      "start": 230.932,
+      "end": 237.964,
+      "text": "现在预测：同一个驱动下，若初始位移改得很大，长期振幅会不会变大？"
+    },
+    {
+      "slide": 6,
+      "start": 238.614,
+      "end": 243.054,
+      "text": "先选择，再用后面的解析解核对理由。"
+    },
+    {
+      "slide": 7,
+      "start": 245.054,
+      "end": 256.886,
+      "text": "这次固定驱动频率为固有频率的一点一倍，保持外力、系统和初态相同，阻尼比依次取零点零五、零点一、零点二和零点四。"
+    },
+    {
+      "slide": 7,
+      "start": 257.286,
+      "end": 259.518,
+      "text": "现在播放对照。"
+    },
+    {
+      "slide": 7,
+      "start": 259.918,
+      "end": 264.934,
+      "text": "同时看初始扰动消失多快，以及最终振幅多大。"
+    },
+    {
+      "slide": 7,
+      "start": 265.334,
+      "end": 272.126,
+      "text": "在这组欠阻尼比较里，阻尼增大，暂态衰减更快，稳态振幅更小。"
+    },
+    {
+      "slide": 7,
+      "start": 272.526,
+      "end": 278.358,
+      "text": "前者描述建立过程，后者描述最终幅度，需要分别判断。"
+    },
+    {
+      "slide": 7,
+      "start": 278.758,
+      "end": 281.71,
+      "text": "观察以后还要问为什么。"
+    },
+    {
+      "slide": 7,
+      "start": 282.11,
+      "end": 288.734,
+      "text": "外力持续供能，阻尼持续耗能，稳态要求一周期的输入与耗散平衡。"
+    },
+    {
+      "slide": 7,
+      "start": 289.134,
+      "end": 292.47,
+      "text": "下面从方程解释这些规律。"
+    },
+    {
+      "slide": 8,
+      "start": 293.67,
+      "end": 297.822,
+      "text": "先用线性叠加，写成齐次解加特解。"
+    },
+    {
+      "slide": 8,
+      "start": 298.222,
+      "end": 303.79,
+      "text": "本页讨论零小于贝塔、小于欧米伽零的欠阻尼情形。"
+    },
+    {
+      "slide": 8,
+      "start": 304.19,
+      "end": 309.11,
+      "text": "对齐次方程尝试指数解，e的λt次方。"
+    },
+    {
+      "slide": 8,
+      "start": 309.51,
+      "end": 318.87,
+      "text": "求导一次带来λ，两次带来λ平方，代入得到λ平方加二贝塔λ加欧米伽零平方等于零。"
+    },
+    {
+      "slide": 8,
+      "start": 319.27,
+      "end": 326.998,
+      "text": "求根为负贝塔，加减i乘欧米伽d，欧米伽d是欧米伽零平方减贝塔平方的平方根。"
+    },
+    {
+      "slide": 8,
+      "start": 327.398,
+      "end": 335.294,
+      "text": "所以齐次解是e的负贝塔t次方，乘以C余弦欧米伽dt与D正弦欧米伽dt的和。"
+    },
+    {
+      "slide": 8,
+      "start": 335.694,
+      "end": 341.67,
+      "text": "C、D由初值决定，包络的衰减时间约一除以贝塔。"
+    },
+    {
+      "slide": 8,
+      "start": 342.07,
+      "end": 347.926,
+      "text": "欧米伽d是阻尼自由频率，不能和驱动频率、共振峰位混用。"
+    },
+    {
+      "slide": 9,
+      "start": 349.126,
+      "end": 351.55,
+      "text": "再求同频特解。"
+    },
+    {
+      "slide": 9,
+      "start": 351.95,
+      "end": 361.262,
+      "text": "阻尼含一阶导数，余弦求导会产生正弦，因此设特解为a余弦欧米伽t加b正弦欧米伽t。"
+    },
+    {
+      "slide": 9,
+      "start": 361.662,
+      "end": 364.11,
+      "text": "现在逐项求导。"
+    },
+    {
+      "slide": 9,
+      "start": 364.51,
+      "end": 373.438,
+      "text": "一阶导数是负a欧米伽乘正弦，加b欧米伽乘余弦；二阶导数两项都乘负欧米伽平方。"
+    },
+    {
+      "slide": 9,
+      "start": 373.838,
+      "end": 378.83,
+      "text": "代回受迫方程，把正弦、余弦各自归类。"
+    },
+    {
+      "slide": 9,
+      "start": 379.23,
+      "end": 390.246,
+      "text": "记德尔塔为欧米伽零平方减欧米伽平方，得到德尔塔a加二贝塔欧米伽b等于f零，德尔塔b减二贝塔欧米伽a等于零。"
+    },
+    {
+      "slide": 9,
+      "start": 390.646,
+      "end": 394.03,
+      "text": "第二行负号来自余弦的一阶导数。"
+    },
+    {
+      "slide": 9,
+      "start": 394.43,
+      "end": 398.366,
+      "text": "微分方程于是变成了两个代数方程。"
+    },
+    {
+      "slide": 10,
+      "start": 399.566,
+      "end": 405.806,
+      "text": "系数方程的行列式Q，是德尔塔平方加二贝塔欧米伽的平方。"
+    },
+    {
+      "slide": 10,
+      "start": 406.206,
+      "end": 412.47,
+      "text": "解得a为f零德尔塔除以Q，b为二贝塔欧米伽f零除以Q。"
+    },
+    {
+      "slide": 10,
+      "start": 412.87,
+      "end": 423.094,
+      "text": "再用三角恒等式，合成A乘欧米伽t减δ的余弦，其中a等于A余弦δ，b等于A正弦δ。"
+    },
+    {
+      "slide": 10,
+      "start": 423.494,
+      "end": 437.678,
+      "text": "把a、b平方相加，得到A是a平方加b平方的平方根，也就是f零除以根号下，欧米伽零平方减欧米伽平方整体平方，加四贝塔平方欧米伽平方。"
+    },
+    {
+      "slide": 10,
+      "start": 438.078,
+      "end": 447.294,
+      "text": "初始位移与速度没有出现在这里，因此固定驱动条件下，初值影响暂态，不改变最终稳态振幅。"
+    },
+    {
+      "slide": 11,
+      "start": 448.494,
+      "end": 450.87,
+      "text": "还要理解相位滞后。"
+    },
+    {
+      "slide": 11,
+      "start": 451.27,
+      "end": 456.718,
+      "text": "写成欧米伽t减δ，表示位移比外力晚到同一相位。"
+    },
+    {
+      "slide": 11,
+      "start": 457.118,
+      "end": 463.406,
+      "text": "正切δ等于二贝塔欧米伽除以欧米伽零平方减欧米伽平方。"
+    },
+    {
+      "slide": 11,
+      "start": 463.806,
+      "end": 469.374,
+      "text": "但普通反正切会丢失象限，要用双参数反正切保留符号。"
+    },
+    {
+      "slide": 11,
+      "start": 469.774,
+      "end": 473.542,
+      "text": "正阻尼、正频率下，b为正。"
+    },
+    {
+      "slide": 11,
+      "start": 473.942,
+      "end": 487.022,
+      "text": "低于固有频率时a为正，δ小于九十度；等于固有频率时a为零，δ为九十度；高于它时a为负，δ进入第二象限，趋近一百八十度。"
+    },
+    {
+      "slide": 11,
+      "start": 487.422,
+      "end": 492.486,
+      "text": "现在拖动频率控件，比较外力和位移两条波形。"
+    },
+    {
+      "slide": 11,
+      "start": 492.886,
+      "end": 497.014,
+      "text": "高频端的负正切，并不表示负的滞后角。"
+    },
+    {
+      "slide": 12,
+      "start": 498.214,
+      "end": 500.662,
+      "text": "现在合成完整解。"
+    },
+    {
+      "slide": 12,
+      "start": 501.062,
+      "end": 505.598,
+      "text": "第一项是衰减的齐次响应，第二项是同频特解。"
+    },
+    {
+      "slide": 12,
+      "start": 505.998,
+      "end": 512.718,
+      "text": "代入初始时刻，初始位移等于C加a，所以C等于x零减a。"
+    },
+    {
+      "slide": 12,
+      "start": 513.118,
+      "end": 524.758,
+      "text": "求导后，初速度等于负贝塔C加欧米伽d乘D，再加b欧米伽，因此D等于v零减b欧米伽加贝塔C，整体除以欧米伽d。"
+    },
+    {
+      "slide": 12,
+      "start": 525.158,
+      "end": 529.046,
+      "text": "两个初值都满足了，响应不再少一块。"
+    },
+    {
+      "slide": 12,
+      "start": 529.446,
+      "end": 537.102,
+      "text": "对于正阻尼，指数项长期趋于零，这解释了不同初态却有相同稳态的预测题。"
+    },
+    {
+      "slide": 12,
+      "start": 537.502,
+      "end": 546.118,
+      "text": "临界、过阻尼要换齐次形式，稳态公式仍成立；无阻尼的初态影响不会这样衰减。"
+    },
+    {
+      "slide": 13,
+      "start": 547.318,
+      "end": 551.662,
+      "text": "把离散频率连起来，得到稳态振幅曲线。"
+    },
+    {
+      "slide": 13,
+      "start": 552.062,
+      "end": 557.342,
+      "text": "横轴是驱动频率比，纵轴是振幅除以静态位移。"
+    },
+    {
+      "slide": 13,
+      "start": 557.742,
+      "end": 562.782,
+      "text": "每一点代表在这个频率下等暂态衰减后的响应。"
+    },
+    {
+      "slide": 13,
+      "start": 563.182,
+      "end": 569.47,
+      "text": "现在扫过一系列频率，标记点先升高，到峰顶，再下降。"
+    },
+    {
+      "slide": 13,
+      "start": 569.87,
+      "end": 576.182,
+      "text": "改变驱动频率时，稳态位移振幅出现峰值，称为位移共振。"
+    },
+    {
+      "slide": 13,
+      "start": 576.582,
+      "end": 583.974,
+      "text": "阻尼比零点一时，峰位约零点九九倍固有频率，峰高约五点零三倍静态位移。"
+    },
+    {
+      "slide": 13,
+      "start": 584.374,
+      "end": 589.822,
+      "text": "请分清扫频曲线与位移时间轨迹，它们的横轴不同。"
+    },
+    {
+      "slide": 13,
+      "start": 590.222,
+      "end": 593.366,
+      "text": "峰位为什么略低于固有频率？"
+    },
+    {
+      "slide": 13,
+      "start": 594.016,
+      "end": 596.512,
+      "text": "下面研究振幅的分母。"
+    },
+    {
+      "slide": 14,
+      "start": 597.712,
+      "end": 604.456,
+      "text": "固定外力和系统参数，振幅最大对应分母最小，只需研究分母平方G。"
+    },
+    {
+      "slide": 14,
+      "start": 604.856,
+      "end": 615.488,
+      "text": "求导时，第一项是负四欧米伽，乘以欧米伽零平方与欧米伽平方的差；第二项是八贝塔平方欧米伽，合并成页面第二行。"
+    },
+    {
+      "slide": 14,
+      "start": 615.888,
+      "end": 624.888,
+      "text": "令导数为零，除零频率端点，还可能有正频率峰位，欧米伽零平方减二贝塔平方的平方根。"
+    },
+    {
+      "slide": 14,
+      "start": 625.288,
+      "end": 630.232,
+      "text": "它要求零小于贝塔、小于欧米伽零除以根号二。"
+    },
+    {
+      "slide": 14,
+      "start": 630.632,
+      "end": 635.552,
+      "text": "满足条件时，G先降后升，振幅取极大。"
+    },
+    {
+      "slide": 14,
+      "start": 635.952,
+      "end": 639.936,
+      "text": "由此得到共振频率及其存在条件。"
+    },
+    {
+      "slide": 14,
+      "start": 640.336,
+      "end": 648.52,
+      "text": "阻尼达到这个阈值后，位移振幅从静态值单调下降，没有正频率峰，却仍有受迫响应。"
+    },
+    {
+      "slide": 15,
+      "start": 649.72,
+      "end": 657.016,
+      "text": "把峰位代回分母平方，得到四贝塔平方，乘以欧米伽零平方与贝塔平方的差。"
+    },
+    {
+      "slide": 15,
+      "start": 657.416,
+      "end": 667.376,
+      "text": "因此峰高为f零除以二贝塔，再除以欧米伽零平方减贝塔平方的平方根，仍须满足正频率峰存在条件。"
+    },
+    {
+      "slide": 15,
+      "start": 667.776,
+      "end": 678.048,
+      "text": "比较三条曲线，阻尼比零点三五、零点二、零点一，峰高约一点五三、二点五五、五点零三倍静态位移。"
+    },
+    {
+      "slide": 15,
+      "start": 678.448,
+      "end": 683.488,
+      "text": "阻尼越小，峰越高越尖，峰位越接近固有频率。"
+    },
+    {
+      "slide": 15,
+      "start": 683.888,
+      "end": 689.504,
+      "text": "尖峰意味着对失谐敏感，偏离峰位，响应下降明显。"
+    },
+    {
+      "slide": 15,
+      "start": 689.904,
+      "end": 698.328,
+      "text": "最后看弱阻尼近似，只有贝塔远小于欧米伽零，才可近似说共振频率等于固有频率。"
+    },
+    {
+      "slide": 16,
+      "start": 699.528,
+      "end": 711.84,
+      "text": "现在探究：贝塔很小但仍大于零，驱动频率等于固有频率，从静止初态、位移和速度都为零启动，振幅会立刻达到巨大稳态值吗？"
+    },
+    {
+      "slide": 16,
+      "start": 712.49,
+      "end": 715.682,
+      "text": "先判断，再说明条件。"
+    },
+    {
+      "slide": 16,
+      "start": 716.882,
+      "end": 724.634,
+      "text": "写出机械能，动能二分之一m乘速度平方，加弹性势能二分之一k乘位移平方。"
+    },
+    {
+      "slide": 16,
+      "start": 725.034,
+      "end": 731.562,
+      "text": "将方程乘速度，得到能量变化率为外力功率减阻尼耗散功率。"
+    },
+    {
+      "slide": 16,
+      "start": 731.962,
+      "end": 740.482,
+      "text": "稳态一周期能量变化为零，平均输入等于平均耗散，后者为伽马A平方欧米伽平方除以二。"
+    },
+    {
+      "slide": 16,
+      "start": 740.882,
+      "end": 743.81,
+      "text": "正阻尼的最终振幅有限。"
+    },
+    {
+      "slide": 16,
+      "start": 744.21,
+      "end": 752.562,
+      "text": "从静止初态启动，阻尼很小，最终振幅可以很大，但建立时间约一除以贝塔，也会变长。"
+    },
+    {
+      "slide": 16,
+      "start": 752.962,
+      "end": 763.738,
+      "text": "再看理想无阻尼且精确共振，普通有界特解失效，要写成f零除以二欧米伽零，乘t正弦欧米伽零t，包络线性增长。"
+    },
+    {
+      "slide": 16,
+      "start": 764.138,
+      "end": 774.17,
+      "text": "无限增长依赖理想线性、无耗散和持续精确驱动，现实中的阻尼、非线性和强度限制会改变它。"
+    },
+    {
+      "slide": 17,
+      "start": 775.37,
+      "end": 781.994,
+      "text": "某装置的贝塔是欧米伽零的零点八倍，自由响应仍能看到衰减振荡。"
+    },
+    {
+      "slide": 17,
+      "start": 782.394,
+      "end": 787.05,
+      "text": "有同学断言，扫频一定出现位移共振峰。"
+    },
+    {
+      "slide": 17,
+      "start": 787.45,
+      "end": 789.826,
+      "text": "现在请选择判断。"
+    },
+    {
+      "slide": 17,
+      "start": 791.026,
+      "end": 800.122,
+      "text": "这里有两个不同条件：自由振荡要求贝塔小于欧米伽零，位移峰要求贝塔小于欧米伽零除以根号二。"
+    },
+    {
+      "slide": 17,
+      "start": 800.522,
+      "end": 804.074,
+      "text": "零点八满足前者，不满足后者。"
+    },
+    {
+      "slide": 17,
+      "start": 804.474,
+      "end": 810.114,
+      "text": "所以自由振荡存在，并不能保证正频率位移峰存在。"
+    },
+    {
+      "slide": 17,
+      "start": 810.514,
+      "end": 815.458,
+      "text": "它仍然响应周期外力，只是振幅随频率单调下降。"
+    },
+    {
+      "slide": 17,
+      "start": 815.858,
+      "end": 826.226,
+      "text": "实验中应把启动衰减和长期扫频分开测量，用明确现象核对明确条件，避免把所有周期运动都叫共振。"
+    },
+    {
+      "slide": 18,
+      "start": 827.426,
+      "end": 829.394,
+      "text": "回到桥梁。"
+    },
+    {
+      "slide": 18,
+      "start": 829.794,
+      "end": 836.346,
+      "text": "涡街视频中，圆柱后两侧旋涡交替脱落，产生变化的气动力。"
+    },
+    {
+      "slide": 18,
+      "start": 836.746,
+      "end": 845.602,
+      "text": "固定几何和一定流动条件下，可用脱涡频率约等于斯特劳哈尔数，乘来流速度、除以特征尺寸估计。"
+    },
+    {
+      "slide": 18,
+      "start": 846.002,
+      "end": 850.034,
+      "text": "风速和外形会改变激励时间尺度。"
+    },
+    {
+      "slide": 18,
+      "start": 850.434,
+      "end": 857.61,
+      "text": "虎门大桥事件中，水马改变气动外形，特定风况下出现较大涡振。"
+    },
+    {
+      "slide": 18,
+      "start": 858.01,
+      "end": 861.586,
+      "text": "开场问题的能量答案是风流做功。"
+    },
+    {
+      "slide": 18,
+      "start": 861.986,
+      "end": 868.442,
+      "text": "但结构运动也会改变流场，出现锁定时，脱涡与运动互相影响。"
+    },
+    {
+      "slide": 18,
+      "start": 868.842,
+      "end": 875.082,
+      "text": "因此涡振需要流固耦合分析，气动力不能直接当作独立规定外力。"
+    },
+    {
+      "slide": 18,
+      "start": 875.482,
+      "end": 882.802,
+      "text": "线性模型提供供能和阻尼认识，工程判断还要风洞试验与现场监测。"
+    },
+    {
+      "slide": 19,
+      "start": 884.002,
+      "end": 888.13,
+      "text": "工程上既要优化外形，也要管理能量。"
+    },
+    {
+      "slide": 19,
+      "start": 888.53,
+      "end": 895.778,
+      "text": "这里是央视超级工程的源片段，关注港珠澳大桥耗能装置，视频静音播放。"
+    },
+    {
+      "slide": 19,
+      "start": 896.178,
+      "end": 904.41,
+      "text": "在线性规定外力模型里，当驱动频率等于固有频率，振幅为f零除以二贝塔欧米伽零。"
+    },
+    {
+      "slide": 19,
+      "start": 904.81,
+      "end": 911.578,
+      "text": "外力、固有频率都相同，将贝塔加倍，这个频率处振幅减半。"
+    },
+    {
+      "slide": 19,
+      "start": 911.978,
+      "end": 918.05,
+      "text": "比较的是同一驱动频率，不能把比例直接当作真实桥梁的安全保证。"
+    },
+    {
+      "slide": 19,
+      "start": 918.45,
+      "end": 922.602,
+      "text": "装置的材料、连接和工况都要验证。"
+    },
+    {
+      "slide": 19,
+      "start": 923.002,
+      "end": 932.77,
+      "text": "由此理解工程责任：计算给出方向，试验检验响应，长期监测检查状态，让物理知识具体服务公共安全。"
+    },
+    {
+      "slide": 20,
+      "start": 933.97,
+      "end": 936.922,
+      "text": "共振也能帮助获取信息。"
+    },
+    {
+      "slide": 20,
+      "start": 937.322,
+      "end": 943.106,
+      "text": "源片段展示心脏动态磁共振成像，并不是射频激发动画。"
+    },
+    {
+      "slide": 20,
+      "start": 943.506,
+      "end": 948.81,
+      "text": "氢核具有磁矩，强静磁场下群体形成净磁化。"
+    },
+    {
+      "slide": 20,
+      "start": 949.21,
+      "end": 955.09,
+      "text": "合适的射频脉冲使它偏离主磁场方向，产生横向磁化。"
+    },
+    {
+      "slide": 20,
+      "start": 955.49,
+      "end": 961.778,
+      "text": "射频关闭后，它进动并弛豫，在接收线圈中留下衰减电信号。"
+    },
+    {
+      "slide": 20,
+      "start": 962.178,
+      "end": 967.866,
+      "text": "还需要梯度磁场编码空间位置，再经过重建，才能得到图像。"
+    },
+    {
+      "slide": 20,
+      "start": 968.266,
+      "end": 974.77,
+      "text": "这里的物理对象是许多核磁矩的统计净磁化，不是质量块的机械位移。"
+    },
+    {
+      "slide": 20,
+      "start": 975.17,
+      "end": 983.81,
+      "text": "下一页只展开频率匹配，区分主磁场决定的进动频率与可调射频，并保留磁共振模型本身。"
+    },
+    {
+      "slide": 21,
+      "start": 985.01,
+      "end": 990.458,
+      "text": "写清拉莫尔频率，等于旋磁比乘主磁场，再除以二π。"
+    },
+    {
+      "slide": 21,
+      "start": 990.858,
+      "end": 995.754,
+      "text": "这里伽马N是旋磁比，与前面的阻力系数不同。"
+    },
+    {
+      "slide": 21,
+      "start": 996.154,
+      "end": 1000.57,
+      "text": "同一种核，主磁场越大，匹配频率越高。"
+    },
+    {
+      "slide": 21,
+      "start": 1000.97,
+      "end": 1003.778,
+      "text": "现在播放净磁化对照。"
+    },
+    {
+      "slide": 21,
+      "start": 1004.178,
+      "end": 1008.666,
+      "text": "主磁场、射频强度和脉冲时长相同。"
+    },
+    {
+      "slide": 21,
+      "start": 1009.066,
+      "end": 1016.53,
+      "text": "左图匹配，使用九十度脉冲；右图明显失谐，脉冲末的横向磁化较小。"
+    },
+    {
+      "slide": 21,
+      "start": 1016.93,
+      "end": 1025.21,
+      "text": "激发时在旋转参考系观察，射频关闭后切到实验室参考系，慢放进动与信号衰减。"
+    },
+    {
+      "slide": 21,
+      "start": 1025.61,
+      "end": 1028.946,
+      "text": "图像还需要梯度编码和重建。"
+    },
+    {
+      "slide": 21,
+      "start": 1029.346,
+      "end": 1039.714,
+      "text": "这个类比的边界是：频率匹配有助激发，但净磁化遵循磁共振进动与弛豫规律，机械振子的位移峰公式不能原样搬来。"
+    },
+    {
+      "slide": 22,
+      "start": 1040.914,
+      "end": 1043.698,
+      "text": "再看希格斯发现质量谱。"
+    },
+    {
+      "slide": 22,
+      "start": 1044.098,
+      "end": 1052.738,
+      "text": "测量双光子能量和方向，重建不变质量，在约一百二十五吉电子伏附近发现高于本底的事件过量。"
+    },
+    {
+      "slide": 22,
+      "start": 1053.138,
+      "end": 1063.05,
+      "text": "右侧共振振幅模方示意峰形，分母含s减质量平方整体平方，加质量平方乘衰变宽度平方。"
+    },
+    {
+      "slide": 22,
+      "start": 1063.45,
+      "end": 1071.61,
+      "text": "s为双光子不变质量平方，扫描的是质量或能量变量，不能当作弹簧的驱动角频率。"
+    },
+    {
+      "slide": 22,
+      "start": 1072.01,
+      "end": 1078.106,
+      "text": "伽马H是衰变宽度，实验峰宽还含探测器分辨率效应。"
+    },
+    {
+      "slide": 22,
+      "start": 1078.506,
+      "end": 1083.162,
+      "text": "二零一三年，希格斯与恩格勒获诺贝尔物理学奖。"
+    },
+    {
+      "slide": 22,
+      "start": 1083.562,
+      "end": 1092.682,
+      "text": "可靠发现需要本底分析、统计检验、多通道与独立实验复核，峰是线索，交叉证据支撑结论。"
+    },
+    {
+      "slide": 23,
+      "start": 1093.882,
+      "end": 1096.21,
+      "text": "再做一次模型判断。"
+    },
+    {
+      "slide": 23,
+      "start": 1096.61,
+      "end": 1103.834,
+      "text": "只测桥梁固有频率和阻尼，就直接套弹簧振子的振幅公式，信息足够吗？"
+    },
+    {
+      "slide": 23,
+      "start": 1105.034,
+      "end": 1109.786,
+      "text": "应先核查外力能否预先给定而独立于结构运动。"
+    },
+    {
+      "slide": 23,
+      "start": 1110.186,
+      "end": 1117.89,
+      "text": "风与桥梁可能相互反馈，外形和流态会改变激励，因此仅凭结构参数还不够。"
+    },
+    {
+      "slide": 23,
+      "start": 1118.29,
+      "end": 1127.89,
+      "text": "回顾应用，桥梁要分析气流与结构，MRI要研究磁矩和净磁化，粒子实验要分析质量谱和统计证据。"
+    },
+    {
+      "slide": 23,
+      "start": 1128.29,
+      "end": 1132.49,
+      "text": "类比帮助提出问题，验证决定可用结论。"
+    },
+    {
+      "slide": 23,
+      "start": 1132.89,
+      "end": 1141.218,
+      "text": "每次迁移都要重新确定物理对象、测量变量和模型条件，才能让公式进入真实问题。"
+    },
+    {
+      "slide": 24,
+      "start": 1142.418,
+      "end": 1144.53,
+      "text": "把这一节接起来。"
+    },
+    {
+      "slide": 24,
+      "start": 1144.93,
+      "end": 1152.154,
+      "text": "受迫运动有暂态与稳态，正阻尼使初态影响衰减，长期响应跟随外力。"
+    },
+    {
+      "slide": 24,
+      "start": 1152.554,
+      "end": 1158.386,
+      "text": "振幅和相位由系统与驱动决定，位移峰有额外阻尼条件。"
+    },
+    {
+      "slide": 24,
+      "start": 1158.786,
+      "end": 1168.626,
+      "text": "回到开场，桥梁运动的能量来自风流做功，增强机制还涉及外形、风况、结构特性和流固耦合。"
+    },
+    {
+      "slide": 24,
+      "start": 1169.026,
+      "end": 1173.442,
+      "text": "优化外形、增加耗能，需要实验检验。"
+    },
+    {
+      "slide": 24,
+      "start": 1173.842,
+      "end": 1181.282,
+      "text": "从桥梁到成像、粒子实验，我们迁移共振认识，同时检查模型边界和证据。"
+    },
+    {
+      "slide": 24,
+      "start": 1181.682,
+      "end": 1187.85,
+      "text": "完整推导、控制变量与独立复核，是今天希望大家带走的习惯。"
+    },
+    {
+      "slide": 25,
+      "start": 1189.05,
+      "end": 1191.258,
+      "text": "课后先做计算。"
+    },
+    {
+      "slide": 25,
+      "start": 1191.658,
+      "end": 1200.562,
+      "text": "固有角频率每秒十弧度，贝塔每秒一，小写f零为零点二米每平方秒，驱动频率等于固有频率。"
+    },
+    {
+      "slide": 25,
+      "start": 1200.962,
+      "end": 1208.138,
+      "text": "求共振频率、当前稳态振幅，再把贝塔加倍，比较同一频率处振幅。"
+    },
+    {
+      "slide": 25,
+      "start": 1208.538,
+      "end": 1211.802,
+      "text": "写清条件、过程和单位。"
+    },
+    {
+      "slide": 25,
+      "start": 1212.202,
+      "end": 1219.714,
+      "text": "再做探究：弱阻尼下，从静止启动，为什么不能立即达到巨大稳态振幅？"
+    },
+    {
+      "slide": 25,
+      "start": 1220.364,
+      "end": 1229.34,
+      "text": "先独立作答，让AI围绕模型、能量与暂态连续追问不少于三轮，再写约一百五十字修订结论。"
+    },
+    {
+      "slide": 25,
+      "start": 1229.74,
+      "end": 1239.028,
+      "text": "最后预习机械波，画相邻时刻波形，标出传播方向，思考相位差、波长和波速，并带来一个问题。"
+    },
+    {
+      "slide": 25,
+      "start": 1239.428,
+      "end": 1242.236,
+      "text": "今天到这里，下次见。"
+    }
+  ],
+  "build_ts": 1791397823,
+  "logoScale": 0.67,
+  "theme": "special",
+  "sections": [
+    {
+      "title": "01 · 受迫振动",
+      "page": 4
+    },
+    {
+      "title": "02 · 解析求解",
+      "page": 8
+    },
+    {
+      "title": "03 · 共振规律",
+      "page": 13
+    },
+    {
+      "title": "04 · 工程与应用",
+      "page": 18
+    },
+    {
+      "title": "05 · 小结与作业",
+      "page": 24
+    }
+  ]
+}

@@ -44,7 +44,7 @@ export default function QaRunner({ mediaRef, weblec }: {
       const dr = design.getBoundingClientRect()
       const sc = dr.width / VIDEO_W
       if (!sc) return []
-      const items: { i: number; type: string; label: string; rect: Rect; crect: Rect | null; overlay: boolean }[] = []
+      const items: { i: number; type: string; label: string; rect: Rect; crect: Rect | null; overlay: boolean; decorative: boolean }[] = []
       page.elements.forEach((el, i) => {
         const outer = design.querySelector(`[data-elidx="${i}"]`)?.firstElementChild
         if (!outer) return
@@ -61,7 +61,7 @@ export default function QaRunner({ mediaRef, weblec }: {
         if (!rect || rect.w < 4) return
         const raw = el.label || el.tex ||
           (el.paras ? el.paras.flat().map(r => r.t).join('') : '') || el.name || el.type
-        items.push({ i, type: el.type, label: stripMath(raw).slice(0, 22), rect, crect, overlay: !!el.overlay })
+        items.push({ i, type: el.type, label: stripMath(raw).slice(0, 22), rect, crect, overlay: !!el.overlay, decorative: !!el.decorative })
       })
       const out: QaIssue[] = []
       const textish = (t: string) => t === 'text' || t === 'tex' || t === 'box'
@@ -80,6 +80,7 @@ export default function QaRunner({ mediaRef, weblec }: {
       for (let m = 0; m < items.length; m++) {
         for (let n = m + 1; n < items.length; n++) {
           const A = items[m], B = items[n]
+          if (A.decorative || B.decorative) continue
           const ox = Math.min(A.rect.x + A.rect.w, B.rect.x + B.rect.w) - Math.max(A.rect.x, B.rect.x)
           const oy = Math.min(A.rect.y + A.rect.h, B.rect.y + B.rect.h) - Math.max(A.rect.y, B.rect.y)
           if (ox <= 30 || oy <= 20) continue
@@ -97,7 +98,7 @@ export default function QaRunner({ mediaRef, weblec }: {
       /** 框体松紧：内容 vs 声明边框（纵横两个方向都查——横向过窄即公式顶边/溢出框外） */
       for (const it of items) {
         const el = page.elements[it.i]
-        if (it.type === 'box' && it.crect) {
+        if (it.type === 'box' && it.crect && !it.decorative) {
           const padV = ((el.h ?? 90) - it.crect.h) / 2
           const padH = (el.w - it.crect.w) / 2
           if (padV < 3)

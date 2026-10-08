@@ -359,7 +359,7 @@
       <label><input type="checkbox" id="c-ring" checked> 轨迹圆环</label>
     </div>
 
-    <div id="foot" class="embed-hide">对照 · 脉冲星：\(I\propto R^2\)，恒星坍缩成中子星后 ω 提升约 10⁹ 倍（25 天 → 毫秒级）——同一条 \(I\omega=\text{常量}\)。</div>
+    <div id="foot" class="embed-hide">对照 · 脉冲星：\(I\propto R^2\)，仅在等质量、同构形且角动量不变的理想缩放中，半径缩小会使 ω 增大；真实星体演化还涉及质量和角动量变化。模型关系为 \(I\omega=\text{常量}\)。</div>
   </div>
 
   <!-- 左面板底部公式条（KaTeX 行内，auto-render 处理 \( \) 定界符） -->
@@ -381,7 +381,7 @@
   </div>
   <div id="ledger" class="card">
     <div class="lt">两本账 · 难点提醒</div>
-    <div>角动量守恒不要求转动动能守恒——<b>L 不变时 \(K = L^2/2I\)</b>，I 变则 K 变，差额由内力做功补足。<span class="hl">守恒的是角动量，不是能量。</span></div>
+    <div>角动量守恒不要求转动动能守恒——<b>L 不变时 \(K = L^2/2I\)</b>，I 变则 K 变，差额由内力做功补足。<span class="hl">转动动能可变，总能量仍守恒。模型未计收臂过程的径向动能。</span></div>
   </div>
 </div>
 
@@ -634,6 +634,10 @@ const S = {
   Iref: 0                                           // 上次给 L 定值时的 I，用于判断收臂/伸臂
 };
 const inertia = r => S.I0 + 2 * S.m * r * r;         // I = I₀ + 2mr²
+// Only this course opts into the shared lecture-state protocol. A seek always
+// reconstructs the spoken model; paused hand operation remains available.
+const lecture = { received: false, mode: 'interactive', pageId: null,
+  pageTime: 0, playing: false, manual: false, steps: {} };
 
 /* ================= ω–I 双曲线小图 ================= */
 const chart = $('chart');
@@ -863,7 +867,7 @@ function drawExpA() {
   if (!fit) conc.innerHTML = '尚未记录数据点。<span class="dim">理论：M = 0 ⟹ L = Iω = 常量。</span>';
   else conc.innerHTML = '已记录 <b>' + fit.n + '</b> 点：L = Iω = <b>' + fmt(fit.Lm) + '</b> kg·m²/s　' +
     '最大相对偏差 <b>' + fit.dev.toFixed(2) + '%</b>' +
-    '<br><span class="dim">I 收小 ' + (EXPA[EXPA.length - 1].I / EXPA[0].I).toFixed(1) + ' 倍，ω 便放大多少倍——乘积纹丝不动。</span>';
+    '<br><span class="dim">I 收小 ' + (EXPA[0].I / EXPA[EXPA.length - 1].I).toFixed(1) + ' 倍，ω 便放大多少倍——乘积纹丝不动。</span>';
 }
 
 /* ================= 现场记录曲线（embed=record：L / ω / K 随臂长实时绘制） ================= */
@@ -943,9 +947,13 @@ function drawRec() {                                 // 横轴=臂长 r（向右
     }
     g.strokeStyle = col; g.lineWidth = 1.6; g.globalAlpha = 0.30; g.stroke(); g.globalAlpha = 1;
   };
-  g.setLineDash([6, 5]); theory(() => L0, YL, '#dc2626'); g.setLineDash([]);
-  theory(r => L0 / inertia(r), YL, '#1d4ed8');
-  theory(r => L0 * L0 / (2 * inertia(r)), YK, '#ea580c');
+  // The spoken record lesson draws measured points progressively. Showing the
+  // complete theoretical future curve first would defeat that demonstration.
+  if (!recordMode) {
+    g.setLineDash([6, 5]); theory(() => L0, YL, '#dc2626'); g.setLineDash([]);
+    theory(r => L0 / inertia(r), YL, '#1d4ed8');
+    theory(r => L0 * L0 / (2 * inertia(r)), YK, '#ea580c');
+  }
 
   /* 现场轨迹（粗线，随演示/拖动逐点重描）：按 r 排序连线，来回拖 r 不会折叠乱线 */
   const pts = [...REC.buckets.values()].sort((a, b) => b.r - a.r);   // r 从大到小（左→右）
@@ -1010,9 +1018,9 @@ function resetSim() {                                // 重置：按当前滑块
   setPaused(false);
 }
 
-$('btn-pause').addEventListener('click', () => setPaused(!S.paused));
-$('btn-reset').addEventListener('click', () => recordMode ? resetRecord() : resetSim());
-$('btn-demo').addEventListener('click', () => (S.demo ? stopDemo() : startDemo()));
+$('btn-pause').addEventListener('click', () => { lecture.manual = true; setPaused(!S.paused); });
+$('btn-reset').addEventListener('click', () => { lecture.manual = true; recordMode ? resetRecord() : resetSim(); });
+$('btn-demo').addEventListener('click', () => { lecture.manual = true; S.demo ? stopDemo() : startDemo(); });
 $('btn-record').addEventListener('click', expRecordA);
 $('btn-scan').addEventListener('click', expScanArm);
 $('btn-clear').addEventListener('click', expClearA);
@@ -1120,13 +1128,76 @@ function updateDemo(dt) {                            // 收臂 3s → 展臂 3s�
 function runAutoDemo() {                             // 先把臂长拉回最大，再约 7s 平滑收到最短并保持
   stopDemo();
   if (recordMode) recClear();                        // 记录档：清掉旧轨迹，现场重画
-  setR(1.00);
+  const from = recordMode ? 0.80 : 1.00;             // record 口播起点：I=2.92，ω=4，K=23.36
+  setR(from);
   S.omega = S.L / inertia(S.r);                      // 走与手动拖滑块相同的约束路径 ω = L/I
-  S.ademo = { t: 0, from: 1.00, to: 0.25, dur: 7 };
+  S.ademo = { t: 0, from, to: 0.25, dur: 7 };
+}
+function restoreLectureModel() {
+  S.mode = 'A'; S.omega0 = 4; S.m = 1.5; S.I0 = 1; S.M = 0; S.b = 0;
+  S.ademo = null; setR(0.80); resetSim();
+  if (recordMode) recClear();
+}
+function radiusAt(time, start, from) {
+  if (time < start) return 0.80;
+  return from + (0.25 - from) * smooth(clamp((time - start) / 7, 0, 1));
+}
+function applyLectureState(d) {
+  if (!Number.isFinite(d.pageTime) || !Number.isInteger(d.pageId) || !d.steps) return;
+  const newPage = !lecture.received || lecture.pageId !== d.pageId || lecture.mode !== d.mode;
+  const jumped = newPage || d.pageTime < lecture.pageTime - 0.01 || Math.abs(d.pageTime - lecture.pageTime) > 0.6;
+  const wasPlaying = lecture.playing;
+  const changedTime = Math.abs(d.pageTime - lecture.pageTime) > 0.001;
+  // A resumed narration returns to its reproducible model. Paused repeated
+  // messages do not overwrite the learner's sliders.
+  if (jumped || (!wasPlaying && d.playing)) { restoreLectureModel(); lecture.manual = false; }
+  Object.assign(lecture, { received: true, mode: d.mode, pageId: d.pageId,
+    pageTime: Math.max(0, d.pageTime), playing: Boolean(d.playing), steps: d.steps });
+  if (!jumped && !changedTime && !d.playing) return;
+  if (lecture.manual && !d.playing && !jumped) return;
+  S.ademo = null; stopDemo();
+  const demo = d.pageId === 4 || d.pageId === 11;
+  const from = d.pageId === 11 ? 0.80 : 0.80;
+  const start = Number(d.steps['2'] ?? Infinity);
+  const time = d.mode === 'static' && d.step >= 2 && demo ? start + 7 : lecture.pageTime;
+  setR(demo ? radiusAt(time, start, from) : 0.80);
+  S.omega = S.L / inertia(S.r);
+  // Angle and recorded curve derive from page-local time, independent of wall
+  // clock or message frequency. Back-drag removes all future points.
+  let angle = 0; const segments = Math.max(1, Math.ceil(time * 30));
+  const dt = time / segments;
+  for (let i = 0; i < segments; i++) {
+    const at = (i + 0.5) * dt;
+    angle += S.L / inertia(demo ? radiusAt(at, start, from) : 0.80) * dt;
+  }
+  rotor.rotation.y = angle;
+  if (recordMode) {
+    REC.buckets.clear(); recLast = null;
+    const elapsed = Math.max(0, Math.min(time - start, 7));
+    for (let i = 0; i <= Math.ceil(elapsed * 30); i++) {
+      const at = Math.min(i / 30, elapsed);
+      const r = time < start ? 0.80 : radiusAt(start + at, start, from);
+      const I = inertia(r), w = S.L / I;
+      recLast = { r, L: S.L, w, K: 0.5 * I * w * w };
+      REC.buckets.set(recBucket(r), recLast);
+    }
+    drawRec();
+  }
+  hist.length = 0; lastPt = { i: -1, w: 1e9 }; chartDirty = true;
+  setPaused(!d.playing);
+  // Private QA reads the actual model values, never an estimated storyboard.
+  document.body.dataset.lectureState = JSON.stringify({ pageId: d.pageId,
+    pageTime: lecture.pageTime, playing: lecture.playing, mode: d.mode,
+    r: S.r, omega: S.omega, L: S.L, I: inertia(S.r), K: 0.5 * inertia(S.r) * S.omega ** 2,
+    angle, points: recordMode ? REC.buckets.size : 0 });
 }
 window.addEventListener('message', e => {
   const d = e.data || {};
-  if (d.type === 'demo') runAutoDemo();
+  if (d.type === 'lecture-state') {
+    if (e.source !== window.parent || e.origin !== location.origin) return;
+    applyLectureState(d);
+  }
+  else if (d.type === 'demo') { lecture.manual = true; runAutoDemo(); }
   else if (d.type === 'reset') { S.ademo = null; recordMode ? resetRecord() : (setR(0.80), resetSim()); }
 });
 
@@ -1170,7 +1241,7 @@ function updateHUD() {
     } else if (I < S.Iref * 0.995) {
       msg = '收臂 → I 减小 → ω 增大，L = Iω 保持不变；动能增大来自拉臂做功';
     } else if (I > S.Iref * 1.005) {
-      msg = '伸臂 → I 增大 → ω 减小，L = Iω 保持不变；动能减小因手臂抵抗离心对外做功';
+      msg = '伸臂 → I 增大 → ω 减小，L = Iω 保持不变；转动动能减小，内力对转动做负功';
     } else {
       msg = '外力矩为零：L = Iω 守恒，I 与 ω 此消彼长，乘积不变';
     }
@@ -1199,7 +1270,9 @@ function fmt(x) {                                    // 3 位有效数字
 
 function tick() {
   const frameDt = Math.min(clock.getDelta(), 0.05);
-  const dt = S.paused ? 0 : frameDt;
+  // Narrated and static states are reconstructed by applyLectureState; free
+  // animation is reserved for stand-alone/manual operation.
+  const dt = S.paused || (lecture.received && !lecture.manual) ? 0 : frameDt;
 
   if (dt > 0) {
     if (S.demo) updateDemo(dt);
@@ -1234,8 +1307,8 @@ function tick() {
   if (S.demo) S.rDir = Math.sign(S.r - prevR) || S.rDir;
   prevR = S.r;
 
-  sampleChart(frameDt);
-  recSample(frameDt);                                // embed=record：现场记录 L/ω/K 轨迹
+  sampleChart(dt);
+  if (!lecture.received || lecture.manual) recSample(dt);
   if (!S.paused || chartDirty) { drawChart(); chartDirty = false; }
 
   controls.update();

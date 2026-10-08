@@ -12,9 +12,11 @@ __pycache__/
 # 密钥（绝不入库）
 .env
 .env.local
+.env.minimax.local
 interactive-lecture/.env.local
 
 # 归档与临时
+work/
 待处理/
 docs/qa/
 *.log
@@ -27,3 +29,7 @@ tools/*.zip
 # 系统杂项
 Thumbs.db
 .DS_Store
+
+# FFmpeg合并清单/静音垫为可再生成中间文件；页音频和时间轴继续保留
+lecture_factory/courses_web/*/audio/_list*.txt
+lecture_factory/courses_web/*/audio/_sil*.mp3

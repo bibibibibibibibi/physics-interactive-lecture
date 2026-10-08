@@ -12,6 +12,8 @@ import { COURSE_BASE } from '@/lib/course'
 
 interface Props {
   mediaRef: RefObject<HTMLAudioElement | null>
+  /** Quiz cards lock playback and navigation until the learner continues. */
+  playbackLocked?: boolean
   weblec: WebLec | null
   curPage: WebPage | null
   t: number
@@ -77,12 +79,46 @@ export function measureContentRect(outer: Element) {
   return { left: l, top: t, right: r, bottom: b, width: r - l, height: b - t }
 }
 
+type VideoClock = { time: number; playing: boolean; rate: number; readTime?: () => number }
+
+/** Opt-in audio clock. Independent component keeps Element hooks unconditional. */
+function SyncedVideo({ src, clock }: { src: string; clock: VideoClock }) {
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const sync = useCallback(() => {
+    const video = videoRef.current
+    if (!video) return
+    const playbackRate = Number.isFinite(clock.rate) && clock.rate > 0 ? clock.rate : 1
+    video.playbackRate = playbackRate
+    if (!Number.isFinite(video.duration) || video.duration <= 0) {
+      video.pause()
+      return
+    }
+    const liveTime = clock.readTime?.() ?? clock.time
+    const time = Number.isFinite(liveTime) ? Math.max(0, liveTime) : 0
+    const target = time % video.duration
+    const delta = Math.abs(video.currentTime - target)
+    const drift = Math.min(delta, Math.abs(video.duration - delta))
+    // Use wall-clock tolerance at higher rates and let an in-flight seek finish.
+    if (!clock.playing || (!video.seeking && drift > 0.12 * playbackRate)) video.currentTime = target
+    if (clock.playing) void video.play().catch(() => {})
+    else video.pause()
+  }, [clock.time, clock.playing, clock.rate, clock.readTime])
+  useEffect(sync, [sync, src])
+  useEffect(() => {
+    const video = videoRef.current
+    return () => video?.pause()
+  }, [src])
+  return <video ref={videoRef} src={src} muted loop playsInline onLoadedMetadata={sync}
+    style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 8 }} />
+}
+
 /** 单个元素渲染（SlidesOnly 静态导出也复用） */
-export function Element({ el, t, iframeRef, onIframeLoad }: {
+export function Element({ el, t, iframeRef, onIframeLoad, videoClock }: {
   el: WebElement; t: number
   /** html 元素用：iframe 引用回调与加载完成回调（步进消息补发兜底） */
   iframeRef?: (node: HTMLIFrameElement | null) => void
   onIframeLoad?: () => void
+  videoClock?: VideoClock
 }) {
   const base: React.CSSProperties = {
     position: 'absolute', left: el.x, top: el.y, width: el.w,
@@ -97,11 +133,13 @@ export function Element({ el, t, iframeRef, onIframeLoad }: {
   if (el.type === 'img') {
     return (
       <div style={base}>
-        <img src={el.src?.startsWith('data:') ? el.src : `${COURSE_BASE}${el.src}`} style={{ width: '100%', height: '100%', objectFit: 'contain' }} alt="" />
+        <img src={el.src?.startsWith('data:') ? el.src : `${COURSE_BASE}${el.src}`}
+          style={{ width: '100%', height: '100%', objectFit: el.fit ?? 'contain', objectPosition: el.objectPosition ?? 'center' }} alt="" />
       </div>
     )
   }
   if (el.type === 'video') {
+    if (el.timelineSync && videoClock) return <div style={base}><SyncedVideo src={`${COURSE_BASE}${el.src}`} clock={videoClock} /></div>
     /** 嵌入短视频：静音自动循环，cover 充满；muted 无自动播放限制，随 step 挂载即播 */
     return (
       <div style={base}>
@@ -164,7 +202,7 @@ export function Element({ el, t, iframeRef, onIframeLoad }: {
 export default function SlideStage({
   mediaRef, weblec, curPage, t, onTimeUpdate, laserTarget, underlines, onOpenBullet,
   rate, onRateChange, shownPose, character, characterName, charactersSwitchable, onSwitchCharacter,
-  navOpen, onToggleNav,
+  navOpen, onToggleNav, playbackLocked = false,
 }: Props) {
   const stageRef = useRef<HTMLDivElement>(null)
   const innerRef = useRef<HTMLDivElement>(null)
@@ -225,7 +263,7 @@ export default function SlideStage({
   useEffect(() => {
     if (!curPage) return
     curPage.elements.forEach((el, i) => {
-      if (el.type !== 'html' || !el.msgs) return
+      if (el.type !== 'html' || !el.msgs || el.timelineSync) return
       for (const [k, msg] of Object.entries(el.msgs)) {
         const key = `${curPage.id}:${i}:${k}`
         if (curStep >= +k) {
@@ -238,9 +276,25 @@ export default function SlideStage({
       }
     })
   }, [curPage, curStep])
+  /** A course must opt in. Older iframe message behavior is unchanged. */
+  function sendHtmlTimeline(elIdx: number, el: WebElement) {
+    if (el.type !== 'html' || !el.timelineSync || !curPage) return
+    htmlRefs.current.get(elIdx)?.contentWindow?.postMessage({
+      type: 'lecture-state', mode: 'interactive', pageId: curPage.id,
+      pageTime: Math.max(0, t - curPage.t_start), step: curStep, playing,
+      steps: Object.fromEntries(Object.entries(curPage.stepTimes)
+        .map(([k, v]) => [k, v - curPage.t_start])),
+    }, window.location.origin)
+  }
+  useEffect(() => {
+    curPage?.elements.forEach((el, i) => sendHtmlTimeline(i, el))
+  }, [curPage, curStep, t, playing])
+
   /** iframe 加载完成兜底：补发当前已 reveal 步的消息（懒加载晚于步进的场景） */
   function flushHtmlMsgs(elIdx: number, el: WebElement) {
-    if (el.type !== 'html' || !el.msgs) return
+    if (el.type !== 'html') return
+    sendHtmlTimeline(elIdx, el)
+    if (!el.msgs || el.timelineSync) return
     const win = htmlRefs.current.get(elIdx)?.contentWindow
     if (!win) return
     for (const [k, msg] of Object.entries(el.msgs)) {
@@ -291,6 +345,7 @@ export default function SlideStage({
     : -1
   const curSection = sections && curSectionIdx >= 0 ? sections[curSectionIdx] : null
   function seekTo(time: number, autoplay = false) {
+    if (playbackLocked) return
     const a = mediaRef.current
     if (!a) return
     a.currentTime = time
@@ -317,6 +372,7 @@ export default function SlideStage({
     }
   }
   function togglePlay() {
+    if (playbackLocked) return
     const a = mediaRef.current
     if (!a) return
     if (a.paused) a.play(); else a.pause()
@@ -327,6 +383,7 @@ export default function SlideStage({
     const onKey = (e: KeyboardEvent) => {
       const tag = (e.target as HTMLElement)?.tagName
       if (tag === 'INPUT' || tag === 'TEXTAREA') return
+      if (playbackLocked && (e.code === 'Space' || e.key === ' ' || e.key === 'ArrowRight' || e.key === 'ArrowLeft')) { e.preventDefault(); return }
       if (e.code === 'Space' || e.key === ' ') { e.preventDefault(); togglePlay() }
       else if (e.key === 'ArrowRight') stepNav(1)
       else if (e.key === 'ArrowLeft') stepNav(-1)
@@ -354,7 +411,10 @@ export default function SlideStage({
           style={{ background: th.background }}>
           <audio ref={mediaRef} src={`${COURSE_BASE}audio.mp3${weblec?.build_ts ? `?v=${weblec.build_ts}` : ''}`} preload="auto"
             onTimeUpdate={e => onTimeUpdate((e.target as HTMLAudioElement).currentTime)}
-            onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} />
+            onPlay={e => {
+              if (playbackLocked) (e.target as HTMLAudioElement).pause()
+              else setPlaying(true)
+            }} onPause={() => setPlaying(false)} />
           {/* 1920×1080 设计坐标舞台 */}
           <div style={{
             position: 'absolute', width: VIDEO_W, height: VIDEO_H,
@@ -399,8 +459,13 @@ export default function SlideStage({
               el.step <= curStep
                 ? <div key={`${curPage.id}-${i}`} data-elidx={i} className="wl-in">
                     <Element el={el} t={t}
+                      videoClock={el.type === 'video' && el.timelineSync ? {
+                        time: Math.max(0, t - (curPage.stepTimes[String(el.step)] ?? curPage.t_start)), playing, rate,
+                        readTime: () => Math.max(0, (mediaRef.current?.currentTime ?? t)
+                          - (curPage.stepTimes[String(el.step)] ?? curPage.t_start)),
+                      } : undefined}
                       iframeRef={el.type === 'html' ? (n => { n ? htmlRefs.current.set(i, n) : htmlRefs.current.delete(i) }) : undefined}
-                      onIframeLoad={el.type === 'html' && el.msgs ? () => flushHtmlMsgs(i, el) : undefined} />
+                      onIframeLoad={el.type === 'html' && (el.msgs || el.timelineSync) ? () => flushHtmlMsgs(i, el) : undefined} />
                   </div>
                 : null
             ))}
@@ -480,8 +545,8 @@ export default function SlideStage({
         <RatePill rate={rate} onChange={onRateChange} containerRef={innerRef} />
         {/* 全屏按钮：鼠标活动时显示，空闲 3s 自动收起 */}
         <button onClick={toggleFs}
-          className={`absolute z-20 rounded-full bg-black/45 px-1.5 py-0.5 text-base leading-none text-slate-100 backdrop-blur-sm transition-opacity duration-300 hover:bg-black/70 ${
-            fs ? 'bottom-24 right-1' : 'bottom-0.5 -right-1'
+          className={`absolute z-40 rounded-full bg-black/45 px-1.5 py-0.5 text-base leading-none text-slate-100 backdrop-blur-sm transition-opacity duration-300 hover:bg-black/70 ${
+            fs ? 'bottom-24 right-1' : 'bottom-[7%] -right-1'
           } ${fsBtnOn ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
           title={fs ? '退出全屏（F）' : '全屏（F），含讲师与标注'}>
           {fs ? '⤡' : '⛶'}
