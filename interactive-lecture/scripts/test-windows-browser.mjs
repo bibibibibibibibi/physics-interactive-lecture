@@ -6,11 +6,12 @@ import { createServer } from 'node:net'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { createHash } from 'node:crypto'
 import { chromium } from 'playwright'
 
 const root = fileURLToPath(new URL('../', import.meta.url))
 const repo = path.resolve(root, '..')
-const dist = path.join(root, 'dist')
+const dist = process.env.LECTURE_DIST_DIR ? path.resolve(process.env.LECTURE_DIST_DIR) : path.join(root, 'dist')
 const output = path.join(repo, 'work/project-sync/browser-smoke', new Date().toISOString().replace(/[:.]/g, '-'))
 await mkdir(output, { recursive: true })
 const isWindows = process.platform === 'win32'
@@ -33,7 +34,12 @@ server.on('error', error => { log += String(error) })
 let browser
 let page
 const evidence = { platform: process.platform, channel: executablePath ? 'configured-executable' : channel, url: `http://127.0.0.1:${port}`, courses: [], operations: [], scope: 'Deployment and browser smoke only; no complete course interaction, human listening or teaching approval.' }
+evidence.deployment_directory = dist
+evidence.commit = process.env.GITHUB_SHA || null
+evidence.entry_sha256 = createHash('sha256').update(await readFile(path.join(dist, 'index.html'))).digest('hex')
 const errors = []
+const expectedFailures = new Set()
+evidence.expected_data_failures = []
 async function mediaSnapshot() {
   if (!page || page.isClosed()) return null
   return page.evaluate(() => ({
@@ -56,6 +62,7 @@ try {
   }
   assert.ok(ready, `Server did not become ready: ${log}`)
   browser = await chromium.launch({ ...(executablePath ? { executablePath } : { channel }), headless: true })
+  evidence.browser_version = browser.version()
   const context = await browser.newContext({ viewport: { width: 1440, height: 900 } })
   await context.addInitScript(() => {
     const trace = window.__lectureMediaTrace = []
@@ -84,7 +91,10 @@ try {
   page = await context.newPage()
   page.on('pageerror', error => errors.push(String(error)))
   page.on('response', response => {
-    if (response.url().startsWith(base + '/') && response.status() >= 400 && !response.url().includes('/api/ask')) errors.push(`${response.status()} ${response.url()}`)
+    if (response.url().startsWith(base + '/') && response.status() >= 400 && !response.url().includes('/api/ask')) {
+      if (expectedFailures.delete(response.url())) evidence.expected_data_failures.push({ status: response.status(), url: response.url() })
+      else errors.push(`${response.status()} ${response.url()}`)
+    }
   })
   await page.goto(`${base}/?menu=special`)
   const menu = JSON.parse(await readFile(path.join(dist, 'weblec/courses_special.json'), 'utf8'))
@@ -113,7 +123,8 @@ try {
   evidence.before_first_play = await mediaSnapshot()
   await page.locator('button[title="播放/暂停（空格）"]').click()
   evidence.after_first_play = await mediaSnapshot()
-  await page.waitForFunction(() => { const a = document.querySelector('audio'); return a && !a.paused && a.currentTime > 1 })
+  // A short start can pass before a delayed JSON response resets the audio src.
+  await page.waitForFunction(() => { const a = document.querySelector('audio'); return a && !a.paused && a.currentTime > 4 })
   await page.locator('button[title="播放/暂停（空格）"]').click()
   assert.equal(await page.locator('audio').evaluate(audio => audio.paused), true)
   await page.locator('audio').evaluate(audio => { audio.currentTime = 0.25 })
@@ -122,7 +133,80 @@ try {
   await page.locator('button[title="播放/暂停（空格）"]').click()
   evidence.operations.push('sp1 classroom UI play/pause and audio API backward seek then resume')
   await page.screenshot({ path: path.join(output, 'sp1-classroom.png') })
+  evidence.delayed_data_cases = []
+  for (const course of ['sp1', 'shm']) {
+    let releaseData
+    let reportRequest
+    const held = new Promise(resolve => { releaseData = resolve })
+    const requested = new Promise(resolve => { reportRequest = resolve })
+    const pattern = `**/weblec/${course}/weblec.json?*`
+    await page.route(pattern, async route => {
+      reportRequest()
+      await held
+      await route.continue()
+    })
+    await page.goto(`${base}/?course=${course}`)
+    let timer
+    try {
+      await Promise.race([requested, new Promise((_, reject) => { timer = setTimeout(() => reject(new Error(`No course request for ${course}`)), 20000) })])
+      await page.getByRole('heading', { name: '正在加载课件…', exact: true }).waitFor()
+      assert.equal(await page.locator('audio').count(), 0, 'Audio must not mount before its version is bound')
+      assert.equal(await page.locator('button[title="播放/暂停（空格）"]').count(), 0, 'Playback must not be offered before course data')
+      evidence.delayed_data_cases.push({ course, held_state: await mediaSnapshot() })
+    } finally { clearTimeout(timer); releaseData() }
+    await page.locator('button[title="播放/暂停（空格）"]').waitFor({ state: 'visible' })
+    await page.locator('button[title="播放/暂停（空格）"]').click()
+    await page.waitForFunction(() => { const a = document.querySelector('audio'); return a && !a.paused && a.currentTime > 4 })
+    const state = await mediaSnapshot()
+    const data = JSON.parse(await readFile(path.join(dist, 'weblec', course, 'weblec.json'), 'utf8'))
+    assert.ok(state.media[0].currentSrc.endsWith(`audio.mp3?v=${data.build_ts}`))
+    assert.equal(state.media[0].error, null)
+    assert.ok(!state.trace.some(item => ['src-change', 'unhandledrejection', 'error'].includes(item.event)), 'First playback must keep one bound source')
+    evidence.delayed_data_cases.at(-1).single_click_playback = state
+    await page.locator('button[title="播放/暂停（空格）"]').click()
+    await page.unroute(pattern)
+  }
+  evidence.operations.push('Special and ordinary classrooms hold delayed JSON without audio, then sustain a single-click playback with one versioned source')
+  for (const failure of ['http-503', 'invalid-json']) {
+    const pattern = '**/weblec/sp1/weblec.json?*'
+    await page.route(pattern, route => {
+      if (failure === 'http-503') expectedFailures.add(route.request().url())
+      return route.fulfill({ status: failure === 'http-503' ? 503 : 200, contentType: 'application/json', body: '{invalid-json' })
+    })
+    await page.goto(`${base}/?course=sp1`)
+    await page.getByRole('heading', { name: '课件读取失败', exact: true }).waitFor()
+    assert.equal(await page.locator('audio').count(), 0)
+    assert.equal(expectedFailures.size, 0)
+    await page.unroute(pattern)
+    await page.getByRole('button', { name: '重新加载', exact: true }).click()
+    await page.locator('button[title="播放/暂停（空格）"]').waitFor({ state: 'visible' })
+    await page.locator('button[title="播放/暂停（空格）"]').click()
+    await page.waitForFunction(() => { const a = document.querySelector('audio'); return a && !a.paused && a.currentTime > 4 })
+    await page.locator('button[title="播放/暂停（空格）"]').click()
+    evidence.operations.push(`${failure}: visible failure without audio, then UI reload and sustained first-click playback`)
+  }
   const sp1 = JSON.parse(await readFile(path.join(dist, 'weblec/sp1/weblec.json'), 'utf8'))
+  const quiz = sp1.slides.find(slide => slide.interactions?.length)?.interactions[0]
+  assert.ok(quiz && quiz.options && Number.isInteger(quiz.answer))
+  await page.getByRole('button', { name: '2.5x', exact: true }).click()
+  assert.equal(await page.locator('audio').evaluate(a => a.playbackRate), 2.5)
+  await page.locator('audio').evaluate((a, time) => { a.currentTime = time }, quiz.t - 1)
+  await page.waitForFunction(time => { const a = document.querySelector('audio'); return a && !a.seeking && Math.abs(a.currentTime - time) < 0.2 }, quiz.t - 1)
+  await page.locator('button[title="播放/暂停（空格）"]').click()
+  await page.getByText('随堂互动 · 选择题', { exact: true }).waitFor()
+  const lockedTime = await page.locator('audio').evaluate(a => a.currentTime)
+  assert.equal(await page.locator('audio').evaluate(a => a.paused), true)
+  await page.keyboard.press('Space')
+  await page.waitForTimeout(500)
+  assert.equal(await page.locator('audio').evaluate(a => a.paused), true)
+  assert.ok(Math.abs(await page.locator('audio').evaluate(a => a.currentTime) - lockedTime) < 0.1)
+  await page.getByRole('button').filter({ hasText: quiz.options[quiz.answer] }).click()
+  await page.getByText('回答正确！', { exact: true }).waitFor()
+  await page.getByRole('button', { name: '继续播放 ▶', exact: true }).click()
+  await page.waitForFunction(time => { const a = document.querySelector('audio'); return a && !a.paused && a.currentTime > time + 1 }, lockedTime)
+  await page.locator('button[title="播放/暂停（空格）"]').click()
+  evidence.quiz_after_loading = await mediaSnapshot()
+  evidence.operations.push('sp1 first quiz at 2.5x naturally pauses, locks Space, accepts correct answer and resumes via UI')
   const videoPage = sp1.slides.find(slide => slide.elements.some(element => element.type === 'html' && element.src?.startsWith('synced-video.html')))
   assert.ok(videoPage, 'sp1 native video wrapper must exist')
   const videoElement = videoPage.elements.find(element => element.type === 'html' && element.src?.startsWith('synced-video.html'))

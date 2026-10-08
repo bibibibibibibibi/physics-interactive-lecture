@@ -95,6 +95,7 @@ function Lecture() {
     }
   }, [quizHost])
   const [weblec, setWeblec] = useState<WebLec | null>(null)
+  const [loadFailed, setLoadFailed] = useState(false)
   /** 版式质检模式：地址栏带 ?qa=1 时自动巡检全部页面 */
   const qaMode = useMemo(() => new URLSearchParams(window.location.search).has('qa'), [])
   const [t, setT] = useState(0)
@@ -137,8 +138,16 @@ function Lecture() {
   }
 
   useEffect(() => {
-    // 加时间戳防旧缓存：weblec.json 拿到 build_ts 后，音频/图片再按 build_ts 戳
-    fetch(`${COURSE_BASE}weblec.json?t=${Date.now()}`).then(r => r.json()).then(setWeblec)
+    // Bind the version before mounting audio: changing its src interrupts playback.
+    const controller = new AbortController()
+    fetch(`${COURSE_BASE}weblec.json?t=${Date.now()}`, { signal: controller.signal })
+      .then(r => {
+        if (!r.ok) throw new Error('Course data unavailable')
+        return r.json() as Promise<WebLec>
+      })
+      .then(setWeblec)
+      .catch(() => { if (!controller.signal.aborted) setLoadFailed(true) })
+    return () => controller.abort()
   }, [])
 
   /** 姿态/激光状态机用的时间轴（激光时刻转成页内相对值） */
@@ -401,6 +410,15 @@ function Lecture() {
   const navCurrentId = sections && curPage
     ? sections.reduce((acc, s, i) => (s.page <= curPage.id ? i + 1 : acc), 0)
     : curTime?.id
+
+  if (!weblec) return (
+    <div className="flex min-h-screen flex-col items-center justify-center gap-5 bg-[#0b1f38] px-6 text-center text-slate-100">
+      <h1 className="text-2xl font-bold">{loadFailed ? '课件读取失败' : '正在加载课件…'}</h1>
+      {loadFailed && <button onClick={() => window.location.reload()}
+        className="rounded bg-[#ffb703] px-4 py-2 font-bold text-[#0b1f38]">重新加载</button>}
+      <a href="/" className="text-slate-400 hover:text-slate-200">← 课程列表</a>
+    </div>
+  )
 
   return (
     <div className="min-h-screen bg-[#0b1f38] text-slate-100">
