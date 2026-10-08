@@ -31,7 +31,21 @@ server.stdout.on('data', value => { log += value.toString() })
 server.stderr.on('data', value => { log += value.toString() })
 server.on('error', error => { log += String(error) })
 let browser
+let page
 const evidence = { platform: process.platform, channel: executablePath ? 'configured-executable' : channel, url: `http://127.0.0.1:${port}`, courses: [], operations: [], scope: 'Deployment and browser smoke only; no complete course interaction, human listening or teaching approval.' }
+const errors = []
+async function mediaSnapshot() {
+  if (!page || page.isClosed()) return null
+  return page.evaluate(() => ({
+    url: location.href, title: document.querySelector('h1')?.textContent,
+    media: [...document.querySelectorAll('audio,video')].map(a => ({
+      tag: a.tagName, src: a.getAttribute('src'), currentSrc: a.currentSrc,
+      paused: a.paused, time: a.currentTime, duration: a.duration,
+      readyState: a.readyState, networkState: a.networkState,
+      error: a.error && { code: a.error.code, message: a.error.message },
+    })), trace: window.__lectureMediaTrace,
+  }))
+}
 try {
   const base = evidence.url
   let ready = false
@@ -43,14 +57,31 @@ try {
   assert.ok(ready, `Server did not become ready: ${log}`)
   browser = await chromium.launch({ ...(executablePath ? { executablePath } : { channel }), headless: true })
   const context = await browser.newContext({ viewport: { width: 1440, height: 900 } })
+  await context.addInitScript(() => {
+    const trace = window.__lectureMediaTrace = []
+    const add = (event, a, detail) => {
+      trace.push({ event, ms: performance.now(), ...(a ? {
+        src: a.getAttribute('src'), currentSrc: a.currentSrc, paused: a.paused,
+        time: a.currentTime, readyState: a.readyState, networkState: a.networkState,
+        error: a.error && { code: a.error.code, message: a.error.message },
+      } : {}), detail })
+      if (trace.length > 200) trace.shift()
+    }
+    for (const event of ['loadstart', 'abort', 'emptied', 'loadedmetadata', 'canplay', 'play', 'playing', 'pause', 'waiting', 'stalled', 'error', 'seeked']) {
+      document.addEventListener(event, e => { if (e.target instanceof HTMLMediaElement) add(event, e.target) }, true)
+    }
+    window.addEventListener('unhandledrejection', e => add('unhandledrejection', null, String(e.reason)))
+    new MutationObserver(records => {
+      for (const record of records) if (record.type === 'attributes' && record.target instanceof HTMLMediaElement) add('src-change', record.target, record.oldValue)
+    }).observe(document, { subtree: true, attributes: true, attributeFilter: ['src'], attributeOldValue: true })
+  })
   // Keep the test local. Remote optional links are outside this transport contract.
   await context.route('**/*', async route => {
     const url = route.request().url()
     if (/^https?:/.test(url) && !url.startsWith(base + '/')) return route.abort()
     return route.continue()
   })
-  const page = await context.newPage()
-  const errors = []
+  page = await context.newPage()
   page.on('pageerror', error => errors.push(String(error)))
   page.on('response', response => {
     if (response.url().startsWith(base + '/') && response.status() >= 400 && !response.url().includes('/api/ask')) errors.push(`${response.status()} ${response.url()}`)
@@ -79,7 +110,9 @@ try {
   }
   await page.goto(`${base}/?course=sp1`)
   await page.locator('button[title="播放/暂停（空格）"]').waitFor({ state: 'visible' })
+  evidence.before_first_play = await mediaSnapshot()
   await page.locator('button[title="播放/暂停（空格）"]').click()
+  evidence.after_first_play = await mediaSnapshot()
   await page.waitForFunction(() => { const a = document.querySelector('audio'); return a && !a.paused && a.currentTime > 1 })
   await page.locator('button[title="播放/暂停（空格）"]').click()
   assert.equal(await page.locator('audio').evaluate(audio => audio.paused), true)
@@ -133,8 +166,11 @@ try {
 } catch (error) {
   evidence.result = 'failed'
   evidence.failure = String(error)
+  evidence.failure_state = await mediaSnapshot().catch(error => ({ snapshot_failure: String(error) }))
+  if (page && !page.isClosed()) await page.screenshot({ path: path.join(output, 'failure.png') }).catch(error => { evidence.screenshot_failure = String(error) })
   throw error
 } finally {
+  evidence.browser_errors = errors
   if (browser) await browser.close().catch(error => { evidence.browser_close_failure = String(error); process.exitCode = 1 })
   if (server.exitCode === null) {
     if (isWindows) await exec('taskkill.exe', ['/PID', String(server.pid), '/T', '/F']).catch(error => { evidence.stop_failure = String(error); process.exitCode = 1 })
