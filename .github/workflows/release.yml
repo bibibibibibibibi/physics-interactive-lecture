@@ -1,0 +1,41 @@
+name: Package classroom release
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing Git tag to package
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      RELEASE_TAG: ${{ inputs.tag }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.tag }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: interactive-lecture/package-lock.json
+      - name: Install locked dependencies
+        working-directory: interactive-lecture
+        run: npm ci --no-audit --no-fund
+      - name: Build and package from source
+        run: python -B interactive-lecture/scripts/package-release.py --build
+      - name: Create draft release for review
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$RELEASE_TAG" work/releases/*-release.zip --verify-tag --draft --title "$RELEASE_TAG" --notes "由所选标签的源码构建；包含课堂启动器和教师放映页。技术文件检查不代替完整人工听审与教师核准。"

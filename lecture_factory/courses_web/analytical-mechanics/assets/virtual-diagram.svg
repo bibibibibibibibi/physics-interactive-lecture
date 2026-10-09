@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="770" height="685" viewBox="0 0 770 685" role="img" aria-labelledby="title desc">
+  <title id="title">固定时间的切向虚位移</title>
+  <desc id="desc">同一时刻支点 O(t) 固定。位置矢量从支点指向当前构型，虚位移沿圆周切线，与位置矢量严格垂直。相邻允许构型的角差和虚位移箭头放大示意。</desc>
+  <defs>
+    <marker id="position-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#244b88"/></marker>
+    <marker id="variation-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#167a70"/></marker>
+    <marker id="angle-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#cf8435"/></marker>
+  </defs>
+  <style>
+    text {font-family:"PingFang SC","Microsoft YaHei",sans-serif;fill:#172b45;font-size:30px}
+    .math {font-family:"Times New Roman",serif;font-style:italic;font-size:34px}
+    .vector {font-family:"Times New Roman",serif;font-style:italic;font-weight:bold;font-size:36px}
+    .muted {fill:#52647a;font-size:24px}
+  </style>
+  <rect width="770" height="685" rx="18" fill="#f3f7fc"/>
+  <text x="55" y="48">同一时刻 t：比较相邻允许构型</text>
+  <path d="M240 112H320M280 112V145" fill="none" stroke="#172b45" stroke-width="4"/>
+  <circle cx="280" cy="145" r="7" fill="#172b45"/>
+  <text x="173" y="157" class="math">O(t)</text>
+  <path d="M373.174857 492.733297A360 360 0 0 0 534.558441 399.558441" fill="none" stroke="#c1cedd" stroke-width="3" stroke-dasharray="7 7"/>
+  <path d="M280 145L476.070053 446.921405" fill="none" stroke="#a4b0be" stroke-width="2" stroke-dasharray="7 7"/>
+  <path d="M280 145L460 456.769145" fill="none" stroke="#244b88" stroke-width="3.5" marker-end="url(#position-arrow)"/>
+  <text x="333" y="357" class="vector" style="fill:#244b88">r</text>
+  <path d="M347.5 261.913430A135 135 0 0 0 353.526270 258.220527" fill="none" stroke="#cf8435" stroke-width="2.5" marker-end="url(#angle-arrow)"/>
+  <path d="M357 260L386 252" fill="none" stroke="#cf8435" stroke-width="1.5"/>
+  <text x="391" y="262" class="math" style="fill:#cf8435">δθ</text>
+  <path d="M460 456.769145L581.243556 386.769145" fill="none" stroke="#167a70" stroke-width="4" marker-end="url(#variation-arrow)"/>
+  <text x="594" y="386" class="vector" style="fill:#167a70">δr</text>
+  <path d="M449.607695 462.769145L443.607695 452.376840L454 446.376840" fill="none" stroke="#52647a" stroke-width="2"/>
+  <circle cx="460" cy="456.769145" r="8" fill="#cf8435"/>
+  <text x="482" y="493" style="font-size:27px">当前构型</text>
+  <text x="55" y="574">δt = 0：支点位置固定</text>
+  <text x="55" y="617">r 从当前支点量起；δr · r = 0</text>
+  <text x="55" y="658" class="muted">虚位移箭头与角差均放大；取一阶近似。</text>
+</svg>

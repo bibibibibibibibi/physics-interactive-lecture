@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>分析力学交互实验</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:"PingFang SC","Microsoft YaHei",sans-serif;color:#172b45;background:#f5f8fc}body{padding:14px}header{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:12px}h1{font-size:27px;margin:0}header span{font-size:14px;color:#52647a}.layout{display:grid;grid-template-columns:minmax(0,1fr) 285px;gap:14px;height:calc(100vh - 72px);min-height:510px}.scene{border:1px solid #d7e2ef;border-radius:16px;background:white;display:flex;flex-direction:column;overflow:hidden}.canvas-wrap{flex:1;min-height:280px;position:relative}canvas{width:100%;height:100%;display:block;touch-action:none}.explanation{padding:12px 16px;border-top:1px solid #e3eaf3;font-size:17px;line-height:1.65;min-height:86px}.controls{background:#fff;border:1px solid #d7e2ef;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:9px;overflow:auto}label{display:block;font-size:22px;font-weight:600}label .value{float:right;font-variant-numeric:tabular-nums;color:#244b88}input[type=range]{width:100%;accent-color:#244b88;min-height:27px;margin:6px 0 0}select{width:100%;font-size:16px;border:1px solid #b8c8dc;border-radius:7px;background:#fff;padding:7px;margin-top:7px}button{border:0;border-radius:8px;padding:11px 9px;font-family:inherit;font-size:16px;font-weight:600;cursor:pointer;background:#244b88;color:white}button.secondary{background:#eaf0f8;color:#244b88}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #f4b942;outline-offset:2px}.buttons{display:flex;gap:8px}.buttons button{flex:1}.readings{border-top:1px solid #dce6f1;padding-top:10px;font-size:21px;line-height:1.6;font-variant-numeric:tabular-nums}.readings strong{color:#167a70}.note{font-size:18px;line-height:1.6;color:#52647a}.warn{color:#a34e12;background:#fff4e6;border-radius:7px;padding:8px}.energy{margin:4px 0;height:10px;border-radius:9px;background:#edf2f7;overflow:hidden}.energy i{display:block;height:100%;background:#167a70}.paused{color:#52647a;font-size:14px}body.embed{padding:12px}body.embed header span{display:none}@media(max-width:620px){.layout{grid-template-columns:1fr;height:auto;min-height:0}.canvas-wrap{height:350px;flex:none}.controls{overflow:visible;display:grid;grid-template-columns:1fr 1fr}.buttons,.readings,.note{grid-column:1/-1}header span{display:none}}
+</style>
+</head>
+<body>
+<header><h1 id="title"></h1><button class="secondary" type="button" id="expand">放大实验</button></header>
+<div class="layout"><section class="scene"><div class="canvas-wrap"><canvas id="canvas" aria-label="力学系统运动示意图"></canvas></div><div id="explanation" class="explanation"></div></section><aside class="controls" aria-label="实验参数"><div id="inputs"></div><div class="buttons"><button id="play" type="button">开始</button><button class="secondary" id="reset" type="button">重置</button></div><div id="readings" class="readings" aria-live="off"></div><div id="note" class="note"></div></aside></div>
+<script src="sim-physics.js"></script>
+<script>
+'use strict';
+const P=MechanicsModels, params=new URLSearchParams(location.search);
+if(params.has('embed'))document.body.classList.add('embed');
+const specs={
+ pendulum:{title:'单摆：一个角度确定构型',inputs:[['l','摆长 l',.4,2.5,.1,1,'m'],['m','质量 m',.5,4,.1,1,'kg'],['angle','初始摆角',5,100,1,35,'°']],explain:'蓝色圆弧表示长度约束。橙色切线表示允许虚位移方向。改变质量，比较同一初始条件下的运动。',note:'定长无质量杆，质点摆。使用完整 sin θ 方程；能量柱比较动能与势能。'},
+ virtual:{title:'虚位移与实位移',inputs:[['angle','当前摆角',-65,65,1,30,'°'],['speed','支点速度',0,2,.1,0,'m/s'],['delta','角度微变',-4,4,1,2,'°']],explain:'绿色 δr：同一时刻的切向虚位移。红色：支点在 dt 内的平移。蓝色 dr：两部分相加得到的一阶实位移。',note:'取 l = 1 m，dt = 0.12 s，并令 dθ = δθ。箭头统一放大 1.8 倍；一阶近似，|δθ|≤4°。δt = 0，移动支点仍可构成理想约束。'},
+ rolling:{title:'上方切点施力：光滑与无滑',inputs:[['m','圆盘质量 m',.5,4,.1,1,'kg'],['force','水平力 F',.2,5,.1,1,'N'],['k','I / (ma²)',.25,1,.05,.5,''],['mu','静摩擦系数 μₛ',0,.6,.01,.3,'']],select:['contact','接触条件',[['roll','无滑滚动'],['smooth','光滑地面']]],explain:'外力始终在当前上方切点水平向右作用，顺时针角度为正。无滑时该切点的瞬时水平速度是质心的两倍。',note:'半径 a = 0.5 m。k = 0.5 对应均质圆盘。无滑模式仅在静摩擦足够时开始，摩擦不足时提示模型不适用。'},
+ atwood:{title:'Atwood 机：有质量的滑轮',inputs:[['m1','左侧质量 m₁',.5,4,.1,1,'kg'],['m2','右侧质量 m₂',.5,4,.1,2,'kg'],['M','滑轮质量 M',0,6,.1,1,'kg']],explain:'取右侧向下为 x 的正方向。绳不可伸长、与均质圆盘滑轮无滑动。先预测增大 M 会怎样，再调节参数。',note:'R = 0.3 m，Iₚ = MR²/2，模拟时间目标1×，帧卡顿会减慢。场景统一180 px/m，±0.7 m是示意行程边界。无滑为题设，未给摩擦参数。到达示意装置行程边界后暂停；不会自动循环回到起点。'},
+ chain:{title:'铁链：先判断启动，再算滑动',inputs:[['fraction','初始悬垂 x₀/l',.05,.9,.01,.35,''],['muS','静摩擦 μₛ',0,.8,.01,.3,''],['muK','滑动摩擦 μₖ',0,.8,.01,.2,'']],explain:'悬垂重力要超过桌面最大静摩擦才会从静止自行启动。开始滑动后，用 μₖ 计算非保守广义力。',note:'l = 2 m，m = 1 kg，初速度为零。若 μₖ > μₛ，参数不符合本模型常用假设，会阻止启动。停住或全部滑出后暂停。'},
+ wedge:{title:'移动斜面：两个坐标相互耦合',inputs:[['m','滑块质量 m',.5,3,.1,1,'kg'],['M','斜面质量 M',.5,10,.1,3,'kg'],['alpha','倾角 α',15,60,1,30,'°']],explain:'斜面水平坐标 x 向右为正，滑块沿斜面向右下的相对位移 s 为正。无外部水平力，所以总水平动量守恒。',note:'光滑地面、光滑斜面。从静止开始，到坡底暂停。显示的是惯性系中的运动与动量。'},
+ ring:{title:'旋转圆环：随环观察的小环',inputs:[['omega','大环角速度 ω',.2,2.5,.1,1,'rad/s'],['R','圆环半径 R',.3,1.5,.1,1,'m'],['v0','θ = 0 时相对速率',0,4,.1,1,'m/s']],explain:'水平圆环绕左侧圆周点的竖直轴匀速旋转。图中使用随环坐标：θ 从转轴指向环心的方向起算。',note:'允许切向上科里奥利力无分量，θ̈ = −ω² sin θ。能量式中的 v 为相对速率，转向点处方向反转。'}
+};
+const mode=specs[params.get('mode')]?params.get('mode'):'pendulum',spec=specs[mode],values={};
+document.getElementById('title').textContent=spec.title;document.getElementById('explanation').textContent=spec.explain;
+document.getElementById('note').textContent=spec.note;
+const controls=document.getElementById('inputs');
+for(const [key,label,min,max,step,value,unit] of spec.inputs){
+ values[key]=value;const wrap=document.createElement('div');wrap.style.marginBottom='11px';
+ const lab=document.createElement('label');lab.htmlFor=key;lab.append(label+' ');
+ const val=document.createElement('span');val.className='value';val.id='value-'+key;lab.append(val);
+ const inp=document.createElement('input');inp.type='range';Object.assign(inp,{id:key,min,max,step,value});
+ inp.addEventListener('input',()=>{values[key]=Number(inp.value);val.textContent=fmt(values[key])+unit;reset();});
+ val.textContent=fmt(value)+unit;wrap.append(lab,inp);controls.append(wrap);
+}
+if(spec.select){const[key,label,options]=spec.select;values[key]=options.some(o=>o[0]===params.get(key))?params.get(key):options[0][0];const lab=document.createElement('label');lab.textContent=label;const sel=document.createElement('select');sel.id=key;sel.setAttribute('aria-label',label);for(const[val,label]of options){const opt=document.createElement('option');opt.value=val;opt.textContent=label;sel.append(opt);}sel.value=values[key];sel.addEventListener('change',()=>{values[key]=sel.value;reset();});lab.append(sel);controls.append(lab);}
+const canvas=document.getElementById('canvas'),ctx=canvas.getContext('2d'),readings=document.getElementById('readings'),play=document.getElementById('play');
+const expand=document.getElementById('expand');
+expand.addEventListener('click',async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen();}catch{document.getElementById('note').textContent=spec.note+' 当前浏览器未开放全屏，可以在教师放映中按 F 放大全页。';}});
+document.addEventListener('fullscreenchange',()=>{expand.textContent=document.fullscreenElement?'退出全屏':'放大实验';});
+const C={ink:'#172b45',blue:'#244b88',teal:'#167a70',orange:'#dd842c',red:'#c35252',light:'#cbd9eb'};
+let q=0,v=0,time=0,playing=false,endReason='',last=performance.now(),history=[];
+function fmt(n){return Number(n).toFixed(2).replace(/\.00$/,'');}
+function stop(reason=''){playing=false;endReason=reason;play.textContent='开始';}
+function reset(){stop();time=0;v=0;q=mode==='pendulum'?values.angle*Math.PI/180:mode==='chain'?2*values.fraction:0;if(mode==='ring')v=values.v0/values.R;history=[];render();}
+function valid(){
+ if(mode==='rolling'&&values.contact==='roll'){let r=P.rolling(values.m,values.force,values.k);if(values.mu+1e-9<r.minMu)return '静摩擦不足，不能使用无滑方程。请增大 μₛ 或减小 F。';}
+ if(mode==='chain'){if(values.muK>values.muS)return '本实验要求 μₖ ≤ μₛ，请调整摩擦系数。';if(!P.chain(2,values.muK,values.muS,q,v).canStart&&time===0)return '静摩擦足以平衡悬垂重力，铁链不会从静止自行启动。';}
+ return '';
+}
+play.addEventListener('click',()=>{if(mode==='virtual'){stop('该实验为瞬时几何比较，请直接拖动参数。');render();return;}if(playing){stop();render();return;}const error=valid();if(error){stop(error);render();return;}if(endReason&&time>0)reset();endReason='';playing=true;play.textContent='暂停';last=performance.now();});
+const resetButton=document.getElementById('reset');
+resetButton.textContent=mode==='virtual'?'恢复参数':'重置运动';
+resetButton.addEventListener('click',()=>{
+ if(mode==='virtual')for(const[key,label,min,max,step,value,unit]of spec.inputs){values[key]=value;document.getElementById(key).value=value;document.getElementById('value-'+key).textContent=fmt(value)+unit;}
+ reset();
+});
+function step(dt){
+ let acceleration;
+ if(mode==='pendulum')acceleration=(a,b)=>P.pendulum(values.l,values.m,a,b).acceleration;
+ if(mode==='ring')acceleration=(a,b)=>P.ring(values.omega,values.R,a,b).acceleration;
+ if(mode==='atwood')acceleration=()=>P.atwood(values.m1,values.m2,values.M).acceleration;
+ if(mode==='rolling'){const r=P.rolling(values.m,values.force,values.k);acceleration=()=>values.contact==='roll'?r.acceleration:r.smoothAcceleration;}
+ if(mode==='wedge')acceleration=()=>P.wedge(values.m,values.M,values.alpha*Math.PI/180).sAcceleration;
+ if(mode==='chain')acceleration=(a,b)=>P.chain(2,values.muK,values.muS,a,b).acceleration;
+ if(!acceleration)return;
+ [q,v]=P.rk4(q,v,dt,acceleration);time+=dt;
+ if(mode==='atwood'&&Math.abs(q)>=.7){q=.7*Math.sign(q);stop('已到示意行程边界，点击重置再实验。');}
+ if(mode==='rolling'&&q>=4){q=4;stop('已到示意行程边界，点击重置再实验。');}
+ if(mode==='wedge'&&q>=2.5){q=2.5;stop('滑块已到坡底，点击重置再实验。');}
+ if(mode==='chain'&&q>=2){q=2;stop('桌面链条已全部滑出，当前模型结束。');}
+ if(mode==='chain'&&v<0){v=0;stop('向下滑动已停止，需重新判断静摩擦。');}
+}
+function text(s,x,y,color=C.ink,size=19,align='left'){ctx.fillStyle=color;ctx.font=`${size}px "PingFang SC",sans-serif`;ctx.textAlign=align;ctx.fillText(s,x,y);ctx.textAlign='left';}
+function line(x1,y1,x2,y2,color=C.ink,width=3,dash=[]){ctx.beginPath();ctx.strokeStyle=color;ctx.lineWidth=width;ctx.setLineDash(dash);ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();ctx.setLineDash([]);}
+function circle(x,y,r,fill,stroke=C.ink){ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fillStyle=fill;ctx.fill();ctx.strokeStyle=stroke;ctx.lineWidth=3;ctx.stroke();}
+function arrow(x,y,dx,dy,color,label=''){if(Math.hypot(dx,dy)<.2)return;line(x,y,x+dx,y+dy,color,3);const a=Math.atan2(dy,dx);line(x+dx,y+dy,x+dx-12*Math.cos(a-.45),y+dy-12*Math.sin(a-.45),color);line(x+dx,y+dy,x+dx-12*Math.cos(a+.45),y+dy-12*Math.sin(a+.45),color);if(label)text(label,x+dx+9,y+dy-10,color,19);}
+function rect(x,y,w,h,fill){ctx.fillStyle=fill;ctx.fillRect(x,y,w,h);ctx.strokeStyle=C.ink;ctx.lineWidth=2;ctx.strokeRect(x,y,w,h);}
+function read(items,extra=''){readings.innerHTML=items.map(([a,b])=>`<div>${a} <strong>${b}</strong></div>`).join('')+(extra?`<div class="warn">${extra}</div>`:'');}
+function render(){
+ const w=canvas.clientWidth||500,h=canvas.clientHeight||450,dpr=devicePixelRatio||1;
+ if(canvas.width!==Math.round(w*dpr)||canvas.height!==Math.round(h*dpr)){canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);}
+ ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,canvas.width,canvas.height);const sceneScale=Math.min(w/600,h/500);ctx.setTransform(dpr*sceneScale,0,0,dpr*sceneScale,dpr*(w-600*sceneScale)/2,dpr*(h-500*sceneScale)/2);
+ // A quiet Cartesian grid makes geometric changes readable.
+ for(let x=40;x<600;x+=40)line(x,35,x,465,'#f0f4f9',1);
+ for(let y=45;y<500;y+=40)line(20,y,580,y,'#f0f4f9',1);
+ if(mode==='pendulum'){
+  const theta=q,origin=[290,90],len=215,px=origin[0]+len*Math.sin(theta),py=origin[1]+len*Math.cos(theta),r=P.pendulum(values.l,values.m,theta,v);
+  ctx.beginPath();ctx.strokeStyle=C.light;ctx.lineWidth=2;ctx.arc(...origin,len,.05,Math.PI-.05);ctx.stroke();
+  line(origin[0],origin[1],origin[0],340,C.light,2,[6,5]);line(...origin,px,py,C.blue,5);circle(...origin,7,C.ink);circle(px,py,15,C.orange);
+  arrow(px,py,65*Math.cos(theta),-65*Math.sin(theta),C.teal,'δr');text('θ',origin[0]+22,origin[1]+50,C.blue,26);
+  text('x = l sin θ',40,400);text('y = −l cos θ',40,433);text('θ = '+fmt(theta*180/Math.PI)+'°',360,433,C.blue);
+  const total=r.T+r.V||1;read([['时间',fmt(time)+' s'],['角速度',fmt(v)+' rad/s'],['动能 T',fmt(r.T)+' J'],['势能 V',fmt(r.V)+' J'],['总机械能',fmt(r.T+r.V)+' J']]);
+  readings.innerHTML+=`<div class="note">T / E</div><div class="energy"><i style="width:${100*r.T/total}%"></i></div><div class="note">V / E</div><div class="energy"><i style="width:${100*r.V/total}%;background:#dd842c"></i></div>`;
+ }
+ if(mode==='virtual'){
+  const th=values.angle*Math.PI/180,dth=values.delta*Math.PI/180,geometry=P.virtual(1,th,dth,values.speed,.12),ox=240,oy=85,len=230,px=ox+len*Math.sin(th),py=oy+len*Math.cos(th),virtualX=len*geometry.deltaX,virtualY=-len*geometry.deltaY,move=geometry.translation*230;
+  line(ox,oy,px,py,C.ink,4);circle(ox,oy,6,C.ink);circle(px,py,10,'#fff');
+  circle(ox+move,oy,5,C.red);line(ox+move,oy,px+virtualX+move,py+virtualY,C.light,3,[6,4]);
+  arrow(ox,oy,move,0,C.red,'支点移动');arrow(px,py,virtualX*1.8,virtualY*1.8,C.teal,'δr');arrow(px+virtualX*1.8,py+virtualY*1.8,move*1.8,0,C.red);arrow(px,py,(virtualX+move)*1.8,virtualY*1.8,C.blue,'dr');
+  text('同一时刻：δt = 0',35,410,C.teal);text('跨越时间：dt = 0.12 s',35,443,C.blue);
+  read([['δx', geometry.deltaX.toFixed(4)+' m'],['dx', geometry.actualX.toFixed(4)+' m'],['δr 的大小',fmt(Math.abs(dth))+' m'],['支点平移',fmt(values.speed*.12)+' m'],['一阶 dr 大小',fmt(Math.hypot(Math.cos(th)*dth+values.speed*.12,-Math.sin(th)*dth))+' m']],endReason);
+ }
+ if(mode==='rolling'){
+  const r=P.rolling(values.m,values.force,values.k),cx=120+q*75,cy=300,a=70,theta=values.contact==='roll'?q/.5:.5*(values.force*.5/(values.k*values.m*.25))*time*time;
+  line(30,cy+a,575,cy+a,C.ink,4);circle(cx,cy,a,'#edf3fb',C.blue);circle(cx,cy,4,C.ink);
+  line(cx,cy,cx+a*.85*Math.sin(theta),cy-a*.85*Math.cos(theta),C.blue,4);
+  arrow(cx,cy-a,90,0,C.orange,'F');if(values.contact==='roll')arrow(cx,cy+a,r.friction*60,0,C.teal,'f');
+  arrow(cx,cy,70,0,C.blue,'xᶜ');text('当前上方切点 A',35,170,C.orange);text(values.contact==='roll'?'vA = 2vC；接触点速度 = 0':'平动与转动独立',35,425,C.blue,21);
+  const error=valid();read([['质心加速度',fmt(values.contact==='roll'?r.acceleration:r.smoothAcceleration)+' m/s²'],['质心位移',fmt(q)+' m'],...(values.contact==='roll'?[['静摩擦（向右为正）',fmt(r.friction)+' N'],['无滑所需 μₛ ≥',fmt(r.minMu)]]:[['角加速度',fmt(values.force*.5/(values.k*values.m*.25))+' rad/s²']])],error||endReason);
+ }
+ if(mode==='atwood'){
+  const r=P.atwood(values.m1,values.m2,values.M),cx=300,cy=120,R=.3*180,leftY=280-q*180,rightY=280+q*180;
+  line(300,35,300,55,C.ink,5);circle(cx,cy,R,'#edf3fb',C.blue);
+  line(cx,cy,cx+R*.8*Math.sin(q/.3),cy-R*.8*Math.cos(q/.3),C.orange,3);
+  line(cx-R,cy,cx-R,leftY,C.ink,3);line(cx+R,cy,cx+R,rightY,C.ink,3);
+  rect(cx-R-29,leftY,58,53,'#d9eae7');rect(cx+R-29,rightY,58,53,'#ffe3bc');text('m₁',cx-R,leftY+35,C.teal,23,'center');text('m₂',cx+R,rightY+35,C.orange,23,'center');
+  arrow(465,220,0,85,C.blue,'+x');text('均质圆盘滑轮',45,78);text('两侧绳张力一般不同',45,465,C.blue);
+  read([['加速度 ẍ',fmt(r.acceleration)+' m/s²'],['位移 x',fmt(q)+' m'],['左侧张力 T₁',fmt(r.T1)+' N'],['右侧张力 T₂',fmt(r.T2)+' N'],['额外惯性 M/2',fmt(values.M/2)+' kg']],endReason);
+ }
+ if(mode==='chain'){
+  const length=2,x=q,edge=410,top=160,scale=120,left=edge-(length-x)*scale,bottom=top+x*scale,r=P.chain(length,values.muK,values.muS,x,v);
+  rect(40,top,edge-40,35,'#eaf0f7');line(edge,top+35,edge,455,C.ink,4);
+  line(left,top-8,edge,top-8,C.blue,8);line(edge+7,top-8,edge+7,bottom,C.blue,8);
+  for(let yy=top+8;yy<bottom;yy+=14)circle(edge+7,yy,5,'#fff',C.blue);
+  arrow(485,top+50,0,65,C.orange,'x');text('桌面链长：l − x',50,115);text('x* = μₖl / (1 + μₖ)',40,465,C.teal);
+  read([['悬垂长度 x',fmt(x)+' m'],['滑动阶段 ẍ',fmt(r.acceleration)+' m/s²'],['速度 ẋ',fmt(v)+' m/s'],['滑动临界 x*',fmt(r.threshold)+' m']],valid()||endReason);
+ }
+ if(mode==='wedge'){
+  const a=values.alpha*Math.PI/180,r=P.wedge(values.m,values.M,a),wedgeX=-(values.m/(values.M+values.m))*q*Math.cos(a),left=90+wedgeX*105,base=350,peakX=left,peakY=base-2.5*Math.sin(a)*105,right=left+2.5*Math.cos(a)*105;
+  line(20,385,580,385,C.ink,3);ctx.beginPath();ctx.moveTo(left,base);ctx.lineTo(peakX,peakY);ctx.lineTo(right,base);ctx.closePath();ctx.fillStyle='#e2ebf7';ctx.fill();ctx.strokeStyle=C.blue;ctx.stroke();
+  const bx=peakX+q*Math.cos(a)*105,by=peakY+q*Math.sin(a)*105;ctx.save();ctx.translate(bx,by);ctx.rotate(a);rect(-18,-37,36,35,'#ffe3bc');ctx.restore();
+  arrow(430,330,70,0,C.blue,'+x');arrow(peakX+45,peakY-15,70*Math.cos(a),70*Math.sin(a),C.orange,'+s');
+  const xdot=-(values.m/(values.M+values.m))*v*Math.cos(a),momentum=(values.M+values.m)*xdot+values.m*v*Math.cos(a);
+  read([['沿坡相对 s̈',fmt(r.sAcceleration)+' m/s²'],['斜面 ẍ',fmt(r.xAcceleration)+' m/s²'],['水平总动量',fmt(momentum)+' kg·m/s'],['相对位移 s',fmt(q)+' m']],endReason);text('地面与斜面均光滑',45,455,C.blue);
+ }
+ if(mode==='ring'){
+  const cx=305,cy=245,R=140,px=cx+R*Math.cos(q),py=cy-R*Math.sin(q),r=P.ring(values.omega,values.R,q,v);
+  circle(cx,cy,R,'#f7fafc',C.blue);line(cx-R,cy,cx+R,cy,C.light,2,[6,5]);circle(cx-R,cy,8,C.ink);line(cx,cy,px,py,C.light,2);circle(px,py,13,C.orange);
+  arrow(px,py,60*(-Math.sin(q))*Math.sign(v),-60*Math.cos(q)*Math.sign(v),C.teal,'v相对');arrow(cx-R+8,cy-6,(px-(cx-R))*.55,(py-cy)*.55,C.red,'离心方向');
+  text('转轴 O',75,cy+40);text('环心 C',cx-10,cy+27);text('随环坐标：水平面俯视图',40,445,C.blue,20);
+  read([['θ',fmt(q*180/Math.PI)+'°'],['相对速率',fmt(r.speed)+' m/s'],['θ̈',fmt(r.acceleration)+' rad/s²'],['运动积分 E/m',fmt(r.invariant)+' m²/s²']]);
+ }
+ if(!playing&&!endReason)text(mode==='virtual'?'拖动参数，比较箭头':'点击“开始”观察运动',25,35,C.teal,18);
+}
+function animate(now){const dt=Math.min(.04,(now-last)/1000);last=now;if(playing){let remain=dt;while(remain>0&&playing){const h=Math.min(remain,1/240);step(h);remain-=h;}render();}requestAnimationFrame(animate);}
+new ResizeObserver(render).observe(canvas.parentElement);
+window.addEventListener('message',e=>{if(e.origin!==location.origin)return;if(e.data?.type==='reset')reset();if(e.data?.type==='lecture-state'){const locked=e.data.playing===true;document.querySelectorAll('input,select,#play,#reset').forEach(el=>el.disabled=locked);if(locked&&playing){stop();render();}}});
+reset();requestAnimationFrame(animate);
+window.MechanicsExperiment={mode,getState:()=>({q,v,time,playing,endReason,values:{...values}}),reset};
+</script>
+</body></html>
