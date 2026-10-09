@@ -10,7 +10,9 @@ lerna-debug.log*
 node_modules
 dist-ssr
 *.local
-# dist 是有意跟踪的最终产品（交互课堂打包产物），不要在此忽略
+# 本地部署与静态导出在 Release ZIP 中分发。
+dist/
+slides-export/
 
 # Editor directories and files
 .vscode/*

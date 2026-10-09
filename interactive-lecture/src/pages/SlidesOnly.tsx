@@ -481,6 +481,7 @@ export default function SlidesOnly() {
       {activeQuiz && (
         <div onClick={e => e.stopPropagation()} onContextMenu={e => { e.preventDefault(); e.stopPropagation() }}>
           <QuizCard key={`${pageKey}-${quizIdx}`} quiz={activeQuiz}
+            largeDisplay={!!weblec?.projectedSubtitles}
             continueLabel="返回幻灯片" onContinue={() => setQuizIdx(null)} />
         </div>
       )}

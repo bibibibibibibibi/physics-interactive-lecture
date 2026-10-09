@@ -1,0 +1,5212 @@
+{
+ "title": "拉格朗日方程：50分钟交互课堂",
+ "nav": "本科分析力学",
+ "footer": "第二章 · 拉格朗日方程",
+ "character": "aqiang",
+ "theme": "special",
+ "logoScale": 0.48,
+ "showTeacher": false,
+ "sections": [
+  {
+   "title": "问题与目标",
+   "page": 1
+  },
+  {
+   "title": "约束与坐标",
+   "page": 3
+  },
+  {
+   "title": "虚位移与达朗贝尔原理",
+   "page": 8
+  },
+  {
+   "title": "拉格朗日方程的推导",
+   "page": 13
+  },
+  {
+   "title": "有质量滑轮例题",
+   "page": 23
+  },
+  {
+   "title": "独立建模练习",
+   "page": 30
+  },
+  {
+   "title": "总结与条件",
+   "page": 32
+  }
+ ],
+ "source": {
+  "path": "/Users/xm/Documents/第二章 拉格朗日方程.pptx",
+  "sha256": "29c8f643953af620f687fee01f380e637c9fb5e3a6e092d8054838f3db6246d4"
+ },
+ "projectedSubtitles": true,
+ "pages": [
+  {
+   "id": 1,
+   "heading": "约束力为什么成为未知量",
+   "source_pages": [
+    1,
+    5
+   ],
+   "narration": "研究平面单摆时，我们已经会使用牛顿第二定律。现在把问题稍微改变：不求绳的张力，能不能直接得到摆角的运动方程？请看图，绳始终绷紧，支点固定，摆长为小写的艾尔，摆球质量为小写的艾姆，摆角西塔从竖直向下方向量起，向右偏转为正。横坐标向右，纵坐标向上。[[1]]如果分别列横向和纵向方程，重力已知，张力的大小却未知，而且两个位置坐标还必须满足长度不变的条件。主动力大写艾弗是重力，约束力大写阿尔是张力，位置矢量记为小写阿尔。未知约束力与坐标约束同时进入方程，这正是复杂系统中牛顿方法容易变得繁琐的原因。这里的问题不是牛顿定律失效，而是描述方式没有充分利用约束。\n[[2]]沿摆圆的切向投影，张力没有切向分量，得到质量乘摆长乘摆角的二阶时间导数，等于负的质量乘重力加速度乘摆角的正弦。质量约去以后，我们已经得到一个只含摆角的方程。它说明两个重要事实：允许的运动只有一个独立方向；约束力可以在合适的投影中消去。今天要把这种做法推广到多个质点和复杂连接的系统。我们不预先猜每个系统的投影方向，而用独立坐标和虚位移系统地完成投影。单摆在前半节作为概念的贯穿例子，后半节完整求解一个包含有质量滑轮的系统。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 25,
+     "w": 1300,
+     "h": 40,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "01 / 问题与目标",
+        "size": 23,
+        "color": "#244B88",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 69,
+     "w": 1540,
+     "h": 72,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "约束力为什么成为未知量",
+        "size": 48,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 155,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 976,
+     "w": 1500,
+     "h": 45,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "从牛顿方程中寻找独立运动变量",
+        "size": 25,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 115,
+     "y": 230,
+     "w": 840,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "固定支点、定长、平面运动；θ 从竖直向下向右为正",
+        "size": 35,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 115,
+     "y": 430,
+     "w": 840,
+     "h": 155,
+     "tex": "\\underbrace{\\mathbf F}_{\\text{重力}}+\\underbrace{\\mathbf R}_{\\text{张力}}=m\\ddot{\\mathbf r}",
+     "size": 36,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 115,
+     "y": 675,
+     "w": 840,
+     "h": 155,
+     "tex": "ml\\ddot\\theta=-mg\\sin\\theta",
+     "size": 43,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "img",
+     "step": 0,
+     "x": 1015,
+     "y": 215,
+     "w": 770,
+     "h": 685,
+     "src": "pendulum-diagram.svg"
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "heading": "本节课的三个目标",
+   "source_pages": [
+    1,
+    24
+   ],
+   "narration": "[[1]]本节课只要求达到三个可以检查的目标。第一，面对约束，能够选择一组独立的广义坐标，并说明选择的理由。第二，能够说明虚位移为什么固定时间，理想约束为什么能够消去约束力，以及达朗贝尔原理怎样把牛顿方程变成虚功关系。第三，能够为一个典型系统建立拉格朗日方程，并用另一种方法或简单极限检查结果。\n[[2]]学习过程分成七段。先从牛顿力学提出问题，再用约束和自由度整理坐标；随后讨论虚位移、理想约束和达朗贝尔原理；核心部分逐步推导广义力和动能恒等式，得到拉格朗日方程；最后完成滑轮例题、独立迁移练习和方法总结。你需要特别注意每一步改变了什么，以及哪些条件仍然必须保留。把张力从方程里消去，不等于张力不存在；写出一个漂亮的拉格朗日函数，也不保证所选坐标独立。\n[[3]]三次课堂活动分别检查固定时间的允许位移、滑轮惯性怎样改变加速度，以及如何把阻尼加入单摆方程。操作和作答时讲解会暂停，完成以后继续。标准课堂把讲解和活动合计为约五十分钟；自己反复调参数、返回前页或延长思考，会增加学习时间。移动斜面、铁链和非惯性系等较复杂的专题安排为课后选读，本节集中完成核心推导和一个完整例题。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 25,
+     "w": 1300,
+     "h": 40,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "01 / 问题与目标",
+        "size": 23,
+        "color": "#244B88",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 69,
+     "w": 1540,
+     "h": 72,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "本节课的三个目标",
+        "size": 48,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 155,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 976,
+     "w": 1500,
+     "h": 45,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "从牛顿方程中寻找独立运动变量",
+        "size": 25,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 115,
+     "y": 230,
+     "w": 1660,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "① 根据约束选择独立的广义坐标",
+        "size": 41,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 115,
+     "y": 430,
+     "w": 1660,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "② 解释虚位移、理想约束和达朗贝尔原理的作用",
+        "size": 41,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 115,
+     "y": 675,
+     "w": 1660,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "③ 建立典型系统方程，并检验结果",
+        "size": 41,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "heading": "约束是允许构型的限制",
+   "source_pages": [
+    4,
+    5
+   ],
+   "narration": "[[1]]先给出约束的含义。约束是系统的位置或速度必须满足的限制。今天从位置约束出发：用函数小写的艾弗，下标阿尔法，等于零表示一个约束。阿尔法只是约束编号，质点的位置矢量和时间是它的自变量。固定长度的杆连接两点，要求两点间的距离等于杆长；质点保持在某个光滑曲面上，要求位置满足曲面的方程。这些限制决定哪些构型允许，不能随意把所有直角坐标都看成独立变量。\n[[2]]单摆在平面内的位置由横坐标和纵坐标描述，长度条件是横坐标平方加纵坐标平方等于摆长平方。可以在纸上画出这条圆周：它的点有两个坐标，但沿圆周移动只需要一个连续参数。坐标数量与自由度数量因此不是同一个概念。我们后面用摆角描述这个圆周，就让约束自动满足。\n[[3]]还要区分杆和绳。不可伸长的刚杆始终规定距离等于杆长；轻绳只能拉、不能推，松弛时两端距离可以小于绳长。只有确认绳始终绷紧，才可以使用等式长度约束。模型中出现绳、接触面或滚动条件时，方程求出以后还必须回来检查这些条件。这一步不是额外装饰，它决定推导得到的解在什么阶段有效。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 25,
+     "w": 1300,
+     "h": 40,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "02 / 约束与坐标",
+        "size": 23,
+        "color": "#244B88",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 69,
+     "w": 1540,
+     "h": 72,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "约束是允许构型的限制",
+        "size": 48,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 155,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 976,
+     "w": 1500,
+     "h": 45,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "用约束选择局部独立的坐标",
+        "size": 25,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 115,
+     "y": 230,
+     "w": 840,
+     "h": 155,
+     "tex": "f_\\alpha(x,y,t)=0\\quad(\\alpha:\\text{约束编号})",
+     "size": 43,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 115,
+     "y": 430,
+     "w": 840,
+     "h": 155,
+     "tex": "x^2+y^2=l^2",
+     "size": 43,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 115,
+     "y": 675,
+     "w": 840,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "刚杆：距离 = l；轻绳：距离 ≤ l，绷紧时取等号",
+        "size": 35,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "img",
+     "step": 0,
+     "x": 1015,
+     "y": 215,
+     "w": 770,
+     "h": 685,
+     "src": "coordinate-diagram.svg"
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "heading": "自由度计数的条件",
+   "source_pages": [
+    5
+   ],
+   "narration": "[[1]]对三维空间中的大写恩个质点，先有三恩个直角坐标。如果有小写凯个相互独立的位置等式约束，而且约束在当前构型附近是正则的，那么局部自由度小写恩等于三恩减凯。大写恩表示质点数，小写恩表示自由度，二者不要混淆。所谓独立，指约束的梯度没有重复或线性依赖；所谓正则，指约束的雅可比矩阵在所讨论区域保持所需的秩。我们不在这节课展开隐函数定理，但要知道计数公式正是以这些条件为基础。\n[[2]]例如，一个质点限定在平面内，可以先从两个平面坐标计数，再减去一个定长约束，得到一个自由度。也可以从三个空间坐标开始，把平面条件和长度条件都计入，两种计数一致。相反，把同一个长度关系写两遍，不会再减少一次自由度。初始速度恰好为零，也不是一个新的几何约束，不能再从自由度中减掉一。\n[[3]]如果给定初始条件使某些坐标在后续运动中保持不变，可以据此简化这个特定运动。但这相当于选择了一类满足特殊初值的解，并不自动改变整个系统的构形自由度。我们对平面单摆的一个自由度计数，已经把平面运动作为模型条件。对一般空间单摆，长度约束以后还剩两个自由度。遇到不等式约束，要先判断哪些接触或绳长条件处于激活状态，不能把所有不等式的数量直接代入三恩减凯。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 25,
+     "w": 1300,
+     "h": 40,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "02 / 约束与坐标",
+        "size": 23,
+        "color": "#244B88",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 69,
+     "w": 1540,
+     "h": 72,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "自由度计数的条件",
+        "size": 48,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 155,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 976,
+     "w": 1500,
+     "h": 45,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "用约束选择局部独立的坐标",
+        "size": 25,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 115,
+     "y": 230,
+     "w": 1660,
+     "h": 155,
+     "tex": "n=3N-k\\quad(\\operatorname{rank}D_{\\mathbf r}f=k)",
+     "size": 44,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 115,
+     "y": 430,
+     "w": 1660,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "N：质点数；n：局部自由度；k：独立完整等式约束数",
+        "size": 41,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 115,
+     "y": 675,
+     "w": 1660,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "平面单摆：2 − 1 = 1；空间单摆：3 − 1 = 2",
+        "size": 41,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "heading": "约束的两种分类",
+   "source_pages": [
+    4
+   ],
+   "narration": "[[1]]约束有两种互相独立的分类。第一种问：能否写成只含位置坐标和时间的等式？能，就称为完整约束。若一个速度约束不能积分成这种位置关系，通常称为非完整约束。看到时间导数就立即判为非完整是不准确的。沿一条直线无滑滚动时，质心位移的时间导数等于半径乘转角的时间导数，积分后是位移减半径乘转角等于常数，仍可作为完整约束处理。任意平面滚动的情况更复杂，不能照搬这个例子。\n[[2]]第二种分类问：约束是否显含时间？不显含时间称为定常约束，显含时间称为非定常约束，也常叫不定常约束。固定支点的定长摆是完整且定常的。支点按给定函数移动，长度关系仍然是完整约束，却变成非定常约束。这两个分类回答不同问题，所以完整约束不必定常，定常约束也不必完整。\n[[3]]本节核心推导使用独立的广义坐标，适用于正则的完整等式约束以及已经积分成位置关系的约束。一般非完整约束需要另行处理允许变分和乘子，不能直接套用今天最后的独立变分论证。还要把不可积的速度约束与不等式表示的单边约束区分开。前者限制允许的速度，后者需要判断绳是否绷紧或物体是否接触，再确定当前有效的约束，不能不加区分地使用自由度公式。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 25,
+     "w": 1300,
+     "h": 40,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "02 / 约束与坐标",
+        "size": 23,
+        "color": "#244B88",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 69,
+     "w": 1540,
+     "h": 72,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "约束的两种分类",
+        "size": 48,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 155,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 976,
+     "w": 1500,
+     "h": 45,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "用约束选择局部独立的坐标",
+        "size": 25,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 115,
+     "y": 210,
+     "w": 1660,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "完整 / 非完整：能否化为位置与时间的等式",
+        "size": 41,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 115,
+     "y": 385,
+     "w": 1660,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "定常 / 非定常：约束是否显含时间",
+        "size": 41,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 115,
+     "y": 560,
+     "w": 1660,
+     "h": 155,
+     "tex": "\\dot x=a\\dot\\phi\\Rightarrow x-a\\phi=C\\quad(a:\\text{半径},\\ \\phi:\\text{转角},\\ C:\\text{常数})",
+     "size": 44,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 115,
+     "y": 750,
+     "w": 1660,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "本课：局部正则、完整、理想约束",
+        "size": 41,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "heading": "广义坐标与坐标图",
+   "source_pages": [
+    5
+   ],
+   "narration": "[[1]]广义坐标是能够在所讨论区域独立确定系统构型的一组参数。它们记为小写的丘，下标从一到小写恩。广义坐标可以是长度、角度，或者适合描述构型的其他参数，并不一定是直角坐标。选取它们的目的，是让位置关系自动满足约束，并把独立运动方向直接显露出来。\n[[2]]平面单摆选摆角西塔。横坐标等于摆长乘摆角正弦，纵坐标等于负摆长乘摆角余弦。角度增加时摆球在图上向右侧切向移动，符号与我们开头的约定一致。把这两个表达式代回长度约束，就得到摆长平方，因此约束不需要再单独求解。\n[[3]]也可以问，能不能选横坐标作广义坐标？在摆球位于下半圆、且避开水平位置的一个局部区域，可以。但同一横坐标通常对应上下两个位置，所以要限定分支；到左右最远点，横坐标对摆角的导数为零，反解还会奇异。广义坐标往往是局部的坐标图，不要求一套参数覆盖所有构型。实际建模时，选择能保持独立、避免奇异且使动能简单的参数。小角度近似不是坐标选择的条件，本节暂时保留完整的正弦和余弦。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 25,
+     "w": 1300,
+     "h": 40,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "02 / 约束与坐标",
+        "size": 23,
+        "color": "#244B88",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 69,
+     "w": 1540,
+     "h": 72,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "广义坐标与坐标图",
+        "size": 48,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 155,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 976,
+     "w": 1500,
+     "h": 45,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "用约束选择局部独立的坐标",
+        "size": 25,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 115,
+     "y": 210,
+     "w": 840,
+     "h": 155,
+     "tex": "q=\\theta,\\qquad x=l\\sin\\theta,\\quad y=-l\\cos\\theta",
+     "size": 43,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 115,
+     "y": 385,
+     "w": 840,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "角度也可作坐标；θ 以弧度进入微分与方程",
+        "size": 35,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 115,
+     "y": 560,
+     "w": 840,
+     "h": 155,
+     "tex": "\\frac{dx}{d\\theta}=l\\cos\\theta",
+     "size": 43,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 115,
+     "y": 750,
+     "w": 840,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "选 x 时须限定分支并避开 cos θ = 0",
+        "size": 35,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "img",
+     "step": 0,
+     "x": 1015,
+     "y": 215,
+     "w": 770,
+     "h": 685,
+     "src": "coordinate-diagram.svg"
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "heading": "位置与速度的统一表示",
+   "source_pages": [
+    5,
+    12
+   ],
+   "narration": "[[1]]现在把单摆的表达推广。第艾个质点的位置矢量写成所有广义坐标和时间的函数。质点编号艾从一到大写恩，坐标编号杰从一到小写恩。这里的位置函数已经满足全部完整约束。约束定常时，通常可以选不显含时间的位置函数；约束非定常时，位置函数中往往必须保留时间。\n[[2]]沿真实运动轨迹对时间求导，速度等于对每个广义坐标的偏导数乘该坐标的一阶时间导数，再加位置函数对时间的显式偏导数。求和号的范围是所有独立广义坐标。坐标上方一点表示时间导数；偏导数表示把其余自变量暂时固定，只改变被求导的那个变量。它们含义不同。\n[[3]]例如支点以给定速度向右移动，位置的横分量里就要加支点位置函数。真实速度中因此同时有摆角变化的贡献和支点移动的贡献。这项显式时间导数以后在区分实位移与虚位移时仍会出现。我们在这里先保留一般形式，不假定所有约束都定常。另一方面，广义坐标的一阶时间导数在计算动能偏导数时，要作为独立的速度变量使用，这正是下一部分动能恒等式的基础。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 25,
+     "w": 1300,
+     "h": 40,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "02 / 约束与坐标",
+        "size": 23,
+        "color": "#244B88",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 69,
+     "w": 1540,
+     "h": 72,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "位置与速度的统一表示",
+        "size": 48,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 155,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 976,
+     "w": 1500,
+     "h": 45,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "用约束选择局部独立的坐标",
+        "size": 25,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 115,
+     "y": 230,
+     "w": 1660,
+     "h": 155,
+     "tex": "\\mathbf r_i=\\mathbf r_i(q_1,\\ldots,q_n,t),\\quad i=1,\\ldots,N",
+     "size": 44,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 115,
+     "y": 430,
+     "w": 1660,
+     "h": 155,
+     "tex": "\\mathbf v_i=\\dot{\\mathbf r}_i=\\sum_{j=1}^{n}\\frac{\\partial\\mathbf r_i}{\\partial q_j}\\dot q_j+\\frac{\\partial\\mathbf r_i}{\\partial t}",
+     "size": 39,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 115,
+     "y": 675,
+     "w": 1660,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "点号：沿运动的时间导数；∂：固定其余自变量的偏导数",
+        "size": 41,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "heading": "虚位移固定同一时刻",
+   "source_pages": [
+    7
+   ],
+   "narration": "[[1]]虚位移不是实际运动中一个神秘的小位移，而是在同一时刻比较相邻允许构型得到的一阶变化。用希腊字母德尔塔表示变分，按定义时间的变分等于零。约束中已经给定的支点位置，也在这个同一时刻固定。广义坐标可以发生允许的微小变化，记为德尔塔丘杰；质点虚位移就是位置对广义坐标的偏导数乘这些变分再求和。没有对时间的那一项。\n[[2]]把长度约束变分，就得到位置矢量与虚位移垂直。对单摆，这说明虚位移沿当前圆周的切线。它可以向切线的任一方向，大小也可以任意小；我们并没有规定它必须等于系统下一瞬间实际走过的位移。研究虚位移时不需要先知道实际速度，也不要求摆球真的走到比较的构型。\n[[3]]变分符号与微分符号在操作上有类似的链式法则，但含义不同。微分可以描述随时间发生的实际变化；这里的变分固定时间，只改变构型。使用虚位移，是为了在当前约束允许的方向上检查力的作用。它让我们把牛顿方程投影到允许方向，而不需要先解出约束反力。随后说虚功，是力与这种允许虚位移的内积，不应直接理解为真实轨迹上已经传递的能量。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 25,
+     "w": 1300,
+     "h": 40,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "03 / 虚位移与达朗贝尔原理",
+        "size": 23,
+        "color": "#244B88",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 69,
+     "w": 1540,
+     "h": 72,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "虚位移固定同一时刻",
+        "size": 48,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 155,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 976,
+     "w": 1500,
+     "h": 45,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "固定时间，沿约束允许的方向比较构型",
+        "size": 25,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 115,
+     "y": 230,
+     "w": 840,
+     "h": 155,
+     "tex": "\\delta t=0,\\qquad\\delta\\mathbf r_i=\\sum_{j=1}^{n}\\frac{\\partial\\mathbf r_i}{\\partial q_j}\\delta q_j",
+     "size": 36,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 115,
+     "y": 430,
+     "w": 840,
+     "h": 155,
+     "tex": "\\delta(x^2+y^2)=2x\\delta x+2y\\delta y=0",
+     "size": 43,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 115,
+     "y": 675,
+     "w": 840,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "虚位移：同一时刻、相邻允许构型、一阶变化",
+        "size": 35,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "img",
+     "step": 0,
+     "x": 1015,
+     "y": 215,
+     "w": 770,
+     "h": 685,
+     "src": "virtual-diagram.svg"
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "heading": "实际位移含时间变化",
+   "source_pages": [
+    7
+   ],
+   "narration": "[[1]]实际位移发生在相邻两个时刻。对位置函数取全微分，既有广义坐标变化的项，也有显式时间变化的项。若支点向右移动，摆球的实际位移一般包含支点的平移。虚位移却把时间固定，所以比较时支点位置不动。两者都要符合各自的约束条件，但一个比较不同时间，一个比较同一时间。\n[[2]]定常约束下，实际运动的一阶位移是一个允许虚位移，因为约束本身不随时间移动。即便如此，任意选择的虚位移仍不等于那次实际位移。非定常约束下，二者允许的方向集合就可能不同：虚位移仍切于当前约束面，实际位移还跟随约束面的移动。\n[[3]]下面用移动支点单摆做一次定量几何比较。设摆长一米，当前摆角三十度；给实际角度微变与虚角度微变相同的小值，取一个短的时间间隔。将支点速度从零改到一米每秒，你将看到切向虚位移保持不变，实际位移增加向右的分量。图上的箭头作一阶近似并放大，不能把放大的箭头末端当成真实轨迹上的精确新位置。这个演示只比较几何关系，没有在积分移动支点单摆的动力学方程。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 25,
+     "w": 1300,
+     "h": 40,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "03 / 虚位移与达朗贝尔原理",
+        "size": 23,
+        "color": "#244B88",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 69,
+     "w": 1540,
+     "h": 72,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "实际位移含时间变化",
+        "size": 48,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 155,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 976,
+     "w": 1500,
+     "h": 45,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "固定时间，沿约束允许的方向比较构型",
+        "size": 25,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 115,
+     "y": 230,
+     "w": 1660,
+     "h": 155,
+     "tex": "d\\mathbf r_i=\\sum_j\\frac{\\partial\\mathbf r_i}{\\partial q_j}dq_j+\\frac{\\partial\\mathbf r_i}{\\partial t}dt",
+     "size": 44,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 115,
+     "y": 430,
+     "w": 1660,
+     "h": 155,
+     "tex": "\\delta\\mathbf r_i=\\sum_j\\frac{\\partial\\mathbf r_i}{\\partial q_j}\\delta q_j\\quad(\\delta t=0)",
+     "size": 44,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 115,
+     "y": 675,
+     "w": 1660,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "显含时间的约束：实际位移多出约束移动的贡献",
+        "size": 41,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "heading": "活动一：移动支点的虚位移",
+   "source_pages": [
+    5,
+    7
+   ],
+   "narration": "[[1]]先预测：当前时刻固定摆角和角度微变，把支点速度从零调到一米每秒，绿色虚位移箭头是否必须增加支点的平移？请选择你的判断，再按任务操作。操作任务是先设置摆角三十度、角度微变二度，比较支点速度为零和一时的两组箭头；记录绿色虚位移的横分量和蓝色实际位移的横分量。注意摆角是唯一的独立构型参数，屏幕上的横纵位置不能分别指定。现在暂停讲解，完成预测和操作后继续。\n[[2]]结果应当是绿色箭头不变，蓝色箭头增加了支点在所选时间间隔内的平移。取摆长一米、角度微变二度，即约零点零三四九弧度，虚位移的横分量约为零点零三零二米；支点每秒一米、时间间隔零点一二秒，又给实际位移增加零点一二米。数值说明固定时间不是一句口号，而是在链式法则中明确去掉了时间变化项。\n[[3]]如果把虚位移强行加上支点的平移，就不再是在同一时刻比较构型；如果沿绳方向画虚位移，则违反了当前长度约束。完成活动后，我们用这个允许的切向方向讨论约束力。移动支点的张力仍沿绳方向，它与允许虚位移垂直；但张力与真实位移不一定垂直，因此它可能传递实际能量。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 25,
+     "w": 1300,
+     "h": 40,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "03 / 虚位移与达朗贝尔原理",
+        "size": 23,
+        "color": "#244B88",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 69,
+     "w": 1540,
+     "h": 72,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "活动一：移动支点的虚位移",
+        "size": 48,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 155,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 976,
+     "w": 1500,
+     "h": 45,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "预测与操作时讲解暂停；完成理论核对后继续",
+        "size": 25,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 115,
+     "y": 240,
+     "w": 495,
+     "h": 175,
+     "tex": "\\begin{aligned}\\delta x&=l\\cos\\theta\\,\\delta\\theta\\\\dx&=\\delta x+u\\,dt\\end{aligned}",
+     "size": 38,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 115,
+     "y": 480,
+     "w": 495,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "预测 → 调 u：0 与 1 m/s → 比较 δx、dx",
+        "size": 35,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 115,
+     "y": 725,
+     "w": 495,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "l = 1 m；δθ = 2°；dt = 0.12 s；一阶近似，箭头放大",
+        "size": 35,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "html",
+     "step": 0,
+     "x": 645,
+     "y": 208,
+     "w": 1170,
+     "h": 713,
+     "src": "sim-mechanics.html?mode=virtual&embed=1",
+     "timelineSync": true,
+     "label": "虚位移几何比较"
+    }
+   ],
+   "interactions": [
+    {
+     "type": "activity",
+     "q": "同一时刻比较：增加支点速度 u，δr 怎样变化？",
+     "options": [
+      "δr 不变，dr 增加 u dt 的平移",
+      "δr 必须增加支点平移",
+      "δr 必须沿绳方向",
+      "位置有 x、y，所以必须有两个独立坐标"
+     ],
+     "answer": 0,
+     "explain": "δt=0；当前支点固定。长度约束只允许切向 δr。实际位移才含 u dt。",
+     "feedbackPerOption": [
+      "正确：固定时间排除了显式时间变化项。",
+      "误把不同时间的实际位移当成同一时刻的变分。",
+      "沿绳方向会改变长度，不是允许虚位移。",
+      "两个直角坐标被长度约束联系，只有一个独立参数。"
+     ],
+     "task": "先写为何只选θ而不能分别指定x、y；θ=30°、δθ=2°，u从0调至1 m/s，比较δx与dx。",
+     "observe": "分别记录两次的δx与dx，判断哪一个随u改变；说明时间固定在哪一步起作用。",
+     "plannedSeconds": 180,
+     "after_sentence": "现在暂停讲解，完成预测和操作后继续。",
+     "pause_offset": 0.1,
+     "pause_margin": 0.65
+    }
+   ],
+   "sentence_gap_overrides": [
+    {
+     "after_sentence": "现在暂停讲解，完成预测和操作后继续。",
+     "gap_seconds": 0.9
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "heading": "理想约束的总虚功",
+   "source_pages": [
+    8,
+    9
+   ],
+   "narration": "[[1]]把第艾个质点受到的力分成主动力与约束力。主动力记为大写艾弗下标艾，是我们保留并明确描述的力，例如重力、外加驱动力和需要计入的摩擦力。约束力记为大写阿尔下标艾，是维持所采用约束产生的反力。这个划分依赖模型中的约束选择，不能只凭力的名称机械分类。\n[[2]]理想约束的定义是：对任意允许虚位移，所有约束力的总虚功为零。注意两个限定：总和为零，而且对任意允许虚位移成立。刚杆两端的内力可以各自有非零虚功，但两端贡献相互抵消；所以不要求每个约束力单独为零。光滑固定曲面的法向力与切向虚位移垂直，是较直观的理想约束例子。\n[[3]]静止地面上的理想无滑滚动，接触点的瞬时允许虚位移为零，静摩擦可以作为理想约束反力。发生滑动时，摩擦通常有非零虚功，应作为非保守主动力保留。也不能从理想约束定义推出实际功永远为零。刚才移动支点的例子已经说明，非定常理想约束能够向系统输入或取走机械能。后面消去的是总约束虚功，而不是实际世界中的所有张力、支持力或摩擦。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 25,
+     "w": 1300,
+     "h": 40,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "03 / 虚位移与达朗贝尔原理",
+        "size": 23,
+        "color": "#244B88",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 69,
+     "w": 1540,
+     "h": 72,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "理想约束的总虚功",
+        "size": 48,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 155,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 976,
+     "w": 1500,
+     "h": 45,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "固定时间，沿约束允许的方向比较构型",
+        "size": 25,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 115,
+     "y": 230,
+     "w": 1660,
+     "h": 155,
+     "tex": "\\mathbf F_i:\\text{主动力},\\qquad\\mathbf R_i:\\text{约束力}",
+     "size": 44,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 115,
+     "y": 430,
+     "w": 1660,
+     "h": 155,
+     "tex": "\\sum_{i=1}^{N}\\mathbf R_i\\cdot\\delta\\mathbf r_i=0\\quad\\text{对任意允许 }\\delta\\mathbf r_i",
+     "size": 44,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 115,
+     "y": 675,
+     "w": 1660,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "总虚功为零 ≠ 每一项为零 ≠ 实际功总为零",
+        "size": 41,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "heading": "达朗贝尔原理消去约束反力",
+   "source_pages": [
+    8
+   ],
+   "narration": "[[1]]从惯性参考系中的牛顿第二定律开始，每个质点的主动力加约束力，等于质量乘加速度。质量在本课取常量。把质量乘加速度移到左边，再与这个质点的允许虚位移点乘，对全部大写恩个质点求和。由于每个牛顿方程本来就成立，这个求和等于零。\n[[2]]接着利用理想约束的总虚功条件，约束反力的总项消失，留下主动力减质量乘加速度，与虚位移点乘的总和等于零。这就是本节使用的达朗贝尔原理。它把动力学写成类似静力学的虚功形式，但加速度还保留在里面。负质量乘加速度常被叫作惯性力项，这里只是牛顿方程的重排，没有增加一种新的真实相互作用。\n[[3]]这一步解决了约束力未知的问题，却尚未完全解决坐标不独立的问题。质点虚位移必须满足约束，不能从这个总和直接断言每个质点的主动力等于质量乘加速度，那会把约束力错误地设成零。下一步要把允许虚位移写成独立广义坐标的变分，并收集每个独立变分的系数。牛顿定律、理想约束条件和独立坐标，这三项共同支撑后面的方程；若约束不理想，需要保留相应反力的虚功或引入另外的未知量。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 25,
+     "w": 1300,
+     "h": 40,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "03 / 虚位移与达朗贝尔原理",
+        "size": 23,
+        "color": "#244B88",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 69,
+     "w": 1540,
+     "h": 72,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "达朗贝尔原理消去约束反力",
+        "size": 48,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 155,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 976,
+     "w": 1500,
+     "h": 45,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "固定时间，沿约束允许的方向比较构型",
+        "size": 25,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 115,
+     "y": 230,
+     "w": 1660,
+     "h": 155,
+     "tex": "\\mathbf F_i+\\mathbf R_i=m_i\\ddot{\\mathbf r}_i",
+     "size": 44,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 115,
+     "y": 430,
+     "w": 1660,
+     "h": 155,
+     "tex": "\\sum_i(\\mathbf F_i+\\mathbf R_i-m_i\\ddot{\\mathbf r}_i)\\cdot\\delta\\mathbf r_i=0",
+     "size": 44,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 115,
+     "y": 675,
+     "w": 1660,
+     "h": 155,
+     "tex": "\\boxed{\\sum_i(\\mathbf F_i-m_i\\ddot{\\mathbf r}_i)\\cdot\\delta\\mathbf r_i=0}",
+     "size": 44,
+     "color": "#172B45",
+     "align": "left"
+    }
+   ]
+  },
+  {
+   "id": 13,
+   "heading": "把允许虚位移代入虚功关系",
+   "source_pages": [
+    11,
+    12
+   ],
+   "narration": "[[1]]现在开始核心推导。上方保留达朗贝尔关系，下方写出虚位移的广义坐标表达。将第二式代入第一式，得到对质点和广义坐标的双重求和。一个求和遍历大写恩个质点，另一个遍历小写恩个广义坐标，二者范围不同。力和加速度的项先与位置对坐标的偏导矢量点乘，最后乘上同一个坐标变分。\n[[2]]交换有限求和的次序以后，按照德尔塔丘杰把项收集起来。于是第杰个变分的系数有两部分：主动力的投影，和惯性项的投影。我们会把前者定义为广义力，把后者改写为动能的导数。这两步没有再次假定约束定常，因为虚位移从定义上已经固定时间。\n[[3]]请注意这不是把矢量方程简单改成标量方程，而是投影方向由约束允许的位形变化给出。位置对丘杰的偏导矢量，表示只改变第杰个坐标时，各质点沿什么方向、以什么比例移动。不同坐标对应的投影方向不必彼此垂直；关键是这些坐标局部独立。这页暂不消掉变分，它们让我们看清后面广义力和动能项为什么恰好组合在一起。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 25,
+     "w": 1300,
+     "h": 40,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "04 / 拉格朗日方程的推导",
+        "size": 23,
+        "color": "#244B88",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 69,
+     "w": 1540,
+     "h": 72,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "把允许虚位移代入虚功关系",
+        "size": 48,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 155,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 976,
+     "w": 1500,
+     "h": 45,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "把主动力和惯性项分别化为广义量",
+        "size": 25,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 0,
+     "x": 115,
+     "y": 230,
+     "w": 1660,
+     "h": 155,
+     "tex": "\\sum_i(\\mathbf F_i-m_i\\ddot{\\mathbf r}_i)\\cdot\\delta\\mathbf r_i=0",
+     "size": 44,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 0,
+     "x": 115,
+     "y": 430,
+     "w": 1660,
+     "h": 155,
+     "tex": "\\delta\\mathbf r_i=\\sum_j\\frac{\\partial\\mathbf r_i}{\\partial q_j}\\delta q_j",
+     "size": 44,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 115,
+     "y": 675,
+     "w": 1660,
+     "h": 175,
+     "tex": "\\begin{aligned}\\sum_{j=1}^{n}\\Big[&\\sum_{i=1}^{N}\\mathbf F_i\\cdot\\frac{\\partial\\mathbf r_i}{\\partial q_j}\\\\[-1pt]&-\\sum_{i=1}^{N}m_i\\ddot{\\mathbf r}_i\\cdot\\frac{\\partial\\mathbf r_i}{\\partial q_j}\\Big]\\delta q_j=0\\end{aligned}",
+     "size": 39,
+     "color": "#172B45",
+     "align": "left"
+    }
+   ]
+  },
+  {
+   "id": 14,
+   "heading": "广义力来自主动力的虚功",
+   "source_pages": [
+    11
+   ],
+   "narration": "[[1]]先处理主动力的部分。主动力的总虚功，是各质点的主动力与虚位移内积的总和。代入虚位移表达并交换求和，就可以写成广义力乘坐标变分的总和。因此定义大写丘下标杰，为全部主动力与位置对丘杰偏导矢量的内积之和。大写丘表示广义力，小写丘表示广义坐标，大小写不可混淆。\n[[2]]广义力不是把各力的大小相加，也不必具有牛顿的量纲。若坐标是长度，广义力的量纲通常是力；若坐标是角度，广义力是相应的力矩量，虚功则是力矩乘角度变分。更一般地，广义力与对应坐标变分的乘积总有能量量纲。用虚功定义，能够避免遗漏杠杆长度或把正负方向写反。\n[[3]]这里的求和包括主动力对所有有关质点的贡献，不能只看某一处作用力。在包含刚体的系统中，可以先按质点求和，再用刚体运动关系化成合力与力矩的虚功。滑轮后面就是一个例子。若理想约束反力已经在上一页消去，就不要再把同一反力重复加入广义力。需要保留的非保守主动力则必须进入广义力，不能因为我们准备写势能就把它漏掉。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 25,
+     "w": 1300,
+     "h": 40,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "04 / 拉格朗日方程的推导",
+        "size": 23,
+        "color": "#244B88",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 69,
+     "w": 1540,
+     "h": 72,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "广义力来自主动力的虚功",
+        "size": 48,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 155,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 976,
+     "w": 1500,
+     "h": 45,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "把主动力和惯性项分别化为广义量",
+        "size": 25,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 115,
+     "y": 230,
+     "w": 1660,
+     "h": 155,
+     "tex": "\\delta W=\\sum_i\\mathbf F_i\\cdot\\delta\\mathbf r_i=\\sum_j Q_j\\delta q_j",
+     "size": 44,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 115,
+     "y": 430,
+     "w": 1660,
+     "h": 155,
+     "tex": "\\boxed{Q_j=\\sum_{i=1}^{N}\\mathbf F_i\\cdot\\frac{\\partial\\mathbf r_i}{\\partial q_j}}",
+     "size": 44,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 115,
+     "y": 675,
+     "w": 1660,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "q 是长度：Q 为力；q 是角度：Q 为力矩量",
+        "size": 41,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "heading": "角坐标的广义力：单摆",
+   "source_pages": [
+    11
+   ],
+   "narration": "[[1]]用单摆检查定义。摆角西塔是唯一广义坐标。位置对摆角的偏导矢量，其横分量是摆长乘余弦，纵分量是摆长乘正弦。重力矢量向下，分量为零和负的质量乘重力加速度。两者点乘，得到重力对应的广义力，是负的质量乘重力加速度乘摆长乘摆角正弦。\n[[2]]这个广义力不是负的质量乘重力加速度乘正弦，因为角坐标还需要一个长度因子。它正是重力对支点的力矩，负号表示在正摆角处重力使摆角减小，起回复作用。角度作为无量纲量时，广义力用牛顿米表示；微分中的角度必须以弧度计，不能把度数直接代入导数。\n[[3]]张力沿杆或绳方向，与位置对摆角的偏导方向垂直，因此没有进入这个广义力。这里我们通过虚功得到与开头切向投影相同的信息。若另外施加一个沿正摆角方向的驱动力矩，它就直接加到这个角坐标广义力上。这样处理力矩与处理作用在质点上的力，其实是同一个虚功定义的两种写法。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 25,
+     "w": 1300,
+     "h": 40,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "04 / 拉格朗日方程的推导",
+        "size": 23,
+        "color": "#244B88",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 69,
+     "w": 1540,
+     "h": 72,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "角坐标的广义力：单摆",
+        "size": 48,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 155,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 976,
+     "w": 1500,
+     "h": 45,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "把主动力和惯性项分别化为广义量",
+        "size": 25,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 115,
+     "y": 230,
+     "w": 840,
+     "h": 155,
+     "tex": "\\frac{\\partial\\mathbf r}{\\partial\\theta}=(l\\cos\\theta,\\ l\\sin\\theta)",
+     "size": 36,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 115,
+     "y": 430,
+     "w": 840,
+     "h": 155,
+     "tex": "\\mathbf F_g=(0,-mg)\\quad\\Rightarrow\\quad Q_\\theta=-mgl\\sin\\theta",
+     "size": 36,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 115,
+     "y": 675,
+     "w": 840,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "负号：回复方向；l：角坐标必须保留的力臂",
+        "size": 35,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "img",
+     "step": 0,
+     "x": 1015,
+     "y": 215,
+     "w": 770,
+     "h": 685,
+     "src": "pendulum-diagram.svg"
+    }
+   ]
+  },
+  {
+   "id": 16,
+   "heading": "动能与第一个速度恒等式",
+   "source_pages": [
+    12
+   ],
+   "narration": "[[1]]下面处理惯性项。定义系统动能大写梯，为全部质点的二分之一质量乘速度平方之和。位置通过广义坐标表示以后，动能就是广义坐标、广义速度和时间的函数。我们在求偏导数时，把丘、丘上方一点和时间作为独立自变量。\n[[2]]回看速度表达。它对每一个广义速度都是线性的，广义速度丘杰上方一点的系数，恰好是位置对丘杰的偏导矢量。因此速度对丘杰上方一点的偏导，等于位置对丘杰的偏导。这是第一个恒等式，不是额外的力学定律，而是链式法则的直接结果。显含时间的速度项在这个偏导中为零，因为它不含广义速度。\n[[3]]对动能求广义速度偏导，速度平方的导数给出两倍速度，约去二分之一，得到质量乘速度与速度偏导的内积，再对质点求和。利用刚才的恒等式，改写成质量乘速度与位置坐标偏导的内积。这个形式与惯性投影非常接近：前者含速度，后者含加速度。所以下一页对它取时间导数。请记住，时间求导将同时作用于速度和位置偏导矢量，第二部分不能省略。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 25,
+     "w": 1300,
+     "h": 40,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "04 / 拉格朗日方程的推导",
+        "size": 23,
+        "color": "#244B88",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 69,
+     "w": 1540,
+     "h": 72,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "动能与第一个速度恒等式",
+        "size": 48,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 155,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 976,
+     "w": 1500,
+     "h": 45,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "把主动力和惯性项分别化为广义量",
+        "size": 25,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 115,
+     "y": 176,
+     "w": 1660,
+     "h": 30,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "已知：速度链式法则",
+        "size": 23,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 0,
+     "x": 115,
+     "y": 210,
+     "w": 1660,
+     "h": 155,
+     "tex": "\\mathbf v_i=\\sum_\\alpha\\frac{\\partial\\mathbf r_i}{\\partial q_\\alpha}\\dot q_\\alpha+\\frac{\\partial\\mathbf r_i}{\\partial t}",
+     "size": 39,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 115,
+     "y": 351,
+     "w": 1660,
+     "h": 30,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "定义系统动能",
+        "size": 23,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 115,
+     "y": 385,
+     "w": 1660,
+     "h": 155,
+     "tex": "T(q,\\dot q,t)=\\frac12\\sum_i m_i\\mathbf v_i\\cdot\\mathbf v_i",
+     "size": 44,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 115,
+     "y": 526,
+     "w": 1660,
+     "h": 30,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "① 固定 q、t，对广义速度求偏导",
+        "size": 23,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 115,
+     "y": 560,
+     "w": 1660,
+     "h": 155,
+     "tex": "\\frac{\\partial\\mathbf v_i}{\\partial\\dot q_j}=\\frac{\\partial\\mathbf r_i}{\\partial q_j}",
+     "size": 44,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 115,
+     "y": 716,
+     "w": 1660,
+     "h": 30,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "② 对动能使用链式法则",
+        "size": 23,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 115,
+     "y": 750,
+     "w": 1660,
+     "h": 155,
+     "tex": "\\frac{\\partial T}{\\partial\\dot q_j}=\\sum_i m_i\\mathbf v_i\\cdot\\frac{\\partial\\mathbf r_i}{\\partial q_j}",
+     "size": 44,
+     "color": "#172B45",
+     "align": "left"
+    }
+   ]
+  },
+  {
+   "id": 17,
+   "heading": "时间导数与坐标偏导的关系",
+   "source_pages": [
+    12
+   ],
+   "narration": "[[1]]先单独证明需要的第二个恒等式。对位置的丘杰偏导沿实际运动求时间导数，使用链式法则，得到位置对丘杰和丘阿尔法的混合二阶偏导，乘丘阿尔法的一阶时间导数并求和，再加位置对丘杰和时间的混合偏导。阿尔法在本页是广义坐标的求和编号，从一到小写恩。\n[[2]]从另一边计算，把速度表达对丘杰求偏导。求这个偏导时固定所有广义速度和时间，因此导数只作用在位置的各个偏导系数上。所得项是位置对丘阿尔法和丘杰的混合偏导乘广义速度，以及位置对时间和丘杰的混合偏导。若位置函数足够光滑，混合偏导可以交换次序，这两种计算逐项相同。\n[[3]]因此，位置的坐标偏导的时间导数，等于速度的坐标偏导。这里并不是笼统地说任何时间导数和偏导都能交换。等式依赖我们刚才写出的速度链式法则、求偏导时固定广义速度的约定，以及位置函数的光滑性。把这些条件说明以后，后面从惯性项改写为动能项才有可靠的代数依据。若位置函数显含时间，最后那项仍在两边出现，所以恒等式并不要求定常约束。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 25,
+     "w": 1300,
+     "h": 40,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "04 / 拉格朗日方程的推导",
+        "size": 23,
+        "color": "#244B88",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 69,
+     "w": 1540,
+     "h": 72,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "时间导数与坐标偏导的关系",
+        "size": 48,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 155,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 976,
+     "w": 1500,
+     "h": 45,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "把主动力和惯性项分别化为广义量",
+        "size": 25,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 115,
+     "y": 176,
+     "w": 1660,
+     "h": 30,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "保留速度表达",
+        "size": 23,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 0,
+     "x": 115,
+     "y": 210,
+     "w": 1660,
+     "h": 155,
+     "tex": "\\mathbf v_i=\\sum_\\alpha\\frac{\\partial\\mathbf r_i}{\\partial q_\\alpha}\\dot q_\\alpha+\\frac{\\partial\\mathbf r_i}{\\partial t}",
+     "size": 39,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 115,
+     "y": 351,
+     "w": 1660,
+     "h": 30,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "从左侧沿真实运动求时间导数",
+        "size": 23,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 115,
+     "y": 385,
+     "w": 1660,
+     "h": 155,
+     "tex": "\\frac d{dt}\\frac{\\partial\\mathbf r_i}{\\partial q_j}=\\sum_{\\alpha=1}^{n}\\frac{\\partial^2\\mathbf r_i}{\\partial q_j\\partial q_\\alpha}\\dot q_\\alpha+\\frac{\\partial^2\\mathbf r_i}{\\partial q_j\\partial t}",
+     "size": 39,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 115,
+     "y": 526,
+     "w": 1660,
+     "h": 30,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "从右侧固定广义速度求坐标偏导",
+        "size": 23,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 115,
+     "y": 560,
+     "w": 1660,
+     "h": 155,
+     "tex": "\\frac{\\partial\\mathbf v_i}{\\partial q_j}=\\sum_{\\alpha=1}^{n}\\frac{\\partial^2\\mathbf r_i}{\\partial q_\\alpha\\partial q_j}\\dot q_\\alpha+\\frac{\\partial^2\\mathbf r_i}{\\partial t\\partial q_j}",
+     "size": 39,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 115,
+     "y": 716,
+     "w": 1660,
+     "h": 30,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "光滑性使混合偏导相等",
+        "size": 23,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 115,
+     "y": 750,
+     "w": 1660,
+     "h": 155,
+     "tex": "\\boxed{\\frac d{dt}\\frac{\\partial\\mathbf r_i}{\\partial q_j}=\\frac{\\partial\\mathbf v_i}{\\partial q_j}}",
+     "size": 44,
+     "color": "#172B45",
+     "align": "left"
+    }
+   ]
+  },
+  {
+   "id": 18,
+   "heading": "惯性投影的乘积求导",
+   "source_pages": [
+    12
+   ],
+   "narration": "[[1]]回到动能的广义速度偏导。对这个质点求和表达沿运动取时间导数，每一项都用内积的乘积法则。第一部分对速度求导，得到质量乘加速度与位置坐标偏导的内积，这就是达朗贝尔关系中的惯性投影。第二部分保留速度，对位置坐标偏导求时间导数。\n[[2]]利用上一页已经证明的第二恒等式，第二部分改写成质量乘速度与速度的坐标偏导的内积。再对动能直接求坐标偏导，可以看到它恰好就是动能对丘杰的偏导。因为质量为常量，速度平方求导后同样约去二分之一；求偏导时广义速度与时间仍保持固定。\n[[3]]于是，动能的广义速度偏导再作时间导数，等于惯性投影，加上动能的坐标偏导。把最后一项移到另一边，就会得到所需的差。很多简写的推导直接写出这个差，却没有交代第二项从哪里来。如果忽略乘积法则的第二部分，只保留加速度项，就会误以为惯性投影永远等于动能的广义速度偏导的时间导数；仅在特殊坐标中，动能的坐标偏导才可能为零。一般曲线坐标下不能省略它。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 25,
+     "w": 1300,
+     "h": 40,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "04 / 拉格朗日方程的推导",
+        "size": 23,
+        "color": "#244B88",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 69,
+     "w": 1540,
+     "h": 72,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "惯性投影的乘积求导",
+        "size": 48,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 155,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 976,
+     "w": 1500,
+     "h": 45,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "把主动力和惯性项分别化为广义量",
+        "size": 25,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 115,
+     "y": 171,
+     "w": 1660,
+     "h": 30,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "前两页得到的两个恒等式",
+        "size": 23,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 0,
+     "x": 115,
+     "y": 205,
+     "w": 1660,
+     "h": 155,
+     "tex": "\\frac{\\partial\\mathbf v_i}{\\partial\\dot q_j}=\\frac{\\partial\\mathbf r_i}{\\partial q_j},\\qquad \\frac d{dt}\\frac{\\partial\\mathbf r_i}{\\partial q_j}=\\frac{\\partial\\mathbf v_i}{\\partial q_j}",
+     "size": 39,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 115,
+     "y": 391,
+     "w": 1660,
+     "h": 30,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "乘积求导：速度和投影方向都会变化",
+        "size": 23,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 115,
+     "y": 425,
+     "w": 1660,
+     "h": 260,
+     "tex": "\\frac d{dt}\\frac{\\partial T}{\\partial\\dot q_j}={\\color{#244B88}\\underbrace{\\sum_i m_i\\ddot{\\mathbf r}_i\\cdot\\frac{\\partial\\mathbf r_i}{\\partial q_j}}_{\\text{惯性投影}}}+{\\color{#B15D16}\\underbrace{\\sum_i m_i\\mathbf v_i\\cdot\\frac d{dt}\\frac{\\partial\\mathbf r_i}{\\partial q_j}}_{\\text{投影方向的变化}}}",
+     "size": 39,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 115,
+     "y": 701,
+     "w": 1660,
+     "h": 30,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "第二项识别为动能的坐标偏导",
+        "size": 23,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 115,
+     "y": 735,
+     "w": 1660,
+     "h": 130,
+     "tex": "{\\color{#B15D16}\\sum_i m_i\\mathbf v_i\\cdot\\frac{\\partial\\mathbf v_i}{\\partial q_j}=\\frac{\\partial T}{\\partial q_j}}",
+     "size": 39,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 115,
+     "y": 910,
+     "w": 1660,
+     "h": 70,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "乘积法则的第二项正是 ∂T/∂qⱼ，不能遗漏",
+        "size": 32,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": 19,
+   "heading": "惯性项的动能表达",
+   "source_pages": [
+    12
+   ],
+   "narration": "[[1]]把上一页等式移项，得到惯性项的完整动能表达：所有质点的质量乘加速度，与位置对第杰个坐标偏导的内积之和，等于动能对该广义速度的偏导再取时间导数，减去动能对该广义坐标的偏导。这个恒等式把很多质点的加速度投影，集中到一个标量动能函数里。\n[[2]]我们可以用单摆作快速核对。固定支点的动能是二分之一质量乘摆长平方乘摆角速度平方。它不显含摆角，所以动能的摆角偏导为零；角速度偏导是质量乘摆长平方乘角速度，再对时间求导得到质量乘摆长平方乘角加速度。这个量与前面重力广义力一样具有力矩量纲，两个量相等就得到单摆方程。\n[[3]]这个核对并不能代替一般证明，但能检查差号和长度幂次。刚才一般证明用了常质量质点、惯性系速度、光滑的位置参数化。对刚体，我们把动能进一步分成质心平动和绕质心转动，仍源自同一个质点动能总和。显含时间的位置函数也满足恒等式，因此这一阶段并没有推出能量守恒。方程的形式能成立，与某个守恒量是否成立，必须分开判断。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 25,
+     "w": 1300,
+     "h": 40,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "04 / 拉格朗日方程的推导",
+        "size": 23,
+        "color": "#244B88",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 69,
+     "w": 1540,
+     "h": 72,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "惯性项的动能表达",
+        "size": 48,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 155,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 976,
+     "w": 1500,
+     "h": 45,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "把主动力和惯性项分别化为广义量",
+        "size": 25,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 115,
+     "y": 196,
+     "w": 1660,
+     "h": 30,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "将第二项移到等号右侧",
+        "size": 23,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 115,
+     "y": 230,
+     "w": 1660,
+     "h": 155,
+     "tex": "\\boxed{{\\color{#244B88}\\sum_i m_i\\ddot{\\mathbf r}_i\\cdot\\frac{\\partial\\mathbf r_i}{\\partial q_j}}=\\frac d{dt}\\frac{\\partial T}{\\partial\\dot q_j}-{\\color{#B15D16}\\frac{\\partial T}{\\partial q_j}}}",
+     "size": 39,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 115,
+     "y": 396,
+     "w": 1660,
+     "h": 30,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "用单摆核对长度、量纲和符号",
+        "size": 23,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 115,
+     "y": 430,
+     "w": 1660,
+     "h": 155,
+     "tex": "T_{\\rm pend}=\\frac12ml^2\\dot\\theta^2\\ \\Rightarrow\\ \\frac d{dt}\\frac{\\partial T}{\\partial\\dot\\theta}-\\frac{\\partial T}{\\partial\\theta}=ml^2\\ddot\\theta",
+     "size": 39,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 115,
+     "y": 675,
+     "w": 1660,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "加速度投影 → 单个动能函数的导数",
+        "size": 41,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": 20,
+   "heading": "独立虚位移给出运动方程",
+   "source_pages": [
+    13
+   ],
+   "narration": "[[1]]现在把广义力定义和动能恒等式一起代回收集好的变分关系。第杰个坐标变分的系数，是广义力减去动能广义速度偏导的时间导数，再加动能的坐标偏导。这个系数与坐标变分的乘积，对所有独立坐标求和为零。\n[[2]]由于完整约束已经通过位置函数满足，广义坐标在当前局部区域独立。我们可以只让其中一个坐标产生非零微小变分，而把其余坐标变分设为零。关系又必须对这个变分的任意大小和正负方向成立，因此相应的系数只能为零。逐个坐标使用同样的理由，得到小写恩个方程，即动能广义速度偏导的时间导数，减动能坐标偏导，等于该坐标的广义力。\n[[3]]这就是以动能和广义力写成的拉格朗日方程。它不是从某一次虚位移总和为零推出的，而是从任意独立允许变分都成立推出的。若坐标有冗余，或者非完整约束使这些变分还满足额外关系，就不能逐个系数设零。至此，我们完成了两项消去：约束反力通过理想虚功条件消去，坐标间的约束通过独立参数化消去。方程数与自由度数相同，后面的任务是计算动能与广义力。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 25,
+     "w": 1300,
+     "h": 40,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "04 / 拉格朗日方程的推导",
+        "size": 23,
+        "color": "#244B88",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 69,
+     "w": 1540,
+     "h": 72,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "独立虚位移给出运动方程",
+        "size": 48,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 155,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 976,
+     "w": 1500,
+     "h": 45,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "把主动力和惯性项分别化为广义量",
+        "size": 25,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 115,
+     "y": 230,
+     "w": 1660,
+     "h": 155,
+     "tex": "\\sum_j\\left[Q_j-\\frac d{dt}\\frac{\\partial T}{\\partial\\dot q_j}+\\frac{\\partial T}{\\partial q_j}\\right]\\delta q_j=0",
+     "size": 39,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 115,
+     "y": 430,
+     "w": 1660,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "δq₁,…,δqₙ 局部独立，且等式对任意允许变分成立",
+        "size": 41,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 115,
+     "y": 675,
+     "w": 1660,
+     "h": 155,
+     "tex": "\\boxed{\\frac d{dt}\\frac{\\partial T}{\\partial\\dot q_j}-\\frac{\\partial T}{\\partial q_j}=Q_j,\\quad j=1,\\ldots,n}",
+     "size": 44,
+     "color": "#172B45",
+     "align": "left"
+    }
+   ]
+  },
+  {
+   "id": 21,
+   "heading": "势能与非保守广义力",
+   "source_pages": [
+    13,
+    21
+   ],
+   "narration": "[[1]]什么时候可以进一步写拉格朗日函数？如果主动力中的保守部分能够用不含广义速度的势能大写维表示，它的固定时间虚功等于负的势能变分。利用链式法则，该部分广义力就是负的势能坐标偏导。剩余的非保守主动力用大写丘上标非保守表示，保留在方程右边。\n[[2]]把两部分广义力代入动能形式的方程，再把势能偏导移到左边。定义拉格朗日函数花体艾尔，等于动能减势能。势能不含广义速度，所以拉格朗日函数的广义速度偏导等于动能的广义速度偏导；它的坐标偏导则等于动能偏导减势能偏导。这两项正好将左边组合成拉格朗日函数的导数形式。\n[[3]]不要把非保守力也随意塞进一个普通位置势能。阻尼力矩与角速度有关，需要作为非保守广义力单独保留。势能允许显含时间，但若显含时间，不能立刻宣称机械能守恒。本课不讨论速度相关广义势的一般理论，也不把所有非惯性力都归入位置势能。我们已经得到足够完成典型建模的形式：独立坐标、动能、势能以及必要的非保守广义力。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 25,
+     "w": 1300,
+     "h": 40,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "04 / 拉格朗日方程的推导",
+        "size": 23,
+        "color": "#244B88",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 69,
+     "w": 1540,
+     "h": 72,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "势能与非保守广义力",
+        "size": 48,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 155,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 976,
+     "w": 1500,
+     "h": 45,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "把主动力和惯性项分别化为广义量",
+        "size": 25,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 115,
+     "y": 230,
+     "w": 1660,
+     "h": 155,
+     "tex": "Q_j=-\\frac{\\partial V(q,t)}{\\partial q_j}+Q_j^{\\rm nc}",
+     "size": 44,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 115,
+     "y": 430,
+     "w": 1660,
+     "h": 155,
+     "tex": "\\mathcal L=T-V,\\qquad\\frac{\\partial V}{\\partial\\dot q_j}=0",
+     "size": 44,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 115,
+     "y": 675,
+     "w": 1660,
+     "h": 155,
+     "tex": "\\boxed{\\frac d{dt}\\frac{\\partial\\mathcal L}{\\partial\\dot q_j}-\\frac{\\partial\\mathcal L}{\\partial q_j}=Q_j^{\\rm nc}}",
+     "size": 39,
+     "color": "#172B45",
+     "align": "left"
+    }
+   ]
+  },
+  {
+   "id": 22,
+   "heading": "方程成立与能量守恒的条件",
+   "source_pages": [
+    13,
+    14,
+    21
+   ],
+   "narration": "[[1]]在进入例题前，把条件集中检查一次。我们使用惯性参考系、常质量质点或由它们组成的刚体，位置通过光滑且独立的广义坐标描述，约束完整而且理想。取拉格朗日函数为动能减普通势能时，势能不含速度；其余主动力留在非保守广义力中。方程成立本身并不要求所有约束定常。\n[[2]]能量守恒还需要更多条件。对定常约束、没有外部显式时间驱动、只有保守主动力的通常机械系统，动能加势能守恒，可以用它检查解。存在阻尼时，机械能一般下降；支点被外界按给定规律移动时，即使张力是理想约束反力，也可能输入能量。不能只看到理想约束就断定能量不变。\n[[3]]下面的滑轮例题约束定常、只有重力做主动力功，因此可以检查能量守恒；迁移练习加入阻尼后，就要改成机械能变化率检查。守恒关系与方程的适用条件必须分别判断。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 25,
+     "w": 1300,
+     "h": 40,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "04 / 拉格朗日方程的推导",
+        "size": 23,
+        "color": "#244B88",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 69,
+     "w": 1540,
+     "h": 72,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "方程成立与能量守恒的条件",
+        "size": 48,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 155,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 976,
+     "w": 1500,
+     "h": 45,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "把主动力和惯性项分别化为广义量",
+        "size": 25,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 115,
+     "y": 230,
+     "w": 1660,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "方程：惯性系、常质量、独立完整坐标、理想约束",
+        "size": 41,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 115,
+     "y": 430,
+     "w": 1660,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "L = T − V：V 不含广义速度；Qⁿᶜ 单独保留",
+        "size": 41,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 115,
+     "y": 675,
+     "w": 1660,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "T + V 守恒：定常模型、无显式驱动、无非保守功",
+        "size": 41,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": 23,
+   "heading": "例题：有质量滑轮的系统",
+   "source_pages": [
+    18
+   ],
+   "narration": "[[1]]下面用有质量滑轮的阿特伍德机，完整走一遍建模和求解过程。系统包括左侧质量艾姆一、右侧质量艾姆二，以及质量大写艾姆、半径大写阿尔的均质圆盘滑轮。参考系固定在地面，是惯性系；滑轮轴固定且轴承无阻力。绳轻、不可伸长、始终绷紧，在滑轮上不打滑；两重物只沿竖直方向运动。空气阻力忽略，重力加速度取九点八一米每二次方秒。\n[[2]]滑轮绕固定轴的转动惯量记为艾下标滑轮，对均质圆盘等于二分之一质量乘半径平方。不要把这个结论当作任意滑轮的惯量，若是薄环或其他质量分布，必须换用相应惯量。我们先保留一般的惯量符号，最后再代入均质圆盘。\n[[3]]如果暂时用两物块位移和滑轮转角描述系统，有三个运动变量。绳长不变把两侧位移联系起来，无滑条件再把绳的线位移与滑轮转角联系起来，因此只剩一个独立坐标。选右侧物块向下的位移小写艾克斯为正，则左侧向上移动同样距离，滑轮顺时针转动为正。把方向在图上固定后，动能不会受正负方向影响，但势能的正负号和张力核对会直接依赖它。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 25,
+     "w": 1300,
+     "h": 40,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "05 / 有质量滑轮例题",
+        "size": 23,
+        "color": "#244B88",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 69,
+     "w": 1540,
+     "h": 72,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "例题：有质量滑轮的系统",
+        "size": 48,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 155,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 976,
+     "w": 1500,
+     "h": 45,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "约束 → 坐标 → 动能与势能 → 方程 → 检验",
+        "size": 25,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 115,
+     "y": 230,
+     "w": 840,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "系统：m₁、m₂、滑轮 M；地面惯性系，轴固定",
+        "size": 35,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 115,
+     "y": 430,
+     "w": 840,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "轻绳绷紧且不伸长、无滑、轴承无阻力",
+        "size": 35,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 115,
+     "y": 675,
+     "w": 840,
+     "h": 155,
+     "tex": "I_p=\\frac12MR^2,\\qquad q=x\\ (m_2\\text{向下为正})",
+     "size": 43,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "img",
+     "step": 0,
+     "x": 1015,
+     "y": 215,
+     "w": 770,
+     "h": 685,
+     "src": "atwood-diagram.svg"
+    }
+   ]
+  },
+  {
+   "id": 24,
+   "heading": "位置关系与一个独立坐标",
+   "source_pages": [
+    18
+   ],
+   "narration": "[[1]]取竖直向上为两物块高度的正方向。左侧高度等于参考高度加艾克斯，右侧高度等于参考高度减艾克斯。这样，艾克斯增加时右物块下降、左物块上升，符合刚才的定义。绳长条件使两高度之和保持常量。固定轴滑轮的顺时针转角记为斐，无滑关系是转角等于参考转角加位移除以半径。三个参考值都取艾克斯等于零的构型，并不要求运动初值为零。\n[[2]]对这些位置关系取时间导数，左物块竖直速度为艾克斯上方一点，右物块竖直速度为负的艾克斯上方一点，滑轮角速度为艾克斯上方一点除以半径。两物块速率相同，方向相反。不要因为右侧速度分量为负就把动能写成负值，动能用速度平方。\n[[3]]这里无滑速度关系可以积分成位移与转角的关系，所以在此系统中仍属于完整约束。绳长条件与无滑条件已经被位置关系满足，所以拉格朗日方程只需要对艾克斯写一次。绳对物块的张力、绳与滑轮之间的接触力属于内部约束作用，理想情况下总虚功相互抵消。物块所受张力的虚功为左张力减右张力乘位移变分；滑轮上的绳力矩虚功为相反的张力差乘半径乘转角变分。无滑关系使两项相消。轴的支持力作用点固定，也没有虚功。我们不需要先知道两侧张力是否相等；事实上有质量滑轮需要净力矩，两侧张力一般不同。这个差异会在求出加速度后用牛顿方法恢复出来。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 25,
+     "w": 1300,
+     "h": 40,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "05 / 有质量滑轮例题",
+        "size": 23,
+        "color": "#244B88",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 69,
+     "w": 1540,
+     "h": 72,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "位置关系与一个独立坐标",
+        "size": 48,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 155,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 976,
+     "w": 1500,
+     "h": 45,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "约束 → 坐标 → 动能与势能 → 方程 → 检验",
+        "size": 25,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 115,
+     "y": 205,
+     "w": 840,
+     "h": 230,
+     "tex": "\\begin{aligned}y_1&=y_{10}+x,\\quad y_2=y_{20}-x\\\\ \\phi&=\\phi_0+\\frac{x}{R}\\end{aligned}",
+     "size": 36,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 115,
+     "y": 465,
+     "w": 840,
+     "h": 155,
+     "tex": "\\dot y_1=\\dot x,\\quad\\dot y_2=-\\dot x,\\quad\\dot\\phi=\\frac{\\dot x}{R}",
+     "size": 36,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 115,
+     "y": 650,
+     "w": 840,
+     "h": 230,
+     "tex": "\\begin{aligned}\\delta W_{\\rm rope}={}&(T_1-T_2)\\delta x\\\\&+(T_2-T_1)R\\delta\\phi=0\\end{aligned}",
+     "size": 36,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 115,
+     "y": 915,
+     "w": 840,
+     "h": 70,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "T₁、T₂：左、右张力；δφ = δx/R",
+        "size": 32,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "img",
+     "step": 0,
+     "x": 1015,
+     "y": 215,
+     "w": 770,
+     "h": 685,
+     "src": "atwood-diagram.svg"
+    }
+   ]
+  },
+  {
+   "id": 25,
+   "heading": "完整计算动能与势能",
+   "source_pages": [
+    18
+   ],
+   "narration": "[[1]]总动能有三项：左物块平动、右物块平动，以及滑轮绕固定轴转动。将上一页速度关系代入，两个物块贡献二分之一质量之和乘位移速度平方，滑轮贡献二分之一转动惯量乘位移速度除以半径的平方。合并后，括号里是两物块质量之和，再加转动惯量除以半径平方。\n[[2]]惯量除以半径平方的量纲是质量，它表示在这个坐标下滑轮转动带来的等效惯性。滑轮轴不移动，所以没有滑轮质心平动动能；不能再给它加一个二分之一滑轮质量乘位移速度平方。这个错误会把滑轮的惯性重复计算。\n[[3]]重力势能以向上高度为正，等于两物块质量分别乘重力加速度乘高度。代入高度关系，常数项可以略去，留下左质量减右质量，乘重力加速度乘艾克斯。若右侧更重，艾克斯增加时势能下降，负斜率正好对应右侧向下的驱动。滑轮质心高度固定，其重力势能只贡献常量。系统没有另外的非保守广义力，所以用动能减势能作拉格朗日函数即可。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 25,
+     "w": 1300,
+     "h": 40,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "05 / 有质量滑轮例题",
+        "size": 23,
+        "color": "#244B88",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 69,
+     "w": 1540,
+     "h": 72,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "完整计算动能与势能",
+        "size": 48,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 155,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 976,
+     "w": 1500,
+     "h": 45,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "约束 → 坐标 → 动能与势能 → 方程 → 检验",
+        "size": 25,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 115,
+     "y": 196,
+     "w": 1660,
+     "h": 30,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "两个物块平动 + 滑轮转动",
+        "size": 23,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 115,
+     "y": 230,
+     "w": 1660,
+     "h": 155,
+     "tex": "T=\\frac12m_1\\dot x^2+\\frac12m_2\\dot x^2+\\frac12 I_p\\left(\\frac{\\dot x}{R}\\right)^2",
+     "size": 44,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 115,
+     "y": 396,
+     "w": 1660,
+     "h": 30,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "合并：转动惯量成为这个坐标下的等效质量",
+        "size": 23,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 115,
+     "y": 430,
+     "w": 1660,
+     "h": 155,
+     "tex": "T=\\frac12\\left(m_1+m_2+\\frac{I_p}{R^2}\\right)\\dot x^2",
+     "size": 44,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 115,
+     "y": 641,
+     "w": 1660,
+     "h": 30,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "重力势能的斜率给出驱动方向",
+        "size": 23,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 115,
+     "y": 675,
+     "w": 1660,
+     "h": 155,
+     "tex": "V=(m_1-m_2)gx+\\mathrm{const},\\qquad Q_x^{\\rm nc}=0",
+     "size": 44,
+     "color": "#172B45",
+     "align": "left"
+    }
+   ]
+  },
+  {
+   "id": 26,
+   "heading": "从拉格朗日函数到加速度",
+   "source_pages": [
+    18
+   ],
+   "narration": "[[1]]写出拉格朗日函数：二分之一有效惯性乘位移速度平方，减去左质量减右质量乘重力加速度乘位移。对广义速度求偏导，得到有效惯性乘位移速度；再对时间求导，有效惯性是常数，所以得到有效惯性乘加速度。\n[[2]]拉格朗日函数对位移的偏导来自势能项，等于右质量减左质量乘重力加速度。把这两个导数代入方程，得到有效惯性乘加速度，等于右质量减左质量乘重力加速度。这里再次核对符号：右侧更重时右边为正，所以我们定义的右向下加速度为正。\n[[3]]最后得到加速度，为质量差乘重力加速度，除以两物块质量之和加惯量除半径平方。若滑轮是均质圆盘，惯量除半径平方就是滑轮质量的一半。半径约去，不表示滑轮转动没有影响，而是同一圆盘质量分布的惯量随半径平方变化，恰好与无滑关系中的半径平方抵消。对于具有不同惯量参数的滑轮，应该使用一般表达式，不要无条件套用分母中质量一半的结果。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 25,
+     "w": 1300,
+     "h": 40,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "05 / 有质量滑轮例题",
+        "size": 23,
+        "color": "#244B88",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 69,
+     "w": 1540,
+     "h": 72,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "从拉格朗日函数到加速度",
+        "size": 48,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 155,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 976,
+     "w": 1500,
+     "h": 45,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "约束 → 坐标 → 动能与势能 → 方程 → 检验",
+        "size": 25,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 115,
+     "y": 230,
+     "w": 1660,
+     "h": 155,
+     "tex": "\\mathcal L=\\frac12\\left(m_1+m_2+\\frac{I_p}{R^2}\\right)\\dot x^2-(m_1-m_2)gx",
+     "size": 44,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 115,
+     "y": 430,
+     "w": 1660,
+     "h": 175,
+     "tex": "\\begin{aligned}\\frac d{dt}\\frac{\\partial\\mathcal L}{\\partial\\dot x}&=\\left(m_1+m_2+\\frac{I_p}{R^2}\\right)\\ddot x\\\\ \\frac{\\partial\\mathcal L}{\\partial x}&=(m_2-m_1)g\\end{aligned}",
+     "size": 39,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 115,
+     "y": 675,
+     "w": 1660,
+     "h": 155,
+     "tex": "\\boxed{a=\\ddot x=\\frac{(m_2-m_1)g}{m_1+m_2+I_p/R^2}}\\quad\\xrightarrow{I_p=MR^2/2}\\quad a=\\frac{(m_2-m_1)g}{m_1+m_2+M/2}",
+     "size": 39,
+     "color": "#172B45",
+     "align": "left"
+    }
+   ]
+  },
+  {
+   "id": 27,
+   "heading": "运动解、量纲与简单极限",
+   "source_pages": [
+    18
+   ],
+   "narration": "[[1]]在绳绷紧、接触和无滑条件持续满足的阶段，加速度为常量。给定位移初值艾克斯零和速度初值维零，速度随时间等于初速度加加速度乘时间；位移等于初位移加初速度乘时间，再加二分之一加速度乘时间平方。这是完整的运动解，不只是一个加速度公式。取从静止释放时，初速度为零即可。\n[[2]]检查量纲，分子质量乘重力加速度是力，分母是质量，加速度量纲正确。两质量相等时，加速度为零；从静止释放则保持静止，若已有初速度，在理想无阻力模型中保持匀速。这提醒我们，加速度为零不等于速度必为零。令滑轮惯量趋于零，就恢复轻滑轮的熟悉结果。滑轮惯量增大时，驱动力没有改变，总惯性增大，所以加速度绝对值减小。\n[[3]]还可以检查能量。用常有效惯性计算动能变化率，再加势能变化率，会得到有效惯性乘速度乘加速度，加上左质量减右质量乘重力加速度乘速度。代入方程，两项相消。能量守恒核对了符号和分母中的转动贡献。动画中的运动将使用这里的常加速度解，达到示意行程边界就停止；物块碰到滑轮或地面以后，需要新的接触模型，不能继续使用同一个解。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 25,
+     "w": 1300,
+     "h": 40,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "05 / 有质量滑轮例题",
+        "size": 23,
+        "color": "#244B88",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 69,
+     "w": 1540,
+     "h": 72,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "运动解、量纲与简单极限",
+        "size": 48,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 155,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 976,
+     "w": 1500,
+     "h": 45,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "约束 → 坐标 → 动能与势能 → 方程 → 检验",
+        "size": 25,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 115,
+     "y": 230,
+     "w": 1660,
+     "h": 155,
+     "tex": "\\dot x=v_0+at,\\qquad x=x_0+v_0t+\\frac12at^2",
+     "size": 44,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 115,
+     "y": 430,
+     "w": 1660,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "检查：m₁ = m₂ → a = 0；Iₚ → 0 → 轻滑轮结果",
+        "size": 41,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 115,
+     "y": 675,
+     "w": 1660,
+     "h": 155,
+     "tex": "\\frac d{dt}(T+V)=\\dot x\\left[\\left(m_1+m_2+\\frac{I_p}{R^2}\\right)a+(m_1-m_2)g\\right]=0",
+     "size": 44,
+     "color": "#172B45",
+     "align": "left"
+    }
+   ]
+  },
+  {
+   "id": 28,
+   "heading": "用牛顿方程恢复两侧张力",
+   "source_pages": [
+    18
+   ],
+   "narration": "[[1]]我们再用另一种方法核对。左物块向上加速度为正的艾，牛顿方程是左张力减左重力等于左质量乘艾，因此左张力等于左质量乘重力加速度加艾。右物块向下加速度为艾，右重力减右张力等于右质量乘艾，因此右张力等于右质量乘重力加速度减艾。\n[[2]]滑轮顺时针角加速度等于艾除以半径。右张力与左张力对轴产生相反力矩，净顺时针力矩为张力差乘半径，等于滑轮惯量乘角加速度。把两张力表达代入，便再次得到两质量之和加惯量除半径平方，乘加速度，等于质量差乘重力加速度，与拉格朗日结果完全一致。\n[[3]]对正质量和非负惯量，加速度绝对值小于重力加速度，两张力都为正，符合绳能拉不能推的要求。但这只检查了绷紧的必要条件。实际绳轮接触还需要足够摩擦维持不打滑；本题没有给出绳轮接触的摩擦参数，所以无滑是已经声明的模型假设，不能从加速度公式反推出任意绳轮都不打滑。轴承若有阻力矩，应加入对应的非保守广义力，方程也会改变。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 25,
+     "w": 1300,
+     "h": 40,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "05 / 有质量滑轮例题",
+        "size": 23,
+        "color": "#244B88",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 69,
+     "w": 1540,
+     "h": 72,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "用牛顿方程恢复两侧张力",
+        "size": 48,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 155,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 976,
+     "w": 1500,
+     "h": 45,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "约束 → 坐标 → 动能与势能 → 方程 → 检验",
+        "size": 25,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 115,
+     "y": 230,
+     "w": 840,
+     "h": 175,
+     "tex": "\\begin{aligned}T_1&=m_1(g+a)\\\\T_2&=m_2(g-a)\\end{aligned}",
+     "size": 43,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 115,
+     "y": 430,
+     "w": 840,
+     "h": 155,
+     "tex": "(T_2-T_1)R=I_p\\frac aR",
+     "size": 43,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 115,
+     "y": 675,
+     "w": 840,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "T₁、T₂ > 0；有惯量且 a ≠ 0 时，两侧张力不同",
+        "size": 35,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "img",
+     "step": 0,
+     "x": 1015,
+     "y": 215,
+     "w": 770,
+     "h": 685,
+     "src": "atwood-forces.svg"
+    }
+   ]
+  },
+  {
+   "id": 29,
+   "heading": "活动二：滑轮质量与加速度",
+   "source_pages": [
+    18
+   ],
+   "narration": "[[1]]保持左质量一千克、右质量两千克，预测把均质滑轮质量从零增加到四千克，加速度会变大还是变小？先选择理由，再操作。任务是分别取滑轮质量零、一、四千克，记录加速度和两侧张力；每次改变参数会重新从静止开始。观察的重点是加速度，以及滑轮所需净力矩是否由张力差提供，不是看哪一侧物块更快。现在暂停讲解，完成预测和操作后继续。\n[[2]]三个加速度应约为三点二七、二点八零和一点九六米每秒平方。质量差始终是一千克，重力驱动不变；分母从三千克变为三点五千克和五千克，所以加速度下降。零质量滑轮的转动惯量为零，两侧张力相等；有质量滑轮转动时，两侧张力差承担转动所需的力矩。这与把约束力消去并不矛盾：我们只是无需先求它们，就可以建立运动方程。\n[[3]]正式例题结束。接下来的练习加入非保守作用，请独立使用同样的建模步骤。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 25,
+     "w": 1300,
+     "h": 40,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "05 / 有质量滑轮例题",
+        "size": 23,
+        "color": "#244B88",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 69,
+     "w": 1540,
+     "h": 72,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "活动二：滑轮质量与加速度",
+        "size": 48,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 155,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 976,
+     "w": 1500,
+     "h": 45,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "预测与操作时讲解暂停；完成理论核对后继续",
+        "size": 25,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 0,
+     "x": 115,
+     "y": 240,
+     "w": 495,
+     "h": 155,
+     "tex": "a=\\frac{(m_2-m_1)g}{m_1+m_2+M/2}",
+     "size": 38,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 115,
+     "y": 480,
+     "w": 495,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "m₁ = 1 kg，m₂ = 2 kg；M = 0、1、4 kg",
+        "size": 35,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 115,
+     "y": 725,
+     "w": 495,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "记录 a、T₁、T₂；比较有效惯性与张力差",
+        "size": 35,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "html",
+     "step": 0,
+     "x": 645,
+     "y": 208,
+     "w": 1170,
+     "h": 713,
+     "src": "sim-mechanics.html?mode=atwood&embed=1",
+     "timelineSync": true,
+     "label": "有质量滑轮参数实验"
+    }
+   ],
+   "interactions": [
+    {
+     "type": "activity",
+     "q": "质量差不变，增加均质滑轮质量 M，会怎样改变 a？",
+     "options": [
+      "a 减小：转动等效惯性增加",
+      "a 增大：滑轮重力驱动两侧",
+      "a 不变：约束力被消去",
+      "两侧质量不变，所以张力始终相等"
+     ],
+     "answer": 0,
+     "explain": "滑轮轴固定，滑轮重力不做功；Iₚ/R²=M/2增大分母。非零惯量与角加速度需要T₂−T₁。",
+     "feedbackPerOption": [
+      "正确：驱动力不变，有效惯性增大。",
+      "滑轮质心高度固定，其重力势能没有随x变化。",
+      "消去约束反力并没有消去滑轮的转动动能。",
+      "无质量滑轮可张力相等；有惯量且在加速时需要张力差。"
+     ],
+     "task": "先说明φ=x/R为何不是第二个独立坐标；固定m₁=1、m₂=2，M依次设0、1、4 kg，重置并记录。",
+     "observe": "记录三组a、T₁、T₂，比较加速度与张力差；用Iₚ/R²解释变化。",
+     "plannedSeconds": 120,
+     "after_sentence": "现在暂停讲解，完成预测和操作后继续。",
+     "pause_offset": 0.1,
+     "pause_margin": 0.65
+    }
+   ],
+   "sentence_gap_overrides": [
+    {
+     "after_sentence": "现在暂停讲解，完成预测和操作后继续。",
+     "gap_seconds": 0.9
+    }
+   ]
+  },
+  {
+   "id": 30,
+   "heading": "独立练习：有阻尼的单摆",
+   "source_pages": [
+    5,
+    24
+   ],
+   "narration": "[[1]]现在独立建模。用质量可忽略的刚杆连接质点的平面单摆，支点为固定铰轴，质点质量为艾姆、摆长为艾尔，摆角方向与开头一致。铰轴阻尼机构对杆施加阻尼力矩，等于负的阻尼系数小写比乘摆角速度，小写比大于零，量纲是牛顿米秒。角度以弧度表示，本题不作小角度近似。这个力矩与角速度相反；其余约束仍然理想，忽略空气阻力。\n[[2]]请先在纸上写出独立坐标、动能、势能以及非保守广义力，再写运动方程。不要只凭记忆选择选项。检查你的方程在阻尼系数为零时是否回到开头的单摆方程，并判断机械能变化率的符号。作答暂停三分钟，包括先独立写式、再选择和阅读反馈。现在暂停讲解，完成建模和作答后继续。\n[[3]]核对你的建模步骤后，下一页给出完整方程与能量讲评。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 25,
+     "w": 1300,
+     "h": 40,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "06 / 独立建模练习",
+        "size": 23,
+        "color": "#244B88",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 69,
+     "w": 1540,
+     "h": 72,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "独立练习：有阻尼的单摆",
+        "size": 48,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 155,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 976,
+     "w": 1500,
+     "h": 45,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "预测与操作时讲解暂停；完成理论核对后继续",
+        "size": 25,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 115,
+     "y": 230,
+     "w": 1660,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "无质量刚杆、固定铰轴、末端质点 m；q = θ；τ_d = −b θ̇；b：N·m·s",
+        "size": 41,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 115,
+     "y": 430,
+     "w": 1660,
+     "h": 155,
+     "tex": "\\text{写出 }T,\\ V,\\ Q_\\theta^{\\rm nc},\\ \\text{运动方程与 }\\dot E",
+     "size": 44,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 115,
+     "y": 675,
+     "w": 1660,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "E = T + V 为机械能；先独立建模 → 检查 b = 0 → 作答 → 讲评",
+        "size": 41,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    }
+   ],
+   "interactions": [
+    {
+     "q": "哪个方程符合上述阻尼单摆模型？",
+     "options": [
+      "$ml^2\\ddot\\theta+b\\dot\\theta+mgl\\sin\\theta=0$",
+      "$ml\\ddot\\theta+b\\dot\\theta+mg\\sin\\theta=0$",
+      "$ml^2\\ddot\\theta-b\\dot\\theta+mgl\\sin\\theta=0$",
+      "$ml^2\\ddot\\theta+mgl\\sin\\theta=0$"
+     ],
+     "answer": 0,
+     "explain": "$T=\\frac12ml^2\\dot\\theta^2$，$V=mgl(1-\\cos\\theta)$，$Q_\\theta^{nc}=-b\\dot\\theta$。$\\dot E=-b\\dot\\theta^2\\le0$；b=0恢复无阻尼单摆。",
+     "feedbackPerOption": [
+      "正确：惯性、阻尼和重力各项均为力矩量。",
+      "把切向力方程与阻尼力矩混合，量纲不一致，缺少长度因子。",
+      "该负号会使力矩促进运动，变成反阻尼并输入能量。",
+      "阻尼是非保守主动力，不能作为理想约束力消去。"
+     ],
+     "plannedSeconds": 180,
+     "after_sentence": "现在暂停讲解，完成建模和作答后继续。",
+     "pause_offset": 0.1,
+     "pause_margin": 0.65
+    }
+   ],
+   "sentence_gap_overrides": [
+    {
+     "after_sentence": "现在暂停讲解，完成建模和作答后继续。",
+     "gap_seconds": 0.9
+    }
+   ]
+  },
+  {
+   "id": 31,
+   "heading": "练习讲评：方程与能量检查",
+   "source_pages": [
+    24
+   ],
+   "narration": "[[1]]完整的中间量在这里。动能为二分之一质量乘摆长平方乘角速度平方，势能以最低点为零，取质量乘重力加速度乘摆长乘一减摆角余弦。这个零点选择不影响势能导数。阻尼的非保守广义力直接是负的比乘角速度，因为我们使用角坐标。\n[[2]]由方程计算机械能变化率，动能导数是质量乘摆长平方乘角速度乘角加速度，势能导数是质量乘重力加速度乘摆长乘正弦再乘角速度。合并后是角速度乘惯性项与重力项之和，利用运动方程等于负的比乘角速度平方，所以机械能单调不增。它不仅告诉我们能量不守恒，也检查了阻尼的符号是否正确。\n[[3]]如果你选了缺少摆长的式子，错误在于把切向力与角坐标的力矩混在一起；如果选了负阻尼号，错误在于阻尼方向；如果漏掉阻尼，错误在于把所有力都当成可消去的约束力。通过这些检查，建立方程以后才算完成建模，而不是看到某个熟悉的形式就结束。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 25,
+     "w": 1300,
+     "h": 40,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "06 / 独立建模练习",
+        "size": 23,
+        "color": "#244B88",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 69,
+     "w": 1540,
+     "h": 72,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "练习讲评：方程与能量检查",
+        "size": 48,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 155,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 976,
+     "w": 1500,
+     "h": 45,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "独立建模；把阻尼作为非保守广义力保留",
+        "size": 25,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 115,
+     "y": 230,
+     "w": 1660,
+     "h": 155,
+     "tex": "T=\\frac12ml^2\\dot\\theta^2,\\quad V=mgl(1-\\cos\\theta),\\quad Q_\\theta^{\\rm nc}=-b\\dot\\theta",
+     "size": 44,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 115,
+     "y": 430,
+     "w": 1660,
+     "h": 155,
+     "tex": "ml^2\\ddot\\theta+b\\dot\\theta+mgl\\sin\\theta=0",
+     "size": 44,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 115,
+     "y": 675,
+     "w": 1660,
+     "h": 155,
+     "tex": "E=T+V,\\qquad\\dot E=\\dot\\theta(ml^2\\ddot\\theta+mgl\\sin\\theta)=-b\\dot\\theta^2\\le0",
+     "size": 44,
+     "color": "#172B45",
+     "align": "left"
+    }
+   ]
+  },
+  {
+   "id": 32,
+   "heading": "推导逻辑与建模步骤",
+   "source_pages": [
+    24
+   ],
+   "narration": "[[1]]回顾推导的逻辑。约束先决定允许构型，我们用独立广义坐标描述它；固定时间的变分给出允许虚位移；理想约束的总虚功条件消去反力；主动力的虚功定义广义力；惯性投影利用两条速度恒等式与乘积求导，改写成动能的导数；最后利用独立变分得到拉格朗日方程。有普通势能时，再把保守广义力并入动能减势能。\n[[2]]实际建模可以按六步进行：明确系统与参考系，列约束和假设，选独立坐标并规定正方向，写位置或速度关系，计算动能势能和必要广义力，最后列方程、求解并检查。检查包括量纲、方向、简单极限、另一种方法以及约束状态。绳是否绷紧、接触是否存在、无滑是否成立，都属于最后一步，也限定解的有效区间。\n[[3]]今天的三个目标可以由三份结果检验：能说明平面定长摆为什么只需一个独立参数；能解释移动支点时为什么虚位移不包含支点平移；能完整建立滑轮或阻尼单摆方程，并给出至少一种结果检查。如果其中一步仍不清楚，返回相应推导页沿着保留的等式再走一遍。课后可以选择一个更复杂的系统，继续按这些步骤建模，并重点检查新增的约束和模型条件。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 25,
+     "w": 1300,
+     "h": 40,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "07 / 总结与条件",
+        "size": 23,
+        "color": "#244B88",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 69,
+     "w": 1540,
+     "h": 72,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "推导逻辑与建模步骤",
+        "size": 48,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 155,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 976,
+     "w": 1500,
+     "h": 45,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "回顾方法，并检查方程的适用条件",
+        "size": 25,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 115,
+     "y": 230,
+     "w": 1660,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "允许构型 → δr → 消去总约束虚功 → Q 与 T → 独立 δq",
+        "size": 41,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 115,
+     "y": 430,
+     "w": 1660,
+     "h": 155,
+     "tex": "\\frac d{dt}\\frac{\\partial\\mathcal L}{\\partial\\dot q_j}-\\frac{\\partial\\mathcal L}{\\partial q_j}=Q_j^{\\rm nc}",
+     "size": 44,
+     "color": "#172B45",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 115,
+     "y": 675,
+     "w": 1660,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "系统 / 约束 / 坐标 → 速度 → T、V、Q → 方程 → 检验",
+        "size": 41,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": 33,
+   "heading": "适用条件与课后范围",
+   "source_pages": [
+    4,
+    13,
+    15,
+    16,
+    17,
+    19,
+    20,
+    22,
+    23,
+    25
+   ],
+   "narration": "[[1]]最后再次限定本节的适用范围：我们在惯性系中，对常质量系统使用独立完整坐标和理想约束；拉格朗日函数取动能减不含速度的势能，非保守广义力单独处理。一般非完整约束、非惯性系的速度相关惯性作用，以及接触或绳状态发生改变的阶段，需要扩展模型，不能直接沿用当前结果。\n[[2]]本节课到此结束。刚体受力与滚动、物理摆、铁链、可动斜面和旋转圆环，以及拉格朗日函数的全导数变换，安排为课后选读和练习。课后材料分别给出模型条件、推导任务和结论检验；有些题目还需要先澄清力的作用点或摩擦条件。它们没有计入这节五十分钟的标准课堂，也不在音频结束后自动接着讲。继续自主操作或反复作答所用的时间，是你额外的学习时间。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 25,
+     "w": 1300,
+     "h": 40,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "07 / 总结与条件",
+        "size": 23,
+        "color": "#244B88",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 105,
+     "y": 69,
+     "w": 1540,
+     "h": 72,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "适用条件与课后范围",
+        "size": 48,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 0,
+     "x": 105,
+     "y": 155,
+     "w": 1710,
+     "h": 2,
+     "fill": "#D8E0EA",
+     "line": "#D8E0EA",
+     "lw": 0,
+     "radius": 0,
+     "paras": null,
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 110,
+     "y": 976,
+     "w": 1500,
+     "h": 45,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "回顾方法，并检查方程的适用条件",
+        "size": 25,
+        "color": "#52647A",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 115,
+     "y": 230,
+     "w": 1660,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "惯性系；常质量；独立完整坐标；理想约束",
+        "size": 41,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 115,
+     "y": 430,
+     "w": 1660,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "势能不含速度；非保守广义力保留；模型边界须检查",
+        "size": 41,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 115,
+     "y": 675,
+     "w": 1660,
+     "h": 155,
+     "align": "left",
+     "valign": "top",
+     "paras": [
+      [
+       {
+        "t": "主课结束。复杂系统与非惯性系见课后拓展索引",
+        "size": 41,
+        "color": "#172B45",
+        "b": false,
+        "font": "PingFang SC, Microsoft YaHei, sans-serif"
+       }
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

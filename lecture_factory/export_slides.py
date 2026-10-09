@@ -90,7 +90,10 @@ def main() -> int:
             media[name] = data_url(f)
         else:
             print(f'! 媒体文件缺失，跳过：{name}')
-    inject = ('<script>window.__WEBLEC__=' + json.dumps(weblec, ensure_ascii=False)
+    # Inline HTML documents can contain </script>; escape '<' in the JSON so
+    # the HTML parser cannot close this script before JavaScript reads it.
+    data_json = json.dumps(weblec, ensure_ascii=False).replace('<', r'\u003c')
+    inject = ('<script>window.__WEBLEC__=' + data_json
               + ';window.__WEBLEC_MEDIA__=' + json.dumps(media, ensure_ascii=False) + ';</script>')
 
     # 4) 拼装：数据注入在最前，保证 React 启动前可用

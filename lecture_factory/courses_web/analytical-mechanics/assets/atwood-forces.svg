@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="770" height="685" viewBox="0 0 770 685" role="img" aria-labelledby="title desc">
+  <title id="title">有质量滑轮系统的平动与转动受力核验</title>
+  <desc id="desc">地面惯性系。左物块张力向上、重力向下，加速度正向向上；右物块张力向上、重力向下，加速度正向向下。固定轴滑轮只画产生绕轴力矩的两绳力，左侧张力向下、右侧张力向下；净顺时针力矩为张力二减张力一乘半径。力箭头长度示意大小关系，加速度箭头使用独立尺度。</desc>
+  <defs>
+    <marker id="tension-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#244b88"/></marker>
+    <marker id="weight-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#b74747"/></marker>
+    <marker id="acceleration-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#167a70"/></marker>
+  </defs>
+  <style>
+    text {font-family:"PingFang SC","Microsoft YaHei",sans-serif;fill:#172b45;font-size:29px}
+    .math {font-family:"Times New Roman",serif;font-style:italic;font-size:33px}
+    .tension {fill:#244b88}
+    .weight {fill:#b74747}
+    .acceleration {fill:#167a70}
+    .note {fill:#52647a;font-size:23px}
+  </style>
+  <rect width="770" height="685" rx="18" fill="#f3f7fc"/>
+  <text x="55" y="42">固定轴转动</text>
+  <circle cx="385" cy="140" r="75" fill="#e8f0f7" stroke="#9fb3ca" stroke-width="3"/>
+  <path d="M350 22H420M385 22V140" fill="none" stroke="#52647a" stroke-width="4"/>
+  <circle cx="385" cy="140" r="6" fill="#172b45"/>
+  <path d="M385 140H460" fill="none" stroke="#52647a" stroke-width="1.7" stroke-dasharray="5 5"/>
+  <text x="409" y="130" class="math">R</text>
+  <path d="M310 140V228.27" fill="none" stroke="#244b88" stroke-width="3.5" marker-end="url(#tension-arrow)"/>
+  <path d="M460 140V238.07" fill="none" stroke="#244b88" stroke-width="3.5" marker-end="url(#tension-arrow)"/>
+  <text x="257" y="224" class="math tension">T₁</text>
+  <text x="477" y="232" class="math tension">T₂</text>
+  <path d="M306.361404 84.936662A96 96 0 0 1 463.638596 84.936662" fill="none" stroke="#167a70" stroke-width="3" marker-end="url(#acceleration-arrow)"/>
+  <text x="500" y="84" class="math acceleration">+a/R</text>
+  <text x="500" y="115" class="acceleration" style="font-size:24px">角加速度</text>
+  <text x="112" y="279" style="font-size:30px">净顺时针力矩：</text>
+  <text x="370" y="279" class="math">(T₂ − T₁)R</text>
+  <text x="55" y="313" class="note">滑轮只列产生轴向力矩的绳力。</text>
+  <text x="55" y="343" class="note">轮重与轴反力过轴，绕轴力矩为零。</text>
+  <path d="M225 470V381.73" fill="none" stroke="#244b88" stroke-width="3.5" marker-end="url(#tension-arrow)"/>
+  <path d="M225 470V538.67" fill="none" stroke="#b74747" stroke-width="3.5" marker-end="url(#weight-arrow)"/>
+  <path d="M545 470V371.93" fill="none" stroke="#244b88" stroke-width="3.5" marker-end="url(#tension-arrow)"/>
+  <path d="M545 470V607.34" fill="none" stroke="#b74747" stroke-width="3.5" marker-end="url(#weight-arrow)"/>
+  <circle cx="225" cy="470" r="28" fill="#ffffff" stroke="#8094ab" stroke-width="2.5"/>
+  <circle cx="545" cy="470" r="28" fill="#ffffff" stroke="#8094ab" stroke-width="2.5"/>
+  <text x="204" y="480" class="math">m₁</text>
+  <text x="524" y="480" class="math">m₂</text>
+  <text x="244" y="396" class="math tension">T₁</text>
+  <text x="565" y="390" class="math tension">T₂</text>
+  <text x="244" y="544" class="math weight">m₁g</text>
+  <text x="565" y="605" class="math weight">m₂g</text>
+  <path d="M125 500V392" fill="none" stroke="#167a70" stroke-width="3.5" marker-end="url(#acceleration-arrow)"/>
+  <path d="M655 392V500" fill="none" stroke="#167a70" stroke-width="3.5" marker-end="url(#acceleration-arrow)"/>
+  <text x="87" y="378" class="math acceleration">+a</text>
+  <text x="672" y="503" class="math acceleration">+a</text>
+  <text x="55" y="649" class="note">地面惯性系；力的长度仅示意大小关系。</text>
+  <text x="55" y="678" class="note">绿色箭头表示加速度，采用独立尺度。</text>
+</svg>

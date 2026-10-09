@@ -24,9 +24,15 @@ export default function Home() {
         src="/weblec/courses_special.json"
         backLink={{ href: '/', label: '← 第九章课程' }} />
     }
+    if (menu === 'analytical') {
+      return <CourseMenu title="分析力学交互课堂" subtitle="从约束、虚功到拉格朗日方程"
+        src="/weblec/courses_analytical.json"
+        backLink={{ href: '/', label: '← 全部课程' }} />
+    }
     return <CourseMenu extraLinks={[
       { href: '/?menu=foundation', label: '课前数学基础 →' },
       { href: '/?menu=special', label: '专题系列 →' },
+      { href: '/?menu=analytical', label: '分析力学 →' },
     ]} />
   }
   if (/^sp[1-8]$/.test(COURSE_ID)) return <SpecialLecture />
@@ -479,7 +485,8 @@ function Lecture() {
       </main>
       {qaMode && <QaRunner mediaRef={mediaRef} weblec={weblec} />}
       {activeQuiz && curPage?.id === activeQuiz.pageId && createPortal(
-        <QuizCard quiz={activeQuiz.quiz} onContinue={finishQuiz} />, quizHost
+        <QuizCard key={`${activeQuiz.pageId}:${activeQuiz.quiz.t}`}
+          quiz={activeQuiz.quiz} largeDisplay={!!weblec?.projectedSubtitles} onContinue={finishQuiz} />, quizHost
       )}
     </div>
   )

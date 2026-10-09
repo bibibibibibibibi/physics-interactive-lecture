@@ -6,8 +6,28 @@ interactive-lecture/dist-slides/
 __pycache__/
 *.pyc
 
-# 注意：交互课堂打包产物 dist/ 与静态幻灯片 slides-export/ 是**有意跟踪**的最终产品，
-# 便于从 GitHub 直接取用部署；只有中间产物 dist-slides/ 忽略。
+# 部署与静态导出通过 Release ZIP 分发；本地文件保留，不重复提交到源码仓库。
+interactive-lecture/dist/
+interactive-lecture/slides-export/
+
+# 可恢复的制作输入：本地保留页音频和源 PPT 提取材料，元数据仍入库。
+lecture_factory/courses_web/*/audio/*.mp3
+lecture_factory/courses_web/*/source/**
+!lecture_factory/courses_web/*/source/**/
+!lecture_factory/courses_web/*/source/**/*.json
+!lecture_factory/courses_web/*/source/**/*.html
+!lecture_factory/courses_web/*/source/**/*.svg
+
+# 历史审阅版本只保留轻量兼容入口，不再次打包整课媒体。
+interactive-lecture/public/weblec/*-review/*
+!interactive-lecture/public/weblec/*-review/slides-preview.html
+
+# sp1 已由两个 native 视频替代的旧剪辑；创作原件留在课程 assets/。
+interactive-lecture/public/weblec/sp1/snowboard.mp4
+interactive-lecture/public/weblec/sp1/BV16Z4y1F7Gm_merged.mp4
+interactive-lecture/public/weblec/sp1/station_flight_30s.mp4
+interactive-lecture/public/weblec/sp1/BV1VF411E7h7_merged.mp4
+interactive-lecture/public/weblec/sp1/BV11c411S7a2_merged.mp4
 
 # 密钥（绝不入库）
 .env

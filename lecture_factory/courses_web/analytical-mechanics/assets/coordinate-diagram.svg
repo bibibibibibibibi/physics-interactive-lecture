@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="770" height="685" viewBox="0 0 770 685" role="img" aria-labelledby="title desc">
+  <title id="title">用摆角描述圆周上的一个独立构型</title>
+  <desc id="desc">圆心为原点，x 向右、y 向上。当前构型的摆角为三十度，从竖直向下向右量起。当前下半圆构型与上半圆构型有同一 x，说明用 x 作坐标须限定分支。</desc>
+  <defs>
+    <marker id="axis-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#244b88"/></marker>
+    <marker id="angle-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#cf8435"/></marker>
+  </defs>
+  <style>
+    text {font-family:"PingFang SC","Microsoft YaHei",sans-serif;fill:#172b45;font-size:29px}
+    .math {font-family:"Times New Roman",serif;font-style:italic;font-size:34px}
+    .coordinate {fill:#244b88}
+    .muted {fill:#52647a;font-size:25px}
+  </style>
+  <rect width="770" height="685" rx="18" fill="#f3f7fc"/>
+  <text x="60" y="48" class="math">x² + y² = l²</text>
+  <circle cx="315" cy="310" r="210" fill="none" stroke="#b9c9dd" stroke-width="3"/>
+  <path d="M65 310H675" fill="none" stroke="#244b88" stroke-width="2.5" marker-end="url(#axis-arrow)"/>
+  <path d="M315 570V65" fill="none" stroke="#244b88" stroke-width="2.5" marker-end="url(#axis-arrow)"/>
+  <text x="687" y="320" class="math coordinate">+x</text>
+  <text x="330" y="78" class="math coordinate">+y</text>
+  <path d="M420 128.134665V491.865335M315 491.865335H420" fill="none" stroke="#244b88" stroke-width="2" stroke-dasharray="6 7"/>
+  <path d="M315 310L420 128.134665" fill="none" stroke="#a4b0be" stroke-width="2.5" stroke-dasharray="7 7"/>
+  <path d="M315 310L420 491.865335" fill="none" stroke="#cf8435" stroke-width="4"/>
+  <circle cx="315" cy="310" r="5.5" fill="#172b45"/>
+  <circle cx="420" cy="128.134665" r="8" fill="#a4b0be"/>
+  <circle cx="420" cy="491.865335" r="9" fill="#cf8435"/>
+  <path d="M315 374A64 64 0 0 0 347 365.425626" fill="none" stroke="#cf8435" stroke-width="2.5" marker-end="url(#angle-arrow)"/>
+  <text x="348" y="397" class="math" style="fill:#cf8435">θ</text>
+  <text x="376" y="418" class="math" style="fill:#cf8435">l</text>
+  <text x="280" y="339" class="math">O</text>
+  <text x="438" y="123" class="muted">同 x 的上半圆构型</text>
+  <text x="438" y="513" style="fill:#cf8435;font-size:26px">当前：下半圆</text>
+  <text x="447" y="350" class="math coordinate" style="font-size:29px">x = l sin θ</text>
+  <text x="76" y="544" class="math coordinate" style="font-size:29px">y = −l cos θ</text>
+  <text x="55" y="597">同一 x 可对应两种构型，须限定分支。</text>
+  <text x="55" y="639" class="muted">圆周几何构型；不表示绳的实际运动轨迹。</text>
+</svg>

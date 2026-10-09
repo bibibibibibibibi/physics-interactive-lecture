@@ -24,13 +24,19 @@ class BuildIntermediatesTest(unittest.TestCase):
         doc["pages"] = doc["pages"][:1]
         doc.pop("sections", None)
         (course / "slides.json").write_text(json.dumps(doc, ensure_ascii=False), encoding="utf-8")
-        for relative in ("audio/page1.mp3", "page1.times.json"):
-            shutil.copy2(source / relative, course / relative)
+        shutil.copy2(source / "page1.times.json", course / "page1.times.json")
+        # Page MP3s are local authoring inputs, not repository files. Exercise
+        # real cache reuse using the first page of the tracked published audio.
+        import imageio_ffmpeg
+        media = REPO / "interactive-lecture/public/weblec/pre_vector"
+        published = json.loads((media / "weblec.json").read_text(encoding="utf-8"))
+        subprocess.run([imageio_ffmpeg.get_ffmpeg_exe(), "-i", str(media / "audio.mp3"),
+                        "-t", str(published["slides"][0]["duration"]), "-ac", "1", "-b:a", "96k",
+                        str(course / "audio/page1.mp3")], capture_output=True, check=True)
         cache = (course / "audio/page1.mp3").read_bytes()
         output = root / "public/weblec"
         assets = output / course.name
         assets.mkdir(parents=True)
-        media = REPO / "interactive-lecture/public/weblec/pre_vector"
         for name in ("hero_vectors.svg", "logo.png"):
             shutil.copy2(media / name, assets / name)
         code = """

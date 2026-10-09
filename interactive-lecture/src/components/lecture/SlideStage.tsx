@@ -153,7 +153,8 @@ export function Element({ el, t, iframeRef, onIframeLoad, videoClock }: {
     return (
       <div style={base}>
         <iframe ref={iframeRef} onLoad={onIframeLoad}
-          src={`${COURSE_BASE}${el.src}`} loading="lazy" title={el.label ?? '交互模拟'}
+          src={el.srcDoc ? undefined : `${COURSE_BASE}${el.src}`} srcDoc={el.srcDoc}
+          loading="lazy" allowFullScreen title={el.label ?? '交互模拟'}
           style={{ width: '100%', height: '100%', border: 'none', borderRadius: 12, background: '#fff' }} />
       </div>
     )
@@ -210,6 +211,20 @@ export default function SlideStage({
   const [blackout, setBlackout] = useState(false)
   const [playing, setPlaying] = useState(false)
   const [scale, setScale] = useState(0.5)
+  const [narrowCaption, setNarrowCaption] = useState(() => window.innerWidth < 900)
+  const showProjectedSubtitles = fs && !!weblec?.projectedSubtitles
+  const fullscreenFooterHeight = showProjectedSubtitles ? narrowCaption ? 180 : 140 : 64
+  const fullscreenStageWidth = `min(100vw, calc((100vh - ${fullscreenFooterHeight}px) * 16 / 9))`
+  const projectedSubtitle = showProjectedSubtitles
+    ? weblec?.subtitles.find(sub => t >= sub.start && t < sub.end) : null
+
+  useEffect(() => {
+    if (!fs || !weblec?.projectedSubtitles) return
+    const updateCaptionWidth = () => setNarrowCaption(window.innerWidth < 900)
+    updateCaptionWidth()
+    window.addEventListener('resize', updateCaptionWidth)
+    return () => window.removeEventListener('resize', updateCaptionWidth)
+  }, [fs, weblec?.projectedSubtitles])
 
   /** 全屏圆钮：鼠标在舞台上活动时显示，空闲 3s 自动收起（不挡页码/画面） */
   const [fsBtnOn, setFsBtnOn] = useState(true)
@@ -353,7 +368,13 @@ export default function SlideStage({
   }
   function goPage(d: number) {
     const p = pages[pageIdx + d]
-    if (p) seekTo(p.t_start + 0.01, playing)
+    if (p) {
+      if (playbackLocked && mediaRef.current) {
+        mediaRef.current.pause()
+        mediaRef.current.currentTime = p.t_start + 0.01
+        onTimeUpdate(p.t_start + 0.01)
+      } else seekTo(p.t_start + 0.01, playing)
+    }
   }
   /** 暂停时 ←/→ 按步进翻（翻页笔逻辑），播放时按页跳 */
   function stepNav(d: number) {
@@ -406,7 +427,7 @@ export default function SlideStage({
       `}</style>
       <div ref={innerRef} className="group relative"
         onMouseMove={pokeFsBtn} onMouseEnter={pokeFsBtn} onTouchStart={pokeFsBtn}
-        style={fs ? { width: 'min(100vw, calc((100vh - 64px) * 16 / 9))' } : undefined}>
+        style={fs ? { width: fullscreenStageWidth } : undefined}>
         <div className={`relative w-full aspect-video overflow-hidden ${fs ? '' : 'rounded-xl shadow-2xl'}`}
           style={{ background: th.background }}>
           <audio ref={mediaRef} src={`${COURSE_BASE}audio.mp3${weblec?.build_ts ? `?v=${weblec.build_ts}` : ''}`} preload="auto"
@@ -551,16 +572,28 @@ export default function SlideStage({
           title={fs ? '退出全屏（F）' : '全屏（F），含讲师与标注'}>
           {fs ? '⤡' : '⛶'}
         </button>
-        <Teacher
+        {weblec?.showTeacher !== false && <Teacher
           character={character} characterName={characterName}
           switchable={charactersSwitchable} onSwitch={onSwitchCharacter}
           shownPose={shownPose} laserTarget={laserTarget} stageRef={innerRef} fs={fs}
-        />
+        />}
       </div>
+
+      {/* 投影字幕占舞台之外的独立区域；保留原句与原时钟，不遮挡公式或截断内容。 */}
+      {showProjectedSubtitles && (
+        <div data-projected-subtitles className="flex w-full shrink-0 items-center justify-center px-6 py-2 text-center text-slate-100"
+          style={{
+            minHeight: narrowCaption ? 112 : 76,
+            fontSize: narrowCaption ? 'clamp(16px, 2.4vw, 18px)' : 'clamp(22px, 1.8vw, 24px)',
+            lineHeight: 1.35, overflowWrap: 'anywhere',
+          }}>
+          <span>{projectedSubtitle?.text ?? '\u00a0'}</span>
+        </div>
+      )}
 
       {/* 播放控制条 */}
       <div className={`mt-3 flex items-center gap-3 ${fs ? 'w-full px-6' : ''}`}
-        style={fs ? { maxWidth: 'min(100vw, calc((100vh - 64px) * 16 / 9))' } : undefined}>
+        style={fs ? { maxWidth: fullscreenStageWidth } : undefined}>
         <button onClick={() => goPage(-1)} className="rounded bg-[#123a63] px-2.5 py-1.5 text-sm text-slate-200 hover:bg-[#1a4a7a]" title="上一页（←）">⏮</button>
         <button onClick={togglePlay}
           className="rounded bg-[#ffb703] px-3.5 py-1.5 text-sm font-bold text-[#0b1f38] hover:brightness-110"

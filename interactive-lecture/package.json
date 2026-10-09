@@ -15,6 +15,7 @@
     "postbuild": "node scripts/copy-launchers.mjs",
     "test:launchers": "node --test scripts/copy-launchers.test.mjs",
     "check:release": "python scripts/check-release.py",
+    "package:release": "python scripts/package-release.py --build",
     "test:windows": "python scripts/test-windows-launcher.py",
     "test:browser": "node scripts/test-windows-browser.mjs"
   },

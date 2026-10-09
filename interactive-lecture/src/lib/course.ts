@@ -6,7 +6,15 @@
  * 课程清单在 public/weblec/courses.json；单文件导出的幻灯片由
  * export_slides.py 注入 __WEBLEC__，不经过这里。
  */
-export const COURSE_ID: string | null = new URLSearchParams(window.location.search).get('course')
+const requestedCourse = new URLSearchParams(window.location.search).get('course')
+/** Historical review bookmarks now resolve to the maintained course and its media. */
+const courseAliases: Record<string, string> = {
+  'sp1-correction-review': 'sp1',
+  'sp3-static-review': 'sp3',
+}
+export const COURSE_ID: string | null = requestedCourse
+  ? courseAliases[requestedCourse] ?? requestedCourse
+  : null
 
 export const DEFAULT_COURSE = 'shm'
 

@@ -20,6 +20,8 @@ export interface WebElement {
   rowh?: number
   name?: string
   src?: string
+  /** 自包含放映导出可内联模拟文档，避免 file:// 下请求外部资源。 */
+  srcDoc?: string
   /** 图片在框内的显示方式；cover 可按框的比例裁切边缘 */
   fit?: 'contain' | 'cover'
   /** 图片裁切时保留哪一侧，例如 'right center' */
@@ -47,9 +49,17 @@ export interface WebBullet extends Bullet { elIdx: number }
 export interface WebQuiz {
   t: number
   q: string
+  /** 活动题先记录预测，再收起卡片允许 iframe 操作，查看解释后才恢复讲解。 */
+  type?: 'activity'
   options?: string[]
   answer: number | string
   explain?: string
+  /** 与 options 顺序一致的理由；普通题立即反馈，活动题完成操作后反馈。 */
+  feedbackPerOption?: string[]
+  /** 活动操作任务和应观察的量；计时是教学安排参考，不自动放行。 */
+  task?: string
+  observe?: string
+  plannedSeconds?: number
 }
 
 export interface WebPage extends Omit<Slide, 'bullets'> {
@@ -78,6 +88,10 @@ export interface WebLec extends Omit<Lecture, 'slides'> {
   build_ts?: number
   /** 可选：课程 logo 缩放（默认 1，作者脚本 doc.logoScale 透传） */
   logoScale?: number
+  /** 特定课程可给图示和推导留出空间；缺省保留现有课程讲师。 */
+  showTeacher?: boolean
+  /** 全屏投影时在舞台下方显示当前句字幕；缺省不影响既有全屏布局。 */
+  projectedSubtitles?: boolean
   duration: number
   slides: WebPage[]
   subtitles: Sub[]

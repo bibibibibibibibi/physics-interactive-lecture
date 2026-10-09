@@ -13,21 +13,21 @@
 
 ---
 
-## 产物说明（clone 下来什么能直接用）
+## 产物说明（源码与发布包）
 
 | 目录 | 是什么 | 怎么用 |
 | --- | --- | --- |
-| `interactive-lecture/dist/` | **本地课堂部署版**（第九章八课、基础课 `pre_vector`、专题 sp1–sp8；菜单保留技术复核与人工核准的状态说明） | **Windows 双击 `启动交互课堂-win.bat`、Mac 双击 `启动交互课堂-mac.command`**，自动起本地服务并打开浏览器；也可整个拷到静态服务器。不能双击 index.html，课件 JSON 需走 HTTP |
-| `interactive-lecture/slides-export/` | **静态幻灯片**（第九章8份单文件、专题8份HTTP媒体版及2份旧审阅兼容入口） | 第九章双击即开；专题媒体版需通过本地HTTP服务，支持翻页笔与课堂批注 |
-| 其余全部（`src/`、`public/`、`lecture_factory/`、各配置文件） | 制作与开发体系 | 只有要做新课／改代码时才需要：`npm ci` 后进入开发模式 |
+| `interactive-lecture/dist/` | **本地课堂部署版**，由源码构建，在 Release ZIP 中分发，不再重复提交 | 下载发布 ZIP 后，Windows 双击 `启动交互课堂-win.bat`、Mac 双击 `启动交互课堂-mac.command`；开发者也可用 `npm run build` 生成。不能双击 index.html |
+| `interactive-lecture/slides-export/` | **本地静态导出**，不再重复提交内联媒体与字体 | 可随发布 ZIP 分发；第九章单文件可双击，专题媒体版通过本地 HTTP 服务使用 |
+| `src/`、`public/`、课程源稿、配置与工具 | GitHub 源码及必要运行资源 | 克隆后在 `interactive-lecture/` 执行 `npm ci`，可开发或构建，不必重新配音 |
 
-一句话：**用课 = 取 `dist/` 或 `slides-export/`；做课 = 全部**。
+**已有发布版本可下载 Release ZIP；开发或尚无发布附件时克隆源码构建。** 页音频、原 PPT 提取材料与历史审阅素材本地保留，退出 Git 跟踪；来源和时间轴元数据仍入库。具体范围、发布与恢复方式见 [仓库资源与发布包](docs/repository-storage.md)。
 
 ---
 
 ## 目录
 
-- [产物说明](#产物说明clone-下来什么能直接用)
+- [产物说明](#产物说明源码与发布包)
 - [快速开始](#快速开始)
 - [目录结构](#目录结构)
 - [做一门新课的完整流程](#做一门新课的完整流程)
@@ -73,6 +73,8 @@ sp2 修订版为 21 页、实测 21 分 03 秒，包含 4 道随堂选择题、�
 
 修改讲稿后，先运行 `lecture_factory/courses_web/pre_vector/author.py`，再从项目根目录运行 `.venv/bin/python lecture_factory/courses_web/pre_vector/make_audio_neural.py --pages 1`（把 `1` 换成改动页；省略 `--pages` 则生成全部 19 页）。需先在 `interactive-lecture/` 运行 `npm ci`，并保持联网。脚本把 24 kHz／96 kbps 单声道 MP3、逐句时间轴暂存到 `.local-backups/pre-vector-neural-stage/`，不会直接覆盖当前课堂；可用 `--volume '+30%'` 和 `--output-dir` 调整。试听后，备份并将暂存目录内对应页的 `audio/page<n>.mp3` 和 `page<n>.times.json` **一起**复制到 `lecture_factory/courses_web/pre_vector/`，再运行 `.venv/bin/python lecture_factory/build_web.py lecture_factory/courses_web/pre_vector`，最后在 `interactive-lecture/` 运行 `npm run build`。原 Mac 系统语音脚本 `make_audio_mac.py` 可用于离线配音，但音色不同。
 
+分析力学课程《第二章 拉格朗日方程》依据 2026-10-09 新版 PPT 重制，入口 `/?menu=analytical`，有声课堂 `/?course=analytical-mechanics`。主课 33 页、3 个必要活动，完整推导拉格朗日方程，并完整求解有质量滑轮 Atwood 机。实测音轨 42:17.6，其中正文语音片段 39:43.7、正常过渡 2:33.9；活动独立暂停 8:00，标准流程合计 50:17.6。学生页面与配音直接讲解物理，来源对应仅保留在教师审阅材料；新增约束坐标和虚位移专用图、彩色动能推导，活动题卡已按投影调整字号，33 页终态呈现及三次活动阅读流程已检查。课后拓展另列文档，无配音、不计主课时长。教师手动放映入口 `slides.html?course=analytical-mechanics`；`slides-export/分析力学-拉格朗日方程-交互放映.html` 内联公式、图示与交互，供教师手动讲授，不含配音，尚未完成双击运行验证。完整教师听审、最终版本连续播放与人工完整试讲尚未完成；浏览器播放/暂停、跳页、活动和教师放映流程已检查，具体范围见本课核验记录。讲稿、安排、物理核验、运行核验、纠错、源页对应和重建方法见 [本课说明](lecture_factory/courses_web/analytical-mechanics/README.md)。
+
 ## 目录结构
 
 ```
@@ -97,7 +99,8 @@ sp2 修订版为 21 页、实测 21 分 03 秒，包含 4 道随堂选择题、�
 │   │       ├── weblec.ts         # 课件数据类型定义
 │   │       └── qa.ts             # 答疑（在线 AI + 离线预设库）
 │   ├── slides.html               # 静态幻灯片入口
-│   ├── dist/                     # 已构建产品：含 -win.bat/-mac.command 两个启动入口
+│   ├── dist/                     # 本地部署产品，Release ZIP 分发，不入 Git
+│   ├── slides-export/            # 本地静态导出，不入 Git
 │   ├── scripts/copy-launchers.mjs # 两个平台共用的启动器复制脚本
 │   └── vite.slides.config.ts     # 单文件构建配置（单 chunk + 字体内联）
 │
@@ -109,7 +112,7 @@ sp2 修订版为 21 页、实测 21 分 03 秒，包含 4 道随堂选择题、�
 │   ├── export_slides.py          # 单文件幻灯片导出（--build 一条命令）
 │   ├── gen_audio.py              # 逐句 TTS + 句级时间轴
 │   ├── style.json                # 音色/角色配置
-│   ├── courses_web/<课名>/       # author.py、slides.json、assets、页音频与逐句时间/来源元数据
+│   ├── courses_web/<课名>/       # 源稿、素材、时间/来源元数据；页 MP3 与原始提取材料本地保留
 │   └── README.md                 # 工厂细粒度约定
 │
 ├── docs/                         # 制作方案.tex/.pdf、special系列证据复盘
@@ -218,14 +221,14 @@ python lecture_factory/export_slides.py --build --course 旋转矢量
 # → interactive-lecture/slides-export/大学物理-<标题>-幻灯片.html
 ```
 
-### 第 8 环：产品同步入库（0 token）
+### 第 8 环：源码同步与产品打包（0 token）
 
-两种最终产品**有意纳入 git 跟踪**，每次课程定稿（含任何版式/讲稿修改）后都要重建并提交，
-GitHub同步以本次核准的正式产品为准；不得以重建或提交代替课程教学验收：
+每次课程定稿后，同步课程源稿、必要的正式 public 资源、应用代码及文档。
+部署目录和静态导出由源码重建，保持在本地或作为 Release 附件分发，不重复提交到 Git。不得以重建或提交代替课程教学验收：
 
 ```bash
 cd interactive-lecture && npm run build && cd ..   # 重建 dist/（交互课堂部署版）
-python lecture_factory/export_slides.py --build    # 重导出 slides-export/（静态幻灯片）
+python lecture_factory/export_slides.py --build --course <课名>  # 仅重导出本次课程
 python -B interactive-lecture/scripts/check-release.py --no-git-check
 # 核对改动清单后只暂存本次正式范围
 git add <核准的路径>
@@ -235,9 +238,8 @@ git push origin main
 ```
 
 - `interactive-lecture/dist/`：交互课堂部署版，拷到任意静态服务器即跑；
-- `interactive-lecture/slides-export/`：单文件幻灯片，GitHub 上直接下载分发；
-- 注意 `interactive-lecture/.gitignore`（Vite 模板）原有的 `dist` 忽略已移除，
-  新增课程/应用模板时不要再把 `dist`、`slides-export` 加回忽略；
+- `interactive-lecture/slides-export/`：本地单文件幻灯片，可随 Release ZIP 分发；
+- `dist/` 与 `slides-export/` 由 `.gitignore` 排除。不要强制添加生成产品；用 `python -B interactive-lecture/scripts/package-release.py --build` 在 `work/releases/` 中打包；
 - 本地启动器母版在 `lecture_factory/assets/launcher/`：Windows 使用 `启动交互课堂-win.bat` + `serve-win.ps1`，
   Mac 使用 `启动交互课堂-mac.command` + `serve-mac.py`。`npm run build` 后由 Node `postbuild` 脚本统一拷入 dist，
   无需 Windows 的 `xcopy`；发布时保留全部启动器文件。Vite设置 `emptyOutDir:false`，启动器复制保留旧名称，避免构建永久删除旧资源；这不等于整课多文件事务或统一发布锁，专题仍须隔离候选、串行集成和失败回滚。
@@ -433,11 +435,11 @@ AI_MODEL=moonshot-v1-8k                  # 可选
 字体：课件含宋体（SimSun）设置；Mac 若缺该字体会使用回退字体，可能改变换行。
 导入 PPT、换机器制作或换字体后应在 `?course=<课名>&qa=1` 下检查版式，勿仅凭构建成功验收排版。
 
-**已提交的产物**：各课的 `public/weblec/<课名>/`（含合并音频）、TTS 缓存、
-姿态图，以及**最终产品** `interactive-lecture/dist/`（交互课堂部署版）与
-`interactive-lecture/slides-export/`（第九章8份单文件、专题8份HTTP版及2份旧审阅兼容入口）——克隆后无需重新构建即可运行、部署、分发。
+**源码仓库保留**：应用代码、课程源稿、必要的 `public/weblec/<课名>/`（含合并音频）、
+姿态图、制作工具及音频时间轴／来源元数据。`dist/` 与 `slides-export/` 转由 Release ZIP 分发；
+逐页 MP3 与原始提取的二进制材料保留本地，可另行制作输入存档，不重复提交。
 **未入库**：`node_modules/`、`.venv/`、`.local-backups/`、`work/`、`dist-slides/`（幻灯片中间构建产物）、
-`待处理/`（旧方案与各课源 PPT 归档）、`.env.local`、Tectonic 本机可执行文件。
+`待处理/`（旧方案与各课源 PPT 归档）、`.env.local`、Tectonic 本机可执行文件，以及上述部署产品和本地制作输入。
 
 ## Windows 与 Mac 共用项目
 
@@ -488,9 +490,9 @@ node interactive-lecture/scripts/test-windows-browser.mjs
 - **提交信息**：`课程: <课名> <改动>` 或 `工厂: <改动>` / `应用: <改动>`；
 - **author.py 与 weblec.json 一起提交**（数据源与产物同步，便于回溯）；
 - **大返工前先打标签**：如 `git tag shm-v1`（某课定稿）；
-- `.gitignore` 排除依赖、中间产物、密钥、work与归档；dist、slides-export是正式交付例外，继续跟踪，不强行 `git add -f`。
+- `.gitignore` 排除依赖、密钥、work、部署产品、静态导出与本地制作输入；Release ZIP 分发产品，不强行 `git add -f`。
 - 整理前保存Git差异及待移文件的可恢复记录。FFmpeg清单归入work，不提交陈旧本机绝对路径；页音频、句缓存、times和来源元数据按制作需要保留。
-- 提交前核对真实入口、public/dist、导出及旧书签依赖；旧哈希资源保留兼容，不凭文件名或mtime删除。前置检查失败即停止后续动作，避免全量候选误入库。
+- 提交前核对真实入口、public/部署包、导出及旧书签依赖；旧书签由轻量兼容入口维护。打包按依赖图选文件，不凭文件名或mtime删除原件。前置检查失败即停止后续动作，避免全量候选误入库。
 - `.github/workflows/portability.yml` 在Windows/macOS检查正式资源、构建和启动器；Windows使用PowerShell5.1及真实Edge。技术结果与人工听审、教师核准分开记录。
 
 ## 故障排查

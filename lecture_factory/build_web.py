@@ -265,7 +265,8 @@ def main():
                 sys.exit(1)
             out = {"t": round(trigger + t_abs, 3),
                    "q": it["q"], "answer": it.get("answer")}
-            for opt in ("options", "explain"):
+            for opt in ("options", "explain", "type", "task", "observe",
+                        "plannedSeconds", "feedbackPerOption"):
                 if it.get(opt) is not None:
                     out[opt] = it[opt]
             interactions.append(out)
@@ -317,7 +318,7 @@ def main():
         "subtitles": subtitles,
         "build_ts": int(time.time()),  # 构建时间戳：前端给音频/图片做缓存戳，防旧缓存
     }
-    for opt in ("logoScale", "theme", "sections"):  # 可选版式参数透传
+    for opt in ("logoScale", "theme", "sections", "showTeacher", "projectedSubtitles"):  # 可选版式参数透传
         if opt in doc:
             weblec[opt] = doc[opt]
     with open(os.path.join(out_dir, "weblec.json"), "w", encoding="utf-8") as f:

@@ -21,6 +21,7 @@ from urllib.parse import parse_qs, unquote, urlsplit
 REPO = Path(__file__).resolve().parents[2]
 APP = REPO / "interactive-lecture"
 MENUS = {
+    "courses_analytical.json": {"analytical-mechanics"},
     "courses.json": {"shm", "rotvec", "pendulum", "energy", "compose", "damping", "emosc", "nonlinear"},
     "courses_foundation.json": {"pre_vector"},
     "courses_special.json": {"sp%d" % n for n in range(1, 9)},
@@ -65,7 +66,10 @@ class PageReferences(HTMLParser):
 
 
 class ReleaseCheck:
-    def __init__(self):
+    def __init__(self, dist=None, exports=None):
+        self.dist = (dist or APP / "dist").resolve()
+        # None keeps standalone checker coverage; packaging selects exports.
+        self.exports = exports
         self.errors, self.inputs, self.edges, self.external = [], {}, set(), set()
         self.service_routes = set()
         self.visited, self.course_titles = set(), {}
@@ -251,7 +255,7 @@ class ReleaseCheck:
 
     def menus(self):
         for name, expected in MENUS.items():
-            copies = [APP / folder / "weblec" / name for folder in ("public", "dist")]
+            copies = [root / "weblec" / name for root in (APP / "public", self.dist)]
             docs = []
             for path in copies:
                 if not self.require(path, "menu"):
@@ -303,22 +307,30 @@ class ReleaseCheck:
                             continue
                         for pose in POSES:
                             self.require(webroot / "poses" / character / ("pose_" + pose + ".png"), "teacher pose")
-                for webroot in (APP / "public", APP / "dist"):
+                for webroot in (APP / "public", self.dist):
                     if row.get("slidesUrl"):
                         self.reference(row["slidesUrl"], webroot / "index.html", webroot, "menu slidesUrl")
 
     def run(self):
         self.menus()
-        webroot = APP / "dist"
+        webroot = self.dist
         for leaf in ("index.html", "slides.html", "启动交互课堂-win.bat", "启动交互课堂-mac.command", "serve-win.ps1", "serve-mac.py"):
             path = webroot / leaf
             if self.require(path, "deployment entry"):
                 self.walk(path, webroot)
-        # Retained exports and compatibility routes are release entry points too.
-        for folder, root in ((APP / "dist", webroot), (APP / "public" / "weblec", APP / "public"), (APP / "slides-export", webroot)):
+        # Maintained HTML routes include compatibility links.
+        for folder, root in ((self.dist, webroot), (APP / "public" / "weblec", APP / "public")):
             for path in sorted(folder.rglob("*.html")):
+                # Old review materials may remain locally for recovery. Only
+                # their small maintained redirect is a Release entry point.
+                if any(part.endswith("-review") for part in path.relative_to(folder).parts[:-1]) and path.name != "slides-preview.html":
+                    continue
                 if self.require(path, "retained HTML entry"):
                     self.walk(path, root)
+        exports = sorted((APP / "slides-export").rglob("*.html")) if self.exports is None else self.exports
+        for path in exports:
+            if self.require(path, "selected standalone export"):
+                self.walk(path, webroot)
 
     def git_check(self, check_index):
         try:
@@ -335,7 +347,15 @@ class ReleaseCheck:
                     self.fail("Unmerged Git index: %s" % filename.decode("utf-8"))
                 else:
                     entries[filename.decode("utf-8")] = oid
-        paths = sorted(self.label(path) for path in self.inputs)
+        # Deployment products and standalone exports are Release artifacts.
+        # Verify their tracked source inputs, not generated dist/export copies.
+        sources = {path for path in self.inputs if path.is_relative_to(APP / "public")}
+        sources.update(APP / leaf for leaf in ("index.html", "slides.html", "package.json", "package-lock.json", "vite.config.ts"))
+        sources.update((APP / "src").rglob("*"))
+        sources.update(APP.glob("tsconfig*.json"))
+        sources.update(APP / "scripts" / leaf for leaf in ("copy-launchers.mjs", "check-release.py", "package-release.py"))
+        sources.update((REPO / "lecture_factory" / "assets" / "launcher").glob("*"))
+        paths = sorted(self.label(path) for path in sources if path.is_file())
         for path in paths:
             if path not in entries:
                 self.fail("Required release file is not in Git index: %s" % path)
@@ -367,11 +387,15 @@ def main():
     mode.add_argument("--no-git-check", action="store_true", help="Development check before staging; does not prove clone completeness")
     mode.add_argument("--check-index", action="store_true", help="Also require current inputs to match staged Git blobs")
     parser.add_argument("--report", type=Path, help="Write exact input SHA-256 and scope to a path inside work/")
+    parser.add_argument("--dist-dir", type=Path, help="Check an isolated deployment directory inside this repository")
     args = parser.parse_args()
     report_path = args.report.resolve() if args.report and args.report.is_absolute() else ((REPO / args.report).resolve() if args.report else None)
     if report_path and not report_path.is_relative_to(REPO / "work"):
         parser.error("--report must be inside the repository work/ directory")
-    check = ReleaseCheck()
+    dist = args.dist_dir.resolve() if args.dist_dir else APP / "dist"
+    if not dist.is_relative_to(REPO):
+        parser.error("--dist-dir must be inside the repository")
+    check = ReleaseCheck(dist)
     check.run()
     if not args.no_git_check:
         check.git_check(args.check_index)
@@ -380,7 +404,7 @@ def main():
     report = {
         "result": "failed" if errors else "passed",
         "checked_at_utc": datetime.now(timezone.utc).isoformat(),
-        "scope": "local release file completeness, menu contract, public/dist data/audio equality and static runtime dependency graph",
+        "scope": "release file completeness, public/deployment equality, static runtime dependencies and tracked source inputs; generated outputs need not be in Git",
         "not_verified": ["browser behavior", "Windows machine launch", "teaching accuracy", "full listening", "teacher approval", "remote link availability", "arbitrary computed JavaScript URLs"],
         "git_mode": "disabled_development_only" if args.no_git_check else ("tracked_and_staged_bytes" if args.check_index else "tracked_membership"),
         "checker_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),

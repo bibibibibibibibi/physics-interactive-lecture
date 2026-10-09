@@ -4,6 +4,7 @@
 
 ## 使用已构建课堂
 
+- 已有发布附件时，从 GitHub Releases 下载并解压课堂 ZIP；源码克隆可用 `npm ci`、`npm run build` 生成本机部署版。
 - Windows：双击 `dist/启动交互课堂-win.bat`。
 - Mac：双击 `dist/启动交互课堂-mac.command`；首次运行的系统许可处理见根目录 README。
 - 启动器提供本地 HTTP 服务。交互课堂需要通过服务访问，不能用 `file://` 或双击 `dist/index.html`。
@@ -17,14 +18,27 @@
 | --- | --- |
 | `src/` | 正式应用代码，共用播放器及目录页面。 |
 | `public/` | 应用构建输入，含正式课件数据、媒体和讲师素材；与单课创作源码的职责不同。 |
-| `dist/` | 已构建的部署产品，有意纳入 Git，克隆后可启动使用。 |
-| `slides-export/` | 正式静态交付文件，有意纳入 Git；专题 HTTP 版本还依赖同源课件媒体。 |
+| `dist/` | 本地部署产品，退出 Git，通过 Release ZIP 分发。 |
+| `slides-export/` | 本地静态导出，退出 Git，可随发布包分发；专题 HTTP 版本依赖同源课件媒体。 |
 | `dist-slides/` | 静态导出的中间构建目录，由 `.gitignore` 排除。 |
 | `scripts/` | 启动器复制与检查等应用工具。 |
 | `../lecture_factory/` | 课程创作源码、素材及制作工具。 |
 | `../work/` | 本机候选、授权记录、缓存、历史证据与临时构建，默认不随 Git 同步。 |
 
-`dist/` 和 `slides-export/` 是本项目保留的正式产物例外，不按普通临时构建目录清理。默认构建配置使用 `emptyOutDir: false`，保留旧 chunks；启动器复制也保留已有旧名称。这些措施降低旧页面与书签失效的风险，仍不构成整课多文件发布事务。special 的候选晋级和中央发布须按专题规范执行。
+默认构建配置仍使用 `emptyOutDir: false`，原有本地文件可恢复；发布 ZIP 只选取检查过的运行依赖，不整目录携带旧 chunks 和闲置媒体。默认只含课堂部署版与共享教师放映页；独立 HTML 导出必须用 `--include-export <文件路径>` 明确指定。旧审阅书签映射到正式课程。special 的候选晋级和中央发布须按专题规范执行，当前仓库存储规则见[仓库资源与发布包](../docs/repository-storage.md)。
+
+在仓库根目录运行 `python -B interactive-lecture/scripts/package-release.py --build`，可在 `work/releases/` 中构建和打包，不覆盖当前 `dist/`，不自动上传。正式模式同时检查 Git 源码输入；开发候选需显式添加 `--no-git-check`，ZIP 会标记为 development。
+
+## 分析力学 demo
+
+《第二章 拉格朗日方程》：33 页主课，3 次暂停活动；实测音轨 42:17.6，加 8 分钟活动，标准流程约 50:17.6。
+
+- 课程目录：`/?menu=analytical`。
+- 有声课堂：`/?course=analytical-mechanics`。
+- 教师放映：`/slides.html?course=analytical-mechanics`。
+- 完整讲稿、安排、来源审查、物理核验与重建说明：[本课文档](../lecture_factory/courses_web/analytical-mechanics/README.md)。
+
+运行与逐页呈现检查已经完成，完整人工听审、连续播放和教师试讲尚未完成。离线 HTML 的双击执行尚未验证。
 
 ## 本机开发
 
