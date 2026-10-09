@@ -52,6 +52,8 @@ ZIP 默认放在忽略的 `work/releases/`。默认仅收录发布检查遍历�
 
 正式打包要求必要的源码输入已跟踪并与 Git 索引一致；部署包及静态导出无需被 Git 跟踪。CI 先构建再检查，跨平台检查结果作为 Actions artifact 保存。
 
+根目录 `LICENSE`、[版权说明](copyright.md)、[第三方说明](third-party-notices.md) 及 `docs/licenses/` 中列明的运行组件许可文本是必要分发文件，即使不被网页引用也会显式纳入 ZIP 并校验 Git 索引与字节；缺失时停止打包。此项保留不代表许可未明的课程素材已经取得传播授权。
+
 GitHub 的 “Package classroom release” 工作流仅在人工触发、指定已有标签后运行，创建草稿 Release。此次整理没有触发该工作流，没有创建远程标签或发布 Release。
 
 ## 分析力学本次同步范围

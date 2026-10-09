@@ -14,6 +14,31 @@ checker = runpy.run_path(str(REPO / "interactive-lecture/scripts/check-release.p
 
 
 class ReleasePackagingTest(unittest.TestCase):
+    def test_unreferenced_copyright_and_licenses_are_archived(self):
+        root = make_test_directory("release-notices-")
+        for name in pack["LEGAL_FILES"]:
+            path = root / name
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text("required notice: " + name)
+        notices = pack["release_notice_files"](root)
+        files = pack["distribution_files"]({}, root / "dist", root / "slides-export")
+        files.update(notices)
+        output = root / "release.zip"
+        pack["write_archive"](output, files, {"kind": "development"})
+        with zipfile.ZipFile(output) as archive:
+            for name in pack["LEGAL_FILES"]:
+                self.assertEqual(archive.read(name), (root / name).read_bytes())
+
+    def test_missing_license_blocks_packaging(self):
+        root = make_test_directory("release-missing-notice-")
+        for name in pack["LEGAL_FILES"][:-1]:
+            path = root / name
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text("required notice")
+        with self.assertRaisesRegex(ValueError, "Missing required copyright/license notice"):
+            pack["release_notice_files"](root)
+        self.assertFalse((root / "release.zip").exists())
+
     def test_explicit_export_selection_skips_local_history(self):
         root = make_test_directory("release-exports-")
         stale = root / "slides-export" / "old.html"

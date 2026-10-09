@@ -11,6 +11,8 @@
 > 正式的《制作方案》见 `docs/大学物理交互课堂制作方案.pdf`（LaTeX 源文件同目录）；
 > 工厂脚本的细粒度约定见 `lecture_factory/README.md`。
 
+**版权与使用：** Copyright © 2026 操宣敏（GitHub：[bibibibibibibibi](https://github.com/bibibibibibibibi)）。保留依法享有的权利；授权联系：[caoxuanmin@qq.com](mailto:caoxuanmin@qq.com)。原创成果的使用范围见 [LICENSE](LICENSE) 和 [版权说明](docs/copyright.md)；第三方内容按各自适用许可或授权处理，见 [第三方说明](docs/third-party-notices.md)。
+
 ---
 
 ## 产物说明（源码与发布包）

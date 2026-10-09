@@ -23,6 +23,23 @@ import zipfile
 REPO = Path(__file__).resolve().parents[2]
 APP = REPO / "interactive-lecture"
 STORED = {".mp3", ".mp4", ".glb", ".png", ".jpg", ".jpeg", ".gif", ".pptx"}
+LEGAL_FILES = (
+    "LICENSE", "docs/copyright.md", "docs/third-party-notices.md",
+    "docs/licenses/react-mit.txt", "docs/licenses/react-router-mit.txt",
+    "docs/licenses/katex-mit.txt", "docs/licenses/katex-fonts-ofl.txt",
+    "docs/licenses/three-mit.txt",
+)
+
+
+def release_notice_files(repo=REPO):
+    """Licenses are distribution requirements even without runtime references."""
+    selected = {}
+    for name in LEGAL_FILES:
+        source = repo / name
+        if not source.is_file():
+            raise ValueError("Missing required copyright/license notice: " + name)
+        selected[source] = name
+    return selected
 
 
 def distribution_files(inputs, dist, exports):
@@ -90,12 +107,16 @@ def main(argv=None):
     checker = runpy.run_path(str(APP / "scripts/check-release.py"), run_name="release_packaging")
     check = checker["ReleaseCheck"](dist, exports=exports)
     check.run()
+    notices = release_notice_files()
+    for path in notices:
+        check.require(path, "required copyright/license notice")
     if not args.no_git_check:
         check.git_check(True)
     check.seal_inputs()
     if check.errors:
         raise ValueError("Release check failed:\n" + "\n".join(sorted(set(check.errors))[:15]))
     files = distribution_files(check.inputs, dist, APP / "slides-export")
+    files.update(notices)
     kind = "development" if args.no_git_check else "release"
     metadata = {
         "kind": kind,

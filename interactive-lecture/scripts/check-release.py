@@ -350,6 +350,7 @@ class ReleaseCheck:
         # Deployment products and standalone exports are Release artifacts.
         # Verify their tracked source inputs, not generated dist/export copies.
         sources = {path for path in self.inputs if path.is_relative_to(APP / "public")}
+        sources.update(path for path in self.inputs if path == REPO / "LICENSE" or path.is_relative_to(REPO / "docs"))
         sources.update(APP / leaf for leaf in ("index.html", "slides.html", "package.json", "package-lock.json", "vite.config.ts"))
         sources.update((APP / "src").rglob("*"))
         sources.update(APP.glob("tsconfig*.json"))

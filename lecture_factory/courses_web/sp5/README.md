@@ -60,7 +60,7 @@
 
 互动模型复用本地原 HTML：[圆孔衍射-3D模拟.html](</Users/xm/Documents/青教赛筑基/PPT风格统一试改/圆孔衍射与分辨本领/网页演示/圆孔衍射-3D模拟.html>)。同目录的 `圆孔衍射-原理推导.html` 用于核对六步推导，推导内容在本课页面重新排版。源 PPT 给出的线上入口为 [3D 模拟](https://up.physxuanmin.cloud/assets/interactives/circular-aperture-diffraction-3d.html) 和 [原理推导 s4](https://up.physxuanmin.cloud/assets/interactives/circular-aperture-diffraction-principles.html#s4)；本课候选实际使用本地适配资产，不依赖上述网页运行。
 
-`assets/vendor/` 保留 Three.js r164、OrbitControls、RoomEnvironment、KaTeX 0.16.11 的 JS/CSS 和字体。主体依赖只读复制自项目现有本地资产；补齐的 KaTeX 字体及许可证来自项目已安装包。模拟导入和 KaTeX 字体引用均指向本地文件，不使用 CDN。HTML、vendor 和图片需一起由 HTTP 提供；不能据此宣称已获得包含 iframe 与依赖的离线单 HTML 成品。
+`assets/vendor/` 保留 Three.js r164、OrbitControls、RoomEnvironment、KaTeX 的 JS/CSS 和字体；2026-10-09 按当前文件核对，KaTeX 为 0.18.9。主体依赖只读复制自项目现有本地资产；补齐的 KaTeX 字体及许可证来自项目已安装包。软件 MIT 与字体 SIL OFL 的适用文本见[第三方说明](../../../docs/third-party-notices.md)。模拟导入和 KaTeX 字体引用均指向本地文件，不使用 CDN。HTML、vendor 和图片需一起由 HTTP 提供；不能据此宣称已获得包含 iframe 与依赖的离线单 HTML 成品。
 
 ## 模型约定、纠错及物理依据
 
