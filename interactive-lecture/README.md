@@ -4,6 +4,7 @@
 
 ## 使用已构建课堂
 
+- 在线使用版：[打开 Demo 课程列表](http://8.134.180.157:8080/)，无需下载或启动本地服务。在线答疑使用内置离线库，发布范围见[在线发布说明](../docs/repository-storage.md)。
 - 已有发布附件时，从 GitHub Releases 下载并解压课堂 ZIP；源码克隆可用 `npm ci`、`npm run build` 生成本机部署版。
 - Windows：双击 `dist/启动交互课堂-win.bat`。
 - Mac：双击 `dist/启动交互课堂-mac.command`；首次运行的系统许可处理见根目录 README。
@@ -33,6 +34,8 @@
 
 《第二章 拉格朗日方程》：33 页主课，3 次暂停活动；实测音轨 42:17.6，加 8 分钟活动，标准流程约 50:17.6。
 
+- 在线交互课堂：[直接打开](http://8.134.180.157:8080/?course=analytical-mechanics)。
+- 在线教师放映：[网页版幻灯片](http://8.134.180.157:8080/slides.html?course=analytical-mechanics)，供手动放映，不带配音。
 - 课程目录：`/?menu=analytical`。
 - 有声课堂：`/?course=analytical-mechanics`。
 - 教师放映：`/slides.html?course=analytical-mechanics`。

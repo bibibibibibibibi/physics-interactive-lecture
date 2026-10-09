@@ -8,11 +8,12 @@
 
 ## 使用入口
 
-- 有声课堂：`http://127.0.0.1:3000/?course=analytical-mechanics`，含完整合成配音、逐句字幕、公式分步出现与活动暂停。
-- 教师手动放映：`http://127.0.0.1:3000/slides.html?course=analytical-mechanics`。
-- 课程目录：`http://127.0.0.1:3000/?menu=analytical`。
+- 在线有声课堂：[浏览器直接打开](http://8.134.180.157:8080/?course=analytical-mechanics)，含合成配音、逐句字幕、公式分步出现与活动暂停，无需本地启动。
+- 在线教师手动放映：[网页版幻灯片](http://8.134.180.157:8080/slides.html?course=analytical-mechanics)，不带配音。
+- 在线课程目录：[第二章 拉格朗日方程](http://8.134.180.157:8080/?menu=analytical)。在线 Demo 使用内置离线答疑库，发布范围见[发布说明](../../../docs/repository-storage.md)。
+- 本机开发入口：有声课堂 `http://127.0.0.1:3000/?course=analytical-mechanics`，教师放映 `http://127.0.0.1:3000/slides.html?course=analytical-mechanics`，课程目录 `http://127.0.0.1:3000/?menu=analytical`；端口以实际启动输出为准。
 - 离线交互 HTML：`interactive-lecture/slides-export/分析力学-拉格朗日方程-交互放映.html`。公式、字体、示意图与两类必要参数交互已内联；这是教师手动讲授入口，**不含配音**。本轮未完成双击打开的实际运行验证，不能把静态导出成功写成离线使用已验证。
-- 部署目录沿用 `interactive-lecture/dist/` 及项目已有启动方式；构建完成后由主菜单“分析力学”进入。
+- 本机部署目录沿用 `interactive-lecture/dist/` 及项目已有启动方式；构建完成后由主菜单“分析力学”进入。
 
 有声课堂中用播放/暂停按钮或空格控制音频，鼠标上一页/下一页按钮切换整页；暂停时左右键逐步查看公式，F 控制课堂全屏。教师放映中用右方向键或空格逐步揭示，PageDown 整页翻页，A 开启批注，Q 打开当前页活动。
 
