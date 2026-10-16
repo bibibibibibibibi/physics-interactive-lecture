@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>非惯性系 · 交互实验</title>
+<style>
+  :root {
+    color-scheme: light;
+    --ink: #16283f; --muted: #63758c; --rule: #d8e0ea; --surface: #fff;
+    --red: #e00000; --blue: #0000cd; --orange: #e07000; --purple: #7b1fa2;
+    --magenta: #c000c0; --cyan: #0d8f97; --soft: #f2f6fb;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    background: linear-gradient(180deg, #eaf0f8, #f8fbff 46%, #fff);
+    color: var(--ink);
+    font: 15px/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  button, input { font: inherit; }
+  .app { height: 100%; display: flex; flex-direction: column; gap: 8px; padding: 12px; }
+  header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; }
+  header h1 { margin: 0; font-size: 17px; letter-spacing: .02em; }
+  header .sub { color: var(--muted); font-size: 12.5px; }
+  .modes { margin-left: auto; display: flex; gap: 6px; }
+  .modes a {
+    text-decoration: none; color: var(--muted); border: 1px solid var(--rule);
+    border-radius: 999px; padding: 3px 12px; font-size: 12.5px; background: #fff;
+  }
+  .modes a.on { color: #fff; background: var(--ink); border-color: var(--ink); }
+  main {
+    flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 232px; gap: 12px;
+  }
+  .stage {
+    position: relative; min-height: 0; background: var(--surface);
+    border: 1px solid var(--rule); border-radius: 12px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(22, 40, 63, .06);
+  }
+  .stage svg { display: block; width: 100%; height: 100%; }
+  aside { display: flex; flex-direction: column; gap: 10px; min-height: 0; overflow: auto; }
+  .card {
+    background: var(--surface); border: 1px solid var(--rule); border-radius: 12px;
+    padding: 10px 12px;
+  }
+  .card h2 { margin: 0 0 6px; font-size: 12px; color: var(--muted); font-weight: 600; letter-spacing: .06em; }
+  .row { display: flex; align-items: center; gap: 8px; }
+  .row + .row { margin-top: 8px; }
+  .row label { flex: 0 0 auto; font-size: 13px; color: var(--muted); }
+  input[type=range] { flex: 1; min-width: 0; accent-color: var(--purple); }
+  .val { flex: 0 0 74px; text-align: right; font-variant-numeric: tabular-nums; font-size: 13px; }
+  .btns { display: flex; flex-wrap: wrap; gap: 6px; }
+  button {
+    border: 1px solid var(--rule); background: #fff; color: var(--ink);
+    border-radius: 8px; padding: 5px 11px; cursor: pointer; font-size: 13px;
+  }
+  button:hover { background: var(--soft); }
+  button.on { background: var(--ink); border-color: var(--ink); color: #fff; }
+  .out { display: grid; gap: 5px; }
+  .out div {
+    display: flex; justify-content: space-between; gap: 8px; align-items: baseline;
+    font-size: 13px; border-bottom: 1px dashed var(--rule); padding-bottom: 4px;
+  }
+  .out div:last-child { border-bottom: 0; padding-bottom: 0; }
+  .out b { font-variant-numeric: tabular-nums; font-weight: 600; }
+  .note { margin: 0; color: var(--muted); font-size: 12.5px; }
+  /* 嵌进课件：控件与读数并成底部一条，舞台占满整个宽度 */
+  body.embed { background: #fff; }
+  body.embed .app { padding: 5px; gap: 5px; }
+  body.embed header { display: none; }
+  body.embed main { grid-template-columns: 1fr; grid-template-rows: 1fr auto; gap: 6px; }
+  body.embed aside { flex-direction: row; align-items: center; gap: 8px; overflow: visible; }
+  body.embed #ctrl { flex: 0 0 auto; }
+  body.embed .card { padding: 5px 9px; border-radius: 9px; }
+  body.embed .card h2 { display: none; }
+  body.embed .out {
+    flex: 1; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2px 14px;
+  }
+  body.embed .out div { font-size: 12.5px; border-bottom: 0; padding-bottom: 0; }
+  body.embed .row + .row { margin-top: 0; }
+  body.embed .note { display: none; }
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <h1>非惯性系 · 交互实验</h1>
+    <span class="sub">拖滑块改变参数，看画面与力怎么变</span>
+    <nav class="modes">
+      <a href="?mode=pendulum" data-mode="pendulum">动力摆</a>
+      <a href="?mode=frames" data-mode="frames">加速车双参考系</a>
+      <a href="?mode=disc" data-mode="disc">惯性离心力</a>
+    </nav>
+  </header>
+  <main>
+    <div class="stage"><svg id="scene" xmlns="http://www.w3.org/2000/svg"></svg></div>
+    <aside>
+      <div class="card" id="ctrl"></div>
+      <div class="card"><h2>读数</h2><div class="out" id="out"></div></div>
+      <p class="note" id="note"></p>
+    </aside>
+  </main>
+</div>
+<script>
+'use strict';
+const P = new URLSearchParams(window.__SIM_QUERY__ || location.search);
+const MODE = ['pendulum', 'frames', 'disc'].includes(P.get('mode')) ? P.get('mode') : 'pendulum';
+if (P.has('embed')) document.body.classList.add('embed');
+const scene = document.getElementById('scene');
+const ctrl = document.getElementById('ctrl');
+const out = document.getElementById('out');
+const note = document.getElementById('note');
+
+const C = { red: '#e00000', blue: '#0000cd', orange: '#e07000', purple: '#7b1fa2',
+            magenta: '#c000c0', cyan: '#0d8f97', ink: '#16283f', mild: '#8a99ac',
+            wedge: '#3b62c8', block: '#d01b1b' };
+const SERIF = '"Times New Roman", SimSun, serif';
+const G = 9.8;
+const f = (v, n = 2) => (Math.abs(v) < 5e-3 ? '0' : v.toFixed(n));
+const pad = (v, n = 2) => v.toFixed(n);
+/** 带箭头的直线（屏幕坐标 y 向下） */
+function arrow(x1, y1, x2, y2, color, w = 4, dash = '') {
+  const a = Math.atan2(y2 - y1, x2 - x1), b = a + Math.PI / 2;
+  const L = Math.hypot(x2 - x1, y2 - y1);
+  if (L < 1) return '';
+  const hx = Math.min(18, L * .5), xb = x2 - hx * Math.cos(a), yb = y2 - hx * Math.sin(a);
+  const hw = Math.max(6, w * 2.1);
+  return `<line x1="${x1}" y1="${y1}" x2="${xb}" y2="${yb}" stroke="${color}" stroke-width="${w}"
+      ${dash ? `stroke-dasharray="${dash}"` : ''} stroke-linecap="round"/>
+    <polygon points="${x2},${y2} ${xb + hw * Math.cos(b)},${yb + hw * Math.sin(b)}
+      ${xb - hw * Math.cos(b)},${yb - hw * Math.sin(b)}" fill="${color}"/>`;
+}
+/** 斜体矢量符号 + 上方小箭头 + 可选角标 */
+function vec(ch, x, y, size, color, sub, anchor) {
+  const w = size * .6, left = anchor === 'end' ? x - w : anchor === 'middle' ? x - w / 2 : x;
+  const ay = y - size * .88;
+  let s = `<text x="${x}" y="${y}" font-size="${size}" font-style="italic" fill="${color}"
+      font-family=${JSON.stringify(SERIF)} text-anchor="${anchor || 'start'}">${ch}</text>
+    <line x1="${left}" y1="${ay}" x2="${left + w}" y2="${ay}" stroke="${color}"
+      stroke-width="${Math.max(2, size * .055)}"/>
+    <polygon points="${left + w},${ay} ${left + w - size * .2},${ay - size * .1}
+      ${left + w - size * .2},${ay + size * .1}" fill="${color}"/>`;
+  if (sub) s += `<text x="${left + w + 1}" y="${y + size * .2}" font-size="${size * .55}"
+      font-style="italic" fill="${color}" font-family=${JSON.stringify(SERIF)}>${sub}</text>`;
+  return s;
+}
+/** m 乘矢量（mḡ、mā₀） */
+function mvec(ch, x, y, size, color, sub) {
+  return `<text x="${x}" y="${y}" font-size="${size}" font-style="italic" fill="${color}"
+      font-family=${JSON.stringify(SERIF)}>m</text>` + vec(ch, x + size * .72, y, size, color, sub);
+}
+function txt(x, y, s, size, color, anchor, weight) {
+  return `<text x="${x}" y="${y}" font-size="${size}" fill="${color || C.ink}"
+    text-anchor="${anchor || 'start'}"${weight ? ` font-weight="${weight}"` : ''}
+    font-family="PingFang SC, Microsoft YaHei, sans-serif">${s}</text>`;
+}
+function tag(x, y, w, h, color, s, fill) {
+  return `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${h / 2}"
+    fill="${fill || '#fff'}" stroke="${color}" stroke-width="1.6"/>
+    ${txt(x + w / 2, y + h * .72, s, 13, color, 'middle')}`;
+}
+
+/* ============================================================
+   ① 动力摆：车厢以 a 加速 → 摆角 θ，tanθ = a/g
+   参考系切换：车厢系三力闭合 / 地面系合力 = mā
+   ============================================================ */
+const Pend = {
+  a: 6, th: 0, om: 0, X: 0, V: 0, wheel: 0, ground: 0, t: 0, run: true, frame: 'car',
+  L: 1.2, lp: 240, P: [660, 48], Lg: 115, wp: 208,
+  reset() { this.th = 0; this.om = 0; this.X = 0; this.V = 0; this.wheel = 0; this.t = 0; },
+  step(dt) {
+    // θ 自竖直向下量起、向左为正；车厢加速度 a 向右 ⇒ 惯性力向左 ⇒ 平衡在 tanθ = a/g
+    const w0 = Math.sqrt(G / this.L), z = .42;
+    const ddt = -(G / this.L) * Math.sin(this.th) + (this.a / this.L) * Math.cos(this.th)
+      - 2 * z * w0 * this.om;
+    this.om += ddt * dt; this.th += this.om * dt;
+    if (this.run) {
+      this.V += this.a * dt; this.X += this.V * dt;
+      this.wheel += (this.V / .32) * dt; this.t += dt;
+    }
+    this.ground = this.wp * this.X;
+  },
+  render() {
+    const off = this.ground % 44, [px, py] = this.P, l = this.lp;
+    const bx = px - l * Math.sin(this.th), by = py + l * Math.cos(this.th);
+    const st = Math.sin(this.th), ct = Math.cos(this.th);
+    const Lg = this.Lg, Lft = Lg / ct, Lfi = Lg * Math.tan(this.th);
+    let g = '';
+    // 车厢（相机随车：车厢固定，地面向后加速流动）
+    g += `<rect x="120" y="48" width="840" height="356" rx="10" fill="#fbfdff"
+      stroke="${C.ink}" stroke-width="3.5"/>`;
+    g += `<line x1="0" y1="428" x2="1000" y2="428" stroke="${C.ink}" stroke-width="4"/>`;
+    for (let i = -1; i < 26; i++) {
+      const x = i * 44 - off;
+      if (x < 4 || x > 996) continue;
+      g += `<line x1="${x}" y1="428" x2="${x - 10}" y2="452" stroke="${C.mild}" stroke-width="2.6"/>`;
+    }
+    for (const wx of [236, 400]) {
+      g += `<circle cx="${wx}" cy="404" r="22" fill="#fff" stroke="${C.ink}" stroke-width="3"/>`;
+      for (let k = 0; k < 3; k++) {
+        const ang = this.wheel + k * Math.PI / 3;
+        g += `<line x1="${wx - 20 * Math.cos(ang)}" y1="${404 - 20 * Math.sin(ang)}"
+          x2="${wx + 20 * Math.cos(ang)}" y2="${404 + 20 * Math.sin(ang)}"
+          stroke="${C.mild}" stroke-width="2"/>`;
+      }
+    }
+    g += txt(142, 88, '车厢系（非惯性系）', 18, C.ink, 'start', 600);
+    g += txt(142, 112, `车厢相对地面 a = ${f(this.a, 1)} m/s²，向右`, 14, C.purple);
+    // 竖直参考虚线
+    g += `<line x1="${px}" y1="${py}" x2="${px}" y2="${py + 330}" stroke="${C.mild}"
+      stroke-width="1.8" stroke-dasharray="8 7"/>`;
+    // θ 弧（自竖直向下量到细杆）
+    const r0 = 132, a0 = Math.PI / 2 + this.th;
+    g += `<path d="M ${px} ${py + r0} A ${r0} ${r0} 0 0 ${this.th > 0 ? 1 : 0}
+      ${px + r0 * Math.cos(a0)} ${py + r0 * Math.sin(a0)}" fill="none"
+      stroke="${C.ink}" stroke-width="2.4"/>`;
+    if (Math.abs(this.th) > .06) {
+      g += txt(px - r0 * 1.28 * Math.sin(this.th / 2), py + r0 * 1.22 * Math.cos(this.th / 2),
+        'θ', 26, C.ink, 'middle');
+    }
+    // 细杆
+    g += `<line x1="${px}" y1="${py}" x2="${bx}" y2="${by}" stroke="${C.ink}" stroke-width="5"
+      stroke-linecap="round"/>`;
+    g += `<circle cx="${px}" cy="${py}" r="6" fill="${C.ink}"/>`;
+    // 力（比例尺：mg ↔ Lg 像素）
+    if (this.frame === 'car') {
+      g += arrow(bx, by, bx + Lft * st, by - Lft * ct, C.magenta, 5);
+      g += vec('F', bx + Lft * st + 14, by - Lft * ct + 8, 26, C.magenta, 'T');
+      g += arrow(bx, by, bx - Lfi, by, C.orange, 5);
+      g += vec('F', bx - Lfi - 8, by - 10, 26, C.orange, 'i', 'end');
+      g += txt(bx - Lfi - 8, by + 32, '= −mā', 15, C.orange, 'end');
+    } else {
+      g += arrow(bx, by, bx + Lft * st, by - Lft * ct, C.magenta, 5);
+      g += vec('F', bx + Lft * st + 14, by - Lft * ct + 8, 26, C.magenta, 'T');
+      g += arrow(bx, by, bx + Lfi, by, C.purple, 5);
+      g += mvec('a', bx + Lfi + 10, by - 10, 26, C.purple);
+      g += txt(bx + Lfi + 10, by + 32, '合力', 15, C.purple);
+    }
+    g += arrow(bx, by, bx, by + Lg, C.blue, 5);
+    g += mvec('g', bx + 12, by + Lg + 6, 26, C.blue);
+    // 小球
+    g += `<circle cx="${bx}" cy="${by}" r="15" fill="#1f4e9c" stroke="${C.ink}" stroke-width="2.5"/>`;
+    // 图例
+    const lg = (i, c, s) => tag(207 + i * 200, 476, 186, 30, c, s);
+    g += lg(0, C.magenta, 'F_T 绳张力');
+    g += lg(1, C.blue, 'mḡ 重力');
+    g += this.frame === 'car' ? lg(2, C.orange, 'F_i 惯性力') : lg(2, C.purple, '合力 = mā');
+    return g;
+  },
+  ui() {
+    ctrl.innerHTML = `<h2>参数与参考系</h2>
+      <div class="row"><label>a</label><input type="range" id="sa" min="0" max="15" step="0.1"
+        value="${this.a}"><span class="val" id="va">${f(this.a, 1)} m/s²</span></div>
+      <div class="btns" style="margin-top:10px">
+        <button data-fr="car" class="${this.frame === 'car' ? 'on' : ''}">车厢系</button>
+        <button data-fr="ground" class="${this.frame === 'ground' ? 'on' : ''}">地面系</button>
+        <button id="rs">↺ 重置</button>
+      </div>`;
+    ctrl.querySelector('#sa').oninput = e => { this.a = +e.target.value; this.uiSync(); };
+    ctrl.querySelectorAll('[data-fr]').forEach(b => b.onclick = () => {
+      this.frame = b.dataset.fr; this.ui();
+    });
+    ctrl.querySelector('#rs').onclick = () => this.reset();
+    this.uiSync();
+  },
+  uiSync() { ctrl.querySelector('#va').textContent = f(this.a, 1) + ' m/s²'; },
+  read() {
+    const th = this.th, a_eq = G * Math.tan(th);
+    out.innerHTML =
+      `<div><span>摆角 θ</span><b>${pad(th * 180 / Math.PI, 1)}°</b></div>
+       <div><span>g·tanθ</span><b>${f(a_eq, 2)} m/s²</b></div>
+       <div><span>F_T/mg</span><b>${f(1 / Math.cos(th), 2)}</b></div>
+       <div><span>F_i/mg</span><b>${f(Math.tan(th), 2)}</b></div>`;
+    note.textContent = this.frame === 'car'
+      ? '车厢系里摆球是静止的：F_T + mḡ + F_i = 0，三个力正好闭合。'
+      : '地面系里没有惯性力：F_T + mḡ 的合力水平向右，等于 mā —— 摆球随车厢一起加速。';
+  }
+};
+
+/* ============================================================
+   ② 加速车的双参考系：上排地面系（A 静止）／下车厢系（A 反向加速）
+   ============================================================ */
+const Frames = {
+  a: 3.2, X: 0, V: 0, t: 0, run: true, px: 46, span: 520, W: 300,
+  reset() { this.X = 0; this.V = 0; this.t = 0; },
+  step(dt) {
+    if (!this.run) return;
+    this.V += this.a * dt; this.X += this.V * dt; this.t += dt;
+    if (this.X * this.px > this.span) this.reset();
+  },
+  car(x, y, s, color, driver) {
+    let g = `<path d="M${x},${y} L${x + 16 * s},${y - 38 * s} L${x + 142 * s},${y - 44 * s}
+      L${x + 194 * s},${y - 78 * s} L${x + 326 * s},${y - 78 * s} L${x + 370 * s},${y - 38 * s}
+      L${x + 378 * s},${y} Z" fill="${color}" stroke="${C.ink}" stroke-width="${2.6 * s}"/>`;
+    for (const cx of [x + 76 * s, x + 312 * s]) {
+      g += `<circle cx="${cx}" cy="${y}" r="${26 * s}" fill="#1a1a1a"/>`;
+    }
+    if (driver) {
+      g += `<circle cx="${x + 260 * s}" cy="${y - 106 * s}" r="${10 * s}" fill="#1f4e9c"/>`;
+      g += `<line x1="${x + 260 * s}" y1="${y - 96 * s}" x2="${x + 260 * s}" y2="${y - 66 * s}"
+        stroke="#1f4e9c" stroke-width="${5 * s}"/>`;
+      g += txt(x + 260 * s, y - 128 * s, '丙', 22, '#1f4e9c', 'middle');
+    }
+    return g;
+  },
+  render() {
+    const X = this.X * this.px;
+    const W = this.W;
+    let g = '';
+    // —— 上排：地面系
+    g += `<rect x="14" y="14" width="972" height="292" rx="10" fill="#fbfdff"
+      stroke="#c9d6e6" stroke-width="1.6"/>`;
+    g += txt(34, 48, '地面系（惯性系）', 17, C.ink, 'start', 600);
+    g += txt(34, 72, 'A 物相对地面静止：F = 0，a = 0；车以 a₀ 向右加速', 14, C.muted);
+    g += `<line x1="30" y1="252" x2="970" y2="252" stroke="${C.ink}" stroke-width="4"/>`;
+    for (let i = 0; i < 24; i++) {
+      const x = 34 + i * 41;
+      g += `<line x1="${x}" y1="252" x2="${x}" y2="270" stroke="${C.mild}" stroke-width="2.4"/>`;
+    }
+    g += `<rect x="88" y="214" width="100" height="38" fill="#7fe3e8" stroke="${C.ink}"
+      stroke-width="2.6"/>`;
+    g += txt(138, 200, 'A', 30, C.ink, 'middle');
+    g += txt(34, 296, 'A：F = 0，a = 0（相对地面静止）', 13.5, C.cyan, 'start', 600);
+    g += this.car(300 + X, 252, .62, '#d01b1b', true);
+    g += arrow(300 + X + 120, 152, 300 + X + 210, 152, C.purple, 4.4);
+    g += vec('a', 300 + X + 120, 146, 24, C.purple, '0');
+    // —— 下排：车厢系
+    g += `<rect x="14" y="318" width="972" height="290" rx="10" fill="#fffaf4"
+      stroke="#e6d6c2" stroke-width="1.6"/>`;
+    g += txt(34, 352, '车厢系（非惯性系）', 17, C.ink, 'start', 600);
+    g += txt(34, 376, 'A 以 −a₀ 向后加速；地面刻度与 A 同步向后流', 14, C.muted);
+    g += `<line x1="30" y1="556" x2="970" y2="556" stroke="${C.ink}" stroke-width="4"/>`;
+    for (let i = -1; i < 26; i++) {
+      const x = 34 + i * 41 - (X % 41);
+      if (x < 30) continue;
+      g += `<line x1="${x}" y1="556" x2="${x}" y2="574" stroke="${C.mild}" stroke-width="2.4"/>`;
+    }
+    g += this.car(430, 556, .62, '#d01b1b', true);
+    const ax = 310 - X;
+    g += `<rect x="${ax}" y="518" width="100" height="38" fill="#7fe3e8" stroke="${C.ink}"
+      stroke-width="2.6"/>`;
+    g += txt(ax + 50, 504, 'A', 30, C.ink, 'middle');
+    g += arrow(ax + 50, 600, ax + 50 - 96, 600, C.cyan, 4.4);
+    g += vec('a', ax + 50 - 128, 594, 24, C.cyan, '′');
+    g += txt(34, 600, `t = ${pad(this.t, 1)} s`, 14, C.muted);
+    g += txt(966, 600, 'A 与地面刻度同步 ⇒ 相对地面静止', 14, C.cyan, 'end', 600);
+    return g;
+  },
+  ui() {
+    ctrl.innerHTML = `<h2>参数</h2>
+      <div class="row"><label>a₀</label><input type="range" id="sa" min="0" max="6" step="0.1"
+        value="${this.a}"><span class="val" id="va">${f(this.a, 1)} m/s²</span></div>
+      <div class="btns" style="margin-top:10px">
+        <button id="pp">${this.run ? '⏸ 暂停' : '▶ 播放'}</button>
+        <button id="rs">↺ 重置</button>
+      </div>`;
+    ctrl.querySelector('#sa').oninput = e => {
+      this.a = +e.target.value; ctrl.querySelector('#va').textContent = f(this.a, 1) + ' m/s²';
+    };
+    const pp = ctrl.querySelector('#pp');
+    pp.onclick = () => { this.run = !this.run; this.ui(); };
+    ctrl.querySelector('#rs').onclick = () => this.reset();
+  },
+  uiSync() {},
+  read() {
+    out.innerHTML =
+      `<div><span>车 a₀</span><b>${f(this.a, 1)} m/s²</b></div>
+       <div><span>A 对地 a</span><b>0</b></div>
+       <div><span>A 对车 a′</span><b>−${f(this.a, 1)} m/s²</b></div>
+       <div><span>A 受力</span><b>0</b></div>`;
+    note.textContent = '同一个 A 物：相对地面加速度为零，相对车厢却等于 −a₀ ——'
+      + '合外力为零而加速度不为零，说明车厢系里牛顿第二定律失效。';
+  }
+};
+
+/* ============================================================
+   ③ 惯性离心力：转台以 ω 转动，弹簧拉着物块
+   地面系：向心力 mω²r；转台系：惯性离心力 mω²r
+   ============================================================ */
+const Disc = {
+  w: 1.6, m: 1, k: 18.78, l0: .65, wc: 4.333, phi: 0, run: true, frame: 'ground', rp: 175,
+  cx: 500, cy: 240, rx: 290, ry: 122,
+  r() { return this.l0 / (1 - this.w * this.w / (this.k / this.m)); },
+  step(dt) { if (this.run && this.frame === 'ground') this.phi += this.w * dt; },
+  pos() {
+    const R = this.r() * this.rp;
+    return [this.cx + R * Math.cos(this.phi), this.cy + this.ry / this.rx * R * Math.sin(this.phi)];
+  },
+  render() {
+    const [bx, by] = this.pos(), R = this.r() * this.rp;
+    const ux = Math.cos(this.phi), uy = (this.ry / this.rx) * Math.sin(this.phi);
+    const n = Math.hypot(ux, uy) || 1, dx = ux / n, dy = uy / n;
+    const F = this.m * this.w * this.w * this.r();
+    const fl = Math.min(200, 22 + 30 * Math.sqrt(F));
+    const ox = 26 * dy, oy = -26 * dx;      // 沿半径方向的垂直偏移（力箭头让开弹簧）
+    let g = '';
+    // 立柱（先画，压在台面下）
+    g += `<rect x="${this.cx - 30}" y="${this.cy}" width="60" height="212" rx="8"
+      fill="${C.wedge}" stroke="${C.ink}" stroke-width="2.6"/>`;
+    // 转台
+    g += `<ellipse cx="${this.cx}" cy="${this.cy}" rx="${this.rx}" ry="${this.ry}"
+      fill="${C.wedge}" stroke="${C.orange}" stroke-width="5"/>`;
+    // 辐条（画在台面之上才会看见；地面系里跟着转）
+    const spin = this.frame === 'ground' ? this.phi : 0;
+    for (let i = 0; i < 8; i++) {
+      const a = spin + i * Math.PI / 4;
+      g += `<line x1="${this.cx}" y1="${this.cy}" x2="${this.cx + this.rx * .94 * Math.cos(a)}"
+        y2="${this.cy + this.ry * .94 * Math.sin(a)}" stroke="#2c4bb0" stroke-width="2.2"
+        opacity=".45"/>`;
+    }
+    // 物块轨道（斜二测椭圆），任何相位都能看出它在绕圈
+    g += `<ellipse cx="${this.cx}" cy="${this.cy}" rx="${R}" ry="${R * this.ry / this.rx}"
+      fill="none" stroke="#ffffff" stroke-width="2.4" stroke-dasharray="10 8" opacity=".8"/>`;
+    g += `<circle cx="${this.cx}" cy="${this.cy}" r="8" fill="#7a1010"/>`;
+    // 半径虚线（读 r 用）
+    g += `<line x1="${this.cx + 10 * dx}" y1="${this.cy + 10 * dy}" x2="${bx - 34 * dx}"
+      y2="${by - 34 * dy}" stroke="#ffffff" stroke-width="2.2" stroke-dasharray="9 7"
+      opacity=".85"/>`;
+    // 弹簧：从轴心到物块，沿径向锯齿
+    const sx = this.cx + 12 * dx, sy = this.cy + 12 * dy;
+    const ex = bx - 30 * dx, ey = by - 30 * dy;
+    const L = Math.hypot(ex - sx, ey - sy) || 1, cxu = (ex - sx) / L, cyu = (ey - sy) / L;
+    const nx = -cyu, ny = cxu, amps = Math.max(9, Math.min(24, L * .10));
+    let d = `M ${sx} ${sy}`;
+    const coils = Math.max(5, Math.min(11, Math.round(L / 34)));
+    for (let i = 1; i <= coils * 2; i++) {
+      const t = i / (coils * 2 + 1), sg = (i % 2 === 0 ? amps : -amps);
+      d += ` L ${sx + cxu * L * t + nx * sg} ${sy + cyu * L * t + ny * sg}`;
+    }
+    d += ` L ${ex} ${ey}`;
+    g += `<path d="${d}" fill="none" stroke="${C.ink}" stroke-width="4.5" stroke-linejoin="round"/>`;
+    // 物块
+    g += `<rect x="${bx - 29}" y="${by - 29}" width="58" height="58" rx="6" fill="#b03000"
+      stroke="${C.ink}" stroke-width="2.6"/>`;
+    g += txt((this.cx + bx) / 2 + 34 * dy, (this.cy + by) / 2 - 34 * dx + 8, 'r', 27,
+      '#ffffff', 'middle');
+    // 力箭头（沿半径、整体侧移，避开弹簧）
+    if (this.frame === 'ground') {
+      g += arrow(bx + ox, by + oy, bx - fl * dx + ox, by - fl * dy + oy, C.red, 5);
+      const mx = bx - fl * dx * .5 + ox * 1.9, my = by - fl * dy * .5 + oy * 1.9;
+      g += vec('F', mx, my - 8, 26, C.red, '');
+    } else {
+      g += arrow(bx + ox, by + oy, bx + fl * dx + ox, by + fl * dy + oy, C.orange, 5, '12 8');
+      const mx = bx + fl * dx * .5 + ox * 1.9, my = by + fl * dy * .5 + oy * 1.9;
+      g += vec('F', mx, my - 8, 26, C.orange, 'i');
+    }
+    // 转动方向 ω（弧 + 端部箭头）
+    const wr = 150, wry = 40, wy = this.cy + 250, aa = .5, ab = 2.55;
+    const pt = a => [this.cx + wr * Math.cos(a), wy + wry * Math.sin(a)];
+    const p0 = pt(aa), p1 = pt(ab), p2 = pt(ab - .16);
+    const da = Math.atan2(p1[1] - p2[1], p1[0] - p2[0]);
+    const hx = p1[0] - 20 * Math.cos(da), hy = p1[1] - 20 * Math.sin(da);
+    const op = this.w > .02 ? .95 : .25;
+    g += `<path d="M ${p0[0]} ${p0[1]} A ${wr} ${wry} 0 0 1 ${p1[0]} ${p1[1]}" fill="none"
+      stroke="${C.orange}" stroke-width="5" opacity="${op}"/>`;
+    g += `<polygon points="${p1[0]},${p1[1]} ${hx + 12 * Math.cos(da + Math.PI / 2)},${hy + 12 * Math.sin(da + Math.PI / 2)}
+      ${hx - 12 * Math.cos(da + Math.PI / 2)},${hy - 12 * Math.sin(da + Math.PI / 2)}"
+      fill="${C.orange}" opacity="${op}"/>`;
+    g += `<text x="${this.cx + 172}" y="${wy + 22}" font-size="30" font-style="italic"
+      fill="${C.orange}" font-family=${JSON.stringify(SERIF)}>ω</text>`;
+    g += txt(24, 46, this.frame === 'ground' ? '地面系（惯性系）：物块作圆周运动'
+      : '转台系（非惯性系）：物块静止，受惯性离心力', 16, C.ink, 'start', 600);
+    g += txt(24, 70, this.frame === 'ground'
+      ? '弹簧拉力提供向心力，指向轴心' : '物块相对转台不动：F + F_i = 0', 13.5, C.muted);
+    g += txt(966, 70, `F = mω²r = ${f(F, 2)} N`, 16, C.red, 'end', 600);
+    return g;
+  },
+  ui() {
+    ctrl.innerHTML = `<h2>参数与参考系</h2>
+      <div class="row"><label>ω</label><input type="range" id="sw" min="0" max="3.2" step="0.05"
+        value="${this.w}"><span class="val" id="vw">${f(this.w, 2)} rad/s</span></div>
+      <div class="btns" style="margin-top:10px">
+        <button data-fr="ground" class="${this.frame === 'ground' ? 'on' : ''}">地面系</button>
+        <button data-fr="disc" class="${this.frame === 'disc' ? 'on' : ''}">转台系</button>
+        <button id="pp">${this.run ? '⏸' : '▶'}</button>
+      </div>`;
+    ctrl.querySelector('#sw').oninput = e => {
+      this.w = +e.target.value; ctrl.querySelector('#vw').textContent = f(this.w, 2) + ' rad/s';
+    };
+    ctrl.querySelectorAll('[data-fr]').forEach(b => b.onclick = () => {
+      this.frame = b.dataset.fr; this.ui();
+    });
+    const pp = ctrl.querySelector('#pp');
+    pp.onclick = () => { this.run = !this.run; this.ui(); };
+  },
+  uiSync() {},
+  read() {
+    const r = this.r(), F = this.m * this.w * this.w * r;
+    out.innerHTML =
+      `<div><span>半径 r</span><b>${f(r, 3)} m</b></div>
+       <div><span>F = mω²r</span><b>${f(F, 2)} N</b></div>
+       <div><span>周期 T</span><b>${this.w < .02 ? '∞' : f(2 * Math.PI / this.w, 2) + ' s'}</b></div>
+       <div><span>ω/ω_c</span><b>${f(this.w / this.wc, 2)}</b></div>`;
+    note.textContent = 'ω 越大弹簧拉得越长（k·Δl = mω²r）。转到临界角速度 ω_c = √(k/m) '
+      + '弹簧就拉不住了 —— 这就是离心机的原理。';
+  }
+};
+
+/* ---------------- 启动 ---------------- */
+const MODES = { pendulum: Pend, frames: Frames, disc: Disc };
+const S = MODES[MODE];
+const VBOX = { pendulum: '0 0 1000 600', frames: '0 0 1000 620', disc: '0 0 1000 600' };
+scene.setAttribute('viewBox', VBOX[MODE]);
+scene.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+document.querySelectorAll('.modes a').forEach(a => a.classList.toggle('on', a.dataset.mode === MODE));
+S.ui();
+let last = performance.now();
+function loop(now) {
+  const dt = Math.min(.033, (now - last) / 1000); last = now;
+  S.step(dt);
+  scene.innerHTML = S.render();
+  S.read();
+  requestAnimationFrame(loop);
+}
+requestAnimationFrame(loop);
+</script>
+</body>
+</html>
