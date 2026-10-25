@@ -6872,7 +6872,6 @@ export function WorkCurve() {
         const s0 = i / N, s1 = (i + 1) / N
         const P = at(s0), Q = at(s1)
         const t = tg((s0 + s1) / 2)
-        const Lp = Math.hypot(Q[0] - P[0], Q[1] - P[1])
         return (
           <g key={i}>
             <Arrow x1={P[0]} y1={P[1]} x2={Q[0]} y2={Q[1]} color="#0A8A0A" w={5} />
@@ -7216,7 +7215,6 @@ export function FxArea() {
   const x1 = 380, x2 = 720
   const fy = (x: number) => Oy + SL * (x - Ox)
   const stripA = 528, stripB = 556
-  const line = (x: number) => `${x},${fy(x)}`
   return (
     <svg viewBox="0 0 1040 620" width="100%" height="100%">
       {/* 坐标轴 */}
@@ -7311,8 +7309,6 @@ export function ConsPath() {
 
 /** 3-5 第 10 页：三种势能曲线（重力 / 弹性 / 引力） */
 export function EpCurves() {
-  const lin = (x0: number, y0: number, x1: number, y1: number) =>
-    [x0, y0, x1, y1].join(',')
   // 弹性势能抛物线
   const par: string[] = []
   for (let i = 0; i <= 60; i++) {
@@ -8925,7 +8921,7 @@ function SymTrans({ mode }: { mode: 'A' | 'B' }) {
   const fm: [number, number] = [(f0[0] + f1[0]) / 2, (f0[1] + f1[1]) / 2]
   const lx = fm[0] - n[0] * 46, ly = fm[1] - n[1] * 46   // 标签放连线左上侧（离开图内）
   const sm: [number, number] = [(sFrom[0] + sTo[0]) / 2, (sFrom[1] + sTo[1]) / 2]
-  const dot = (p: [number, number], fill: string, dashed = false) => (
+  const dot = (p: [number, number], _fill: string, dashed = false) => (
     <circle cx={p[0]} cy={p[1]} r={R} fill={dashed ? '#F4FAF5' : '#EAF2FA'}
       stroke={dashed ? '#12852F' : '#1F4E9C'} strokeWidth="2.8"
       strokeDasharray={dashed ? '8 6' : undefined} />
@@ -9215,7 +9211,7 @@ export function RotOmega() {
     <svg viewBox="140 30 800 620" width="100%" height="100%">
       {/* 右手螺旋：四指沿转动方向弯，拇指指向 ω */}
       <circle cx="230" cy="300" r="86" fill="none" stroke="#1F6FBF" strokeWidth="3.4" />
-      <Arrow x1="230" y1="300" x2="230" y2="146" color="#1F6FBF" w={6} />
+      <Arrow x1={230} y1={300} x2={230} y2={146} color="#1F6FBF" w={6} />
       <text x="246" y="142" fontSize="32" fontStyle="italic" fontFamily={SERIF}
         fill="#1F6FBF">ω</text>
       <ArcArrow cx={230} cy={300} r={112} a0={0.4} a1={-0.6} color="#9AA7B5" w={4.5} />
@@ -9639,7 +9635,6 @@ export function FallingRod() {
   const O: [number, number] = [430, 600]
   const L = 470
   const th = (24 * Math.PI) / 180
-  const tip: [number, number] = [O[0] + L * Math.sin(th), O[1] - L * Math.cos(th)]
   const C: [number, number] = [O[0] + (L / 2) * Math.sin(th), O[1] - (L / 2) * Math.cos(th)]
   return (
     <svg viewBox="240 90 520 560" width="100%" height="100%">
@@ -9828,7 +9823,7 @@ export function RigidL() {
         strokeWidth="2.2" strokeDasharray="9 7" />
       <line x1={CX} y1="140" x2={CX} y2="520" stroke="#333" strokeWidth="2.6"
         strokeDasharray="11 8" />
-      <Arrow x1={CX} y1={CY - 60} x2={CX} y2="120" color="#D0021B" w={6} />
+      <Arrow x1={CX} y1={CY - 60} x2={CX} y2={120} color="#D0021B" w={6} />
       <text x={CX + 14} y="140" fontSize="32" fontStyle="italic" fontFamily={SERIF}
         fill="#D0021B">ω</text>
       <text x={CX + 46} y="140" fontSize="28" fontStyle="italic" fontFamily={SERIF}
@@ -10046,7 +10041,7 @@ export function BulletRod() {
       {/* 子弹 */}
       <rect x="300" y={O[1] + a - 12} width="70" height="24" fill="#F2D98A" stroke="#8A6A3A"
         strokeWidth="2.4" />
-      <Arrow x1="300" y1={O[1] + a} x2={O[0] - 22} y2={O[1] + a} color="#D0021B" w={5} />
+      <Arrow x1={300} y1={O[1] + a} x2={O[0] - 22} y2={O[1] + a} color="#D0021B" w={5} />
       <text x="300" y={O[1] + a - 26} fontSize="28" fontStyle="italic"
         fontFamily="SimSun, serif" fill="#111">m, v</text>
       {/* a 标注 */}
@@ -10084,8 +10079,8 @@ export function BulletDisc() {
         fontFamily={SERIF} fill="#111">m</text>
       <text x="664" y={O[1] - d - 14} fontSize="26" fontStyle="italic"
         fontFamily={SERIF} fill="#D0021B">v</text>
-      <Arrow x1="240" y1={O[1] - d} x2="320" y2={O[1] - d} color="#D0021B" w={5} />
-      <Arrow x1="620" y1={O[1] - d} x2="540" y2={O[1] - d} color="#D0021B" w={5} />
+      <Arrow x1={240} y1={O[1] - d} x2={320} y2={O[1] - d} color="#D0021B" w={5} />
+      <Arrow x1={620} y1={O[1] - d} x2={540} y2={O[1] - d} color="#D0021B" w={5} />
       {/* d */}
       <line x1={O[0] + R0 + 30} y1={O[1]} x2={O[0] + R0 + 30} y2={O[1] - d} stroke="#12852F"
         strokeWidth="2.2" />
@@ -10435,7 +10430,7 @@ export function FluidApps() {
         <rect x="722" y="240" width="326" height="258" fill="#DCEBF7" />
         <line x1="722" y1="240" x2="1048" y2="240" stroke="#1F6FBF" strokeWidth="4" />
         <circle cx="1050" cy="470" r="9" fill="#FFF" stroke="#1F4E9C" strokeWidth="3" />
-        <Arrow x1="1056" y1="470" x2="1120" y2="470" color="#12852F" w={5} />
+        <Arrow x1={1056} y1={470} x2={1120} y2={470} color="#12852F" w={5} />
         <text x="1124" y="462" fontSize="26" fontStyle="italic" fontFamily={SERIF}
           fill="#12852F">v</text>
         <line x1="760" y1="240" x2="760" y2="470" stroke="#9AA7B5" strokeWidth="2.2" />
@@ -10814,7 +10809,7 @@ export function ChapterMap() {
             <text x="598" y={y + 48} textAnchor="end" fontSize="25" fontFamily={SERIF}
               fill="#12852F">{st.n}</text>
             {i < steps.length - 1 && (
-              <Arrow x1="322" y1={y + 80} x2="322" y2={y + 104} color="#9AA7B5" w={4} />
+              <Arrow x1={322} y1={y + 80} x2={322} y2={y + 104} color="#9AA7B5" w={4} />
             )}
           </g>
         )
@@ -10881,7 +10876,7 @@ export function ChargeConserve() {
       {[0, 1, 2].map(i => (
         <circle key={i} cx={378 + i * 26} cy={116} r="8" fill="#1F4E9C" />
       ))}
-      <Arrow x1="420" y1="88" x2="322" y2="88" color="#1F4E9C" w={4.5} />
+      <Arrow x1={420} y1={88} x2={322} y2={88} color="#1F4E9C" w={4.5} />
       <text x="350" y="62" textAnchor="middle" fontSize="26" fontFamily={HEI} fill="#1F4E9C">
         转移 −q（电子）
       </text>
@@ -10927,8 +10922,8 @@ export function PointChargeModel() {
       <circle cx="606" cy="215" r="10" fill="#111" />
       <text x="620" y="200" fontSize="32" fontStyle="italic" fontFamily={SERIF} fill="#111">P</text>
       {/* 距离 r */}
-      <Arrow x1="326" y1="356" x2="600" y2="356" color="#12852F" w={3.4} />
-      <Arrow x1="600" y1="356" x2="326" y2="356" color="#12852F" w={3.4} />
+      <Arrow x1={326} y1={356} x2={600} y2={356} color="#12852F" w={3.4} />
+      <Arrow x1={600} y1={356} x2={326} y2={356} color="#12852F" w={3.4} />
       <text x="463" y="400" textAnchor="middle" fontSize="33" fontStyle="italic"
         fontFamily={SERIF} fill="#12852F">r</text>
       {/* 等效点电荷 */}
@@ -11107,7 +11102,7 @@ export function ELines() {
       <line x1="1060" y1="180" x2="1060" y2="460" stroke="#D0021B" strokeWidth="7" />
       <line x1="1290" y1="180" x2="1290" y2="460" stroke="#1F4E9C" strokeWidth="7" />
       {[200, 246, 292, 338, 384, 430, 462].map((y, i) => (
-        <Arrow key={i} x1="1066" y1={y} x2="1282" y2={y} color="#1F6FBF" w={3.4} />
+        <Arrow key={i} x1={1066} y1={y} x2={1282} y2={y} color="#1F6FBF" w={3.4} />
       ))}
       <text x="1175" y="550" textAnchor="middle" fontSize="28" fontFamily={HEI}
         fill="#555">平行板：匀强</text>
@@ -11176,7 +11171,7 @@ export function ETestDef() {
       <circle cx="150" cy={P[1]} r="26" fill="#FBFCFE" stroke="#D0021B" strokeWidth="3" />
       <text x="150" y={P[1] + 9} textAnchor="middle" fontSize="26" fontFamily={SERIF}
         fill="#D0021B">+</text>
-      <Arrow x1="150" y1={P[1] - 32} x2="150" y2={P[1] - 136} color="#D0021B" w={5} />
+      <Arrow x1={150} y1={P[1] - 32} x2={150} y2={P[1] - 136} color="#D0021B" w={5} />
       <text x="104" y={P[1] - 112} fontSize="27" fontStyle="italic" fontFamily={SERIF}
         fill="#D0021B">F</text>
       <text x="126" y={P[1] + 70} textAnchor="middle" fontSize="22" fontFamily={HEI}
@@ -11185,7 +11180,7 @@ export function ETestDef() {
       <circle cx="556" cy={P[1]} r="26" fill="#FBFCFE" stroke="#1F4E9C" strokeWidth="3" />
       <text x="556" y={P[1] + 9} textAnchor="middle" fontSize="26" fontFamily={SERIF}
         fill="#1F4E9C">−</text>
-      <Arrow x1="556" y1={P[1] + 32} x2="556" y2={P[1] + 136} color="#1F4E9C" w={5} />
+      <Arrow x1={556} y1={P[1] + 32} x2={556} y2={P[1] + 136} color="#1F4E9C" w={5} />
       <text x="570" y={P[1] + 118} fontSize="27" fontStyle="italic" fontFamily={SERIF}
         fill="#1F4E9C">F</text>
       <text x="556" y={P[1] + 174} textAnchor="middle" fontSize="22" fontFamily={HEI}
@@ -11636,11 +11631,11 @@ export function FluxSign() {
       })}
       <text x="548" y="196" fontSize="24" fontFamily={SERIF} fill="#D0021B">n</text>
       {/* 穿出（右上） */}
-      <Arrow x1="404" y1="196" x2="588" y2="126" color="#1F6FBF" w={4} />
+      <Arrow x1={404} y1={196} x2={588} y2={126} color="#1F6FBF" w={4} />
       <text x="596" y="122" fontSize="27" fontFamily={SERIF} fill="#12852F">+</text>
       <text x="410" y="112" fontSize="24" fontFamily={HEI} fill="#12852F">穿出为正</text>
       {/* 穿入（左下） */}
-      <Arrow x1="104" y1="352" x2="232" y2="306" color="#1F6FBF" w={4} />
+      <Arrow x1={104} y1={352} x2={232} y2={306} color="#1F6FBF" w={4} />
       <text x="100" y="380" textAnchor="start" fontSize="24" fontFamily={HEI} fill="#B00020">穿入为负</text>
       <text x="300" y="410" textAnchor="middle" fontSize="25" fontFamily={HEI} fill="#666">
         闭合面取外法线
@@ -11666,7 +11661,7 @@ export function SolidAngle() {
         strokeWidth="2.6" />
       <text x="560" y="242" fontSize="25" fontStyle="italic" fontFamily={SERIF}
         fill="#D0021B">dS</text>
-      <Arrow x1={O[0]} y1={O[1]} x2="430" y2="250" color="#1F6FBF" w={2.6} dashed />
+      <Arrow x1={O[0]} y1={O[1]} x2={430} y2={250} color="#1F6FBF" w={2.6} dashed />
       <text x="286" y="238" fontSize="26" fontStyle="italic" fontFamily={SERIF}
         fill="#1F6FBF">r</text>
       <text x="470" y="300" fontSize="26" fontFamily={SERIF} fill="#12852F">dΩ</text>
@@ -11751,17 +11746,17 @@ export function ParallelPlates() {
       <text x="253" y="106" textAnchor="middle" fontSize="26" fontFamily={SERIF} fill="#D0021B">+σ</text>
       <text x="487" y="106" textAnchor="middle" fontSize="26" fontFamily={SERIF} fill="#1F4E9C">−σ</text>
       {[150, 190, 230, 270, 310, 350].map((y, i) => (
-        <Arrow key={i} x1="264" y1={y} x2="476" y2={y} color="#1F6FBF" w={3.4} />
+        <Arrow key={i} x1={264} y1={y} x2={476} y2={y} color="#1F6FBF" w={3.4} />
       ))}
       <text x="370" y="404" textAnchor="middle" fontSize="27" fontFamily={HEI} fill="#B00020">
         板间：两场同向 ⇒ E = σ/ε₀
       </text>
       {/* 板外抵消 */}
-      <Arrow x1="200" y1="200" x2="128" y2="200" color="#9AA7B5" w={3.4} />
-      <Arrow x1="128" y1="222" x2="200" y2="222" color="#9AA7B5" w={3.4} />
+      <Arrow x1={200} y1={200} x2={128} y2={200} color="#9AA7B5" w={3.4} />
+      <Arrow x1={128} y1={222} x2={200} y2={222} color="#9AA7B5" w={3.4} />
       <text x="164" y="264" textAnchor="middle" fontSize="24" fontFamily={HEI} fill="#777">E = 0</text>
-      <Arrow x1="540" y1="200" x2="612" y2="200" color="#9AA7B5" w={3.4} />
-      <Arrow x1="612" y1="222" x2="540" y2="222" color="#9AA7B5" w={3.4} />
+      <Arrow x1={540} y1={200} x2={612} y2={200} color="#9AA7B5" w={3.4} />
+      <Arrow x1={612} y1={222} x2={540} y2={222} color="#9AA7B5" w={3.4} />
       <text x="576" y="264" textAnchor="middle" fontSize="24" fontFamily={HEI} fill="#777">E = 0</text>
       <text x="370" y="440" textAnchor="middle" fontSize="24" fontFamily={HEI} fill="#777">
         板外：两场反向抵消
@@ -11896,7 +11891,7 @@ export function MillikanWhy() {
       <text x="532" y="256" textAnchor="middle" fontSize="23" fontFamily={HEI} fill="#777">
         比值知道，两者各自未知
       </text>
-      <Arrow x1="286" y1="120" x2="392" y2="120" color="#9AA7B5" w={4} />
+      <Arrow x1={286} y1={120} x2={392} y2={120} color="#9AA7B5" w={4} />
       {/* 分出 e 之后 */}
       <line x1="30" y1="298" x2="670" y2="298" stroke="#DCE5F0" strokeWidth="1.8"
         strokeDasharray="9 7" />
@@ -11935,19 +11930,19 @@ export function MagPhenomena() {
       </text>
       {bar(30, 86, true)}
       {bar(250, 86, true)}
-      <Arrow x1="176" y1="111" x2="240" y2="111" color="#7B1FA2" w={5} />
-      <Arrow x1="324" y1="111" x2="260" y2="111" color="#7B1FA2" w={5} />
+      <Arrow x1={176} y1={111} x2={240} y2={111} color="#7B1FA2" w={5} />
+      <Arrow x1={324} y1={111} x2={260} y2={111} color="#7B1FA2" w={5} />
       {/* 同名相斥 */}
       <text x="210" y="220" textAnchor="middle" fontSize="25" fontFamily={HEI} fill="#1F4E9C">
         同名相斥
       </text>
       {bar(30, 244, true)}
       {bar(250, 244, false)}
-      <Arrow x1="176" y1="269" x2="96" y2="269" color="#1F6FBF" w={5} />
-      <Arrow x1="324" y1="269" x2="404" y2="269" color="#1F6FBF" w={5} />
+      <Arrow x1={176} y1={269} x2={96} y2={269} color="#1F6FBF" w={5} />
+      <Arrow x1={324} y1={269} x2={404} y2={269} color="#1F6FBF" w={5} />
       {/* 奥斯特实验 */}
       <line x1="430" y1="330" x2="672" y2="330" stroke="#8A6A3A" strokeWidth="5" />
-      <Arrow x1="452" y1="306" x2="520" y2="306" color="#D0021B" w={4} />
+      <Arrow x1={452} y1={306} x2={520} y2={306} color="#D0021B" w={4} />
       <text x="528" y="300" fontSize="26" fontStyle="italic" fontFamily={SERIF}
         fill="#D0021B">I</text>
       <circle cx="560" cy="384" r="34" fill="#F4F7FB" stroke="#9AA7B5" strokeWidth="2.4" />
@@ -12014,7 +12009,7 @@ export function MagFieldLoop() {
     <svg viewBox="0 0 1580 230" width="100%" height="100%">
       {/* 直导线 */}
       <line x1="250" y1="24" x2="250" y2="188" stroke="#8A6A3A" strokeWidth="6" />
-      <Arrow x1="274" y1="64" x2="274" y2="116" color="#D0021B" w={4} />
+      <Arrow x1={274} y1={64} x2={274} y2={116} color="#D0021B" w={4} />
       <text x="288" y="98" fontSize="26" fontStyle="italic" fontFamily={SERIF}
         fill="#D0021B">I</text>
       {[56, 104, 152].map((ry, i) => (
@@ -12031,8 +12026,8 @@ export function MagFieldLoop() {
       ))}
       <line x1="880" y1="34" x2="1200" y2="34" stroke="#1F6FBF" strokeWidth="2.6" />
       <line x1="880" y1="186" x2="1200" y2="186" stroke="#1F6FBF" strokeWidth="2.6" />
-      <Arrow x1="900" y1="34" x2="1170" y2="34" color="#1F6FBF" w={3.6} />
-      <Arrow x1="1180" y1="186" x2="910" y2="186" color="#1F6FBF" w={3.6} />
+      <Arrow x1={900} y1={34} x2={1170} y2={34} color="#1F6FBF" w={3.6} />
+      <Arrow x1={1180} y1={186} x2={910} y2={186} color="#1F6FBF" w={3.6} />
       <text x="1040" y="220" textAnchor="middle" fontSize="24" fontFamily={HEI} fill="#1F4E9C">
         螺线管：外部像条形磁铁
       </text>
@@ -12117,7 +12112,7 @@ export function ChargeMotionThree() {
     <svg viewBox="0 0 1580 210" width="100%" height="100%">
       {/* ① 直线 */}
       <line x1={xs[0]} y1="26" x2={xs[0]} y2="162" stroke="#1F6FBF" strokeWidth="4" />
-      <Arrow x1={xs[0]} y1="162" x2={xs[0]} y2="32" color="#D0021B" w={5} />
+      <Arrow x1={xs[0]} y1={162} x2={xs[0]} y2={32} color="#D0021B" w={5} />
       <text x={xs[0] + 14} y="62" fontSize="26" fontStyle="italic" fontFamily={SERIF}
         fill="#D0021B">v</text>
       <text x={xs[0] + 14} y="104" fontSize="26" fontStyle="italic" fontFamily={SERIF}
@@ -12125,8 +12120,8 @@ export function ChargeMotionThree() {
       {/* ② 圆 */}
       <circle cx={xs[1]} cy="96" r="70" fill="none" stroke="#D0021B" strokeWidth="3" />
       <circle cx={xs[1]} cy="26" r="9" fill="#FBE9E7" stroke="#D0021B" strokeWidth="2.4" />
-      <Arrow x1={xs[1] + 10} y1="26" x2={xs[1] + 84} y2="26" color="#1F6FBF" w={4.2} />
-      <Arrow x1={xs[1]} y1="38" x2={xs[1]} y2="88" color="#12852F" w={4.2} />
+      <Arrow x1={xs[1] + 10} y1={26} x2={xs[1] + 84} y2={26} color="#1F6FBF" w={4.2} />
+      <Arrow x1={xs[1]} y1={38} x2={xs[1]} y2={88} color="#12852F" w={4.2} />
       <text x={xs[1] + 88} y="20" fontSize="24" fontStyle="italic" fontFamily={SERIF}
         fill="#1F6FBF">v</text>
       <text x={xs[1] + 8} y="76" fontSize="24" fontStyle="italic" fontFamily={SERIF}
@@ -12234,7 +12229,7 @@ export function BiotElem() {
     <svg viewBox="60 108 590 322" width="100%" height="100%">
       {/* 导线 */}
       <line x1="70" y1={O[1]} x2="600" y2={O[1]} stroke="#8A6A3A" strokeWidth="8.5" />
-      <Arrow x1="80" y1={O[1] + 34} x2="170" y2={O[1] + 34} color="#D0021B" w={5.4} />
+      <Arrow x1={80} y1={O[1] + 34} x2={170} y2={O[1] + 34} color="#D0021B" w={5.4} />
       <text x="178" y={O[1] + 42} fontSize="33" fontStyle="italic" fontFamily={SERIF} fill="#D0021B">I</text>
       {/* 电流元：沿导线方向的加粗段 */}
       <line x1={O[0] - 30} y1={O[1]} x2={O[0] + 30} y2={O[1]} stroke="#D0021B" strokeWidth="16" />
@@ -12372,7 +12367,7 @@ export function BiotSolenoid() {
       ))}
       {/* 内部场：从管口到管口，不与线圈端点重叠 */}
       {[212, 250, 288].map((yy, i) => (
-        <Arrow key={i} x1="196" y1={yy} x2="492" y2={yy} color="#1F6FBF" w={5.8} />
+        <Arrow key={i} x1={196} y1={yy} x2={492} y2={yy} color="#1F6FBF" w={5.8} />
       ))}
       <text x="330" y={y + 132} textAnchor="middle" fontSize="31" fontFamily={HEI} fill="#333">
         内部：B = μ₀nI，方向沿轴，匀强
@@ -12382,8 +12377,8 @@ export function BiotSolenoid() {
         stroke="#1F6FBF" strokeWidth="3" opacity="0.7" />
       <path d="M 508 294 C 572 310 600 344 566 364 C 528 382 452 374 410 360" fill="none"
         stroke="#1F6FBF" strokeWidth="3" opacity="0.7" />
-      <Arrow x1="470" y1="134" x2="424" y2="140" color="#1F6FBF" w={4} />
-      <Arrow x1="470" y1="366" x2="424" y2="360" color="#1F6FBF" w={4} />
+      <Arrow x1={470} y1={134} x2={424} y2={140} color="#1F6FBF" w={4} />
+      <Arrow x1={470} y1={366} x2={424} y2={360} color="#1F6FBF" w={4} />
       <text x="344" y={y - 82} textAnchor="middle" fontSize="29" fontFamily={HEI} fill="#777">
         外部：磁感线闭合，像条形磁铁
       </text>
@@ -12756,7 +12751,7 @@ export function AmfElement() {
     <svg viewBox="70 90 560 330" width="100%" height="100%">
       {/* 导线与电流 */}
       <line x1="80" y1={O[1]} x2="580" y2={O[1]} stroke="#8A6A3A" strokeWidth="7" />
-      <Arrow x1="96" y1={O[1] - 34} x2="180" y2={O[1] - 34} color="#D0021B" w={4.5} />
+      <Arrow x1={96} y1={O[1] - 34} x2={180} y2={O[1] - 34} color="#D0021B" w={4.5} />
       <text x="188" y={O[1] - 26} fontSize="30" fontStyle="italic" fontFamily={SERIF}
         fill="#D0021B">I</text>
       {/* 电流元 */}
@@ -12791,21 +12786,21 @@ export function AmfBent() {
     <svg viewBox="56 88 628 360" width="100%" height="100%">
       {/* 左：直导线 */}
       <line x1="110" y1="150" x2="110" y2="370" stroke="#8A6A3A" strokeWidth="6" />
-      <Arrow x1="136" y1="330" x2="136" y2="210" color="#D0021B" w={4} />
+      <Arrow x1={136} y1={330} x2={136} y2={210} color="#D0021B" w={4} />
       <text x="150" y="284" fontSize="28" fontStyle="italic" fontFamily={SERIF} fill="#D0021B">I</text>
-      <Arrow x1="110" y1="260" x2="230" y2="260" color="#7B1FA2" w={7} />
+      <Arrow x1={110} y1={260} x2={230} y2={260} color="#7B1FA2" w={7} />
       <text x="196" y="240" fontSize="30" fontStyle="italic" fontFamily={SERIF} fill="#7B1FA2">F</text>
       <text x="170" y="404" textAnchor="middle" fontSize="24" fontFamily={HEI} fill="#333">
         直导线：F = BIL
       </text>
       {/* 右：弯曲导线 */}
       <path d="M 390 150 C 470 180 500 300 590 330" fill="none" stroke="#8A6A3A" strokeWidth="6" />
-      <Arrow x1="410" y1="166" x2="452" y2="180" color="#D0021B" w={4} />
+      <Arrow x1={410} y1={166} x2={452} y2={180} color="#D0021B" w={4} />
       <text x="430" y="150" fontSize="28" fontStyle="italic" fontFamily={SERIF} fill="#D0021B">I</text>
       {/* 端点到端点的等效线 */}
       <line x1="390" y1="150" x2="590" y2="330" stroke="#12852F" strokeWidth="3"
         strokeDasharray="10 8" />
-      <Arrow x1="490" y1="240" x2="600" y2="240" color="#7B1FA2" w={7} />
+      <Arrow x1={490} y1={240} x2={600} y2={240} color="#7B1FA2" w={7} />
       <text x="560" y="222" fontSize="30" fontStyle="italic" fontFamily={SERIF} fill="#7B1FA2">F</text>
       <text x="490" y="404" textAnchor="middle" fontSize="24" fontFamily={HEI} fill="#333">
         弯曲导线：合力 = 两端连线所受的力
@@ -12835,8 +12830,8 @@ export function ParallelWires() {
       </text>
       {wire(180, 1, '#D0021B')}
       {wire(430, 1, '#D0021B')}
-      <Arrow x1="216" y1="250" x2="286" y2="250" color="#7B1FA2" w={6} />
-      <Arrow x1="394" y1="250" x2="324" y2="250" color="#7B1FA2" w={6} />
+      <Arrow x1={216} y1={250} x2={286} y2={250} color="#7B1FA2" w={6} />
+      <Arrow x1={394} y1={250} x2={324} y2={250} color="#7B1FA2" w={6} />
       <text x="305" y="232" textAnchor="middle" fontSize="26" fontStyle="italic"
         fontFamily={SERIF} fill="#7B1FA2">F</text>
       <line x1="180" y1="430" x2="430" y2="430" stroke="#1F4E9C" strokeWidth="2.6" />
@@ -12937,7 +12932,6 @@ export function LoopTorque() {
 
 /** SVG 文本里的真下标（SVG 不认 LaTeX，不能用 _r 这种写法） */
 const Sb = ({ c }: { c: string }) => <tspan dy="5" fontSize="0.66em">{c}</tspan>
-const Sbc = () => <Sb c="c" />
 const Sbk = () => <Sb c="r" />
 const Sbm = () => <Sb c="m" />
 
@@ -12957,7 +12951,7 @@ export function MolCurrent() {
   return (
     <svg viewBox="100 84 600 380" width="100%" height="100%">
       {/* 右：先铺外场（浅蓝，穿过整个区域），再画分子电流 */}
-      <Arrow x1="662" y1="332" x2="662" y2="152" color="#7FB2FF" w={5.5} />
+      <Arrow x1={662} y1={332} x2={662} y2={152} color="#7FB2FF" w={5.5} />
       {[0, 1, 2, 3, 4, 5].map(i => cell(xsL[i % 3], ys[Math.floor(i / 3)], leftA[i], `l${i}`))}
       {[0, 1, 2, 3, 4, 5].map(i => cell(xsR[i % 3], ys[Math.floor(i / 3)], -Math.PI / 2, `r${i}`))}
       <text x="216" y="120" textAnchor="middle" fontSize="27" fontFamily={HEI} fill="#1F4E9C">
@@ -12984,7 +12978,7 @@ export function MolCurrent() {
 export function MagMediaThree() {
   const panel = (cx: number, k: number, fill: string, stroke: string) => (
     <g>
-      <Arrow x1={cx} y1="116" x2={cx} y2="58" color="#1F6FBF" w={3.4} />
+      <Arrow x1={cx} y1={116} x2={cx} y2={58} color="#1F6FBF" w={3.4} />
       <rect x={cx - 62} y="132" width="124" height="164" rx="8" fill={fill}
         stroke={stroke} strokeWidth="3.4" />
       {[0, 1, 2].map(i => [0, 1].map(j => {
@@ -13044,7 +13038,7 @@ export function MagBoundCurrent() {
       <polygon points="410,334 396,330 400,346" fill="#D0021B" />
       <text x={x1 + 34} y={y + 10} fontSize="26" fontFamily={HEI} fill="#B00020">磁介质</text>
       {/* 磁化强度 M 沿轴 */}
-      <Arrow x1="216" y1="146" x2="452" y2="146" color="#7B1FA2" w={5.4} />
+      <Arrow x1={216} y1={146} x2={452} y2={146} color="#7B1FA2" w={5.4} />
       <text x="466" y="158" fontSize="30" fontStyle="italic" fontFamily={SERIF}
         fill="#7B1FA2">M</text>
       <text x="330" y="126" textAnchor="middle" fontSize="24" fontFamily={HEI} fill="#7B1FA2">
@@ -13277,8 +13271,8 @@ export function FaradayCoil() {
           fill="#fff">S</text>
         {/* 运动方向 */}
         {state !== 1 && (
-          <Arrow x1={state === 0 ? px + 18 : px + 62} y1="150"
-            x2={state === 0 ? px + 66 : px + 14} y2="150" color="#7B1FA2" w={4} />
+          <Arrow x1={state === 0 ? px + 18 : px + 62} y1={150}
+            x2={state === 0 ? px + 66 : px + 14} y2={150} color="#7B1FA2" w={4} />
         )}
         <text x={px + 100} y="66" textAnchor="middle" fontSize="24" fontFamily={HEI}
           fill="#B00020">{title}</text>
@@ -13406,7 +13400,7 @@ export function FluxChangeWays() {
         ))}
         <rect x="34" y="164" width="28" height="14" fill="#E8453C" />
         <rect x="34" y="178" width="28" height="14" fill="#2F6DB5" />
-        <Arrow x1="24" y1="140" x2="74" y2="140" color="#7B1FA2" w={4} />
+        <Arrow x1={24} y1={140} x2={74} y2={140} color="#7B1FA2" w={4} />
         <text x="120" y="70" textAnchor="middle" fontSize="23" fontFamily={HEI} fill="#1F4E9C">
           B 变
         </text>
@@ -13423,7 +13417,7 @@ export function FluxChangeWays() {
         <line x1="252" y1="248" x2="472" y2="248" stroke="#8A6A3A" strokeWidth="4" />
         <line x1="252" y1="152" x2="252" y2="248" stroke="#8A6A3A" strokeWidth="4" />
         <line x1="392" y1="146" x2="392" y2="254" stroke="#D0021B" strokeWidth="7" />
-        <Arrow x1="406" y1="200" x2="462" y2="200" color="#7B1FA2" w={4} />
+        <Arrow x1={406} y1={200} x2={462} y2={200} color="#7B1FA2" w={4} />
         {[[300, 180], [340, 180], [300, 222], [340, 222], [420, 180], [420, 222]].map((p, i) => (
           <g key={i} opacity="0.5">
             <line x1={p[0] - 7} y1={p[1] - 7} x2={p[0] + 7} y2={p[1] + 7} stroke="#1F4E9C"
@@ -13447,7 +13441,7 @@ export function FluxChangeWays() {
         <polygon points="556,168 646,196 646,236 556,208" fill="#EAF2FA" stroke="#1F4E9C"
           strokeWidth="3.2" />
         <ArcLine cx={601} cy={204} r={58} a0={-0.9} a1={0.55} color="#7B1FA2" w={3.6} />
-        <Arrow x1="648" y1="252" x2="636" y2="228" color="#7B1FA2" w={3.6} />
+        <Arrow x1={648} y1={252} x2={636} y2={228} color="#7B1FA2" w={3.6} />
         <text x="601" y="70" textAnchor="middle" fontSize="23" fontFamily={HEI} fill="#1F4E9C">
           θ 变
         </text>
@@ -13537,15 +13531,15 @@ export function MotionalRod() {
         B 向里
       </text>
       {/* 洛伦兹力（正电荷被推向上端） */}
-      <Arrow x1={rodX - 18} y1="252" x2={rodX - 18} y2="188" color="#12852F" w={5} />
+      <Arrow x1={rodX - 18} y1={252} x2={rodX - 18} y2={188} color="#12852F" w={5} />
       <text x={rodX - 34} y="222" textAnchor="end" fontSize="25" fontStyle="italic"
         fontFamily={SERIF} fill="#12852F">F</text>
       {/* 速度 */}
-      <Arrow x1={rodX + 20} y1="318" x2={rodX + 108} y2="318" color="#7B1FA2" w={5} />
+      <Arrow x1={rodX + 20} y1={318} x2={rodX + 108} y2={318} color="#7B1FA2" w={5} />
       <text x={rodX + 116} y="326" fontSize="28" fontStyle="italic" fontFamily={SERIF}
         fill="#7B1FA2">v</text>
       {/* 感应电流方向：沿上导轨向左 */}
-      <Arrow x1={rodX - 20} y1={yT - 30} x2="250" y2={yT - 30} color="#D0021B" w={4.4} />
+      <Arrow x1={rodX - 20} y1={yT - 30} x2={250} y2={yT - 30} color="#D0021B" w={4.4} />
       <text x="300" y={yT - 42} textAnchor="middle" fontSize="22" fontFamily={HEI}
         fill="#B00020">感应电流 I</text>
       <text x="400" y="386" textAnchor="middle" fontSize="26" fontFamily={SERIF} fill="#333">
@@ -13614,7 +13608,6 @@ export function RotatingRod() {
 export function VortexElectric() {
   const cx = 340, cy = 236
   const arrows = (r: number, key: string) => {
-    const a = -Math.PI / 2
     return (
       <g key={key}>
         <circle cx={cx} cy={cy} r={r} fill="none" stroke="#7B1FA2" strokeWidth="3.2" />
@@ -13779,7 +13772,7 @@ export function DipoleTorque() {
     <svg viewBox="220 140 660 490" width="100%" height="100%">
       {/* 匀强电场 */}
       {[210, 288, 366, 444, 522].map((y, i) => (
-        <Arrow key={i} x1="280" y1={y} x2="830" y2={y} color="#1F6FBF" w={3} />
+        <Arrow key={i} x1={280} y1={y} x2={830} y2={y} color="#1F6FBF" w={3} />
       ))}
       <text x="844" y="206" fontSize="30" fontStyle="italic" fontFamily={SERIF}
         fill="#1F6FBF">E</text>
@@ -13903,9 +13896,9 @@ export function Shield() {
         const dx = Math.sqrt(R2 * R2 - dy * dy)
         return (
           <g key={i}>
-            <Arrow x1="300" y1={O[1] + dy} x2={O[0] - dx - 10} y2={O[1] + dy}
+            <Arrow x1={300} y1={O[1] + dy} x2={O[0] - dx - 10} y2={O[1] + dy}
               color="#1F6FBF" w={3.2} />
-            <Arrow x1={O[0] + dx + 10} y1={O[1] + dy} x2="700" y2={O[1] + dy}
+            <Arrow x1={O[0] + dx + 10} y1={O[1] + dy} x2={700} y2={O[1] + dy}
               color="#1F6FBF" w={3.2} />
           </g>
         )
@@ -13972,8 +13965,8 @@ export function DielectricSlab() {
       <text x="796" y="664" fontSize="28" fontFamily={SERIF} fill="#1F4E9C">−</text>
       {[360, 430, 500, 570, 640, 720].map((x, i) => (
         <g key={i}>
-          <Arrow x1={x} y1="164" x2={x} y2={y0 - 12} color="#1F6FBF" w={3.4} />
-          <Arrow x1={x} y1="636" x2={x} y2={y1 + 12} color="#1F6FBF" w={3.4} />
+          <Arrow x1={x} y1={164} x2={x} y2={y0 - 12} color="#1F6FBF" w={3.4} />
+          <Arrow x1={x} y1={636} x2={x} y2={y1 + 12} color="#1F6FBF" w={3.4} />
         </g>
       ))}
       <rect x={x0} y={y0} width={x1 - x0} height={y1 - y0} fill="#EAF2DA" fillOpacity="0.85"
@@ -14476,7 +14469,7 @@ export function DipolePair() {
       {[250, 360, 470, 580].map((y, i) => (
         <line key={i} x1="300" y1={y} x2="820" y2={y} stroke="#B9D0E6" strokeWidth="2.2" />
       ))}
-      <Arrow x1="760" y1="580" x2="836" y2="580" color="#8FB6DA" w={2.6} />
+      <Arrow x1={760} y1={580} x2={836} y2={580} color="#8FB6DA" w={2.6} />
       <text x="844" y="590" fontSize="30" fontStyle="italic" fontFamily={SERIF}
         fill="#1F6FBF">E</text>
       {/* 偶极子 */}
@@ -14524,7 +14517,7 @@ export function DipoleNonuniform() {
   // 场线水平，右端向中线收拢 ⇒ 右端明显更密（场更强）
   const ys0 = [200, 262, 324, 386, 448, 510, 572]
   const mid = 386
-  const xs = 300, xm = 640, xe = 760
+  const xs = 300, xe = 760
   const A: [number, number] = [612, 386]        // +q（靠强场）
   const B: [number, number] = [462, 386]        // −q
   return (
@@ -14539,7 +14532,7 @@ export function DipoleNonuniform() {
         )
       })}
       {/* 方向箭头：最上一条 */}
-      <Arrow x1="708" y1="386" x2="782" y2="386" color="#8FB6DA" w={3} />
+      <Arrow x1={708} y1={386} x2={782} y2={386} color="#8FB6DA" w={3} />
       <text x="790" y="396" fontSize="28" fontStyle="italic" fontFamily={SERIF}
         fill="#1F6FBF">E</text>
       <text x="296" y="182" fontSize="25" fontFamily={HEI} fill="#555">场弱</text>
@@ -14563,7 +14556,7 @@ export function DipoleNonuniform() {
       <text x={B[0] - 22 - 40} y={B[1] - 14} textAnchor="middle" fontSize="24"
         fontStyle="italic" fontFamily={SERIF} fill="#1F4E9C">F₋</text>
       {/* 合力 */}
-      <Arrow x1="520" y1="486" x2="628" y2="486" color="#7B1FA2" w={6.5} />
+      <Arrow x1={520} y1={486} x2={628} y2={486} color="#7B1FA2" w={6.5} />
       <text x="640" y="496" fontSize="28" fontStyle="italic" fontFamily={SERIF}
         fill="#7B1FA2">F</text>
       <text x="520" y="524" textAnchor="middle" fontSize="23" fontFamily={HEI}
@@ -14895,7 +14888,7 @@ export function MutualCoils() {
       {ring(c2, 'r2')}
 
       {/* 线圈 1 的绕行电流 */}
-      <ArcLine cx={c1 + 10} cy={cy} r="90" a0={-2.15} a1={ea} color="#7B1FA2" w={3.6} />
+      <ArcLine cx={c1 + 10} cy={cy} r={90} a0={-2.15} a1={ea} color="#7B1FA2" w={3.6} />
       <g transform={`translate(${ex},${ey}) rotate(12)`}>
         <polygon points="0,0 -15,-6.5 -15,6.5" fill="#7B1FA2" />
       </g>
@@ -17847,7 +17840,7 @@ export function SlitSetup() {
       ))}
       <line x1="390" y1="360" x2={Px} y2="300" stroke={OPT_VIOLET} strokeWidth="2.6"
         strokeDasharray="10 6" />
-      <ArcLine cx="390" cy="360" r="120" a0={-0.12} a1={0} color="#E8821E" w={2.6} />
+      <ArcLine cx={390} cy={360} r={120} a0={-0.12} a1={0} color="#E8821E" w={2.6} />
       <text x="470" y="316" fontSize="28" fontStyle="italic" fontFamily={SERIF}
         fill="#E8821E">θ</text>
 
@@ -17894,7 +17887,7 @@ export function HalfZone() {
         <text x={ox + 30} y={(top + bot) / 2 + 8} fontSize="26" fontFamily={HEI} fill="#111">
           {n} 个半波带
         </text>
-        <text x={ox} y={bot + 116} fontSize="30" fontFamily={HEI} fill={n === 2 ? OPT_RED : BLUE}>
+        <text x={ox} y={bot + 116} fontSize="30" fontFamily={HEI} fill={n === 2 ? OPT_RED : OPT_BLUE}>
           {caption}
         </text>
         <text x={ox} y={bot + 158} fontSize="26" fontFamily={SERIF} fill="#333">{sub}</text>
@@ -17954,7 +17947,6 @@ export function SlitPattern() {
 /** 11-6 P9：中央明纹宽度——屏上两个第一暗纹之间，宽 2fλ/b。 */
 export function SlitWidth() {
   const Px = 760
-  const cy = 300
   return (
     <svg viewBox="0 0 1120 560" width="100%" height="100%">
       {/* 缝与透镜 */}
@@ -18354,7 +18346,7 @@ export function AirySetup() {
       <text x={Px + 96} y={cy + 8} fontSize="24" fontFamily={HEI} fill="#555">艾里斑</text>
 
       {/* θ */}
-      <ArcLine cx="626" cy="300" r="150" a0={-0.185} a1={0} color="#E8821E" w={2.4} />
+      <ArcLine cx={626} cy={300} r={150} a0={-0.185} a1={0} color="#E8821E" w={2.4} />
       <text x="700" y="238" fontSize="26" fontStyle="italic" fontFamily={SERIF}
         fill="#E8821E">θ</text>
     </svg>
@@ -18514,8 +18506,8 @@ export function WallImpact() {
         fontFamily={SERIF} fill="#333">l</text>
 
       {/* ---------- 右：x–t 图，撞壁间隔 Δt ---------- */}
-      <Arrow x1={t0} y1="320" x2={t1} y2="320" color="#666" w={2.2} />
-      <Arrow x1={t0} y1="320" x2={t0} y2="118" color="#666" w={2.2} />
+      <Arrow x1={t0} y1={320} x2={t1} y2={320} color="#666" w={2.2} />
+      <Arrow x1={t0} y1={320} x2={t0} y2={118} color="#666" w={2.2} />
       <text x={t0 - 16} y="114" textAnchor="end" fontSize="24" fontStyle="italic"
         fontFamily={SERIF} fill="#444">x</text>
       <text x={t1 + 8} y="328" fontSize="24" fontStyle="italic" fontFamily={SERIF}
@@ -18559,8 +18551,8 @@ export function PressureFluctuation() {
   return (
     <svg viewBox="0 0 700 420" width="100%" height="100%">
       {/* 坐标轴 */}
-      <Arrow x1={90} y1="320" x2={660} y2="320" color="#666" w={2.2} />
-      <Arrow x1={90} y1="320" x2={90} y2="100" color="#666" w={2.2} />
+      <Arrow x1={90} y1={320} x2={660} y2={320} color="#666" w={2.2} />
+      <Arrow x1={90} y1={320} x2={90} y2={100} color="#666" w={2.2} />
       <text x={666} y="330" fontSize="24" fontStyle="italic" fontFamily={SERIF} fill="#444">t</text>
       <text x={78} y="96" textAnchor="end" fontSize="24" fontStyle="italic"
         fontFamily={SERIF} fill="#444">p</text>
@@ -18593,7 +18585,6 @@ export function PressureFluctuation() {
 /** 11-8 P2：光栅衍射装置——多缝光栅 + 透镜，屏上得到 0、±1、±2 级主极大。 */
 export function GratingSetup() {
   const Px = 1020
-  const cy = 300
   return (
     <svg viewBox="0 0 1200 620" width="100%" height="100%">
       {/* 平行光 */}
@@ -18636,7 +18627,7 @@ export function GratingSetup() {
 
       {/* 屏上主极大 */}
       {[[0, 300, '0'], [-1, 225, '−1'], [1, 375, '+1'], [-2, 150, '−2'], [2, 450, '+2']].map(
-        ([k, y, label]) => (
+        ([, y, label]) => (
           <g key={String(label)}>
             <rect x={Px + 4} y={Number(y) - 9} width="8" height="18" fill="#F2C230" />
             <text x={Px + 22} y={Number(y) + 8} fontSize="24" fontFamily={SERIF}
@@ -18773,7 +18764,7 @@ export function Bragg() {
       {/* θ 角 */}
       <line x1="560" y1="392" x2="760" y2="392" stroke="#999" strokeWidth="1.6"
         strokeDasharray="8 6" />
-      <ArcLine cx="560" cy="392" r="110" a0={-0.52} a1={0} color="#E8821E" w={2.4} />
+      <ArcLine cx={560} cy={392} r={110} a0={-0.52} a1={0} color="#E8821E" w={2.4} />
       <text x="640" y="360" fontSize="26" fontStyle="italic" fontFamily={SERIF}
         fill="#E8821E">θ</text>
 
@@ -19084,7 +19075,7 @@ export function PolarizerAnalyzer() {
       <rect x="702" y="130" width="26" height="200" fill="#F3E6F8" stroke="#7B4FB5"
         strokeWidth="2.4" transform="rotate(20 715 230)" />
       <text x="690" y="112" fontSize="26" fontFamily={SERIF} fill="#111">P₂</text>
-      <ArcLine cx="715" cy="230" r="70" a0={-0.35} a1={0} color="#E8821E" w={2.6} />
+      <ArcLine cx={715} cy={230} r={70} a0={-0.35} a1={0} color="#E8821E" w={2.6} />
       <text x="760" y="206" fontSize="26" fontStyle="italic" fontFamily={SERIF}
         fill="#E8821E">α</text>
 
@@ -19304,7 +19295,7 @@ export function ReflectionPol() {
         </g>
       ))}
       <text x="196" y="166" fontSize="26" fontFamily={HEI} fill="#1F8A4C">自然光</text>
-      <ArcLine cx={O[0]} cy={O[1]} r="90" a0={-Math.PI / 2} a1={-0.75} color="#E8821E" w={2.4} />
+      <ArcLine cx={O[0]} cy={O[1]} r={90} a0={-Math.PI / 2} a1={-0.75} color="#E8821E" w={2.4} />
       <text x={O[0] - 84} y="250" fontSize="26" fontStyle="italic" fontFamily={SERIF}
         fill="#E8821E">i</text>
 
@@ -19355,7 +19346,7 @@ export function BrewsterAngle() {
       <line x1="230" y1="150" x2={O[0]} y2={O[1]} stroke="#1F8A4C" strokeWidth="3.2"
         markerEnd="url(#brArrow)" />
       <text x="190" y="138" fontSize="26" fontFamily={SERIF} fill="#1F8A4C">自然光</text>
-      <ArcLine cx={O[0]} cy={O[1]} r="100" a0={-Math.PI / 2} a1={-0.93} color="#E8821E" w={2.6} />
+      <ArcLine cx={O[0]} cy={O[1]} r={100} a0={-Math.PI / 2} a1={-0.93} color="#E8821E" w={2.6} />
       <text x={O[0] - 100} y="230" fontSize="28" fontFamily={SERIF} fill="#E8821E">i₀</text>
 
       {/* 反射：全偏振 */}
@@ -19787,20 +19778,20 @@ export function RefractionLaw() {
       <line x1="240" y1="150" x2={O[0]} y2={O[1]} stroke="#1F8A4C" strokeWidth="3"
         markerEnd="url(#rfArrow)" />
       <text x="200" y="136" fontSize="24" fontFamily={HEI} fill="#1F8A4C">入射光</text>
-      <ArcLine cx={O[0]} cy={O[1]} r="92" a0={-Math.PI / 2} a1={-1.05} color="#E8821E" w={2.4} />
+      <ArcLine cx={O[0]} cy={O[1]} r={92} a0={-Math.PI / 2} a1={-1.05} color="#E8821E" w={2.4} />
       <text x={O[0] - 92} y="236" fontSize="24" fontFamily={SERIF} fill="#E8821E">i₁</text>
 
       {/* 反射 */}
       <line x1={O[0]} y1={O[1]} x2="800" y2="150" stroke={OPT_RED} strokeWidth="3"
         markerEnd="url(#rfArrow2)" />
       <text x="812" y="144" fontSize="24" fontFamily={HEI} fill={OPT_RED}>反射光</text>
-      <ArcLine cx={O[0]} cy={O[1]} r="92" a0={-2.1} a1={-Math.PI / 2} color="#E8821E" w={2.4} />
+      <ArcLine cx={O[0]} cy={O[1]} r={92} a0={-2.1} a1={-Math.PI / 2} color="#E8821E" w={2.4} />
 
       {/* 折射 */}
       <line x1={O[0]} y1={O[1]} x2="740" y2="470" stroke={OPT_BLUE} strokeWidth="3"
         markerEnd="url(#rfArrow3)" />
       <text x="750" y="470" fontSize="24" fontFamily={HEI} fill={OPT_BLUE}>折射光</text>
-      <ArcLine cx={O[0]} cy={O[1]} r="110" a0={Math.PI / 2 - 0.72} a1={Math.PI / 2}
+      <ArcLine cx={O[0]} cy={O[1]} r={110} a0={Math.PI / 2 - 0.72} a1={Math.PI / 2}
         color="#E8821E" w={2.4} />
       <text x={O[0] + 60} y="440" fontSize="24" fontFamily={SERIF} fill="#E8821E">i₂</text>
 
@@ -21531,7 +21522,7 @@ export function FirstLawEnergy() {
 /** 13-2 P6：理想气体的内能 —— E 与 T 成正比，直线过原点，
  *  所以内能只是温度的函数（与体积、压强无关）。 */
 export function IdealGasEnergy() {
-  const X0 = 120, Y0 = 320, X1 = 620, YT = 70
+  const X0 = 120, Y0 = 320
   const xT = (t: number) => X0 + t * 440
   const yE = (t: number) => Y0 - t * 200
   return (
@@ -24126,7 +24117,7 @@ export function PhotoelectricSetup() {
 export function IvCurve() {
   const X = (v: number) => 300 + v * 90
   const Y = (i: number) => 300 - i * 190
-  const curve = (sat: number, k: number) => {
+  const curve = (sat: number, _k: number) => {
     const pts: string[] = []
     for (let i = 0; i <= 120; i++) {
       const v = -1.2 + (4.2 * i) / 120
@@ -24708,7 +24699,6 @@ export function InfiniteWell() {
       {/* n=1,2,3 波函数 */}
       {n(0) && [0, 1, 2].map(k => {
         const nn = k + 1
-        const base = 250 - k * 0
         const pts: string[] = []
         for (let i = 0; i <= 60; i++) {
           const x = i / 60

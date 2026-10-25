@@ -195,7 +195,7 @@ export function Element({ el, t, iframeRef, onIframeLoad, videoClock, theme }: {
           const head = soft && Math.floor(i / cols) === 0
           return (
             <div key={i} style={{
-              background: soft ? tint(el.fill, head ? 0.18 : 0.55) : el.fill,
+              background: soft ? tint(el.fill ?? '#FFFFFF', head ? 0.18 : 0.55) : el.fill,
               border: soft ? '1px solid rgba(80,110,150,0.14)' : '2px solid #4472C4',
               height: el.rowh, display: 'flex', alignItems: 'center', justifyContent: 'center',
               fontSize: el.size, fontFamily: 'SimSun, serif', margin: soft ? 0 : -1,
@@ -228,8 +228,8 @@ export function Element({ el, t, iframeRef, onIframeLoad, videoClock, theme }: {
     return (
       <div style={{
         ...base, height: 'auto', minHeight: el.h,
-        background: soft ? tint(el.fill, 0.42) : el.fill,
-        border: soft ? `1.5px solid ${tint(el.line, 0.42)}` : `${el.lw ?? 3}px solid ${el.line}`,
+        background: soft ? tint(el.fill ?? '#FFFFFF', 0.42) : el.fill,
+        border: soft ? `1.5px solid ${tint(el.line ?? '#4472C4', 0.42)}` : `${el.lw ?? 3}px solid ${el.line}`,
         borderRadius: soft ? 14 : (el.radius ?? 0),
         padding: soft ? '12px 26px' : (el.pad ?? '8px 20px'),
         alignItems: el.align === 'left' ? 'flex-start' : 'center',
