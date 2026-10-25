@@ -1,0 +1,2347 @@
+{
+ "title": "4-6 刚体的进动",
+ "nav": "4-6　刚体的进动",
+ "footer": "第四章　刚体转动和流体运动",
+ "logoScale": 0.67,
+ "engine": "edge",
+ "voice": "zh-CN-YunxiNeural",
+ "pages": [
+  {
+   "id": 1,
+   "narration": "[[1]]这一节 4-6，刚体的进动。[[2]]它是选学内容，但现象很吸引人：一个高速旋转的陀螺，明明歪着，却不会倒下去，而是绕着竖直轴慢慢转圈。[[3]]这一节要回答三个问题：进动的原因是什么？为什么自转角速度看起来不变？进动的方向怎么判断？[[4]]答案都指向同一句话：角动量定理。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 292,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 四 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 300,
+     "y": 420,
+     "w": 1320,
+     "h": 160,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "刚体转动和流体运动",
+        "size": 76,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 380,
+     "y": 606,
+     "w": 1160,
+     "h": 130,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4-6　刚体的进动",
+        "size": 50,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 766,
+     "w": 1480,
+     "h": 120,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "高速自转的物体，其自转轴绕另一轴转动",
+        "size": 42,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 220,
+     "y": 900,
+     "w": 1480,
+     "h": 90,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "进动的原因　·　自转速度为何不变　·　进动方向的判断",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "封面"
+  },
+  {
+   "id": 2,
+   "narration": "[[1]]先看现象。把陀螺斜着支在一点上，让它高速自转。[[2]]如果不转，它会倒下；可一旦转起来，它就歪着不倒，而是让自转轴绕着竖直方向慢慢地画圈。[[3]]这个“自转轴绕另一条轴转动”的现象，就叫进动，也叫旋进。[[4]]注意两种转动同时存在：绕自身轴的快速自转，角速度 ω；自转轴绕竖直轴的慢速进动，角速度 Ω。通常 ω 远大于 Ω。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 900,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　进动的描述",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 238,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "陀螺斜支于 O 点，高速自转．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不转：会倒下；转起来：",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "歪着不倒",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 430,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "自转轴绕竖直方向慢慢画圈 —— ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 490,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这叫",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "进动",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "，也叫旋进．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 600,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同时有两种转动：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 660,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "自转 ω（快）　进动 Ω（慢）",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 726,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "通常 ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "ω ≫ Ω",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 1010,
+     "y": 220,
+     "w": 660,
+     "h": 613,
+     "name": "gyro_precess"
+    }
+   ],
+   "heading": "一　进动的描述"
+  },
+  {
+   "id": 3,
+   "narration": "[[1]]为什么会进动？还是回到角动量定理：对定点转动，力矩等于角动量的变化率。[[2]]陀螺受重力和支点的支持力。支持力过 O 点，力矩为零；只有重力有力矩。[[3]]重力矩 M 等于 r 叉乘 m g，r 是从 O 到质心的位矢。[[4]]这个力矩垂直于重力，也垂直于自转轴——所以它垂直于 r 与 mg 张成的平面。[[5]]又因为 ω 远大于 Ω，陀螺对 O 的角动量几乎就是自转角动量，L 等于 Jω，方向沿自转轴。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　进动的力学分析",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "对定点转动，用角动量定理：",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "M = dL/dt",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 320,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "支点支持力过 O ⇒ 力矩为零；只有重力有力矩．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 394,
+     "w": 1580,
+     "h": 120,
+     "tex": "\\vec M_O=\\vec r\\times m\\vec g",
+     "size": 38,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 540,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "M 垂直于 ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "重力",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "，也垂直于 ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "自转轴",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 620,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "ω ≫ Ω ⇒ 陀螺对 O 的角动量近似为自转角动量：",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 700,
+     "w": 1580,
+     "h": 120,
+     "tex": "\\vec L_O=J\\vec\\omega",
+     "size": 42,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 850,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "方向沿自转轴，大小 L = Jω．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "二　进动的力学分析"
+  },
+  {
+   "id": 4,
+   "narration": "[[1]]关键一步来了。把角动量定理写成增量形式：dL 等于 M dt。[[2]]因为 M 垂直于 L，所以 dL 也垂直于 L。[[3]]一个矢量加上一个垂直于自己的小矢量，结果是什么？大小几乎不变，方向转了一点。[[4]]严格说：L 撇等于 L 加 dL，而因为 dL 垂直于 L，L 撇的长度与 L 相等。[[5]]所以角动量只改变方向，不改变大小。方向变了意味着轴在转——这就是进动；大小不变意味着 ω 不变——这回答了第二个问题。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　为什么只改方向",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "由 ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "M = dL/dt",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": " 得 ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "dL = M dt",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 320,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "M ⊥ L ⇒ ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "dL ⊥ L",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 300,
+     "y": 400,
+     "w": 1320,
+     "h": 120,
+     "tex": "\\vec L'=\\vec L+\\mathrm d\\vec L",
+     "size": 40,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 300,
+     "y": 540,
+     "w": 1320,
+     "h": 110,
+     "tex": "|\\vec L'|=|\\vec L|\\quad(\\mathrm d\\vec L\\perp\\vec L)",
+     "size": 34,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 690,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "结论：",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "L 只改变方向，不改变大小",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 760,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "方向变 ⇒ 轴在转 ⇒ ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "进动",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "；大小不变 ⇒ ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "ω 不变",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 1150,
+     "y": 240,
+     "w": 560,
+     "h": 519,
+     "name": "gyro_dl"
+    }
+   ],
+   "heading": "二　为什么只改方向"
+  },
+  {
+   "id": 5,
+   "narration": "[[1]]把进动角速度算出来。L 的端点在一个水平圆上运动，圆心为 O 撇，半径是 L sinθ。[[2]]转过 dθ，端点走过的弧长就是 L sinθ dθ，也就是 dL 的大小。[[3]]所以 dL 等于 L sinθ dθ。[[4]]两边除以 dt：左边是 M，右边是 L sinθ 乘 dθ/dt。[[5]]而 dθ/dt 正是进动角速度 Ω。于是 M 等于 L sinθ Ω。[[6]]解出 Ω 等于 M 除以 L sinθ，也就是 M 除以 Jω sinθ。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　进动角速度",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "L 的端点作圆周运动，半径 ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "L sinθ",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 316,
+     "w": 1580,
+     "h": 120,
+     "tex": "|\\mathrm d\\vec L|=L\\sin\\theta\\,\\mathrm d\\theta",
+     "size": 38,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 466,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两边除以 dt（",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "dL/dt = M",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "，",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "dθ/dt = Ω",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "）：",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 546,
+     "w": 1580,
+     "h": 110,
+     "tex": "M=L\\sin\\theta\\cdot\\Omega",
+     "size": 38,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 676,
+     "w": 1580,
+     "h": 150,
+     "tex": "\\Omega=\\frac{M}{L\\sin\\theta}=\\frac{M}{J\\omega\\sin\\theta}",
+     "size": 40,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 860,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "注意 Ω 与 ω 成反比：转得越快，进动越慢．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "三　进动角速度"
+  },
+  {
+   "id": 6,
+   "narration": "[[1]]把重力矩代进去。设质心到支点的距离为 s，则重力矩 M 等于 m g s sinθ。[[2]]代进进动角速度的式子，sinθ 约掉，得 Ω 等于 m g s 除以 Jω。[[3]]这个结果干净得意外：进动角速度与倾角 θ 无关！[[4]]另外两条推论：[[5]]如果合重力矩为零——比如把陀螺的重心支在支点上——就不会有进动。[[6]]如果自转角速度反向，进动也反向。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　讨论",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "设质心到支点距离为 s，则 ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "M = mgs sinθ",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 1580,
+     "h": 170,
+     "tex": "\\Omega=\\frac{M}{J\\omega\\sin\\theta}=\\frac{mgs\\sin\\theta}{J\\omega\\sin\\theta}=\\frac{mgs}{J\\omega}",
+     "size": 36,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 540,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "结果与倾角 θ ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "无关",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "！",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 630,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "推论一：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "合重力矩为零 ⇒ 无进动（如重心支在支点上）．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 720,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "推论二：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "自转角速度反向 ⇒ 进动反向．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 810,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "推论三：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "ω 越大 ⇒ Ω 越小（转得越快，越“稳”）．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 900,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这三条就是陀螺仪能用来定向的原因．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "三　讨论"
+  },
+  {
+   "id": 7,
+   "narration": "[[1]]进动方向怎么判断？方法还是那一条：dL 与 M 同向，而 M 等于 r 叉乘 mg。[[2]]所以只要画出 M 的方向，就知道 dL 往哪边偏，进而知道 L 的端点往哪边转——那就是进动的方向。[[3]]举两个例子。支点在下方，重力向下，r 从支点指向质心斜向上，叉乘的结果水平指向某一侧，于是进动沿那个方向。[[4]]把陀螺倒过来支在上方，r 变成斜向下，叉乘方向反了，进动也就反了。[[5]]所以判断进动方向不需要记口诀，按右手螺旋走一遍就行。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　判断进动方向",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "dL 与 M 同向，而 ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "M = r × mg",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 336,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "步骤：",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "定 M 方向 → 定 dL 方向 → L 端点转向 → 进动方向",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 440,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 支点在下方：r 斜向上 ⇒ M 水平指向一侧；",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 520,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 支点在上方：r 斜向下 ⇒ M 反向，进动也反向．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 620,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不用记口诀：按右手螺旋走一遍即可．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 720,
+     "w": 1580,
+     "h": 150,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "进动方向由 M 的方向决定；M 反向则进动反向",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 910,
+     "w": 1580,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这与“自转角速度反向 ⇒ 进动反向”是同一条规律的两种说法．",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "四　判断进动方向"
+  },
+  {
+   "id": 8,
+   "narration": "[[1]]把结论收一下。在 ω 远大于 Ω 的条件下，有三条：[[2]]第一，自转角速度恒定；第二，进动方向与自转方向有关；第三，进动角速度与自转角速度近似成反比。[[3]]还有一个很好的类比：平动里的圆周运动，向心力垂直于速度，只改变速度方向、不改大小；[[4]]转动里的进动，重力矩垂直于角动量，只改变角动量方向、不改大小。[[5]]两件事的结构完全一样。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五　结论与类比",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "在 ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "ω ≫ Ω",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": " 的条件下：",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 200,
+     "y": 320,
+     "w": 1560,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 自转角速度恒定；",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 200,
+     "y": 386,
+     "w": 1560,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 进动方向与自转方向有关；",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 200,
+     "y": 452,
+     "w": 1560,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 进动角速度与自转角速度近似成反比（ω↑ ⇒ Ω↓）．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 560,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "类比：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "table",
+     "step": 4,
+     "x": 170,
+     "y": 640,
+     "w": 1580,
+     "rows": [
+      [
+       "平动",
+       "转动"
+      ],
+      [
+       "向心力 ⊥ v",
+       "重力矩 ⊥ L"
+      ],
+      [
+       "只改 v 的方向",
+       "只改 L 的方向"
+      ],
+      [
+       "⇒ 匀速圆周运动",
+       "⇒ 进动"
+      ]
+     ],
+     "rowh": 70,
+     "size": 32,
+     "fill": "#CCFFCC"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 960,
+     "w": 1580,
+     "h": 50,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两件事结构完全相同——都是“垂直于运动量的作用，只转弯不改快慢”．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "五　结论与类比"
+  },
+  {
+   "id": 9,
+   "narration": "[[1]]进动不只出现在玩具陀螺上。[[2]]第一个应用是陀螺仪：让转子高速自转，轴的方向就非常稳定，即使外壳怎么转，轴都指着原来的方向——飞机、导弹、船舶的惯性导航就靠它。[[3]]第二个应用是航天器调姿：航天器上装一个高速转动的飞轮，通过电机让它加速或减速，飞轮对航天器施加反作用力矩，航天器就会反向转一点，从而改变姿态。[[4]]这里用的其实是角动量守恒：飞轮转快了，航天器就转慢一点，总角动量不变。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "六　进动现象的应用",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 陀螺仪：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "转子高速自转，轴方向极稳定．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 300,
+     "w": 1580,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "外壳怎么转，轴仍指原方向 —— 惯性导航的核心．",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 400,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 航天器调姿：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "靠飞轮的加减速施加反作用力矩．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 460,
+     "w": 1580,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "飞轮转快一点，航天器就反向转一点．",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 560,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "背后的规律：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "角动量守恒（系统无外力矩）．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 170,
+     "y": 660,
+     "w": 1580,
+     "h": 150,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "从玩具陀螺到卫星姿态控制，用的是同一条角动量定理",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 860,
+     "w": 1580,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "地球的岁差也是进动：自转轴绕黄道法线缓慢画圈，周期约 26000 年．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 916,
+     "w": 1580,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "正是它让“北极星”每隔几千年换一颗．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "六　进动现象的应用"
+  },
+  {
+   "id": 10,
+   "narration": "[[1]]看一个最大的例子：地球的岁差。[[2]]地球不是完美的球，赤道略鼓；太阳和月亮对赤道隆起部分的引力，产生一个不为零的力矩。[[3]]于是地球的自转轴像陀螺一样，绕着黄道面的法线缓慢画圈。[[4]]倾角保持 23 度 5 分，方向却在变，周期大约两万六千年。[[5]]这个效应叫岁差，它让北极星每隔几千年换一颗，也让春分点在星空中缓慢西移。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 900,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "六　地球的岁差（进动）",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 238,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "地球赤道略鼓，日月对隆起部分的引力",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 296,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "产生",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "不为零的力矩",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 390,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "于是自转轴绕黄道法线缓慢画圈，",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 448,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "倾角保持 ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "23°5′",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": " 不变．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 542,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "周期约 ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "26 000 年",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 636,
+     "w": 800,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "后果：北极星每隔几千年换一颗；",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 692,
+     "w": 800,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "春分点在星空中缓慢西移．",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 1010,
+     "y": 210,
+     "w": 620,
+     "h": 620,
+     "name": "earth_precess"
+    }
+   ],
+   "heading": "六　地球的岁差"
+  },
+  {
+   "id": 11,
+   "narration": "[[1]]做一道题。一个高速自转的陀螺，若设法把它的自转角速度增大到原来的两倍，其他条件不变，进动角速度会怎样？[[2]]看公式：Ω 等于 m g s 除以 Jω。[[3]]分子不变，分母里的 ω 变成两倍，所以 Ω 变成原来的一半。[[4]]这也解释了为什么转得越快的陀螺越“稳”——它进动得越慢，轴看起来就越定。[[5]]所以选 B。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "随堂练习",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "高速自转的陀螺，若把自转角速度增大到原来的 2 倍，",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 302,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "其他条件不变，则进动角速度（　　）",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 220,
+     "y": 420,
+     "w": 380,
+     "h": 84,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "A．变为 4 倍",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 640,
+     "y": 420,
+     "w": 380,
+     "h": 84,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "B．变为 1/2",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 220,
+     "y": 530,
+     "w": 380,
+     "h": 84,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "C．变为 1/4",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 640,
+     "y": 530,
+     "w": 380,
+     "h": 84,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "D．不变",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 680,
+     "w": 780,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "由 ",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "Ω = mgs/(Jω)",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "，",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 724,
+     "w": 780,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "Ω 与自转角速度 ω 成反比．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 800,
+     "w": 780,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "转得越快越「稳」，说的就是",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 842,
+     "w": 780,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "进动越慢、轴越定．",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 1010,
+     "y": 420,
+     "w": 740,
+     "h": 300,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "进动角速度",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "Ω = mgs / (Jω)",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "ω 加倍 ⇒ Ω 减半",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "选项 B",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "interactions": [
+    {
+     "at": 3,
+     "q": "高速自转的陀螺，若把自转角速度增大到原来的 2 倍，其他条件不变，则进动角速度（　　）",
+     "answer": 1,
+     "options": [
+      "A．变为 4 倍",
+      "B．变为 1/2",
+      "C．变为 1/4",
+      "D．不变"
+     ],
+     "explain": "进动角速度 Ω = M/(Jω sinθ) = mgs/(Jω)，与自转角速度 ω 成反比。ω 加倍，Ω 减半。所以转速越高，进动越慢，陀螺的轴看起来越稳定。"
+    }
+   ],
+   "heading": "随堂练习"
+  },
+  {
+   "id": 12,
+   "narration": "[[1]]小结。进动是高速自转的物体，其自转轴绕另一条轴转动的现象。[[2]]原因：重力矩垂直于角动量，由角动量定理，dL 垂直于 L，所以 L 只改变方向、不改变大小。[[3]]改方向导致轴缓慢转圈——这是进动；大小不变导致自转角速度恒定。[[4]]进动角速度 Ω 等于 M 除以 Jω sinθ；把重力矩代进去得 Ω 等于 m g s 除以 Jω，与倾角无关，与自转速度成反比。[[5]]判断方向就按 M 的方向走右手螺旋。[[6]]第四章到此结束，下一节进入流体与伯努利方程。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "进动",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "：高速自转的物体，自转轴绕另一轴转动．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 336,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "原因",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "：M ⊥ L ⇒ dL ⊥ L ⇒ 只改方向、不改大小．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 432,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "进动角速度",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "：Ω = M/(Jω sinθ) = mgs/(Jω)．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 528,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三条结论",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "：ω 恒定、方向由 M 定、Ω ∝ 1/ω．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 624,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "应用",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "：陀螺仪定向、航天器调姿、地球岁差．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "M 只改 L 的方向 —— 一句话说尽进动",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 916,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "下一节：流体　伯努利方程．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "本节小结"
+  }
+ ]
+}

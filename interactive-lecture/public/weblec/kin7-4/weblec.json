@@ -1,0 +1,3068 @@
+{
+ "title": "7-4 安培环路定理",
+ "nav": "7-4　安培环路定理",
+ "footer": "第七章　恒定磁场",
+ "character": "aqiang",
+ "characters": [
+  {
+   "id": "aqiang",
+   "name": "阿强"
+  },
+  {
+   "id": "professor",
+   "name": "博士讲师"
+  },
+  {
+   "id": "zhongshan",
+   "name": "中山装先生"
+  }
+ ],
+ "duration": 482.26,
+ "slides": [
+  {
+   "id": 1,
+   "kind": "page",
+   "heading": "封面",
+   "narration": "这一节讲安培环路定理。上一节的高斯定理说的是「通量」，这一节说的是「环流」——把磁场沿一条闭合路径积分起来。定理的形式很简洁：环流等于 μ₀ 乘以穿过这条环路的电流的代数和。它的价值在于：对称情形下，不用积分就能把磁场求出来。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 282,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 七 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 300,
+     "y": 408,
+     "w": 1320,
+     "h": 170,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "恒 定 磁 场",
+        "size": 80,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 300,
+     "y": 600,
+     "w": 1320,
+     "h": 140,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "7-4　安培环路定理",
+        "size": 50,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 770,
+     "w": 1480,
+     "h": 90,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "环流　·　符号规则　·　螺线管与螺绕环",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 220,
+     "y": 900,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "从「通量」到「环流」",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 0.0,
+    "2": 3.4,
+    "3": 11.46,
+    "4": 18.2
+   },
+   "t_start": 0.0,
+   "t_end": 24.65,
+   "duration": 24.65,
+   "laser": []
+  },
+  {
+   "id": 2,
+   "kind": "page",
+   "heading": "本节路线",
+   "narration": "先看结构。第一步，写出定理本身：磁场沿闭合路径的积分，等于 μ₀ 乘以穿过路径的电流之和。第二步，讲清楚符号规则——电流有的算正、有的算负，判错了结果会差一个符号。第三步，用无限长直导线验证一遍，确认它和毕奥-萨伐尔定律给的结果一致。第四步，用它求两个对称情形：螺线管和螺绕环。最后把它和高斯定理放在一起，看看这两条定理在描述磁场的什么不同侧面。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节路线",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "主线：定理 → 符号 → 验证 → 两个应用 → 与高斯定理对照",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 320,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1　定理的表述",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 372,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "环流 = μ₀ × 穿过环路的电流和",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 444,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2　符号规则",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 496,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "右手定则决定正负",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 568,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "3　验证与应用",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 620,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "直导线、螺线管、螺绕环",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 700,
+     "w": 740,
+     "h": 176,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "与 7-2 的分工",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "毕奥-萨伐尔：任何情形都能算，但要积分",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "安培环路：对称情形下几行出结果",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 985,
+     "y": 236,
+     "w": 765,
+     "h": 240,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "这条定理的地位",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "恒定磁场的基本方程之一",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "磁场是涡旋场：环流不为零",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "与「无源」一起刻画磁场",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 985,
+     "y": 506,
+     "w": 765,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "用它的前提",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "要有对称性：轴对称、面对称",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "否则只能求环流，求不出各点的 B",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 25.45,
+    "2": 27.72,
+    "3": 35.42,
+    "4": 43.67,
+    "5": 51.15
+   },
+   "t_start": 25.45,
+   "t_end": 64.38,
+   "duration": 38.93,
+   "laser": []
+  },
+  {
+   "id": 3,
+   "kind": "page",
+   "heading": "一　安培环路定理",
+   "narration": "定理本身。在磁场中任取一条闭合路径 l，把 B 沿这条路径积分，得到的值等于 μ₀ 乘以穿过以 l 为边界的曲面的电流的代数和。左边叫「环流」，它和路径的形状有关，但定理说：只要穿过路径的电流不变，环流就不变。右边只算穿过路径的电流，绕在路径外面、没有穿进去的电流一律不计。这条定理对恒定电流成立，可以由毕奥-萨伐尔定律证明，也可以从它出发反过来推出直导线的磁场。要注意：环流不为零，说明磁场线是闭合的、绕着电流打转——这正是「涡旋场」的含义。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　安培环路定理",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "在磁场中任取闭合路径 $l$：",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 300,
+     "w": 740,
+     "h": 160,
+     "tex": "\\oint_l \\vec B\\cdot\\mathrm{d}\\vec l=\\mu_0\\sum I_{\\text{内}}",
+     "size": 42,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 486,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "左边叫「环流」：",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "B 沿路径的积分．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 542,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "路径形状可变，只要穿过的电流不变，环流就不变．",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 610,
+     "w": 740,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "右边只算",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "穿过路径的电流",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "：",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 666,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "绕在路径外、没穿进去的，一律不计．",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 736,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "环流不为零 ⇒ 磁场是",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "涡旋场",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 806,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这条定理对恒定电流成立，可由毕奥-萨伐尔定律证明．",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 985,
+     "y": 246,
+     "w": 765,
+     "h": 240,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "读式子时注意三点",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "① 左边沿「闭合路径」积分",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "② 右边是「穿过」的电流代数和",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "③ μ₀ 在外面，不在积分里",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 985,
+     "y": 516,
+     "w": 765,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "与静电场环路定理对照",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "静电场：∮E·dl = 0（无旋）",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "恒定磁场：∮B·dl = μ₀ΣI（涡旋）",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 65.18,
+    "2": 67.45,
+    "3": 77.93,
+    "4": 86.54,
+    "5": 93.64,
+    "6": 102.78
+   },
+   "t_start": 65.18,
+   "t_end": 111.64,
+   "duration": 46.46,
+   "laser": []
+  },
+  {
+   "id": 4,
+   "kind": "page",
+   "heading": "二　符号规则",
+   "narration": "符号规则是这一节最容易错的地方。做法是：右手四指沿积分方向绕行，拇指指向的那一侧，电流为正；反向的电流为负。看图：环路里有三个电流。I₁ 垂直纸面向里，按环路的绕行方向算是正的；I₂ 向纸面外，算负的；I₃ 在环路外面，根本不参与。所以右边是 μ₀ 乘以 I₁ 减 I₂。如果两个电流方向相反、大小相等，右边就是零，环流也是零——但这不代表路径上没有磁场，只代表穿过它的净电流为零。这一点和「通量为零不等于场为零」是同一个道理，别混。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　符号规则",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "右手四指沿积分方向绕行，",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 292,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "拇指所指的一侧，电流为正．",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 364,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "图中的三个电流：",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 418,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$I_1$ 向里 ⇒ 正；",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 466,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$I_2$ 向外 ⇒ 负；",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 514,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$I_3$ 在环路外 ⇒ 不计．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 580,
+     "w": 720,
+     "h": 130,
+     "tex": "\\oint\\vec B\\cdot\\mathrm{d}\\vec l=\\mu_0(I_1-I_2)",
+     "size": 32,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 730,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两电流反向等大 ⇒ 右边为零，环流也零．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 800,
+     "w": 740,
+     "h": 170,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "别混：环流为零 ≠ 场为零",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "路径上每一点都可能有 B",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "只是沿路径积起来抵消了",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 985,
+     "y": 246,
+     "w": 765,
+     "h": 457,
+     "name": "ampere_loop"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 112.44,
+    "2": 116.18,
+    "3": 125.12,
+    "4": 139.05,
+    "5": 142.62
+   },
+   "t_start": 112.44,
+   "t_end": 159.55,
+   "duration": 47.11,
+   "laser": []
+  },
+  {
+   "id": 5,
+   "kind": "page",
+   "heading": "三　验证：无限长直导线",
+   "narration": "用无限长直导线验证一遍。取一条以导线为圆心、半径 r 的圆形路径。由对称性，圆上每一点的 B 大小相同，方向都沿切线，与路径方向一致。所以 B 点乘 dl 就等于 B 乘 dl，积分出来就是 B 乘以周长 2πr。右边穿过路径的电流就是 I。于是 B 乘 2πr 等于 μ₀I，解出 B 等于 μ₀I 除以 2πr。这和上一节用毕奥-萨伐尔定律积分出来的结果完全一致。这说明两条路是通的：一个从「元的叠加」出发，一个从「整体性质」出发。实际做题时，哪个方便用哪个。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　验证：无限长直导线",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "取以导线为圆心、半径 $r$ 的圆路径．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 308,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "对称性：圆上各点",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 360,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$B$ 大小相同，方向都沿切线．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 424,
+     "w": 740,
+     "h": 130,
+     "tex": "\\oint\\vec B\\cdot\\mathrm{d}\\vec l=B\\oint\\mathrm{d}l=B\\cdot2\\pi r",
+     "size": 28,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 566,
+     "w": 740,
+     "h": 120,
+     "tex": "B\\cdot2\\pi r=\\mu_0 I",
+     "size": 34,
+     "color": "#0000CD",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 700,
+     "w": 740,
+     "h": 140,
+     "tex": "B=\\dfrac{\\mu_0 I}{2\\pi r}",
+     "size": 40,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 856,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与 7-2 用毕奥-萨伐尔积出的结果完全一致．",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 985,
+     "y": 246,
+     "w": 765,
+     "h": 440,
+     "name": "ampere_straight"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 985,
+     "y": 706,
+     "w": 765,
+     "h": 176,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "两条路的分工",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "毕奥-萨伐尔：元的叠加，普遍但繁",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "安培环路：整体性质，要对称性",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 160.35,
+    "2": 163.94,
+    "3": 168.68,
+    "4": 176.47,
+    "5": 183.61,
+    "6": 193.51
+   },
+   "t_start": 160.35,
+   "t_end": 210.34,
+   "duration": 49.99,
+   "laser": []
+  },
+  {
+   "id": 6,
+   "kind": "page",
+   "heading": "四　应用一：长直螺线管",
+   "narration": "第一个应用，长直螺线管。取一个矩形的安培环路：一条边在管内、沿轴线，一条边在管外，两条短边穿过管壁。管内的 B 沿轴线、大小均匀；管外的 B 近似为零。沿环路走一圈：管内那条边贡献 B 乘以长度 l；管外那条边贡献零；两条短边呢？它们垂直于 B，点乘为零。所以环流等于 B 乘 l。右边穿过这个矩形的电流，是 n 乘以 l 匝，每匝电流 I，所以是 μ₀ 乘以 n l I。两边一约，得到 B 等于 μ₀nI，和上一节的结果一样。这个推导只用了三行，比积分快得多——这就是安培环路定理的威力。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　应用一：长直螺线管",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "取矩形环路：",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 292,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一长边在管内沿轴，一长边在管外，",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 340,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两条短边穿过管壁．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 408,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "沿环路逐段算：",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 460,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "管内长边：$Bl$；管外长边：$0$；",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 508,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两短边 $\\perp B$ ⇒ 贡献为零．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 572,
+     "w": 740,
+     "h": 120,
+     "tex": "\\oint\\vec B\\cdot\\mathrm{d}\\vec l=Bl",
+     "size": 32,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 706,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "穿过环路的电流：$n l I$（共 $nl$ 匝）．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 768,
+     "w": 740,
+     "h": 140,
+     "tex": "Bl=\\mu_0 n l I\\ \\Rightarrow\\ B=\\mu_0 n I",
+     "size": 32,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 930,
+     "w": 1580,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同样的结果，比 7-2 的积分快得多——这就是环路定理的威力．",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 985,
+     "y": 246,
+     "w": 765,
+     "h": 430,
+     "name": "biot_solenoid"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 211.14,
+    "2": 214.64,
+    "3": 223.15,
+    "4": 228.69,
+    "5": 240.98,
+    "6": 244.38
+   },
+   "t_start": 211.14,
+   "t_end": 264.59,
+   "duration": 53.45,
+   "laser": []
+  },
+  {
+   "id": 7,
+   "kind": "page",
+   "heading": "五　应用二：螺绕环",
+   "narration": "第二个应用，螺绕环。把导线密绕在一个圆环形的芯上，就得到螺绕环。取一条与环同心的圆形路径，半径 r，落在环的内部。由对称性，这条路径上 B 的大小相同、方向沿圆周，所以环流等于 B 乘 2πr。穿过这条路径的电流，是全部 N 匝，所以是 μ₀NI。于是 B 等于 μ₀NI 除以 2πr。注意这里的 r 在分母上：环内侧的场强一些，外侧弱一些，不像螺线管那样均匀。如果把环做得很大、很细，让 r 远大于环的截面尺寸，那么 B 近似等于 μ₀nI，就退化成螺线管的结果。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五　应用二：螺绕环",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "导线密绕在圆环形芯上．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 306,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "取与环同心、半径 $r$ 的圆路径（在环内）．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 372,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "对称性：环上 $B$ 大小相同、沿圆周，",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 426,
+     "w": 740,
+     "h": 120,
+     "tex": "\\oint\\vec B\\cdot\\mathrm{d}\\vec l=B\\cdot2\\pi r",
+     "size": 30,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 566,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "穿过路径的电流 = 全部 $N$ 匝：$\\mu_0 N I$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 628,
+     "w": 740,
+     "h": 140,
+     "tex": "B=\\dfrac{\\mu_0 N I}{2\\pi r}",
+     "size": 38,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 784,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$r$ 在分母：内侧强、外侧弱，",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 836,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不像螺线管那样均匀．",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 7,
+     "x": 170,
+     "y": 900,
+     "w": 1580,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "环做得又大又细（$r\\gg$ 截面）⇒ $B\\approx\\mu_0 nI$，退化为螺线管．",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 985,
+     "y": 246,
+     "w": 765,
+     "h": 606,
+     "name": "toroid"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 265.39,
+    "2": 268.57,
+    "3": 273.65,
+    "4": 279.45,
+    "5": 288.25,
+    "6": 294.05,
+    "7": 298.55
+   },
+   "t_start": 265.39,
+   "t_end": 316.15,
+   "duration": 50.76,
+   "laser": []
+  },
+  {
+   "id": 8,
+   "kind": "page",
+   "heading": "六　两条定理的分工",
+   "narration": "把两条定理放在一起，看得更清楚。高斯定理讲的是「通量」：穿过闭合面的磁通量为零，说明磁感线不发出、不终止，磁场无源。安培环路定理讲的是「环流」：沿闭合路径的积分为 μ₀ΣI，说明磁感线绕着电流打转，磁场是涡旋场。一个说「不从哪里出来」，一个说「绕着谁转」——这两句话合起来，才把恒定磁场的形状说清楚。用场的语言：高斯定理等价于「磁场的散度为零」，环路定理等价于「磁场的旋度等于 μ₀ 乘以电流密度」。这两条加上后面要学的电磁感应，就是麦克斯韦方程组在恒定情形下的样子。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "六　两条定理的分工",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "高斯定理 —— 讲「通量」",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 296,
+     "w": 700,
+     "h": 110,
+     "tex": "\\oint_S\\vec B\\cdot\\mathrm{d}\\vec S=0",
+     "size": 30,
+     "color": "#0000CD",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 420,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁感线不发出、不终止 ⇒ 磁场",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "无源",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 492,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "安培环路 —— 讲「环流」",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 548,
+     "w": 700,
+     "h": 110,
+     "tex": "\\oint_l\\vec B\\cdot\\mathrm{d}\\vec l=\\mu_0\\sum I",
+     "size": 30,
+     "color": "#0000CD",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 672,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁感线绕着电流打转 ⇒ 磁场是",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "涡旋场",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 744,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一句「不从哪里出来」，一句「绕着谁转」——",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 792,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "合起来才把恒定磁场说清楚．",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 985,
+     "y": 246,
+     "w": 765,
+     "h": 250,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "换成场的语言",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "散度为零：∇·B = 0",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "旋度为 μ₀J：∇×B = μ₀J",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "微分形式与积分形式等价",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 985,
+     "y": 526,
+     "w": 765,
+     "h": 210,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "麦克斯韦方程组（恒定情形）",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "这两条 + 电场的两条",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "再加上电磁感应，就齐了（第八章）",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 316.95,
+    "2": 321.0,
+    "3": 330.09,
+    "4": 339.8,
+    "6": 356.72
+   },
+   "t_start": 316.95,
+   "t_end": 364.18,
+   "duration": 47.23,
+   "laser": []
+  },
+  {
+   "id": 9,
+   "kind": "page",
+   "heading": "例题　无限长载流圆柱",
+   "narration": "做一道题：无限长载流圆柱导体的磁场。圆柱半径 R，电流 I 均匀分布在截面上。求圆柱内外的磁感应强度。先说外面，r 大于 R。取半径 r 的圆路径，它包围了全部电流，所以 B 乘 2πr 等于 μ₀I，B 等于 μ₀I 除以 2πr——和一根细导线一样。这说明：圆柱外的磁场，等效于把所有电流集中在轴线上。再说里面，r 小于 R。这时圆路径只包围了一部分电流，比例是面积比，也就是 r 平方比 R 平方。所以 B 乘 2πr 等于 μ₀I 乘以 r 平方比 R 平方，解出 B 等于 μ₀Ir 除以 2πR 平方。内部 B 与 r 成正比，中心为零；外部与 r 成反比。在 r 等于 R 处两式相等，场是连续的。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例题　无限长载流圆柱",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "半径 $R$，电流 $I$ 均匀分布在截面上．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 288,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "求柱内、柱外的磁感应强度．",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 358,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$r>R$：",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "路径包围全部电流",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 412,
+     "w": 740,
+     "h": 120,
+     "tex": "B\\cdot2\\pi r=\\mu_0 I\\ \\Rightarrow\\ B=\\dfrac{\\mu_0 I}{2\\pi r}",
+     "size": 27,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 552,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "等效于电流全集中在轴线上．",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 618,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$r<R$：",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "只包围部分电流，按面积比",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 672,
+     "w": 740,
+     "h": 120,
+     "tex": "B\\cdot2\\pi r=\\mu_0 I\\dfrac{r^{2}}{R^{2}}",
+     "size": 28,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 6,
+     "x": 170,
+     "y": 812,
+     "w": 740,
+     "h": 130,
+     "tex": "B=\\dfrac{\\mu_0 I r}{2\\pi R^{2}}",
+     "size": 36,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 7,
+     "x": 170,
+     "y": 962,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "内部 $B\\propto r$，外部 $B\\propto 1/r$；$r=R$ 处两式相等，场连续．",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 985,
+     "y": 246,
+     "w": 765,
+     "h": 230,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "两个关键判断",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "① 路径包围了多少电流",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "② 面的法线与电流方向（定正负）",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "其余就是代数",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 985,
+     "y": 506,
+     "w": 765,
+     "h": 210,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "与 5-3 的球体对照",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "均匀带电球：内 E∝r、外 E∝1/r²",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "均匀载流柱：内 B∝r、外 B∝1/r",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 364.98,
+    "2": 369.48,
+    "3": 377.94,
+    "4": 391.46,
+    "5": 397.74,
+    "6": 408.69,
+    "7": 417.3
+   },
+   "t_start": 364.98,
+   "t_end": 428.39,
+   "duration": 63.41,
+   "laser": []
+  },
+  {
+   "id": 10,
+   "kind": "page",
+   "heading": "本节小结",
+   "narration": "小结。第一，安培环路定理：磁场沿闭合路径的积分等于 μ₀ 乘以穿过路径的电流代数和。第二，符号规则用右手定则：四指沿积分方向，拇指指向正电流。第三，只算穿过的电流，绕在外面的不计。第四，两个典型结果：螺线管内 B 等于 μ₀nI；螺绕环内 B 等于 μ₀NI 除以 2πr。第五，它和高斯定理分工明确：一个说无源，一个说涡旋。用法上要记住一点：它只能求环流，要单独求出每点的 B，必须有对称性。没有对称性时，还是得回到毕奥-萨伐尔定律。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 安培环路定理",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 290,
+     "w": 700,
+     "h": 110,
+     "tex": "\\oint_l\\vec B\\cdot\\mathrm{d}\\vec l=\\mu_0\\sum I_{\\text{内}}",
+     "size": 26,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 420,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "环流只由穿过的电流决定．",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 486,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 符号规则",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 540,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "右手四指沿积分方向，拇指指向正电流．",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 606,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 两个典型结果",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 660,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "螺线管　$B=\\mu_0 n I$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 708,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "螺绕环　$B=\\mu_0 N I/(2\\pi r)$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 985,
+     "y": 236,
+     "w": 765,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 与高斯定理分工",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 985,
+     "y": 290,
+     "w": 765,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "高斯定理：磁场无源",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 985,
+     "y": 338,
+     "w": 765,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "环路定理：磁场是涡旋场",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 985,
+     "y": 404,
+     "w": 765,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "⑤ 使用的边界",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 985,
+     "y": 458,
+     "w": 765,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只能求环流；要逐点求 B 必须有对称性．",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 985,
+     "y": 506,
+     "w": 765,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "没有对称性 → 回到毕奥-萨伐尔定律．",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 792,
+     "w": 1580,
+     "h": 150,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "下一节：带电粒子在电场和磁场中的运动",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "洛伦兹力、圆周运动、回旋加速器与霍尔效应",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 429.19,
+    "2": 431.46,
+    "3": 439.66,
+    "4": 447.09,
+    "5": 451.95,
+    "6": 460.97
+   },
+   "t_start": 429.19,
+   "t_end": 480.81,
+   "duration": 51.62,
+   "laser": []
+  }
+ ],
+ "subtitles": [
+  {
+   "slide": 1,
+   "start": 0.0,
+   "end": 3.0,
+   "text": "这一节讲安培环路定理。"
+  },
+  {
+   "slide": 1,
+   "start": 3.4,
+   "end": 11.06,
+   "text": "上一节的高斯定理说的是「通量」，这一节说的是「环流」——把磁场沿一条闭合路径积分起来。"
+  },
+  {
+   "slide": 1,
+   "start": 11.46,
+   "end": 17.8,
+   "text": "定理的形式很简洁：环流等于 μ₀ 乘以穿过这条环路的电流的代数和。"
+  },
+  {
+   "slide": 1,
+   "start": 18.2,
+   "end": 24.03,
+   "text": "它的价值在于：对称情形下，不用积分就能把磁场求出来。"
+  },
+  {
+   "slide": 2,
+   "start": 25.45,
+   "end": 27.32,
+   "text": "先看结构。"
+  },
+  {
+   "slide": 2,
+   "start": 27.72,
+   "end": 35.02,
+   "text": "第一步，写出定理本身：磁场沿闭合路径的积分，等于 μ₀ 乘以穿过路径的电流之和。"
+  },
+  {
+   "slide": 2,
+   "start": 35.42,
+   "end": 43.27,
+   "text": "第二步，讲清楚符号规则——电流有的算正、有的算负，判错了结果会差一个符号。"
+  },
+  {
+   "slide": 2,
+   "start": 43.67,
+   "end": 50.75,
+   "text": "第三步，用无限长直导线验证一遍，确认它和毕奥-萨伐尔定律给的结果一致。"
+  },
+  {
+   "slide": 2,
+   "start": 51.15,
+   "end": 56.72,
+   "text": "第四步，用它求两个对称情形：螺线管和螺绕环。"
+  },
+  {
+   "slide": 2,
+   "start": 57.12,
+   "end": 63.65,
+   "text": "最后把它和高斯定理放在一起，看看这两条定理在描述磁场的什么不同侧面。"
+  },
+  {
+   "slide": 3,
+   "start": 65.18,
+   "end": 67.05,
+   "text": "定理本身。"
+  },
+  {
+   "slide": 3,
+   "start": 67.45,
+   "end": 77.53,
+   "text": "在磁场中任取一条闭合路径 l，把 B 沿这条路径积分，得到的值等于 μ₀ 乘以穿过以 l 为边界的曲面的电流的代数和。"
+  },
+  {
+   "slide": 3,
+   "start": 77.93,
+   "end": 86.14,
+   "text": "左边叫「环流」，它和路径的形状有关，但定理说：只要穿过路径的电流不变，环流就不变。"
+  },
+  {
+   "slide": 3,
+   "start": 86.54,
+   "end": 93.24,
+   "text": "右边只算穿过路径的电流，绕在路径外面、没有穿进去的电流一律不计。"
+  },
+  {
+   "slide": 3,
+   "start": 93.64,
+   "end": 102.38,
+   "text": "这条定理对恒定电流成立，可以由毕奥-萨伐尔定律证明，也可以从它出发反过来推出直导线的磁场。"
+  },
+  {
+   "slide": 3,
+   "start": 102.78,
+   "end": 110.92,
+   "text": "要注意：环流不为零，说明磁场线是闭合的、绕着电流打转——这正是「涡旋场」的含义。"
+  },
+  {
+   "slide": 4,
+   "start": 112.44,
+   "end": 115.78,
+   "text": "符号规则是这一节最容易错的地方。"
+  },
+  {
+   "slide": 4,
+   "start": 116.18,
+   "end": 124.72,
+   "text": "做法是：右手四指沿积分方向绕行，拇指指向的那一侧，电流为正；反向的电流为负。"
+  },
+  {
+   "slide": 4,
+   "start": 125.12,
+   "end": 128.31,
+   "text": "看图：环路里有三个电流。"
+  },
+  {
+   "slide": 4,
+   "start": 128.71,
+   "end": 138.65,
+   "text": "I₁ 垂直纸面向里，按环路的绕行方向算是正的；I₂ 向纸面外，算负的；I₃ 在环路外面，根本不参与。"
+  },
+  {
+   "slide": 4,
+   "start": 139.05,
+   "end": 142.22,
+   "text": "所以右边是 μ₀ 乘以 I₁ 减 I₂。"
+  },
+  {
+   "slide": 4,
+   "start": 142.62,
+   "end": 153.37,
+   "text": "如果两个电流方向相反、大小相等，右边就是零，环流也是零——但这不代表路径上没有磁场，只代表穿过它的净电流为零。"
+  },
+  {
+   "slide": 4,
+   "start": 153.77,
+   "end": 158.76,
+   "text": "这一点和「通量为零不等于场为零」是同一个道理，别混。"
+  },
+  {
+   "slide": 5,
+   "start": 160.35,
+   "end": 163.54,
+   "text": "用无限长直导线验证一遍。"
+  },
+  {
+   "slide": 5,
+   "start": 163.94,
+   "end": 168.28,
+   "text": "取一条以导线为圆心、半径 r 的圆形路径。"
+  },
+  {
+   "slide": 5,
+   "start": 168.68,
+   "end": 176.07,
+   "text": "由对称性，圆上每一点的 B 大小相同，方向都沿切线，与路径方向一致。"
+  },
+  {
+   "slide": 5,
+   "start": 176.47,
+   "end": 183.21,
+   "text": "所以 B 点乘 dl 就等于 B 乘 dl，积分出来就是 B 乘以周长 2πr。"
+  },
+  {
+   "slide": 5,
+   "start": 183.61,
+   "end": 186.73,
+   "text": "右边穿过路径的电流就是 I。"
+  },
+  {
+   "slide": 5,
+   "start": 187.13,
+   "end": 193.11,
+   "text": "于是 B 乘 2πr 等于 μ₀I，解出 B 等于 μ₀I 除以 2πr。"
+  },
+  {
+   "slide": 5,
+   "start": 193.51,
+   "end": 198.62,
+   "text": "这和上一节用毕奥-萨伐尔定律积分出来的结果完全一致。"
+  },
+  {
+   "slide": 5,
+   "start": 199.02,
+   "end": 205.74,
+   "text": "这说明两条路是通的：一个从「元的叠加」出发，一个从「整体性质」出发。"
+  },
+  {
+   "slide": 5,
+   "start": 206.14,
+   "end": 209.43,
+   "text": "实际做题时，哪个方便用哪个。"
+  },
+  {
+   "slide": 6,
+   "start": 211.14,
+   "end": 214.24,
+   "text": "第一个应用，长直螺线管。"
+  },
+  {
+   "slide": 6,
+   "start": 214.64,
+   "end": 222.75,
+   "text": "取一个矩形的安培环路：一条边在管内、沿轴线，一条边在管外，两条短边穿过管壁。"
+  },
+  {
+   "slide": 6,
+   "start": 223.15,
+   "end": 228.29,
+   "text": "管内的 B 沿轴线、大小均匀；管外的 B 近似为零。"
+  },
+  {
+   "slide": 6,
+   "start": 228.69,
+   "end": 236.71,
+   "text": "沿环路走一圈：管内那条边贡献 B 乘以长度 l；管外那条边贡献零；两条短边呢？"
+  },
+  {
+   "slide": 6,
+   "start": 237.36,
+   "end": 240.58,
+   "text": "它们垂直于 B，点乘为零。"
+  },
+  {
+   "slide": 6,
+   "start": 240.98,
+   "end": 243.98,
+   "text": "所以环流等于 B 乘 l。"
+  },
+  {
+   "slide": 6,
+   "start": 244.38,
+   "end": 251.87,
+   "text": "右边穿过这个矩形的电流，是 n 乘以 l 匝，每匝电流 I，所以是 μ₀ 乘以 n l I。"
+  },
+  {
+   "slide": 6,
+   "start": 252.27,
+   "end": 257.48,
+   "text": "两边一约，得到 B 等于 μ₀nI，和上一节的结果一样。"
+  },
+  {
+   "slide": 6,
+   "start": 257.88,
+   "end": 263.69,
+   "text": "这个推导只用了三行，比积分快得多——这就是安培环路定理的威力。"
+  },
+  {
+   "slide": 7,
+   "start": 265.39,
+   "end": 268.17,
+   "text": "第二个应用，螺绕环。"
+  },
+  {
+   "slide": 7,
+   "start": 268.57,
+   "end": 273.25,
+   "text": "把导线密绕在一个圆环形的芯上，就得到螺绕环。"
+  },
+  {
+   "slide": 7,
+   "start": 273.65,
+   "end": 279.05,
+   "text": "取一条与环同心的圆形路径，半径 r，落在环的内部。"
+  },
+  {
+   "slide": 7,
+   "start": 279.45,
+   "end": 287.85,
+   "text": "由对称性，这条路径上 B 的大小相同、方向沿圆周，所以环流等于 B 乘 2πr。"
+  },
+  {
+   "slide": 7,
+   "start": 288.25,
+   "end": 293.65,
+   "text": "穿过这条路径的电流，是全部 N 匝，所以是 μ₀NI。"
+  },
+  {
+   "slide": 7,
+   "start": 294.05,
+   "end": 298.15,
+   "text": "于是 B 等于 μ₀NI 除以 2πr。"
+  },
+  {
+   "slide": 7,
+   "start": 298.55,
+   "end": 305.44,
+   "text": "注意这里的 r 在分母上：环内侧的场强一些，外侧弱一些，不像螺线管那样均匀。"
+  },
+  {
+   "slide": 7,
+   "start": 305.84,
+   "end": 315.3,
+   "text": "如果把环做得很大、很细，让 r 远大于环的截面尺寸，那么 B 近似等于 μ₀nI，就退化成螺线管的结果。"
+  },
+  {
+   "slide": 8,
+   "start": 316.95,
+   "end": 320.6,
+   "text": "把两条定理放在一起，看得更清楚。"
+  },
+  {
+   "slide": 8,
+   "start": 321.0,
+   "end": 329.69,
+   "text": "高斯定理讲的是「通量」：穿过闭合面的磁通量为零，说明磁感线不发出、不终止，磁场无源。"
+  },
+  {
+   "slide": 8,
+   "start": 330.09,
+   "end": 339.4,
+   "text": "安培环路定理讲的是「环流」：沿闭合路径的积分为 μ₀ΣI，说明磁感线绕着电流打转，磁场是涡旋场。"
+  },
+  {
+   "slide": 8,
+   "start": 339.8,
+   "end": 347.38,
+   "text": "一个说「不从哪里出来」，一个说「绕着谁转」——这两句话合起来，才把恒定磁场的形状说清楚。"
+  },
+  {
+   "slide": 8,
+   "start": 347.78,
+   "end": 356.32,
+   "text": "用场的语言：高斯定理等价于「磁场的散度为零」，环路定理等价于「磁场的旋度等于 μ₀ 乘以电流密度」。"
+  },
+  {
+   "slide": 8,
+   "start": 356.72,
+   "end": 363.44,
+   "text": "这两条加上后面要学的电磁感应，就是麦克斯韦方程组在恒定情形下的样子。"
+  },
+  {
+   "slide": 9,
+   "start": 364.98,
+   "end": 369.08,
+   "text": "做一道题：无限长载流圆柱导体的磁场。"
+  },
+  {
+   "slide": 9,
+   "start": 369.48,
+   "end": 374.16,
+   "text": "圆柱半径 R，电流 I 均匀分布在截面上。"
+  },
+  {
+   "slide": 9,
+   "start": 374.56,
+   "end": 377.54,
+   "text": "求圆柱内外的磁感应强度。"
+  },
+  {
+   "slide": 9,
+   "start": 377.94,
+   "end": 381.04,
+   "text": "先说外面，r 大于 R。"
+  },
+  {
+   "slide": 9,
+   "start": 381.44,
+   "end": 391.06,
+   "text": "取半径 r 的圆路径，它包围了全部电流，所以 B 乘 2πr 等于 μ₀I，B 等于 μ₀I 除以 2πr——和一根细导线一样。"
+  },
+  {
+   "slide": 9,
+   "start": 391.46,
+   "end": 397.34,
+   "text": "这说明：圆柱外的磁场，等效于把所有电流集中在轴线上。"
+  },
+  {
+   "slide": 9,
+   "start": 397.74,
+   "end": 400.98,
+   "text": "再说里面，r 小于 R。"
+  },
+  {
+   "slide": 9,
+   "start": 401.38,
+   "end": 408.29,
+   "text": "这时圆路径只包围了一部分电流，比例是面积比，也就是 r 平方比 R 平方。"
+  },
+  {
+   "slide": 9,
+   "start": 408.69,
+   "end": 416.9,
+   "text": "所以 B 乘 2πr 等于 μ₀I 乘以 r 平方比 R 平方，解出 B 等于 μ₀Ir 除以 2πR 平方。"
+  },
+  {
+   "slide": 9,
+   "start": 417.3,
+   "end": 422.65,
+   "text": "内部 B 与 r 成正比，中心为零；外部与 r 成反比。"
+  },
+  {
+   "slide": 9,
+   "start": 423.05,
+   "end": 427.37,
+   "text": "在 r 等于 R 处两式相等，场是连续的。"
+  },
+  {
+   "slide": 10,
+   "start": 429.19,
+   "end": 431.06,
+   "text": "小结。"
+  },
+  {
+   "slide": 10,
+   "start": 431.46,
+   "end": 439.26,
+   "text": "第一，安培环路定理：磁场沿闭合路径的积分等于 μ₀ 乘以穿过路径的电流代数和。"
+  },
+  {
+   "slide": 10,
+   "start": 439.66,
+   "end": 446.69,
+   "text": "第二，符号规则用右手定则：四指沿积分方向，拇指指向正电流。"
+  },
+  {
+   "slide": 10,
+   "start": 447.09,
+   "end": 451.55,
+   "text": "第三，只算穿过的电流，绕在外面的不计。"
+  },
+  {
+   "slide": 10,
+   "start": 451.95,
+   "end": 460.57,
+   "text": "第四，两个典型结果：螺线管内 B 等于 μ₀nI；螺绕环内 B 等于 μ₀NI 除以 2πr。"
+  },
+  {
+   "slide": 10,
+   "start": 460.97,
+   "end": 466.9,
+   "text": "第五，它和高斯定理分工明确：一个说无源，一个说涡旋。"
+  },
+  {
+   "slide": 10,
+   "start": 467.3,
+   "end": 474.76,
+   "text": "用法上要记住一点：它只能求环流，要单独求出每点的 B，必须有对称性。"
+  },
+  {
+   "slide": 10,
+   "start": 475.16,
+   "end": 479.96,
+   "text": "没有对称性时，还是得回到毕奥-萨伐尔定律。"
+  }
+ ],
+ "build_ts": 1792482475,
+ "logoScale": 0.67
+}

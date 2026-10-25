@@ -1,0 +1,5662 @@
+{
+ "title": "4-3 角动量 角动量守恒定律",
+ "nav": "4-3　角动量 角动量守恒定律",
+ "footer": "第四章　刚体转动和流体运动",
+ "character": "aqiang",
+ "characters": [
+  {
+   "id": "aqiang",
+   "name": "阿强"
+  },
+  {
+   "id": "professor",
+   "name": "博士讲师"
+  },
+  {
+   "id": "zhongshan",
+   "name": "中山装先生"
+  }
+ ],
+ "duration": 941.98,
+ "slides": [
+  {
+   "id": 1,
+   "kind": "page",
+   "heading": "封面",
+   "narration": "这一节 4-3，角动量与角动量守恒定律。前面我们讲动量：力对时间的累积给出冲量，冲量改变动量。现在把“力”换成“力矩”，把“动量”换成“角动量”，整条线索完全平行：力矩对时间的累积叫冲量矩，冲量矩改变角动量。这条线索会给出本章最重要的一条守恒律——角动量守恒。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 292,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 四 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 300,
+     "y": 420,
+     "w": 1320,
+     "h": 160,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "刚体转动和流体运动",
+        "size": 76,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 380,
+     "y": 606,
+     "w": 1160,
+     "h": 130,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4-3　角动量　角动量守恒定律",
+        "size": 50,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 766,
+     "w": 1480,
+     "h": 120,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "力矩对时间的累积 ⟶ ",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "冲量矩、角动量、角动量定理",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 220,
+     "y": 900,
+     "w": 1480,
+     "h": 90,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质点的角动量　·　刚体的角动量　·　角动量守恒",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 0.0,
+    "2": 5.06,
+    "3": 11.34,
+    "4": 23.09
+   },
+   "t_start": 0.0,
+   "t_end": 29.28,
+   "duration": 29.28,
+   "laser": []
+  },
+  {
+   "id": 2,
+   "kind": "page",
+   "heading": "引入　两条平行线索",
+   "narration": "先看这张对照表。左边是力的时间累积：力乘时间得冲量，冲量改变动量，这就是动量定理；合外力为零，动量守恒。右边把每个量换成转动版本：力矩乘时间得冲量矩，冲量矩改变角动量；合外力矩为零，角动量守恒。所以这一节的内容，其实是把上一章动量那套逻辑，原封不动搬过来。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两条平行的线索",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "table",
+     "step": 1,
+     "x": 170,
+     "y": 262,
+     "w": 1580,
+     "rows": [
+      [
+       "力的时间累积效应",
+       "力矩的时间累积效应"
+      ],
+      [
+       "冲量　∫F dt",
+       "冲量矩　∫M dt"
+      ],
+      [
+       "动量　p = m v",
+       "角动量　L = r × p"
+      ],
+      [
+       "动量定理",
+       "角动量定理"
+      ],
+      [
+       "动量守恒",
+       "角动量守恒"
+      ]
+     ],
+     "rowh": 84,
+     "size": 36,
+     "fill": "#CCFFCC"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "左边：合外力为零 ⇒ 动量守恒．",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 812,
+     "w": 1580,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "右边：合外力矩为零 ⇒ ",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "角动量守恒",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 908,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这一节就是把左边的逻辑，原样搬到转动上来．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 30.08,
+    "2": 32.9,
+    "3": 42.85,
+    "4": 52.71
+   },
+   "t_start": 30.08,
+   "t_end": 59.43,
+   "duration": 29.35,
+   "laser": []
+  },
+  {
+   "id": 3,
+   "kind": "page",
+   "heading": "一　质点的角动量",
+   "narration": "先定义质点的角动量。质量为 m 的质点以速度 v 在空间运动，某时刻它对参考点 O 的位矢是 r。定义：L 等于 r 叉乘 p，也等于 r 叉乘 m v。这是一个叉积，所以 L 垂直于 r 和 v 张成的平面，方向由右手螺旋定则确定。注意：角动量必须相对于某个参考点来说，换一个参考点，r 变了，L 也就变了。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 900,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　质点的角动量",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质量 m 的质点以速度 v 运动，某时刻",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 306,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "对参考点 O 的位矢为 r．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 400,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "定义：",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 478,
+     "w": 760,
+     "h": 130,
+     "tex": "\\vec L=\\vec r\\times\\vec p=\\vec r\\times m\\vec v",
+     "size": 42,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 640,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "L 垂直于 r、v 所在平面，",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 700,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "方向由",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "右手螺旋定则",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "确定．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 800,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "L 必须相对于某个",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "参考点",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "而言：",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 860,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "换参考点 ⇒ r 变 ⇒ L 变．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 1000,
+     "y": 250,
+     "w": 720,
+     "h": 495,
+     "name": "ang_mom_def"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 60.23,
+    "2": 70.94,
+    "3": 77.1,
+    "4": 85.73
+   },
+   "t_start": 60.23,
+   "t_end": 94.29,
+   "duration": 34.06,
+   "laser": []
+  },
+  {
+   "id": 4,
+   "kind": "page",
+   "heading": "一　大小与方向",
+   "narration": "叉积的大小是 L 等于 r m v sinθ，θ 是 r 与 v 的夹角。方向用右手螺旋：四指从 r 转向 v，拇指就指向 L。单位是千克二次方米每秒。一个重要的特例：质点以角速度 ω 作半径为 r 的圆周运动，r 与 v 垂直，sinθ 等于一，于是 L 等于 m r 方 ω，正好等于 Jω。这个式子把质点的角动量和刚体的角动量联系起来了。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　角动量　大小与方向",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 130,
+     "tex": "L=rmv\\sin\\theta",
+     "size": 44,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 396,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "方向：",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "右手螺旋（四指 r → v，拇指为 L）．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 490,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "单位：",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "kg·m²·s⁻¹",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 596,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "特例：质点以 ω 作半径 r 的圆周运动，r ⊥ v，",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 656,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "sinθ = 1 ⇒ ",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$L=mr^2\\omega=J\\omega$",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 780,
+     "w": 1580,
+     "h": 130,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "圆周运动的质点，其角动量就等于“转动惯量 × 角速度”",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 946,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这条式子后面会反复用到．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 95.09,
+    "2": 101.54,
+    "3": 107.99,
+    "4": 111.51
+   },
+   "t_start": 95.09,
+   "t_end": 131.57,
+   "duration": 36.48,
+   "laser": []
+  },
+  {
+   "id": 5,
+   "kind": "page",
+   "heading": "一　为什么需要角动量",
+   "narration": "为什么有了动量，还要角动量？看这个例子。一个圆盘绕中心轴转，但它整体并没有平移，所以总动量等于零。可是盘上每一点都在动：i 点的动量向上，j 点的动量向下，两个动量大小相等、方向相反。它们对轴的角动量却同向叠加，加起来不为零。所以“总动量为零”根本描述不了转动——必须有角动量这个新物理量。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 900,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　为什么需要角动量",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 780,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "圆盘绕中心轴转：",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 320,
+     "w": 780,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "整体不平移 ⇒ ",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "总动量 p = 0",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 412,
+     "w": 780,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "但盘上每点都在动：",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 472,
+     "w": 780,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "p",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "i",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 向上，p",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "j",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 向下，等大反向．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 566,
+     "w": 780,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "它们对轴的角动量",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "同向叠加",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "，",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 626,
+     "w": 780,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "总和不为零．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 730,
+     "w": 780,
+     "h": 170,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "总动量",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "描述不了转动",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "——",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "需要新的物理量：角动量",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1000,
+     "y": 250,
+     "w": 700,
+     "h": 538,
+     "name": "ang_mom_spin"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 132.37,
+    "2": 138.58,
+    "3": 145.87,
+    "4": 154.48
+   },
+   "t_start": 132.37,
+   "t_end": 166.57,
+   "duration": 34.2,
+   "laser": []
+  },
+  {
+   "id": 6,
+   "kind": "page",
+   "heading": "二　角动量定理",
+   "narration": "角动量随时间怎么变？直接对定义式求导。dL/dt 等于 d(r×p)/dt，按乘积法则展开成两项：r 叉乘 dp/dt，加上 dr/dt 叉乘 p。第二项里 dr/dt 就是 v，而 v 与 p 平行，叉积为零，这一项直接消失。剩下第一项，dp/dt 等于 F，于是 dL/dt 等于 r 叉乘 F，也就是力矩。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　质点的角动量定理",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 170,
+     "tex": "\\frac{\\mathrm d\\vec L}{\\mathrm dt}=\\frac{\\mathrm d}{\\mathrm dt}(\\vec r\\times\\vec p)=\\vec r\\times\\frac{\\mathrm d\\vec p}{\\mathrm dt}+\\frac{\\mathrm d\\vec r}{\\mathrm dt}\\times\\vec p",
+     "size": 30,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 452,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "其中 ",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "dr/dt = v",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "，且 ",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "v ∥ p",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": " ⇒ ",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "v × p = 0",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 556,
+     "w": 1580,
+     "h": 130,
+     "tex": "\\frac{\\mathrm d\\vec L}{\\mathrm dt}=\\vec r\\times\\vec F",
+     "size": 38,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 720,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "而 ",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "r × F",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": " 正是合外力对 O 点的",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "力矩 M",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 812,
+     "w": 1580,
+     "h": 120,
+     "tex": "\\vec M=\\frac{\\mathrm d\\vec L}{\\mathrm dt}",
+     "size": 46,
+     "color": "#C00000",
+     "align": "center"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 167.37,
+    "2": 173.44,
+    "3": 184.57,
+    "4": 192.58
+   },
+   "t_start": 167.37,
+   "t_end": 201.33,
+   "duration": 33.96,
+   "laser": []
+  },
+  {
+   "id": 7,
+   "kind": "page",
+   "heading": "二　角动量定理　表述",
+   "narration": "把定理说出来：作用于质点的合外力对参考点 O 的力矩，等于质点对该点的角动量随时间的变化率。注意参考点 O 要固定，力矩和角动量必须对同一个点算。把它对时间积分，就得到积分形式：冲量矩等于角动量的增量。“冲量矩”这个名字就是从“冲量”照搬来的——力矩乘时间。和动量定理对照：冲量改变动量，冲量矩改变角动量。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　角动量定理　表述",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "作用于质点的合外力对参考点 O 的力矩，等于质点对该点的",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 300,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "角动量随时间的变化率．",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 300,
+     "y": 400,
+     "w": 1320,
+     "h": 150,
+     "tex": "\\int_{t_1}^{t_2}\\vec M\\,\\mathrm dt=\\vec L_2-\\vec L_1",
+     "size": 42,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 580,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "左边叫",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "冲量矩",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "，右边是角动量的增量．",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 680,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "对同一参考点 O：",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       },
+       {
+        "t": "冲量矩 = 角动量的增量",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "table",
+     "step": 4,
+     "x": 170,
+     "y": 790,
+     "w": 1580,
+     "rows": [
+      [
+       "",
+       "平动",
+       "转动"
+      ],
+      [
+       "累积量",
+       "冲量 ∫F dt",
+       "冲量矩 ∫M dt"
+      ],
+      [
+       "结果",
+       "动量变化 Δp",
+       "角动量变化 ΔL"
+      ]
+     ],
+     "rowh": 62,
+     "size": 30,
+     "fill": "#CCFFCC"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 202.13,
+    "2": 210.93,
+    "3": 216.63,
+    "4": 222.98
+   },
+   "t_start": 202.13,
+   "t_end": 235.18,
+   "duration": 33.05,
+   "laser": []
+  },
+  {
+   "id": 8,
+   "kind": "page",
+   "heading": "三　质点的角动量守恒",
+   "narration": "合外力矩等于零的时候呢？dL/dt 等于零，角动量就是常矢量——这就是质点的角动量守恒定律。注意“常矢量”三个字：大小不变，方向也不变。什么时候合力矩为零？有两种情况：一种是根本不受力，F 等于零；另一种是合力不为零，但合力的作用线始终通过参考点 O——力臂为零，力矩自然为零，比如有心力。行星绕太阳运动就是后一种：引力始终指向太阳。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　质点的角动量守恒定律",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 72,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "当 ",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "M = 0",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": " 时，",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "L = 常矢量",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 340,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "大小不变，方向也不变．",
+        "size": 36,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 440,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "M = 0 的两种情形：",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 200,
+     "y": 520,
+     "w": 1560,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 合外力为零 ",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "F = 0",
+        "size": 36,
+        "color": "#666",
+        "b": false
+       },
+       {
+        "t": "；",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 200,
+     "y": 600,
+     "w": 1560,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 合力不为零，但",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "始终通过参考点 O",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "（力臂为零）．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 200,
+     "y": 668,
+     "w": 1560,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例：行星绕太阳——引力是有心力，对太阳的力矩恒为零．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 780,
+     "w": 1580,
+     "h": 150,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "有心力问题：角动量守恒，行星在近日点快、远日点慢",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 235.98,
+    "2": 246.39,
+    "3": 251.52,
+    "4": 258.845
+   },
+   "t_start": 235.98,
+   "t_end": 274.19,
+   "duration": 38.21,
+   "laser": []
+  },
+  {
+   "id": 9,
+   "kind": "page",
+   "heading": "例1　圆环上的小球",
+   "narration": "例一。一个半径 R 的光滑圆环竖直放置，一个质量 m 的小球穿在环上可以滑动。小球开始时静止在 A 点，A 点在过环心 O 的水平面上。然后从 A 开始下滑，摩擦力略去。求小球滑到 B 点时，对环心 O 的角动量和角速度。关键是选对参考点：取 O 点，那么环对球的支持力始终沿半径，通过 O，力矩为零。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 800,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例1　圆环上的小球",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 238,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "半径 R 的光滑圆环竖直放置，",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 304,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质量 m 的小球穿在圆环上可滑动．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 396,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "小球开始时",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "静止于 A 点",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "（A 在过",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 462,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "环心 O 的水平面上），然后下滑．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 554,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "摩擦力略去不计．求滑到 B 点时对",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 620,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "环心 O 的角动量和角速度．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 716,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "取 O 为参考点：",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 776,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "支持力沿半径过 O ⇒ 力矩为零．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1010,
+     "y": 240,
+     "w": 560,
+     "h": 583,
+     "name": "bead_ring"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 274.99,
+    "2": 284.81,
+    "3": 290.39,
+    "4": 294.82
+   },
+   "t_start": 274.99,
+   "t_end": 309.36,
+   "duration": 34.37,
+   "laser": []
+  },
+  {
+   "id": 10,
+   "kind": "page",
+   "heading": "例1　解（一）",
+   "narration": "解。小球受重力 P 和支持力 F_N。支持力沿半径，通过 O，对 O 的力矩为零；只有重力有力矩。重力作用在小球上，重力臂是 R cosθ，其中 θ 是小球位置与水平线的夹角。所以重力矩 M 等于 m g R cosθ，方向垂直纸面向里。由角动量定理，M 等于 dL/dt，于是 dL 等于 m g R cosθ 乘 dt。接下来要把 dt 换成 dθ，因为 θ 才是位置变量。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例1　解（一）",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "受重力 P 与支持力 F",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "N",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "；F",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "N",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 过 O，",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 296,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "对 O 的",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "力矩为零",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 386,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "重力矩（力臂 R cosθ）：",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 456,
+     "w": 1580,
+     "h": 120,
+     "tex": "M=mgR\\cos\\theta",
+     "size": 40,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 604,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "方向：垂直纸面向里．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 692,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "由角动量定理 ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "M = dL/dt",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "：",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 762,
+     "w": 1580,
+     "h": 120,
+     "tex": "\\mathrm dL=mgR\\cos\\theta\\,\\mathrm dt",
+     "size": 36,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 900,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "下一步：把 dt 换成 dθ．",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 310.16,
+    "2": 323.23,
+    "3": 332.58,
+    "4": 339.46
+   },
+   "t_start": 310.16,
+   "t_end": 354.13,
+   "duration": 43.97,
+   "laser": []
+  },
+  {
+   "id": 11,
+   "kind": "page",
+   "heading": "例1　解（二）",
+   "narration": "利用 ω 等于 dθ/dt，而 L 等于 m R 方 ω，所以 dt 等于 m R 方 dθ 除以 L。把它代进 dL 的式子，两边再同乘 L，就得到 L dL 等于 m 方 g R 三次方 cosθ dθ。两边积分：左边从零到 L，右边从零到 θ。积出来 L 方等于 2 m 方 g R 三次方 sinθ，开方得 L 等于 m R 的二分之三次方乘根号下 2g sinθ。再由 L 等于 m R 方 ω，解出 ω 等于根号下 2g sinθ 除以 R。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例1　解（二）",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "用 ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "ω = dθ/dt",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "、",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "L = mR²ω",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": " 消去 dt：",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 312,
+     "w": 1580,
+     "h": 120,
+     "tex": "L\\,\\mathrm dL=m^2gR^3\\cos\\theta\\,\\mathrm d\\theta",
+     "size": 36,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 456,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "由题设条件积分（0 → L，0 → θ）：",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 528,
+     "w": 1580,
+     "h": 140,
+     "tex": "\\int_0^L L\\,\\mathrm dL=m^2gR^3\\int_0^{\\theta}\\cos\\theta\\,\\mathrm d\\theta",
+     "size": 32,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 700,
+     "w": 1580,
+     "h": 120,
+     "tex": "L=mR^{3/2}\\left(2g\\sin\\theta\\right)^{1/2}",
+     "size": 38,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 830,
+     "w": 1580,
+     "h": 120,
+     "tex": "\\omega=\\left(\\frac{2g}{R}\\sin\\theta\\right)^{1/2}",
+     "size": 40,
+     "color": "#C00000",
+     "align": "center"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 354.93,
+    "2": 364.74,
+    "3": 374.12,
+    "4": 379.46
+   },
+   "t_start": 354.93,
+   "t_end": 398.54,
+   "duration": 43.61,
+   "laser": []
+  },
+  {
+   "id": 12,
+   "kind": "page",
+   "heading": "四　刚体定轴转动的角动量",
+   "narration": "从质点推广到刚体。刚体定轴转动时，每个质量元都在作圆周运动，各自对轴有角动量。第 i 个质量元的角动量大小是 m_i r_i 方 ω，方向都沿转轴。把所有质量元加起来，ω 是共同的，可以提出来，括号里正好是转动惯量。于是得到刚体定轴转动的角动量：L 等于 Jω。它和质点的 p 等于 m v 完全对应。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 900,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　刚体定轴转动的角动量",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "每个质量元绕轴作圆周运动，",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 300,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "各点角动量都沿轴、同向．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 400,
+     "w": 800,
+     "h": 130,
+     "tex": "\\vec L=\\sum_i m_ir_i^2\\vec\\omega",
+     "size": 40,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 558,
+     "w": 800,
+     "h": 120,
+     "tex": "=\\left(\\sum_i m_ir_i^2\\right)\\vec\\omega",
+     "size": 38,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 706,
+     "w": 800,
+     "h": 120,
+     "tex": "\\vec L=J\\vec\\omega",
+     "size": 46,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 862,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与 ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "p = m v",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": " 完全对应（J ↔ m，ω ↔ v）．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1010,
+     "y": 240,
+     "w": 640,
+     "h": 549,
+     "name": "rigid_l"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 399.34,
+    "2": 409.4,
+    "3": 418.03,
+    "4": 425.58
+   },
+   "t_start": 399.34,
+   "t_end": 435.63,
+   "duration": 36.29,
+   "laser": []
+  },
+  {
+   "id": 13,
+   "kind": "page",
+   "heading": "五　刚体的角动量定理",
+   "narration": "有了 L 等于 Jω，对它求导，就得到刚体的角动量定理。M 等于 dL/dt，等于 d(Jω)/dt。对定轴转动的刚体，J 是常量，可以提到导数外面，于是 M 等于 J dω/dt，也就是 Jα——这不就是上一节的转动定律吗？所以转动定律其实是角动量定理在刚体定轴转动下的特例。但如果物体不是刚体，J 会变，就必须保留 d(Jω)/dt 的形式，不能随便提出来。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五　刚体定轴转动的角动量定理",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 150,
+     "tex": "\\vec M=\\frac{\\mathrm d\\vec L}{\\mathrm dt}=\\frac{\\mathrm d(J\\vec\\omega)}{\\mathrm dt}",
+     "size": 38,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 430,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "刚体：J 为常量，可提到导数外——",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 300,
+     "y": 510,
+     "w": 1320,
+     "h": 130,
+     "tex": "\\vec M=J\\frac{\\mathrm d\\vec\\omega}{\\mathrm dt}=J\\vec\\alpha",
+     "size": 40,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 680,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这就是上一节的",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "转动定律",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "，它是角动量定理的特例．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 780,
+     "w": 1580,
+     "h": 130,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "非刚体（J 随时间变）：必须用 M = d(Jω)/dt，不能把 J 提出去",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 946,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例子：花样滑冰运动员收臂、小虫在杆上爬．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 436.43,
+    "2": 442.52,
+    "3": 448.25,
+    "4": 461.19
+   },
+   "t_start": 436.43,
+   "t_end": 476.85,
+   "duration": 40.42,
+   "laser": []
+  },
+  {
+   "id": 14,
+   "kind": "page",
+   "heading": "五　积分形式",
+   "narration": "把刚体的角动量定理对时间积分。左边是冲量矩，右边是角动量的增量。对刚体，J 不变，写成 Jω₂ 减 Jω₁。对非刚体，J 也在变，就得写成 J₂ω₂ 减 J₁ω₁——两个 J 要分别用各自时刻的值。所以判断用哪个式子，先问一句：转动过程中 J 变不变？这就是定轴转动的角动量定理。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五　积分形式",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "在 t₁ 到 t₂ 内，角速度由 ω₁ 变到 ω₂：",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 320,
+     "w": 1580,
+     "h": 140,
+     "tex": "\\int_{t_1}^{t_2}M\\,\\mathrm dt=J\\omega_2-J\\omega_1",
+     "size": 42,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 500,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（刚体：J 不变）",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 590,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "非刚体定轴转动：",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 664,
+     "w": 1580,
+     "h": 140,
+     "tex": "\\int_{t_1}^{t_2}M\\,\\mathrm dt=J_2\\omega_2-J_1\\omega_1",
+     "size": 40,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 840,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "判断用哪个：先问",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "转动过程中 J 变不变",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 912,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "冲量矩 = 角动量的增量 —— 定轴转动的角动量定理．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 477.65,
+    "2": 481.6,
+    "3": 490.64,
+    "4": 498.17
+   },
+   "t_start": 477.65,
+   "t_end": 509.23,
+   "duration": 31.58,
+   "laser": []
+  },
+  {
+   "id": 15,
+   "kind": "page",
+   "heading": "六　刚体定轴转动的角动量守恒",
+   "narration": "合外力矩为零时，L 等于 Jω 是常矢量，这就是刚体定轴转动的角动量守恒定律。因为轴固定，ω 只能沿轴，所以守恒表现为 Jω 等于常量。这一句话解开了很多现象：J 不变，ω 就不变——转得稳稳的陀螺；J 变了，ω 就得跟着变，但乘积不变——花样滑冰收臂加速，就是 J 变小、ω 变大。注意这里的 J 变，是指物体的质量分布发生变化，不是刚体了。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "六　刚体定轴转动的角动量守恒",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 300,
+     "y": 236,
+     "w": 1320,
+     "h": 140,
+     "tex": "\\vec M=0\\ \\Longrightarrow\\ \\vec L=J\\vec\\omega=\\text{常矢量}",
+     "size": 38,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 420,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "轴固定 ⇒ ω 沿轴 ⇒ 守恒写成 ",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "Jω = 常量",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 520,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "若 ",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "J 不变",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "：ω 也不变（稳转的陀螺）；",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 600,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "若 ",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "J 变",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "：ω 随之变，但乘积不变（收臂加速）．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 700,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这里 J 变，意味着质量分布变了——物体已不是刚体．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 800,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "角动量守恒是自然界的普遍规律，与动量、能量守恒并列",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 510.03,
+    "2": 518.49,
+    "3": 526.07,
+    "4": 528.467,
+    "5": 532.461
+   },
+   "t_start": 510.03,
+   "t_end": 547.4,
+   "duration": 37.37,
+   "laser": []
+  },
+  {
+   "id": 16,
+   "kind": "page",
+   "heading": "六　讨论",
+   "narration": "把角动量守恒的几条讨论集中说一下。第一，守恒条件是 M 等于零；J 不变时 ω 不变，J 变时 ω 也变，但 L 不变。第二，内力矩不改变系统的角动量——这一点和内力不改变总动量完全一样。第三，在冲击、碰撞这类问题里，内力矩远大于外力矩，所以可以近似认为角动量守恒。第四，角动量守恒是自然界的基本定律，不只是力学里的技巧。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "六　讨论",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（1）",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "守恒条件 M = 0；J 变则 ω 变，但 L 不变．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 340,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（2）",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "内力矩不改变系统的角动量．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 440,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（3）",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "冲击问题中 M",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "in",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " ≫ M",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "ex",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " ⇒ L ≈ 常量．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 540,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（4）",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "角动量守恒是自然界的基本定律．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 640,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与动量守恒、能量守恒并列，源自空间旋转不变性．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 760,
+     "w": 1580,
+     "h": 150,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "解题套路：先判断 M 是否为零 → 再写 J₁ω₁ = J₂ω₂",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 548.2,
+    "2": 552.54,
+    "3": 561.53,
+    "4": 569.3
+   },
+   "t_start": 548.2,
+   "t_end": 585.21,
+   "duration": 37.01,
+   "laser": []
+  },
+  {
+   "id": 17,
+   "kind": "page",
+   "heading": "六　应用：收臂加速",
+   "narration": "看一个直观的例子。两个质量块连在一根可伸缩的杆上，绕中心转动。左边：质量块伸得远，转动惯量大，角速度小。右边：把质量块收进来，转动惯量变成原来的四分之一。因为 Jω 守恒，角速度就得变成原来的四倍。花样滑冰运动员收臂加速、跳水运动员抱膝翻腾，都是这个道理——不是谁给了力矩，而是自己把质量往轴附近收。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "六　应用：收臂加速",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两质量块连在可伸缩杆上，绕中心转，",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 282,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "无外力矩．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 354,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "左：$r$ 大 ⇒ $J$ 大 ⇒ $\\omega$ 小；",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 420,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "右：$r$ 收为一半 ⇒ $J$ 变为 $1/4$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 462,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "⇒ $\\omega$ 变为 4 倍．",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 540,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "自己把质量往轴附近收，",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 582,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不是谁给了力矩．",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 668,
+     "w": 740,
+     "h": 170,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "Jω = 常量",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "J 减为一半 ⇒ ω 加倍",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "这就是收臂加速的全部秘密",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 480,
+     "name": "j_omega"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 586.01,
+    "2": 594.1,
+    "3": 600.0,
+    "4": 606.42,
+    "5": 611.6
+   },
+   "t_start": 586.01,
+   "t_end": 622.39,
+   "duration": 36.38,
+   "laser": []
+  },
+  {
+   "id": 18,
+   "kind": "page",
+   "heading": "例3　小虫在细杆上爬行",
+   "narration": "例三。一根质量很小、长度 l 的均匀细杆，可绕过其中心 O 并与纸面垂直的轴在竖直平面内转动。杆静止在水平位置时，一只小虫以速率 v 零垂直落在距 O 为 l/4 处，然后背离 O 向端点 A 爬行。小虫与细杆的质量都是 m。问：欲使细杆以恒定的角速度转动，小虫应以多大速率向端点爬行？这里有两问的味道：碰撞瞬间求角速度，之后维持恒定角速度求爬行速率。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 900,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例3　小虫在细杆上爬行",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 238,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质量很小、长 l 的均匀细杆，绕过",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 296,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "中心 O 且垂直纸面的轴转动．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 380,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "杆静止于水平位置时，小虫以速率 v",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "0",
+        "size": 22,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 438,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "垂直落在距 O 为 l/4 处，再背离 O",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 496,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "向端点 A 爬行．虫与杆质量均为 m．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 588,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "问：欲使杆以",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "恒定角速度",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "转动，",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 646,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "小虫应以多大速率爬行？",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 740,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "提示：碰撞用角动量守恒；之后用",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 798,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "M = d(Jω)/dt，ω 为常量．",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1000,
+     "y": 250,
+     "w": 640,
+     "h": 486,
+     "name": "bug_rod"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 623.19,
+    "2": 633.83,
+    "3": 643.28,
+    "4": 646.9
+   },
+   "t_start": 623.19,
+   "t_end": 662.53,
+   "duration": 39.34,
+   "laser": []
+  },
+  {
+   "id": 19,
+   "kind": "page",
+   "heading": "例3　解（一）",
+   "narration": "第一步，碰撞瞬间。小虫与杆组成的系统，碰撞时间极短，外力矩可以忽略，角动量守恒。碰前：小虫的角动量是 m v 零乘 l/4——它垂直落下，力臂正好是 l/4；杆静止，角动量为零。碰后：虫和杆一起以 ω 转动。杆的转动惯量是十二分之一 m l 方，小虫在 l/4 处，贡献 m 乘 l/4 的平方。两边相等，解出 ω 等于 12 v 零除以 7 l。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例3　解（一）碰撞瞬间",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "碰撞极短，外力矩可忽略 ⇒ ",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "角动量守恒",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 1580,
+     "h": 160,
+     "tex": "mv_0\\frac{l}{4}=\\left[\\frac{1}{12}ml^2+m\\left(\\frac{l}{4}\\right)^2\\right]\\omega",
+     "size": 34,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 510,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "左：虫的角动量（力臂 l/4）；右：杆 + 虫的 Jω．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 600,
+     "w": 1580,
+     "h": 120,
+     "tex": "\\frac{1}{12}ml^2+\\frac{1}{16}ml^2=\\frac{7}{48}ml^2",
+     "size": 34,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 740,
+     "w": 1580,
+     "h": 120,
+     "tex": "\\omega=\\frac{12}{7}\\frac{v_0}{l}",
+     "size": 46,
+     "color": "#C00000",
+     "align": "center"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 663.33,
+    "2": 673.52,
+    "3": 683.47,
+    "4": 695.45
+   },
+   "t_start": 663.33,
+   "t_end": 701.08,
+   "duration": 37.75,
+   "laser": []
+  },
+  {
+   "id": 20,
+   "kind": "page",
+   "heading": "例3　解（二）",
+   "narration": "第二步，维持恒定角速度。杆转起来后，小虫在杆上爬，r 在变，所以 J 在变。要维持 ω 不变，就必须有力矩——这个力矩只能来自重力：小虫偏离水平位置后，重力对 O 有矩。重力矩是 m g r cosθ，其中 θ 等于 ωt。而 M 等于 ω dJ/dt，J 里只有虫那一项在变，dJ/dt 等于 2 m r dr/dt。两边相等，解出 dr/dt 等于 g cosθ 除以 2ω，把 ω 代进去，就是 7 l g 除以 24 v 零，再乘 cos(12 v 零 t 除以 7 l)。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例3　解（二）维持恒定 ω",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 232,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "小虫爬行 ⇒ r 变 ⇒ J 变；要用 ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "M = ω dJ/dt",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 316,
+     "w": 1580,
+     "h": 160,
+     "tex": "mgr\\cos\\theta=\\omega\\frac{\\mathrm dJ}{\\mathrm dt}=\\omega\\frac{\\mathrm d}{\\mathrm dt}\\left(\\frac{1}{12}ml^2+mr^2\\right)",
+     "size": 30,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 496,
+     "w": 1580,
+     "h": 110,
+     "tex": "=2mr\\omega\\frac{\\mathrm dr}{\\mathrm dt}",
+     "size": 34,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 620,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "用 ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "θ = ωt",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": " 解出：",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 696,
+     "w": 1580,
+     "h": 150,
+     "tex": "\\frac{\\mathrm dr}{\\mathrm dt}=\\frac{g}{2\\omega}\\cos\\omega t=\\frac{7lg}{24v_0}\\cos\\left(\\frac{12v_0}{7l}t\\right)",
+     "size": 30,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 872,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这就是小虫应有的爬行速率——它必须按余弦规律时快时慢．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 701.88,
+    "2": 711.63,
+    "3": 720.31,
+    "4": 727.26,
+    "5": 735.75
+   },
+   "t_start": 701.88,
+   "t_end": 750.0,
+   "duration": 48.12,
+   "laser": []
+  },
+  {
+   "id": 21,
+   "kind": "page",
+   "heading": "例4　跳板弹人",
+   "narration": "例四。一个跳板表演：演员 M 从距水平跳板高 h 处自由下落，落到跳板的一端 A，把另一端的演员 N 弹起来。设跳板匀质、长 l、质量 m 撇，可绕中点 C 在竖直平面内转动；两名演员质量都是 m。假定 M 与跳板的碰撞是完全非弹性碰撞，也就是碰后 M 随板一起动。问演员 N 能弹起多高？思路：碰撞瞬间角动量守恒，碰后 N 获得线速度，再按竖直上抛算高度。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 900,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例4　跳板弹人",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 238,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "演员 M 从高 h 处自由下落，落到",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 296,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "跳板一端 A，把另一端 N 弹起．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 386,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "跳板匀质，长 l、质量 m′，绕中点",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 444,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "C 在竖直面内转动；两人质量均为 m．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 534,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "M 与跳板",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "完全非弹性碰撞",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "（碰后同动）．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 626,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "求：演员 N 能弹起多高？",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 720,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "思路：碰撞瞬间 L 守恒 → N 得线速度",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 778,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "→ 竖直上抛求高度．",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1000,
+     "y": 250,
+     "w": 760,
+     "h": 507,
+     "name": "diving_board"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 750.8,
+    "2": 762.49,
+    "3": 771.41,
+    "4": 778.53,
+    "5": 781.99
+   },
+   "t_start": 750.8,
+   "t_end": 790.11,
+   "duration": 39.31,
+   "laser": []
+  },
+  {
+   "id": 22,
+   "kind": "page",
+   "heading": "例4　解",
+   "narration": "解。碰前 M 的速度 v 等于根号下 2gh。碰后瞬间，M 在 A 端、N 在 B 端，两者速度大小都是 u，等于 l/2 乘 ω。对 C 点角动量守恒：碰前只有 M，角动量 m v 乘 l/2；碰后是跳板加两个人。跳板绕中心的 J 是十二分之一 m 撇 l 方；两个人各在 l/2 处，各贡献 m l 方除以 4，合起来二分之一 m l 方。代入解出 ω，再算 N 的高度：h 撇等于 u 方除以 2g，等于 l 方 ω 方除以 8g，最后化成括号 3m 除以 m 撇加 6m 的平方，乘 h。检验：如果板很轻，m 撇趋于零，h 撇等于 h/4——两演员等质量，碰后各分一半动量，高度变成四分之一，合理。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例4　解",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 232,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "碰前速度：",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "v",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "M",
+        "size": 22,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " = √(2gh)",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 300,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "碰后两端线速度：",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "u = lω/2",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 380,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "对 C 角动量守恒：",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 452,
+     "w": 1580,
+     "h": 180,
+     "tex": "mv_{\\mathrm M}\\frac{l}{2}=\\left[\\frac{1}{12}m'l^2+2m\\left(\\frac{l}{2}\\right)^2\\right]\\omega",
+     "size": 26,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 650,
+     "w": 1580,
+     "h": 130,
+     "tex": "\\omega=\\frac{6m\\sqrt{2gh}}{(m'+6m)\\,l}",
+     "size": 30,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 800,
+     "w": 1580,
+     "h": 140,
+     "tex": "h'=\\frac{u^2}{2g}=\\left(\\frac{3m}{m'+6m}\\right)^2h",
+     "size": 30,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 956,
+     "w": 1580,
+     "h": 50,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "m′ → 0 时 h′ = h/4，合理．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 790.91,
+    "2": 797.66,
+    "3": 806.05,
+    "4": 814.66,
+    "5": 825.52
+   },
+   "t_start": 790.91,
+   "t_end": 850.31,
+   "duration": 59.4,
+   "laser": []
+  },
+  {
+   "id": 23,
+   "kind": "page",
+   "heading": "随堂练习　收臂之后",
+   "narration": "做一道概念题。一个转台以角速度 ω 转，人站在上面，双臂张开；然后他把双臂收回。问：收臂之后，系统的角速度和角动量怎么变？外力矩只有重力和支持力，都过轴，力矩为零，所以角动量守恒。收臂使质量靠近轴，J 变小，ω 必须变大。所以角动量不变、角速度变大，选 A。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "随堂练习　收臂之后",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "人站在转台上随之转动，双臂张开；随后把双臂收回．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 312,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "若外力矩为零，则收臂后（　　）",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 200,
+     "y": 430,
+     "w": 760,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "A．L 不变，ω 变大",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 200,
+     "y": 540,
+     "w": 760,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "B．L 不变，ω 变小",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 1010,
+     "y": 430,
+     "w": 740,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "C．L 变大，ω 不变",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 1010,
+     "y": 540,
+     "w": 740,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "D．L 变小，ω 变大",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 690,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "关键：",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "J 变小 ⇒ ω 必须变大",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 742,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "才能保持 $J\\omega$ 不变．",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 812,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这与花样滑冰收臂加速是同一件事．",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 1010,
+     "y": 690,
+     "w": 740,
+     "h": 210,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "判据",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "外力矩为零 ⇒ L = Jω 守恒",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "收臂 ⇒ J 变小 ⇒ ω 变大",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "答案：A",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 851.11,
+    "2": 861.56
+   },
+   "t_start": 851.11,
+   "t_end": 886.1,
+   "duration": 34.99,
+   "laser": [],
+   "interactions": [
+    {
+     "t": 861.56,
+     "q": "人站在转台上随之转动，双臂张开；随后把双臂收回。若外力矩为零，则收臂后（　　）",
+     "answer": 0,
+     "options": [
+      "A．L 不变，ω 变大",
+      "B．L 不变，ω 变小",
+      "C．L 变大，ω 不变",
+      "D．L 变小，ω 变大"
+     ],
+     "explain": "重力和支持力都通过转轴，对轴力矩为零，所以角动量 L = Jω 守恒。收臂使质量分布靠近轴，J 变小，因此 ω 必须变大——这就是花样滑冰收臂加速的道理。"
+    }
+   ]
+  },
+  {
+   "id": 24,
+   "kind": "page",
+   "heading": "本节小结",
+   "narration": "小结。质点的角动量 L 等于 r 叉乘 p，大小 r m v sinθ，方向右手螺旋；圆周运动时 L 等于 m r 方 ω 等于 Jω。质点角动量定理：M 等于 dL/dt，积分形式是冲量矩等于角动量的增量。M 等于零则 L 守恒；有两种情形：合外力为零，或者合力始终通过参考点。刚体定轴转动：L 等于 Jω，M 等于 d(Jω)/dt；J 不变时退化为转动定律。角动量守恒 Jω 等于常量，解释了收臂加速、跳板弹人这一类现象。下一节讲力矩做功与转动动能定理——那是对应的“功与能”。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 760,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 质点角动量",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 290,
+     "w": 760,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$L=r\\times p$，大小 $rmv\\sin\\theta$；",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 332,
+     "w": 760,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "圆周运动 $L=J\\omega$．",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 412,
+     "w": 760,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 角动量定理",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 462,
+     "w": 760,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$M=\\mathrm dL/\\mathrm dt$，",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 504,
+     "w": 760,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\int M\\mathrm dt=\\Delta L$．",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 240,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 守恒",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 290,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$M=0$ ⇒ $L$ 为常矢量．",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 332,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（$F=0$，或 $F$ 始终过 $O$）",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 412,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 刚体定轴",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 462,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$L=J\\omega$，$M=\\mathrm d(J\\omega)/\\mathrm dt$；",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 504,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$J$ 不变 ⇒ $M=J\\alpha$．",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 596,
+     "w": 1580,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "⑤ 角动量守恒：",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "$J\\omega=$ 常量 —— 收臂加速、跳板弹人．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 678,
+     "w": 1580,
+     "h": 180,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "解题先判 M 是否为零",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "J 变时不能用 M = Jα，必须写 M = d(Jω)/dt",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "公式里凡出现 J，先问一句：它变不变？",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 900,
+     "w": 1580,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "下一节：力矩做功与刚体定轴转动的动能定理．",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 886.9,
+    "2": 900.56,
+    "3": 908.64,
+    "4": 916.41,
+    "5": 926.6,
+    "6": 933.55
+   },
+   "t_start": 886.9,
+   "t_end": 939.65,
+   "duration": 52.75,
+   "laser": []
+  }
+ ],
+ "subtitles": [
+  {
+   "slide": 1,
+   "start": 0.0,
+   "end": 4.66,
+   "text": "这一节 4-3，角动量与角动量守恒定律。"
+  },
+  {
+   "slide": 1,
+   "start": 5.06,
+   "end": 10.94,
+   "text": "前面我们讲动量：力对时间的累积给出冲量，冲量改变动量。"
+  },
+  {
+   "slide": 1,
+   "start": 11.34,
+   "end": 22.69,
+   "text": "现在把“力”换成“力矩”，把“动量”换成“角动量”，整条线索完全平行：力矩对时间的累积叫冲量矩，冲量矩改变角动量。"
+  },
+  {
+   "slide": 1,
+   "start": 23.09,
+   "end": 28.66,
+   "text": "这条线索会给出本章最重要的一条守恒律——角动量守恒。"
+  },
+  {
+   "slide": 2,
+   "start": 30.08,
+   "end": 32.5,
+   "text": "先看这张对照表。"
+  },
+  {
+   "slide": 2,
+   "start": 32.9,
+   "end": 42.45,
+   "text": "左边是力的时间累积：力乘时间得冲量，冲量改变动量，这就是动量定理；合外力为零，动量守恒。"
+  },
+  {
+   "slide": 2,
+   "start": 42.85,
+   "end": 52.31,
+   "text": "右边把每个量换成转动版本：力矩乘时间得冲量矩，冲量矩改变角动量；合外力矩为零，角动量守恒。"
+  },
+  {
+   "slide": 2,
+   "start": 52.71,
+   "end": 58.81,
+   "text": "所以这一节的内容，其实是把上一章动量那套逻辑，原封不动搬过来。"
+  },
+  {
+   "slide": 3,
+   "start": 60.23,
+   "end": 62.99,
+   "text": "先定义质点的角动量。"
+  },
+  {
+   "slide": 3,
+   "start": 63.39,
+   "end": 70.54,
+   "text": "质量为 m 的质点以速度 v 在空间运动，某时刻它对参考点 O 的位矢是 r。"
+  },
+  {
+   "slide": 3,
+   "start": 70.94,
+   "end": 76.7,
+   "text": "定义：L 等于 r 叉乘 p，也等于 r 叉乘 m v。"
+  },
+  {
+   "slide": 3,
+   "start": 77.1,
+   "end": 85.33,
+   "text": "这是一个叉积，所以 L 垂直于 r 和 v 张成的平面，方向由右手螺旋定则确定。"
+  },
+  {
+   "slide": 3,
+   "start": 85.73,
+   "end": 93.6,
+   "text": "注意：角动量必须相对于某个参考点来说，换一个参考点，r 变了，L 也就变了。"
+  },
+  {
+   "slide": 4,
+   "start": 95.09,
+   "end": 101.14,
+   "text": "叉积的大小是 L 等于 r m v sinθ，θ 是 r 与 v 的夹角。"
+  },
+  {
+   "slide": 4,
+   "start": 101.54,
+   "end": 107.59,
+   "text": "方向用右手螺旋：四指从 r 转向 v，拇指就指向 L。"
+  },
+  {
+   "slide": 4,
+   "start": 107.99,
+   "end": 111.11,
+   "text": "单位是千克二次方米每秒。"
+  },
+  {
+   "slide": 4,
+   "start": 111.51,
+   "end": 125.14,
+   "text": "一个重要的特例：质点以角速度 ω 作半径为 r 的圆周运动，r 与 v 垂直，sinθ 等于一，于是 L 等于 m r 方 ω，正好等于 Jω。"
+  },
+  {
+   "slide": 4,
+   "start": 125.54,
+   "end": 130.89,
+   "text": "这个式子把质点的角动量和刚体的角动量联系起来了。"
+  },
+  {
+   "slide": 5,
+   "start": 132.37,
+   "end": 135.66,
+   "text": "为什么有了动量，还要角动量？"
+  },
+  {
+   "slide": 5,
+   "start": 136.31,
+   "end": 138.18,
+   "text": "看这个例子。"
+  },
+  {
+   "slide": 5,
+   "start": 138.58,
+   "end": 145.47,
+   "text": "一个圆盘绕中心轴转，但它整体并没有平移，所以总动量等于零。"
+  },
+  {
+   "slide": 5,
+   "start": 145.87,
+   "end": 154.08,
+   "text": "可是盘上每一点都在动：i 点的动量向上，j 点的动量向下，两个动量大小相等、方向相反。"
+  },
+  {
+   "slide": 5,
+   "start": 154.48,
+   "end": 159.42,
+   "text": "它们对轴的角动量却同向叠加，加起来不为零。"
+  },
+  {
+   "slide": 5,
+   "start": 159.82,
+   "end": 165.82,
+   "text": "所以“总动量为零”根本描述不了转动——必须有角动量这个新物理量。"
+  },
+  {
+   "slide": 6,
+   "start": 167.37,
+   "end": 169.89,
+   "text": "角动量随时间怎么变？"
+  },
+  {
+   "slide": 6,
+   "start": 170.54,
+   "end": 173.04,
+   "text": "直接对定义式求导。"
+  },
+  {
+   "slide": 6,
+   "start": 173.44,
+   "end": 184.17,
+   "text": "dL/dt 等于 d(r×p)/dt，按乘积法则展开成两项：r 叉乘 dp/dt，加上 dr/dt 叉乘 p。"
+  },
+  {
+   "slide": 6,
+   "start": 184.57,
+   "end": 192.18,
+   "text": "第二项里 dr/dt 就是 v，而 v 与 p 平行，叉积为零，这一项直接消失。"
+  },
+  {
+   "slide": 6,
+   "start": 192.58,
+   "end": 200.64,
+   "text": "剩下第一项，dp/dt 等于 F，于是 dL/dt 等于 r 叉乘 F，也就是力矩。"
+  },
+  {
+   "slide": 7,
+   "start": 202.13,
+   "end": 210.53,
+   "text": "把定理说出来：作用于质点的合外力对参考点 O 的力矩，等于质点对该点的角动量随时间的变化率。"
+  },
+  {
+   "slide": 7,
+   "start": 210.93,
+   "end": 216.23,
+   "text": "注意参考点 O 要固定，力矩和角动量必须对同一个点算。"
+  },
+  {
+   "slide": 7,
+   "start": 216.63,
+   "end": 222.58,
+   "text": "把它对时间积分，就得到积分形式：冲量矩等于角动量的增量。"
+  },
+  {
+   "slide": 7,
+   "start": 222.98,
+   "end": 228.36,
+   "text": "“冲量矩”这个名字就是从“冲量”照搬来的——力矩乘时间。"
+  },
+  {
+   "slide": 7,
+   "start": 228.76,
+   "end": 234.5,
+   "text": "和动量定理对照：冲量改变动量，冲量矩改变角动量。"
+  },
+  {
+   "slide": 8,
+   "start": 235.98,
+   "end": 238.6,
+   "text": "合外力矩等于零的时候呢？"
+  },
+  {
+   "slide": 8,
+   "start": 239.25,
+   "end": 245.99,
+   "text": "dL/dt 等于零，角动量就是常矢量——这就是质点的角动量守恒定律。"
+  },
+  {
+   "slide": 8,
+   "start": 246.39,
+   "end": 251.12,
+   "text": "注意“常矢量”三个字：大小不变，方向也不变。"
+  },
+  {
+   "slide": 8,
+   "start": 251.52,
+   "end": 254.02,
+   "text": "什么时候合力矩为零？"
+  },
+  {
+   "slide": 8,
+   "start": 254.67,
+   "end": 267.99,
+   "text": "有两种情况：一种是根本不受力，F 等于零；另一种是合力不为零，但合力的作用线始终通过参考点 O——力臂为零，力矩自然为零，比如有心力。"
+  },
+  {
+   "slide": 8,
+   "start": 268.39,
+   "end": 273.43,
+   "text": "行星绕太阳运动就是后一种：引力始终指向太阳。"
+  },
+  {
+   "slide": 9,
+   "start": 274.99,
+   "end": 276.86,
+   "text": "例一。"
+  },
+  {
+   "slide": 9,
+   "start": 277.26,
+   "end": 284.41,
+   "text": "一个半径 R 的光滑圆环竖直放置，一个质量 m 的小球穿在环上可以滑动。"
+  },
+  {
+   "slide": 9,
+   "start": 284.81,
+   "end": 289.99,
+   "text": "小球开始时静止在 A 点，A 点在过环心 O 的水平面上。"
+  },
+  {
+   "slide": 9,
+   "start": 290.39,
+   "end": 294.42,
+   "text": "然后从 A 开始下滑，摩擦力略去。"
+  },
+  {
+   "slide": 9,
+   "start": 294.82,
+   "end": 299.84,
+   "text": "求小球滑到 B 点时，对环心 O 的角动量和角速度。"
+  },
+  {
+   "slide": 9,
+   "start": 300.24,
+   "end": 308.62,
+   "text": "关键是选对参考点：取 O 点，那么环对球的支持力始终沿半径，通过 O，力矩为零。"
+  },
+  {
+   "slide": 10,
+   "start": 310.16,
+   "end": 312.03,
+   "text": "解。"
+  },
+  {
+   "slide": 10,
+   "start": 312.43,
+   "end": 316.53,
+   "text": "小球受重力 P 和支持力 F_N。"
+  },
+  {
+   "slide": 10,
+   "start": 316.93,
+   "end": 322.83,
+   "text": "支持力沿半径，通过 O，对 O 的力矩为零；只有重力有力矩。"
+  },
+  {
+   "slide": 10,
+   "start": 323.23,
+   "end": 332.18,
+   "text": "重力作用在小球上，重力臂是 R cosθ，其中 θ 是小球位置与水平线的夹角。"
+  },
+  {
+   "slide": 10,
+   "start": 332.58,
+   "end": 339.06,
+   "text": "所以重力矩 M 等于 m g R cosθ，方向垂直纸面向里。"
+  },
+  {
+   "slide": 10,
+   "start": 339.46,
+   "end": 347.36,
+   "text": "由角动量定理，M 等于 dL/dt，于是 dL 等于 m g R cosθ 乘 dt。"
+  },
+  {
+   "slide": 10,
+   "start": 347.76,
+   "end": 353.33,
+   "text": "接下来要把 dt 换成 dθ，因为 θ 才是位置变量。"
+  },
+  {
+   "slide": 11,
+   "start": 354.93,
+   "end": 364.34,
+   "text": "利用 ω 等于 dθ/dt，而 L 等于 m R 方 ω，所以 dt 等于 m R 方 dθ 除以 L。"
+  },
+  {
+   "slide": 11,
+   "start": 364.74,
+   "end": 373.72,
+   "text": "把它代进 dL 的式子，两边再同乘 L，就得到 L dL 等于 m 方 g R 三次方 cosθ dθ。"
+  },
+  {
+   "slide": 11,
+   "start": 374.12,
+   "end": 379.06,
+   "text": "两边积分：左边从零到 L，右边从零到 θ。"
+  },
+  {
+   "slide": 11,
+   "start": 379.46,
+   "end": 390.09,
+   "text": "积出来 L 方等于 2 m 方 g R 三次方 sinθ，开方得 L 等于 m R 的二分之三次方乘根号下 2g sinθ。"
+  },
+  {
+   "slide": 11,
+   "start": 390.49,
+   "end": 397.86,
+   "text": "再由 L 等于 m R 方 ω，解出 ω 等于根号下 2g sinθ 除以 R。"
+  },
+  {
+   "slide": 12,
+   "start": 399.34,
+   "end": 401.98,
+   "text": "从质点推广到刚体。"
+  },
+  {
+   "slide": 12,
+   "start": 402.38,
+   "end": 409.0,
+   "text": "刚体定轴转动时，每个质量元都在作圆周运动，各自对轴有角动量。"
+  },
+  {
+   "slide": 12,
+   "start": 409.4,
+   "end": 417.63,
+   "text": "第 i 个质量元的角动量大小是 m_i r_i 方 ω，方向都沿转轴。"
+  },
+  {
+   "slide": 12,
+   "start": 418.03,
+   "end": 425.18,
+   "text": "把所有质量元加起来，ω 是共同的，可以提出来，括号里正好是转动惯量。"
+  },
+  {
+   "slide": 12,
+   "start": 425.58,
+   "end": 430.67,
+   "text": "于是得到刚体定轴转动的角动量：L 等于 Jω。"
+  },
+  {
+   "slide": 12,
+   "start": 431.07,
+   "end": 434.89,
+   "text": "它和质点的 p 等于 m v 完全对应。"
+  },
+  {
+   "slide": 13,
+   "start": 436.43,
+   "end": 442.12,
+   "text": "有了 L 等于 Jω，对它求导，就得到刚体的角动量定理。"
+  },
+  {
+   "slide": 13,
+   "start": 442.52,
+   "end": 447.85,
+   "text": "M 等于 dL/dt，等于 d(Jω)/dt。"
+  },
+  {
+   "slide": 13,
+   "start": 448.25,
+   "end": 460.54,
+   "text": "对定轴转动的刚体，J 是常量，可以提到导数外面，于是 M 等于 J dω/dt，也就是 Jα——这不就是上一节的转动定律吗？"
+  },
+  {
+   "slide": 13,
+   "start": 461.19,
+   "end": 467.5,
+   "text": "所以转动定律其实是角动量定理在刚体定轴转动下的特例。"
+  },
+  {
+   "slide": 13,
+   "start": 467.9,
+   "end": 476.16,
+   "text": "但如果物体不是刚体，J 会变，就必须保留 d(Jω)/dt 的形式，不能随便提出来。"
+  },
+  {
+   "slide": 14,
+   "start": 477.65,
+   "end": 481.2,
+   "text": "把刚体的角动量定理对时间积分。"
+  },
+  {
+   "slide": 14,
+   "start": 481.6,
+   "end": 485.78,
+   "text": "左边是冲量矩，右边是角动量的增量。"
+  },
+  {
+   "slide": 14,
+   "start": 486.18,
+   "end": 490.24,
+   "text": "对刚体，J 不变，写成 Jω₂ 减 Jω₁。"
+  },
+  {
+   "slide": 14,
+   "start": 490.64,
+   "end": 497.77,
+   "text": "对非刚体，J 也在变，就得写成 J₂ω₂ 减 J₁ω₁——两个 J 要分别用各自时刻的值。"
+  },
+  {
+   "slide": 14,
+   "start": 498.17,
+   "end": 504.34,
+   "text": "所以判断用哪个式子，先问一句：转动过程中 J 变不变？"
+  },
+  {
+   "slide": 14,
+   "start": 504.99,
+   "end": 508.49,
+   "text": "这就是定轴转动的角动量定理。"
+  },
+  {
+   "slide": 15,
+   "start": 510.03,
+   "end": 518.09,
+   "text": "合外力矩为零时，L 等于 Jω 是常矢量，这就是刚体定轴转动的角动量守恒定律。"
+  },
+  {
+   "slide": 15,
+   "start": 518.49,
+   "end": 525.67,
+   "text": "因为轴固定，ω 只能沿轴，所以守恒表现为 Jω 等于常量。"
+  },
+  {
+   "slide": 15,
+   "start": 526.07,
+   "end": 540.85,
+   "text": "这一句话解开了很多现象：J 不变，ω 就不变——转得稳稳的陀螺；J 变了，ω 就得跟着变，但乘积不变——花样滑冰收臂加速，就是 J 变小、ω 变大。"
+  },
+  {
+   "slide": 15,
+   "start": 541.25,
+   "end": 546.77,
+   "text": "注意这里的 J 变，是指物体的质量分布发生变化，不是刚体了。"
+  },
+  {
+   "slide": 16,
+   "start": 548.2,
+   "end": 552.14,
+   "text": "把角动量守恒的几条讨论集中说一下。"
+  },
+  {
+   "slide": 16,
+   "start": 552.54,
+   "end": 561.13,
+   "text": "第一，守恒条件是 M 等于零；J 不变时 ω 不变，J 变时 ω 也变，但 L 不变。"
+  },
+  {
+   "slide": 16,
+   "start": 561.53,
+   "end": 568.9,
+   "text": "第二，内力矩不改变系统的角动量——这一点和内力不改变总动量完全一样。"
+  },
+  {
+   "slide": 16,
+   "start": 569.3,
+   "end": 577.89,
+   "text": "第三，在冲击、碰撞这类问题里，内力矩远大于外力矩，所以可以近似认为角动量守恒。"
+  },
+  {
+   "slide": 16,
+   "start": 578.29,
+   "end": 584.53,
+   "text": "第四，角动量守恒是自然界的基本定律，不只是力学里的技巧。"
+  },
+  {
+   "slide": 17,
+   "start": 586.01,
+   "end": 588.19,
+   "text": "看一个直观的例子。"
+  },
+  {
+   "slide": 17,
+   "start": 588.59,
+   "end": 593.7,
+   "text": "两个质量块连在一根可伸缩的杆上，绕中心转动。"
+  },
+  {
+   "slide": 17,
+   "start": 594.1,
+   "end": 599.6,
+   "text": "左边：质量块伸得远，转动惯量大，角速度小。"
+  },
+  {
+   "slide": 17,
+   "start": 600.0,
+   "end": 606.02,
+   "text": "右边：把质量块收进来，转动惯量变成原来的四分之一。"
+  },
+  {
+   "slide": 17,
+   "start": 606.42,
+   "end": 611.2,
+   "text": "因为 Jω 守恒，角速度就得变成原来的四倍。"
+  },
+  {
+   "slide": 17,
+   "start": 611.6,
+   "end": 621.66,
+   "text": "花样滑冰运动员收臂加速、跳水运动员抱膝翻腾，都是这个道理——不是谁给了力矩，而是自己把质量往轴附近收。"
+  },
+  {
+   "slide": 18,
+   "start": 623.19,
+   "end": 625.06,
+   "text": "例三。"
+  },
+  {
+   "slide": 18,
+   "start": 625.46,
+   "end": 633.43,
+   "text": "一根质量很小、长度 l 的均匀细杆，可绕过其中心 O 并与纸面垂直的轴在竖直平面内转动。"
+  },
+  {
+   "slide": 18,
+   "start": 633.83,
+   "end": 642.88,
+   "text": "杆静止在水平位置时，一只小虫以速率 v 零垂直落在距 O 为 l/4 处，然后背离 O 向端点 A 爬行。"
+  },
+  {
+   "slide": 18,
+   "start": 643.28,
+   "end": 646.5,
+   "text": "小虫与细杆的质量都是 m。"
+  },
+  {
+   "slide": 18,
+   "start": 646.9,
+   "end": 654.0,
+   "text": "问：欲使细杆以恒定的角速度转动，小虫应以多大速率向端点爬行？"
+  },
+  {
+   "slide": 18,
+   "start": 654.65,
+   "end": 661.78,
+   "text": "这里有两问的味道：碰撞瞬间求角速度，之后维持恒定角速度求爬行速率。"
+  },
+  {
+   "slide": 19,
+   "start": 663.33,
+   "end": 665.9,
+   "text": "第一步，碰撞瞬间。"
+  },
+  {
+   "slide": 19,
+   "start": 666.3,
+   "end": 673.12,
+   "text": "小虫与杆组成的系统，碰撞时间极短，外力矩可以忽略，角动量守恒。"
+  },
+  {
+   "slide": 19,
+   "start": 673.52,
+   "end": 683.07,
+   "text": "碰前：小虫的角动量是 m v 零乘 l/4——它垂直落下，力臂正好是 l/4；杆静止，角动量为零。"
+  },
+  {
+   "slide": 19,
+   "start": 683.47,
+   "end": 687.33,
+   "text": "碰后：虫和杆一起以 ω 转动。"
+  },
+  {
+   "slide": 19,
+   "start": 687.73,
+   "end": 695.05,
+   "text": "杆的转动惯量是十二分之一 m l 方，小虫在 l/4 处，贡献 m 乘 l/4 的平方。"
+  },
+  {
+   "slide": 19,
+   "start": 695.45,
+   "end": 700.35,
+   "text": "两边相等，解出 ω 等于 12 v 零除以 7 l。"
+  },
+  {
+   "slide": 20,
+   "start": 701.88,
+   "end": 704.83,
+   "text": "第二步，维持恒定角速度。"
+  },
+  {
+   "slide": 20,
+   "start": 705.23,
+   "end": 711.23,
+   "text": "杆转起来后，小虫在杆上爬，r 在变，所以 J 在变。"
+  },
+  {
+   "slide": 20,
+   "start": 711.63,
+   "end": 719.91,
+   "text": "要维持 ω 不变，就必须有力矩——这个力矩只能来自重力：小虫偏离水平位置后，重力对 O 有矩。"
+  },
+  {
+   "slide": 20,
+   "start": 720.31,
+   "end": 726.86,
+   "text": "重力矩是 m g r cosθ，其中 θ 等于 ωt。"
+  },
+  {
+   "slide": 20,
+   "start": 727.26,
+   "end": 735.35,
+   "text": "而 M 等于 ω dJ/dt，J 里只有虫那一项在变，dJ/dt 等于 2 m r dr/dt。"
+  },
+  {
+   "slide": 20,
+   "start": 735.75,
+   "end": 749.26,
+   "text": "两边相等，解出 dr/dt 等于 g cosθ 除以 2ω，把 ω 代进去，就是 7 l g 除以 24 v 零，再乘 cos(12 v 零 t 除以 7 l)。"
+  },
+  {
+   "slide": 21,
+   "start": 750.8,
+   "end": 752.67,
+   "text": "例四。"
+  },
+  {
+   "slide": 21,
+   "start": 753.07,
+   "end": 762.09,
+   "text": "一个跳板表演：演员 M 从距水平跳板高 h 处自由下落，落到跳板的一端 A，把另一端的演员 N 弹起来。"
+  },
+  {
+   "slide": 21,
+   "start": 762.49,
+   "end": 771.01,
+   "text": "设跳板匀质、长 l、质量 m 撇，可绕中点 C 在竖直平面内转动；两名演员质量都是 m。"
+  },
+  {
+   "slide": 21,
+   "start": 771.41,
+   "end": 778.13,
+   "text": "假定 M 与跳板的碰撞是完全非弹性碰撞，也就是碰后 M 随板一起动。"
+  },
+  {
+   "slide": 21,
+   "start": 778.53,
+   "end": 781.34,
+   "text": "问演员 N 能弹起多高？"
+  },
+  {
+   "slide": 21,
+   "start": 781.99,
+   "end": 789.36,
+   "text": "思路：碰撞瞬间角动量守恒，碰后 N 获得线速度，再按竖直上抛算高度。"
+  },
+  {
+   "slide": 22,
+   "start": 790.91,
+   "end": 792.78,
+   "text": "解。"
+  },
+  {
+   "slide": 22,
+   "start": 793.18,
+   "end": 797.26,
+   "text": "碰前 M 的速度 v 等于根号下 2gh。"
+  },
+  {
+   "slide": 22,
+   "start": 797.66,
+   "end": 805.65,
+   "text": "碰后瞬间，M 在 A 端、N 在 B 端，两者速度大小都是 u，等于 l/2 乘 ω。"
+  },
+  {
+   "slide": 22,
+   "start": 806.05,
+   "end": 814.26,
+   "text": "对 C 点角动量守恒：碰前只有 M，角动量 m v 乘 l/2；碰后是跳板加两个人。"
+  },
+  {
+   "slide": 22,
+   "start": 814.66,
+   "end": 825.12,
+   "text": "跳板绕中心的 J 是十二分之一 m 撇 l 方；两个人各在 l/2 处，各贡献 m l 方除以 4，合起来二分之一 m l 方。"
+  },
+  {
+   "slide": 22,
+   "start": 825.52,
+   "end": 838.34,
+   "text": "代入解出 ω，再算 N 的高度：h 撇等于 u 方除以 2g，等于 l 方 ω 方除以 8g，最后化成括号 3m 除以 m 撇加 6m 的平方，乘 h。"
+  },
+  {
+   "slide": 22,
+   "start": 838.74,
+   "end": 849.52,
+   "text": "检验：如果板很轻，m 撇趋于零，h 撇等于 h/4——两演员等质量，碰后各分一半动量，高度变成四分之一，合理。"
+  },
+  {
+   "slide": 23,
+   "start": 851.11,
+   "end": 853.25,
+   "text": "做一道概念题。"
+  },
+  {
+   "slide": 23,
+   "start": 853.65,
+   "end": 861.16,
+   "text": "一个转台以角速度 ω 转，人站在上面，双臂张开；然后他把双臂收回。"
+  },
+  {
+   "slide": 23,
+   "start": 861.56,
+   "end": 866.65,
+   "text": "问：收臂之后，系统的角速度和角动量怎么变？"
+  },
+  {
+   "slide": 23,
+   "start": 867.3,
+   "end": 874.52,
+   "text": "外力矩只有重力和支持力，都过轴，力矩为零，所以角动量守恒。"
+  },
+  {
+   "slide": 23,
+   "start": 874.92,
+   "end": 880.18,
+   "text": "收臂使质量靠近轴，J 变小，ω 必须变大。"
+  },
+  {
+   "slide": 23,
+   "start": 880.58,
+   "end": 885.36,
+   "text": "所以角动量不变、角速度变大，选 A。"
+  },
+  {
+   "slide": 24,
+   "start": 886.9,
+   "end": 888.77,
+   "text": "小结。"
+  },
+  {
+   "slide": 24,
+   "start": 889.17,
+   "end": 900.16,
+   "text": "质点的角动量 L 等于 r 叉乘 p，大小 r m v sinθ，方向右手螺旋；圆周运动时 L 等于 m r 方 ω 等于 Jω。"
+  },
+  {
+   "slide": 24,
+   "start": 900.56,
+   "end": 908.24,
+   "text": "质点角动量定理：M 等于 dL/dt，积分形式是冲量矩等于角动量的增量。"
+  },
+  {
+   "slide": 24,
+   "start": 908.64,
+   "end": 916.01,
+   "text": "M 等于零则 L 守恒；有两种情形：合外力为零，或者合力始终通过参考点。"
+  },
+  {
+   "slide": 24,
+   "start": 916.41,
+   "end": 926.2,
+   "text": "刚体定轴转动：L 等于 Jω，M 等于 d(Jω)/dt；J 不变时退化为转动定律。"
+  },
+  {
+   "slide": 24,
+   "start": 926.6,
+   "end": 933.15,
+   "text": "角动量守恒 Jω 等于常量，解释了收臂加速、跳板弹人这一类现象。"
+  },
+  {
+   "slide": 24,
+   "start": 933.55,
+   "end": 938.85,
+   "text": "下一节讲力矩做功与转动动能定理——那是对应的“功与能”。"
+  }
+ ],
+ "build_ts": 1792398895,
+ "logoScale": 0.67
+}

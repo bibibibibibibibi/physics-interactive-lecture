@@ -1,0 +1,4096 @@
+{
+ "title": "13-7 熵 熵增加原理",
+ "nav": "13-7　熵　熵增加原理",
+ "footer": "第十三章　热力学基础",
+ "character": "aqiang",
+ "characters": [
+  {
+   "id": "aqiang",
+   "name": "阿强"
+  },
+  {
+   "id": "professor",
+   "name": "博士讲师"
+  },
+  {
+   "id": "zhongshan",
+   "name": "中山装先生"
+  }
+ ],
+ "duration": 480.53,
+ "slides": [
+  {
+   "id": 1,
+   "kind": "page",
+   "heading": "封面",
+   "narration": "第十三章第七节。13-7，熵，以及熵增加原理。上一节讲了方向性，但只说「不能」，这一节要把它变成一个可以计算的量。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 282,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 十 三 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 300,
+     "y": 408,
+     "w": 1320,
+     "h": 170,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "热 力 学 基 础",
+        "size": 92,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 250,
+     "y": 588,
+     "w": 1420,
+     "h": 120,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "13-7　熵　熵增加原理",
+        "size": 40,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 220,
+     "y": 730,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "热温比　·　熵是态函数　·　熵增加　·　熵变计算",
+        "size": 31,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 850,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "把「方向」变成一个能算的量",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 0.0,
+    "2": 2.8,
+    "3": 7.42
+   },
+   "t_start": 0.0,
+   "t_end": 14.3,
+   "duration": 14.3,
+   "laser": []
+  },
+  {
+   "id": 2,
+   "kind": "page",
+   "heading": "本节路线",
+   "narration": "本节路线。先看热温比：可逆卡诺循环里，它绕一圈正好抵消。把任意可逆循环切成许多小卡诺循环，就得到环积分为零。由此定义熵——一个只由状态决定的量。然后是熵变的计算和四个例子。最后得到熵增加原理，它是判断过程方向的判据。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节路线",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 244,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "主线：热温比 → 环积分为零 → 熵 → 熵变计算 → 熵增加原理",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1　热温比",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 386,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "可逆卡诺循环：和为零",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 458,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2　任意可逆循环",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 512,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\oint \\mathrm{d}Q/T=0$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 584,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "3　熵是态函数",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 638,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\Delta S=\\int \\mathrm{d}Q/T$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 330,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4　熵变的计算",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 386,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "假设可逆路径",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 458,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "5　四个例子",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 512,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "混合 · 热传导 · 热源 · 自由膨胀",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 584,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "6　熵增加原理",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 638,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\Delta S\\ge 0$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "本节收口：熵增加原理 —— 孤立系统里，自发过程只朝熵大的方向走",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 15.1,
+    "2": 17.37,
+    "3": 23.22,
+    "4": 29.6,
+    "5": 33.72,
+    "6": 37.26
+   },
+   "t_start": 15.1,
+   "t_end": 42.89,
+   "duration": 27.79,
+   "laser": []
+  },
+  {
+   "id": 3,
+   "kind": "page",
+   "heading": "一　热温比",
+   "narration": "第二定律说过程有方向，但要定量判断方向，还得有个量。先看一个简单的量：热温比，就是吸收或放出的热量除以热源温度。对一个可逆卡诺循环，上边等温吸热 Q₁，下边等温放热 Q₂，两条竖边绝热不换热。算一算热温比：Q₁ 比 T₁ 减去 Q₂ 比 T₂，结果正好等于零。也就是说，绕一圈下来，热温比的总和是零。这个结果不寻常，它暗示存在一个状态量。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　热温比",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 437,
+     "name": "ts_carnot"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "热温比：$\\mathrm{d}Q/T$",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "热量除以热源温度",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "卡诺循环：两条等温 + 两条绝热",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 416,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$Q_1/T_1-Q_2/T_2=0$",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 476,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "绕一圈，热温比总和为零",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 536,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这暗示存在一个状态量",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 610,
+     "w": 740,
+     "h": 180,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "为什么是零",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$Q_1/Q_2=T_1/T_2$（卡诺循环）",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "所以两项大小相等、符号相反",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "只在可逆卡诺循环上成立",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 820,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "T–S 图上，卡诺循环就是一个矩形：横边是等温，竖边是绝热，面积就是净功",
+        "size": 26,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 43.69,
+    "2": 49.61,
+    "3": 56.25,
+    "4": 64.14,
+    "5": 70.04,
+    "6": 75.12
+   },
+   "t_start": 43.69,
+   "t_end": 79.95,
+   "duration": 36.26,
+   "laser": []
+  },
+  {
+   "id": 4,
+   "kind": "page",
+   "heading": "二　任意可逆循环",
+   "narration": "卡诺循环只是个开始。任意的可逆循环，都可以切成许多微小的卡诺循环。每个小循环的热温比之和都是零。把它们全加起来，内部的边界两两抵消。剩下的就是整圈的积分，也等于零：环积分 dQ 比 T 等于零。所以对任何可逆循环，热温比的环积分都是零。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　任意可逆循环",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 437,
+     "name": "ts_micro"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "切成许多小卡诺循环",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "任意可逆循环都可以这么切",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "每个小循环：热温比之和为零",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 416,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "相邻边界方向相反，两两抵消",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 480,
+     "w": 740,
+     "h": 110,
+     "tex": "\\oint \\frac{\\mathrm{d}Q}{T}=0",
+     "size": 36,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 620,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "对任何可逆循环都成立",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 690,
+     "w": 740,
+     "h": 170,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "克劳修斯等式",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$\\oint \\mathrm{d}Q/T=0$",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "它是熵存在的数学前提",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 890,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "内部边界一正一负正好抵消，只有最外圈留下来 —— 这就是环积分为零的来源",
+        "size": 26,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 80.75,
+    "2": 83.74,
+    "3": 89.18,
+    "4": 93.23,
+    "5": 97.78,
+    "6": 104.18
+   },
+   "t_start": 80.75,
+   "t_end": 110.05,
+   "duration": 29.3,
+   "laser": []
+  },
+  {
+   "id": 5,
+   "kind": "page",
+   "heading": "三　熵是态函数",
+   "narration": "环积分为零意味着什么？它意味着从 A 到 B 的热温比积分，与走哪条路无关。既然只由初末状态决定，就可以定义一个新的状态函数。这个函数叫熵，符号 S，定义为 ΔS 等于从 A 到 B 的可逆过程 dQ 比 T 的积分。写成微分形式是 dS 等于 dQ 比 T，单位是焦耳每开。注意这里要求可逆过程——不可逆过程不能直接积分。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　熵是态函数",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 437,
+     "name": "entropy_paths"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与路径无关",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "从 A 到 B，走哪条路都一样",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只由初末状态决定 ⇒ 态函数",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 416,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "定义：熵 $S$",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 462,
+     "w": 740,
+     "h": 110,
+     "tex": "\\Delta S=S_B-S_A=\\int_{A}^{B}\\frac{\\mathrm{d}Q}{T}",
+     "size": 28,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 590,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "微分形式：$\\mathrm{d}S=\\mathrm{d}Q/T$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 636,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "单位：J·K⁻¹",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 710,
+     "w": 1580,
+     "h": 130,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "注意：积分必须沿可逆过程",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "不可逆过程不能直接积分 —— 要另找一条可逆路径（下一节的办法）",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 110.85,
+    "2": 114.09,
+    "3": 119.53,
+    "4": 124.66,
+    "5": 133.29,
+    "6": 139.09
+   },
+   "t_start": 110.85,
+   "t_end": 145.34,
+   "duration": 34.49,
+   "laser": []
+  },
+  {
+   "id": 6,
+   "kind": "page",
+   "heading": "四　熵变的计算",
+   "narration": "熵变怎么算？有两条要点。第一，熵是态函数，与过程无关。所以不妨在初末态之间假设任一条可逆路径，按它来算。第二，系统分成几部分时，各部分的熵变之和等于总熵变。这两条让熵变的计算变得很灵活。尤其是第一条：实际过程往往不可逆，但我们总能另找一条可逆路径来算。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　熵变的计算",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两条要点",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 170,
+     "y": 300,
+     "w": 760,
+     "h": 200,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "① 熵是态函数",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "与过程无关",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "可以在初末态之间",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "假设任一条可逆路径",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 170,
+     "y": 520,
+     "w": 760,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "算的时候",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "按假设的可逆路径积分",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$\\Delta S=\\int \\mathrm{d}Q/T$",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "结果与假设无关",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 1010,
+     "y": 300,
+     "w": 740,
+     "h": 200,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "② 可加性",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "系统分成几部分",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "各部分的熵变之和",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "等于系统的总熵变",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 520,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "为什么灵活",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "实际过程往往不可逆",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "但总能另找一条",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "可逆路径来算",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 770,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这套办法的关键是：熵变只认初末态，过程怎么走是自由的",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 146.14,
+    "2": 151.08,
+    "3": 155.63,
+    "4": 161.86,
+    "5": 168.36,
+    "6": 172.43
+   },
+   "t_start": 146.14,
+   "t_end": 179.67,
+   "duration": 33.53,
+   "laser": []
+  },
+  {
+   "id": 7,
+   "kind": "page",
+   "heading": "例 1　不同温度的水混合",
+   "narration": "看第一个例子：不同温度的水混合。0.30 千克 90 摄氏度的水，和 0.70 千克 20 摄氏度的水混合，与外界没有能量交换。先求平衡温度：由能量守恒，是 41 摄氏度。混合是不可逆的，但熵变可以假设一条可逆的等压路径来算。两部分水分别积分：ΔS 等于 mc 乘 ln(T₂/T₁)，加起来是 20.7 焦耳每开。注意：熵增加了，但系统是孤立的、没有吸热——这就是不可逆的标志。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例 1　不同温度的水混合",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "0.30 kg、90 ℃ 的水 + 0.70 kg、20 ℃ 的水，与外界无能量交换",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 288,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 平衡温度",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 334,
+     "w": 760,
+     "h": 80,
+     "tex": "0.3c(363-T)+0.7c(293-T)=0\\ \\Rightarrow\\ T=314\\ \\mathrm{K}=41\\mathrm{^{\\circ}C}",
+     "size": 20,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 440,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 假设可逆的等压过程",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 486,
+     "w": 760,
+     "h": 90,
+     "tex": "\\Delta S=mc\\ln\\frac{T_2}{T_1}",
+     "size": 28,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 596,
+     "w": 760,
+     "h": 80,
+     "tex": "\\Delta S=0.3c\\ln\\frac{314}{363}+0.7c\\ln\\frac{314}{293}",
+     "size": 22,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 690,
+     "w": 760,
+     "h": 90,
+     "tex": "=20.7\\ \\mathrm{J\\cdot K^{-1}}",
+     "size": 30,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 220,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "关键一步",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "混合不可逆",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "但熵变只认初末态",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "所以假设可逆等压路径",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 486,
+     "w": 740,
+     "h": 220,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "结果说明什么",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "孤立系统，没有吸热",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "熵却增加了 20.7",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "所以混合不可逆",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 180.47,
+    "2": 184.57,
+    "3": 192.91,
+    "4": 198.33,
+    "5": 204.3,
+    "6": 213.22
+   },
+   "t_start": 180.47,
+   "t_end": 220.96,
+   "duration": 40.49,
+   "laser": []
+  },
+  {
+   "id": 8,
+   "kind": "page",
+   "heading": "例 2　热传导中的熵变",
+   "narration": "第二个例子：热传导。设一小段时间内，有 dQ 的热从 A 传到 B。A 的熵变是负的 dQ 比 T_A，B 的熵变是正的 dQ 比 T_B。两者相加，等于 dQ 乘以 T_A 减 T_B 再除以 T_A T_B。因为 T_A 大于 T_B，这个结果是正的。所以热传导作为孤立系统，熵总是增加的——不管温差多小，都不可逆。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例 2　热传导中的熵变",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "绝热壁隔开的两个物体 A、B：热量 dQ 从高温 A 传到低温 B",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 288,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 两部分各自的熵变",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 334,
+     "w": 760,
+     "h": 90,
+     "tex": "\\mathrm{d}S_A=-\\frac{\\mathrm{d}Q}{T_A},\\qquad \\mathrm{d}S_B=+\\frac{\\mathrm{d}Q}{T_B}",
+     "size": 26,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 448,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 加起来",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 494,
+     "w": 760,
+     "h": 100,
+     "tex": "\\mathrm{d}S=\\mathrm{d}Q\\left(\\frac{1}{T_B}-\\frac{1}{T_A}\\right)>0",
+     "size": 28,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "为什么大于零",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 344,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$T_A>T_B$ ⇒ $1/T_B>1/T_A$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 392,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以括号里是正的",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 452,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "热传导一定使熵增加",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 620,
+     "w": 1580,
+     "h": 150,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "即使温差很小，熵也在增加 —— 只是增加得慢",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "所以有限温差传热一定是不可逆的；只有温差趋于零的传热才可能可逆",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 810,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这就是「热不能自动倒流」的定量版本 —— 倒流会让总熵减少，不可能发生",
+        "size": 26,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 221.76,
+    "2": 224.92,
+    "3": 229.88,
+    "4": 237.7,
+    "5": 246.26,
+    "6": 252.16
+   },
+   "t_start": 221.76,
+   "t_end": 259.9,
+   "duration": 38.14,
+   "laser": []
+  },
+  {
+   "id": 9,
+   "kind": "page",
+   "heading": "五　熵增加原理",
+   "narration": "把这些例子合起来，就是熵增加原理。孤立系统中的熵永不减少。可逆过程熵不变，不可逆过程熵增加。写成式子就是 ΔS 大于等于零，等号只在可逆时成立。要注意成立的条件：必须是孤立系统，或者绝热过程。它给了我们一个判据：算一算熵变，就知道过程能不能自发进行。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五　熵增加原理",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 250,
+     "w": 765,
+     "h": 415,
+     "name": "entropy_growth"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "孤立系统的熵永不减少",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "孤立系统中",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "可逆过程：熵不变",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 402,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不可逆过程：熵增加",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 462,
+     "w": 740,
+     "h": 110,
+     "tex": "\\Delta S\\ge 0",
+     "size": 40,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 600,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "条件：孤立系统或绝热过程",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 670,
+     "w": 740,
+     "h": 180,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "它的用处",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "算一算熵变",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "大于零：能自发",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "小于零：不可能发生",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 985,
+     "y": 700,
+     "w": 765,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "到了平衡态，熵最大，过程自然停止",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 260.7,
+    "2": 264.6,
+    "3": 268.05,
+    "4": 272.46,
+    "5": 278.64,
+    "6": 284.27
+   },
+   "t_start": 260.7,
+   "t_end": 291.23,
+   "duration": 30.53,
+   "laser": []
+  },
+  {
+   "id": 10,
+   "kind": "page",
+   "heading": "六　熵增加原理与第二定律",
+   "narration": "所以第二定律可以换一种说法。一切自发过程，总是向着熵增加的方向进行。这就把前面那些零散的方向性统一起来了：热传导、功热转化、自由膨胀，都是熵增加。平衡态就是熵最大的状态。一旦到了平衡，熵不再增加，过程也就停止了。想一想：为什么孤立系统最终会变成一潭死水？因为熵到了最大，再没有可用的能量差。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "六　熵增加原理与第二定律",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第二定律的另一种说法",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一切自发过程",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 342,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "总是向着熵增加的方向",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 402,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "热传导：熵增",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 448,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "功热转化：熵增",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 494,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "自由膨胀：熵增",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "平衡态",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 292,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "熵最大的状态",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 352,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "到了平衡",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 398,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "熵不再增加",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 444,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "过程自然停止",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 580,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "所以：熵增加原理 = 第二定律的定量表述",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "「不能自发」的种种说法，最后都落在同一个量上 —— 熵",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 760,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "孤立系统最终变成一潭死水，不是因为没有能量，而是因为熵到了最大、能量差没了",
+        "size": 26,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 292.03,
+    "2": 295.81,
+    "3": 301.03,
+    "4": 309.83,
+    "5": 313.49,
+    "6": 318.59
+   },
+   "t_start": 292.03,
+   "t_end": 329.16,
+   "duration": 37.13,
+   "laser": []
+  },
+  {
+   "id": 11,
+   "kind": "page",
+   "heading": "例 3　水与热源接触升温",
+   "narration": "第三个例子：水与热源。1 千克 20 摄氏度的水，和 100 摄氏度的热源接触，最后达到 100 摄氏度。水的熵变：mc 乘 ln(373/293)，约 1.01 乘十的三次方焦耳每开。热源放出的热等于水吸收的热，除以热源温度 373 开，熵变约负 8.96 乘十的二次方。两者相加，约 113 焦耳每开，大于零。所以这个过程不可逆——有限温差传热，一定有熵产生。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例 3　水与热源接触升温",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1 kg、20 ℃ 的水与 100 ℃ 热源接触，升到 100 ℃；$c=4.18\\times10^{3}$ J·kg⁻¹·K⁻¹",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 288,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 水的熵变",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 334,
+     "w": 760,
+     "h": 90,
+     "tex": "\\Delta S_1=mc\\ln\\frac{T_2}{T_1}=1.01\\times10^{3}\\ \\mathrm{J/K}",
+     "size": 24,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 448,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 热源的熵变",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 494,
+     "w": 760,
+     "h": 90,
+     "tex": "\\Delta S_2=-\\frac{mc(T_2-T_1)}{T_2}=-8.96\\times10^{2}\\ \\mathrm{J/K}",
+     "size": 22,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 孤立系统的总熵变",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 1010,
+     "y": 334,
+     "w": 740,
+     "h": 90,
+     "tex": "\\Delta S=\\Delta S_1+\\Delta S_2=1.1\\times10^{2}\\ \\mathrm{J/K}",
+     "size": 24,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 448,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "大于零 ⇒ 不可逆",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 496,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "有限温差传热必产生熵",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 620,
+     "w": 1580,
+     "h": 150,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "注意两部分符号相反：水吸热熵增，热源放热熵减",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "但总熵还是增加了 —— 因为低温处相同的热引起的熵变更大",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 810,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这正是「热往低处流」的代价：热量没变少，但它的「品质」低了",
+        "size": 26,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 329.96,
+    "2": 333.46,
+    "3": 340.77,
+    "4": 349.79,
+    "5": 358.54,
+    "6": 364.22
+   },
+   "t_start": 329.96,
+   "t_end": 370.69,
+   "duration": 40.73,
+   "laser": []
+  },
+  {
+   "id": 12,
+   "kind": "page",
+   "heading": "例 4　理想气体自由膨胀",
+   "narration": "第四个例子：理想气体自由膨胀。绝热容器中间有隔板，一边是气体，一边是真空，抽掉隔板。过程绝热，而且不做功，所以内能不变、温度不变。但它是不可逆的，不能直接积分。于是假设一条可逆等温膨胀路径：ΔS 等于 νR 乘 ln(V₂/V₁)。因为 V₂ 大于 V₁，熵是增加的。可见熵增加与「温度变不变」无关。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例 4　理想气体自由膨胀",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "绝热容器、中间隔板，一边气体一边真空；抽掉隔板，体积由 $V_1$ 变为 $V_2$",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 288,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 这个过程的特殊性",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 344,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "绝热：$Q=0$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 390,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不对外做功：$W=0$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 446,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以 $\\Delta E=0$，温度不变",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 506,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "但过程不可逆，不能直接积分",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 假设可逆等温膨胀",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 1010,
+     "y": 334,
+     "w": 740,
+     "h": 100,
+     "tex": "\\Delta S=\\nu R\\ln\\frac{V_2}{V_1}",
+     "size": 30,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 448,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$V_2>V_1$ ⇒ $\\Delta S>0$",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 600,
+     "w": 1580,
+     "h": 150,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "熵增加与「温度变不变」无关",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "这里温度一点没变，熵照样增加 —— 因为体积变大了、分子更「无规」了",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 790,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "自由膨胀不做功、不换热，看起来「什么都没发生」，但熵如实记下了它的不可逆",
+        "size": 26,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 371.49,
+    "2": 375.66,
+    "3": 382.11,
+    "4": 387.84,
+    "5": 391.72,
+    "6": 398.96
+   },
+   "t_start": 371.49,
+   "t_end": 407.71,
+   "duration": 36.22,
+   "laser": []
+  },
+  {
+   "id": 13,
+   "kind": "page",
+   "heading": "例 5　理想气体的一般熵变",
+   "narration": "最后一个例子：理想气体的一般熵变。由第一定律和第二定律，dS 等于 νC_V dT 比 T 加上 νR dV 比 V。积分得 ΔS 等于 νC_V 乘 ln(T₂/T₁) 加 νR 乘 ln(V₂/V₁)。等温时第一项为零，只剩 νR ln(V₂/V₁)。等容时第二项为零；等压时用 C_p 代替 C_V。这三个特例要记住，做题时直接套。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例 5　理想气体的一般熵变",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "从第一定律与第二定律出发",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 272,
+     "w": 760,
+     "h": 90,
+     "tex": "\\mathrm{d}S=\\frac{\\mathrm{d}E+p\\,\\mathrm{d}V}{T}",
+     "size": 26,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 386,
+     "w": 760,
+     "h": 100,
+     "tex": "\\mathrm{d}S=\\nu C_{V,\\mathrm{m}}\\frac{\\mathrm{d}T}{T}+\\nu R\\frac{\\mathrm{d}V}{V}",
+     "size": 24,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 510,
+     "w": 760,
+     "h": 40,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "积分得一般式",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 552,
+     "w": 760,
+     "h": 100,
+     "tex": "\\Delta S=\\nu C_{V,\\mathrm{m}}\\ln\\frac{T_2}{T_1}+\\nu R\\ln\\frac{V_2}{V_1}",
+     "size": 22,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 226,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三种特例",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 282,
+     "w": 740,
+     "h": 38,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "等温",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 1010,
+     "y": 316,
+     "w": 740,
+     "h": 80,
+     "tex": "\\Delta S=\\nu R\\ln\\frac{V_2}{V_1}",
+     "size": 24,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 416,
+     "w": 740,
+     "h": 38,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "等容",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 1010,
+     "y": 450,
+     "w": 740,
+     "h": 80,
+     "tex": "\\Delta S=\\nu C_{V,\\mathrm{m}}\\ln\\frac{T_2}{T_1}",
+     "size": 24,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 550,
+     "w": 740,
+     "h": 38,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "等压",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 1010,
+     "y": 584,
+     "w": 740,
+     "h": 80,
+     "tex": "\\Delta S=\\nu C_{p,\\mathrm{m}}\\ln\\frac{T_2}{T_1}",
+     "size": 24,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 700,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "做题套路：先判断是哪种过程，再套对应的公式",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "等温看体积，等容看温度，等压也是看温度但用 $C_p$",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 408.51,
+    "2": 412.68,
+    "3": 420.71,
+    "4": 429.56,
+    "5": 434.74,
+    "6": 441.4
+   },
+   "t_start": 408.51,
+   "t_end": 446.14,
+   "duration": 37.63,
+   "laser": []
+  },
+  {
+   "id": 14,
+   "kind": "page",
+   "heading": "本节小结",
+   "narration": "小结。热温比绕可逆循环一圈之和为零，由此定义熵：ΔS 等于可逆过程 dQ/T 的积分。熵是态函数，算熵变时可以假设任一条可逆路径。熵增加原理：孤立系统的熵永不减少，可逆不变、不可逆增加。它给出了自发过程的方向判据。下一节讲第二定律的统计意义，看熵到底在数什么。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 热温比与熵",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "环积分为零 ⇒ 定义 $\\Delta S=\\int \\mathrm{d}Q/T$",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 熵是态函数",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 408,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只认初末态，可假设可逆路径计算",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 熵增加原理",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "孤立系统：$\\Delta S\\ge 0$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 356,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 判据",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 408,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\Delta S>0$ 能自发；$<0$ 不可能",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 470,
+     "w": 740,
+     "h": 170,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "下一节",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "13-8　第二定律的统计意义",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "熵到底在数什么",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 490,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一句话",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "热温比绕一圈归零",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "于是有了熵",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "孤立系统只朝熵大的方向走",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 120,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "第十三章 7/9：从「方向性」到「可以计算的熵」",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 446.94,
+    "2": 449.21,
+    "3": 457.39,
+    "4": 463.05,
+    "5": 469.76
+   },
+   "t_start": 446.94,
+   "t_end": 478.84,
+   "duration": 31.9,
+   "laser": []
+  }
+ ],
+ "subtitles": [
+  {
+   "slide": 1,
+   "start": 0.0,
+   "end": 2.4,
+   "text": "第十三章第七节。"
+  },
+  {
+   "slide": 1,
+   "start": 2.8,
+   "end": 7.02,
+   "text": "13-7，熵，以及熵增加原理。"
+  },
+  {
+   "slide": 1,
+   "start": 7.42,
+   "end": 13.73,
+   "text": "上一节讲了方向性，但只说「不能」，这一节要把它变成一个可以计算的量。"
+  },
+  {
+   "slide": 2,
+   "start": 15.1,
+   "end": 16.97,
+   "text": "本节路线。"
+  },
+  {
+   "slide": 2,
+   "start": 17.37,
+   "end": 22.82,
+   "text": "先看热温比：可逆卡诺循环里，它绕一圈正好抵消。"
+  },
+  {
+   "slide": 2,
+   "start": 23.22,
+   "end": 29.2,
+   "text": "把任意可逆循环切成许多小卡诺循环，就得到环积分为零。"
+  },
+  {
+   "slide": 2,
+   "start": 29.6,
+   "end": 33.32,
+   "text": "由此定义熵——一个只由状态决定的量。"
+  },
+  {
+   "slide": 2,
+   "start": 33.72,
+   "end": 36.86,
+   "text": "然后是熵变的计算和四个例子。"
+  },
+  {
+   "slide": 2,
+   "start": 37.26,
+   "end": 42.16,
+   "text": "最后得到熵增加原理，它是判断过程方向的判据。"
+  },
+  {
+   "slide": 3,
+   "start": 43.69,
+   "end": 49.21,
+   "text": "第二定律说过程有方向，但要定量判断方向，还得有个量。"
+  },
+  {
+   "slide": 3,
+   "start": 49.61,
+   "end": 55.85,
+   "text": "先看一个简单的量：热温比，就是吸收或放出的热量除以热源温度。"
+  },
+  {
+   "slide": 3,
+   "start": 56.25,
+   "end": 63.74,
+   "text": "对一个可逆卡诺循环，上边等温吸热 Q₁，下边等温放热 Q₂，两条竖边绝热不换热。"
+  },
+  {
+   "slide": 3,
+   "start": 64.14,
+   "end": 69.64,
+   "text": "算一算热温比：Q₁ 比 T₁ 减去 Q₂ 比 T₂，结果正好等于零。"
+  },
+  {
+   "slide": 3,
+   "start": 70.04,
+   "end": 74.72,
+   "text": "也就是说，绕一圈下来，热温比的总和是零。"
+  },
+  {
+   "slide": 3,
+   "start": 75.12,
+   "end": 79.22,
+   "text": "这个结果不寻常，它暗示存在一个状态量。"
+  },
+  {
+   "slide": 4,
+   "start": 80.75,
+   "end": 83.34,
+   "text": "卡诺循环只是个开始。"
+  },
+  {
+   "slide": 4,
+   "start": 83.74,
+   "end": 88.78,
+   "text": "任意的可逆循环，都可以切成许多微小的卡诺循环。"
+  },
+  {
+   "slide": 4,
+   "start": 89.18,
+   "end": 92.83,
+   "text": "每个小循环的热温比之和都是零。"
+  },
+  {
+   "slide": 4,
+   "start": 93.23,
+   "end": 97.38,
+   "text": "把它们全加起来，内部的边界两两抵消。"
+  },
+  {
+   "slide": 4,
+   "start": 97.78,
+   "end": 103.78,
+   "text": "剩下的就是整圈的积分，也等于零：环积分 dQ 比 T 等于零。"
+  },
+  {
+   "slide": 4,
+   "start": 104.18,
+   "end": 109.32,
+   "text": "所以对任何可逆循环，热温比的环积分都是零。"
+  },
+  {
+   "slide": 5,
+   "start": 110.85,
+   "end": 113.44,
+   "text": "环积分为零意味着什么？"
+  },
+  {
+   "slide": 5,
+   "start": 114.09,
+   "end": 119.13,
+   "text": "它意味着从 A 到 B 的热温比积分，与走哪条路无关。"
+  },
+  {
+   "slide": 5,
+   "start": 119.53,
+   "end": 124.26,
+   "text": "既然只由初末状态决定，就可以定义一个新的状态函数。"
+  },
+  {
+   "slide": 5,
+   "start": 124.66,
+   "end": 132.89,
+   "text": "这个函数叫熵，符号 S，定义为 ΔS 等于从 A 到 B 的可逆过程 dQ 比 T 的积分。"
+  },
+  {
+   "slide": 5,
+   "start": 133.29,
+   "end": 138.69,
+   "text": "写成微分形式是 dS 等于 dQ 比 T，单位是焦耳每开。"
+  },
+  {
+   "slide": 5,
+   "start": 139.09,
+   "end": 144.59,
+   "text": "注意这里要求可逆过程——不可逆过程不能直接积分。"
+  },
+  {
+   "slide": 6,
+   "start": 146.14,
+   "end": 148.04,
+   "text": "熵变怎么算？"
+  },
+  {
+   "slide": 6,
+   "start": 148.69,
+   "end": 150.68,
+   "text": "有两条要点。"
+  },
+  {
+   "slide": 6,
+   "start": 151.08,
+   "end": 155.23,
+   "text": "第一，熵是态函数，与过程无关。"
+  },
+  {
+   "slide": 6,
+   "start": 155.63,
+   "end": 161.46,
+   "text": "所以不妨在初末态之间假设任一条可逆路径，按它来算。"
+  },
+  {
+   "slide": 6,
+   "start": 161.86,
+   "end": 167.96,
+   "text": "第二，系统分成几部分时，各部分的熵变之和等于总熵变。"
+  },
+  {
+   "slide": 6,
+   "start": 168.36,
+   "end": 172.03,
+   "text": "这两条让熵变的计算变得很灵活。"
+  },
+  {
+   "slide": 6,
+   "start": 172.43,
+   "end": 178.86,
+   "text": "尤其是第一条：实际过程往往不可逆，但我们总能另找一条可逆路径来算。"
+  },
+  {
+   "slide": 7,
+   "start": 180.47,
+   "end": 184.17,
+   "text": "看第一个例子：不同温度的水混合。"
+  },
+  {
+   "slide": 7,
+   "start": 184.57,
+   "end": 192.51,
+   "text": "0.30 千克 90 摄氏度的水，和 0.70 千克 20 摄氏度的水混合，与外界没有能量交换。"
+  },
+  {
+   "slide": 7,
+   "start": 192.91,
+   "end": 197.93,
+   "text": "先求平衡温度：由能量守恒，是 41 摄氏度。"
+  },
+  {
+   "slide": 7,
+   "start": 198.33,
+   "end": 203.9,
+   "text": "混合是不可逆的，但熵变可以假设一条可逆的等压路径来算。"
+  },
+  {
+   "slide": 7,
+   "start": 204.3,
+   "end": 212.82,
+   "text": "两部分水分别积分：ΔS 等于 mc 乘 ln(T₂/T₁)，加起来是 20.7 焦耳每开。"
+  },
+  {
+   "slide": 7,
+   "start": 213.22,
+   "end": 220.23,
+   "text": "注意：熵增加了，但系统是孤立的、没有吸热——这就是不可逆的标志。"
+  },
+  {
+   "slide": 8,
+   "start": 221.76,
+   "end": 224.52,
+   "text": "第二个例子：热传导。"
+  },
+  {
+   "slide": 8,
+   "start": 224.92,
+   "end": 229.48,
+   "text": "设一小段时间内，有 dQ 的热从 A 传到 B。"
+  },
+  {
+   "slide": 8,
+   "start": 229.88,
+   "end": 237.3,
+   "text": "A 的熵变是负的 dQ 比 T_A，B 的熵变是正的 dQ 比 T_B。"
+  },
+  {
+   "slide": 8,
+   "start": 237.7,
+   "end": 245.86,
+   "text": "两者相加，等于 dQ 乘以 T_A 减 T_B 再除以 T_A T_B。"
+  },
+  {
+   "slide": 8,
+   "start": 246.26,
+   "end": 251.76,
+   "text": "因为 T_A 大于 T_B，这个结果是正的。"
+  },
+  {
+   "slide": 8,
+   "start": 252.16,
+   "end": 259.17,
+   "text": "所以热传导作为孤立系统，熵总是增加的——不管温差多小，都不可逆。"
+  },
+  {
+   "slide": 9,
+   "start": 260.7,
+   "end": 264.2,
+   "text": "把这些例子合起来，就是熵增加原理。"
+  },
+  {
+   "slide": 9,
+   "start": 264.6,
+   "end": 267.65,
+   "text": "孤立系统中的熵永不减少。"
+  },
+  {
+   "slide": 9,
+   "start": 268.05,
+   "end": 272.06,
+   "text": "可逆过程熵不变，不可逆过程熵增加。"
+  },
+  {
+   "slide": 9,
+   "start": 272.46,
+   "end": 278.24,
+   "text": "写成式子就是 ΔS 大于等于零，等号只在可逆时成立。"
+  },
+  {
+   "slide": 9,
+   "start": 278.64,
+   "end": 283.87,
+   "text": "要注意成立的条件：必须是孤立系统，或者绝热过程。"
+  },
+  {
+   "slide": 9,
+   "start": 284.27,
+   "end": 290.49,
+   "text": "它给了我们一个判据：算一算熵变，就知道过程能不能自发进行。"
+  },
+  {
+   "slide": 10,
+   "start": 292.03,
+   "end": 295.41,
+   "text": "所以第二定律可以换一种说法。"
+  },
+  {
+   "slide": 10,
+   "start": 295.81,
+   "end": 300.63,
+   "text": "一切自发过程，总是向着熵增加的方向进行。"
+  },
+  {
+   "slide": 10,
+   "start": 301.03,
+   "end": 309.43,
+   "text": "这就把前面那些零散的方向性统一起来了：热传导、功热转化、自由膨胀，都是熵增加。"
+  },
+  {
+   "slide": 10,
+   "start": 309.83,
+   "end": 313.09,
+   "text": "平衡态就是熵最大的状态。"
+  },
+  {
+   "slide": 10,
+   "start": 313.49,
+   "end": 318.19,
+   "text": "一旦到了平衡，熵不再增加，过程也就停止了。"
+  },
+  {
+   "slide": 10,
+   "start": 318.59,
+   "end": 323.68,
+   "text": "想一想：为什么孤立系统最终会变成一潭死水？"
+  },
+  {
+   "slide": 10,
+   "start": 324.33,
+   "end": 328.34,
+   "text": "因为熵到了最大，再没有可用的能量差。"
+  },
+  {
+   "slide": 11,
+   "start": 329.96,
+   "end": 333.06,
+   "text": "第三个例子：水与热源。"
+  },
+  {
+   "slide": 11,
+   "start": 333.46,
+   "end": 340.37,
+   "text": "1 千克 20 摄氏度的水，和 100 摄氏度的热源接触，最后达到 100 摄氏度。"
+  },
+  {
+   "slide": 11,
+   "start": 340.77,
+   "end": 349.39,
+   "text": "水的熵变：mc 乘 ln(373/293)，约 1.01 乘十的三次方焦耳每开。"
+  },
+  {
+   "slide": 11,
+   "start": 349.79,
+   "end": 358.14,
+   "text": "热源放出的热等于水吸收的热，除以热源温度 373 开，熵变约负 8.96 乘十的二次方。"
+  },
+  {
+   "slide": 11,
+   "start": 358.54,
+   "end": 363.82,
+   "text": "两者相加，约 113 焦耳每开，大于零。"
+  },
+  {
+   "slide": 11,
+   "start": 364.22,
+   "end": 369.96,
+   "text": "所以这个过程不可逆——有限温差传热，一定有熵产生。"
+  },
+  {
+   "slide": 12,
+   "start": 371.49,
+   "end": 375.26,
+   "text": "第四个例子：理想气体自由膨胀。"
+  },
+  {
+   "slide": 12,
+   "start": 375.66,
+   "end": 381.71,
+   "text": "绝热容器中间有隔板，一边是气体，一边是真空，抽掉隔板。"
+  },
+  {
+   "slide": 12,
+   "start": 382.11,
+   "end": 387.44,
+   "text": "过程绝热，而且不做功，所以内能不变、温度不变。"
+  },
+  {
+   "slide": 12,
+   "start": 387.84,
+   "end": 391.32,
+   "text": "但它是不可逆的，不能直接积分。"
+  },
+  {
+   "slide": 12,
+   "start": 391.72,
+   "end": 398.56,
+   "text": "于是假设一条可逆等温膨胀路径：ΔS 等于 νR 乘 ln(V₂/V₁)。"
+  },
+  {
+   "slide": 12,
+   "start": 398.96,
+   "end": 402.54,
+   "text": "因为 V₂ 大于 V₁，熵是增加的。"
+  },
+  {
+   "slide": 12,
+   "start": 402.94,
+   "end": 406.92,
+   "text": "可见熵增加与「温度变不变」无关。"
+  },
+  {
+   "slide": 13,
+   "start": 408.51,
+   "end": 412.28,
+   "text": "最后一个例子：理想气体的一般熵变。"
+  },
+  {
+   "slide": 13,
+   "start": 412.68,
+   "end": 420.31,
+   "text": "由第一定律和第二定律，dS 等于 νC_V dT 比 T 加上 νR dV 比 V。"
+  },
+  {
+   "slide": 13,
+   "start": 420.71,
+   "end": 429.16,
+   "text": "积分得 ΔS 等于 νC_V 乘 ln(T₂/T₁) 加 νR 乘 ln(V₂/V₁)。"
+  },
+  {
+   "slide": 13,
+   "start": 429.56,
+   "end": 434.34,
+   "text": "等温时第一项为零，只剩 νR ln(V₂/V₁)。"
+  },
+  {
+   "slide": 13,
+   "start": 434.74,
+   "end": 441.0,
+   "text": "等容时第二项为零；等压时用 C_p 代替 C_V。"
+  },
+  {
+   "slide": 13,
+   "start": 441.4,
+   "end": 445.41,
+   "text": "这三个特例要记住，做题时直接套。"
+  },
+  {
+   "slide": 14,
+   "start": 446.94,
+   "end": 448.81,
+   "text": "小结。"
+  },
+  {
+   "slide": 14,
+   "start": 449.21,
+   "end": 456.99,
+   "text": "热温比绕可逆循环一圈之和为零，由此定义熵：ΔS 等于可逆过程 dQ/T 的积分。"
+  },
+  {
+   "slide": 14,
+   "start": 457.39,
+   "end": 462.65,
+   "text": "熵是态函数，算熵变时可以假设任一条可逆路径。"
+  },
+  {
+   "slide": 14,
+   "start": 463.05,
+   "end": 469.36,
+   "text": "熵增加原理：孤立系统的熵永不减少，可逆不变、不可逆增加。"
+  },
+  {
+   "slide": 14,
+   "start": 469.76,
+   "end": 472.78,
+   "text": "它给出了自发过程的方向判据。"
+  },
+  {
+   "slide": 14,
+   "start": 473.18,
+   "end": 478.1,
+   "text": "下一节讲第二定律的统计意义，看熵到底在数什么。"
+  }
+ ],
+ "build_ts": 1792588188,
+ "logoScale": 0.67,
+ "theme": "wave"
+}

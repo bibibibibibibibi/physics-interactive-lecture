@@ -1,0 +1,4924 @@
+{
+ "title": "4-2 力矩 转动定律 转动惯量",
+ "nav": "4-2　力矩 转动定律 转动惯量",
+ "footer": "第四章　刚体转动和流体运动",
+ "logoScale": 0.67,
+ "engine": "edge",
+ "voice": "zh-CN-YunxiNeural",
+ "pages": [
+  {
+   "id": 1,
+   "narration": "[[1]]这一节 4-2。[[2]]上一节我们有了描述转动的语言：θ、ω、α。[[3]]现在要问：什么让刚体转起来？答案是力矩。这一节要建立转动定律 M 等于 Jα，再把它和平动的 F 等于 ma 对照起来。[[4]]三个关键词：力矩、转动定律、转动惯量。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 292,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 四 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 300,
+     "y": 420,
+     "w": 1320,
+     "h": 160,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "刚体转动和流体运动",
+        "size": 76,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 300,
+     "y": 606,
+     "w": 1320,
+     "h": 130,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4-2　力矩　转动定律　转动惯量",
+        "size": 50,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 766,
+     "w": 1480,
+     "h": 120,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "转动中 ",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "M = Jα",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "　与平动中 ",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "F = ma",
+        "size": 48,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": " 地位相同",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 220,
+     "y": 900,
+     "w": 1480,
+     "h": 90,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "力矩的方向与正负　·　转动定律的推导　·　转动惯量与平行轴定理",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "封面"
+  },
+  {
+   "id": 2,
+   "narration": "[[1]]先看一个判断：一个物体所受的合外力为零，如果开始时静止，它将永远保持静止。这句话对吗？[[2]]按牛顿第一定律，好像是对的。但请看这个反例：一对大小相等、方向相反、但不在同一条作用线上的力，合力为零，物体却会转起来——这就是力偶。[[3]]所以“合外力为零”不足以保证平衡，还必须有“合力矩为零”。这就说明：转动需要一个新的物理量来描述，它就是力矩。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "想一想",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 1580,
+     "h": 72,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一个物体所受的",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "合外力为零",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "，若开始时静止，",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 334,
+     "w": 1580,
+     "h": 72,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "则它将永远保持静止状态．这句话对吗？",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 240,
+     "y": 480,
+     "w": 1300,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "A．对",
+        "size": 46,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 240,
+     "y": 600,
+     "w": 1300,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "B．错",
+        "size": 46,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 760,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "反例：一对等大反向、但不在同一直线上的力——合力为零，",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 826,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "物体却转起来了．所以还要有",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "合力矩为零",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 916,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "描述转动，需要新的物理量：",
+        "size": 36,
+        "color": "#666",
+        "b": false
+       },
+       {
+        "t": "力矩",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "interactions": [
+    {
+     "at": 3,
+     "q": "一个物体所受的合外力为零，若开始时静止，则它将永远保持静止。这句话对吗？",
+     "answer": 1,
+     "options": [
+      "A．对",
+      "B．错"
+     ],
+     "explain": "错。合外力为零并不能保证物体不转：一对大小相等、方向相反、但作用线不重合的力（力偶），合力为零，合力矩却不为零，物体照样会转起来。所以平衡的条件是合外力为零且合力矩为零。"
+    }
+   ],
+   "heading": "想一想　合外力为零就静止吗"
+  },
+  {
+   "id": 3,
+   "narration": "[[1]]力矩，用来描述力对刚体的转动作用。[[2]]定义很直观：力的大小乘上力臂。力臂 d 是转轴到力的作用线的垂直距离。[[3]]写成公式就是 M 等于 F r sinθ，也等于 F d，其中 θ 是位矢 r 与力 F 的夹角。[[4]]注意两种极端：力沿着位矢方向，θ 等于零，力矩为零，推不动；力垂直于位矢，θ 等于 90 度，力矩最大。[[5]]写成矢量式就是 M 等于 r 叉乘 F，方向由右手螺旋定则确定。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 900,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　力矩",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 760,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "用来描述力对刚体的",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "转动作用",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 760,
+     "h": 130,
+     "tex": "M=Fr\\sin\\theta=Fd",
+     "size": 42,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 474,
+     "w": 760,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "d：",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "力臂",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "（转轴到力作用线的垂距）．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 566,
+     "w": 760,
+     "h": 120,
+     "tex": "\\vec M=\\vec r\\times\\vec F",
+     "size": 44,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 700,
+     "w": 760,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "方向：",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "右手螺旋",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "（四指 r → F，拇指为 M）．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 800,
+     "w": 760,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "F 沿 r：",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       },
+       {
+        "t": "M = 0",
+        "size": 36,
+        "color": "#666",
+        "b": false
+       },
+       {
+        "t": "；F ⊥ r：",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       },
+       {
+        "t": "M 最大",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1010,
+     "y": 250,
+     "w": 700,
+     "h": 548,
+     "name": "torque_def"
+    }
+   ],
+   "heading": "一　力矩"
+  },
+  {
+   "id": 4,
+   "narration": "[[1]]实际情况里，力不一定落在转动平面内。这时怎么办？[[2]]把力分解成两个分量：平行于转轴的分量 F_z，和垂直于转轴、也就是落在转动平面内的分量 F 垂直。[[3]]沿轴的那个分量，作用线平行于轴，到轴的距离为零，力矩为零；它只会把轴拉紧或压紧，不会让刚体转。[[4]]所以对转轴有贡献的，只有 F 垂直。于是 M_z 等于 r 乘 F 垂直再乘 sinθ。[[5]]这个结论很重要：以后算力矩，先看力在不在转动平面内，不在就只取垂直分量。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 900,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　力矩　不在转动平面内的力",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 760,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "若力 F 不在转动平面内，",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 306,
+     "w": 760,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "把它分解为",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "平行",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "和",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "垂直于",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "转轴的分量．",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 400,
+     "w": 760,
+     "h": 120,
+     "tex": "\\vec F=\\vec F_z+\\vec F_\\perp",
+     "size": 38,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 532,
+     "w": 760,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "F_z 对轴的力矩为零",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "（力臂为零）．",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 600,
+     "w": 760,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只有 ",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "F⊥",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": " 产生对转轴的力矩．",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 700,
+     "w": 760,
+     "h": 120,
+     "tex": "M_z=rF_\\perp\\sin\\theta",
+     "size": 40,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1000,
+     "y": 236,
+     "w": 700,
+     "h": 565,
+     "name": "torque_axis"
+    }
+   ],
+   "heading": "一　力不在转动平面内"
+  },
+  {
+   "id": 5,
+   "narration": "[[1]]一个刚体上往往不止一个力，力矩怎么合成？规则很简单：按矢量相加。[[2]]M 等于 M₁ 加 M₂ 加 M₃ 一直加下去。[[3]]对定轴转动，所有力矩都沿同一条轴，只有正反两个方向，于是矢量加法退化成代数和——同向取正、反向取负即可。[[4]]这就是为什么定轴转动的问题算起来特别省事。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　力矩　合力矩",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "刚体受多个力时，",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "合力矩等于各分力矩的矢量和",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "：",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 340,
+     "w": 1580,
+     "h": 140,
+     "tex": "\\vec M=\\vec M_1+\\vec M_2+\\vec M_3+\\cdots",
+     "size": 44,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 520,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "定轴转动时，各力矩都",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "沿同一条轴",
+        "size": 40,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "，",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 590,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "矢量加法退化为",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "代数和",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "：同向取正、反向取负．",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 720,
+     "w": 1580,
+     "h": 150,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "定轴转动：合力矩 = 各力矩的代数和",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 916,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这也是定轴转动问题比一般刚体问题简单的原因．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "一　合力矩"
+  },
+  {
+   "id": 6,
+   "narration": "[[1]]还有一个关键结论：刚体内一对作用力与反作用力的力矩，互相抵消。[[2]]看 i、j 两个质点：j 对 i 的力沿连线，i 对 j 的力也沿同一条连线，方向相反。[[3]]但与轴的距离不同，所以两个力矩的大小并不相同？——不，因为力的大小的也不同，两者的乘积恰好相等，而方向相反。[[4]]严格地说，这一对力沿同一直线，它们对同一点的合力矩为零。所以求刚体合力矩时，只需要算外力矩。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 900,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　力矩　内力矩",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 760,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "刚体内",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "作用力与反作用力",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "的力矩",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 306,
+     "w": 760,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "互相抵消．",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 400,
+     "w": 760,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "i、j 两质点的相互作用力",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 464,
+     "w": 760,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "沿同一条连线，等大反向．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 560,
+     "w": 760,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这对力对同一点的",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "合力矩为零",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 660,
+     "w": 760,
+     "h": 120,
+     "tex": "\\vec M_{ij}=-\\vec M_{ji}",
+     "size": 42,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 806,
+     "w": 760,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以求合力矩时",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "只需计外力矩",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1000,
+     "y": 236,
+     "w": 700,
+     "h": 583,
+     "name": "torque_internal"
+    }
+   ],
+   "heading": "一　内力矩"
+  },
+  {
+   "id": 7,
+   "narration": "[[1]]现在推导转动定律。出发点是牛顿第二定律，但要用在每一个质量元上。[[2]]取第 i 个质量元 Δm_i，它受外力 F_i，也受刚体内部其他质点的内力 F_i 撇。[[3]]每个质量元都在绕轴作圆周运动，所以只看切向：切向合力等于质量乘切向加速度。[[4]]而切向加速度等于 r_i 乘 α——这是上一节的角量与线量关系。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1000,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　转动定律　推导",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 232,
+     "w": 780,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "取第 i 个质量元 Δm",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "i",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "，它受",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "外力 F",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "i",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "、",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 294,
+     "w": 780,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "内力 F′",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "i",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 372,
+     "w": 780,
+     "h": 130,
+     "tex": "\\vec F_i+\\vec F_i'=\\Delta m_i\\vec a_i",
+     "size": 38,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 534,
+     "w": 780,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "每个质量元绕轴作圆周运动，",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "只看切向",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "：",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 616,
+     "w": 780,
+     "h": 150,
+     "tex": "F_{i\\mathrm t}+F_{i\\mathrm t}'=\\Delta m_i a_{i\\mathrm t}=\\Delta m_i r_i\\alpha",
+     "size": 30,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 792,
+     "w": 780,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "用了 ",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "a",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "t",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " = r",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "i",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "α",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 1000,
+     "y": 236,
+     "w": 700,
+     "h": 596,
+     "name": "rot_law"
+    }
+   ],
+   "heading": "二　转动定律　推导"
+  },
+  {
+   "id": 8,
+   "narration": "[[1]]下一步，把这个切向方程两边同乘 r_i。[[2]]左边变成力矩：力乘力臂，正是切向力对轴的力矩。右边出现 Δm_i r_i 方乘 α。[[3]]对所有质量元求和。内力矩成对相消，那一项整体为零。[[4]]于是左边只剩外力矩之和，右边是括号里那一堆乘 α。括号里这个量，我们把它定义成转动惯量 J。[[5]]于是得到 M 等于 Jα。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　转动定律　推导（续）",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两边同乘 ",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "r",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "i",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "，再对所有质量元求和：",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 1580,
+     "h": 150,
+     "tex": "\\sum_i F_{i\\mathrm t}r_i+\\sum_i F_{i\\mathrm t}'r_i=\\left(\\sum_i\\Delta m_ir_i^2\\right)\\alpha",
+     "size": 34,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 506,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "内力矩成对相消 ⇒ ",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "Σ F′",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "it",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " r",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "i",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " = 0",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 606,
+     "w": 1580,
+     "h": 140,
+     "tex": "\\sum_i F_{i\\mathrm t}r_i=\\left(\\sum_i\\Delta m_ir_i^2\\right)\\alpha",
+     "size": 36,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 782,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "左边是",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "合外力矩 M",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "；括号里定义为",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "转动惯量 J",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 878,
+     "w": 1580,
+     "h": 110,
+     "tex": "M=J\\alpha",
+     "size": 50,
+     "color": "#C00000",
+     "align": "center"
+    }
+   ],
+   "heading": "二　转动定律　推导（续）"
+  },
+  {
+   "id": 9,
+   "narration": "[[1]]把转动定律说成话：刚体定轴转动的角加速度，与它所受的合外力矩成正比，与刚体的转动惯量成反比。[[2]]写成 M 等于 Jα，它和平动中的 F 等于 ma 地位完全相当：M 对应 F，J 对应 m，α 对应 a。[[3]]三条讨论：第一，α 与 M 同方向；第二，这是瞬时关系，每一时刻都成立；第三，合外力矩为零，角速度就保持不变——这就是转动中的惯性定律。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　转动定律",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 120,
+     "tex": "M=J\\alpha",
+     "size": 50,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 386,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "刚体定轴转动的",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "角加速度",
+        "size": 40,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "与所受",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "合外力矩成正比",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "，",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 456,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "转动惯量成反比",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "——转动定律．",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 566,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（1）",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "α 与 M 同方向；",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 632,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（2）",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "瞬时关系，每一时刻都成立；",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 698,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（3）",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "M = 0 ⇒ ω = 常量（转动惯性定律）．",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 812,
+     "w": 1580,
+     "h": 72,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与平动对照：",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "M ↔ F",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "，",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "J ↔ m",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "，",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "α ↔ a",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 900,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同样是“瞬时”“同向”“矢量”三件事．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "二　转动定律"
+  },
+  {
+   "id": 10,
+   "narration": "[[1]]转动惯量 J，定义式就是刚才括号里那一堆：每个质量元的质量乘上它到轴的距离的平方，再求和。[[2]]对连续分布的刚体，求和变成积分：J 等于 r 方对 dm 的积分。[[3]]单位是千克二次方米。[[4]]它的意义：转动惯性的量度。质量相同，转动惯量越大，越难让它转起来，也越难让它停下来。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　转动惯量",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 860,
+     "h": 140,
+     "tex": "J=\\sum_i\\Delta m_ir_i^2",
+     "size": 44,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 406,
+     "w": 860,
+     "h": 130,
+     "tex": "J=\\int r^2\\,\\mathrm dm",
+     "size": 44,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 546,
+     "w": 860,
+     "h": 58,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（质量元连续分布）",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 626,
+     "w": 860,
+     "h": 64,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "单位：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "kg·m²",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 1080,
+     "y": 250,
+     "w": 670,
+     "h": 300,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "J 取决于三件事",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "① 总质量",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "② 质量怎么分布",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "　（离轴越远，贡献越大）",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "③ 转轴的位置与方向",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 720,
+     "w": 1580,
+     "h": 68,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "意义：",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "转动惯性的量度",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 800,
+     "w": 1580,
+     "h": 58,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质量相同，J 越大，越难改变它的转动状态",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 880,
+     "w": 1580,
+     "h": 110,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "同一个刚体，换个转轴 J 就变 —— 谈 J 必须说清「绕哪条轴」",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "三　转动惯量"
+  },
+  {
+   "id": 11,
+   "narration": "[[1]]J 怎么算？分两种情况。[[2]]质量离散分布：J 等于各个质点的质量乘各自半径平方，再相加。[[3]]质量连续分布：求和换成积分；如果知道体密度 ρ，就写成 ρ r 方对体积的积分。[[4]]所以做这类题，第一步永远是选质量元、写出 dm，第二步才是积分。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　转动惯量　计算方法",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 238,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质量离散分布：",
+        "size": 40,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 320,
+     "w": 1580,
+     "h": 130,
+     "tex": "J=\\sum_j\\Delta m_jr_j^2=m_1r_1^2+m_2r_2^2+\\cdots",
+     "size": 36,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 480,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质量连续分布：",
+        "size": 40,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 562,
+     "w": 1580,
+     "h": 130,
+     "tex": "J=\\int r^2\\,\\mathrm dm=\\int_V\\rho r^2\\,\\mathrm dV",
+     "size": 36,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 726,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "dm：质量元　　d V：体积元　　ρ：体密度",
+        "size": 36,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 830,
+     "w": 1580,
+     "h": 72,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "做题两步：",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "① 取质量元写出 dm；② 积分．",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "三　转动惯量的计算"
+  },
+  {
+   "id": 12,
+   "narration": "[[1]]转动惯量不是一个固定的数，它跟三件事有关。[[2]]第一，与刚体的体密度有关——质量分布在离轴远的地方，J 就大。[[3]]第二，与几何形状有关，因为形状决定了质量怎么分布。[[4]]第三，也是最重要的：与转轴的位置有关。同一个物体，绕不同的轴转，转动惯量不同。所以以后说 J，一定要说清楚是“对哪条轴”的转动惯量。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　转动惯量与哪些因素有关",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与以下三个因素有关：",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 360,
+     "w": 1580,
+     "h": 72,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（1）与刚体的",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "体密度 ρ",
+        "size": 40,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": " 有关；",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 470,
+     "w": 1580,
+     "h": 72,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（2）与刚体的",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "几何形状",
+        "size": 40,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "（及密度分布）有关；",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 580,
+     "w": 1580,
+     "h": 72,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（3）与",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "转轴的位置",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": " 有关．",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 150,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "质量分布离轴越远，J 越大 —— 飞轮把质量做在外缘就是这个道理",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 920,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以说到 J，必须说明是“对哪一条轴”的转动惯量．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "三　与哪些因素有关"
+  },
+  {
+   "id": 13,
+   "narration": "[[1]]看例二。质量 m、长 l 的均匀细棒，求通过棒中心并与棒垂直的轴的转动惯量。[[2]]设线密度 λ，在距轴 r 处取一个长度 dr 的质量元，它的质量是 λ dr。[[3]]这个质量元对轴的转动惯量是 r 方乘 dm，等于 r 方 λ dr。[[4]]积分从负 l/2 到正 l/2，因为轴在中间，两边对称，写两倍的零到 l/2。[[5]]把 λ 换成 m 除以 l，积出来就是十二分之一 m l 方。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 900,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例2　细棒绕中心轴",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 760,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质量 m、长 l 的均匀细棒，求通过",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 306,
+     "w": 760,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "棒中心并与棒垂直的轴的 J．",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 400,
+     "w": 760,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "设线密度 λ，取质量元 ",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "dm = λ dr",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 490,
+     "w": 760,
+     "h": 120,
+     "tex": "\\mathrm dJ=r^2\\,\\mathrm dm=r^2\\lambda\\,\\mathrm dr",
+     "size": 36,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 620,
+     "w": 760,
+     "h": 160,
+     "tex": "J_C=\\int_{-l/2}^{l/2}r^2\\lambda\\,\\mathrm dr=2\\int_0^{l/2}r^2\\frac{m}{l}\\,\\mathrm dr",
+     "size": 28,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 796,
+     "w": 760,
+     "h": 120,
+     "tex": "J_C=\\frac{1}{12}ml^2",
+     "size": 44,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 1020,
+     "y": 300,
+     "w": 780,
+     "h": 462,
+     "name": "rod_center"
+    }
+   ],
+   "heading": "例2　细棒绕中心轴"
+  },
+  {
+   "id": 14,
+   "narration": "[[1]]如果换一条轴，是不是要重新积分？不必，有平行轴定理。[[2]]质量为 m 的刚体，如果对过质心的那条轴转动惯量是 J_C，那么对任一与它平行、相距 d 的轴，转动惯量是 J_O 等于 J_C 加 m d 方。[[3]]注意这个定理只能用于“一条过质心、另一条与它平行”这一对轴，而且 d 是两轴之间的距离。[[4]]物理意义也直观：质心轴是所有平行轴里转动惯量最小的那条。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 900,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　平行轴定理",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 760,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质量为 m 的刚体，对过质心轴的转动",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 306,
+     "w": 760,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "惯量为 J",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "C",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "，则对任一与之平行、相距 d",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 372,
+     "w": 760,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "的轴：",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 470,
+     "w": 760,
+     "h": 130,
+     "tex": "J_O=J_C+md^2",
+     "size": 44,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 626,
+     "w": 760,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只能用在这两条",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "互相平行",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "的轴上．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 724,
+     "w": 760,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质心轴的 J ",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "最小",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "（d = 0 时取等）．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 960,
+     "y": 300,
+     "w": 800,
+     "h": 504,
+     "name": "parallel_axis"
+    }
+   ],
+   "heading": "四　平行轴定理"
+  },
+  {
+   "id": 15,
+   "narration": "[[1]]用平行轴定理，马上可以得到细棒绕端点的转动惯量。[[2]]质心轴到端点轴的距离是 l/2，所以 J 等于 J_C 加 m 乘 l/2 的平方。[[3]]十二分之一加四分之一等于三分之一。[[4]]注意这个结果比绕中心时大四倍——离轴越远，转动惯量越大，这就是刚才那条规律的体现。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1000,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例2　续　细棒绕端点轴",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 900,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两轴平行，相距 ",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "d = l/2",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 340,
+     "w": 900,
+     "h": 150,
+     "tex": "J=J_C+m\\left(\\frac{l}{2}\\right)^2",
+     "size": 38,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 512,
+     "w": 900,
+     "h": 140,
+     "tex": "=\\frac{1}{12}ml^2+\\frac{1}{4}ml^2=\\frac{1}{3}ml^2",
+     "size": 38,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 700,
+     "w": 900,
+     "h": 72,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "绕端点：",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "J = ml²/3",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 790,
+     "w": 900,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "比绕中心大 4 倍——离轴越远，J 越大．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 1020,
+     "y": 330,
+     "w": 780,
+     "h": 414,
+     "name": "rod_end"
+    }
+   ],
+   "heading": "例2　续　绕端点轴"
+  },
+  {
+   "id": 16,
+   "narration": "[[1]]例三，这是一个典型的联接体问题。质量 m_A 的物体 A 静止在光滑水平面上，用一根质量不计的绳子连接，绳跨过半径 R、质量 m_C 的圆柱形滑轮 C，另一端系着质量 m_B 的物体 B，B 竖直悬挂。[[2]]滑轮与绳之间无滑动，轴承摩擦不计。[[3]]求：两物体的线加速度、两段绳的张力；以及 B 从静止落下距离 y 时的速率。[[4]]注意滑轮有质量，所以两边张力不相等——这是本题的关键。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 800,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例3　滑轮与两物块",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 238,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质量 m",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "A",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 的物体 A 静止在光滑水平面上，",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 304,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "经质量不计的绳跨过半径 R、质量 m",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "C",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 的",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 370,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "圆柱形滑轮 C，系住竖直悬挂的物体 B．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 462,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "滑轮与绳间",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "无滑动",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "，轴承摩擦不计．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 552,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "求：（1）两物体的线加速度、",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 618,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "　　　两段绳的张力；",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 684,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（2）B 由静止落下 y 时的速率．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 780,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "关键：滑轮有质量 ⇒ ",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       },
+       {
+        "t": "两段张力不等",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1040,
+     "y": 330,
+     "w": 700,
+     "h": 414,
+     "name": "pulley_blocks"
+    }
+   ],
+   "heading": "例3　滑轮与两物块"
+  },
+  {
+   "id": 17,
+   "narration": "[[1]]解法：隔离法。把 A、B、滑轮分别隔离出来，各自受力分析。[[2]]A 在水平方向只受绳的拉力 F_T1，所以 F_T1 等于 m_A a。[[3]]B 受重力向下、绳的拉力向上，所以 m_B g 减 F_T2 等于 m_B a。[[4]]滑轮受两段绳的拉力，产生力偶：R F_T2 减 R F_T1 等于 Jα。[[5]]再补一个约束条件：绳不打滑，所以 a 等于 Rα。四个方程，四个未知量。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 820,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例3　解　隔离法",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "隔离 A、B 与滑轮，取图示正方向：",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 340,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "对 A：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "F",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "T1",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " = m",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "A",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "a",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 414,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "对 B：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "m",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "B",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "g − F",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "T2",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " = m",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "B",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "a",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 488,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "对滑轮：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 548,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "R F",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "T2",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " − R F",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "T1",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " = Jα",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 636,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "约束（无滑动）：",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "a = Rα",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 726,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四个方程，四个未知量．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 802,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "圆柱滑轮：",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "J = ½ m",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "C",
+        "size": 22,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "R²",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 0,
+     "x": 1040,
+     "y": 300,
+     "w": 700,
+     "h": 414,
+     "name": "pulley_blocks"
+    }
+   ],
+   "heading": "例3　解　隔离法"
+  },
+  {
+   "id": 18,
+   "narration": "[[1]]把 a 等于 Rα 和 J 等于二分之一 m_C R 方代进去，R 可以约掉。[[2]]解这个方程组，得到加速度 a 等于 m_B g 除以 m_A 加 m_B 加 m_C 的一半。[[3]]分母里多出来的 m_C/2，正是滑轮转动惯量折算过来的“等效力质量”。[[4]]两段张力也解出来了：水平段 F_T1 等于 m_A a；竖直段 F_T2 等于括号 m_A 加 m_C/2 乘 a。可以看到 F_T2 比 F_T1 大——差值正是用来让滑轮转起来的。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例3　解　结果",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 232,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "代入 ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "a = Rα",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "、",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "J = ½m",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "C",
+        "size": 22,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "R²",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "，R 约去后解得：",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 320,
+     "w": 1580,
+     "h": 150,
+     "tex": "a=\\frac{m_{\\mathrm B}g}{m_{\\mathrm A}+m_{\\mathrm B}+m_{\\mathrm C}/2}",
+     "size": 40,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 500,
+     "w": 1580,
+     "h": 140,
+     "tex": "F_{\\mathrm T1}=\\frac{m_{\\mathrm A}m_{\\mathrm B}g}{m_{\\mathrm A}+m_{\\mathrm B}+m_{\\mathrm C}/2}",
+     "size": 32,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 660,
+     "w": 1580,
+     "h": 140,
+     "tex": "F_{\\mathrm T2}=\\frac{(m_{\\mathrm A}+m_{\\mathrm C}/2)m_{\\mathrm B}g}{m_{\\mathrm A}+m_{\\mathrm B}+m_{\\mathrm C}/2}",
+     "size": 30,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 828,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "分母中的 ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "m",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "C",
+        "size": 22,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "/2",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "：滑轮转动惯量折算的等效力质量．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 904,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "F",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "T2",
+        "size": 22,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " > F",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "T1",
+        "size": 22,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "：差值用来让滑轮转起来．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "例3　解　结果"
+  },
+  {
+   "id": 19,
+   "narration": "[[1]]第二问，B 从静止开始作匀加速直线运动，落下距离 y 时的速率，直接用平动的运动学公式 v 方等于 2 a y。[[2]]把刚才的 a 代进去，就得到这个结果。[[3]]顺带做一个检验：如果滑轮质量为零，令 m_C 等于零，两段张力就相等，回到熟悉的阿特伍德机结果；如果 m_A 也等于零，就退化成自由落体。[[4]]这种“令某个量趋于零、看结果是否合理”的习惯，值得养成。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例3　解（2）",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "B 由静止作匀加速直线运动，下落 y 时速率为：",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 1580,
+     "h": 180,
+     "tex": "v=\\sqrt{2ay}=\\sqrt{\\frac{2m_{\\mathrm B}gy}{m_{\\mathrm A}+m_{\\mathrm B}+m_{\\mathrm C}/2}}",
+     "size": 36,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 560,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "检验：令 ",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "m",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "C",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " = 0",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "，得 ",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "F",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "T1",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " = F",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "T2",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "，",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 636,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "回到轻滑轮的阿特伍德机结果．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 736,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "再令 ",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "m",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "A",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " = 0",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "，退化为自由落体 ",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "v = √(2gy)",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 846,
+     "w": 1580,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "习惯：令某个量趋于零，看结果是否退化为已知情形",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "例3　解（2）"
+  },
+  {
+   "id": 20,
+   "narration": "[[1]]例四。一根长 l、质量 m 的均匀细杆竖直放置，下端与固定铰链 O 相接，可以绕它转动。[[2]]竖直放置是不稳定平衡：稍微一碰，细杆就在重力作用下绕 O 转下来。[[3]]求它转到与竖直线成 θ 角时的角加速度和角速度。[[4]]注意：这里重力矩随 θ 变化，所以角加速度不是常量，不能套匀变速公式；要回到定义，用积分。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 900,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例4　细杆绕铰链倒下",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 238,
+     "w": 780,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "长 l、质量 m 的均匀细杆竖直放置，下端",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 304,
+     "w": 780,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与固定铰链 O 相接，可绕其转动．",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 400,
+     "w": 780,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "竖直位置是",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "不稳定平衡",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "：受微小",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 466,
+     "w": 780,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "扰动后，在重力作用下转下．",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 560,
+     "w": 780,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "求：转到与竖直线成 θ 角时的 ",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "α",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": " 与 ",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "ω",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 660,
+     "w": 780,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "重力矩随 θ 变化 ⇒ α 不是常量，",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 722,
+     "w": 780,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不能用匀变速公式，要积分．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 0,
+     "x": 1040,
+     "y": 220,
+     "w": 560,
+     "h": 603,
+     "name": "falling_rod"
+    }
+   ],
+   "heading": "例4　细杆绕铰链倒下"
+  },
+  {
+   "id": 21,
+   "narration": "[[1]]先求角加速度。细杆受重力和铰链的约束力，但约束力通过 O 点，对 O 的力矩为零，所以只有重力产生力矩。[[2]]重力作用在质心，力臂是 l/2 乘 sinθ。[[3]]所以重力矩等于二分之一 m g l sinθ，等于 Jα。[[4]]绕端点转动惯量是三分之一 m l 方。[[5]]代进去，解出 α 等于 3g sinθ 除以 2l。可以看到：θ 越大，α 越大——杆越倒越快。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例4　解　角加速度",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "重力矩：",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "约束力过 O，力矩为零，只有重力有效．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 326,
+     "w": 1580,
+     "h": 130,
+     "tex": "M=\\frac{1}{2}mgl\\sin\\theta",
+     "size": 40,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 478,
+     "w": 1580,
+     "h": 120,
+     "tex": "\\frac{1}{2}mgl\\sin\\theta=J\\alpha",
+     "size": 38,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 620,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "其中 ",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "J = ⅓ m l²",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "（绕端点）．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 716,
+     "w": 1580,
+     "h": 140,
+     "tex": "\\alpha=\\frac{3g}{2l}\\sin\\theta",
+     "size": 46,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 886,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "θ 越大 α 越大 —— 杆越倒越快．",
+        "size": 36,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "例4　解　角加速度"
+  },
+  {
+   "id": 22,
+   "narration": "[[1]]再求角速度。α 等于 dω/dt，但它是 θ 的函数，直接对时间积分不方便。[[2]]用链式法则换一下：dω/dt 等于 dω/dθ 乘 dθ/dt，而 dθ/dt 就是 ω。[[3]]于是 α 等于 ω dω/dθ，可以分离变量：ω dω 等于 α dθ。[[4]]把 α 代进去，两边积分，左边从 0 到 ω，右边从 0 到 θ。[[5]]利用初始条件：杆从竖直位置静止开始，θ 等于零时 ω 等于零。积出来 ω 方等于 3g/l 乘 1 减 cosθ，开方即可。[[6]]检查一下：θ 等于 90 度时，ω 等于根号下 3g/l——这个结果可以和能量守恒对照。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例4　解　角速度",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 232,
+     "w": 1580,
+     "h": 160,
+     "tex": "\\alpha=\\frac{\\mathrm d\\omega}{\\mathrm dt}=\\frac{\\mathrm d\\omega}{\\mathrm d\\theta}\\cdot\\frac{\\mathrm d\\theta}{\\mathrm dt}=\\omega\\frac{\\mathrm d\\omega}{\\mathrm d\\theta}",
+     "size": 32,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 420,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "分离变量：",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 500,
+     "w": 1580,
+     "h": 130,
+     "tex": "\\omega\\,\\mathrm d\\omega=\\frac{3g}{2l}\\sin\\theta\\,\\mathrm d\\theta",
+     "size": 36,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 660,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "积分，用初始条件 ",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "θ = 0 时 ω = 0",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "：",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 752,
+     "w": 1580,
+     "h": 130,
+     "tex": "\\frac{1}{2}\\omega^2=\\frac{3g}{2l}(1-\\cos\\theta)",
+     "size": 34,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 890,
+     "w": 1580,
+     "h": 120,
+     "tex": "\\omega=\\sqrt{\\frac{3g}{l}(1-\\cos\\theta)}",
+     "size": 40,
+     "color": "#C00000",
+     "align": "center"
+    }
+   ],
+   "heading": "例4　解　角速度"
+  },
+  {
+   "id": 23,
+   "narration": "[[1]]最后做一个小题。轻绳绕在有水平轴的定滑轮上，滑轮质量 m。第一次，绳下端挂一个重 P 的物体，物体下落带动滑轮，角加速度 α₁；第二次，把物体去掉，直接用大小等于 P 的力向下拉绳，角加速度 α₂。[[2]]比较两者的大小。[[3]]关键区别在绳的张力：挂物体时，物体本身要加速下落，所以绳的张力 F_T 小于 P；直接拉时，张力就等于 P。[[4]]力矩大，角加速度就大，所以 α₂ 大于 α₁。选 A。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "随堂练习　两种拉法",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 234,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "轻绳绕在有水平轴的定滑轮上，滑轮质量 m．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 296,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第一次挂重 P 的物体，滑轮角加速度 α₁；",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 358,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第二次用大小等于 P 的力直接拉绳，角加速度 α₂．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 448,
+     "w": 1580,
+     "h": 66,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "则 α₂（　　）α₁",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 200,
+     "y": 560,
+     "w": 380,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "A．大于",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 640,
+     "y": 560,
+     "w": 380,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "B．小于",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 200,
+     "y": 676,
+     "w": 380,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "C．等于",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 640,
+     "y": 676,
+     "w": 380,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "D．无法判断",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 840,
+     "w": 780,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "挂物时物体要加速下落 ⇒",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 888,
+     "w": 780,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "张力 $F_T<P$；直接拉时张力就是 $P$．",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 960,
+     "w": 780,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "力矩大的，角加速度就大．",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 1010,
+     "y": 560,
+     "w": 740,
+     "h": 260,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "关键：绳的张力",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "挂物体：P − F_T = ma ⇒ F_T < P",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "直接拉：张力就是 P",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "力矩大 ⇒ α 大",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "interactions": [
+    {
+     "at": 3,
+     "q": "轻绳绕在定滑轮上，滑轮质量 m。第一次挂重 P 的物体，角加速度 α₁；第二次用大小等于 P 的力直接拉绳，角加速度 α₂。则 α₂ 与 α₁ 的关系是（　　）",
+     "answer": 0,
+     "options": [
+      "A．大于",
+      "B．小于",
+      "C．等于",
+      "D．无法判断"
+     ],
+     "explain": "挂物体时，物体本身要加速下落，由 P − F_T = ma 得绳的张力 F_T < P，产生的力矩为 F_T R；直接拉绳时张力就是 P，力矩为 P R。两者 J 相同，力矩大的角加速度大，所以 α₂ > α₁，选 A。"
+    }
+   ],
+   "heading": "随堂练习　两种拉法"
+  },
+  {
+   "id": 24,
+   "narration": "[[1]]小结。力矩 M 等于 r 叉乘 F，大小等于 F r sinθ 也等于 F d；方向由右手螺旋定则确定，定轴转动时用正负号表示。[[2]]力不在转动平面内时，只有垂直分量对轴有矩；刚体内力矩成对相消，所以只用算外力矩。[[3]]转动定律 M 等于 Jα，与平动的 F 等于 ma 地位相同。[[4]]转动惯量 J 等于 Σ m r 方，等于 ∫r²dm，它由质量分布和轴的位置共同决定；换平行轴时用 J_O 等于 J_C 加 m d 方。[[5]]下一节讲角动量与角动量守恒——那是转动里的“动量守恒”。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "力矩",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "：",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "M = r × F",
+        "size": 40,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "，大小 ",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "F r sinθ = F d",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "．",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 336,
+     "w": 1580,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不在转动平面内的力：只有 ",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "F⊥",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": " 有矩；",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "内力矩成对相消",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 432,
+     "w": 1580,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "转动定律",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "：",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "M = Jα",
+        "size": 40,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "，与 ",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "F = ma",
+        "size": 40,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": " 地位相同．",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 528,
+     "w": 1580,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "转动惯量",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "：J = ΣΔm r² = ∫r²dm；",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 600,
+     "w": 1580,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "由质量分布与",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "轴的位置",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "共同决定．",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 700,
+     "w": 1580,
+     "h": 72,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "平行轴定理：",
+        "size": 40,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "J",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "O",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " = J",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "C",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " + m d²",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 812,
+     "w": 1580,
+     "h": 120,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "定轴转动：先算合力矩，再由 M = Jα 求 α",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 950,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "下一节：角动量与角动量守恒定律．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "本节小结"
+  }
+ ]
+}

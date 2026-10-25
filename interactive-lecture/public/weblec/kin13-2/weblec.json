@@ -1,0 +1,3092 @@
+{
+ "title": "13-2 热力学第一定律 内能",
+ "nav": "13-2　热力学第一定律　内能",
+ "footer": "第十三章　热力学基础",
+ "character": "aqiang",
+ "characters": [
+  {
+   "id": "aqiang",
+   "name": "阿强"
+  },
+  {
+   "id": "professor",
+   "name": "博士讲师"
+  },
+  {
+   "id": "zhongshan",
+   "name": "中山装先生"
+  }
+ ],
+ "duration": 432.91,
+ "slides": [
+  {
+   "id": 1,
+   "kind": "page",
+   "heading": "封面",
+   "narration": "第十三章第二节。13-2，热力学第一定律，内能。上一节把「过程」说清楚了：功和热量都是过程量。这一节要找一个只跟状态走、不跟过程走的量——内能，再把三者用一个等式串起来。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 282,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 十 三 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 300,
+     "y": 408,
+     "w": 1320,
+     "h": 170,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "热 力 学 基 础",
+        "size": 92,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 250,
+     "y": 588,
+     "w": 1420,
+     "h": 120,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "13-2　热力学第一定律　内能",
+        "size": 40,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 220,
+     "y": 730,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "内能　·　第一定律　·　符号规定　·　能量守恒",
+        "size": 31,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 850,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "找一个不跟过程走的量：内能",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 0.0,
+    "2": 2.8,
+    "3": 7.33
+   },
+   "t_start": 0.0,
+   "t_end": 20.26,
+   "duration": 20.26,
+   "laser": []
+  },
+  {
+   "id": 2,
+   "kind": "page",
+   "heading": "本节路线",
+   "narration": "本节路线。先看焦耳实验：做功和传热都能改变系统的状态。由此提炼出内能——一个只由状态决定的量。再看绕一圈的循环：回到原处，内能增量为零。对理想气体，内能只是温度的函数。然后写第一定律，规定 Q、ΔE、W 的正负号，最后说它的物理意义。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节路线",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 244,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "主线：焦耳实验 → 内能 → 循环 → 理想气体 → 第一定律 → 符号与意义",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1　焦耳实验",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 386,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "做功和传热都能改变状态",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 458,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2　内能是状态量",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 512,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\Delta E$ 只与初末态有关",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 584,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "3　绕一圈",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 638,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "循环一周，$\\Delta E=0$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 330,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4　理想气体的内能",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 386,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只由温度决定",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 458,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "5　热力学第一定律",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 512,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$Q=\\Delta E+W$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 584,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "6　符号与意义",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 638,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "先定正负，再谈守恒",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "本节收口：内能是状态量，功和热是过程量，三者用第一定律串起来",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 21.06,
+    "2": 23.33,
+    "3": 28.99,
+    "4": 33.42,
+    "5": 38.88,
+    "6": 43.07
+   },
+   "t_start": 21.06,
+   "t_end": 50.63,
+   "duration": 29.57,
+   "laser": []
+  },
+  {
+   "id": 3,
+   "kind": "page",
+   "heading": "一　焦耳实验",
+   "narration": "先从实验说起。左边是焦耳的经典实验：两个重物下落，通过滑轮带动容器里的搅拌桨，桨叶搅水，水温升高。这里没有加热，只有机械功，水的状态照样变了。右边是另一个实验：电流通过电阻丝给水加热，这是电功，水温同样升高。两个实验说明同一件事：做功和传热都能改变系统的热运动状态。想一想：既然两条路都能把水从同一个初态送到同一个末态，它们之间能不能互相换算？答案是肯定的，这正是内能存在的实验基础。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　焦耳实验",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 448,
+     "name": "joule_experiments"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两个实验，同一种效果",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "重物下落 → 搅拌桨 → 水温升高",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 346,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只有机械功，没有加热",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 406,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电流通过电阻丝 → 水温升高",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 454,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只有电功，同样没有加热",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 514,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两条路，状态改变完全相同",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 574,
+     "w": 740,
+     "h": 160,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "功和热是同一层次的两个量",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "都描述「能量怎么进出」",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "而不是「系统里存了多少」",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 762,
+     "w": 1580,
+     "h": 130,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "两条路的差别只在过程，不在结果",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "所以一定有某个量只由初末状态决定 —— 那就是内能",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 51.43,
+    "2": 54.06,
+    "3": 63.29,
+    "4": 68.51,
+    "5": 76.35,
+    "6": 83.01
+   },
+   "t_start": 51.43,
+   "t_end": 96.72,
+   "duration": 45.29,
+   "laser": []
+  },
+  {
+   "id": 4,
+   "kind": "page",
+   "heading": "二　内能是状态量",
+   "narration": "把这件事说得更准确一点。系统从状态 A 变到状态 B，可以走路径 1，也可以走路径 2。沿路径 1，外界对系统做功 W₁、传递热量 Q₁；沿路径 2 是 W₂ 和 Q₂。实验发现：两条路径的功不一样，热量也不一样，但功与热量之和完全相等。也就是说，Q 加 W外 这个组合只由初末状态决定，与路径无关。既然它只跟状态走，就可以定义一个新的状态量——内能 E，让 ΔE 等于这个和。所以内能是状态量，不是过程量。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　内能是状态量",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 437,
+     "name": "pv_ab_paths"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "从 A 到 B，两条路径",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "路径 1：外界做功 $W_1$、传热 $Q_1$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 344,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "路径 2：外界做功 $W_2$、传热 $Q_2$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 406,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "实验：$W_1\\ne W_2$，$Q_1\\ne Q_2$",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 466,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "但 $Q+W_{\\text{外}}$ 总是同一个值",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 526,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "它只由初末状态决定",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 592,
+     "w": 740,
+     "h": 190,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "定义内能 $E$",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$\\Delta E=E_2-E_1=Q+W_{\\text{外}}$",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "状态一定，$E$ 就定了",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 985,
+     "y": 700,
+     "w": 765,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "内能是状态的函数，不是过程的函数",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 97.52,
+    "2": 100.56,
+    "3": 106.53,
+    "4": 114.3,
+    "5": 122.07,
+    "6": 129.07
+   },
+   "t_start": 97.52,
+   "t_end": 140.79,
+   "duration": 43.27,
+   "laser": []
+  },
+  {
+   "id": 5,
+   "kind": "page",
+   "heading": "三　绕一圈：内能增量为零",
+   "narration": "再看一个特殊情形：绕一圈又回到原处。从 A 沿路径 1 到 B，再沿路径 2 从 B 回到 A，这就是一个循环。回到初态，内能没有变化，所以 ΔE 等于零。于是 Q 加 W外 等于零，也就是 Q 等于 W——净吸收的热量，全部变成了对外做的功。这正是热机的工作方式：吸热、做功、回到原处，周而复始。所以第一定律不只管单个过程，也管转一圈下来能量怎么进出。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　绕一圈：内能增量为零",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 437,
+     "name": "pv_ab_cycle"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "A → 1 → B → 2 → A",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "去一趟，再绕回来",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "回到原状态，内能没有变化",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 404,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以 $\\Delta E=0$",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 470,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "于是 $Q=W$：净吸热 = 净做功",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 530,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这正是热机的工作方式",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 600,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "循环一周",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$\\Delta E=0$",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "净功 = 回路包围的面积",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "吸进来的热，全变成了功",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 985,
+     "y": 700,
+     "w": 765,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "绕回原处，内能这个账目自动归零",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 141.59,
+    "2": 146.21,
+    "3": 153.02,
+    "4": 158.6,
+    "5": 167.38,
+    "6": 174.5
+   },
+   "t_start": 141.59,
+   "t_end": 181.43,
+   "duration": 39.84,
+   "laser": []
+  },
+  {
+   "id": 6,
+   "kind": "page",
+   "heading": "四　理想气体的内能",
+   "narration": "内能具体是多少？对理想气体有个特别简单的结论。第十二章说过，理想气体分子之间没有相互作用，所以没有分子势能。内能就只剩下所有分子的动能之和。而动能只由温度决定，所以理想气体的内能也只是温度的函数。写成公式是 E 等于 ν 乘以二分之 i 再乘以 R T，i 是自由度。这条结论很值钱：等温过程里 ΔE 等于零，第一定律就退化成 Q 等于 W。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　理想气体的内能",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 250,
+     "w": 765,
+     "h": 415,
+     "name": "ideal_gas_energy"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "理想气体：没有分子势能",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "分子之间没有相互作用",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 344,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以没有分子势能",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 404,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "内能 = 所有分子动能之和",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 462,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "动能只由温度决定",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 522,
+     "w": 740,
+     "h": 110,
+     "tex": "E=\\nu\\frac{i}{2}RT",
+     "size": 36,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 660,
+     "w": 740,
+     "h": 190,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "等温过程",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$T$ 不变 $\\Rightarrow \\Delta E=0$",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "第一定律退化成 $Q=W$",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "吸的热全部拿去对外做功",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 182.23,
+    "2": 189.12,
+    "3": 195.35,
+    "4": 199.28,
+    "5": 205.94,
+    "6": 213.04
+   },
+   "t_start": 182.23,
+   "t_end": 221.73,
+   "duration": 39.5,
+   "laser": []
+  },
+  {
+   "id": 7,
+   "kind": "page",
+   "heading": "五　热力学第一定律",
+   "narration": "现在把三者的关系写成等式。系统从外界吸收热量 Q，一部分用来增加内能，另一部分用来对外界做功。写成式子就是 Q 等于 E₂ 减 E₁ 再加 W。把 E₂ 减 E₁ 记作 ΔE，就得到最常用的形式：Q 等于 ΔE 加 W。注意这里的 W 是系统对外界做的功，跟上一页的 W外 差一个负号。把 W外 等于负 W 代进去，两个式子完全一致。所以第一定律不是新假设，它是内能存在的直接推论。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五　热力学第一定律",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 437,
+     "name": "first_law_energy"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "能量的收支",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "吸热 = 内能增量 + 对外做功",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 360,
+     "w": 740,
+     "h": 100,
+     "tex": "Q=E_2-E_1+W",
+     "size": 34,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 468,
+     "w": 740,
+     "h": 110,
+     "tex": "Q=\\Delta E+W",
+     "size": 38,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 596,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这里的 $W$ 是系统对外做的功",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 642,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与上一页的 $W_{\\text{外}}$ 差一个负号",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 720,
+     "w": 1580,
+     "h": 120,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "$W_{\\text{外}}=-W$　⇒　两个式子完全一致",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "第一定律不是新假设，是内能存在的直接推论",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 880,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "Q、ΔE、W 三个量，各自可正可负 —— 下一节先把符号定死",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 222.53,
+    "2": 226.75,
+    "3": 234.35,
+    "4": 239.26,
+    "5": 246.52,
+    "6": 253.16
+   },
+   "t_start": 222.53,
+   "t_end": 264.29,
+   "duration": 41.76,
+   "laser": []
+  },
+  {
+   "id": 8,
+   "kind": "page",
+   "heading": "六　准静态过程与微变过程",
+   "narration": "对不同的过程，第一定律有不同的写法。如果过程是准静态的，功可以用 p dV 的积分表示。于是第一定律写成 Q 等于 ΔE 加上 p 对 V 从 V₁ 到 V₂ 的积分。如果过程取得足够小，就得到微变形式：dQ 等于 dE 加 dW，也等于 dE 加 p dV。这个微分式是后面所有计算的出发点：等容、等压、等温、绝热，都是把它按不同条件积分。所以不要把它当成三个公式背，它就是一个能量账本，每一项都可以正可负。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "六　准静态过程与微变过程",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 760,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "准静态过程",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "微变过程",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 292,
+     "w": 760,
+     "h": 170,
+     "tex": "Q=\\Delta E+\\int_{V_{1}}^{V_{2}} p\\,\\mathrm{d}V",
+     "size": 32,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 490,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "功写成积分：体积从 $V_1$ 到 $V_2$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 1010,
+     "y": 292,
+     "w": 740,
+     "h": 170,
+     "tex": "\\mathrm{d}Q=\\mathrm{d}E+p\\,\\mathrm{d}V",
+     "size": 32,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 490,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "取足够小的一段，就是微分式",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 580,
+     "w": 1580,
+     "h": 160,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "后面所有过程都从它出发",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "等容、等压、等温、绝热 —— 都是按不同条件积分这个式子",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 780,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "别把它当三个公式背：它是一个能量账本，每一项都可以正可负",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 265.09,
+    "2": 269.57,
+    "3": 274.55,
+    "4": 281.24,
+    "5": 289.85,
+    "6": 299.73
+   },
+   "t_start": 265.09,
+   "t_end": 306.92,
+   "duration": 41.83,
+   "laser": []
+  },
+  {
+   "id": 9,
+   "kind": "page",
+   "heading": "七　第一定律的符号规定",
+   "narration": "用这个账本之前，必须先把正负号定死。规定：系统吸收热量，Q 取正；系统放出热量，Q 取负。内能增加，ΔE 取正；内能减少，ΔE 取负。系统对外界做功，W 取正；外界对系统做功，W 取负。这三条要背下来，它们决定了后面每一道题的正负。一个常见的错误是：压缩气体时把 W 写成正号——那是外界对系统做功，按我们的规定应该取负。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "七　第一定律的符号规定",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三行规定，先记牢",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "table",
+     "step": 2,
+     "x": 170,
+     "y": 300,
+     "w": 1580,
+     "rows": [
+      [
+       "",
+       "Q",
+       "ΔE",
+       "W"
+      ],
+      [
+       "＋",
+       "系统吸热",
+       "内能增加",
+       "系统对外界做功"
+      ],
+      [
+       "－",
+       "系统放热",
+       "内能减少",
+       "外界对系统做功"
+      ]
+     ],
+     "rowh": 96,
+     "size": 27,
+     "fill": "#CCFFCC"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 610,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三条都记牢，后面每道题的正负就定了",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 676,
+     "w": 740,
+     "h": 190,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "口诀",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "吸热为正，放热为负",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "内能增加为正",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "对外做功为正",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 676,
+     "w": 740,
+     "h": 190,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "最容易错的一条",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "压缩气体：外界对系统做功",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "所以 $W$ 取负号",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "不是「压缩了所以功为正」",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 896,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "正负号是这套语言的一部分 —— 同一个式子，符号错了一切都错",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 307.72,
+    "2": 312.34,
+    "3": 319.46,
+    "4": 325.31,
+    "5": 331.57,
+    "6": 337.06
+   },
+   "t_start": 307.72,
+   "t_end": 346.84,
+   "duration": 39.12,
+   "laser": []
+  },
+  {
+   "id": 10,
+   "kind": "page",
+   "heading": "八　物理意义",
+   "narration": "最后说它的地位。第一，它是能量转化和守恒定律在热现象中的具体形式：能量不会凭空产生，也不会凭空消失。第二，它判定了一种机器不可能造成——第一类永动机。那种机器不消耗能量却源源不断地做功。想一想，它为什么造不出来？因为那等于让 Q 等于零而 W 大于零，直接违反第一定律。第三，它不是从别的理论推出来的，而是无数实验的总结，是自然界的普遍规律。所以它的适用范围远远超出理想气体，也超出热学本身。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "八　物理意义",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 能量守恒",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 292,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "能量不会凭空产生，也不会消失",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 338,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "它只是从一种形式变成另一种",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 402,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 第一类永动机不可能",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 458,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不消耗能量却持续做功",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 504,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "等于 $Q=0$ 而 $W>0$，直接违反第一定律",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 568,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 实验总结，普遍规律",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 624,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "适用范围远超理想气体",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 240,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "第一类永动机",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "不需要燃料，却能不断做功",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "违反能量守恒",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "所以永远造不成",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 500,
+     "w": 740,
+     "h": 170,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "它的地位",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "不是推出来的，是总结出来的",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "和动量守恒、能量守恒同级",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 720,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第一定律是全书少数几条「不能证明、只能相信」的定律之一",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 347.64,
+    "2": 350.2,
+    "3": 359.77,
+    "4": 365.59,
+    "5": 380.11,
+    "6": 387.88
+   },
+   "t_start": 347.64,
+   "t_end": 394.68,
+   "duration": 47.04,
+   "laser": []
+  },
+  {
+   "id": 11,
+   "kind": "page",
+   "heading": "本节小结",
+   "narration": "小结。焦耳实验说明：做功和传热都能改变系统的状态，两者之和只由初末态决定。由此定义内能，它是状态量；理想气体的内能只是温度的函数。热力学第一定律：Q 等于 ΔE 加 W，吸热为正、内能增加为正、对外做功为正。它的微分形式 dQ 等于 dE 加 p dV，是后面所有过程计算的出发点。下一节用它算等容和等压过程。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 内能是状态量",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\Delta E$ 只与初末态有关",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 理想气体的内能",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 408,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只由温度决定，$E=\\nu\\frac{i}{2}RT$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 热力学第一定律",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$Q=\\Delta E+W$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 356,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 微变形式",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 408,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\mathrm{d}Q=\\mathrm{d}E+p\\,\\mathrm{d}V$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 470,
+     "w": 740,
+     "h": 170,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "下一节",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "13-3　等容过程与等压过程 摩尔热容",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "用它算两种最简单的过程",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 490,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一句话",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "状态量只认状态",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "过程量只认过程",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "第一定律把两者接在一起",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 120,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "第十三章 2/9：从「能量守恒」到一本可以逐项记账的能量账本",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 395.48,
+    "2": 397.75,
+    "3": 405.85,
+    "4": 412.25,
+    "5": 420.23
+   },
+   "t_start": 395.48,
+   "t_end": 431.41,
+   "duration": 35.93,
+   "laser": []
+  }
+ ],
+ "subtitles": [
+  {
+   "slide": 1,
+   "start": 0.0,
+   "end": 2.4,
+   "text": "第十三章第二节。"
+  },
+  {
+   "slide": 1,
+   "start": 2.8,
+   "end": 6.93,
+   "text": "13-2，热力学第一定律，内能。"
+  },
+  {
+   "slide": 1,
+   "start": 7.33,
+   "end": 12.35,
+   "text": "上一节把「过程」说清楚了：功和热量都是过程量。"
+  },
+  {
+   "slide": 1,
+   "start": 12.75,
+   "end": 19.64,
+   "text": "这一节要找一个只跟状态走、不跟过程走的量——内能，再把三者用一个等式串起来。"
+  },
+  {
+   "slide": 2,
+   "start": 21.06,
+   "end": 22.93,
+   "text": "本节路线。"
+  },
+  {
+   "slide": 2,
+   "start": 23.33,
+   "end": 28.59,
+   "text": "先看焦耳实验：做功和传热都能改变系统的状态。"
+  },
+  {
+   "slide": 2,
+   "start": 28.99,
+   "end": 33.02,
+   "text": "由此提炼出内能——一个只由状态决定的量。"
+  },
+  {
+   "slide": 2,
+   "start": 33.42,
+   "end": 38.48,
+   "text": "再看绕一圈的循环：回到原处，内能增量为零。"
+  },
+  {
+   "slide": 2,
+   "start": 38.88,
+   "end": 42.67,
+   "text": "对理想气体，内能只是温度的函数。"
+  },
+  {
+   "slide": 2,
+   "start": 43.07,
+   "end": 49.89,
+   "text": "然后写第一定律，规定 Q、ΔE、W 的正负号，最后说它的物理意义。"
+  },
+  {
+   "slide": 3,
+   "start": 51.43,
+   "end": 53.66,
+   "text": "先从实验说起。"
+  },
+  {
+   "slide": 3,
+   "start": 54.06,
+   "end": 62.89,
+   "text": "左边是焦耳的经典实验：两个重物下落，通过滑轮带动容器里的搅拌桨，桨叶搅水，水温升高。"
+  },
+  {
+   "slide": 3,
+   "start": 63.29,
+   "end": 68.11,
+   "text": "这里没有加热，只有机械功，水的状态照样变了。"
+  },
+  {
+   "slide": 3,
+   "start": 68.51,
+   "end": 75.95,
+   "text": "右边是另一个实验：电流通过电阻丝给水加热，这是电功，水温同样升高。"
+  },
+  {
+   "slide": 3,
+   "start": 76.35,
+   "end": 82.61,
+   "text": "两个实验说明同一件事：做功和传热都能改变系统的热运动状态。"
+  },
+  {
+   "slide": 3,
+   "start": 83.01,
+   "end": 91.0,
+   "text": "想一想：既然两条路都能把水从同一个初态送到同一个末态，它们之间能不能互相换算？"
+  },
+  {
+   "slide": 3,
+   "start": 91.65,
+   "end": 95.9,
+   "text": "答案是肯定的，这正是内能存在的实验基础。"
+  },
+  {
+   "slide": 4,
+   "start": 97.52,
+   "end": 100.16,
+   "text": "把这件事说得更准确一点。"
+  },
+  {
+   "slide": 4,
+   "start": 100.56,
+   "end": 106.13,
+   "text": "系统从状态 A 变到状态 B，可以走路径 1，也可以走路径 2。"
+  },
+  {
+   "slide": 4,
+   "start": 106.53,
+   "end": 113.9,
+   "text": "沿路径 1，外界对系统做功 W₁、传递热量 Q₁；沿路径 2 是 W₂ 和 Q₂。"
+  },
+  {
+   "slide": 4,
+   "start": 114.3,
+   "end": 121.67,
+   "text": "实验发现：两条路径的功不一样，热量也不一样，但功与热量之和完全相等。"
+  },
+  {
+   "slide": 4,
+   "start": 122.07,
+   "end": 128.67,
+   "text": "也就是说，Q 加 W外 这个组合只由初末状态决定，与路径无关。"
+  },
+  {
+   "slide": 4,
+   "start": 129.07,
+   "end": 135.91,
+   "text": "既然它只跟状态走，就可以定义一个新的状态量——内能 E，让 ΔE 等于这个和。"
+  },
+  {
+   "slide": 4,
+   "start": 136.31,
+   "end": 140.01,
+   "text": "所以内能是状态量，不是过程量。"
+  },
+  {
+   "slide": 5,
+   "start": 141.59,
+   "end": 145.81,
+   "text": "再看一个特殊情形：绕一圈又回到原处。"
+  },
+  {
+   "slide": 5,
+   "start": 146.21,
+   "end": 152.62,
+   "text": "从 A 沿路径 1 到 B，再沿路径 2 从 B 回到 A，这就是一个循环。"
+  },
+  {
+   "slide": 5,
+   "start": 153.02,
+   "end": 158.2,
+   "text": "回到初态，内能没有变化，所以 ΔE 等于零。"
+  },
+  {
+   "slide": 5,
+   "start": 158.6,
+   "end": 166.98,
+   "text": "于是 Q 加 W外 等于零，也就是 Q 等于 W——净吸收的热量，全部变成了对外做的功。"
+  },
+  {
+   "slide": 5,
+   "start": 167.38,
+   "end": 174.1,
+   "text": "这正是热机的工作方式：吸热、做功、回到原处，周而复始。"
+  },
+  {
+   "slide": 5,
+   "start": 174.5,
+   "end": 180.69,
+   "text": "所以第一定律不只管单个过程，也管转一圈下来能量怎么进出。"
+  },
+  {
+   "slide": 6,
+   "start": 182.23,
+   "end": 184.61,
+   "text": "内能具体是多少？"
+  },
+  {
+   "slide": 6,
+   "start": 185.26,
+   "end": 188.72,
+   "text": "对理想气体有个特别简单的结论。"
+  },
+  {
+   "slide": 6,
+   "start": 189.12,
+   "end": 194.95,
+   "text": "第十二章说过，理想气体分子之间没有相互作用，所以没有分子势能。"
+  },
+  {
+   "slide": 6,
+   "start": 195.35,
+   "end": 198.88,
+   "text": "内能就只剩下所有分子的动能之和。"
+  },
+  {
+   "slide": 6,
+   "start": 199.28,
+   "end": 205.54,
+   "text": "而动能只由温度决定，所以理想气体的内能也只是温度的函数。"
+  },
+  {
+   "slide": 6,
+   "start": 205.94,
+   "end": 212.64,
+   "text": "写成公式是 E 等于 ν 乘以二分之 i 再乘以 R T，i 是自由度。"
+  },
+  {
+   "slide": 6,
+   "start": 213.04,
+   "end": 220.94,
+   "text": "这条结论很值钱：等温过程里 ΔE 等于零，第一定律就退化成 Q 等于 W。"
+  },
+  {
+   "slide": 7,
+   "start": 222.53,
+   "end": 226.35,
+   "text": "现在把三者的关系写成等式。"
+  },
+  {
+   "slide": 7,
+   "start": 226.75,
+   "end": 233.95,
+   "text": "系统从外界吸收热量 Q，一部分用来增加内能，另一部分用来对外界做功。"
+  },
+  {
+   "slide": 7,
+   "start": 234.35,
+   "end": 238.86,
+   "text": "写成式子就是 Q 等于 E₂ 减 E₁ 再加 W。"
+  },
+  {
+   "slide": 7,
+   "start": 239.26,
+   "end": 246.12,
+   "text": "把 E₂ 减 E₁ 记作 ΔE，就得到最常用的形式：Q 等于 ΔE 加 W。"
+  },
+  {
+   "slide": 7,
+   "start": 246.52,
+   "end": 252.76,
+   "text": "注意这里的 W 是系统对外界做的功，跟上一页的 W外 差一个负号。"
+  },
+  {
+   "slide": 7,
+   "start": 253.16,
+   "end": 257.94,
+   "text": "把 W外 等于负 W 代进去，两个式子完全一致。"
+  },
+  {
+   "slide": 7,
+   "start": 258.34,
+   "end": 263.5,
+   "text": "所以第一定律不是新假设，它是内能存在的直接推论。"
+  },
+  {
+   "slide": 8,
+   "start": 265.09,
+   "end": 269.17,
+   "text": "对不同的过程，第一定律有不同的写法。"
+  },
+  {
+   "slide": 8,
+   "start": 269.57,
+   "end": 274.15,
+   "text": "如果过程是准静态的，功可以用 p dV 的积分表示。"
+  },
+  {
+   "slide": 8,
+   "start": 274.55,
+   "end": 280.84,
+   "text": "于是第一定律写成 Q 等于 ΔE 加上 p 对 V 从 V₁ 到 V₂ 的积分。"
+  },
+  {
+   "slide": 8,
+   "start": 281.24,
+   "end": 289.45,
+   "text": "如果过程取得足够小，就得到微变形式：dQ 等于 dE 加 dW，也等于 dE 加 p dV。"
+  },
+  {
+   "slide": 8,
+   "start": 289.85,
+   "end": 299.33,
+   "text": "这个微分式是后面所有计算的出发点：等容、等压、等温、绝热，都是把它按不同条件积分。"
+  },
+  {
+   "slide": 8,
+   "start": 299.73,
+   "end": 306.19,
+   "text": "所以不要把它当成三个公式背，它就是一个能量账本，每一项都可以正可负。"
+  },
+  {
+   "slide": 9,
+   "start": 307.72,
+   "end": 311.94,
+   "text": "用这个账本之前，必须先把正负号定死。"
+  },
+  {
+   "slide": 9,
+   "start": 312.34,
+   "end": 319.06,
+   "text": "规定：系统吸收热量，Q 取正；系统放出热量，Q 取负。"
+  },
+  {
+   "slide": 9,
+   "start": 319.46,
+   "end": 324.91,
+   "text": "内能增加，ΔE 取正；内能减少，ΔE 取负。"
+  },
+  {
+   "slide": 9,
+   "start": 325.31,
+   "end": 331.17,
+   "text": "系统对外界做功，W 取正；外界对系统做功，W 取负。"
+  },
+  {
+   "slide": 9,
+   "start": 331.57,
+   "end": 336.66,
+   "text": "这三条要背下来，它们决定了后面每一道题的正负。"
+  },
+  {
+   "slide": 9,
+   "start": 337.06,
+   "end": 346.11,
+   "text": "一个常见的错误是：压缩气体时把 W 写成正号——那是外界对系统做功，按我们的规定应该取负。"
+  },
+  {
+   "slide": 10,
+   "start": 347.64,
+   "end": 349.8,
+   "text": "最后说它的地位。"
+  },
+  {
+   "slide": 10,
+   "start": 350.2,
+   "end": 359.37,
+   "text": "第一，它是能量转化和守恒定律在热现象中的具体形式：能量不会凭空产生，也不会凭空消失。"
+  },
+  {
+   "slide": 10,
+   "start": 359.77,
+   "end": 365.19,
+   "text": "第二，它判定了一种机器不可能造成——第一类永动机。"
+  },
+  {
+   "slide": 10,
+   "start": 365.59,
+   "end": 369.5,
+   "text": "那种机器不消耗能量却源源不断地做功。"
+  },
+  {
+   "slide": 10,
+   "start": 369.9,
+   "end": 373.16,
+   "text": "想一想，它为什么造不出来？"
+  },
+  {
+   "slide": 10,
+   "start": 373.81,
+   "end": 379.71,
+   "text": "因为那等于让 Q 等于零而 W 大于零，直接违反第一定律。"
+  },
+  {
+   "slide": 10,
+   "start": 380.11,
+   "end": 387.48,
+   "text": "第三，它不是从别的理论推出来的，而是无数实验的总结，是自然界的普遍规律。"
+  },
+  {
+   "slide": 10,
+   "start": 387.88,
+   "end": 393.81,
+   "text": "所以它的适用范围远远超出理想气体，也超出热学本身。"
+  },
+  {
+   "slide": 11,
+   "start": 395.48,
+   "end": 397.35,
+   "text": "小结。"
+  },
+  {
+   "slide": 11,
+   "start": 397.75,
+   "end": 405.45,
+   "text": "焦耳实验说明：做功和传热都能改变系统的状态，两者之和只由初末态决定。"
+  },
+  {
+   "slide": 11,
+   "start": 405.85,
+   "end": 411.85,
+   "text": "由此定义内能，它是状态量；理想气体的内能只是温度的函数。"
+  },
+  {
+   "slide": 11,
+   "start": 412.25,
+   "end": 419.83,
+   "text": "热力学第一定律：Q 等于 ΔE 加 W，吸热为正、内能增加为正、对外做功为正。"
+  },
+  {
+   "slide": 11,
+   "start": 420.23,
+   "end": 426.54,
+   "text": "它的微分形式 dQ 等于 dE 加 p dV，是后面所有过程计算的出发点。"
+  },
+  {
+   "slide": 11,
+   "start": 426.94,
+   "end": 430.66,
+   "text": "下一节用它算等容和等压过程。"
+  }
+ ],
+ "build_ts": 1792585487,
+ "logoScale": 0.67,
+ "theme": "wave"
+}

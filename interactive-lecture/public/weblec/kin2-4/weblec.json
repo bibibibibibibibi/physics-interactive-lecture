@@ -1,0 +1,4946 @@
+{
+ "title": "2-4 牛顿定律的应用举例",
+ "nav": "2-4　牛顿定律的应用举例",
+ "footer": "第二章　牛顿定律",
+ "character": "aqiang",
+ "characters": [
+  {
+   "id": "aqiang",
+   "name": "阿强"
+  },
+  {
+   "id": "professor",
+   "name": "博士讲师"
+  },
+  {
+   "id": "zhongshan",
+   "name": "中山装先生"
+  }
+ ],
+ "duration": 1113.48,
+ "slides": [
+  {
+   "id": 1,
+   "kind": "page",
+   "heading": "封面",
+   "narration": "这一段内容在第二章，牛顿定律。2-4 是这一章的收口——前面讲了三条定律、单位和量纲、几种常见的力，这一节用五道例题把它们真正用起来。解动力学问题有一套固定的步骤，先讲清步骤，再一道道题走。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 290,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 二 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 360,
+     "y": 430,
+     "w": 1200,
+     "h": 200,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "牛 顿 定 律",
+        "size": 110,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 500,
+     "y": 710,
+     "w": 920,
+     "h": 110,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2-4　牛顿定律的应用举例",
+        "size": 56,
+        "color": "#0000CD",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 360,
+     "y": 860,
+     "w": 1200,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两道基本题型 · 六个解题步骤 · 五道例题",
+        "size": 44,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 2.387,
+    "2": 3.98,
+    "3": 14.46
+   },
+   "t_start": 0.0,
+   "t_end": 20.95,
+   "duration": 20.95,
+   "laser": []
+  },
+  {
+   "id": 2,
+   "kind": "page",
+   "heading": "两类常见问题",
+   "narration": "先看质点动力学的两类常见问题。第一类，已知物体受的力，求它的运动方程——也就是由力推加速度、再由加速度求出位矢。第二类刚好相反，已知运动方程，求力——由运动方程求出加速度，再乘质量得到合力。看这张图：两条链的正中间都是加速度，方向正好相反。为什么绕不开加速度？因为牛顿第二定律就是把力和加速度联系起来的桥梁，无论求哪一头，都要先过这座桥。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两类常见问题",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 1580,
+     "h": 455,
+     "name": "dyn_two_types"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 760,
+     "w": 1580,
+     "h": 120,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "牛顿第二定律是桥梁：",
+        "size": 44,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "无论求运动还是求力，都必须先求出加速度 a．",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 890,
+     "w": 1580,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本章前面讲的三条定律与常见的力，都是为这两条链服务的．",
+        "size": 42,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 22.249,
+    "2": 44.04
+   },
+   "t_start": 21.75,
+   "t_end": 61.9,
+   "duration": 40.15,
+   "laser": []
+  },
+  {
+   "id": 3,
+   "kind": "page",
+   "heading": "解题步骤",
+   "narration": "解动力学问题有六个步骤，看这张流程图。第一步隔离物体，把研究对象单独取出来；第二步受力分析，把作用在它上面的每一个力都画出来；第三步建立坐标；第四步列方程；第五步解方程；第六步结果讨论。第三步选坐标有一条实用原则：让尽可能多的力落在坐标轴上，需要分解的矢量就越少、方程越简单。第六步最容易被跳过，但恰恰最能体现物理：查一查量纲对不对，看一看极限情形合不合理，比如令两个质量相等、令某个速度趋于零，结果是不是符合直觉。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "解题步骤",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1520,
+     "h": 352,
+     "name": "dyn_steps"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 640,
+     "w": 1580,
+     "h": 120,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "选坐标的原则：",
+        "size": 44,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "让尽可能多的力落在坐标轴上，需要分解的矢量就越少．",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 790,
+     "w": 1580,
+     "h": 120,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "结果讨论：",
+        "size": 44,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "查量纲、看极限（如 m₁ = m₂ 时 a = 0）、看数量级是否合理．",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true
+    }
+   ],
+   "bullets": [
+    {
+     "text": "结果讨论：查量纲、看极限（如 m₁ = m₂ 时 a = 0）、看数量级是否合理",
+     "x": 960,
+     "y": 922,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 3
+    }
+   ],
+   "stepTimes": {
+    "1": 62.7,
+    "2": 82.85,
+    "3": 92.49
+   },
+   "t_start": 62.7,
+   "t_end": 106.38,
+   "duration": 43.68,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 92.49,
+     "end": 97.49
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "kind": "page",
+   "heading": "例1　阿特伍德机",
+   "narration": "第一道例题，阿特伍德机。如图所示，滑轮和绳子的质量均不计，滑轮与绳间、滑轮与轴间的摩擦力也均不计，并且 m₁ 大于 m₂。求重物释放后，两个物体的加速度和绳的张力。题目的关键条件在这里：绳不可伸长，所以两个物体的加速度大小一定相等，只是一个向上、一个向下。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例1　阿特伍德机",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 270,
+     "w": 900,
+     "h": 120,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "如图所示，滑轮和绳子的质量均不计，滑轮与绳间的",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 398,
+     "w": 900,
+     "h": 127,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "摩擦力以及滑轮与轴间的摩擦力均不计，且 ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$m_1>m_2$",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 533,
+     "w": 900,
+     "h": 118,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "求重物释放后，物体的",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "加速度",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "和绳的",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "张力",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 1080,
+     "y": 250,
+     "w": 760,
+     "h": 690,
+     "name": "atwood_basic"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 660,
+     "w": 860,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "绳不可伸长 ⇒ ",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "两物体加速度大小相等",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 760,
+     "w": 860,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（方向相反：m₁ 向下、m₂ 向上）",
+        "size": 42,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 107.18,
+    "2": 121.06,
+    "3": 126.09
+   },
+   "t_start": 107.18,
+   "t_end": 136.56,
+   "duration": 29.38,
+   "laser": []
+  },
+  {
+   "id": 5,
+   "kind": "page",
+   "heading": "例1　解（1）受力分析",
+   "narration": "以地面为参考系来解。先把两个物体分别隔离出来，各自画受力图、取坐标，如右图。m₁ 受绳的张力 F 下标 T1 向上，重力 P₁ 向下；它的坐标轴从 o 指向下方，向下为正。m₂ 受张力 F 下标 T2 向上，重力 P₂ 向下；坐标轴从 o 指向上方，向上为正。同一条绳，而且滑轮和绳的质量、摩擦都不计，所以两段绳的张力相等，都记作 F 下标 T。这样取坐标的好处是：两个物体都沿自己的正方向运动，加速度都是正的，列方程时不用带负号。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例1　解（1）受力分析与坐标",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 275,
+     "w": 880,
+     "h": 120,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "以地面为参考系，两物体分别",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "隔离",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "、画受力图并取坐标．",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 430,
+     "w": 880,
+     "h": 120,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$m_1$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "：张力 ",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$F_{\\mathrm{T1}}$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 向上、重力 ",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$P_1$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 向下，",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "取向下为正",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 570,
+     "w": 880,
+     "h": 120,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$m_2$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "：张力 ",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$F_{\\mathrm{T2}}$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 向上、重力 ",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$P_2$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 向下，",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "取向上为正",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1080,
+     "y": 250,
+     "w": 760,
+     "h": 422,
+     "name": "atwood_force"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 720,
+     "w": 880,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "滑轮与绳的质量、摩擦均不计 ⇒ ",
+        "size": 35,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$F_{\\mathrm{T1}}=F_{\\mathrm{T2}}=F_{\\mathrm{T}}$",
+        "size": 37,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 860,
+     "w": 1580,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "好处：两物体各自沿自己的正方向运动，加速度取正值，列方程时不带负号．",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true
+    }
+   ],
+   "bullets": [
+    {
+     "text": "好处：两物体各自沿自己的正方向运动，加速度取正值，列方程时不带负号．",
+     "x": 960,
+     "y": 982,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 6
+    }
+   ],
+   "stepTimes": {
+    "1": 140.5,
+    "2": 164.82,
+    "3": 174.1
+   },
+   "t_start": 137.36,
+   "t_end": 183.7,
+   "duration": 46.34,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 174.1,
+     "end": 179.1
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "kind": "page",
+   "heading": "例1　解（1）列方程",
+   "narration": "列方程。对 m₁：m₁g 减 F 下标 T 等于 m₁ 乘 a；对 m₂：负的 m₂g 加 F 下标 T 等于 m₂ 乘 a。再加上绳不可伸长给出的条件：两个加速度大小相等，都记作 a。两个方程联立求解，得到加速度 a 等于 m₁ 减 m₂ 比 m₁ 加 m₂ 再乘 g；绳的张力 F 下标 T 等于 2 m₁ m₂ 比 m₁ 加 m₂ 再乘 g。结果讨论：如果 m₁ 等于 m₂，加速度为零——两个物块静止或者匀速运动，这正是阿特伍德机用来测重力加速度的原理；张力总在 m₁g 和 m₂g 之间，也符合直觉。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例1　解（1）列方程与结果",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 220,
+     "y": 255,
+     "w": 1000,
+     "h": 255,
+     "tex": "\\begin{cases}m_1g-F_{\\mathrm{T}}=m_1a\\\\[18px]-m_2g+F_{\\mathrm{T}}=m_2a\\end{cases}",
+     "size": 40,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 220,
+     "y": 520,
+     "w": 1000,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "绳不可伸长：",
+        "size": 44,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "$a_1=a_2=a$",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 300,
+     "y": 640,
+     "w": 600,
+     "h": 160,
+     "tex": "a=\\dfrac{m_1-m_2}{m_1+m_2}\\,g",
+     "size": 44,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 900,
+     "y": 640,
+     "w": 760,
+     "h": 160,
+     "tex": "F_{\\mathrm{T}}=\\dfrac{2m_1m_2}{m_1+m_2}\\,g",
+     "size": 44,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 815,
+     "w": 1580,
+     "h": 125,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "讨论：",
+        "size": 42,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "$m_1=m_2$",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 时 ",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$a=0$",
+        "size": 42,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "；张力总在 $m_1g$ 与 $m_2g$ 之间——阿特伍德机测 g 的依据．",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true
+    }
+   ],
+   "bullets": [
+    {
+     "text": "讨论：$m_1=m_2$ 时 $a=0$；张力总在 $m_1g$ 与 $m_2g",
+     "x": 960,
+     "y": 952,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 5
+    }
+   ],
+   "stepTimes": {
+    "1": 184.5,
+    "2": 196.08,
+    "3": 202.34,
+    "4": 213.95
+   },
+   "t_start": 184.5,
+   "t_end": 228.8,
+   "duration": 44.3,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 213.95,
+     "end": 218.95
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "kind": "page",
+   "heading": "例1　（2）电梯中",
+   "narration": "把题目改一下：若将此装置置于电梯顶部，当电梯以加速度 a 相对地面向上运动时，求两物体相对电梯的加速度和绳的张力。看右边的图：电梯相对地面有向上的加速度 a，记作 ā；两个物块相对电梯的加速度 a 下标 r 大小相等、方向相反。这里要特别小心：a 下标 r 是相对量，而电梯的加速度 a 是相对地面的——求物体相对地面的加速度，必须把两者合成起来。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例1　（2）电梯中的阿特伍德机",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 270,
+     "w": 880,
+     "h": 130,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "若将此装置置于电梯顶部，当电梯以加速度 ",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec a$",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 相对",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 408,
+     "w": 880,
+     "h": 124,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "地面向上运动时，求两物体",
+        "size": 41,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "相对电梯",
+        "size": 41,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "的加速度",
+        "size": 41,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 540,
+     "w": 880,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "和绳的张力．",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 1060,
+     "y": 250,
+     "w": 700,
+     "h": 600,
+     "name": "atwood_lift"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 660,
+     "w": 880,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "相对量 a",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$_{\\mathrm{r}}$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 与牵连量 a ：",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "物体相对地面的加速度要由两者合成",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "important": true
+    }
+   ],
+   "bullets": [
+    {
+     "text": "相对量 a$_{\\mathrm{r}}$ 与牵连量 a ：物体相对地面的加速度要",
+     "x": 610,
+     "y": 812,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 5
+    }
+   ],
+   "stepTimes": {
+    "1": 229.6,
+    "2": 241.11,
+    "3": 252.21
+   },
+   "t_start": 229.6,
+   "t_end": 263.3,
+   "duration": 33.7,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 252.21,
+     "end": 257.21
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "kind": "page",
+   "heading": "例1　解（2）以地面为参考系",
+   "narration": "仍然以地面为参考系。设两物体相对地面的加速度分别为 a₁ 和 a₂，相对电梯的加速度为 a 下标 r。列方程：m₁g 减 F 下标 T 等于 m₁ 乘 a₁，而 a₁ 等于 a 下标 r 减 a；负的 m₂g 加 F 下标 T 等于 m₂ 乘 a₂，而 a₂ 等于 a 下标 r 加 a。联立解得：相对加速度 a 下标 r 等于 m₁ 减 m₂ 比 m₁ 加 m₂ 再乘括号 g 加 a；绳的张力 F 下标 T 等于 2 m₁ m₂ 比 m₁ 加 m₂ 再乘括号 g 加 a。和第一问的结果比一比：只要把 g 换成 g 加 a 就行。这在电梯参考系里看，相当于重力「变重」了——这个思路在后面讲非惯性系时还会深入。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例1　解（2）以地面为参考系",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 265,
+     "w": 880,
+     "h": 137,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "设两物体相对地面的加速度为 ",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$a_1,\\,a_2$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "，相对电梯的为 ",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$a_{\\mathrm{r}}$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "．",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 412,
+     "w": 900,
+     "h": 250,
+     "tex": "\\begin{cases}m_1g-F_{\\mathrm{T}}=m_1a_1,\\quad a_1=a_{\\mathrm{r}}-a\\\\[20px]-m_2g+F_{\\mathrm{T}}=m_2a_2,\\quad a_2=a_{\\mathrm{r}}+a\\end{cases}",
+     "size": 34,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 672,
+     "w": 900,
+     "h": 330,
+     "tex": "\\begin{cases}a_{\\mathrm{r}}=\\dfrac{m_1-m_2}{m_1+m_2}(g+a)\\\\[22px]F_{\\mathrm{T}}=\\dfrac{2m_1m_2}{m_1+m_2}(g+a)\\end{cases}",
+     "size": 42,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1100,
+     "y": 240,
+     "w": 740,
+     "h": 411,
+     "name": "atwood_force"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1100,
+     "y": 690,
+     "w": 740,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与（1）比较：",
+        "size": 42,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "$g\\to g+a$",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 264.1,
+    "2": 275.17,
+    "3": 288.58,
+    "4": 302.59
+   },
+   "t_start": 264.1,
+   "t_end": 316.23,
+   "duration": 52.13,
+   "laser": []
+  },
+  {
+   "id": 9,
+   "kind": "page",
+   "heading": "例2　竖直圆周运动",
+   "narration": "第二道例题。如图，长为 l 的轻绳，一端系质量为 m 的小球，另一端系于定点 O。t 等于 0 时，小球位于最低位置，并具有水平速度 v₀。求小球在任意位置的速率及绳的张力。注意这是变速率圆周运动：速率在变，所以切线方向有加速度；而只要还在圆周上运动，法线方向就必有向心加速度。两个方向都要列方程——这就是自然坐标系的用武之地。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例2　竖直圆周运动",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 265,
+     "w": 900,
+     "h": 136,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "长为 ",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$l$",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 的轻绳，一端系质量为 ",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$m$",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 的小球，另一端系于定点 ",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$O$",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "．",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 411,
+     "w": 900,
+     "h": 137,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$t=0$",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 时小球位于最低位置，并具有水平速度 ",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec v_0$",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 558,
+     "w": 900,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "求小球在",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "任意位置的速率",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "及绳的",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "张力",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 1150,
+     "y": 260,
+     "w": 550,
+     "h": 560,
+     "name": "vert_circle"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 678,
+     "w": 900,
+     "h": 145,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "变速率圆周运动：",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "切向有加速度（速率在变），法向有向心加速度．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 833,
+     "w": 900,
+     "h": 105,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两个方向都要列方程 ⇒ 用自然坐标系．",
+        "size": 42,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [
+    {
+     "text": "变速率圆周运动：切向有加速度（速率在变），法向有向心加速度．",
+     "x": 620,
+     "y": 835,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 5
+    }
+   ],
+   "stepTimes": {
+    "1": 317.03,
+    "2": 332.41,
+    "3": 336.67
+   },
+   "t_start": 317.03,
+   "t_end": 353.44,
+   "duration": 36.41,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 336.67,
+     "end": 341.67
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "kind": "page",
+   "heading": "例2　解（1）自然坐标",
+   "narration": "在自然坐标系里列方程。沿法线方向指向圆心：绳的张力减去重力的法向分量 mg 乘 cosθ，等于向心力 m v² 比 l。沿切线方向：负的 mg 乘 sinθ 等于 m 乘 dv 比 dt，也就是切向加速度。第二个式子里对时间的微分不好直接积分，用一个小技巧：把 dt 换成角度。因为 v 等于 l 乘 dθ 比 dt，所以 dv 比 dt 等于 v 比 l 乘 dv 比 dθ。这样一来时间被消掉，方程变成了对角度 θ 的积分，而从 θ 等于 0 到 θ 正是小球走过的位置角。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例2　解（1）自然坐标列方程",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 270,
+     "w": 880,
+     "h": 165,
+     "tex": "F_{\\mathrm{T}}-mg\\cos\\theta=m\\dfrac{v^2}{l}",
+     "size": 48,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 440,
+     "w": 880,
+     "h": 150,
+     "tex": "-mg\\sin\\theta=m\\dfrac{\\mathrm{d}v}{\\mathrm{d}t}",
+     "size": 48,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 625,
+     "w": 880,
+     "h": 170,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "技巧：",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "$\\dfrac{\\mathrm{d}v}{\\mathrm{d}t}=\\dfrac{v}{l}\\dfrac{\\mathrm{d}v}{\\mathrm{d}\\theta}$",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 810,
+     "w": 880,
+     "h": 157,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$v=l\\dfrac{\\mathrm{d}\\theta}{\\mathrm{d}t}$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " ⇒ 把对时间的微分换成对角度 θ 的微分．",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 0,
+     "x": 1150,
+     "y": 270,
+     "w": 550,
+     "h": 560,
+     "name": "vert_circle"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 354.24,
+    "2": 367.84,
+    "3": 375.85
+   },
+   "t_start": 354.24,
+   "t_end": 402.02,
+   "duration": 47.78,
+   "laser": []
+  },
+  {
+   "id": 11,
+   "kind": "page",
+   "heading": "例2　解（2）积分得结果",
+   "narration": "把切向式整理成 v dv 等于负 g l sinθ dθ，两边同时积分：左边从 v₀ 积到 v，右边从 0 积到 θ。积分出来，速率满足 v² 等于 v₀² 加 2 g l 乘括号 cosθ 减 1。把它代回法向方程，就得到绳的张力：F 下标 T 等于 m 乘括号 v₀² 比 l 减 2g 加 3g cosθ。这个结果只能用在张力大于零的地方。如果某个位置算出来张力为零或者为负，说明绳已经松弛、小球已经离开圆周——此后它做的是抛体运动，不能再用圆周运动的公式了。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例2　解（2）积分得结果",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 220,
+     "y": 265,
+     "w": 1400,
+     "h": 170,
+     "tex": "\\int_{v_0}^{v}v\\,\\mathrm{d}v=-gl\\int_{0}^{\\theta}\\sin\\theta\\,\\mathrm{d}\\theta",
+     "size": 48,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 220,
+     "y": 470,
+     "w": 1400,
+     "h": 170,
+     "tex": "v^2=v_0^2+2gl(\\cos\\theta-1)\\ \\Longrightarrow\\ v=\\sqrt{v_0^2+2gl(\\cos\\theta-1)}",
+     "size": 44,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 220,
+     "y": 675,
+     "w": 1400,
+     "h": 170,
+     "tex": "F_{\\mathrm{T}}=m\\left(\\dfrac{v_0^2}{l}-2g+3g\\cos\\theta\\right)",
+     "size": 50,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 880,
+     "w": 1580,
+     "h": 115,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "适用范围：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "$F_{\\mathrm{T}}>0$",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "；若某处张力为零或为负，绳已松弛，小球此后做抛体运动．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true
+    }
+   ],
+   "bullets": [
+    {
+     "text": "适用范围：$F_{\\mathrm{T}}>0$；若某处张力为零或为负，绳已松弛，",
+     "x": 960,
+     "y": 1007,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 4
+    }
+   ],
+   "stepTimes": {
+    "1": 402.82,
+    "2": 413.01,
+    "3": 421.16,
+    "4": 431.23
+   },
+   "t_start": 402.82,
+   "t_end": 447.15,
+   "duration": 44.33,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 431.23,
+     "end": 436.23
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "kind": "page",
+   "heading": "例3　圆锥摆",
+   "narration": "第三道例题，圆锥摆。如图，摆长为 l 的圆锥摆：细绳一端固定在天花板上，另一端悬挂质量为 m 的小球；小球被推动后，在水平面内绕通过圆心 O 的铅直轴作角速度为 ω 的匀速率圆周运动。问绳和铅直方向所成的角度 θ 为多少？空气阻力不计。解题前先想清楚一件事：小球在水平面内做圆周运动，所以向心力必须是水平的、指向轴心。这就是取坐标的依据。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例3　圆锥摆",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 265,
+     "w": 880,
+     "h": 128,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "摆长为 ",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$l$",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 的圆锥摆：细绳一端固定在天花板上，另一端悬挂",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 403,
+     "w": 880,
+     "h": 131,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质量为 ",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$m$",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 的小球．小球经推动后，在",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "水平面内",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "绕通过圆心 ",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$O$",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 542,
+     "w": 880,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "的铅直轴作角速度为 ",
+        "size": 39,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\omega$",
+        "size": 39,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 的匀速率圆周运动．",
+        "size": 39,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 660,
+     "w": 880,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "问绳和铅直方向所成的角度 ",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\theta$",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 为多少？",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 1120,
+     "y": 250,
+     "w": 640,
+     "h": 578,
+     "name": "conical_pendulum"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 778,
+     "w": 880,
+     "h": 145,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "向心力必须是",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "水平的",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "（指向轴心）——这就是取坐标的依据．",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true
+    }
+   ],
+   "bullets": [
+    {
+     "text": "向心力必须是水平的（指向轴心）——这就是取坐标的依据．",
+     "x": 610,
+     "y": 935,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 6
+    }
+   ],
+   "stepTimes": {
+    "1": 447.95,
+    "2": 466.41,
+    "3": 473.99
+   },
+   "t_start": 447.95,
+   "t_end": 486.59,
+   "duration": 38.64,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 473.99,
+     "end": 478.99
+    }
+   ]
+  },
+  {
+   "id": 13,
+   "kind": "page",
+   "heading": "例3　解",
+   "narration": "先写矢量式：绳的张力 F 下标 T 加上重力 P 等于 m 乘 a。沿水平和竖直两个方向分解。水平方向：F 下标 T 乘 sinθ 提供向心力，等于 m r ω²；竖直方向：F 下标 T 乘 cosθ 减去重力等于零——因为小球始终在同一个水平面内运动，竖直方向没有加速度。还有一个几何关系：轨道半径 r 等于 l 乘 sinθ。由竖直方程得到 F 下标 T 乘 cosθ 等于 mg；再由水平方程，把 F 下标 T 用 m ω² l 代入，两式相除，就得到 cosθ 等于 g 比 ω² l，也就是 θ 等于 arccos 括号 g 比 ω² l 括号。结论很有意思：ω 越大，cosθ 越小、θ 越大——转得越快，摆得越高。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例3　解",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 255,
+     "w": 880,
+     "h": 140,
+     "tex": "\\vec F_{\\mathrm{T}}+\\vec P=m\\vec a",
+     "size": 48,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 410,
+     "w": 880,
+     "h": 250,
+     "tex": "\\begin{cases}F_{\\mathrm{T}}\\sin\\theta=ma_{\\mathrm{n}}=mr\\omega^2\\\\[20px]F_{\\mathrm{T}}\\cos\\theta-P=0\\end{cases}",
+     "size": 38,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 685,
+     "w": 880,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "几何关系：",
+        "size": 44,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "$r=l\\sin\\theta$",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 795,
+     "w": 880,
+     "h": 160,
+     "tex": "\\cos\\theta=\\dfrac{mg}{m\\omega^2l}=\\dfrac{g}{\\omega^2l}",
+     "size": 46,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "diagram",
+     "step": 0,
+     "x": 1150,
+     "y": 240,
+     "w": 560,
+     "h": 505,
+     "name": "conical_pendulum"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1150,
+     "y": 748,
+     "w": 620,
+     "h": 132,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\theta=\\arccos\\dfrac{g}{\\omega^2l}$",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1150,
+     "y": 888,
+     "w": 620,
+     "h": 122,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\omega$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 越大，",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\theta$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 也越大——转得越快、摆得越高．",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true
+    }
+   ],
+   "bullets": [
+    {
+     "text": "$\\omega$ 越大，$\\theta$ 也越大——转得越快、摆得越高．",
+     "x": 1460,
+     "y": 1022,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 7
+    }
+   ],
+   "stepTimes": {
+    "1": 487.39,
+    "2": 493.81,
+    "3": 514.41,
+    "4": 520.07,
+    "5": 540.61
+   },
+   "t_start": 487.39,
+   "t_end": 549.05,
+   "duration": 61.66,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 540.61,
+     "end": 545.61
+    }
+   ]
+  },
+  {
+   "id": 14,
+   "kind": "page",
+   "heading": "例3　应用·离心调速器",
+   "narration": "这个结论有个很有名的应用——蒸汽机的离心调速器。看这幅图：两根长 l 的杆从转轴上的铰点挂下来，末端各有一个质量 m 的球；两个球又用短杆连到一个可以沿轴上下滑动的套筒上，短杆使两杆与铅直方向的夹角始终保持相等。转轴以角速度 ω 旋转时，球向外张开：根据刚才的结果，θ 等于 arccos 括号 g 比 ω² l 括号，转得越快张角越大。球张开的同时，被短杆顶着的套筒会向上滑动。把这个位移接到进气阀门上，当转速过高时就能自动关小进气、让转速降下来——这就是离心调速器稳定转速的原理。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例3　应用·离心调速器",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 265,
+     "w": 880,
+     "h": 136,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两根长 ",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$l$",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 的杆从转轴铰点挂下，末端各一个质量 ",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$m$",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 的球；",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 411,
+     "w": 880,
+     "h": 150,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "球又经短杆连到可沿轴滑动的套筒上，使两杆与铅直方向的",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "夹角始终相等．",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1080,
+     "y": 240,
+     "w": 620,
+     "h": 600,
+     "name": "governor"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 571,
+     "w": 880,
+     "h": 105,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "转轴以 ",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\omega$",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 旋转 ⇒ 球外张 ⇒ 套筒上滑．",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 686,
+     "w": 880,
+     "h": 150,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\theta=\\arccos\\dfrac{g}{\\omega^2l}$",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "：转速越高，张角越大．",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 846,
+     "w": 1580,
+     "h": 105,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "套筒位移接到进气阀门上 → 转速过高时自动关小进气，使转速稳定．",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true
+    }
+   ],
+   "bullets": [
+    {
+     "text": "套筒位移接到进气阀门上 → 转速过高时自动关小进气，使转速稳定．",
+     "x": 960,
+     "y": 963,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 6
+    }
+   ],
+   "stepTimes": {
+    "1": 549.85,
+    "2": 570.74,
+    "3": 583.26
+   },
+   "t_start": 549.85,
+   "t_end": 600.01,
+   "duration": 50.16,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 583.26,
+     "end": 588.26
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "kind": "page",
+   "heading": "例4　有阻力的抛体运动",
+   "narration": "第四道例题。设空气对抛体的阻力与抛体的速度成正比，即 F 下标 r 等于负 k v，k 为比例系数；抛体的质量为 m、初速为 v₀、抛射角为 α。求抛体运动的轨迹方程。看右图：取 Oxy 平面坐标系，初速 v₀ 与 x 轴成 α 角；虚线画的是没有阻力时的抛物线，那正是我们熟悉的结论。有阻力时轨迹变成什么样，就是本题要解的东西。注意阻力写成负 k v：大小与速率成正比，方向始终与速度相反，所以它的两个分量都随速度变化——两个方向的方程是耦合在一起的，必须分别求解。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例4　有阻力的抛体运动",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 265,
+     "w": 860,
+     "h": 131,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "空气对抛体的阻力与速度成正比，",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec F_{\\mathrm{r}}=-k\\vec v$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 404,
+     "w": 860,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "抛体质量 ",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$m$",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "、初速 ",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec v_0$",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "、抛射角 ",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\alpha$",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "．",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 522,
+     "w": 860,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "求抛体运动的",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "轨迹方程",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 1080,
+     "y": 250,
+     "w": 760,
+     "h": 473,
+     "name": "proj_drag"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 640,
+     "w": 860,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "虚线为",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "无阻力",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "时的抛物线（已知结论）；有阻力时轨迹是什么形状，正是本题所求．",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 788,
+     "w": 860,
+     "h": 130,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "阻力方向始终与 v 相反 ⇒ 两个方向的分量耦合，要分别求解．",
+        "size": 42,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "important": true
+    }
+   ],
+   "bullets": [
+    {
+     "text": "阻力方向始终与 v 相反 ⇒ 两个方向的分量耦合，要分别求解．",
+     "x": 600,
+     "y": 930,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 6
+    }
+   ],
+   "stepTimes": {
+    "1": 600.81,
+    "2": 616.15,
+    "3": 619.5,
+    "4": 630.32
+   },
+   "t_start": 600.81,
+   "t_end": 650.13,
+   "duration": 49.32,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 630.32,
+     "end": 635.32
+    }
+   ]
+  },
+  {
+   "id": 16,
+   "kind": "page",
+   "heading": "例4　解（1）分量方程",
+   "narration": "取如图所示的 Oxy 平面坐标系，把牛顿第二定律沿两个方向分解。x 方向只有阻力的分量，所以 m 乘 dv_x 比 dt 等于负 k v_x。y 方向除了阻力的分量，还有重力，所以 m 乘 dv_y 比 dt 等于负 mg 减 k v_y。这两个方程看着很像，区别只在 y 方向多了一个常数项 mg。正因为如此，两者分离变量的办法不一样，必须分开来解。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例4　解（1）分量方程",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 290,
+     "w": 880,
+     "h": 155,
+     "tex": "m\\dfrac{\\mathrm{d}v_x}{\\mathrm{d}t}=-kv_x",
+     "size": 48,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 480,
+     "w": 880,
+     "h": 165,
+     "tex": "m\\dfrac{\\mathrm{d}v_y}{\\mathrm{d}t}=-mg-kv_y",
+     "size": 48,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 690,
+     "w": 880,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "y 方向多一个常数项 ",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$mg$",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": " ⇒ 两式的积分办法不同，必须分开解．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 0,
+     "x": 1100,
+     "y": 240,
+     "w": 740,
+     "h": 460,
+     "name": "proj_drag_f"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 650.93,
+    "2": 666.34,
+    "3": 676.29
+   },
+   "t_start": 650.93,
+   "t_end": 688.61,
+   "duration": 37.68,
+   "laser": []
+  },
+  {
+   "id": 17,
+   "kind": "page",
+   "heading": "例4　解（2）分离变量",
+   "narration": "先把两式分离变量。x 方向：dv_x 比 v_x 等于负 k 比 m 乘 dt。y 方向：k dv_y 比括号 mg 加 k v_y，等于负 k 比 m 乘 dt——分子分母都凑上 k，是为了积分以后好取对数。还要代初始条件：t 等于 0 时，速度的两个分量分别是 v₀cosα 和 v₀sinα。这两条就是定积分的下限。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例4　解（2）分离变量",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 290,
+     "w": 880,
+     "h": 165,
+     "tex": "\\dfrac{\\mathrm{d}v_x}{v_x}=-\\dfrac{k}{m}\\,\\mathrm{d}t",
+     "size": 44,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 480,
+     "w": 880,
+     "h": 175,
+     "tex": "\\dfrac{k\\,\\mathrm{d}v_y}{mg+kv_y}=-\\dfrac{k}{m}\\,\\mathrm{d}t",
+     "size": 44,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 700,
+     "w": 880,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "初始条件：",
+        "size": 44,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "$t=0$",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 时 ",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$v_{0x}=v_0\\cos\\alpha$",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "，",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$v_{0y}=v_0\\sin\\alpha$",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 848,
+     "w": 880,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（这就是定积分的下限）",
+        "size": 42,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 0,
+     "x": 1100,
+     "y": 240,
+     "w": 740,
+     "h": 460,
+     "name": "proj_drag_f"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 689.41,
+    "2": 699.38,
+    "3": 711.9
+   },
+   "t_start": 689.41,
+   "t_end": 723.87,
+   "duration": 34.46,
+   "laser": []
+  },
+  {
+   "id": 18,
+   "kind": "page",
+   "heading": "例4　解（3）积分得速度",
+   "narration": "两个式子分别积分、代入初始条件，x 方向得到：v_x 等于 v₀cosα 乘 e 的负 kt/m 次方。y 方向得到：v_y 等于括号 v₀sinα 加 mg 比 k 括号乘 e 的负 kt/m 次方，再减 mg 比 k。注意 y 方向这个结果：当时间趋于无穷，指数项趋于零，v_y 趋于负的 mg 比 k——也就是说竖直方向的速度有一个极限，这时阻力的竖直分量恰好与重力平衡。这就是落体在空气里的收尾速度，和下一道例题的极限速度是同一件事。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例4　解（3）积分得速度",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 300,
+     "w": 900,
+     "h": 165,
+     "tex": "v_x=v_0\\cos\\alpha\\,\\mathrm{e}^{-kt/m}",
+     "size": 48,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 500,
+     "w": 900,
+     "h": 185,
+     "tex": "v_y=\\left(v_0\\sin\\alpha+\\dfrac{mg}{k}\\right)\\mathrm{e}^{-kt/m}-\\dfrac{mg}{k}",
+     "size": 34,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 730,
+     "w": 900,
+     "h": 160,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$t\\to\\infty$",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 时 ",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$v_y\\to-\\dfrac{mg}{k}$",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "：",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "竖直方向也有收尾速度",
+        "size": 42,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 0,
+     "x": 1100,
+     "y": 240,
+     "w": 740,
+     "h": 460,
+     "name": "proj_drag_f"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 724.67,
+    "2": 734.79,
+    "3": 744.96
+   },
+   "t_start": 724.67,
+   "t_end": 767.32,
+   "duration": 42.65,
+   "laser": []
+  },
+  {
+   "id": 19,
+   "kind": "page",
+   "heading": "例4　解（4）积分得坐标",
+   "narration": "再由 dx 等于 v_x dt、dy 等于 v_y dt 对时间积分，仍然代初始条件：x 等于 y 等于 0。x 方向积分得到：x 等于 m 比 k 乘 v₀cosα，再乘括号 1 减 e 的负 kt/m 次方。y 方向得到：y 等于 m 比 k 乘括号 v₀sinα 加 mg 比 k 括号，乘括号 1 减 e 的负 kt/m 次方，再减去 mg 比 k 乘 t。到这里，位置作为时间的函数已经全部求出来了。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例4　解（4）积分得坐标",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 275,
+     "w": 880,
+     "h": 283,
+     "tex": "\\begin{cases}\\mathrm{d}x=v_x\\,\\mathrm{d}t\\\\[18px]\\mathrm{d}y=v_y\\,\\mathrm{d}t\\end{cases}",
+     "size": 44,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 568,
+     "w": 880,
+     "h": 165,
+     "tex": "x=\\dfrac{m}{k}(v_0\\cos\\alpha)\\left(1-\\mathrm{e}^{-kt/m}\\right)",
+     "size": 40,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 743,
+     "w": 880,
+     "h": 236,
+     "tex": "\\begin{aligned}y=&\\dfrac{m}{k}\\left(v_0\\sin\\alpha+\\dfrac{mg}{k}\\right)\\left(1-\\mathrm{e}^{-kt/m}\\right)\\\\[16px]&-\\dfrac{mg}{k}t\\end{aligned}",
+     "size": 34,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "diagram",
+     "step": 0,
+     "x": 1100,
+     "y": 240,
+     "w": 740,
+     "h": 460,
+     "name": "proj_drag_f"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 768.12,
+    "2": 778.91,
+    "3": 787.25
+   },
+   "t_start": 768.12,
+   "t_end": 804.53,
+   "duration": 36.41,
+   "laser": []
+  },
+  {
+   "id": 20,
+   "kind": "page",
+   "heading": "例4　解（5）消去 t",
+   "narration": "最后一步，消去参数 t。看右边的图：虚线是无阻力时的抛物线，实线是有阻力时的轨迹。由 x 的表达式反解出 t，再代进 y，就得到轨迹方程：y 等于括号 tanα 加 mg 比 k v₀cosα 括号乘 x，再加上 m²g 比 k² 乘 ln 括号 1 减 k 比 m v₀cosα 乘 x 括号。这里出现了对数项，就是阻力的痕迹。对比两条曲线：有阻力时轨迹明显变低、变近，而且下降段更陡——这是由于阻力始终与运动方向相反，吃掉了一部分动能。所以严格地说，只有当阻力可以忽略时，抛体运动的轨迹才是抛物线。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例4　解（5）消去 t 得轨迹",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1150,
+     "y": 220,
+     "w": 690,
+     "h": 429,
+     "name": "proj_drag_f"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 250,
+     "w": 940,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "消去参数 ",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$t$",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "：由 ",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$x(t)$",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 反解 ",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$t$",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "，代回 ",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$y(t)$",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "．",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 385,
+     "w": 940,
+     "h": 120,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与虚线对比：有阻力时轨迹",
+        "size": 37,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "更低、更近",
+        "size": 37,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "，下降段更陡．",
+        "size": 37,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 560,
+     "w": 940,
+     "h": 282,
+     "tex": "\\begin{aligned}y=&\\left(\\tan\\alpha+\\dfrac{mg}{kv_0\\cos\\alpha}\\right)x\\\\[16px]&+\\dfrac{m^2g}{k^2}\\ln\\left(1-\\dfrac{k}{mv_0\\cos\\alpha}x\\right)\\end{aligned}",
+     "size": 36,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 852,
+     "w": 1580,
+     "h": 120,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "轨迹不再是抛物线",
+        "size": 42,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "（多了一个对数项）：只有阻力可忽略时，抛体轨迹才是抛物线．",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true
+    }
+   ],
+   "bullets": [
+    {
+     "text": "轨迹不再是抛物线（多了一个对数项）：只有阻力可忽略时，抛体轨迹才是抛物线．",
+     "x": 960,
+     "y": 984,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 5
+    }
+   ],
+   "stepTimes": {
+    "1": 805.33,
+    "2": 815.18,
+    "4": 849.13,
+    "3": 837.07
+   },
+   "t_start": 805.33,
+   "t_end": 856.19,
+   "duration": 50.86,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 849.13,
+     "end": 854.13
+    }
+   ]
+  },
+  {
+   "id": 21,
+   "kind": "page",
+   "heading": "例5　水中沉球",
+   "narration": "第五道例题。一质量为 m、半径为 r 的球体，在水中静止释放、沉入水底。已知阻力 F 下标 r 等于负 6π η r v，η 为粘滞系数。求 v 随时间的变化关系 v(t)。先做受力分析：球受三个竖直方向的力——重力 mg 向下、浮力 F 下标 B 向上、阻力与速度反向所以也向上。取坐标 y 向下为正，牛顿第二定律写成 mg 减 F 下标 B 减 6πηrv 等于 m 乘 a。为了把式子写简洁，令 F₀ 等于 mg 减 F 下标 B、b 等于 6πηr，方程就简化成 F₀ 减 bv 等于 m 乘 dv 比 dt——只剩两个参数，好解多了。注意这两个量的含义：b 由粘滞系数和球的半径决定，反映阻力的大小；F₀ 则是重力和浮力之差，也就是净重力，后面求极限速度时它还会出现。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例5　水中沉球",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 245,
+     "w": 820,
+     "h": 123,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质量 ",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$m$",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "、半径 ",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$r$",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 的球体在水中静止释放沉入水底．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 375,
+     "w": 820,
+     "h": 124,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "已知阻力 ",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec F_{\\mathrm{r}}=-6\\pi\\eta r\\vec v$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "，",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\eta$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 为粘滞系数，",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 506,
+     "w": 820,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "求 ",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$v(t)$",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 1040,
+     "y": 245,
+     "w": 620,
+     "h": 620,
+     "name": "sphere_drag"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 616,
+     "w": 820,
+     "h": 136,
+     "tex": "mg-F_{\\mathrm{B}}-6\\pi\\eta rv=ma",
+     "size": 38,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 760,
+     "w": 940,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "令 ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$F_0=mg-F_{\\mathrm{B}}$",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "、",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$b=6\\pi\\eta r$",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "，得",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 868,
+     "w": 940,
+     "h": 140,
+     "tex": "F_0-bv=m\\dfrac{\\mathrm{d}v}{\\mathrm{d}t}",
+     "size": 42,
+     "color": "#C00000",
+     "align": "left"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 856.99,
+    "2": 876.95,
+    "3": 887.14,
+    "4": 896.2
+   },
+   "t_start": 856.99,
+   "t_end": 923.3,
+   "duration": 66.31,
+   "laser": []
+  },
+  {
+   "id": 22,
+   "kind": "page",
+   "heading": "例5　解　分离变量积分",
+   "narration": "这个方程可以分离变量：把负 bv 移到左边，两边同除以括号 v 减 F₀ 比 b，得到 dv 比括号 v 减 F₀ 比 b 等于负 b 比 m 乘 dt。两边同时积分：左边从 0 积到 v，右边从 0 积到 t。积分出来，左边是对数，整理取指数、代入初始条件 v(0) 等于 0，得到 v 等于 F₀ 比 b 乘中括号 1 减 e 的负 b 比 m 再乘 t 次方。这是一个从零开始、逐渐逼近常数的指数上升曲线。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例5　解　分离变量积分",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 220,
+     "y": 275,
+     "w": 1400,
+     "h": 175,
+     "tex": "\\dfrac{\\mathrm{d}v}{v-F_0/b}=-\\dfrac{b}{m}\\,\\mathrm{d}t",
+     "size": 46,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 220,
+     "y": 480,
+     "w": 1400,
+     "h": 175,
+     "tex": "\\int_{0}^{v}\\dfrac{\\mathrm{d}v}{v-F_0/b}=-\\dfrac{b}{m}\\int_{0}^{t}\\mathrm{d}t",
+     "size": 46,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 220,
+     "y": 685,
+     "w": 1400,
+     "h": 180,
+     "tex": "v=\\dfrac{F_0}{b}\\left[1-\\mathrm{e}^{-(b/m)t}\\right]",
+     "size": 54,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 890,
+     "w": 1580,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "从零开始、逐渐逼近常数的",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "指数上升曲线",
+        "size": 42,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "（$t=0$ 时 $v=0$，加速度最大）．",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 924.1,
+    "2": 935.8,
+    "3": 941.72
+   },
+   "t_start": 924.1,
+   "t_end": 960.51,
+   "duration": 36.41,
+   "laser": []
+  },
+  {
+   "id": 23,
+   "kind": "page",
+   "heading": "例5　讨论·极限速度",
+   "narration": "看这个结果：当时间趋于无穷，指数项趋于零，速率趋于 F₀ 比 b——这就是极限速度。它的物理意义很清楚：速度增大时阻力也随之增大，当阻力加上浮力恰好抵消重力，合外力为零、加速度为零，速度就不再增大。什么时候可以认为已经达到极限速度？把 t 等于 3m 比 b 代进去：指数项等于 e 的负 3 次方，约等于 0.05，所以速率达到了极限速度的 95%。因此一般认为，当 t 大于等于 3m 比 b 时，就可以把速率当作极限速度了。看右下角的曲线：速率很快升上去，然后紧贴着水平渐近线走。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例5　讨论·极限速度",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 270,
+     "w": 800,
+     "h": 125,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$t\\to\\infty$",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 时 ",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$v\\to F_0/b$",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "（极限速度）",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 400,
+     "w": 800,
+     "h": 125,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "物理意义：",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "阻力随速度增大，直到与净重力平衡，a = 0．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 540,
+     "w": 800,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "当 ",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$t=3m/b$",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 时，",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 640,
+     "w": 800,
+     "h": 155,
+     "tex": "v=v_{\\mathrm{L}}(1-0.05)=0.95\\,v_{\\mathrm{L}}",
+     "size": 46,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 1000,
+     "y": 300,
+     "w": 750,
+     "h": 514,
+     "name": "vt_limit"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 830,
+     "w": 1580,
+     "h": 120,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一般认为 ",
+        "size": 35,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$t\\ge 3m/b$",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": " 时 ",
+        "size": 35,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$v\\to v_{\\mathrm{L}}$",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "：速率很快升上去，随后紧贴水平渐近线．",
+        "size": 35,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true
+    }
+   ],
+   "bullets": [
+    {
+     "text": "一般认为 $t\\ge 3m/b$ 时 $v\\to v_{\\mathrm{L}}$",
+     "x": 960,
+     "y": 962,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 6
+    }
+   ],
+   "stepTimes": {
+    "1": 961.31,
+    "2": 981.82,
+    "3": 996.82
+   },
+   "t_start": 961.31,
+   "t_end": 1011.01,
+   "duration": 49.7,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 996.82,
+     "end": 1001.82
+    }
+   ]
+  },
+  {
+   "id": 24,
+   "kind": "page",
+   "heading": "例5　讨论·水面有初速",
+   "narration": "再看一种情形：若球体在水面上具有竖直向下的速率 v₀，且在水中浮力恰好与重力相等，也就是 F 下标 B 等于 P，那么球在水中只受阻力的作用。方程变成 m 乘 dv 比 dt 等于负 bv。分离变量、两边积分，从 v₀ 积到 v，得到 v 等于 v₀ 乘 e 的负 b 比 m 再乘 t 次方。这是纯粹的指数衰减：一开始速率最大、减得也最快，然后越来越慢、趋于零。对比上一页那条曲线——一条趋近常数，一条衰减到零，差别就在于有没有净的重力。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例5　讨论·水面有初速的情形",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 270,
+     "w": 820,
+     "h": 128,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "若球体在水面上具有竖直向下的速率 ",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$v_0$",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "，且在水中",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 408,
+     "w": 820,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$F_{\\mathrm{B}}=P$",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "，则球在水中",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "仅受阻力",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "的作用．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 528,
+     "w": 820,
+     "h": 160,
+     "tex": "m\\dfrac{\\mathrm{d}v}{\\mathrm{d}t}=-bv",
+     "size": 46,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 698,
+     "w": 820,
+     "h": 170,
+     "tex": "v=v_0\\,\\mathrm{e}^{-(b/m)t}",
+     "size": 52,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 1000,
+     "y": 300,
+     "w": 750,
+     "h": 514,
+     "name": "vt_decay"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 880,
+     "w": 1580,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "纯指数衰减：一开始减得最快，随后趋于零．与上页对比——",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "有无净重力，决定曲线趋于常数还是趋于零",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true
+    }
+   ],
+   "bullets": [
+    {
+     "text": "纯指数衰减：一开始减得最快，随后趋于零．与上页对比——有无净重力，决定曲线趋于常",
+     "x": 960,
+     "y": 1002,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 6
+    }
+   ],
+   "stepTimes": {
+    "1": 1011.81,
+    "2": 1025.43,
+    "3": 1038.95
+   },
+   "t_start": 1011.81,
+   "t_end": 1056.07,
+   "duration": 44.26,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 1038.95,
+     "end": 1043.95
+    }
+   ]
+  },
+  {
+   "id": 25,
+   "kind": "page",
+   "heading": "本节小结",
+   "narration": "这一节用五道例题把动力学问题走了一遍，其实都在同一条链上：隔离物体、受力分析、建立坐标、列方程、解方程、结果讨论。把五道题的结论放在一起看，各自的招法很清楚：阿特伍德机重在找加速度关系，竖直圆用自然坐标，圆锥摆的向心力必须取水平，有阻力的抛体要分离变量积分，水中沉球最后落在一个极限速度上。两个共同点值得记牢：只要阻力与速度相关，解里一定会出现指数；变速率圆周运动一定要分成切向和法向两个方程。最后一步的讨论千万别省——m₁ 等于 m₂ 时加速度为零、张力为零时绳已松弛、t 趋于无穷时的极限速度，这些极限情形本身就是最好的物理图像。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 1580,
+     "h": 115,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "解动力学问题的一条链：",
+        "size": 41,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "隔离物体 → 受力分析 → 建立坐标 → 列方程 → 解方程 → 结果讨论",
+        "size": 39,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "table",
+     "step": 2,
+     "x": 220,
+     "y": 390,
+     "w": 1480,
+     "rows": [
+      [
+       "例题",
+       "结论 / 关键"
+      ],
+      [
+       "例1　阿特伍德机",
+       "a = (m₁−m₂)g/(m₁+m₂)"
+      ],
+      [
+       "例1（2）电梯中",
+       "g → g + a"
+      ],
+      [
+       "例2　竖直圆",
+       "v² = v₀² + 2gl(cosθ−1)"
+      ],
+      [
+       "例3　圆锥摆",
+       "cosθ = g/(ω²l)"
+      ],
+      [
+       "例4　阻力抛体",
+       "轨迹含对数项，不再是抛物线"
+      ],
+      [
+       "例5　水中沉球",
+       "v_L = F₀/b（极限速度）"
+      ]
+     ],
+     "rowh": 70,
+     "size": 34,
+     "fill": "#CCFFCC"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 895,
+     "w": 1580,
+     "h": 105,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "共同点：",
+        "size": 39,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "阻力与速度相关 ⇒ 解里必出现指数；变速率圆周运动 ⇒ 切向、法向各一个方程．",
+        "size": 39,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true
+    }
+   ],
+   "bullets": [
+    {
+     "text": "共同点：阻力与速度相关 ⇒ 解里必出现指数；变速率圆周运动 ⇒ 切向、法向各一个",
+     "x": 960,
+     "y": 1012,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 3
+    }
+   ],
+   "stepTimes": {
+    "1": 1056.87,
+    "2": 1068.89,
+    "3": 1086.21
+   },
+   "t_start": 1056.87,
+   "t_end": 1111.09,
+   "duration": 54.22,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 1086.21,
+     "end": 1091.21
+    }
+   ]
+  }
+ ],
+ "subtitles": [
+  {
+   "slide": 1,
+   "start": 0.0,
+   "end": 3.58,
+   "text": "这一段内容在第二章，牛顿定律。"
+  },
+  {
+   "slide": 1,
+   "start": 3.98,
+   "end": 14.06,
+   "text": "2-4 是这一章的收口——前面讲了三条定律、单位和量纲、几种常见的力，这一节用五道例题把它们真正用起来。"
+  },
+  {
+   "slide": 1,
+   "start": 14.46,
+   "end": 20.39,
+   "text": "解动力学问题有一套固定的步骤，先讲清步骤，再一道道题走。"
+  },
+  {
+   "slide": 2,
+   "start": 21.75,
+   "end": 25.49,
+   "text": "先看质点动力学的两类常见问题。"
+  },
+  {
+   "slide": 2,
+   "start": 25.89,
+   "end": 34.41,
+   "text": "第一类，已知物体受的力，求它的运动方程——也就是由力推加速度、再由加速度求出位矢。"
+  },
+  {
+   "slide": 2,
+   "start": 34.81,
+   "end": 43.64,
+   "text": "第二类刚好相反，已知运动方程，求力——由运动方程求出加速度，再乘质量得到合力。"
+  },
+  {
+   "slide": 2,
+   "start": 44.04,
+   "end": 50.04,
+   "text": "看这张图：两条链的正中间都是加速度，方向正好相反。"
+  },
+  {
+   "slide": 2,
+   "start": 50.44,
+   "end": 52.79,
+   "text": "为什么绕不开加速度？"
+  },
+  {
+   "slide": 2,
+   "start": 53.44,
+   "end": 61.14,
+   "text": "因为牛顿第二定律就是把力和加速度联系起来的桥梁，无论求哪一头，都要先过这座桥。"
+  },
+  {
+   "slide": 3,
+   "start": 62.7,
+   "end": 67.43,
+   "text": "解动力学问题有六个步骤，看这张流程图。"
+  },
+  {
+   "slide": 3,
+   "start": 67.83,
+   "end": 82.45,
+   "text": "第一步隔离物体，把研究对象单独取出来；第二步受力分析，把作用在它上面的每一个力都画出来；第三步建立坐标；第四步列方程；第五步解方程；第六步结果讨论。"
+  },
+  {
+   "slide": 3,
+   "start": 82.85,
+   "end": 92.09,
+   "text": "第三步选坐标有一条实用原则：让尽可能多的力落在坐标轴上，需要分解的矢量就越少、方程越简单。"
+  },
+  {
+   "slide": 3,
+   "start": 92.49,
+   "end": 105.76,
+   "text": "第六步最容易被跳过，但恰恰最能体现物理：查一查量纲对不对，看一看极限情形合不合理，比如令两个质量相等、令某个速度趋于零，结果是不是符合直觉。"
+  },
+  {
+   "slide": 4,
+   "start": 107.18,
+   "end": 110.11,
+   "text": "第一道例题，阿特伍德机。"
+  },
+  {
+   "slide": 4,
+   "start": 110.51,
+   "end": 120.66,
+   "text": "如图所示，滑轮和绳子的质量均不计，滑轮与绳间、滑轮与轴间的摩擦力也均不计，并且 m₁ 大于 m₂。"
+  },
+  {
+   "slide": 4,
+   "start": 121.06,
+   "end": 125.69,
+   "text": "求重物释放后，两个物体的加速度和绳的张力。"
+  },
+  {
+   "slide": 4,
+   "start": 126.09,
+   "end": 135.93,
+   "text": "题目的关键条件在这里：绳不可伸长，所以两个物体的加速度大小一定相等，只是一个向上、一个向下。"
+  },
+  {
+   "slide": 5,
+   "start": 137.36,
+   "end": 140.1,
+   "text": "以地面为参考系来解。"
+  },
+  {
+   "slide": 5,
+   "start": 140.5,
+   "end": 146.91,
+   "text": "先把两个物体分别隔离出来，各自画受力图、取坐标，如右图。"
+  },
+  {
+   "slide": 5,
+   "start": 147.31,
+   "end": 155.88,
+   "text": "m₁ 受绳的张力 F 下标 T1 向上，重力 P₁ 向下；它的坐标轴从 o 指向下方，向下为正。"
+  },
+  {
+   "slide": 5,
+   "start": 156.28,
+   "end": 164.42,
+   "text": "m₂ 受张力 F 下标 T2 向上，重力 P₂ 向下；坐标轴从 o 指向上方，向上为正。"
+  },
+  {
+   "slide": 5,
+   "start": 164.82,
+   "end": 173.7,
+   "text": "同一条绳，而且滑轮和绳的质量、摩擦都不计，所以两段绳的张力相等，都记作 F 下标 T。"
+  },
+  {
+   "slide": 5,
+   "start": 174.1,
+   "end": 182.98,
+   "text": "这样取坐标的好处是：两个物体都沿自己的正方向运动，加速度都是正的，列方程时不用带负号。"
+  },
+  {
+   "slide": 6,
+   "start": 184.5,
+   "end": 186.4,
+   "text": "列方程。"
+  },
+  {
+   "slide": 6,
+   "start": 186.8,
+   "end": 195.68,
+   "text": "对 m₁：m₁g 减 F 下标 T 等于 m₁ 乘 a；对 m₂：负的 m₂g 加 F 下标 T 等于 m₂ 乘 a。"
+  },
+  {
+   "slide": 6,
+   "start": 196.08,
+   "end": 201.94,
+   "text": "再加上绳不可伸长给出的条件：两个加速度大小相等，都记作 a。"
+  },
+  {
+   "slide": 6,
+   "start": 202.34,
+   "end": 213.55,
+   "text": "两个方程联立求解，得到加速度 a 等于 m₁ 减 m₂ 比 m₁ 加 m₂ 再乘 g；绳的张力 F 下标 T 等于 2 m₁ m₂ 比 m₁ 加 m₂ 再乘 g。"
+  },
+  {
+   "slide": 6,
+   "start": 213.95,
+   "end": 228.13,
+   "text": "结果讨论：如果 m₁ 等于 m₂，加速度为零——两个物块静止或者匀速运动，这正是阿特伍德机用来测重力加速度的原理；张力总在 m₁g 和 m₂g 之间，也符合直觉。"
+  },
+  {
+   "slide": 7,
+   "start": 229.6,
+   "end": 240.71,
+   "text": "把题目改一下：若将此装置置于电梯顶部，当电梯以加速度 a 相对地面向上运动时，求两物体相对电梯的加速度和绳的张力。"
+  },
+  {
+   "slide": 7,
+   "start": 241.11,
+   "end": 251.81,
+   "text": "看右边的图：电梯相对地面有向上的加速度 a，记作 ā；两个物块相对电梯的加速度 a 下标 r 大小相等、方向相反。"
+  },
+  {
+   "slide": 7,
+   "start": 252.21,
+   "end": 262.72,
+   "text": "这里要特别小心：a 下标 r 是相对量，而电梯的加速度 a 是相对地面的——求物体相对地面的加速度，必须把两者合成起来。"
+  },
+  {
+   "slide": 8,
+   "start": 264.1,
+   "end": 266.76,
+   "text": "仍然以地面为参考系。"
+  },
+  {
+   "slide": 8,
+   "start": 267.16,
+   "end": 274.77,
+   "text": "设两物体相对地面的加速度分别为 a₁ 和 a₂，相对电梯的加速度为 a 下标 r。"
+  },
+  {
+   "slide": 8,
+   "start": 275.17,
+   "end": 288.18,
+   "text": "列方程：m₁g 减 F 下标 T 等于 m₁ 乘 a₁，而 a₁ 等于 a 下标 r 减 a；负的 m₂g 加 F 下标 T 等于 m₂ 乘 a₂，而 a₂ 等于 a 下标 r 加 a。"
+  },
+  {
+   "slide": 8,
+   "start": 288.58,
+   "end": 302.19,
+   "text": "联立解得：相对加速度 a 下标 r 等于 m₁ 减 m₂ 比 m₁ 加 m₂ 再乘括号 g 加 a；绳的张力 F 下标 T 等于 2 m₁ m₂ 比 m₁ 加 m₂ 再乘括号 g 加 a。"
+  },
+  {
+   "slide": 8,
+   "start": 302.59,
+   "end": 307.68,
+   "text": "和第一问的结果比一比：只要把 g 换成 g 加 a 就行。"
+  },
+  {
+   "slide": 8,
+   "start": 308.08,
+   "end": 315.5,
+   "text": "这在电梯参考系里看，相当于重力「变重」了——这个思路在后面讲非惯性系时还会深入。"
+  },
+  {
+   "slide": 9,
+   "start": 317.03,
+   "end": 319.02,
+   "text": "第二道例题。"
+  },
+  {
+   "slide": 9,
+   "start": 319.42,
+   "end": 326.14,
+   "text": "如图，长为 l 的轻绳，一端系质量为 m 的小球，另一端系于定点 O。"
+  },
+  {
+   "slide": 9,
+   "start": 326.54,
+   "end": 332.01,
+   "text": "t 等于 0 时，小球位于最低位置，并具有水平速度 v₀。"
+  },
+  {
+   "slide": 9,
+   "start": 332.41,
+   "end": 336.27,
+   "text": "求小球在任意位置的速率及绳的张力。"
+  },
+  {
+   "slide": 9,
+   "start": 336.67,
+   "end": 347.23,
+   "text": "注意这是变速率圆周运动：速率在变，所以切线方向有加速度；而只要还在圆周上运动，法线方向就必有向心加速度。"
+  },
+  {
+   "slide": 9,
+   "start": 347.63,
+   "end": 352.69,
+   "text": "两个方向都要列方程——这就是自然坐标系的用武之地。"
+  },
+  {
+   "slide": 10,
+   "start": 354.24,
+   "end": 356.98,
+   "text": "在自然坐标系里列方程。"
+  },
+  {
+   "slide": 10,
+   "start": 357.38,
+   "end": 367.44,
+   "text": "沿法线方向指向圆心：绳的张力减去重力的法向分量 mg 乘 cosθ，等于向心力 m v² 比 l。"
+  },
+  {
+   "slide": 10,
+   "start": 367.84,
+   "end": 375.45,
+   "text": "沿切线方向：负的 mg 乘 sinθ 等于 m 乘 dv 比 dt，也就是切向加速度。"
+  },
+  {
+   "slide": 10,
+   "start": 375.85,
+   "end": 382.64,
+   "text": "第二个式子里对时间的微分不好直接积分，用一个小技巧：把 dt 换成角度。"
+  },
+  {
+   "slide": 10,
+   "start": 383.04,
+   "end": 391.25,
+   "text": "因为 v 等于 l 乘 dθ 比 dt，所以 dv 比 dt 等于 v 比 l 乘 dv 比 dθ。"
+  },
+  {
+   "slide": 10,
+   "start": 391.65,
+   "end": 401.3,
+   "text": "这样一来时间被消掉，方程变成了对角度 θ 的积分，而从 θ 等于 0 到 θ 正是小球走过的位置角。"
+  },
+  {
+   "slide": 11,
+   "start": 402.82,
+   "end": 412.61,
+   "text": "把切向式整理成 v dv 等于负 g l sinθ dθ，两边同时积分：左边从 v₀ 积到 v，右边从 0 积到 θ。"
+  },
+  {
+   "slide": 11,
+   "start": 413.01,
+   "end": 420.76,
+   "text": "积分出来，速率满足 v² 等于 v₀² 加 2 g l 乘括号 cosθ 减 1。"
+  },
+  {
+   "slide": 11,
+   "start": 421.16,
+   "end": 430.83,
+   "text": "把它代回法向方程，就得到绳的张力：F 下标 T 等于 m 乘括号 v₀² 比 l 减 2g 加 3g cosθ。"
+  },
+  {
+   "slide": 11,
+   "start": 431.23,
+   "end": 434.88,
+   "text": "这个结果只能用在张力大于零的地方。"
+  },
+  {
+   "slide": 11,
+   "start": 435.28,
+   "end": 446.46,
+   "text": "如果某个位置算出来张力为零或者为负，说明绳已经松弛、小球已经离开圆周——此后它做的是抛体运动，不能再用圆周运动的公式了。"
+  },
+  {
+   "slide": 12,
+   "start": 447.95,
+   "end": 450.97,
+   "text": "第三道例题，圆锥摆。"
+  },
+  {
+   "slide": 12,
+   "start": 451.37,
+   "end": 466.01,
+   "text": "如图，摆长为 l 的圆锥摆：细绳一端固定在天花板上，另一端悬挂质量为 m 的小球；小球被推动后，在水平面内绕通过圆心 O 的铅直轴作角速度为 ω 的匀速率圆周运动。"
+  },
+  {
+   "slide": 12,
+   "start": 466.41,
+   "end": 470.71,
+   "text": "问绳和铅直方向所成的角度 θ 为多少？"
+  },
+  {
+   "slide": 12,
+   "start": 471.36,
+   "end": 473.59,
+   "text": "空气阻力不计。"
+  },
+  {
+   "slide": 12,
+   "start": 473.99,
+   "end": 483.04,
+   "text": "解题前先想清楚一件事：小球在水平面内做圆周运动，所以向心力必须是水平的、指向轴心。"
+  },
+  {
+   "slide": 12,
+   "start": 483.44,
+   "end": 485.84,
+   "text": "这就是取坐标的依据。"
+  },
+  {
+   "slide": 13,
+   "start": 487.39,
+   "end": 493.41,
+   "text": "先写矢量式：绳的张力 F 下标 T 加上重力 P 等于 m 乘 a。"
+  },
+  {
+   "slide": 13,
+   "start": 493.81,
+   "end": 497.15,
+   "text": "沿水平和竖直两个方向分解。"
+  },
+  {
+   "slide": 13,
+   "start": 497.55,
+   "end": 514.01,
+   "text": "水平方向：F 下标 T 乘 sinθ 提供向心力，等于 m r ω²；竖直方向：F 下标 T 乘 cosθ 减去重力等于零——因为小球始终在同一个水平面内运动，竖直方向没有加速度。"
+  },
+  {
+   "slide": 13,
+   "start": 514.41,
+   "end": 519.67,
+   "text": "还有一个几何关系：轨道半径 r 等于 l 乘 sinθ。"
+  },
+  {
+   "slide": 13,
+   "start": 520.07,
+   "end": 540.21,
+   "text": "由竖直方程得到 F 下标 T 乘 cosθ 等于 mg；再由水平方程，把 F 下标 T 用 m ω² l 代入，两式相除，就得到 cosθ 等于 g 比 ω² l，也就是 θ 等于 arccos 括号 g 比 ω² l 括号。"
+  },
+  {
+   "slide": 13,
+   "start": 540.61,
+   "end": 548.31,
+   "text": "结论很有意思：ω 越大，cosθ 越小、θ 越大——转得越快，摆得越高。"
+  },
+  {
+   "slide": 14,
+   "start": 549.85,
+   "end": 554.84,
+   "text": "这个结论有个很有名的应用——蒸汽机的离心调速器。"
+  },
+  {
+   "slide": 14,
+   "start": 555.24,
+   "end": 570.34,
+   "text": "看这幅图：两根长 l 的杆从转轴上的铰点挂下来，末端各有一个质量 m 的球；两个球又用短杆连到一个可以沿轴上下滑动的套筒上，短杆使两杆与铅直方向的夹角始终保持相等。"
+  },
+  {
+   "slide": 14,
+   "start": 570.74,
+   "end": 582.86,
+   "text": "转轴以角速度 ω 旋转时，球向外张开：根据刚才的结果，θ 等于 arccos 括号 g 比 ω² l 括号，转得越快张角越大。"
+  },
+  {
+   "slide": 14,
+   "start": 583.26,
+   "end": 588.2,
+   "text": "球张开的同时，被短杆顶着的套筒会向上滑动。"
+  },
+  {
+   "slide": 14,
+   "start": 588.6,
+   "end": 599.33,
+   "text": "把这个位移接到进气阀门上，当转速过高时就能自动关小进气、让转速降下来——这就是离心调速器稳定转速的原理。"
+  },
+  {
+   "slide": 15,
+   "start": 600.81,
+   "end": 602.87,
+   "text": "第四道例题。"
+  },
+  {
+   "slide": 15,
+   "start": 603.27,
+   "end": 615.75,
+   "text": "设空气对抛体的阻力与抛体的速度成正比，即 F 下标 r 等于负 k v，k 为比例系数；抛体的质量为 m、初速为 v₀、抛射角为 α。"
+  },
+  {
+   "slide": 15,
+   "start": 616.15,
+   "end": 619.1,
+   "text": "求抛体运动的轨迹方程。"
+  },
+  {
+   "slide": 15,
+   "start": 619.5,
+   "end": 629.92,
+   "text": "看右图：取 Oxy 平面坐标系，初速 v₀ 与 x 轴成 α 角；虚线画的是没有阻力时的抛物线，那正是我们熟悉的结论。"
+  },
+  {
+   "slide": 15,
+   "start": 630.32,
+   "end": 635.12,
+   "text": "有阻力时轨迹变成什么样，就是本题要解的东西。"
+  },
+  {
+   "slide": 15,
+   "start": 635.52,
+   "end": 649.39,
+   "text": "注意阻力写成负 k v：大小与速率成正比，方向始终与速度相反，所以它的两个分量都随速度变化——两个方向的方程是耦合在一起的，必须分别求解。"
+  },
+  {
+   "slide": 16,
+   "start": 650.93,
+   "end": 657.36,
+   "text": "取如图所示的 Oxy 平面坐标系，把牛顿第二定律沿两个方向分解。"
+  },
+  {
+   "slide": 16,
+   "start": 657.76,
+   "end": 665.94,
+   "text": "x 方向只有阻力的分量，所以 m 乘 dv_x 比 dt 等于负 k v_x。"
+  },
+  {
+   "slide": 16,
+   "start": 666.34,
+   "end": 675.89,
+   "text": "y 方向除了阻力的分量，还有重力，所以 m 乘 dv_y 比 dt 等于负 mg 减 k v_y。"
+  },
+  {
+   "slide": 16,
+   "start": 676.29,
+   "end": 682.15,
+   "text": "这两个方程看着很像，区别只在 y 方向多了一个常数项 mg。"
+  },
+  {
+   "slide": 16,
+   "start": 682.55,
+   "end": 687.93,
+   "text": "正因为如此，两者分离变量的办法不一样，必须分开来解。"
+  },
+  {
+   "slide": 17,
+   "start": 689.41,
+   "end": 691.86,
+   "text": "先把两式分离变量。"
+  },
+  {
+   "slide": 17,
+   "start": 692.26,
+   "end": 698.98,
+   "text": "x 方向：dv_x 比 v_x 等于负 k 比 m 乘 dt。"
+  },
+  {
+   "slide": 17,
+   "start": 699.38,
+   "end": 711.5,
+   "text": "y 方向：k dv_y 比括号 mg 加 k v_y，等于负 k 比 m 乘 dt——分子分母都凑上 k，是为了积分以后好取对数。"
+  },
+  {
+   "slide": 17,
+   "start": 711.9,
+   "end": 719.72,
+   "text": "还要代初始条件：t 等于 0 时，速度的两个分量分别是 v₀cosα 和 v₀sinα。"
+  },
+  {
+   "slide": 17,
+   "start": 720.12,
+   "end": 723.19,
+   "text": "这两条就是定积分的下限。"
+  },
+  {
+   "slide": 18,
+   "start": 724.67,
+   "end": 734.39,
+   "text": "两个式子分别积分、代入初始条件，x 方向得到：v_x 等于 v₀cosα 乘 e 的负 kt/m 次方。"
+  },
+  {
+   "slide": 18,
+   "start": 734.79,
+   "end": 744.56,
+   "text": "y 方向得到：v_y 等于括号 v₀sinα 加 mg 比 k 括号乘 e 的负 kt/m 次方，再减 mg 比 k。"
+  },
+  {
+   "slide": 18,
+   "start": 744.96,
+   "end": 760.27,
+   "text": "注意 y 方向这个结果：当时间趋于无穷，指数项趋于零，v_y 趋于负的 mg 比 k——也就是说竖直方向的速度有一个极限，这时阻力的竖直分量恰好与重力平衡。"
+  },
+  {
+   "slide": 18,
+   "start": 760.67,
+   "end": 766.69,
+   "text": "这就是落体在空气里的收尾速度，和下一道例题的极限速度是同一件事。"
+  },
+  {
+   "slide": 19,
+   "start": 768.12,
+   "end": 778.51,
+   "text": "再由 dx 等于 v_x dt、dy 等于 v_y dt 对时间积分，仍然代初始条件：x 等于 y 等于 0。"
+  },
+  {
+   "slide": 19,
+   "start": 778.91,
+   "end": 786.85,
+   "text": "x 方向积分得到：x 等于 m 比 k 乘 v₀cosα，再乘括号 1 减 e 的负 kt/m 次方。"
+  },
+  {
+   "slide": 19,
+   "start": 787.25,
+   "end": 798.79,
+   "text": "y 方向得到：y 等于 m 比 k 乘括号 v₀sinα 加 mg 比 k 括号，乘括号 1 减 e 的负 kt/m 次方，再减去 mg 比 k 乘 t。"
+  },
+  {
+   "slide": 19,
+   "start": 799.19,
+   "end": 803.89,
+   "text": "到这里，位置作为时间的函数已经全部求出来了。"
+  },
+  {
+   "slide": 20,
+   "start": 805.33,
+   "end": 808.43,
+   "text": "最后一步，消去参数 t。"
+  },
+  {
+   "slide": 20,
+   "start": 808.83,
+   "end": 814.78,
+   "text": "看右边的图：虚线是无阻力时的抛物线，实线是有阻力时的轨迹。"
+  },
+  {
+   "slide": 20,
+   "start": 815.18,
+   "end": 832.48,
+   "text": "由 x 的表达式反解出 t，再代进 y，就得到轨迹方程：y 等于括号 tanα 加 mg 比 k v₀cosα 括号乘 x，再加上 m²g 比 k² 乘 ln 括号 1 减 k 比 m v₀cosα 乘 x 括号。"
+  },
+  {
+   "slide": 20,
+   "start": 832.88,
+   "end": 836.67,
+   "text": "这里出现了对数项，就是阻力的痕迹。"
+  },
+  {
+   "slide": 20,
+   "start": 837.07,
+   "end": 848.73,
+   "text": "对比两条曲线：有阻力时轨迹明显变低、变近，而且下降段更陡——这是由于阻力始终与运动方向相反，吃掉了一部分动能。"
+  },
+  {
+   "slide": 20,
+   "start": 849.13,
+   "end": 855.44,
+   "text": "所以严格地说，只有当阻力可以忽略时，抛体运动的轨迹才是抛物线。"
+  },
+  {
+   "slide": 21,
+   "start": 856.99,
+   "end": 859.01,
+   "text": "第五道例题。"
+  },
+  {
+   "slide": 21,
+   "start": 859.41,
+   "end": 865.48,
+   "text": "一质量为 m、半径为 r 的球体，在水中静止释放、沉入水底。"
+  },
+  {
+   "slide": 21,
+   "start": 865.88,
+   "end": 872.29,
+   "text": "已知阻力 F 下标 r 等于负 6π η r v，η 为粘滞系数。"
+  },
+  {
+   "slide": 21,
+   "start": 872.69,
+   "end": 876.55,
+   "text": "求 v 随时间的变化关系 v(t)。"
+  },
+  {
+   "slide": 21,
+   "start": 876.95,
+   "end": 886.74,
+   "text": "先做受力分析：球受三个竖直方向的力——重力 mg 向下、浮力 F 下标 B 向上、阻力与速度反向所以也向上。"
+  },
+  {
+   "slide": 21,
+   "start": 887.14,
+   "end": 895.8,
+   "text": "取坐标 y 向下为正，牛顿第二定律写成 mg 减 F 下标 B 减 6πηrv 等于 m 乘 a。"
+  },
+  {
+   "slide": 21,
+   "start": 896.2,
+   "end": 909.45,
+   "text": "为了把式子写简洁，令 F₀ 等于 mg 减 F 下标 B、b 等于 6πηr，方程就简化成 F₀ 减 bv 等于 m 乘 dv 比 dt——只剩两个参数，好解多了。"
+  },
+  {
+   "slide": 21,
+   "start": 909.85,
+   "end": 922.45,
+   "text": "注意这两个量的含义：b 由粘滞系数和球的半径决定，反映阻力的大小；F₀ 则是重力和浮力之差，也就是净重力，后面求极限速度时它还会出现。"
+  },
+  {
+   "slide": 22,
+   "start": 924.1,
+   "end": 935.4,
+   "text": "这个方程可以分离变量：把负 bv 移到左边，两边同除以括号 v 减 F₀ 比 b，得到 dv 比括号 v 减 F₀ 比 b 等于负 b 比 m 乘 dt。"
+  },
+  {
+   "slide": 22,
+   "start": 935.8,
+   "end": 941.32,
+   "text": "两边同时积分：左边从 0 积到 v，右边从 0 积到 t。"
+  },
+  {
+   "slide": 22,
+   "start": 941.72,
+   "end": 954.32,
+   "text": "积分出来，左边是对数，整理取指数、代入初始条件 v(0) 等于 0，得到 v 等于 F₀ 比 b 乘中括号 1 减 e 的负 b 比 m 再乘 t 次方。"
+  },
+  {
+   "slide": 22,
+   "start": 954.72,
+   "end": 959.88,
+   "text": "这是一个从零开始、逐渐逼近常数的指数上升曲线。"
+  },
+  {
+   "slide": 23,
+   "start": 961.31,
+   "end": 969.45,
+   "text": "看这个结果：当时间趋于无穷，指数项趋于零，速率趋于 F₀ 比 b——这就是极限速度。"
+  },
+  {
+   "slide": 23,
+   "start": 969.85,
+   "end": 981.42,
+   "text": "它的物理意义很清楚：速度增大时阻力也随之增大，当阻力加上浮力恰好抵消重力，合外力为零、加速度为零，速度就不再增大。"
+  },
+  {
+   "slide": 23,
+   "start": 981.82,
+   "end": 985.59,
+   "text": "什么时候可以认为已经达到极限速度？"
+  },
+  {
+   "slide": 23,
+   "start": 986.24,
+   "end": 996.42,
+   "text": "把 t 等于 3m 比 b 代进去：指数项等于 e 的负 3 次方，约等于 0.05，所以速率达到了极限速度的 95%。"
+  },
+  {
+   "slide": 23,
+   "start": 996.82,
+   "end": 1003.59,
+   "text": "因此一般认为，当 t 大于等于 3m 比 b 时，就可以把速率当作极限速度了。"
+  },
+  {
+   "slide": 23,
+   "start": 1003.99,
+   "end": 1010.28,
+   "text": "看右下角的曲线：速率很快升上去，然后紧贴着水平渐近线走。"
+  },
+  {
+   "slide": 24,
+   "start": 1011.81,
+   "end": 1025.03,
+   "text": "再看一种情形：若球体在水面上具有竖直向下的速率 v₀，且在水中浮力恰好与重力相等，也就是 F 下标 B 等于 P，那么球在水中只受阻力的作用。"
+  },
+  {
+   "slide": 24,
+   "start": 1025.43,
+   "end": 1030.13,
+   "text": "方程变成 m 乘 dv 比 dt 等于负 bv。"
+  },
+  {
+   "slide": 24,
+   "start": 1030.53,
+   "end": 1038.55,
+   "text": "分离变量、两边积分，从 v₀ 积到 v，得到 v 等于 v₀ 乘 e 的负 b 比 m 再乘 t 次方。"
+  },
+  {
+   "slide": 24,
+   "start": 1038.95,
+   "end": 1046.85,
+   "text": "这是纯粹的指数衰减：一开始速率最大、减得也最快，然后越来越慢、趋于零。"
+  },
+  {
+   "slide": 24,
+   "start": 1047.25,
+   "end": 1055.39,
+   "text": "对比上一页那条曲线——一条趋近常数，一条衰减到零，差别就在于有没有净的重力。"
+  },
+  {
+   "slide": 25,
+   "start": 1056.87,
+   "end": 1068.49,
+   "text": "这一节用五道例题把动力学问题走了一遍，其实都在同一条链上：隔离物体、受力分析、建立坐标、列方程、解方程、结果讨论。"
+  },
+  {
+   "slide": 25,
+   "start": 1068.89,
+   "end": 1085.81,
+   "text": "把五道题的结论放在一起看，各自的招法很清楚：阿特伍德机重在找加速度关系，竖直圆用自然坐标，圆锥摆的向心力必须取水平，有阻力的抛体要分离变量积分，水中沉球最后落在一个极限速度上。"
+  },
+  {
+   "slide": 25,
+   "start": 1086.21,
+   "end": 1096.72,
+   "text": "两个共同点值得记牢：只要阻力与速度相关，解里一定会出现指数；变速率圆周运动一定要分成切向和法向两个方程。"
+  },
+  {
+   "slide": 25,
+   "start": 1097.12,
+   "end": 1110.46,
+   "text": "最后一步的讨论千万别省——m₁ 等于 m₂ 时加速度为零、张力为零时绳已松弛、t 趋于无穷时的极限速度，这些极限情形本身就是最好的物理图像。"
+  }
+ ],
+ "build_ts": 1792455880,
+ "logoScale": 0.67
+}

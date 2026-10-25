@@ -1,0 +1,3244 @@
+{
+ "title": "5-2 电场强度",
+ "nav": "5-2　电场强度",
+ "footer": "第五章　静电场",
+ "logoScale": 0.67,
+ "engine": "edge",
+ "voice": "zh-CN-YunxiNeural",
+ "pages": [
+  {
+   "id": 1,
+   "narration": "[[1]]5-2，电场强度。[[2]]上一节讲的是两个电荷之间的力。但两个电荷并不接触，力是怎么过去的？[[3]]这一节引入电场，把「甲对乙的力」拆成两件事：甲在周围产生场，场对乙施力。[[4]]这样做不只是换个说法——场是实实在在的物理对象，它携带能量和动量，还能脱离电荷独立存在，这就是电磁波。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 300,
+     "w": 800,
+     "h": 90,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 五 章　静电场",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 300,
+     "y": 430,
+     "w": 1320,
+     "h": 160,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "5-2　电场强度",
+        "size": 76,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 220,
+     "y": 640,
+     "w": 1480,
+     "h": 110,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "从「超距作用」到「场」",
+        "size": 44,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 790,
+     "w": 1480,
+     "h": 90,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电荷　→　场　→　电荷",
+        "size": 38,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "封面"
+  },
+  {
+   "id": 2,
+   "narration": "[[1]]一，静电场。[[2]]电荷周围存在一种特殊的物质，叫电场。[[3]]它的表现是：放在场中的任何电荷，都会受到场给它的力。[[4]]所以我们不再说「甲直接推乙」，而说：甲在周围激发电场，电场再对乙施力。[[5]]这样，力的传递就不需要「超距」了——中间隔着的是场，场是局部存在的，逐点起作用。[[6]]静电场是指相对于观察者静止的电荷所激发的电场，它不随时间变化。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　静电场",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电荷周围存在一种特殊物质——",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 292,
+     "w": 740,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电场",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 366,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "表现：置于场中的任何电荷都受到场给它的力．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 452,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "于是把「甲推乙」改写成两步：",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 508,
+     "w": 720,
+     "h": 110,
+     "tex": "\\text{甲}\\ \\longrightarrow\\ \\text{场}\\ \\longrightarrow\\ \\text{乙}",
+     "size": 34,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 660,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "好处：力的传递不再是超距的，",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 706,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "场逐点局部地起作用．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 786,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "静电场：",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "静止电荷激发，不随时间变化．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 465,
+     "name": "field_chain"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 730,
+     "w": 740,
+     "h": 180,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "场不是数学虚构",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "它携带能量与动量",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "可以脱离电荷独立存在（电磁波）",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "一　静电场"
+  },
+  {
+   "id": 3,
+   "narration": "[[1]]二，怎样定量描述电场？办法是：拿一个试探电荷放进去，看它受多大力。[[2]]试探电荷有两个要求：电荷量足够小，放进去不至于扰动原来的电荷分布；线度也足够小，可以看作点电荷，这样测到的才是某一点的场。[[3]]定义：电场中某点的电场强度，等于放在该点的试探电荷所受的力除以它的电荷量。[[4]]写成 E 等于 F 除以 q0。[[5]]要注意，E 是矢量，方向规定为正电荷在该点受力的方向。[[6]]单位是牛每库仑，也可以写成伏每米，两者完全等价。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　电场强度的定义",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "方法：放入试探电荷 $q_0$，测它受的力．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 316,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "试探电荷的要求：",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 364,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 电量足够小（不扰动场源）",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 410,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 线度足够小（可视为点）",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 486,
+     "w": 700,
+     "h": 130,
+     "tex": "\\vec E=\\dfrac{\\vec F}{q_0}",
+     "size": 44,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 622,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\vec E$ 是矢量：方向规定为",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 670,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "正电荷",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "在该点受力的方向．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 750,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "单位：$\\mathrm{N/C}$，也写作 $\\mathrm{V/m}$．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 796,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "负电荷受力与 $\\vec E$ 反向．",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 480,
+     "name": "e_test_def"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 760,
+     "w": 740,
+     "h": 180,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "E 是「场的属性」",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "换一个 q₀，F 跟着变",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "但 F/q₀ 不变",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "二　电场强度的定义"
+  },
+  {
+   "id": 4,
+   "narration": "[[1]]为什么说 E 与 q0 无关？看图。[[2]]同一个场源 Q，在同一处 P 点，分别放 q0、两倍 q0、三倍 q0。[[3]]力确实一次比一次大，成正比地变大。[[4]]但每次把力除以对应的电荷量，得到的比值完全一样。[[5]]这个比值就是 P 点的场强，它只跟场源 Q 和 P 的位置有关。[[6]]所以电场强度是描述场的物理量，跟用什么去测没有关系。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1000,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "为什么 E 与 $q_0$ 无关",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同一场源、同一场点，换不同的试探电荷：",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$q_0$　⇒　$F$",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 396,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$2q_0$　⇒　$2F$",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 462,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$3q_0$　⇒　$3F$",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 560,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "但",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$F/q_0$ 始终相同",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 660,
+     "w": 760,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这个比值只由场源与位置决定，",
+        "size": 33,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 714,
+     "w": 760,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "就是该点的电场强度．",
+        "size": 33,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 812,
+     "w": 760,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "E 描述的是「场」，",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 870,
+     "w": 760,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与用什么电荷去测无关．",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 940,
+     "y": 240,
+     "w": 900,
+     "h": 540,
+     "name": "e_test"
+    }
+   ],
+   "heading": "为什么 E 与 q₀ 无关"
+  },
+  {
+   "id": 5,
+   "narration": "[[1]]三，点电荷的场强。[[2]]把场源取成一个点电荷 Q，在距它 r 处的 P 点放试探电荷 q0。[[3]]由库仑定律，q0 受的力是 k Q q0 除以 r 平方，方向沿连线。[[4]]再除以 q0，就得 E 等于 k Q 除以 r 平方，方向沿从 Q 指向 P 的单位矢量。[[5]]注意 q0 被约掉了——这正是场强的意义：它只跟场源 Q 和距离 r 有关。[[6]]如果 Q 是正的，E 沿径向向外；Q 是负的，E 沿径向向内。场强按 r 平方反比衰减。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1000,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　点电荷的场强",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "场源 $Q$，场点 $P$ 距它为 $r$，放试探电荷 $q_0$．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 320,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "由库仑定律：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 380,
+     "w": 900,
+     "h": 130,
+     "tex": "\\vec F=k\\dfrac{Qq_0}{r^{2}}\\hat{\\vec r}",
+     "size": 40,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 540,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "除以 $q_0$：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 240,
+     "y": 600,
+     "w": 900,
+     "h": 140,
+     "tex": "\\vec E=\\dfrac{\\vec F}{q_0}=k\\dfrac{Q}{r^{2}}\\hat{\\vec r}",
+     "size": 44,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 240,
+     "y": 760,
+     "w": 900,
+     "h": 120,
+     "tex": "=\\dfrac{1}{4\\pi\\varepsilon_0}\\dfrac{Q}{r^{2}}\\hat{\\vec r}",
+     "size": 38,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 900,
+     "w": 1580,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$q_0$ 被约掉 ⇒ $\\vec E$ 只由场源 $Q$ 与距离 $r$ 决定．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1080,
+     "y": 236,
+     "w": 780,
+     "h": 640,
+     "name": "e_point"
+    }
+   ],
+   "heading": "三　点电荷的场强"
+  },
+  {
+   "id": 6,
+   "narration": "[[1]]四，场强叠加原理。[[2]]如果空间里有多个场源电荷，那么某一点的合场强，等于各个电荷单独存在时在该点产生的场强的矢量和。[[3]]道理很直接：力是矢量，可以叠加；而每项都除以同一个 q0，所以场强也按同样的方式叠加。[[4]]图上 P 点同时处在 q1 和 q2 的场里，两个场强矢量作平行四边形，对角线就是合场强 E。[[5]]有了这条原理，任何带电体都可以切成电荷元 dq，每个 dq 产生一个 dE，再积分。[[6]]后面所有例题，本质都是这一件事。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　场强叠加原理",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "多个场源时，某点的合场强等于各场源单独存在时场强的",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 300,
+     "w": 1580,
+     "h": 58,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "矢量和．",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 396,
+     "w": 1100,
+     "h": 130,
+     "tex": "\\vec E=\\sum_i\\vec E_i",
+     "size": 44,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 546,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "理由：$\\vec F$ 可叠加，各项同除以 $q_0$ ⇒ $\\vec E$ 同样叠加．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 640,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "连续带电体：切成电荷元 $\\mathrm dq$，",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\mathrm d\\vec E$ 再积分",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 706,
+     "w": 1100,
+     "h": 120,
+     "tex": "\\vec E=\\int \\mathrm d\\vec E=\\int k\\dfrac{\\mathrm dq}{r^{2}}\\hat{\\vec r}",
+     "size": 36,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 896,
+     "w": 1580,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "后面所有例题，本质都是这一件事．",
+        "size": 33,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1000,
+     "y": 236,
+     "w": 860,
+     "h": 632,
+     "name": "e_superpose"
+    }
+   ],
+   "heading": "四　场强叠加原理"
+  },
+  {
+   "id": 7,
+   "narration": "[[1]]例一，电偶极子。[[2]]两个电荷量相等、符号相反的点电荷，相距 l，这样的电荷系统叫电偶极子。[[3]]定义电偶极矩 p 等于 q 乘 l，方向规定为从负电荷指向正电荷。[[4]]这是一个很重要的模型：水分子、天线、原子里的电子云偏移，都可以看成电偶极子。[[5]]我们要算它在中垂线上和延长线上的场强，条件是 r 远大于 l。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1100,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例1　电偶极子",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两个电荷量相等、符号相反的点电荷，相距 $l$．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 318,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电偶极矩：",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "$\\vec p=q\\vec l$",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 372,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "方向由 $-q$ 指向 $+q$．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 452,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "典型实例：水分子、天线、",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 498,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "原子中的电荷偏移．",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 582,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "求：中垂线上、延长线上的场强",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 630,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（条件 $r\\gg l$）．",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1010,
+     "y": 226,
+     "w": 740,
+     "h": 500,
+     "name": "dipole_def"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 760,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "为什么这个模型重要",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "最简单的「净电荷为零、场不为零」系统",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "远处按 1/r³ 衰减，比点电荷快一阶",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "例1　电偶极子"
+  },
+  {
+   "id": 8,
+   "narration": "[[1]]结果分两种位置。[[2]]先看中垂线：两个电荷到场点的距离都是根号下 r 平方加二分之 l 平方，两个场强大小相等，一个斜向上、一个斜向下。[[3]]垂直于中垂线的分量互相抵消，沿中垂线的分量相加，方向与 p 相反。[[4]]化简后 E 等于 k p 除以 r 立方。[[5]]再看延长线：两个场强都沿轴线，但方向相反，相减之后剩下的是 k 乘 2p 除以 r 立方，方向与 p 相同。[[6]]两者都按 r 立方衰减，比点电荷的 r 平方多降一阶——因为正负电荷的场在远处大部分抵消了。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 900,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例1　结果",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "中垂线上（$r\\gg l$）：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 900,
+     "h": 120,
+     "tex": "E_\\perp=k\\dfrac{p}{r^{3}}",
+     "size": 42,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 428,
+     "w": 900,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "方向与 $\\vec p$ 相反．",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 528,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "延长线上（$r\\gg l$）：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 588,
+     "w": 900,
+     "h": 120,
+     "tex": "E_\\parallel=k\\dfrac{2p}{r^{3}}",
+     "size": 42,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 720,
+     "w": 900,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "方向与 $\\vec p$ 相同．",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 820,
+     "w": 1580,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "统一写成矢量式：$\\vec E=-k\\vec p/r^{3}$（中垂线）．",
+        "size": 33,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 300,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "对比：点电荷 $E\\propto1/r^{2}$",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 360,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电偶极子 $E\\propto1/r^{3}$",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 452,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "原因：正负电荷的场在远处",
+        "size": 31,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 504,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "大部分相互抵消，只剩「差值」．",
+        "size": 31,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 620,
+     "w": 740,
+     "h": 220,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "记法",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "延长线：2 倍、同向",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "中垂线：1 倍、反向",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "例1　结果"
+  },
+  {
+   "id": 9,
+   "narration": "[[1]]例二，均匀带电直线。[[2]]一根无限长细直线，电荷线密度为 lambda，即单位长度上的电荷量。[[3]]求距直线 a 处的场强。[[4]]办法是标准的：在直线上取一长度元 dx，它的电荷 dq 等于 lambda dx，把它当成点电荷，写出 dE。[[5]]然后分解：垂直于直线的分量和平行于直线的分量。[[6]]由对称性，如果直线无限长，每个 dx 都有一个关于垂足对称的配对元，它们的平行分量正好抵消。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1100,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例2　均匀带电直线",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "无限长细直线，电荷线密度 $\\lambda$．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 318,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "求：距直线 $a$ 处的场强．",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 400,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "取长度元 $\\mathrm dx$，电荷 $\\mathrm dq$，",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 444,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "视为点电荷：$\\mathrm dq=\\lambda\\mathrm dx$．",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 494,
+     "w": 700,
+     "h": 120,
+     "tex": "\\mathrm dE=k\\dfrac{\\lambda\\,\\mathrm dx}{r^{2}}",
+     "size": 36,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 632,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "分解为 dE⊥ 与 dE∥．",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 706,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "对称性：每段 $\\mathrm dx$ 都有关于垂足",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 752,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "对称的配对元，",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "平行分量相互抵消",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 832,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只需把垂直分量积分即可．",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 615,
+     "name": "line_charge_setup"
+    }
+   ],
+   "heading": "例2　带电直线"
+  },
+  {
+   "id": 10,
+   "narration": "[[1]]积分结果：无限长均匀带电直线，在距它 a 处的场强，E 等于 lambda 除以二派 epsilon 零 a。[[2]]方向垂直于直线，正电荷向外、负电荷向内。[[3]]也可以写成二 k lambda 除以 a。[[4]]要注意这个场按一次方反比衰减，比点电荷慢——因为直线是无限长的，离得再远，两端仍然贡献。[[5]]如果直线是有限长的，结果里会出现两个角度，当长度趋于无穷时，才退化成这个简洁式子。[[6]]这条结论后面用高斯定理可以一行推出来，那是 5-3 的事。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 900,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例2　结果",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "无限长均匀带电直线，距它 $a$ 处：",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 306,
+     "w": 700,
+     "h": 130,
+     "tex": "E=\\dfrac{\\lambda}{2\\pi\\varepsilon_0 a}",
+     "size": 44,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 470,
+     "w": 700,
+     "h": 110,
+     "tex": "=\\dfrac{2k\\lambda}{a}",
+     "size": 36,
+     "color": "#0000CD",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 606,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "方向：垂直于直线；",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 652,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "正电荷向外，负电荷向内．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 728,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "注意：$E\\propto1/a$，衰减得",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "慢",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 800,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "原因：直线无限长，离得再远，",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 844,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两端仍持续贡献．",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 906,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "有限长时含两个角度，极限才退化．",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 567,
+     "name": "line_charge_field"
+    }
+   ],
+   "heading": "例2　结果"
+  },
+  {
+   "id": 11,
+   "narration": "[[1]]例三，均匀带电圆环，半径 R，电荷量 q，求轴线上距圆心 x 处的场强。[[2]]在环上取电荷元 dq，它到轴线上 P 点的距离都是根号下 R 平方加 x 平方。[[3]]dE 的大小都一样，方向沿各自的连线。[[4]]把 dE 分解：垂直于轴线的分量，绕着整个环一周，两两抵消；沿轴线的分量全部同向，相加。[[5]]积分时，环上所有点到 P 的距离相同，这个距离可以提到积分号外，只剩对 dq 求和，等于总电荷 q。[[6]]结果 E 等于 k q x 除以 R 平方加 x 平方的二分之三次方，方向沿轴线。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1100,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例3　圆环轴线上的场强",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 238,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "半径 $R$、电荷量 $q$ 的均匀带电圆环．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 316,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "取电荷元 $\\mathrm dq$，它到 $P$ 的距离",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 362,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "都是 $\\sqrt{R^{2}+x^{2}}$．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 440,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "各 $\\mathrm dE$ 大小相同；",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 486,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "垂直轴线的分量绕环一周相互抵消",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 562,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只剩沿轴分量 dE cosθ．",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 608,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "其中 $\\cos\\theta=x/\\sqrt{R^{2}+x^{2}}$．",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 672,
+     "w": 720,
+     "h": 130,
+     "tex": "E=\\int\\mathrm dE_x=k\\dfrac{qx}{(R^{2}+x^{2})^{3/2}}",
+     "size": 36,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 836,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "方向沿轴线；$q>0$ 时背离环心．",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 884,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$x\\gg R$ 时退化为点电荷 $kq/x^{2}$．",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 490,
+     "name": "ring_axis"
+    }
+   ],
+   "heading": "例3　带电圆环"
+  },
+  {
+   "id": 12,
+   "narration": "[[1]]例四，把圆环推广成圆盘。[[2]]半径 R 的均匀带电圆盘，面密度 sigma，求轴线上距圆心 x 处的场强。[[3]]办法是把圆盘切成一个个同心细环，半径取 r，宽度 dr。[[4]]这个环的电荷是 sigma 乘二派 r dr，代入圆环的结果，再对 r 从零积到 R。[[5]]积分得 E 等于 sigma 除以二 epsilon 零，乘以括号里一减去 x 除以根号下 R 平方加 x 平方。[[6]]两个极限很有用：R 趋于无穷，得匀强场 sigma 除以二 epsilon 零；x 远大于 R，又退化成点电荷。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1100,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例4　圆盘轴线上的场强",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 238,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "半径 $R$、面密度 $\\sigma$ 的均匀带电圆盘．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 316,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "切成同心细环：半径 $r$、宽 $\\mathrm dr$，",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 362,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电荷 dq = σ·2πr dr．",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 440,
+     "w": 720,
+     "h": 140,
+     "tex": "E=\\dfrac{\\sigma}{2\\varepsilon_0}\\left(1-\\dfrac{x}{\\sqrt{R^{2}+x^{2}}}\\right)",
+     "size": 36,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 618,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "极限一：",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "$R\\to\\infty$ ⇒ $E\\to\\sigma/(2\\varepsilon_0)$",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 676,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "极限二：",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "$x\\gg R$ ⇒ $E\\to kq/x^{2}$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 760,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "无限大平面两侧的场是匀强的，",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 806,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与距离无关——平行板的基础．",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 497,
+     "name": "disc_axis"
+    }
+   ],
+   "heading": "例4　带电圆盘"
+  },
+  {
+   "id": 13,
+   "narration": "[[1]]五，电场线。场是看不见的，为了直观，法拉第引入了电场线。[[2]]规定：电场线上每一点的切线方向，就是该点场强的方向。[[3]]左边是正电荷：线从它向外发出，呈放射状。[[4]]中间是负电荷：线从四面八方汇聚到它。[[5]]右边是一对带电平行板：板间的线彼此平行、间距相等，这是匀强电场。[[6]]注意电场线是假想的曲线，不是真实存在的东西；但它画出来以后，场的分布就一目了然了。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1000,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五　电场线",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 58,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "规定：电场线上每一点的",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "切线方向",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "就是该点 $\\vec E$ 的方向．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "正电荷：线向外发出；负电荷：线向内汇聚．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 420,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "平行板之间：线平行、等距 ⇒",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "匀强电场",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 512,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电场线是",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "假想曲线",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "，不是真实存在的物质．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 390,
+     "y": 578,
+     "w": 1140,
+     "h": 413,
+     "name": "e_lines"
+    }
+   ],
+   "heading": "五　电场线"
+  },
+  {
+   "id": 14,
+   "narration": "[[1]]电场线有几条必须记住的性质。[[2]]第一，不闭合：静电场的线总是从正电荷出发，终止于负电荷，或者伸向无穷远。[[3]]第二，不相交：如果两条线相交，交点处的场强就会有两个方向，这是不可能的。[[4]]第三，疏密表示强弱：线密的地方场强大，线疏的地方场强小。[[5]]第四，与导体表面垂直——这一条下一章讲导体时会用到。[[6]]把这四条记住，看到一个带电体的电场线图，就能读出它的场。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电场线的性质",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 760,
+     "h": 200,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "① 不闭合",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "起于正电荷，止于负电荷",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "或伸向无穷远",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 200,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "② 不相交",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "否则交点处场强",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "会有两个方向",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 170,
+     "y": 466,
+     "w": 760,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "③ 疏密表强弱",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "线密处 $E$ 大",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "线疏处 $E$ 小",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 1010,
+     "y": 466,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "④ 与导体表面垂直",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "否则表面电荷",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "会沿表面移动",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 720,
+     "w": 1580,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "由电场线可以读出三件事：",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "方向（切线）　强弱（疏密）　起止（源与汇）",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 800,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "注意：电场线不是电荷的运动轨迹．",
+        "size": 31,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 852,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "轨迹由力和初速度共同决定，与场线一般不同．",
+        "size": 31,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "电场线的性质"
+  },
+  {
+   "id": 15,
+   "narration": "[[1]]这一节的核心只有一件事：把力换成了场。[[2]]定义 E 等于 F 除以 q0，它与试探电荷无关，是场的属性。[[3]]点电荷的场强 E 等于 kQ 除以 r 平方，沿径向。[[4]]多个场源用矢量叠加；连续带电体切成 dq 再积分。[[5]]四个典型结果要记：点电荷 r 平方反比、电偶极子 r 立方反比、无限长直线一次方反比、无限大平面匀强。[[6]]下一节用高斯定理，这些结果大半可以一行写出来。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 定义：",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "$\\vec E=\\vec F/q_0$",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 292,
+     "w": 760,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与 $q_0$ 无关，是场的属性．",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 372,
+     "w": 760,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 点电荷：$\\vec E=kQ\\hat r/r^{2}$",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 452,
+     "w": 760,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 叠加：$\\vec E=\\sum\\vec E_i$",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 504,
+     "w": 760,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "连续体 $\\vec E=\\int k\\mathrm dq\\,\\hat r/r^{2}$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 四个典型结果",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 300,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "点电荷　　　　$1/r^{2}$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 348,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电偶极子　　　$1/r^{3}$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 396,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "无限长直线　　$1/a$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 444,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "无限大平面　　匀强",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 596,
+     "w": 1580,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "⑤ 电场线：",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "切线给方向，疏密给大小，不闭合、不相交．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 676,
+     "w": 1580,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "下一节：通量与高斯定理",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "把「场」和「源」用一个积分式连起来",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "很多对称情形的场强，可以不解积分直接写出",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 910,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这一节只做了一件事：把「力」换成了「场」．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "本节小结"
+  }
+ ]
+}

@@ -1,0 +1,3244 @@
+{
+ "title": "12-7 玻耳兹曼能量分布律 等温气压公式",
+ "nav": "12-7　玻耳兹曼能量分布律",
+ "footer": "第十二章　气体动理论",
+ "character": "aqiang",
+ "characters": [
+  {
+   "id": "aqiang",
+   "name": "阿强"
+  },
+  {
+   "id": "professor",
+   "name": "博士讲师"
+  },
+  {
+   "id": "zhongshan",
+   "name": "中山装先生"
+  }
+ ],
+ "duration": 467.66,
+ "slides": [
+  {
+   "id": 1,
+   "kind": "page",
+   "heading": "封面",
+   "narration": "第十二章第七节。12-7，玻耳兹曼能量分布律，等温气压公式。这一节在教材里标了星号，属选学内容，但它只做一件事：把麦克斯韦分布从动能推广到总能量。推广完，就能回答一个很朴素的问题——为什么越往高处，空气越稀薄。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 0,
+     "y": 552,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 十 二 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 300,
+     "y": 400,
+     "w": 1320,
+     "h": 170,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "气 体 动 论",
+        "size": 92,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 230,
+     "y": 588,
+     "w": 1460,
+     "h": 120,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "12-7　玻耳兹曼能量分布律　等温气压公式",
+        "size": 40,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 220,
+     "y": 730,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "选学（教材标 *）　·　从动能推广到总能量",
+        "size": 31,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 850,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "能量越高，分子越少 —— 这一句话就是全部",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 0.0,
+    "2": 2.82,
+    "3": 8.14
+   },
+   "t_start": 0.0,
+   "t_end": 24.5,
+   "duration": 24.5,
+   "laser": []
+  },
+  {
+   "id": 2,
+   "kind": "page",
+   "heading": "本节路线",
+   "narration": "本节路线。先回到麦克斯韦分布：它只写了动能，没有写位置。把总能量拆成动能加势能，就得到玻耳兹曼分布。然后把它用在重力场上：分子数密度随高度按指数衰减。再用物态方程换成压强，得到等温气压公式。最后算一道珠峰的例题，并说清这个公式在哪儿能用、在哪儿不能用。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节路线",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 244,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "主线：只含动能 → 加上势能 → 重力场 → 气压公式 → 珠峰例题",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1　麦克斯韦分布缺什么",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 386,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只写了动能，没写位置",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 458,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2　玻耳兹曼分布",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 512,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "总能量 = 动能 + 势能",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 584,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "3　重力场中的数密度",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 638,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$n=n_0\\mathrm{e}^{-mgh/kT}$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 330,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4　等温气压公式",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 386,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "换成压强，指数照旧",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 458,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "5　特征高度",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 512,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "每升 8 km，压强剩 1/e",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 584,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "6　例题与适用范围",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 638,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "珠峰顶上的气压",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一句提醒：本节是选学，主线（12-6 → 12-8）不依赖它，但它是统计物理的入口",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 25.3,
+    "2": 27.57,
+    "3": 32.77,
+    "4": 37.92,
+    "5": 43.96,
+    "6": 49.33
+   },
+   "t_start": 25.3,
+   "t_end": 56.19,
+   "duration": 30.89,
+   "laser": []
+  },
+  {
+   "id": 3,
+   "kind": "page",
+   "heading": "一　麦克斯韦分布缺什么",
+   "narration": "先回到上一节的麦克斯韦分布。它的核心是一个负指数：分子数按动能的指数衰减，能量越高，占的比例越小。注意这个式子里只有速度，没有位置——它假设空间各处是一样的。这在均匀的容器里成立，可一旦有外场就不行了。想想重力场：越往高处，空气越稀薄，密度明明跟位置有关。所以麦克斯韦分布只说了一半，另一半要由位置补上。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　麦克斯韦分布缺什么",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "上一节的结论",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 292,
+     "w": 740,
+     "h": 140,
+     "tex": "f(v)\\propto \\mathrm{e}^{-\\varepsilon_k/kT}",
+     "size": 32,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 448,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\varepsilon_k=\\frac12 mv^2$：分子的平动动能",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 520,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只有速度，没有位置",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 572,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "默认空间各处一样密",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 646,
+     "w": 740,
+     "h": 170,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "容器里成立，有外场就不成立",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "重力场里，高处分子确实更少",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "密度和位置有关",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 180,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "位置怎么进来？",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "分子有势能 $\\varepsilon_p$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "位置不同，势能就不同",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 446,
+     "w": 740,
+     "h": 190,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "于是概率由总能量定",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$\\varepsilon=\\varepsilon_k+\\varepsilon_p$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "不再单看速度",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 856,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "从「按动能分布」到「按总能量分布」，这一步就是玻耳兹曼做的推广",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 56.99,
+    "2": 60.39,
+    "3": 68.23,
+    "4": 75.04,
+    "5": 79.95,
+    "6": 86.73
+   },
+   "t_start": 56.99,
+   "t_end": 92.85,
+   "duration": 35.86,
+   "laser": []
+  },
+  {
+   "id": 4,
+   "kind": "page",
+   "heading": "二　玻耳兹曼能量分布律",
+   "narration": "这就是玻耳兹曼能量分布律。把总能量写成动能加势能，指数里一起放进去：分子的数目按总能量指数衰减。如果只关心「某个位置上有多少分子」，把速度部分积掉，就剩一个干净的式子：数密度等于基准密度乘以势能的负指数。这里小 n 零是势能取零处的数密度，是参考点。这个式子的意思很直白：势能越高的地方，分子越少；温度越高，这种减少越不明显。注意它说的是「能量」，不限于重力——电场、离心力场，凡是能用势能描述的都行。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　玻耳兹曼能量分布律",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "总能量进入指数",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 292,
+     "w": 740,
+     "h": 130,
+     "tex": "\\mathrm{d}N\\propto \\mathrm{e}^{-(\\varepsilon_k+\\varepsilon_p)/kT}\\,\\mathrm{d}v\\,\\mathrm{d}V",
+     "size": 27,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 440,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "把速度积掉，只看位置",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 496,
+     "w": 740,
+     "h": 150,
+     "tex": "n=n_0\\,\\mathrm{e}^{-\\varepsilon_p/kT}",
+     "size": 34,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 664,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$n_0$：$\\varepsilon_p=0$ 处的数密度",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "读法",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "势能越高 ⇒ 分子越少",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "温度越高 ⇒ 衰减越慢",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$kT$ 是能量的标尺",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 470,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不限于重力场",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 522,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电场、离心力场、任何势场",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 572,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只要能把能量写成势能函数",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 760,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这就是玻耳兹曼分布：$\\varepsilon_p$ 换成总能量也成立 —— 它管的是「能量」，不是「重力」",
+        "size": 28,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 93.65,
+    "2": 97.07,
+    "3": 105.08,
+    "4": 115.44,
+    "5": 120.28,
+    "6": 128.62
+   },
+   "t_start": 93.65,
+   "t_end": 136.95,
+   "duration": 43.3,
+   "laser": []
+  },
+  {
+   "id": 5,
+   "kind": "page",
+   "heading": "三　能量越高，分子越少",
+   "narration": "把分布画出来看看。横轴是能量，纵轴是相对数目，曲线是负指数——能量为零处最多，往右迅速衰减。蓝线是三百开：能量到一乘十的负二十次方焦耳时，只剩不到一成。红线是一千开：同样的能量，还有将近一半的分子。温度高，等于把能量的标尺拉长了，高能分子自然多起来。这条曲线是后面一切的地基：高处分子少、蒸发、化学反应速率，都是从它长出来的。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　能量越高，分子越少",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一条负指数曲线",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 250,
+     "w": 765,
+     "h": 448,
+     "name": "boltzmann_energy"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 300,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "能量为零处最多",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 350,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "往右迅速衰减",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 416,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "300 K：1×10⁻²⁰ J 处只剩不到一成",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 476,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1000 K：同一能量还有近一半",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 548,
+     "w": 740,
+     "h": 170,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "温度拉长了能量标尺",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$kT$ 就是这把尺子的刻度",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$T$ 高 ⇒ 高能分子多",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 748,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "记住形状：从最大值出发、单调下降、永不归零 —— 指数尾巴再长也还有分子",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 137.75,
+    "2": 140.24,
+    "3": 149.14,
+    "4": 155.95,
+    "5": 161.29,
+    "6": 167.16
+   },
+   "t_start": 137.75,
+   "t_end": 176.41,
+   "duration": 38.66,
+   "laser": []
+  },
+  {
+   "id": 6,
+   "kind": "page",
+   "heading": "四　重力场中的数密度",
+   "narration": "现在把势能具体化：重力场。取地面为零势能面，高度 h 处的势能就是 m g h。代进玻耳兹曼分布，数密度随高度按指数衰减：n 等于 n 零乘以 e 的负 m g h 除以 k T。这里有个特征长度：k T 除以 m g。每升高这么多，密度就降到原来的 e 分之一。对空气分子算一下，室温下大约八千米。想一想：为什么氢气球能飞上去，而氧气留在地面？因为轻的分子 m 小，特征长度大，衰减得慢。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　重力场中的数密度",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "取地面为零势能面",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 292,
+     "w": 740,
+     "h": 120,
+     "tex": "\\varepsilon_p=mgh",
+     "size": 31,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 430,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "代入玻耳兹曼分布",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 486,
+     "w": 740,
+     "h": 150,
+     "tex": "n=n_0\\,\\mathrm{e}^{-mgh/kT}",
+     "size": 34,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 654,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "特征长度 $h_0=kT/mg$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 706,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "每升高 $h_0$，密度剩 $1/\\mathrm{e}$",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 190,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "空气：室温下",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$h_0\\approx8$ km",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "氢分子 $m$ 小 16 倍",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$h_0$ 大 16 倍 ⇒ 跑得更高",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 460,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "想一想：为什么高空氢少、氧多？",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 512,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "轻的气体衰减慢，更容易逃离",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 806,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这个式子解释了大气成分随高度的变化 —— 越往上，重分子占比越大",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 177.21,
+    "2": 181.5,
+    "3": 187.35,
+    "4": 195.93,
+    "5": 205.37,
+    "6": 209.68
+   },
+   "t_start": 177.21,
+   "t_end": 221.08,
+   "duration": 43.87,
+   "laser": []
+  },
+  {
+   "id": 7,
+   "kind": "page",
+   "heading": "五　等温气压公式",
+   "narration": "数密度不好直接测，压强好测。用物态方程：p 等于 n k T。等温条件下温度不变，压强和数密度成正比。于是压强的衰减规律和密度完全一样：p 等于 p 零乘以 e 的负 m g h 除以 k T。再把分子质量换成摩尔质量：m 乘 N-A 等于 M，k 乘 N-A 等于 R，指数就变成负 M g h 除以 R T。这就是等温气压公式。它说的是：在温度处处相同的假设下，压强随高度按指数衰减。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五　等温气压公式",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "压强与数密度成正比",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 292,
+     "w": 740,
+     "h": 120,
+     "tex": "p=nkT\\ \\Longrightarrow\\ p\\propto n",
+     "size": 30,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 430,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "等温下，指数照搬",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 486,
+     "w": 740,
+     "h": 140,
+     "tex": "p=p_0\\,\\mathrm{e}^{-mgh/kT}",
+     "size": 32,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 646,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "换成摩尔质量：$mN_A=M$，$kN_A=R$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 700,
+     "w": 740,
+     "h": 140,
+     "tex": "p=p_0\\,\\mathrm{e}^{-Mgh/RT}",
+     "size": 33,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 400,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "两个条件",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "① 等温：$T$ 处处相同",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "② 重力场：$\\varepsilon_p=mgh$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "实际大气只是近似",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这个式子能直接对照气压表",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "飞机舱压、高原反应都靠它估",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 880,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同一个指数，从「数密度」搬到「压强」—— 因为等温下两者只差一个常数 $kT$",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 221.88,
+    "2": 226.02,
+    "3": 235.68,
+    "4": 244.26,
+    "5": 255.36,
+    "6": 258.45
+   },
+   "t_start": 221.88,
+   "t_end": 265.85,
+   "duration": 43.97,
+   "laser": []
+  },
+  {
+   "id": 8,
+   "kind": "page",
+   "heading": "六　特征高度",
+   "narration": "把指数里的常数提出来，定义特征高度 H 等于 R T 除以 M g。对空气算一下：温度 273 开、摩尔质量 29 克每摩尔，得 H 约等于 8 千米。它的意义是：每升高 8 千米，压强降到原来的 e 分之一，也就是百分之三十七。看图：横轴高度，纵轴相对压强，是一条一路下滑的指数曲线。五千米处还有百分之五十四，珠峰顶上只剩三分之一，一万米巡航高度约百分之二十九。所以客机必须增压——舱外气压不到地面的三成，人受不了。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "六　特征高度",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "把常数提出来",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 292,
+     "w": 740,
+     "h": 150,
+     "tex": "H=\\frac{RT}{Mg}",
+     "size": 34,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 456,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "空气：$T=273$ K，$M=29$ g/mol",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 508,
+     "w": 740,
+     "h": 120,
+     "tex": "H\\approx8.0\\ \\mathrm{km}",
+     "size": 31,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 250,
+     "w": 765,
+     "h": 448,
+     "name": "barometric_height"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 650,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "每升 8 km，压强剩 $1/\\mathrm{e}\\approx37\\%$",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 712,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "5 km：54%",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 758,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "8.85 km（珠峰）：33%",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 820,
+     "w": 740,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "所以客机要增压：舱外不到三成",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 736,
+     "w": 740,
+     "h": 88,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "特征高度越大，大气越「厚」—— 火星的 H 比地球大得多",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 266.65,
+    "2": 273.6,
+    "3": 281.94,
+    "4": 289.35,
+    "5": 296.61,
+    "6": 305.03
+   },
+   "t_start": 266.65,
+   "t_end": 311.89,
+   "duration": 45.24,
+   "laser": []
+  },
+  {
+   "id": 9,
+   "kind": "page",
+   "heading": "七　例题：珠峰顶上的气压",
+   "narration": "一道例题：估算珠峰顶上的大气压强。已知海平面压强一点零一三乘十的五次方帕，温度取 273 开，空气摩尔质量 29 克每摩尔，高度 8848 米。先算指数：分子是 0.029 乘 9.8 乘 8848，分母是 8.31 乘 273。指数约等于负一点一一，也就是 e 的负一点一次方，约 0.33。乘上海平面压强，得三点三乘十的四次方帕，大约是地面的三分之一。这和实测的珠峰气压很接近。想一想：为什么实际值比等温公式算的还略低一点？因为真实大气不是等温的，越往高处越冷，衰减更快。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "七　例题：珠峰顶上的气压",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "已知",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 288,
+     "w": 740,
+     "h": 96,
+     "tex": "p_0=1.013\\times10^{5}\\ \\mathrm{Pa},\\ T=273\\ \\mathrm{K}",
+     "size": 23,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 388,
+     "w": 740,
+     "h": 96,
+     "tex": "M=0.029\\ \\mathrm{kg/mol},\\ h=8848\\ \\mathrm{m}",
+     "size": 23,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 510,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "代入",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 558,
+     "w": 740,
+     "h": 120,
+     "tex": "p=p_0\\,\\mathrm{e}^{-Mgh/RT}",
+     "size": 26,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 690,
+     "w": 740,
+     "h": 120,
+     "tex": "=p_0\\,\\mathrm{e}^{-1.109}",
+     "size": 26,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 140,
+     "tex": "\\approx0.33\\,p_0",
+     "size": 33,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 1010,
+     "y": 392,
+     "w": 740,
+     "h": 130,
+     "tex": "\\approx3.3\\times10^{4}\\ \\mathrm{Pa}",
+     "size": 30,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 534,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "约为地面的三分之一",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 600,
+     "w": 740,
+     "h": 160,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "与实测接近",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "实测约 $3.3\\times10^{4}$ Pa",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "公式在这个范围内相当准",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 830,
+     "w": 1580,
+     "h": 130,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "想一想：为什么实际略低于等温估算？",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "真实大气非等温 —— 高处更冷，$T$ 小则衰减更快",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "等温假设只是把它当成一根「温度均匀的柱子」",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 312.69,
+    "2": 317.58,
+    "3": 328.9,
+    "4": 337.65,
+    "5": 343.95,
+    "6": 351.38
+   },
+   "t_start": 312.69,
+   "t_end": 367.29,
+   "duration": 54.6,
+   "laser": []
+  },
+  {
+   "id": 10,
+   "kind": "page",
+   "heading": "八　边界与意义",
+   "narration": "最后一页说清这个公式的边界。第一，等温假设是理想化的：真实大气里温度随高度变化，对流层每升高一千米降六度左右。第二，重力场均匀的假设只在几十千米内成立，再高重力也要变。所以这个公式是「估算工具」，不是精确的大气模型。但它的意义远不止大气：玻耳兹曼分布是整个统计物理的基石，化学反应的速率、半导体的载流子、离心分离，都从这条指数曲线来。它把两件事接在了一起：能量和概率。能量高的事件，发生的概率就小。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "八　边界与意义",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "适用范围（两条）",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 等温：真实大气不是",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 344,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "对流层每升高 1 km 降约 6 ℃",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 404,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 重力均匀：只到几十 km",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 452,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "再高，$g$ 也要随距离变",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 512,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以它是估算工具，不是精确模型",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "但它远不止大气",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 292,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "化学反应速率（阿伦尼乌斯）",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 338,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "半导体载流子、离心分离",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 384,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "凡是「越过能量门槛」的事",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 450,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "它把两件事接在一起",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "能量　↔　概率",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "能量高的事件，概率就小",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "这是统计物理的第一句话",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 720,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "从这条曲线出发，才有了后来的配分函数、自由能、相变理论",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 368.09,
+    "2": 371.78,
+    "3": 380.89,
+    "4": 387.77,
+    "5": 392.68,
+    "6": 404.29
+   },
+   "t_start": 368.09,
+   "t_end": 413.26,
+   "duration": 45.17,
+   "laser": []
+  },
+  {
+   "id": 11,
+   "kind": "page",
+   "heading": "本节小结",
+   "narration": "小结。玻耳兹曼分布：数密度按势能的负指数衰减，n 等于 n 零乘以 e 的负 εp 除以 kT。它和麦克斯韦分布合起来，就是分子按总能量的分布律。放在重力场里，数密度按高度指数衰减；再用 p 等于 n k T，得到等温气压公式 p 等于 p 零乘以 e 的负 Mgh 除以 RT。特征高度 H 等于 RT 除以 Mg，空气约 8 千米——每升 8 千米，压强剩百分之三十七。珠峰顶约三分之一大气压；公式的等温假设让它只是估算，但这条指数曲线是统计物理的入口。下一节回到主线：分子的平均碰撞频率和平均自由程。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 玻耳兹曼分布",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 286,
+     "w": 740,
+     "h": 130,
+     "tex": "n=n_0\\,\\mathrm{e}^{-\\varepsilon_p/kT}",
+     "size": 28,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 430,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 重力场中的数密度",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 480,
+     "w": 740,
+     "h": 120,
+     "tex": "n=n_0\\,\\mathrm{e}^{-mgh/kT}",
+     "size": 27,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 等温气压公式",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 1010,
+     "y": 286,
+     "w": 740,
+     "h": 120,
+     "tex": "p=p_0\\,\\mathrm{e}^{-Mgh/RT}",
+     "size": 27,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 424,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 特征高度",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 476,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$H=RT/Mg\\approx8$ km，每升 8 km 剩 37%",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 536,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "⑤ 边界",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 588,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "等温 + 均匀重力 ⇒ 只作估算",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 656,
+     "w": 740,
+     "h": 170,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "下一节",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "平均碰撞频率与平均自由程",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "回到主线（12-8）",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 620,
+     "w": 740,
+     "h": 170,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一句话",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "能量高，概率小",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "一条指数曲线，撑起整个统计物理",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "本节选学，但值得记住",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 414.06,
+    "2": 416.33,
+    "3": 424.65,
+    "4": 429.9,
+    "5": 441.53,
+    "6": 450.45
+   },
+   "t_start": 414.06,
+   "t_end": 466.16,
+   "duration": 52.1,
+   "laser": []
+  }
+ ],
+ "subtitles": [
+  {
+   "slide": 1,
+   "start": 0.0,
+   "end": 2.42,
+   "text": "第十二章第七节。"
+  },
+  {
+   "slide": 1,
+   "start": 2.82,
+   "end": 7.74,
+   "text": "12-7，玻耳兹曼能量分布律，等温气压公式。"
+  },
+  {
+   "slide": 1,
+   "start": 8.14,
+   "end": 16.95,
+   "text": "这一节在教材里标了星号，属选学内容，但它只做一件事：把麦克斯韦分布从动能推广到总能量。"
+  },
+  {
+   "slide": 1,
+   "start": 17.35,
+   "end": 23.88,
+   "text": "推广完，就能回答一个很朴素的问题——为什么越往高处，空气越稀薄。"
+  },
+  {
+   "slide": 2,
+   "start": 25.3,
+   "end": 27.17,
+   "text": "本节路线。"
+  },
+  {
+   "slide": 2,
+   "start": 27.57,
+   "end": 32.37,
+   "text": "先回到麦克斯韦分布：它只写了动能，没有写位置。"
+  },
+  {
+   "slide": 2,
+   "start": 32.77,
+   "end": 37.52,
+   "text": "把总能量拆成动能加势能，就得到玻耳兹曼分布。"
+  },
+  {
+   "slide": 2,
+   "start": 37.92,
+   "end": 43.56,
+   "text": "然后把它用在重力场上：分子数密度随高度按指数衰减。"
+  },
+  {
+   "slide": 2,
+   "start": 43.96,
+   "end": 48.93,
+   "text": "再用物态方程换成压强，得到等温气压公式。"
+  },
+  {
+   "slide": 2,
+   "start": 49.33,
+   "end": 55.45,
+   "text": "最后算一道珠峰的例题，并说清这个公式在哪儿能用、在哪儿不能用。"
+  },
+  {
+   "slide": 3,
+   "start": 56.99,
+   "end": 59.99,
+   "text": "先回到上一节的麦克斯韦分布。"
+  },
+  {
+   "slide": 3,
+   "start": 60.39,
+   "end": 67.83,
+   "text": "它的核心是一个负指数：分子数按动能的指数衰减，能量越高，占的比例越小。"
+  },
+  {
+   "slide": 3,
+   "start": 68.23,
+   "end": 74.64,
+   "text": "注意这个式子里只有速度，没有位置——它假设空间各处是一样的。"
+  },
+  {
+   "slide": 3,
+   "start": 75.04,
+   "end": 79.55,
+   "text": "这在均匀的容器里成立，可一旦有外场就不行了。"
+  },
+  {
+   "slide": 3,
+   "start": 79.95,
+   "end": 86.33,
+   "text": "想想重力场：越往高处，空气越稀薄，密度明明跟位置有关。"
+  },
+  {
+   "slide": 3,
+   "start": 86.73,
+   "end": 92.11,
+   "text": "所以麦克斯韦分布只说了一半，另一半要由位置补上。"
+  },
+  {
+   "slide": 4,
+   "start": 93.65,
+   "end": 96.67,
+   "text": "这就是玻耳兹曼能量分布律。"
+  },
+  {
+   "slide": 4,
+   "start": 97.07,
+   "end": 104.68,
+   "text": "把总能量写成动能加势能，指数里一起放进去：分子的数目按总能量指数衰减。"
+  },
+  {
+   "slide": 4,
+   "start": 105.08,
+   "end": 115.04,
+   "text": "如果只关心「某个位置上有多少分子」，把速度部分积掉，就剩一个干净的式子：数密度等于基准密度乘以势能的负指数。"
+  },
+  {
+   "slide": 4,
+   "start": 115.44,
+   "end": 119.88,
+   "text": "这里小 n 零是势能取零处的数密度，是参考点。"
+  },
+  {
+   "slide": 4,
+   "start": 120.28,
+   "end": 128.22,
+   "text": "这个式子的意思很直白：势能越高的地方，分子越少；温度越高，这种减少越不明显。"
+  },
+  {
+   "slide": 4,
+   "start": 128.62,
+   "end": 136.2,
+   "text": "注意它说的是「能量」，不限于重力——电场、离心力场，凡是能用势能描述的都行。"
+  },
+  {
+   "slide": 5,
+   "start": 137.75,
+   "end": 139.84,
+   "text": "把分布画出来看看。"
+  },
+  {
+   "slide": 5,
+   "start": 140.24,
+   "end": 148.74,
+   "text": "横轴是能量，纵轴是相对数目，曲线是负指数——能量为零处最多，往右迅速衰减。"
+  },
+  {
+   "slide": 5,
+   "start": 149.14,
+   "end": 155.55,
+   "text": "蓝线是三百开：能量到一乘十的负二十次方焦耳时，只剩不到一成。"
+  },
+  {
+   "slide": 5,
+   "start": 155.95,
+   "end": 160.89,
+   "text": "红线是一千开：同样的能量，还有将近一半的分子。"
+  },
+  {
+   "slide": 5,
+   "start": 161.29,
+   "end": 166.76,
+   "text": "温度高，等于把能量的标尺拉长了，高能分子自然多起来。"
+  },
+  {
+   "slide": 5,
+   "start": 167.16,
+   "end": 175.68,
+   "text": "这条曲线是后面一切的地基：高处分子少、蒸发、化学反应速率，都是从它长出来的。"
+  },
+  {
+   "slide": 6,
+   "start": 177.21,
+   "end": 181.1,
+   "text": "现在把势能具体化：重力场。"
+  },
+  {
+   "slide": 6,
+   "start": 181.5,
+   "end": 186.95,
+   "text": "取地面为零势能面，高度 h 处的势能就是 m g h。"
+  },
+  {
+   "slide": 6,
+   "start": 187.35,
+   "end": 195.53,
+   "text": "代进玻耳兹曼分布，数密度随高度按指数衰减：n 等于 n 零乘以 e 的负 m g h 除以 k T。"
+  },
+  {
+   "slide": 6,
+   "start": 195.93,
+   "end": 200.3,
+   "text": "这里有个特征长度：k T 除以 m g。"
+  },
+  {
+   "slide": 6,
+   "start": 200.7,
+   "end": 204.97,
+   "text": "每升高这么多，密度就降到原来的 e 分之一。"
+  },
+  {
+   "slide": 6,
+   "start": 205.37,
+   "end": 209.28,
+   "text": "对空气分子算一下，室温下大约八千米。"
+  },
+  {
+   "slide": 6,
+   "start": 209.68,
+   "end": 214.94,
+   "text": "想一想：为什么氢气球能飞上去，而氧气留在地面？"
+  },
+  {
+   "slide": 6,
+   "start": 215.59,
+   "end": 220.22,
+   "text": "因为轻的分子 m 小，特征长度大，衰减得慢。"
+  },
+  {
+   "slide": 7,
+   "start": 221.88,
+   "end": 225.62,
+   "text": "数密度不好直接测，压强好测。"
+  },
+  {
+   "slide": 7,
+   "start": 226.02,
+   "end": 229.91,
+   "text": "用物态方程：p 等于 n k T。"
+  },
+  {
+   "slide": 7,
+   "start": 230.31,
+   "end": 235.28,
+   "text": "等温条件下温度不变，压强和数密度成正比。"
+  },
+  {
+   "slide": 7,
+   "start": 235.68,
+   "end": 243.86,
+   "text": "于是压强的衰减规律和密度完全一样：p 等于 p 零乘以 e 的负 m g h 除以 k T。"
+  },
+  {
+   "slide": 7,
+   "start": 244.26,
+   "end": 254.96,
+   "text": "再把分子质量换成摩尔质量：m 乘 N-A 等于 M，k 乘 N-A 等于 R，指数就变成负 M g h 除以 R T。"
+  },
+  {
+   "slide": 7,
+   "start": 255.36,
+   "end": 258.05,
+   "text": "这就是等温气压公式。"
+  },
+  {
+   "slide": 7,
+   "start": 258.45,
+   "end": 265.05,
+   "text": "它说的是：在温度处处相同的假设下，压强随高度按指数衰减。"
+  },
+  {
+   "slide": 8,
+   "start": 266.65,
+   "end": 273.2,
+   "text": "把指数里的常数提出来，定义特征高度 H 等于 R T 除以 M g。"
+  },
+  {
+   "slide": 8,
+   "start": 273.6,
+   "end": 281.54,
+   "text": "对空气算一下：温度 273 开、摩尔质量 29 克每摩尔，得 H 约等于 8 千米。"
+  },
+  {
+   "slide": 8,
+   "start": 281.94,
+   "end": 288.95,
+   "text": "它的意义是：每升高 8 千米，压强降到原来的 e 分之一，也就是百分之三十七。"
+  },
+  {
+   "slide": 8,
+   "start": 289.35,
+   "end": 296.21,
+   "text": "看图：横轴高度，纵轴相对压强，是一条一路下滑的指数曲线。"
+  },
+  {
+   "slide": 8,
+   "start": 296.61,
+   "end": 304.63,
+   "text": "五千米处还有百分之五十四，珠峰顶上只剩三分之一，一万米巡航高度约百分之二十九。"
+  },
+  {
+   "slide": 8,
+   "start": 305.03,
+   "end": 311.15,
+   "text": "所以客机必须增压——舱外气压不到地面的三成，人受不了。"
+  },
+  {
+   "slide": 9,
+   "start": 312.69,
+   "end": 317.18,
+   "text": "一道例题：估算珠峰顶上的大气压强。"
+  },
+  {
+   "slide": 9,
+   "start": 317.58,
+   "end": 328.5,
+   "text": "已知海平面压强一点零一三乘十的五次方帕，温度取 273 开，空气摩尔质量 29 克每摩尔，高度 8848 米。"
+  },
+  {
+   "slide": 9,
+   "start": 328.9,
+   "end": 337.25,
+   "text": "先算指数：分子是 0.029 乘 9.8 乘 8848，分母是 8.31 乘 273。"
+  },
+  {
+   "slide": 9,
+   "start": 337.65,
+   "end": 343.55,
+   "text": "指数约等于负一点一一，也就是 e 的负一点一次方，约 0.33。"
+  },
+  {
+   "slide": 9,
+   "start": 343.95,
+   "end": 350.98,
+   "text": "乘上海平面压强，得三点三乘十的四次方帕，大约是地面的三分之一。"
+  },
+  {
+   "slide": 9,
+   "start": 351.38,
+   "end": 354.48,
+   "text": "这和实测的珠峰气压很接近。"
+  },
+  {
+   "slide": 9,
+   "start": 354.88,
+   "end": 359.9,
+   "text": "想一想：为什么实际值比等温公式算的还略低一点？"
+  },
+  {
+   "slide": 9,
+   "start": 360.55,
+   "end": 366.43,
+   "text": "因为真实大气不是等温的，越往高处越冷，衰减更快。"
+  },
+  {
+   "slide": 10,
+   "start": 368.09,
+   "end": 371.38,
+   "text": "最后一页说清这个公式的边界。"
+  },
+  {
+   "slide": 10,
+   "start": 371.78,
+   "end": 380.49,
+   "text": "第一，等温假设是理想化的：真实大气里温度随高度变化，对流层每升高一千米降六度左右。"
+  },
+  {
+   "slide": 10,
+   "start": 380.89,
+   "end": 387.37,
+   "text": "第二，重力场均匀的假设只在几十千米内成立，再高重力也要变。"
+  },
+  {
+   "slide": 10,
+   "start": 387.77,
+   "end": 392.28,
+   "text": "所以这个公式是「估算工具」，不是精确的大气模型。"
+  },
+  {
+   "slide": 10,
+   "start": 392.68,
+   "end": 403.89,
+   "text": "但它的意义远不止大气：玻耳兹曼分布是整个统计物理的基石，化学反应的速率、半导体的载流子、离心分离，都从这条指数曲线来。"
+  },
+  {
+   "slide": 10,
+   "start": 404.29,
+   "end": 408.47,
+   "text": "它把两件事接在了一起：能量和概率。"
+  },
+  {
+   "slide": 10,
+   "start": 408.87,
+   "end": 412.47,
+   "text": "能量高的事件，发生的概率就小。"
+  },
+  {
+   "slide": 11,
+   "start": 414.06,
+   "end": 415.93,
+   "text": "小结。"
+  },
+  {
+   "slide": 11,
+   "start": 416.33,
+   "end": 424.25,
+   "text": "玻耳兹曼分布：数密度按势能的负指数衰减，n 等于 n 零乘以 e 的负 εp 除以 kT。"
+  },
+  {
+   "slide": 11,
+   "start": 424.65,
+   "end": 429.5,
+   "text": "它和麦克斯韦分布合起来，就是分子按总能量的分布律。"
+  },
+  {
+   "slide": 11,
+   "start": 429.9,
+   "end": 441.13,
+   "text": "放在重力场里，数密度按高度指数衰减；再用 p 等于 n k T，得到等温气压公式 p 等于 p 零乘以 e 的负 Mgh 除以 RT。"
+  },
+  {
+   "slide": 11,
+   "start": 441.53,
+   "end": 450.05,
+   "text": "特征高度 H 等于 RT 除以 Mg，空气约 8 千米——每升 8 千米，压强剩百分之三十七。"
+  },
+  {
+   "slide": 11,
+   "start": 450.45,
+   "end": 459.33,
+   "text": "珠峰顶约三分之一大气压；公式的等温假设让它只是估算，但这条指数曲线是统计物理的入口。"
+  },
+  {
+   "slide": 11,
+   "start": 459.73,
+   "end": 465.37,
+   "text": "下一节回到主线：分子的平均碰撞频率和平均自由程。"
+  }
+ ],
+ "build_ts": 1792567086,
+ "logoScale": 0.67,
+ "theme": "wave"
+}

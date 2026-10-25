@@ -1,0 +1,2798 @@
+{
+ "title": "15-8 量子力学简介",
+ "nav": "15-8　量子力学简介",
+ "footer": "第十五章　量子物理",
+ "character": "aqiang",
+ "characters": [
+  {
+   "id": "aqiang",
+   "name": "阿强"
+  },
+  {
+   "id": "professor",
+   "name": "博士讲师"
+  },
+  {
+   "id": "zhongshan",
+   "name": "中山装先生"
+  }
+ ],
+ "duration": 346.25,
+ "slides": [
+  {
+   "id": 1,
+   "kind": "page",
+   "heading": "封面",
+   "narration": "第十五章第八节。15-8，量子力学简介。前面几节都是「猜想 + 实验」，这一节开始，量子力学有了自己的方程。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 282,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 十 五 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 300,
+     "y": 408,
+     "w": 1320,
+     "h": 170,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "量 子 物 理",
+        "size": 92,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 250,
+     "y": 588,
+     "w": 1420,
+     "h": 120,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "15-8　量子力学简介",
+        "size": 42,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 220,
+     "y": 730,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "波函数　·　概率密度　·　薛定谔方程　·　一维势阱",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 850,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "量子力学，终于有了自己的方程",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 0.0,
+    "2": 2.8,
+    "3": 6.42
+   },
+   "t_start": 0.0,
+   "t_end": 13.3,
+   "duration": 13.3,
+   "laser": []
+  },
+  {
+   "id": 2,
+   "kind": "page",
+   "heading": "本节路线",
+   "narration": "本节路线。先讲波函数：用它描述微观粒子，而不是轨道。再说概率密度和归一化条件。然后写出薛定谔方程，含时的和定态的。最后拿一维无限深势阱做例子——这是量子力学的「Hello World」。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节路线",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 244,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "主线：波函数 → 概率密度 → 薛定谔方程 → 一维势阱",
+        "size": 25,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1　波函数",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 386,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "复函数，不是实波",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 458,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2　概率密度",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 512,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "归一化条件",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 584,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "3　薛定谔方程",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 638,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "含时与定态",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 330,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4　一维势阱",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 386,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "能量量子化",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 470,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "为什么重要",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "第一次有了「算」的方程",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "能量量子化变成推论",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "不再是硬性假设",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 770,
+     "w": 1580,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "本节收口：量子力学从「假设」走向「方程」",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 14.1,
+    "2": 16.37,
+    "3": 22.07,
+    "4": 26.12,
+    "5": 31.08
+   },
+   "t_start": 14.1,
+   "t_end": 37.69,
+   "duration": 23.59,
+   "laser": []
+  },
+  {
+   "id": 3,
+   "kind": "page",
+   "heading": "一　波函数",
+   "narration": "先看波函数。经典的波——机械波、电磁波——都用实函数描述，比如 y 等于 A cos(kx 减 ωt)。但量子力学的波函数是复函数，写成 Ψ。它本身没有直接的物理意义。不过，它包含了粒子状态的全部信息。为什么必须用波函数？因为微观粒子没有确定的轨道，只能用「概率分布」描述。想一想：如果粒子有确定轨道，波函数还有什么用？",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　波函数",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "经典波：实函数",
+        "size": 26,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 286,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "机械波、电磁波，都可以写成 $y=A\\cos(kx-\\omega t)$",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 346,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "量子波函数：复函数 $\\Psi$",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 406,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\Psi$ 本身没有直接的物理意义",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 466,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "但它包含粒子状态的全部信息",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 530,
+     "w": 1580,
+     "h": 150,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "为什么必须用波函数",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "因为微观粒子没有确定的轨道，只能用概率分布描述",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "这一点，是不确定关系逼出来的",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "自由粒子：平面单色波，波长和频率不变，但位置完全不确定",
+        "size": 24,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 38.49,
+    "2": 41.12,
+    "3": 50.64,
+    "4": 55.82,
+    "5": 58.93,
+    "6": 63.24
+   },
+   "t_start": 38.49,
+   "t_end": 78.04,
+   "duration": 39.55,
+   "laser": []
+  },
+  {
+   "id": 4,
+   "kind": "page",
+   "heading": "二　概率密度与归一化",
+   "narration": "那波函数怎么给出概率？玻恩的解释是：波函数模的平方，正比于在该处发现粒子的概率。具体说，某一时刻在体积元里发现粒子的概率，等于 Ψ 模平方乘上体积元。所以 Ψ 模的平方叫概率密度。它是正实数。把整个空间的概率加起来，应该等于一，这叫归一化条件。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　概率密度与归一化",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "玻恩的解释",
+        "size": 26,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 286,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "波函数模的平方 ∝ 发现粒子的概率",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 336,
+     "w": 760,
+     "h": 100,
+     "tex": "\\mathrm{d}P=|\\Psi|^2\\,\\mathrm{d}V",
+     "size": 26,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 456,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$|\\Psi|^2$：概率密度（正实数）",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 1010,
+     "y": 336,
+     "w": 740,
+     "h": 100,
+     "tex": "\\iiint|\\Psi|^2\\,\\mathrm{d}V=1",
+     "size": 24,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 456,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "归一化条件（束缚态）",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 530,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "波函数的标准条件：单值、有限、连续",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "不是随便什么函数都能当波函数 —— 它必须能给出合理的概率",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 700,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以德布罗意波不是机械波，也不是电磁波，它是概率波",
+        "size": 24,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 780,
+     "w": 1580,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "概率波：波强的地方概率大，波弱的地方概率小",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 78.84,
+    "2": 82.39,
+    "3": 88.72,
+    "4": 96.51,
+    "5": 100.53,
+    "6": 102.92
+   },
+   "t_start": 78.84,
+   "t_end": 108.94,
+   "duration": 30.1,
+   "laser": []
+  },
+  {
+   "id": 5,
+   "kind": "page",
+   "heading": "三　薛定谔方程",
+   "narration": "接下来是薛定谔方程。1926 年，薛定谔从自由粒子的平面波出发，对 x 求二阶偏导，对 t 求一阶偏导。把能量和动量用算符替换，就凑出一维自由粒子的含时方程。推广到势场中，就是一般形式。这个方程在量子力学里的地位，相当于牛顿第二定律在经典力学里的地位。给它初始条件和边界条件，就能算出波函数怎么演化。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　薛定谔方程",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1926 年，波动力学的核心方程",
+        "size": 26,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 286,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "从自由粒子平面波出发，对 $x$ 求二阶导、对 $t$ 求一阶导",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 330,
+     "w": 1580,
+     "h": 120,
+     "tex": "-\\frac{\\hbar^2}{2m}\\frac{\\partial^2\\Psi}{\\partial x^2}=i\\hbar\\frac{\\partial\\Psi}{\\partial t}",
+     "size": 28,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 470,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "有势场时，左边加上 $U\\Psi$",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 530,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "地位相当于牛顿第二定律",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 590,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "薛定谔：奥地利物理学家，1933 年与狄拉克同获诺贝尔奖",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "他的方程，是二十世纪被引用最多的方程之一",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 760,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "和牛顿方程不同：它给的不是轨道，是波函数；结果是概率，不是确定值",
+        "size": 24,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 109.74,
+    "2": 112.88,
+    "3": 121.15,
+    "4": 127.86,
+    "5": 131.69,
+    "6": 138.43
+   },
+   "t_start": 109.74,
+   "t_end": 144.18,
+   "duration": 34.44,
+   "laser": []
+  },
+  {
+   "id": 6,
+   "kind": "page",
+   "heading": "四　定态薛定谔方程",
+   "narration": "如果势能和时间无关，方程可以分离变量。把波函数写成「空间部分」乘「时间部分」，时间部分就解出来了，是一个振荡因子。剩下的就是定态薛定谔方程。这时波函数、能量、概率密度都与时间无关，所以叫「定态」。一维的形式是：负的 ħ 平方比 2m 乘二阶导，加上 UΨ，等于 EΨ。三维的只要把二阶导换成拉普拉斯算子。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　定态薛定谔方程",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "势能与时间无关 ⇒ 可分离变量",
+        "size": 25,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 286,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\Psi(x,t)=\\psi(x)\\,\\mathrm{e}^{-iEt/\\hbar}$",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 346,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "空间部分满足：",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 390,
+     "w": 1580,
+     "h": 120,
+     "tex": "-\\frac{\\hbar^2}{2m}\\frac{\\mathrm{d}^2\\psi}{\\mathrm{d}x^2}+U\\psi=E\\psi",
+     "size": 28,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 530,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "定态：能量、概率密度都不随时间变",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 590,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三维：把 $\\mathrm{d}^2/\\mathrm{d}x^2$ 换成拉普拉斯算子 $\\nabla^2$",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 660,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "定态不是「静止」，而是「概率分布不随时间变」",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "电子还在动，只是各处出现的概率稳定了",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 144.98,
+    "2": 149.53,
+    "3": 157.08,
+    "4": 161.03,
+    "5": 167.84,
+    "6": 175.32
+   },
+   "t_start": 144.98,
+   "t_end": 180.6,
+   "duration": 35.62,
+   "laser": []
+  },
+  {
+   "id": 7,
+   "kind": "page",
+   "heading": "五　波函数的标准条件",
+   "narration": "解方程之前，先说清楚波函数要满足什么条件。第一，它必须能归一化，也就是积分收敛。第二，它和它的一阶导数必须连续。第三，它必须是有限的、单值的。合起来就是标准条件：单值、有限、连续。这些条件看着只是数学要求，其实正是它们造成了「能量量子化」。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五　波函数的标准条件",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 500,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "① 可归一化",
+        "size": 23,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "积分收敛",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$\\int|\\Psi|^2\\mathrm{d}V=1$",
+        "size": 21,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 700,
+     "y": 226,
+     "w": 500,
+     "h": 200,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "② 连续",
+        "size": 23,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$\\psi$ 与 $\\psi'$ 都连续",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "不能有突变",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 1230,
+     "y": 226,
+     "w": 520,
+     "h": 200,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "③ 单值、有限",
+        "size": 23,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "一点只有一个值",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "不能发散到无穷",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 470,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "合起来：单值、有限、连续",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 530,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这些条件看着只是数学要求",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 590,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "其实正是它们造成了能量量子化 —— 下面就能看到",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 660,
+     "w": 1580,
+     "h": 130,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "数学要求 → 物理结论",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "边界上的连续性，把「允许的波长」挑了出来，能量就被量子化了",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 181.4,
+    "2": 187.03,
+    "3": 191.8,
+    "4": 196.21,
+    "5": 200.62,
+    "6": 206.11
+   },
+   "t_start": 181.4,
+   "t_end": 213.08,
+   "duration": 31.68,
+   "laser": []
+  },
+  {
+   "id": 8,
+   "kind": "page",
+   "heading": "六　一维无限深方势阱",
+   "narration": "看一个最简单的例子：一维无限深方势阱。阱内势能为零，阱外势能无穷大，所以粒子出不去。波函数在 x 等于零和 x 等于 a 处必须为零，因为那里势能无穷大，粒子不可能存在。这就是边界条件。它像一根两端固定的弦——只能形成驻波。所以阱内只能容纳半波长的整数倍。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "六　一维无限深方势阱",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 250,
+     "w": 765,
+     "h": 380,
+     "name": "infinite_well"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "最简单的量子力学模型",
+        "size": 25,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 286,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "阱内 $U=0$，阱外 $U\\to\\infty$",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 346,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "边界：$\\psi(0)=\\psi(a)=0$",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 406,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "粒子出不去",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 466,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "像两端固定的弦，形成驻波",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 526,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以只能容纳半波长的整数倍",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 620,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "这个模型的意义：金属中自由电子的简化，且数学简单、结论典型",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "量子力学的基本概念，在它身上都能看到",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 213.88,
+    "2": 218.38,
+    "3": 224.49,
+    "4": 233.07,
+    "5": 235.73,
+    "6": 240.16
+   },
+   "t_start": 213.88,
+   "t_end": 244.82,
+   "duration": 30.94,
+   "laser": []
+  },
+  {
+   "id": 9,
+   "kind": "page",
+   "heading": "七　势阱的结果",
+   "narration": "解出来的结果很漂亮。波函数是正弦函数，量子数 n 只能取正整数。能量呢？E 等于 n 平方乘 h 平方除以 8ma 平方。注意：能量只能取分立的值，而且有一个最低能量 E₁，不为零。为什么不能为零？因为波函数必须满足边界条件，不能是一条平线。这就是零点能——经典物理里没有这个东西。不妨算算：如果势阱变宽，E₁ 会变大还是变小？",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "七　势阱的结果",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "波函数与能量都解出来了",
+        "size": 25,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 270,
+     "w": 760,
+     "h": 110,
+     "tex": "\\psi_n=\\sqrt{\\frac{2}{a}}\\sin\\frac{n\\pi x}{a}",
+     "size": 24,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 400,
+     "w": 760,
+     "h": 110,
+     "tex": "E_n=n^2\\frac{h^2}{8ma^2},\\quad n=1,2,3\\cdots",
+     "size": 22,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 540,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "能量只能取分立值，而且最低能不为零",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 600,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "因为波函数必须满足边界条件，不能是一条平线",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 660,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这就是「零点能」—— 经典物理里没有",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 120,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "能量量子化，不再是假设，而是方程 + 边界条件的必然结果",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 245.62,
+    "2": 248.42,
+    "3": 253.96,
+    "4": 261.32,
+    "5": 267.77,
+    "6": 275.52
+   },
+   "t_start": 245.62,
+   "t_end": 285.99,
+   "duration": 40.37,
+   "laser": []
+  },
+  {
+   "id": 10,
+   "kind": "page",
+   "heading": "八　概率密度的分布",
+   "narration": "再看概率密度。n 等于 1 时，中间最大，两边为零。n 等于 2 时，中间恰好为零——粒子不会出现在正中间。n 等于 3 时有两个零点。所以节点数是 n 减 1。这和经典的「均匀分布」完全不同，是量子力学的独特预言，也已经被实验证实。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "八　概率密度的分布",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 415,
+     "name": "prob_density"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "粒子在各处出现的概率不同",
+        "size": 25,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 286,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$n=1$：中间最大",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 346,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$n=2$：中间为零",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 406,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$n=3$：两个零点",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 466,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "节点数 = $n-1$",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 526,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与经典的均匀分布完全不同",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 620,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "这不是数学游戏 —— 用电子束在势阱中的分布可以测出来",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "量子力学的预言，总是可以被检验的",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 286.79,
+    "2": 289.23,
+    "3": 294.17,
+    "4": 300.14,
+    "5": 303.44,
+    "6": 306.86
+   },
+   "t_start": 286.79,
+   "t_end": 314.58,
+   "duration": 27.79,
+   "laser": []
+  },
+  {
+   "id": 11,
+   "kind": "page",
+   "heading": "本节小结",
+   "narration": "小结。波函数描述微观粒子，它的模平方是概率密度，要满足单值、有限、连续和归一化。薛定谔方程是量子力学的基本方程，势能与时间无关时化为定态方程。一维无限深势阱给出两个结论：能量量子化，以及概率分布不均匀。下一节用它处理氢原子。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 波函数",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$|\\Psi|^2$：概率密度",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 薛定谔方程",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 408,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "含时与定态两种形式",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 势阱结论",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$E_n\\propto n^2$，零点能",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 356,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 方法",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 408,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "方程 + 边界条件 ⇒ 量子化",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 1010,
+     "y": 470,
+     "w": 740,
+     "h": 170,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "下一节",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "15-9　氢原子的量子理论",
+        "size": 21,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "三维势阱",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 490,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一句话",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "波函数代替轨道",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "方程代替牛顿定律",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "概率代替确定性",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 120,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "第十五章 8/15：量子力学正式登场",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 315.38,
+    "2": 317.65,
+    "3": 326.91,
+    "4": 334.39,
+    "5": 341.34
+   },
+   "t_start": 315.38,
+   "t_end": 344.76,
+   "duration": 29.38,
+   "laser": []
+  }
+ ],
+ "subtitles": [
+  {
+   "slide": 1,
+   "start": 0.0,
+   "end": 2.4,
+   "text": "第十五章第八节。"
+  },
+  {
+   "slide": 1,
+   "start": 2.8,
+   "end": 6.02,
+   "text": "15-8，量子力学简介。"
+  },
+  {
+   "slide": 1,
+   "start": 6.42,
+   "end": 12.73,
+   "text": "前面几节都是「猜想 + 实验」，这一节开始，量子力学有了自己的方程。"
+  },
+  {
+   "slide": 2,
+   "start": 14.1,
+   "end": 15.97,
+   "text": "本节路线。"
+  },
+  {
+   "slide": 2,
+   "start": 16.37,
+   "end": 21.67,
+   "text": "先讲波函数：用它描述微观粒子，而不是轨道。"
+  },
+  {
+   "slide": 2,
+   "start": 22.07,
+   "end": 25.72,
+   "text": "再说概率密度和归一化条件。"
+  },
+  {
+   "slide": 2,
+   "start": 26.12,
+   "end": 30.68,
+   "text": "然后写出薛定谔方程，含时的和定态的。"
+  },
+  {
+   "slide": 2,
+   "start": 31.08,
+   "end": 37.01,
+   "text": "最后拿一维无限深势阱做例子——这是量子力学的「Hello World」。"
+  },
+  {
+   "slide": 3,
+   "start": 38.49,
+   "end": 40.72,
+   "text": "先看波函数。"
+  },
+  {
+   "slide": 3,
+   "start": 41.12,
+   "end": 50.24,
+   "text": "经典的波——机械波、电磁波——都用实函数描述，比如 y 等于 A cos(kx 减 ωt)。"
+  },
+  {
+   "slide": 3,
+   "start": 50.64,
+   "end": 55.42,
+   "text": "但量子力学的波函数是复函数，写成 Ψ。"
+  },
+  {
+   "slide": 3,
+   "start": 55.82,
+   "end": 58.53,
+   "text": "它本身没有直接的物理意义。"
+  },
+  {
+   "slide": 3,
+   "start": 58.93,
+   "end": 62.84,
+   "text": "不过，它包含了粒子状态的全部信息。"
+  },
+  {
+   "slide": 3,
+   "start": 63.24,
+   "end": 65.62,
+   "text": "为什么必须用波函数？"
+  },
+  {
+   "slide": 3,
+   "start": 66.27,
+   "end": 71.41,
+   "text": "因为微观粒子没有确定的轨道，只能用「概率分布」描述。"
+  },
+  {
+   "slide": 3,
+   "start": 71.81,
+   "end": 76.92,
+   "text": "想一想：如果粒子有确定轨道，波函数还有什么用？"
+  },
+  {
+   "slide": 4,
+   "start": 78.84,
+   "end": 81.74,
+   "text": "那波函数怎么给出概率？"
+  },
+  {
+   "slide": 4,
+   "start": 82.39,
+   "end": 88.32,
+   "text": "玻恩的解释是：波函数模的平方，正比于在该处发现粒子的概率。"
+  },
+  {
+   "slide": 4,
+   "start": 88.72,
+   "end": 96.11,
+   "text": "具体说，某一时刻在体积元里发现粒子的概率，等于 Ψ 模平方乘上体积元。"
+  },
+  {
+   "slide": 4,
+   "start": 96.51,
+   "end": 100.13,
+   "text": "所以 Ψ 模的平方叫概率密度。"
+  },
+  {
+   "slide": 4,
+   "start": 100.53,
+   "end": 102.52,
+   "text": "它是正实数。"
+  },
+  {
+   "slide": 4,
+   "start": 102.92,
+   "end": 108.18,
+   "text": "把整个空间的概率加起来，应该等于一，这叫归一化条件。"
+  },
+  {
+   "slide": 5,
+   "start": 109.74,
+   "end": 112.48,
+   "text": "接下来是薛定谔方程。"
+  },
+  {
+   "slide": 5,
+   "start": 112.88,
+   "end": 120.75,
+   "text": "1926 年，薛定谔从自由粒子的平面波出发，对 x 求二阶偏导，对 t 求一阶偏导。"
+  },
+  {
+   "slide": 5,
+   "start": 121.15,
+   "end": 127.46,
+   "text": "把能量和动量用算符替换，就凑出一维自由粒子的含时方程。"
+  },
+  {
+   "slide": 5,
+   "start": 127.86,
+   "end": 131.29,
+   "text": "推广到势场中，就是一般形式。"
+  },
+  {
+   "slide": 5,
+   "start": 131.69,
+   "end": 138.03,
+   "text": "这个方程在量子力学里的地位，相当于牛顿第二定律在经典力学里的地位。"
+  },
+  {
+   "slide": 5,
+   "start": 138.43,
+   "end": 143.45,
+   "text": "给它初始条件和边界条件，就能算出波函数怎么演化。"
+  },
+  {
+   "slide": 6,
+   "start": 144.98,
+   "end": 149.13,
+   "text": "如果势能和时间无关，方程可以分离变量。"
+  },
+  {
+   "slide": 6,
+   "start": 149.53,
+   "end": 156.68,
+   "text": "把波函数写成「空间部分」乘「时间部分」，时间部分就解出来了，是一个振荡因子。"
+  },
+  {
+   "slide": 6,
+   "start": 157.08,
+   "end": 160.63,
+   "text": "剩下的就是定态薛定谔方程。"
+  },
+  {
+   "slide": 6,
+   "start": 161.03,
+   "end": 167.44,
+   "text": "这时波函数、能量、概率密度都与时间无关，所以叫「定态」。"
+  },
+  {
+   "slide": 6,
+   "start": 167.84,
+   "end": 174.92,
+   "text": "一维的形式是：负的 ħ 平方比 2m 乘二阶导，加上 UΨ，等于 EΨ。"
+  },
+  {
+   "slide": 6,
+   "start": 175.32,
+   "end": 179.86,
+   "text": "三维的只要把二阶导换成拉普拉斯算子。"
+  },
+  {
+   "slide": 7,
+   "start": 181.4,
+   "end": 186.63,
+   "text": "解方程之前，先说清楚波函数要满足什么条件。"
+  },
+  {
+   "slide": 7,
+   "start": 187.03,
+   "end": 191.4,
+   "text": "第一，它必须能归一化，也就是积分收敛。"
+  },
+  {
+   "slide": 7,
+   "start": 191.8,
+   "end": 195.81,
+   "text": "第二，它和它的一阶导数必须连续。"
+  },
+  {
+   "slide": 7,
+   "start": 196.21,
+   "end": 200.22,
+   "text": "第三，它必须是有限的、单值的。"
+  },
+  {
+   "slide": 7,
+   "start": 200.62,
+   "end": 205.71,
+   "text": "合起来就是标准条件：单值、有限、连续。"
+  },
+  {
+   "slide": 7,
+   "start": 206.11,
+   "end": 212.35,
+   "text": "这些条件看着只是数学要求，其实正是它们造成了「能量量子化」。"
+  },
+  {
+   "slide": 8,
+   "start": 213.88,
+   "end": 217.98,
+   "text": "看一个最简单的例子：一维无限深方势阱。"
+  },
+  {
+   "slide": 8,
+   "start": 218.38,
+   "end": 224.09,
+   "text": "阱内势能为零，阱外势能无穷大，所以粒子出不去。"
+  },
+  {
+   "slide": 8,
+   "start": 224.49,
+   "end": 232.67,
+   "text": "波函数在 x 等于零和 x 等于 a 处必须为零，因为那里势能无穷大，粒子不可能存在。"
+  },
+  {
+   "slide": 8,
+   "start": 233.07,
+   "end": 235.33,
+   "text": "这就是边界条件。"
+  },
+  {
+   "slide": 8,
+   "start": 235.73,
+   "end": 239.76,
+   "text": "它像一根两端固定的弦——只能形成驻波。"
+  },
+  {
+   "slide": 8,
+   "start": 240.16,
+   "end": 244.07,
+   "text": "所以阱内只能容纳半波长的整数倍。"
+  },
+  {
+   "slide": 9,
+   "start": 245.62,
+   "end": 248.02,
+   "text": "解出来的结果很漂亮。"
+  },
+  {
+   "slide": 9,
+   "start": 248.42,
+   "end": 253.56,
+   "text": "波函数是正弦函数，量子数 n 只能取正整数。"
+  },
+  {
+   "slide": 9,
+   "start": 253.96,
+   "end": 255.83,
+   "text": "能量呢？"
+  },
+  {
+   "slide": 9,
+   "start": 256.48,
+   "end": 260.92,
+   "text": "E 等于 n 平方乘 h 平方除以 8ma 平方。"
+  },
+  {
+   "slide": 9,
+   "start": 261.32,
+   "end": 267.37,
+   "text": "注意：能量只能取分立的值，而且有一个最低能量 E₁，不为零。"
+  },
+  {
+   "slide": 9,
+   "start": 267.77,
+   "end": 269.79,
+   "text": "为什么不能为零？"
+  },
+  {
+   "slide": 9,
+   "start": 270.44,
+   "end": 275.12,
+   "text": "因为波函数必须满足边界条件，不能是一条平线。"
+  },
+  {
+   "slide": 9,
+   "start": 275.52,
+   "end": 279.46,
+   "text": "这就是零点能——经典物理里没有这个东西。"
+  },
+  {
+   "slide": 9,
+   "start": 279.86,
+   "end": 284.8,
+   "text": "不妨算算：如果势阱变宽，E₁ 会变大还是变小？"
+  },
+  {
+   "slide": 10,
+   "start": 286.79,
+   "end": 288.83,
+   "text": "再看概率密度。"
+  },
+  {
+   "slide": 10,
+   "start": 289.23,
+   "end": 293.77,
+   "text": "n 等于 1 时，中间最大，两边为零。"
+  },
+  {
+   "slide": 10,
+   "start": 294.17,
+   "end": 299.74,
+   "text": "n 等于 2 时，中间恰好为零——粒子不会出现在正中间。"
+  },
+  {
+   "slide": 10,
+   "start": 300.14,
+   "end": 303.04,
+   "text": "n 等于 3 时有两个零点。"
+  },
+  {
+   "slide": 10,
+   "start": 303.44,
+   "end": 306.46,
+   "text": "所以节点数是 n 减 1。"
+  },
+  {
+   "slide": 10,
+   "start": 306.86,
+   "end": 313.84,
+   "text": "这和经典的「均匀分布」完全不同，是量子力学的独特预言，也已经被实验证实。"
+  },
+  {
+   "slide": 11,
+   "start": 315.38,
+   "end": 317.25,
+   "text": "小结。"
+  },
+  {
+   "slide": 11,
+   "start": 317.65,
+   "end": 326.51,
+   "text": "波函数描述微观粒子，它的模平方是概率密度，要满足单值、有限、连续和归一化。"
+  },
+  {
+   "slide": 11,
+   "start": 326.91,
+   "end": 333.99,
+   "text": "薛定谔方程是量子力学的基本方程，势能与时间无关时化为定态方程。"
+  },
+  {
+   "slide": 11,
+   "start": 334.39,
+   "end": 340.94,
+   "text": "一维无限深势阱给出两个结论：能量量子化，以及概率分布不均匀。"
+  },
+  {
+   "slide": 11,
+   "start": 341.34,
+   "end": 344.08,
+   "text": "下一节用它处理氢原子。"
+  }
+ ],
+ "build_ts": 1792633255,
+ "logoScale": 0.67,
+ "theme": "wave"
+}

@@ -1,0 +1,2616 @@
+{
+ "title": "12-8 分子平均碰撞频率和平均自由程",
+ "nav": "12-8　平均碰撞频率与平均自由程",
+ "footer": "第十二章　气体动理论",
+ "logoScale": 0.67,
+ "theme": "wave",
+ "engine": "edge",
+ "voice": "zh-CN-YunxiNeural",
+ "pages": [
+  {
+   "id": 1,
+   "narration": "[[1]]第十二章第八节。[[2]]12-8，分子的平均碰撞频率和平均自由程。[[3]]前面几节讲的都是「分子有多快、有多猛」，这一节讲另一件事：它们多久撞一次。[[4]]结论会很反直觉——常温常压下，一个分子每秒要撞几十亿次，可每次自由飞行的路程还不到一微米的百分之一。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 0,
+     "y": 560,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 十 二 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 300,
+     "y": 408,
+     "w": 1320,
+     "h": 170,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "气 体 动 论",
+        "size": 92,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 250,
+     "y": 596,
+     "w": 1420,
+     "h": 120,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "12-8　平均碰撞频率　平均自由程",
+        "size": 42,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 220,
+     "y": 742,
+     "w": 1480,
+     "h": 90,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "碰撞截面　·　√2 的来历　·　λ 与压强　·　星际介质",
+        "size": 33,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 856,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "每秒撞几十亿次，每次只飞几十纳米",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "封面"
+  },
+  {
+   "id": 2,
+   "narration": "[[1]]本节路线。[[2]]先定义三个量：自由程、平均自由程、平均碰撞频率。[[3]]再把分子当成球，算出它的碰撞截面。[[4]]然后先假设只有一个分子在动，算出碰撞次数；再修正成大家都在动，多出一个根号二。[[5]]接着得到平均自由程的公式，看它跟压强的关系。[[6]]最后两道例题：一道空气、一道暗星云。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节路线",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 244,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "主线：三个定义 → 碰撞截面 → 一个分子动 → 大家都动 → λ 的公式 → 例题",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1　三个平均量",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 386,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "自由程、$\\lambda$、$Z$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 458,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2　碰撞截面",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 512,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "分子扫过的圆柱",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 584,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "3　先让一个分子动",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 638,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$Z=\\pi d^2\\bar{v}n$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 330,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4　修正：大家都动",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 386,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "多出一个 $\\sqrt2$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 458,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "5　$\\lambda$ 的公式与量级",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 512,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "常压 68 nm，高真空 7 m",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 584,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "6　两道例题",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 638,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "空气与暗星云",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "这一节只做一件事：把「分子多久撞一次」算成一个可检验的数",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "本节路线"
+  },
+  {
+   "id": 3,
+   "narration": "[[1]]先把三个量说清楚。[[2]]一个分子从这次碰撞到下次碰撞，中间自由飞过的那段路程，叫自由程。[[3]]每次长短都不一样，所以取平均，叫平均自由程，记作 lambda。[[4]]单位时间内一个分子撞了多少次，叫平均碰撞频率，记作 Z。[[5]]两者之间有个简单关系：一秒内飞过的总路程是平均速率 v 拔，除以撞的次数，就是每段的平均长度。[[6]]所以 lambda 等于 v 拔除以 Z——记住这个关系，后面两个量只要算出一个，另一个就出来了。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　三个平均量",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "从一次到下一次",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "自由程：两次碰撞之间飞过的路程",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "平均自由程 $\\lambda$：取平均",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 416,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "平均碰撞频率 $Z$：单位时间撞几次",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 482,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一秒飞 $\\bar{v}$，撞 $Z$ 次",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 6,
+     "x": 170,
+     "y": 536,
+     "w": 740,
+     "h": 150,
+     "tex": "\\lambda=\\frac{\\bar{v}}{Z}",
+     "size": 34,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 190,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "两个量，一个关系",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$\\lambda$：每段多长",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$Z$：每秒几次",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$\\lambda Z=\\bar{v}$",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 470,
+     "w": 740,
+     "h": 190,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "注意",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$\\lambda$ 是统计平均",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "单个分子这次长、下次短",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "但大量分子有确定的平均",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以问题变成：$Z$ 有多大？算出了 $Z$，$\\lambda$ 就是 $\\bar{v}/Z$",
+        "size": 28,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "一　三个平均量"
+  },
+  {
+   "id": 4,
+   "narration": "[[1]]要算碰撞次数，先得说清「什么算撞上」。[[2]]把分子当成直径 d 的小球。两个球心距离小于 d，就碰上了。[[3]]换个等效的说法：把运动的那个球的半径放大到 d，它扫过一根半径 d 的圆柱。[[4]]凡是球心落进这根圆柱的分子，都会被撞上。[[5]]所以圆柱的截面积 πd 平方，就叫碰撞截面——它不是分子的几何截面，是「碰撞范围」。[[6]]一秒内扫过的体积是 πd 平方乘 v 拔，里面的分子数就是碰撞次数。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　碰撞截面",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "什么算「撞上」？",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 250,
+     "w": 765,
+     "h": 437,
+     "name": "collision_cylinder"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 300,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "分子看成直径 $d$ 的球",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "球心距 $<d$ 就算碰撞",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 416,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "等效：半径放大到 $d$ 的圆柱",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 476,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "碰撞截面 $\\sigma=\\pi d^{2}$",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 530,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不是几何截面，是「碰撞范围」",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 600,
+     "w": 740,
+     "h": 180,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一秒扫过的体积",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$\\pi d^{2}\\bar{v}$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "柱内分子数 = 数密度 × 体积",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "二　碰撞截面"
+  },
+  {
+   "id": 5,
+   "narration": "[[1]]先做一个不真实的假设：只有这个分子在动，别的都静止。[[2]]那么它一秒扫过的圆柱体积是 πd 平方乘 v 拔。[[3]]柱内有多少个分子？数密度 n 乘体积，就是 n πd 平方 v 拔。[[4]]这些分子都要被撞，所以一秒撞这么多次。[[5]]但这个结果是偏小的——因为别的分子也在动，迎面而来的会更快撞上。[[6]]所以要修一下。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　先让一个分子动",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "假设：其他分子都静止",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 300,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一秒扫过体积 $\\pi d^{2}\\bar{v}$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 360,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "柱内分子数 $=n\\pi d^{2}\\bar{v}$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 424,
+     "w": 740,
+     "h": 150,
+     "tex": "Z'=\\pi d^{2}\\bar{v}n",
+     "size": 34,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 594,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "但别的分子也在动",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 646,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "迎面来的撞得更快 ⇒ 上面的结果偏小",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 380,
+     "w": 740,
+     "h": 230,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一个直觉",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "静止的靶子，只能等着被撞",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "会跑的靶子，相向时撞得更勤",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "平均下来，多一个 $\\sqrt2$",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 770,
+     "w": 1580,
+     "h": 130,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "这个假设只为把问题拆开算 —— 与自由电子气的做法同源",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "先让一个跑，再补上其他分子的运动",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "三　先让一个分子动"
+  },
+  {
+   "id": 6,
+   "narration": "[[1]]修正的系数是根号二。[[2]]为什么？因为碰撞频率取决于两个分子的相对速率，而不是某一个的速率。[[3]]麦克斯韦分布告诉我们，两个分子的平均相对速率，是平均速率的根号二倍。[[4]]这个根号二可以严格算出来，不是凑的。[[5]]于是把 v 拔换成根号二倍的 v 拔，碰撞频率就多一个根号二。[[6]]想一想：温度升高，碰撞频率会变吗？会，因为 v 拔随温度升高。但平均自由程几乎不变——因为分子跑得快，撞得也勤，两头抵消。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　√2 的来历",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "碰撞看的是「相对速率」",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 300,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两个分子相向时，接近得快",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 360,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "麦克斯韦分布给出：",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 414,
+     "w": 740,
+     "h": 140,
+     "tex": "\\bar{v}_{\\mathrm{rel}}=\\sqrt2\\,\\bar{v}",
+     "size": 32,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 570,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "于是",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 622,
+     "w": 740,
+     "h": 150,
+     "tex": "Z=\\sqrt2\\,\\pi d^{2}\\bar{v}n",
+     "size": 34,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 330,
+     "w": 740,
+     "h": 210,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "$\\sqrt2$ 不是凑的",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "是相对速率的平均值",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "由麦克斯韦分布严格算出",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "换成别的分布就不是 $\\sqrt2$",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 570,
+     "w": 740,
+     "h": 190,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "想一想：升温会怎样？",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$Z$ 变大（$\\bar v$ 大）",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$\\lambda$ 几乎不变",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "跑得快，撞得也勤，两头抵消",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "四　√2 的来历"
+  },
+  {
+   "id": 7,
+   "narration": "[[1]]有了碰撞频率，平均自由程就是一个除法。[[2]]lambda 等于 v 拔除以 Z，把 Z 代进去，v 拔消掉。[[3]]得到 lambda 等于一除以根号二 πd 平方 n——注意它只跟数密度有关，跟分子跑多快无关。[[4]]再用 p 等于 n k T，换成压强：lambda 等于 k T 除以根号二 πd 平方 p。[[5]]这个式子很有用：等温下，自由程与压强成反比。抽掉一半气体，自由程就翻一倍。[[6]]这也解释了真空技术：抽得越空，分子飞得越远，越不容易互相碰撞。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五　平均自由程的公式",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\lambda=\\bar v/Z$，把 $Z$ 代进去",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 292,
+     "w": 740,
+     "h": 150,
+     "tex": "\\lambda=\\frac{1}{\\sqrt2\\,\\pi d^{2}n}",
+     "size": 32,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 466,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只跟数密度有关，与速率无关",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 528,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "用 $p=nkT$ 换成压强",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 582,
+     "w": 740,
+     "h": 150,
+     "tex": "\\lambda=\\frac{kT}{\\sqrt2\\,\\pi d^{2}p}",
+     "size": 32,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "等温下 $\\lambda\\propto1/p$",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 292,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "抽掉一半气体，自由程翻一倍",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 348,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这就是真空技术的基础",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 420,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "反过来读",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$\\lambda$ 大 ⇒ 分子飞得远",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "还没撞上就到了器壁",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "真空管里就是这个状态",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 770,
+     "w": 1580,
+     "h": 130,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "注意：$\\lambda$ 里没有 $\\bar v$ —— 分子跑多快，与每段多长无关",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "快分子撞得勤，但每段也飞得快，两头正好抵消",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "五　平均自由程的公式"
+  },
+  {
+   "id": 8,
+   "narration": "[[1]]代几个数看看 lambda 到底多大。[[2]]常温常压，空气分子直径约三点五乘十的负十次方米，算出来 lambda 约六十八纳米。[[3]]这有多长？大约两百个分子直径。[[4]]再看高真空：压强抽到十的负三次方帕，lambda 变成七米左右——比一间教室还长。[[5]]所以真空管里的电子能一路飞到荧光屏，中间几乎不撞气体分子。[[6]]想一想：如果 lambda 比容器还大，分子会怎样？从这头直接飞到那头，中间什么都不碰——这就是「分子流」，抽真空和镀膜的原理都在这儿。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "六　$\\lambda$ 到底有多大",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "常温常压：几十纳米",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 250,
+     "w": 765,
+     "h": 448,
+     "name": "mean_free_path"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 300,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "空气：$d\\approx3.5\\times10^{-10}$ m",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 350,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\lambda\\approx68$ nm",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 410,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "约合 200 个分子直径",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 470,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "高真空（$10^{-3}$ Pa）：约 7 m",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 530,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "比教室还长 ⇒ 分子直接飞到器壁",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 600,
+     "w": 740,
+     "h": 190,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "想一想：$\\lambda$ 比容器还大呢？",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "从这头直接飞到那头",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "中间什么都不碰",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "这叫「分子流」",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 740,
+     "w": 740,
+     "h": 88,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "真空镀膜、电子管、质谱仪，靠的都是这个",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "六　λ 到底有多大"
+  },
+  {
+   "id": 9,
+   "narration": "[[1]]第一道例题，算空气分子的平均自由程。[[2]]两种情形：一是 273 开、一个标准大气压；二是 273 开、压强只有一点三三帕。[[3]]空气分子直径取三点五乘十的负十次方米。[[4]]第一种情形，代进公式，lambda 约六点八乘十的负八次方米，也就是六十八纳米。[[5]]第二种，压强小了一万倍，lambda 就大一万倍，约五点二乘十的负三次方米，五毫米多。[[6]]两个结果都说明了同一件事：lambda 与 p 成反比。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "七　例题（一）：空气分子的自由程",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "已知",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 288,
+     "w": 740,
+     "h": 92,
+     "tex": "T=273\\ \\mathrm{K},\\quad d=3.5\\times10^{-10}\\ \\mathrm{m}",
+     "size": 22,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 392,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① $p=1.013\\times10^{5}$ Pa",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 442,
+     "w": 740,
+     "h": 120,
+     "tex": "\\lambda=\\frac{kT}{\\sqrt2\\,\\pi d^{2}p}",
+     "size": 26,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 570,
+     "w": 740,
+     "h": 110,
+     "tex": "\\approx6.8\\times10^{-8}\\ \\mathrm{m}",
+     "size": 26,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 690,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "约 68 nm，200 个分子直径",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② $p=1.333$ Pa",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 1010,
+     "y": 288,
+     "w": 740,
+     "h": 112,
+     "tex": "\\lambda=\\frac{kT}{\\sqrt2\\,\\pi d^{2}p}",
+     "size": 24,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 1010,
+     "y": 414,
+     "w": 740,
+     "h": 120,
+     "tex": "\\approx5.2\\times10^{-3}\\ \\mathrm{m}",
+     "size": 28,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 546,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "约 5.2 mm",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 610,
+     "w": 740,
+     "h": 180,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "压强小 $7.6\\times10^{4}$ 倍",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$\\lambda$ 就大同样的倍数",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$\\lambda\\propto1/p$ 的直接验证",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 800,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两问之间只改了压强，结果差五个数量级 —— 这就是真空技术的杠杆",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "七　例题（一）：空气分子的自由程"
+  },
+  {
+   "id": 10,
+   "narration": "[[1]]第二道例题更有意思，来自天体物理。[[2]]某暗星云温度只有 20 开，每立方厘米含 50 个氢原子，氢原子直径取十的负十次方米。[[3]]要求两件事：这些氢原子的平均碰撞频率，以及两次碰撞之间的平均时间。[[4]]先用平均速率公式：v 拔等于根号下八 R T 除以 π 摩尔质量，算得约六百五十米每秒。[[5]]再算碰撞频率：根号二 πd 平方 v 拔 n，得一点四乘十的负九次方每秒。[[6]]倒数就是平均间隔：约七乘十的八次方秒，也就是二十二年。想一想：这么稀的介质里，一个氢原子二十多年才撞一次——星际化学反应的慢，就慢在这里。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "八　例题（二）：暗星云中的氢原子",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "已知",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 288,
+     "w": 740,
+     "h": 90,
+     "tex": "T=20\\ \\mathrm{K},\\quad n=50\\ \\mathrm{cm^{-3}}=5\\times10^{7}\\ \\mathrm{m^{-3}}",
+     "size": 20,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 384,
+     "w": 740,
+     "h": 90,
+     "tex": "d=1.0\\times10^{-10}\\ \\mathrm{m},\\quad M=10^{-3}\\ \\mathrm{kg/mol}",
+     "size": 20,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 500,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 平均速率",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 548,
+     "w": 740,
+     "h": 120,
+     "tex": "\\bar v=\\sqrt{\\frac{8RT}{\\pi M}}\\approx6.5\\times10^{2}\\ \\mathrm{m/s}",
+     "size": 22,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 碰撞频率",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 1010,
+     "y": 286,
+     "w": 740,
+     "h": 110,
+     "tex": "Z=\\sqrt2\\,\\pi d^{2}\\bar v n",
+     "size": 24,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 1010,
+     "y": 402,
+     "w": 740,
+     "h": 86,
+     "tex": "\\approx1.4\\times10^{-9}\\ \\mathrm{s^{-1}}",
+     "size": 26,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 552,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 平均间隔 $\\Delta t=1/Z$",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 1010,
+     "y": 604,
+     "w": 740,
+     "h": 110,
+     "tex": "\\Delta t\\approx7\\times10^{8}\\ \\mathrm{s}\\approx22\\ \\text{年}",
+     "size": 24,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 742,
+     "w": 1580,
+     "h": 150,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "想一想：为什么星际化学这么慢？",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "数密度只有地面的万亿分之一，撞一次要等二十年",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "所以星际分子的生成，靠的是尘埃表面的催化，不是气相碰撞",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "八　例题（二）：暗星云中的氢原子"
+  },
+  {
+   "id": 11,
+   "narration": "[[1]]小结。[[2]]三个量：自由程、平均自由程 lambda、平均碰撞频率 Z，它们的关系是 lambda 等于 v 拔除以 Z。[[3]]碰撞截面是 πd 平方——分子被放大成半径 d 的球，扫过的圆柱。[[4]]碰撞频率 Z 等于根号二 πd 平方 v 拔 n，根号二来自相对速率。[[5]]平均自由程 lambda 等于一除以根号二 πd 平方 n，也等于 kT 除以根号二 πd 平方 p。[[6]]常温常压 68 纳米，高真空可到米级；暗星云里二十二年才撞一次。第十二章的正文到此结束，下一节是选学的迁移现象。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 三个量",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\lambda=\\bar v/Z$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 350,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 碰撞截面",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 402,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\sigma=\\pi d^{2}$，扫过圆柱",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 466,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 碰撞频率",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 514,
+     "w": 740,
+     "h": 120,
+     "tex": "Z=\\sqrt2\\,\\pi d^{2}\\bar v n",
+     "size": 26,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 平均自由程",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 1010,
+     "y": 284,
+     "w": 740,
+     "h": 120,
+     "tex": "\\lambda=\\frac{kT}{\\sqrt2\\,\\pi d^{2}p}",
+     "size": 26,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 424,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "⑤ 两个数量级",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 476,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "常压 68 nm　·　高真空 7 m",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 522,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "暗星云：22 年撞一次",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 596,
+     "w": 740,
+     "h": 170,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "下一节（选学）",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "气体的迁移现象",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "内摩擦、热导、扩散",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 660,
+     "w": 740,
+     "h": 190,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一句话",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "分子跑得快，撞得更勤",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "两头一抵消",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "自由程只由密度和直径决定",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "本节小结"
+  }
+ ]
+}

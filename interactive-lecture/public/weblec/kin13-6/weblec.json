@@ -1,0 +1,3972 @@
+{
+ "title": "13-6 第二定律的表述 卡诺定理",
+ "nav": "13-6　第二定律的表述",
+ "footer": "第十三章　热力学基础",
+ "character": "aqiang",
+ "characters": [
+  {
+   "id": "aqiang",
+   "name": "阿强"
+  },
+  {
+   "id": "professor",
+   "name": "博士讲师"
+  },
+  {
+   "id": "zhongshan",
+   "name": "中山装先生"
+  }
+ ],
+ "duration": 462.05,
+ "slides": [
+  {
+   "id": 1,
+   "kind": "page",
+   "heading": "封面",
+   "narration": "第十三章第六节。13-6，热力学第二定律的表述，以及卡诺定理。第一定律管能量守恒，这一节要加一条：管过程往哪个方向走。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 282,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 十 三 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 300,
+     "y": 408,
+     "w": 1320,
+     "h": 170,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "热 力 学 基 础",
+        "size": 92,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 250,
+     "y": 588,
+     "w": 1420,
+     "h": 120,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "13-6　第二定律的表述　卡诺定理",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 220,
+     "y": 730,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "开尔文表述　·　克劳修斯表述　·　可逆性　·　卡诺定理",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 850,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "能量守恒之外，还有一条「方向」的定律",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 0.0,
+    "2": 2.85,
+    "3": 8.31
+   },
+   "t_start": 0.0,
+   "t_end": 14.59,
+   "duration": 14.59,
+   "laser": []
+  },
+  {
+   "id": 2,
+   "kind": "page",
+   "heading": "本节路线",
+   "narration": "本节路线。先看第一定律管不了的三件事：功热转化、热传导方向、自由膨胀。由此引出第二定律的两种表述：开尔文表述和克劳修斯表述。再讲可逆与不可逆，这是判断方向的标准。然后用它推出卡诺定理，给热机效率排座次。最后说能量品质——为什么能量也有「好坏」之分。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节路线",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 244,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "主线：第一定律管不了 → 两种表述 → 可逆性 → 卡诺定理 → 能量品质",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1　第一定律管不了什么",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 386,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "方向性它说不出",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 458,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2　两种表述",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 512,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "开尔文 · 克劳修斯",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 584,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "3　可逆与不可逆",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 638,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "准静态 + 无耗散",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 330,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4　卡诺定理",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 386,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "效率的上限",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 458,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "5　能量品质",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 512,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "能量也有好坏",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 584,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "6　小结",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 638,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "方向比数量更要紧",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "本节收口：第二定律不是公式，是一条关于「方向」的定律",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 15.39,
+    "2": 17.66,
+    "3": 24.83,
+    "4": 31.33,
+    "5": 35.98,
+    "6": 40.72
+   },
+   "t_start": 15.39,
+   "t_end": 46.11,
+   "duration": 30.72,
+   "laser": []
+  },
+  {
+   "id": 3,
+   "kind": "page",
+   "heading": "一　第一定律管不了什么",
+   "narration": "第一定律说能量守恒，但它管不了方向。比如功可以完全变成热，热能不能完全变成功？第一定律回答不了。再比如热总是自动从高温传到低温，反过来行不行？第一定律也回答不了。气体自由膨胀后不会自己缩回去，这也是一条第一定律说不出的规矩。所以要有一条新定律，专门管「过程往哪个方向走」。这就是热力学第二定律。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　第一定律管不了什么",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "能量守恒，但方向未定",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 功可以完全变热",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 342,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "热能不能完全变功？",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 402,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 热自动从高温到低温",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 448,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "反过来行不行？",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 508,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 气体自由膨胀后",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 554,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不会自己缩回去",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 200,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "第一定律",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "管「多少」：能量守恒",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "不管「方向」",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "所以它解释不了上面三件事",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 640,
+     "w": 740,
+     "h": 170,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "需要一条新定律",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "专门回答：过程往哪个方向走",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "这就是热力学第二定律",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 480,
+     "w": 740,
+     "h": 190,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "三条线索",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "功热转化 · 热传导 · 自由膨胀",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "都是「回不去」的过程",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "这就是方向性",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 860,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第一定律说「能量不会凭空消失」，第二定律说「能量消失以后就不好用了」",
+        "size": 26,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 46.91,
+    "2": 51.68,
+    "3": 60.12,
+    "4": 68.73,
+    "5": 75.08,
+    "6": 80.64
+   },
+   "t_start": 46.91,
+   "t_end": 84.13,
+   "duration": 37.22,
+   "laser": []
+  },
+  {
+   "id": 4,
+   "kind": "page",
+   "heading": "二　开尔文表述",
+   "narration": "第二定律有很多种说法，先看开尔文表述。不可能造出这样一种循环热机：它只使单一热源冷却来做功，而不放出热量给其他物体。换句话说，不可能只从一个热源吸热，把它全部变成功，而不引起外界的任何变化。注意「循环」两个字：等温膨胀确实能从单一热源吸热并全部变成功，但它不是循环，气体膨胀完就回不去了。所以这种机器如果存在，就是第二类永动机。第一类永动机违反能量守恒，第二类不违反守恒，只违反方向——但它同样造不出来。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　开尔文表述",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 437,
+     "name": "kelvin_engine"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不可能只靠单一热源做功",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "循环热机不能只吸热、不放热",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 352,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "吸来的热不能全部变成功",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 412,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "注意「循环」两个字",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 458,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "等温膨胀能全变功，但回不去",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 518,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这样的机器 = 第二类永动机",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 590,
+     "w": 740,
+     "h": 190,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "两类永动机",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "第一类：违反能量守恒",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "第二类：违反方向性",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "都造不出来，但原因不同",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 810,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第二类永动机不违反第一定律 —— 它只是把「不可能的方向」当成了可能",
+        "size": 26,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 84.93,
+    "2": 90.01,
+    "3": 97.87,
+    "4": 105.95,
+    "5": 116.14,
+    "6": 120.96
+   },
+   "t_start": 84.93,
+   "t_end": 129.76,
+   "duration": 44.83,
+   "laser": []
+  },
+  {
+   "id": 5,
+   "kind": "page",
+   "heading": "三　克劳修斯表述",
+   "narration": "再看克劳修斯表述。不可能把热量从低温物体自动传到高温物体，而不引起外界的变化。注意「自动」两个字：冰箱确实能把热从冷藏室搬到房间，但它要耗电，外界发生了变化。卡诺制冷机也一样：它能把热从低温搬到高温，但必须外界做功。所以克劳修斯表述说的是：热不会自己倒流。这两句话看起来很不相同，其实说的是同一件事。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　克劳修斯表述",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 260,
+     "w": 765,
+     "h": 415,
+     "name": "clausius_flow"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "热不会自己倒流",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不能自动把热从低温送到高温",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "注意「自动」两个字",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 402,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "冰箱能搬热，但它要耗电",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 462,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "卡诺制冷机也要外界做功",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 522,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以：热不会自己倒流",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 592,
+     "w": 740,
+     "h": 180,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "两种表述",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "开尔文：热不能全变功",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "克劳修斯：热不能自动倒流",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "看似不同，其实等价",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 800,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "「效率小于一」和「热不会倒流」，是同一件事的两个说法",
+        "size": 26,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 130.56,
+    "2": 133.48,
+    "3": 140.14,
+    "4": 148.41,
+    "5": 154.59,
+    "6": 159.53
+   },
+   "t_start": 130.56,
+   "t_end": 164.9,
+   "duration": 34.34,
+   "laser": []
+  },
+  {
+   "id": 6,
+   "kind": "page",
+   "heading": "四　两种表述是等价的",
+   "narration": "为什么两种表述等价？可以反证：如果开尔文表述不成立，就能造出单一热源的热机；用它驱动制冷机，合起来就成了不需要功的热泵，克劳修斯表述也不成立。不妨反过来推，结果一样。所以两种表述是等价的。要注意三点：第一，它是大量实验和经验的总结；第二，两种表述等效；第三，它有很多种表述，每一种都反映自然界过程的方向性。换句话说，第二定律不是一条公式，而是一条关于方向的定律。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　两种表述是等价的",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 760,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "反证法",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "若开尔文表述不成立",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 342,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "→ 有单一热源热机",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 388,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "→ 驱动制冷机 → 不需功的热泵",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 448,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "反过来推，同样矛盾",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 508,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以两种表述等价",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 250,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "注意三点",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "① 大量实验和经验的总结",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "② 开尔文表述与克劳修斯表述等效",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "③ 表述有多种，都反映方向性",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 600,
+     "w": 1580,
+     "h": 150,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "第二定律不是一条公式，而是一条关于「方向」的定律",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "它回答的不是「能不能量守恒」，而是「这个过程会不会自己发生」",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 790,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以它和第一定律是两条独立的定律 —— 谁也不能代替谁",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 165.7,
+    "2": 168.87,
+    "3": 180.38,
+    "4": 183.78,
+    "5": 187.3,
+    "6": 200.4
+   },
+   "t_start": 165.7,
+   "t_end": 207.22,
+   "duration": 41.52,
+   "laser": []
+  },
+  {
+   "id": 7,
+   "kind": "page",
+   "heading": "五　可逆过程",
+   "narration": "要判断方向，先得有个标准，这就引出可逆过程。如果系统状态变化时，逆过程能重复正过程的每一个状态，而且不引起其他变化，这样的过程就叫可逆过程。举个例子：无摩擦的准静态压缩和膨胀，正着走完能原路返回，外界也一起复原。所以准静态、无摩擦、无耗散的过程是可逆的。注意这是理想化的极限，现实中并不存在。但它给了我们一把尺子：越接近可逆，效率越高。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五　可逆过程",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 250,
+     "w": 765,
+     "h": 415,
+     "name": "reversible_vs_not"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "能原路返回，才算可逆",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "逆过程能重复正过程的每一状态",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 342,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "并且不引起其他变化",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 402,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例：无摩擦的准静态压缩与膨胀",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 462,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "准静态 + 无耗散 ⇒ 可逆",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 522,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这是理想极限，现实中没有",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 590,
+     "w": 740,
+     "h": 180,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "可逆过程是一把尺子",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "越接近可逆，效率越高",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "卡诺循环就是可逆循环",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "所以它的效率是上限",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 800,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "可逆不是「能做到」，而是「可以无限接近」—— 它的价值在于给出极限",
+        "size": 26,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 208.02,
+    "2": 213.39,
+    "3": 223.58,
+    "4": 231.71,
+    "5": 237.92,
+    "6": 242.98
+   },
+   "t_start": 208.02,
+   "t_end": 248.82,
+   "duration": 40.8,
+   "laser": []
+  },
+  {
+   "id": 8,
+   "kind": "page",
+   "heading": "六　不可逆过程与可逆的条件",
+   "narration": "反过来就是不可逆过程。在不引起其他变化的条件下，逆过程不能重复正过程的每一个状态，或者虽然能重复但必然引起其他变化。一切非准静态过程都是不可逆的。有摩擦、有黏性、有耗散的过程也是不可逆的。可逆过程的条件写出来只有两条：过程无限缓慢，而且没有摩擦力、黏性力或其他耗散力做功。这两条同时满足，才叫可逆。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "六　不可逆过程与可逆的条件",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不可逆：回不到原样",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "逆过程重复不了正过程的每一状态",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 342,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "或者虽然能重复，但必然引起其他变化",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 402,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "非准静态过程 ⇒ 不可逆",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 462,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "有摩擦、有黏性、有耗散 ⇒ 不可逆",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 230,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "可逆的两个条件",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "① 无限缓慢（准静态）",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "② 无摩擦、黏性等耗散力做功",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "两条同时满足",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 560,
+     "w": 740,
+     "h": 200,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "现实中的过程",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "都是不可逆的",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "可逆只是理想化的极限",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "但它给了我们比较的基准",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 500,
+     "w": 740,
+     "h": 200,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "三个常见的不可逆",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "有限温差传热",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "摩擦做功生热",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "气体自由膨胀",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 800,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "判断可逆还是不可逆，就看「能不能原路返回、外界有没有留下痕迹」",
+        "size": 26,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 249.62,
+    "2": 252.59,
+    "3": 262.21,
+    "4": 266.23,
+    "5": 271.86,
+    "6": 281.21
+   },
+   "t_start": 249.62,
+   "t_end": 285.52,
+   "duration": 35.9,
+   "laser": []
+  },
+  {
+   "id": 9,
+   "kind": "page",
+   "heading": "七　第二定律的实质",
+   "narration": "那第二定律的实质是什么？自然界一切与热现象有关的实际宏观过程，都是不可逆的。热总是自动从高温流向低温，反过来不会自动发生。功可以完全变成热，热却不能完全变成功。这些自发过程有一个共同的走向：从非平衡走向平衡，从有序走向无序。所以第二定律说的不是「能量有多少」，而是「能量往哪儿走、还能不能用」。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "七　第二定律的实质",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 250,
+     "w": 765,
+     "h": 415,
+     "name": "energy_direction"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一切实际宏观过程都不可逆",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与热现象有关的实际过程",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 352,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "热：高温 → 低温，不会自动反过来",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 408,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "功 → 热 完全；热 → 功 不完全",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 468,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "共同走向：从非平衡到平衡",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 514,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "从有序到无序",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 580,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "所以说的是方向",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "不是「能量有多少」",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "而是「往哪儿走、还能不能用」",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "这就是不可逆的根源",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 810,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "自发过程的方向性，是自然界最普遍的事实之一 —— 第二定律只是把它说清楚",
+        "size": 26,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 286.32,
+    "2": 289.56,
+    "3": 295.22,
+    "4": 300.4,
+    "5": 305.0,
+    "6": 312.58
+   },
+   "t_start": 286.32,
+   "t_end": 320.06,
+   "duration": 33.74,
+   "laser": []
+  },
+  {
+   "id": 10,
+   "kind": "page",
+   "heading": "八　卡诺定理",
+   "narration": "有了可逆与不可逆，就可以给热机效率排个座次。卡诺定理有两条。第一条：在相同的高温热源和低温热源之间工作的任意工作物质的可逆机，都具有相同的效率。第二条：工作在相同高低温热源之间的一切不可逆机，效率都不可能大于可逆机的效率。所以可逆卡诺机是所有热机里效率最高的，而且它与工作物质无关。这就回答了上一节留下的问题：效率的上限确实存在。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "八　卡诺定理",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "给所有热机的效率排个座次",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 170,
+     "y": 300,
+     "w": 760,
+     "h": 190,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "定理 (1)",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "相同 $T_1$、$T_2$ 之间",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "任意工作物质的可逆机",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "效率都相同",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 1010,
+     "y": 300,
+     "w": 740,
+     "h": 190,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "定理 (2)",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "相同 $T_1$、$T_2$ 之间",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "不可逆机的效率",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "不可能大于可逆机",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 520,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以：可逆卡诺机效率最高",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 580,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "而且与工作物质无关",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 626,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "换气体、换摩尔数都一样",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 700,
+     "w": 1580,
+     "h": 130,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "上一节的问题有答案了：效率上限确实存在，就是可逆卡诺循环的效率",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "任何实际热机只能低于它 —— 因为实际过程都不可逆",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 860,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "卡诺定理把「效率」和「可逆性」直接挂钩 —— 这是第二定律最有用的推论",
+        "size": 26,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 320.86,
+    "2": 325.89,
+    "3": 328.79,
+    "4": 337.71,
+    "5": 345.91,
+    "6": 353.15
+   },
+   "t_start": 320.86,
+   "t_end": 359.04,
+   "duration": 38.18,
+   "laser": []
+  },
+  {
+   "id": 11,
+   "kind": "page",
+   "heading": "九　卡诺定理的推论",
+   "narration": "把卡诺效率代进去，就得到卡诺定理的推论。可逆机效率等于 1 减 T₂ 比 T₁。不可逆机的效率小于等于这个值。写成不等式就是 η 小于等于 1 减 T₂ 比 T₁。这个式子把「效率」和「温度」直接连了起来。它也说明：只要 T₁ 有限、T₂ 不为零，效率就不可能等于一。想一想，这对工程意味着什么？",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "九　卡诺定理的推论",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 760,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "可逆机：取等号",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 170,
+     "y": 290,
+     "w": 760,
+     "h": 150,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": null,
+     "tex": "\\eta_{\\text{可逆}}=1-\\frac{T_2}{T_1}",
+     "size": 34,
+     "align": "center",
+     "color": "#C00000"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 480,
+     "w": 760,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不可逆机：取小于号",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 170,
+     "y": 534,
+     "w": 760,
+     "h": 160,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": null,
+     "tex": "\\eta_{\\text{不可逆}}<1-\\frac{T_2}{T_1}",
+     "size": 32,
+     "align": "center",
+     "color": "#0000CD"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "合起来写成一条",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 1010,
+     "y": 290,
+     "w": 740,
+     "h": 170,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": null,
+     "tex": "\\eta\\le 1-\\frac{T_2}{T_1}",
+     "size": 42,
+     "align": "center",
+     "color": "#C00000"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 500,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "效率与温度直接挂钩",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 556,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$T_1$ 有限、$T_2>0$ ⇒ $\\eta<1$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 602,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "效率永远到不了一",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 740,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "工程上的含义：提高 $T_1$、降低 $T_2$，才是提高效率的正路",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "想靠「改进机器」把效率做到 100%，方向就错了 —— 那违反第二定律",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 359.84,
+    "2": 364.49,
+    "3": 368.25,
+    "5": 377.02,
+    "4": 372.23,
+    "6": 381.57
+   },
+   "t_start": 359.84,
+   "t_end": 392.31,
+   "duration": 32.47,
+   "laser": []
+  },
+  {
+   "id": 12,
+   "kind": "page",
+   "heading": "十　能量品质",
+   "narration": "最后说一个概念：能量品质。从能量守恒看，系统始末的能量确实没变。但从能量传递看，高温热源的热变成低温环境的热以后，就再也做不了功了。这部分能量叫耗散掉的能量。所以能量不仅有「多少」，还有「好不好用」。高品质的能量容易变成功，低品质的能量很难——这就是为什么我们要节约的是「可用能」，而不只是能量。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "十　能量品质",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "能量也有「好坏」",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "守恒看：能量总量不变",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 352,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "传递看：高温的热变低温的热",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 398,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "就再也做不了功",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 458,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这叫能量耗散",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 518,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以能量不只有「多少」",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 564,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "还有「好不好用」",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "高品质能量",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "电能、机械能、高温热",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "容易完全变成功",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 470,
+     "w": 740,
+     "h": 200,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "低品质能量",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "环境温度的热",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "几乎做不了功",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 640,
+     "w": 1580,
+     "h": 140,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "所以要节约的不是「能量」，而是「可用能」",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "能量守恒告诉我们不会少，第二定律告诉我们会用完 —— 用的是品质",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 830,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一句话：能量不会消失，但会「贬值」—— 从能做功，变成不能做功",
+        "size": 26,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 393.11,
+    "2": 396.85,
+    "3": 402.19,
+    "4": 409.36,
+    "5": 413.0,
+    "6": 417.53
+   },
+   "t_start": 393.11,
+   "t_end": 427.31,
+   "duration": 34.2,
+   "laser": []
+  },
+  {
+   "id": 13,
+   "kind": "page",
+   "heading": "本节小结",
+   "narration": "小结。第二定律有两种典型表述：开尔文说热不能全部变成功，克劳修斯说热不能自动倒流，两者等价。可逆过程要求准静态且无耗散；现实中一切与热有关的实际过程都不可逆。卡诺定理：可逆机效率最高，等于 1 减 T₂ 比 T₁；不可逆机小于它。下一节把它写成不等式，就得到熵和熵增加原理。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 两种表述",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "开尔文 · 克劳修斯，两者等价",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 可逆与不可逆",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 408,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "准静态 + 无耗散；实际都不可逆",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 卡诺定理",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "可逆机效率最高，与工质无关",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 356,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 效率上限",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 408,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\eta\\le 1-T_2/T_1$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 470,
+     "w": 740,
+     "h": 170,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "下一节",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "13-7　熵 熵增加原理",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "把不等式变成等式",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 490,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一句话",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "第一定律管「多少」",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "第二定律管「方向」",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "两条合起来，才是完整的热力学",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 120,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "第十三章 6/9：从「效率上限」到「方向性」",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 428.11,
+    "2": 430.38,
+    "3": 440.24,
+    "4": 448.27,
+    "5": 455.15
+   },
+   "t_start": 428.11,
+   "t_end": 460.39,
+   "duration": 32.28,
+   "laser": []
+  }
+ ],
+ "subtitles": [
+  {
+   "slide": 1,
+   "start": 0.0,
+   "end": 2.45,
+   "text": "第十三章第六节。"
+  },
+  {
+   "slide": 1,
+   "start": 2.85,
+   "end": 7.91,
+   "text": "13-6，热力学第二定律的表述，以及卡诺定理。"
+  },
+  {
+   "slide": 1,
+   "start": 8.31,
+   "end": 14.02,
+   "text": "第一定律管能量守恒，这一节要加一条：管过程往哪个方向走。"
+  },
+  {
+   "slide": 2,
+   "start": 15.39,
+   "end": 17.26,
+   "text": "本节路线。"
+  },
+  {
+   "slide": 2,
+   "start": 17.66,
+   "end": 24.43,
+   "text": "先看第一定律管不了的三件事：功热转化、热传导方向、自由膨胀。"
+  },
+  {
+   "slide": 2,
+   "start": 24.83,
+   "end": 30.93,
+   "text": "由此引出第二定律的两种表述：开尔文表述和克劳修斯表述。"
+  },
+  {
+   "slide": 2,
+   "start": 31.33,
+   "end": 35.58,
+   "text": "再讲可逆与不可逆，这是判断方向的标准。"
+  },
+  {
+   "slide": 2,
+   "start": 35.98,
+   "end": 40.32,
+   "text": "然后用它推出卡诺定理，给热机效率排座次。"
+  },
+  {
+   "slide": 2,
+   "start": 40.72,
+   "end": 45.38,
+   "text": "最后说能量品质——为什么能量也有「好坏」之分。"
+  },
+  {
+   "slide": 3,
+   "start": 46.91,
+   "end": 51.28,
+   "text": "第一定律说能量守恒，但它管不了方向。"
+  },
+  {
+   "slide": 3,
+   "start": 51.68,
+   "end": 56.79,
+   "text": "比如功可以完全变成热，热能不能完全变成功？"
+  },
+  {
+   "slide": 3,
+   "start": 57.44,
+   "end": 59.72,
+   "text": "第一定律回答不了。"
+  },
+  {
+   "slide": 3,
+   "start": 60.12,
+   "end": 65.18,
+   "text": "再比如热总是自动从高温传到低温，反过来行不行？"
+  },
+  {
+   "slide": 3,
+   "start": 65.83,
+   "end": 68.33,
+   "text": "第一定律也回答不了。"
+  },
+  {
+   "slide": 3,
+   "start": 68.73,
+   "end": 74.68,
+   "text": "气体自由膨胀后不会自己缩回去，这也是一条第一定律说不出的规矩。"
+  },
+  {
+   "slide": 3,
+   "start": 75.08,
+   "end": 80.24,
+   "text": "所以要有一条新定律，专门管「过程往哪个方向走」。"
+  },
+  {
+   "slide": 3,
+   "start": 80.64,
+   "end": 83.26,
+   "text": "这就是热力学第二定律。"
+  },
+  {
+   "slide": 4,
+   "start": 84.93,
+   "end": 89.61,
+   "text": "第二定律有很多种说法，先看开尔文表述。"
+  },
+  {
+   "slide": 4,
+   "start": 90.01,
+   "end": 97.47,
+   "text": "不可能造出这样一种循环热机：它只使单一热源冷却来做功，而不放出热量给其他物体。"
+  },
+  {
+   "slide": 4,
+   "start": 97.87,
+   "end": 105.55,
+   "text": "换句话说，不可能只从一个热源吸热，把它全部变成功，而不引起外界的任何变化。"
+  },
+  {
+   "slide": 4,
+   "start": 105.95,
+   "end": 115.74,
+   "text": "注意「循环」两个字：等温膨胀确实能从单一热源吸热并全部变成功，但它不是循环，气体膨胀完就回不去了。"
+  },
+  {
+   "slide": 4,
+   "start": 116.14,
+   "end": 120.56,
+   "text": "所以这种机器如果存在，就是第二类永动机。"
+  },
+  {
+   "slide": 4,
+   "start": 120.96,
+   "end": 129.02,
+   "text": "第一类永动机违反能量守恒，第二类不违反守恒，只违反方向——但它同样造不出来。"
+  },
+  {
+   "slide": 5,
+   "start": 130.56,
+   "end": 133.08,
+   "text": "再看克劳修斯表述。"
+  },
+  {
+   "slide": 5,
+   "start": 133.48,
+   "end": 139.74,
+   "text": "不可能把热量从低温物体自动传到高温物体，而不引起外界的变化。"
+  },
+  {
+   "slide": 5,
+   "start": 140.14,
+   "end": 148.01,
+   "text": "注意「自动」两个字：冰箱确实能把热从冷藏室搬到房间，但它要耗电，外界发生了变化。"
+  },
+  {
+   "slide": 5,
+   "start": 148.41,
+   "end": 154.19,
+   "text": "卡诺制冷机也一样：它能把热从低温搬到高温，但必须外界做功。"
+  },
+  {
+   "slide": 5,
+   "start": 154.59,
+   "end": 159.13,
+   "text": "所以克劳修斯表述说的是：热不会自己倒流。"
+  },
+  {
+   "slide": 5,
+   "start": 159.53,
+   "end": 164.16,
+   "text": "这两句话看起来很不相同，其实说的是同一件事。"
+  },
+  {
+   "slide": 6,
+   "start": 165.7,
+   "end": 168.22,
+   "text": "为什么两种表述等价？"
+  },
+  {
+   "slide": 6,
+   "start": 168.87,
+   "end": 179.98,
+   "text": "可以反证：如果开尔文表述不成立，就能造出单一热源的热机；用它驱动制冷机，合起来就成了不需要功的热泵，克劳修斯表述也不成立。"
+  },
+  {
+   "slide": 6,
+   "start": 180.38,
+   "end": 183.38,
+   "text": "不妨反过来推，结果一样。"
+  },
+  {
+   "slide": 6,
+   "start": 183.78,
+   "end": 186.9,
+   "text": "所以两种表述是等价的。"
+  },
+  {
+   "slide": 6,
+   "start": 187.3,
+   "end": 200.0,
+   "text": "要注意三点：第一，它是大量实验和经验的总结；第二，两种表述等效；第三，它有很多种表述，每一种都反映自然界过程的方向性。"
+  },
+  {
+   "slide": 6,
+   "start": 200.4,
+   "end": 206.47,
+   "text": "换句话说，第二定律不是一条公式，而是一条关于方向的定律。"
+  },
+  {
+   "slide": 7,
+   "start": 208.02,
+   "end": 212.99,
+   "text": "要判断方向，先得有个标准，这就引出可逆过程。"
+  },
+  {
+   "slide": 7,
+   "start": 213.39,
+   "end": 223.18,
+   "text": "如果系统状态变化时，逆过程能重复正过程的每一个状态，而且不引起其他变化，这样的过程就叫可逆过程。"
+  },
+  {
+   "slide": 7,
+   "start": 223.58,
+   "end": 231.31,
+   "text": "举个例子：无摩擦的准静态压缩和膨胀，正着走完能原路返回，外界也一起复原。"
+  },
+  {
+   "slide": 7,
+   "start": 231.71,
+   "end": 237.52,
+   "text": "所以准静态、无摩擦、无耗散的过程是可逆的。"
+  },
+  {
+   "slide": 7,
+   "start": 237.92,
+   "end": 242.58,
+   "text": "注意这是理想化的极限，现实中并不存在。"
+  },
+  {
+   "slide": 7,
+   "start": 242.98,
+   "end": 248.09,
+   "text": "但它给了我们一把尺子：越接近可逆，效率越高。"
+  },
+  {
+   "slide": 8,
+   "start": 249.62,
+   "end": 252.19,
+   "text": "反过来就是不可逆过程。"
+  },
+  {
+   "slide": 8,
+   "start": 252.59,
+   "end": 261.81,
+   "text": "在不引起其他变化的条件下，逆过程不能重复正过程的每一个状态，或者虽然能重复但必然引起其他变化。"
+  },
+  {
+   "slide": 8,
+   "start": 262.21,
+   "end": 265.83,
+   "text": "一切非准静态过程都是不可逆的。"
+  },
+  {
+   "slide": 8,
+   "start": 266.23,
+   "end": 271.46,
+   "text": "有摩擦、有黏性、有耗散的过程也是不可逆的。"
+  },
+  {
+   "slide": 8,
+   "start": 271.86,
+   "end": 280.81,
+   "text": "可逆过程的条件写出来只有两条：过程无限缓慢，而且没有摩擦力、黏性力或其他耗散力做功。"
+  },
+  {
+   "slide": 8,
+   "start": 281.21,
+   "end": 284.79,
+   "text": "这两条同时满足，才叫可逆。"
+  },
+  {
+   "slide": 9,
+   "start": 286.32,
+   "end": 288.91,
+   "text": "那第二定律的实质是什么？"
+  },
+  {
+   "slide": 9,
+   "start": 289.56,
+   "end": 294.82,
+   "text": "自然界一切与热现象有关的实际宏观过程，都是不可逆的。"
+  },
+  {
+   "slide": 9,
+   "start": 295.22,
+   "end": 300.0,
+   "text": "热总是自动从高温流向低温，反过来不会自动发生。"
+  },
+  {
+   "slide": 9,
+   "start": 300.4,
+   "end": 304.6,
+   "text": "功可以完全变成热，热却不能完全变成功。"
+  },
+  {
+   "slide": 9,
+   "start": 305.0,
+   "end": 312.18,
+   "text": "这些自发过程有一个共同的走向：从非平衡走向平衡，从有序走向无序。"
+  },
+  {
+   "slide": 9,
+   "start": 312.58,
+   "end": 319.32,
+   "text": "所以第二定律说的不是「能量有多少」，而是「能量往哪儿走、还能不能用」。"
+  },
+  {
+   "slide": 10,
+   "start": 320.86,
+   "end": 325.49,
+   "text": "有了可逆与不可逆，就可以给热机效率排个座次。"
+  },
+  {
+   "slide": 10,
+   "start": 325.89,
+   "end": 328.39,
+   "text": "卡诺定理有两条。"
+  },
+  {
+   "slide": 10,
+   "start": 328.79,
+   "end": 337.31,
+   "text": "第一条：在相同的高温热源和低温热源之间工作的任意工作物质的可逆机，都具有相同的效率。"
+  },
+  {
+   "slide": 10,
+   "start": 337.71,
+   "end": 345.51,
+   "text": "第二条：工作在相同高低温热源之间的一切不可逆机，效率都不可能大于可逆机的效率。"
+  },
+  {
+   "slide": 10,
+   "start": 345.91,
+   "end": 352.75,
+   "text": "所以可逆卡诺机是所有热机里效率最高的，而且它与工作物质无关。"
+  },
+  {
+   "slide": 10,
+   "start": 353.15,
+   "end": 358.31,
+   "text": "这就回答了上一节留下的问题：效率的上限确实存在。"
+  },
+  {
+   "slide": 11,
+   "start": 359.84,
+   "end": 364.09,
+   "text": "把卡诺效率代进去，就得到卡诺定理的推论。"
+  },
+  {
+   "slide": 11,
+   "start": 364.49,
+   "end": 367.85,
+   "text": "可逆机效率等于 1 减 T₂ 比 T₁。"
+  },
+  {
+   "slide": 11,
+   "start": 368.25,
+   "end": 371.83,
+   "text": "不可逆机的效率小于等于这个值。"
+  },
+  {
+   "slide": 11,
+   "start": 372.23,
+   "end": 376.62,
+   "text": "写成不等式就是 η 小于等于 1 减 T₂ 比 T₁。"
+  },
+  {
+   "slide": 11,
+   "start": 377.02,
+   "end": 381.17,
+   "text": "这个式子把「效率」和「温度」直接连了起来。"
+  },
+  {
+   "slide": 11,
+   "start": 381.57,
+   "end": 387.45,
+   "text": "它也说明：只要 T₁ 有限、T₂ 不为零，效率就不可能等于一。"
+  },
+  {
+   "slide": 11,
+   "start": 387.85,
+   "end": 391.26,
+   "text": "想一想，这对工程意味着什么？"
+  },
+  {
+   "slide": 12,
+   "start": 393.11,
+   "end": 396.45,
+   "text": "最后说一个概念：能量品质。"
+  },
+  {
+   "slide": 12,
+   "start": 396.85,
+   "end": 401.79,
+   "text": "从能量守恒看，系统始末的能量确实没变。"
+  },
+  {
+   "slide": 12,
+   "start": 402.19,
+   "end": 408.96,
+   "text": "但从能量传递看，高温热源的热变成低温环境的热以后，就再也做不了功了。"
+  },
+  {
+   "slide": 12,
+   "start": 409.36,
+   "end": 412.6,
+   "text": "这部分能量叫耗散掉的能量。"
+  },
+  {
+   "slide": 12,
+   "start": 413.0,
+   "end": 417.13,
+   "text": "所以能量不仅有「多少」，还有「好不好用」。"
+  },
+  {
+   "slide": 12,
+   "start": 417.53,
+   "end": 426.58,
+   "text": "高品质的能量容易变成功，低品质的能量很难——这就是为什么我们要节约的是「可用能」，而不只是能量。"
+  },
+  {
+   "slide": 13,
+   "start": 428.11,
+   "end": 429.98,
+   "text": "小结。"
+  },
+  {
+   "slide": 13,
+   "start": 430.38,
+   "end": 439.84,
+   "text": "第二定律有两种典型表述：开尔文说热不能全部变成功，克劳修斯说热不能自动倒流，两者等价。"
+  },
+  {
+   "slide": 13,
+   "start": 440.24,
+   "end": 447.87,
+   "text": "可逆过程要求准静态且无耗散；现实中一切与热有关的实际过程都不可逆。"
+  },
+  {
+   "slide": 13,
+   "start": 448.27,
+   "end": 454.75,
+   "text": "卡诺定理：可逆机效率最高，等于 1 减 T₂ 比 T₁；不可逆机小于它。"
+  },
+  {
+   "slide": 13,
+   "start": 455.15,
+   "end": 459.71,
+   "text": "下一节把它写成不等式，就得到熵和熵增加原理。"
+  }
+ ],
+ "build_ts": 1792587331,
+ "logoScale": 0.67,
+ "theme": "wave"
+}

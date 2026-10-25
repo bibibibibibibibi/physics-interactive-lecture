@@ -1,0 +1,3587 @@
+{
+ "title": "2-5 非惯性系 惯性力",
+ "nav": "2-5　非惯性系　惯性力",
+ "footer": "第二章　牛顿定律",
+ "character": "aqiang",
+ "characters": [
+  {
+   "id": "aqiang",
+   "name": "阿强"
+  },
+  {
+   "id": "professor",
+   "name": "博士讲师"
+  },
+  {
+   "id": "zhongshan",
+   "name": "中山装先生"
+  }
+ ],
+ "duration": 661.42,
+ "slides": [
+  {
+   "id": 1,
+   "kind": "page",
+   "heading": "封面",
+   "narration": "这一段内容在第二章，牛顿定律。2-5 讲非惯性系和惯性力，是这一章的选讲内容。前几节我们一直在地面这类参考系里讨论问题，牛顿定律用得理直气壮；可有些问题偏偏换个参考系看更方便——电梯启动的时候、列车加速的时候、转动的圆盘上。在那些参考系里，牛顿第二定律会失效。这一节就回答三个问题：为什么失效、怎么补救、补上以后能得到什么。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 290,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 二 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 360,
+     "y": 430,
+     "w": 1200,
+     "h": 200,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "牛 顿 定 律",
+        "size": 110,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 500,
+     "y": 710,
+     "w": 920,
+     "h": 110,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2-5　非惯性系　惯性力",
+        "size": 56,
+        "color": "#0000CD",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 360,
+     "y": 860,
+     "w": 1200,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "选讲 · 平动参考系与转动参考系的惯性力",
+        "size": 44,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 2.387,
+    "2": 3.98,
+    "3": 28.05
+   },
+   "t_start": 0.0,
+   "t_end": 35.76,
+   "duration": 35.76,
+   "laser": []
+  },
+  {
+   "id": 2,
+   "kind": "page",
+   "heading": "一　惯性系",
+   "narration": "先分清两类参考系。相对惯性系作加速运动的参考系，我们叫它非惯性系。先看惯性系里的情形：甲站在地面上观察物块 A，A 静止不动。静止意味着合外力为零，重力和支持力正好抵消。受力为零、加速度也为零，牛顿第二定律照样成立——这就是惯性系。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　惯性系与非惯性系的区别",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 248,
+     "w": 880,
+     "h": 155,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "相对惯性系",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "作加速运动",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "的参考系，",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "称为",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "非惯性系",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 410,
+     "w": 880,
+     "h": 105,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "在",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "惯性系",
+        "size": 44,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "中：",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 535,
+     "w": 880,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "甲观测 A，A 物",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "静止",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 660,
+     "w": 880,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "A 物受合外力 ",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec F=\\mathbf{0}$",
+        "size": 46,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 785,
+     "w": 880,
+     "h": 105,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "满足牛顿第二定律",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "important": true
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1080,
+     "y": 300,
+     "w": 760,
+     "h": 556,
+     "name": "noniner_obs_ground"
+    }
+   ],
+   "bullets": [
+    {
+     "text": "满足牛顿第二定律",
+     "x": 610,
+     "y": 902,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 5
+    }
+   ],
+   "stepTimes": {
+    "1": 36.56,
+    "2": 45.38,
+    "3": 52.12,
+    "4": 57.75
+   },
+   "t_start": 36.56,
+   "t_end": 65.38,
+   "duration": 28.82,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 57.75,
+     "end": 62.75
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "kind": "page",
+   "heading": "一　匀速车中观测",
+   "narration": "再看另一辆匀速运动的车。乙坐在车里观察物块 A，A 相对地面作匀速运动，在乙看来同样是匀速运动。匀速运动的物体合外力为零、加速度也是零，和刚才在地面上看到的情形完全一样。所以乙所在的车也是惯性系。一般地说：在一个参考系中观察，一个不受力作用的物体将保持静止或者匀速直线运动状态不变，这样的参考系就叫惯性系。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　惯性系　匀速运动的车中观测",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 860,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "乙在相对地",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "匀速运动",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "的车中观测 A 物，A 物作",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "匀速运动",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 420,
+     "w": 860,
+     "h": 118,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "A 物受合外力 ",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec F=\\mathbf{0}$",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "，加速度 ",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec a=\\mathbf{0}$",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 558,
+     "w": 860,
+     "h": 105,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "满足牛顿第二定律",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "important": true
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1050,
+     "y": 285,
+     "w": 780,
+     "h": 520,
+     "name": "noniner_obs_cart"
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 700,
+     "w": 1580,
+     "h": 235,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "惯性系",
+        "size": 46,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "　在该参考系中观察，一个不受力作用的物体将保持静止",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "或匀速直线运动状态不变．",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "left",
+     "color": "#111111",
+     "important": true
+    }
+   ],
+   "bullets": [
+    {
+     "text": "满足牛顿第二定律",
+     "x": 600,
+     "y": 675,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "惯性系　在该参考系中观察，一个不受力作用的物体将保持静止或匀速直线运动状态不变．",
+     "x": 960,
+     "y": 947,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 5
+    }
+   ],
+   "stepTimes": {
+    "1": 66.18,
+    "2": 77.01,
+    "3": 84.78,
+    "4": 88.49
+   },
+   "t_start": 66.18,
+   "t_end": 100.04,
+   "duration": 33.86,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 84.78,
+     "end": 89.78
+    },
+    {
+     "bullet": 1,
+     "start": 88.49,
+     "end": 93.49
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "kind": "page",
+   "heading": "一　非惯性系",
+   "narration": "现在让车加速。丙坐在相对地面以加速度 a₀ 向右加速的车上，回头看物块 A——A 明明只受重力和支持力，合外力为零。先看上面这一排：相机固定在地面上，A 始终静止不动，合外力为零、加速度也为零。再看下面这一排：相机固定在车厢里，A 却以负 a₀ 向后加速，越走越快——注意它和地面刻度是同步后退的，说明 A 相对地面确实没动。同一个 A、同一段运动，合外力为零而加速度不为零，这直接和牛顿第二定律矛盾：在非惯性系中牛顿运动定律不再成立。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　非惯性系　加速运动的车中观测",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 880,
+     "h": 118,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "丙在相对地以加速度 ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec a_0$",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 向右运动的车上，看 A",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 376,
+     "w": 880,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "物沿反向以 ",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$-\\vec a_0$",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 加速运动．",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 520,
+     "w": 880,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "上排固定在地面看：A 静止，",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 636,
+     "w": 880,
+     "h": 112,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\vec F=\\mathbf{0}$",
+        "size": 39,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "，",
+        "size": 37,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec a=\\mathbf{0}$",
+        "size": 39,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 786,
+     "w": 880,
+     "h": 112,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "下排固定在车厢看：A 以 ",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$-\\vec a_0$",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 向后加速．",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 906,
+     "w": 880,
+     "h": 105,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\vec F=\\mathbf{0}$",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": " 而 ",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec a\\ne\\mathbf{0}$",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": " ⇒ 定律失效",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "important": true
+    },
+    {
+     "type": "html",
+     "step": 1,
+     "x": 1080,
+     "y": 250,
+     "w": 780,
+     "h": 680,
+     "src": "sim_inertial.html?mode=frames&embed=1",
+     "label": "加速车双参考系模拟"
+    }
+   ],
+   "bullets": [
+    {
+     "text": "$\\vec F=\\mathbf{0}$ 而 $\\vec a\\ne\\mathbf{",
+     "x": 610,
+     "y": 1023,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 6
+    }
+   ],
+   "stepTimes": {
+    "1": 100.84,
+    "2": 113.69,
+    "3": 122.06,
+    "4": 134.27
+   },
+   "t_start": 100.84,
+   "t_end": 145.19,
+   "duration": 44.35,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 134.27,
+     "end": 139.27
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "kind": "page",
+   "heading": "二　引入非惯性系的意义",
+   "narration": "既然定律会失效，为什么还要用非惯性系？因为有些问题必须在非惯性系里研究。看这张表：取地面参考系，地球自转带来的加速度大约是三点四乘十的负二次方米每二次方秒，赤道处最大；取地心参考系，地球绕太阳公转的加速度约六乘十的负三次方；再取太阳参考系，太阳绕银河系中心转动的加速度约一点八乘十的负十次方。参考系越大，非惯性就越不明显。另一方面，有些问题在非惯性系中研究要方便得多——尤其是转动参考系。而像物体惯性的证明、潮汐、科里奥利力、地球表面重力这些问题，也都要在非惯性系里才算得清楚。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　引入非惯性系的意义",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 1000,
+     "h": 105,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "▲ 有些问题",
+        "size": 44,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "需要",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "在非惯性系中研究",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "：",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "table",
+     "step": 2,
+     "x": 170,
+     "y": 375,
+     "w": 1000,
+     "rows": [
+      [
+       "参考系",
+       "相对惯性系的运动",
+       "加速度 a / (m·s⁻²)"
+      ],
+      [
+       "地面",
+       "地球自转",
+       "3.4×10⁻²（赤道）"
+      ],
+      [
+       "地心",
+       "地球绕太阳公转",
+       "6×10⁻³"
+      ],
+      [
+       "太阳",
+       "太阳绕银河系中心转",
+       "1.8×10⁻¹⁰"
+      ]
+     ],
+     "rowh": 80,
+     "size": 32,
+     "fill": "#CCFFCC"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 730,
+     "w": 1000,
+     "h": 105,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "▲ 有些问题在非惯性系中研究",
+        "size": 44,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "较为方便",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "：",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 850,
+     "w": 1000,
+     "h": 105,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "物体惯性的证明，潮汐、科里奥利力、地球表面重力等问题．",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 0,
+     "x": 1200,
+     "y": 330,
+     "w": 620,
+     "h": 505,
+     "name": "noniner_refs"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 145.99,
+    "2": 155.29,
+    "3": 181.57,
+    "4": 189.0
+   },
+   "t_start": 145.99,
+   "t_end": 198.74,
+   "duration": 52.75,
+   "laser": []
+  },
+  {
+   "id": 6,
+   "kind": "page",
+   "heading": "三　惯性力（1）",
+   "narration": "下面把失效的牛顿定律补回来。设 S 系是惯性系，S′ 系是非惯性系，S′ 相对 S 的加速度记作 a₀，它可以是平动的、也可以是转动，先讨论平动。同一个质点，相对 S 系的加速度记作 a，相对 S′ 系的加速度记作 a 撇。两个加速度之间差一个牵连量：a 等于 a 撇加上 a₀。这就是加速度的合成关系，也是后面全部推导的出发点。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　平动参考系的惯性力（1）加速度的合成",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 255,
+     "w": 880,
+     "h": 130,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "设 ",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$S$",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 系为",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "惯性系",
+        "size": 44,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "，",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$S'$",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 系为",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "非惯性系",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "，",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 400,
+     "w": 880,
+     "h": 118,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$S'$",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 相对 ",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$S$",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 的加速度为 ",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec a_0$",
+        "size": 46,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 535,
+     "w": 880,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "物体相对 ",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$S$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 的加速度 ",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec a$",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "，相对 ",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$S'$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 的加速度 ",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec a\\,'$",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 700,
+     "w": 880,
+     "h": 150,
+     "tex": "\\vec a=\\vec a\\,'+\\vec a_0",
+     "size": 50,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 870,
+     "w": 880,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同一质点，两个参考系量出的加速度正好差一个牵连量．",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 0,
+     "x": 1080,
+     "y": 270,
+     "w": 770,
+     "h": 530,
+     "name": "noniner_wedge"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 199.54,
+    "2": 213.78,
+    "3": 220.92
+   },
+   "t_start": 199.54,
+   "t_end": 232.23,
+   "duration": 32.69,
+   "laser": []
+  },
+  {
+   "id": 7,
+   "kind": "page",
+   "heading": "三　惯性力（2）",
+   "narration": "把它代进牛顿第二定律。在 S 系中，合外力 F 等于 m a，也就是 m a 撇加上 m a₀。注意 F 是物体真正受到的合外力，它不会因为换参考系而改变。把一个参考系无关的东西挪到等式左边：F 减去 m a₀，等于 m a 撇。现在给 m a₀ 前面添个负号、记作 F 下标 i，把它叫做惯性力，方程就写成 F 加 F 下标 i 等于 m a 撇——形式上和第二定律一模一样。在非惯性系 S′ 中，牛顿第二定律形式上又成立了。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　平动参考系的惯性力（2）惯性力的引入",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 880,
+     "h": 150,
+     "tex": "\\vec F=m\\vec a=m\\vec a\\,'+m\\vec a_0",
+     "size": 44,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 420,
+     "w": 880,
+     "h": 122,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\vec F$",
+        "size": 35,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 是物体真正受到的合外力，它",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "不随参考系变化",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 560,
+     "w": 880,
+     "h": 150,
+     "tex": "\\vec F-m\\vec a_0=m\\vec a\\,'",
+     "size": 46,
+     "color": "#0000CD",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 715,
+     "w": 880,
+     "h": 115,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "令 ",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec F_{\\mathrm i}=-m\\vec a_0$",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "（惯性力）",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 840,
+     "w": 880,
+     "h": 150,
+     "tex": "\\vec F+\\vec F_{\\mathrm i}=m\\vec a\\,'",
+     "size": 46,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "diagram",
+     "step": 0,
+     "x": 1080,
+     "y": 280,
+     "w": 770,
+     "h": 530,
+     "name": "noniner_wedge"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 233.03,
+    "2": 242.83,
+    "3": 249.54,
+    "4": 256.66
+   },
+   "t_start": 233.03,
+   "t_end": 275.37,
+   "duration": 42.34,
+   "laser": []
+  },
+  {
+   "id": 8,
+   "kind": "page",
+   "heading": "惯性力的性质",
+   "narration": "把惯性力的性质说清楚。它的大小等于质点的质量 m 和这个非惯性系整体相对惯性系的加速度 a₀ 的乘积，方向与 a₀ 的方向相反，写成矢量式就是 F 下标 i 等于负 m a₀。惯性力是参考系加速运动引起的附加力，本质上是物体惯性的体现。它和前几节讲的力有个根本区别：它不是物体之间的相互作用，找不到施力物体，也就没有反作用力；但它有真实的效果——你在加速的车里确实会被推得往后倒。这个结论可以推广到非平动的非惯性系，比如转动参考系，下一节就讲。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "惯性力的性质",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 1580,
+     "h": 120,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "大小：",
+        "size": 44,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "等于质点的质量 m 与此非惯性系整体相对惯性系的加速度 a₀ 的乘积；",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 375,
+     "w": 1580,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "方向：",
+        "size": 44,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "与该加速度的方向",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "相反",
+        "size": 42,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 490,
+     "w": 1580,
+     "h": 145,
+     "tex": "\\vec F_{\\mathrm i}=-m\\vec a_0",
+     "size": 50,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 170,
+     "y": 650,
+     "w": 500,
+     "h": 230,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "附加力",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "是参考系加速运动引起的",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "附加力",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 710,
+     "y": 650,
+     "w": 500,
+     "h": 230,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "惯性的体现",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "本质上是物体惯性的",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "体现",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 1250,
+     "y": 650,
+     "w": 500,
+     "h": 230,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "没有反作用力",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "不是物体间的相互作用，没有",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "反作用力，但有真实的效果",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 895,
+     "w": 1580,
+     "h": 95,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "此结论可推广到",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "非平动的非惯性系",
+        "size": 42,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "，如转动参考系．",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true
+    }
+   ],
+   "bullets": [
+    {
+     "text": "此结论可推广到非平动的非惯性系，如转动参考系．",
+     "x": 960,
+     "y": 1002,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 7
+    }
+   ],
+   "stepTimes": {
+    "1": 276.17,
+    "2": 292.67,
+    "3": 299.24,
+    "4": 313.61
+   },
+   "t_start": 276.17,
+   "t_end": 320.91,
+   "duration": 44.74,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 313.61,
+     "end": 318.61
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "kind": "page",
+   "heading": "例1　三棱柱",
+   "narration": "看第一道例题。三棱柱以加速度 a₀ 沿水平面向左运动，它的斜面是光滑的。质量为 m 的物体恰能静止于斜面上，求物体对三棱柱的压力。注意“恰能静止”这四个字：它表示物体相对三棱柱是静止的，跟着三棱柱一起运动，所以相对地面它也有向左的加速度 a₀。这道题要用两种参考系各解一遍，正好对照一下惯性力是怎么起作用的。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例1　三棱柱与斜面上的物体",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 255,
+     "w": 880,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三棱柱以加速度 ",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec a_0$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 沿水平面向",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "左",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "运动，它的斜面是",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "光滑",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "的．",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 410,
+     "w": 880,
+     "h": 115,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "若质量为 ",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$m$",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 的物体",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "恰能静止",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "于斜面上，",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 535,
+     "w": 880,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "求物体对三棱柱的",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "压力",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 675,
+     "w": 880,
+     "h": 118,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "“恰能静止” ⇒ 物体相对三棱柱静止，",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 800,
+     "w": 880,
+     "h": 112,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "相对地面则以 ",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec a_0$",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 向左加速．",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 1080,
+     "y": 250,
+     "w": 770,
+     "h": 530,
+     "name": "wedge_bare"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 321.71,
+    "3": 336.83,
+    "2": 330.65
+   },
+   "t_start": 321.71,
+   "t_end": 355.41,
+   "duration": 33.7,
+   "laser": []
+  },
+  {
+   "id": 10,
+   "kind": "page",
+   "heading": "例1　解（1）地面系",
+   "narration": "先以地面为参考系，这是惯性系。物体受两个力：重力 P 竖直向下，斜面的支持力 F 下标 N 垂直于斜面指向上方。物体相对地面的加速度是 a₀，水平向左，所以运动方程是 F 下标 N 加 P 等于 m a₀。在直角坐标系里写成分量式：竖直方向 F 下标 N cos θ 减 m g 等于零，水平方向 F 下标 N sin θ 等于 m a₀。两式联立解出支持力 F 下标 N 等于 m 乘根号下 g 方加 a₀ 方。由牛顿第三定律，物体对三棱柱的压力大小也是这个值，方向垂直于斜面向下。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例1　解（1）以地面为参考系",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 1000,
+     "h": 150,
+     "tex": "\\vec F_{\\mathrm N}+\\vec P=m\\vec a_0",
+     "size": 48,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 425,
+     "w": 1000,
+     "h": 125,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "以地面为参考系（",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "惯性系",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "）：物体与三棱柱一起以 ",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec a_0$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 向左加速．",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 565,
+     "w": 1000,
+     "h": 150,
+     "tex": "F_{\\mathrm N}\\cos\\theta-mg=0,\\qquad F_{\\mathrm N}\\sin\\theta=ma_0",
+     "size": 38,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 730,
+     "w": 1000,
+     "h": 150,
+     "tex": "\\therefore\\ F_{\\mathrm N}=m\\sqrt{g^2+a_0^2}",
+     "size": 48,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 890,
+     "w": 1000,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "方向垂直于斜面；由牛顿第三定律，物体对三棱柱的压力大小也是它．",
+        "size": 39,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1080,
+     "y": 250,
+     "w": 770,
+     "h": 530,
+     "name": "wedge_ground"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 356.21,
+    "2": 368.8,
+    "3": 378.01,
+    "4": 390.07,
+    "5": 396.76
+   },
+   "t_start": 356.21,
+   "t_end": 405.46,
+   "duration": 49.25,
+   "laser": []
+  },
+  {
+   "id": 11,
+   "kind": "page",
+   "heading": "例1　解（2）非惯性系",
+   "narration": "再以三棱柱为参考系，这是非惯性系。物体受重力、支持力，还要再加上惯性力 F 下标 i 等于负 m a₀。在这个参考系里物体是静止的，加速度为零，运动方程写成 F 下标 N 加 P 加 F 下标 i 等于零，三个力首尾相接正好闭合。分量式只有一点变化：水平方向由 F 下标 N sin θ 等于 m a₀ 变成 F 下标 N sin θ 减 m a₀ 等于零，把惯性力那一项补上了。解出来还是 F 下标 N 等于 m 乘根号下 g 方加 a₀ 方。两种参考系，方程不一样，结论完全一致——惯性力正好把差异补上了。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例1　解（2）以三棱柱为参考系",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 248,
+     "w": 880,
+     "h": 122,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "以三棱柱为参考系（",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "非惯性系",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "）：物体受重力、支持力，",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 378,
+     "w": 880,
+     "h": 118,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "还要加上",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "惯性力",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": " ",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec F_{\\mathrm i}=-m\\vec a_0$",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 508,
+     "w": 880,
+     "h": 145,
+     "tex": "\\vec F_{\\mathrm N}+\\vec P+\\vec F_{\\mathrm i}=m\\vec a=\\mathbf{0}",
+     "size": 38,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 662,
+     "w": 880,
+     "h": 145,
+     "tex": "F_{\\mathrm N}\\cos\\theta-mg=0,\\qquad F_{\\mathrm N}\\sin\\theta-ma_0=0",
+     "size": 33,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 818,
+     "w": 880,
+     "h": 145,
+     "tex": "\\therefore\\ F_{\\mathrm N}=m\\sqrt{g^2+a_0^2}",
+     "size": 46,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1080,
+     "y": 245,
+     "w": 770,
+     "h": 530,
+     "name": "wedge_inertial"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1080,
+     "y": 795,
+     "w": 770,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两种参考系：一个多出一项惯性力，方程不同，",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1080,
+     "y": 912,
+     "w": 770,
+     "h": 95,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "结论完全一致．",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 406.26,
+    "2": 417.82,
+    "3": 430.0,
+    "4": 442.64,
+    "5": 448.68
+   },
+   "t_start": 406.26,
+   "t_end": 456.64,
+   "duration": 50.38,
+   "laser": []
+  },
+  {
+   "id": 12,
+   "kind": "page",
+   "heading": "例2　动力摆",
+   "narration": "第二道例题，动力摆。动力摆可以用来测定车辆的加速度。在如图所示的车厢内，一根质量可以略去不计的细棒，一端固定在车厢顶部，另一端系着一个小球。当列车以加速度 a 行驶时，细杆偏离竖直线成角 θ。求加速度 a 与摆角 θ 间的关系。摆球是跟着车厢一起加速的，所以车厢本身就是一个非惯性系——这正是上一页刚学的方法的用武之地。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例2　动力摆",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 255,
+     "w": 830,
+     "h": 118,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "动力摆可用来测定车辆的加速度．如图所示，车厢内",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 383,
+     "w": 830,
+     "h": 118,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一根质量可略去不计的细棒，一端固定在车厢顶部，",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 511,
+     "w": 830,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "另一端系以小球．",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 632,
+     "w": 830,
+     "h": 122,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "当列车以加速度 ",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec a$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 行驶时，细杆偏离竖直线成角 ",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\theta$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "．",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 765,
+     "w": 830,
+     "h": 112,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "试求加速度 ",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec a$",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 与摆角 ",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\theta$",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 间的关系．",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 0,
+     "x": 1030,
+     "y": 265,
+     "w": 800,
+     "h": 498,
+     "name": "dyn_pendulum"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 895,
+     "w": 830,
+     "h": 112,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "摆球随车厢一起加速 ⇒ ",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "车厢也是非惯性系",
+        "size": 40,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 457.44,
+    "2": 473.14,
+    "3": 479.32,
+    "4": 483.49
+   },
+   "t_start": 457.44,
+   "t_end": 492.94,
+   "duration": 35.5,
+   "laser": []
+  },
+  {
+   "id": 13,
+   "kind": "page",
+   "heading": "例2　解",
+   "narration": "以车厢为参考系来解。摆球受三个力：绳的张力 F 下标 T 沿着细杆指向悬点，重力 m g 竖直向下，还有惯性力 F 下标 i 等于负 m a，方向与车厢的加速度相反。在车厢这个参考系里摆球是静止的，三个力平衡，方程写成 m g 加 F 下标 T 减 m a 等于零。在直角坐标系里分解：竖直方向 F 下标 T cos θ 减 m g 等于零，水平方向 F 下标 T sin θ 减 m a 等于零。两式联立，消掉张力，就得到 a 等于 g tan θ。这个结果很有意思：摆角 θ 越大，对应的加速度就越大；反过来，只要读出细杆偏离竖直线的角度，就能直接算出车辆的加速度——动力摆测加速度的道理就在这里。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例2　解",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 245,
+     "w": 880,
+     "h": 122,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "以车厢为参考系（",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "非惯性系",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "）：摆球受张力、重力，",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 375,
+     "w": 880,
+     "h": 118,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "还有惯性力 ",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec F_{\\mathrm i}=-m\\vec a$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "，三力平衡．",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 505,
+     "w": 880,
+     "h": 145,
+     "tex": "m\\vec g+\\vec F_{\\mathrm T}-m\\vec a=\\mathbf{0}",
+     "size": 42,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 660,
+     "w": 880,
+     "h": 145,
+     "tex": "F_{\\mathrm T}\\cos\\theta-mg=0,\\qquad F_{\\mathrm T}\\sin\\theta-ma=0",
+     "size": 32,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 815,
+     "w": 880,
+     "h": 150,
+     "tex": "a=g\\tan\\theta",
+     "size": 50,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "html",
+     "step": 0,
+     "x": 1030,
+     "y": 245,
+     "w": 800,
+     "h": 590,
+     "src": "sim_inertial.html?mode=pendulum&embed=1",
+     "label": "动力摆模拟"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1030,
+     "y": 858,
+     "w": 800,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "θ 越大 ⇒ a 越大；读出细杆偏角即可得到加速度．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 493.74,
+    "2": 509.95,
+    "3": 519.45,
+    "4": 531.03,
+    "5": 536.76
+   },
+   "t_start": 493.74,
+   "t_end": 550.88,
+   "duration": 57.14,
+   "laser": []
+  },
+  {
+   "id": 14,
+   "kind": "page",
+   "heading": "四　惯性离心力",
+   "narration": "最后看转动参考系。从地面参考系观察这个水平转台：物块被弹簧拉着作圆周运动，合外力就是弹簧的拉力，大小等于 m ω² r，方向指向圆心，这正是向心力。换到转台上观察：物块一动不动，加速度为零，可它明明受着弹簧的拉力，合外力不为零——牛顿第二定律又不成立了。照搬刚才的办法，再引入一个虚拟力，这次叫惯性离心力，F 下标 i 等于 m ω² r，方向背离圆心。添上它，合外力加惯性力等于零，摆动球在这个参考系里就平衡了，定律在形式上再次成立。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　转动参考系　惯性离心力",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 243,
+     "w": 880,
+     "h": 118,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "从地面参考系（",
+        "size": 37,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "惯性系",
+        "size": 37,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "）观察：物块作圆周运动，",
+        "size": 37,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 368,
+     "w": 880,
+     "h": 138,
+     "tex": "\\vec F=-m\\omega^2\\vec r",
+     "size": 46,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 512,
+     "w": 880,
+     "h": 122,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "从水平转台（",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "非惯性系",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "）上观察：物块静止，",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec a\\,'=\\mathbf{0}$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "，",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 640,
+     "w": 880,
+     "h": 120,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "却受弹簧拉力 ",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec F\\ne\\mathbf{0}$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " ⇒ 牛顿第二定律不成立．",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 758,
+     "w": 880,
+     "h": 132,
+     "tex": "\\vec F_{\\mathrm i}=m\\omega^2\\vec r,\\qquad \\vec F+\\vec F_{\\mathrm i}=\\mathbf{0}",
+     "size": 40,
+     "color": "#E07000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 898,
+     "w": 880,
+     "h": 112,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "引入惯性离心力后，在非惯性系中牛顿第二定律",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "形式上成立",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true
+    },
+    {
+     "type": "html",
+     "step": 0,
+     "x": 1050,
+     "y": 245,
+     "w": 800,
+     "h": 590,
+     "src": "sim_inertial.html?mode=disc&embed=1",
+     "label": "惯性离心力模拟"
+    }
+   ],
+   "bullets": [
+    {
+     "text": "引入惯性离心力后，在非惯性系中牛顿第二定律形式上成立．",
+     "x": 610,
+     "y": 1022,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 6
+    }
+   ],
+   "stepTimes": {
+    "1": 551.68,
+    "2": 568.8,
+    "3": 580.26,
+    "4": 590.28
+   },
+   "t_start": 551.68,
+   "t_end": 599.44,
+   "duration": 47.76,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 590.28,
+     "end": 595.28
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "kind": "page",
+   "heading": "本节小结",
+   "narration": "最后小结。惯性系里牛顿第二定律成立；非惯性系是相对惯性系作加速运动的参考系，在里面引入惯性力之后，定律只是形式上成立，多出来的那一项纯粹来自参考系的加速。两类参考系对照着看：平动参考系的惯性力是负 m a₀，转动参考系的惯性离心力是 m ω² r，一个由平动加速度引起，一个由转动角速度引起，方向都背离参考系的加速度。惯性力的性质要记牢：它是参考系加速运动引起的附加力，本质上是物体惯性的体现；它不是物体之间的相互作用，找不到施力物体，也就没有反作用力，但它有真实的效果。回到开头那句话：在惯性系里和在非惯性系里观测同一个物体的同一段运动，得到的结论是不同的——惯性力，正是把这份差异补回来的那一项。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 242,
+     "w": 1580,
+     "h": 118,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "惯性系",
+        "size": 44,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "：牛顿第二定律成立；",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "非惯性系",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "：引入",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "惯性力",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "后，定律形式上成立．",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "table",
+     "step": 2,
+     "x": 170,
+     "y": 378,
+     "w": 1580,
+     "rows": [
+      [
+       "参考系",
+       "惯性力",
+       "在非惯性系中的方程"
+      ],
+      [
+       "平动参考系（相对加速度 a₀）",
+       "F_i = −m a₀",
+       "F + F_i = m a′"
+      ],
+      [
+       "转动参考系（角速度 ω）",
+       "F_i = m ω² r（惯性离心力）",
+       "F + F_i = 0"
+      ]
+     ],
+     "rowh": 88,
+     "size": 36,
+     "fill": "#CCFFCC"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 688,
+     "w": 1580,
+     "h": 115,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "惯性力的性质：",
+        "size": 42,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "由参考系加速引起，本质是物体惯性的体现；",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 808,
+     "w": 1580,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "它不是物体间的相互作用，没有反作用力，但有真实的效果．",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 925,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同一物体、同一段运动，两种参考系观测结论不同 —— 惯性力正是补上差异的那一项．",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true
+    }
+   ],
+   "bullets": [
+    {
+     "text": "同一物体、同一段运动，两种参考系观测结论不同 —— 惯性力正是补上差异的那一项．",
+     "x": 960,
+     "y": 1027,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 5
+    }
+   ],
+   "stepTimes": {
+    "1": 600.24,
+    "2": 616.69,
+    "3": 632.31,
+    "4": 647.11
+   },
+   "t_start": 600.24,
+   "t_end": 659.66,
+   "duration": 59.42,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 647.11,
+     "end": 652.11
+    }
+   ]
+  }
+ ],
+ "subtitles": [
+  {
+   "slide": 1,
+   "start": 0.0,
+   "end": 3.58,
+   "text": "这一段内容在第二章，牛顿定律。"
+  },
+  {
+   "slide": 1,
+   "start": 3.98,
+   "end": 8.83,
+   "text": "2-5 讲非惯性系和惯性力，是这一章的选讲内容。"
+  },
+  {
+   "slide": 1,
+   "start": 9.23,
+   "end": 23.03,
+   "text": "前几节我们一直在地面这类参考系里讨论问题，牛顿定律用得理直气壮；可有些问题偏偏换个参考系看更方便——电梯启动的时候、列车加速的时候、转动的圆盘上。"
+  },
+  {
+   "slide": 1,
+   "start": 23.43,
+   "end": 27.65,
+   "text": "在那些参考系里，牛顿第二定律会失效。"
+  },
+  {
+   "slide": 1,
+   "start": 28.05,
+   "end": 35.08,
+   "text": "这一节就回答三个问题：为什么失效、怎么补救、补上以后能得到什么。"
+  },
+  {
+   "slide": 2,
+   "start": 36.56,
+   "end": 39.37,
+   "text": "先分清两类参考系。"
+  },
+  {
+   "slide": 2,
+   "start": 39.77,
+   "end": 44.98,
+   "text": "相对惯性系作加速运动的参考系，我们叫它非惯性系。"
+  },
+  {
+   "slide": 2,
+   "start": 45.38,
+   "end": 51.72,
+   "text": "先看惯性系里的情形：甲站在地面上观察物块 A，A 静止不动。"
+  },
+  {
+   "slide": 2,
+   "start": 52.12,
+   "end": 57.35,
+   "text": "静止意味着合外力为零，重力和支持力正好抵消。"
+  },
+  {
+   "slide": 2,
+   "start": 57.75,
+   "end": 64.71,
+   "text": "受力为零、加速度也为零，牛顿第二定律照样成立——这就是惯性系。"
+  },
+  {
+   "slide": 3,
+   "start": 66.18,
+   "end": 68.89,
+   "text": "再看另一辆匀速运动的车。"
+  },
+  {
+   "slide": 3,
+   "start": 69.29,
+   "end": 76.61,
+   "text": "乙坐在车里观察物块 A，A 相对地面作匀速运动，在乙看来同样是匀速运动。"
+  },
+  {
+   "slide": 3,
+   "start": 77.01,
+   "end": 84.38,
+   "text": "匀速运动的物体合外力为零、加速度也是零，和刚才在地面上看到的情形完全一样。"
+  },
+  {
+   "slide": 3,
+   "start": 84.78,
+   "end": 88.09,
+   "text": "所以乙所在的车也是惯性系。"
+  },
+  {
+   "slide": 3,
+   "start": 88.49,
+   "end": 99.36,
+   "text": "一般地说：在一个参考系中观察，一个不受力作用的物体将保持静止或者匀速直线运动状态不变，这样的参考系就叫惯性系。"
+  },
+  {
+   "slide": 4,
+   "start": 100.84,
+   "end": 103.0,
+   "text": "现在让车加速。"
+  },
+  {
+   "slide": 4,
+   "start": 103.4,
+   "end": 113.29,
+   "text": "丙坐在相对地面以加速度 a₀ 向右加速的车上，回头看物块 A——A 明明只受重力和支持力，合外力为零。"
+  },
+  {
+   "slide": 4,
+   "start": 113.69,
+   "end": 121.66,
+   "text": "先看上面这一排：相机固定在地面上，A 始终静止不动，合外力为零、加速度也为零。"
+  },
+  {
+   "slide": 4,
+   "start": 122.06,
+   "end": 133.87,
+   "text": "再看下面这一排：相机固定在车厢里，A 却以负 a₀ 向后加速，越走越快——注意它和地面刻度是同步后退的，说明 A 相对地面确实没动。"
+  },
+  {
+   "slide": 4,
+   "start": 134.27,
+   "end": 144.52,
+   "text": "同一个 A、同一段运动，合外力为零而加速度不为零，这直接和牛顿第二定律矛盾：在非惯性系中牛顿运动定律不再成立。"
+  },
+  {
+   "slide": 5,
+   "start": 145.99,
+   "end": 150.57,
+   "text": "既然定律会失效，为什么还要用非惯性系？"
+  },
+  {
+   "slide": 5,
+   "start": 151.22,
+   "end": 154.89,
+   "text": "因为有些问题必须在非惯性系里研究。"
+  },
+  {
+   "slide": 5,
+   "start": 155.29,
+   "end": 177.15,
+   "text": "看这张表：取地面参考系，地球自转带来的加速度大约是三点四乘十的负二次方米每二次方秒，赤道处最大；取地心参考系，地球绕太阳公转的加速度约六乘十的负三次方；再取太阳参考系，太阳绕银河系中心转动的加速度约一点八乘十的负十次方。"
+  },
+  {
+   "slide": 5,
+   "start": 177.55,
+   "end": 181.17,
+   "text": "参考系越大，非惯性就越不明显。"
+  },
+  {
+   "slide": 5,
+   "start": 181.57,
+   "end": 188.6,
+   "text": "另一方面，有些问题在非惯性系中研究要方便得多——尤其是转动参考系。"
+  },
+  {
+   "slide": 5,
+   "start": 189.0,
+   "end": 197.98,
+   "text": "而像物体惯性的证明、潮汐、科里奥利力、地球表面重力这些问题，也都要在非惯性系里才算得清楚。"
+  },
+  {
+   "slide": 6,
+   "start": 199.54,
+   "end": 202.56,
+   "text": "下面把失效的牛顿定律补回来。"
+  },
+  {
+   "slide": 6,
+   "start": 202.96,
+   "end": 213.38,
+   "text": "设 S 系是惯性系，S′ 系是非惯性系，S′ 相对 S 的加速度记作 a₀，它可以是平动的、也可以是转动，先讨论平动。"
+  },
+  {
+   "slide": 6,
+   "start": 213.78,
+   "end": 220.52,
+   "text": "同一个质点，相对 S 系的加速度记作 a，相对 S′ 系的加速度记作 a 撇。"
+  },
+  {
+   "slide": 6,
+   "start": 220.92,
+   "end": 225.94,
+   "text": "两个加速度之间差一个牵连量：a 等于 a 撇加上 a₀。"
+  },
+  {
+   "slide": 6,
+   "start": 226.34,
+   "end": 231.55,
+   "text": "这就是加速度的合成关系，也是后面全部推导的出发点。"
+  },
+  {
+   "slide": 7,
+   "start": 233.03,
+   "end": 235.62,
+   "text": "把它代进牛顿第二定律。"
+  },
+  {
+   "slide": 7,
+   "start": 236.02,
+   "end": 242.43,
+   "text": "在 S 系中，合外力 F 等于 m a，也就是 m a 撇加上 m a₀。"
+  },
+  {
+   "slide": 7,
+   "start": 242.83,
+   "end": 249.14,
+   "text": "注意 F 是物体真正受到的合外力，它不会因为换参考系而改变。"
+  },
+  {
+   "slide": 7,
+   "start": 249.54,
+   "end": 256.26,
+   "text": "把一个参考系无关的东西挪到等式左边：F 减去 m a₀，等于 m a 撇。"
+  },
+  {
+   "slide": 7,
+   "start": 256.66,
+   "end": 268.83,
+   "text": "现在给 m a₀ 前面添个负号、记作 F 下标 i，把它叫做惯性力，方程就写成 F 加 F 下标 i 等于 m a 撇——形式上和第二定律一模一样。"
+  },
+  {
+   "slide": 7,
+   "start": 269.23,
+   "end": 274.63,
+   "text": "在非惯性系 S′ 中，牛顿第二定律形式上又成立了。"
+  },
+  {
+   "slide": 8,
+   "start": 276.17,
+   "end": 279.05,
+   "text": "把惯性力的性质说清楚。"
+  },
+  {
+   "slide": 8,
+   "start": 279.45,
+   "end": 292.27,
+   "text": "它的大小等于质点的质量 m 和这个非惯性系整体相对惯性系的加速度 a₀ 的乘积，方向与 a₀ 的方向相反，写成矢量式就是 F 下标 i 等于负 m a₀。"
+  },
+  {
+   "slide": 8,
+   "start": 292.67,
+   "end": 298.84,
+   "text": "惯性力是参考系加速运动引起的附加力，本质上是物体惯性的体现。"
+  },
+  {
+   "slide": 8,
+   "start": 299.24,
+   "end": 313.21,
+   "text": "它和前几节讲的力有个根本区别：它不是物体之间的相互作用，找不到施力物体，也就没有反作用力；但它有真实的效果——你在加速的车里确实会被推得往后倒。"
+  },
+  {
+   "slide": 8,
+   "start": 313.61,
+   "end": 320.23,
+   "text": "这个结论可以推广到非平动的非惯性系，比如转动参考系，下一节就讲。"
+  },
+  {
+   "slide": 9,
+   "start": 321.71,
+   "end": 323.85,
+   "text": "看第一道例题。"
+  },
+  {
+   "slide": 9,
+   "start": 324.25,
+   "end": 330.25,
+   "text": "三棱柱以加速度 a₀ 沿水平面向左运动，它的斜面是光滑的。"
+  },
+  {
+   "slide": 9,
+   "start": 330.65,
+   "end": 336.43,
+   "text": "质量为 m 的物体恰能静止于斜面上，求物体对三棱柱的压力。"
+  },
+  {
+   "slide": 9,
+   "start": 336.83,
+   "end": 347.22,
+   "text": "注意“恰能静止”这四个字：它表示物体相对三棱柱是静止的，跟着三棱柱一起运动，所以相对地面它也有向左的加速度 a₀。"
+  },
+  {
+   "slide": 9,
+   "start": 347.62,
+   "end": 354.72,
+   "text": "这道题要用两种参考系各解一遍，正好对照一下惯性力是怎么起作用的。"
+  },
+  {
+   "slide": 10,
+   "start": 356.21,
+   "end": 360.1,
+   "text": "先以地面为参考系，这是惯性系。"
+  },
+  {
+   "slide": 10,
+   "start": 360.5,
+   "end": 368.4,
+   "text": "物体受两个力：重力 P 竖直向下，斜面的支持力 F 下标 N 垂直于斜面指向上方。"
+  },
+  {
+   "slide": 10,
+   "start": 368.8,
+   "end": 377.61,
+   "text": "物体相对地面的加速度是 a₀，水平向左，所以运动方程是 F 下标 N 加 P 等于 m a₀。"
+  },
+  {
+   "slide": 10,
+   "start": 378.01,
+   "end": 389.67,
+   "text": "在直角坐标系里写成分量式：竖直方向 F 下标 N cos θ 减 m g 等于零，水平方向 F 下标 N sin θ 等于 m a₀。"
+  },
+  {
+   "slide": 10,
+   "start": 390.07,
+   "end": 396.36,
+   "text": "两式联立解出支持力 F 下标 N 等于 m 乘根号下 g 方加 a₀ 方。"
+  },
+  {
+   "slide": 10,
+   "start": 396.76,
+   "end": 404.73,
+   "text": "由牛顿第三定律，物体对三棱柱的压力大小也是这个值，方向垂直于斜面向下。"
+  },
+  {
+   "slide": 11,
+   "start": 406.26,
+   "end": 410.44,
+   "text": "再以三棱柱为参考系，这是非惯性系。"
+  },
+  {
+   "slide": 11,
+   "start": 410.84,
+   "end": 417.42,
+   "text": "物体受重力、支持力，还要再加上惯性力 F 下标 i 等于负 m a₀。"
+  },
+  {
+   "slide": 11,
+   "start": 417.82,
+   "end": 429.6,
+   "text": "在这个参考系里物体是静止的，加速度为零，运动方程写成 F 下标 N 加 P 加 F 下标 i 等于零，三个力首尾相接正好闭合。"
+  },
+  {
+   "slide": 11,
+   "start": 430.0,
+   "end": 442.24,
+   "text": "分量式只有一点变化：水平方向由 F 下标 N sin θ 等于 m a₀ 变成 F 下标 N sin θ 减 m a₀ 等于零，把惯性力那一项补上了。"
+  },
+  {
+   "slide": 11,
+   "start": 442.64,
+   "end": 448.28,
+   "text": "解出来还是 F 下标 N 等于 m 乘根号下 g 方加 a₀ 方。"
+  },
+  {
+   "slide": 11,
+   "start": 448.68,
+   "end": 455.9,
+   "text": "两种参考系，方程不一样，结论完全一致——惯性力正好把差异补上了。"
+  },
+  {
+   "slide": 12,
+   "start": 457.44,
+   "end": 460.13,
+   "text": "第二道例题，动力摆。"
+  },
+  {
+   "slide": 12,
+   "start": 460.53,
+   "end": 463.99,
+   "text": "动力摆可以用来测定车辆的加速度。"
+  },
+  {
+   "slide": 12,
+   "start": 464.39,
+   "end": 472.74,
+   "text": "在如图所示的车厢内，一根质量可以略去不计的细棒，一端固定在车厢顶部，另一端系着一个小球。"
+  },
+  {
+   "slide": 12,
+   "start": 473.14,
+   "end": 478.92,
+   "text": "当列车以加速度 a 行驶时，细杆偏离竖直线成角 θ。"
+  },
+  {
+   "slide": 12,
+   "start": 479.32,
+   "end": 483.09,
+   "text": "求加速度 a 与摆角 θ 间的关系。"
+  },
+  {
+   "slide": 12,
+   "start": 483.49,
+   "end": 492.2,
+   "text": "摆球是跟着车厢一起加速的，所以车厢本身就是一个非惯性系——这正是上一页刚学的方法的用武之地。"
+  },
+  {
+   "slide": 13,
+   "start": 493.74,
+   "end": 496.48,
+   "text": "以车厢为参考系来解。"
+  },
+  {
+   "slide": 13,
+   "start": 496.88,
+   "end": 509.55,
+   "text": "摆球受三个力：绳的张力 F 下标 T 沿着细杆指向悬点，重力 m g 竖直向下，还有惯性力 F 下标 i 等于负 m a，方向与车厢的加速度相反。"
+  },
+  {
+   "slide": 13,
+   "start": 509.95,
+   "end": 519.05,
+   "text": "在车厢这个参考系里摆球是静止的，三个力平衡，方程写成 m g 加 F 下标 T 减 m a 等于零。"
+  },
+  {
+   "slide": 13,
+   "start": 519.45,
+   "end": 530.63,
+   "text": "在直角坐标系里分解：竖直方向 F 下标 T cos θ 减 m g 等于零，水平方向 F 下标 T sin θ 减 m a 等于零。"
+  },
+  {
+   "slide": 13,
+   "start": 531.03,
+   "end": 536.36,
+   "text": "两式联立，消掉张力，就得到 a 等于 g tan θ。"
+  },
+  {
+   "slide": 13,
+   "start": 536.76,
+   "end": 550.15,
+   "text": "这个结果很有意思：摆角 θ 越大，对应的加速度就越大；反过来，只要读出细杆偏离竖直线的角度，就能直接算出车辆的加速度——动力摆测加速度的道理就在这里。"
+  },
+  {
+   "slide": 14,
+   "start": 551.68,
+   "end": 554.56,
+   "text": "最后看转动参考系。"
+  },
+  {
+   "slide": 14,
+   "start": 554.96,
+   "end": 568.4,
+   "text": "从地面参考系观察这个水平转台：物块被弹簧拉着作圆周运动，合外力就是弹簧的拉力，大小等于 m ω² r，方向指向圆心，这正是向心力。"
+  },
+  {
+   "slide": 14,
+   "start": 568.8,
+   "end": 579.86,
+   "text": "换到转台上观察：物块一动不动，加速度为零，可它明明受着弹簧的拉力，合外力不为零——牛顿第二定律又不成立了。"
+  },
+  {
+   "slide": 14,
+   "start": 580.26,
+   "end": 589.88,
+   "text": "照搬刚才的办法，再引入一个虚拟力，这次叫惯性离心力，F 下标 i 等于 m ω² r，方向背离圆心。"
+  },
+  {
+   "slide": 14,
+   "start": 590.28,
+   "end": 598.75,
+   "text": "添上它，合外力加惯性力等于零，摆动球在这个参考系里就平衡了，定律在形式上再次成立。"
+  },
+  {
+   "slide": 15,
+   "start": 600.24,
+   "end": 602.11,
+   "text": "最后小结。"
+  },
+  {
+   "slide": 15,
+   "start": 602.51,
+   "end": 616.29,
+   "text": "惯性系里牛顿第二定律成立；非惯性系是相对惯性系作加速运动的参考系，在里面引入惯性力之后，定律只是形式上成立，多出来的那一项纯粹来自参考系的加速。"
+  },
+  {
+   "slide": 15,
+   "start": 616.69,
+   "end": 631.91,
+   "text": "两类参考系对照着看：平动参考系的惯性力是负 m a₀，转动参考系的惯性离心力是 m ω² r，一个由平动加速度引起，一个由转动角速度引起，方向都背离参考系的加速度。"
+  },
+  {
+   "slide": 15,
+   "start": 632.31,
+   "end": 646.71,
+   "text": "惯性力的性质要记牢：它是参考系加速运动引起的附加力，本质上是物体惯性的体现；它不是物体之间的相互作用，找不到施力物体，也就没有反作用力，但它有真实的效果。"
+  },
+  {
+   "slide": 15,
+   "start": 647.11,
+   "end": 658.99,
+   "text": "回到开头那句话：在惯性系里和在非惯性系里观测同一个物体的同一段运动，得到的结论是不同的——惯性力，正是把这份差异补回来的那一项。"
+  }
+ ],
+ "build_ts": 1792455912,
+ "logoScale": 0.67
+}

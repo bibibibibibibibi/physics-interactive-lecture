@@ -1,0 +1,2317 @@
+{
+ "title": "15-14 扫描隧穿显微镜",
+ "nav": "15-14　扫描隧穿显微镜",
+ "footer": "第十五章　量子物理",
+ "character": "aqiang",
+ "characters": [
+  {
+   "id": "aqiang",
+   "name": "阿强"
+  },
+  {
+   "id": "professor",
+   "name": "博士讲师"
+  },
+  {
+   "id": "zhongshan",
+   "name": "中山装先生"
+  }
+ ],
+ "duration": 228.5,
+ "slides": [
+  {
+   "id": 1,
+   "kind": "page",
+   "heading": "封面",
+   "narration": "第十五章第十四节，选学。15-14，扫描隧穿显微镜，简称 STM。它是量子力学最漂亮的应用之一：用一根针，就能「摸」到单个原子。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 282,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 十 五 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 300,
+     "y": 408,
+     "w": 1320,
+     "h": 170,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "量 子 物 理",
+        "size": 92,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 250,
+     "y": 588,
+     "w": 1420,
+     "h": 120,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "15-14　扫描隧穿显微镜",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 220,
+     "y": 730,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "选学（教材标 *）　·　隧道效应　·　原子级成像　·　诺贝尔奖",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 850,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一根针，摸到单个原子",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 0.0,
+    "2": 3.95,
+    "3": 9.77
+   },
+   "t_start": 0.0,
+   "t_end": 16.18,
+   "duration": 16.18,
+   "laser": []
+  },
+  {
+   "id": 2,
+   "kind": "page",
+   "heading": "本节路线",
+   "narration": "本节路线。先说背景：电镜之后，人们还想要更直接的工具。然后讲原理：隧道效应。关键是隧道电流对间距极其敏感。再看 STM 的两种工作模式。最后是应用。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节路线",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 244,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "主线：背景 → 隧道效应 → STM 原理 → 两种模式 → 应用",
+        "size": 25,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1　背景",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 386,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电镜之后",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 458,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2　隧道效应",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 512,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电子穿过势垒",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 584,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "3　两种模式",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 638,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "恒高与恒流",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 330,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4　应用",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 386,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "单原子操作",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 470,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一句话",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "隧道电流对间距极敏感",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "0.1 nm 的差别",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "电流差几个数量级",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 770,
+     "w": 1580,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "本节收口：量子效应，变成了「看得见原子」的工具",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 16.98,
+    "2": 19.25,
+    "3": 24.62,
+    "4": 27.9,
+    "5": 32.38,
+    "6": 35.97
+   },
+   "t_start": 16.98,
+   "t_end": 38.58,
+   "duration": 21.6,
+   "laser": []
+  },
+  {
+   "id": 3,
+   "kind": "page",
+   "heading": "一　背景",
+   "narration": "先说背景。1932 年鲁斯卡造出第一台电子显微镜，之后又有 TEM、SEM、场离子显微镜等等。1981 年，宾尼希和罗雷尔利用量子力学的隧道效应，做出了扫描隧穿显微镜。1986 年他们获得诺贝尔物理学奖。STM 的意义在于：人类第一次能在实空间、实时地看到单个原子在表面的排列。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　背景",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "从电镜到 STM",
+        "size": 25,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 286,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1932 鲁斯卡：第一台电镜；后来有 TEM、SEM、FIM",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 346,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1981 宾尼希、罗雷尔：STM",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 406,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1986 年诺贝尔物理学奖",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 466,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第一次能实时看到单个原子的排列",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 540,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "它被评为 20 世纪 80 年代世界十大科技成就之一",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "在表面科学、材料科学、生命科学里都有广泛应用",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 720,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "它不是「看得更清楚」，而是「换了一种成像原理」",
+        "size": 24,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 226,
+     "w": 740,
+     "h": 210,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "关键的人物",
+        "size": 23,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "宾尼希（德）",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "罗雷尔（瑞士）",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "1981 年做出 STM",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 800,
+     "w": 1580,
+     "h": 110,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "从「放大」到「摸到」",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 39.38,
+    "2": 41.68,
+    "3": 50.48,
+    "4": 58.51,
+    "5": 62.73
+   },
+   "t_start": 39.38,
+   "t_end": 71.06,
+   "duration": 31.68,
+   "laser": []
+  },
+  {
+   "id": 4,
+   "kind": "page",
+   "heading": "二　隧道效应",
+   "narration": "原理是隧道效应。两块导体板，中间夹一层很薄的绝缘层，加电压。按经典物理，电子能量不够，过不去。但按量子力学，电子有一定概率「穿」过去，形成隧道电流。不妨对照一下经典图像，差在哪？这个电流的密度，和绝缘层厚度的关系是指数的。所以厚度变 0.1 纳米，电流就能差好几个数量级。想一想：这样的灵敏度，能用来做什么？",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　隧道效应",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 250,
+     "w": 765,
+     "h": 350,
+     "name": "tunnel_junction"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "导体 + 薄绝缘层 + 电压",
+        "size": 24,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 286,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "经典：电子过不去",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 346,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "量子：有一定概率穿过去",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 406,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "形成隧道电流 $J_T$",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 466,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$J_T$ 与厚度 $l$ 呈指数关系",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 526,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$l$ 变 0.1 nm，电流差几个量级",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 600,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "这就是 STM 能分辨单个原子的根本原因",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "间距的极小变化，被电流的指数关系「放大」了",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 780,
+     "w": 1580,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "灵敏度的来源：指数关系，不是线性关系",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 71.86,
+    "2": 74.54,
+    "3": 80.17,
+    "4": 84.75,
+    "5": 95.43,
+    "6": 100.63
+   },
+   "t_start": 71.86,
+   "t_end": 111.87,
+   "duration": 40.01,
+   "laser": []
+  },
+  {
+   "id": 5,
+   "kind": "page",
+   "heading": "三　STM 的原理",
+   "narration": "STM 的结构很简单。一根极细的金属探针，针尖只有一个原子大小，靠近样品表面，距离小于 1 纳米。加电压，就有隧道电流。让探针在表面逐点扫描，记录每个点的电流，就得到表面形貌图。写成一句话：它根本没有透镜，所以不受衍射极限的限制。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　STM 的原理",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "结构：一根极细的探针",
+        "size": 25,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 286,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "针尖只有原子尺度，距样品 < 1 nm",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 346,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "加电压 ⇒ 隧道电流",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 406,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "逐点扫描 ⇒ 表面形貌图",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 466,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "没有透镜 ⇒ 不受衍射极限限制",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 540,
+     "w": 1580,
+     "h": 150,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "所以它的分辨率不是由波长决定的",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "而是由「电流对间距的敏感度」和「探针的尖锐度」决定的",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "横向能到 0.1 nm，纵向能到 0.001 nm —— 这是真正意义上的「看见原子」",
+        "size": 24,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 226,
+     "w": 740,
+     "h": 220,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "结构三件套",
+        "size": 23,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "原子级探针",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "压电陶瓷扫描台",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "反馈控制电路",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 800,
+     "w": 1580,
+     "h": 110,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "分辨率不靠波长，靠「敏感度」",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 112.67,
+    "2": 115.66,
+    "3": 123.62,
+    "4": 127.09,
+    "5": 133.92
+   },
+   "t_start": 112.67,
+   "t_end": 140.25,
+   "duration": 27.58,
+   "laser": []
+  },
+  {
+   "id": 6,
+   "kind": "page",
+   "heading": "四　两种工作模式",
+   "narration": "STM 有两种工作模式。第一种是恒高模式：探针保持固定高度扫描。样品表面有起伏，间距就变，电流跟着变——记录电流就得到形貌。第二种是恒流模式：保持电流不变，让探针上下起伏。记录探针的高度就得到形貌。两种模式各有优劣：恒高快，恒流安全。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　两种工作模式",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 760,
+     "h": 220,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "恒高模式",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "探针高度固定",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "间距变化 ⇒ 电流变化",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "记录电流",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "速度快，但易撞针",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 1010,
+     "y": 226,
+     "w": 740,
+     "h": 220,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "恒流模式",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "电流保持不变",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "探针上下起伏",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "记录高度",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "安全，但速度慢",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 480,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两种模式都需要：压电陶瓷、控制电路、计算机系统",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 540,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "压电陶瓷负责纳米级的精确定位",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 600,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "反馈回路把电流「锁」在设定值上",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 670,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "所以 STM 是「量子效应 + 精密控制」的结合",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "缺了任何一半，都做不出来",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 141.05,
+    "2": 144.38,
+    "3": 149.48,
+    "4": 156.53,
+    "5": 162.74,
+    "6": 166.33
+   },
+   "t_start": 141.05,
+   "t_end": 171.99,
+   "duration": 30.94,
+   "laser": []
+  },
+  {
+   "id": 7,
+   "kind": "page",
+   "heading": "五　应用",
+   "narration": "应用方面，STM 能做很多别的手段做不到的事。第一，可以直接观察表面原子的排列。第二，可以对表面直接刻写。第三，也是最有名的：单原子操作——用针尖把原子一个一个搬过去，摆成想要的图案。IBM 就曾经用 35 个氙原子拼出「IBM」三个字母。这是人类第一次真正意义上「操纵原子」。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五　应用",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "STM 能做的三件事",
+        "size": 25,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 286,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 观察表面原子的排列",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 346,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 对表面直接刻写",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 406,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 单原子操作",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 466,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "IBM 用 35 个氙原子拼出「IBM」",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 526,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "人类第一次真正操纵单个原子",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 600,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "它把「量子力学」从公式变成了工具",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "后来的原子操纵、量子点、分子机器，都是从这里起步的",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 700,
+     "w": 740,
+     "h": 180,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "更远的应用",
+        "size": 23,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "原子级加工",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "分子器件",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "表面催化研究",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 880,
+     "w": 1580,
+     "h": 110,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "STM 让「看见原子」变成常规操作",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 172.79,
+    "2": 177.8,
+    "3": 181.97,
+    "4": 185.71,
+    "5": 193.98,
+    "6": 199.61
+   },
+   "t_start": 172.79,
+   "t_end": 204.06,
+   "duration": 31.27,
+   "laser": []
+  },
+  {
+   "id": 8,
+   "kind": "page",
+   "heading": "本节小结",
+   "narration": "小结。STM 基于隧道效应：隧道电流随间距指数变化，所以能分辨原子。两种模式：恒高和恒流。应用：表面成像、刻写、单原子操作。它是量子力学最直接的应用之一。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 原理",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "隧道效应 + 指数关系",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 两种模式",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 408,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "恒高、恒流",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 应用",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "成像 · 刻写 · 单原子操作",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 356,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 地位",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 408,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1986 诺贝尔奖",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 1010,
+     "y": 470,
+     "w": 740,
+     "h": 170,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "下一节",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "15-15　纳米材料简介",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "（选学）",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 490,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一句话",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "用电流「摸」原子",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "不用透镜",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "分辨率由量子效应给",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 120,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "第十五章 14/15（选学）：量子力学最漂亮的工具",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 204.86,
+    "2": 207.13,
+    "3": 214.01,
+    "4": 217.99,
+    "5": 223.21
+   },
+   "t_start": 204.86,
+   "t_end": 227.2,
+   "duration": 22.34,
+   "laser": []
+  }
+ ],
+ "subtitles": [
+  {
+   "slide": 1,
+   "start": 0.0,
+   "end": 3.55,
+   "text": "第十五章第十四节，选学。"
+  },
+  {
+   "slide": 1,
+   "start": 3.95,
+   "end": 9.37,
+   "text": "15-14，扫描隧穿显微镜，简称 STM。"
+  },
+  {
+   "slide": 1,
+   "start": 9.77,
+   "end": 15.6,
+   "text": "它是量子力学最漂亮的应用之一：用一根针，就能「摸」到单个原子。"
+  },
+  {
+   "slide": 2,
+   "start": 16.98,
+   "end": 18.85,
+   "text": "本节路线。"
+  },
+  {
+   "slide": 2,
+   "start": 19.25,
+   "end": 24.22,
+   "text": "先说背景：电镜之后，人们还想要更直接的工具。"
+  },
+  {
+   "slide": 2,
+   "start": 24.62,
+   "end": 27.5,
+   "text": "然后讲原理：隧道效应。"
+  },
+  {
+   "slide": 2,
+   "start": 27.9,
+   "end": 31.98,
+   "text": "关键是隧道电流对间距极其敏感。"
+  },
+  {
+   "slide": 2,
+   "start": 32.38,
+   "end": 35.57,
+   "text": "再看 STM 的两种工作模式。"
+  },
+  {
+   "slide": 2,
+   "start": 35.97,
+   "end": 37.84,
+   "text": "最后是应用。"
+  },
+  {
+   "slide": 3,
+   "start": 39.38,
+   "end": 41.28,
+   "text": "先说背景。"
+  },
+  {
+   "slide": 3,
+   "start": 41.68,
+   "end": 50.08,
+   "text": "1932 年鲁斯卡造出第一台电子显微镜，之后又有 TEM、SEM、场离子显微镜等等。"
+  },
+  {
+   "slide": 3,
+   "start": 50.48,
+   "end": 58.11,
+   "text": "1981 年，宾尼希和罗雷尔利用量子力学的隧道效应，做出了扫描隧穿显微镜。"
+  },
+  {
+   "slide": 3,
+   "start": 58.51,
+   "end": 62.33,
+   "text": "1986 年他们获得诺贝尔物理学奖。"
+  },
+  {
+   "slide": 3,
+   "start": 62.73,
+   "end": 70.39,
+   "text": "STM 的意义在于：人类第一次能在实空间、实时地看到单个原子在表面的排列。"
+  },
+  {
+   "slide": 4,
+   "start": 71.86,
+   "end": 74.14,
+   "text": "原理是隧道效应。"
+  },
+  {
+   "slide": 4,
+   "start": 74.54,
+   "end": 79.77,
+   "text": "两块导体板，中间夹一层很薄的绝缘层，加电压。"
+  },
+  {
+   "slide": 4,
+   "start": 80.17,
+   "end": 84.35,
+   "text": "按经典物理，电子能量不够，过不去。"
+  },
+  {
+   "slide": 4,
+   "start": 84.75,
+   "end": 90.68,
+   "text": "但按量子力学，电子有一定概率「穿」过去，形成隧道电流。"
+  },
+  {
+   "slide": 4,
+   "start": 91.08,
+   "end": 94.78,
+   "text": "不妨对照一下经典图像，差在哪？"
+  },
+  {
+   "slide": 4,
+   "start": 95.43,
+   "end": 100.23,
+   "text": "这个电流的密度，和绝缘层厚度的关系是指数的。"
+  },
+  {
+   "slide": 4,
+   "start": 100.63,
+   "end": 105.86,
+   "text": "所以厚度变 0.1 纳米，电流就能差好几个数量级。"
+  },
+  {
+   "slide": 4,
+   "start": 106.26,
+   "end": 110.75,
+   "text": "想一想：这样的灵敏度，能用来做什么？"
+  },
+  {
+   "slide": 5,
+   "start": 112.67,
+   "end": 115.26,
+   "text": "STM 的结构很简单。"
+  },
+  {
+   "slide": 5,
+   "start": 115.66,
+   "end": 123.22,
+   "text": "一根极细的金属探针，针尖只有一个原子大小，靠近样品表面，距离小于 1 纳米。"
+  },
+  {
+   "slide": 5,
+   "start": 123.62,
+   "end": 126.69,
+   "text": "加电压，就有隧道电流。"
+  },
+  {
+   "slide": 5,
+   "start": 127.09,
+   "end": 133.52,
+   "text": "让探针在表面逐点扫描，记录每个点的电流，就得到表面形貌图。"
+  },
+  {
+   "slide": 5,
+   "start": 133.92,
+   "end": 139.56,
+   "text": "写成一句话：它根本没有透镜，所以不受衍射极限的限制。"
+  },
+  {
+   "slide": 6,
+   "start": 141.05,
+   "end": 143.98,
+   "text": "STM 有两种工作模式。"
+  },
+  {
+   "slide": 6,
+   "start": 144.38,
+   "end": 149.08,
+   "text": "第一种是恒高模式：探针保持固定高度扫描。"
+  },
+  {
+   "slide": 6,
+   "start": 149.48,
+   "end": 156.13,
+   "text": "样品表面有起伏，间距就变，电流跟着变——记录电流就得到形貌。"
+  },
+  {
+   "slide": 6,
+   "start": 156.53,
+   "end": 162.34,
+   "text": "第二种是恒流模式：保持电流不变，让探针上下起伏。"
+  },
+  {
+   "slide": 6,
+   "start": 162.74,
+   "end": 165.93,
+   "text": "记录探针的高度就得到形貌。"
+  },
+  {
+   "slide": 6,
+   "start": 166.33,
+   "end": 171.25,
+   "text": "两种模式各有优劣：恒高快，恒流安全。"
+  },
+  {
+   "slide": 7,
+   "start": 172.79,
+   "end": 177.4,
+   "text": "应用方面，STM 能做很多别的手段做不到的事。"
+  },
+  {
+   "slide": 7,
+   "start": 177.8,
+   "end": 181.57,
+   "text": "第一，可以直接观察表面原子的排列。"
+  },
+  {
+   "slide": 7,
+   "start": 181.97,
+   "end": 185.31,
+   "text": "第二，可以对表面直接刻写。"
+  },
+  {
+   "slide": 7,
+   "start": 185.71,
+   "end": 193.58,
+   "text": "第三，也是最有名的：单原子操作——用针尖把原子一个一个搬过去，摆成想要的图案。"
+  },
+  {
+   "slide": 7,
+   "start": 193.98,
+   "end": 199.21,
+   "text": "IBM 就曾经用 35 个氙原子拼出「IBM」三个字母。"
+  },
+  {
+   "slide": 7,
+   "start": 199.61,
+   "end": 203.33,
+   "text": "这是人类第一次真正意义上「操纵原子」。"
+  },
+  {
+   "slide": 8,
+   "start": 204.86,
+   "end": 206.73,
+   "text": "小结。"
+  },
+  {
+   "slide": 8,
+   "start": 207.13,
+   "end": 213.61,
+   "text": "STM 基于隧道效应：隧道电流随间距指数变化，所以能分辨原子。"
+  },
+  {
+   "slide": 8,
+   "start": 214.01,
+   "end": 217.59,
+   "text": "两种模式：恒高和恒流。"
+  },
+  {
+   "slide": 8,
+   "start": 217.99,
+   "end": 222.81,
+   "text": "应用：表面成像、刻写、单原子操作。"
+  },
+  {
+   "slide": 8,
+   "start": 223.21,
+   "end": 226.52,
+   "text": "它是量子力学最直接的应用之一。"
+  }
+ ],
+ "build_ts": 1792633990,
+ "logoScale": 0.67,
+ "theme": "wave"
+}

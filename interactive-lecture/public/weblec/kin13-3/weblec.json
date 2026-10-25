@@ -1,0 +1,3147 @@
+{
+ "title": "13-3 等容过程和等压过程 摩尔热容",
+ "nav": "13-3　等容和等压过程　摩尔热容",
+ "footer": "第十三章　热力学基础",
+ "character": "aqiang",
+ "characters": [
+  {
+   "id": "aqiang",
+   "name": "阿强"
+  },
+  {
+   "id": "professor",
+   "name": "博士讲师"
+  },
+  {
+   "id": "zhongshan",
+   "name": "中山装先生"
+  }
+ ],
+ "duration": 442.46,
+ "slides": [
+  {
+   "id": 1,
+   "kind": "page",
+   "heading": "封面",
+   "narration": "第十三章第三节。13-3，理想气体的等容过程和等压过程，摩尔热容。上一节有了第一定律这本账，这一节就拿它去算两种最简单的过程：体积不变，和压强不变。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 282,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 十 三 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 300,
+     "y": 408,
+     "w": 1320,
+     "h": 170,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "热 力 学 基 础",
+        "size": 92,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 250,
+     "y": 588,
+     "w": 1420,
+     "h": 120,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "13-3　等容过程和等压过程　摩尔热容",
+        "size": 40,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 220,
+     "y": 730,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "等容　·　等压　·　摩尔热容　·　迈耶公式",
+        "size": 31,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 850,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "把第一定律用到两种最简单的过程上",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 0.0,
+    "2": 2.82,
+    "3": 9.15
+   },
+   "t_start": 0.0,
+   "t_end": 17.98,
+   "duration": 17.98,
+   "laser": []
+  },
+  {
+   "id": 2,
+   "kind": "page",
+   "heading": "本节路线",
+   "narration": "本节路线。先备齐四块基础：状态方程、第一定律、内能只由温度定、各过程的特性。然后算等容过程——不做功，热全部变成内能。由此定义摩尔定容热容。再算等压过程——既要升温又要做功，所以吸的热更多。最后得到迈耶公式、热容比，还有比热容。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节路线",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 244,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "主线：四块基础 → 等容 → $C_{V,\\mathrm{m}}$ → 等压 → 迈耶公式 → 热容比",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1　四块基础",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 386,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "状态方程 · 第一定律 · 内能 · 特性",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 458,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2　等容过程",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 512,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$W=0$，$Q_V=\\Delta E$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 584,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "3　摩尔定容热容",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 638,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$C_{V,\\mathrm{m}}=iR/2$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 330,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4　等压过程",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 386,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$W=p(V_2-V_1)$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 458,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "5　迈耶公式",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 512,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$C_{p,\\mathrm{m}}=C_{V,\\mathrm{m}}+R$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 584,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "6　热容比与比热容",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 638,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\gamma=C_{p,\\mathrm{m}}/C_{V,\\mathrm{m}}$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "本节收口：两种过程，两个热容，一条迈耶公式",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 18.78,
+    "2": 21.05,
+    "3": 29.08,
+    "4": 34.26,
+    "5": 37.59,
+    "6": 44.04
+   },
+   "t_start": 18.78,
+   "t_end": 49.16,
+   "duration": 30.38,
+   "laser": []
+  },
+  {
+   "id": 3,
+   "kind": "page",
+   "heading": "一　算等值过程的四块基础",
+   "narration": "算任何等值过程，都靠这四块基础。第一块：理想气体状态方程 pV 等于 νRT，这是所有气体共有的。第二块：第一定律，微分形式 dQ 等于 dE 加 p dV，积分形式是 Q 等于 ΔE 加上 p dV 的积分。第三块：内能只是温度的函数，E 等于 E(T)，这是理想气体的特殊之处。第四块：每种过程有自己的特性——等容是 V 不变，等压是 p 不变，等温是 T 不变。把这四块拼起来，任何等值过程的热量、功、内能都能算。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　算等值过程的四块基础",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 状态方程（共性）",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 288,
+     "w": 740,
+     "h": 100,
+     "tex": "pV=\\nu RT",
+     "size": 34,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 400,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 第一定律",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 452,
+     "w": 740,
+     "h": 100,
+     "tex": "\\mathrm{d}Q=\\mathrm{d}E+p\\,\\mathrm{d}V",
+     "size": 32,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 内能只是温度的函数",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 1010,
+     "y": 288,
+     "w": 740,
+     "h": 100,
+     "tex": "E=E(T)",
+     "size": 34,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 400,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 各过程的特性",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 456,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "等容 $V=$ 常量，等压 $p=$ 常量",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 504,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "等温 $T=$ 常量",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 590,
+     "w": 1580,
+     "h": 150,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "四种过程各锁住一个参量",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "锁住谁，谁就是常量；剩下的两个按状态方程联动",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 770,
+     "w": 1580,
+     "h": 130,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "四块拼起来：状态方程算过程方程，第一定律算能量分配",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "内能只由温度定 —— 这一条让 $\\Delta E$ 可以脱离过程单独算",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 49.96,
+    "2": 54.49,
+    "3": 61.63,
+    "4": 71.53,
+    "5": 79.56,
+    "6": 87.81
+   },
+   "t_start": 49.96,
+   "t_end": 94.53,
+   "duration": 44.57,
+   "laser": []
+  },
+  {
+   "id": 4,
+   "kind": "page",
+   "heading": "二　等容过程",
+   "narration": "先看等容过程。特性很干脆：体积不变，所以 dV 等于零。体积不变，气体就不推活塞，于是 dW 等于零，不做功。想一想，气体为什么不推活塞？因为体积压根没变。第一定律里 dW 一删，就只剩 dQ_V 等于 dE：吸进来的热，全部变成内能。过程方程也简单：由 pV 等于 νRT 且 V 不变，得到 p 比 T 等于常量——压强和温度成正比。所以在 p–V 图上，等容过程就是一条竖直线：压强涨，体积不动。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　等容过程",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 437,
+     "name": "pv_isochoric"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "特性：$V=$ 常量",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "体积不变 $\\Rightarrow \\mathrm{d}V=0$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 352,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不推活塞 $\\Rightarrow \\mathrm{d}W=0$",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 412,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第一定律只剩：$\\mathrm{d}Q_V=\\mathrm{d}E$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 472,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "过程方程：$p/T=$ 常量",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 518,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "压强和温度成正比",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 584,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "等容的意义",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "吸的热没有别的去处",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "只能存进内能",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "所以 $Q_V$ 是内能变化的量度",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 985,
+     "y": 700,
+     "w": 765,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "竖直线：体积锁死，压强涨多少，温度就涨多少",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 95.33,
+    "2": 97.99,
+    "3": 103.36,
+    "4": 116.37,
+    "5": 124.45,
+    "6": 134.4
+   },
+   "t_start": 95.33,
+   "t_end": 142.13,
+   "duration": 46.8,
+   "laser": []
+  },
+  {
+   "id": 5,
+   "kind": "page",
+   "heading": "三　摩尔定容热容",
+   "narration": "既然热量全都变成了内能，就可以用它来定义热容。一摩尔气体，等容下吸热 dQ、升温 dT，比值就叫摩尔定容热容。写成式子：C_V,m 等于 dQ_V,m 比 dT，单位是焦耳每摩尔每开。对 ν 摩尔气体，dQ_V 等于 dE，也等于 ν C_V,m dT。从 T₁ 积到 T₂，就是 Q_V 等于 ν C_V,m 乘以温度差，也正好等于 E₂ 减 E₁。注意这个式子说明：只要知道 C_V,m，等容过程的内能变化就直接算出来了。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　摩尔定容热容",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一摩尔气体，等容吸热",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "吸热 $\\mathrm{d}Q_V$，升温 $\\mathrm{d}T$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 150,
+     "tex": "C_{V,\\mathrm{m}}=\\frac{\\mathrm{d}Q_{V,\\mathrm{m}}}{\\mathrm{d}T}",
+     "size": 36,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 524,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "单位：J·mol⁻¹·K⁻¹",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "对 ν 摩尔气体",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 1010,
+     "y": 290,
+     "w": 740,
+     "h": 100,
+     "tex": "\\mathrm{d}Q_V=\\mathrm{d}E=\\nu C_{V,\\mathrm{m}}\\,\\mathrm{d}T",
+     "size": 30,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 410,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "从 $T_1$ 到 $T_2$ 积分",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 1010,
+     "y": 462,
+     "w": 740,
+     "h": 100,
+     "tex": "Q_V=\\nu C_{V,\\mathrm{m}}(T_2-T_1)=E_2-E_1",
+     "size": 28,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 600,
+     "w": 1580,
+     "h": 150,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "知道 $C_{V,\\mathrm{m}}$，内能变化就能直接算",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "理想气体的 $C_{V,\\mathrm{m}}$ 只由自由度决定：$C_{V,\\mathrm{m}}=\\frac{i}{2}R$",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 800,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "单原子 $i=3$ 时 $C_{V,\\mathrm{m}}=1.5R$；双原子 $i=5$ 时 $=2.5R$ —— 下一节还会用到",
+        "size": 26,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 142.93,
+    "2": 147.77,
+    "3": 154.67,
+    "4": 164.0,
+    "5": 171.86,
+    "6": 181.21
+   },
+   "t_start": 142.93,
+   "t_end": 189.87,
+   "duration": 46.94,
+   "laser": []
+  },
+  {
+   "id": 6,
+   "kind": "page",
+   "heading": "四　等压过程",
+   "narration": "再看等压过程。特性是压强不变，活塞可以自由移动。气体膨胀时要推着外界走，所以要做功，功等于 p 乘以体积变化。于是第一定律写成 dQ_p 等于 dE 加 dW：吸的热一部分升温，一部分对外做功。过程方程由 pV 等于 νRT 得到 V 比 T 等于常量——体积和温度成正比。在 p–V 图上，等压过程是一条水平线，线下的矩形面积就是功。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　等压过程",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 437,
+     "name": "pv_isobaric"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "特性：$p=$ 常量",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "压强不变，活塞可以自由移动",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 352,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "膨胀要推外界 $\\Rightarrow W=p(V_2-V_1)$",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 402,
+     "w": 740,
+     "h": 80,
+     "tex": "\\mathrm{d}Q_p=\\mathrm{d}E+\\mathrm{d}W",
+     "size": 30,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 500,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "过程方程：$V/T=$ 常量",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 546,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "体积和温度成正比",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 600,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "等压的意义",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "吸的热有两个去处",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "升内能 + 对外做功",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "所以 $Q_p$ 比 $Q_V$ 多",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 985,
+     "y": 700,
+     "w": 765,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "水平线：压强锁死，面积就是对外做的功",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 190.67,
+    "2": 193.28,
+    "3": 198.17,
+    "4": 204.47,
+    "5": 213.1,
+    "6": 220.7
+   },
+   "t_start": 190.67,
+   "t_end": 227.87,
+   "duration": 37.2,
+   "laser": []
+  },
+  {
+   "id": 7,
+   "kind": "page",
+   "heading": "五　摩尔定压热容与迈耶公式",
+   "narration": "同样定义一个摩尔定压热容：C_p,m 等于 dQ_p,m 比 dT。对 ν 摩尔气体，dQ_p 等于 ν C_p,m dT，同时它又等于 dE 加 p dV。把 dE 写成 ν C_V,m dT，把 p dV 用状态方程换成 νR dT。两边约掉 ν dT，就得到 C_p,m 等于 C_V,m 加 R——这就是迈耶公式。它的意思很直白：等压时要多吸一份 R 的热，因为还要额外对外做功。所以定压热容总比定容热容大，差值恰好是 R。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五　摩尔定压热容与迈耶公式",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "摩尔定压热容",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 288,
+     "w": 740,
+     "h": 140,
+     "tex": "C_{p,\\mathrm{m}}=\\frac{\\mathrm{d}Q_{p,\\mathrm{m}}}{\\mathrm{d}T}",
+     "size": 34,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 448,
+     "w": 740,
+     "h": 100,
+     "tex": "\\mathrm{d}Q_p=\\nu C_{p,\\mathrm{m}}\\,\\mathrm{d}T=\\mathrm{d}E+p\\,\\mathrm{d}V",
+     "size": 27,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 566,
+     "w": 740,
+     "h": 90,
+     "tex": "\\mathrm{d}E=\\nu C_{V,\\mathrm{m}}\\,\\mathrm{d}T,\\quad p\\,\\mathrm{d}V=\\nu R\\,\\mathrm{d}T",
+     "size": 25,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两边约掉 $\\nu\\,\\mathrm{d}T$",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 1010,
+     "y": 290,
+     "w": 740,
+     "h": 140,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": null,
+     "tex": "C_{p,\\mathrm{m}}=C_{V,\\mathrm{m}}+R",
+     "size": 38,
+     "align": "center",
+     "color": "#C00000"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 470,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "多出来的 $R$ 是什么？",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 518,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "是等压膨胀时额外对外做的功",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 560,
+     "w": 740,
+     "h": 190,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "迈耶公式",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$C_{p,\\mathrm{m}}-C_{V,\\mathrm{m}}=R$",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "差的这一份，正好是「保持压强不变」的代价",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 780,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "等容时热量全进内能；等压时同样的温升还要额外做功 —— 所以 $C_p$ 必然大于 $C_V$",
+        "size": 26,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 228.67,
+    "2": 236.7,
+    "3": 246.27,
+    "4": 254.73,
+    "5": 263.87,
+    "6": 270.25
+   },
+   "t_start": 228.67,
+   "t_end": 276.45,
+   "duration": 47.78,
+   "laser": []
+  },
+  {
+   "id": 8,
+   "kind": "page",
+   "heading": "六　等压过程的三个量",
+   "narration": "把等压过程的三个量摆在一起看。功：W 等于 p 乘体积差，也等于 νR 乘温度差。热量：Q_p 等于 ν C_p,m 乘温度差。内能变化：E₂ 减 E₁ 等于 ν C_V,m 乘温度差。三个式子结构完全一样，都是「系数乘温度差」，区别只在系数。记住这一点，做题时就不会把 C_p 和 C_V 用混。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "六　等压过程的三个量",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 236,
+     "w": 765,
+     "h": 393,
+     "name": "heat_split"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "功",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 286,
+     "w": 740,
+     "h": 100,
+     "tex": "W=p(V_2-V_1)=\\nu R(T_2-T_1)",
+     "size": 30,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 404,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "热量",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 454,
+     "w": 740,
+     "h": 100,
+     "tex": "Q_p=\\nu C_{p,\\mathrm{m}}(T_2-T_1)",
+     "size": 30,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 574,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "内能变化",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 624,
+     "w": 740,
+     "h": 100,
+     "tex": "E_2-E_1=\\nu C_{V,\\mathrm{m}}(T_2-T_1)",
+     "size": 30,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 760,
+     "w": 1580,
+     "h": 110,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "三个式子一个模子：系数 × 温度差，区别只在系数",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 896,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$C_p$ 管热量，$C_V$ 管内能，$R$ 管功 —— 用混了就等于把功算进了内能",
+        "size": 26,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 277.25,
+    "2": 280.91,
+    "3": 287.0,
+    "4": 293.64,
+    "5": 300.16,
+    "6": 306.42
+   },
+   "t_start": 277.25,
+   "t_end": 313.42,
+   "duration": 36.17,
+   "laser": []
+  },
+  {
+   "id": 9,
+   "kind": "page",
+   "heading": "七　摩尔热容比与典型数值",
+   "narration": "有了这两个热容，就有一个很常用的比值。定义 γ 等于 C_p,m 比 C_V,m，叫摩尔热容比。把迈耶公式代进去，得到 γ 等于 1 加 2 比 i，i 是自由度。单原子气体 i 等于 3，γ 约等于 1.67；双原子 i 等于 5，γ 等于 1.4；多原子 i 等于 6，γ 约等于 1.33。这些数可以查表，也可以用自由度算出来，两者基本吻合。γ 在后面讲绝热过程时会反复出现，先记住它的来历。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "七　摩尔热容比与典型数值",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 760,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "摩尔热容比",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 288,
+     "w": 760,
+     "h": 140,
+     "tex": "\\gamma=\\frac{C_{p,\\mathrm{m}}}{C_{V,\\mathrm{m}}}",
+     "size": 36,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 460,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "代入迈耶公式：$\\gamma=1+\\dfrac{2}{i}$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "table",
+     "step": 4,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "rows": [
+      [
+       "气体",
+       "自由度 i",
+       "定容热容",
+       "定压热容",
+       "热容比"
+      ],
+      [
+       "单原子",
+       "3",
+       "1.5R",
+       "2.5R",
+       "1.67"
+      ],
+      [
+       "双原子",
+       "5",
+       "2.5R",
+       "3.5R",
+       "1.40"
+      ],
+      [
+       "多原子",
+       "6",
+       "3R",
+       "4R",
+       "1.33"
+      ]
+     ],
+     "rowh": 84,
+     "size": 24,
+     "fill": "#CCFFCC"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 620,
+     "w": 740,
+     "h": 150,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "和实测对比",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "氦 1.66 · 氮 1.40 · 二氧化碳 1.30",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "基本吻合，差别来自分子不是刚性的",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 590,
+     "w": 760,
+     "h": 180,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "为什么叫「比」",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "它把两个热容的关系压成一个数",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "绝热过程里它决定曲线有多陡",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 800,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "γ 不是新东西，就是 $C_p$ 与 $C_V$ 的比值 —— 记住这一句就够了",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 314.22,
+    "2": 318.48,
+    "3": 326.06,
+    "4": 332.56,
+    "5": 344.19,
+    "6": 350.06
+   },
+   "t_start": 314.22,
+   "t_end": 356.39,
+   "duration": 42.17,
+   "laser": []
+  },
+  {
+   "id": 10,
+   "kind": "page",
+   "heading": "八　比热容",
+   "narration": "最后分清三个层次。热容 C 是「升高一度要多少热」，单位是焦耳每开。摩尔热容是「一摩尔升高一度要多少热」，单位是焦耳每摩尔每开。比热容 c 是「一千克升高一度要多少热」，单位是焦耳每千克每开。三者关系很直接：比热容等于摩尔热容除以摩尔质量。想一想：为什么工程上爱用比热容，而物理上爱用摩尔热容？因为前者按质量算方便，后者按分子数算，才看得出微观规律。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "八　比热容",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三个层次",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 292,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "热容 $C=\\mathrm{d}Q/\\mathrm{d}T$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 348,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "摩尔热容 $C_{\\mathrm{m}}$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 404,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "比热容 $c=\\mathrm{d}Q/(m\\,\\mathrm{d}T)$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 470,
+     "w": 740,
+     "h": 140,
+     "tex": "c=\\frac{C_{\\mathrm{m}}}{M}",
+     "size": 38,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 624,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$M$ 为摩尔质量",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 140,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "热容",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "整个系统升高 1 K 要吸的热",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "单位 J·K⁻¹，与物质的量有关",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 1010,
+     "y": 396,
+     "w": 740,
+     "h": 140,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "摩尔热容",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "1 mol 升高 1 K 要吸的热",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "单位 J·mol⁻¹·K⁻¹",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 1010,
+     "y": 556,
+     "w": 740,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "比热容",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "1 kg 升高 1 K 要吸的热",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "单位 J·kg⁻¹·K⁻¹，工程最常用",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "物理上用摩尔热容：它直接对应每个分子的自由度",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "工程上用比热容：称质量比数分子方便",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 357.19,
+    "2": 360.06,
+    "3": 365.21,
+    "4": 371.66,
+    "5": 378.49,
+    "6": 384.03
+   },
+   "t_start": 357.19,
+   "t_end": 397.75,
+   "duration": 40.56,
+   "laser": []
+  },
+  {
+   "id": 11,
+   "kind": "page",
+   "heading": "本节小结",
+   "narration": "小结。等容过程：V 不变，W 等于零，Q_V 等于 ΔE，图上是竖线。等压过程：p 不变，W 等于 p 乘体积差，Q_p 等于 ΔE 加 W，图上是水平线。摩尔热容：C_V,m 等于二分之 i 乘 R，C_p,m 等于 C_V,m 加 R，γ 等于 C_p,m 比 C_V,m。下一节把这两个过程推广到等温和绝热，四种基本过程就齐了。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 等容过程",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$V$ 不变，$W=0$，$Q_V=\\Delta E$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 等压过程",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 408,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$p$ 不变，$W=p\\Delta V$，$Q_p=\\Delta E+W$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 两个热容",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$C_{V,\\mathrm{m}}=\\frac{i}{2}R$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 336,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$C_{p,\\mathrm{m}}=C_{V,\\mathrm{m}}+R$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 400,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 热容比",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 452,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\gamma=C_p/C_V=1+2/i$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 520,
+     "w": 740,
+     "h": 170,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "下一节",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "13-4　等温过程与绝热过程 多方过程",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "再添两种过程，四种基本过程就齐了",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 490,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一句话",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "锁住 $V$：热全进内能",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "锁住 $p$：热分成两份",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "差的正是那份额外的功",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 120,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "第十三章 3/9：两种过程、两个热容、一条迈耶公式",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 398.55,
+    "2": 400.82,
+    "3": 409.09,
+    "4": 418.87,
+    "5": 434.17
+   },
+   "t_start": 398.55,
+   "t_end": 440.96,
+   "duration": 42.41,
+   "laser": []
+  }
+ ],
+ "subtitles": [
+  {
+   "slide": 1,
+   "start": 0.0,
+   "end": 2.42,
+   "text": "第十三章第三节。"
+  },
+  {
+   "slide": 1,
+   "start": 2.82,
+   "end": 8.75,
+   "text": "13-3，理想气体的等容过程和等压过程，摩尔热容。"
+  },
+  {
+   "slide": 1,
+   "start": 9.15,
+   "end": 17.41,
+   "text": "上一节有了第一定律这本账，这一节就拿它去算两种最简单的过程：体积不变，和压强不变。"
+  },
+  {
+   "slide": 2,
+   "start": 18.78,
+   "end": 20.65,
+   "text": "本节路线。"
+  },
+  {
+   "slide": 2,
+   "start": 21.05,
+   "end": 28.68,
+   "text": "先备齐四块基础：状态方程、第一定律、内能只由温度定、各过程的特性。"
+  },
+  {
+   "slide": 2,
+   "start": 29.08,
+   "end": 33.86,
+   "text": "然后算等容过程——不做功，热全部变成内能。"
+  },
+  {
+   "slide": 2,
+   "start": 34.26,
+   "end": 37.19,
+   "text": "由此定义摩尔定容热容。"
+  },
+  {
+   "slide": 2,
+   "start": 37.59,
+   "end": 43.64,
+   "text": "再算等压过程——既要升温又要做功，所以吸的热更多。"
+  },
+  {
+   "slide": 2,
+   "start": 44.04,
+   "end": 48.43,
+   "text": "最后得到迈耶公式、热容比，还有比热容。"
+  },
+  {
+   "slide": 3,
+   "start": 49.96,
+   "end": 54.09,
+   "text": "算任何等值过程，都靠这四块基础。"
+  },
+  {
+   "slide": 3,
+   "start": 54.49,
+   "end": 61.23,
+   "text": "第一块：理想气体状态方程 pV 等于 νRT，这是所有气体共有的。"
+  },
+  {
+   "slide": 3,
+   "start": 61.63,
+   "end": 71.13,
+   "text": "第二块：第一定律，微分形式 dQ 等于 dE 加 p dV，积分形式是 Q 等于 ΔE 加上 p dV 的积分。"
+  },
+  {
+   "slide": 3,
+   "start": 71.53,
+   "end": 79.16,
+   "text": "第三块：内能只是温度的函数，E 等于 E(T)，这是理想气体的特殊之处。"
+  },
+  {
+   "slide": 3,
+   "start": 79.56,
+   "end": 87.41,
+   "text": "第四块：每种过程有自己的特性——等容是 V 不变，等压是 p 不变，等温是 T 不变。"
+  },
+  {
+   "slide": 3,
+   "start": 87.81,
+   "end": 93.79,
+   "text": "把这四块拼起来，任何等值过程的热量、功、内能都能算。"
+  },
+  {
+   "slide": 4,
+   "start": 95.33,
+   "end": 97.59,
+   "text": "先看等容过程。"
+  },
+  {
+   "slide": 4,
+   "start": 97.99,
+   "end": 102.96,
+   "text": "特性很干脆：体积不变，所以 dV 等于零。"
+  },
+  {
+   "slide": 4,
+   "start": 103.36,
+   "end": 109.26,
+   "text": "体积不变，气体就不推活塞，于是 dW 等于零，不做功。"
+  },
+  {
+   "slide": 4,
+   "start": 109.66,
+   "end": 112.97,
+   "text": "想一想，气体为什么不推活塞？"
+  },
+  {
+   "slide": 4,
+   "start": 113.62,
+   "end": 115.97,
+   "text": "因为体积压根没变。"
+  },
+  {
+   "slide": 4,
+   "start": 116.37,
+   "end": 124.05,
+   "text": "第一定律里 dW 一删，就只剩 dQ_V 等于 dE：吸进来的热，全部变成内能。"
+  },
+  {
+   "slide": 4,
+   "start": 124.45,
+   "end": 134.0,
+   "text": "过程方程也简单：由 pV 等于 νRT 且 V 不变，得到 p 比 T 等于常量——压强和温度成正比。"
+  },
+  {
+   "slide": 4,
+   "start": 134.4,
+   "end": 141.26,
+   "text": "所以在 p–V 图上，等容过程就是一条竖直线：压强涨，体积不动。"
+  },
+  {
+   "slide": 5,
+   "start": 142.93,
+   "end": 147.37,
+   "text": "既然热量全都变成了内能，就可以用它来定义热容。"
+  },
+  {
+   "slide": 5,
+   "start": 147.77,
+   "end": 154.27,
+   "text": "一摩尔气体，等容下吸热 dQ、升温 dT，比值就叫摩尔定容热容。"
+  },
+  {
+   "slide": 5,
+   "start": 154.67,
+   "end": 163.6,
+   "text": "写成式子：C_V,m 等于 dQ_V,m 比 dT，单位是焦耳每摩尔每开。"
+  },
+  {
+   "slide": 5,
+   "start": 164.0,
+   "end": 171.46,
+   "text": "对 ν 摩尔气体，dQ_V 等于 dE，也等于 ν C_V,m dT。"
+  },
+  {
+   "slide": 5,
+   "start": 171.86,
+   "end": 180.81,
+   "text": "从 T₁ 积到 T₂，就是 Q_V 等于 ν C_V,m 乘以温度差，也正好等于 E₂ 减 E₁。"
+  },
+  {
+   "slide": 5,
+   "start": 181.21,
+   "end": 189.13,
+   "text": "注意这个式子说明：只要知道 C_V,m，等容过程的内能变化就直接算出来了。"
+  },
+  {
+   "slide": 6,
+   "start": 190.67,
+   "end": 192.88,
+   "text": "再看等压过程。"
+  },
+  {
+   "slide": 6,
+   "start": 193.28,
+   "end": 197.77,
+   "text": "特性是压强不变，活塞可以自由移动。"
+  },
+  {
+   "slide": 6,
+   "start": 198.17,
+   "end": 204.07,
+   "text": "气体膨胀时要推着外界走，所以要做功，功等于 p 乘以体积变化。"
+  },
+  {
+   "slide": 6,
+   "start": 204.47,
+   "end": 212.7,
+   "text": "于是第一定律写成 dQ_p 等于 dE 加 dW：吸的热一部分升温，一部分对外做功。"
+  },
+  {
+   "slide": 6,
+   "start": 213.1,
+   "end": 220.3,
+   "text": "过程方程由 pV 等于 νRT 得到 V 比 T 等于常量——体积和温度成正比。"
+  },
+  {
+   "slide": 6,
+   "start": 220.7,
+   "end": 227.13,
+   "text": "在 p–V 图上，等压过程是一条水平线，线下的矩形面积就是功。"
+  },
+  {
+   "slide": 7,
+   "start": 228.67,
+   "end": 236.3,
+   "text": "同样定义一个摩尔定压热容：C_p,m 等于 dQ_p,m 比 dT。"
+  },
+  {
+   "slide": 7,
+   "start": 236.7,
+   "end": 245.87,
+   "text": "对 ν 摩尔气体，dQ_p 等于 ν C_p,m dT，同时它又等于 dE 加 p dV。"
+  },
+  {
+   "slide": 7,
+   "start": 246.27,
+   "end": 254.33,
+   "text": "把 dE 写成 ν C_V,m dT，把 p dV 用状态方程换成 νR dT。"
+  },
+  {
+   "slide": 7,
+   "start": 254.73,
+   "end": 263.47,
+   "text": "两边约掉 ν dT，就得到 C_p,m 等于 C_V,m 加 R——这就是迈耶公式。"
+  },
+  {
+   "slide": 7,
+   "start": 263.87,
+   "end": 269.85,
+   "text": "它的意思很直白：等压时要多吸一份 R 的热，因为还要额外对外做功。"
+  },
+  {
+   "slide": 7,
+   "start": 270.25,
+   "end": 275.72,
+   "text": "所以定压热容总比定容热容大，差值恰好是 R。"
+  },
+  {
+   "slide": 8,
+   "start": 277.25,
+   "end": 280.51,
+   "text": "把等压过程的三个量摆在一起看。"
+  },
+  {
+   "slide": 8,
+   "start": 280.91,
+   "end": 286.6,
+   "text": "功：W 等于 p 乘体积差，也等于 νR 乘温度差。"
+  },
+  {
+   "slide": 8,
+   "start": 287.0,
+   "end": 293.24,
+   "text": "热量：Q_p 等于 ν C_p,m 乘温度差。"
+  },
+  {
+   "slide": 8,
+   "start": 293.64,
+   "end": 299.76,
+   "text": "内能变化：E₂ 减 E₁ 等于 ν C_V,m 乘温度差。"
+  },
+  {
+   "slide": 8,
+   "start": 300.16,
+   "end": 306.02,
+   "text": "三个式子结构完全一样，都是「系数乘温度差」，区别只在系数。"
+  },
+  {
+   "slide": 8,
+   "start": 306.42,
+   "end": 312.68,
+   "text": "记住这一点，做题时就不会把 C_p 和 C_V 用混。"
+  },
+  {
+   "slide": 9,
+   "start": 314.22,
+   "end": 318.08,
+   "text": "有了这两个热容，就有一个很常用的比值。"
+  },
+  {
+   "slide": 9,
+   "start": 318.48,
+   "end": 325.66,
+   "text": "定义 γ 等于 C_p,m 比 C_V,m，叫摩尔热容比。"
+  },
+  {
+   "slide": 9,
+   "start": 326.06,
+   "end": 332.16,
+   "text": "把迈耶公式代进去，得到 γ 等于 1 加 2 比 i，i 是自由度。"
+  },
+  {
+   "slide": 9,
+   "start": 332.56,
+   "end": 343.79,
+   "text": "单原子气体 i 等于 3，γ 约等于 1.67；双原子 i 等于 5，γ 等于 1.4；多原子 i 等于 6，γ 约等于 1.33。"
+  },
+  {
+   "slide": 9,
+   "start": 344.19,
+   "end": 349.66,
+   "text": "这些数可以查表，也可以用自由度算出来，两者基本吻合。"
+  },
+  {
+   "slide": 9,
+   "start": 350.06,
+   "end": 355.65,
+   "text": "γ 在后面讲绝热过程时会反复出现，先记住它的来历。"
+  },
+  {
+   "slide": 10,
+   "start": 357.19,
+   "end": 359.66,
+   "text": "最后分清三个层次。"
+  },
+  {
+   "slide": 10,
+   "start": 360.06,
+   "end": 364.81,
+   "text": "热容 C 是「升高一度要多少热」，单位是焦耳每开。"
+  },
+  {
+   "slide": 10,
+   "start": 365.21,
+   "end": 371.26,
+   "text": "摩尔热容是「一摩尔升高一度要多少热」，单位是焦耳每摩尔每开。"
+  },
+  {
+   "slide": 10,
+   "start": 371.66,
+   "end": 378.09,
+   "text": "比热容 c 是「一千克升高一度要多少热」，单位是焦耳每千克每开。"
+  },
+  {
+   "slide": 10,
+   "start": 378.49,
+   "end": 383.63,
+   "text": "三者关系很直接：比热容等于摩尔热容除以摩尔质量。"
+  },
+  {
+   "slide": 10,
+   "start": 384.03,
+   "end": 390.32,
+   "text": "想一想：为什么工程上爱用比热容，而物理上爱用摩尔热容？"
+  },
+  {
+   "slide": 10,
+   "start": 390.97,
+   "end": 396.95,
+   "text": "因为前者按质量算方便，后者按分子数算，才看得出微观规律。"
+  },
+  {
+   "slide": 11,
+   "start": 398.55,
+   "end": 400.42,
+   "text": "小结。"
+  },
+  {
+   "slide": 11,
+   "start": 400.82,
+   "end": 408.69,
+   "text": "等容过程：V 不变，W 等于零，Q_V 等于 ΔE，图上是竖线。"
+  },
+  {
+   "slide": 11,
+   "start": 409.09,
+   "end": 418.47,
+   "text": "等压过程：p 不变，W 等于 p 乘体积差，Q_p 等于 ΔE 加 W，图上是水平线。"
+  },
+  {
+   "slide": 11,
+   "start": 418.87,
+   "end": 433.77,
+   "text": "摩尔热容：C_V,m 等于二分之 i 乘 R，C_p,m 等于 C_V,m 加 R，γ 等于 C_p,m 比 C_V,m。"
+  },
+  {
+   "slide": 11,
+   "start": 434.17,
+   "end": 440.27,
+   "text": "下一节把这两个过程推广到等温和绝热，四种基本过程就齐了。"
+  }
+ ],
+ "build_ts": 1792585939,
+ "logoScale": 0.67,
+ "theme": "wave"
+}

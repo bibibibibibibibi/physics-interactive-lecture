@@ -1,0 +1,2528 @@
+{
+ "title": "5-1 电荷 库仑定律",
+ "nav": "5-1　电荷　库仑定律",
+ "footer": "第五章　静电场",
+ "logoScale": 0.67,
+ "engine": "edge",
+ "voice": "zh-CN-YunxiNeural",
+ "pages": [
+  {
+   "id": 1,
+   "narration": "[[1]]从这一节开始，我们进入第五章，静电场。[[2]]前四章讲的是力学：质点、刚体、流体。[[3]]从这一章起，研究对象换了——不再是看得见的物体，而是看不见的电荷和它周围的场。[[4]]第一节先把最基本的三件事说清楚：电荷有什么性质，电荷守恒，以及两个点电荷之间的作用力服从什么规律。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 292,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 五 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 300,
+     "y": 420,
+     "w": 1320,
+     "h": 160,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "静　电　场",
+        "size": 76,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 300,
+     "y": 606,
+     "w": 1320,
+     "h": 130,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "5-1　电荷　库仑定律",
+        "size": 48,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 766,
+     "w": 1480,
+     "h": 90,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电荷的量子化　·　电荷守恒定律　·　库仑定律",
+        "size": 36,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 220,
+     "y": 900,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "从「力」到「场」",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "封面"
+  },
+  {
+   "id": 2,
+   "narration": "[[1]]先看一眼整章的路。[[2]]第一步，用库仑定律描述电荷之间的相互作用——但两个电荷之间隔着空间，力是怎么传递的？[[3]]第二步就引入电场强度，把「甲对乙的力」改写成「甲产生场，场对乙施力」。[[4]]第三步，用高斯定理把场强和电荷分布联系起来，这样对称情形下不用积分也能求场。[[5]]第四步，因为静电力做功与路径无关，可以引入电势，把矢量问题变成标量问题。[[6]]最后讨论电场中的电偶极子。这条线，就是静电学的全部骨架。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本章路线",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 60,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "主线：电荷 → 场 → 通量 → 势 → 偶极子",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 320,
+     "w": 740,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1　库仑定律：",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "两个点电荷的力（5-1）",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 392,
+     "w": 740,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2　电场强度：",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "把「力」改成「场」（5-2）",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 464,
+     "w": 740,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "3　高斯定理：",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "通量与源（5-3）",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 536,
+     "w": 740,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4　环路定理与电势（5-5、5-6）",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 608,
+     "w": 740,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "5　梯度与电偶极子（5-7、5-8）",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 700,
+     "w": 740,
+     "h": 190,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一句话",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "电场有两个等价描述：",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "矢量 E，标量 V；两者由梯度联系",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 640,
+     "name": "chapter_map"
+    }
+   ],
+   "heading": "本章路线"
+  },
+  {
+   "id": 3,
+   "narration": "[[1]]一，电荷的量子化。[[2]]实验发现，任何带电体所带电荷量，都不是连续变化的，而只能是一个基本单元的整数倍。[[3]]这个基本单元叫元电荷，用 e 表示，等于一点六零乘十的负十九次方库仑。[[4]]密立根从一九零六年开始做油滴实验，反复测量，证实了这一点，并测出了 e 的精确值。[[5]]所以电荷量写作 Q 等于 n e，n 是整数。[[6]]图上这些点，就是实验测得的各种电荷量——它们全部落在这几条水平线上，中间是空的。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 900,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　电荷的量子化",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 760,
+     "h": 58,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "实验事实：带电体的电荷量不能连续变化，",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 300,
+     "w": 760,
+     "h": 58,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只能取某个基本单元的整数倍．",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 400,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "元电荷：",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 456,
+     "w": 720,
+     "h": 120,
+     "tex": "e=1.60\\times10^{-19}\\,\\mathrm{C}",
+     "size": 40,
+     "color": "#0000CD",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 604,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "密立根油滴实验（1906—1917）",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 664,
+     "w": 760,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "反复测量微小油滴的电荷，确认了量子化，",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 714,
+     "w": 760,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "并定出 e 的精确值．",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 806,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "于是",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 862,
+     "w": 760,
+     "h": 120,
+     "tex": "Q=ne\\qquad n=\\pm1,\\pm2,\\cdots",
+     "size": 40,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1000,
+     "y": 236,
+     "w": 760,
+     "h": 527,
+     "name": "charge_quant"
+    }
+   ],
+   "heading": "一　电荷的量子化"
+  },
+  {
+   "id": 4,
+   "narration": "[[1]]关于量子化，有两点要说明。[[2]]第一，宏观物体带电时，电荷量远远大于 e，所以看起来像是连续变化的。[[3]]比如一库仑的电荷，就是六点二五乘十的十八次方个元电荷——这个数太大，台阶细得看不见。[[4]]第二，后来发现强子内部还有夸克，带电量是三分之一个 e 或三分之二个 e。[[5]]但夸克不能单独存在，只能成对或三个一组地禁闭在强子里，所以宏观上测到的电荷，仍然是 e 的整数倍。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　量子化的两点说明",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 238,
+     "w": 740,
+     "h": 58,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 宏观带电体：电量 ≫ e",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 302,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1 C 的电荷 ≈ 6.25×10¹⁸ 个元电荷",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "台阶细到看不见 ⇒",
+        "size": 31,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 406,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "可当作连续分布处理．",
+        "size": 31,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 484,
+     "w": 740,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 更深一层：夸克带 ±e/3、±2e/3",
+        "size": 35,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 548,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "但夸克被禁闭在强子内部，",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 596,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不能单独出现 ⇒",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 646,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "自由电荷仍是 e 的整数倍．",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 730,
+     "w": 740,
+     "h": 200,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "量子化是一条严格的实验规律",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "根源要到量子电动力学才讲得清",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "本节只需记住：Q = n e",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 560,
+     "name": "quant_pair"
+    }
+   ],
+   "heading": "一　量子化的两点说明"
+  },
+  {
+   "id": 5,
+   "narration": "[[1]]二，电荷守恒定律。[[2]]表述很简单：在一个孤立系统内，无论发生什么过程，正负电荷的代数和保持不变。[[3]]注意是代数和，不是绝对值——摩擦起电时，一边多出负电，另一边就必然少掉同样多的负电。[[4]]电荷不是被「创造」出来的，只是从一个物体转移到了另一个物体。[[5]]这条定律的适用范围极广：宏观的摩擦、感应，微观的核衰变、正负电子对的产生与湮灭，都严格遵守。[[6]]比如一个中性粒子衰变成正负两个粒子，总电荷仍然是零。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 900,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　电荷守恒定律",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 760,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "在一个孤立系统内，无论发生什么过程，",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 302,
+     "w": 760,
+     "h": 60,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "正负电荷的代数和保持不变．",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 396,
+     "w": 760,
+     "h": 110,
+     "tex": "\\sum q_i=\\text{常量}",
+     "size": 40,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 528,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "注意：",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "是代数和，不是绝对值之和．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 584,
+     "w": 760,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "摩擦起电：一边多得 −q，",
+        "size": 31,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 632,
+     "w": 760,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "另一边必定失去 −q（即带 +q）．",
+        "size": 31,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 710,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "适用范围极广：",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 764,
+     "w": 760,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "摩擦、感应、核衰变、电子对产生与湮灭……",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 818,
+     "w": 760,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "衰变举例：中性粒子 → 正 + 负粒子，",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 862,
+     "w": 760,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "总电荷仍为 0．",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 529,
+     "name": "charge_conserve"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 770,
+     "w": 740,
+     "h": 180,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "与能量守恒、动量守恒并列",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "是自然界最基本的守恒律之一",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "二　电荷守恒定律"
+  },
+  {
+   "id": 6,
+   "narration": "[[1]]三，库仑定律。在说定律之前，先要有一个模型，叫点电荷。[[2]]当带电体本身的线度远小于它到其他带电体的距离时，就可以把它看成一个几何点。[[3]]这和力学里的质点是一回事。[[4]]不是物体真的没有大小，而是大小在问题里不重要。[[5]]有了点电荷，才能写出一个干净的、只依赖距离的力的公式。[[6]]后面所有的带电直线、圆环、平面，都是靠它叠加出来的。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 900,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　点电荷模型",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 246,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "带电体的线度 ≪ 它到其他带电体的距离时，",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 300,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "形状与电荷分布对问题没有影响．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 360,
+     "w": 760,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "⇒ 可视为几何点．",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 450,
+     "w": 760,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "点电荷：",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "带电的点，是理想模型．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 540,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与「质点」完全平行：",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 596,
+     "w": 760,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不是真的没有大小，",
+        "size": 31,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 644,
+     "w": 760,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "而是大小在问题中可以忽略．",
+        "size": 31,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 730,
+     "w": 760,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只有在点电荷模型下，",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 784,
+     "w": 760,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "力才只由电荷量与距离决定．",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 592,
+     "name": "point_charge_model"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 860,
+     "w": 760,
+     "h": 130,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "后面所有带电直线、圆环、平面",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "都是切成点电荷再叠加",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "三　点电荷模型"
+  },
+  {
+   "id": 7,
+   "narration": "[[1]]库仑定律：真空中两个静止点电荷之间的相互作用力，与它们电荷量的乘积成正比，与距离的平方成反比，方向沿两电荷的连线。[[2]]写成公式，F 等于 k 乘 q1 q2 除以 r 平方。[[3]]比例系数 k 通常写成四派 epsilon 零分之一，epsilon 零叫真空电容率。[[4]]数值上 k 约等于九点零乘十的九次方，单位是牛平方米每平方库仑；epsilon 零约等于八点八五乘十的负十二次方。[[5]]要强调三点：真空中、静止、点电荷。三个条件缺一个，公式就要修正。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1000,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　库仑定律",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 58,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "真空中两个静止点电荷之间的相互作用力：",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 300,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与电荷量乘积成正比，与距离平方成反比，方向沿连线．",
+        "size": 36,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 396,
+     "w": 900,
+     "h": 140,
+     "tex": "F=k\\dfrac{q_1q_2}{r^{2}}",
+     "size": 46,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 546,
+     "w": 900,
+     "h": 130,
+     "tex": "k=\\dfrac{1}{4\\pi\\varepsilon_0}",
+     "size": 40,
+     "color": "#0000CD",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 690,
+     "w": 1180,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$k\\approx9.0\\times10^{9}\\,\\mathrm{N\\cdot m^2/C^2}$",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 750,
+     "w": 1180,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\varepsilon_0\\approx8.85\\times10^{-12}\\,\\mathrm{C^2/(N\\cdot m)}$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 846,
+     "w": 900,
+     "h": 58,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三个条件：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "真空、静止、点电荷．",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 1080,
+     "y": 396,
+     "w": 670,
+     "h": 320,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "为什么写 1/4πε₀",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "这是国际单位制的约定；",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "写成这样，高斯定理",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "（5-3）会变得极简洁",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "三　库仑定律"
+  },
+  {
+   "id": 8,
+   "narration": "[[1]]方向怎么看？[[2]]同号电荷相互排斥：两个力都沿连线、向外，各自作用在自己的电荷上，大小相等、方向相反。[[3]]异号电荷相互吸引：两个力都沿连线、向内。[[4]]注意这是一对作用力与反作用力，永远等大反向，但分别作用在两个电荷上，绝不能抵消。[[5]]写成矢量式：F 一二 等于 k q1 q2 除以 r 平方，再乘上从 1 指向 2 的单位矢量。[[6]]这样写有个好处：q1 q2 的符号自动带进来——同号得正，方向沿 r 一二；异号得负，方向就反过来，正好是吸引。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 900,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　库仑力的方向",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 700,
+     "h": 58,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同号：",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "相互排斥，力沿连线向外．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 320,
+     "w": 700,
+     "h": 58,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "异号：",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "相互吸引，力沿连线向内．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 400,
+     "w": 700,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一对作用力与反作用力：等大、反向、",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 456,
+     "w": 700,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "分别作用在两个电荷上，",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "不能抵消",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 566,
+     "w": 760,
+     "h": 130,
+     "tex": "\\vec F_{12}=k\\dfrac{q_1q_2}{r^{2}}\\hat{\\vec r}_{12}",
+     "size": 42,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 712,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "q₁q₂ > 0 ⇒ 沿 $\\hat r_{12}$（斥）；",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 766,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "q₁q₂ < 0 ⇒ 反向（吸）．",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 842,
+     "w": 760,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "符号自动包含在 q 里，不必另判．",
+        "size": 31,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 900,
+     "y": 226,
+     "w": 900,
+     "h": 604,
+     "name": "coulomb_pair"
+    }
+   ],
+   "heading": "三　库仑力的方向"
+  },
+  {
+   "id": 9,
+   "narration": "[[1]]四，静电力的叠加原理。[[2]]如果空间里有多个点电荷，那么作用在某一个电荷上的总静电力，等于其他每一个电荷单独存在时对它作用力的矢量和。[[3]]注意是矢量相加，不是代数和——方向不同的力要用平行四边形。[[4]]图上 q0 同时受到 q1 和 q2 的斥力 F10 与 F20，把这两个矢量平移过去作平行四边形，对角线就是合力 F。[[5]]这条原理看起来平凡，其实极其重要：有了它，任何连续带电体都可以切成无穷多个电荷元，逐个求力再积分。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1100,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　静电力的叠加原理",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 58,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "多个点电荷时，作用在某一电荷上的总静电力：",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 306,
+     "w": 1580,
+     "h": 60,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "等于各电荷单独存在时对它作用力的矢量和．",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 410,
+     "w": 1000,
+     "h": 120,
+     "tex": "\\vec F=\\vec F_{10}+\\vec F_{20}+\\cdots=\\sum_i\\vec F_{i0}",
+     "size": 36,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 566,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "是矢量相加：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "方向不同的力不能直接加减，要用平行四边形．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 672,
+     "w": 1580,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "有了它，连续带电体就能切成无穷多电荷元，逐个求力再积分．",
+        "size": 33,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 940,
+     "y": 236,
+     "w": 900,
+     "h": 662,
+     "name": "superpose"
+    }
+   ],
+   "heading": "四　静电力的叠加"
+  },
+  {
+   "id": 10,
+   "narration": "[[1]]例一，比较氢原子中电子与质子之间的静电力，和它们之间的万有引力。[[2]]已知电子电荷量是 e，质子电荷量也是 e，距离取玻尔半径五点三乘十的负十一次方米。[[3]]静电力用库仑定律：k e 平方除以 r 平方，代入数值得八点二乘十的负八次方牛。[[4]]万有引力要小得多：G 乘电子质量乘质子质量，再除以 r 平方，只有三点六乘十的负四十七次方牛。[[5]]两者之比是二点三乘十的三十九次方。[[6]]也就是说，在原子尺度上，万有引力可以完全忽略——这就是为什么讨论原子时从来只提电磁力。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1100,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例1　氢原子中的两个力",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 238,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "比较电子与质子之间的静电力与万有引力．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 298,
+     "w": 1580,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "已知 $e=1.60\\times10^{-19}\\,\\mathrm{C}$，$r=5.3\\times10^{-11}\\,\\mathrm{m}$．",
+        "size": 33,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 386,
+     "w": 780,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "静电力：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 448,
+     "w": 780,
+     "h": 110,
+     "tex": "F_e=k\\dfrac{e^{2}}{r^{2}}",
+     "size": 36,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 576,
+     "w": 780,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$=8.2\\times10^{-8}\\,\\mathrm{N}$",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 676,
+     "w": 780,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "万有引力：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 738,
+     "w": 780,
+     "h": 110,
+     "tex": "F_g=G\\dfrac{m_em_p}{r^{2}}",
+     "size": 36,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 980,
+     "y": 386,
+     "w": 780,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$=3.6\\times10^{-47}\\,\\mathrm{N}$",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 980,
+     "y": 470,
+     "w": 780,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "比值：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 980,
+     "y": 536,
+     "w": 780,
+     "h": 120,
+     "tex": "\\dfrac{F_e}{F_g}\\approx2.3\\times10^{39}",
+     "size": 40,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 980,
+     "y": 690,
+     "w": 780,
+     "h": 190,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "原子尺度上",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "万有引力可完全忽略",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "电磁力才是主角",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "例1　氢原子中的两个力"
+  },
+  {
+   "id": 11,
+   "narration": "[[1]]例二，两个点电荷固定在同一条直线上，左边是四 q，右边是 q，相距 d。[[2]]问第三个电荷 q0 放在哪里，所受合力为零。[[3]]设 q0 在两者之间，距左端为 x，那么距右端就是 d 减 x。[[4]]平衡条件是两边的库仑力大小相等：k 乘四 q q0 除以 x 平方，等于 k 乘 q q0 除以 d 减 x 的平方。[[5]]q0 约掉，开方得 2 比 x 等于 1 比 d 减 x，解出 x 等于三分之二 d。[[6]]注意位置与 q0 的电荷量和符号都无关——因为两边都正比于 q0，可以约掉；但只有放在两电荷之间、靠近小电荷那一侧，两个力才反向。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1000,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例2　第三个电荷的平衡位置",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 238,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$q_1=4q$ 与 $q_2=q$ 固定在一直线上，相距 $d$．",
+        "size": 35,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 300,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "求：$q_0$ 放在何处所受合力为零？",
+        "size": 35,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 386,
+     "w": 1580,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "设 $q_0$ 在两电荷之间，距 $q_1$ 为 $x$，则距 $q_2$ 为 $d-x$．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 470,
+     "w": 1100,
+     "h": 120,
+     "tex": "k\\dfrac{4q\\,q_0}{x^{2}}=k\\dfrac{q\\,q_0}{(d-x)^{2}}",
+     "size": 38,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 618,
+     "w": 1100,
+     "h": 130,
+     "tex": "\\dfrac{2}{x}=\\dfrac{1}{d-x}\\,\\Longrightarrow\\,x=\\dfrac{2}{3}d",
+     "size": 38,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 782,
+     "w": 1580,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与 $q_0$ 的电荷量、符号都无关（两边都正比于 $q_0$）；",
+        "size": 33,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 838,
+     "w": 1580,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "但必须放在两电荷之间、靠近小电荷一侧，两力才反向．",
+        "size": 33,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 3,
+     "x": 980,
+     "y": 230,
+     "w": 900,
+     "h": 424,
+     "name": "charge_balance"
+    }
+   ],
+   "heading": "例2　平衡位置"
+  },
+  {
+   "id": 12,
+   "narration": "[[1]]这一节三件事。[[2]]电荷是量子化的，Q 等于 n e，元电荷 e 等于一点六零乘十的负十九次方库仑。[[3]]孤立系统的电荷代数和守恒，这是自然界最基本的守恒律之一。[[4]]库仑定律给出真空中两个静止点电荷之间的力，平方反比，方向沿连线；写成矢量式时，电荷的符号会自动给出吸引还是排斥。[[5]]多个电荷时用矢量叠加，连续带电体就切成电荷元再积分。[[6]]下一节，我们把「力」换成「场」。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 760,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 电荷量子化：",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "$Q=ne$",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 292,
+     "w": 760,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$e=1.60\\times10^{-19}\\ \\mathrm{C}$",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 372,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 电荷守恒：",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 424,
+     "w": 760,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "孤立系统内正负电荷的代数和不变．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 库仑定律：",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 288,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$F=kq_1q_2/r^{2}$，沿连线．",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 372,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 叠加原理：",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 424,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "矢量和；连续体切成电荷元再积分．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 520,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "矢量式 $\\vec F_{12}=kq_1q_2\\hat r_{12}/r^{2}$：符号自动给出斥 / 吸．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 600,
+     "w": 1580,
+     "h": 230,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "下一节：电场强度",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "不再问「甲对乙的力」，而问「甲在周围产生了什么」",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "这是从「超距作用」走向「场」的关键一步",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 890,
+     "w": 1580,
+     "h": 48,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三个性质 + 一条定律 = 静电学的出发点．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "本节小结"
+  }
+ ]
+}

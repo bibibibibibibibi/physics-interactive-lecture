@@ -1,0 +1,2476 @@
+{
+ "title": "10-5 驻波",
+ "nav": "10-5　驻波",
+ "footer": "第十章　波动",
+ "logoScale": 0.67,
+ "theme": "wave",
+ "engine": "edge",
+ "voice": "zh-CN-YunxiNeural",
+ "pages": [
+  {
+   "id": 1,
+   "narration": "[[1]]这一节讲驻波。[[2]]两列振幅相同、方向相反的波叠加，会得到一种很特别的波形：它不前进，只在原地上下振动。[[3]]这就是驻波。[[4]]它是弦乐器、管乐器发声的基础，也是理解薄膜干涉、激光腔的钥匙。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 282,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 十 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 300,
+     "y": 408,
+     "w": 1320,
+     "h": 170,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "波 动",
+        "size": 92,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 300,
+     "y": 600,
+     "w": 1320,
+     "h": 140,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "10-5　驻　波",
+        "size": 44,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 770,
+     "w": 1480,
+     "h": 90,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "波腹　·　波节　·　半波损失　·　简正模式",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 220,
+     "y": 900,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不前进的波",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "封面"
+  },
+  {
+   "id": 2,
+   "narration": "[[1]]本节路线。[[2]]先看驻波怎么形成：两列反向传播的波叠加。[[3]]再求出它的表达式，看清「位置因子」和「时间因子」的分工。[[4]]然后读出波腹、波节的位置与间距。[[5]]接着讲一个容易被忽略的特点：相邻两段反相。[[6]]最后是半波损失、弦的简正模式，以及一道例题。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节路线",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 244,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "主线：反向叠加 → 表达式 → 节与腹 → 相位 → 半波损失 → 简正模式",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1　驻波的形成",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 386,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两列反向传播的波叠加",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 458,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2　表达式",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 512,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$y=2A\\cos kx\\cos\\omega t$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 584,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "3　波腹与波节",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 638,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "相邻两节相距 $\\lambda/2$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 330,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4　相位与能量",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 386,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同段同相、邻段反相",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 458,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "5　半波损失与简正模式",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 512,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$f_n=n\\,u/(2L)$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 596,
+     "w": 740,
+     "h": 230,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "与行波的分水岭",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "行波：波形前进，能量被带走",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "驻波：波形不动，能量关在原地",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "差别就在「两列反向」",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "本节路线"
+  },
+  {
+   "id": 3,
+   "narration": "[[1]]先看驻波怎么形成的。[[2]]两列振幅相同、频率相同的波，沿相反方向传播，叠加起来。[[3]]图上蓝线是实际的合成波形，灰虚线是它的包络。[[4]]注意包络是固定的：包络为零的位置永远为零，这些点叫波节；包络最大的位置叫波腹。[[5]]波节和波腹的位置都不随时间移动，所以叫驻波——波形不前进，各点只在原地上下振动。[[6]]两个波节之间的距离是半个波长，一个波节到相邻波腹是四分之一个波长。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　驻波的形成",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 470,
+     "name": "standing_wave"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两列振幅相同、方向相反的波叠加",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 292,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "合成后波形不再前进",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 348,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "灰虚线是包络，位置固定",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 404,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "包络为零处 ⇒ 波节（永远不动）",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 456,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "包络最大处 ⇒ 波腹",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 512,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "波形不前进，所以叫「驻」波",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 584,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "两个关键间距",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "相邻波节（或波腹）相距 $\\lambda/2$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "相邻的节与腹相距 $\\lambda/4$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "这两个数后面直接拿来用",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 820,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "驻波的波形「站住了」，只有各点在动",
+        "size": 28,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "一　驻波的形成"
+  },
+  {
+   "id": 4,
+   "narration": "[[1]]把它算出来。[[2]]设两列波分别沿正、负 x 方向传播，振幅都是 A，角频率都是 ω。[[3]]下面把两式相加，用和差化积整理一下，得到 2A 乘余弦 kx，再乘余弦 ωt。[[4]]这个式子有两个因子：一个只含位置，一个只含时间——这是驻波与行波最本质的区别。[[5]]只含位置的那个因子，它的绝对值就是各点的振幅。[[6]]只含时间的因子对所有点都一样，所以各点振动的节奏完全同步。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　驻波的表达式",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两列等幅反向传播的波",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 300,
+     "w": 760,
+     "h": 110,
+     "tex": "y_1=A\\cos(\\omega t-kx)",
+     "size": 28,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 1010,
+     "y": 300,
+     "w": 740,
+     "h": 110,
+     "tex": "y_2=A\\cos(\\omega t+kx)",
+     "size": 28,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 440,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "和差化积：余弦加余弦，等于 2 倍余弦乘余弦",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 512,
+     "w": 1580,
+     "h": 150,
+     "tex": "y=y_1+y_2=2A\\cos kx\\,\\cos\\omega t",
+     "size": 34,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 700,
+     "w": 740,
+     "h": 200,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "位置因子 $\\cos kx$",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "决定各点振幅：$|2A\\cos kx|$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "不同位置，振幅不同",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 700,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "时间因子 $\\cos\\omega t$",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "对所有点都一样",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "各点同时过零、同时到极值",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 926,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两个因子分工明确：一个管「多大」，一个管「何时」",
+        "size": 28,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "二　驻波的表达式"
+  },
+  {
+   "id": 5,
+   "narration": "[[1]]从振幅因子就能读出全部结构。[[2]]余弦 kx 等于零的地方，振幅为零，这些点是波节。[[3]]也就是 x 等于半波长的整数倍处，波节出现在这些位置。[[4]]余弦的绝对值等于一的地方，振幅最大等于 2A，这些点是波腹。[[5]]想一想：相邻两个波节之间的距离是多少？是半个波长。[[6]]把这些数记住：相邻波节相距半个波长，相邻节与腹相距四分之一个波长。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　波腹与波节",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "从振幅因子 $|2A\\cos kx|$ 直接读出",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 170,
+     "y": 312,
+     "w": 760,
+     "h": 230,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "波节",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$\\cos kx=0$ ⇒ 振幅 $=0$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$x=\\pm(2k+1)\\lambda/4$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "这些点永远不动",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 1010,
+     "y": 312,
+     "w": 740,
+     "h": 230,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "波腹",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$|\\cos kx|=1$ ⇒ 振幅 $=2A$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$x=\\pm k\\lambda/2$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "振幅是单列波的两倍",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "table",
+     "step": 4,
+     "x": 170,
+     "y": 580,
+     "w": 1580,
+     "rows": [
+      [
+       "相邻两点",
+       "距离",
+       "含义"
+      ],
+      [
+       "节 — 节",
+       "λ/2",
+       "一个「驻波段」"
+      ],
+      [
+       "腹 — 腹",
+       "λ/2",
+       "同上"
+      ],
+      [
+       "节 — 腹",
+       "λ/4",
+       "半个驻波段"
+      ]
+     ],
+     "rowh": 56,
+     "size": 28,
+     "fill": "#CCFFCC"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 846,
+     "w": 1580,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "相邻两节相距 $\\lambda/2$ —— 这是最常用的一个数",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 900,
+     "w": 1580,
+     "h": 96,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "记法：节距半波，节腹四分之一波",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "三　波腹与波节"
+  },
+  {
+   "id": 6,
+   "narration": "[[1]]驻波还有一个容易忽略的特点：各点的相位。[[2]]时间因子对所有点相同，所以同一时刻，所有点的位移方向都由它决定。[[3]]但符号还由位置因子决定：在两个相邻波节之间，位置因子的符号不变，这些点同相。[[4]]跨过一个波节，符号反号，所以相邻两段的振动方向总是相反。[[5]]图上蓝线和绿线同相，红线正好反相，峰与谷严格对齐。[[6]]注意反相不是「落后」：相位差恒为 π，不随时间变化。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　各点的相位",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 246,
+     "w": 765,
+     "h": 459,
+     "name": "standing_phase"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "时间因子对所有点相同",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 292,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同一时刻，各点的位移方向",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 344,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "由时间因子统一决定",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 400,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "符号另由位置因子决定",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 456,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两节之间同相；跨过节就反相",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 512,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "相邻两段：位移方向永远相反",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 584,
+     "w": 740,
+     "h": 210,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "反相 ≠ 落后",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "落后：相位差随时间增大",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "反相：相位差恒为 $\\pi$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "所以峰谷严格对齐，不移动",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 826,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同一段内，各点同时到达最大、同时过零",
+        "size": 28,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "四　各点的相位"
+  },
+  {
+   "id": 7,
+   "narration": "[[1]]驻波不传播能量。[[2]]原因很直接：两列波的能量流方向相反、大小相等，正好抵消。[[3]]但能量并没有消失，它在波节和波腹之间来回转换：一会儿全是动能，一会儿全是势能，交替出现。[[4]]而且这种转换局限在相邻两个波节之间，各段之间不交换能量。[[5]]这与行波完全不同：行波把能量一路带走，驻波把能量关在原地。[[6]]所以驻波适合储存能量——乐器的共鸣、激光腔都是这个道理。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五　能量不传播",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "驻波的净能流为零",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 170,
+     "y": 312,
+     "w": 760,
+     "h": 230,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "为什么净能流为零",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "两列波反向传播",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "能流方向相反、大小相等",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "相加正好抵消",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 1010,
+     "y": 312,
+     "w": 740,
+     "h": 230,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "能量去哪了",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "在节、腹之间来回转换",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "动能与势能交替最大",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "只在本段内转换",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 600,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "转换范围局限在相邻两个波节之间，各段互不交换能量",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "table",
+     "step": 5,
+     "x": 170,
+     "y": 676,
+     "w": 1580,
+     "rows": [
+      [
+       "",
+       "行　波",
+       "驻　波"
+      ],
+      [
+       "波形",
+       "向前推进",
+       "原地不动"
+      ],
+      [
+       "能量",
+       "一路带走",
+       "关在原地，来回转换"
+      ],
+      [
+       "各点振幅",
+       "相同",
+       "随位置变（0 到 2A）"
+      ]
+     ],
+     "rowh": 56,
+     "size": 28,
+     "fill": "#CCFFCC"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 940,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "记住：驻波是「能量不搬家」的波",
+        "size": 28,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "五　能量不传播"
+  },
+  {
+   "id": 8,
+   "narration": "[[1]]驻波通常由入射波和反射波叠加形成，这里有个细节：半波损失。[[2]]波从波疏介质射向波密介质，比如弦遇到固定端，反射时相位突变 π，相当于多走了半个波长。[[3]]结果是反射点必须是波节——固定端本来就不动，这很直观。[[4]]反过来，从波密射向波疏，比如弦遇到自由端，反射没有相位突变，反射点是波腹。[[5]]所以「固定端是节、自由端是腹」，本质就是有没有半波损失。[[6]]光在薄膜上下表面的反射也有这一条，后面讲薄膜干涉会直接用到。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "六　半波损失",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 246,
+     "w": 765,
+     "h": 546,
+     "name": "half_wave_loss"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "入射波 + 反射波 = 驻波",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 292,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "波疏 → 波密：反射有相位突变 $\\pi$",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 344,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "相位突变 $\\pi$ ⇒ 多走半个波长",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 400,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以固定端是波节",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 456,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "波密 → 波疏：无突变",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 508,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以自由端是波腹",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 580,
+     "w": 740,
+     "h": 230,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一句话记住",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "固定端：波节（有半波损失）",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "自由端：波腹（无半波损失）",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "反射点由「边界条件」定死",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 836,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "光在薄膜两面的反射同理，薄膜干涉要用到",
+        "size": 28,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "六　半波损失"
+  },
+  {
+   "id": 9,
+   "narration": "[[1]]把驻波用到弦上，就得到乐器发声的基础。[[2]]两端固定的弦，长度 L 上必须容纳整数个半波，因为两端都得是波节。[[3]]所以 L 等于 n 乘半个波长，n 取一、二、三这些正整数。[[4]]再由波速等于波长乘频率，得到频率等于 n 乘波速除以二倍弦长。[[5]]想一想：为什么吉他按住品位就能变调？因为有效长度变短，基频升高。[[6]]n 等于一叫基频，其余叫谐频；弦越短、越紧、越细，频率越高——这就是调音和按弦的原理。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "七　弦的简正模式",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 236,
+     "w": 765,
+     "h": 645,
+     "name": "string_modes"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两端固定 ⇒ 两端都是波节",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 292,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "长度 $L$ 上容纳整数个半波",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 120,
+     "tex": "L=n\\frac{\\lambda}{2}\\quad(n=1,2,3,\\cdots)",
+     "size": 30,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 496,
+     "w": 740,
+     "h": 130,
+     "tex": "f_n=\\frac{u}{\\lambda}=\\frac{n\\,u}{2L}",
+     "size": 30,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 646,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$n=1$：基频；$n\\ge2$：谐频",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 698,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "弦越短、越紧、越细 ⇒ 频率越高",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 770,
+     "w": 740,
+     "h": 180,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "管乐器同理",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "两端开口：$L=n\\lambda/2$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "一端封闭：$L=(2n-1)\\lambda/4$",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "七　弦的简正模式"
+  },
+  {
+   "id": 10,
+   "narration": "[[1]]一道例题。[[2]]一根长零点六五米的弦，两端固定，弦上横波波速三百三十米每秒，求基频。[[3]]基频对应 n 等于一，此时波长等于二倍弦长，也就是一点三米。[[4]]频率等于波速除以波长，三百三十除以一点三，约二百五十四赫兹。[[5]]这个音大致在中央 C 附近。[[6]]如果把弦按在中点，有效长度减半，频率翻倍，正好高一个八度。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "八　例题：弦的基频",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$L=0.65\\ \\mathrm m$，两端固定，$u=330\\ \\mathrm{m/s}$",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 306,
+     "w": 760,
+     "h": 130,
+     "tex": "\\lambda_1=2L=1.3\\ \\mathrm m",
+     "size": 30,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1010,
+     "y": 322,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "基频：$n=1$",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 452,
+     "w": 1580,
+     "h": 140,
+     "tex": "f_1=\\frac{u}{\\lambda_1}=\\frac{330}{1.3}\\approx254\\ \\mathrm{Hz}",
+     "size": 30,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 606,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "接近中央 C（261.6 Hz）—— 吉他的第五弦空弦就是这个音区",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 680,
+     "w": 760,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "按到中点",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "有效长度减半 ⇒ $f$ 翻倍",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "正好高一个八度",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 680,
+     "w": 740,
+     "h": 200,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "解题三步",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "① $\\lambda=2L/n$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "② $f=u/\\lambda$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "③ 检查两端是否都是节",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "八　例题：弦的基频"
+  },
+  {
+   "id": 11,
+   "narration": "[[1]]小结。[[2]]驻波是两列等幅反向波的叠加，表达式 2A 余弦 kx 乘余弦 ωt，位置因子管振幅、时间因子管节奏。[[3]]波节处振幅为零，波腹处振幅为 2A；相邻两节相距半个波长，节与腹相距四分之一个波长。[[4]]各点相位：同一段同相，跨过波节就反相，相位差恒为 π。[[5]]驻波不传播能量，能量在各段内来回转换。[[6]]最后两件事：固定端是节、自由端是腹，这来自半波损失；两端固定的弦，频率是基频的整数倍。下一节讲多普勒效应。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 760,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 表达式",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 290,
+     "w": 700,
+     "h": 110,
+     "tex": "y=2A\\cos kx\\cos\\omega t",
+     "size": 26,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 430,
+     "w": 760,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 节与腹",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 486,
+     "w": 760,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "节：$A=0$；腹：$A=2A_0$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 534,
+     "w": 760,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "节距 $\\lambda/2$，节腹距 $\\lambda/4$",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 相位",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 292,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同段同相，邻段反相（差 $\\pi$）",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 366,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 能量",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 422,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "净能流为零，段内来回转换",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 496,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "⑤ 半波损失",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 552,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "固定端 → 节；自由端 → 腹",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 626,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "⑥ 简正模式",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 6,
+     "x": 1010,
+     "y": 680,
+     "w": 710,
+     "h": 110,
+     "tex": "f_n=\\frac{n\\,u}{2L}",
+     "size": 26,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 700,
+     "w": 760,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一句话",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "行波带走能量",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "驻波把能量关在原地",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "乐器的音高由它决定",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 926,
+     "w": 1580,
+     "h": 74,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "下一节：多普勒效应",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "本节小结"
+  }
+ ]
+}

@@ -1,0 +1,3242 @@
+{
+ "title": "7-2 毕奥-萨伐尔定律",
+ "nav": "7-2　毕奥-萨伐尔定律",
+ "footer": "第七章　恒定磁场",
+ "logoScale": 0.67,
+ "engine": "edge",
+ "voice": "zh-CN-YunxiNeural",
+ "pages": [
+  {
+   "id": 1,
+   "narration": "[[1]]这一节解决一个问题：电流在空间里产生的磁场，到底有多大。[[2]]上一节我们认识了磁感应强度，但只是描述场，没有回答场从哪里来。[[3]]毕奥和萨伐尔在一八二零年之后做了大量实验，找到了答案：把电流切成无穷多个电流元，每个电流元在空间产生一小份磁场，全部叠加起来就是总的场。[[4]]这个思路和静电场里的点电荷完全平行。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 292,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 七 章",
+        "size": 60,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 300,
+     "y": 420,
+     "w": 1320,
+     "h": 160,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "恒 定 磁 场",
+        "size": 80,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 300,
+     "y": 606,
+     "w": 1320,
+     "h": 130,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "7-2　毕奥-萨伐尔定律",
+        "size": 50,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 766,
+     "w": 1480,
+     "h": 90,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电流元　·　定律　·　三种典型载流导线",
+        "size": 36,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 220,
+     "y": 900,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "从「场」到「源」",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "封面"
+  },
+  {
+   "id": 2,
+   "narration": "[[1]]先看这一节的路。[[2]]第一步，把电流切成电流元：一段很短的导线，带着电流，当作一个整体。[[3]]第二步，写出毕奥-萨伐尔定律，给出一个电流元产生的那一小份磁场。[[4]]第三步，用它算三种最典型的载流导线：长直导线、圆环、螺线管。这三条结果后面要反复用，要背下来。[[5]]最后一步，把电流换成一个运动的电荷，得到运动电荷的磁场。[[6]]整节的方法和静电场一一对应：先取元、再叠加。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节路线",
+        "size": 54,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "主线：电流元 → 定律 → 三种典型导线 → 运动电荷",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 322,
+     "w": 740,
+     "h": 51,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1　电流元模型",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 385,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "把电流切成一段段有方向的元",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 445,
+     "w": 740,
+     "h": 51,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2　毕奥-萨伐尔定律",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 508,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一个电流元产生的那一小份磁场",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 568,
+     "w": 740,
+     "h": 51,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "3　三种典型载流导线",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 631,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "长直导线、圆环轴线、螺线管",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 691,
+     "w": 740,
+     "h": 51,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4　运动电荷的磁场",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 754,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "把电流换成一个电荷",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 814,
+     "w": 740,
+     "h": 168,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "与静电场一一对应",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "点电荷的场 ←→ 电流元的场",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "叠加原理在这里同样成立",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 240,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "为什么要用电流元",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "导线有长有短、有弯有直",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "先用「元」得到最一般的规律",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "再对整条导线求积分",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 1010,
+     "y": 506,
+     "w": 740,
+     "h": 210,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "三条结果要背下来",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "直导线　B ∝ I/a",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "圆环圆心　B = μ₀I/2R",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "螺线管内　B = μ₀nI",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 756,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "后面安培环路定理会用它们反过来验证．",
+        "size": 31,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "本节路线"
+  },
+  {
+   "id": 3,
+   "narration": "[[1]]先说电流元。[[2]]在载流导线上取一小段长度 d l，把这段的长度乘上电流，再给它一个方向，就是电流元 I d l。[[3]]方向取电流的方向。它和静电场里的点电荷地位完全一样：点电荷是电荷的最小单元，电流元是电流的最小单元。[[4]]为什么不能直接套库仑定律？因为库仑定律只对静止电荷成立。电流元里的电荷在运动，而且在导线里各处都在动，必须用新的规律。[[5]]注意一点：孤立的电流元在现实中做不出来，导线必须有回路。但电流元只是一个数学上的切块，积分回去就是真实导线，所以这个模型是合法的。[[6]]还有一件事要提醒：电流元产生的磁场 d B，垂直于电流元，也垂直于从电流元指向场点的那条连线。这一点下面马上会看到。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　电流元",
+        "size": 54,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 49,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "在载流导线上取一小段 $\\mathrm{d}l$，规定方向沿电流．",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 301,
+     "w": 700,
+     "h": 120,
+     "tex": "I\\,\\mathrm{d}\\vec l",
+     "size": 44,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 433,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "长度 × 电流，方向沿电流方向．",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 493,
+     "w": 740,
+     "h": 49,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "地位等同于静电场里的点电荷：",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 554,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "点电荷是电荷的最小单元，",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 614,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电流元是电流的最小单元．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 674,
+     "w": 740,
+     "h": 49,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "为什么不能套库仑定律？",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 735,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "库仑定律只对静止电荷成立；",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 795,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电流元里的电荷在运动．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 236,
+     "w": 765,
+     "h": 470,
+     "name": "biot_elem"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 736,
+     "w": 740,
+     "h": 190,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一个容易误解的地方",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "孤立电流元做不出来（导线要成回路）",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "它只是「切块」，积分回去就是真导线",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "一　电流元"
+  },
+  {
+   "id": 4,
+   "narration": "[[1]]现在写定律本身。[[2]]一个电流元在空间某点产生的磁感应强度 d B，大小正比于电流、正比于元长、正比于这个角的正弦，反比于距离的平方。[[3]]写成矢量式就是：d B 等于 μ₀ 除以四派，乘以 I d l 叉乘 r 的单位矢量，再除以 r 平方。[[4]]这里的 μ₀ 叫真空磁导率，数值是四派乘十的负七次方，单位是牛每安培平方。它和静电场的 ε₀ 地位相同，只是描述磁的性质。[[5]]叉乘带来了方向：d B 垂直于 I d l，也垂直于 r，也就是说，垂直于这两者构成的平面。[[6]]这个定律是实验总结出来的，不是从更基本的原理推出来的。它的地位相当于磁场里的库仑定律。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　毕奥-萨伐尔定律",
+        "size": 54,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 49,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一个电流元在场点产生的磁场：",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 301,
+     "w": 720,
+     "h": 140,
+     "tex": "\\mathrm{d}B=\\dfrac{\\mu_0}{4\\pi}\\dfrac{I\\,\\mathrm{d}l\\sin\\theta}{r^{2}}",
+     "size": 34,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 453,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "大小式：$\\theta$ 是 $\\mathrm{d}\\vec l$ 与 $\\vec r$ 的夹角．",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 513,
+     "w": 720,
+     "h": 140,
+     "tex": "\\mathrm{d}\\vec B=\\dfrac{\\mu_0}{4\\pi}\\dfrac{I\\,\\mathrm{d}\\vec l\\times\\hat r}{r^{2}}",
+     "size": 32,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 665,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "真空磁导率 $\\mu_0=4\\pi\\times10^{-7}\\ \\mathrm{N/A^{2}}$",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 725,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "方向：$\\mathrm{d}\\vec B\\perp\\mathrm{d}\\vec l$，且 $\\mathrm{d}\\vec B\\perp\\vec r$",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 785,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "地位：磁场里的「库仑定律」，由实验总结．",
+        "size": 31,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 230,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "两个式子怎么用",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "先算大小（标量式）",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "再定方向（叉乘，右手定则）",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "最后对整条导线积分",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 1010,
+     "y": 496,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "μ₀ 与 ε₀ 对照",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "ε₀ = 8.85×10⁻¹² F/m",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "μ₀ = 4π×10⁻⁷ N/A²",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "两者由光速联系：c² = 1/(ε₀μ₀)",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 726,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这一关系后来把光学并进了电磁学．",
+        "size": 31,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "二　毕奥-萨伐尔定律"
+  },
+  {
+   "id": 5,
+   "narration": "[[1]]单独说方向，因为这是最容易出错的地方。[[2]]d B 的方向由 I d l 叉乘 r 决定。判断方法：右手四指从电流元的方向，弯向从电流元指向场点的方向，拇指就指向 d B。[[3]]看图：电流元沿导线向右，场点在右上方，那么 d B 垂直于纸面向里。[[4]]这里有一个反直觉的地方：d B 不在纸面内，它垂直于纸面。所以画图时常用一个叉号表示向里、一个点表示向外，而不是画一支箭头。[[5]]还有一个常见的错误：把这个场点上的 d B 当成整条导线产生的 B。整条导线的 B 要把所有电流元的贡献叠加起来，方向可能完全不同，通常要重新判断。[[6]]记住这三个互相垂直的关系：d B 垂直于 d l，d B 垂直于 r，而 d l 和 r 在同一个平面内。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　方向与右手定则",
+        "size": 54,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 49,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "右手定则：",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 301,
+     "w": 740,
+     "h": 49,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四指从 $\\mathrm{d}\\vec l$ 弯向 $\\hat r$，",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 362,
+     "w": 740,
+     "h": 49,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "拇指指向 $\\mathrm{d}\\vec B$．",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 423,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "图中：$\\mathrm{d}\\vec l$ 向右，场点在右上方，",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 483,
+     "w": 740,
+     "h": 49,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "则 $\\mathrm{d}\\vec B$ 垂直纸面",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "向里",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 544,
+     "w": 740,
+     "h": 49,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "画法约定：",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 605,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "⊗ 向里　　⊙ 向外",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 667,
+     "w": 740,
+     "h": 168,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "常见错误",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "把某个电流元的 dB 当成整条导线的 B",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "整条导线要积分，方向可能完全不同",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 847,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三个垂直：$\\mathrm{d}\\vec B\\perp\\mathrm{d}\\vec l$、$\\mathrm{d}\\vec B\\perp\\vec r$",
+        "size": 31,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 985,
+     "y": 236,
+     "w": 765,
+     "h": 470,
+     "name": "biot_elem"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 736,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\mathrm{d}\\vec l$ 与 $\\vec r$ 张成一个平面，$\\mathrm{d}\\vec B$ 垂直于它．",
+        "size": 31,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "三　方向与右手定则"
+  },
+  {
+   "id": 6,
+   "narration": "[[1]]第一个例子，载流长直导线。[[2]]一根无限长细直导线，电流 I，求距它 a 处的磁感应强度。[[3]]取一个电流元，它到 P 点的距离是 r，r 与电流方向的夹角记作 θ。[[4]]关键观察：这根导线是直的，所有电流元都在同一条直线上，它们产生的 d B 方向全都相同，都垂直于纸面向里。[[5]]既然方向相同，矢量叠加就退化成大小相加，直接积分就行。这一点和静电场里带电直线的情形不同：那里电场在纸面内，要分解成垂直和平行两个分量，平行分量还得靠对称性抵消。磁场这里省了这一步。[[6]]下面就是把这个积分算出来。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1100,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例1　载流长直导线",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 49,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "无限长细直导线，电流 $I$．",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 301,
+     "w": 740,
+     "h": 49,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "求：距导线 $a$ 处的磁感应强度．",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 362,
+     "w": 740,
+     "h": 49,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "取电流元，到 $P$ 的距离 $r$，",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 423,
+     "w": 740,
+     "h": 49,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与电流方向夹角 $\\theta$．",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 484,
+     "w": 740,
+     "h": 49,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "关键：导线是直的 ⇒ 各电流元的",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 545,
+     "w": 740,
+     "h": 49,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\mathrm{d}\\vec B$ ",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "方向全部相同",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "（垂直纸面向里）．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 606,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "方向相同 ⇒ 矢量叠加退化为大小相加，",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 666,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "直接积分，不必分解．",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 726,
+     "w": 740,
+     "h": 176,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "与带电直线对比",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "电场在纸面内 → 要分解、靠对称消去",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "磁场垂直纸面 → 同向，直接相加",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 266,
+     "w": 765,
+     "h": 400,
+     "name": "biot_straight"
+    }
+   ],
+   "heading": "例1　载流长直导线"
+  },
+  {
+   "id": 7,
+   "narration": "[[1]]把积分做出来。[[2]]用角度做变量更省事：d l 可以用 r d θ 除以正弦来替换，整理之后得到有限长导线的结果：B 等于 μ₀ I 除以四派 a，乘以 cosθ₁ 减 cosθ₂。[[3]]θ₁ 和 θ₂ 是导线两端到 P 点的连线与电流方向的夹角。[[4]]现在取极限：导线两端伸到无穷远，θ₁ 取零、θ₂ 取派，两个余弦相减得二，于是 B 等于 μ₀ I 除以二派 a。[[5]]这个结果要记住：无限长直导线的磁场，和距离成反比，不像点电荷那样和距离平方成反比。原因和带电直线一样：离得再远，导线的两端仍在持续贡献。[[6]]半无限长导线则取一个角度为零、另一个为派的一半，结果是上式的一半。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1100,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例1　结果",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 49,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "有限长导线：",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 301,
+     "w": 720,
+     "h": 130,
+     "tex": "B=\\dfrac{\\mu_0 I}{4\\pi a}(\\cos\\theta_1-\\cos\\theta_2)",
+     "size": 30,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 443,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\theta_1$、$\\theta_2$：两端连线与电流方向的夹角．",
+        "size": 31,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 501,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "无限长：$\\theta_1=0$，$\\theta_2=\\pi$ ⇒",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 561,
+     "w": 720,
+     "h": 130,
+     "tex": "B=\\dfrac{\\mu_0 I}{2\\pi a}",
+     "size": 40,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 703,
+     "w": 740,
+     "h": 49,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与距离成 ",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "反比",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "，不是平方反比．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 764,
+     "w": 740,
+     "h": 45,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "原因：导线无限长，离得再远两端仍在贡献．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 821,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "半无限长：$\\theta_1=0$，$\\theta_2=\\pi/2$ ⇒ 结果减半．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 1010,
+     "y": 246,
+     "w": 740,
+     "h": 230,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "三个量级对照",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "点电荷　　E ∝ 1/r²",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "带电直线　E ∝ 1/a",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "载流直线　B ∝ 1/a",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 506,
+     "w": 740,
+     "h": 210,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "方向怎么判",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "右手定则：拇指沿电流，",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "四指绕导线弯曲的方向即 B",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "磁感线是同心圆",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 746,
+     "w": 740,
+     "h": 45,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这个结果是 7-4 安培环路定理的最简验证对象．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "例1　结果"
+  },
+  {
+   "id": 8,
+   "narration": "[[1]]第二个例子，圆形载流导线。[[2]]半径 R、电流 I 的圆环，求轴线上距圆心 x 处的磁场。[[3]]取一个电流元，它到 P 的距离都是根号下 R 平方加 x 平方，所以每个电流元产生的 d B 大小相同。[[4]]但方向不同：d B 垂直于电流元、垂直于 r。把它分解成沿轴和垂直轴两个方向。[[5]]垂直轴的分量绕环一周，两两相消；只剩沿轴的分量。这和带电圆环的电场是同一个道理。[[6]]积分得到 B 等于 μ₀ I R 平方，除以二倍 R 平方加 x 平方的二分之三次方。两个特例要记住：圆心处 x 取零，B 等于 μ₀ I 除以 2R；远处 x 远大于 R，B 按 x 的三次方衰减，比点电荷快一阶。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1100,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例2　圆环轴线上的磁场",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 238,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "半径 $R$、电流 $I$ 的圆环，求轴线上距圆心 $x$ 处的 $B$．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 298,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "各电流元到 $P$ 的距离相同：",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 358,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$r=\\sqrt{R^{2}+x^{2}}$ ⇒ $\\mathrm{d}B$ 大小相同．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 416,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "方向不同 ⇒ 分解：",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 476,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "垂直轴分量绕环一周",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "相消",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "；",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 536,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只剩沿轴分量．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 594,
+     "w": 720,
+     "h": 140,
+     "tex": "B=\\dfrac{\\mu_0 I R^{2}}{2(R^{2}+x^{2})^{3/2}}",
+     "size": 32,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 746,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "圆心 $x=0$：$B=\\dfrac{\\mu_0 I}{2R}$",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 806,
+     "w": 740,
+     "h": 45,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "远处 $x\\gg R$：$B\\propto 1/x^{3}$（比点电荷快一阶）",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 863,
+     "w": 740,
+     "h": 43,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "圆环中心是均匀磁场区的典型来源（亥姆霍兹线圈）．",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 256,
+     "w": 765,
+     "h": 430,
+     "name": "biot_ring_axis"
+    }
+   ],
+   "heading": "例2　圆环轴线上的磁场"
+  },
+  {
+   "id": 9,
+   "narration": "[[1]]第三个例子，载流螺线管。[[2]]把导线密绕在圆柱面上，每单位长度 n 匝，通电流 I。[[3]]可以把它看成一串圆环叠起来，每个圆环在轴线上产生一份磁场，全部叠加。[[4]]结果很干净：管内的磁场沿轴方向，大小等于 μ₀ 乘以 n 再乘以 I，和位置无关，是匀强磁场。[[5]]条件是这个螺线管足够长，长度远大于直径，这样端点效应可以忽略。[[6]]管外的磁场很弱，而且磁感线要闭合回来，所以外部的分布很像一根条形磁铁：一端是 N 极，一端是 S 极。这一条后面讲磁介质和电磁铁时要反复用，它是「用电流造出一个均匀磁场」的标准办法。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1100,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例3　载流螺线管",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 49,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "导线密绕在圆柱面上，",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 301,
+     "w": 740,
+     "h": 49,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "单位长度 $n$ 匝，电流 $I$．",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 362,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "看成 $n$ 个圆环的叠加：",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 422,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "每个圆环贡献一份轴向磁场．",
+        "size": 31,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 480,
+     "w": 720,
+     "h": 130,
+     "tex": "B=\\mu_0 n I",
+     "size": 42,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 622,
+     "w": 740,
+     "h": 49,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "管内：",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "匀强",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "，方向沿轴，与位置无关．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 683,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "条件：长度 $\\gg$ 直径（忽略端点效应）．",
+        "size": 31,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 741,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "管外很弱，磁感线闭合回来 ⇒",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 799,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "外部像一根条形磁铁．",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 736,
+     "w": 740,
+     "h": 190,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "为什么这条重要",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "它是「用电流造均匀磁场」的标准办法",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "电磁铁、磁共振、粒子加速器都用它",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 985,
+     "y": 236,
+     "w": 765,
+     "h": 470,
+     "name": "biot_solenoid"
+    }
+   ],
+   "heading": "例3　载流螺线管"
+  },
+  {
+   "id": 10,
+   "narration": "[[1]]最后一步，把电流换成一个运动的电荷。[[2]]电流元可以写成电荷乘以速度：I d l 等于 d q 乘以 v。代进毕奥-萨伐尔定律，就得到运动电荷的磁场。[[3]]B 等于 μ₀ 除以四派，乘以 q v 叉乘 r 的单位矢量，再除以 r 平方。[[4]]这个式子和电流元的式子完全同形，只是把 I d l 换成了 q v。[[5]]它说明一件事：磁场的根源是运动的电荷，静止的电荷不产生磁场。[[6]]同时也解释了两件事：为什么电流会产生磁场，为什么磁场只对运动的电荷有力的作用。因为场和受力，两边都只认「运动」这件事。这个式子在原子物理里很有用：电子绕核运动，相当于一个小电流环，产生原子的磁矩。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1100,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　运动电荷的磁场",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "把电流元换成电荷：",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 300,
+     "w": 720,
+     "h": 110,
+     "tex": "I\\,\\mathrm{d}\\vec l=\\mathrm{d}q\\,\\vec v",
+     "size": 32,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 422,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "代入毕奥-萨伐尔定律：",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 482,
+     "w": 720,
+     "h": 130,
+     "tex": "\\vec B=\\dfrac{\\mu_0}{4\\pi}\\dfrac{q\\,\\vec v\\times\\hat r}{r^{2}}",
+     "size": 30,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 624,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与电流元式同形，只是 $I\\mathrm{d}\\vec l\\to q\\vec v$．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 682,
+     "w": 740,
+     "h": 49,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "结论：磁场的根源是",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "运动的电荷",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 743,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "静止电荷不产生磁场；",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 801,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁场也只对运动电荷施力．",
+        "size": 31,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 736,
+     "w": 740,
+     "h": 190,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "延伸到原子尺度",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "电子绕核 ≈ 一个小电流环",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "由此产生原子磁矩（7-8 讲）",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 985,
+     "y": 236,
+     "w": 765,
+     "h": 470,
+     "name": "biot_moving_charge"
+    }
+   ],
+   "heading": "四　运动电荷的磁场"
+  },
+  {
+   "id": 11,
+   "narration": "[[1]]做一道例题，把直导线的结果用起来。[[2]]两根平行长直导线，相距 d，都通电流 I。[[3]]第一问：电流同向，求两导线中点处的磁感应强度。[[4]]左边导线在中点产生的 B 垂直纸面向里，右边导线产生的 B 垂直纸面向外，两者大小相同，正好抵消，所以中点处 B 等于零。[[5]]第二问：电流反向，中点处的磁场。这时两个 B 方向相同，叠加，大小是单根的两倍，也就是 μ₀ I 除以派 d。[[6]]这道题的关键不是算，而是判断方向。方向判断错了，第一问会答成两倍，第二问会答成零，刚好反过来。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例题　两平行长直导线",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两根平行长直导线，相距 $d$，电流均为 $I$．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 300,
+     "w": 740,
+     "h": 49,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "问1：同向电流，中点处的 $B$．",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 361,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "左导线在中点：$B$ 向里；",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 421,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "右导线在中点：$B$ 向外．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 481,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "大小相同 ⇒ ",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "互相抵消，中点 B = 0",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 541,
+     "w": 740,
+     "h": 49,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "问2：反向电流，中点处的 $B$．",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 602,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两个 $B$ 方向相同 ⇒ 叠加：",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 662,
+     "w": 720,
+     "h": 130,
+     "tex": "B=2\\cdot\\dfrac{\\mu_0 I}{2\\pi(d/2)}=\\dfrac{2\\mu_0 I}{\\pi d}",
+     "size": 28,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 804,
+     "w": 740,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "关键在判断方向，不在算",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "方向判反，两问答案刚好互换",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 1010,
+     "y": 246,
+     "w": 740,
+     "h": 240,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "单根导线在中点的场",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$B_0=\\dfrac{\\mu_0 I}{2\\pi(d/2)}=\\dfrac{\\mu_0 I}{\\pi d}$",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "同向：相减 → 0",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "反向：相加 → 2B₀",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 516,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同向电流的两根导线会相互吸引——",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 574,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这是「安培」的定义基础（7-5 讲）．",
+        "size": 31,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "例题　两平行长直导线"
+  },
+  {
+   "id": 12,
+   "narration": "[[1]]小结。[[2]]第一，电流元：一段短导线带电流，方向沿电流，地位等同于点电荷。[[3]]第二，毕奥-萨伐尔定律：d B 正比于 I d l、正比于正弦、反比于 r 平方，方向由叉乘给出，垂直于 d l 和 r 张成的平面。[[4]]第三，三条要背下来的结果：无限长直导线 B 等于 μ₀I 除以二派 a；圆环圆心 B 等于 μ₀I 除以 2R；螺线管内 B 等于 μ₀nI。[[5]]第四，运动电荷的磁场：把 I d l 换成 q v 就行，磁场只由运动的电荷产生。[[6]]下一节讲磁通量和磁场的高斯定理，它和这一节一起，构成恒定磁场的完整描述。这一节的方法论值得记一下：先切元、写微分规律、再积分。这套路子在整个电磁学里通用。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 54,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 49,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 电流元",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 297,
+     "w": 740,
+     "h": 45,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$I\\mathrm{d}\\vec l$，方向沿电流；地位同点电荷．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 354,
+     "w": 740,
+     "h": 49,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 毕奥-萨伐尔定律",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 415,
+     "w": 700,
+     "h": 110,
+     "tex": "\\mathrm{d}\\vec B=\\dfrac{\\mu_0}{4\\pi}\\dfrac{I\\mathrm{d}\\vec l\\times\\hat r}{r^{2}}",
+     "size": 24,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 537,
+     "w": 740,
+     "h": 49,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 三条必背结果",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 598,
+     "w": 740,
+     "h": 45,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "无限长直导线　$B=\\mu_0 I/(2\\pi a)$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 655,
+     "w": 740,
+     "h": 45,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "圆环圆心　　　$B=\\mu_0 I/(2R)$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 712,
+     "w": 740,
+     "h": 45,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "螺线管内部　　$B=\\mu_0 nI$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 49,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 运动电荷",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 297,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\vec B=\\dfrac{\\mu_0}{4\\pi}\\dfrac{q\\vec v\\times\\hat r}{r^{2}}$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 353,
+     "w": 740,
+     "h": 45,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁场只由运动电荷产生．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 410,
+     "w": 740,
+     "h": 49,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "⑤ 方法论",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 471,
+     "w": 740,
+     "h": 45,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "切元 → 写微分规律 → 积分叠加",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 528,
+     "w": 740,
+     "h": 45,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与静电场完全平行．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 756,
+     "w": 1580,
+     "h": 180,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "下一节：磁通量与磁场的高斯定理",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "磁感线闭合，穿过任意闭合面的净磁通量为零",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "从「源」和「通量」两边合起来，恒定磁场的描述才完整",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 960,
+     "w": 1580,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这一节只做了一件事：把「电流」和「磁场」用一条微分规律连起来．",
+        "size": 31,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "本节小结"
+  }
+ ]
+}

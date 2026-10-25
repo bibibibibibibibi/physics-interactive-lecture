@@ -1,0 +1,2933 @@
+{
+ "title": "14-3 狭义相对论的基本原理 洛伦兹变换式",
+ "nav": "14-3　基本原理 洛伦兹变换",
+ "footer": "第十四章　相对论",
+ "character": "aqiang",
+ "characters": [
+  {
+   "id": "aqiang",
+   "name": "阿强"
+  },
+  {
+   "id": "professor",
+   "name": "博士讲师"
+  },
+  {
+   "id": "zhongshan",
+   "name": "中山装先生"
+  }
+ ],
+ "duration": 334.85,
+ "slides": [
+  {
+   "id": 1,
+   "kind": "page",
+   "heading": "封面",
+   "narration": "第十四章第三节。14-3，狭义相对论的两条基本原理，以及洛伦兹变换式。上一节把旧的地基挖空了，这一节开始重建。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 282,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 十 四 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 300,
+     "y": 408,
+     "w": 1320,
+     "h": 170,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "相 对 论",
+        "size": 92,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 250,
+     "y": 588,
+     "w": 1420,
+     "h": 120,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "14-3　基本原理　洛伦兹变换式",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 220,
+     "y": 730,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "相对性原理　·　光速不变　·　洛伦兹变换　·　速度变换",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 850,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "旧的地基挖空了，现在重建",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 0.0,
+    "2": 2.78,
+    "3": 8.99
+   },
+   "t_start": 0.0,
+   "t_end": 14.33,
+   "duration": 14.33,
+   "laser": []
+  },
+  {
+   "id": 2,
+   "kind": "page",
+   "heading": "本节路线",
+   "narration": "本节路线。先认识爱因斯坦，1905 年他提出狭义相对论。然后是他立的两条原理：相对性原理和光速不变原理。由这两条，可以推出新的时空变换——洛伦兹变换。它和伽利略变换差一个因子 γ，低速时 γ 趋于 1，就退回去了。最后是速度变换，并用它验证光速不变。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节路线",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 244,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "主线：爱因斯坦 → 两条原理 → 洛伦兹变换 → γ 因子 → 速度变换",
+        "size": 27,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1　爱因斯坦",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 386,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1905 年，狭义相对论",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 458,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2　两条基本原理",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 512,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "相对性 · 光速不变",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 584,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "3　洛伦兹坐标变换",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 638,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "时间与空间耦合",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 330,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4　低速极限",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 386,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "γ 趋于 1，回到伽利略",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 458,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "5　洛伦兹速度变换",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 512,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "速度不再简单相加",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 584,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "6　光速不变检验",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 638,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "公式自己给出 c",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "本节收口：两条原理 + 一个变换，新的时空观就立起来了",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 15.13,
+    "2": 17.4,
+    "3": 23.01,
+    "4": 28.93,
+    "5": 34.32,
+    "6": 41.18
+   },
+   "t_start": 15.13,
+   "t_end": 46.33,
+   "duration": 31.2,
+   "laser": []
+  },
+  {
+   "id": 3,
+   "kind": "page",
+   "heading": "一　爱因斯坦",
+   "narration": "先说人。爱因斯坦，1879 年到 1955 年，二十世纪最伟大的物理学家之一。1905 年，他一年之内发表了五篇论文，其中一篇就是狭义相对论。同年他还提出了光量子假设，后来因此拿了诺贝尔奖。1915 年，他又把相对论推广到加速系和引力，就是广义相对论。一个人一生改写两次物理学的根基，这在科学史上没有第二个。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　爱因斯坦",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1879 — 1955",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二十世纪最伟大的物理学家之一",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1905 年：狭义相对论",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 402,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同年：光量子假设",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 462,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1915 年：广义相对论",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1905：奇迹年",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 292,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一年之内发表五篇论文",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 338,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "每一篇都足以名垂青史",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 398,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1921 年诺贝尔物理学奖",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 444,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（因光电效应，不是相对论）",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 560,
+     "w": 1580,
+     "h": 150,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "他做的事，是把「时间」和「空间」从绝对变成相对",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "这需要的不是数学，而是敢于怀疑常识的勇气",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 760,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "相对论不是从实验数据里「拟合」出来的，是从两条原理推出来的",
+        "size": 26,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 47.13,
+    "2": 49.4,
+    "3": 56.57,
+    "4": 63.88,
+    "5": 69.25,
+    "6": 76.44
+   },
+   "t_start": 47.13,
+   "t_end": 82.99,
+   "duration": 35.86,
+   "laser": []
+  },
+  {
+   "id": 4,
+   "kind": "page",
+   "heading": "二　相对性原理",
+   "narration": "第一条：相对性原理。物理定律在所有惯性系中都具有相同的表达形式。也就是说，所有惯性系对运动的描述都是等效的。注意这里说的是「物理定律」，不只是力学定律——爱因斯坦把伽利略的船舱推广到了全部物理。想一想：如果电磁定律也这样，会带来什么麻烦？所以你在封闭的船舱里，不管做力学实验、电磁实验还是光学实验，都分不出船是静止还是在匀速运动。这条原理其实很「保守」：它只是要求物理定律不该挑参考系。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　相对性原理",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "物理定律在所有惯性系中",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 282,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "具有相同的表达形式",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 342,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所有惯性系对运动的描述都等效",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 402,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "注意：是「物理定律」",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 448,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不只力学，还包括电磁和光",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这就是伽利略船舱的推广",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 292,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "力学实验分不出",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 338,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电磁实验也分不出",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 384,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "光学实验同样分不出",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 520,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "这条原理其实很「保守」：只是要求物理定律不挑参考系",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "但它一旦包括电磁学，就和伽利略变换冲突了 —— 这正是难点",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 700,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以爱因斯坦的选择是：保住原理，改掉变换",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 772,
+     "w": 1580,
+     "h": 130,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "「所有惯性系都平权」这句话，本身就是对绝对参考系的否定",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "如果存在一个特殊的以太系，相对性原理就破了",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 83.79,
+    "2": 86.93,
+    "3": 92.32,
+    "4": 97.78,
+    "5": 111.39,
+    "6": 121.7
+   },
+   "t_start": 83.79,
+   "t_end": 128.41,
+   "duration": 44.62,
+   "laser": []
+  },
+  {
+   "id": 5,
+   "kind": "page",
+   "heading": "三　光速不变原理",
+   "narration": "第二条：光速不变原理。真空中的光速是常量，沿各个方向都等于 c。它与光源的运动状态无关。也与观测者的运动状态无关。这一条非常「不保守」——它直接和速度合成公式冲突。想一想：如果光速真的能叠加，迈克耳孙实验该看到什么？但迈克耳孙-莫雷实验的零结果，正站在它这一边。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　光速不变原理",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 760,
+     "h": 180,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": null,
+     "tex": "c=2.998\\times10^{8}\\ \\mathrm{m/s}",
+     "size": 26,
+     "align": "center",
+     "color": "#C00000"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 450,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "沿各个方向都等于 $c$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 510,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与光源的运动无关",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 570,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与观测者的运动无关",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这一条非常「不保守」",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 292,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "它直接和速度合成冲突",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 338,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "按常识，追光就该更快",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 398,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "但实验站在它这一边",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 444,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "迈克耳孙-莫雷：零结果",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 650,
+     "w": 1580,
+     "h": 150,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "两条原理合起来的力量",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "相对性原理要求「所有惯性系一样」，光速不变要求「光速是个常数」",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 850,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这两条一旦同时成立，时间就不得不变成相对的 —— 下一节的结论",
+        "size": 26,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 129.21,
+    "2": 132.56,
+    "3": 137.66,
+    "4": 140.82,
+    "5": 144.2,
+    "6": 156.31
+   },
+   "t_start": 129.21,
+   "t_end": 162.04,
+   "duration": 32.83,
+   "laser": []
+  },
+  {
+   "id": 6,
+   "kind": "page",
+   "heading": "四　洛伦兹坐标变换",
+   "narration": "从这两条原理出发，可以推出新的变换。设 t 等于零时两原点重合，S′ 以 u 沿 x 轴运动。设 γ 等于 1 比上根号下一减 u² 比 c²。正变换是：x′ 等于 γ 乘 x 减 ut，t′ 等于 γ 乘 t 减 ux 比 c²。注意第二式：t′ 里居然有 x。时间和空间不再分家，这是相对论最核心的变化。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　洛伦兹坐标变换",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 437,
+     "name": "lorentz_frames"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "由两条原理推出",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 282,
+     "w": 740,
+     "h": 100,
+     "tex": "\\gamma=\\frac{1}{\\sqrt{1-u^2/c^2}}",
+     "size": 26,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 400,
+     "w": 740,
+     "h": 40,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "正变换",
+        "size": 27,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 442,
+     "w": 740,
+     "h": 90,
+     "tex": "x'=\\gamma(x-ut)",
+     "size": 28,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 542,
+     "w": 740,
+     "h": 110,
+     "tex": "t'=\\gamma\\left(t-\\frac{ux}{c^2}\\right)",
+     "size": 28,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 668,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$t'$ 里出现了 $x$",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 130,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "时间与空间不再是两回事，而是被 $u$ 耦合在一起",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "这就是「时空」这个词的来历",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 162.84,
+    "2": 167.2,
+    "3": 173.07,
+    "4": 178.75,
+    "5": 187.05,
+    "6": 190.93
+   },
+   "t_start": 162.84,
+   "t_end": 196.46,
+   "duration": 33.62,
+   "laser": []
+  },
+  {
+   "id": 7,
+   "kind": "page",
+   "heading": "五　逆变换与低速极限",
+   "narration": "逆变换只要把 u 换成负 u。x 等于 γ 乘 x′ 加 ut′，t 等于 γ 乘 t′ 加 ux′ 比 c²。这很自然：在 S′ 看来，S 是以负 u 运动的。低速时会发生什么？u 远小于 c，γ 就趋于 1。代进去，x′ 等于 x 减 ut，t′ 等于 t——正好退回伽利略变换。所以伽利略变换是洛伦兹变换在低速下的近似。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五　逆变换与低速极限",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 400,
+     "name": "gamma_curve"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "逆变换：$u\\to-u$",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 282,
+     "w": 740,
+     "h": 90,
+     "tex": "x=\\gamma(x'+ut')",
+     "size": 26,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 382,
+     "w": 740,
+     "h": 100,
+     "tex": "t=\\gamma\\left(t'+\\frac{ux'}{c^2}\\right)",
+     "size": 26,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 500,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "低速：$u\\ll c$ ⇒ $\\gamma\\to1$",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 560,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "于是退回：$x'=x-ut$，$t'=t$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 620,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "伽利略变换是低速近似",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 690,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "新旧不是对立的，而是包含关系",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "相对论在低速下自动回到经典 —— 这叫「对应原理」",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 197.26,
+    "2": 200.85,
+    "3": 208.04,
+    "4": 213.26,
+    "5": 220.02,
+    "6": 227.16
+   },
+   "t_start": 197.26,
+   "t_end": 233.12,
+   "duration": 35.86,
+   "laser": []
+  },
+  {
+   "id": 8,
+   "kind": "page",
+   "heading": "六　洛伦兹速度变换",
+   "narration": "把坐标变换求导，就得到速度变换。正变换是：v′ₓ 等于 vₓ 减 u，再除以一减 u vₓ 比 c²。分母里多了一项，这正是它和伽利略速度合成的区别。低速时，分母趋于 1，就回到 v′ₓ 等于 vₓ 减 u。逆变换把 u 换成负 u。注意：速度合成不再是简单相加，因为分母会「压缩」结果。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "六　洛伦兹速度变换",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "正变换",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 282,
+     "w": 760,
+     "h": 130,
+     "tex": "v'_x=\\frac{v_x-u}{1-\\dfrac{uv_x}{c^2}}",
+     "size": 28,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 430,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "逆变换",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 476,
+     "w": 760,
+     "h": 130,
+     "tex": "v_x=\\frac{v'_x+u}{1+\\dfrac{uv'_x}{c^2}}",
+     "size": 28,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "和伽利略差在哪",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 292,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "多了分母 $1\\pm uv/c^2$",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 352,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "低速：分母趋于 1",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 398,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "⇒ $v'_x=v_x-u$",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 470,
+     "w": 740,
+     "h": 170,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "分母的作用",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "把结果「压」在 $c$ 以内",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "无论怎么加，都超不过光速",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "这就是光速上限的机制",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 640,
+     "w": 1580,
+     "h": 130,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "所以「速度合成」在相对论里是一道非线性公式",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "两个 0.9c 相加，结果不是 1.8c，而是约 0.994c",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 233.92,
+    "2": 238.21,
+    "3": 244.95,
+    "4": 250.44,
+    "5": 255.81,
+    "6": 259.23
+   },
+   "t_start": 233.92,
+   "t_end": 265.7,
+   "duration": 31.78,
+   "laser": []
+  },
+  {
+   "id": 9,
+   "kind": "page",
+   "heading": "七　公式自己给出光速不变",
+   "narration": "用这个公式检验一下光速。设 S 系里沿 x 方向发一个光信号，vₓ 等于 c。代进正变换：分子是 c 减 u，分母是一减 uc 比 c²，也就是一减 u 比 c。分子提出一个 c，和分母约掉，剩下 c。所以 v′ₓ 还是等于 c。不管 S′ 跑多快，看到的光速都是 c——这就是光速不变原理的数学体现。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "七　公式自己给出光速不变",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "设 $v_x=c$",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 282,
+     "w": 760,
+     "h": 130,
+     "tex": "v'_x=\\frac{c-u}{1-\\dfrac{uc}{c^2}}",
+     "size": 28,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 430,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "分母：$1-u/c$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 476,
+     "w": 760,
+     "h": 110,
+     "tex": "=\\frac{c-u}{(c-u)/c}=c",
+     "size": 28,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 600,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以 $v'_x=c$，与 $u$ 无关",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这就是数学上的保证",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 292,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不必额外假设",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 338,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "公式自然给出",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 410,
+     "w": 740,
+     "h": 180,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "反过来看",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "如果两个惯性系里光速不同",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "那就得另找一套变换",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "洛伦兹变换正是为此而生",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 690,
+     "w": 1580,
+     "h": 130,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "光速不变不是硬塞进去的假设，而是变换的必然结果",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "这也解释了为什么地球上测不出以太风 —— 本来就没有",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 266.5,
+    "2": 269.97,
+    "3": 275.46,
+    "4": 283.47,
+    "5": 288.0,
+    "6": 291.21
+   },
+   "t_start": 266.5,
+   "t_end": 298.49,
+   "duration": 31.99,
+   "laser": []
+  },
+  {
+   "id": 10,
+   "kind": "page",
+   "heading": "本节小结",
+   "narration": "小结。两条原理：物理定律在所有惯性系中形式相同，真空光速与光源、观测者无关。洛伦兹变换把时间和空间耦合成时空，γ 是核心因子。低速时 γ 趋于 1，退回伽利略变换。速度变换多了个分母，保证结果不超过 c。下一节看这个新时空观带来的具体效应：同时性的相对性、钟慢、尺缩。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 两条原理",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "相对性原理 · 光速不变原理",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 洛伦兹变换",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 408,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "时间与空间被 $u$ 耦合成时空",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ γ 因子",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "低速趋于 1，$u\\to c$ 时趋于无穷",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 356,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 速度变换",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 408,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "分母 $1\\pm uv/c^2$ 保证不超过 $c$",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 470,
+     "w": 740,
+     "h": 170,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "下一节",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "14-4　狭义相对论的时空观",
+        "size": 23,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "同时、钟慢、尺缩",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 490,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一句话",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "两条原理",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "一套变换",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "一个新的时空",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 120,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "第十四章 3/8：不是修补，是重建",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 299.29,
+    "2": 301.56,
+    "3": 310.1,
+    "4": 316.33,
+    "5": 325.5
+   },
+   "t_start": 299.29,
+   "t_end": 333.42,
+   "duration": 34.13,
+   "laser": []
+  }
+ ],
+ "subtitles": [
+  {
+   "slide": 1,
+   "start": 0.0,
+   "end": 2.38,
+   "text": "第十四章第三节。"
+  },
+  {
+   "slide": 1,
+   "start": 2.78,
+   "end": 8.59,
+   "text": "14-3，狭义相对论的两条基本原理，以及洛伦兹变换式。"
+  },
+  {
+   "slide": 1,
+   "start": 8.99,
+   "end": 13.77,
+   "text": "上一节把旧的地基挖空了，这一节开始重建。"
+  },
+  {
+   "slide": 2,
+   "start": 15.13,
+   "end": 17.0,
+   "text": "本节路线。"
+  },
+  {
+   "slide": 2,
+   "start": 17.4,
+   "end": 22.61,
+   "text": "先认识爱因斯坦，1905 年他提出狭义相对论。"
+  },
+  {
+   "slide": 2,
+   "start": 23.01,
+   "end": 28.53,
+   "text": "然后是他立的两条原理：相对性原理和光速不变原理。"
+  },
+  {
+   "slide": 2,
+   "start": 28.93,
+   "end": 33.92,
+   "text": "由这两条，可以推出新的时空变换——洛伦兹变换。"
+  },
+  {
+   "slide": 2,
+   "start": 34.32,
+   "end": 40.78,
+   "text": "它和伽利略变换差一个因子 γ，低速时 γ 趋于 1，就退回去了。"
+  },
+  {
+   "slide": 2,
+   "start": 41.18,
+   "end": 45.6,
+   "text": "最后是速度变换，并用它验证光速不变。"
+  },
+  {
+   "slide": 3,
+   "start": 47.13,
+   "end": 49.0,
+   "text": "先说人。"
+  },
+  {
+   "slide": 3,
+   "start": 49.4,
+   "end": 56.17,
+   "text": "爱因斯坦，1879 年到 1955 年，二十世纪最伟大的物理学家之一。"
+  },
+  {
+   "slide": 3,
+   "start": 56.57,
+   "end": 63.48,
+   "text": "1905 年，他一年之内发表了五篇论文，其中一篇就是狭义相对论。"
+  },
+  {
+   "slide": 3,
+   "start": 63.88,
+   "end": 68.85,
+   "text": "同年他还提出了光量子假设，后来因此拿了诺贝尔奖。"
+  },
+  {
+   "slide": 3,
+   "start": 69.25,
+   "end": 76.04,
+   "text": "1915 年，他又把相对论推广到加速系和引力，就是广义相对论。"
+  },
+  {
+   "slide": 3,
+   "start": 76.44,
+   "end": 82.25,
+   "text": "一个人一生改写两次物理学的根基，这在科学史上没有第二个。"
+  },
+  {
+   "slide": 4,
+   "start": 83.79,
+   "end": 86.53,
+   "text": "第一条：相对性原理。"
+  },
+  {
+   "slide": 4,
+   "start": 86.93,
+   "end": 91.92,
+   "text": "物理定律在所有惯性系中都具有相同的表达形式。"
+  },
+  {
+   "slide": 4,
+   "start": 92.32,
+   "end": 97.38,
+   "text": "也就是说，所有惯性系对运动的描述都是等效的。"
+  },
+  {
+   "slide": 4,
+   "start": 97.78,
+   "end": 105.56,
+   "text": "注意这里说的是「物理定律」，不只是力学定律——爱因斯坦把伽利略的船舱推广到了全部物理。"
+  },
+  {
+   "slide": 4,
+   "start": 105.96,
+   "end": 110.74,
+   "text": "想一想：如果电磁定律也这样，会带来什么麻烦？"
+  },
+  {
+   "slide": 4,
+   "start": 111.39,
+   "end": 121.3,
+   "text": "所以你在封闭的船舱里，不管做力学实验、电磁实验还是光学实验，都分不出船是静止还是在匀速运动。"
+  },
+  {
+   "slide": 4,
+   "start": 121.7,
+   "end": 127.6,
+   "text": "这条原理其实很「保守」：它只是要求物理定律不该挑参考系。"
+  },
+  {
+   "slide": 5,
+   "start": 129.21,
+   "end": 132.16,
+   "text": "第二条：光速不变原理。"
+  },
+  {
+   "slide": 5,
+   "start": 132.56,
+   "end": 137.26,
+   "text": "真空中的光速是常量，沿各个方向都等于 c。"
+  },
+  {
+   "slide": 5,
+   "start": 137.66,
+   "end": 140.42,
+   "text": "它与光源的运动状态无关。"
+  },
+  {
+   "slide": 5,
+   "start": 140.82,
+   "end": 143.8,
+   "text": "也与观测者的运动状态无关。"
+  },
+  {
+   "slide": 5,
+   "start": 144.2,
+   "end": 149.38,
+   "text": "这一条非常「不保守」——它直接和速度合成公式冲突。"
+  },
+  {
+   "slide": 5,
+   "start": 149.78,
+   "end": 155.66,
+   "text": "想一想：如果光速真的能叠加，迈克耳孙实验该看到什么？"
+  },
+  {
+   "slide": 5,
+   "start": 156.31,
+   "end": 161.23,
+   "text": "但迈克耳孙-莫雷实验的零结果，正站在它这一边。"
+  },
+  {
+   "slide": 6,
+   "start": 162.84,
+   "end": 166.8,
+   "text": "从这两条原理出发，可以推出新的变换。"
+  },
+  {
+   "slide": 6,
+   "start": 167.2,
+   "end": 172.67,
+   "text": "设 t 等于零时两原点重合，S′ 以 u 沿 x 轴运动。"
+  },
+  {
+   "slide": 6,
+   "start": 173.07,
+   "end": 178.35,
+   "text": "设 γ 等于 1 比上根号下一减 u² 比 c²。"
+  },
+  {
+   "slide": 6,
+   "start": 178.75,
+   "end": 186.65,
+   "text": "正变换是：x′ 等于 γ 乘 x 减 ut，t′ 等于 γ 乘 t 减 ux 比 c²。"
+  },
+  {
+   "slide": 6,
+   "start": 187.05,
+   "end": 190.53,
+   "text": "注意第二式：t′ 里居然有 x。"
+  },
+  {
+   "slide": 6,
+   "start": 190.93,
+   "end": 195.73,
+   "text": "时间和空间不再分家，这是相对论最核心的变化。"
+  },
+  {
+   "slide": 7,
+   "start": 197.26,
+   "end": 200.45,
+   "text": "逆变换只要把 u 换成负 u。"
+  },
+  {
+   "slide": 7,
+   "start": 200.85,
+   "end": 207.64,
+   "text": "x 等于 γ 乘 x′ 加 ut′，t 等于 γ 乘 t′ 加 ux′ 比 c²。"
+  },
+  {
+   "slide": 7,
+   "start": 208.04,
+   "end": 212.86,
+   "text": "这很自然：在 S′ 看来，S 是以负 u 运动的。"
+  },
+  {
+   "slide": 7,
+   "start": 213.26,
+   "end": 215.49,
+   "text": "低速时会发生什么？"
+  },
+  {
+   "slide": 7,
+   "start": 216.14,
+   "end": 219.62,
+   "text": "u 远小于 c，γ 就趋于 1。"
+  },
+  {
+   "slide": 7,
+   "start": 220.02,
+   "end": 226.76,
+   "text": "代进去，x′ 等于 x 减 ut，t′ 等于 t——正好退回伽利略变换。"
+  },
+  {
+   "slide": 7,
+   "start": 227.16,
+   "end": 232.3,
+   "text": "所以伽利略变换是洛伦兹变换在低速下的近似。"
+  },
+  {
+   "slide": 8,
+   "start": 233.92,
+   "end": 237.81,
+   "text": "把坐标变换求导，就得到速度变换。"
+  },
+  {
+   "slide": 8,
+   "start": 238.21,
+   "end": 244.55,
+   "text": "正变换是：v′ₓ 等于 vₓ 减 u，再除以一减 u vₓ 比 c²。"
+  },
+  {
+   "slide": 8,
+   "start": 244.95,
+   "end": 250.04,
+   "text": "分母里多了一项，这正是它和伽利略速度合成的区别。"
+  },
+  {
+   "slide": 8,
+   "start": 250.44,
+   "end": 255.41,
+   "text": "低速时，分母趋于 1，就回到 v′ₓ 等于 vₓ 减 u。"
+  },
+  {
+   "slide": 8,
+   "start": 255.81,
+   "end": 258.83,
+   "text": "逆变换把 u 换成负 u。"
+  },
+  {
+   "slide": 8,
+   "start": 259.23,
+   "end": 264.97,
+   "text": "注意：速度合成不再是简单相加，因为分母会「压缩」结果。"
+  },
+  {
+   "slide": 9,
+   "start": 266.5,
+   "end": 269.57,
+   "text": "用这个公式检验一下光速。"
+  },
+  {
+   "slide": 9,
+   "start": 269.97,
+   "end": 275.06,
+   "text": "设 S 系里沿 x 方向发一个光信号，vₓ 等于 c。"
+  },
+  {
+   "slide": 9,
+   "start": 275.46,
+   "end": 283.07,
+   "text": "代进正变换：分子是 c 减 u，分母是一减 uc 比 c²，也就是一减 u 比 c。"
+  },
+  {
+   "slide": 9,
+   "start": 283.47,
+   "end": 287.6,
+   "text": "分子提出一个 c，和分母约掉，剩下 c。"
+  },
+  {
+   "slide": 9,
+   "start": 288.0,
+   "end": 290.81,
+   "text": "所以 v′ₓ 还是等于 c。"
+  },
+  {
+   "slide": 9,
+   "start": 291.21,
+   "end": 297.76,
+   "text": "不管 S′ 跑多快，看到的光速都是 c——这就是光速不变原理的数学体现。"
+  },
+  {
+   "slide": 10,
+   "start": 299.29,
+   "end": 301.16,
+   "text": "小结。"
+  },
+  {
+   "slide": 10,
+   "start": 301.56,
+   "end": 309.7,
+   "text": "两条原理：物理定律在所有惯性系中形式相同，真空光速与光源、观测者无关。"
+  },
+  {
+   "slide": 10,
+   "start": 310.1,
+   "end": 315.93,
+   "text": "洛伦兹变换把时间和空间耦合成时空，γ 是核心因子。"
+  },
+  {
+   "slide": 10,
+   "start": 316.33,
+   "end": 320.6,
+   "text": "低速时 γ 趋于 1，退回伽利略变换。"
+  },
+  {
+   "slide": 10,
+   "start": 321.0,
+   "end": 325.1,
+   "text": "速度变换多了个分母，保证结果不超过 c。"
+  },
+  {
+   "slide": 10,
+   "start": 325.5,
+   "end": 332.68,
+   "text": "下一节看这个新时空观带来的具体效应：同时性的相对性、钟慢、尺缩。"
+  }
+ ],
+ "build_ts": 1792590039,
+ "logoScale": 0.67,
+ "theme": "wave"
+}

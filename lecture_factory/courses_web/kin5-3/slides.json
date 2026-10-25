@@ -1,0 +1,3516 @@
+{
+ "title": "5-3 电场强度通量 高斯定理",
+ "nav": "5-3　通量　高斯定理",
+ "footer": "第五章　静电场",
+ "logoScale": 0.67,
+ "engine": "edge",
+ "voice": "zh-CN-YunxiNeural",
+ "pages": [
+  {
+   "id": 1,
+   "narration": "[[1]]5-3，电场强度通量与高斯定理。[[2]]上一节我们用积分求场，除了几个对称情形，多数积分都很难算。[[3]]这一节给出一条更根本的规律：高斯定理。它把穿过闭合曲面的通量，和面内包围的电荷直接连起来。[[4]]好处有两个：一是它反映静电场的有源性质；二是对对称的带电体，可以不解积分，几步就写出场强。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 300,
+     "w": 800,
+     "h": 90,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 五 章　静电场",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 300,
+     "y": 420,
+     "w": 1320,
+     "h": 150,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "5-3　通量与高斯定理",
+        "size": 68,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 220,
+     "y": 630,
+     "w": 1480,
+     "h": 110,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "从「积分求场」到「通量定场」",
+        "size": 42,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 780,
+     "w": 1480,
+     "h": 90,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "Φe = ∮ E · dS = Σq内 / ε₀",
+        "size": 40,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "封面"
+  },
+  {
+   "id": 2,
+   "narration": "[[1]]先把电场线再理一遍，因为通量的直观图像就是「穿过多少根线」。[[2]]第一，电场线的切线方向就是场强方向。[[3]]第二，线的疏密表示场强大小——密的地方场强大。[[4]]第三，静电场的线不闭合，起于正电荷、止于负电荷或无穷远。[[5]]第四，任何两条线不相交。[[6]]有了这四条，我们就可以把「通量」想成：某个曲面被多少根电场线穿过。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　电场线（复习）",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 切线方向 = 该点 $\\vec E$ 的方向．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 316,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 疏密表强弱：线密处 $E$ 大．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 392,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 不闭合：起于正电荷，",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 438,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "止于负电荷或无穷远．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 514,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 任意两条电场线不相交．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 600,
+     "w": 740,
+     "h": 170,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "把「通量」想成：",
+        "size": 27,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "曲面被多少根电场线穿过",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "这是理解高斯定理最省力的图像",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 810,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "注意：这个图像只在「线的密度",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 852,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "正比于 E」的画法下成立．",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 490,
+     "name": "line_props"
+    }
+   ],
+   "heading": "一　电场线（复习）"
+  },
+  {
+   "id": 3,
+   "narration": "[[1]]二，电场强度通量。[[2]]在电场中取一个面元 dS，它的方向用单位法矢 n 表示。[[3]]场强 E 与法线之间有一个夹角 theta。[[4]]穿过这个面元的通量，定义为 E 点乘 dS，也就是 E dS cos theta。[[5]]几何意义很清楚：dS cos theta 是面元在垂直于场强方向上的投影面积，只有穿过这个投影的场线才算数。[[6]]如果场线与面元平行，theta 等于九十度，通量为零——场线贴着面走，没有穿过去。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　电场强度通量",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 800,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "取面元 $\\mathrm dS$，方向用 $\\hat n$ 表示．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 304,
+     "w": 800,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\vec E$ 与 $\\hat n$ 的夹角为 $\\theta$．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 372,
+     "w": 800,
+     "h": 120,
+     "tex": "\\mathrm d\\Phi_e=E\\,\\mathrm dS\\cos\\theta",
+     "size": 32,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 520,
+     "w": 800,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "几何意义：",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 572,
+     "w": 800,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\mathrm dS\\cos\\theta$ 是垂直场强方向上的投影面积．",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 652,
+     "w": 800,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\theta=90^\\circ$ ⇒ 通量为零．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 736,
+     "w": 835,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "整个曲面：$\\Phi_e=\\int_S\\vec E\\cdot\\mathrm d\\vec S$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 990,
+     "y": 236,
+     "w": 860,
+     "h": 613,
+     "name": "flux_plane"
+    }
+   ],
+   "heading": "二　通量的定义"
+  },
+  {
+   "id": 4,
+   "narration": "[[1]]通量是代数量，有正有负。[[2]]正负由法线的取法决定：场线穿出曲面时，与法线成锐角，通量为正；穿入曲面时成钝角，通量为负。[[3]]对于闭合曲面，习惯上规定法线指向外部，叫外法线。[[4]]于是：穿出为正，穿入为负。[[5]]这个约定很重要——后面高斯定理里的「净通量」，就是穿出的减去穿入的。[[6]]如果一个闭合曲面里没有电荷，穿出的线全部来自穿入的线，净通量就是零。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "通量的正负与闭合面",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\Phi_e$ 是代数量，正负由法线取向决定．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 320,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "闭合曲面：",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "规定法线指向外部．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 400,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "穿出 ⇒ 锐角 ⇒ ",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "通量为正",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "；",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 446,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "穿入 ⇒ 钝角 ⇒ ",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "通量为负",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 520,
+     "w": 700,
+     "h": 120,
+     "tex": "\\Phi_e=\\oint_S\\vec E\\cdot\\mathrm d\\vec S",
+     "size": 40,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 676,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "「净通量」= 穿出的 − 穿入的．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 760,
+     "w": 740,
+     "h": 170,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "面内无电荷 ⇒ 净通量为零",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "进去多少根，就出来多少根",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 515,
+     "name": "flux_sign"
+    }
+   ],
+   "heading": "通量的正负与闭合面"
+  },
+  {
+   "id": 5,
+   "narration": "[[1]]要证明高斯定理，需要一个几何工具：立体角。[[2]]把面元 dS 投影到以电荷为球心、半径 r 的球面上，投影面积是 dS cos theta，再除以 r 平方，就是它对球心张开的立体角 dΩ。[[3]]立体角的单位是球面度。[[4]]整个球面对球心张开的立体角是四派。[[5]]关键结论：一个闭合曲面对内部一点张开的立体角，要么是四派（点在内部），要么是零（点在外部）——因为在外部时，进入的立体角与出去的正好抵消。[[6]]高斯定理的本质，就是这个几何事实。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "立体角（证明的工具）",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 700,
+     "h": 130,
+     "tex": "\\mathrm d\\Omega=\\dfrac{\\mathrm dS\\cos\\theta}{r^{2}}",
+     "size": 40,
+     "color": "#0000CD",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 420,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "单位：球面度（sr）；整个球面为 $4\\pi$．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 500,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "关键：对闭合曲面而言",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 552,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "点在面内 ⇒ $\\oint\\mathrm d\\Omega=4\\pi$",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 602,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "点在面外 ⇒ $\\oint\\mathrm d\\Omega=0$",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 664,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（进出相消）",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 726,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这个几何事实，就是高斯定理的全部内容．",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 800,
+     "w": 740,
+     "h": 160,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "注意",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "立体角与曲面形状无关，",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "只与它对球心张开的「视角」有关",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 450,
+     "name": "solid_angle"
+    }
+   ],
+   "heading": "立体角"
+  },
+  {
+   "id": 6,
+   "narration": "[[1]]三，高斯定理。[[2]]在真空中，穿过任意闭合曲面 S 的电场强度通量，等于该曲面所包围的所有电荷的代数和，除以 epsilon 零。[[3]]公式写作：闭合面积分 E 点乘 dS，等于 sigma q 内 除以 epsilon 零。[[4]]要注意三件事。第一，S 叫高斯面，是任意的闭合曲面，不必是真实的物理面。[[5]]第二，通量只由面内的电荷决定，面外的电荷对净通量没有贡献——但它们在面上各点产生的场并不为零。[[6]]第三，高斯定理是库仑定律加上叠加原理的必然结果，它和库仑定律等价，但用起来方便得多。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　高斯定理",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "真空中，穿过任意闭合曲面 $S$ 的电场强度通量：",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 306,
+     "w": 1580,
+     "h": 58,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "等于该曲面所包围电荷的代数和除以 $\\varepsilon_0$．",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 200,
+     "y": 396,
+     "w": 1100,
+     "h": 150,
+     "tex": "\\oint_S\\vec E\\cdot\\mathrm d\\vec S=\\dfrac{1}{\\varepsilon_0}\\sum_{S\\text{内}}q_i",
+     "size": 40,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 580,
+     "w": 1580,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "①",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "$S$ 是任意闭合曲面，叫高斯面，不必是真实面．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 660,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "②",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "通量只由",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "面内电荷",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "决定；面外电荷对净通量无贡献．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 744,
+     "w": 1580,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "但面外电荷在面上各点产生的场并不为零——只是积分抵消了．",
+        "size": 31,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 828,
+     "w": 1580,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "高斯定理与库仑定律等价，但它把「通量」和「源」直接连起来．",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1030,
+     "y": 236,
+     "w": 820,
+     "h": 608,
+     "name": "gauss_sphere"
+    }
+   ],
+   "heading": "三　高斯定理"
+  },
+  {
+   "id": 7,
+   "narration": "[[1]]先证明最简单的情形：点电荷 q 在球心，高斯面取半径 r 的同心球面。[[2]]球面上每一点的场强都垂直于球面，大小都是 kq 除以 r 平方。[[3]]所以 E 点乘 dS 就退化成 E dS，可以把 E 提到积分号外。[[4]]剩下的是对 dS 积分，等于球面积四派 r 平方。[[5]]代回去：E 乘四派 r 平方，等于 kq 除以 r 平方乘四派 r 平方，等于 q 除以 epsilon 零。[[6]]注意 r 被完全约掉了——通量与球的半径无关，这是高斯定理的第一个特征。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1100,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "证明（球面情形）",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "点电荷 $q$ 在球心，高斯面取半径 $r$ 的同心球面．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 320,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "球面上每点：$\\vec E\\perp\\mathrm d\\vec S$，",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 366,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "且 $E=kq/r^{2}$ 为常量．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 436,
+     "w": 700,
+     "h": 120,
+     "tex": "\\oint\\vec E\\cdot\\mathrm d\\vec S=E\\oint\\mathrm dS=E\\cdot4\\pi r^{2}",
+     "size": 31,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 566,
+     "w": 700,
+     "h": 120,
+     "tex": "=\\dfrac{q}{4\\pi\\varepsilon_0 r^{2}}\\cdot4\\pi r^{2}=\\dfrac{q}{\\varepsilon_0}",
+     "size": 31,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 720,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$r$ 被完全约掉 ⇒",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "通量与球半径无关",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 800,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这是第一个特征：只问「包了多少",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 842,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电荷」，不问「面多大」．",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1010,
+     "y": 236,
+     "w": 760,
+     "h": 564,
+     "name": "gauss_sphere"
+    }
+   ],
+   "heading": "证明（球面）"
+  },
+  {
+   "id": 8,
+   "narration": "[[1]]再看任意形状的闭合面。[[2]]把每个面元 dS 的通量，用立体角改写：E dS cos theta 等于 kq 乘 dΩ。[[3]]于是整个积分变成 kq 乘以闭合曲面的总立体角。[[4]]如果 q 在面内，总立体角是四派，结果是 q 除以 epsilon 零。[[5]]如果 q 在面外，总立体角是零，通量为零。[[6]]最后加上叠加原理：多个电荷时逐项相加，面外的全为零，只剩面内的代数和。定理证完。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "证明（任意闭合面）",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "面元通量用立体角改写：",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 300,
+     "w": 700,
+     "h": 110,
+     "tex": "\\vec E\\cdot\\mathrm d\\vec S=\\dfrac{q}{4\\pi\\varepsilon_0}\\,\\mathrm d\\Omega",
+     "size": 30,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 434,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "整个积分：",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 490,
+     "w": 700,
+     "h": 110,
+     "tex": "\\oint_S\\vec E\\cdot\\mathrm d\\vec S=\\dfrac{q}{4\\pi\\varepsilon_0}\\oint\\mathrm d\\Omega",
+     "size": 29,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 640,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$q$ 在面内 ⇒ $4\\pi$ ⇒ 通量 $=q/\\varepsilon_0$",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 706,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$q$ 在面外 ⇒ 通量 $=0$",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 780,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "多个电荷逐项相加，面外项全为零 ⇒",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 822,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\sum q_{\\text{内}}/\\varepsilon_0$．",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 890,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "定理证完，与库仑定律完全等价．",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 573,
+     "name": "gauss_any"
+    }
+   ],
+   "heading": "证明（任意闭合面）"
+  },
+  {
+   "id": 9,
+   "narration": "[[1]]高斯定理的意义，可以从三个角度看。[[2]]第一，它说明静电场是有源场：电场线从正电荷发出，终止于负电荷——「源」就是电荷。[[3]]第二，正电荷是源头，负电荷是汇。如果某个闭合面内正电荷多，净通量为正。[[4]]第三，它是一条普适规律：不只对静电场成立，麦克斯韦把它的形式推广到变化场，成为电磁场方程组的第一个方程。[[5]]后面讲磁场时你会看到，磁场的高斯定理右边是零——因为不存在磁单极子。[[6]]两相对照，就明白「有源」和「无源」的区别。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "高斯定理说明什么",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 静电场是",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "有源场",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "场线起于正电荷，止于负电荷．",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 380,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 正电荷是源，负电荷是汇；",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 426,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "面内正电荷多 ⇒ 净通量为正．",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 510,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 普适规律：麦克斯韦把它推广到",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 556,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "变化场，成为电磁场方程之一．",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 640,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 与磁场对照：磁场的高斯定理",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 686,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "右边为零（无磁单极子）．",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 230,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "两种「源」的语言",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "电荷是电场的源",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "没有磁荷，所以磁场无源",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 506,
+     "w": 740,
+     "h": 200,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "有源 / 无源",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "这两条对照，就是电磁场的",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "两个高斯定理的全部差别",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 790,
+     "w": 1580,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只要闭合面里没有净电荷，穿出的场线根数就等于穿入的根数．",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 860,
+     "w": 1580,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这条结论对任意形状的闭合面都成立．",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "高斯定理说明什么"
+  },
+  {
+   "id": 10,
+   "narration": "[[1]]四，用高斯定理求场。先看球对称。[[2]]半径 R、总电荷 q 的均匀带电球壳。[[3]]第一种情形，r 小于 R，高斯面取在球壳内部。这个面里一个电荷也没有，所以通量为零。[[4]]由对称性，面上各点场强大小相等、方向沿径向，所以 E 乘四派 r 平方等于零，E 等于零。[[5]]结论：均匀带电球壳内部处处无场。这一点很反直觉，但实验和计算都支持。[[6]]第二种情形，r 大于 R，高斯面包住了整个球壳，电荷是 q，结果是 E 等于 kq 除以 r 平方——对外部而言，球壳就像把所有电荷集中在球心。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1100,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "应用①　均匀带电球壳",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 780,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "半径 $R$、总电荷 $q$ 的均匀带电球壳．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 780,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$r<R$：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "高斯面内无电荷",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 392,
+     "w": 780,
+     "h": 120,
+     "tex": "E\\cdot4\\pi r^{2}=0\\ \\Rightarrow\\ E=0",
+     "size": 32,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 530,
+     "w": 780,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$r>R$：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "高斯面内电荷为 $q$",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 592,
+     "w": 780,
+     "h": 120,
+     "tex": "E\\cdot4\\pi r^{2}=\\dfrac{q}{\\varepsilon_0}",
+     "size": 32,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 720,
+     "w": 780,
+     "h": 120,
+     "tex": "E=\\dfrac{q}{4\\pi\\varepsilon_0 r^{2}}=\\dfrac{kq}{r^{2}}",
+     "size": 34,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 856,
+     "w": 780,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "结论：球内无场，球外等效于球心点电荷．",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 1010,
+     "y": 236,
+     "w": 830,
+     "h": 671,
+     "name": "gauss_shell"
+    }
+   ],
+   "heading": "应用①　球壳"
+  },
+  {
+   "id": 11,
+   "narration": "[[1]]把球壳换成实心球，电荷均匀分布在体积里，体密度 rho。[[2]]外部 r 大于 R，还是一样，等效于球心点电荷：E 等于 kq 除以 r 平方。[[3]]内部就不一样了。[[4]]高斯面半径 r 小于 R，面内只包了一部分电荷，按体积比例算：q 内等于 q 乘 r 立方除以 R 立方。[[5]]代入高斯定理，得 E 等于 q r 除以四派 epsilon 零 R 立方，也可以写成 rho r 除以三 epsilon 零。[[6]]注意内部场强随 r 线性增大，到球面处达到最大值，然后按平方反比衰减。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1100,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "应用①　均匀带电球体",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电荷分布在体积内，体密度 $\\rho$，半径 $R$．",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 316,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$r>R$：",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "与球壳相同，$E=kq/r^{2}$．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 392,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$r<R$：",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "面内电荷按体积比例",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 446,
+     "w": 700,
+     "h": 110,
+     "tex": "q_{\\text{内}}=q\\dfrac{r^{3}}{R^{3}}",
+     "size": 31,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 570,
+     "w": 700,
+     "h": 110,
+     "tex": "E\\cdot4\\pi r^{2}=\\dfrac{q}{\\varepsilon_0}\\dfrac{r^{3}}{R^{3}}",
+     "size": 30,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 690,
+     "w": 700,
+     "h": 110,
+     "tex": "E=\\dfrac{qr}{4\\pi\\varepsilon_0 R^{3}}=\\dfrac{\\rho r}{3\\varepsilon_0}",
+     "size": 30,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 828,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "内部 $E\\propto r$ 线性增大，球面处最大；",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 870,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "球外按 $1/r^{2}$ 衰减．",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 671,
+     "name": "gauss_solid_sphere"
+    }
+   ],
+   "heading": "应用①　球体"
+  },
+  {
+   "id": 12,
+   "narration": "[[1]]第二个对称性：轴对称。[[2]]无限长均匀带电圆柱面，或者无限长带电直线，线密度 lambda。[[3]]高斯面取同轴圆柱面：半径 r、长 l，加上两个底面。[[4]]侧面上的法线沿径向，与场强平行，通量是 E 乘侧面积二派 r l。两个底面上法线与场强垂直，通量为零。[[5]]所以总通量就是 E 乘二派 r l。[[6]]面内电荷是 lambda 乘 l，代入得 E 等于 lambda 除以二派 epsilon 零 r，与上一节积分的结果一致——但这里只用了两行。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1100,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "应用②　无限长带电圆柱",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 800,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "线密度 $\\lambda$，高斯面取同轴圆柱面：",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 292,
+     "w": 800,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "半径 $r$、长 $l$，加两个底面．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 372,
+     "w": 800,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "侧面：",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "$\\hat n\\parallel\\vec E$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 424,
+     "w": 800,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\Phi=E\\cdot2\\pi rl$",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 500,
+     "w": 800,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "底面：",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "$\\hat n\\perp\\vec E$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 552,
+     "w": 800,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\Phi=0$",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 626,
+     "w": 800,
+     "h": 110,
+     "tex": "E\\cdot2\\pi rl=\\dfrac{\\lambda l}{\\varepsilon_0}",
+     "size": 30,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 748,
+     "w": 800,
+     "h": 120,
+     "tex": "E=\\dfrac{\\lambda}{2\\pi\\varepsilon_0 r}",
+     "size": 34,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 884,
+     "w": 800,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与 5-2 积分结果一致，但只用两行．",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 1020,
+     "y": 226,
+     "w": 820,
+     "h": 602,
+     "name": "gauss_cyl"
+    }
+   ],
+   "heading": "应用②　圆柱"
+  },
+  {
+   "id": 13,
+   "narration": "[[1]]第三个对称性：面对称。[[2]]无限大均匀带电平面，面密度 sigma。[[3]]高斯面取一个圆柱形「药盒」，两个底面面积都是 S，分居平面两侧，侧面与平面垂直。[[4]]侧面的法线与场强垂直，通量为零；两个底面的法线都朝外，而场强也从平面向两侧指，所以两边都是正通量，共 2 E S。[[5]]面内电荷是 sigma 乘 S。[[6]]代入得 2 E S 等于 sigma S 除以 epsilon 零，E 等于 sigma 除以二 epsilon 零。注意结果与距离无关——无限大平面的场是匀强的。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1100,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "应用③　无限大带电平面",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "面密度 $\\sigma$，高斯面取圆柱形药盒：",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 296,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两底面面积 $S$，分居平面两侧．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 380,
+     "w": 800,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "侧面：",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "$\\hat n\\perp\\vec E$ ⇒ 通量 0",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 448,
+     "w": 800,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两底面：",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "都穿出 ⇒ 共 $2ES$",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 530,
+     "w": 800,
+     "h": 120,
+     "tex": "2ES=\\dfrac{\\sigma S}{\\varepsilon_0}",
+     "size": 32,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 660,
+     "w": 800,
+     "h": 130,
+     "tex": "E=\\dfrac{\\sigma}{2\\varepsilon_0}",
+     "size": 38,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 806,
+     "w": 800,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与距离无关 ⇒",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "匀强场",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 1000,
+     "y": 232,
+     "w": 860,
+     "h": 710,
+     "name": "gauss_plane"
+    }
+   ],
+   "heading": "应用③　平面"
+  },
+  {
+   "id": 14,
+   "narration": "[[1]]把两块无限大带电平板平行放置，一正一负，面密度分别是正 sigma 和负 sigma。[[2]]每一块单独产生的场，大小都是 sigma 除以二 epsilon 零。[[3]]在两板之间，两个场方向相同，叠加成 sigma 除以 epsilon 零。[[4]]在两板外侧，两个场方向相反，正好抵消，场强为零。[[5]]这就是平行板电容器的场：场全部集中在板间，外部没有场。[[6]]这个结论后面讲电容时要直接用。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1100,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两平行带电板",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两板面密度分别为 $+\\sigma$、$-\\sigma$．",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 316,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "每块单独产生 $E_0=\\sigma/(2\\varepsilon_0)$．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 392,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "板间：",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "两场同向叠加．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 462,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "板外：",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "两场反向抵消．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 536,
+     "w": 700,
+     "h": 130,
+     "tex": "E_{\\text{内}}=\\dfrac{\\sigma}{\\varepsilon_0},\\qquad E_{\\text{外}}=0",
+     "size": 33,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 700,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "场全部集中在板间，外部没有场．",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 746,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这就是平行板电容器的场．",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 820,
+     "w": 740,
+     "h": 150,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "下一章讲电容",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "直接用这个结果",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 459,
+     "name": "parallel_plates"
+    }
+   ],
+   "heading": "两平行带电板"
+  },
+  {
+   "id": 15,
+   "narration": "[[1]]把用法总结成四步。[[2]]第一步，分析对称性：球对称、轴对称、还是面对称。没有对称性，高斯定理无法求出场强——它只能告诉你通量，不能告诉你每一点的 E。[[3]]第二步，选取合适的高斯面，让面上场强大小相等、方向与法线平行或垂直。[[4]]第三步，算通量：能提出积分号的提出来，通量为零的部分直接划掉。[[5]]第四步，算面内电荷，代入定理求解。[[6]]这四步的关键在第二步——高斯面选得好，两行就完；选得不好，寸步难行。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "用高斯定理的四步",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 760,
+     "h": 210,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "① 分析对称性",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "球对称 / 轴对称 / 面对称",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "没有对称性只能求通量，",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "求不出每点的 E",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 210,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "② 选高斯面",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "面上 E 大小相等，",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "n 与 E 平行或垂直",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 170,
+     "y": 476,
+     "w": 760,
+     "h": 210,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "③ 算通量",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "能提出积分号的提出，",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "为零的部分直接划掉",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 1010,
+     "y": 476,
+     "w": 740,
+     "h": 210,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "④ 算面内电荷",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "代入定理，解出 E",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "电荷按体积 / 面积 / 长度算",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 726,
+     "w": 1580,
+     "h": 170,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "关键在第二步",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "高斯面选得好，两行就完；选得不好，寸步难行",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 940,
+     "w": 1580,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "常见选法：同心球面、同轴圆柱面、垂直平面的药盒．",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "用高斯定理的四步"
+  },
+  {
+   "id": 16,
+   "narration": "[[1]]例，半径 R 的无限长均匀带电圆柱体，体密度 rho，求各处场强。[[2]]外部 r 大于 R：高斯面包住整段圆柱，面内电荷是 rho 乘派 R 平方乘 l。[[3]]代入得 E 乘二派 r l 等于 rho 派 R 平方 l 除以 epsilon 零，所以 E 等于 rho R 平方 除以二 epsilon 零 r。[[4]]内部 r 小于 R：面内电荷是 rho 派 r 平方 l，结果是 E 等于 rho r 除以二 epsilon 零。[[5]]内部随 r 线性增大，外部按一次方反比衰减。[[6]]在 r 等于 R 处两式相等，场强连续——这是检验结果的一个好办法。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1100,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例　无限长带电圆柱体",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 238,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "半径 $R$、体密度 $\\rho$，求各处 $E$．",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 316,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$r>R$：",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "面内电荷 $\\rho\\pi R^{2}l$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 372,
+     "w": 700,
+     "h": 110,
+     "tex": "E\\cdot2\\pi rl=\\dfrac{\\rho\\pi R^{2}l}{\\varepsilon_0}",
+     "size": 30,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 496,
+     "w": 700,
+     "h": 110,
+     "tex": "E=\\dfrac{\\rho R^{2}}{2\\varepsilon_0 r}",
+     "size": 32,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 630,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$r<R$：",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "面内电荷 $\\rho\\pi r^{2}l$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 686,
+     "w": 700,
+     "h": 110,
+     "tex": "E=\\dfrac{\\rho r}{2\\varepsilon_0}",
+     "size": 32,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 824,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "内部线性、外部 $1/r$；",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 866,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$r=R$ 处两式相等，场强连续．",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 617,
+     "name": "gauss_cyl_solid"
+    }
+   ],
+   "heading": "例　带电圆柱体"
+  },
+  {
+   "id": 17,
+   "narration": "[[1]]这一节的主线是：通量，然后是高斯定理，最后是应用。[[2]]通量定义为 E 点乘 dS，闭合面取外法线，穿出为正。[[3]]高斯定理：闭合面的净通量等于面内电荷的代数和除以 epsilon 零。它说明静电场是有源场。[[4]]三个对称性的结果要记牢：球壳内无场、球内线性、无限长圆柱一次方反比、无限大平面匀强。[[5]]用的时候记住四步：看对称、选面、算通量、算电荷。[[6]]下一节 5-5 讲环路定理，那里会说明静电场还有一个性质：它是无旋场。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 760,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 通量",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 284,
+     "w": 700,
+     "h": 90,
+     "tex": "\\Phi_e=\\int_S\\vec E\\cdot\\mathrm d\\vec S",
+     "size": 26,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 392,
+     "w": 760,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 高斯定理",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 440,
+     "w": 700,
+     "h": 110,
+     "tex": "\\oint_S\\vec E\\cdot\\mathrm d\\vec S=\\dfrac{\\sum q_{\\text{内}}}{\\varepsilon_0}",
+     "size": 24,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 576,
+     "w": 760,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 静电场是",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "有源场",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 三个结果",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 292,
+     "w": 740,
+     "h": 40,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "球壳内　　$E=0$",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 336,
+     "w": 740,
+     "h": 40,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "球内　　　$E\\propto r$",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 380,
+     "w": 740,
+     "h": 40,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "无限长圆柱　$E\\propto1/r$",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 424,
+     "w": 740,
+     "h": 40,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "无限大平面　$E=$ 常量",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 640,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "⑤ 四步法：",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "看对称 → 选面 → 算通量 → 算电荷．",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 712,
+     "w": 1580,
+     "h": 190,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "下一节：静电场的环路定理",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "那里证明静电场是无旋场，从而引入电势",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "有源 + 无旋，决定静电场的全部行为",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 930,
+     "w": 1580,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这一节把「场」和「源」用一个积分式连了起来．",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "本节小结"
+  }
+ ]
+}

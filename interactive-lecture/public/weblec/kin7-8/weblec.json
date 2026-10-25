@@ -1,0 +1,2526 @@
+{
+ "title": "7-8 磁介质 磁场强度",
+ "nav": "7-8　磁介质　磁场强度",
+ "footer": "第七章　恒定磁场",
+ "character": "aqiang",
+ "characters": [
+  {
+   "id": "aqiang",
+   "name": "阿强"
+  },
+  {
+   "id": "professor",
+   "name": "博士讲师"
+  },
+  {
+   "id": "zhongshan",
+   "name": "中山装先生"
+  }
+ ],
+ "duration": 391.75,
+ "slides": [
+  {
+   "id": 1,
+   "kind": "page",
+   "heading": "封面",
+   "narration": "这一节讲磁介质。前面几节讨论的都是真空中的磁场。但实际器件里，磁场总要穿过铁芯、线圈骨架、空气——这些都是物质。物质放进磁场后会被磁化，反过来改变磁场本身。这一节要引入两个量：磁化强度 M 和磁场强度 H，用来把复杂的磁化效应收进一个参数里。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 282,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 七 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 300,
+     "y": 408,
+     "w": 1320,
+     "h": 170,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "恒 定 磁 场",
+        "size": 80,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 300,
+     "y": 600,
+     "w": 1320,
+     "h": 140,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "7-8　磁介质　磁场强度",
+        "size": 46,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 770,
+     "w": 1480,
+     "h": 90,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁化　·　磁化强度　·　磁场强度 H",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 220,
+     "y": 900,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "有了介质，安培环路定理要改写",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 0.0,
+    "2": 2.82,
+    "3": 7.13,
+    "4": 14.66
+   },
+   "t_start": 0.0,
+   "t_end": 29.26,
+   "duration": 29.26,
+   "laser": []
+  },
+  {
+   "id": 2,
+   "kind": "page",
+   "heading": "本节路线",
+   "narration": "先看结构。第一步，介质为什么会磁化：安培的分子电流假说。第二步，三类介质的区别，顺磁、抗磁、铁磁。第三步，用磁化强度 M 描述磁化的程度，并说明它等价于侧面的磁化面电流。第四步，定义磁场强度 H，把磁化电流从式子里消掉。最后是有介质时的安培环路定理，以及一个螺绕环的例题。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节路线",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "主线：磁化 → 三类介质 → M → H → 环路定理",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1　介质为何磁化",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 386,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "分子电流假说：分子内有圆电流",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 434,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "无场时杂乱，有场时转向",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 512,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2　三类磁介质",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 568,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "顺磁、抗磁、铁磁",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 330,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "3　磁化强度与面电流",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 386,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$M=\\sum p_m/\\Delta V$",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 434,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "侧面面电流 $i'=M$",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 512,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4　磁场强度 $\\vec H$",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 568,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\vec H=\\vec B/\\mu_0-\\vec M$",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 664,
+     "w": 1580,
+     "h": 200,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "5　有介质时的环路定理：$\\oint\\vec H\\cdot\\mathrm d\\vec l=\\sum I_0$",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "只数自由电流 —— 介质只在 $\\mu$ 里出现一次",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "这是本节最有用的一句",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 30.06,
+    "2": 32.33,
+    "3": 37.82,
+    "4": 43.76,
+    "5": 51.55,
+    "6": 57.61
+   },
+   "t_start": 30.06,
+   "t_end": 63.47,
+   "duration": 33.41,
+   "laser": []
+  },
+  {
+   "id": 3,
+   "kind": "page",
+   "heading": "一　磁介质的磁化",
+   "narration": "先回答第一个问题：介质为什么会磁化。磁介质就是能与磁场发生相互作用的物质，一切实物都算。安培提出一个假说：分子内部有电子在运动，等效于一个个微小的圆电流，每个都有自己的磁矩。没有外磁场时，热运动把这些小磁矩的取向彻底打乱，加起来互相抵消，宏观上不显磁性。一旦加上外磁场，每个分子电流都受到磁力矩，慢慢转向外场方向。这个转向过程就叫磁化，介质出现了宏观磁矩。于是空间里的总磁场等于原来的磁场加上磁化产生的附加场。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　磁介质的磁化",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁介质：能与磁场发生相互作用的物质．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 300,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "安培的分子电流假说：",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 354,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "分子内电子的运动 ⇒ 分子圆电流",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 402,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "每个分子都有自己的磁矩 $\\vec p_m$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 474,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "无外场：热运动使取向杂乱",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 528,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\sum\\vec p_m=0$，介质不显磁性",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 600,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "有外场：每个分子电流受磁力矩",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 654,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁矩转向 $\\vec B$ 的方向",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 726,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁化：",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "介质出现宏观磁矩 $M\\neq0$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 790,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "此时 $\\vec B=\\vec B_0+\\vec B'$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 846,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\vec B'$ 是磁化产生的附加场",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 3,
+     "x": 985,
+     "y": 246,
+     "w": 765,
+     "h": 500,
+     "name": "mol_current"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 64.27,
+    "2": 68.8,
+    "3": 74.62,
+    "4": 83.11,
+    "5": 92.15,
+    "6": 99.29
+   },
+   "t_start": 64.27,
+   "t_end": 111.55,
+   "duration": 47.28,
+   "laser": []
+  },
+  {
+   "id": 4,
+   "kind": "page",
+   "heading": "二　三类磁介质",
+   "narration": "磁化效应有强有弱，按相对磁导率分成三类。顺磁质的μr略大于一，比如铝、铂、液氧；抗磁质的μr略小于一，比如铜、水、铋；铁磁质的μr远大于一，可以到几千甚至十万量级，铁、钴、镍是代表。机制上，顺磁质的分子本来就有固有磁矩，外场只是让它稍微转向；抗磁质的分子没有固有磁矩，外场反而感生出与外场反向的磁矩，这是楞次定律的体现。所以顺磁略增强外场，抗磁略减弱外场。要注意，一切物质都有抗磁性，只不过顺磁效应盖过它时才表现为顺磁。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　三类磁介质",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "按相对磁导率 $\\mu_r$ 分三类：",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 302,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "顺磁质：",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "$\\mu_r$ 略大于 1",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 352,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "铝、铂、液氧",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 412,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "抗磁质：",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "$\\mu_r$ 略小于 1",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 462,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "铜、水、铋",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 522,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "铁磁质：",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "$\\mu_r\\gg1$（10³~10⁵）",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 572,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "铁、钴、镍及其合金",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 638,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "机制：顺磁有固有磁矩，外场使其转向；",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 686,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "抗磁无固有磁矩，外场感生出反向磁矩．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 752,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "顺磁略增强，抗磁略减弱；",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 800,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "但抗磁性一切物质都有．",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 862,
+     "w": 740,
+     "h": 120,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "顺磁、抗磁的效应只有 10⁻⁵ 量级",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 236,
+     "w": 765,
+     "h": 520,
+     "name": "mag_media_three"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 112.35,
+    "2": 117.81,
+    "3": 122.562,
+    "4": 127.077,
+    "5": 135.08,
+    "6": 149.45
+   },
+   "t_start": 112.35,
+   "t_end": 162.68,
+   "duration": 50.33,
+   "laser": []
+  },
+  {
+   "id": 5,
+   "kind": "page",
+   "heading": "三　磁化强度与面电流",
+   "narration": "第三个问题：怎么定量描述磁化的程度。取一个小体元，把里面所有分子磁矩加起来再除以体积，就是磁化强度 M，单位是安每米。现在看一个均匀磁化的圆柱。内部的分子电流两两相邻，方向相反，几乎全部互相抵消。只有侧面那一圈抵消不掉，剩下一层环形的面电流。这个面电流的线密度，数值上正好等于磁化强度 M。于是磁化后的介质，完全等效于一个载流螺线管。这也说明，磁化电流不是自由电荷的流动，所以叫束缚电流。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　磁化强度与磁化面电流",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁化强度：单位体积内的分子磁矩之和",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 292,
+     "w": 700,
+     "h": 120,
+     "tex": "M=\\dfrac{\\sum \\vec p_m}{\\Delta V}",
+     "size": 34,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 428,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "均匀磁化圆柱：",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 478,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "内部相邻分子电流两两反向，互相抵消",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 534,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只剩侧面一圈未被抵消",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 584,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "⇒ 出现环形面电流",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 642,
+     "w": 700,
+     "h": 100,
+     "tex": "i'=M",
+     "size": 34,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 752,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$i'$：面电流线密度（A/m）",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 812,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "等效于一个载流螺线管",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 862,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁化电流不能自由流动 ⇒ 束缚电流",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 985,
+     "y": 246,
+     "w": 765,
+     "h": 576,
+     "name": "mag_bound_current"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 163.48,
+    "2": 167.91,
+    "3": 176.25,
+    "4": 186.37,
+    "5": 191.62,
+    "6": 197.13
+   },
+   "t_start": 163.48,
+   "t_end": 208.94,
+   "duration": 45.46,
+   "laser": []
+  },
+  {
+   "id": 6,
+   "kind": "page",
+   "heading": "四　磁场强度 H",
+   "narration": "到这一步会遇到一个麻烦。空间里的磁感应强度 B，由自由电流和磁化电流共同决定。但磁化电流藏在介质内部，既不能接电极也不能接电流表，根本测不到。解决办法是定义一个新的矢量：磁场强度 H，等于 B 除以μ0 再减去 M。这样就把磁化部分单独拎出来了。反过来写，B 等于μ0 乘以 H 加 M。对线性介质，M 正比于 H，比例系数是磁化率，于是 B 等于μ0μr H。注意 H 的单位是安每米，和 B 的特斯拉不是一回事。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　磁场强度 $\\vec H$",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 50,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "麻烦：$\\vec B$ 由两种电流共同决定",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 292,
+     "w": 1580,
+     "h": 48,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "自由电流 $I_0$（可测）　＋　磁化电流 $I'$（藏在介质里，测不到）",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 356,
+     "w": 1580,
+     "h": 46,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "于是定义磁场强度，把磁化的部分从 $\\vec B$ 里剥出来：",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 240,
+     "y": 412,
+     "w": 1440,
+     "h": 130,
+     "tex": "\\vec H=\\dfrac{\\vec B}{\\mu_0}-\\vec M",
+     "size": 40,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 240,
+     "y": 566,
+     "w": 1440,
+     "h": 120,
+     "tex": "\\vec B=\\mu_0(\\vec H+\\vec M)",
+     "size": 36,
+     "color": "#0000CD",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 706,
+     "w": 1580,
+     "h": 48,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "线性介质：$\\vec M=\\chi_m\\vec H$，$\\mu_r=1+\\chi_m$ ⇒ $\\vec B=\\mu_0\\mu_r\\vec H=\\mu\\vec H$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 782,
+     "w": 1580,
+     "h": 150,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "单位：H 为 A/m，B 为 T",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "历史上 H 叫「磁场强度」，B 叫「磁感应强度」—— 名字与直觉相反，记住单位最保险",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 209.74,
+    "2": 212.88,
+    "3": 219.21,
+    "4": 226.52,
+    "5": 238.17,
+    "6": 251.48
+   },
+   "t_start": 209.74,
+   "t_end": 257.5,
+   "duration": 47.76,
+   "laser": []
+  },
+  {
+   "id": 7,
+   "kind": "page",
+   "heading": "五　有介质时的环路定理",
+   "narration": "有了 H，安培环路定理就可以改写。原来的形式，右边要同时数自由电流和磁化电流。把 B 用 H 和 M 换掉，磁化电流那一项正好被 M 的环流吸收。结果非常干净：H 的环流只等于穿过环路的自由电流。这就是有介质时的安培环路定理，也是这一节最有用的一句话——算 H 的时候，介质可以完全不管。举例：充满介质的螺线管，H 等于 n 乘以 I0，B 再乘上μ。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五　有介质时的安培环路定理",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "原来的形式：两种电流都要数",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 292,
+     "w": 700,
+     "h": 110,
+     "tex": "\\oint\\vec B\\cdot\\mathrm d\\vec l=\\mu_0\\left(\\sum I_0+\\sum I'\\right)",
+     "size": 28,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 424,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "代入 $\\vec B=\\mu_0(\\vec H+\\vec M)$，",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 468,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\vec M$ 的环流正好等于 $\\sum I'$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 528,
+     "w": 700,
+     "h": 120,
+     "tex": "\\oint\\vec H\\cdot\\mathrm d\\vec l=\\sum I_0",
+     "size": 32,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 672,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只数自由电流 —— 介质不用管",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 722,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "求出 $\\vec H$ 后，再用 $\\vec B=\\mu\\vec H$ 得 $\\vec B$",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 790,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "螺线管：$H=nI_0$，$B=\\mu_0\\mu_r nI_0$",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 985,
+     "y": 246,
+     "w": 765,
+     "h": 582,
+     "name": "h_loop"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 258.3,
+    "2": 262.76,
+    "3": 268.61,
+    "4": 274.79,
+    "5": 281.0,
+    "6": 289.97
+   },
+   "t_start": 258.3,
+   "t_end": 297.23,
+   "duration": 38.93,
+   "laser": []
+  },
+  {
+   "id": 8,
+   "kind": "page",
+   "heading": "例　螺绕环",
+   "narration": "看一个例题：螺绕环里充满相对磁导率为μr的介质，一共 N 匝，平均半径 R，通电流 I0。求环内的 H、B 和磁化强度。取一个与环同心的圆做环路，半径就是平均半径。由对称性，H 沿圆周大小处处相等。环流等于 H 乘以 2πR，等于穿过环面的自由电流 NI0。于是 H 等于 NI0 除以 2πR。B 再乘μ0μr；磁化强度由 M 等于χm H 给出。截面半径远小于 R 时，退化为 nI0。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例　充满介质的螺绕环",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 234,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "N 匝、平均半径 $R$、介质 $\\mu_r$、通电流 $I_0$．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 306,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "取与环同心的圆为环路（半径 $R$）",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 372,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "对称性：$H$ 沿圆周大小处处相等",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 434,
+     "w": 700,
+     "h": 110,
+     "tex": "\\oint\\vec H\\cdot\\mathrm d\\vec l=H\\cdot2\\pi R",
+     "size": 30,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 560,
+     "w": 700,
+     "h": 120,
+     "tex": "H=\\dfrac{NI_0}{2\\pi R}",
+     "size": 34,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 6,
+     "x": 170,
+     "y": 700,
+     "w": 700,
+     "h": 110,
+     "tex": "B=\\mu_0\\mu_r\\dfrac{NI_0}{2\\pi R},\\qquad M=\\chi_m H",
+     "size": 27,
+     "color": "#0000CD",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 7,
+     "x": 170,
+     "y": 830,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "截面半径 $\\ll R$ 时：$H=nI_0$，$n=N/2\\pi R$",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 7,
+     "x": 170,
+     "y": 878,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这正是螺线管 $B=\\mu_0\\mu_r nI_0$ 的来源．",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 985,
+     "y": 236,
+     "w": 765,
+     "h": 765,
+     "name": "toroid_medium"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 298.03,
+    "2": 307.33,
+    "3": 311.31,
+    "4": 316.37,
+    "5": 321.23,
+    "6": 327.92,
+    "7": 332.66
+   },
+   "t_start": 298.03,
+   "t_end": 343.92,
+   "duration": 45.89,
+   "laser": []
+  },
+  {
+   "id": 9,
+   "kind": "page",
+   "heading": "本节小结",
+   "narration": "小结一下。第一，磁化的微观图像是分子电流转向，宏观表现是出现了磁化强度 M。第二，均匀磁化的介质等同于侧面有面电流的螺线管，面电流线密度等于 M。第三，磁场强度 H 等于 B 除以μ0 减 M，它把磁化的贡献剥了出来，环流只认自由电流。第四，有介质的环路定理是 H 的环流等于自由电流之和，求出 H 再乘μ得到 B。第五，顺磁、抗磁效应都很弱，只有铁磁质的μr能达到成千上万——这正是下一节要专门讨论的。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 760,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 磁化：分子电流转向外场",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 288,
+     "w": 760,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "无场时 $\\sum\\vec p_m=0$，有场时 $M\\neq0$",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 366,
+     "w": 760,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 磁化强度",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 416,
+     "w": 700,
+     "h": 100,
+     "tex": "M=\\dfrac{\\sum p_m}{\\Delta V},\\quad i'=M",
+     "size": 25,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 540,
+     "w": 760,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 磁场强度",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 590,
+     "w": 700,
+     "h": 110,
+     "tex": "\\vec H=\\dfrac{\\vec B}{\\mu_0}-\\vec M,\\quad \\vec B=\\mu\\vec H",
+     "size": 24,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 有介质的环路定理",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 1010,
+     "y": 290,
+     "w": 700,
+     "h": 100,
+     "tex": "\\oint\\vec H\\cdot\\mathrm d\\vec l=\\sum I_0",
+     "size": 25,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 416,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "先求 $H$，再乘 $\\mu$ 得 $B$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 462,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "介质只在 $\\mu$ 里出现一次",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 540,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "⑤ 三类介质",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 590,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "顺磁 $\\mu_r\\gtrsim1$　抗磁 $\\mu_r\\lesssim1$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 636,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "铁磁 $\\mu_r\\gg1$（下一节）",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 736,
+     "w": 1580,
+     "h": 180,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "下一节：铁磁质",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "磁畴、磁化曲线、磁滞回线、软磁与硬磁",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "μr 特别大的根源是磁畴，而不是单个分子的磁矩",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 940,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这一节把「介质的响应」收进一个参数 μr，代价是铁磁质不能用常数描述．",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 344.72,
+    "2": 346.99,
+    "3": 355.09,
+    "4": 363.12,
+    "5": 371.78,
+    "6": 380.41
+   },
+   "t_start": 344.72,
+   "t_end": 390.39,
+   "duration": 45.67,
+   "laser": []
+  }
+ ],
+ "subtitles": [
+  {
+   "slide": 1,
+   "start": 0.0,
+   "end": 2.42,
+   "text": "这一节讲磁介质。"
+  },
+  {
+   "slide": 1,
+   "start": 2.82,
+   "end": 6.73,
+   "text": "前面几节讨论的都是真空中的磁场。"
+  },
+  {
+   "slide": 1,
+   "start": 7.13,
+   "end": 14.26,
+   "text": "但实际器件里，磁场总要穿过铁芯、线圈骨架、空气——这些都是物质。"
+  },
+  {
+   "slide": 1,
+   "start": 14.66,
+   "end": 19.72,
+   "text": "物质放进磁场后会被磁化，反过来改变磁场本身。"
+  },
+  {
+   "slide": 1,
+   "start": 20.12,
+   "end": 28.57,
+   "text": "这一节要引入两个量：磁化强度 M 和磁场强度 H，用来把复杂的磁化效应收进一个参数里。"
+  },
+  {
+   "slide": 2,
+   "start": 30.06,
+   "end": 31.93,
+   "text": "先看结构。"
+  },
+  {
+   "slide": 2,
+   "start": 32.33,
+   "end": 37.42,
+   "text": "第一步，介质为什么会磁化：安培的分子电流假说。"
+  },
+  {
+   "slide": 2,
+   "start": 37.82,
+   "end": 43.36,
+   "text": "第二步，三类介质的区别，顺磁、抗磁、铁磁。"
+  },
+  {
+   "slide": 2,
+   "start": 43.76,
+   "end": 51.15,
+   "text": "第三步，用磁化强度 M 描述磁化的程度，并说明它等价于侧面的磁化面电流。"
+  },
+  {
+   "slide": 2,
+   "start": 51.55,
+   "end": 57.21,
+   "text": "第四步，定义磁场强度 H，把磁化电流从式子里消掉。"
+  },
+  {
+   "slide": 2,
+   "start": 57.61,
+   "end": 62.72,
+   "text": "最后是有介质时的安培环路定理，以及一个螺绕环的例题。"
+  },
+  {
+   "slide": 3,
+   "start": 64.27,
+   "end": 68.4,
+   "text": "先回答第一个问题：介质为什么会磁化。"
+  },
+  {
+   "slide": 3,
+   "start": 68.8,
+   "end": 74.22,
+   "text": "磁介质就是能与磁场发生相互作用的物质，一切实物都算。"
+  },
+  {
+   "slide": 3,
+   "start": 74.62,
+   "end": 82.71,
+   "text": "安培提出一个假说：分子内部有电子在运动，等效于一个个微小的圆电流，每个都有自己的磁矩。"
+  },
+  {
+   "slide": 3,
+   "start": 83.11,
+   "end": 91.75,
+   "text": "没有外磁场时，热运动把这些小磁矩的取向彻底打乱，加起来互相抵消，宏观上不显磁性。"
+  },
+  {
+   "slide": 3,
+   "start": 92.15,
+   "end": 98.89,
+   "text": "一旦加上外磁场，每个分子电流都受到磁力矩，慢慢转向外场方向。"
+  },
+  {
+   "slide": 3,
+   "start": 99.29,
+   "end": 104.04,
+   "text": "这个转向过程就叫磁化，介质出现了宏观磁矩。"
+  },
+  {
+   "slide": 3,
+   "start": 104.44,
+   "end": 110.75,
+   "text": "于是空间里的总磁场等于原来的磁场加上磁化产生的附加场。"
+  },
+  {
+   "slide": 4,
+   "start": 112.35,
+   "end": 117.41,
+   "text": "磁化效应有强有弱，按相对磁导率分成三类。"
+  },
+  {
+   "slide": 4,
+   "start": 117.81,
+   "end": 134.68,
+   "text": "顺磁质的μr略大于一，比如铝、铂、液氧；抗磁质的μr略小于一，比如铜、水、铋；铁磁质的μr远大于一，可以到几千甚至十万量级，铁、钴、镍是代表。"
+  },
+  {
+   "slide": 4,
+   "start": 135.08,
+   "end": 149.05,
+   "text": "机制上，顺磁质的分子本来就有固有磁矩，外场只是让它稍微转向；抗磁质的分子没有固有磁矩，外场反而感生出与外场反向的磁矩，这是楞次定律的体现。"
+  },
+  {
+   "slide": 4,
+   "start": 149.45,
+   "end": 154.49,
+   "text": "所以顺磁略增强外场，抗磁略减弱外场。"
+  },
+  {
+   "slide": 4,
+   "start": 154.89,
+   "end": 161.99,
+   "text": "要注意，一切物质都有抗磁性，只不过顺磁效应盖过它时才表现为顺磁。"
+  },
+  {
+   "slide": 5,
+   "start": 163.48,
+   "end": 167.51,
+   "text": "第三个问题：怎么定量描述磁化的程度。"
+  },
+  {
+   "slide": 5,
+   "start": 167.91,
+   "end": 175.85,
+   "text": "取一个小体元，把里面所有分子磁矩加起来再除以体积，就是磁化强度 M，单位是安每米。"
+  },
+  {
+   "slide": 5,
+   "start": 176.25,
+   "end": 179.11,
+   "text": "现在看一个均匀磁化的圆柱。"
+  },
+  {
+   "slide": 5,
+   "start": 179.51,
+   "end": 185.97,
+   "text": "内部的分子电流两两相邻，方向相反，几乎全部互相抵消。"
+  },
+  {
+   "slide": 5,
+   "start": 186.37,
+   "end": 191.22,
+   "text": "只有侧面那一圈抵消不掉，剩下一层环形的面电流。"
+  },
+  {
+   "slide": 5,
+   "start": 191.62,
+   "end": 196.73,
+   "text": "这个面电流的线密度，数值上正好等于磁化强度 M。"
+  },
+  {
+   "slide": 5,
+   "start": 197.13,
+   "end": 201.88,
+   "text": "于是磁化后的介质，完全等效于一个载流螺线管。"
+  },
+  {
+   "slide": 5,
+   "start": 202.28,
+   "end": 208.09,
+   "text": "这也说明，磁化电流不是自由电荷的流动，所以叫束缚电流。"
+  },
+  {
+   "slide": 6,
+   "start": 209.74,
+   "end": 212.48,
+   "text": "到这一步会遇到一个麻烦。"
+  },
+  {
+   "slide": 6,
+   "start": 212.88,
+   "end": 218.81,
+   "text": "空间里的磁感应强度 B，由自由电流和磁化电流共同决定。"
+  },
+  {
+   "slide": 6,
+   "start": 219.21,
+   "end": 226.12,
+   "text": "但磁化电流藏在介质内部，既不能接电极也不能接电流表，根本测不到。"
+  },
+  {
+   "slide": 6,
+   "start": 226.52,
+   "end": 233.82,
+   "text": "解决办法是定义一个新的矢量：磁场强度 H，等于 B 除以μ0 再减去 M。"
+  },
+  {
+   "slide": 6,
+   "start": 234.22,
+   "end": 237.77,
+   "text": "这样就把磁化部分单独拎出来了。"
+  },
+  {
+   "slide": 6,
+   "start": 238.17,
+   "end": 242.42,
+   "text": "反过来写，B 等于μ0 乘以 H 加 M。"
+  },
+  {
+   "slide": 6,
+   "start": 242.82,
+   "end": 251.08,
+   "text": "对线性介质，M 正比于 H，比例系数是磁化率，于是 B 等于μ0μr H。"
+  },
+  {
+   "slide": 6,
+   "start": 251.48,
+   "end": 256.66,
+   "text": "注意 H 的单位是安每米，和 B 的特斯拉不是一回事。"
+  },
+  {
+   "slide": 7,
+   "start": 258.3,
+   "end": 262.36,
+   "text": "有了 H，安培环路定理就可以改写。"
+  },
+  {
+   "slide": 7,
+   "start": 262.76,
+   "end": 268.21,
+   "text": "原来的形式，右边要同时数自由电流和磁化电流。"
+  },
+  {
+   "slide": 7,
+   "start": 268.61,
+   "end": 274.39,
+   "text": "把 B 用 H 和 M 换掉，磁化电流那一项正好被 M 的环流吸收。"
+  },
+  {
+   "slide": 7,
+   "start": 274.79,
+   "end": 280.6,
+   "text": "结果非常干净：H 的环流只等于穿过环路的自由电流。"
+  },
+  {
+   "slide": 7,
+   "start": 281.0,
+   "end": 289.57,
+   "text": "这就是有介质时的安培环路定理，也是这一节最有用的一句话——算 H 的时候，介质可以完全不管。"
+  },
+  {
+   "slide": 7,
+   "start": 289.97,
+   "end": 296.5,
+   "text": "举例：充满介质的螺线管，H 等于 n 乘以 I0，B 再乘上μ。"
+  },
+  {
+   "slide": 8,
+   "start": 298.03,
+   "end": 306.93,
+   "text": "看一个例题：螺绕环里充满相对磁导率为μr的介质，一共 N 匝，平均半径 R，通电流 I0。"
+  },
+  {
+   "slide": 8,
+   "start": 307.33,
+   "end": 310.91,
+   "text": "求环内的 H、B 和磁化强度。"
+  },
+  {
+   "slide": 8,
+   "start": 311.31,
+   "end": 315.97,
+   "text": "取一个与环同心的圆做环路，半径就是平均半径。"
+  },
+  {
+   "slide": 8,
+   "start": 316.37,
+   "end": 320.83,
+   "text": "由对称性，H 沿圆周大小处处相等。"
+  },
+  {
+   "slide": 8,
+   "start": 321.23,
+   "end": 327.52,
+   "text": "环流等于 H 乘以 2πR，等于穿过环面的自由电流 NI0。"
+  },
+  {
+   "slide": 8,
+   "start": 327.92,
+   "end": 332.26,
+   "text": "于是 H 等于 NI0 除以 2πR。"
+  },
+  {
+   "slide": 8,
+   "start": 332.66,
+   "end": 338.3,
+   "text": "B 再乘μ0μr；磁化强度由 M 等于χm H 给出。"
+  },
+  {
+   "slide": 8,
+   "start": 338.7,
+   "end": 343.07,
+   "text": "截面半径远小于 R 时，退化为 nI0。"
+  },
+  {
+   "slide": 9,
+   "start": 344.72,
+   "end": 346.59,
+   "text": "小结一下。"
+  },
+  {
+   "slide": 9,
+   "start": 346.99,
+   "end": 354.69,
+   "text": "第一，磁化的微观图像是分子电流转向，宏观表现是出现了磁化强度 M。"
+  },
+  {
+   "slide": 9,
+   "start": 355.09,
+   "end": 362.72,
+   "text": "第二，均匀磁化的介质等同于侧面有面电流的螺线管，面电流线密度等于 M。"
+  },
+  {
+   "slide": 9,
+   "start": 363.12,
+   "end": 371.38,
+   "text": "第三，磁场强度 H 等于 B 除以μ0 减 M，它把磁化的贡献剥了出来，环流只认自由电流。"
+  },
+  {
+   "slide": 9,
+   "start": 371.78,
+   "end": 380.01,
+   "text": "第四，有介质的环路定理是 H 的环流等于自由电流之和，求出 H 再乘μ得到 B。"
+  },
+  {
+   "slide": 9,
+   "start": 380.41,
+   "end": 389.65,
+   "text": "第五，顺磁、抗磁效应都很弱，只有铁磁质的μr能达到成千上万——这正是下一节要专门讨论的。"
+  }
+ ],
+ "build_ts": 1792482485,
+ "logoScale": 0.67
+}

@@ -1,0 +1,3944 @@
+{
+ "title": "13-5 循环过程 卡诺循环",
+ "nav": "13-5　循环过程　卡诺循环",
+ "footer": "第十三章　热力学基础",
+ "character": "aqiang",
+ "characters": [
+  {
+   "id": "aqiang",
+   "name": "阿强"
+  },
+  {
+   "id": "professor",
+   "name": "博士讲师"
+  },
+  {
+   "id": "zhongshan",
+   "name": "中山装先生"
+  }
+ ],
+ "duration": 514.13,
+ "slides": [
+  {
+   "id": 1,
+   "kind": "page",
+   "heading": "封面",
+   "narration": "第十三章第五节。13-5，循环过程与卡诺循环。前面几节把单个过程算清楚了，这一节把过程首尾接起来，绕成一个圈——热机就诞生了。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 282,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 十 三 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 300,
+     "y": 408,
+     "w": 1320,
+     "h": 170,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "热 力 学 基 础",
+        "size": 92,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 250,
+     "y": 588,
+     "w": 1420,
+     "h": 120,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "13-5　循环过程　卡诺循环",
+        "size": 40,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 220,
+     "y": 730,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "循环　·　热机效率　·　制冷系数　·　卡诺循环",
+        "size": 31,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 850,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "把过程首尾接起来，绕成一个圈",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 0.0,
+    "2": 2.78,
+    "3": 7.24
+   },
+   "t_start": 0.0,
+   "t_end": 15.6,
+   "duration": 15.6,
+   "laser": []
+  },
+  {
+   "id": 2,
+   "kind": "page",
+   "heading": "本节路线",
+   "narration": "本节路线。先看热机是怎么来的，以及现在各种热机的效率。然后把过程接成一个循环，回到原状态，内能变化为零。按方向把机器分成热机和制冷机，分别定义效率和制冷系数。再看一个真实的循环：汽油机的奥托循环。最后是卡诺循环——效率的理论极限，以及它的逆循环。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节路线",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 244,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "主线：热机 → 循环 → 效率与制冷系数 → 奥托循环 → 卡诺循环",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1　热机与效率",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 386,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "从 8% 到 48%",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 458,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2　循环过程",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 512,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\Delta E=0$，$Q=W$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 584,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "3　热机与制冷机",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 638,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\eta$ 与 $\\omega$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 330,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4　奥托循环",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 386,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "汽油机的真实循环",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 458,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "5　卡诺循环",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 512,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "效率的理论极限",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 584,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "6　卡诺制冷机",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 638,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "倒着走，就是冰箱",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "本节收口：一台热机好不好，只看它离卡诺极限有多远",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 16.4,
+    "2": 18.67,
+    "3": 23.63,
+    "4": 29.91,
+    "5": 36.43,
+    "6": 41.25
+   },
+   "t_start": 16.4,
+   "t_end": 47.5,
+   "duration": 31.1,
+   "laser": []
+  },
+  {
+   "id": 3,
+   "kind": "page",
+   "heading": "一　热机与它的效率",
+   "narration": "先看一段历史。1698 年萨维利、1705 年纽可门先后造出蒸汽机，效率极低；1765 年瓦特做了重大改进，效率才提上来。人们一直在为提高热机效率而努力，这既是工程问题，也推动了热学理论。看这几个数：蒸汽机 8%，汽油机 25%，柴油机 37%，液体燃料火箭 48%。热机就是持续把热量转化为功的机器。所以核心问题只有一个：烧掉这么多热，最多能变成多少功？",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　热机与它的效率",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 250,
+     "w": 765,
+     "h": 393,
+     "name": "engine_bars"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "热机：把热持续变成功",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1698 萨维利、1705 纽可门：蒸汽机",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 342,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1765 瓦特改进，效率大幅提高",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 404,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "提高效率一直是热学的主线",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 464,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "蒸汽机 8% → 汽油机 25%",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 510,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "柴油机 37% → 火箭 48%",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 570,
+     "w": 740,
+     "h": 170,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "热机",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "持续地把热量转化为功的机器",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "必须有两个热源：一高一低",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 770,
+     "w": 1580,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "核心问题：烧掉这些热，最多能变成多少功？",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "答案不在机器的手艺里，而在两个热源的温度里 —— 这是这一节要走的路",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 48.3,
+    "2": 50.76,
+    "3": 62.1,
+    "4": 69.24,
+    "5": 78.54,
+    "6": 82.59
+   },
+   "t_start": 48.3,
+   "t_end": 89.65,
+   "duration": 41.35,
+   "laser": []
+  },
+  {
+   "id": 4,
+   "kind": "page",
+   "heading": "二　循环过程",
+   "narration": "要研究热机，先把过程接成一个圈。系统经过一系列变化，又回到原来的状态，这就叫热力学循环过程。回到原状态，内能没有变化，所以一个循环下来 ΔE 等于零。由第一定律，净吸热等于净功：Q 等于 W。在 p–V 图上，循环是一条闭合曲线，包围的面积就是净功。想一想，顺时针走和逆时针走，净功的符号一样吗？沿顺时针走是正循环，对外做正功；沿逆时针走是逆循环，外界对系统做功。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　循环过程",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 437,
+     "name": "pv_cycle"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "绕一圈，回到原状态",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "系统经历一系列变化后又回到原态",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "回到原态 $\\Rightarrow \\Delta E=0$",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 416,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第一定律：净吸热 = 净功，$Q=W$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 476,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "p–V 图上是闭合曲线",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 522,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "包围面积 = 净功",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 592,
+     "w": 740,
+     "h": 190,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "方向决定正负",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "顺时针：正循环，$W>0$",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "逆时针：逆循环，$W<0$",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "面积一样，符号相反",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 985,
+     "y": 700,
+     "w": 765,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同一块面积，顺时针与逆时针的净功差一个符号",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 90.45,
+    "2": 94.47,
+    "3": 101.16,
+    "4": 108.14,
+    "5": 113.82,
+    "6": 126.17
+   },
+   "t_start": 90.45,
+   "t_end": 134.92,
+   "duration": 44.47,
+   "laser": []
+  },
+  {
+   "id": 5,
+   "kind": "page",
+   "heading": "三　热机和制冷机",
+   "narration": "按循环的方向，机器分成两类。热机是正循环：从高温热源吸热 Q₁，对外做功 W，再向低温热源放热 Q₂。制冷机是逆循环：外界做功 W，从低温热源吸热 Q₂，向高温热源放热 Q₁。三个量的关系都是 W 等于 Q₁ 减 Q₂，只是正负号不同。注意这里 Q₂ 取绝对值，是放热的多少，不是代数值。所以判断一台机器是热机还是制冷机，看净功是正还是负就够了。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　热机和制冷机",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 236,
+     "w": 765,
+     "h": 470,
+     "name": "engine_vs_fridge"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同一个装置，两个方向",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "热机：高温吸热，对外做功",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "制冷机：外界做功，低温吸热",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 416,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两种都满足 $W=Q_1-Q_2$",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 476,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$Q_2$ 取绝对值，表示放了多少",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 536,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "看净功的正负就能分类",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 700,
+     "w": 1580,
+     "h": 120,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "热机：把热变成功；制冷机：花功把热搬走",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "前者关心「得到多少功」，后者关心「搬走多少热」",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 135.72,
+    "2": 139.62,
+    "3": 147.2,
+    "4": 154.66,
+    "5": 160.6,
+    "6": 166.18
+   },
+   "t_start": 135.72,
+   "t_end": 173.45,
+   "duration": 37.73,
+   "laser": []
+  },
+  {
+   "id": 6,
+   "kind": "page",
+   "heading": "四　热机效率",
+   "narration": "热机好不好，看效率。效率等于净功除以总吸热，η 等于 W 比 Q₁。因为 W 等于 Q₁ 减 Q₂，又可以写成 1 减 Q₂ 比 Q₁。这个式子说明：效率永远小于一，因为总要放掉一些热。所以不可能把吸收的热全部变成功，这是热机的本性。要提高效率，就得想办法让 Q₂ 比 Q₁ 尽量小。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　热机效率",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "花多少热，得到多少功",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 150,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": null,
+     "tex": "\\eta=\\frac{W}{Q_1}",
+     "size": 40,
+     "align": "center",
+     "color": "#C00000"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 480,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "又因为 $W=Q_1-Q_2$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 170,
+     "y": 530,
+     "w": 740,
+     "h": 150,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": null,
+     "tex": "\\eta=1-\\frac{Q_2}{Q_1}",
+     "size": 38,
+     "align": "center",
+     "color": "#C00000"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "为什么必然小于一",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 292,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "Q₂ 是放给低温热源的热",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 338,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只能尽量小，不能为零",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 400,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "不可能把热全变成功",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "这是热机的本性",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "也是第二定律的入口",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "想提高效率，只有一条路：让放掉的 $Q_2$ 占 $Q_1$ 的比例尽量小",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 174.25,
+    "2": 177.31,
+    "3": 182.89,
+    "4": 188.33,
+    "5": 193.99,
+    "6": 199.57
+   },
+   "t_start": 174.25,
+   "t_end": 205.04,
+   "duration": 30.79,
+   "laser": []
+  },
+  {
+   "id": 7,
+   "kind": "page",
+   "heading": "五　制冷系数",
+   "narration": "制冷机好不好，看的不是效率，而是制冷系数。定义是 ω 等于 Q₂ 比 W：花一份功，能从低温处搬走多少热。这个数可以大于一，空调和冰箱的制冷系数通常在两到四之间。它大于一并不违反能量守恒，因为搬走的热来自低温热源。所以制冷系数和热机效率是两种不同的好坏标准。一个看「花多少热得到多少功」，一个看「花多少功搬走多少热」。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五　制冷系数",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "花多少功，搬走多少热",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 160,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": null,
+     "tex": "\\omega=\\frac{Q_2}{W}",
+     "size": 40,
+     "align": "center",
+     "color": "#C00000"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 490,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "可以大于一：空调、冰箱通常 2~4",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 550,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不违反能量守恒",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 596,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "搬走的热来自低温热源",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 190,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "两种「好坏」标准",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "效率：热 → 功，越高越好",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "制冷系数：功 → 热，越大越好",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "它们不是同一件事",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 460,
+     "w": 740,
+     "h": 190,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "单位",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$\\eta$ 与 $\\omega$ 都是纯数",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "没有单位",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 680,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "热机把热变成功，制冷机花功把热从低温搬到高温 —— 同一个循环，两个方向",
+        "size": 26,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 760,
+     "w": 1580,
+     "h": 140,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "冰箱、空调、热泵，都是逆循环的机器",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "它们不「制冷」，只是把热从低温处搬到高温处",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 205.84,
+    "2": 210.85,
+    "3": 218.23,
+    "4": 224.61,
+    "5": 230.41,
+    "6": 236.31
+   },
+   "t_start": 205.84,
+   "t_end": 243.04,
+   "duration": 37.2,
+   "laser": []
+  },
+  {
+   "id": 8,
+   "kind": "page",
+   "heading": "例 1　奥托循环（汽油机）",
+   "narration": "看一个具体循环：汽油机的奥托循环。它由两条绝热线和两条等容线组成：A 到 B 绝热压缩，B 到 C 等容吸热。C 到 D 绝热膨胀，D 到 A 等容放热。效率等于 1 减放热比吸热，而等容过程的热量等于 νC_V 乘温度差。再借用两条绝热线的温度关系，消掉温度，最后得到 η 等于 1 减 V₁ 比 V₂ 的 γ 减一次方。这里 V₁ 是压缩后的小体积，V₂ 是膨胀后的大体积，比值就是压缩比。压缩比越大，效率越高。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例 1　奥托循环（汽油机）",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 437,
+     "name": "otto_cycle"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两条绝热 + 两条等容",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 286,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "A→B 绝热压缩，B→C 等容吸热",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 342,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "C→D 绝热膨胀，D→A 等容放热",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 404,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "效率：$\\eta=1-\\dfrac{|Q_{DA}|}{Q_{BC}}$",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 450,
+     "w": 740,
+     "h": 90,
+     "tex": "=1-\\frac{T_D-T_A}{T_C-T_B}",
+     "size": 26,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 566,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "用绝热关系消去温度",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 612,
+     "w": 740,
+     "h": 110,
+     "tex": "\\eta=1-\\left(\\frac{V_1}{V_2}\\right)^{\\gamma-1}",
+     "size": 30,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 760,
+     "w": 1580,
+     "h": 130,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "压缩比 $V_2/V_1$ 越大，效率越高",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "这正是提高汽油机效率的方向：提高压缩比（但受爆震限制）",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 243.84,
+    "2": 248.27,
+    "3": 255.89,
+    "4": 260.66,
+    "5": 268.64,
+    "6": 276.67
+   },
+   "t_start": 243.84,
+   "t_end": 287.95,
+   "duration": 44.11,
+   "laser": []
+  },
+  {
+   "id": 9,
+   "kind": "page",
+   "heading": "六　卡诺循环",
+   "narration": "那么效率的极限在哪里？1824 年，法国工程师卡诺提出一个理想循环：工作在两个热源之间，由两个等温过程和两个绝热过程组成。A 到 B 在高温 T₁ 下等温膨胀，吸热 Q₁。B 到 C 绝热膨胀，温度降到 T₂。C 到 D 在低温 T₂ 下等温压缩，放热 Q₂。D 到 A 绝热压缩，回到起点。整个过程没有任何不可逆环节，所以效率最高。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "六　卡诺循环",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 437,
+     "name": "carnot_cycle"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1824 年，卡诺的理想循环",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 286,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两个等温 + 两个绝热",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 346,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "A→B：T₁ 等温膨胀，吸热 Q₁",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 400,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "B→C：绝热膨胀，温度降到 T₂",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 454,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "C→D：T₂ 等温压缩，放热 Q₂",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 508,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "D→A：绝热压缩，回到起点",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 580,
+     "w": 740,
+     "h": 180,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "为什么效率最高",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "四条过程全部可逆",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "没有任何耗散环节",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "所以它是理想极限",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 985,
+     "y": 700,
+     "w": 765,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两个热源、四条过程，就是卡诺循环的全部",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 288.75,
+    "2": 292.26,
+    "3": 302.67,
+    "4": 307.46,
+    "5": 312.04,
+    "6": 316.69
+   },
+   "t_start": 288.75,
+   "t_end": 326.72,
+   "duration": 37.97,
+   "laser": []
+  },
+  {
+   "id": 10,
+   "kind": "page",
+   "heading": "七　卡诺热机的效率",
+   "narration": "算一下它的效率。等温膨胀吸热：Q₁ 等于 νRT₁ 乘 ln(V₂/V₁)。等温压缩放热：Q₂ 等于 νRT₂ 乘 ln(V₃/V₄)。两条绝热线给出 V₂ 比 V₁ 等于 V₃ 比 V₄，所以两个对数相等。代进效率公式，得到 η 等于 1 减 T₂ 比 T₁。注意这个结果里没有工作物质，只有两个温度——这就是卡诺循环最了不起的地方。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "七　卡诺热机的效率",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两个等温过程",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 272,
+     "w": 760,
+     "h": 100,
+     "tex": "Q_1=\\nu RT_1\\ln\\frac{V_2}{V_1}",
+     "size": 28,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 392,
+     "w": 760,
+     "h": 100,
+     "tex": "Q_2=\\nu RT_2\\ln\\frac{V_3}{V_4}",
+     "size": 28,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 510,
+     "w": 760,
+     "h": 40,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两条绝热线给出",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 552,
+     "w": 760,
+     "h": 100,
+     "tex": "\\frac{V_2}{V_1}=\\frac{V_3}{V_4}",
+     "size": 28,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 226,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "代进效率公式",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 280,
+     "w": 740,
+     "h": 170,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": null,
+     "tex": "\\eta=1-\\frac{T_2}{T_1}",
+     "size": 40,
+     "align": "center",
+     "color": "#C00000"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 480,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "结果里没有工作物质",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 526,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只有两个热源的温度",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 690,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "效率只由 T₁、T₂ 决定，与用什么气体、多少摩尔都无关",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "这是卡诺循环最了不起的地方 —— 理论极限与工质无关",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 327.52,
+    "2": 329.96,
+    "3": 336.05,
+    "4": 341.71,
+    "5": 348.25,
+    "6": 352.99
+   },
+   "t_start": 327.52,
+   "t_end": 360.23,
+   "duration": 32.71,
+   "laser": []
+  },
+  {
+   "id": 11,
+   "kind": "page",
+   "heading": "八　卡诺效率说明了什么",
+   "narration": "这个式子有三层意思。第一，效率只由两个热源的温度决定，与用什么气体、多少摩尔都无关。第二，温差越大效率越高：想提高效率，要么提高高温热源，要么降低低温热源。第三，效率永远小于一，因为 T₂ 不可能为零。所以任何热机的效率都不可能超过同温之间的卡诺循环，这就是后面卡诺定理的内容。想一想：实际热机的效率为什么远低于卡诺效率？因为实际过程有摩擦、有热漏，都是不可逆的。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "八　卡诺效率说明了什么",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三层意思",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 292,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 与工质无关，只看温度",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 352,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 温差越大，效率越高",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 412,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ $T_2>0$ ⇒ $\\eta<1$，永远小于一",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 150,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "换一种气体",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "效率一模一样",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "这很不平常",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 1010,
+     "y": 406,
+     "w": 740,
+     "h": 150,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "提高效率的路",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "提高 $T_1$ 或降低 $T_2$",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "工程上就是提高蒸汽温度",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 480,
+     "w": 740,
+     "h": 180,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "卡诺定理（下一节）",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "任何热机都超不过卡诺效率",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "同温之间，卡诺循环最高",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 690,
+     "w": 1580,
+     "h": 130,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "实际热机远低于卡诺效率：摩擦、热漏、有限温差传热",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "这些都是不可逆过程 —— 第二定律要算的就是这笔账",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 361.03,
+    "2": 364.14,
+    "3": 371.07,
+    "4": 379.46,
+    "5": 385.26,
+    "6": 393.6
+   },
+   "t_start": 361.03,
+   "t_end": 404.83,
+   "duration": 43.8,
+   "laser": []
+  },
+  {
+   "id": 12,
+   "kind": "page",
+   "heading": "九　卡诺制冷机",
+   "narration": "把卡诺循环倒过来走，就是卡诺制冷机。外界做功 W，从低温热源吸热 Q₂，向高温热源放热 Q₁。制冷系数是 ω 等于 Q₂ 比 W。用同样的推导，可以得到 ω 等于 T₂ 比 T₁ 减 T₂。这个式子同样只与温度有关。注意：温差越小，制冷系数越大——所以空调在夏天特别热的时候更费电。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "九　卡诺制冷机",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "卡诺循环倒着走",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "外界做功 $W$，从低温吸热 $Q_2$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 342,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "向高温放热 $Q_1$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 404,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "制冷系数 $\\omega=Q_2/W$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 985,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "用同样的推导",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 985,
+     "y": 290,
+     "w": 740,
+     "h": 170,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": null,
+     "tex": "\\omega=\\frac{T_2}{T_1-T_2}",
+     "size": 40,
+     "align": "center",
+     "color": "#C00000"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 985,
+     "y": 490,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "仍然只与温度有关",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 985,
+     "y": 546,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "温差越小，$\\omega$ 越大",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 985,
+     "y": 592,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以夏天最热时空调最费电",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 680,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "同样的温度区间：热机效率看 $1-T_2/T_1$，制冷系数看 $T_2/(T_1-T_2)$",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "一个趋近于 1，一个可以远大于 1 —— 但都受同一对温度的约束",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 405.63,
+    "2": 409.99,
+    "3": 416.13,
+    "4": 420.51,
+    "5": 426.0,
+    "6": 429.66
+   },
+   "t_start": 405.63,
+   "t_end": 438.05,
+   "duration": 32.42,
+   "laser": []
+  },
+  {
+   "id": 13,
+   "kind": "page",
+   "heading": "例 2　冰箱每天要做多少功",
+   "narration": "看一个实际例子：冰箱。室温 20 摄氏度，冰箱里 5 摄氏度，每天有 2.0 乘十的八次方焦的热量漏进去。要维持温度不变，就得把这些热搬出去。理想卡诺制冷系数是 T₂ 比 T₁ 减 T₂，等于 18.5；实际只有 55%，也就是 10.2。所以每天需要做的功是 Q₂ 比 ω，约 2 乘十的七次方焦。换算成功率，是 232 瓦——这就是冰箱压缩机的功率。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例 2　冰箱每天要做多少功",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "室温 20 ℃（293 K），冰箱 5 ℃（278 K），每天漏进 $Q_2=2.0\\times10^{8}$ J",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 288,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 卡诺制冷系数",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 334,
+     "w": 760,
+     "h": 110,
+     "tex": "\\omega_{\\text{卡}}=\\frac{T_2}{T_1-T_2}=\\frac{278}{15}=18.5",
+     "size": 26,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 实际只有 55%",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 1010,
+     "y": 334,
+     "w": 740,
+     "h": 100,
+     "tex": "\\omega=0.55\\,\\omega_{\\text{卡}}=10.2",
+     "size": 28,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 480,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 每天需要做的功",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 526,
+     "w": 760,
+     "h": 100,
+     "tex": "|W|=\\frac{Q_2}{\\omega}=\\frac{2.0\\times10^{8}}{10.2}=2.0\\times10^{7}\\ \\mathrm{J}",
+     "size": 24,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 480,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 功率",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 1010,
+     "y": 526,
+     "w": 740,
+     "h": 100,
+     "tex": "P=\\frac{|W|}{t}=\\frac{2.0\\times10^{7}}{24\\times3600}=232\\ \\mathrm{W}",
+     "size": 24,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 680,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "232 W —— 这就是冰箱压缩机的功率量级",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "每天搬走 2×10⁸ J 的热，只花 2×10⁷ J 的功：制冷系数约 10",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 438.85,
+    "2": 442.11,
+    "3": 449.9,
+    "4": 454.07,
+    "5": 463.09,
+    "6": 469.63
+   },
+   "t_start": 438.85,
+   "t_end": 475.59,
+   "duration": 36.74,
+   "laser": []
+  },
+  {
+   "id": 14,
+   "kind": "page",
+   "heading": "本节小结",
+   "narration": "小结。循环过程：回到原态，ΔE 等于零，净吸热等于净功，图上是一圈闭合曲线。热机效率 η 等于 W 比 Q₁，等于 1 减 Q₂ 比 Q₁；制冷系数 ω 等于 Q₂ 比 W。卡诺循环由两个等温、两个绝热组成，效率 η 等于 1 减 T₂ 比 T₁。只与两个热源的温度有关，与工质无关——这是所有热机的效率上限。下一节讲卡诺定理和第二定律。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 循环过程",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\Delta E=0$，$Q=W$，闭合曲线包围面积",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 两个指标",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 408,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "热机 $\\eta=W/Q_1$；制冷 $\\omega=Q_2/W$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 卡诺循环",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两个等温 + 两个绝热",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 356,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 卡诺效率",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 408,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\eta=1-T_2/T_1$，与工质无关",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 470,
+     "w": 740,
+     "h": 170,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "下一节",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "13-6　第二定律的表述 卡诺定理",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "从「效率上限」到「方向性」",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 490,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一句话",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "热机看效率，制冷看系数",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "卡诺循环给出上限",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "上限只由两个温度决定",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 120,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "第十三章 5/9：从「算过程」到「比效率」",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 476.39,
+    "2": 478.66,
+    "3": 486.88,
+    "4": 494.82,
+    "5": 501.77
+   },
+   "t_start": 476.39,
+   "t_end": 512.41,
+   "duration": 36.02,
+   "laser": []
+  }
+ ],
+ "subtitles": [
+  {
+   "slide": 1,
+   "start": 0.0,
+   "end": 2.38,
+   "text": "第十三章第五节。"
+  },
+  {
+   "slide": 1,
+   "start": 2.78,
+   "end": 6.84,
+   "text": "13-5，循环过程与卡诺循环。"
+  },
+  {
+   "slide": 1,
+   "start": 7.24,
+   "end": 15.04,
+   "text": "前面几节把单个过程算清楚了，这一节把过程首尾接起来，绕成一个圈——热机就诞生了。"
+  },
+  {
+   "slide": 2,
+   "start": 16.4,
+   "end": 18.27,
+   "text": "本节路线。"
+  },
+  {
+   "slide": 2,
+   "start": 18.67,
+   "end": 23.23,
+   "text": "先看热机是怎么来的，以及现在各种热机的效率。"
+  },
+  {
+   "slide": 2,
+   "start": 23.63,
+   "end": 29.51,
+   "text": "然后把过程接成一个循环，回到原状态，内能变化为零。"
+  },
+  {
+   "slide": 2,
+   "start": 29.91,
+   "end": 36.03,
+   "text": "按方向把机器分成热机和制冷机，分别定义效率和制冷系数。"
+  },
+  {
+   "slide": 2,
+   "start": 36.43,
+   "end": 40.85,
+   "text": "再看一个真实的循环：汽油机的奥托循环。"
+  },
+  {
+   "slide": 2,
+   "start": 41.25,
+   "end": 46.77,
+   "text": "最后是卡诺循环——效率的理论极限，以及它的逆循环。"
+  },
+  {
+   "slide": 3,
+   "start": 48.3,
+   "end": 50.36,
+   "text": "先看一段历史。"
+  },
+  {
+   "slide": 3,
+   "start": 50.76,
+   "end": 61.7,
+   "text": "1698 年萨维利、1705 年纽可门先后造出蒸汽机，效率极低；1765 年瓦特做了重大改进，效率才提上来。"
+  },
+  {
+   "slide": 3,
+   "start": 62.1,
+   "end": 68.84,
+   "text": "人们一直在为提高热机效率而努力，这既是工程问题，也推动了热学理论。"
+  },
+  {
+   "slide": 3,
+   "start": 69.24,
+   "end": 78.14,
+   "text": "看这几个数：蒸汽机 8%，汽油机 25%，柴油机 37%，液体燃料火箭 48%。"
+  },
+  {
+   "slide": 3,
+   "start": 78.54,
+   "end": 82.19,
+   "text": "热机就是持续把热量转化为功的机器。"
+  },
+  {
+   "slide": 3,
+   "start": 82.59,
+   "end": 88.64,
+   "text": "所以核心问题只有一个：烧掉这么多热，最多能变成多少功？"
+  },
+  {
+   "slide": 4,
+   "start": 90.45,
+   "end": 94.07,
+   "text": "要研究热机，先把过程接成一个圈。"
+  },
+  {
+   "slide": 4,
+   "start": 94.47,
+   "end": 100.76,
+   "text": "系统经过一系列变化，又回到原来的状态，这就叫热力学循环过程。"
+  },
+  {
+   "slide": 4,
+   "start": 101.16,
+   "end": 107.74,
+   "text": "回到原状态，内能没有变化，所以一个循环下来 ΔE 等于零。"
+  },
+  {
+   "slide": 4,
+   "start": 108.14,
+   "end": 113.42,
+   "text": "由第一定律，净吸热等于净功：Q 等于 W。"
+  },
+  {
+   "slide": 4,
+   "start": 113.82,
+   "end": 119.6,
+   "text": "在 p–V 图上，循环是一条闭合曲线，包围的面积就是净功。"
+  },
+  {
+   "slide": 4,
+   "start": 120.0,
+   "end": 125.52,
+   "text": "想一想，顺时针走和逆时针走，净功的符号一样吗？"
+  },
+  {
+   "slide": 4,
+   "start": 126.17,
+   "end": 134.11,
+   "text": "沿顺时针走是正循环，对外做正功；沿逆时针走是逆循环，外界对系统做功。"
+  },
+  {
+   "slide": 5,
+   "start": 135.72,
+   "end": 139.22,
+   "text": "按循环的方向，机器分成两类。"
+  },
+  {
+   "slide": 5,
+   "start": 139.62,
+   "end": 146.8,
+   "text": "热机是正循环：从高温热源吸热 Q₁，对外做功 W，再向低温热源放热 Q₂。"
+  },
+  {
+   "slide": 5,
+   "start": 147.2,
+   "end": 154.26,
+   "text": "制冷机是逆循环：外界做功 W，从低温热源吸热 Q₂，向高温热源放热 Q₁。"
+  },
+  {
+   "slide": 5,
+   "start": 154.66,
+   "end": 160.2,
+   "text": "三个量的关系都是 W 等于 Q₁ 减 Q₂，只是正负号不同。"
+  },
+  {
+   "slide": 5,
+   "start": 160.6,
+   "end": 165.78,
+   "text": "注意这里 Q₂ 取绝对值，是放热的多少，不是代数值。"
+  },
+  {
+   "slide": 5,
+   "start": 166.18,
+   "end": 172.71,
+   "text": "所以判断一台机器是热机还是制冷机，看净功是正还是负就够了。"
+  },
+  {
+   "slide": 6,
+   "start": 174.25,
+   "end": 176.91,
+   "text": "热机好不好，看效率。"
+  },
+  {
+   "slide": 6,
+   "start": 177.31,
+   "end": 182.49,
+   "text": "效率等于净功除以总吸热，η 等于 W 比 Q₁。"
+  },
+  {
+   "slide": 6,
+   "start": 182.89,
+   "end": 187.93,
+   "text": "因为 W 等于 Q₁ 减 Q₂，又可以写成 1 减 Q₂ 比 Q₁。"
+  },
+  {
+   "slide": 6,
+   "start": 188.33,
+   "end": 193.59,
+   "text": "这个式子说明：效率永远小于一，因为总要放掉一些热。"
+  },
+  {
+   "slide": 6,
+   "start": 193.99,
+   "end": 199.17,
+   "text": "所以不可能把吸收的热全部变成功，这是热机的本性。"
+  },
+  {
+   "slide": 6,
+   "start": 199.57,
+   "end": 204.3,
+   "text": "要提高效率，就得想办法让 Q₂ 比 Q₁ 尽量小。"
+  },
+  {
+   "slide": 7,
+   "start": 205.84,
+   "end": 210.45,
+   "text": "制冷机好不好，看的不是效率，而是制冷系数。"
+  },
+  {
+   "slide": 7,
+   "start": 210.85,
+   "end": 217.83,
+   "text": "定义是 ω 等于 Q₂ 比 W：花一份功，能从低温处搬走多少热。"
+  },
+  {
+   "slide": 7,
+   "start": 218.23,
+   "end": 224.21,
+   "text": "这个数可以大于一，空调和冰箱的制冷系数通常在两到四之间。"
+  },
+  {
+   "slide": 7,
+   "start": 224.61,
+   "end": 230.01,
+   "text": "它大于一并不违反能量守恒，因为搬走的热来自低温热源。"
+  },
+  {
+   "slide": 7,
+   "start": 230.41,
+   "end": 235.91,
+   "text": "所以制冷系数和热机效率是两种不同的好坏标准。"
+  },
+  {
+   "slide": 7,
+   "start": 236.31,
+   "end": 242.31,
+   "text": "一个看「花多少热得到多少功」，一个看「花多少功搬走多少热」。"
+  },
+  {
+   "slide": 8,
+   "start": 243.84,
+   "end": 247.87,
+   "text": "看一个具体循环：汽油机的奥托循环。"
+  },
+  {
+   "slide": 8,
+   "start": 248.27,
+   "end": 255.49,
+   "text": "它由两条绝热线和两条等容线组成：A 到 B 绝热压缩，B 到 C 等容吸热。"
+  },
+  {
+   "slide": 8,
+   "start": 255.89,
+   "end": 260.26,
+   "text": "C 到 D 绝热膨胀，D 到 A 等容放热。"
+  },
+  {
+   "slide": 8,
+   "start": 260.66,
+   "end": 268.24,
+   "text": "效率等于 1 减放热比吸热，而等容过程的热量等于 νC_V 乘温度差。"
+  },
+  {
+   "slide": 8,
+   "start": 268.64,
+   "end": 276.27,
+   "text": "再借用两条绝热线的温度关系，消掉温度，最后得到 η 等于 1 减 V₁ 比 V₂ 的 γ 减一次方。"
+  },
+  {
+   "slide": 8,
+   "start": 276.67,
+   "end": 283.63,
+   "text": "这里 V₁ 是压缩后的小体积，V₂ 是膨胀后的大体积，比值就是压缩比。"
+  },
+  {
+   "slide": 8,
+   "start": 284.03,
+   "end": 287.15,
+   "text": "压缩比越大，效率越高。"
+  },
+  {
+   "slide": 9,
+   "start": 288.75,
+   "end": 291.61,
+   "text": "那么效率的极限在哪里？"
+  },
+  {
+   "slide": 9,
+   "start": 292.26,
+   "end": 302.27,
+   "text": "1824 年，法国工程师卡诺提出一个理想循环：工作在两个热源之间，由两个等温过程和两个绝热过程组成。"
+  },
+  {
+   "slide": 9,
+   "start": 302.67,
+   "end": 307.06,
+   "text": "A 到 B 在高温 T₁ 下等温膨胀，吸热 Q₁。"
+  },
+  {
+   "slide": 9,
+   "start": 307.46,
+   "end": 311.64,
+   "text": "B 到 C 绝热膨胀，温度降到 T₂。"
+  },
+  {
+   "slide": 9,
+   "start": 312.04,
+   "end": 316.29,
+   "text": "C 到 D 在低温 T₂ 下等温压缩，放热 Q₂。"
+  },
+  {
+   "slide": 9,
+   "start": 316.69,
+   "end": 320.51,
+   "text": "D 到 A 绝热压缩，回到起点。"
+  },
+  {
+   "slide": 9,
+   "start": 320.91,
+   "end": 325.93,
+   "text": "整个过程没有任何不可逆环节，所以效率最高。"
+  },
+  {
+   "slide": 10,
+   "start": 327.52,
+   "end": 329.56,
+   "text": "算一下它的效率。"
+  },
+  {
+   "slide": 10,
+   "start": 329.96,
+   "end": 335.65,
+   "text": "等温膨胀吸热：Q₁ 等于 νRT₁ 乘 ln(V₂/V₁)。"
+  },
+  {
+   "slide": 10,
+   "start": 336.05,
+   "end": 341.31,
+   "text": "等温压缩放热：Q₂ 等于 νRT₂ 乘 ln(V₃/V₄)。"
+  },
+  {
+   "slide": 10,
+   "start": 341.71,
+   "end": 347.85,
+   "text": "两条绝热线给出 V₂ 比 V₁ 等于 V₃ 比 V₄，所以两个对数相等。"
+  },
+  {
+   "slide": 10,
+   "start": 348.25,
+   "end": 352.59,
+   "text": "代进效率公式，得到 η 等于 1 减 T₂ 比 T₁。"
+  },
+  {
+   "slide": 10,
+   "start": 352.99,
+   "end": 359.49,
+   "text": "注意这个结果里没有工作物质，只有两个温度——这就是卡诺循环最了不起的地方。"
+  },
+  {
+   "slide": 11,
+   "start": 361.03,
+   "end": 363.74,
+   "text": "这个式子有三层意思。"
+  },
+  {
+   "slide": 11,
+   "start": 364.14,
+   "end": 370.67,
+   "text": "第一，效率只由两个热源的温度决定，与用什么气体、多少摩尔都无关。"
+  },
+  {
+   "slide": 11,
+   "start": 371.07,
+   "end": 379.06,
+   "text": "第二，温差越大效率越高：想提高效率，要么提高高温热源，要么降低低温热源。"
+  },
+  {
+   "slide": 11,
+   "start": 379.46,
+   "end": 384.86,
+   "text": "第三，效率永远小于一，因为 T₂ 不可能为零。"
+  },
+  {
+   "slide": 11,
+   "start": 385.26,
+   "end": 393.2,
+   "text": "所以任何热机的效率都不可能超过同温之间的卡诺循环，这就是后面卡诺定理的内容。"
+  },
+  {
+   "slide": 11,
+   "start": 393.6,
+   "end": 398.69,
+   "text": "想一想：实际热机的效率为什么远低于卡诺效率？"
+  },
+  {
+   "slide": 11,
+   "start": 399.34,
+   "end": 404.02,
+   "text": "因为实际过程有摩擦、有热漏，都是不可逆的。"
+  },
+  {
+   "slide": 12,
+   "start": 405.63,
+   "end": 409.59,
+   "text": "把卡诺循环倒过来走，就是卡诺制冷机。"
+  },
+  {
+   "slide": 12,
+   "start": 409.99,
+   "end": 415.73,
+   "text": "外界做功 W，从低温热源吸热 Q₂，向高温热源放热 Q₁。"
+  },
+  {
+   "slide": 12,
+   "start": 416.13,
+   "end": 420.11,
+   "text": "制冷系数是 ω 等于 Q₂ 比 W。"
+  },
+  {
+   "slide": 12,
+   "start": 420.51,
+   "end": 425.6,
+   "text": "用同样的推导，可以得到 ω 等于 T₂ 比 T₁ 减 T₂。"
+  },
+  {
+   "slide": 12,
+   "start": 426.0,
+   "end": 429.26,
+   "text": "这个式子同样只与温度有关。"
+  },
+  {
+   "slide": 12,
+   "start": 429.66,
+   "end": 437.32,
+   "text": "注意：温差越小，制冷系数越大——所以空调在夏天特别热的时候更费电。"
+  },
+  {
+   "slide": 13,
+   "start": 438.85,
+   "end": 441.71,
+   "text": "看一个实际例子：冰箱。"
+  },
+  {
+   "slide": 13,
+   "start": 442.11,
+   "end": 449.5,
+   "text": "室温 20 摄氏度，冰箱里 5 摄氏度，每天有 2.0 乘十的八次方焦的热量漏进去。"
+  },
+  {
+   "slide": 13,
+   "start": 449.9,
+   "end": 453.67,
+   "text": "要维持温度不变，就得把这些热搬出去。"
+  },
+  {
+   "slide": 13,
+   "start": 454.07,
+   "end": 462.69,
+   "text": "理想卡诺制冷系数是 T₂ 比 T₁ 减 T₂，等于 18.5；实际只有 55%，也就是 10.2。"
+  },
+  {
+   "slide": 13,
+   "start": 463.09,
+   "end": 469.23,
+   "text": "所以每天需要做的功是 Q₂ 比 ω，约 2 乘十的七次方焦。"
+  },
+  {
+   "slide": 13,
+   "start": 469.63,
+   "end": 474.86,
+   "text": "换算成功率，是 232 瓦——这就是冰箱压缩机的功率。"
+  },
+  {
+   "slide": 14,
+   "start": 476.39,
+   "end": 478.26,
+   "text": "小结。"
+  },
+  {
+   "slide": 14,
+   "start": 478.66,
+   "end": 486.48,
+   "text": "循环过程：回到原态，ΔE 等于零，净吸热等于净功，图上是一圈闭合曲线。"
+  },
+  {
+   "slide": 14,
+   "start": 486.88,
+   "end": 494.42,
+   "text": "热机效率 η 等于 W 比 Q₁，等于 1 减 Q₂ 比 Q₁；制冷系数 ω 等于 Q₂ 比 W。"
+  },
+  {
+   "slide": 14,
+   "start": 494.82,
+   "end": 501.37,
+   "text": "卡诺循环由两个等温、两个绝热组成，效率 η 等于 1 减 T₂ 比 T₁。"
+  },
+  {
+   "slide": 14,
+   "start": 501.77,
+   "end": 507.79,
+   "text": "只与两个热源的温度有关，与工质无关——这是所有热机的效率上限。"
+  },
+  {
+   "slide": 14,
+   "start": 508.19,
+   "end": 511.67,
+   "text": "下一节讲卡诺定理和第二定律。"
+  }
+ ],
+ "build_ts": 1792586940,
+ "logoScale": 0.67,
+ "theme": "wave"
+}

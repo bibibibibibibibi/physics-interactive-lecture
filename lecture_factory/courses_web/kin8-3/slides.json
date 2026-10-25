@@ -1,0 +1,3108 @@
+{
+ "title": "8-3 自感与互感",
+ "nav": "8-3　自感与互感",
+ "footer": "第八章　电磁感应",
+ "logoScale": 0.67,
+ "engine": "edge",
+ "voice": "zh-CN-YunxiNeural",
+ "pages": [
+  {
+   "id": 1,
+   "narration": "[[1]]这一节讲自感与互感。[[2]]上一节的两类电动势，都是由「外面的磁通变化」引起的。[[3]]现在换一个角度：如果磁通的变化，是这个线圈自己的电流造成的呢？[[4]]这就是自感；如果是旁边另一个线圈的电流造成的，就是互感。两者都是法拉第定律的应用，但工程上极其重要。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 282,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 八 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 300,
+     "y": 408,
+     "w": 1320,
+     "h": 170,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电 磁 感 应",
+        "size": 80,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 300,
+     "y": 600,
+     "w": 1320,
+     "h": 140,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "8-3　自感与互感",
+        "size": 44,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 770,
+     "w": 1480,
+     "h": 90,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "自感系数　·　互感系数　·　耦合",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 220,
+     "y": 900,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁场也有「惯性」",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "封面"
+  },
+  {
+   "id": 2,
+   "narration": "[[1]]本节路线。[[2]]先看自感现象：一个线圈通断电时，灯光的亮度会「慢半拍」。[[3]]然后定义自感系数，得到自感电动势的公式。[[4]]再用两个例子算自感：长直螺线管和同轴电缆。[[5]]接着看互感：两个线圈之间通过磁场耦合，同样定义一个系数 M。[[6]]最后讨论 M 与 L 的关系，也就是耦合系数，以及它们的工程应用。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节路线",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 244,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "主线：自感（自己的电流）→ 互感（别人的电流）→ 耦合 → 应用",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1　自感现象",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 386,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "通断电时灯光的「慢半拍」",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 458,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2　自感系数与自感电动势",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 512,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\Psi=Li$：磁通链与电流成正比",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 558,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\varepsilon_L=-L\\,\\mathrm di/\\mathrm dt$",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 616,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "3　两个算例",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 670,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "长直螺线管、同轴电缆",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 330,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4　互感系数",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 386,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\Phi_{21}=Mi_1$，$M_{21}=M_{12}$",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 458,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "5　耦合与应用",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 514,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "耦合系数 $k$、变压器、无线充电",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 610,
+     "w": 740,
+     "h": 230,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "两条线的共同点",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "都是 $-\\mathrm d\\Psi/\\mathrm dt$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "区别只在「磁通是谁造成的」",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "本节路线"
+  },
+  {
+   "id": 3,
+   "narration": "[[1]]先看一个实验。[[2]]图中有两条并联支路：左边是电阻 R 和灯 A₁，右边是线圈 L 和灯 A₂，两支路元件完全对称。[[3]]闭合开关的瞬间，A₁ 立刻亮到正常亮度。[[4]]A₂ 却要过一会儿才慢慢变亮——线圈把电流的增长拖住了。[[5]]断开开关时更明显：A₂ 不是立刻熄灭，而是闪亮一下再暗下去。[[6]]两次「慢半拍」出于同一个原因：线圈里的电流变化时，线圈自己产生了感应电动势。这个电动势叫自感电动势，它总是阻碍电流的变化——注意是阻碍，不是阻止。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　自感现象",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 246,
+     "w": 765,
+     "h": 470,
+     "name": "self_induct_exp"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两条并联支路：电阻支路与线圈支路",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 292,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "元件对称，灯 A₁、A₂ 规格相同",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 358,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "闭合 S：A₁ 立刻亮到正常亮度",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 414,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "A₂ 却慢慢变亮 —— 电流被拖住",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 470,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "断开 S：A₂ 闪亮一下再熄灭",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 536,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两次「慢半拍」的原因相同",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 592,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "线圈中电流变化 ⇒ 自身产生感应电动势",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 660,
+     "w": 740,
+     "h": 190,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "自感电动势",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "由线圈自身电流的变化引起",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "总在阻碍电流的变化",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 884,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "自感是「电磁惯性」的表现",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "一　自感现象"
+  },
+  {
+   "id": 4,
+   "narration": "[[1]]把实验写成定量关系。[[2]]穿过线圈的磁通链记作 Psi，等于匝数乘每匝磁通。[[3]]实验表明，磁通链与电流成正比，比例系数就是自感系数 L。[[4]]所以 L 等于 Psi 除以 i，单位是亨利，一亨利等于一韦伯每安培。[[5]]把磁通链代入法拉第定律，就得到自感电动势：等于负 L 乘 di/dt。[[6]]负号就是楞次定律：i 增大时电动势与 i 反向，i 减小时同向，总是阻碍变化。注意 L 只由线圈本身决定——匝数、形状、大小、介质，与电流无关。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　自感系数与自感电动势",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 246,
+     "w": 765,
+     "h": 470,
+     "name": "self_emf_sign"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁通链 $\\Psi=N\\Phi$，与电流成正比",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 292,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这里的 $\\Phi$ 是穿过每一匝的磁通",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 356,
+     "w": 700,
+     "h": 110,
+     "tex": "\\Psi = L i",
+     "size": 38,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 486,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$L=\\Psi/i$：自感系数（简称自感）",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 542,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "单位：亨利 $\\mathrm H=\\mathrm{Wb/A}$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 608,
+     "w": 720,
+     "h": 130,
+     "tex": "\\varepsilon_L=-\\frac{\\mathrm d\\Psi}{\\mathrm dt}=-L\\frac{\\mathrm di}{\\mathrm dt}",
+     "size": 30,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 752,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "负号：$\\varepsilon_L$ 总是阻碍电流变化",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 816,
+     "w": 740,
+     "h": 160,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "L 只由线圈本身决定",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "匝数、形状、大小、介质",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "与电流 $i$ 无关",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "二　自感系数与自感电动势"
+  },
+  {
+   "id": 5,
+   "narration": "[[1]]算一个具体的自感：长直螺线管。[[2]]设管长 l、截面积 S、单位长度有 n 匝。[[3]]管内磁场是均匀的，等于 mu0 乘 n 乘 i。[[4]]穿过每一匝的磁通是 B 乘 S。[[5]]总匝数是 n 乘 l，所以磁通链等于 n l 乘 B S，除以电流就得到自感。[[6]]结果里出现了 n 的平方，因为匝数翻倍时，磁通链里的匝数和磁场里的 n 各贡献一个因子。最后写成体积形式：L 等于 mu0 n 平方 V。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　例：长直螺线管的自感",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 470,
+     "name": "solenoid_self"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "长 $l$、截面 $S$、单位长度 $n$ 匝",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "管内磁场均匀：$B=\\mu_0 n i$",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "每匝磁通 $\\Phi=BS$",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 412,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "共 $N=n l$ 匝 ⇒ $\\Psi=N\\Phi$",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 476,
+     "w": 720,
+     "h": 120,
+     "tex": "L=\\frac{\\Psi}{i}=\\mu_0 n^{2} l S=\\mu_0 n^{2} V",
+     "size": 31,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 626,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "自感只由几何与介质决定",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 690,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "为什么是 $n^{2}$",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "磁通链里 $N\\propto n$，磁场里 $B\\propto n$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "两个因子各带一个 $n$ ⇒ $n^{2}$",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 916,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "记住 $L\\propto n^{2}$：多绕一倍，自感变四倍",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "三　例：长直螺线管的自感"
+  },
+  {
+   "id": 6,
+   "narration": "[[1]]再看一个例子：同轴电缆。[[2]]内导体半径 R1，外导体的内半径 R2，电流从内导体去、从外导体回。[[3]]两导体之间的磁场等于 mu0 I 除以 2 pi r。[[4]]取长为 l 的一段，在半径 r 处取宽 dr 的窄条，穿过它的磁通是 B 乘 l dr。[[5]]从 R1 积到 R2，再除以电流，就得到这段电缆的自感。[[6]]结果是 mu0 l 除以 2 pi，再乘 ln R2 比 R1。这种结构把磁场完全关在电缆内部，外面测不到——这正是同轴电缆屏蔽好的原因。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　例：同轴电缆的自感",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 470,
+     "name": "coax_induct"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "内导体 $R_1$、外导体内半径 $R_2$",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两导体之间 $B=\\mu_0 I/(2\\pi r)$",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "取长 $l$ 的一段，在 $r$ 处取宽 $\\mathrm dr$",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 420,
+     "w": 730,
+     "h": 120,
+     "tex": "\\Phi=\\int_{R_1}^{R_2}\\frac{\\mu_0 I}{2\\pi r}\\,l\\,\\mathrm dr",
+     "size": 28,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 566,
+     "w": 730,
+     "h": 130,
+     "tex": "L=\\frac{\\Phi}{I}=\\frac{\\mu_0 l}{2\\pi}\\ln\\frac{R_2}{R_1}",
+     "size": 30,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 712,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁场完全限制在电缆内部",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 776,
+     "w": 740,
+     "h": 190,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "这类题的通法",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "先求 $B(r)$ ⇒ 再积分求 $\\Phi$ ⇒ 最后 $L=\\Phi/I$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "与静电学里「先求 $E$ 再求 $U$」同构",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "四　例：同轴电缆的自感"
+  },
+  {
+   "id": 7,
+   "narration": "[[1]]自感在电路里既好用也可怕。[[2]]先说有利的一面：扼流圈。它直流电阻很小，直流能通过；但对交流呈现很大的感抗，于是把交流挡住，常用于滤波。[[3]]日光灯的镇流器也是利用自感：启辉瞬间断开电路，电流急剧变化，线圈产生很高的自感电动势，把灯管点亮。[[4]]有害的一面在断电的瞬间：di/dt 极大，自感电动势可以达到上千伏，触点打火、击穿元件。[[5]]对策是给线圈并联续流二极管或灭弧电路，让电流有路可走；要求自感很小时，用双线并绕。[[6]]一句话：自感是能量暂存在磁场里的效应，用得好是工具，用不好是干扰。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五　自感的利与弊",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "有利：扼流圈",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 300,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "直流电阻小，直流畅通",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 348,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "感抗 $X_L=\\omega L$，交流被挡住",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 412,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "日光灯镇流器",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 472,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "断电瞬间 $\\mathrm di/\\mathrm dt$ 极大",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 520,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "产生高压，把灯管点亮",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 240,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "有害：断开电路时",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 300,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\varepsilon_L$ 可达上千伏",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 348,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "触点打火、击穿元件",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 412,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "对策",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 468,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "并续流二极管、加灭弧电路",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 516,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "需要小自感时：双线并绕",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 600,
+     "w": 760,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "物理上它是什么",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "自感 = 磁场能量的「容纳能力」",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "电流建立时，电源要额外做功",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "这部分功就储存在磁场里",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 862,
+     "w": 1580,
+     "h": 130,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "用得好的工具，用不好的干扰",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "下一节把「储存在磁场里的能量」算清楚",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "五　自感的利与弊"
+  },
+  {
+   "id": 8,
+   "narration": "[[1]]现在把目光移到两个线圈之间。[[2]]两个线圈靠近放置，线圈 1 通以变化的电流。[[3]]它在周围产生磁场，其中一部分磁通穿过线圈 2。[[4]]线圈 2 里的磁通在变化，于是出现感应电动势。[[5]]这种「一个线圈的电流变化，在另一个线圈里引起电动势」的现象，叫互感现象。[[6]]注意：两个线圈之间没有任何导线连接，耦合全靠磁场。变压器就是靠这个工作的。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "六　互感现象",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 470,
+     "name": "mutual_coils"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两个线圈靠近放置",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 292,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "线圈 1 通以变化的电流 $i_1$",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 348,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "它的磁场穿过线圈 2",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 404,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "线圈 2 里出现感应电动势",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 460,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这种现象叫互感现象",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 516,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两线圈无导线相连，全靠磁场耦合",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 590,
+     "w": 740,
+     "h": 230,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "与自感的区别",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "自感：自己的电流 → 自己的磁通",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "互感：别人的电流 → 自己的磁通",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "公式形式完全一样",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 866,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "变压器、无线充电、互感器都靠它",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "六　互感现象"
+  },
+  {
+   "id": 9,
+   "narration": "[[1]]和自感一样，互感也可以定量描述。[[2]]线圈 1 的电流 i1 在线圈 2 中产生的磁通，与 i1 成正比。[[3]]比例系数就是互感系数 M，它等于 Phi21 比 i1。[[4]]理论上可以证明，反过来线圈 2 的电流在线圈 1 中产生的磁通，用同一个 M 算——这就是互易定理。[[5]]所以互感电动势写成负 M 乘 di1/dt。[[6]]M 只由两个线圈的形状、大小、相对位置和介质决定，与电流无关；单位同样是亨利。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "七　互感系数与互感电动势",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1480,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "线圈 1 的电流 $i_1$ 在线圈 2 中产生的磁通 $\\Phi_{21}\\propto i_1$",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 300,
+     "w": 1580,
+     "h": 130,
+     "tex": "M=\\frac{\\Phi_{21}}{i_1}=\\frac{\\Phi_{12}}{i_2}",
+     "size": 34,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 452,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "互易性：$M_{21}=M_{12}=M$，两线圈之间只有一个 $M$",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 508,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（这是能量守恒的必然结果，可由能量法证明）",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 570,
+     "w": 1580,
+     "h": 120,
+     "tex": "\\varepsilon_2=-M\\frac{\\mathrm di_1}{\\mathrm dt}",
+     "size": 32,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 706,
+     "w": 1480,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$M$ 只由两线圈的形状、相对位置、介质决定",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 776,
+     "w": 1580,
+     "h": 190,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "关于符号",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$M$ 本身取正值；电动势的方向由楞次定律判定",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "绕向相反时，等效于 $\\Phi_{21}$ 反号，可在解题时单独处理",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "七　互感系数"
+  },
+  {
+   "id": 10,
+   "narration": "[[1]]算一个互感的例子：把一个线圈绕在长直螺线管外面。[[2]]内管单位长度 n1 匝，外绕线圈共 n2 乘以 l 匝，两者共享同一段体积 V。[[3]]内管的磁场是 mu0 n1 i1，全部穿过外线圈。[[4]]外线圈每匝的磁通是 B1 乘 S，总磁通链再乘上匝数。[[5]]除以 i1，得到 M 等于 mu0 n1 n2 V。[[6]]验算一下：内管的自感是 mu0 n1 平方 V，外线圈是 mu0 n2 平方 V，两者相乘开根号，正好也是这个结果——因为它们没有漏磁，是完全耦合。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "八　例：同轴螺线管组的互感",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 470,
+     "name": "mutual_solenoid"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "内管 $n_1$，外绕线圈 $n_2$，共享体积 $V$",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "内管磁场 $B_1=\\mu_0 n_1 i_1$",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "外线圈每匝磁通 $\\Phi=B_1 S$",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 412,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁通链 $\\Psi_{21}=n_2 l\\,B_1 S$",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 476,
+     "w": 720,
+     "h": 120,
+     "tex": "M=\\frac{\\Psi_{21}}{i_1}=\\mu_0 n_1 n_2 V",
+     "size": 31,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 626,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "完全耦合（无漏磁）：$M=\\sqrt{L_1L_2}$",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 694,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "验算",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$L_1=\\mu_0 n_1^{2}V$，$L_2=\\mu_0 n_2^{2}V$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$\\sqrt{L_1L_2}=\\mu_0 n_1 n_2 V$ ✓",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 920,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "「无漏磁」是理想化条件，实际总有漏磁",
+        "size": 26,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "八　例：同轴螺线管组的互感"
+  },
+  {
+   "id": 11,
+   "narration": "[[1]]实际的两个线圈之间总有漏磁，一部分磁通没有穿过对方。[[2]]衡量耦合程度用耦合系数 k，定义为 M 除以根号下 L1 L2，取值在零到一之间。[[3]]看表：理想变压器铁芯，k 接近一；罐形磁芯，k 约零点九；两个相距较远的线圈，k 不到零点三；相互垂直放置，k 等于零。[[4]]k 越大，两个线圈之间传递能量的效率越高。[[5]]需要强耦合，就让线圈靠近、共轴、加铁芯；需要隔离，就让它们远离、垂直、加屏蔽。[[6]]这个系数在工程上比 M 本身更好用，因为它无量纲，直接反映「漏了多少」。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "九　耦合系数",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1480,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "实际线圈之间总有漏磁：一部分磁通没穿过对方",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 302,
+     "w": 700,
+     "h": 124,
+     "tex": "k=\\frac{M}{\\sqrt{L_1L_2}}",
+     "size": 34,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1330,
+     "y": 326,
+     "w": 420,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "无量纲，$0\\le k\\le 1$",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1330,
+     "y": 384,
+     "w": 420,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$k=1$：完全耦合",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1330,
+     "y": 436,
+     "w": 420,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$k=0$：无耦合",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "table",
+     "step": 3,
+     "x": 170,
+     "y": 466,
+     "w": 1140,
+     "rows": [
+      [
+       "情形",
+       "耦合系数 k",
+       "典型例子"
+      ],
+      [
+       "无漏磁",
+       "k = 1",
+       "理想变压器铁芯"
+      ],
+      [
+       "紧耦合",
+       "k ≈ 0.9",
+       "罐形铁氧体磁芯"
+      ],
+      [
+       "松耦合",
+       "k < 0.3",
+       "相距较远的两个线圈"
+      ],
+      [
+       "无耦合",
+       "k = 0",
+       "相互垂直放置"
+      ]
+     ],
+     "rowh": 54,
+     "size": 27,
+     "fill": "#CCFFCC"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 762,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "k 越大，两线圈之间传递能量的效率越高",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 820,
+     "w": 760,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "要强耦合：靠近、共轴、加铁芯",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 900,
+     "y": 820,
+     "w": 840,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "要隔离：远离、垂直、加屏蔽",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 876,
+     "w": 1580,
+     "h": 108,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "$k$ 比 $M$ 更好用：无量纲，直接反映「漏了多少」",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "九　耦合系数"
+  },
+  {
+   "id": 12,
+   "narration": "[[1]]互感在工程上无处不在。[[2]]最主要的是变压器：两个线圈套在同一铁芯上，k 接近一，电压比等于匝数比，可以升压也可以降压。[[3]]互感器用来测量：把大电流按比例变小，再送进仪表，人不必接触高压。[[4]]无线充电和无线通信也是互感：发送线圈的电流变化，在接收线圈里感应出电动势，只是耦合很松。[[5]]有害的耦合则要抑制：电路板上的走线相互感应会造成串扰，办法是拉开距离、减少平行段、加屏蔽。[[6]]共同点是：一个线圈的电流变化，在另一个线圈里产生电动势。要利用就增强耦合，要避免就削弱耦合。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "十　互感的应用与避免",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 760,
+     "h": 270,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "变压器",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "同铁芯，$k\\approx 1$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$U_1/U_2=n_1/n_2$",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "升压、降压、阻抗变换",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 270,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "互感器",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "大电流按比例变小",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "仪表与高压隔离",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "测量安全",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 170,
+     "y": 532,
+     "w": 760,
+     "h": 270,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "无线充电",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "发送线圈电流变化",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "接收线圈感应电动势",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "耦合很松（$k$ 小）",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 1010,
+     "y": 532,
+     "w": 740,
+     "h": 270,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "有害耦合",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "走线平行 ⇒ 串扰",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "对策：拉开距离、加屏蔽",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "信号线绞合、用地线隔离",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 838,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "共同点：一个线圈的电流变化，在另一个线圈里产生电动势",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 892,
+     "w": 1580,
+     "h": 100,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "要利用就增强耦合，要避免就削弱耦合",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "十　互感的应用与避免"
+  },
+  {
+   "id": 13,
+   "narration": "[[1]]小结。[[2]]自感：线圈自身电流变化引起磁通变化，产生自感电动势，它总是阻碍电流变化。[[3]]自感系数 L 等于磁通链除以电流，只由线圈的匝数、形状、大小和介质决定；长直螺线管是 mu0 n 平方 V。[[4]]互感：一个线圈的电流变化在另一个线圈里引起电动势，系数 M 等于磁通除以电流，两线圈之间只有一个 M。[[5]]完全耦合时 M 等于根号下 L1 L2，一般情形用耦合系数 k 描述。[[6]]这一节的公式都不新，都是法拉第定律；新的是它把「磁场」和「电路」连了起来——下一节就算储存在磁场里的能量。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 760,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 自感",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 292,
+     "w": 760,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "自身电流变化 ⇒ 自感电动势",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 340,
+     "w": 700,
+     "h": 100,
+     "tex": "\\varepsilon_L=-L\\frac{\\mathrm di}{\\mathrm dt}",
+     "size": 27,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 456,
+     "w": 760,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$L=\\Psi/i$，只由线圈本身决定",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 504,
+     "w": 760,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "螺线管：$L=\\mu_0 n^{2}V$",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 互感",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 292,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "别的线圈电流变化 ⇒ 感应电动势",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 1010,
+     "y": 340,
+     "w": 700,
+     "h": 100,
+     "tex": "\\varepsilon_2=-M\\frac{\\mathrm di_1}{\\mathrm dt}",
+     "size": 27,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 456,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$M=\\Phi_{21}/i_1$，$M_{21}=M_{12}$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 504,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同轴螺线管组：$M=\\mu_0 n_1 n_2 V$",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 570,
+     "w": 760,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 耦合系数",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 626,
+     "w": 760,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$k=M/\\sqrt{L_1L_2}$，$0\\le k\\le 1$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 674,
+     "w": 760,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$k=1$ 完全耦合：$M=\\sqrt{L_1L_2}$",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 570,
+     "w": 740,
+     "h": 170,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "下一节：磁场的能量",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "建立电流时电源多做的功",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "就储存在磁场里",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 754,
+     "w": 1580,
+     "h": 170,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "这一节的公式都不新，都是法拉第定律",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "新的是它把「磁场」和「电路」连接起来了",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "电感 L、M 是电路的参数，本质却是磁场的几何",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 938,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "自感 = 电磁惯性；互感 = 磁场的「传递」．",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "本节小结"
+  }
+ ]
+}

@@ -1,0 +1,3716 @@
+{
+ "title": "3-9 质心 质心运动定理",
+ "nav": "3-9　质心 质心运动定理",
+ "footer": "第三章　动量守恒定律和能量守恒定律",
+ "character": "aqiang",
+ "characters": [
+  {
+   "id": "aqiang",
+   "name": "阿强"
+  },
+  {
+   "id": "professor",
+   "name": "博士讲师"
+  },
+  {
+   "id": "zhongshan",
+   "name": "中山装先生"
+  }
+ ],
+ "duration": 672.1,
+ "slides": [
+  {
+   "id": 1,
+   "kind": "page",
+   "heading": "封面",
+   "narration": "第三章继续。这一节讲 3-9，质心与质心运动定理。前面几节我们把系统当成一个整体处理：动量、动能、功都能对系统求和。但系统里每个质点各走各的，怎么描述整体的运动？答案是找一个特殊的点——质心。只要盯住质心，再复杂的系统也简化成两个问题：质心怎么动，物体怎么绕质心转。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 292,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 三 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 300,
+     "y": 420,
+     "w": 1320,
+     "h": 160,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "动量守恒定律和能量守恒定律",
+        "size": 76,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 360,
+     "y": 606,
+     "w": 1200,
+     "h": 130,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "3-9　质心　质心运动定理",
+        "size": 54,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 766,
+     "w": 1480,
+     "h": 120,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "物体运动 = ",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "质心的平动",
+        "size": 44,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": " + ",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "绕质心的转动",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 220,
+     "y": 900,
+     "w": 1480,
+     "h": 90,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质心的位置　·　质心运动定理　　两个典型例子",
+        "size": 36,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 0.0,
+    "2": 2.46,
+    "3": 7.18,
+    "4": 24.56
+   },
+   "t_start": 0.0,
+   "t_end": 33.41,
+   "duration": 33.41,
+   "laser": []
+  },
+  {
+   "id": 2,
+   "kind": "page",
+   "heading": "1　运动的分解",
+   "narration": "先看一个现象。把一块板斜抛出去，板上的点在翻滚，看着毫无规律；可是板上总有一个点，它走的路是一条规规矩矩的抛物线。这个点就是质心。所以刚体的运动可以拆成两件事：整体跟着质心平移，同时绕质心转动——这两句话是本节、也是下一章刚体力学的主线。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1　运动的分解",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 246,
+     "w": 1580,
+     "h": 112,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "投掷出去的物体，各点运动看着杂乱；但总有一个特殊点——",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "质心 C",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "，它的轨迹是一条简单的抛物线．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 376,
+     "y": 380,
+     "w": 1167,
+     "h": 500,
+     "name": "cm_board_flight"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 908,
+     "w": 1580,
+     "h": 95,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "其余各点的运动 = ",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "随质心的平动",
+        "size": 40,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": " + ",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "绕质心的转动",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true
+    }
+   ],
+   "bullets": [
+    {
+     "text": "其余各点的运动 = 随质心的平动 + 绕质心的转动．",
+     "x": 960,
+     "y": 1015,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 3
+    }
+   ],
+   "stepTimes": {
+    "1": 34.21,
+    "2": 46.5
+   },
+   "t_start": 34.21,
+   "t_end": 60.68,
+   "duration": 26.47,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 46.5,
+     "end": 51.5
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "kind": "page",
+   "heading": "一　质心　1　质心的概念",
+   "narration": "把这两件事画清楚。同一块板从位置一运动到位置二：先让它保持姿态不变，整体平移到位置二，这一步是随质心的平动；再绕新的质心转过四十六度，这才是最终姿态，这一步是绕质心的转动。板上那个绿点 P 的轨迹，正好是这两段的合成——先挪一段直线，再走一段圆弧。所以每个点的复杂轨迹，都拆成了平移加转动。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 760,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　质心　　1　质心的概念",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同一块板从位置 1 到位置 2，可拆成两步：",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 364,
+     "w": 740,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 保持姿态不变，整体",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "平移到新位置",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "；",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 488,
+     "w": 740,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 再绕新的质心",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "转过一个角度",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 880,
+     "y": 258,
+     "w": 860,
+     "h": 592,
+     "name": "cm_decomp"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 640,
+     "w": 740,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "板上任一点 P 的轨迹",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "（绿虚线）",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 752,
+     "w": 740,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "= 一段直线 + 一段圆弧．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 890,
+     "w": 1580,
+     "h": 105,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以：",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "任一点的复杂运动，都能拆成平动加转动",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true
+    }
+   ],
+   "bullets": [
+    {
+     "text": "所以：任一点的复杂运动，都能拆成平动加转动．",
+     "x": 960,
+     "y": 1007,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 7
+    }
+   ],
+   "stepTimes": {
+    "1": 61.48,
+    "2": 79.22
+   },
+   "t_start": 61.48,
+   "t_end": 92.37,
+   "duration": 30.89,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 79.22,
+     "end": 84.22
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "kind": "page",
+   "heading": "2　质心的位置",
+   "narration": "那么质心到底在哪里？定义很直接：把每个质点的位矢按质量加权平均。写成式子就是 r_C 等于 Σ m_i r_i 除以总质量 m 撇。换句话说，质心是系统里质量分布的“平均位置”，重的质点权重大，把质心拉得离它近。要注意：质心是几何上的一个点，不一定落在物体上——比如圆环、弯管，质心在空处。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 800,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2　质心的位置",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1000,
+     "y": 232,
+     "w": 750,
+     "h": 450,
+     "name": "cm_def"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 820,
+     "h": 115,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "由 n 个质点组成的质点系，其质心的位置：",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 372,
+     "w": 800,
+     "h": 185,
+     "tex": "\\vec r_C=\\dfrac{\\sum_i m_i\\vec r_i}{m'}",
+     "size": 46,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 586,
+     "w": 820,
+     "h": 105,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "即质量分布的",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "“平均位置”",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "：",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 698,
+     "w": 820,
+     "h": 105,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质量大的质点把质心拉得更近．",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 856,
+     "w": 1580,
+     "h": 105,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质心是几何上的一个点，",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "不一定落在物体上",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "（圆环、弯管的质心就在空处）．",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true
+    }
+   ],
+   "bullets": [
+    {
+     "text": "质心是几何上的一个点，不一定落在物体上（圆环、弯管的质心就在空处）．",
+     "x": 960,
+     "y": 973,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 6
+    }
+   ],
+   "stepTimes": {
+    "1": 93.17,
+    "2": 102.23,
+    "3": 110.6,
+    "4": 118.75
+   },
+   "t_start": 93.17,
+   "t_end": 128.07,
+   "duration": 34.9,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 118.75,
+     "end": 123.75
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "kind": "page",
+   "heading": "2　质心的位置　分量式",
+   "narration": "实际计算时都用分量式。质量离散分布的物系，x_C 等于 Σ m_i x_i 除以 m 撇，y、z 方向同理。质量连续分布的物体，求和就变成积分：x_C 等于 m 撇分之一乘上 x 对 dm 的积分。还有一个能省掉大半工作的结论：对密度均匀、形状对称的物体，质心就在它的几何中心。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2　质心的位置　分量式",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质量离散分布：",
+        "size": 42,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 352,
+     "w": 1580,
+     "h": 185,
+     "tex": "x_C=\\dfrac{\\sum\\limits_i m_ix_i}{m'},\\qquad y_C=\\dfrac{\\sum\\limits_i m_iy_i}{m'},\\qquad z_C=\\dfrac{\\sum\\limits_i m_iz_i}{m'}",
+     "size": 36,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 562,
+     "w": 1580,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质量连续分布：",
+        "size": 42,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 672,
+     "w": 1580,
+     "h": 190,
+     "tex": "x_C=\\dfrac{1}{m'}\\int x\\,\\mathrm dm,\\qquad y_C=\\dfrac{1}{m'}\\int y\\,\\mathrm dm,\\qquad z_C=\\dfrac{1}{m'}\\int z\\,\\mathrm dm",
+     "size": 34,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 900,
+     "w": 1580,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "说明：",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "对密度均匀、形状对称的物体，质心在其",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "几何中心",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true
+    }
+   ],
+   "bullets": [
+    {
+     "text": "说明：对密度均匀、形状对称的物体，质心在其几何中心．",
+     "x": 960,
+     "y": 1012,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 5
+    }
+   ],
+   "stepTimes": {
+    "1": 128.87,
+    "2": 142.63,
+    "3": 151.67
+   },
+   "t_start": 128.87,
+   "t_end": 160.12,
+   "duration": 31.25,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 151.67,
+     "end": 156.67
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "kind": "page",
+   "heading": "随堂练习",
+   "narration": "做一道小题：两个质量相等的质点，位矢分别是 i 加三 j 和 三 i 加 j，质心位矢是多少？质量相等，质心就是两点的中点，把两个位矢相加除以二，得二 i 加二 j，选 B。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "随堂练习",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 244,
+     "w": 1580,
+     "h": 230,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两个质量相等的质点构成质点系，其中一个质点的位矢为 ",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec i+3\\vec j$",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "，另一个质点的位矢为 ",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$3\\vec i+\\vec j$",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "．则该质点系的质心的位矢为（　　）",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 200,
+     "y": 512,
+     "w": 640,
+     "h": 115,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "A．$4\\vec i+4\\vec j$",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 960,
+     "y": 512,
+     "w": 640,
+     "h": 115,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "B．$2\\vec i+2\\vec j$",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 200,
+     "y": 648,
+     "w": 640,
+     "h": 115,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "C．$\\vec i+\\vec j$",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 960,
+     "y": 648,
+     "w": 640,
+     "h": 115,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "D．$3\\vec i+3\\vec j$",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 160.92
+   },
+   "t_start": 160.92,
+   "t_end": 178.92,
+   "duration": 18.0,
+   "laser": [],
+   "interactions": [
+    {
+     "t": 170.67,
+     "q": "两个质量相等的质点构成质点系，其中一个质点的位矢为 i+3j，另一个质点的位矢为 3i+j。则该质点系的质心的位矢为（　　）",
+     "answer": 1,
+     "options": [
+      "A．4i+4j",
+      "B．2i+2j",
+      "C．i+j",
+      "D．3i+3j"
+     ],
+     "explain": "两个质点质量相等，质心就是它们的中点：r_C = (m·r₁ + m·r₂)/(2m) = (r₁ + r₂)/2 = [(i+3j)+(3i+j)]/2 = 2i+2j，选 B。顺带记住这个特例：等质量的两点，质心一定在连线中点。"
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "kind": "page",
+   "heading": "说明　质心在几何中心",
+   "narration": "对称的物体，质心一眼就能找到。椭球板的质心是椭圆中心；圆柱的质心在轴线上，我们把轴线画出来；矩形板是两条对角线的交点。L 形板不对称，怎么办？把它切成两块矩形：质心一定在“两块各自质心”的连线上，而且偏向面积大的那一边。所以第三个例子里，红点离下面那块更近。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "说明　质心在几何中心",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 246,
+     "w": 1580,
+     "h": 105,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "对密度均匀、形状对称的物体，质心在其",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "几何中心",
+        "size": 42,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 210,
+     "y": 396,
+     "w": 1500,
+     "h": 450,
+     "name": "cm_symmetric"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 856,
+     "w": 1580,
+     "h": 105,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "L 形板不对称：切成两块矩形，质心必在",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "两块质心的连线上",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "，且偏向面积大的一侧．",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true
+    }
+   ],
+   "bullets": [
+    {
+     "text": "L 形板不对称：切成两块矩形，质心必在两块质心的连线上，且偏向面积大的一侧．",
+     "x": 960,
+     "y": 973,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 3
+    }
+   ],
+   "stepTimes": {
+    "1": 179.72,
+    "2": 193.21
+   },
+   "t_start": 179.72,
+   "t_end": 209.7,
+   "duration": 29.98,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 193.21,
+     "end": 198.21
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "kind": "page",
+   "heading": "例2　匀质半薄球壳（题）",
+   "narration": "看一个必须用积分的例子：求半径为 R 的匀质半薄球壳的质心。解法是“切环法”：在球壳上取一个细圆环，它的位置由角度 θ 确定。注意 θ 是从 y 轴量起的，不是从底面量起——这样高度才正好是 R cosθ。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例2　匀质半薄球壳的质心",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 700,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "求半径为 R 的匀质半薄球壳的质心．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 366,
+     "w": 700,
+     "h": 170,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "解　",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "选如图坐标系：底面在 xz 平面内，",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "对称轴取为 y 轴",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 560,
+     "w": 700,
+     "h": 180,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "在球壳上取一个",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "细圆环",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "：位置由 θ 确定，",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "θ 自 y 轴量起",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 820,
+     "y": 230,
+     "w": 910,
+     "h": 582,
+     "name": "cm_shell"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 210.5,
+    "2": 216.44
+   },
+   "t_start": 210.5,
+   "t_end": 232.41,
+   "duration": 21.91,
+   "laser": []
+  },
+  {
+   "id": 9,
+   "kind": "page",
+   "heading": "例2　圆环的面积与质量",
+   "narration": "这个圆环有多大？它的半径是 R sinθ，沿弧的宽度是 R dθ，所以面积 dS 等于二 π R sinθ 乘上 R dθ。乘上面密度 σ，就得到圆环的质量 dm 等于 σ 二 π R 平方 sinθ dθ。再看对称性：球壳关于 y 轴对称，所以质心的 x 和 z 分量都是零。于是只剩 y_C 一个积分要算。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 800,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例2　解（续）",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 620,
+     "h": 170,
+     "tex": "\\mathrm dS=2\\pi R\\sin\\theta\\cdot R\\,\\mathrm d\\theta",
+     "size": 36,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 442,
+     "w": 620,
+     "h": 170,
+     "tex": "\\mathrm dm=\\sigma\\,2\\pi R^2\\sin\\theta\\,\\mathrm d\\theta",
+     "size": 36,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 636,
+     "w": 620,
+     "h": 125,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "球壳关于 y 轴对称 ⇒ ",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "x_C = z_C = 0",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 790,
+     "w": 620,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只剩 ",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "y_C",
+        "size": 42,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": " 一个积分．",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 0,
+     "x": 820,
+     "y": 244,
+     "w": 900,
+     "h": 576,
+     "name": "cm_shell"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 233.21,
+    "2": 247.06,
+    "3": 255.21,
+    "4": 263.03
+   },
+   "t_start": 233.21,
+   "t_end": 267.89,
+   "duration": 34.68,
+   "laser": []
+  },
+  {
+   "id": 10,
+   "kind": "page",
+   "heading": "例2　结果",
+   "narration": "圆环上每一点的高度都是 y 等于 R cosθ，所以直接用定义式：y_C 等于 y 乘 dm 的积分，除以总质量。σ 和二 π R 平方都能约掉。剩下的积分是 cosθ sinθ 从零到二分之 π，结果正好一半，所以 y_C 等于 R/2。写成矢量就是质心位矢等于 R/2 乘 j。注意它比球心高，但远低于半球面的“中部”——这是圆环面积在赤道附近更集中的结果。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 800,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例2　结果",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 620,
+     "h": 150,
+     "tex": "y=R\\cos\\theta",
+     "size": 42,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 396,
+     "w": 620,
+     "h": 165,
+     "tex": "y_C=\\dfrac{1}{m'}\\int_0^{\\pi/2}R\\cos\\theta\\,\\mathrm dm",
+     "size": 34,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 572,
+     "w": 620,
+     "h": 95,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "其中 ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "m′ = σ·2πR²",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 674,
+     "w": 640,
+     "h": 170,
+     "tex": "y_C=R\\int_0^{\\pi/2}\\cos\\theta\\sin\\theta\\,\\mathrm d\\theta=\\dfrac{R}{2}",
+     "size": 34,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 856,
+     "w": 620,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质心位矢：",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec r_C=\\dfrac{R}{2}\\,\\vec j$",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 0,
+     "x": 820,
+     "y": 236,
+     "w": 880,
+     "h": 563,
+     "name": "cm_shell"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 268.69,
+    "2": 279.91,
+    "3": 284.08,
+    "4": 293.1
+   },
+   "t_start": 268.69,
+   "t_end": 305.53,
+   "duration": 36.84,
+   "laser": []
+  },
+  {
+   "id": 11,
+   "kind": "page",
+   "heading": "二　质心运动定理",
+   "narration": "位置定下来了，接下来问：质心怎么动？还是从定义式出发：m 撇乘 r_C 等于 Σ m_i r_i。两边对时间求一阶导数，右边的位矢就变成了速度。于是得到一个很重要的式子：系统的总动量，就等于总质量乘质心速度。换句话说，系统的总动量完全由质心的运动代表。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 800,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　质心运动定理",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 0,
+     "x": 960,
+     "y": 232,
+     "w": 760,
+     "h": 456,
+     "name": "cm_def"
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 780,
+     "h": 175,
+     "tex": "m'\\vec r_C=\\sum_i m_i\\vec r_i",
+     "size": 44,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 420,
+     "w": 780,
+     "h": 105,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两边对时间 t 求一阶导数：",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 534,
+     "w": 780,
+     "h": 190,
+     "tex": "m'\\dfrac{\\mathrm d\\vec r_C}{\\mathrm dt}=\\sum_i m_i\\dfrac{\\mathrm d\\vec r_i}{\\mathrm dt}",
+     "size": 34,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 742,
+     "w": 780,
+     "h": 175,
+     "tex": "m'\\vec v_C=\\sum_i m_i\\vec v_i=\\sum_i\\vec p_i",
+     "size": 38,
+     "color": "#C00000",
+     "align": "left"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 306.33,
+    "2": 319.55,
+    "3": 325.13
+   },
+   "t_start": 306.33,
+   "t_end": 337.77,
+   "duration": 31.44,
+   "laser": []
+  },
+  {
+   "id": 12,
+   "kind": "page",
+   "heading": "二　质心运动定理　加速度",
+   "narration": "再对时间求一次导，左边成了 m 撇 a_C，右边成了总动量对时间的导数。根据质点系动量定理，总动量的变化率等于所有外力之和——内力成对相消，一个都不剩。于是得到 F 外力等于 m 撇 a_C。这就是质心运动定理。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　质心运动定理　加速度",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 300,
+     "y": 240,
+     "w": 1320,
+     "h": 185,
+     "tex": "m'\\vec a_C=\\dfrac{\\mathrm d}{\\mathrm dt}\\left(\\sum_i\\vec p_i\\right)",
+     "size": 46,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 452,
+     "w": 1580,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "根据质点系动量定理：",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 300,
+     "y": 564,
+     "w": 1320,
+     "h": 175,
+     "tex": "\\dfrac{\\mathrm d}{\\mathrm dt}\\sum_i\\vec p_i=\\sum_i\\vec F_i^{\\mathrm{ex}}",
+     "size": 44,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 764,
+     "w": 1580,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（质点系内 ",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "Σ F_i^in = 0",
+        "size": 40,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "，内力成对相消）",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 300,
+     "y": 866,
+     "w": 1320,
+     "h": 140,
+     "tex": "\\vec F^{\\mathrm{ex}}=m'\\vec a_C",
+     "size": 48,
+     "color": "#C00000",
+     "align": "center"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 338.57,
+    "2": 346.05,
+    "3": 354.51
+   },
+   "t_start": 338.57,
+   "t_end": 362.57,
+   "duration": 24.0,
+   "laser": []
+  },
+  {
+   "id": 13,
+   "kind": "page",
+   "heading": "二　质心运动定理　表述",
+   "narration": "把定理说成话：作用在系统上的合外力，等于系统的总质量乘质心的加速度。看图——左边是三个质点各自受的外力，右边把全部质量集中到质心，只受一个合外力 F 外，产生的加速度就是 a_C。质心运动定理的意义在于：不管系统内部多复杂，质心的运动只由合外力决定。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　质心运动定理",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 320,
+     "y": 250,
+     "w": 1280,
+     "h": 557,
+     "name": "cm_theorem"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 840,
+     "w": 1580,
+     "h": 115,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "作用在系统上的",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "合外力",
+        "size": 42,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "，等于系统的",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "总质量",
+        "size": 42,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "乘以",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "质心的加速度",
+        "size": 42,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true
+    }
+   ],
+   "bullets": [
+    {
+     "text": "作用在系统上的合外力，等于系统的总质量乘以质心的加速度．",
+     "x": 960,
+     "y": 967,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 2
+    }
+   ],
+   "stepTimes": {
+    "1": 363.37,
+    "2": 370.63
+   },
+   "t_start": 363.37,
+   "t_end": 389.1,
+   "duration": 25.73,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 370.63,
+     "end": 375.63
+    }
+   ]
+  },
+  {
+   "id": 14,
+   "kind": "page",
+   "heading": "例3　弹丸在最高点炸裂（题）",
+   "narration": "看一个经典例子。质量 2m 的弹丸从地面斜抛出去，在最高点炸成质量相等的两块：一块竖直自由下落，另一块水平抛出。两块同时落地。问第二块落在哪里？",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例3　弹丸在最高点炸裂",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 232,
+     "w": 500,
+     "h": 290,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质量为 2m 的弹丸从地面斜抛出去，在最高点处炸成",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "质量相等的两块",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "：一块",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "竖直自由下落",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "，另一块",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "水平抛出",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "．两者同时落地．",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 604,
+     "w": 500,
+     "h": 115,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "问：第二块落在何处？",
+        "size": 42,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 690,
+     "y": 244,
+     "w": 1050,
+     "h": 700,
+     "name": "cm_burst"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 389.9,
+    "2": 405.18
+   },
+   "t_start": 389.9,
+   "t_end": 408.62,
+   "duration": 18.72,
+   "laser": []
+  },
+  {
+   "id": 15,
+   "kind": "page",
+   "heading": "例3　解",
+   "narration": "解法要点只有一句：炸裂的内力远大于重力，所以质心的运动轨迹不变。取第一块的落点为原点，那么 x 一等于零，质心的横坐标就是 x_C。按质心定义展开：x_C 等于 m 一 x 一 加 m 二 x 二，除以两块质量之和。质量相等、x 一 为零，化成 x_C 等于 x 二的一半。所以 x 二 等于二倍的 x_C。而 x_C 正是原来那条抛物线的射程，所以第二块落在两倍射程处。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 800,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例3　解",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 520,
+     "h": 60,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "取弹丸为系统．",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 312,
+     "w": 520,
+     "h": 60,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "炸裂内力远大于重力，",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 388,
+     "w": 520,
+     "h": 60,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质心运动轨迹不变",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 480,
+     "w": 520,
+     "h": 60,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "取 m₁ 的落点为原点，",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 552,
+     "w": 520,
+     "h": 60,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "则 ",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "x₁ = 0",
+        "size": 42,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 626,
+     "w": 570,
+     "h": 185,
+     "tex": "x_C=\\dfrac{m_1x_1+m_2x_2}{m_1+m_2}=\\dfrac{m\\cdot 0+m\\,x_2}{2m}",
+     "size": 28,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 818,
+     "w": 570,
+     "h": 170,
+     "tex": "x_C=\\dfrac{x_2}{2}\\ \\Longrightarrow\\ x_2=2x_C",
+     "size": 34,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "diagram",
+     "step": 0,
+     "x": 720,
+     "y": 236,
+     "w": 1000,
+     "h": 667,
+     "name": "cm_burst"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 409.42,
+    "2": 417.04,
+    "3": 425.12,
+    "4": 434.35
+   },
+   "t_start": 409.42,
+   "t_end": 454.3,
+   "duration": 44.88,
+   "laser": []
+  },
+  {
+   "id": 16,
+   "kind": "page",
+   "heading": "总结　运动的分解",
+   "narration": "把这一节的思路拉回来看：物体运动等于质心的平动加绕质心的转动。平动这一半，本节已经解决了——就是质心运动定理，合外力决定质心怎么走。转动那一半还没碰：到底怎么描述绕质心的转动？这要留到下一章刚体力学。而刚体的定点转动，又可以继续拆成“定轴转动加轴的转动”，还是同一个分解思路。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "总结　运动的分解",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 220,
+     "y": 258,
+     "w": 1480,
+     "h": 140,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "物体运动 = ",
+        "size": 46,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "质心的平动",
+        "size": 46,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": " + ",
+        "size": 46,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "绕质心的转动",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 200,
+     "y": 466,
+     "w": 480,
+     "h": 105,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "刚体",
+        "size": 42,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 720,
+     "y": 466,
+     "w": 480,
+     "h": 105,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质心运动定理",
+        "size": 42,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1240,
+     "y": 466,
+     "w": 480,
+     "h": 105,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "转动规律　？",
+        "size": 42,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 200,
+     "y": 592,
+     "w": 480,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质点系的一般运动",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 720,
+     "y": 592,
+     "w": 480,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\vec F^{\\mathrm{ex}}=m'\\vec a_C$",
+        "size": 36,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1240,
+     "y": 592,
+     "w": 480,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "下一章解决",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 770,
+     "w": 1580,
+     "h": 200,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "刚体的定点转动 = 刚体的定轴转动 + 轴的转动",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 455.1,
+    "2": 462.05,
+    "3": 469.48,
+    "4": 477.78
+   },
+   "t_start": 455.1,
+   "t_end": 485.7,
+   "duration": 30.6,
+   "laser": []
+  },
+  {
+   "id": 17,
+   "kind": "page",
+   "heading": "例4　匀速提链条（题）",
+   "narration": "再看一个用质心运动定理处理变质量问题的例子。一根长 l、密度均匀的柔软链条，单位长度质量 λ，卷成一堆放在地面。手提一端，以匀速 v 往上提。问：当提起高度为 y 时，手的提力多大？注意这不是简单的“撑住已提起那一段”——链条在地面处不断有链节从静止被拽起来，这就要求额外的力。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例4　匀速提链条",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 232,
+     "w": 600,
+     "h": 200,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一根长为 l、密度均匀的柔软链条，单位长度质量 λ，卷成一堆放在地面．",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 448,
+     "w": 600,
+     "h": 200,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "手提一端，以",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "匀速 v",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "将其上提．当一端离地高度为 y 时，求手的提力 F．",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 676,
+     "w": 600,
+     "h": 105,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "提示：用",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "质心运动定理",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 784,
+     "w": 600,
+     "h": 105,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "关键是先求出质心高度 y_C．",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 900,
+     "w": 600,
+     "h": 105,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "注意：地面处不断有链节从静止被拽起来．",
+        "size": 36,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 0,
+     "x": 830,
+     "y": 250,
+     "w": 900,
+     "h": 720,
+     "name": "cm_chain"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 486.5,
+    "2": 499.82,
+    "3": 509.08
+   },
+   "t_start": 486.5,
+   "t_end": 518.73,
+   "duration": 32.23,
+   "laser": []
+  },
+  {
+   "id": 18,
+   "kind": "page",
+   "heading": "例4　求质心高度",
+   "narration": "建如图坐标系，链条的质心高度 y_C 是随 y 变化的。按定义算：已提起那一段质量 λy，它的质心在 y/2 处；还留在地面的那一段质量 λ(l 减 y)，质心高度是零。总质量是 λl。把两项加起来，y_C 等于 y 平方除以二 l。竖直方向上的合外力只有提力 F 和重力，重力作用在已提起那段上，大小 λyg。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 760,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例4　解",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 760,
+     "h": 105,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "建如图坐标系．链条的质心高度 y_C",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 344,
+     "w": 760,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "是",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "随 y 变化",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "的：",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 470,
+     "w": 780,
+     "h": 210,
+     "tex": "y_C=\\dfrac{\\sum m_iy_i}{\\sum m_i}=\\dfrac{\\lambda y\\cdot\\dfrac{y}{2}+\\lambda(l-y)\\cdot 0}{\\lambda l}",
+     "size": 28,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 700,
+     "w": 780,
+     "h": 160,
+     "tex": "y_C=\\dfrac{y^2}{2l}",
+     "size": 44,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 876,
+     "w": 760,
+     "h": 105,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "竖直方向合外力：",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "F − λyg",
+        "size": 42,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 0,
+     "x": 950,
+     "y": 250,
+     "w": 760,
+     "h": 608,
+     "name": "cm_chain"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 519.53,
+    "2": 526.07,
+    "3": 537.32,
+    "4": 546.37
+   },
+   "t_start": 519.53,
+   "t_end": 554.81,
+   "duration": 35.28,
+   "laser": []
+  },
+  {
+   "id": 19,
+   "kind": "page",
+   "heading": "例4　结果",
+   "narration": "把 y_C 代进质心运动定理：F 减 λyg 等于 lλ 乘上 y_C 对时间的二阶导。而 y_C 是 y 平方除以二 l，对时间求两次导，要用乘积的导数法则。结果等于 l 分之一乘上 dy/dt 的平方，加上 y 乘 d²y/dt²。匀速上提，dy/dt 就是 v，而 d²y/dt² 等于零，后一项消失。所以 F 等于 λyg 加 λv 平方。两项的意义很清楚：前一项撑住已提起那段的重量，后一项是把地面链节从静止加速到 v 所必需的力——所以提得越快，手越吃力。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例4　结果",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 320,
+     "y": 234,
+     "w": 1280,
+     "h": 175,
+     "tex": "F-\\lambda yg=l\\lambda\\dfrac{\\mathrm d^2y_C}{\\mathrm dt^2}",
+     "size": 42,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 300,
+     "y": 428,
+     "w": 1320,
+     "h": 205,
+     "tex": "\\dfrac{\\mathrm d^2y_C}{\\mathrm dt^2}=\\dfrac{1}{l}\\left[\\left(\\dfrac{\\mathrm dy}{\\mathrm dt}\\right)^2+y\\dfrac{\\mathrm d^2y}{\\mathrm dt^2}\\right]",
+     "size": 34,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 656,
+     "w": 1580,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "匀速上提 ⇒ ",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "dy/dt = v",
+        "size": 40,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "，",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "d²y/dt² = 0",
+        "size": 40,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 320,
+     "y": 786,
+     "w": 1280,
+     "h": 165,
+     "tex": "\\therefore\\ F=\\lambda yg+\\lambda v^2",
+     "size": 48,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 946,
+     "w": 1580,
+     "h": 60,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "λyg",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": " 撑住已提起那段；",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "λv²",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": " 把地面链节从静止加速到 v．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 555.61,
+    "2": 565.42,
+    "3": 573.19,
+    "4": 580.93,
+    "5": 588.79
+   },
+   "t_start": 555.61,
+   "t_end": 605.36,
+   "duration": 49.75,
+   "laser": []
+  },
+  {
+   "id": 20,
+   "kind": "page",
+   "heading": "本节小结",
+   "narration": "小结。第一，质心是质点系质量分布的平均位置，r_C 等于 Σ m_i r_i 除以总质量。三种算法：离散求和、连续积分、对称物体直接取几何中心；不规则的像 L 形就切成规则块，按面积加权。第二，质心运动定理：合外力等于总质量乘质心加速度。它说明合外力只决定质心的运动，内部再复杂也不影响质心；质心本身不一定在物体上。再看质心的运动定理这一句：合外力只决定质心的运动，内力再复杂也不影响；而质心本身不一定在物体上。两个典型应用：爆炸问题——质心轨迹不变；变质量问题——像提链条，要额外算上“把静止质量拽起来”的那部分力。下一章，我们解决绕质心的转动。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 125,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质心",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "：质点系质量分布的平均位置，",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec r_C=\\sum m_i\\vec r_i/m'$",
+        "size": 40,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 380,
+     "w": 1580,
+     "h": 125,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三种算法：",
+        "size": 41,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "离散求和、连续积分、对称取几何中心（L 形按面积加权）．",
+        "size": 41,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 520,
+     "w": 1580,
+     "h": 125,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质心运动定理",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "：",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec F^{\\mathrm{ex}}=m'\\vec a_C$",
+        "size": 42,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 648,
+     "w": 1580,
+     "h": 105,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "—— ",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "合外力只决定质心的运动",
+        "size": 42,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "，内力再复杂也不影响；质心可不在物体上．",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 782,
+     "w": 1580,
+     "h": 125,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两个典型应用：",
+        "size": 41,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "爆炸（质心轨迹不变）、变质量问题（提链条）．",
+        "size": 41,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 925,
+     "w": 1580,
+     "h": 85,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "下一章：绕质心的转动 —— 刚体的定轴转动．",
+        "size": 38,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 606.16,
+    "2": 618.67,
+    "3": 629.82,
+    "4": 644.99,
+    "5": 655.09,
+    "6": 665.74
+   },
+   "t_start": 606.16,
+   "t_end": 670.02,
+   "duration": 63.86,
+   "laser": []
+  }
+ ],
+ "subtitles": [
+  {
+   "slide": 1,
+   "start": 0.0,
+   "end": 2.06,
+   "text": "第三章继续。"
+  },
+  {
+   "slide": 1,
+   "start": 2.46,
+   "end": 6.78,
+   "text": "这一节讲 3-9，质心与质心运动定理。"
+  },
+  {
+   "slide": 1,
+   "start": 7.18,
+   "end": 14.74,
+   "text": "前面几节我们把系统当成一个整体处理：动量、动能、功都能对系统求和。"
+  },
+  {
+   "slide": 1,
+   "start": 15.14,
+   "end": 19.89,
+   "text": "但系统里每个质点各走各的，怎么描述整体的运动？"
+  },
+  {
+   "slide": 1,
+   "start": 20.54,
+   "end": 24.16,
+   "text": "答案是找一个特殊的点——质心。"
+  },
+  {
+   "slide": 1,
+   "start": 24.56,
+   "end": 32.65,
+   "text": "只要盯住质心，再复杂的系统也简化成两个问题：质心怎么动，物体怎么绕质心转。"
+  },
+  {
+   "slide": 2,
+   "start": 34.21,
+   "end": 36.27,
+   "text": "先看一个现象。"
+  },
+  {
+   "slide": 2,
+   "start": 36.67,
+   "end": 46.1,
+   "text": "把一块板斜抛出去，板上的点在翻滚，看着毫无规律；可是板上总有一个点，它走的路是一条规规矩矩的抛物线。"
+  },
+  {
+   "slide": 2,
+   "start": 46.5,
+   "end": 48.76,
+   "text": "这个点就是质心。"
+  },
+  {
+   "slide": 2,
+   "start": 49.16,
+   "end": 60.06,
+   "text": "所以刚体的运动可以拆成两件事：整体跟着质心平移，同时绕质心转动——这两句话是本节、也是下一章刚体力学的主线。"
+  },
+  {
+   "slide": 3,
+   "start": 61.48,
+   "end": 63.71,
+   "text": "把这两件事画清楚。"
+  },
+  {
+   "slide": 3,
+   "start": 64.11,
+   "end": 78.82,
+   "text": "同一块板从位置一运动到位置二：先让它保持姿态不变，整体平移到位置二，这一步是随质心的平动；再绕新的质心转过四十六度，这才是最终姿态，这一步是绕质心的转动。"
+  },
+  {
+   "slide": 3,
+   "start": 79.22,
+   "end": 86.35,
+   "text": "板上那个绿点 P 的轨迹，正好是这两段的合成——先挪一段直线，再走一段圆弧。"
+  },
+  {
+   "slide": 3,
+   "start": 86.75,
+   "end": 91.74,
+   "text": "所以每个点的复杂轨迹，都拆成了平移加转动。"
+  },
+  {
+   "slide": 4,
+   "start": 93.17,
+   "end": 95.95,
+   "text": "那么质心到底在哪里？"
+  },
+  {
+   "slide": 4,
+   "start": 96.6,
+   "end": 101.83,
+   "text": "定义很直接：把每个质点的位矢按质量加权平均。"
+  },
+  {
+   "slide": 4,
+   "start": 102.23,
+   "end": 110.2,
+   "text": "写成式子就是 r_C 等于 Σ m_i r_i 除以总质量 m 撇。"
+  },
+  {
+   "slide": 4,
+   "start": 110.6,
+   "end": 118.35,
+   "text": "换句话说，质心是系统里质量分布的“平均位置”，重的质点权重大，把质心拉得离它近。"
+  },
+  {
+   "slide": 4,
+   "start": 118.75,
+   "end": 127.37,
+   "text": "要注意：质心是几何上的一个点，不一定落在物体上——比如圆环、弯管，质心在空处。"
+  },
+  {
+   "slide": 5,
+   "start": 128.87,
+   "end": 132.01,
+   "text": "实际计算时都用分量式。"
+  },
+  {
+   "slide": 5,
+   "start": 132.41,
+   "end": 142.23,
+   "text": "质量离散分布的物系，x_C 等于 Σ m_i x_i 除以 m 撇，y、z 方向同理。"
+  },
+  {
+   "slide": 5,
+   "start": 142.63,
+   "end": 151.27,
+   "text": "质量连续分布的物体，求和就变成积分：x_C 等于 m 撇分之一乘上 x 对 dm 的积分。"
+  },
+  {
+   "slide": 5,
+   "start": 151.67,
+   "end": 159.49,
+   "text": "还有一个能省掉大半工作的结论：对密度均匀、形状对称的物体，质心就在它的几何中心。"
+  },
+  {
+   "slide": 6,
+   "start": 160.92,
+   "end": 170.02,
+   "text": "做一道小题：两个质量相等的质点，位矢分别是 i 加三 j 和 三 i 加 j，质心位矢是多少？"
+  },
+  {
+   "slide": 6,
+   "start": 170.67,
+   "end": 178.4,
+   "text": "质量相等，质心就是两点的中点，把两个位矢相加除以二，得二 i 加二 j，选 B。"
+  },
+  {
+   "slide": 7,
+   "start": 179.72,
+   "end": 183.27,
+   "text": "对称的物体，质心一眼就能找到。"
+  },
+  {
+   "slide": 7,
+   "start": 183.67,
+   "end": 192.81,
+   "text": "椭球板的质心是椭圆中心；圆柱的质心在轴线上，我们把轴线画出来；矩形板是两条对角线的交点。"
+  },
+  {
+   "slide": 7,
+   "start": 193.21,
+   "end": 196.26,
+   "text": "L 形板不对称，怎么办？"
+  },
+  {
+   "slide": 7,
+   "start": 196.91,
+   "end": 204.25,
+   "text": "把它切成两块矩形：质心一定在“两块各自质心”的连线上，而且偏向面积大的那一边。"
+  },
+  {
+   "slide": 7,
+   "start": 204.65,
+   "end": 208.99,
+   "text": "所以第三个例子里，红点离下面那块更近。"
+  },
+  {
+   "slide": 8,
+   "start": 210.5,
+   "end": 216.04,
+   "text": "看一个必须用积分的例子：求半径为 R 的匀质半薄球壳的质心。"
+  },
+  {
+   "slide": 8,
+   "start": 216.44,
+   "end": 223.33,
+   "text": "解法是“切环法”：在球壳上取一个细圆环，它的位置由角度 θ 确定。"
+  },
+  {
+   "slide": 8,
+   "start": 223.73,
+   "end": 231.84,
+   "text": "注意 θ 是从 y 轴量起的，不是从底面量起——这样高度才正好是 R cosθ。"
+  },
+  {
+   "slide": 9,
+   "start": 233.21,
+   "end": 235.35,
+   "text": "这个圆环有多大？"
+  },
+  {
+   "slide": 9,
+   "start": 236.0,
+   "end": 246.66,
+   "text": "它的半径是 R sinθ，沿弧的宽度是 R dθ，所以面积 dS 等于二 π R sinθ 乘上 R dθ。"
+  },
+  {
+   "slide": 9,
+   "start": 247.06,
+   "end": 254.81,
+   "text": "乘上面密度 σ，就得到圆环的质量 dm 等于 σ 二 π R 平方 sinθ dθ。"
+  },
+  {
+   "slide": 9,
+   "start": 255.21,
+   "end": 262.63,
+   "text": "再看对称性：球壳关于 y 轴对称，所以质心的 x 和 z 分量都是零。"
+  },
+  {
+   "slide": 9,
+   "start": 263.03,
+   "end": 267.21,
+   "text": "于是只剩 y_C 一个积分要算。"
+  },
+  {
+   "slide": 10,
+   "start": 268.69,
+   "end": 279.51,
+   "text": "圆环上每一点的高度都是 y 等于 R cosθ，所以直接用定义式：y_C 等于 y 乘 dm 的积分，除以总质量。"
+  },
+  {
+   "slide": 10,
+   "start": 279.91,
+   "end": 283.68,
+   "text": "σ 和二 π R 平方都能约掉。"
+  },
+  {
+   "slide": 10,
+   "start": 284.08,
+   "end": 292.7,
+   "text": "剩下的积分是 cosθ sinθ 从零到二分之 π，结果正好一半，所以 y_C 等于 R/2。"
+  },
+  {
+   "slide": 10,
+   "start": 293.1,
+   "end": 297.35,
+   "text": "写成矢量就是质心位矢等于 R/2 乘 j。"
+  },
+  {
+   "slide": 10,
+   "start": 297.75,
+   "end": 304.85,
+   "text": "注意它比球心高，但远低于半球面的“中部”——这是圆环面积在赤道附近更集中的结果。"
+  },
+  {
+   "slide": 11,
+   "start": 306.33,
+   "end": 310.7,
+   "text": "位置定下来了，接下来问：质心怎么动？"
+  },
+  {
+   "slide": 11,
+   "start": 311.35,
+   "end": 319.15,
+   "text": "还是从定义式出发：m 撇乘 r_C 等于 Σ m_i r_i。"
+  },
+  {
+   "slide": 11,
+   "start": 319.55,
+   "end": 324.73,
+   "text": "两边对时间求一阶导数，右边的位矢就变成了速度。"
+  },
+  {
+   "slide": 11,
+   "start": 325.13,
+   "end": 331.37,
+   "text": "于是得到一个很重要的式子：系统的总动量，就等于总质量乘质心速度。"
+  },
+  {
+   "slide": 11,
+   "start": 331.77,
+   "end": 337.07,
+   "text": "换句话说，系统的总动量完全由质心的运动代表。"
+  },
+  {
+   "slide": 12,
+   "start": 338.57,
+   "end": 345.65,
+   "text": "再对时间求一次导，左边成了 m 撇 a_C，右边成了总动量对时间的导数。"
+  },
+  {
+   "slide": 12,
+   "start": 346.05,
+   "end": 354.11,
+   "text": "根据质点系动量定理，总动量的变化率等于所有外力之和——内力成对相消，一个都不剩。"
+  },
+  {
+   "slide": 12,
+   "start": 354.51,
+   "end": 358.97,
+   "text": "于是得到 F 外力等于 m 撇 a_C。"
+  },
+  {
+   "slide": 12,
+   "start": 359.37,
+   "end": 361.94,
+   "text": "这就是质心运动定理。"
+  },
+  {
+   "slide": 13,
+   "start": 363.37,
+   "end": 370.23,
+   "text": "把定理说成话：作用在系统上的合外力，等于系统的总质量乘质心的加速度。"
+  },
+  {
+   "slide": 13,
+   "start": 370.63,
+   "end": 381.05,
+   "text": "看图——左边是三个质点各自受的外力，右边把全部质量集中到质心，只受一个合外力 F 外，产生的加速度就是 a_C。"
+  },
+  {
+   "slide": 13,
+   "start": 381.45,
+   "end": 388.53,
+   "text": "质心运动定理的意义在于：不管系统内部多复杂，质心的运动只由合外力决定。"
+  },
+  {
+   "slide": 14,
+   "start": 389.9,
+   "end": 391.96,
+   "text": "看一个经典例子。"
+  },
+  {
+   "slide": 14,
+   "start": 392.36,
+   "end": 402.1,
+   "text": "质量 2m 的弹丸从地面斜抛出去，在最高点炸成质量相等的两块：一块竖直自由下落，另一块水平抛出。"
+  },
+  {
+   "slide": 14,
+   "start": 402.5,
+   "end": 404.78,
+   "text": "两块同时落地。"
+  },
+  {
+   "slide": 14,
+   "start": 405.18,
+   "end": 407.72,
+   "text": "问第二块落在哪里？"
+  },
+  {
+   "slide": 15,
+   "start": 409.42,
+   "end": 416.64,
+   "text": "解法要点只有一句：炸裂的内力远大于重力，所以质心的运动轨迹不变。"
+  },
+  {
+   "slide": 15,
+   "start": 417.04,
+   "end": 424.72,
+   "text": "取第一块的落点为原点，那么 x 一等于零，质心的横坐标就是 x_C。"
+  },
+  {
+   "slide": 15,
+   "start": 425.12,
+   "end": 433.95,
+   "text": "按质心定义展开：x_C 等于 m 一 x 一 加 m 二 x 二，除以两块质量之和。"
+  },
+  {
+   "slide": 15,
+   "start": 434.35,
+   "end": 441.09,
+   "text": "质量相等、x 一 为零，化成 x_C 等于 x 二的一半。"
+  },
+  {
+   "slide": 15,
+   "start": 441.49,
+   "end": 446.0,
+   "text": "所以 x 二 等于二倍的 x_C。"
+  },
+  {
+   "slide": 15,
+   "start": 446.4,
+   "end": 453.55,
+   "text": "而 x_C 正是原来那条抛物线的射程，所以第二块落在两倍射程处。"
+  },
+  {
+   "slide": 16,
+   "start": 455.1,
+   "end": 461.65,
+   "text": "把这一节的思路拉回来看：物体运动等于质心的平动加绕质心的转动。"
+  },
+  {
+   "slide": 16,
+   "start": 462.05,
+   "end": 469.08,
+   "text": "平动这一半，本节已经解决了——就是质心运动定理，合外力决定质心怎么走。"
+  },
+  {
+   "slide": 16,
+   "start": 469.48,
+   "end": 473.92,
+   "text": "转动那一半还没碰：到底怎么描述绕质心的转动？"
+  },
+  {
+   "slide": 16,
+   "start": 474.57,
+   "end": 477.38,
+   "text": "这要留到下一章刚体力学。"
+  },
+  {
+   "slide": 16,
+   "start": 477.78,
+   "end": 485.0,
+   "text": "而刚体的定点转动，又可以继续拆成“定轴转动加轴的转动”，还是同一个分解思路。"
+  },
+  {
+   "slide": 17,
+   "start": 486.5,
+   "end": 491.2,
+   "text": "再看一个用质心运动定理处理变质量问题的例子。"
+  },
+  {
+   "slide": 17,
+   "start": 491.6,
+   "end": 499.42,
+   "text": "一根长 l、密度均匀的柔软链条，单位长度质量 λ，卷成一堆放在地面。"
+  },
+  {
+   "slide": 17,
+   "start": 499.82,
+   "end": 503.37,
+   "text": "手提一端，以匀速 v 往上提。"
+  },
+  {
+   "slide": 17,
+   "start": 503.77,
+   "end": 508.43,
+   "text": "问：当提起高度为 y 时，手的提力多大？"
+  },
+  {
+   "slide": 17,
+   "start": 509.08,
+   "end": 518.03,
+   "text": "注意这不是简单的“撑住已提起那一段”——链条在地面处不断有链节从静止被拽起来，这就要求额外的力。"
+  },
+  {
+   "slide": 18,
+   "start": 519.53,
+   "end": 525.67,
+   "text": "建如图坐标系，链条的质心高度 y_C 是随 y 变化的。"
+  },
+  {
+   "slide": 18,
+   "start": 526.07,
+   "end": 536.92,
+   "text": "按定义算：已提起那一段质量 λy，它的质心在 y/2 处；还留在地面的那一段质量 λ(l 减 y)，质心高度是零。"
+  },
+  {
+   "slide": 18,
+   "start": 537.32,
+   "end": 539.86,
+   "text": "总质量是 λl。"
+  },
+  {
+   "slide": 18,
+   "start": 540.26,
+   "end": 545.97,
+   "text": "把两项加起来，y_C 等于 y 平方除以二 l。"
+  },
+  {
+   "slide": 18,
+   "start": 546.37,
+   "end": 554.12,
+   "text": "竖直方向上的合外力只有提力 F 和重力，重力作用在已提起那段上，大小 λyg。"
+  },
+  {
+   "slide": 19,
+   "start": 555.61,
+   "end": 565.02,
+   "text": "把 y_C 代进质心运动定理：F 减 λyg 等于 lλ 乘上 y_C 对时间的二阶导。"
+  },
+  {
+   "slide": 19,
+   "start": 565.42,
+   "end": 572.79,
+   "text": "而 y_C 是 y 平方除以二 l，对时间求两次导，要用乘积的导数法则。"
+  },
+  {
+   "slide": 19,
+   "start": 573.19,
+   "end": 580.53,
+   "text": "结果等于 l 分之一乘上 dy/dt 的平方，加上 y 乘 d²y/dt²。"
+  },
+  {
+   "slide": 19,
+   "start": 580.93,
+   "end": 588.39,
+   "text": "匀速上提，dy/dt 就是 v，而 d²y/dt² 等于零，后一项消失。"
+  },
+  {
+   "slide": 19,
+   "start": 588.79,
+   "end": 593.42,
+   "text": "所以 F 等于 λyg 加 λv 平方。"
+  },
+  {
+   "slide": 19,
+   "start": 593.82,
+   "end": 604.62,
+   "text": "两项的意义很清楚：前一项撑住已提起那段的重量，后一项是把地面链节从静止加速到 v 所必需的力——所以提得越快，手越吃力。"
+  },
+  {
+   "slide": 20,
+   "start": 606.16,
+   "end": 608.03,
+   "text": "小结。"
+  },
+  {
+   "slide": 20,
+   "start": 608.43,
+   "end": 618.27,
+   "text": "第一，质心是质点系质量分布的平均位置，r_C 等于 Σ m_i r_i 除以总质量。"
+  },
+  {
+   "slide": 20,
+   "start": 618.67,
+   "end": 629.42,
+   "text": "三种算法：离散求和、连续积分、对称物体直接取几何中心；不规则的像 L 形就切成规则块，按面积加权。"
+  },
+  {
+   "slide": 20,
+   "start": 629.82,
+   "end": 635.77,
+   "text": "第二，质心运动定理：合外力等于总质量乘质心加速度。"
+  },
+  {
+   "slide": 20,
+   "start": 636.17,
+   "end": 644.59,
+   "text": "它说明合外力只决定质心的运动，内部再复杂也不影响质心；质心本身不一定在物体上。"
+  },
+  {
+   "slide": 20,
+   "start": 644.99,
+   "end": 654.69,
+   "text": "再看质心的运动定理这一句：合外力只决定质心的运动，内力再复杂也不影响；而质心本身不一定在物体上。"
+  },
+  {
+   "slide": 20,
+   "start": 655.09,
+   "end": 665.34,
+   "text": "两个典型应用：爆炸问题——质心轨迹不变；变质量问题——像提链条，要额外算上“把静止质量拽起来”的那部分力。"
+  },
+  {
+   "slide": 20,
+   "start": 665.74,
+   "end": 669.17,
+   "text": "下一章，我们解决绕质心的转动。"
+  }
+ ],
+ "build_ts": 1792482440,
+ "logoScale": 0.67
+}

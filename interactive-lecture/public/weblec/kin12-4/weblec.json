@@ -1,0 +1,3916 @@
+{
+ "title": "12-4 平均平动动能与温度的关系",
+ "nav": "12-4　平均平动动能与温度的关系",
+ "footer": "第十二章　气体动理论",
+ "character": "aqiang",
+ "characters": [
+  {
+   "id": "aqiang",
+   "name": "阿强"
+  },
+  {
+   "id": "professor",
+   "name": "博士讲师"
+  },
+  {
+   "id": "zhongshan",
+   "name": "中山装先生"
+  }
+ ],
+ "duration": 585.14,
+ "slides": [
+  {
+   "id": 1,
+   "kind": "page",
+   "heading": "封面",
+   "narration": "第十二章第四节。12-4，理想气体分子的平均平动动能与温度的关系。这一节只做一件事：把一个式子推出来，再把它读透——平均平动动能等于二分之三 k T。然后回答两个问题：温度到底是什么？为什么它只跟分子的平动有关，跟气体是氧还是氦无关？",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 0,
+     "y": 560,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 十 二 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 300,
+     "y": 408,
+     "w": 1320,
+     "h": 170,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "气 体 动 论",
+        "size": 92,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 250,
+     "y": 596,
+     "w": 1420,
+     "h": 120,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "12-4　平均平动动能与温度的关系",
+        "size": 42,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 220,
+     "y": 742,
+     "w": 1480,
+     "h": 90,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "温度的微观本质　·　统计意义　·　方均根速率",
+        "size": 33,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 856,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "温度，就是分子平均平动动能的量度",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 0.0,
+    "2": 2.8,
+    "3": 8.48
+   },
+   "t_start": 0.0,
+   "t_end": 27.72,
+   "duration": 27.72,
+   "laser": []
+  },
+  {
+   "id": 2,
+   "kind": "page",
+   "heading": "本节路线",
+   "narration": "本节路线。先把那个式子重新推一遍，看清它是两条路的交叉点。再逐条读它的含义：为什么与气体种类无关。然后回答三个问题：温度的本质是什么、它为什么是统计量、它跟物体整体运动有没有关系。接着算方均根速率，看几种气体的差别。最后两道例题、两道练习。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节路线",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 244,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "主线：式子的来历 → 三层含义 → 三个追问 → 方均根速率 → 例题",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1　式子的来历",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 386,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两条路，一个交叉点",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 458,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2　它说了三件事",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 512,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只由温度定，与气体无关",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 584,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "3　三个追问",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 638,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本质、统计性、与整体运动",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 330,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4　方均根速率",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 386,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同温下谁跑得快",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 458,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "5　两道例题",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 512,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "氧气与激光冷却的钠原子",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 584,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "6　两道练习",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 638,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "氦与氮、分子数",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一句提醒：这一节不推新公式，只把一个式子读透",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 28.52,
+    "2": 30.79,
+    "3": 35.87,
+    "4": 40.73,
+    "5": 48.79,
+    "6": 53.2
+   },
+   "t_start": 28.52,
+   "t_end": 57.22,
+   "duration": 28.7,
+   "laser": []
+  },
+  {
+   "id": 3,
+   "kind": "page",
+   "heading": "一　式子的来历",
+   "narration": "先看这个式子的来历。左边一条路是宏观的：物态方程 p V 等于 n R T，换成分子数就得到 p 等于小 n k T，这里小 n 是分子数密度。右边一条路是微观的：上一节从分子撞壁出发，得到 p 等于三分之二小 n 乘以平均平动动能。同一个压强，两个表达式，右边都带着分子数密度小 n。两式相除，小 n 和 p 一起消掉，只剩下一句：平均平动动能等于二分之三 k T。请注意这个式子的结构：左边是纯微观量，一个分子的平均动能；右边只有温度和玻尔兹曼常量，一个分子参数都没有。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　式子的来历",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "宏观一条路",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 290,
+     "w": 740,
+     "h": 126,
+     "tex": "pV=\\nu RT\\ \\Longrightarrow\\ p=nkT",
+     "size": 28,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 430,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "微观一条路",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 484,
+     "w": 740,
+     "h": 134,
+     "tex": "p=\\frac{2}{3}n\\,\\bar{\\varepsilon}_k",
+     "size": 30,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同一个 $p$，两条路",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "都带着分子数密度 $n$",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 350,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "相除，$n$ 与 $p$ 一起消掉",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 985,
+     "y": 420,
+     "w": 765,
+     "h": 150,
+     "tex": "\\bar{\\varepsilon}_k=\\frac{3}{2}kT",
+     "size": 36,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 660,
+     "w": 1580,
+     "h": 150,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "左边：纯微观量　　·　　右边：只有 $T$ 和 $k$",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "一个分子参数都没有 —— 这个式子一定在说某种普适的东西",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 856,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "上节末尾已经碰到它，这一节要问：为什么右边能这么干净？",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 58.02,
+    "2": 60.87,
+    "3": 71.76,
+    "4": 80.25,
+    "5": 86.46,
+    "6": 94.54
+   },
+   "t_start": 58.02,
+   "t_end": 105.35,
+   "duration": 47.33,
+   "laser": []
+  },
+  {
+   "id": 4,
+   "kind": "page",
+   "heading": "二　它说了三件事",
+   "narration": "先看第一件事，也是最能说明问题的一件。这张图里是三种气体：氦、氮、二氧化碳，都处在三百开。它们的平均平动动能完全一样，都是六点二乘十的负二十一次方焦。但方均根速率差得很远：氦一千三百六十八米每秒，氮五百一十七，二氧化碳只有四百一十二。想一想：为什么？因为动能等于二分之一 m v 平方，动能相同，质量大的就跑得慢。所以温度只锁住「平均动能」，锁不住「速度」——这就是那个式子右边为什么只剩温度。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　它说了三件事",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 同一温度，动能相同",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 250,
+     "w": 765,
+     "h": 437,
+     "name": "same_temp_ke"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 300,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\bar{\\varepsilon}_k=\\frac32 kT$ 只含 $T$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 352,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与气体种类、分子质量都无关",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 420,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 速率却各不相同",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 472,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "动能相同 ⇒ $v\\propto1/\\sqrt{m}$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 540,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 温度是集体表现",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 592,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "单个分子只有动能，谈不上温度",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 666,
+     "w": 740,
+     "h": 170,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一句话",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "温度锁住的是「平均动能」",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "不是「平均速率」",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "两者差一个 $\\sqrt{m}$",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 870,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "记住这个对照：同温下，分子越轻跑得越快 —— 但平均动能一样大",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 106.15,
+    "2": 110.65,
+    "3": 117.77,
+    "4": 124.17,
+    "5": 132.87,
+    "6": 142.92
+   },
+   "t_start": 106.15,
+   "t_end": 151.68,
+   "duration": 45.53,
+   "laser": []
+  },
+  {
+   "id": 5,
+   "kind": "page",
+   "heading": "三　温度的微观本质",
+   "narration": "第二层：温度的本质。把式子倒过来写，T 等于三分之二 k 分之平均平动动能——温度正比于分子的平均平动动能。这就是温度的微观解释：温度是分子热运动剧烈程度的量度，分子动得越猛，温度越高。注意它是「平动」动能，不含转动和振动；转动那部分要到能量均分定理才进来。再看绝对零度：按这个式子，T 趋于零时平均平动动能也趋于零，分子该停了。但真实世界里做不到：量子力学给出零点能，分子在绝对零度附近仍在振动；而且越接近零度越难再降，这就是绝对零度不可达。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　温度的微观本质",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "把式子倒过来",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 290,
+     "w": 740,
+     "h": 146,
+     "tex": "T=\\frac{2}{3k}\\,\\bar{\\varepsilon}_k",
+     "size": 33,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 470,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "温度 ∝ 分子平均平动动能",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 530,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "注意：只是「平动」",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 580,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "转动、振动要到能量均分定理才进来",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "温度的量纲",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$k$ 是「每开尔文多少焦耳」",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "把能量换算成温度的汇率",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 470,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$T\\to0$ 时 $\\bar{\\varepsilon}_k\\to0$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 530,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "但绝对零度达不到",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 582,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "量子零点能：分子不会完全静止",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 680,
+     "w": 1580,
+     "h": 150,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "温度不是「热的多少」，而是「分子平均动得多猛」",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "一杯 90 ℃ 的水和一浴缸 40 ℃ 的水，前者温度高、后者热量多",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 152.48,
+    "2": 155.69,
+    "3": 164.08,
+    "4": 172.66,
+    "5": 180.21,
+    "6": 188.36
+   },
+   "t_start": 152.48,
+   "t_end": 200.65,
+   "duration": 48.17,
+   "laser": []
+  },
+  {
+   "id": 6,
+   "kind": "page",
+   "heading": "四　温度是统计概念",
+   "narration": "第三个追问：温度为什么是统计量？想一想：一个分子有没有温度？没有。一个分子只有一个瞬时速度、一个动能，说它「三十度」毫无意义。温度是一大群分子的平均效果，必须有足够多的分子，这个平均值才稳定。分子数少的时候，平均值会明显起伏：十个分子，随便一个跑快一点，平均值就跳；十的二十三次方个分子，起伏小到测不出来。这个规律上一节讲过：相对涨落与根号 N 成反比。所以温度是宏观量、统计量——它描述的是集体，不是个体。这也是为什么热学里从不追单个分子。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　温度是统计概念",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一个分子有没有温度？",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 300,
+     "w": 740,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "没有",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 360,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "它只有一个瞬时速度和动能",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 430,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "温度 = 大量分子的平均值",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 482,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "分子越多，平均值越稳",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 550,
+     "w": 740,
+     "h": 136,
+     "tex": "\\frac{\\delta T}{T}\\propto\\frac{1}{\\sqrt{N}}",
+     "size": 31,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 700,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$N\\sim10^{23}$ ⇒ 涨落 $\\sim10^{-11}$",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 372,
+     "w": 740,
+     "h": 240,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "两句话记住",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "温度描述集体，不描述个体",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "单个分子只有能量，没有温度",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "这就是「统计」二字的分量",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 790,
+     "w": 1580,
+     "h": 140,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "所以「一个分子的温度」这种问法，从根上就是错的",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "它和「一个分子的压强」一样，都是把宏观量硬套到个体身上",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 201.45,
+    "2": 205.84,
+    "3": 218.79,
+    "4": 225.69,
+    "5": 237.32,
+    "6": 242.81
+   },
+   "t_start": 201.45,
+   "t_end": 254.27,
+   "duration": 52.82,
+   "laser": []
+  },
+  {
+   "id": 7,
+   "kind": "page",
+   "heading": "五　热运动与整体运动",
+   "narration": "最后一个追问：温度跟物体的整体运动有没有关系？看一辆匀速行驶的车，车厢里的气体分子一边随车平动，一边仍在乱撞。温度只由无规运动那部分决定，所以车开得再快，车厢里的温度也不变。也就是说，温度与参考系无关——你在站台上测，和车上的人测，读数一样。要把两者分清楚：整体平动是所有分子的一种有规则运动，它不贡献温度；只有相对质心的无规运动才贡献温度。什么时候整体运动会变成温度？急刹车的时候。车的动能被摩擦耗散，变成分子的无规运动，温度才升高——那是热力学第一定律的内容。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五　热运动与整体运动",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "匀速行驶的车厢里",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 300,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "分子一边随车平动",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 350,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一边仍在无规乱撞",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 420,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "温度只由无规运动决定",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 472,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "车速再快，温度也不变",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 540,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "温度与参考系无关",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 592,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "站台上测、车上测，读数一样",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 210,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "两种运动要分清",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "整体平动 = 所有分子的规则运动",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "→ 不贡献温度",
+        "size": 26,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "无规运动 = 相对质心的乱动",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "→ 才贡献温度",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 480,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "温度是「内部」的，不是「整体」的",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 560,
+     "w": 740,
+     "h": 190,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "那什么时候整体运动变成温度？",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "急刹车：车的动能 → 分子的无规运动",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "温度升高（热力学第一定律）",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 680,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以「分子永不停息地乱动」这件事，与物体整体动不动无关 —— 它是分子的内禀性质",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 255.07,
+    "2": 260.74,
+    "3": 267.57,
+    "4": 274.62,
+    "5": 283.2,
+    "6": 293.63
+   },
+   "t_start": 255.07,
+   "t_end": 308.23,
+   "duration": 53.16,
+   "laser": []
+  },
+  {
+   "id": 8,
+   "kind": "page",
+   "heading": "六　方均根速率",
+   "narration": "由这个式子可以直接算出速率。把平均平动动能写成二分之一 m v 平方的平均，令它等于二分之三 k T，解出方均根速率：根号下三 k T 除以 m。再用 k 等于 R 除以 N-A、m 乘以 N-A 等于摩尔质量 M，换成工程上好用的形式：根号下三 R T 除以 M。注意它是方均根速率，不是平均速率，也不是最概然速率——三个数并不相等，下一节讲分布时再分清。看这张图：三百开下，氢气一千九百三十四米每秒，氦气一千三百六十八，水蒸气六百四十五，氮气五百一十七，二氧化碳只有四百一十二。规律很清楚：同温下速率与摩尔质量的平方根成反比——分子越轻，跑得越快。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "六　方均根速率",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "由平均动能解出来",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 292,
+     "w": 740,
+     "h": 112,
+     "tex": "v_{rms}=\\sqrt{\\frac{3kT}{m}}",
+     "size": 31,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 416,
+     "w": 740,
+     "h": 112,
+     "tex": "=\\sqrt{\\frac{3RT}{M}}",
+     "size": 31,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 540,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$k=R/N_A$，$mN_A=M$",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 596,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "方均根速率 ≠ 平均速率 ≠ 最概然速率",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 250,
+     "w": 765,
+     "h": 437,
+     "name": "vrms_gases"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 664,
+     "w": 740,
+     "h": 160,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "同温下",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$v_{rms}\\propto1/\\sqrt{M}$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "质量小 4 倍 ⇒ 速率大 2 倍",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 860,
+     "w": 1580,
+     "h": 38,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "氢气比二氧化碳快 4.7 倍，动能却完全一样 —— 这就是「同温同动能」的代价",
+        "size": 26,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 309.03,
+    "2": 312.93,
+    "3": 323.94,
+    "4": 334.32,
+    "5": 343.43,
+    "6": 356.62
+   },
+   "t_start": 309.03,
+   "t_end": 364.83,
+   "duration": 55.8,
+   "laser": []
+  },
+  {
+   "id": 9,
+   "kind": "page",
+   "heading": "七　例题（一）：氧气的方均根速率",
+   "narration": "一道例题：估算标准状况下氧气分子的方均根速率。标准状况，温度 273 开；氧气的摩尔质量是 32 克每摩尔，也就是 0.032 千克每摩尔。代入方均根速率公式：根号下三乘 8.31 乘 273，再除以 0.032。算出来约 4.6 乘 10 的 2 次方米每秒，也就是四百六十米每秒——比空气中的声速还快一点。再算一个分子的平均平动动能：二分之三 k T，约 5.6 乘 10 的负 21 次方焦耳。想一想：同样温度下氢气是多少？摩尔质量小 16 倍，速率大 4 倍，约一千八百米每秒。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "七　例题（一）：氧气的方均根速率",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "已知（标准状况）",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 288,
+     "w": 740,
+     "h": 100,
+     "tex": "T=273\\ \\mathrm{K},\\quad M=32\\times10^{-3}\\ \\mathrm{kg/mol}",
+     "size": 24,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 420,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "代入方均根速率公式",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 470,
+     "w": 740,
+     "h": 156,
+     "tex": "v_{rms}=\\sqrt{\\frac{3RT}{M}}=\\sqrt{\\frac{3\\times8.31\\times273}{0.032}}",
+     "size": 26,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 640,
+     "w": 740,
+     "h": 110,
+     "tex": "\\approx4.6\\times10^{2}\\ \\mathrm{m/s}",
+     "size": 28,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "平均平动动能",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 1010,
+     "y": 288,
+     "w": 740,
+     "h": 130,
+     "tex": "\\bar{\\varepsilon}_k=\\frac{3}{2}kT\\approx5.6\\times10^{-21}\\ \\mathrm{J}",
+     "size": 25,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 450,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "想一想：氢气呢？",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 502,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$M$ 小 16 倍 ⇒ 速率大 4 倍",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 552,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "约 $1.8\\times10^{3}\\ \\mathrm{m/s}$",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 640,
+     "w": 740,
+     "h": 180,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "答案",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$v_{rms}\\approx4.6\\times10^{2}\\ \\mathrm{m/s}$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$\\bar{\\varepsilon}_k\\approx5.6\\times10^{-21}\\ \\mathrm{J}$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 365.63,
+    "2": 371.6,
+    "3": 381.19,
+    "4": 388.62,
+    "5": 397.01,
+    "6": 404.8
+   },
+   "t_start": 365.63,
+   "t_end": 414.95,
+   "duration": 49.32,
+   "laser": []
+  },
+  {
+   "id": 10,
+   "kind": "page",
+   "heading": "八　例题（二）：激光冷却钠原子",
+   "narration": "一道有故事的例题。用多束激光和磁阱可以把原子限制在很小的范围里，这一招能把原子冷到极低的温度。一九九七年诺贝尔物理学奖就授予了朱棣文等三人，表彰他们在激光冷却和囚禁原子上的贡献。某次实验把钠原子冷到了零点二四毫开，也就是二点四乘十的负四次方开。求这时钠原子的方均根速率。钠的摩尔质量是二十三克每摩尔，代进公式：根号下三乘八点三一乘二点四乘十的负四次方，再除以零点零二三。算出来约零点五一米每秒——比人走路还慢得多。对比一下：三百开时钠原子的方均根速率约五百七十米每秒。温度降了约一百二十五万倍，速率才降到千分之一——因为速率与温度的平方根成正比。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "八　例题（二）：激光冷却钠原子",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "已知",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 288,
+     "w": 740,
+     "h": 96,
+     "tex": "T=0.240\\ \\mathrm{mK}=2.40\\times10^{-4}\\ \\mathrm{K}",
+     "size": 24,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 392,
+     "w": 740,
+     "h": 96,
+     "tex": "M=23\\ \\mathrm{g/mol}=0.023\\ \\mathrm{kg/mol}",
+     "size": 24,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 520,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "代入",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 570,
+     "w": 740,
+     "h": 120,
+     "tex": "v_{rms}=\\sqrt{\\frac{3RT}{M}}",
+     "size": 26,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 664,
+     "w": 740,
+     "h": 140,
+     "tex": "=\\sqrt{\\frac{3\\times8.31\\times2.40\\times10^{-4}}{0.023}}",
+     "size": 24,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 140,
+     "tex": "\\approx0.51\\ \\mathrm{m/s}",
+     "size": 34,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 392,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "比常温小了一千多倍",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 460,
+     "w": 740,
+     "h": 190,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "对照：300 K 时",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$v_{rms}\\approx570\\ \\mathrm{m/s}$",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "温度降 $1.25\\times10^{6}$ 倍",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "速率只降到 $1/1100$",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 690,
+     "w": 740,
+     "h": 150,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "$v\\propto\\sqrt{T}$",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "温度降四个数量级，速率才降两个",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "—— 因为开方",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 415.75,
+    "2": 418.6,
+    "3": 435.26,
+    "4": 445.98,
+    "5": 456.17,
+    "6": 461.37
+   },
+   "t_start": 415.75,
+   "t_end": 476.04,
+   "duration": 60.29,
+   "laser": []
+  },
+  {
+   "id": 11,
+   "kind": "page",
+   "heading": "九　练习（一）：氦气与氮气",
+   "narration": "做一道概念题。一瓶氦气和一瓶氮气，密度相同，分子平均平动动能相同，而且都处于平衡状态。温度、压强各是什么关系？还是说没法判断？提示：平均平动动能只由温度决定；密度相同，意味着单位体积里的质量相同，而两种分子质量差七倍。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "九　练习（一）：氦气与氮气",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 130,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一瓶氦气和一瓶氮气，密度相同，分子平均平动动能相同，",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "而且都处于平衡状态，则：",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 210,
+     "y": 420,
+     "w": 1000,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "A．温度相同、压强相同",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 210,
+     "y": 486,
+     "w": 1000,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "B．温度、压强都不同",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 210,
+     "y": 552,
+     "w": 1000,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "C．温度相同，氦气压强大于氮气压强",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 210,
+     "y": 618,
+     "w": 1000,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "D．温度相同，氦气压强小于氮气压强",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 1250,
+     "y": 420,
+     "w": 500,
+     "h": 252,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "提示",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$\\bar{\\varepsilon}_k$ 只由 $T$ 定",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$\\rho=mn$，$\\rho$ 相同",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$M_{He}=4$，$M_{N_2}=28$",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 720,
+     "w": 1580,
+     "h": 150,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "答案：C",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "动能相同 ⇒ $T$ 相同；$\\rho$ 相同而氦分子轻 7 倍 ⇒ $n$ 大 7 倍 ⇒ $p=nkT$ 大",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "这也说明：同温同压下，密度小的气体分子数多",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 476.84,
+    "2": 479.38,
+    "3": 488.23,
+    "4": 495.27
+   },
+   "t_start": 476.84,
+   "t_end": 505.74,
+   "duration": 28.9,
+   "laser": [],
+   "interactions": [
+    {
+     "t": 479.38,
+     "q": "一瓶氦气和一瓶氮气，密度相同，分子平均平动动能相同，而且都处于平衡状态。则两者的温度和压强关系是？",
+     "answer": 2,
+     "options": [
+      "A．温度相同、压强相同",
+      "B．温度、压强都不同",
+      "C．温度相同，氦气压强大于氮气压强",
+      "D．温度相同，氦气压强小于氮气压强"
+     ],
+     "explain": "平均平动动能 ε̄=3kT/2 相同 ⇒ T 相同。密度 ρ=mn，ρ 相同而氦分子质量只有氮的 1/7 ⇒ 氦的分子数密度 n 是氮的 7 倍。由 p=nkT，同温下 n 大则 p 大，故氦气压强大，选 C。"
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "kind": "page",
+   "heading": "十　练习（二）：分子数",
+   "narration": "再看一道式子题。理想气体体积为 V，压强为 p，温度为 T。一个分子的质量为 m，k 是玻尔兹曼常量，R 是摩尔气体常量。问：这个理想气体的分子数是多少？四个选项。提示：从 p 等于小 n k T 出发，小 n 是单位体积的分子数，乘上体积就是总数。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "十　练习（二）：分子数",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 130,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "理想气体体积为 $V$，压强为 $p$，温度为 $T$。一个分子的质量为 $m$，",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$k$ 为玻尔兹曼常量，$R$ 为摩尔气体常量，则该气体的分子数为：",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 210,
+     "y": 420,
+     "w": 1000,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "A．$pV/(kT)$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 210,
+     "y": 486,
+     "w": 1000,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "B．$pV/(mT)$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 210,
+     "y": 552,
+     "w": 1000,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "C．$p/(kTV)$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 210,
+     "y": 618,
+     "w": 1000,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "D．$pV/(RT)$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 1250,
+     "y": 420,
+     "w": 500,
+     "h": 252,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "提示",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$p=nkT$",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$n=N/V$",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$R=N_A k$",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 720,
+     "w": 1580,
+     "h": 150,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "答案：A",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$n=N/V=p/(kT)$ ⇒ $N=pV/(kT)$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "D 是摩尔数 $\\nu$，不是分子数；少了 $N_A$",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 506.54,
+    "2": 509.05,
+    "3": 520.79,
+    "4": 527.6
+   },
+   "t_start": 506.54,
+   "t_end": 535.94,
+   "duration": 29.4,
+   "laser": [],
+   "interactions": [
+    {
+     "t": 509.05,
+     "q": "理想气体体积为 V，压强为 p，温度为 T。一个分子质量为 m，k 为玻尔兹曼常量，R 为摩尔气体常量，则该气体的分子数为？",
+     "answer": 0,
+     "options": [
+      "A．pV/(kT)",
+      "B．pV/(mT)",
+      "C．p/(kTV)",
+      "D．pV/(RT)"
+     ],
+     "explain": "由 p=nkT 和 n=N/V 得 N/V=p/(kT)，故 N=pV/(kT)。选项 D 的 pV/(RT) 是摩尔数 ν，换成分子数还要乘阿伏伽德罗常量。"
+    }
+   ]
+  },
+  {
+   "id": 13,
+   "kind": "page",
+   "heading": "本节小结",
+   "narration": "小结。平均平动动能等于二分之三 k T，这是宏观与微观的交叉点：左边纯微观，右边只含温度。它锁住的是平均动能，不是速率——同温下各种气体动能相同，速率却按根号 m 反比。温度就是分子平均平动动能的量度，它是统计量：单个分子没有温度，只有集体才有。温度只由无规运动决定，与物体的整体运动无关，与参考系无关。方均根速率等于根号下三 R T 除以 M，三百开下氢气一千九百多，二氧化碳四百出头。下一节讲能量均分定理。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 核心式子",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 286,
+     "w": 740,
+     "h": 130,
+     "tex": "\\bar{\\varepsilon}_k=\\frac{3}{2}kT",
+     "size": 30,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 430,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 三件事",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 482,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只由 $T$ 定；速率各不同；是集体表现",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 544,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 温度的本质",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 596,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "分子平均平动动能的量度",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 统计性",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "单个分子无温度；涨落 $\\propto1/\\sqrt{N}$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 356,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "⑤ 与整体运动无关",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 408,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只由无规运动决定，与参考系无关",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 476,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "⑥ 方均根速率",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 528,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$v_{rms}=\\sqrt{3RT/M}\\propto1/\\sqrt{M}$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 600,
+     "w": 740,
+     "h": 180,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "下一节",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "能量均分定理",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "把转动、振动也算进来",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 660,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一句话",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "温度不是「热的多少」",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "而是「分子平均动得多猛」",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "它是统计量，不是单个分子的事",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 536.74,
+    "2": 539.01,
+    "3": 548.12,
+    "4": 556.42,
+    "5": 564.24,
+    "6": 570.74
+   },
+   "t_start": 536.74,
+   "t_end": 583.52,
+   "duration": 46.78,
+   "laser": []
+  }
+ ],
+ "subtitles": [
+  {
+   "slide": 1,
+   "start": 0.0,
+   "end": 2.4,
+   "text": "第十二章第四节。"
+  },
+  {
+   "slide": 1,
+   "start": 2.8,
+   "end": 8.08,
+   "text": "12-4，理想气体分子的平均平动动能与温度的关系。"
+  },
+  {
+   "slide": 1,
+   "start": 8.48,
+   "end": 16.5,
+   "text": "这一节只做一件事：把一个式子推出来，再把它读透——平均平动动能等于二分之三 k T。"
+  },
+  {
+   "slide": 1,
+   "start": 16.9,
+   "end": 20.72,
+   "text": "然后回答两个问题：温度到底是什么？"
+  },
+  {
+   "slide": 1,
+   "start": 21.37,
+   "end": 26.77,
+   "text": "为什么它只跟分子的平动有关，跟气体是氧还是氦无关？"
+  },
+  {
+   "slide": 2,
+   "start": 28.52,
+   "end": 30.39,
+   "text": "本节路线。"
+  },
+  {
+   "slide": 2,
+   "start": 30.79,
+   "end": 35.47,
+   "text": "先把那个式子重新推一遍，看清它是两条路的交叉点。"
+  },
+  {
+   "slide": 2,
+   "start": 35.87,
+   "end": 40.33,
+   "text": "再逐条读它的含义：为什么与气体种类无关。"
+  },
+  {
+   "slide": 2,
+   "start": 40.73,
+   "end": 48.39,
+   "text": "然后回答三个问题：温度的本质是什么、它为什么是统计量、它跟物体整体运动有没有关系。"
+  },
+  {
+   "slide": 2,
+   "start": 48.79,
+   "end": 52.8,
+   "text": "接着算方均根速率，看几种气体的差别。"
+  },
+  {
+   "slide": 2,
+   "start": 53.2,
+   "end": 56.49,
+   "text": "最后两道例题、两道练习。"
+  },
+  {
+   "slide": 3,
+   "start": 58.02,
+   "end": 60.47,
+   "text": "先看这个式子的来历。"
+  },
+  {
+   "slide": 3,
+   "start": 60.87,
+   "end": 71.36,
+   "text": "左边一条路是宏观的：物态方程 p V 等于 n R T，换成分子数就得到 p 等于小 n k T，这里小 n 是分子数密度。"
+  },
+  {
+   "slide": 3,
+   "start": 71.76,
+   "end": 79.85,
+   "text": "右边一条路是微观的：上一节从分子撞壁出发，得到 p 等于三分之二小 n 乘以平均平动动能。"
+  },
+  {
+   "slide": 3,
+   "start": 80.25,
+   "end": 86.06,
+   "text": "同一个压强，两个表达式，右边都带着分子数密度小 n。"
+  },
+  {
+   "slide": 3,
+   "start": 86.46,
+   "end": 94.14,
+   "text": "两式相除，小 n 和 p 一起消掉，只剩下一句：平均平动动能等于二分之三 k T。"
+  },
+  {
+   "slide": 3,
+   "start": 94.54,
+   "end": 104.62,
+   "text": "请注意这个式子的结构：左边是纯微观量，一个分子的平均动能；右边只有温度和玻尔兹曼常量，一个分子参数都没有。"
+  },
+  {
+   "slide": 4,
+   "start": 106.15,
+   "end": 110.25,
+   "text": "先看第一件事，也是最能说明问题的一件。"
+  },
+  {
+   "slide": 4,
+   "start": 110.65,
+   "end": 117.37,
+   "text": "这张图里是三种气体：氦、氮、二氧化碳，都处在三百开。"
+  },
+  {
+   "slide": 4,
+   "start": 117.77,
+   "end": 123.77,
+   "text": "它们的平均平动动能完全一样，都是六点二乘十的负二十一次方焦。"
+  },
+  {
+   "slide": 4,
+   "start": 124.17,
+   "end": 132.47,
+   "text": "但方均根速率差得很远：氦一千三百六十八米每秒，氮五百一十七，二氧化碳只有四百一十二。"
+  },
+  {
+   "slide": 4,
+   "start": 132.87,
+   "end": 135.8,
+   "text": "想一想：为什么？"
+  },
+  {
+   "slide": 4,
+   "start": 136.45,
+   "end": 142.52,
+   "text": "因为动能等于二分之一 m v 平方，动能相同，质量大的就跑得慢。"
+  },
+  {
+   "slide": 4,
+   "start": 142.92,
+   "end": 150.86,
+   "text": "所以温度只锁住「平均动能」，锁不住「速度」——这就是那个式子右边为什么只剩温度。"
+  },
+  {
+   "slide": 5,
+   "start": 152.48,
+   "end": 155.29,
+   "text": "第二层：温度的本质。"
+  },
+  {
+   "slide": 5,
+   "start": 155.69,
+   "end": 163.68,
+   "text": "把式子倒过来写，T 等于三分之二 k 分之平均平动动能——温度正比于分子的平均平动动能。"
+  },
+  {
+   "slide": 5,
+   "start": 164.08,
+   "end": 172.26,
+   "text": "这就是温度的微观解释：温度是分子热运动剧烈程度的量度，分子动得越猛，温度越高。"
+  },
+  {
+   "slide": 5,
+   "start": 172.66,
+   "end": 179.81,
+   "text": "注意它是「平动」动能，不含转动和振动；转动那部分要到能量均分定理才进来。"
+  },
+  {
+   "slide": 5,
+   "start": 180.21,
+   "end": 187.96,
+   "text": "再看绝对零度：按这个式子，T 趋于零时平均平动动能也趋于零，分子该停了。"
+  },
+  {
+   "slide": 5,
+   "start": 188.36,
+   "end": 199.9,
+   "text": "但真实世界里做不到：量子力学给出零点能，分子在绝对零度附近仍在振动；而且越接近零度越难再降，这就是绝对零度不可达。"
+  },
+  {
+   "slide": 6,
+   "start": 201.45,
+   "end": 205.19,
+   "text": "第三个追问：温度为什么是统计量？"
+  },
+  {
+   "slide": 6,
+   "start": 205.84,
+   "end": 209.18,
+   "text": "想一想：一个分子有没有温度？"
+  },
+  {
+   "slide": 6,
+   "start": 209.83,
+   "end": 211.7,
+   "text": "没有。"
+  },
+  {
+   "slide": 6,
+   "start": 212.1,
+   "end": 218.39,
+   "text": "一个分子只有一个瞬时速度、一个动能，说它「三十度」毫无意义。"
+  },
+  {
+   "slide": 6,
+   "start": 218.79,
+   "end": 225.29,
+   "text": "温度是一大群分子的平均效果，必须有足够多的分子，这个平均值才稳定。"
+  },
+  {
+   "slide": 6,
+   "start": 225.69,
+   "end": 236.92,
+   "text": "分子数少的时候，平均值会明显起伏：十个分子，随便一个跑快一点，平均值就跳；十的二十三次方个分子，起伏小到测不出来。"
+  },
+  {
+   "slide": 6,
+   "start": 237.32,
+   "end": 242.41,
+   "text": "这个规律上一节讲过：相对涨落与根号 N 成反比。"
+  },
+  {
+   "slide": 6,
+   "start": 242.81,
+   "end": 249.05,
+   "text": "所以温度是宏观量、统计量——它描述的是集体，不是个体。"
+  },
+  {
+   "slide": 6,
+   "start": 249.45,
+   "end": 253.34,
+   "text": "这也是为什么热学里从不追单个分子。"
+  },
+  {
+   "slide": 7,
+   "start": 255.07,
+   "end": 260.09,
+   "text": "最后一个追问：温度跟物体的整体运动有没有关系？"
+  },
+  {
+   "slide": 7,
+   "start": 260.74,
+   "end": 267.17,
+   "text": "看一辆匀速行驶的车，车厢里的气体分子一边随车平动，一边仍在乱撞。"
+  },
+  {
+   "slide": 7,
+   "start": 267.57,
+   "end": 274.22,
+   "text": "温度只由无规运动那部分决定，所以车开得再快，车厢里的温度也不变。"
+  },
+  {
+   "slide": 7,
+   "start": 274.62,
+   "end": 282.8,
+   "text": "也就是说，温度与参考系无关——你在站台上测，和车上的人测，读数一样。"
+  },
+  {
+   "slide": 7,
+   "start": 283.2,
+   "end": 293.23,
+   "text": "要把两者分清楚：整体平动是所有分子的一种有规则运动，它不贡献温度；只有相对质心的无规运动才贡献温度。"
+  },
+  {
+   "slide": 7,
+   "start": 293.63,
+   "end": 296.85,
+   "text": "什么时候整体运动会变成温度？"
+  },
+  {
+   "slide": 7,
+   "start": 297.5,
+   "end": 299.47,
+   "text": "急刹车的时候。"
+  },
+  {
+   "slide": 7,
+   "start": 299.87,
+   "end": 307.36,
+   "text": "车的动能被摩擦耗散，变成分子的无规运动，温度才升高——那是热力学第一定律的内容。"
+  },
+  {
+   "slide": 8,
+   "start": 309.03,
+   "end": 312.53,
+   "text": "由这个式子可以直接算出速率。"
+  },
+  {
+   "slide": 8,
+   "start": 312.93,
+   "end": 323.54,
+   "text": "把平均平动动能写成二分之一 m v 平方的平均，令它等于二分之三 k T，解出方均根速率：根号下三 k T 除以 m。"
+  },
+  {
+   "slide": 8,
+   "start": 323.94,
+   "end": 333.92,
+   "text": "再用 k 等于 R 除以 N-A、m 乘以 N-A 等于摩尔质量 M，换成工程上好用的形式：根号下三 R T 除以 M。"
+  },
+  {
+   "slide": 8,
+   "start": 334.32,
+   "end": 343.03,
+   "text": "注意它是方均根速率，不是平均速率，也不是最概然速率——三个数并不相等，下一节讲分布时再分清。"
+  },
+  {
+   "slide": 8,
+   "start": 343.43,
+   "end": 356.22,
+   "text": "看这张图：三百开下，氢气一千九百三十四米每秒，氦气一千三百六十八，水蒸气六百四十五，氮气五百一十七，二氧化碳只有四百一十二。"
+  },
+  {
+   "slide": 8,
+   "start": 356.62,
+   "end": 364.08,
+   "text": "规律很清楚：同温下速率与摩尔质量的平方根成反比——分子越轻，跑得越快。"
+  },
+  {
+   "slide": 9,
+   "start": 365.63,
+   "end": 371.2,
+   "text": "一道例题：估算标准状况下氧气分子的方均根速率。"
+  },
+  {
+   "slide": 9,
+   "start": 371.6,
+   "end": 380.79,
+   "text": "标准状况，温度 273 开；氧气的摩尔质量是 32 克每摩尔，也就是 0.032 千克每摩尔。"
+  },
+  {
+   "slide": 9,
+   "start": 381.19,
+   "end": 388.22,
+   "text": "代入方均根速率公式：根号下三乘 8.31 乘 273，再除以 0.032。"
+  },
+  {
+   "slide": 9,
+   "start": 388.62,
+   "end": 396.61,
+   "text": "算出来约 4.6 乘 10 的 2 次方米每秒，也就是四百六十米每秒——比空气中的声速还快一点。"
+  },
+  {
+   "slide": 9,
+   "start": 397.01,
+   "end": 404.4,
+   "text": "再算一个分子的平均平动动能：二分之三 k T，约 5.6 乘 10 的负 21 次方焦耳。"
+  },
+  {
+   "slide": 9,
+   "start": 404.8,
+   "end": 408.38,
+   "text": "想一想：同样温度下氢气是多少？"
+  },
+  {
+   "slide": 9,
+   "start": 409.03,
+   "end": 414.14,
+   "text": "摩尔质量小 16 倍，速率大 4 倍，约一千八百米每秒。"
+  },
+  {
+   "slide": 10,
+   "start": 415.75,
+   "end": 418.2,
+   "text": "一道有故事的例题。"
+  },
+  {
+   "slide": 10,
+   "start": 418.6,
+   "end": 426.04,
+   "text": "用多束激光和磁阱可以把原子限制在很小的范围里，这一招能把原子冷到极低的温度。"
+  },
+  {
+   "slide": 10,
+   "start": 426.44,
+   "end": 434.86,
+   "text": "一九九七年诺贝尔物理学奖就授予了朱棣文等三人，表彰他们在激光冷却和囚禁原子上的贡献。"
+  },
+  {
+   "slide": 10,
+   "start": 435.26,
+   "end": 442.2,
+   "text": "某次实验把钠原子冷到了零点二四毫开，也就是二点四乘十的负四次方开。"
+  },
+  {
+   "slide": 10,
+   "start": 442.6,
+   "end": 445.58,
+   "text": "求这时钠原子的方均根速率。"
+  },
+  {
+   "slide": 10,
+   "start": 445.98,
+   "end": 455.77,
+   "text": "钠的摩尔质量是二十三克每摩尔，代进公式：根号下三乘八点三一乘二点四乘十的负四次方，再除以零点零二三。"
+  },
+  {
+   "slide": 10,
+   "start": 456.17,
+   "end": 460.97,
+   "text": "算出来约零点五一米每秒——比人走路还慢得多。"
+  },
+  {
+   "slide": 10,
+   "start": 461.37,
+   "end": 467.03,
+   "text": "对比一下：三百开时钠原子的方均根速率约五百七十米每秒。"
+  },
+  {
+   "slide": 10,
+   "start": 467.43,
+   "end": 475.13,
+   "text": "温度降了约一百二十五万倍，速率才降到千分之一——因为速率与温度的平方根成正比。"
+  },
+  {
+   "slide": 11,
+   "start": 476.84,
+   "end": 478.98,
+   "text": "做一道概念题。"
+  },
+  {
+   "slide": 11,
+   "start": 479.38,
+   "end": 487.83,
+   "text": "一瓶氦气和一瓶氮气，密度相同，分子平均平动动能相同，而且都处于平衡状态。"
+  },
+  {
+   "slide": 11,
+   "start": 488.23,
+   "end": 491.69,
+   "text": "温度、压强各是什么关系？"
+  },
+  {
+   "slide": 11,
+   "start": 492.34,
+   "end": 494.62,
+   "text": "还是说没法判断？"
+  },
+  {
+   "slide": 11,
+   "start": 495.27,
+   "end": 505.04,
+   "text": "提示：平均平动动能只由温度决定；密度相同，意味着单位体积里的质量相同，而两种分子质量差七倍。"
+  },
+  {
+   "slide": 12,
+   "start": 506.54,
+   "end": 508.65,
+   "text": "再看一道式子题。"
+  },
+  {
+   "slide": 12,
+   "start": 509.05,
+   "end": 513.75,
+   "text": "理想气体体积为 V，压强为 p，温度为 T。"
+  },
+  {
+   "slide": 12,
+   "start": 514.15,
+   "end": 520.39,
+   "text": "一个分子的质量为 m，k 是玻尔兹曼常量，R 是摩尔气体常量。"
+  },
+  {
+   "slide": 12,
+   "start": 520.79,
+   "end": 524.68,
+   "text": "问：这个理想气体的分子数是多少？"
+  },
+  {
+   "slide": 12,
+   "start": 525.33,
+   "end": 527.2,
+   "text": "四个选项。"
+  },
+  {
+   "slide": 12,
+   "start": 527.6,
+   "end": 535.18,
+   "text": "提示：从 p 等于小 n k T 出发，小 n 是单位体积的分子数，乘上体积就是总数。"
+  },
+  {
+   "slide": 13,
+   "start": 536.74,
+   "end": 538.61,
+   "text": "小结。"
+  },
+  {
+   "slide": 13,
+   "start": 539.01,
+   "end": 547.72,
+   "text": "平均平动动能等于二分之三 k T，这是宏观与微观的交叉点：左边纯微观，右边只含温度。"
+  },
+  {
+   "slide": 13,
+   "start": 548.12,
+   "end": 556.02,
+   "text": "它锁住的是平均动能，不是速率——同温下各种气体动能相同，速率却按根号 m 反比。"
+  },
+  {
+   "slide": 13,
+   "start": 556.42,
+   "end": 563.84,
+   "text": "温度就是分子平均平动动能的量度，它是统计量：单个分子没有温度，只有集体才有。"
+  },
+  {
+   "slide": 13,
+   "start": 564.24,
+   "end": 570.34,
+   "text": "温度只由无规运动决定，与物体的整体运动无关，与参考系无关。"
+  },
+  {
+   "slide": 13,
+   "start": 570.74,
+   "end": 579.02,
+   "text": "方均根速率等于根号下三 R T 除以 M，三百开下氢气一千九百多，二氧化碳四百出头。"
+  },
+  {
+   "slide": 13,
+   "start": 579.42,
+   "end": 582.73,
+   "text": "下一节讲能量均分定理。"
+  }
+ ],
+ "build_ts": 1792566037,
+ "logoScale": 0.67,
+ "theme": "wave"
+}

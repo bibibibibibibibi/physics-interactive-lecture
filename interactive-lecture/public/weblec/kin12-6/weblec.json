@@ -1,0 +1,3006 @@
+{
+ "title": "12-6 麦克斯韦气体分子速率分布律",
+ "nav": "12-6　麦克斯韦速率分布律",
+ "footer": "第十二章　气体动理论",
+ "character": "aqiang",
+ "characters": [
+  {
+   "id": "aqiang",
+   "name": "阿强"
+  },
+  {
+   "id": "professor",
+   "name": "博士讲师"
+  },
+  {
+   "id": "zhongshan",
+   "name": "中山装先生"
+  }
+ ],
+ "duration": 426.6,
+ "slides": [
+  {
+   "id": 1,
+   "kind": "page",
+   "heading": "封面",
+   "narration": "第十二章第六节。12-6，麦克斯韦气体分子速率分布律。上一节把分子当成「平均有一个动能」，这一节要看清楚：速率其实是参差不齐的。麦克斯韦给出了这个参差不齐的规律，它是统计物理的第一个定量结果。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 282,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 十 二 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 300,
+     "y": 408,
+     "w": 1320,
+     "h": 170,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "气 体 动 论",
+        "size": 92,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 300,
+     "y": 596,
+     "w": 1320,
+     "h": 120,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "12-6　麦克斯韦速率分布律",
+        "size": 42,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 220,
+     "y": 742,
+     "w": 1480,
+     "h": 90,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "分布函数　·　归一化　·　三种统计速率",
+        "size": 33,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 856,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "速率各不相同，但分布是有规律的",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 0.0,
+    "2": 2.82,
+    "3": 7.49
+   },
+   "t_start": 0.0,
+   "t_end": 21.91,
+   "duration": 21.91,
+   "laser": []
+  },
+  {
+   "id": 2,
+   "kind": "page",
+   "heading": "本节路线",
+   "narration": "本节路线。先建立「分布」这个概念：速率不齐，但比例是确定的。再定义分布函数，说清它的物理意义和归一化条件。然后给出麦克斯韦分布函数，看它的形状。接着讨论温度的影响，以及三种统计速率。最后一道例题，并解释这条曲线为什么长成这个样子。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节路线",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 244,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "主线：分布 → 分布函数 → 麦克斯韦公式 → 温度效应 → 三种速率 → 例题",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1　速率分布的概念",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 386,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "画成一条曲线就清楚了",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 458,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2　分布函数 $f(v)$",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 512,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "面积 = 分子数占比",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 584,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "3　麦克斯韦公式",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 638,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不推导，会读会用",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 330,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4　温度的影响",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 386,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "峰右移、变矮、变宽",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 458,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "5　三种统计速率",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 512,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$v_p < \\bar{v} < v_{rms}$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 584,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "6　例题与曲线的由来",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 638,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两个因子在竞争",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 720,
+     "w": 1580,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "先记住一句话：分布曲线下的面积，永远是 1",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 22.71,
+    "2": 24.98,
+    "3": 30.52,
+    "4": 35.98,
+    "5": 41.08,
+    "6": 45.66
+   },
+   "t_start": 22.71,
+   "t_end": 51.65,
+   "duration": 28.94,
+   "laser": []
+  },
+  {
+   "id": 3,
+   "kind": "page",
+   "heading": "一　速率分布的概念",
+   "narration": "先说什么是分布。气体里每个分子的速率都不一样，而且随时在变，单个分子无法预测。但大量分子在平衡态下，速率落在各个区间的比例是确定的。把它画成图：横轴是速率，纵轴是分布函数，曲线的形状就是分布。曲线下面任意一段窄条的面积，就是速率落在这个区间的分子数占总数的比例。所有窄条加起来是全部，所以整条曲线下的面积等于 1。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　速率分布的概念",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "单个分子不可预测，整体有规律",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 459,
+     "name": "maxwell_curve"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 310,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "速率各不相同，且随时在变",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 372,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "大量分子：各区间的比例是定的",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 438,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "画成曲线：横轴 $v$，纵轴 $f(v)$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 504,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "窄条面积 = 该区间分子数的占比",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 580,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "全部加起来 = 1",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 640,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这就是「归一化」",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 736,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "分布律描述的是集体：不问「这个分子多快」，只问「多少比例有多快」",
+        "size": 28,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 812,
+     "w": 1580,
+     "h": 100,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "把这条曲线写成函数，就是麦克斯韦分布律",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 52.45,
+    "2": 54.94,
+    "3": 61.46,
+    "4": 67.57,
+    "5": 74.79,
+    "6": 82.41
+   },
+   "t_start": 52.45,
+   "t_end": 89.17,
+   "duration": 36.72,
+   "laser": []
+  },
+  {
+   "id": 4,
+   "kind": "page",
+   "heading": "二　分布函数与归一化",
+   "narration": "把刚才的面积写成式子，就是分布函数的定义。设总分子数是 N，速率在 v 到 v 加 dv 之间的有 dN 个，那么 f(v) 等于 dN 除以 N dv。它的意思是：单位速率区间内，分子数占总数的比例。所以 f(v) 不是「速率为 v 的分子数」，而是「密度」——量纲是速率分之一。归一化条件写成积分：f(v) 从零积到无穷，等于 1。有了它，任何关于速率的平均值都能算：乘上 v 再积分，就是平均速率。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　分布函数与归一化",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "把「占比」写成函数",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 300,
+     "w": 740,
+     "h": 150,
+     "tex": "f(v)=\\frac{\\mathrm dN}{N\\,\\mathrm dv}",
+     "size": 32,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 470,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "单位速率区间内的分子数占比",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "注意它不是「分子数」",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 290,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$f(v)$ 是密度，量纲 $\\mathrm{s/m}$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 1010,
+     "y": 350,
+     "w": 740,
+     "h": 150,
+     "tex": "\\int_0^{\\infty} f(v)\\,\\mathrm dv=1",
+     "size": 32,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 580,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "归一化：总面积等于 1",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 660,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "任何平均值都能由它算出",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 6,
+     "x": 170,
+     "y": 712,
+     "w": 740,
+     "h": 140,
+     "tex": "\\bar{v}=\\int_0^{\\infty}v f(v)\\,\\mathrm dv",
+     "size": 28,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 660,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这条式子后面会用来求平均速率",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 886,
+     "w": 1580,
+     "h": 100,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "$f(v)$ 是「密度」：要积分才有意义，不能直接把函数值当分子数",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 89.97,
+    "2": 94.88,
+    "3": 105.7,
+    "4": 111.4,
+    "5": 118.95,
+    "6": 125.76
+   },
+   "t_start": 89.97,
+   "t_end": 133.53,
+   "duration": 43.56,
+   "laser": []
+  },
+  {
+   "id": 5,
+   "kind": "page",
+   "heading": "三　麦克斯韦分布函数",
+   "narration": "麦克斯韦在一八六零年给出了这个函数的具体形式。它由三部分组成：前面的系数保证归一化，v 平方来自速度空间的球面积，指数因子来自能量分布。指数里是负的动能除以 k T：能量越高，分子越少。这个式子不要求会推导，但要会读：温度在指数里，分子质量也在指数里。曲线从原点出发，先升后降，有一个明显的峰，右边拖一条长尾。这种「右偏」的形状很关键：高速分子虽然少，但尾巴拖得很长。想一想：为什么曲线不从最大值处开始，而是从零慢慢升起来？",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　麦克斯韦分布函数",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一八六零年给出的具体形式",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 300,
+     "w": 1580,
+     "h": 180,
+     "tex": "f(v)=4\\pi\\left(\\frac{m}{2\\pi kT}\\right)^{3/2}v^{2}\\,e^{-mv^{2}/(2kT)}",
+     "size": 26,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 500,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三个因子的来历",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 550,
+     "w": 760,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "系数：保证归一化",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 596,
+     "w": 760,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$v^2$：速度空间的球面积",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 550,
+     "w": 735,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "指数：能量越高越少",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 596,
+     "w": 735,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$e^{-E/kT}$，$E=\\frac12 mv^2$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 660,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不要求推导，但要会读：$T$ 和 $m$ 都藏在指数里",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 130,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "曲线形状：从原点出发 → 单峰 → 右边拖长尾（右偏）",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "高速分子少，但尾巴很长",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 890,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这条「不对称」的尾巴，正是三种统计速率互不相等的根源",
+        "size": 28,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 134.33,
+    "2": 139.63,
+    "3": 149.22,
+    "4": 155.16,
+    "5": 162.66,
+    "6": 169.85
+   },
+   "t_start": 134.33,
+   "t_end": 183.48,
+   "duration": 49.15,
+   "laser": []
+  },
+  {
+   "id": 6,
+   "kind": "page",
+   "heading": "四　温度对分布的影响",
+   "narration": "温度变了，分布怎么变？看右图：温度从 T1 升到 4 倍，峰的位置向右移了一倍。因为最概然速率正比于根号 T。同时峰变矮、曲线变宽——因为总面积必须保持为 1。物理意义很清楚：温度升高，高速分子的比例增大，但总数不变，只能「摊平」。所以升温不是让每个分子都变快，而是让快分子变多。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　温度对分布的影响",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "升温：峰右移、变矮、变宽",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 459,
+     "name": "maxwell_temp"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 310,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "峰位 $v_p\\propto\\sqrt{T}$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 372,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$T$ 变 4 倍，$v_p$ 变 2 倍",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 434,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "峰高 $\\propto 1/\\sqrt{T}$：变矮",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 486,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "宽度变大：面积仍是 1",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 556,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "升温 = 让快分子变多",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 640,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不是「每个分子都变快」，而是「高速分子的比例增大」",
+        "size": 28,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "记住：曲线怎么变形，面积永远是 1 —— 这是判断对错的标尺",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 184.28,
+    "2": 187.79,
+    "3": 194.05,
+    "4": 197.86,
+    "5": 203.37,
+    "6": 210.99
+   },
+   "t_start": 184.28,
+   "t_end": 217.16,
+   "duration": 32.88,
+   "laser": []
+  },
+  {
+   "id": 7,
+   "kind": "page",
+   "heading": "五　三种统计速率",
+   "narration": "同一条曲线上可以读出三个不同的「代表速率」。最概然速率 v-p：曲线最高点对应的速率，也就是分子最可能取的速率。平均速率 v 平均：所有分子速率的算术平均。方均根速率 v-rms：速率平方的平均再开方，压强公式里用的就是它。三者之比恒为 1 比 1.128 比 1.225，与气体种类和温度都无关。注意它们都很接近，但绝不相等——因为曲线右偏，往高速那边拖，平均值被拉大了。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五　三种统计速率",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同一条曲线，三个代表值",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 459,
+     "name": "maxwell_three_speeds"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 310,
+     "w": 740,
+     "h": 130,
+     "tex": "v_p=\\sqrt{\\frac{2kT}{m}}=\\sqrt{\\frac{2RT}{M}}",
+     "size": 26,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 452,
+     "w": 740,
+     "h": 130,
+     "tex": "\\bar{v}=\\sqrt{\\frac{8kT}{\\pi m}}=\\sqrt{\\frac{8RT}{\\pi M}}",
+     "size": 26,
+     "color": "#0000CD",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 594,
+     "w": 740,
+     "h": 130,
+     "tex": "v_{rms}=\\sqrt{\\frac{3kT}{m}}=\\sqrt{\\frac{3RT}{M}}",
+     "size": 26,
+     "color": "#12852F",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 740,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$v_p : \\bar{v} : v_{rms}=1:1.128:1.225$，与气体种类、温度都无关",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 830,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "曲线右偏，高速那边拖尾 → 平均值被拉大，所以 $v_p$ 最小",
+        "size": 28,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 217.96,
+    "2": 222.37,
+    "3": 229.18,
+    "4": 234.02,
+    "5": 241.31,
+    "6": 249.01
+   },
+   "t_start": 217.96,
+   "t_end": 258.02,
+   "duration": 40.06,
+   "laser": []
+  },
+  {
+   "id": 8,
+   "kind": "page",
+   "heading": "六　三种速率的用途",
+   "narration": "三个速率各有各的用处，别混着用。最概然速率描述分布本身的形状，判断「最可能多快」用它。平均速率管碰撞：分子平均跑多快，决定它多久撞一次。方均根速率管能量和压强：因为压强正比于速率平方的平均。三个都正比于根号下 T 除以 M：温度越高越快，分子越重越慢。上一节的压强公式里那个速率，用的正是方均根速率——这一点最容易混。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "六　三种速率的用途",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "table",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "rows": [
+      [
+       "名称",
+       "氮气 300 K 的数值",
+       "什么时候用它"
+      ],
+      [
+       "最概然速率",
+       "422 m/s",
+       "描述分布的形状、峰值位置"
+      ],
+      [
+       "平均速率",
+       "476 m/s",
+       "碰撞频率、平均自由程"
+      ],
+      [
+       "方均根速率",
+       "517 m/s",
+       "压强公式、内能（含 v² 的地方）"
+      ]
+     ],
+     "rowh": 62,
+     "size": 26,
+     "fill": "#CCFFCC"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 570,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$v_p$ → 分布的形状",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 622,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "峰值在哪，就是它",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 690,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\bar{v}$ → 碰撞与自由程",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 570,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$v_{rms}$ → 压强与内能",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 622,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "凡是含 $v^2$ 的公式，都是它",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 790,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三者都正比于 $\\sqrt{T/M}$：温度越高越快，分子越重越慢",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 866,
+     "w": 1580,
+     "h": 110,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "上一节压强公式里的那个速率，是方均根速率",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 258.82,
+    "2": 262.92,
+    "3": 269.25,
+    "4": 274.95,
+    "5": 281.49,
+    "6": 288.2
+   },
+   "t_start": 258.82,
+   "t_end": 295.28,
+   "duration": 36.46,
+   "laser": []
+  },
+  {
+   "id": 9,
+   "kind": "page",
+   "heading": "七　例题：氮气的三种速率",
+   "narration": "一道例题：算氮气在 300 开时的三种速率。氮气的摩尔质量是 28 克每摩尔，也就是 0.028 千克每摩尔。最概然速率：根号下二乘 8.31 乘 300 除以 0.028，约 422 米每秒。平均速率：根号下八乘 8.31 乘 300，除以圆周率乘 0.028，约 476 米每秒。方均根速率：根号下三乘 8.31 乘 300 除以 0.028，约 517 米每秒。想一想：如果温度升到 1200 开，三个数会变成多少？都乘以 2，因为速率正比于根号 T。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "七　例题：氮气的三种速率",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "已知",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 288,
+     "w": 740,
+     "h": 100,
+     "tex": "T=300\\ \\mathrm{K},\\quad M=28\\ \\mathrm{g/mol}",
+     "size": 25,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 400,
+     "w": 740,
+     "h": 130,
+     "tex": "v_p=\\sqrt{\\frac{2RT}{M}}\\approx422\\ \\mathrm{m/s}",
+     "size": 27,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 542,
+     "w": 740,
+     "h": 130,
+     "tex": "\\bar{v}=\\sqrt{\\frac{8RT}{\\pi M}}\\approx476\\ \\mathrm{m/s}",
+     "size": 27,
+     "color": "#0000CD",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 684,
+     "w": 740,
+     "h": 130,
+     "tex": "v_{rms}=\\sqrt{\\frac{3RT}{M}}\\approx517\\ \\mathrm{m/s}",
+     "size": 27,
+     "color": "#12852F",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三个数的比值",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 290,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$422:476:517\\approx1:1.13:1.23$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 350,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与 $1:1.128:1.225$ 一致",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 430,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "想一想：升温到 1200 K",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "三个数都乘 2",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "因为 $v\\propto\\sqrt{T}$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "面积仍是 1，但分布整体右移",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 670,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "数量级：几百米每秒，比声速略快",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 296.08,
+    "2": 300.99,
+    "3": 307.34,
+    "4": 315.23,
+    "5": 324.29,
+    "6": 332.03
+   },
+   "t_start": 296.08,
+   "t_end": 342.81,
+   "duration": 46.73,
+   "laser": []
+  },
+  {
+   "id": 10,
+   "kind": "page",
+   "heading": "八　曲线为什么是这个形状",
+   "narration": "最后解释这条曲线为什么长这样。它其实是两个因子在竞争：一个是 v 平方，一个是负指数。v 平方来自「速度空间的球面积」——速率越大，满足条件的分子态越多。负指数来自能量：动能越大，能分到这份能量的分子越少。低速段 v 平方占上风，曲线往上走；高速段指数占上风，曲线掉下来。两者的平衡点就是峰，也就是最概然速率——曲线的不对称，就来自这两种趋势的拉锯。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "八　曲线为什么是这个形状",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两个因子在竞争",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 306,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① $v^2$：分子态越多",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 354,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "速度空间球面积 ∝ $v^2$",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 420,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 负指数：能量越高越少",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 468,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$e^{-E/kT}$，玻尔兹曼因子",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "低速：$v^2$ 占上风 ⇒ 上升",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 292,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "高速：指数占上风 ⇒ 衰减",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 356,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "平衡点 = 峰 = 最概然速率",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 430,
+     "w": 740,
+     "h": 190,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "这就是「右偏」的来源",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "左边被 $v^2$ 压住，起得慢",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "右边被指数拖长，落得缓",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 668,
+     "w": 1580,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以曲线不对称：峰偏左，尾巴拖在高速一侧",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 748,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "玻尔兹曼分布 $\\propto e^{-E/kT}$ 是统计物理的基石，后面还会反复遇到",
+        "size": 28,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 343.61,
+    "2": 348.02,
+    "3": 353.99,
+    "4": 360.58,
+    "5": 366.62,
+    "6": 374.22
+   },
+   "t_start": 343.61,
+   "t_end": 382.61,
+   "duration": 39.0,
+   "laser": []
+  },
+  {
+   "id": 11,
+   "kind": "page",
+   "heading": "本节小结",
+   "narration": "小结。分布函数 f(v) 等号后是 dN 除以 N dv，物理意义是单位速率区间的分子数占比，归一化条件是积分为 1。麦克斯韦分布由三部分组成：归一化系数、v 平方、负指数。曲线单峰、右偏，温度升高时峰右移、变矮、变宽，面积不变。三种统计速率之比是 1 比 1.128 比 1.225：最概然最小，方均根最大。下一节讲分子的平均碰撞次数和平均自由程。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 分布函数",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 286,
+     "w": 740,
+     "h": 130,
+     "tex": "f(v)=\\frac{\\mathrm dN}{N\\,\\mathrm dv},\\quad \\int_0^\\infty f\\,\\mathrm dv=1",
+     "size": 23,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 440,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 曲线形状",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 492,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "单峰、右偏；升温 ⇒ 右移变矮",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 536,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "面积恒为 1",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 三种速率",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$1:1.128:1.225$",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 340,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$v_p$ 最小，$v_{rms}$ 最大",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 400,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 用途",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 452,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\bar{v}$ 管碰撞，$v_{rms}$ 管能量",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 620,
+     "w": 740,
+     "h": 180,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一句话",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "速率参差不齐",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "但比例是确定的",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "这就是统计规律",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 820,
+     "w": 1580,
+     "h": 90,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "下一节：平均碰撞次数与平均自由程",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 383.41,
+    "2": 385.68,
+    "3": 396.57,
+    "5": 411.13,
+    "6": 419.38
+   },
+   "t_start": 383.41,
+   "t_end": 425.1,
+   "duration": 41.69,
+   "laser": []
+  }
+ ],
+ "subtitles": [
+  {
+   "slide": 1,
+   "start": 0.0,
+   "end": 2.42,
+   "text": "第十二章第六节。"
+  },
+  {
+   "slide": 1,
+   "start": 2.82,
+   "end": 7.09,
+   "text": "12-6，麦克斯韦气体分子速率分布律。"
+  },
+  {
+   "slide": 1,
+   "start": 7.49,
+   "end": 14.64,
+   "text": "上一节把分子当成「平均有一个动能」，这一节要看清楚：速率其实是参差不齐的。"
+  },
+  {
+   "slide": 1,
+   "start": 15.04,
+   "end": 21.28,
+   "text": "麦克斯韦给出了这个参差不齐的规律，它是统计物理的第一个定量结果。"
+  },
+  {
+   "slide": 2,
+   "start": 22.71,
+   "end": 24.58,
+   "text": "本节路线。"
+  },
+  {
+   "slide": 2,
+   "start": 24.98,
+   "end": 30.12,
+   "text": "先建立「分布」这个概念：速率不齐，但比例是确定的。"
+  },
+  {
+   "slide": 2,
+   "start": 30.52,
+   "end": 35.58,
+   "text": "再定义分布函数，说清它的物理意义和归一化条件。"
+  },
+  {
+   "slide": 2,
+   "start": 35.98,
+   "end": 40.68,
+   "text": "然后给出麦克斯韦分布函数，看它的形状。"
+  },
+  {
+   "slide": 2,
+   "start": 41.08,
+   "end": 45.26,
+   "text": "接着讨论温度的影响，以及三种统计速率。"
+  },
+  {
+   "slide": 2,
+   "start": 45.66,
+   "end": 50.92,
+   "text": "最后一道例题，并解释这条曲线为什么长成这个样子。"
+  },
+  {
+   "slide": 3,
+   "start": 52.45,
+   "end": 54.54,
+   "text": "先说什么是分布。"
+  },
+  {
+   "slide": 3,
+   "start": 54.94,
+   "end": 61.06,
+   "text": "气体里每个分子的速率都不一样，而且随时在变，单个分子无法预测。"
+  },
+  {
+   "slide": 3,
+   "start": 61.46,
+   "end": 67.17,
+   "text": "但大量分子在平衡态下，速率落在各个区间的比例是确定的。"
+  },
+  {
+   "slide": 3,
+   "start": 67.57,
+   "end": 74.39,
+   "text": "把它画成图：横轴是速率，纵轴是分布函数，曲线的形状就是分布。"
+  },
+  {
+   "slide": 3,
+   "start": 74.79,
+   "end": 82.01,
+   "text": "曲线下面任意一段窄条的面积，就是速率落在这个区间的分子数占总数的比例。"
+  },
+  {
+   "slide": 3,
+   "start": 82.41,
+   "end": 88.43,
+   "text": "所有窄条加起来是全部，所以整条曲线下的面积等于 1。"
+  },
+  {
+   "slide": 4,
+   "start": 89.97,
+   "end": 94.48,
+   "text": "把刚才的面积写成式子，就是分布函数的定义。"
+  },
+  {
+   "slide": 4,
+   "start": 94.88,
+   "end": 105.3,
+   "text": "设总分子数是 N，速率在 v 到 v 加 dv 之间的有 dN 个，那么 f(v) 等于 dN 除以 N dv。"
+  },
+  {
+   "slide": 4,
+   "start": 105.7,
+   "end": 111.0,
+   "text": "它的意思是：单位速率区间内，分子数占总数的比例。"
+  },
+  {
+   "slide": 4,
+   "start": 111.4,
+   "end": 118.55,
+   "text": "所以 f(v) 不是「速率为 v 的分子数」，而是「密度」——量纲是速率分之一。"
+  },
+  {
+   "slide": 4,
+   "start": 118.95,
+   "end": 125.36,
+   "text": "归一化条件写成积分：f(v) 从零积到无穷，等于 1。"
+  },
+  {
+   "slide": 4,
+   "start": 125.76,
+   "end": 132.79,
+   "text": "有了它，任何关于速率的平均值都能算：乘上 v 再积分，就是平均速率。"
+  },
+  {
+   "slide": 5,
+   "start": 134.33,
+   "end": 139.23,
+   "text": "麦克斯韦在一八六零年给出了这个函数的具体形式。"
+  },
+  {
+   "slide": 5,
+   "start": 139.63,
+   "end": 148.82,
+   "text": "它由三部分组成：前面的系数保证归一化，v 平方来自速度空间的球面积，指数因子来自能量分布。"
+  },
+  {
+   "slide": 5,
+   "start": 149.22,
+   "end": 154.76,
+   "text": "指数里是负的动能除以 k T：能量越高，分子越少。"
+  },
+  {
+   "slide": 5,
+   "start": 155.16,
+   "end": 162.26,
+   "text": "这个式子不要求会推导，但要会读：温度在指数里，分子质量也在指数里。"
+  },
+  {
+   "slide": 5,
+   "start": 162.66,
+   "end": 169.45,
+   "text": "曲线从原点出发，先升后降，有一个明显的峰，右边拖一条长尾。"
+  },
+  {
+   "slide": 5,
+   "start": 169.85,
+   "end": 175.44,
+   "text": "这种「右偏」的形状很关键：高速分子虽然少，但尾巴拖得很长。"
+  },
+  {
+   "slide": 5,
+   "start": 175.84,
+   "end": 182.42,
+   "text": "想一想：为什么曲线不从最大值处开始，而是从零慢慢升起来？"
+  },
+  {
+   "slide": 6,
+   "start": 184.28,
+   "end": 187.14,
+   "text": "温度变了，分布怎么变？"
+  },
+  {
+   "slide": 6,
+   "start": 187.79,
+   "end": 193.65,
+   "text": "看右图：温度从 T1 升到 4 倍，峰的位置向右移了一倍。"
+  },
+  {
+   "slide": 6,
+   "start": 194.05,
+   "end": 197.46,
+   "text": "因为最概然速率正比于根号 T。"
+  },
+  {
+   "slide": 6,
+   "start": 197.86,
+   "end": 202.97,
+   "text": "同时峰变矮、曲线变宽——因为总面积必须保持为 1。"
+  },
+  {
+   "slide": 6,
+   "start": 203.37,
+   "end": 210.59,
+   "text": "物理意义很清楚：温度升高，高速分子的比例增大，但总数不变，只能「摊平」。"
+  },
+  {
+   "slide": 6,
+   "start": 210.99,
+   "end": 216.41,
+   "text": "所以升温不是让每个分子都变快，而是让快分子变多。"
+  },
+  {
+   "slide": 7,
+   "start": 217.96,
+   "end": 221.97,
+   "text": "同一条曲线上可以读出三个不同的「代表速率」。"
+  },
+  {
+   "slide": 7,
+   "start": 222.37,
+   "end": 228.78,
+   "text": "最概然速率 v-p：曲线最高点对应的速率，也就是分子最可能取的速率。"
+  },
+  {
+   "slide": 7,
+   "start": 229.18,
+   "end": 233.62,
+   "text": "平均速率 v 平均：所有分子速率的算术平均。"
+  },
+  {
+   "slide": 7,
+   "start": 234.02,
+   "end": 240.91,
+   "text": "方均根速率 v-rms：速率平方的平均再开方，压强公式里用的就是它。"
+  },
+  {
+   "slide": 7,
+   "start": 241.31,
+   "end": 248.61,
+   "text": "三者之比恒为 1 比 1.128 比 1.225，与气体种类和温度都无关。"
+  },
+  {
+   "slide": 7,
+   "start": 249.01,
+   "end": 257.29,
+   "text": "注意它们都很接近，但绝不相等——因为曲线右偏，往高速那边拖，平均值被拉大了。"
+  },
+  {
+   "slide": 8,
+   "start": 258.82,
+   "end": 262.52,
+   "text": "三个速率各有各的用处，别混着用。"
+  },
+  {
+   "slide": 8,
+   "start": 262.92,
+   "end": 268.85,
+   "text": "最概然速率描述分布本身的形状，判断「最可能多快」用它。"
+  },
+  {
+   "slide": 8,
+   "start": 269.25,
+   "end": 274.55,
+   "text": "平均速率管碰撞：分子平均跑多快，决定它多久撞一次。"
+  },
+  {
+   "slide": 8,
+   "start": 274.95,
+   "end": 281.09,
+   "text": "方均根速率管能量和压强：因为压强正比于速率平方的平均。"
+  },
+  {
+   "slide": 8,
+   "start": 281.49,
+   "end": 287.8,
+   "text": "三个都正比于根号下 T 除以 M：温度越高越快，分子越重越慢。"
+  },
+  {
+   "slide": 8,
+   "start": 288.2,
+   "end": 294.54,
+   "text": "上一节的压强公式里那个速率，用的正是方均根速率——这一点最容易混。"
+  },
+  {
+   "slide": 9,
+   "start": 296.08,
+   "end": 300.59,
+   "text": "一道例题：算氮气在 300 开时的三种速率。"
+  },
+  {
+   "slide": 9,
+   "start": 300.99,
+   "end": 306.94,
+   "text": "氮气的摩尔质量是 28 克每摩尔，也就是 0.028 千克每摩尔。"
+  },
+  {
+   "slide": 9,
+   "start": 307.34,
+   "end": 314.83,
+   "text": "最概然速率：根号下二乘 8.31 乘 300 除以 0.028，约 422 米每秒。"
+  },
+  {
+   "slide": 9,
+   "start": 315.23,
+   "end": 323.89,
+   "text": "平均速率：根号下八乘 8.31 乘 300，除以圆周率乘 0.028，约 476 米每秒。"
+  },
+  {
+   "slide": 9,
+   "start": 324.29,
+   "end": 331.63,
+   "text": "方均根速率：根号下三乘 8.31 乘 300 除以 0.028，约 517 米每秒。"
+  },
+  {
+   "slide": 9,
+   "start": 332.03,
+   "end": 337.41,
+   "text": "想一想：如果温度升到 1200 开，三个数会变成多少？"
+  },
+  {
+   "slide": 9,
+   "start": 338.06,
+   "end": 342.0,
+   "text": "都乘以 2，因为速率正比于根号 T。"
+  },
+  {
+   "slide": 10,
+   "start": 343.61,
+   "end": 347.62,
+   "text": "最后解释这条曲线为什么长这样。"
+  },
+  {
+   "slide": 10,
+   "start": 348.02,
+   "end": 353.59,
+   "text": "它其实是两个因子在竞争：一个是 v 平方，一个是负指数。"
+  },
+  {
+   "slide": 10,
+   "start": 353.99,
+   "end": 360.18,
+   "text": "v 平方来自「速度空间的球面积」——速率越大，满足条件的分子态越多。"
+  },
+  {
+   "slide": 10,
+   "start": 360.58,
+   "end": 366.22,
+   "text": "负指数来自能量：动能越大，能分到这份能量的分子越少。"
+  },
+  {
+   "slide": 10,
+   "start": 366.62,
+   "end": 373.82,
+   "text": "低速段 v 平方占上风，曲线往上走；高速段指数占上风，曲线掉下来。"
+  },
+  {
+   "slide": 10,
+   "start": 374.22,
+   "end": 381.88,
+   "text": "两者的平衡点就是峰，也就是最概然速率——曲线的不对称，就来自这两种趋势的拉锯。"
+  },
+  {
+   "slide": 11,
+   "start": 383.41,
+   "end": 385.28,
+   "text": "小结。"
+  },
+  {
+   "slide": 11,
+   "start": 385.68,
+   "end": 396.17,
+   "text": "分布函数 f(v) 等号后是 dN 除以 N dv，物理意义是单位速率区间的分子数占比，归一化条件是积分为 1。"
+  },
+  {
+   "slide": 11,
+   "start": 396.57,
+   "end": 403.03,
+   "text": "麦克斯韦分布由三部分组成：归一化系数、v 平方、负指数。"
+  },
+  {
+   "slide": 11,
+   "start": 403.43,
+   "end": 410.73,
+   "text": "曲线单峰、右偏，温度升高时峰右移、变矮、变宽，面积不变。"
+  },
+  {
+   "slide": 11,
+   "start": 411.13,
+   "end": 418.98,
+   "text": "三种统计速率之比是 1 比 1.128 比 1.225：最概然最小，方均根最大。"
+  },
+  {
+   "slide": 11,
+   "start": 419.38,
+   "end": 424.37,
+   "text": "下一节讲分子的平均碰撞次数和平均自由程。"
+  }
+ ],
+ "build_ts": 1792555424,
+ "logoScale": 0.67,
+ "theme": "wave"
+}

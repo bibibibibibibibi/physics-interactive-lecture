@@ -1,0 +1,2740 @@
+{
+ "title": "4-5 刚体的平面平行运动",
+ "nav": "4-5　刚体的平面平行运动",
+ "footer": "第四章　刚体转动和流体运动",
+ "logoScale": 0.67,
+ "engine": "edge",
+ "voice": "zh-CN-YunxiNeural",
+ "pages": [
+  {
+   "id": 1,
+   "narration": "[[1]]这一节 4-5，刚体的平面平行运动。[[2]]它是本章的选学内容，但很重要：车轮滚动、斜面滚球、圆柱在木板上滚，都属于这一类。[[3]]处理它的办法只有一句话：把运动拆成质心的平动加绕质心的转动，两条线各用各的定律。[[4]]上一节末我们说过，刚体的任何运动都可以这样拆——这一节就把它落到实处。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 292,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 四 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 300,
+     "y": 420,
+     "w": 1320,
+     "h": 160,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "刚体转动和流体运动",
+        "size": 76,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 380,
+     "y": 606,
+     "w": 1160,
+     "h": 130,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4-5　刚体的平面平行运动",
+        "size": 50,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 766,
+     "w": 1480,
+     "h": 120,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质心的平动",
+        "size": 46,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "　＋　",
+        "size": 46,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "绕质心的转动",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 220,
+     "y": 900,
+     "w": 1480,
+     "h": 90,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质心运动定理　·　绕质心的转动定律　·　动能与势能　·　纯滚动",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "封面"
+  },
+  {
+   "id": 2,
+   "narration": "[[1]]先下定义：如果刚体上各质点都在平行于某一固定参考平面的平面内运动，这种运动就叫做刚体的平面平行运动。[[2]]车轮沿直线滚动、圆盘沿斜面滚下，都是这样：所有点都在同一个竖直平面里动。[[3]]这样的运动怎么描述？分两半。[[4]]第一半是质心的平动：质心像质点一样运动，合外力等于质量乘质心加速度。[[5]]注意这里的合外力是全部外力，不需要管它们作用在哪一点。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　平面平行运动",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 238,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "刚体上各质点都在",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "平行于某一固定参考平面的平面内",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 296,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "运动 —— 称为刚体的",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "平面平行运动",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 400,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例：车轮沿直线滚动、圆盘沿斜面滚下．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 500,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "拆成两半：",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "① 质心的平动　② 绕质心的转动",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 596,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 质心运动方程：",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 664,
+     "w": 1580,
+     "h": 140,
+     "tex": "\\vec F=m\\vec a_C=m\\frac{\\mathrm d\\vec v_C}{\\mathrm dt}",
+     "size": 40,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 830,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "F 是全部外力的合力，与它们作用在哪一点无关．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "一　平面平行运动"
+  },
+  {
+   "id": 3,
+   "narration": "[[1]]第二半是绕质心的转动。刚体绕通过质心的轴转动时，外力矩等于转动惯量乘角加速度。[[2]]这里的轴要垂直于运动平面，也就是垂直于纸面。[[3]]M_Cz 是所有外力对这条质心轴的合力矩，J_C 是绕这条轴的转动惯量，α 是角加速度。[[4]]注意：质心轴虽然跟着质心在动，但只要轴的方向不变、且通过质心，转动定律就照常成立——这是质心系的一个特殊好处。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1300,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　绕质心轴的转动",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "刚体绕通过质心、垂直于运动平面的轴转动：",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 300,
+     "y": 320,
+     "w": 1320,
+     "h": 140,
+     "tex": "M_{Cz}=J_C\\alpha=J_C\\frac{\\mathrm d\\omega}{\\mathrm dt}",
+     "size": 40,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 500,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "M",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "Cz",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "：对质心轴 z 的合外力矩；",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 566,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "J",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "C",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "：对质心轴的转动惯量；",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 632,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "α：对质心轴的角加速度．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 740,
+     "w": 1580,
+     "h": 150,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "质心系的好处：轴跟着质心平动，但转动定律照常成立",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "二　绕质心轴的转动"
+  },
+  {
+   "id": 4,
+   "narration": "[[1]]再看能量。刚体上每个质量元的速度，可以写成质心速度加上它相对质心的速度。[[2]]把动能展开，交叉项求和恰为零——因为质心系里总动量为零。[[3]]于是动能干净地分成两项：质心的平动动能，加上绕质心的转动动能。[[4]]这就是平面平行运动的动能公式。[[5]]它说明：滚动的轮子，能量一部分在“整体跑”，一部分在“自己转”。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　平面平行运动的动能",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 300,
+     "y": 250,
+     "w": 1320,
+     "h": 150,
+     "tex": "E_{\\mathrm k}=\\frac{1}{2}mv_C^2+\\frac{1}{2}J_C\\omega^2",
+     "size": 42,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 450,
+     "w": 1580,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第一项：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "质心的平动动能",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "；第二项：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "绕质心的转动动能",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 550,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "推导要点：各点速度 = 质心速度 + 相对质心的速度，",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 608,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "交叉项求和为零（质心系中总动量为零）．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 700,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "理解：滚动的轮子，一部分能量在“整体跑”，",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 758,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一部分在“自己转”．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 850,
+     "w": 1580,
+     "h": 130,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "Ek = ½mv_C² + ½J_Cω² —— 两项相加，缺一不可",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "三　平面平行运动的动能"
+  },
+  {
+   "id": 5,
+   "narration": "[[1]]最常用的一种平面平行运动是纯滚动：不打滑。[[2]]不打滑的条件是接触点相对接触面瞬时静止，于是质心速度等于 R 乘 ω。[[3]]代进动能公式，两项都变成 ω 的函数，可以合并。[[4]]对圆盘，J_C 等于二分之一 m R 方，代进去得 Ek 等于四分之三 m R 方 ω 方；对圆环，J_C 等于 m R 方，得 Ek 等于 m R 方 ω 方。[[5]]同样速度下，圆环的动能更大——因为它的质量都在边缘。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　纯滚动",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "纯滚动（无滑动）：接触点相对接触面",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "瞬时静止",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 340,
+     "w": 1580,
+     "h": 120,
+     "tex": "v_C=R\\omega",
+     "size": 46,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 490,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "代回动能式：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 560,
+     "w": 1580,
+     "h": 130,
+     "tex": "E_{\\mathrm k}=\\frac{1}{2}mR^2\\omega^2+\\frac{1}{2}J_C\\omega^2",
+     "size": 36,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "圆盘（J = ½mR²）：Ek = ¾ mR²ω²；圆环（J = mR²）：Ek = mR²ω²．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 820,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同样速度下圆环动能更大——质量都在边缘．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "四　纯滚动"
+  },
+  {
+   "id": 6,
+   "narration": "[[1]]势能方面最简单：刚体的重力势能，就等于全部质量集中在质心处的高度所对应的势能。[[2]]Ep 等于 m g h_C。[[3]]所以判断势能变化，只看质心升高或降低了多少，不用管物体怎么转。[[4]]把这四个式子放在一起：质心运动方程、绕质心转动定律、动能式、势能式。[[5]]平面平行运动的题目，无非就是从这四个式子里挑合适的组合。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五　势能与四个基本式子",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 300,
+     "y": 236,
+     "w": 1320,
+     "h": 130,
+     "tex": "E_{\\mathrm p}=mgh_C",
+     "size": 44,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 400,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "刚体的重力势能 = 全部质量集中在质心时的势能．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 458,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只看质心的高度变化，与物体怎么转无关．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "table",
+     "step": 3,
+     "x": 170,
+     "y": 560,
+     "w": 1580,
+     "rows": [
+      [
+       "质心平动",
+       "绕质心转动",
+       "能量"
+      ],
+      [
+       "F = m a_C",
+       "M_Cz = J_C α",
+       "Ek = ½mv_C² + ½J_Cω²"
+      ],
+      [
+       "",
+       "",
+       "Ep = m g h_C"
+      ]
+     ],
+     "rowh": 80,
+     "size": 30,
+     "fill": "#CCFFCC"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 860,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四式在手，平面平行运动的题目就能拆开做．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "五　势能与四个基本式子"
+  },
+  {
+   "id": 7,
+   "narration": "[[1]]例一。一条绳索缠绕在半径 R、质量 m 的均匀圆盘圆周上，绳的另一端悬挂在天花板上。[[2]]设绳的质量忽略不计。[[3]]求：圆盘质心的加速度，以及绳的张力。[[4]]注意这个装置和“圆盘沿斜面滚下”不一样：这里绳是固定的，圆盘一边转一边往下掉。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 800,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例1　绳绕圆盘下落",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 238,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "绳索缠绕在半径 R、质量 m 的均匀圆盘",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 296,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "圆周上，另一端悬挂在天花板上．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 388,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "绳的质量忽略不计．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 480,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "求：（1）圆盘质心的加速度；",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 538,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "　　　（2）绳的张力．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 640,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与斜面滚动的区别：",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 698,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "绳固定，圆盘边转边下落．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1000,
+     "y": 220,
+     "w": 560,
+     "h": 560,
+     "name": "disc_string"
+    }
+   ],
+   "heading": "例1　绳绕圆盘下落"
+  },
+  {
+   "id": 8,
+   "narration": "[[1]]解。圆盘受重力 P 和绳的张力 F_T。选竖直向下为 y 轴正方向。[[2]]对质心的平动：P 减 F_T 等于 m a_C。[[3]]再对通过质心、垂直盘面的轴列转动方程：张力作用在盘的边缘，力臂是 R，所以力矩是 F_T R，等于 J_C α，也就是二分之一 m R 方乘 α。[[4]]两个方程，三个未知量，还差一个约束。[[5]]约束来自绳不可伸长：绳相对质心的加速度等于 Rα，而绳固定，所以这个加速度就等于质心的加速度 a_C。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例1　解",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 232,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "受重力 P 与张力 F",
+        "size": 35,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "T",
+        "size": 23,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "，取竖直向下为 y 正向．",
+        "size": 35,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 320,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质心平动：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 388,
+     "w": 1580,
+     "h": 110,
+     "tex": "P-F_{\\mathrm T}=ma_C",
+     "size": 38,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 520,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "绕质心轴转动（力臂 R）：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 588,
+     "w": 1580,
+     "h": 120,
+     "tex": "F_{\\mathrm T}R=J_C\\alpha=\\frac{1}{2}mR^2\\alpha",
+     "size": 38,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "约束：绳不可伸长 ⇒ 绳相对质心的加速度 = 质心加速度",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 800,
+     "w": 1580,
+     "h": 110,
+     "tex": "a=R\\alpha=a_C",
+     "size": 40,
+     "color": "#C00000",
+     "align": "center"
+    }
+   ],
+   "heading": "例1　解"
+  },
+  {
+   "id": 9,
+   "narration": "[[1]]把 a 等于 Rα 代入转动方程，R 约掉，得 F_T 等于二分之一 m a_C。[[2]]再代进平动方程：m g 减二分之一 m a_C 等于 m a_C，解出 a_C 等于三分之二 g。[[3]]张力 F_T 等于三分之一 m g。[[4]]这个结果值得玩味：如果圆盘只是自由下落，加速度是 g；现在绳拉着它转，一部分重力势能变成了转动动能，所以下落得慢一些——三分之二 g 比 g 小。[[5]]张力正好是重力的三分之一，可以理解为“拿来产生转动”的那一份。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例1　结果",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "由 ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "a = Rα",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": " 代入转动方程，R 约去：",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 316,
+     "w": 1580,
+     "h": 110,
+     "tex": "F_{\\mathrm T}=\\frac{1}{2}ma_C",
+     "size": 38,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 450,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "代回平动方程 ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "mg − F_T = ma_C",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "：",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 528,
+     "w": 1580,
+     "h": 110,
+     "tex": "mg-\\frac{1}{2}ma_C=ma_C",
+     "size": 36,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 660,
+     "w": 1580,
+     "h": 130,
+     "tex": "a_C=\\frac{2}{3}g,\\qquad F_{\\mathrm T}=\\frac{1}{3}mg",
+     "size": 42,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 820,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "自由下落是 g；现在一部分重力势能变成转动动能，",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 878,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以只下落 ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "⅔g",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 950,
+     "w": 1580,
+     "h": 50,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "张力 mg/3：正好是“拿来产生转动”的那一份．",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "例1　结果"
+  },
+  {
+   "id": 10,
+   "narration": "[[1]]例二。质量 m、半径 R 的密度均匀圆盘，由静止从斜面顶端沿斜面作纯滚动。[[2]]求圆盘到达斜面底端时速度的值。[[3]]斜面高度 h，倾角 θ。[[4]]这题用能量最省事：纯滚动没有滑动摩擦做功，机械能守恒。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 800,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例2　圆盘沿斜面纯滚动",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 238,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质量 m、半径 R 的均匀圆盘，由静止",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 296,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "从斜面顶端沿斜面作纯滚动．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 388,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "求：到达斜面底端时质心速度的值．",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 480,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "斜面高 h，倾角 θ．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 570,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "关键：纯滚动 ⇒ 摩擦力不做功 ⇒ ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 628,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "机械能守恒",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1000,
+     "y": 230,
+     "w": 620,
+     "h": 480,
+     "name": "disc_incline"
+    }
+   ],
+   "heading": "例2　圆盘沿斜面纯滚动"
+  },
+  {
+   "id": 11,
+   "narration": "[[1]]设到底端时质心速度为 v_C，角速度为 ω。[[2]]初态：动能为零，势能为 m g h；末态：动能是二分之一 m v_C 方加二分之一 J ω 方，势能为零。[[3]]纯滚动给两个关系：ω 等于 v_C 除以 R，圆盘的 J 等于二分之一 m R 方。[[4]]代进去：m g h 等于二分之一 m v_C 方加四分之一 m v_C 方，等于四分之三 m v_C 方。[[5]]解出 v_C 等于根号下三分之四 g h。[[6]]注意结果与倾角 θ 无关——纯滚动时，斜面多陡只影响快慢，不影响到底端的速度。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例2　解",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 232,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "设底端质心速度 v",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "C",
+        "size": 22,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "、角速度 ω，初态静止：",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 312,
+     "w": 1580,
+     "h": 130,
+     "tex": "mgh=\\frac{1}{2}mv_C^2+\\frac{1}{2}J\\omega^2",
+     "size": 38,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 470,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "代入 ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "ω = v_C/R",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "、",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "J = ½mR²",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "：",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 548,
+     "w": 1580,
+     "h": 130,
+     "tex": "mgh=\\frac{1}{2}mv_C^2+\\frac{1}{4}mv_C^2=\\frac{3}{4}mv_C^2",
+     "size": 36,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 700,
+     "w": 1580,
+     "h": 130,
+     "tex": "v_C=\\left(\\frac{4gh}{3}\\right)^{1/2}",
+     "size": 46,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 860,
+     "w": 1580,
+     "h": 50,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "结果与倾角 θ 无关：纯滚动时，陡缓只影响快慢，",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 914,
+     "w": 1580,
+     "h": 50,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不影响到底端的速度大小．",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "例2　解"
+  },
+  {
+   "id": 12,
+   "narration": "[[1]]例三。质量 m、半径 R 的圆柱体，在质量 m 木 的木板上作纯滚动。[[2]]第一问：木板固定在水平面上，圆柱体受水平外力 F 的作用，F 作用在距圆心为 r 的高度。求圆柱体质心的加速度和所受的摩擦力。[[3]]解：由质心运动定理，F 减摩擦力等于 m a_C。[[4]]再对质心轴列转动方程：F 的力臂是 r，摩擦力的力臂是 R，两者都使圆柱顺时针转，所以是 r F 加 R F_f。[[5]]再加上纯滚动条件 a_C 等于 Rα，三个方程解两个未知量。[[6]]结果：a_C 等于 2F(R+r)/(3mR)，F_f 等于 (R−2r)F/(3R)。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 800,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例3　圆柱在木板上滚动",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 780,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质量 m、半径 R 的圆柱体，在质量 m",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "木",
+        "size": 22,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 278,
+     "w": 780,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "的木板上作纯滚动．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 348,
+     "w": 780,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "(1) 木板固定，圆柱受水平力 F",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 400,
+     "w": 780,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（作用线距圆心 r）．求 a",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "C",
+        "size": 21,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 与 F",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "f",
+        "size": 21,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 482,
+     "w": 780,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "解：",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "质心运动定理",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 542,
+     "w": 800,
+     "h": 90,
+     "tex": "F-F_{\\mathrm f}=ma_C",
+     "size": 28,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 632,
+     "w": 780,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "对质心轴：F 力臂 r，F",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "f",
+        "size": 19,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 力臂 R，同向",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 686,
+     "w": 800,
+     "h": 110,
+     "tex": "rF+RF_{\\mathrm f}=J_C\\alpha=\\frac{1}{2}mR^2\\alpha",
+     "size": 24,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 806,
+     "w": 780,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "纯滚动：",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "a",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "C",
+        "size": 19,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " = Rα",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 6,
+     "x": 170,
+     "y": 862,
+     "w": 1320,
+     "h": 110,
+     "tex": "a_C=\\frac{2F(R+r)}{3mR},\\qquad F_{\\mathrm f}=\\frac{R-2r}{3R}F",
+     "size": 26,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1000,
+     "y": 236,
+     "w": 560,
+     "h": 480,
+     "name": "cyl_plank"
+    }
+   ],
+   "heading": "例3　圆柱在木板上滚动"
+  },
+  {
+   "id": 13,
+   "narration": "[[1]]第二问：木板不固定，在水平恒力 F′ 的作用下沿水平面运动，木板与地面之间的摩擦因数为 μ。求木板的加速度 a。[[2]]这次要隔离三个对象：圆柱、木板、以及它们之间的摩擦。[[3]]对圆柱：板对它的摩擦力 F_f 使它质心加速，同时这个摩擦力对质心产生力矩。[[4]]对木板：F′ 向前，地面摩擦 F_f′ 向后，圆柱对板的摩擦 F_f″ 也向后；其中 F_f′ 等于 μ 乘（m 木 加 m）g——注意正压力是木板加圆柱的总重。[[5]]纯滚动条件这次要仔细写：接触点相对木板的速度为零，所以 a_C 加 Rα 等于 a。[[6]]联立解出 a 等于 [F′ 减 μ(m 木 加 m)g] 除以 (m 木 加 m/3)。[[7]]分母里的 m/3，就是圆柱“折算”到平动上的等效质量。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例3　解（2）木板可动",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 228,
+     "w": 1580,
+     "h": 50,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "木板受水平恒力 F′，与地面摩擦因数 μ．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 280,
+     "w": 1580,
+     "h": 50,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "求：木板的加速度 a．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 350,
+     "w": 1580,
+     "h": 46,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "圆柱：",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "F",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "f",
+        "size": 19,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " = m a",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "C",
+        "size": 19,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 400,
+     "w": 1580,
+     "h": 46,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "对质心：",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "F",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "f",
+        "size": 19,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " = ½mR²α",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 462,
+     "w": 1580,
+     "h": 46,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "木板：",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "F′ − F",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "f",
+        "size": 19,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "′ − F",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "f",
+        "size": 19,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "″ = m",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "木",
+        "size": 19,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "a",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 512,
+     "w": 1580,
+     "h": 46,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "F",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "f",
+        "size": 19,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "′ = μ(m",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "木",
+        "size": 19,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " + m)g",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 586,
+     "w": 1580,
+     "h": 46,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "纯滚动：",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "a",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "C",
+        "size": 19,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " + Rα = a",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 6,
+     "x": 170,
+     "y": 654,
+     "w": 1580,
+     "h": 140,
+     "tex": "a=\\frac{F'-\\mu(m_{\\mathrm t}+m)g}{m_{\\mathrm t}+m/3}",
+     "size": 30,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 7,
+     "x": 170,
+     "y": 820,
+     "w": 1580,
+     "h": 50,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "分母里的 ",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "m/3",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "：圆柱折算到平动上的等效质量．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 7,
+     "x": 170,
+     "y": 872,
+     "w": 1580,
+     "h": 50,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与例1的 m/2、圆盘的 ¾ 一样，都是“转动惯量折算”的体现．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 7,
+     "x": 170,
+     "y": 930,
+     "w": 1580,
+     "h": 46,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "式中 ",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       },
+       {
+        "t": "m",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       },
+       {
+        "t": "t",
+        "size": 18,
+        "color": "#666",
+        "b": false
+       },
+       {
+        "t": " 为木板的质量．",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "例3　解（2）木板可动"
+  },
+  {
+   "id": 14,
+   "narration": "[[1]]小结。平面平行运动：刚体各点都在平行于固定平面的平面内运动。[[2]]处理办法：拆成质心平动加绕质心转动，两条线分别用 F 等于 m a_C 和 M_C 等于 J_C α。[[3]]动能等于两项之和，势能只看质心高度。[[4]]纯滚动的条件是 v_C 等于 Rω、a_C 等于 Rα；此时摩擦力不做功，机械能守恒。[[5]]例1、例2、例3 分别对应“绳绕盘”“斜面滚”“板上滚”三种典型场景，套路都是：隔离 → 列平动和转动方程 → 补纯滚动约束。[[6]]第四章到此结束，下一章进入静电场。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "平面平行运动",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "：各点都在平行于固定平面的平面内运动．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "拆两半：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "F = m a",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "C",
+        "size": 23,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "　与　",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "M",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "Cz",
+        "size": 23,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " = J",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "C",
+        "size": 23,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "α",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 424,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "能量：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "Ek = ½mv_C² + ½J_Cω²",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "，",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "Ep = mgh_C",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 518,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "纯滚动：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "v_C = Rω",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "、",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "a_C = Rα",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "，摩擦力不做功．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 612,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "套路：隔离 → 列平动与转动方程 → 补纯滚动约束．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 720,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "滚动 = 质心平动 + 绕质心转动，两套定律各管一半",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 906,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "下一章：静电场．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "本节小结"
+  }
+ ]
+}

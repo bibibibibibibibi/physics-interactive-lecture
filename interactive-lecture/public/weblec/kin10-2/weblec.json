@@ -1,0 +1,3117 @@
+{
+ "title": "10-2 平面简谐波的波函数",
+ "nav": "10-2　平面简谐波的波函数",
+ "footer": "第十章　波动",
+ "character": "aqiang",
+ "characters": [
+  {
+   "id": "aqiang",
+   "name": "阿强"
+  },
+  {
+   "id": "professor",
+   "name": "博士讲师"
+  },
+  {
+   "id": "zhongshan",
+   "name": "中山装先生"
+  }
+ ],
+ "duration": 470.66,
+ "slides": [
+  {
+   "id": 1,
+   "kind": "page",
+   "heading": "封面",
+   "narration": "这一节把波的描述定量化。上一节说「波传出去的是振动状态」，那到底怎么用一个式子把它写下来？答案是把源点的振动沿 x 方向延迟复制：源点振动了多久，波就传了多远。得到的式子叫平面简谐波的波函数，它是两个变量的函数：位置 x 和时间 t。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 282,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 十 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 300,
+     "y": 408,
+     "w": 1320,
+     "h": 170,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "波 动",
+        "size": 92,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 300,
+     "y": 600,
+     "w": 1320,
+     "h": 140,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "10-2　平面简谐波的波函数",
+        "size": 44,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 770,
+     "w": 1480,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$y=A\\cos[\\omega(t-x/u)+\\varphi]$",
+        "size": 42,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 220,
+     "y": 900,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一个式子，两个变量",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 0.0,
+    "2": 3.52,
+    "3": 10.15,
+    "4": 17.68
+   },
+   "t_start": 0.0,
+   "t_end": 25.9,
+   "duration": 25.9,
+   "laser": []
+  },
+  {
+   "id": 2,
+   "kind": "page",
+   "heading": "本节路线",
+   "narration": "本节路线。先讲清楚波函数的来历：它是源点振动沿 x 方向的延迟复制。然后用三步把它推导出来。接着给出三种等价写法和角波数的定义。再说清传播方向与括号里符号的关系。最后两个例题：由波函数读信息、由波形写波函数。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节路线",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 244,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "主线：延迟 → 波函数 → 三种写法 → 方向判别 → 例题",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1　从振动到波：一个延迟",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 386,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\Delta t=x/u$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 458,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2　波函数的三步推导",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 512,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$y=A\\cos[\\omega(t-x/u)+\\varphi]$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 584,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "3　三种等价写法",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 638,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\omega t-kx+\\varphi$，$k=2\\pi/\\lambda$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 330,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4　传播方向与符号",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 386,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\omega t-kx$ 沿 $+x$；$\\omega t+kx$ 沿 $-x$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 458,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "5　两个例题",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 512,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "读信息、写式子",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 596,
+     "w": 740,
+     "h": 230,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "与振动最根本的区别",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "振动：一个自变量 $t$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "波：两个自变量 $x$、$t$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "所以波函数是一张「时空图」",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 26.7,
+    "2": 28.97,
+    "3": 35.78,
+    "4": 38.96,
+    "5": 43.58,
+    "6": 47.77
+   },
+   "t_start": 26.7,
+   "t_end": 53.99,
+   "duration": 27.29,
+   "laser": []
+  },
+  {
+   "id": 3,
+   "kind": "page",
+   "heading": "一　从振动到波：一个延迟",
+   "narration": "先解决一个根本问题：波函数到底是什么？图上的红线是 x 等于零处质点的振动曲线，振幅 A、周期 T。波传到 P 点需要一段时间，这段时间等于距离 x 除以波速 u。所以 P 点做的是同一个振动，只是晚了 Δt 才开始。蓝线就是把红线整体向右平移一个 Δt，形状一模一样，只是相位落后了。记住这句话：波函数就是「源点的振动，沿传播方向延迟复制」。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　从振动到波：一个延迟",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 250,
+     "w": 765,
+     "h": 459,
+     "name": "wave_delay"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "红线：$x=0$ 处质点的振动",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "振幅 $A$，周期 $T$",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "传到 $P$ 点要 $\\Delta t=x/u$",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 412,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$P$ 点做的是同一个振动，只是晚了",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 468,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "蓝线 = 红线整体右移 $\\Delta t$",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 524,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "形状不变，相位落后",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 596,
+     "w": 740,
+     "h": 220,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "核心一句话",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "波函数 = 源点振动的延迟复制",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "延迟量 $\\Delta t=x/u$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "这就是括号里那个 $-x/u$ 的来历",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 846,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "相位落后 $\\Delta\\varphi=\\omega\\Delta t=kx$",
+        "size": 28,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 54.79,
+    "2": 59.64,
+    "3": 66.5,
+    "4": 73.0,
+    "5": 78.66,
+    "6": 85.83
+   },
+   "t_start": 54.79,
+   "t_end": 92.95,
+   "duration": 38.16,
+   "laser": []
+  },
+  {
+   "id": 4,
+   "kind": "page",
+   "heading": "二　波函数的三步推导",
+   "narration": "按这个思路，三步就能写出波函数。第一步，写出源点的振动：y 等于 A cos ωt 加 φ。第二步，波传到 x 处要用时间 x 除以 u，所以 x 处的质点在时刻 t 的状态，就是源点在 t 减 x 除以 u 那个时刻的状态。第三步，把这个时刻代进去，得到 y 等于 A cos，括号里 ω 乘 t 减 x 除以 u，再加 φ。这就是平面简谐波的波函数，也叫波方程。再强调一次：它有两个自变量，位置和时间，缺一不可——这是波和振动最根本的区别。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　波函数的三步推导",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "沿 $+x$ 方向传播，波速 $u$",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 110,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "延迟量",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$\\Delta t=x/u$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 380,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 源点（$x=0$）的振动",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 430,
+     "w": 740,
+     "h": 110,
+     "tex": "y(0,t)=A\\cos(\\omega t+\\varphi)",
+     "size": 30,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 380,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 传到 $x$ 处用掉 $\\Delta t=x/u$",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 440,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$x$ 处在 $t$ 时刻的状态",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 490,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "= 源点在 $t-x/u$ 时刻的状态",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 610,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 把 $t$ 换成 $t-x/u$",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 660,
+     "w": 780,
+     "h": 130,
+     "tex": "y(x,t)=A\\cos\\left[\\omega\\left(t-\\frac{x}{u}\\right)+\\varphi\\right]",
+     "size": 29,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 620,
+     "w": 740,
+     "h": 170,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "这就是波函数",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "也叫波方程",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "平面简谐波的标准形式",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 850,
+     "w": 1580,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两个自变量 $x$、$t$ 缺一不可 —— 波是「时空里的一张图」",
+        "size": 29,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 906,
+     "w": 1580,
+     "h": 88,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "对照：振动只有一个自变量 $t$，波有两个",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 93.75,
+    "2": 97.99,
+    "3": 104.34,
+    "4": 116.4,
+    "5": 125.73,
+    "6": 130.59
+   },
+   "t_start": 93.75,
+   "t_end": 139.11,
+   "duration": 45.36,
+   "laser": []
+  },
+  {
+   "id": 5,
+   "kind": "page",
+   "heading": "三　三种等价写法",
+   "narration": "这个式子有三种等价写法，做题时看哪个方便。把 ω 乘进去，得到 A cos，括号里 ωt 减 ωx 除以 u。因为 ω 除以 u 等于 2π 除以 λ，把它记作 k，叫角波数。于是写成 ωt 减 kx 加 φ，这是最常用的形式，物理意义也最清楚：ωt 是时间相位，kx 是空间相位。再用 ω 等于 2π 除以 T、k 等于 2π 除以 λ，得到第三种：2π 乘括号 t 除以 T 减 x 除以 λ。三种写法完全等价，只是换了一组参数，别被形式骗了。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　三种等价写法",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同一个波，换一组参数表达",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 300,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "三种写法完全等价",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$k=\\omega/u=2\\pi/\\lambda$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$k$ 叫角波数，单位 $\\mathrm{rad/m}$",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 348,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 用波速 $u$ 写",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 396,
+     "w": 740,
+     "h": 110,
+     "tex": "y=A\\cos\\left[\\omega\\left(t-\\frac{x}{u}\\right)+\\varphi\\right]",
+     "size": 28,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 524,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 用角波数 $k$ 写（最常用）",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 572,
+     "w": 740,
+     "h": 110,
+     "tex": "y=A\\cos(\\omega t-kx+\\varphi)",
+     "size": 30,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 604,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "为什么常用 $k$ 形式",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 656,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\omega t$：时间相位",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 704,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$kx$：空间相位",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 740,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 用 $T$、$\\lambda$ 写",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 786,
+     "w": 740,
+     "h": 110,
+     "tex": "y=A\\cos\\left[2\\pi\\left(\\frac{t}{T}-\\frac{x}{\\lambda}\\right)+\\varphi\\right]",
+     "size": 27,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 926,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三种写法对应同一张波形，只是参数换了衣服 —— 解题时只用一种，别混用",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 139.91,
+    "2": 145.42,
+    "3": 152.83,
+    "4": 159.69,
+    "5": 171.63,
+    "6": 182.73
+   },
+   "t_start": 139.91,
+   "t_end": 189.01,
+   "duration": 49.1,
+   "laser": []
+  },
+  {
+   "id": 6,
+   "kind": "page",
+   "heading": "四　波形在一个 Δt 内右移",
+   "narration": "再看这个式子的图像含义。蓝线是当前时刻的波形，灰虚线是 Δt 之前的波形。可以看到，波形整体向右平移了 u 乘 Δt 这么一段。红点 P 是固定在一个位置上的质点，它只在竖直方向上下动，并不向右跑。绿圈标的是一个波峰，它随着波形一起右移。所以「波形在跑」和「质点在动」是两件事：波形以波速前进，质点只以振动速度上下动，两者的大小和方向毫无关系。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　波形在一个 $\\Delta t$ 内右移 $u\\Delta t$",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 246,
+     "w": 765,
+     "h": 470,
+     "name": "wave_travel"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "蓝线：当前时刻的波形",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 292,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "灰虚线：$\\Delta t$ 之前的波形",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 352,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "波形整体右移 $u\\Delta t$",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 408,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质点 $P$ 只上下动，不右移",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 464,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "波峰（绿圈）随波形右移",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 536,
+     "w": 740,
+     "h": 230,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "两个速度，别再混",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "波速 $u=\\omega/k=\\lambda/T$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "质点速度 $v=\\partial y/\\partial t$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "前者恒定，后者随时间变",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 792,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同一时刻，不同 $x$ 的点位移不同",
+        "size": 28,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 189.81,
+    "2": 193.04,
+    "3": 198.65,
+    "4": 204.35,
+    "5": 211.06,
+    "6": 216.12
+   },
+   "t_start": 189.81,
+   "t_end": 226.99,
+   "duration": 37.18,
+   "laser": []
+  },
+  {
+   "id": 7,
+   "kind": "page",
+   "heading": "五　沿 −x 方向传播",
+   "narration": "如果波沿负 x 方向传播呢？推导完全一样，只是延迟变成了提前：x 处的振动比源点早，因为波是先经过它、后经过源点。所以括号里改成 t 加 x 除以 u，也就是 ωt 加 kx。判别口诀：括号里 t 与 x 的符号相反，波沿正 x 传播；符号相同，波沿负 x 传播。这条经常考：给你一个波函数，先看 ωt 和 kx 谁正谁负，就知道波往哪边跑。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五　沿 $-x$ 方向传播",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "延迟变提前：$t\\to t+x/u$",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 310,
+     "w": 1580,
+     "h": 140,
+     "tex": "y=A\\cos\\left[\\omega\\left(t+\\frac{x}{u}\\right)+\\varphi\\right]=A\\cos(\\omega t+kx+\\varphi)",
+     "size": 30,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 480,
+     "w": 1580,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "符号相同（$\\omega t$ 与 $kx$ 同号）⇒ 沿 $-x$ 传播",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 556,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "沿 $+x$：$\\omega t-kx$",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 556,
+     "w": 740,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "沿 $-x$：$\\omega t+kx$",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "table",
+     "step": 5,
+     "x": 170,
+     "y": 648,
+     "w": 1580,
+     "rows": [
+      [
+       "波函数括号里的形式",
+       "传播方向",
+       "判断口诀"
+      ],
+      [
+       "ωt − kx",
+       "沿 +x",
+       "t 与 x 异号"
+      ],
+      [
+       "ωt + kx",
+       "沿 −x",
+       "t 与 x 同号"
+      ]
+     ],
+     "rowh": 62,
+     "size": 29,
+     "fill": "#CCFFCC"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 227.79,
+    "2": 231.46,
+    "3": 240.64,
+    "4": 247.54,
+    "5": 256.75
+   },
+   "t_start": 227.79,
+   "t_end": 265.49,
+   "duration": 37.7,
+   "laser": []
+  },
+  {
+   "id": 8,
+   "kind": "page",
+   "heading": "六　一个式子能读出什么",
+   "narration": "一个波函数能读出哪些信息？振幅 A：直接读系数。角频率 ω：读 t 的系数，于是 T 等于 2π 除以 ω，频率 ν 等于 ω 除以 2π。角波数 k：读 x 的系数，于是 λ 等于 2π 除以 k，波速 u 等于 ω 除以 k。初相 φ：读常数项，它由 t 等于零时刻波源的状态决定。还有传播方向：由 ωt 与 kx 的符号判断。一个式子，六条信息。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "六　一个式子能读出什么",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$y=A\\cos(\\omega t-kx+\\varphi)$：六条信息",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 170,
+     "y": 310,
+     "w": 760,
+     "h": 130,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "振幅 $A$",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "直接读系数",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 1010,
+     "y": 310,
+     "w": 740,
+     "h": 130,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "角频率 $\\omega$",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$T=2\\pi/\\omega$，$\\nu=\\omega/2\\pi$",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 470,
+     "w": 760,
+     "h": 130,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "角波数 $k$",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$\\lambda=2\\pi/k$，$u=\\omega/k$",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 470,
+     "w": 740,
+     "h": 130,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "初相 $\\varphi$",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "由 $t=0$ 时波源状态决定",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 630,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第六条：传播方向看 $\\omega t$ 与 $kx$ 的符号",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 6,
+     "x": 170,
+     "y": 700,
+     "w": 1580,
+     "h": 130,
+     "tex": "u=\\frac{\\omega}{k}=\\frac{\\lambda}{T}=\\lambda\\nu",
+     "size": 32,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 856,
+     "w": 1580,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这四个量互相换算：知道任意两个，另两个就定了",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 266.29,
+    "2": 270.3,
+    "3": 273.72,
+    "4": 283.1,
+    "5": 291.47,
+    "6": 297.68
+   },
+   "t_start": 266.29,
+   "t_end": 306.87,
+   "duration": 40.58,
+   "laser": []
+  },
+  {
+   "id": 9,
+   "kind": "page",
+   "heading": "七　例题一：读全部信息",
+   "narration": "看第一个例题，专门练「读信息」。想一想能读到什么。已知一列波的波函数是 y 等于零点零二 cos，括号里四π t 减零点五π x，国际单位制。振幅零点零二米；t 的系数是四π，所以 ω 等于四π，周期 T 等于零点五秒。x 的系数是零点五π，所以 k 等于零点五π，波长 λ 等于四米；波速 u 等于 ω 除以 k，等于八米每秒。t 与 x 异号，所以波沿正 x 方向传播。再求 x 等于二米处质点的振动方程：把 x 等于二代入，kx 等于π，所以 y 等于负零点零二 cos 四π t，与原点正好反相。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "七　例题一：从一个式子读全部信息",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 232,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$y=0.02\\cos(4\\pi t-0.5\\pi x)$（SI 单位）",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 300,
+     "w": 760,
+     "h": 110,
+     "tex": "A=0.02\\ \\mathrm{m}",
+     "size": 30,
+     "color": "#0000CD",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 1010,
+     "y": 300,
+     "w": 740,
+     "h": 130,
+     "tex": "T=\\frac{2\\pi}{\\omega}=0.5\\ \\mathrm{s}",
+     "size": 30,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 440,
+     "w": 760,
+     "h": 110,
+     "tex": "\\lambda=\\frac{2\\pi}{k}=4\\ \\mathrm{m}",
+     "size": 30,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 1010,
+     "y": 440,
+     "w": 740,
+     "h": 110,
+     "tex": "u=\\frac{\\omega}{k}=8\\ \\mathrm{m/s}",
+     "size": 30,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 586,
+     "w": 1580,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$t$ 与 $x$ 异号 ⇒ 沿 $+x$ 方向传播",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 660,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "求 $x=2\\ \\mathrm{m}$ 处质点的振动方程",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 6,
+     "x": 170,
+     "y": 720,
+     "w": 1580,
+     "h": 130,
+     "tex": "y=0.02\\cos(4\\pi t-\\pi)=-0.02\\cos(4\\pi t)",
+     "size": 30,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 880,
+     "w": 1580,
+     "h": 100,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "与原点反相：$\\Delta x=2\\ \\mathrm{m}=\\lambda/2$，相位差 $\\pi$",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 307.67,
+    "2": 311.48,
+    "3": 323.37,
+    "4": 332.12,
+    "5": 342.43,
+    "6": 347.15
+   },
+   "t_start": 307.67,
+   "t_end": 359.46,
+   "duration": 51.79,
+   "laser": []
+  },
+  {
+   "id": 10,
+   "kind": "page",
+   "heading": "八　例题二：由波形写波函数",
+   "narration": "第二个例题反过来：想一想波形和条件给全了，怎么写成波函数。一列平面简谐波沿正 x 传播，波长四米，周期两秒，振幅零点一米；t 等于零时，x 等于零处的质点正处在正的最大位移处。先算两个系数：ω 等于 2π 除以 T，等于π；k 等于 2π 除以 λ，等于零点五π。再定初相：t 等于零、x 等于零时 y 等于正 A，说明 cos φ 等于一，所以 φ 等于零。代进通式，得到 y 等于零点一 cos，括号里π t 减零点五π x。如果改一个条件：t 等于零时原点在平衡位置且向负方向运动，那么 φ 就等于 π 除以二，波函数里就多这一项。所以初相由初始状态定，不能默认是零。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "八　例题二：由波形写波函数",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 232,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "沿 $+x$ 传播：$\\lambda=4\\ \\mathrm{m}$，$T=2\\ \\mathrm{s}$，$A=0.1\\ \\mathrm{m}$",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 292,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$t=0$ 时 $x=0$ 处的质点位于正最大位移处",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 360,
+     "w": 760,
+     "h": 130,
+     "tex": "\\omega=\\frac{2\\pi}{T}=\\pi",
+     "size": 30,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 1010,
+     "y": 360,
+     "w": 740,
+     "h": 130,
+     "tex": "k=\\frac{2\\pi}{\\lambda}=0.5\\pi",
+     "size": 30,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 508,
+     "w": 1580,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "定初相：$y(0,0)=A$ ⇒ $\\cos\\varphi=1$ ⇒ $\\varphi=0$",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 578,
+     "w": 1580,
+     "h": 130,
+     "tex": "y=0.1\\cos(\\pi t-0.5\\pi x)\\ \\ \\mathrm{(SI)}",
+     "size": 32,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 740,
+     "w": 760,
+     "h": 220,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "换个初始条件",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$t=0$ 时原点过平衡位置、向 $-y$ 动",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "⇒ $\\varphi=\\pi/2$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "初相由初始状态定，不能默认 $\\varphi=0$",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 740,
+     "w": 740,
+     "h": 220,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "写波函数的三步",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "① 算 $\\omega$、$k$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "② 由初始状态定 $\\varphi$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "③ 代进 $A\\cos(\\omega t-kx+\\varphi)$",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 360.26,
+    "2": 366.47,
+    "3": 378.75,
+    "4": 388.08,
+    "5": 397.74,
+    "6": 404.36
+   },
+   "t_start": 360.26,
+   "t_end": 420.64,
+   "duration": 60.38,
+   "laser": []
+  },
+  {
+   "id": 11,
+   "kind": "page",
+   "heading": "本节小结",
+   "narration": "小结。波函数的来历只有一句话：源点的振动沿传播方向延迟复制，延迟量是 x 除以 u。标准形式 y 等于 A cos，括号里 ωt 减 kx 加 φ，其中 k 等于 2π 除以 λ，是空间相位的「密度」。三种写法等价：用 u、用 k、用 T 和 λ。方向判别：括号里 t 与 x 异号沿正 x 传播，同号沿负 x 传播。最后一句话：一个波函数里装着振幅、频率、波长、波速、初相、传播方向六条信息，会读它，波动这一章就算入门了。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 760,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 来历",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 292,
+     "w": 760,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "源点振动的延迟复制",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 340,
+     "w": 760,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "延迟 $\\Delta t=x/u$",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 412,
+     "w": 760,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 标准形式",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 466,
+     "w": 700,
+     "h": 110,
+     "tex": "y=A\\cos(\\omega t-kx+\\varphi)",
+     "size": 28,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 606,
+     "w": 760,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$k=2\\pi/\\lambda$，$\\omega=2\\pi/T$",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 方向判别",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 292,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\omega t-kx$ ⇒ 沿 $+x$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 340,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\omega t+kx$ ⇒ 沿 $-x$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 412,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 能读出的信息",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 468,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$A$、$\\omega$、$k$、$\\varphi$、方向",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 516,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$u=\\omega/k=\\lambda/T$",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 660,
+     "w": 760,
+     "h": 220,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "最容易错的两处",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "括号里是 $t-x/u$，不是 $x/u-t$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "初相 $\\varphi$ 由初始状态定",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "别默认它等于零",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 660,
+     "w": 740,
+     "h": 220,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "下一节",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "波携带能量",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "波的能量密度、能流密度",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 916,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "会写、会读 $y(x,t)$，波动的定量部分就开了头",
+        "size": 28,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 421.44,
+    "2": 423.71,
+    "3": 432.34,
+    "4": 443.11,
+    "5": 448.69,
+    "6": 456.24
+   },
+   "t_start": 421.44,
+   "t_end": 469.15,
+   "duration": 47.71,
+   "laser": []
+  }
+ ],
+ "subtitles": [
+  {
+   "slide": 1,
+   "start": 0.0,
+   "end": 3.12,
+   "text": "这一节把波的描述定量化。"
+  },
+  {
+   "slide": 1,
+   "start": 3.52,
+   "end": 9.5,
+   "text": "上一节说「波传出去的是振动状态」，那到底怎么用一个式子把它写下来？"
+  },
+  {
+   "slide": 1,
+   "start": 10.15,
+   "end": 17.28,
+   "text": "答案是把源点的振动沿 x 方向延迟复制：源点振动了多久，波就传了多远。"
+  },
+  {
+   "slide": 1,
+   "start": 17.68,
+   "end": 25.26,
+   "text": "得到的式子叫平面简谐波的波函数，它是两个变量的函数：位置 x 和时间 t。"
+  },
+  {
+   "slide": 2,
+   "start": 26.7,
+   "end": 28.57,
+   "text": "本节路线。"
+  },
+  {
+   "slide": 2,
+   "start": 28.97,
+   "end": 35.38,
+   "text": "先讲清楚波函数的来历：它是源点振动沿 x 方向的延迟复制。"
+  },
+  {
+   "slide": 2,
+   "start": 35.78,
+   "end": 38.56,
+   "text": "然后用三步把它推导出来。"
+  },
+  {
+   "slide": 2,
+   "start": 38.96,
+   "end": 43.18,
+   "text": "接着给出三种等价写法和角波数的定义。"
+  },
+  {
+   "slide": 2,
+   "start": 43.58,
+   "end": 47.37,
+   "text": "再说清传播方向与括号里符号的关系。"
+  },
+  {
+   "slide": 2,
+   "start": 47.77,
+   "end": 53.24,
+   "text": "最后两个例题：由波函数读信息、由波形写波函数。"
+  },
+  {
+   "slide": 3,
+   "start": 54.79,
+   "end": 58.99,
+   "text": "先解决一个根本问题：波函数到底是什么？"
+  },
+  {
+   "slide": 3,
+   "start": 59.64,
+   "end": 66.1,
+   "text": "图上的红线是 x 等于零处质点的振动曲线，振幅 A、周期 T。"
+  },
+  {
+   "slide": 3,
+   "start": 66.5,
+   "end": 72.6,
+   "text": "波传到 P 点需要一段时间，这段时间等于距离 x 除以波速 u。"
+  },
+  {
+   "slide": 3,
+   "start": 73.0,
+   "end": 78.26,
+   "text": "所以 P 点做的是同一个振动，只是晚了 Δt 才开始。"
+  },
+  {
+   "slide": 3,
+   "start": 78.66,
+   "end": 85.43,
+   "text": "蓝线就是把红线整体向右平移一个 Δt，形状一模一样，只是相位落后了。"
+  },
+  {
+   "slide": 3,
+   "start": 85.83,
+   "end": 92.21,
+   "text": "记住这句话：波函数就是「源点的振动，沿传播方向延迟复制」。"
+  },
+  {
+   "slide": 4,
+   "start": 93.75,
+   "end": 97.59,
+   "text": "按这个思路，三步就能写出波函数。"
+  },
+  {
+   "slide": 4,
+   "start": 97.99,
+   "end": 103.94,
+   "text": "第一步，写出源点的振动：y 等于 A cos ωt 加 φ。"
+  },
+  {
+   "slide": 4,
+   "start": 104.34,
+   "end": 116.0,
+   "text": "第二步，波传到 x 处要用时间 x 除以 u，所以 x 处的质点在时刻 t 的状态，就是源点在 t 减 x 除以 u 那个时刻的状态。"
+  },
+  {
+   "slide": 4,
+   "start": 116.4,
+   "end": 125.33,
+   "text": "第三步，把这个时刻代进去，得到 y 等于 A cos，括号里 ω 乘 t 减 x 除以 u，再加 φ。"
+  },
+  {
+   "slide": 4,
+   "start": 125.73,
+   "end": 130.19,
+   "text": "这就是平面简谐波的波函数，也叫波方程。"
+  },
+  {
+   "slide": 4,
+   "start": 130.59,
+   "end": 138.37,
+   "text": "再强调一次：它有两个自变量，位置和时间，缺一不可——这是波和振动最根本的区别。"
+  },
+  {
+   "slide": 5,
+   "start": 139.91,
+   "end": 145.02,
+   "text": "这个式子有三种等价写法，做题时看哪个方便。"
+  },
+  {
+   "slide": 5,
+   "start": 145.42,
+   "end": 152.43,
+   "text": "把 ω 乘进去，得到 A cos，括号里 ωt 减 ωx 除以 u。"
+  },
+  {
+   "slide": 5,
+   "start": 152.83,
+   "end": 159.29,
+   "text": "因为 ω 除以 u 等于 2π 除以 λ，把它记作 k，叫角波数。"
+  },
+  {
+   "slide": 5,
+   "start": 159.69,
+   "end": 171.23,
+   "text": "于是写成 ωt 减 kx 加 φ，这是最常用的形式，物理意义也最清楚：ωt 是时间相位，kx 是空间相位。"
+  },
+  {
+   "slide": 5,
+   "start": 171.63,
+   "end": 182.33,
+   "text": "再用 ω 等于 2π 除以 T、k 等于 2π 除以 λ，得到第三种：2π 乘括号 t 除以 T 减 x 除以 λ。"
+  },
+  {
+   "slide": 5,
+   "start": 182.73,
+   "end": 188.27,
+   "text": "三种写法完全等价，只是换了一组参数，别被形式骗了。"
+  },
+  {
+   "slide": 6,
+   "start": 189.81,
+   "end": 192.64,
+   "text": "再看这个式子的图像含义。"
+  },
+  {
+   "slide": 6,
+   "start": 193.04,
+   "end": 198.25,
+   "text": "蓝线是当前时刻的波形，灰虚线是 Δt 之前的波形。"
+  },
+  {
+   "slide": 6,
+   "start": 198.65,
+   "end": 203.95,
+   "text": "可以看到，波形整体向右平移了 u 乘 Δt 这么一段。"
+  },
+  {
+   "slide": 6,
+   "start": 204.35,
+   "end": 210.66,
+   "text": "红点 P 是固定在一个位置上的质点，它只在竖直方向上下动，并不向右跑。"
+  },
+  {
+   "slide": 6,
+   "start": 211.06,
+   "end": 215.72,
+   "text": "绿圈标的是一个波峰，它随着波形一起右移。"
+  },
+  {
+   "slide": 6,
+   "start": 216.12,
+   "end": 226.25,
+   "text": "所以「波形在跑」和「质点在动」是两件事：波形以波速前进，质点只以振动速度上下动，两者的大小和方向毫无关系。"
+  },
+  {
+   "slide": 7,
+   "start": 227.79,
+   "end": 230.81,
+   "text": "如果波沿负 x 方向传播呢？"
+  },
+  {
+   "slide": 7,
+   "start": 231.46,
+   "end": 240.24,
+   "text": "推导完全一样，只是延迟变成了提前：x 处的振动比源点早，因为波是先经过它、后经过源点。"
+  },
+  {
+   "slide": 7,
+   "start": 240.64,
+   "end": 247.14,
+   "text": "所以括号里改成 t 加 x 除以 u，也就是 ωt 加 kx。"
+  },
+  {
+   "slide": 7,
+   "start": 247.54,
+   "end": 256.35,
+   "text": "判别口诀：括号里 t 与 x 的符号相反，波沿正 x 传播；符号相同，波沿负 x 传播。"
+  },
+  {
+   "slide": 7,
+   "start": 256.75,
+   "end": 264.79,
+   "text": "这条经常考：给你一个波函数，先看 ωt 和 kx 谁正谁负，就知道波往哪边跑。"
+  },
+  {
+   "slide": 8,
+   "start": 266.29,
+   "end": 269.65,
+   "text": "一个波函数能读出哪些信息？"
+  },
+  {
+   "slide": 8,
+   "start": 270.3,
+   "end": 273.32,
+   "text": "振幅 A：直接读系数。"
+  },
+  {
+   "slide": 8,
+   "start": 273.72,
+   "end": 282.7,
+   "text": "角频率 ω：读 t 的系数，于是 T 等于 2π 除以 ω，频率 ν 等于 ω 除以 2π。"
+  },
+  {
+   "slide": 8,
+   "start": 283.1,
+   "end": 291.07,
+   "text": "角波数 k：读 x 的系数，于是 λ 等于 2π 除以 k，波速 u 等于 ω 除以 k。"
+  },
+  {
+   "slide": 8,
+   "start": 291.47,
+   "end": 297.28,
+   "text": "初相 φ：读常数项，它由 t 等于零时刻波源的状态决定。"
+  },
+  {
+   "slide": 8,
+   "start": 297.68,
+   "end": 302.74,
+   "text": "还有传播方向：由 ωt 与 kx 的符号判断。"
+  },
+  {
+   "slide": 8,
+   "start": 303.14,
+   "end": 306.07,
+   "text": "一个式子，六条信息。"
+  },
+  {
+   "slide": 9,
+   "start": 307.67,
+   "end": 311.08,
+   "text": "看第一个例题，专门练「读信息」。"
+  },
+  {
+   "slide": 9,
+   "start": 311.48,
+   "end": 314.22,
+   "text": "想一想能读到什么。"
+  },
+  {
+   "slide": 9,
+   "start": 314.62,
+   "end": 322.97,
+   "text": "已知一列波的波函数是 y 等于零点零二 cos，括号里四π t 减零点五π x，国际单位制。"
+  },
+  {
+   "slide": 9,
+   "start": 323.37,
+   "end": 331.72,
+   "text": "振幅零点零二米；t 的系数是四π，所以 ω 等于四π，周期 T 等于零点五秒。"
+  },
+  {
+   "slide": 9,
+   "start": 332.12,
+   "end": 342.03,
+   "text": "x 的系数是零点五π，所以 k 等于零点五π，波长 λ 等于四米；波速 u 等于 ω 除以 k，等于八米每秒。"
+  },
+  {
+   "slide": 9,
+   "start": 342.43,
+   "end": 346.75,
+   "text": "t 与 x 异号，所以波沿正 x 方向传播。"
+  },
+  {
+   "slide": 9,
+   "start": 347.15,
+   "end": 358.67,
+   "text": "再求 x 等于二米处质点的振动方程：把 x 等于二代入，kx 等于π，所以 y 等于负零点零二 cos 四π t，与原点正好反相。"
+  },
+  {
+   "slide": 10,
+   "start": 360.26,
+   "end": 366.07,
+   "text": "第二个例题反过来：想一想波形和条件给全了，怎么写成波函数。"
+  },
+  {
+   "slide": 10,
+   "start": 366.47,
+   "end": 378.35,
+   "text": "一列平面简谐波沿正 x 传播，波长四米，周期两秒，振幅零点一米；t 等于零时，x 等于零处的质点正处在正的最大位移处。"
+  },
+  {
+   "slide": 10,
+   "start": 378.75,
+   "end": 387.68,
+   "text": "先算两个系数：ω 等于 2π 除以 T，等于π；k 等于 2π 除以 λ，等于零点五π。"
+  },
+  {
+   "slide": 10,
+   "start": 388.08,
+   "end": 397.34,
+   "text": "再定初相：t 等于零、x 等于零时 y 等于正 A，说明 cos φ 等于一，所以 φ 等于零。"
+  },
+  {
+   "slide": 10,
+   "start": 397.74,
+   "end": 403.96,
+   "text": "代进通式，得到 y 等于零点一 cos，括号里π t 减零点五π x。"
+  },
+  {
+   "slide": 10,
+   "start": 404.36,
+   "end": 414.9,
+   "text": "如果改一个条件：t 等于零时原点在平衡位置且向负方向运动，那么 φ 就等于 π 除以二，波函数里就多这一项。"
+  },
+  {
+   "slide": 10,
+   "start": 415.3,
+   "end": 419.86,
+   "text": "所以初相由初始状态定，不能默认是零。"
+  },
+  {
+   "slide": 11,
+   "start": 421.44,
+   "end": 423.31,
+   "text": "小结。"
+  },
+  {
+   "slide": 11,
+   "start": 423.71,
+   "end": 431.94,
+   "text": "波函数的来历只有一句话：源点的振动沿传播方向延迟复制，延迟量是 x 除以 u。"
+  },
+  {
+   "slide": 11,
+   "start": 432.34,
+   "end": 442.71,
+   "text": "标准形式 y 等于 A cos，括号里 ωt 减 kx 加 φ，其中 k 等于 2π 除以 λ，是空间相位的「密度」。"
+  },
+  {
+   "slide": 11,
+   "start": 443.11,
+   "end": 448.29,
+   "text": "三种写法等价：用 u、用 k、用 T 和 λ。"
+  },
+  {
+   "slide": 11,
+   "start": 448.69,
+   "end": 455.84,
+   "text": "方向判别：括号里 t 与 x 异号沿正 x 传播，同号沿负 x 传播。"
+  },
+  {
+   "slide": 11,
+   "start": 456.24,
+   "end": 468.41,
+   "text": "最后一句话：一个波函数里装着振幅、频率、波长、波速、初相、传播方向六条信息，会读它，波动这一章就算入门了。"
+  }
+ ],
+ "build_ts": 1792546328,
+ "logoScale": 0.67,
+ "theme": "wave"
+}

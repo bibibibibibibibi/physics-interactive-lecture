@@ -1,0 +1,2643 @@
+{
+ "title": "1-2 圆周运动",
+ "nav": "1-2　圆周运动",
+ "footer": "第一章　质点运动学",
+ "logoScale": 0.67,
+ "engine": "edge",
+ "voice": "zh-CN-YunxiNeural",
+ "pages": [
+  {
+   "id": 1,
+   "narration": "这一段内容在第一章，[[1]]质点运动学——研究运动怎么描述。[[2]]1-2 讲圆周运动：把速度、加速度专门用到圆轨道这个重要特例上，也为后面的一般曲线运动打基础。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 290,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 一 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 360,
+     "y": 430,
+     "w": 1200,
+     "h": 200,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质 点 运 动 学",
+        "size": 110,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 560,
+     "y": 710,
+     "w": 800,
+     "h": 110,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1-2　圆周运动",
+        "size": 56,
+        "color": "#0000CD",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "封面"
+  },
+  {
+   "id": 2,
+   "narration": "圆周运动是最简单的曲线运动，先换一个更方便的坐标系。[[1]]看右图：质点沿曲线运动到点 A。[[2]]质点在点 A 的位置，可以由它到原点的距离 r 和方位角 θ 这一对数来确定。[[3]]平面极坐标系与直角坐标系之间，坐标可以互相变换。[[4]]关系就是：x 等于 r cos θ，y 等于 r sin θ。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1044,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　平面极坐标",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1000,
+     "y": 226,
+     "w": 860,
+     "h": 592,
+     "name": "polar_coord"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 320,
+     "w": 800,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质点在点 A 的位置，可由",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "（r，θ）",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "来确定。",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 490,
+     "w": 900,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "平面极坐标与直角坐标的变换关系：",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 230,
+     "y": 620,
+     "w": 700,
+     "h": 210,
+     "tex": "\\begin{cases}x=r\\cos\\theta\\\\[10px]y=r\\sin\\theta\\end{cases}",
+     "size": 48,
+     "color": "#111111",
+     "align": "left"
+    }
+   ],
+   "heading": "平面极坐标"
+  },
+  {
+   "id": 3,
+   "narration": "圆心不动、质点绕着它跑，先定义角量。[[1]]看右图：质点在圆周上，从 x 轴量起的角 θ 就是它的角坐标；从 B 转到 A，转过的角是 Δθ，对应的弧长是 Δs。[[2]]角坐标随时间变化，写成 θ(t)。[[3]]角速度 ω 就是角坐标对时间的导数：Δθ 比 Δt 让 Δt 趋于零取极限，等于 dθ 比 dt，单位是弧度每秒。[[4]]有了角速度，速率就好写了：v 等于 ds 比 dt，等于 r 乘 dθ 比 dt，也就是 rω。[[5]]所以速度矢量等于 v e_t，也就是 rω e_t，方向沿切线。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1044,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　圆周运动的角速度",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1040,
+     "y": 200,
+     "w": 840,
+     "h": 654,
+     "name": "ang_vel"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 240,
+     "w": 760,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "角坐标　",
+        "size": 46,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "θ(t)",
+        "size": 46,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ],
+     "important": true
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 366,
+     "w": 500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "角速度",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 462,
+     "w": 780,
+     "h": 150,
+     "tex": "\\omega=\\lim_{\\Delta t\\to0}\\frac{\\Delta\\theta}{\\Delta t}=\\frac{\\mathrm{d}\\theta}{\\mathrm{d}t}",
+     "size": 40,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 626,
+     "w": 560,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "单位：",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "rad·s⁻¹",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 736,
+     "w": 860,
+     "h": 120,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "速率　",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$v=\\dfrac{\\mathrm{d}s}{\\mathrm{d}t}=r\\dfrac{\\mathrm{d}\\theta}{\\mathrm{d}t}=r\\omega$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 866,
+     "w": 900,
+     "h": 120,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "速度　",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec v=\\dfrac{\\mathrm{d}s}{\\mathrm{d}t}\\vec e_{\\mathrm{t}}=v\\vec e_{\\mathrm{t}}=r\\omega\\vec e_{\\mathrm{t}}$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true
+    }
+   ],
+   "heading": "角速度"
+  },
+  {
+   "id": 4,
+   "narration": "角量有了，接下来找加速度。[[1]]看右图：质点从 A 运动到 B，速度始终沿切线，但切线的方向一直在转——所以加速度要分两部分。[[2]]先把速度写出来：v 等于 v e_t，也等于 rω e_t。[[3]]对它求导：a 等于 dv 比 dt，等于 dv/dt 乘 e_t，加上 v 乘 d e_t 比 dt；第一项是速率在变，第二项是方向在变。[[4]]第一项就是切向加速度：a_t 等于 dv 比 dt，也等于 r 乘 dω 比 dt，也就是 rα。[[5]]把 dω 比 dt 定义为角加速度 α，单位是弧度每二次方秒。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1440,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　切向加速度和法向加速度　角加速度",
+        "size": 42,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1000,
+     "y": 190,
+     "w": 860,
+     "h": 668,
+     "name": "circ_et"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 250,
+     "w": 800,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质点作",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "变速率",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "圆周运动时",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 350,
+     "w": 700,
+     "h": 110,
+     "tex": "\\vec v=v\\vec e_{\\mathrm{t}}=r\\omega\\vec e_{\\mathrm{t}}",
+     "size": 40,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 480,
+     "w": 830,
+     "h": 150,
+     "tex": "\\vec a=\\frac{\\mathrm{d}\\vec v}{\\mathrm{d}t}=\\frac{\\mathrm{d}v}{\\mathrm{d}t}\\vec e_{\\mathrm{t}}+v\\frac{\\mathrm{d}\\vec e_{\\mathrm{t}}}{\\mathrm{d}t}",
+     "size": 40,
+     "color": "#111111",
+     "align": "left",
+     "important": true
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 660,
+     "w": 860,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "切向加速度　",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "$a_{\\mathrm{t}}=\\dfrac{\\mathrm{d}v}{\\mathrm{d}t}=r\\dfrac{\\mathrm{d}\\omega}{\\mathrm{d}t}=r\\alpha$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 800,
+     "w": 860,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "角加速度　",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "$\\alpha=\\dfrac{\\mathrm{d}\\omega}{\\mathrm{d}t}$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 920,
+     "w": 700,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "单位：rad·s⁻²",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "切向与法向加速度"
+  },
+  {
+   "id": 5,
+   "narration": "刚才还有一项 d e_t 比 dt 没有算。[[1]]看右图：把两个时刻的切向单位矢量 e_t1 和 e_t2 平移到一起作矢量三角形，当 Δt 趋于零时，Δe_t 的方向指向圆心。[[2]]也就是说，它的方向就是法向单位矢量 e_n 的方向。[[3]]大小呢？e_t 是单位矢量、长度不变，只转过了 Δθ，所以 de_t 比 dt 等于 dθ 比 dt 乘 e_n，也就等于 ω e_n。[[4]]e_n 叫作向单位矢量，它指向圆心。[[5]]代回去，加速度就等于 dv 比 dt 乘 e_t 加上 vω 乘 e_n——前一项是切向加速度，后一项是法向加速度。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "切向单位矢量的时间变化率",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 940,
+     "y": 176,
+     "w": 930,
+     "h": 742,
+     "name": "circ_det"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 300,
+     "w": 780,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "Δt→0 时，",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\Delta\\vec e_{\\mathrm{t}}$",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": " 指向圆心",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 450,
+     "w": 780,
+     "h": 170,
+     "tex": "\\lim_{\\Delta t\\to0}\\frac{\\Delta\\vec e_{\\mathrm{t}}}{\\Delta t}=\\frac{\\mathrm{d}\\vec e_{\\mathrm{t}}}{\\mathrm{d}t}=\\frac{\\mathrm{d}\\theta}{\\mathrm{d}t}\\vec e_{\\mathrm{n}}",
+     "size": 36,
+     "color": "#111111",
+     "align": "left",
+     "important": true
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 680,
+     "w": 800,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "法向单位矢量 ",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec e_{\\mathrm{n}}$",
+        "size": 30,
+        "color": "#2E8B57",
+        "b": true
+       },
+       {
+        "t": "：指向圆心。",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 850,
+     "w": 780,
+     "h": 150,
+     "tex": "\\vec a=\\frac{\\mathrm{d}v}{\\mathrm{d}t}\\vec e_{\\mathrm{t}}+v\\omega\\vec e_{\\mathrm{n}}",
+     "size": 42,
+     "color": "#111111",
+     "align": "left",
+     "important": true
+    }
+   ],
+   "heading": "deₜ/dt"
+  },
+  {
+   "id": 6,
+   "narration": "把这两项分别写清楚。[[1]]看右图：速度从 v1 变到 v2，增量 Δv 从 v1 的箭头指向 v2 的箭头；再把它分解成沿切向的 Δv_t 和垂直切向的 Δv_n。[[2]]切向那部分给出切向加速度：a_t 等于 dv 比 dt 乘 e_t，也等于 rα e_t，它只改变速率的大小。[[3]]法向那部分给出法向加速度：a_n 等于 v 乘 dθ 比 dt 乘 e_n，也等于 ω²r e_n，还等于 v² 比 r 乘 e_n，它只改变速度的方向。[[4]]记住这个关系：Δv 等于 Δv_t 加 Δv_n。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "切向加速度与法向加速度",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 960,
+     "y": 200,
+     "w": 900,
+     "h": 640,
+     "name": "vel_triangle"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 250,
+     "w": 760,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "切向加速度",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 350,
+     "w": 780,
+     "h": 130,
+     "tex": "\\vec a_{\\mathrm{t}}=\\frac{\\mathrm{d}v}{\\mathrm{d}t}\\vec e_{\\mathrm{t}}=r\\alpha\\vec e_{\\mathrm{t}}",
+     "size": 38,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 520,
+     "w": 760,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "法向加速度",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 620,
+     "w": 820,
+     "h": 170,
+     "tex": "\\vec a_{\\mathrm{n}}=v\\frac{\\mathrm{d}\\theta}{\\mathrm{d}t}\\vec e_{\\mathrm{n}}=\\omega^{2}r\\vec e_{\\mathrm{n}}=\\frac{v^{2}}{r}\\vec e_{\\mathrm{n}}",
+     "size": 34,
+     "color": "#111111",
+     "align": "left",
+     "important": true
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 830,
+     "w": 820,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "注：",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "$\\Delta\\vec v=\\Delta\\vec v_{\\mathrm{t}}+\\Delta\\vec v_{\\mathrm{n}}$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true
+    }
+   ],
+   "heading": "法向加速度"
+  },
+  {
+   "id": 7,
+   "narration": "变速率圆周运动，两个加速度同时存在。[[1]]看右图：A 点速度 v 沿切线，切向加速度 a_t 也沿切线，法向加速度 a_n 指向圆心；把 a_t 和 a_n 按平行四边形合成，得到总加速度 a。[[2]]写成矢量式，a 等于 a_t 加 a_n，等于 rα e_t 加 rω² e_n。[[3]]它的大小等于 a_t 与 a_n 的平方和再开根号。[[4]]方向用夹角 θ 表示，θ 等于 arctan（a_n 比 a_t）。[[5]]直线运动是特例：加速度与速度平行，同向加速、反向减速。[[6]]曲线运动里，加速度总是指向轨迹的凹侧。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一般圆周运动的加速度",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1030,
+     "y": 180,
+     "w": 860,
+     "h": 664,
+     "name": "acc_decomp"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 250,
+     "w": 700,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "矢量合成：",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 340,
+     "w": 840,
+     "h": 140,
+     "tex": "\\vec a=\\vec a_{\\mathrm{t}}+\\vec a_{\\mathrm{n}}=r\\alpha\\vec e_{\\mathrm{t}}+r\\omega^{2}\\vec e_{\\mathrm{n}}",
+     "size": 36,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 510,
+     "w": 300,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "大小：",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 400,
+     "y": 500,
+     "w": 700,
+     "h": 110,
+     "tex": "a=\\sqrt{a_{\\mathrm{t}}^{2}+a_{\\mathrm{n}}^{2}}",
+     "size": 40,
+     "color": "#111111",
+     "align": "left",
+     "important": true
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 650,
+     "w": 300,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "方向：",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 400,
+     "y": 640,
+     "w": 700,
+     "h": 130,
+     "tex": "\\theta=\\tan^{-1}\\dfrac{a_{\\mathrm{n}}}{a_{\\mathrm{t}}}",
+     "size": 40,
+     "color": "#111111",
+     "align": "left",
+     "important": true
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 800,
+     "w": 900,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "直线运动：",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec a\\parallel\\vec v$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "，同向加速、反向减速。",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 910,
+     "w": 900,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "曲线运动：加速度指向轨迹的",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "凹侧",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "。",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true
+    }
+   ],
+   "heading": "一般加速度"
+  },
+  {
+   "id": 8,
+   "narration": "先做一道讨论题。[[1]]一质点作变速率圆周运动，它的加速度方向是哪一个？四个选项。[[2]]A，与速度方向一致，那是直线加速运动；B，与速度方向相反，那是直线减速；C，与速度方向垂直，那只说法向加速度，都不完整。[[3]]正确的是 D：指向圆周的凹侧，也就是指向圆心的这一侧。[[4]]想一想为什么：法向加速度改变方向，切向加速度改变速率，合起来一定指向凹侧。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 700,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "讨论　加速度的方向",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 1000,
+     "h": 120,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一质点作变速率圆周运动，它的加速度方向是（　　）",
+        "size": 39,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1180,
+     "y": 300,
+     "w": 640,
+     "h": 500,
+     "name": "acc_decomp"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 260,
+     "y": 420,
+     "w": 860,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "A．与速度方向一致",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 260,
+     "y": 515,
+     "w": 860,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "B．与速度方向相反",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 260,
+     "y": 610,
+     "w": 860,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "C．与速度方向垂直",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 240,
+     "y": 706,
+     "w": 680,
+     "h": 100,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 20,
+     "paras": [
+      [
+       {
+        "t": "D．指向圆周的凹侧",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "important": true,
+     "hotspot": true,
+     "label": "正确答案 D",
+     "qa": [
+      {
+       "q": "为什么合加速度指向圆周的凹侧？",
+       "a": "法向加速度 a_n=v²/r 始终指向圆心（凹侧），切向加速度 a_t 只影响速率大小；两者合成的 a 必落在指向凹侧的那一侧。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 260,
+     "y": 828,
+     "w": 1450,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "提示：法向加速度改变方向、切向加速度改变速率，合加速度必指向凹侧。",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "interactions": [
+    {
+     "at": 3,
+     "q": "一质点作变速率圆周运动，它的加速度方向是？",
+     "answer": 3,
+     "options": [
+      "与速度方向一致",
+      "与速度方向相反",
+      "与速度方向垂直",
+      "指向圆周的凹侧"
+     ],
+     "explain": "法向加速度 a_n=v²/r 永远指向圆心（凹侧）；切向加速度 a_t 只改变速率大小。两者合成的 a 必指向凹侧——这也是判断曲线运动加速度方向的一般结论。"
+    }
+   ],
+   "heading": "讨论·凹侧"
+  },
+  {
+   "id": 9,
+   "narration": "把线量和角量的关系整理成一套。[[1]]看右图：质点从 B 移到 A，半径转过 dθ，走过的弧长是 ds。[[2]]弧长与角度的关系是 ds 等于 r 乘 dθ。[[3]]两边除以 dt，就得到速率 v 等于 ds 比 dt，也就是 rω。[[4]]再看两个加速度：法向加速度 a_n 等于 v² 比 r，也等于 rω²；切向加速度 a_t 等于 dv 比 dt，也就是 r 乘 dω 比 dt，等于 rα。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "线量和角量的关系",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1060,
+     "y": 200,
+     "w": 820,
+     "h": 638,
+     "name": "lin_ang"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 280,
+     "w": 780,
+     "h": 130,
+     "tex": "\\mathrm{d}s=r\\,\\mathrm{d}\\theta",
+     "size": 44,
+     "color": "#111111",
+     "align": "left",
+     "important": true
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 440,
+     "w": 800,
+     "h": 130,
+     "tex": "v=\\frac{\\mathrm{d}s}{\\mathrm{d}t}=r\\frac{\\mathrm{d}\\theta}{\\mathrm{d}t}=r\\omega",
+     "size": 40,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 230,
+     "y": 620,
+     "w": 820,
+     "h": 280,
+     "tex": "\\begin{cases}a_{\\mathrm{n}}=\\dfrac{v^{2}}{r}=r\\omega^{2}\\\\[14px]a_{\\mathrm{t}}=\\dfrac{\\mathrm{d}v}{\\mathrm{d}t}=r\\dfrac{\\mathrm{d}\\omega}{\\mathrm{d}t}=r\\alpha\\end{cases}",
+     "size": 36,
+     "color": "#111111",
+     "align": "left"
+    }
+   ],
+   "heading": "线量与角量"
+  },
+  {
+   "id": 10,
+   "narration": "这里补充一个概念——曲率圆和曲率半径。[[1]]看右图：这是一条光滑的曲线。[[2]]任意一条光滑曲线，都可以看成许多段不同半径的圆弧拼接起来的。[[3]]所以，圆周运动是一般曲线运动的基础。[[4]]每一段圆弧所在的那个圆，叫作该段的曲率圆。[[5]]曲率圆的半径，就叫曲率半径，用 ρ 表示。[[6]]曲率半径的倒数就是曲率，它衡量曲线弯曲的程度。不妨想一想：弯得越急的地方，曲率圆应该是越大还是越小？",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "补充　曲率圆和曲率半径 ρ",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1000,
+     "y": 240,
+     "w": 880,
+     "h": 528,
+     "name": "curvature"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 260,
+     "w": 800,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "任意光滑曲线，都可看成许多段",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "不同半径",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "的圆弧组合",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 400,
+     "w": 800,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "圆周运动是",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "一般曲线运动的基础",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "important": true
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 530,
+     "w": 820,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "曲率圆：每段圆弧所在的圆",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 650,
+     "w": 820,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "曲率半径：曲率圆的半径 ρ",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 770,
+     "w": 820,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "曲率：曲率半径的倒数",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true
+    }
+   ],
+   "heading": "曲率圆"
+  },
+  {
+   "id": 11,
+   "narration": "再看一道讨论题。[[1]]看右图：一条光滑曲线上有 A、B 两点，这两点处的曲率半径是什么关系？四个选项。[[2]]A，ρA 大于 ρB；B，ρA 小于 ρB；C，两者相等；D，无法判断。[[3]]看曲线：A 点在急弯处，弯得厉害，曲率大、曲率半径小；B 点在缓弯处，弯得平缓，曲率小、曲率半径大。[[4]]所以正确答案是 B：ρA 小于 ρB。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 700,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "讨论　曲率半径的比较",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 255,
+     "w": 900,
+     "h": 190,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "如图，一条光滑曲线上有 A、B 两点，这两点处的曲率半径的关系是（　）",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1080,
+     "y": 230,
+     "w": 760,
+     "h": 364,
+     "name": "curv_quiz"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 240,
+     "y": 480,
+     "w": 700,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "A．$\\rho_{A}>\\rho_{B}$",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 240,
+     "y": 580,
+     "w": 700,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "B．$\\rho_{A}<\\rho_{B}$",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 240,
+     "y": 680,
+     "w": 700,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "C．$\\rho_{A}=\\rho_{B}$",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 240,
+     "y": 780,
+     "w": 700,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "D．无法判断",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1060,
+     "y": 630,
+     "w": 780,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "A 点在急弯处：曲率大、曲率半径小；",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1060,
+     "y": 730,
+     "w": 780,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "B 点在缓弯处：曲率小、曲率半径大。",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 240,
+     "y": 900,
+     "w": 560,
+     "h": 100,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 20,
+     "paras": [
+      [
+       {
+        "t": "B　$\\rho_{A}<\\rho_{B}$",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "important": true,
+     "hotspot": true,
+     "label": "正确答案 B",
+     "qa": [
+      {
+       "q": "为什么 ρA < ρB？",
+       "a": "曲率半径是曲率圆的半径，ρ=1/κ。A 处弯得急、曲率 κ 大，所以 ρ 小；B 处弯得缓、κ 小，ρ 就大。"
+      }
+     ]
+    }
+   ],
+   "interactions": [
+    {
+     "at": 4,
+     "q": "如图，光滑曲线上 A、B 两点处的曲率半径是什么关系？",
+     "answer": 1,
+     "options": [
+      "ρA > ρB",
+      "ρA < ρB",
+      "ρA = ρB",
+      "无法判断"
+     ],
+     "explain": "曲率半径 ρ 是曲率圆的半径，ρ=1/κ，曲率 κ 越大弯得越急、ρ 越小。A 处是急弯、B 处是缓弯，所以 ρA < ρB。"
+    }
+   ],
+   "heading": "讨论·曲率半径"
+  },
+  {
+   "id": 12,
+   "narration": "接下来介绍一个跟着质点一起走的坐标系。[[1]]看右图：以质点所在处为原点，用切向单位矢量 e_t 和法向单位矢量 e_n 建立二维坐标系。[[2]]这个原点是运动中的质点本身，所以坐标系是动的。[[3]]这样建立起来的坐标系，称为自然坐标系。[[4]]它的特点是：坐标轴随质点一起运动，方向随之改变。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　自然坐标系",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1000,
+     "y": 200,
+     "w": 840,
+     "h": 654,
+     "name": "nat_coord"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 300,
+     "w": 700,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "以动点 A 为原点，",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 410,
+     "w": 780,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "用 $\\vec e_{\\mathrm{t}}$ 和 $\\vec e_{\\mathrm{n}}$ 建立二维坐标系",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 560,
+     "w": 820,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "称为",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "自然坐标系",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "。",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 700,
+     "w": 860,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "特点：坐标轴随质点一起运动，方向随之改变。",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "自然坐标系"
+  },
+  {
+   "id": 13,
+   "narration": "圆周运动按速率分两类。[[1]]看右图：先看匀速率圆周运动，质点绕圆心匀速地转。[[2]]角速度 ω 恒定，于是 dω 比 dt 等于零，切向加速度 a_t 就是零。[[3]]这时只剩下法向加速度，a_n 等于 rω²，指向圆心。[[4]]所以总加速度就等于法向加速度：a 等于 rω² e_n。[[5]]再来看角坐标：由 ω 等于 dθ 比 dt，得到 dθ 等于 ω dt。[[6]]设 t 等于零时角坐标是 θ0，积分就得到 θ 等于 θ0 加 ωt。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五　匀速率和匀变速率圆周运动",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1120,
+     "y": 320,
+     "w": 740,
+     "h": 590,
+     "name": "uniform_circ"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 250,
+     "w": 900,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1　匀速率圆周运动",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 360,
+     "w": 900,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "ω = 常量，故 ",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$a_{\\mathrm{t}}=0$",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "；",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 470,
+     "w": 860,
+     "h": 110,
+     "tex": "a_{\\mathrm{n}}=r\\omega^{2}",
+     "size": 42,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 585,
+     "w": 880,
+     "h": 120,
+     "tex": "\\vec a=\\vec a_{\\mathrm{n}}=r\\omega^{2}\\vec e_{\\mathrm{n}}",
+     "size": 40,
+     "color": "#111111",
+     "align": "left",
+     "important": true
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 706,
+     "w": 900,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "由 ",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\omega=\\dfrac{\\mathrm{d}\\theta}{\\mathrm{d}t}$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "，得 $\\mathrm{d}\\theta=\\omega\\,\\mathrm{d}t$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 835,
+     "w": 1000,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "t = 0 时 θ = θ₀，积分得 ",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\theta=\\theta_{0}+\\omega t$",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "important": true
+    }
+   ],
+   "heading": "匀速率圆周"
+  },
+  {
+   "id": 14,
+   "narration": "第二类，匀变速率圆周运动。[[1]]这时角加速度 α 恒定，切向加速度 a_t 等于 rα，法向加速度 a_n 等于 rω²。[[2]]再由 α 等于 dω 比 dt，得到 dω 等于 α dt；由 ω 等于 dθ 比 dt，得到 dθ 等于 ω dt。[[3]]设 t 等于零时角坐标是 θ0、角速度是 ω0，分别积分，就得到三个常用公式。[[4]]第一，ω 等于 ω0 加 αt。[[5]]第二，θ 等于 θ0 加 ω0t 加二分之一 αt²。[[6]]第三，ω² 等于 ω0² 加 2α 乘（θ 减 θ0）。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2　匀变速率圆周运动",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 245,
+     "w": 1580,
+     "h": 120,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "α = 常量，故 ",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$a_{\\mathrm{t}}=r\\alpha$",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "，",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$a_{\\mathrm{n}}=r\\omega^{2}$",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 380,
+     "w": 1580,
+     "h": 120,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "又 ",
+        "size": 35,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\mathrm{d}\\omega=\\alpha\\,\\mathrm{d}t$",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "，",
+        "size": 35,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\mathrm{d}\\theta=\\omega\\,\\mathrm{d}t$",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 515,
+     "w": 1580,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "t = 0 时 θ = θ₀、ω = ω₀，积分可得：",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 645,
+     "w": 1580,
+     "h": 110,
+     "tex": "\\omega=\\omega_{0}+\\alpha t",
+     "size": 44,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 765,
+     "w": 1580,
+     "h": 110,
+     "tex": "\\theta=\\theta_{0}+\\omega_{0}t+\\dfrac{1}{2}\\alpha t^{2}",
+     "size": 42,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "tex",
+     "step": 6,
+     "x": 170,
+     "y": 885,
+     "w": 1580,
+     "h": 110,
+     "tex": "\\omega^{2}=\\omega_{0}^{2}+2\\alpha(\\theta-\\theta_{0})",
+     "size": 42,
+     "color": "#111111",
+     "align": "center"
+    }
+   ],
+   "heading": "匀变速率圆周"
+  },
+  {
+   "id": 15,
+   "narration": "把这两组公式放在一起，你会发现它们长得一模一样。[[1]]看这张对照表：左边是匀变速率圆周运动的角量公式，右边是匀变速直线运动的线量公式。[[2]]第一行，ω 等于 ω0 加 αt，对应 v 等于 v0 加 at。[[3]]第二行，θ 的公式对应 s 的公式。[[4]]第三行，ω² 的公式对应 v² 的公式。[[5]]角量 ω 对应线量 v，角量 θ 对应线量 s，角加速度 α 对应加速度 a——记住一套，另一套直接类比过来。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 260,
+     "y": 130,
+     "w": 1400,
+     "h": 90,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "匀变速率圆周运动与匀变速直线运动类比",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 220,
+     "y": 250,
+     "w": 780,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "匀变速率圆周运动（角量）",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 980,
+     "y": 250,
+     "w": 780,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "匀变速直线运动（线量）",
+        "size": 46,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 240,
+     "y": 400,
+     "w": 700,
+     "h": 110,
+     "tex": "\\omega=\\omega_{0}+\\alpha t",
+     "size": 44,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 1000,
+     "y": 400,
+     "w": 700,
+     "h": 110,
+     "tex": "v=v_{0}+at",
+     "size": 44,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 240,
+     "y": 560,
+     "w": 860,
+     "h": 120,
+     "tex": "\\theta=\\theta_{0}+\\omega_{0}t+\\dfrac{1}{2}\\alpha t^{2}",
+     "size": 40,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 1000,
+     "y": 560,
+     "w": 860,
+     "h": 120,
+     "tex": "s=s_{0}+v_{0}t+\\dfrac{1}{2}at^{2}",
+     "size": 40,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 240,
+     "y": 720,
+     "w": 860,
+     "h": 120,
+     "tex": "\\omega^{2}=\\omega_{0}^{2}+2\\alpha(\\theta-\\theta_{0})",
+     "size": 40,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 1000,
+     "y": 720,
+     "w": 860,
+     "h": 120,
+     "tex": "v^{2}=v_{0}^{2}+2a(s-s_{0})",
+     "size": 40,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 150,
+     "y": 880,
+     "w": 1620,
+     "h": 110,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "角量 ω ↔ 线量 v　角量 θ ↔ 线量 s　角加速度 α ↔ 加速度 a",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true
+    }
+   ],
+   "heading": "类比"
+  },
+  {
+   "id": 16,
+   "narration": "来看一道例题。[[1]]看右图：飞机从点 A 沿近似圆弧的曲线俯冲到点 B。[[2]]已知条件是：A 点的水平速率 1940 千米每小时，B 点的速率 2192 千米每小时，经历时间 3 秒，弧 AB 的半径约为 3.5 千米。[[3]]把飞机从 A 到 B 的过程看作匀变速率圆周运动，不计重力加速度的影响。[[4]]求两问：第一，飞机在点 B 的加速度；第二，飞机由点 A 到点 B 所经历的路程。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1044,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例　飞机俯冲",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1010,
+     "y": 210,
+     "w": 850,
+     "h": 680,
+     "name": "proj_plane"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 250,
+     "w": 800,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "已知：",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 210,
+     "y": 336,
+     "w": 800,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$v_A=1940\\ \\mathrm{km\\cdot h^{-1}}$",
+        "size": 37,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 210,
+     "y": 430,
+     "w": 800,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$v_B=2192\\ \\mathrm{km\\cdot h^{-1}}$",
+        "size": 37,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 210,
+     "y": 524,
+     "w": 840,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$t=3\\ \\mathrm{s}$，$r=3.5\\times10^{3}\\ \\mathrm{m}$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 632,
+     "w": 840,
+     "h": 150,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "飞机从 A 到 B 视为匀变速率圆周运动，不计重力加速度的影响。",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 790,
+     "w": 840,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "求：（1）飞机在点 B 的加速度；",
+        "size": 42,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 882,
+     "w": 840,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "　　（2）飞机由点 A 到点 B 经历的路程。",
+        "size": 42,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "例·飞机俯冲"
+  },
+  {
+   "id": 17,
+   "narration": "先求第一问。[[1]]看右图：已知 vA、vB、时间 t 和半径 r，要求 B 点的加速度。[[2]]由 a_t 等于 dv 比 dt，两边从 vA 到 vB 积分、对时间从 0 到 t 积分，得到 a_t 等于（vB 减 vA）比 t。[[3]]代入数据，2192 减 1940 比上 3，得到切向加速度 23.3 米每二次方秒；而 B 点的法向加速度 a_n 等于 vB 平方比 r，代入得 106 米每二次方秒。[[4]]两者互相垂直，按平行四边形合成，得到 B 点加速度的大小是 109 米每二次方秒，方向与法向的夹角 β 是 12.4 度。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1044,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例 解（1）　B 点的加速度",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1010,
+     "y": 210,
+     "w": 850,
+     "h": 680,
+     "name": "proj_acc"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 250,
+     "w": 840,
+     "h": 130,
+     "tex": "\\int_{v_{A}}^{v_{B}}\\mathrm{d}v=a_{\\mathrm{t}}\\int_{0}^{t}\\mathrm{d}t",
+     "size": 38,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 390,
+     "w": 840,
+     "h": 120,
+     "tex": "a_{\\mathrm{t}}=\\frac{v_{B}-v_{A}}{t}=23.3\\ \\mathrm{m\\cdot s^{-2}}",
+     "size": 36,
+     "color": "#111111",
+     "align": "left",
+     "important": true
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 520,
+     "w": 840,
+     "h": 120,
+     "tex": "a_{\\mathrm{n}}=\\frac{v_{B}^{2}}{r}=106\\ \\mathrm{m\\cdot s^{-2}}",
+     "size": 36,
+     "color": "#111111",
+     "align": "left",
+     "important": true
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 650,
+     "w": 840,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两者垂直，合加速度：",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 750,
+     "w": 900,
+     "h": 120,
+     "tex": "a=\\sqrt{a_{\\mathrm{t}}^{2}+a_{\\mathrm{n}}^{2}}=109\\ \\mathrm{m\\cdot s^{-2}}",
+     "size": 36,
+     "color": "#111111",
+     "align": "left",
+     "important": true
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 880,
+     "w": 1100,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "方向：",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\beta=\\arctan\\dfrac{a_{\\mathrm{t}}}{a_{\\mathrm{n}}}=12.4^{\\circ}$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "（与法向的夹角）",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "例解(1)"
+  },
+  {
+   "id": 18,
+   "narration": "再求第二问，路程。[[1]]看右图：A 点的角速度 ωA 等于 vA 比 r，角加速度 α 等于 a_t 比 r。[[2]]由匀变速率圆周运动的公式，矢径转过的角度 θ 等于 ωA 乘 t 加上二分之一 αt²。[[3]]而路程 s 等于 r 乘 θ，也等于 vA 乘 t 加上二分之一 a_t t²。[[4]]代入数据：1940 除以 3.6 得 538.9 米每秒，乘 3 秒，再加二分之一乘 23.3 乘 9，最后得到 s 等于 1722 米。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1044,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例 解（2）　经历的路程",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1010,
+     "y": 210,
+     "w": 850,
+     "h": 680,
+     "name": "proj_plane"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 290,
+     "w": 840,
+     "h": 140,
+     "tex": "\\omega_{A}=\\frac{v_{A}}{r},\\qquad \\alpha=\\frac{a_{\\mathrm{t}}}{r}",
+     "size": 38,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 460,
+     "w": 840,
+     "h": 140,
+     "tex": "\\theta=\\omega_{A}t+\\dfrac{1}{2}\\alpha t^{2}",
+     "size": 40,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 620,
+     "w": 900,
+     "h": 140,
+     "tex": "s=r\\theta=v_{A}t+\\dfrac{1}{2}a_{\\mathrm{t}}t^{2}",
+     "size": 40,
+     "color": "#111111",
+     "align": "left",
+     "important": true
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 790,
+     "w": 900,
+     "h": 130,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "代入数据：",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$s=1722\\ \\mathrm{m}$",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "例解(2)"
+  }
+ ]
+}

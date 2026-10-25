@@ -1,0 +1,1678 @@
+{
+ "title": "1-3 相对运动",
+ "nav": "1-3　相对运动",
+ "footer": "第一章　质点运动学",
+ "logoScale": 0.67,
+ "engine": "edge",
+ "voice": "zh-CN-YunxiNeural",
+ "pages": [
+  {
+   "id": 1,
+   "narration": "这一段内容也在第一章，[[1]]质点运动学。[[2]]1-3 讲相对运动：核心问题是——同一个运动，在不同的参考系里看会有什么不同，又有哪些量保持不变。最后还会用它解决一道例题。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 290,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 一 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 360,
+     "y": 430,
+     "w": 1200,
+     "h": 200,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质 点 运 动 学",
+        "size": 110,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 560,
+     "y": 710,
+     "w": 800,
+     "h": 110,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1-3　相对运动",
+        "size": 56,
+        "color": "#0000CD",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "封面"
+  },
+  {
+   "id": 2,
+   "narration": "先看最基础的观念。[[1]]看右图：在经典力学里，同一个过程、同一把尺，在两个作相对运动的参考系中量出来的结果是一样的。[[2]]也就是说，时间的测量是绝对的，空间的测量也是绝对的。[[3]]它们都与参考系无关：你在哪个参考系里量，读数都一样。[[4]]时间和长度的这种绝对性，正是经典力学、也就是牛顿力学的基础。为什么强调「绝对」？因为经典力学里时间和空间的测量都不随参考系改变。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1044,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　时间与空间",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1010,
+     "y": 300,
+     "w": 850,
+     "h": 378,
+     "name": "rel_clock_scale"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 300,
+     "w": 800,
+     "h": 190,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "在两个作相对运动的参考系中，时间的测量是",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "绝对的",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "，空间的测量也是绝对的。",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 520,
+     "w": 810,
+     "h": 170,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两者都与参考系无关：同一过程、同一把尺，在哪个系里量结果都一样。",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 730,
+     "w": 840,
+     "h": 150,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "时间和长度的绝对性，是",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "经典力学（牛顿力学）的基础",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "。",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true
+    }
+   ],
+   "heading": "时间与空间"
+  },
+  {
+   "id": 3,
+   "narration": "先做一个思想实验，体会一下什么叫相对。[[1]]看右图：平板车以 u 匀速向右前进，车上的人把小球相对车竖直向上抛出。[[2]]在车上的人看来，小球只是沿竖直方向上升再下落，轨迹是一条竖直直线。[[3]]可是站在地面的人看到的完全是另一回事：小球一边上升、一边随车向右走，轨迹弯成一条抛物线。[[4]]同一个运动，两个观察者看到的轨迹完全不同——物体运动的轨迹依赖于参考系。[[5]]所以要记住：轨迹和位移、速度一样，都必须指明是相对哪个参考系说的。不妨自己想一想：为什么同一个小球，两个人看到的轨迹会不一样？",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　相对运动",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1000,
+     "y": 210,
+     "w": 860,
+     "h": 401,
+     "name": "rel_traj"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 280,
+     "w": 790,
+     "h": 120,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "车上的人看到：",
+        "size": 44,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "轨迹是一条竖直直线",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 430,
+     "w": 790,
+     "h": 120,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "地面上的人看到：",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "轨迹是一条抛物线",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 600,
+     "w": 820,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "物体运动的轨迹",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "依赖于参考系",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "important": true,
+     "hotspot": true,
+     "label": "轨迹依赖参考系",
+     "qa": [
+      {
+       "q": "为什么同一个运动的轨迹会不一样？",
+       "a": "轨迹是质点在各时刻位置的连线，而「位置」本身要先由参考系确定。车上的人始终与抛出点共速，看到小球只在竖直方向往返；地面上的人还看到小球随车前进，于是轨迹弯成抛物线。两者描述的是同一个运动，只是参考系不同。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 740,
+     "w": 810,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "轨迹、位移、速度都要指明",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "相对哪个参考系",
+        "size": 42,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "。",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "相对运动"
+  },
+  {
+   "id": 4,
+   "narration": "要把这件事说清楚，得把两个参考系都写下来。[[1]]看右图：基本参考系记作 S 系，取地面；运动参考系记作 S′ 系，取平板车，ū 是 S′ 系相对 S 系运动的速度。[[2]]t 等于零时两个坐标系重合，质点在 P 点；经过 Δt，质点运动到了 Q 点，在 S 系里由 P 指到 Q 的 Δr̄ 就是它的位移。[[3]]在 S′ 系里量到的是 Δr̄′，由 P′ 指向 Q；而 P 到 P′ 这一段，正是 S′ 系原点移动的位移 ΔD̄，它等于 u 乘 Δt。[[4]]三条矢量正好围成一个三角形，所以位移关系是：Δr̄ 等于 Δr̄′ 加上 ΔD̄，也就是 Δr̄ 等于 Δr̄′ 加上 ū 乘 Δt。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1044,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "位矢与位移关系",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 920,
+     "y": 180,
+     "w": 900,
+     "h": 720,
+     "name": "rel_displacement"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 250,
+     "w": 700,
+     "h": 170,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "t = 0 时两系重合，质点位于 P；经过 Δt 到达 Q。",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 430,
+     "w": 700,
+     "h": 130,
+     "tex": "\\Delta\\vec D=\\vec u\\,\\Delta t",
+     "size": 40,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 580,
+     "w": 720,
+     "h": 130,
+     "tex": "\\Delta\\vec r=\\Delta\\vec r'+\\Delta\\vec D",
+     "size": 42,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 730,
+     "w": 720,
+     "h": 130,
+     "tex": "\\Delta\\vec r=\\Delta\\vec r'+\\vec u\\,\\Delta t",
+     "size": 40,
+     "color": "#C00000",
+     "align": "left",
+     "important": true
+    }
+   ],
+   "heading": "位移关系"
+  },
+  {
+   "id": 5,
+   "narration": "位移关系有了，速度关系只要把它除以 Δt。[[1]]看右图：把 Δr̄ 除以 Δt，得到 S 系里的速度 v̄；把 Δr̄′ 除以 Δt，得到 S′ 系里的速度 v̄′；把 ΔD̄ 除以 Δt，正好得到 ū。[[2]]于是对位移关系两边同除以 Δt，就得到 Δr̄ 比 Δt 等于 Δr̄′ 比 Δt 再加上 ū。[[3]]再让 Δt 趋于零，平均速度就变成瞬时速度，于是得到速度变换式：v̄ 等于 v̄′ 加上 ū。[[4]]这个三角形和位移三角形形状完全一样，只是每一条边都缩小了 Δt 倍。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1044,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "速度变换",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1000,
+     "y": 195,
+     "w": 860,
+     "h": 669,
+     "name": "rel_vel_triangle"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 300,
+     "w": 780,
+     "h": 150,
+     "tex": "\\frac{\\Delta\\vec r}{\\Delta t}=\\frac{\\Delta\\vec r'}{\\Delta t}+\\vec u",
+     "size": 40,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 500,
+     "w": 780,
+     "h": 140,
+     "tex": "\\vec v=\\vec v'+\\vec u",
+     "size": 46,
+     "color": "#C00000",
+     "align": "left",
+     "important": true
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 690,
+     "w": 800,
+     "h": 200,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两边同除以 Δt（因为 ΔD̄ = ūΔt），再令 Δt→0：平均速度趋于瞬时速度。",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "速度变换"
+  },
+  {
+   "id": 6,
+   "narration": "这个式子里的三个速度都有名字，一定要记住。[[1]]看右图：ū 是运动参考系 S′ 相对基本参考系 S 的速度，叫做牵连速度。[[2]]v̄′ 是质点相对 S′ 系的速度，叫做相对速度。[[3]]v̄ 是质点相对 S 系的速度，叫做绝对速度。[[4]]三者的关系就是伽利略速度变换：绝对速度等于相对速度加上牵连速度。[[5]]平时说「速度」时，如果不特别指明，指的都是绝对速度。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "伽利略速度变换",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1010,
+     "y": 195,
+     "w": 860,
+     "h": 669,
+     "name": "rel_vel_names"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 260,
+     "w": 780,
+     "h": 130,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "牵连速度 ",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec u$",
+        "size": 43,
+        "color": "#2E8B57",
+        "b": true
+       },
+       {
+        "t": "：S′ 系相对 S 系的速度",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 410,
+     "w": 780,
+     "h": 130,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "相对速度 ",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec v'$",
+        "size": 42,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "：质点相对 S′ 系的速度",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 560,
+     "w": 780,
+     "h": 130,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "绝对速度 ",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec v$",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "：质点相对 S 系的速度",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 710,
+     "w": 780,
+     "h": 140,
+     "tex": "\\vec v=\\vec v'+\\vec u",
+     "size": 46,
+     "color": "#C00000",
+     "align": "left",
+     "important": true
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 880,
+     "w": 810,
+     "h": 120,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不特别指明时，「速度」指的都是",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "绝对速度",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "。",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "三种速度"
+  },
+  {
+   "id": 7,
+   "narration": "再对速度变换式求导，就得到加速度的关系。[[1]]两边对时间求导：dv̄ 比 dt 等于 dv̄′ 比 dt 再加上 dū 比 dt。[[2]]也就是 a 等于 a′ 加上 dū 比 dt。[[3]]多出来的这一项 dū 比 dt，正是 S′ 系相对 S 系运动的加速度。[[4]]如果 S′ 系相对 S 系作匀速直线运动，ū 就是不变的常矢量，dū 比 dt 等于零，于是 a 等于 a′。[[5]]这一点非常重要：在一切相对作匀速直线运动的参考系里加速度都相同，牛顿定律的形式也就完全相同。[[6]]还要注意：当物体运动速度接近光速时，速度变换就不再成立了。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "加速度关系",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 130,
+     "tex": "\\frac{\\mathrm{d}\\vec v}{\\mathrm{d}t}=\\frac{\\mathrm{d}\\vec v'}{\\mathrm{d}t}+\\frac{\\mathrm{d}\\vec u}{\\mathrm{d}t}",
+     "size": 40,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 395,
+     "w": 1580,
+     "h": 120,
+     "tex": "\\vec a=\\vec a'+\\frac{\\mathrm{d}\\vec u}{\\mathrm{d}t}",
+     "size": 44,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 535,
+     "w": 1580,
+     "h": 105,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "多出来的 dū/dt，就是 S′ 系相对 S 系运动的加速度。",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 650,
+     "w": 1320,
+     "h": 120,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 18,
+     "paras": [
+      [
+       {
+        "t": "若 S′ 相对 S 匀速平动，则 dū/dt = 0，于是 $\\vec a=\\vec a'$",
+        "size": 42,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "important": true
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 790,
+     "w": 1580,
+     "h": 105,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "物理意义：一切惯性系中加速度相同，牛顿定律的形式也完全相同。",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 918,
+     "w": 1580,
+     "h": 88,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "注意：当物体运动速度接近光速时，速度变换不成立。",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "important": true
+    }
+   ],
+   "heading": "加速度关系"
+  },
+  {
+   "id": 8,
+   "narration": "先做一道多选题，检验一下理解。[[1]]看题：关于伽利略速度变换 v̄ 等于 v̄′ 加 ū，以下说法正确的是。[[2]]A 说适用于一切运动——不对，高速运动就不适用；B 说不适用于高速运动的质点——这是对的。[[3]]C 说仅适用于惯性系变换——也不对，两系相对作平动即可，并不要求都是惯性系；D 说是牛顿力学的基础——对的，它正是由时间和长度的绝对性推出来的。[[4]]所以正确选项是 B 和 D。[[5]]再强调一遍：它的适用条件是物体的运动速度远小于光速。先自己想一想，看看能不能把两个正确选项都找出来。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 700,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "多选讨论",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 1000,
+     "h": 150,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "关于伽利略速度变换 $\\vec v=\\vec v'+\\vec u$，以下说法正确的是（　　）",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1190,
+     "y": 250,
+     "w": 660,
+     "h": 513,
+     "name": "rel_vel_names"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 240,
+     "y": 410,
+     "w": 900,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "A．适用于一切运动",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 240,
+     "y": 505,
+     "w": 900,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "B．不适用于高速运动的质点",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 240,
+     "y": 600,
+     "w": 900,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "C．仅适用于惯性系变换",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 240,
+     "y": 695,
+     "w": 900,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "D．是牛顿力学的基础",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 240,
+     "y": 800,
+     "w": 580,
+     "h": 88,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 20,
+     "paras": [
+      [
+       {
+        "t": "B、D　（正确）",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "important": true,
+     "hotspot": true,
+     "label": "正确答案 B、D",
+     "qa": [
+      {
+       "q": "伽利略速度变换的适用范围是什么？",
+       "a": "只适用于运动速度远小于光速的情形，而且只要求两个参考系相对作平动（不要求都是惯性系）。速度接近光速时必须改用洛伦兹变换。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 240,
+     "y": 930,
+     "w": 1400,
+     "h": 82,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "B：高速运动须用洛伦兹变换；D：它由时间与长度的绝对性直接推出。",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "interactions": [
+    {
+     "at": 3,
+     "q": "关于伽利略速度变换 $\\vec v=\\vec v'+\\vec u$，以下说法正确的是（多选）\nA．适用于一切运动　　B．不适用于高速运动的质点\nC．仅适用于惯性系变换　　D．是牛顿力学的基础",
+     "answer": "B、D。　B：物体运动速度接近光速时必须换成洛伦兹变换，伽利略变换不再成立。D：它由时间与长度的绝对性直接推出，是经典力学（牛顿力学）的基础。　（A 错在「一切运动」——高速运动不适用；C 错在「仅惯性系」——两系相对作平动即可，并不要求都是惯性系。）"
+    }
+   ],
+   "heading": "多选讨论"
+  },
+  {
+   "id": 9,
+   "narration": "来看一道例题。[[1]]看右图：实验者 A 在以 10 米每秒的速率沿水平轨道前进的平板车上，控制一台射弹器。[[2]]已知射弹器以与车前进的反方向成 60 度、斜向上射出一弹丸。[[3]]此时站在地面上的另一位实验者 B 看到，弹丸是铅直向上运动的，也就是水平速度等于零。[[4]]求：弹丸上升的高度。[[5]]思路是：把地面取作 S 系，平板车取作 S′ 系，再套用伽利略速度变换。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1100,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例　平板车上的射弹器",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1010,
+     "y": 185,
+     "w": 850,
+     "h": 680,
+     "name": "rel_cart"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 250,
+     "w": 810,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "已知：",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 190,
+     "y": 340,
+     "w": 810,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "车以 $u=10\\ \\mathrm{m\\cdot s^{-1}}$ 沿水平轨道前进；",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 190,
+     "y": 448,
+     "w": 810,
+     "h": 115,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "射弹器以与车前进反方向成 $60^{\\circ}$ 斜向上射出弹丸。",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 575,
+     "w": 810,
+     "h": 130,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "站在地面的实验者 B 看到弹丸",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "铅直向上",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "运动，即 $v_x=0$。",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 725,
+     "w": 780,
+     "h": 110,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 18,
+     "paras": [
+      [
+       {
+        "t": "求：弹丸上升的高度 y。",
+        "size": 44,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "hotspot": true,
+     "label": "解题提示",
+     "qa": [
+      {
+       "q": "这道题该从哪里下手？",
+       "a": "先约定参考系：地面是 S 系，平板车是 S′ 系。题给的是弹丸相对车的情况（v′ 与车前进反方向成 60°），而要求的高度由地面系里的竖直速度 v_y 决定，于是用 v = v′ + u 把两个系联系起来。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 858,
+     "w": 810,
+     "h": 130,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "提示：地面取作 S 系，平板车取作 S′ 系，用伽利略速度变换。",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "例·射弹器"
+  },
+  {
+   "id": 10,
+   "narration": "先求相对速度的分量。[[1]]地面参考系取作 S 系，平板车取作 S′ 系。[[2]]由伽利略速度变换，把水平和竖直两个方向分别写开：水平方向 v_x 等于 u 加上 v′_x，竖直方向 v_y 等于 v′_y。[[3]]实验者 B 看到弹丸铅直向上，说明 v_x 等于零；把这个条件代进去，就得到 v′_x 等于负 u，也就是负 10 米每秒。[[4]]也就是说，弹丸相对车是斜向左上方飞出的，这与题目给出的 60 度正好一致。[[5]]这里要留意：水平方向两个系差一个牵连速度 ū，而竖直方向两系完全一样。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1100,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例 解（1）　相对速度的水平分量",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1010,
+     "y": 185,
+     "w": 850,
+     "h": 680,
+     "name": "rel_cart"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 250,
+     "w": 800,
+     "h": 130,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "地面参考系为 S 系，平板车参考系为 S′ 系。",
+        "size": 39,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 400,
+     "w": 800,
+     "h": 130,
+     "tex": "v_{x}=u+v'_{x},\\qquad v_{y}=v'_{y}",
+     "size": 42,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 560,
+     "w": 810,
+     "h": 140,
+     "tex": "\\because\\ v_{x}=0\\quad\\therefore\\ v'_{x}=-u=-10\\ \\mathrm{m\\cdot s^{-1}}",
+     "size": 38,
+     "color": "#C00000",
+     "align": "left",
+     "important": true
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 740,
+     "w": 800,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "即弹丸相对车斜向左上方飞出，与题给 60° 一致。",
+        "size": 35,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 890,
+     "w": 810,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "说明：水平方向两系差一个 ū，竖直方向两系",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "完全相同",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "。",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "例解(1)"
+  },
+  {
+   "id": 11,
+   "narration": "再求上升高度。[[1]]弹丸相对车的速度 v′ 与 x′ 轴负向成 α 等于 60 度。[[2]]所以竖直分量满足：v_y 的绝对值等于 v′_y 的绝对值，也等于 v′_x 的绝对值乘 tan α。[[3]]把 v′_x 等于负 10 米每秒代进去，得到 v_y 的绝对值等于 10 乘 tan60 度，约等于 17.3 米每秒。[[4]]于是竖直方向就是一个初速 17.3 米每秒的竖直上抛运动，上升高度用 y 等于 v_y 平方除以 2g 来算。[[5]]代入数据，17.3 的平方除以 2 乘 9.8，最后得到上升高度是 15.3 米。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1100,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例 解（2）　弹丸上升的高度",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1010,
+     "y": 185,
+     "w": 850,
+     "h": 680,
+     "name": "rel_cart"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 250,
+     "w": 800,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "v′ 与 x′ 轴负向成 $\\alpha=60^{\\circ}$，故",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 360,
+     "w": 810,
+     "h": 115,
+     "tex": "|v_{y}|=|v'_{y}|=|v'_{x}|\\tan\\alpha",
+     "size": 40,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 485,
+     "w": 810,
+     "h": 120,
+     "tex": "|v_{y}|=10\\times\\tan60^{\\circ}=17.3\\ \\mathrm{m\\cdot s^{-1}}",
+     "size": 38,
+     "color": "#C00000",
+     "align": "left",
+     "important": true
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 620,
+     "w": 800,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "竖直方向是初速 17.3 m·s⁻¹ 的竖直上抛：",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 730,
+     "w": 800,
+     "h": 115,
+     "tex": "y=\\dfrac{v_{y}^{2}}{2g}",
+     "size": 42,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 860,
+     "w": 810,
+     "h": 120,
+     "tex": "y=\\dfrac{(17.3)^{2}}{2\\times9.8}=15.3\\ \\mathrm{m}",
+     "size": 38,
+     "color": "#C00000",
+     "align": "left",
+     "important": true
+    }
+   ],
+   "heading": "例解(2)"
+  },
+  {
+   "id": 12,
+   "narration": "把这一节的公式整理一遍。[[1]]位矢关系：r̄ 等于 r̄′ 加上 ūt。[[2]]位移关系：Δr̄ 等于 Δr̄′ 加上 ū 乘 Δt。[[3]]速度变换，也就是伽利略速度变换：v̄ 等于 v̄′ 加上 ū。[[4]]加速度关系：a 等于 a′ 加上 dū 比 dt。[[5]]还要记住三个名字：绝对速度 v̄、相对速度 v̄′、牵连速度 ū。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节公式小结",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 215,
+     "w": 1600,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "设 t = 0 时两系原点重合、S′ 相对 S 以恒定速度 ū 平动：",
+        "size": 38,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 200,
+     "y": 330,
+     "w": 420,
+     "h": 110,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "位矢关系",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 318,
+     "w": 1580,
+     "h": 120,
+     "tex": "\\vec r=\\vec r'+\\vec u\\,t",
+     "size": 42,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 200,
+     "y": 460,
+     "w": 420,
+     "h": 110,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "位移关系",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 448,
+     "w": 1580,
+     "h": 120,
+     "tex": "\\Delta\\vec r=\\Delta\\vec r'+\\vec u\\,\\Delta t",
+     "size": 42,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 200,
+     "y": 590,
+     "w": 420,
+     "h": 110,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "速度变换",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 578,
+     "w": 1580,
+     "h": 120,
+     "tex": "\\vec v=\\vec v'+\\vec u",
+     "size": 44,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 200,
+     "y": 720,
+     "w": 420,
+     "h": 110,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "加速度关系",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 705,
+     "w": 1580,
+     "h": 130,
+     "tex": "\\vec a=\\vec a'+\\dfrac{\\mathrm{d}\\vec u}{\\mathrm{d}t}\\quad(\\vec u\\ \\text{为常矢量}\\Rightarrow\\ \\vec a=\\vec a')",
+     "size": 38,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 860,
+     "w": 1600,
+     "h": 110,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "绝对速度 $\\vec v$　相对速度 $\\vec v'$　牵连速度 $\\vec u$",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true
+    }
+   ],
+   "heading": "小结"
+  }
+ ]
+}

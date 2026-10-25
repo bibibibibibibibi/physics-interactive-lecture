@@ -1,0 +1,4839 @@
+{
+ "title": "11-2 杨氏双缝干涉 劳埃德镜",
+ "nav": "11-2　杨氏双缝干涉 劳埃德镜",
+ "footer": "第十一章　光学",
+ "character": "aqiang",
+ "characters": [
+  {
+   "id": "aqiang",
+   "name": "阿强"
+  },
+  {
+   "id": "professor",
+   "name": "博士讲师"
+  },
+  {
+   "id": "zhongshan",
+   "name": "中山装先生"
+  }
+ ],
+ "duration": 849.6,
+ "slides": [
+  {
+   "id": 1,
+   "kind": "page",
+   "heading": "封面",
+   "narration": "第十一章，光学。第二节，杨氏双缝干涉和劳埃德镜。这一节把 11-1 的分波阵面法算到底：先推条纹位置和间距，再讲光程与光程差，最后看劳埃德镜和半波损失。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 292,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 十 一 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 300,
+     "y": 420,
+     "w": 1320,
+     "h": 160,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "光　　学",
+        "size": 110,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 250,
+     "y": 606,
+     "w": 1420,
+     "h": 120,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "11-2　杨氏双缝干涉 劳埃德镜",
+        "size": 54,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 766,
+     "w": 1480,
+     "h": 110,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "波程差　·　条纹间距　·　光程　·　空间相干性　·　半波损失",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 220,
+     "y": 900,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "大学物理　第十一章",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 0.0,
+    "2": 2.97,
+    "3": 7.81
+   },
+   "t_start": 0.0,
+   "t_end": 19.18,
+   "duration": 19.18,
+   "laser": []
+  },
+  {
+   "id": 2,
+   "kind": "page",
+   "heading": "一　实验装置",
+   "narration": "先看实验装置：单缝 S 发出的光照到双缝 S₁、S₂ 上；S₁、S₂ 是同一个波阵面上的两点，发出的两列波是相干的。屏上任意一点 P，两束光走的路程不同，光程差决定它是亮还是暗。实验里缝距 d 只有零点几毫米，屏距 d′ 却有一米左右，d 远小于 d′。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　杨氏双缝干涉　实验装置",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 310,
+     "y": 240,
+     "w": 1300,
+     "h": 700,
+     "name": "ydse_setup"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 952,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "S₁、S₂ 同相；d ≪ d′ 时两束光可看作平行光．",
+        "size": 30,
+        "color": "#444",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 19.98,
+    "2": 30.89
+   },
+   "t_start": 19.98,
+   "t_end": 44.84,
+   "duration": 24.86,
+   "laser": []
+  },
+  {
+   "id": 3,
+   "kind": "page",
+   "heading": "波程差",
+   "narration": "先算波程差。P 点到两缝的距离分别是 r₁ 和 r₂。它们的差就是波程差：Δr 等于 r₂ 减 r₁。实验里 d 远小于 d′，两束光可以看成平行光。从 S₁ 向 r₂ 作垂线，多出来的那一段就是 d sinθ，所以 Δr 约等于 d sinθ。再用屏上的坐标：P 到中心 O 的距离是 x，θ 是中心轴和到 P 的连线的夹角。因为 θ 很小，sinθ 约等于 tanθ，等于 x 除以 d′。于是 Δr 约等于 d 乘以 x 除以 d′——这是双缝干涉最核心的近似。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　杨氏双缝干涉　波程差",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 245,
+     "w": 780,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "P 点到两缝的距离 r₁、r₂ 之差，叫波程差：",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 350,
+     "w": 780,
+     "h": 150,
+     "tex": "\\Delta r=r_2-r_1",
+     "size": 46,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 530,
+     "w": 780,
+     "h": 120,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "d ≪ d′ 时，从 S₁ 向 S₂P 作垂线，两束光近似平行：",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 670,
+     "w": 780,
+     "h": 140,
+     "tex": "\\Delta r\\approx d\\sin\\theta",
+     "size": 44,
+     "color": "#0000CD",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 245,
+     "w": 740,
+     "h": 200,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "P 在屏上的位置用 x 表示；θ 是中心轴与 S₁S₂ 中点到 P 的连线的夹角．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 6,
+     "x": 1010,
+     "y": 470,
+     "w": 740,
+     "h": 180,
+     "tex": "\\sin\\theta\\approx\\tan\\theta=\\dfrac{x}{d'}",
+     "size": 40,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 7,
+     "x": 170,
+     "y": 830,
+     "w": 1200,
+     "h": 150,
+     "tex": "\\Delta r\\approx d\\sin\\theta=d\\dfrac{x}{d'}",
+     "size": 42,
+     "color": "#C00000",
+     "align": "left",
+     "important": true,
+     "hotspot": true,
+     "label": "波程差近似式",
+     "qa": [
+      {
+       "q": "为什么 Δr ≈ d x/d′？",
+       "a": "d≪d′ 时两束光近似平行，Δr≈d sinθ；小角度下 sinθ≈tanθ=x/d′，所以 Δr≈dx/d′。"
+      },
+      {
+       "q": "这个近似成立的条件是什么？",
+       "a": "缝距 d 远小于屏距 d′，且 P 点离中心不太远（θ 很小）。"
+      }
+     ]
+    }
+   ],
+   "bullets": [
+    {
+     "text": "波程差近似式",
+     "x": 770,
+     "y": 992,
+     "qa": [
+      {
+       "q": "为什么 Δr ≈ d x/d′？",
+       "a": "d≪d′ 时两束光近似平行，Δr≈d sinθ；小角度下 sinθ≈tanθ=x/d′，所以 Δr≈dx/d′。"
+      },
+      {
+       "q": "这个近似成立的条件是什么？",
+       "a": "缝距 d 远小于屏距 d′，且 P 点离中心不太远（θ 很小）。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 7
+    }
+   ],
+   "stepTimes": {
+    "1": 45.64,
+    "2": 52.68,
+    "3": 57.9,
+    "4": 63.36,
+    "5": 72.21,
+    "6": 80.58,
+    "7": 87.32
+   },
+   "t_start": 45.64,
+   "t_end": 95.2,
+   "duration": 49.56,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 87.32,
+     "end": 92.32
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "kind": "page",
+   "heading": "明暗条件",
+   "narration": "两束光同相出发，到 P 点的波程差决定加强还是减弱。波程差等于波长的整数倍时，两束光同相叠加，干涉加强。写成式子就是 Δr 等于正负 kλ，k 取零、一、二，等等。波程差等于半波长的奇数倍时，两束光反相叠加，干涉减弱。写成式子就是 Δr 等于正负 2k 加 1 乘以二分之 λ。k 叫级次，k 等于零对应中央明纹，k 等于一对应第一级明纹。正负号表示中央两侧对称。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　杨氏双缝干涉　明暗条件",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 1580,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两束光同相出发，波程差决定 P 点是加强还是减弱．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 220,
+     "y": 380,
+     "w": 640,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "干涉加强",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "hotspot": true,
+     "label": "干涉加强条件",
+     "qa": [
+      {
+       "q": "双缝干涉加强的条件是什么？",
+       "a": "波程差 Δr = ±kλ（k=0,1,2…），两束光同相叠加，出现明纹。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 220,
+     "y": 480,
+     "w": 640,
+     "h": 140,
+     "tex": "\\Delta r=\\pm k\\lambda,\\quad k=0,1,2,\\cdots",
+     "size": 40,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1140,
+     "y": 380,
+     "w": 610,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "干涉减弱",
+        "size": 40,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ],
+     "hotspot": true,
+     "label": "干涉减弱条件",
+     "qa": [
+      {
+       "q": "双缝干涉减弱的条件是什么？",
+       "a": "波程差 Δr = ±(2k+1)λ/2（k=0,1,2…），两束光反相叠加，出现暗纹。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 1140,
+     "y": 480,
+     "w": 610,
+     "h": 160,
+     "tex": "\\Delta r=\\pm(2k+1)\\dfrac{\\lambda}{2}",
+     "size": 42,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 700,
+     "w": 1580,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "k 叫级次：",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "k=0",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": " 是中央明纹，",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "k=1",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": " 是第一级明纹，其余依次类推．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 7,
+     "x": 170,
+     "y": 810,
+     "w": 1580,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "± 表示中央明纹两侧对称分布．",
+        "size": 31,
+        "color": "#444",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [
+    {
+     "text": "干涉加强条件",
+     "x": 540,
+     "y": 472,
+     "qa": [
+      {
+       "q": "双缝干涉加强的条件是什么？",
+       "a": "波程差 Δr = ±kλ（k=0,1,2…），两束光同相叠加，出现明纹。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 2
+    },
+    {
+     "text": "干涉减弱条件",
+     "x": 1445,
+     "y": 472,
+     "qa": [
+      {
+       "q": "双缝干涉减弱的条件是什么？",
+       "a": "波程差 Δr = ±(2k+1)λ/2（k=0,1,2…），两束光反相叠加，出现暗纹。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    }
+   ],
+   "stepTimes": {
+    "1": 96.0,
+    "2": 102.3,
+    "3": 108.65,
+    "4": 116.18,
+    "5": 122.7,
+    "6": 129.0,
+    "7": 135.57
+   },
+   "t_start": 96.0,
+   "t_end": 139.58,
+   "duration": 43.58,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 102.3,
+     "end": 107.3
+    },
+    {
+     "bullet": 1,
+     "start": 116.18,
+     "end": 121.18
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "kind": "page",
+   "heading": "条纹位置与间距",
+   "narration": "把波程差代进明暗条件，就得到条纹在屏上的位置。明纹的位置是 x 等于正负 k 乘以 d′ 比 d 再乘 λ。暗纹的位置是 x 等于正负 2k 加 1 乘以 d′ 比上 2d 再乘 λ。相邻两条明纹中心的距离叫条纹间距：Δx 等于 d′ 除以 d 再乘 λ。注意，条纹是等间距的，而且关于中央明纹对称。看右边的条纹图：级次越高位置越远，但间距不变。这个式子说明：测出 Δx、d、d′，就能算出波长。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　杨氏双缝干涉　条纹位置",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 245,
+     "w": 780,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "把 Δr = d x/d′ 代入明暗条件：",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 350,
+     "w": 780,
+     "h": 170,
+     "tex": "x=\\pm k\\dfrac{d'}{d}\\lambda",
+     "size": 44,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 540,
+     "w": 780,
+     "h": 170,
+     "tex": "x=\\pm(2k+1)\\dfrac{d'}{2d}\\lambda",
+     "size": 40,
+     "color": "#0000CD",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 730,
+     "w": 800,
+     "h": 150,
+     "tex": "\\Delta x=\\dfrac{d'}{d}\\lambda",
+     "size": 46,
+     "color": "#C00000",
+     "align": "left",
+     "important": true,
+     "hotspot": true,
+     "label": "条纹间距公式",
+     "qa": [
+      {
+       "q": "条纹间距公式是什么？由什么决定？",
+       "a": "Δx = d′λ/d：屏距越大、波长越长、缝距越小，条纹越宽。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 900,
+     "w": 800,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "相邻明纹（或暗纹）中心的距离，叫条纹间距．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 6,
+     "x": 1080,
+     "y": 270,
+     "w": 460,
+     "h": 556,
+     "name": "ydse_fringes"
+    },
+    {
+     "type": "text",
+     "step": 7,
+     "x": 1080,
+     "y": 850,
+     "w": 620,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "条纹等间距、关于中央对称．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [
+    {
+     "text": "条纹间距公式",
+     "x": 570,
+     "y": 892,
+     "qa": [
+      {
+       "q": "条纹间距公式是什么？由什么决定？",
+       "a": "Δx = d′λ/d：屏距越大、波长越长、缝距越小，条纹越宽。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    }
+   ],
+   "stepTimes": {
+    "1": 140.38,
+    "2": 145.65,
+    "3": 151.45,
+    "4": 158.26,
+    "5": 166.0,
+    "6": 171.61,
+    "7": 177.58
+   },
+   "t_start": 140.38,
+   "t_end": 184.28,
+   "duration": 43.9,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 158.26,
+     "end": 163.26
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "kind": "page",
+   "heading": "白光照射",
+   "narration": "如果用白光做光源，中央那条明纹是白色的。因为白光包含各种波长，每条明纹的位置都随波长变化。λ 大的红光，条纹间距大；λ 小的紫光，条纹间距小。在中央 k 等于零处，各色光的零级明纹重合，所以是白色。离开中央，各色光的同级明纹逐渐错开。于是形成彩色条纹：内侧偏紫，外侧偏红。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　杨氏双缝干涉　白光照射",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 980,
+     "y": 260,
+     "w": 600,
+     "h": 413,
+     "name": "ydse_white"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 250,
+     "w": 760,
+     "h": 120,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "白光包含各种波长，每条明纹的位置都随 λ 变化．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 400,
+     "w": 760,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "λ 大的红光条纹宽，λ 小的紫光条纹窄．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 520,
+     "w": 760,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "中央 k=0 处各色光重合，是白色明纹．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 640,
+     "w": 760,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "离开中央，各色光错开，形成彩色条纹．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 770,
+     "w": 760,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "内侧偏紫、外侧偏红．",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "important": true
+    }
+   ],
+   "bullets": [
+    {
+     "text": "内侧偏紫、外侧偏红．",
+     "x": 550,
+     "y": 862,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 6
+    }
+   ],
+   "stepTimes": {
+    "1": 185.08,
+    "2": 189.94,
+    "3": 196.03,
+    "4": 202.31,
+    "5": 208.37,
+    "6": 213.4
+   },
+   "t_start": 185.08,
+   "t_end": 219.28,
+   "duration": 34.2,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 213.4,
+     "end": 218.4
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "kind": "page",
+   "heading": "讨论 λ、d、d′",
+   "narration": "Δx 等于 d′λ 除以 d，可以回答三个问题。λ 变大，条纹间距变大；所以红光条纹比紫光宽。缝间距 d 变小，条纹变宽；d 变大，条纹变密。屏距 d′ 变大，条纹也变宽。想一想：把双缝间距增大一倍，条纹间距变成原来的多少？",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　杨氏双缝干涉　讨论",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 900,
+     "h": 507,
+     "name": "ydse_colors"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1120,
+     "y": 250,
+     "w": 620,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "Δx 与 λ 成正比",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "：波长越长，条纹越宽．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "hotspot": true,
+     "label": "波长对条纹的影响",
+     "qa": [
+      {
+       "q": "换用波长更长的光，条纹间距怎么变？",
+       "a": "Δx = d′λ/d，λ 变大条纹间距变大；所以红光条纹比紫光宽。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1120,
+     "y": 420,
+     "w": 620,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "Δx 与 d 成反比",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "：缝距越小，条纹越宽．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "hotspot": true,
+     "label": "缝距对条纹的影响",
+     "qa": [
+      {
+       "q": "增大双缝间距，条纹怎么变？",
+       "a": "d 变大，Δx 变小，条纹变密；d 减小则条纹变宽。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1120,
+     "y": 590,
+     "w": 620,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "Δx 与 d′ 成正比",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "：屏距越大，条纹越宽．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 800,
+     "w": 1580,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "想一想：把双缝间距增大一倍，条纹间距变成原来的多少？",
+        "size": 32,
+        "color": "#444",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [
+    {
+     "text": "波长对条纹的影响",
+     "x": 1430,
+     "y": 402,
+     "qa": [
+      {
+       "q": "换用波长更长的光，条纹间距怎么变？",
+       "a": "Δx = d′λ/d，λ 变大条纹间距变大；所以红光条纹比紫光宽。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 2
+    },
+    {
+     "text": "缝距对条纹的影响",
+     "x": 1430,
+     "y": 572,
+     "qa": [
+      {
+       "q": "增大双缝间距，条纹怎么变？",
+       "a": "d 变大，Δx 变小，条纹变密；d 减小则条纹变宽。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 3
+    }
+   ],
+   "stepTimes": {
+    "1": 220.08,
+    "2": 225.02,
+    "3": 231.44,
+    "4": 237.55,
+    "5": 241.31
+   },
+   "t_start": 220.08,
+   "t_end": 248.4,
+   "duration": 28.32,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 225.02,
+     "end": 230.02
+    },
+    {
+     "bullet": 1,
+     "start": 231.44,
+     "end": 236.44
+    }
+   ],
+   "interactions": [
+    {
+     "t": 241.31,
+     "q": "把双缝间距 d 增大一倍，其他条件不变，条纹间距 Δx 变成原来的多少？",
+     "answer": 1,
+     "options": [
+      "2 倍",
+      "1/2",
+      "1/4"
+     ],
+     "explain": "Δx = d′λ/d 与 d 成反比：d 增大一倍，Δx 减小为原来的一半，条纹变密。"
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "kind": "page",
+   "heading": "例1　题",
+   "narration": "例一。在杨氏双缝实验中，用波长 589.3 纳米的钠灯作光源，屏幕到双缝的距离 d′ 等于 800 毫米。第一问：双缝间距 d 等于 1 毫米时，相邻明纹的中心间距是多少？第二问：把缝间距改成 10 毫米，间距又是多少？解这类题，先确认三个量：λ、d、d′，再直接代公式。单位要统一：纳米换成米，毫米也换成米。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例1　条纹间距的计算",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 260,
+     "w": 1580,
+     "h": 120,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "在杨氏双缝实验中，用波长 λ = 589.3 nm 的钠灯作光源，",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "屏幕距双缝 d′ = 800 mm．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 220,
+     "y": 420,
+     "w": 1500,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（1）当双缝间距 d = 1 mm 时，两相邻明纹中心间距是多少？",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 540,
+     "w": 1500,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（2）假设双缝间距 d = 10 mm，两相邻明纹中心间距又是多少？",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 700,
+     "w": 1580,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "解这类题，先确认三个量：λ、d、d′，再直接代条纹间距公式．",
+        "size": 30,
+        "color": "#444",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 800,
+     "w": 1580,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "单位要统一：589.3 nm = 589.3×10⁻⁹ m，800 mm = 0.8 m．",
+        "size": 30,
+        "color": "#444",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 1350,
+     "y": 345,
+     "w": 400,
+     "h": 230,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 10,
+     "paras": [
+      [
+       {
+        "t": "已知",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "λ = 589.3 nm",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "d′ = 800 mm",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "d = 1 mm、10 mm",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 249.2,
+    "2": 260.32,
+    "3": 267.19,
+    "4": 273.19,
+    "5": 279.83
+   },
+   "t_start": 249.2,
+   "t_end": 285.3,
+   "duration": 36.1,
+   "laser": []
+  },
+  {
+   "id": 9,
+   "kind": "page",
+   "heading": "例1　解",
+   "narration": "先统一单位，再代公式。波长 589.3 纳米，屏距 0.8 米。第一问，d 等于 1 毫米，Δx 等于 d′λ 除以 d。算出来是 4.71 乘 10 的负 4 次方米，约 0.47 毫米。第二问，d 等于 10 毫米。同样代公式，得到 0.047 毫米。缝间距增大十倍，条纹间距就减小到十分之一，和公式完全一致。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例1　解",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "λ = 589.3×10⁻⁹ m，d′ = 0.8 m．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 350,
+     "w": 1580,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（1）d = 1 mm：",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 260,
+     "y": 440,
+     "w": 1400,
+     "h": 190,
+     "tex": "\\Delta x=\\dfrac{d'}{d}\\lambda=\\dfrac{0.8\\times589.3\\times10^{-9}}{1\\times10^{-3}}=4.71\\times10^{-4}\\ \\mathrm{m}\\approx0.47\\ \\mathrm{mm}",
+     "size": 34,
+     "color": "#C00000",
+     "align": "left",
+     "important": true
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 670,
+     "w": 1580,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（2）d = 10 mm：",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 260,
+     "y": 760,
+     "w": 1400,
+     "h": 170,
+     "tex": "\\Delta x=\\dfrac{0.8\\times589.3\\times10^{-9}}{10\\times10^{-3}}=4.71\\times10^{-5}\\ \\mathrm{m}\\approx0.047\\ \\mathrm{mm}",
+     "size": 34,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 950,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "d 增大 10 倍，Δx 减小到 1/10．",
+        "size": 30,
+        "color": "#444",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 1400,
+     "y": 240,
+     "w": 350,
+     "h": 190,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 10,
+     "paras": [
+      [
+       {
+        "t": "答案",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "Δx₁ = 0.47 mm",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "Δx₂ = 0.047 mm",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [
+    {
+     "text": "\\Delta x=\\dfrac{d'}{d}\\lambda=\\dfrac{0.8\\times589.3\\times10^{-9}}{1\\times10^{-3}}=4.71\\times10^{-4}\\ \\mathrm{m}\\approx0.47\\ \\mathrm{mm}",
+     "x": 960,
+     "y": 642,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 3
+    }
+   ],
+   "stepTimes": {
+    "1": 286.1,
+    "2": 293.91,
+    "3": 299.69,
+    "4": 305.63,
+    "5": 308.93,
+    "6": 312.95
+   },
+   "t_start": 286.1,
+   "t_end": 320.61,
+   "duration": 34.51,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 299.69,
+     "end": 304.69
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "kind": "page",
+   "heading": "例2　题",
+   "narration": "例二。单色光照射到相距 0.2 毫米的双缝上，双缝到屏幕的距离是 1 米。第一问：从第一级明纹到同侧第四级明纹的距离是 7.5 毫米，求波长。第二问：若入射光波长是 600 纳米，中央明纹中心到最近暗纹中心的距离是多少？提示：第 k 级明纹的位置 x_k 等于 k 乘以 d′λ 除以 d。第二问考的是中央到最近暗纹，不是相邻两条明纹。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例2　由条纹间距求波长",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 260,
+     "w": 1580,
+     "h": 120,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "单色光照射到相距 d = 0.2 mm 的双缝上，双缝与屏幕的垂直距离 d′ = 1 m．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 220,
+     "y": 420,
+     "w": 1500,
+     "h": 120,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（1）第一级明纹到同侧第四级明纹的距离为 7.5 mm，求单色光的波长；",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 560,
+     "w": 1500,
+     "h": 120,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（2）若入射光的波长为 600 nm，中央明纹中心距最邻近暗纹中心的距离是多少？",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "提示：第 k 级明纹 x_k = k d′λ/d；",
+        "size": 30,
+        "color": "#444",
+        "b": false
+       },
+       {
+        "t": "同一侧两级之间隔了 k₄−k₁ 个条纹间距．",
+        "size": 30,
+        "color": "#444",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 860,
+     "w": 1580,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第二问考的是“中央到最近暗纹”，不是相邻两条明纹．",
+        "size": 30,
+        "color": "#444",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 1350,
+     "y": 250,
+     "w": 400,
+     "h": 240,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 10,
+     "paras": [
+      [
+       {
+        "t": "已知",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "d = 0.2 mm",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "d′ = 1 m",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "Δx₁₄ = 7.5 mm",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 321.41,
+    "2": 330.32,
+    "3": 337.94,
+    "4": 346.08,
+    "5": 353.03
+   },
+   "t_start": 321.41,
+   "t_end": 358.87,
+   "duration": 37.46,
+   "laser": []
+  },
+  {
+   "id": 11,
+   "kind": "page",
+   "heading": "例2　解",
+   "narration": "第一问用级次差。第 k 级明纹位置是 x_k 等于正负 k d′λ 除以 d。第一级到第四级，间隔是 3 个条纹间距。所以 λ 等于 d 除以 d′，再乘 Δx14 除以 k₄ 减 k₁，代入得 500 纳米。第二问，中央明纹到最近暗纹，距离是半个条纹间距。Δx 等于 d′λ 除以 d，等于 3 毫米。一半就是 1.5 毫米。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例2　解",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（1）第 k 级明纹：",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 260,
+     "y": 330,
+     "w": 1400,
+     "h": 140,
+     "tex": "x_k=\\pm\\dfrac{d'}{d}k\\lambda",
+     "size": 40,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 260,
+     "y": 490,
+     "w": 1400,
+     "h": 150,
+     "tex": "\\Delta x_{14}=x_4-x_1=\\dfrac{d'}{d}(k_4-k_1)\\lambda",
+     "size": 38,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 260,
+     "y": 660,
+     "w": 1400,
+     "h": 190,
+     "tex": "\\lambda=\\dfrac{d}{d'}\\cdot\\dfrac{\\Delta x_{14}}{k_4-k_1}=\\dfrac{0.2\\times10^{-3}}{1}\\cdot\\dfrac{7.5\\times10^{-3}}{3}=5.0\\times10^{-7}\\ \\mathrm{m}=500\\ \\mathrm{nm}",
+     "size": 34,
+     "color": "#C00000",
+     "align": "left",
+     "important": true
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 840,
+     "w": 1580,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（2）中央明纹到最近暗纹：半个条纹间距",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 6,
+     "x": 260,
+     "y": 915,
+     "w": 1400,
+     "h": 90,
+     "tex": "\\Delta x'=\\dfrac{1}{2}\\dfrac{d'}{d}\\lambda=\\dfrac{1}{2}\\times\\dfrac{1}{0.2\\times10^{-3}}\\times600\\times10^{-9}=1.5\\ \\mathrm{mm}",
+     "size": 30,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 1400,
+     "y": 240,
+     "w": 350,
+     "h": 190,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 10,
+     "paras": [
+      [
+       {
+        "t": "答案",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "λ = 500 nm",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "Δx′ = 1.5 mm",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [
+    {
+     "text": "\\lambda=\\dfrac{d}{d'}\\cdot\\dfrac{\\Delta x_{14}}{k_4-k_1}=\\dfrac{0.2\\times10^{-3}}{1}\\cdot\\dfrac{7.5\\times10^{-3}}{3}=5.0\\times10^{-7}\\ \\mathrm{m}=500\\ \\mathrm{nm}",
+     "x": 960,
+     "y": 862,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 4
+    }
+   ],
+   "stepTimes": {
+    "1": 359.67,
+    "2": 368.63,
+    "3": 373.18,
+    "4": 381.43,
+    "5": 387.16,
+    "6": 391.83
+   },
+   "t_start": 359.67,
+   "t_end": 395.19,
+   "duration": 35.52,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 381.43,
+     "end": 386.43
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "kind": "page",
+   "heading": "二　光强分布",
+   "narration": "下面看光强分布。两束光叠加，合振幅不是简单相加，要用余弦定理。A 等于根号下 A₁² 加 A₂² 加 2A₁A₂ cos(φ₂ 减 φ₁)。其中相位差由光程差决定。φ₂ 减 φ₁ 等于 2π 乘以 Δr 除以 λ。光强正比于振幅的平方。于是 I 等于 I₁ 加 I₂ 加 2 倍根号下 I₁I₂ 乘以 cos(φ₂ 减 φ₁)。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　杨氏双缝干涉的光强分布",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两束光叠加，合振幅由余弦定理给出：",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 300,
+     "y": 325,
+     "w": 1320,
+     "h": 165,
+     "tex": "A=\\sqrt{A_1^2+A_2^2+2A_1A_2\\cos(\\varphi_2-\\varphi_1)}",
+     "size": 42,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 505,
+     "w": 1580,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "其中相位差由光程差决定：",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 300,
+     "y": 585,
+     "w": 1320,
+     "h": 165,
+     "tex": "\\varphi_2-\\varphi_1=2\\pi\\dfrac{\\Delta r}{\\lambda}",
+     "size": 42,
+     "color": "#0000CD",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 765,
+     "w": 1580,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "光强正比于振幅平方，于是：",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 6,
+     "x": 300,
+     "y": 845,
+     "w": 1320,
+     "h": 95,
+     "tex": "I=I_1+I_2+2\\sqrt{I_1I_2}\\cos(\\varphi_2-\\varphi_1)",
+     "size": 40,
+     "color": "#C00000",
+     "align": "center",
+     "important": true
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 950,
+     "w": 1580,
+     "h": 62,
+     "fill": "#EDF3FB",
+     "line": "#EDF3FB",
+     "lw": 3,
+     "radius": 8,
+     "paras": [
+      [
+       {
+        "t": "干涉项 2√(I₁I₂)cos(φ₂−φ₁) 可正可负，决定叠加后变亮还是变暗．",
+        "size": 28,
+        "color": "#24456C",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    }
+   ],
+   "bullets": [
+    {
+     "text": "I=I_1+I_2+2\\sqrt{I_1I_2}\\cos(\\varphi_2-\\varphi_1)",
+     "x": 960,
+     "y": 952,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 6
+    }
+   ],
+   "stepTimes": {
+    "1": 395.99,
+    "2": 404.83,
+    "3": 410.49,
+    "4": 414.15,
+    "5": 418.8,
+    "6": 422.18
+   },
+   "t_start": 395.99,
+   "t_end": 428.85,
+   "duration": 32.86,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 422.18,
+     "end": 427.18
+    }
+   ]
+  },
+  {
+   "id": 13,
+   "kind": "page",
+   "heading": "等强度分布",
+   "narration": "如果两缝等宽，两束光振幅相同，设都为 A₀，光强都为 I₀。公式化简成 I 等于 4I₀ 乘以 cos²(πΔr/λ)。看曲线：波程差是 λ 的整数倍时，I 等于 4I₀，最亮；波程差是半波长的奇数倍时，I 等于零，最暗。所以条纹的明暗，就是光强按余弦平方分布的结果。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　光强分布　等强度情形",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 245,
+     "w": 1580,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两缝等宽时 A₁ = A₂ = A₀，I₁ = I₂ = I₀．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 420,
+     "y": 335,
+     "w": 1080,
+     "h": 140,
+     "tex": "I=4I_0\\cos^2\\left(\\pi\\dfrac{\\Delta r}{\\lambda}\\right)",
+     "size": 44,
+     "color": "#C00000",
+     "align": "left",
+     "important": true
+    },
+    {
+     "type": "diagram",
+     "step": 3,
+     "x": 385,
+     "y": 500,
+     "w": 1150,
+     "h": 495,
+     "name": "ydse_intensity"
+    }
+   ],
+   "bullets": [
+    {
+     "text": "I=4I_0\\cos^2\\left(\\pi\\dfrac{\\Delta r}{\\lambda}\\right)",
+     "x": 960,
+     "y": 487,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 2
+    }
+   ],
+   "stepTimes": {
+    "1": 429.65,
+    "2": 436.48,
+    "3": 442.28
+   },
+   "t_start": 429.65,
+   "t_end": 458.69,
+   "duration": 29.04,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 436.48,
+     "end": 441.48
+    }
+   ]
+  },
+  {
+   "id": 14,
+   "kind": "page",
+   "heading": "三　介质中的波长",
+   "narration": "进入第三个问题：光在介质中传播时，干涉条件还能不能用波程差？真空中光速 c 等于根号下 ε₀μ₀ 分之一，介质中 u 等于根号下 εμ 分之一。两者之比就是折射率：n 等于 c 除以 u。频率由光源决定，进介质不变；速度变小，波长变短。介质中的波长 λ′ 等于真空波长 λ 除以 n。所以同样的几何路程，在介质中要走更多的波数。这就是要把路程折算成光程的原因。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　光程和光程差　介质中的波长",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 245,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "光在介质中传播时，波长变了，波程差不再直接等于相位差．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 360,
+     "w": 780,
+     "h": 150,
+     "tex": "c=\\dfrac{1}{\\sqrt{\\varepsilon_0\\mu_0}}",
+     "size": 40,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 1010,
+     "y": 360,
+     "w": 740,
+     "h": 150,
+     "tex": "u=\\dfrac{1}{\\sqrt{\\varepsilon\\mu}}",
+     "size": 40,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 540,
+     "w": 780,
+     "h": 150,
+     "tex": "n=\\dfrac{c}{u}",
+     "size": 44,
+     "color": "#0000CD",
+     "align": "left",
+     "hotspot": true,
+     "label": "折射率的定义",
+     "qa": [
+      {
+       "q": "折射率与光速的关系是什么？",
+       "a": "n = c/u：真空光速与介质中光速之比，所以介质中 u = c/n。"
+      }
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 1010,
+     "y": 540,
+     "w": 740,
+     "h": 150,
+     "tex": "\\lambda'=\\dfrac{\\lambda}{n}",
+     "size": 44,
+     "color": "#C00000",
+     "align": "left",
+     "important": true,
+     "hotspot": true,
+     "label": "介质中的波长",
+     "qa": [
+      {
+       "q": "光进入介质后波长怎么变？",
+       "a": "频率不变，速度变为 c/n，波长变为 λ′ = λ/n。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 720,
+     "w": 1580,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "频率 ν 不变，u = λ′ν；真空中 c = λν．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 7,
+     "x": 170,
+     "y": 830,
+     "w": 1580,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同样的几何路程，在介质中经历的波数更多．",
+        "size": 32,
+        "color": "#444",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 7,
+     "x": 170,
+     "y": 930,
+     "w": 1580,
+     "h": 66,
+     "fill": "#EDF3FB",
+     "line": "#EDF3FB",
+     "lw": 3,
+     "radius": 8,
+     "paras": [
+      [
+       {
+        "t": "把介质中的路程乘 n 折算成光程，就能统一用真空波长算相位差．",
+        "size": 28,
+        "color": "#24456C",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    }
+   ],
+   "bullets": [
+    {
+     "text": "折射率的定义",
+     "x": 560,
+     "y": 702,
+     "qa": [
+      {
+       "q": "折射率与光速的关系是什么？",
+       "a": "n = c/u：真空光速与介质中光速之比，所以介质中 u = c/n。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    },
+    {
+     "text": "介质中的波长",
+     "x": 1380,
+     "y": 702,
+     "qa": [
+      {
+       "q": "光进入介质后波长怎么变？",
+       "a": "频率不变，速度变为 c/n，波长变为 λ′ = λ/n。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 5
+    }
+   ],
+   "stepTimes": {
+    "1": 459.49,
+    "2": 467.03,
+    "3": 473.62,
+    "4": 478.58,
+    "5": 484.88,
+    "6": 490.46,
+    "7": 496.0
+   },
+   "t_start": 459.49,
+   "t_end": 500.19,
+   "duration": 40.7,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 478.58,
+     "end": 483.58
+    },
+    {
+     "bullet": 1,
+     "start": 484.88,
+     "end": 489.88
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "kind": "page",
+   "heading": "光程与光程差",
+   "narration": "为了把介质中的路程和真空统一起来，引入光程。光在介质中走几何路程 r，光程 L 等于 n 乘以 r。它的物理意义是：把介质中的路程折算成真空中的路程。看这幅图：S₁ 在空气中走 r₁，S₂ 在介质中走 r₂，两束光在 P 点相遇。两束光的光程之差叫光程差。Δ 等于 n₂r₂ 减 n₁r₁；同一种介质里就是 n 乘以路程差。有了光程差，相位差就是 2π 乘以 Δ 除以 λ。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　光程和光程差　光程",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 245,
+     "w": 1580,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "光在介质中通过的几何路程，折算到真空中的路程，叫光程．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 350,
+     "w": 700,
+     "h": 150,
+     "tex": "L=nr",
+     "size": 48,
+     "color": "#C00000",
+     "align": "left",
+     "important": true,
+     "hotspot": true,
+     "label": "光程",
+     "qa": [
+      {
+       "q": "什么是光程？",
+       "a": "光程 L = nr，是把介质中的几何路程 r 折算到真空中的等效路程。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 520,
+     "w": 720,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "物理意义：介质中的路程折算到真空，频率不变、波长统一用 λ．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 4,
+     "x": 900,
+     "y": 330,
+     "w": 850,
+     "h": 433,
+     "name": "optical_path"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 700,
+     "w": 720,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两束光的光程之差，叫光程差：",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 6,
+     "x": 170,
+     "y": 790,
+     "w": 720,
+     "h": 140,
+     "tex": "\\Delta=n_2r_2-n_1r_1",
+     "size": 40,
+     "color": "#0000CD",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 7,
+     "x": 170,
+     "y": 930,
+     "w": 1580,
+     "h": 60,
+     "tex": "\\Delta\\varphi=2\\pi\\dfrac{\\Delta}{\\lambda}",
+     "size": 36,
+     "color": "#C00000",
+     "align": "left"
+    }
+   ],
+   "bullets": [
+    {
+     "text": "光程",
+     "x": 520,
+     "y": 512,
+     "qa": [
+      {
+       "q": "什么是光程？",
+       "a": "光程 L = nr，是把介质中的几何路程 r 折算到真空中的等效路程。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    }
+   ],
+   "stepTimes": {
+    "1": 500.99,
+    "2": 506.33,
+    "3": 512.42,
+    "4": 518.17,
+    "5": 526.08,
+    "6": 530.1,
+    "7": 536.86
+   },
+   "t_start": 500.99,
+   "t_end": 543.09,
+   "duration": 42.1,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 506.33,
+     "end": 511.33
+    }
+   ]
+  },
+  {
+   "id": 16,
+   "kind": "page",
+   "heading": "干涉条件",
+   "narration": "有了光程差，干涉条件可以统一写成光程差的形式。光程差等于波长整数倍时，干涉加强。写成式子：Δ 等于正负 kλ。光程差等于半波长奇数倍时，干涉减弱。写成式子：Δ 等于正负 2k 加 1 乘以二分之 λ。换成相位差，就是正负 2kπ 加强，正负 2k 加 1 乘以 π 减弱。注意：同一种介质里，光程差和波程差相等；跨介质时必须用光程差。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　光程和光程差　干涉条件",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 245,
+     "w": 1580,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "把波程差换成光程差，干涉条件写成统一形式：",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 220,
+     "y": 370,
+     "w": 640,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "干涉加强",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 220,
+     "y": 470,
+     "w": 700,
+     "h": 140,
+     "tex": "\\Delta=\\pm k\\lambda",
+     "size": 42,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1020,
+     "y": 370,
+     "w": 640,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "干涉减弱",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 1020,
+     "y": 470,
+     "w": 720,
+     "h": 160,
+     "tex": "\\Delta=\\pm(2k+1)\\dfrac{\\lambda}{2}",
+     "size": 42,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 690,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "对应的相位差：",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "加强",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": " Δφ = ±2kπ；",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "减弱",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": " Δφ = ±(2k+1)π．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 7,
+     "x": 170,
+     "y": 820,
+     "w": 1580,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同一种介质里二者相等；跨介质时必须用光程差．",
+        "size": 32,
+        "color": "#444",
+        "b": false
+       }
+      ]
+     ],
+     "important": true
+    },
+    {
+     "type": "box",
+     "step": 7,
+     "x": 170,
+     "y": 920,
+     "w": 1580,
+     "h": 66,
+     "fill": "#EDF3FB",
+     "line": "#EDF3FB",
+     "lw": 3,
+     "radius": 8,
+     "paras": [
+      [
+       {
+        "t": "判断加强还是减弱，只看光程差 Δ 与波长 λ 的关系．",
+        "size": 28,
+        "color": "#24456C",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    }
+   ],
+   "bullets": [
+    {
+     "text": "同一种介质里二者相等；跨介质时必须用光程差．",
+     "x": 960,
+     "y": 902,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 7
+    }
+   ],
+   "stepTimes": {
+    "1": 543.89,
+    "2": 549.4,
+    "3": 554.19,
+    "4": 558.65,
+    "5": 563.63,
+    "6": 569.74,
+    "7": 576.81
+   },
+   "t_start": 543.89,
+   "t_end": 584.98,
+   "duration": 41.09,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 576.81,
+     "end": 581.81
+    }
+   ]
+  },
+  {
+   "id": 17,
+   "kind": "page",
+   "heading": "例3　题",
+   "narration": "例三。波长 550 纳米的单色光垂直照射双缝。用一块厚度 e 等于 6.6 微米、折射率 n 等于 1.58 的云母片，盖在上缝上。问：屏上条纹有什么变化？中央 O 点现在是明纹还是暗纹？看装置：云母片盖在上缝 S₁ 上，两束光在 O 点相遇。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例3　云母片覆盖一条缝",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "在杨氏双缝实验中，用波长 λ = 550 nm 的单色光垂直照射双缝．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 350,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "用厚度 e = 6.6 μm、折射率 n = 1.58 的云母片覆盖上缝 S₁．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 450,
+     "w": 1580,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "问：（1）屏上干涉条纹有什么变化？",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "（2）中央 O 点现在是明纹还是暗纹？",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 4,
+     "x": 495,
+     "y": 560,
+     "w": 930,
+     "h": 434,
+     "name": "ydse_mica"
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 1350,
+     "y": 250,
+     "w": 400,
+     "h": 240,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 10,
+     "paras": [
+      [
+       {
+        "t": "已知",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "λ = 550 nm",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "e = 6.6 μm",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "n = 1.58",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 585.78,
+    "2": 592.67,
+    "3": 599.96,
+    "4": 608.51
+   },
+   "t_start": 585.78,
+   "t_end": 614.94,
+   "duration": 29.16,
+   "laser": []
+  },
+  {
+   "id": 18,
+   "kind": "page",
+   "heading": "例3　解",
+   "narration": "云母片使 S₁ 这束光多走了 (n 减 1) 乘以 e 的光程。O 点原来两束光光程相等，现在光程差变成 (n 减 1)e。算一下级次：k 等于 (n 减 1)e 除以 λ。代入数值，k 约等于 6.96，取 7。所以 O 点现在是第七级明纹，整个条纹图样向上、也就是向 S₁ 一侧平移 7 个间距。记住：条纹平移的方向，总是指向被云母片挡住的那条缝一侧。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例3　解",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "云母片使 S₁ 的光程增加，附加光程：",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 300,
+     "y": 330,
+     "w": 1320,
+     "h": 150,
+     "tex": "\\Delta=(n-1)e",
+     "size": 44,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 520,
+     "w": 1580,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "O 点原来光程差为零，现在变成 (n−1)e：",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 300,
+     "y": 610,
+     "w": 1320,
+     "h": 190,
+     "tex": "k=\\dfrac{(n-1)e}{\\lambda}=\\dfrac{(0.58)(6.6\\times10^{-6})}{550\\times10^{-9}}\\approx6.96\\approx7",
+     "size": 36,
+     "color": "#0000CD",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 820,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以 O 点现在是第 7 级明纹；条纹整体向 S₁ 一侧平移 7 个间距．",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "important": true
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 930,
+     "w": 1580,
+     "h": 60,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "条纹平移方向，总是指向被云母片挡住的那条缝．",
+        "size": 30,
+        "color": "#444",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 1400,
+     "y": 240,
+     "w": 350,
+     "h": 200,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 10,
+     "paras": [
+      [
+       {
+        "t": "结果",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "k ≈ 7",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "O 点为第 7 级明纹",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "条纹上移 7 个间距",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [
+    {
+     "text": "所以 O 点现在是第 7 级明纹；条纹整体向 S₁ 一侧平移 7 个间距．",
+     "x": 960,
+     "y": 922,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 5
+    }
+   ],
+   "stepTimes": {
+    "1": 615.74,
+    "2": 621.73,
+    "3": 628.56,
+    "4": 634.86,
+    "5": 639.75,
+    "6": 648.0
+   },
+   "t_start": 615.74,
+   "t_end": 654.67,
+   "duration": 38.93,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 639.75,
+     "end": 644.75
+    }
+   ]
+  },
+  {
+   "id": 19,
+   "kind": "page",
+   "heading": "四　空间相干性",
+   "narration": "第四个问题：缝宽对条纹有什么影响？实验结果：缝宽增大，条纹变模糊，最后完全消失。看这三幅条纹：缝越宽，对比度越低。原因是缝宽增大后，缝上各点发出的光相位不再一致。只有缝足够窄，S₁、S₂ 才能近似看作两个同相的点光源——这就是光的空间相干性。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　缝宽对条纹的影响　空间相干性",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 245,
+     "w": 1580,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "实验现象：随缝宽增大，干涉条纹变模糊，最后消失．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 400,
+     "y": 340,
+     "w": 1120,
+     "h": 529,
+     "name": "spatial_coherence"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 880,
+     "w": 1580,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "原因：缝宽增大，缝上各点发出的光相位不再一致．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 950,
+     "w": 1580,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只有缝足够窄，S₁、S₂ 才能看作同相的点光源．",
+        "size": 31,
+        "color": "#444",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 655.47,
+    "2": 666.12,
+    "3": 670.77,
+    "4": 676.91
+   },
+   "t_start": 655.47,
+   "t_end": 685.81,
+   "duration": 30.34,
+   "laser": []
+  },
+  {
+   "id": 20,
+   "kind": "page",
+   "heading": "五　劳埃德镜",
+   "narration": "最后看劳埃德镜。它用一块平面镜，把一束光分成直射和反射两束。反射光相当于从虚光源 S₂ 发出，与 S₁ 构成一对相干光源。关键在反射：光从光速大的介质射向光速小的介质时，反射光相位突变 π。这叫半波损失，反射光要多算半个波长：Δ 等于 r₂ 减 r₁ 加 λ/2。按几何光程，接触处 O 点应该是明纹；实验看到的却是暗纹——这只能用半波损失解释。想一想：劳埃德镜实验中，屏与镜面接触的 O 点为什么是暗纹？",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五　劳埃德镜",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 780,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "平面镜把一束光分成直射光和反射光两束．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 900,
+     "y": 280,
+     "w": 850,
+     "h": 453,
+     "name": "lloyd_mirror"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 380,
+     "w": 700,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "反射光等效于从虚光源 S₂ 发出，与 S₁ 相干．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 550,
+     "w": 700,
+     "h": 180,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "半波损失：光从光速大的介质射向光速小的介质，反射光相位突变 π．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "hotspot": true,
+     "label": "半波损失",
+     "qa": [
+      {
+       "q": "什么是半波损失？",
+       "a": "光从光疏介质（光速大）射向光密介质（光速小）并被反射时，反射光相位突变 π，相当于多走半个波长。"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 760,
+     "w": 700,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "反射光要附加 λ/2：Δ = r₂ − r₁ + λ/2．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 900,
+     "w": 1580,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "想一想：屏与镜面接触的 O 点，为什么是暗纹？",
+        "size": 32,
+        "color": "#444",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [
+    {
+     "text": "半波损失",
+     "x": 520,
+     "y": 742,
+     "qa": [
+      {
+       "q": "什么是半波损失？",
+       "a": "光从光疏介质（光速大）射向光密介质（光速小）并被反射时，反射光相位突变 π，相当于多走半个波长。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    }
+   ],
+   "stepTimes": {
+    "1": 686.61,
+    "2": 695.04,
+    "3": 701.13,
+    "4": 708.83,
+    "5": 716.65,
+    "6": 725.14
+   },
+   "t_start": 686.61,
+   "t_end": 732.31,
+   "duration": 45.7,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 708.83,
+     "end": 713.83
+    }
+   ],
+   "interactions": [
+    {
+     "t": 725.14,
+     "q": "劳埃德镜实验中，屏与镜面接触的 O 点为什么是暗纹？",
+     "answer": 1,
+     "options": [
+      "两束光的光程差恰好为零",
+      "反射光有半波损失，光程差为 λ/2",
+      "两束光的强度不相等"
+     ],
+     "explain": "O 点处两束光的几何路程相等，但反射光相位突变 π，相当于附加 λ/2 的光程差，所以叠加后相消，出现暗纹。"
+    }
+   ]
+  },
+  {
+   "id": 21,
+   "kind": "page",
+   "heading": "例4　题",
+   "narration": "例四。离湖面 h 等于 0.5 米处有一个电磁波接收器 C。射电星从地平线渐渐升起时，接收器断断续续检测到一系列极大值。已知波长 20 厘米，求第一次测到极大值时，射电星的方位与湖面的夹角。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例4　湖面反射",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 1580,
+     "h": 130,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "离湖面 h = 0.5 m 处有一接收器 C．射电星从地平线渐渐升起，接收器断续测到一系列极大值．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 400,
+     "w": 1580,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "已知射电星发射的电磁波波长 λ = 20.0 cm，",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "求第一次测到极大值时，射电星方位与湖面的夹角．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 3,
+     "x": 520,
+     "y": 548,
+     "w": 880,
+     "h": 448,
+     "name": "lloyd_lake"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 733.11,
+    "2": 740.82,
+    "3": 747.72
+   },
+   "t_start": 733.11,
+   "t_end": 755.41,
+   "duration": 22.3,
+   "laser": []
+  },
+  {
+   "id": 22,
+   "kind": "page",
+   "heading": "例4　解",
+   "narration": "直射光和反射光的光程差，要加上半波损失。Δr 等于 AC 减 BC 加 λ/2，而 AC 减 BC 等于 AC 乘以 1 减 cos2α。又因为 AC 等于 h 除以 sinα，代入得到 Δr 的表达式。极大时 Δr 等于 kλ，整理得 sinα 等于 2k 减 1 乘以 λ 除以 4h。第一次出现极大值取 k 等于 1：α₁ 等于 arcsin(λ/4h)。代入 λ 等于 0.2 米、h 等于 0.5 米，得 5.74 度。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例4　解",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "直射光与反射光的光程差（含半波损失）：",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 300,
+     "y": 330,
+     "w": 1320,
+     "h": 170,
+     "tex": "\\Delta r=AC-BC+\\dfrac{\\lambda}{2}=AC(1-\\cos2\\alpha)+\\dfrac{\\lambda}{2}",
+     "size": 34,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 300,
+     "y": 510,
+     "w": 1320,
+     "h": 130,
+     "tex": "AC=\\dfrac{h}{\\sin\\alpha}",
+     "size": 36,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 660,
+     "w": 1580,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "极大时 Δr = kλ，整理得：",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 300,
+     "y": 740,
+     "w": 1320,
+     "h": 130,
+     "tex": "\\sin\\alpha=\\dfrac{(2k-1)\\lambda}{4h}",
+     "size": 38,
+     "color": "#0000CD",
+     "align": "center"
+    },
+    {
+     "type": "tex",
+     "step": 6,
+     "x": 300,
+     "y": 880,
+     "w": 1320,
+     "h": 110,
+     "tex": "k=1:\\ \\alpha_1=\\arcsin\\dfrac{\\lambda}{4h}=\\arcsin\\dfrac{0.200}{4\\times0.5}=5.74^\\circ",
+     "size": 34,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 1400,
+     "y": 240,
+     "w": 350,
+     "h": 160,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 10,
+     "paras": [
+      [
+       {
+        "t": "答案",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "α₁ = 5.74°",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 756.21,
+    "2": 761.29,
+    "3": 770.35,
+    "4": 777.04,
+    "5": 785.77,
+    "6": 792.17
+   },
+   "t_start": 756.21,
+   "t_end": 798.98,
+   "duration": 42.77,
+   "laser": []
+  },
+  {
+   "id": 23,
+   "kind": "page",
+   "heading": "本节小结",
+   "narration": "小结。第一条，波程差 Δr 约等于 d 乘以 x 除以 d′，这是双缝干涉的核心近似。第二条，明纹 x 等于 k d′λ 除以 d，暗纹是半波长的奇数倍；条纹间距 Δx 等于 d′λ 除以 d。第三条，光程 L 等于 nr，光程差 Δ 等于 n₂r₂ 减 n₁r₁，相位差 2πΔ/λ。第四条，劳埃德镜的反射光有半波损失，接触处 O 点是暗纹。记住这条主线：波程差、明暗条件、条纹间距。下一节，我们用薄膜的上下表面反射，讲薄膜干涉。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 760,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 波程差：Δr ≈ d x/d′，明暗由 Δr 与 λ 的关系决定．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 400,
+     "w": 760,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 条纹间距：Δx = d′λ/d（λ、d′ 越大越宽，d 越大越密）．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1000,
+     "y": 240,
+     "w": 750,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 光程 L = nr；光程差 Δ = n₂r₂ − n₁r₁；Δφ = 2πΔ/λ．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1000,
+     "y": 400,
+     "w": 750,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 劳埃德镜：反射光有半波损失，O 点出现暗纹．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 590,
+     "w": 1580,
+     "h": 96,
+     "fill": "#EDF3FB",
+     "line": "#EDF3FB",
+     "lw": 3,
+     "radius": 8,
+     "paras": [
+      [
+       {
+        "t": "双缝干涉三件套：波程差 → 明暗条件 → 条纹间距 Δx = d′λ/d．",
+        "size": 30,
+        "color": "#24456C",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 720,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "下一节：薄膜干涉——用振幅分割法，把一束光分成两束再叠加．",
+        "size": 33,
+        "color": "#0000CD",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 799.78,
+    "2": 810.2,
+    "3": 819.94,
+    "4": 828.67,
+    "5": 835.31,
+    "6": 841.06
+   },
+   "t_start": 799.78,
+   "t_end": 847.35,
+   "duration": 47.57,
+   "laser": []
+  }
+ ],
+ "subtitles": [
+  {
+   "slide": 1,
+   "start": 0.0,
+   "end": 2.57,
+   "text": "第十一章，光学。"
+  },
+  {
+   "slide": 1,
+   "start": 2.97,
+   "end": 7.41,
+   "text": "第二节，杨氏双缝干涉和劳埃德镜。"
+  },
+  {
+   "slide": 1,
+   "start": 7.81,
+   "end": 18.61,
+   "text": "这一节把 11-1 的分波阵面法算到底：先推条纹位置和间距，再讲光程与光程差，最后看劳埃德镜和半波损失。"
+  },
+  {
+   "slide": 2,
+   "start": 19.98,
+   "end": 30.49,
+   "text": "先看实验装置：单缝 S 发出的光照到双缝 S₁、S₂ 上；S₁、S₂ 是同一个波阵面上的两点，发出的两列波是相干的。"
+  },
+  {
+   "slide": 2,
+   "start": 30.89,
+   "end": 37.51,
+   "text": "屏上任意一点 P，两束光走的路程不同，光程差决定它是亮还是暗。"
+  },
+  {
+   "slide": 2,
+   "start": 37.91,
+   "end": 44.27,
+   "text": "实验里缝距 d 只有零点几毫米，屏距 d′ 却有一米左右，d 远小于 d′。"
+  },
+  {
+   "slide": 3,
+   "start": 45.64,
+   "end": 47.85,
+   "text": "先算波程差。"
+  },
+  {
+   "slide": 3,
+   "start": 48.25,
+   "end": 52.28,
+   "text": "P 点到两缝的距离分别是 r₁ 和 r₂。"
+  },
+  {
+   "slide": 3,
+   "start": 52.68,
+   "end": 57.5,
+   "text": "它们的差就是波程差：Δr 等于 r₂ 减 r₁。"
+  },
+  {
+   "slide": 3,
+   "start": 57.9,
+   "end": 62.96,
+   "text": "实验里 d 远小于 d′，两束光可以看成平行光。"
+  },
+  {
+   "slide": 3,
+   "start": 63.36,
+   "end": 71.81,
+   "text": "从 S₁ 向 r₂ 作垂线，多出来的那一段就是 d sinθ，所以 Δr 约等于 d sinθ。"
+  },
+  {
+   "slide": 3,
+   "start": 72.21,
+   "end": 80.18,
+   "text": "再用屏上的坐标：P 到中心 O 的距离是 x，θ 是中心轴和到 P 的连线的夹角。"
+  },
+  {
+   "slide": 3,
+   "start": 80.58,
+   "end": 86.92,
+   "text": "因为 θ 很小，sinθ 约等于 tanθ，等于 x 除以 d′。"
+  },
+  {
+   "slide": 3,
+   "start": 87.32,
+   "end": 94.35,
+   "text": "于是 Δr 约等于 d 乘以 x 除以 d′——这是双缝干涉最核心的近似。"
+  },
+  {
+   "slide": 4,
+   "start": 96.0,
+   "end": 101.9,
+   "text": "两束光同相出发，到 P 点的波程差决定加强还是减弱。"
+  },
+  {
+   "slide": 4,
+   "start": 102.3,
+   "end": 108.25,
+   "text": "波程差等于波长的整数倍时，两束光同相叠加，干涉加强。"
+  },
+  {
+   "slide": 4,
+   "start": 108.65,
+   "end": 115.78,
+   "text": "写成式子就是 Δr 等于正负 kλ，k 取零、一、二，等等。"
+  },
+  {
+   "slide": 4,
+   "start": 116.18,
+   "end": 122.3,
+   "text": "波程差等于半波长的奇数倍时，两束光反相叠加，干涉减弱。"
+  },
+  {
+   "slide": 4,
+   "start": 122.7,
+   "end": 128.6,
+   "text": "写成式子就是 Δr 等于正负 2k 加 1 乘以二分之 λ。"
+  },
+  {
+   "slide": 4,
+   "start": 129.0,
+   "end": 135.17,
+   "text": "k 叫级次，k 等于零对应中央明纹，k 等于一对应第一级明纹。"
+  },
+  {
+   "slide": 4,
+   "start": 135.57,
+   "end": 138.79,
+   "text": "正负号表示中央两侧对称。"
+  },
+  {
+   "slide": 5,
+   "start": 140.38,
+   "end": 145.25,
+   "text": "把波程差代进明暗条件，就得到条纹在屏上的位置。"
+  },
+  {
+   "slide": 5,
+   "start": 145.65,
+   "end": 151.05,
+   "text": "明纹的位置是 x 等于正负 k 乘以 d′ 比 d 再乘 λ。"
+  },
+  {
+   "slide": 5,
+   "start": 151.45,
+   "end": 157.86,
+   "text": "暗纹的位置是 x 等于正负 2k 加 1 乘以 d′ 比上 2d 再乘 λ。"
+  },
+  {
+   "slide": 5,
+   "start": 158.26,
+   "end": 165.6,
+   "text": "相邻两条明纹中心的距离叫条纹间距：Δx 等于 d′ 除以 d 再乘 λ。"
+  },
+  {
+   "slide": 5,
+   "start": 166.0,
+   "end": 171.21,
+   "text": "注意，条纹是等间距的，而且关于中央明纹对称。"
+  },
+  {
+   "slide": 5,
+   "start": 171.61,
+   "end": 177.18,
+   "text": "看右边的条纹图：级次越高位置越远，但间距不变。"
+  },
+  {
+   "slide": 5,
+   "start": 177.58,
+   "end": 183.48,
+   "text": "这个式子说明：测出 Δx、d、d′，就能算出波长。"
+  },
+  {
+   "slide": 6,
+   "start": 185.08,
+   "end": 189.54,
+   "text": "如果用白光做光源，中央那条明纹是白色的。"
+  },
+  {
+   "slide": 6,
+   "start": 189.94,
+   "end": 195.63,
+   "text": "因为白光包含各种波长，每条明纹的位置都随波长变化。"
+  },
+  {
+   "slide": 6,
+   "start": 196.03,
+   "end": 201.91,
+   "text": "λ 大的红光，条纹间距大；λ 小的紫光，条纹间距小。"
+  },
+  {
+   "slide": 6,
+   "start": 202.31,
+   "end": 207.97,
+   "text": "在中央 k 等于零处，各色光的零级明纹重合，所以是白色。"
+  },
+  {
+   "slide": 6,
+   "start": 208.37,
+   "end": 213.0,
+   "text": "离开中央，各色光的同级明纹逐渐错开。"
+  },
+  {
+   "slide": 6,
+   "start": 213.4,
+   "end": 218.54,
+   "text": "于是形成彩色条纹：内侧偏紫，外侧偏红。"
+  },
+  {
+   "slide": 7,
+   "start": 220.08,
+   "end": 224.62,
+   "text": "Δx 等于 d′λ 除以 d，可以回答三个问题。"
+  },
+  {
+   "slide": 7,
+   "start": 225.02,
+   "end": 231.04,
+   "text": "λ 变大，条纹间距变大；所以红光条纹比紫光宽。"
+  },
+  {
+   "slide": 7,
+   "start": 231.44,
+   "end": 237.15,
+   "text": "缝间距 d 变小，条纹变宽；d 变大，条纹变密。"
+  },
+  {
+   "slide": 7,
+   "start": 237.55,
+   "end": 240.91,
+   "text": "屏距 d′ 变大，条纹也变宽。"
+  },
+  {
+   "slide": 7,
+   "start": 241.31,
+   "end": 247.45,
+   "text": "想一想：把双缝间距增大一倍，条纹间距变成原来的多少？"
+  },
+  {
+   "slide": 8,
+   "start": 249.2,
+   "end": 251.07,
+   "text": "例一。"
+  },
+  {
+   "slide": 8,
+   "start": 251.47,
+   "end": 259.92,
+   "text": "在杨氏双缝实验中，用波长 589.3 纳米的钠灯作光源，屏幕到双缝的距离 d′ 等于 800 毫米。"
+  },
+  {
+   "slide": 8,
+   "start": 260.32,
+   "end": 266.54,
+   "text": "第一问：双缝间距 d 等于 1 毫米时，相邻明纹的中心间距是多少？"
+  },
+  {
+   "slide": 8,
+   "start": 267.19,
+   "end": 272.54,
+   "text": "第二问：把缝间距改成 10 毫米，间距又是多少？"
+  },
+  {
+   "slide": 8,
+   "start": 273.19,
+   "end": 279.43,
+   "text": "解这类题，先确认三个量：λ、d、d′，再直接代公式。"
+  },
+  {
+   "slide": 8,
+   "start": 279.83,
+   "end": 284.53,
+   "text": "单位要统一：纳米换成米，毫米也换成米。"
+  },
+  {
+   "slide": 9,
+   "start": 286.1,
+   "end": 289.05,
+   "text": "先统一单位，再代公式。"
+  },
+  {
+   "slide": 9,
+   "start": 289.45,
+   "end": 293.51,
+   "text": "波长 589.3 纳米，屏距 0.8 米。"
+  },
+  {
+   "slide": 9,
+   "start": 293.91,
+   "end": 299.29,
+   "text": "第一问，d 等于 1 毫米，Δx 等于 d′λ 除以 d。"
+  },
+  {
+   "slide": 9,
+   "start": 299.69,
+   "end": 305.23,
+   "text": "算出来是 4.71 乘 10 的负 4 次方米，约 0.47 毫米。"
+  },
+  {
+   "slide": 9,
+   "start": 305.63,
+   "end": 308.53,
+   "text": "第二问，d 等于 10 毫米。"
+  },
+  {
+   "slide": 9,
+   "start": 308.93,
+   "end": 312.55,
+   "text": "同样代公式，得到 0.047 毫米。"
+  },
+  {
+   "slide": 9,
+   "start": 312.95,
+   "end": 319.81,
+   "text": "缝间距增大十倍，条纹间距就减小到十分之一，和公式完全一致。"
+  },
+  {
+   "slide": 10,
+   "start": 321.41,
+   "end": 323.28,
+   "text": "例二。"
+  },
+  {
+   "slide": 10,
+   "start": 323.68,
+   "end": 329.92,
+   "text": "单色光照射到相距 0.2 毫米的双缝上，双缝到屏幕的距离是 1 米。"
+  },
+  {
+   "slide": 10,
+   "start": 330.32,
+   "end": 337.54,
+   "text": "第一问：从第一级明纹到同侧第四级明纹的距离是 7.5 毫米，求波长。"
+  },
+  {
+   "slide": 10,
+   "start": 337.94,
+   "end": 345.43,
+   "text": "第二问：若入射光波长是 600 纳米，中央明纹中心到最近暗纹中心的距离是多少？"
+  },
+  {
+   "slide": 10,
+   "start": 346.08,
+   "end": 352.63,
+   "text": "提示：第 k 级明纹的位置 x_k 等于 k 乘以 d′λ 除以 d。"
+  },
+  {
+   "slide": 10,
+   "start": 353.03,
+   "end": 358.12,
+   "text": "第二问考的是中央到最近暗纹，不是相邻两条明纹。"
+  },
+  {
+   "slide": 11,
+   "start": 359.67,
+   "end": 361.85,
+   "text": "第一问用级次差。"
+  },
+  {
+   "slide": 11,
+   "start": 362.25,
+   "end": 368.23,
+   "text": "第 k 级明纹位置是 x_k 等于正负 k d′λ 除以 d。"
+  },
+  {
+   "slide": 11,
+   "start": 368.63,
+   "end": 372.78,
+   "text": "第一级到第四级，间隔是 3 个条纹间距。"
+  },
+  {
+   "slide": 11,
+   "start": 373.18,
+   "end": 381.03,
+   "text": "所以 λ 等于 d 除以 d′，再乘 Δx14 除以 k₄ 减 k₁，代入得 500 纳米。"
+  },
+  {
+   "slide": 11,
+   "start": 381.43,
+   "end": 386.76,
+   "text": "第二问，中央明纹到最近暗纹，距离是半个条纹间距。"
+  },
+  {
+   "slide": 11,
+   "start": 387.16,
+   "end": 391.43,
+   "text": "Δx 等于 d′λ 除以 d，等于 3 毫米。"
+  },
+  {
+   "slide": 11,
+   "start": 391.83,
+   "end": 394.4,
+   "text": "一半就是 1.5 毫米。"
+  },
+  {
+   "slide": 12,
+   "start": 395.99,
+   "end": 398.32,
+   "text": "下面看光强分布。"
+  },
+  {
+   "slide": 12,
+   "start": 398.72,
+   "end": 404.43,
+   "text": "两束光叠加，合振幅不是简单相加，要用余弦定理。"
+  },
+  {
+   "slide": 12,
+   "start": 404.83,
+   "end": 410.09,
+   "text": "A 等于根号下 A₁² 加 A₂² 加 2A₁A₂ cos(φ₂ 减 φ₁)。"
+  },
+  {
+   "slide": 12,
+   "start": 410.49,
+   "end": 413.75,
+   "text": "其中相位差由光程差决定。"
+  },
+  {
+   "slide": 12,
+   "start": 414.15,
+   "end": 418.4,
+   "text": "φ₂ 减 φ₁ 等于 2π 乘以 Δr 除以 λ。"
+  },
+  {
+   "slide": 12,
+   "start": 418.8,
+   "end": 421.78,
+   "text": "光强正比于振幅的平方。"
+  },
+  {
+   "slide": 12,
+   "start": 422.18,
+   "end": 428.06,
+   "text": "于是 I 等于 I₁ 加 I₂ 加 2 倍根号下 I₁I₂ 乘以 cos(φ₂ 减 φ₁)。"
+  },
+  {
+   "slide": 13,
+   "start": 429.65,
+   "end": 436.08,
+   "text": "如果两缝等宽，两束光振幅相同，设都为 A₀，光强都为 I₀。"
+  },
+  {
+   "slide": 13,
+   "start": 436.48,
+   "end": 441.88,
+   "text": "公式化简成 I 等于 4I₀ 乘以 cos²(πΔr/λ)。"
+  },
+  {
+   "slide": 13,
+   "start": 442.28,
+   "end": 452.46,
+   "text": "看曲线：波程差是 λ 的整数倍时，I 等于 4I₀，最亮；波程差是半波长的奇数倍时，I 等于零，最暗。"
+  },
+  {
+   "slide": 13,
+   "start": 452.86,
+   "end": 458.07,
+   "text": "所以条纹的明暗，就是光强按余弦平方分布的结果。"
+  },
+  {
+   "slide": 14,
+   "start": 459.49,
+   "end": 466.38,
+   "text": "进入第三个问题：光在介质中传播时，干涉条件还能不能用波程差？"
+  },
+  {
+   "slide": 14,
+   "start": 467.03,
+   "end": 473.22,
+   "text": "真空中光速 c 等于根号下 ε₀μ₀ 分之一，介质中 u 等于根号下 εμ 分之一。"
+  },
+  {
+   "slide": 14,
+   "start": 473.62,
+   "end": 478.18,
+   "text": "两者之比就是折射率：n 等于 c 除以 u。"
+  },
+  {
+   "slide": 14,
+   "start": 478.58,
+   "end": 484.48,
+   "text": "频率由光源决定，进介质不变；速度变小，波长变短。"
+  },
+  {
+   "slide": 14,
+   "start": 484.88,
+   "end": 490.06,
+   "text": "介质中的波长 λ′ 等于真空波长 λ 除以 n。"
+  },
+  {
+   "slide": 14,
+   "start": 490.46,
+   "end": 495.6,
+   "text": "所以同样的几何路程，在介质中要走更多的波数。"
+  },
+  {
+   "slide": 14,
+   "start": 496.0,
+   "end": 499.38,
+   "text": "这就是要把路程折算成光程的原因。"
+  },
+  {
+   "slide": 15,
+   "start": 500.99,
+   "end": 505.93,
+   "text": "为了把介质中的路程和真空统一起来，引入光程。"
+  },
+  {
+   "slide": 15,
+   "start": 506.33,
+   "end": 512.02,
+   "text": "光在介质中走几何路程 r，光程 L 等于 n 乘以 r。"
+  },
+  {
+   "slide": 15,
+   "start": 512.42,
+   "end": 517.77,
+   "text": "它的物理意义是：把介质中的路程折算成真空中的路程。"
+  },
+  {
+   "slide": 15,
+   "start": 518.17,
+   "end": 525.68,
+   "text": "看这幅图：S₁ 在空气中走 r₁，S₂ 在介质中走 r₂，两束光在 P 点相遇。"
+  },
+  {
+   "slide": 15,
+   "start": 526.08,
+   "end": 529.7,
+   "text": "两束光的光程之差叫光程差。"
+  },
+  {
+   "slide": 15,
+   "start": 530.1,
+   "end": 536.46,
+   "text": "Δ 等于 n₂r₂ 减 n₁r₁；同一种介质里就是 n 乘以路程差。"
+  },
+  {
+   "slide": 15,
+   "start": 536.86,
+   "end": 542.28,
+   "text": "有了光程差，相位差就是 2π 乘以 Δ 除以 λ。"
+  },
+  {
+   "slide": 16,
+   "start": 543.89,
+   "end": 549.0,
+   "text": "有了光程差，干涉条件可以统一写成光程差的形式。"
+  },
+  {
+   "slide": 16,
+   "start": 549.4,
+   "end": 553.79,
+   "text": "光程差等于波长整数倍时，干涉加强。"
+  },
+  {
+   "slide": 16,
+   "start": 554.19,
+   "end": 558.25,
+   "text": "写成式子：Δ 等于正负 kλ。"
+  },
+  {
+   "slide": 16,
+   "start": 558.65,
+   "end": 563.23,
+   "text": "光程差等于半波长奇数倍时，干涉减弱。"
+  },
+  {
+   "slide": 16,
+   "start": 563.63,
+   "end": 569.34,
+   "text": "写成式子：Δ 等于正负 2k 加 1 乘以二分之 λ。"
+  },
+  {
+   "slide": 16,
+   "start": 569.74,
+   "end": 576.41,
+   "text": "换成相位差，就是正负 2kπ 加强，正负 2k 加 1 乘以 π 减弱。"
+  },
+  {
+   "slide": 16,
+   "start": 576.81,
+   "end": 584.18,
+   "text": "注意：同一种介质里，光程差和波程差相等；跨介质时必须用光程差。"
+  },
+  {
+   "slide": 17,
+   "start": 585.78,
+   "end": 587.65,
+   "text": "例三。"
+  },
+  {
+   "slide": 17,
+   "start": 588.05,
+   "end": 592.27,
+   "text": "波长 550 纳米的单色光垂直照射双缝。"
+  },
+  {
+   "slide": 17,
+   "start": 592.67,
+   "end": 599.56,
+   "text": "用一块厚度 e 等于 6.6 微米、折射率 n 等于 1.58 的云母片，盖在上缝上。"
+  },
+  {
+   "slide": 17,
+   "start": 599.96,
+   "end": 603.51,
+   "text": "问：屏上条纹有什么变化？"
+  },
+  {
+   "slide": 17,
+   "start": 604.16,
+   "end": 607.86,
+   "text": "中央 O 点现在是明纹还是暗纹？"
+  },
+  {
+   "slide": 17,
+   "start": 608.51,
+   "end": 614.17,
+   "text": "看装置：云母片盖在上缝 S₁ 上，两束光在 O 点相遇。"
+  },
+  {
+   "slide": 18,
+   "start": 615.74,
+   "end": 621.33,
+   "text": "云母片使 S₁ 这束光多走了 (n 减 1) 乘以 e 的光程。"
+  },
+  {
+   "slide": 18,
+   "start": 621.73,
+   "end": 628.16,
+   "text": "O 点原来两束光光程相等，现在光程差变成 (n 减 1)e。"
+  },
+  {
+   "slide": 18,
+   "start": 628.56,
+   "end": 634.46,
+   "text": "算一下级次：k 等于 (n 减 1)e 除以 λ。"
+  },
+  {
+   "slide": 18,
+   "start": 634.86,
+   "end": 639.35,
+   "text": "代入数值，k 约等于 6.96，取 7。"
+  },
+  {
+   "slide": 18,
+   "start": 639.75,
+   "end": 647.6,
+   "text": "所以 O 点现在是第七级明纹，整个条纹图样向上、也就是向 S₁ 一侧平移 7 个间距。"
+  },
+  {
+   "slide": 18,
+   "start": 648.0,
+   "end": 653.93,
+   "text": "记住：条纹平移的方向，总是指向被云母片挡住的那条缝一侧。"
+  },
+  {
+   "slide": 19,
+   "start": 655.47,
+   "end": 659.36,
+   "text": "第四个问题：缝宽对条纹有什么影响？"
+  },
+  {
+   "slide": 19,
+   "start": 660.01,
+   "end": 665.72,
+   "text": "实验结果：缝宽增大，条纹变模糊，最后完全消失。"
+  },
+  {
+   "slide": 19,
+   "start": 666.12,
+   "end": 670.37,
+   "text": "看这三幅条纹：缝越宽，对比度越低。"
+  },
+  {
+   "slide": 19,
+   "start": 670.77,
+   "end": 676.51,
+   "text": "原因是缝宽增大后，缝上各点发出的光相位不再一致。"
+  },
+  {
+   "slide": 19,
+   "start": 676.91,
+   "end": 685.12,
+   "text": "只有缝足够窄，S₁、S₂ 才能近似看作两个同相的点光源——这就是光的空间相干性。"
+  },
+  {
+   "slide": 20,
+   "start": 686.61,
+   "end": 688.96,
+   "text": "最后看劳埃德镜。"
+  },
+  {
+   "slide": 20,
+   "start": 689.36,
+   "end": 694.64,
+   "text": "它用一块平面镜，把一束光分成直射和反射两束。"
+  },
+  {
+   "slide": 20,
+   "start": 695.04,
+   "end": 700.73,
+   "text": "反射光相当于从虚光源 S₂ 发出，与 S₁ 构成一对相干光源。"
+  },
+  {
+   "slide": 20,
+   "start": 701.13,
+   "end": 708.43,
+   "text": "关键在反射：光从光速大的介质射向光速小的介质时，反射光相位突变 π。"
+  },
+  {
+   "slide": 20,
+   "start": 708.83,
+   "end": 716.25,
+   "text": "这叫半波损失，反射光要多算半个波长：Δ 等于 r₂ 减 r₁ 加 λ/2。"
+  },
+  {
+   "slide": 20,
+   "start": 716.65,
+   "end": 724.74,
+   "text": "按几何光程，接触处 O 点应该是明纹；实验看到的却是暗纹——这只能用半波损失解释。"
+  },
+  {
+   "slide": 20,
+   "start": 725.14,
+   "end": 731.26,
+   "text": "想一想：劳埃德镜实验中，屏与镜面接触的 O 点为什么是暗纹？"
+  },
+  {
+   "slide": 21,
+   "start": 733.11,
+   "end": 734.98,
+   "text": "例四。"
+  },
+  {
+   "slide": 21,
+   "start": 735.38,
+   "end": 740.42,
+   "text": "离湖面 h 等于 0.5 米处有一个电磁波接收器 C。"
+  },
+  {
+   "slide": 21,
+   "start": 740.82,
+   "end": 747.32,
+   "text": "射电星从地平线渐渐升起时，接收器断断续续检测到一系列极大值。"
+  },
+  {
+   "slide": 21,
+   "start": 747.72,
+   "end": 754.78,
+   "text": "已知波长 20 厘米，求第一次测到极大值时，射电星的方位与湖面的夹角。"
+  },
+  {
+   "slide": 22,
+   "start": 756.21,
+   "end": 760.89,
+   "text": "直射光和反射光的光程差，要加上半波损失。"
+  },
+  {
+   "slide": 22,
+   "start": 761.29,
+   "end": 769.95,
+   "text": "Δr 等于 AC 减 BC 加 λ/2，而 AC 减 BC 等于 AC 乘以 1 减 cos2α。"
+  },
+  {
+   "slide": 22,
+   "start": 770.35,
+   "end": 776.64,
+   "text": "又因为 AC 等于 h 除以 sinα，代入得到 Δr 的表达式。"
+  },
+  {
+   "slide": 22,
+   "start": 777.04,
+   "end": 785.37,
+   "text": "极大时 Δr 等于 kλ，整理得 sinα 等于 2k 减 1 乘以 λ 除以 4h。"
+  },
+  {
+   "slide": 22,
+   "start": 785.77,
+   "end": 791.77,
+   "text": "第一次出现极大值取 k 等于 1：α₁ 等于 arcsin(λ/4h)。"
+  },
+  {
+   "slide": 22,
+   "start": 792.17,
+   "end": 798.24,
+   "text": "代入 λ 等于 0.2 米、h 等于 0.5 米，得 5.74 度。"
+  },
+  {
+   "slide": 23,
+   "start": 799.78,
+   "end": 801.65,
+   "text": "小结。"
+  },
+  {
+   "slide": 23,
+   "start": 802.05,
+   "end": 809.8,
+   "text": "第一条，波程差 Δr 约等于 d 乘以 x 除以 d′，这是双缝干涉的核心近似。"
+  },
+  {
+   "slide": 23,
+   "start": 810.2,
+   "end": 819.54,
+   "text": "第二条，明纹 x 等于 k d′λ 除以 d，暗纹是半波长的奇数倍；条纹间距 Δx 等于 d′λ 除以 d。"
+  },
+  {
+   "slide": 23,
+   "start": 819.94,
+   "end": 828.27,
+   "text": "第三条，光程 L 等于 nr，光程差 Δ 等于 n₂r₂ 减 n₁r₁，相位差 2πΔ/λ。"
+  },
+  {
+   "slide": 23,
+   "start": 828.67,
+   "end": 834.91,
+   "text": "第四条，劳埃德镜的反射光有半波损失，接触处 O 点是暗纹。"
+  },
+  {
+   "slide": 23,
+   "start": 835.31,
+   "end": 840.66,
+   "text": "记住这条主线：波程差、明暗条件、条纹间距。"
+  },
+  {
+   "slide": 23,
+   "start": 841.06,
+   "end": 846.56,
+   "text": "下一节，我们用薄膜的上下表面反射，讲薄膜干涉。"
+  }
+ ],
+ "build_ts": 1792544699,
+ "logoScale": 0.67
+}

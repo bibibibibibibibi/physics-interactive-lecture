@@ -1,0 +1,2606 @@
+{
+ "title": "15-9 氢原子的量子理论简介",
+ "nav": "15-9　氢原子的量子理论",
+ "footer": "第十五章　量子物理",
+ "character": "aqiang",
+ "characters": [
+  {
+   "id": "aqiang",
+   "name": "阿强"
+  },
+  {
+   "id": "professor",
+   "name": "博士讲师"
+  },
+  {
+   "id": "zhongshan",
+   "name": "中山装先生"
+  }
+ ],
+ "duration": 285.0,
+ "slides": [
+  {
+   "id": 1,
+   "kind": "page",
+   "heading": "封面",
+   "narration": "第十五章第九节。15-9，氢原子的量子理论简介。上一节的势阱是「一维」的，这一节把它换成真正的氢原子——三维、有库仑势。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 282,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 十 五 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 300,
+     "y": 408,
+     "w": 1320,
+     "h": 170,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "量 子 物 理",
+        "size": 92,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 250,
+     "y": 588,
+     "w": 1420,
+     "h": 120,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "15-9　氢原子的量子理论简介",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 220,
+     "y": 730,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "球坐标　·　四个量子数　·　空间量子化　·　电子云",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 850,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "把「轨道」换成「概率云」",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 0.0,
+    "2": 2.85,
+    "3": 7.21
+   },
+   "t_start": 0.0,
+   "t_end": 15.12,
+   "duration": 15.12,
+   "laser": []
+  },
+  {
+   "id": 2,
+   "kind": "page",
+   "heading": "本节路线",
+   "narration": "本节路线。先写出氢原子的薛定谔方程，用球坐标分离变量。解出来会自然给出几个量子数：主量子数、角量子数、磁量子数。再加上自旋，一共四个。最后看基态波函数和电子的概率分布。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节路线",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 244,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "主线：方程 → 三个量子数 → 自旋 → 四个量子数 → 电子云",
+        "size": 24,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1　氢原子方程",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 386,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "球坐标 + 分离变量",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 458,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2　三个量子数",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 512,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "n、l、$m_l$",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 584,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "3　再加自旋",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 638,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "共四个量子数",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 330,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4　基态与概率分布",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 386,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电子云",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 470,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "和玻尔理论的区别",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "玻尔：确定的圆轨道",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "量子力学：概率云",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "没有「轨道」这回事",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 770,
+     "w": 1580,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "本节收口：量子数不是假设，是解方程「解」出来的",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 15.92,
+    "2": 18.19,
+    "3": 23.82,
+    "4": 31.11,
+    "5": 34.61
+   },
+   "t_start": 15.92,
+   "t_end": 39.54,
+   "duration": 23.62,
+   "laser": []
+  },
+  {
+   "id": 3,
+   "kind": "page",
+   "heading": "一　氢原子的薛定谔方程",
+   "narration": "先写方程。氢原子中电子受核的库仑吸引，势能是负的 e 平方除以 4πε₀r。把它代进定态薛定谔方程，因为势能是球对称的，所以要换成球坐标。然后用分离变量法，把波函数写成径向部分乘角向部分。这样就把三维问题拆成了三个一维问题。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　氢原子的薛定谔方程",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电子在核的库仑场中运动",
+        "size": 25,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 270,
+     "w": 760,
+     "h": 110,
+     "tex": "U=-\\frac{e^2}{4\\pi\\varepsilon_0 r}",
+     "size": 24,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 410,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "势能球对称 ⇒ 换成球坐标 $(r,\\theta,\\varphi)$",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 470,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "分离变量：$\\psi=R(r)\\,Y(\\theta,\\varphi)$",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 530,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三维问题拆成三个一维方程",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 600,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "这一步是数学技巧，但它的后果很物理",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "每个方程都带边界条件，各自给出一个量子数",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 226,
+     "w": 740,
+     "h": 230,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "分离变量的意义",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "三个方程各自给出一个量子数",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 790,
+     "w": 1580,
+     "h": 110,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "三个方程 = 三个量子数，一个都不多",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 40.34,
+    "2": 42.68,
+    "3": 49.39,
+    "4": 56.08,
+    "5": 62.22
+   },
+   "t_start": 40.34,
+   "t_end": 67.29,
+   "duration": 26.95,
+   "laser": []
+  },
+  {
+   "id": 4,
+   "kind": "page",
+   "heading": "二　主量子数与能量",
+   "narration": "径向方程给出的第一个量子数是主量子数 n，取正整数。它决定能量：E 等于负 13.6 除以 n 平方电子伏特。这和玻尔理论的结果一模一样。但来路完全不同——玻尔是假设，这里是解出来的。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　主量子数与能量",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "主量子数 $n=1,2,3\\cdots$",
+        "size": 25,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 270,
+     "w": 1580,
+     "h": 120,
+     "tex": "E_n=-\\frac{13.6}{n^2}\\ \\mathrm{eV}",
+     "size": 30,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 410,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与玻尔理论的结果完全一致",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 470,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "但来路不同：一个是假设，一个是解方程",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 540,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "能量的负号意味着电子被束缚",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$n\\to\\infty$ 时 $E\\to0$，电子电离",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 710,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这个「巧合」本身就是量子力学正确的有力证据",
+        "size": 24,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 1010,
+     "y": 226,
+     "w": 740,
+     "h": 230,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "这一条有多硬",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "13.6 eV 从假设变成了计算",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 790,
+     "w": 1580,
+     "h": 110,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "这个「巧合」本身就是量子力学正确的有力证据",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 68.09,
+    "2": 74.3,
+    "3": 80.24,
+    "4": 83.64
+   },
+   "t_start": 68.09,
+   "t_end": 89.02,
+   "duration": 20.93,
+   "laser": []
+  },
+  {
+   "id": 5,
+   "kind": "page",
+   "heading": "三　角量子数与角动量",
+   "narration": "角向方程给出角量子数 l。它决定角动量的大小：L 等于根号下 l 乘 l 加 1，再乘 ħ。注意 l 的取值受 n 限制：只能取 0 到 n 减 1。所以 n 等于 2 时，l 只能是 0 或 1。角动量不能为零以外的任意值，这也是量子化的。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　角量子数与角动量",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "角量子数 $l=0,1,2\\cdots,n-1$",
+        "size": 25,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 270,
+     "w": 1580,
+     "h": 120,
+     "tex": "L=\\sqrt{l(l+1)}\\,\\hbar",
+     "size": 30,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 410,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "取值受 $n$ 限制",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 470,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$n=2$ ⇒ $l=0$ 或 $1$",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 530,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "角动量也是量子化的",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 600,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "注意：$L$ 不等于 $l\\hbar$",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$l=0$ 时 $L=0$，但电子仍在运动 —— 这是经典图像失效的标志",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 226,
+     "w": 740,
+     "h": 230,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "注意",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "L=0 时电子仍在运动",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 790,
+     "w": 1580,
+     "h": 110,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "经典轨道图像，从这里开始失效",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 89.82,
+    "2": 93.63,
+    "3": 100.34,
+    "4": 105.2,
+    "5": 109.94
+   },
+   "t_start": 89.82,
+   "t_end": 115.12,
+   "duration": 25.3,
+   "laser": []
+  },
+  {
+   "id": 6,
+   "kind": "page",
+   "heading": "四　磁量子数与空间量子化",
+   "narration": "第三个是磁量子数 m_l，它决定角动量在磁场方向上的投影。把氢原子放进外磁场，角动量的方向不能再任意取了。它在外磁场方向的投影只能是 m_l 乘 ħ，m_l 取负 l 到正 l 之间的整数。一共 2l 加 1 个取向，这叫空间量子化。它在实验上的表现，就是谱线分裂——正常塞曼效应。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　磁量子数与空间量子化",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 415,
+     "name": "space_quantization"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁量子数 $m_l=0,\\pm1,\\cdots,\\pm l$",
+        "size": 24,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 286,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "外磁场中，方向不再任意",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 330,
+     "w": 740,
+     "h": 100,
+     "tex": "L_z=m_l\\hbar",
+     "size": 26,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 450,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "共 $2l+1$ 个取向 = 空间量子化",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 510,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "实验表现：谱线分裂（塞曼效应）",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 580,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "空间量子化不是数学游戏 —— 磁场里的谱线确实会分裂",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "这是量子力学最直观的验证之一",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 790,
+     "w": 1580,
+     "h": 110,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "空间量子化：磁场把「方向」也量子化了",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 115.92,
+    "2": 122.92,
+    "3": 128.53,
+    "4": 137.38,
+    "5": 142.12
+   },
+   "t_start": 115.92,
+   "t_end": 147.89,
+   "duration": 31.97,
+   "laser": []
+  },
+  {
+   "id": 7,
+   "kind": "page",
+   "heading": "五　自旋",
+   "narration": "第四个量子数是自旋。斯特恩-格拉赫实验发现，即使 l 等于零，角动量也不为零——电子还有一种「内禀」的角动量。它叫自旋，量子数 s 等于二分之一。在外磁场方向的投影只有两个值：正二分之一和负二分之一，对应 m_s 等于 ±1/2。自旋是纯量子的，没有经典对应——别把它想成「电子在自转」。想一想：为什么自旋只有两个取向？",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五　自旋",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第四个量子数：自旋",
+        "size": 25,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 286,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "斯特恩-格拉赫实验：$l=0$ 时角动量仍不为零",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 330,
+     "w": 1580,
+     "h": 110,
+     "tex": "S=\\sqrt{s(s+1)}\\,\\hbar,\\quad s=\\tfrac12",
+     "size": 24,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 460,
+     "w": 1580,
+     "h": 100,
+     "tex": "m_s=\\pm\\tfrac12",
+     "size": 28,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 580,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "自旋是纯量子的，没有经典对应",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 650,
+     "w": 1580,
+     "h": 140,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "别把自旋想成「电子在自转」",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "它是一个内禀自由度，就像电荷一样，是电子的固有属性",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 148.69,
+    "2": 151.71,
+    "3": 160.32,
+    "4": 164.9,
+    "5": 174.32
+   },
+   "t_start": 148.69,
+   "t_end": 185.17,
+   "duration": 36.48,
+   "laser": []
+  },
+  {
+   "id": 8,
+   "kind": "page",
+   "heading": "六　四个量子数小结",
+   "narration": "把四个量子数放在一起。主量子数 n 决定能量，也决定「壳层」。角量子数 l 决定轨道角动量的大小，也决定「亚壳层」。磁量子数 m_l 决定角动量的方向，自旋量子数 m_s 决定自旋的方向。所以一个电子的状态，由这四个数完全确定。这就是下一节讲电子分布的基础。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "六　四个量子数小结",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一个电子的状态 = 四个量子数 $(n,l,m_l,m_s)$",
+        "size": 24,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 170,
+     "y": 290,
+     "w": 760,
+     "h": 170,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "主量子数 $n$",
+        "size": 23,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "决定能量",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$n=1,2,3\\cdots$（壳层 K,L,M…）",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 1010,
+     "y": 290,
+     "w": 740,
+     "h": 170,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "角量子数 $l$",
+        "size": 23,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "决定角动量大小",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$l=0,1,\\cdots,n-1$（s,p,d…）",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 490,
+     "w": 760,
+     "h": 170,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "磁量子数 $m_l$",
+        "size": 23,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "决定角动量方向",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$m_l=0,\\pm1,\\cdots,\\pm l$",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 490,
+     "w": 740,
+     "h": 170,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "自旋磁量子数 $m_s$",
+        "size": 23,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "决定自旋方向",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$m_s=\\pm\\tfrac12$",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 700,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这四个数，就是下一节「电子怎么排布」的全部规则",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 770,
+     "w": 1580,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "泡利原理会限制：没有两个电子可以有完全相同的四个量子数",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 185.97,
+    "2": 188.87,
+    "3": 193.49,
+    "4": 199.22,
+    "5": 207.64
+   },
+   "t_start": 185.97,
+   "t_end": 216.86,
+   "duration": 30.89,
+   "laser": []
+  },
+  {
+   "id": 9,
+   "kind": "page",
+   "heading": "七　基态波函数与概率分布",
+   "narration": "最后看基态电子到底在哪。解出基态的径向波函数，它是一个指数衰减的函数。但要说「电子出现在哪」，得看径向概率密度：它等于 4πr² 乘波函数模的平方。为什么乘 r²？因为球壳的体积随 r² 增长。不妨算一下：这个函数在 r 等于 a₀ 处最大。所以玻尔半径不是「轨道半径」，而是电子最可能出现的距离。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "七　基态波函数与概率分布",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 415,
+     "name": "radial_prob"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电子到底在哪？",
+        "size": 25,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 286,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "径向波函数：指数衰减",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 346,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "径向概率密度 $p(r)=4\\pi r^2|R|^2$",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 406,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "乘 $r^2$ 是因为球壳体积随 $r^2$ 长",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 466,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "在 $r=a_0$ 处最大",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 526,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$a_0$ 不是轨道半径，是最可能距离",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 600,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "所以「电子云」这个词很贴切：电子并没有固定的位置",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "它只是一团概率分布，玻尔半径处最密",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 790,
+     "w": 1580,
+     "h": 110,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "玻尔半径 = 电子最可能出现的距离",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 217.66,
+    "2": 221.49,
+    "3": 227.1,
+    "4": 235.35,
+    "5": 242.5,
+    "6": 247.51
+   },
+   "t_start": 217.66,
+   "t_end": 254.12,
+   "duration": 36.46,
+   "laser": []
+  },
+  {
+   "id": 10,
+   "kind": "page",
+   "heading": "本节小结",
+   "narration": "小结。解氢原子的薛定谔方程，会自然得到四个量子数：n 定能量，l 定角动量，m_l 定方向，m_s 定自旋。空间量子化在磁场中表现为谱线分裂。基态电子没有轨道，只有一个概率分布，最可能在玻尔半径处。下一节讲多电子原子里的电子怎么排布。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 四个量子数",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$n$、$l$、$m_l$、$m_s$",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 各自决定什么",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 408,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "能量 · 角动量 · 方向 · 自旋",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 空间量子化",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "塞曼效应",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 356,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 电子云",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 408,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "没有轨道，只有概率",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 1010,
+     "y": 470,
+     "w": 740,
+     "h": 170,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "下一节",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "15-10　多电子原子中的电子分布",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "（选学）",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 490,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一句话",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "量子数不是规定的",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "是解方程解出来的",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "这是量子力学的力量",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 120,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "第十五章 9/15：氢原子，从「轨道」变成「电子云」",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 254.92,
+    "2": 257.19,
+    "3": 268.63,
+    "4": 273.11,
+    "5": 279.03
+   },
+   "t_start": 254.92,
+   "t_end": 283.58,
+   "duration": 28.66,
+   "laser": []
+  }
+ ],
+ "subtitles": [
+  {
+   "slide": 1,
+   "start": 0.0,
+   "end": 2.45,
+   "text": "第十五章第九节。"
+  },
+  {
+   "slide": 1,
+   "start": 2.85,
+   "end": 6.81,
+   "text": "15-9，氢原子的量子理论简介。"
+  },
+  {
+   "slide": 1,
+   "start": 7.21,
+   "end": 14.55,
+   "text": "上一节的势阱是「一维」的，这一节把它换成真正的氢原子——三维、有库仑势。"
+  },
+  {
+   "slide": 2,
+   "start": 15.92,
+   "end": 17.79,
+   "text": "本节路线。"
+  },
+  {
+   "slide": 2,
+   "start": 18.19,
+   "end": 23.42,
+   "text": "先写出氢原子的薛定谔方程，用球坐标分离变量。"
+  },
+  {
+   "slide": 2,
+   "start": 23.82,
+   "end": 30.71,
+   "text": "解出来会自然给出几个量子数：主量子数、角量子数、磁量子数。"
+  },
+  {
+   "slide": 2,
+   "start": 31.11,
+   "end": 34.21,
+   "text": "再加上自旋，一共四个。"
+  },
+  {
+   "slide": 2,
+   "start": 34.61,
+   "end": 38.86,
+   "text": "最后看基态波函数和电子的概率分布。"
+  },
+  {
+   "slide": 3,
+   "start": 40.34,
+   "end": 42.28,
+   "text": "先写方程。"
+  },
+  {
+   "slide": 3,
+   "start": 42.68,
+   "end": 48.99,
+   "text": "氢原子中电子受核的库仑吸引，势能是负的 e 平方除以 4πε₀r。"
+  },
+  {
+   "slide": 3,
+   "start": 49.39,
+   "end": 55.68,
+   "text": "把它代进定态薛定谔方程，因为势能是球对称的，所以要换成球坐标。"
+  },
+  {
+   "slide": 3,
+   "start": 56.08,
+   "end": 61.82,
+   "text": "然后用分离变量法，把波函数写成径向部分乘角向部分。"
+  },
+  {
+   "slide": 3,
+   "start": 62.22,
+   "end": 66.61,
+   "text": "这样就把三维问题拆成了三个一维问题。"
+  },
+  {
+   "slide": 4,
+   "start": 68.09,
+   "end": 73.9,
+   "text": "径向方程给出的第一个量子数是主量子数 n，取正整数。"
+  },
+  {
+   "slide": 4,
+   "start": 74.3,
+   "end": 79.84,
+   "text": "它决定能量：E 等于负 13.6 除以 n 平方电子伏特。"
+  },
+  {
+   "slide": 4,
+   "start": 80.24,
+   "end": 83.24,
+   "text": "这和玻尔理论的结果一模一样。"
+  },
+  {
+   "slide": 4,
+   "start": 83.64,
+   "end": 88.39,
+   "text": "但来路完全不同——玻尔是假设，这里是解出来的。"
+  },
+  {
+   "slide": 5,
+   "start": 89.82,
+   "end": 93.23,
+   "text": "角向方程给出角量子数 l。"
+  },
+  {
+   "slide": 5,
+   "start": 93.63,
+   "end": 99.94,
+   "text": "它决定角动量的大小：L 等于根号下 l 乘 l 加 1，再乘 ħ。"
+  },
+  {
+   "slide": 5,
+   "start": 100.34,
+   "end": 104.8,
+   "text": "注意 l 的取值受 n 限制：只能取 0 到 n 减 1。"
+  },
+  {
+   "slide": 5,
+   "start": 105.2,
+   "end": 109.54,
+   "text": "所以 n 等于 2 时，l 只能是 0 或 1。"
+  },
+  {
+   "slide": 5,
+   "start": 109.94,
+   "end": 114.43,
+   "text": "角动量不能为零以外的任意值，这也是量子化的。"
+  },
+  {
+   "slide": 6,
+   "start": 115.92,
+   "end": 122.52,
+   "text": "第三个是磁量子数 m_l，它决定角动量在磁场方向上的投影。"
+  },
+  {
+   "slide": 6,
+   "start": 122.92,
+   "end": 128.13,
+   "text": "把氢原子放进外磁场，角动量的方向不能再任意取了。"
+  },
+  {
+   "slide": 6,
+   "start": 128.53,
+   "end": 136.98,
+   "text": "它在外磁场方向的投影只能是 m_l 乘 ħ，m_l 取负 l 到正 l 之间的整数。"
+  },
+  {
+   "slide": 6,
+   "start": 137.38,
+   "end": 141.72,
+   "text": "一共 2l 加 1 个取向，这叫空间量子化。"
+  },
+  {
+   "slide": 6,
+   "start": 142.12,
+   "end": 147.21,
+   "text": "它在实验上的表现，就是谱线分裂——正常塞曼效应。"
+  },
+  {
+   "slide": 7,
+   "start": 148.69,
+   "end": 151.31,
+   "text": "第四个量子数是自旋。"
+  },
+  {
+   "slide": 7,
+   "start": 151.71,
+   "end": 159.92,
+   "text": "斯特恩-格拉赫实验发现，即使 l 等于零，角动量也不为零——电子还有一种「内禀」的角动量。"
+  },
+  {
+   "slide": 7,
+   "start": 160.32,
+   "end": 164.5,
+   "text": "它叫自旋，量子数 s 等于二分之一。"
+  },
+  {
+   "slide": 7,
+   "start": 164.9,
+   "end": 173.92,
+   "text": "在外磁场方向的投影只有两个值：正二分之一和负二分之一，对应 m_s 等于 ±1/2。"
+  },
+  {
+   "slide": 7,
+   "start": 174.32,
+   "end": 179.94,
+   "text": "自旋是纯量子的，没有经典对应——别把它想成「电子在自转」。"
+  },
+  {
+   "slide": 7,
+   "start": 180.34,
+   "end": 184.18,
+   "text": "想一想：为什么自旋只有两个取向？"
+  },
+  {
+   "slide": 8,
+   "start": 185.97,
+   "end": 188.47,
+   "text": "把四个量子数放在一起。"
+  },
+  {
+   "slide": 8,
+   "start": 188.87,
+   "end": 193.09,
+   "text": "主量子数 n 决定能量，也决定「壳层」。"
+  },
+  {
+   "slide": 8,
+   "start": 193.49,
+   "end": 198.82,
+   "text": "角量子数 l 决定轨道角动量的大小，也决定「亚壳层」。"
+  },
+  {
+   "slide": 8,
+   "start": 199.22,
+   "end": 207.24,
+   "text": "磁量子数 m_l 决定角动量的方向，自旋量子数 m_s 决定自旋的方向。"
+  },
+  {
+   "slide": 8,
+   "start": 207.64,
+   "end": 212.34,
+   "text": "所以一个电子的状态，由这四个数完全确定。"
+  },
+  {
+   "slide": 8,
+   "start": 212.74,
+   "end": 216.12,
+   "text": "这就是下一节讲电子分布的基础。"
+  },
+  {
+   "slide": 9,
+   "start": 217.66,
+   "end": 221.09,
+   "text": "最后看基态电子到底在哪。"
+  },
+  {
+   "slide": 9,
+   "start": 221.49,
+   "end": 226.7,
+   "text": "解出基态的径向波函数，它是一个指数衰减的函数。"
+  },
+  {
+   "slide": 9,
+   "start": 227.1,
+   "end": 234.95,
+   "text": "但要说「电子出现在哪」，得看径向概率密度：它等于 4πr² 乘波函数模的平方。"
+  },
+  {
+   "slide": 9,
+   "start": 235.35,
+   "end": 237.75,
+   "text": "为什么乘 r²？"
+  },
+  {
+   "slide": 9,
+   "start": 238.4,
+   "end": 242.1,
+   "text": "因为球壳的体积随 r² 增长。"
+  },
+  {
+   "slide": 9,
+   "start": 242.5,
+   "end": 247.11,
+   "text": "不妨算一下：这个函数在 r 等于 a₀ 处最大。"
+  },
+  {
+   "slide": 9,
+   "start": 247.51,
+   "end": 253.32,
+   "text": "所以玻尔半径不是「轨道半径」，而是电子最可能出现的距离。"
+  },
+  {
+   "slide": 10,
+   "start": 254.92,
+   "end": 256.79,
+   "text": "小结。"
+  },
+  {
+   "slide": 10,
+   "start": 257.19,
+   "end": 268.23,
+   "text": "解氢原子的薛定谔方程，会自然得到四个量子数：n 定能量，l 定角动量，m_l 定方向，m_s 定自旋。"
+  },
+  {
+   "slide": 10,
+   "start": 268.63,
+   "end": 272.71,
+   "text": "空间量子化在磁场中表现为谱线分裂。"
+  },
+  {
+   "slide": 10,
+   "start": 273.11,
+   "end": 278.63,
+   "text": "基态电子没有轨道，只有一个概率分布，最可能在玻尔半径处。"
+  },
+  {
+   "slide": 10,
+   "start": 279.03,
+   "end": 282.89,
+   "text": "下一节讲多电子原子里的电子怎么排布。"
+  }
+ ],
+ "build_ts": 1792634291,
+ "logoScale": 0.67,
+ "theme": "wave"
+}

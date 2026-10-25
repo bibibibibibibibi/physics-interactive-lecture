@@ -1,0 +1,2759 @@
+{
+ "title": "3-1 质点和质点系的动量定理",
+ "nav": "3-1　质点和质点系的动量定理",
+ "footer": "第三章　动量守恒定律和能量守恒定律",
+ "character": "aqiang",
+ "characters": [
+  {
+   "id": "aqiang",
+   "name": "阿强"
+  },
+  {
+   "id": "professor",
+   "name": "博士讲师"
+  },
+  {
+   "id": "zhongshan",
+   "name": "中山装先生"
+  }
+ ],
+ "duration": 634.7,
+ "slides": [
+  {
+   "id": 1,
+   "kind": "page",
+   "heading": "封面",
+   "narration": "这一段内容在第三章，动量守恒定律和能量守恒定律。3-1 先从最基本的东西讲起：冲量和动量，以及把它们联系起来的动量定理。先想一想一个问题——从比较高的地方把鸡蛋扔下来，怎样才能让它不破？",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 280,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 三 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 300,
+     "y": 410,
+     "w": 1320,
+     "h": 170,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "动量守恒定律和能量守恒定律",
+        "size": 76,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 500,
+     "y": 660,
+     "w": 920,
+     "h": 110,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "3-1　质点和质点系的动量定理",
+        "size": 56,
+        "color": "#0000CD",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 300,
+     "y": 830,
+     "w": 1320,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "思考题：从较高的地方把鸡蛋扔下来，怎样才能让它不破？",
+        "size": 40,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 2.3,
+    "2": 5.92,
+    "3": 13.54
+   },
+   "t_start": 0.0,
+   "t_end": 20.42,
+   "duration": 20.42,
+   "laser": []
+  },
+  {
+   "id": 2,
+   "kind": "page",
+   "heading": "力的累积效应",
+   "narration": "牛顿第二定律给出的其实是一个瞬时关系：某一时刻的合外力，等于质量乘该时刻的加速度。但很多问题关心的不是某一瞬间，而是力在一段时间、一段路程上的总效果。看这张图：力对时间的累积，得到的是冲量，往下走就是动量定理和动量守恒定律；力对空间的累积，得到的是功，往下走是动能定理和机械能守恒定律。这一章的两条主线，就是这么分出来的。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "力的累积效应",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 245,
+     "w": 1580,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "牛顿第二定律 ",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec F=m\\vec a$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 给出的是",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "瞬时",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "关系；很多问题关心的却是力在一段时间、一段路程上的",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "总效果",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 310,
+     "y": 400,
+     "w": 1300,
+     "h": 576,
+     "name": "mom_accum"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 21.22,
+    "2": 36.4
+   },
+   "t_start": 21.22,
+   "t_end": 55.4,
+   "duration": 34.18,
+   "laser": []
+  },
+  {
+   "id": 3,
+   "kind": "page",
+   "heading": "一　冲量与动量",
+   "narration": "先看一个质点。描述它的运动状态，除了位置和速度，我们引入动量：动量 p 等于质量乘速度，方向与速度相同，它把物体的「质量」和「运动快慢」一起装了进去。再看力对时间的累积，叫做冲量：把力在时间上积分，就是在这段时间里力持续作用的总效果；力随时间变化时，冲量就是 F–t 图曲线下的面积。注意这两个量都是矢量——冲量的方向不一定和力在某一时刻的方向相同，但它一定等于动量增量的方向。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　冲量　质点的动量定理",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 880,
+     "h": 130,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "动量",
+        "size": 46,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "　",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec p=m\\vec v$",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 395,
+     "w": 880,
+     "h": 115,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "是矢量，方向与速度的方向相同．",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 530,
+     "w": 880,
+     "h": 118,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "冲量",
+        "size": 46,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "　力对时间的累积，也是矢量：",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 200,
+     "y": 665,
+     "w": 880,
+     "h": 160,
+     "tex": "\\vec I=\\int_{t_1}^{t_2}\\vec F\\,\\mathrm{d}t",
+     "size": 48,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 850,
+     "w": 880,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "冲量的单位 N·s 与动量的单位 kg·m·s⁻¹ 相同",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 0,
+     "x": 1080,
+     "y": 250,
+     "w": 760,
+     "h": 473,
+     "name": "impulse_def"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 56.2,
+    "2": 71.21,
+    "3": 83.54
+   },
+   "t_start": 56.2,
+   "t_end": 92.75,
+   "duration": 36.55,
+   "laser": []
+  },
+  {
+   "id": 4,
+   "kind": "page",
+   "heading": "动量定理",
+   "narration": "把这两个量联系起来，就是动量定理：在给定的时间间隔内，外力作用在质点上的冲量，等于质点在此时间内动量的增量。写成公式就是 I 等于 p 二减 p 一，也等于 m v 二减 m v 一。看右图这个矢量三角形：冲量不是从原点出发的，而是从初动量的末端指向末动量的末端——这一点是初学者最容易画错的地方。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "动量定理",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 245,
+     "w": 1580,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "在给定的时间间隔内，外力作用在质点上的",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "冲量",
+        "size": 42,
+        "color": "#0A8A0A",
+        "b": true
+       },
+       {
+        "t": "，等于质点在此时间内",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "动量的增量",
+        "size": 42,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 260,
+     "y": 430,
+     "w": 1400,
+     "h": 580,
+     "name": "p_theorem"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 93.55,
+    "2": 103.69
+   },
+   "t_start": 93.55,
+   "t_end": 121.7,
+   "duration": 28.15,
+   "laser": []
+  },
+  {
+   "id": 5,
+   "kind": "page",
+   "heading": "说明　分量表示",
+   "narration": "动量定理是矢量式，用起来要写成三个分量式：I x 等于 m v 二x 减 m v 一x，y 方向和 z 方向同理。看右图：速度从 v 一变成 v 二，它的增量按 x、y 两个方向拆开，两个方向各管各的。所以有一条很实用的说明：某方向受到冲量，该方向上动量就改变；垂直方向不受冲量，那个方向的动量就不变。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "说明　分量表示",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 385,
+     "y": 250,
+     "w": 1150,
+     "h": 560,
+     "name": "impulse_comp"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 855,
+     "w": 1580,
+     "h": 115,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "某方向受到冲量，该方向上动量就改变；垂直方向不受冲量，该方向动量就不变．",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true
+    }
+   ],
+   "bullets": [
+    {
+     "text": "某方向受到冲量，该方向上动量就改变；垂直方向不受冲量，该方向动量就不变．",
+     "x": 960,
+     "y": 982,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 2
+    }
+   ],
+   "stepTimes": {
+    "1": 122.5,
+    "2": 142.91
+   },
+   "t_start": 122.5,
+   "t_end": 153.32,
+   "duration": 30.82,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 142.91,
+     "end": 147.91
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "kind": "page",
+   "heading": "二　质点系动量定理",
+   "narration": "把对象从一个质点换成一个系统。所谓质点系，就是若干个有相互作用的质点组成的整体。对其中任意一个质点，比如质量 m 一的那个，它受到两种力：系统外的物体给它的是外力 F 一，系统内另一个质点给它的是内力 F 一二；对 m 二也照样写一个方程。把两式相加之前，先记住内力的特点：F 一二和 F 二一是一对作用力与反作用力，等值反向。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　质点系的动量定理",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 245,
+     "w": 860,
+     "h": 112,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "对两质点",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "分别",
+        "size": 42,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "应用质点动量定理：",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 368,
+     "w": 860,
+     "h": 150,
+     "tex": "\\int_{t_1}^{t_2}(\\vec F_1+\\vec F_{12})\\,\\mathrm{d}t=m_1\\vec v_1-m_1\\vec v_{10}",
+     "size": 30,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 530,
+     "w": 860,
+     "h": 150,
+     "tex": "\\int_{t_1}^{t_2}(\\vec F_2+\\vec F_{21})\\,\\mathrm{d}t=m_2\\vec v_2-m_2\\vec v_{20}",
+     "size": 30,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 690,
+     "w": 860,
+     "h": 130,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\vec F_1,\\vec F_2$",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 为外力，",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec F_{12},\\vec F_{21}$",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 为内力，",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec F_{12}=-\\vec F_{21}$",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 0,
+     "x": 1070,
+     "y": 300,
+     "w": 740,
+     "h": 273,
+     "name": "sys_two_body"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 154.12,
+    "2": 163.39,
+    "3": 178.24
+   },
+   "t_start": 154.12,
+   "t_end": 187.48,
+   "duration": 33.36,
+   "laser": []
+  },
+  {
+   "id": 7,
+   "kind": "page",
+   "heading": "内力相消",
+   "narration": "因为内力 F 一二等于负的 F 二一，把刚才那两个方程相加，内力这一对就正好抵消了。剩下的是：左边只有两个外力的冲量之和，右边是 m 一 v 一加 m 二 v 二，减去 m 一 v 一零加 m 二 v 二零——这就是系统总动量的增量。结论很干脆：内力只能改变系统内某个物体的动量，但改变不了系统的总动量。这一点是本节的灵魂，也是后面动量守恒定律的直接来源。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "内力相消　两式相加",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 1580,
+     "h": 135,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "因内力 ",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\vec F_{12}=-\\vec F_{21}$",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "，两式相加时内力恰好抵消．",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 200,
+     "y": 420,
+     "w": 1520,
+     "h": 175,
+     "tex": "\\int_{t_1}^{t_2}(\\vec F_1+\\vec F_2)\\,\\mathrm{d}t=(m_1\\vec v_1+m_2\\vec v_2)-(m_1\\vec v_{10}+m_2\\vec v_{20})",
+     "size": 36,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 630,
+     "w": 1580,
+     "h": 130,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "左边只剩",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "外力的冲量",
+        "size": 42,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "，右边是系统",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "总动量的增量",
+        "size": 42,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 170,
+     "y": 790,
+     "w": 1580,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "内力仅能改变系统内某个物体的动量，",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "但不能改变系统的总动量．",
+        "size": 42,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "important": true
+    }
+   ],
+   "bullets": [
+    {
+     "text": "内力仅能改变系统内某个物体的动量，但不能改变系统的总动量．",
+     "x": 960,
+     "y": 1002,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 4
+    }
+   ],
+   "stepTimes": {
+    "1": 188.28,
+    "2": 196.1,
+    "3": 208.86
+   },
+   "t_start": 188.28,
+   "t_end": 222.26,
+   "duration": 33.98,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 208.86,
+     "end": 213.86
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "kind": "page",
+   "heading": "质点系动量定理",
+   "narration": "把两质点的情形推广到 N 个质点：对每一个质点写动量定理，再全部相加。仍然是内力两两抵消，留下来的只有系统所受合外力的冲量。于是得到质点系动量定理：作用于系统的合外力的冲量，等于系统动量的增量。这里的 p 是系统总动量，等于所有质点动量的矢量和——注意是矢量和，方向不同不能直接相加数值。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质点系动量定理",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 1580,
+     "h": 175,
+     "tex": "\\int_{t_1}^{t_2}\\Big(\\sum_i\\vec F_i^{\\,\\mathrm{ex}}\\Big)\\mathrm{d}t=\\sum_i m_i\\vec v_i-\\sum_i m_i\\vec v_{i0}",
+     "size": 40,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 455,
+     "w": 1580,
+     "h": 130,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "作用于系统的",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "合外力的冲量",
+        "size": 42,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "，等于系统",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "动量的增量",
+        "size": 42,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 620,
+     "w": 1580,
+     "h": 165,
+     "tex": "\\vec I^{\\,\\mathrm{ex}}=\\vec p-\\vec p_0,\\qquad \\vec p=\\sum_i m_i\\vec v_i",
+     "size": 44,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 815,
+     "w": 1580,
+     "h": 125,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "系统总动量是各质点动量的",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "矢量和",
+        "size": 42,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "——方向不同不能直接把数值相加．",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 223.06,
+    "2": 236.96,
+    "3": 244.34
+   },
+   "t_start": 223.06,
+   "t_end": 254.19,
+   "duration": 31.13,
+   "laser": []
+  },
+  {
+   "id": 9,
+   "kind": "page",
+   "heading": "注意　外力和内力",
+   "narration": "这里要特别把外力和内力分清楚。外力是系统以外的物体施于系统内物体的力；内力是系统内各物体之间的相互作用力。两者的地位完全不同：内力总是成对出现、等值反向，所以在求和时两两相消；外力则不然，它没有「配对」的那一个，会完整地留在结果里。所以做动量定理的题目，第一步永远是先划定系统，把边界画出来——边界上的力是外力，边界里面的成对力是内力。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "注意　外力和内力",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 245,
+     "w": 860,
+     "h": 120,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "区分",
+        "size": 44,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "外力",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "和",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "内力",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 390,
+     "w": 860,
+     "h": 120,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "外力",
+        "size": 44,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "　系统外的物体施于系统内的力",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 525,
+     "w": 860,
+     "h": 120,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "内力",
+        "size": 44,
+        "color": "#E07000",
+        "b": true
+       },
+       {
+        "t": "　系统内各物体之间的相互作用力",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 665,
+     "w": 860,
+     "h": 125,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "内力成对出现、等值反向 ⇒ 求和时两两相消",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 0,
+     "x": 1070,
+     "y": 300,
+     "w": 740,
+     "h": 273,
+     "name": "sys_two_body"
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 170,
+     "y": 815,
+     "w": 1580,
+     "h": 165,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "内力仅能改变系统内某个物体的动量，但不能改变系统的总动量．",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "important": true
+    }
+   ],
+   "bullets": [
+    {
+     "text": "内力仅能改变系统内某个物体的动量，但不能改变系统的总动量．",
+     "x": 960,
+     "y": 992,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 6
+    }
+   ],
+   "stepTimes": {
+    "1": 254.99,
+    "2": 266.88,
+    "3": 280.22
+   },
+   "t_start": 254.99,
+   "t_end": 290.92,
+   "duration": 35.93,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 280.22,
+     "end": 285.22
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "kind": "page",
+   "heading": "讨论　F–t 图",
+   "narration": "再回到冲量本身。如果力是恒力，冲量等于力乘时间，在 F–t 图上就是一个矩形的面积。如果力是变力——实际碰撞中基本都是变力——就要把力对时间积分，冲量等于曲线下的面积。两种情况是一回事：都是 F–t 曲线下的面积，恒力只是变力的特例。由此还得一个很实用的概念：平均冲力，就是让面积相等的那条等高等的矩形，F 平均乘 Δt 等于冲量。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1480,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "讨论　力的冲量在 F–t 图上的面积",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 210,
+     "y": 245,
+     "w": 1500,
+     "h": 620,
+     "name": "ft_panels"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 890,
+     "w": 1580,
+     "h": 115,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "平均冲力：",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "$\\bar F\\,\\Delta t=\\vec I$",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "　—— 图上是与曲线下面积相等的等高等高的矩形",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 291.72,
+    "2": 301.0
+   },
+   "t_start": 291.72,
+   "t_end": 326.02,
+   "duration": 34.3,
+   "laser": []
+  },
+  {
+   "id": 11,
+   "kind": "page",
+   "heading": "注意　碰撞问题",
+   "narration": "动量定理最典型的应用就是碰撞问题。碰撞的特点是：作用时间极短、作用力急剧变化，直接用力乘时间根本算不出来；但冲量由动量变化决定，而动量变化好算，于是我们只关心平均冲力。关键结论在这里：动量变化一定时，作用时间越短，平均冲力就越大。回到开头那个鸡蛋：直接落在硬地上，碰撞时间极短，冲力极大，蛋壳撑不住；先垫一层厚软的东西，把碰撞时间拉长，冲力就降下来了，鸡蛋就不破。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1480,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "注意　动量定理常应用于碰撞问题",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 135,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "碰撞时作用时间极短、力变化剧烈；但",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "冲量由动量变化决定",
+        "size": 42,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "，所以只需求",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "平均冲力",
+        "size": 42,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 385,
+     "y": 385,
+     "w": 1150,
+     "h": 616,
+     "name": "egg_cushion"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 326.82,
+    "2": 345.41
+   },
+   "t_start": 326.82,
+   "t_end": 366.54,
+   "duration": 39.72,
+   "laser": []
+  },
+  {
+   "id": 12,
+   "kind": "page",
+   "heading": "例1　钢球撞钢板",
+   "narration": "看例题一。一质量为 0.05 千克、速率为 10 米每秒的钢球，以与钢板法线呈 45 度角的方向撞击在钢板上，并以相同的速率和角度弹回来。设碰撞时间为 0.05 秒，求在此时间内钢板所受到的平均冲力。先注意两件事：速率不变，但速度方向变了，所以动量一定变了；而且碰撞时间给了我们，平均冲力就在这个方向上求。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1480,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例1　钢球撞钢板",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 245,
+     "w": 1580,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一质量为 ",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "0.05 kg",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "、速率为 ",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "10 m·s⁻¹",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": " 的钢球，以与钢板法线呈 ",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "45º",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": " 角的方向撞击在钢板上，",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 400,
+     "w": 1580,
+     "h": 130,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "并以相同的速率和角度弹回来．设碰撞时间为 ",
+        "size": 37,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "0.05 s",
+        "size": 37,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "，求在此时间内钢板所受到的平均冲力．",
+        "size": 37,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 460,
+     "y": 555,
+     "w": 1000,
+     "h": 443,
+     "name": "ball_plate"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 367.34,
+    "2": 381.6
+   },
+   "t_start": 367.34,
+   "t_end": 400.84,
+   "duration": 33.5,
+   "laser": []
+  },
+  {
+   "id": 13,
+   "kind": "page",
+   "heading": "例1　解",
+   "narration": "取坐标 Oxy，x 轴垂直于钢板向外。以钢球为研究对象，由动量定理：F 平均乘 Δt 等于 m v 二减 m v 一。沿 x 方向展开：初速度在 x 上的分量是负的 v cos45 度，末速度是正的 v cos45 度，两者相减得 2 v cos45 度；垂直于钢板的 y 方向没有受力，动量不变。代入数据：2 乘 0.05 乘 10 乘 cos45 度，再除以 0.05 秒，算出 14.1 牛顿。这个力就是钢板受到的平均冲力。方向与 x 轴正向相同，也就是垂直于钢板向外。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1480,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例1　解",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 245,
+     "w": 880,
+     "h": 130,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "取坐标 ",
+        "size": 35,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$Oxy$",
+        "size": 35,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "，",
+        "size": 35,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$x$",
+        "size": 35,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 轴垂直于钢板向外，以钢球为研究对象．",
+        "size": 35,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 395,
+     "w": 880,
+     "h": 150,
+     "tex": "\\vec F\\,\\Delta t=m\\vec v_2-m\\vec v_1",
+     "size": 42,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 565,
+     "w": 880,
+     "h": 165,
+     "tex": "F_x=\\dfrac{mv\\cos45^\\circ-m(-v\\cos45^\\circ)}{\\Delta t}=\\dfrac{2mv\\cos45^\\circ}{\\Delta t}",
+     "size": 28,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 750,
+     "w": 880,
+     "h": 148,
+     "tex": "=\\dfrac{2\\times0.05\\times10\\times0.707}{0.05}\\ \\mathrm{N}=14.1\\ \\mathrm{N}",
+     "size": 30,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 908,
+     "w": 880,
+     "h": 95,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "垂直于钢板向外（与 x 轴正向相同）",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 0,
+     "x": 1120,
+     "y": 275,
+     "w": 720,
+     "h": 418,
+     "name": "ball_plate_dp"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 401.64,
+    "2": 414.58,
+    "3": 430.1,
+    "4": 438.88,
+    "5": 443.29
+   },
+   "t_start": 401.64,
+   "t_end": 449.14,
+   "duration": 47.5,
+   "laser": []
+  },
+  {
+   "id": 14,
+   "kind": "page",
+   "heading": "例2　链条下落",
+   "narration": "例题二。一柔软链条长为 l，单位长度的质量为 λ；链条放在有一个小孔的桌上，一端由小孔稍微伸下，其余部分堆在小孔周围。由于某种扰动，链条因为自身重量开始下落。求链条下落速度 v 与下垂长度 y 之间的关系。题目设各处摩擦均不计，并且认为链条软得可以自由伸开——这两条保证了我们只考虑重力。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1480,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例2　链条从小孔下落",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 900,
+     "h": 135,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "柔软链条长为 ",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$l$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "，单位长度的质量为 ",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$\\lambda$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "；链条放在有一个小孔的桌上，",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 400,
+     "w": 900,
+     "h": 132,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一端由小孔稍伸下，其余部分堆在小孔周围．由于某种扰动，",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 545,
+     "w": 900,
+     "h": 110,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "链条因自身重量开始下落．",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 675,
+     "w": 900,
+     "h": 122,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "求链条下落速度 ",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$v$",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 与下垂长度 ",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$y$",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 之间的关系．",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 820,
+     "w": 900,
+     "h": 115,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "设各处摩擦均不计，且认为链条软得可以自由伸开．",
+        "size": 40,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 0,
+     "x": 1120,
+     "y": 250,
+     "w": 700,
+     "h": 462,
+     "name": "chain_fall"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 449.94,
+    "2": 468.18,
+    "3": 473.21
+   },
+   "t_start": 449.94,
+   "t_end": 482.15,
+   "duration": 32.21,
+   "laser": []
+  },
+  {
+   "id": 15,
+   "kind": "page",
+   "heading": "例2　解（1）",
+   "narration": "以竖直悬挂的那一段和桌面上的那一段为一个系统，建立坐标系 Oy，向下为正。先算系统的总动量：只有下垂的那一段在动，它的质量是 λ 乘 y，速度是 v，所以系统总动量 p 等于 λ y v——桌上那一堆是静止的，动量是零。系统受到的合外力只有下垂段的重力 λ y g，桌上部分的重力被桌面支持力抵消了。由质点系动量定理，动量对时间求导等于合外力：λ d(y v)/dt 等于 λ y g，约掉 λ、对乘积求导展开，就得到 y dv/dt 加 v 方等于 y g。再强调一遍：桌上那一段是静止的，系统总动量完全由下垂的那一段贡献。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1480,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例2　解（1）建系统，列方程",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 245,
+     "w": 880,
+     "h": 130,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "以",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "竖直悬挂段",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "与",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "桌上段",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "为一系统，建坐标 ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$Oy$",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " 向下为正．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 390,
+     "w": 880,
+     "h": 145,
+     "tex": "p=\\lambda y v",
+     "size": 44,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 550,
+     "w": 880,
+     "h": 155,
+     "tex": "\\dfrac{\\mathrm{d}(\\lambda y v)}{\\mathrm{d}t}=\\lambda y g",
+     "size": 42,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 715,
+     "w": 880,
+     "h": 150,
+     "tex": "y\\dfrac{\\mathrm{d}v}{\\mathrm{d}t}+v^2=yg",
+     "size": 44,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 880,
+     "w": 880,
+     "h": 105,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只有下垂段在动，桌上段动量恒为零",
+        "size": 38,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 0,
+     "x": 1100,
+     "y": 300,
+     "w": 700,
+     "h": 462,
+     "name": "chain_fall"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 482.95,
+    "2": 490.84,
+    "3": 504.99,
+    "4": 513.5,
+    "5": 528.71
+   },
+   "t_start": 482.95,
+   "t_end": 536.69,
+   "duration": 53.74,
+   "laser": []
+  },
+  {
+   "id": 16,
+   "kind": "page",
+   "heading": "例2　解（2）",
+   "narration": "现在这个方程里，时间和位置两个变量混在一起。用一个老办法：把 dv/dt 换成 v 乘 dv/dy，因为 dv/dt 等于 dv/dy 乘 dy/dt，而 dy/dt 就是 v。方程变成 y v dv/dy 加 v 方等于 y g。两边同乘以 2y，左边正好凑成 d(y 方 v 方)/dy，右边是 2 g y 方。对 y 积分，初始时 y 等于零、v 也等于零，所以积分常数是零，得到 y 方 v 方等于三分之二 g y 立方。开方就得到 v 等于根号下三分之二 g y——下落速度与下垂长度的平方根成正比。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1480,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例2　解（2）积分得 v 与 y 的关系",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 245,
+     "w": 1000,
+     "h": 145,
+     "tex": "y v\\dfrac{\\mathrm{d}v}{\\mathrm{d}y}+v^2=yg",
+     "size": 42,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 400,
+     "w": 1000,
+     "h": 105,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两边同乘以 ",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$2y$",
+        "size": 44,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "：",
+        "size": 42,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 512,
+     "w": 1000,
+     "h": 145,
+     "tex": "\\dfrac{\\mathrm{d}}{\\mathrm{d}y}\\left(y^2v^2\\right)=2gy^2",
+     "size": 42,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 665,
+     "w": 1000,
+     "h": 140,
+     "tex": "y^2v^2=\\dfrac{2}{3}gy^3",
+     "size": 44,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 806,
+     "w": 1000,
+     "h": 178,
+     "tex": "v=\\sqrt{\\dfrac{2gy}{3}}",
+     "size": 50,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "diagram",
+     "step": 0,
+     "x": 1120,
+     "y": 300,
+     "w": 700,
+     "h": 462,
+     "name": "chain_fall"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 537.49,
+    "2": 553.6,
+    "3": 558.78,
+    "4": 566.86,
+    "5": 577.96
+   },
+   "t_start": 537.49,
+   "t_end": 586.07,
+   "duration": 48.58,
+   "laser": []
+  },
+  {
+   "id": 17,
+   "kind": "page",
+   "heading": "本节小结",
+   "narration": "小结一下。这一节引入了两个新量：冲量，力对时间的积分，矢量，F–t 图上就是曲线下的面积；动量，质量乘速度，也是矢量。把它们连起来就是动量定理：冲量等于动量的增量。把它用到系统上，就是质点系动量定理：合外力的冲量等于系统总动量的增量——两式相加时内力成对相消，这是最关键的一步。两道例题也各有招法：钢球撞钢板用的是分量式，垂直于钢板的方向不受力、动量不变；链条下落用的是「只有动的那部分贡献动量」，最后积分得到 v 等于根号下三分之二 g y。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1480,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 125,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "冲量",
+        "size": 42,
+        "color": "#0A8A0A",
+        "b": true
+       },
+       {
+        "t": "　力对时间的累积，矢量，F–t 图上的",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "面积",
+        "size": 40,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "；",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "动量",
+        "size": 42,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "　$\\vec p=m\\vec v$．",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 300,
+     "y": 385,
+     "w": 1320,
+     "h": 160,
+     "tex": "\\vec I=\\vec p_2-\\vec p_1,\\qquad \\vec I^{\\,\\mathrm{ex}}=\\vec p-\\vec p_0",
+     "size": 44,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "table",
+     "step": 3,
+     "x": 220,
+     "y": 565,
+     "w": 1480,
+     "rows": [
+      [
+       "例题",
+       "结论 / 关键"
+      ],
+      [
+       "例1　钢球撞钢板",
+       "分量式：F = 2mv cos45º / Δt ≈ 14.1 N"
+      ],
+      [
+       "例2　链条下落",
+       "只有下垂段贡献动量 ⇒ v = √(2gy/3)"
+      ]
+     ],
+     "rowh": 86,
+     "size": 34,
+     "fill": "#CCFFCC"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 850,
+     "w": 1580,
+     "h": 125,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两件事：",
+        "size": 37,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "① 内力成对相消，只有合外力的冲量才改变总动量；② Δp 一定时，Δt 越短，平均冲力越大．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "important": true
+    }
+   ],
+   "bullets": [
+    {
+     "text": "两件事：① 内力成对相消，只有合外力的冲量才改变总动量；② Δp 一定时，Δt ",
+     "x": 960,
+     "y": 987,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 4
+    }
+   ],
+   "stepTimes": {
+    "1": 586.87,
+    "2": 600.56,
+    "3": 606.05,
+    "4": 617.54
+   },
+   "t_start": 586.87,
+   "t_end": 632.83,
+   "duration": 45.96,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 617.54,
+     "end": 622.54
+    }
+   ]
+  }
+ ],
+ "subtitles": [
+  {
+   "slide": 1,
+   "start": 0.0,
+   "end": 5.52,
+   "text": "这一段内容在第三章，动量守恒定律和能量守恒定律。"
+  },
+  {
+   "slide": 1,
+   "start": 5.92,
+   "end": 13.14,
+   "text": "3-1 先从最基本的东西讲起：冲量和动量，以及把它们联系起来的动量定理。"
+  },
+  {
+   "slide": 1,
+   "start": 13.54,
+   "end": 19.59,
+   "text": "先想一想一个问题——从比较高的地方把鸡蛋扔下来，怎样才能让它不破？"
+  },
+  {
+   "slide": 2,
+   "start": 21.22,
+   "end": 29.12,
+   "text": "牛顿第二定律给出的其实是一个瞬时关系：某一时刻的合外力，等于质量乘该时刻的加速度。"
+  },
+  {
+   "slide": 2,
+   "start": 29.52,
+   "end": 36.0,
+   "text": "但很多问题关心的不是某一瞬间，而是力在一段时间、一段路程上的总效果。"
+  },
+  {
+   "slide": 2,
+   "start": 36.4,
+   "end": 50.49,
+   "text": "看这张图：力对时间的累积，得到的是冲量，往下走就是动量定理和动量守恒定律；力对空间的累积，得到的是功，往下走是动能定理和机械能守恒定律。"
+  },
+  {
+   "slide": 2,
+   "start": 50.89,
+   "end": 54.78,
+   "text": "这一章的两条主线，就是这么分出来的。"
+  },
+  {
+   "slide": 3,
+   "start": 56.2,
+   "end": 58.22,
+   "text": "先看一个质点。"
+  },
+  {
+   "slide": 3,
+   "start": 58.62,
+   "end": 70.81,
+   "text": "描述它的运动状态，除了位置和速度，我们引入动量：动量 p 等于质量乘速度，方向与速度相同，它把物体的「质量」和「运动快慢」一起装了进去。"
+  },
+  {
+   "slide": 3,
+   "start": 71.21,
+   "end": 83.14,
+   "text": "再看力对时间的累积，叫做冲量：把力在时间上积分，就是在这段时间里力持续作用的总效果；力随时间变化时，冲量就是 F–t 图曲线下的面积。"
+  },
+  {
+   "slide": 3,
+   "start": 83.54,
+   "end": 92.13,
+   "text": "注意这两个量都是矢量——冲量的方向不一定和力在某一时刻的方向相同，但它一定等于动量增量的方向。"
+  },
+  {
+   "slide": 4,
+   "start": 93.55,
+   "end": 103.29,
+   "text": "把这两个量联系起来，就是动量定理：在给定的时间间隔内，外力作用在质点上的冲量，等于质点在此时间内动量的增量。"
+  },
+  {
+   "slide": 4,
+   "start": 103.69,
+   "end": 109.83,
+   "text": "写成公式就是 I 等于 p 二减 p 一，也等于 m v 二减 m v 一。"
+  },
+  {
+   "slide": 4,
+   "start": 110.23,
+   "end": 121.13,
+   "text": "看右图这个矢量三角形：冲量不是从原点出发的，而是从初动量的末端指向末动量的末端——这一点是初学者最容易画错的地方。"
+  },
+  {
+   "slide": 5,
+   "start": 122.5,
+   "end": 133.16,
+   "text": "动量定理是矢量式，用起来要写成三个分量式：I x 等于 m v 二x 减 m v 一x，y 方向和 z 方向同理。"
+  },
+  {
+   "slide": 5,
+   "start": 133.56,
+   "end": 142.51,
+   "text": "看右图：速度从 v 一变成 v 二，它的增量按 x、y 两个方向拆开，两个方向各管各的。"
+  },
+  {
+   "slide": 5,
+   "start": 142.91,
+   "end": 152.75,
+   "text": "所以有一条很实用的说明：某方向受到冲量，该方向上动量就改变；垂直方向不受冲量，那个方向的动量就不变。"
+  },
+  {
+   "slide": 6,
+   "start": 154.12,
+   "end": 157.5,
+   "text": "把对象从一个质点换成一个系统。"
+  },
+  {
+   "slide": 6,
+   "start": 157.9,
+   "end": 162.99,
+   "text": "所谓质点系，就是若干个有相互作用的质点组成的整体。"
+  },
+  {
+   "slide": 6,
+   "start": 163.39,
+   "end": 177.84,
+   "text": "对其中任意一个质点，比如质量 m 一的那个，它受到两种力：系统外的物体给它的是外力 F 一，系统内另一个质点给它的是内力 F 一二；对 m 二也照样写一个方程。"
+  },
+  {
+   "slide": 6,
+   "start": 178.24,
+   "end": 186.86,
+   "text": "把两式相加之前，先记住内力的特点：F 一二和 F 二一是一对作用力与反作用力，等值反向。"
+  },
+  {
+   "slide": 7,
+   "start": 188.28,
+   "end": 195.7,
+   "text": "因为内力 F 一二等于负的 F 二一，把刚才那两个方程相加，内力这一对就正好抵消了。"
+  },
+  {
+   "slide": 7,
+   "start": 196.1,
+   "end": 208.46,
+   "text": "剩下的是：左边只有两个外力的冲量之和，右边是 m 一 v 一加 m 二 v 二，减去 m 一 v 一零加 m 二 v 二零——这就是系统总动量的增量。"
+  },
+  {
+   "slide": 7,
+   "start": 208.86,
+   "end": 215.6,
+   "text": "结论很干脆：内力只能改变系统内某个物体的动量，但改变不了系统的总动量。"
+  },
+  {
+   "slide": 7,
+   "start": 216.0,
+   "end": 221.64,
+   "text": "这一点是本节的灵魂，也是后面动量守恒定律的直接来源。"
+  },
+  {
+   "slide": 8,
+   "start": 223.06,
+   "end": 230.14,
+   "text": "把两质点的情形推广到 N 个质点：对每一个质点写动量定理，再全部相加。"
+  },
+  {
+   "slide": 8,
+   "start": 230.54,
+   "end": 236.56,
+   "text": "仍然是内力两两抵消，留下来的只有系统所受合外力的冲量。"
+  },
+  {
+   "slide": 8,
+   "start": 236.96,
+   "end": 243.94,
+   "text": "于是得到质点系动量定理：作用于系统的合外力的冲量，等于系统动量的增量。"
+  },
+  {
+   "slide": 8,
+   "start": 244.34,
+   "end": 253.56,
+   "text": "这里的 p 是系统总动量，等于所有质点动量的矢量和——注意是矢量和，方向不同不能直接相加数值。"
+  },
+  {
+   "slide": 9,
+   "start": 254.99,
+   "end": 258.42,
+   "text": "这里要特别把外力和内力分清楚。"
+  },
+  {
+   "slide": 9,
+   "start": 258.82,
+   "end": 266.48,
+   "text": "外力是系统以外的物体施于系统内物体的力；内力是系统内各物体之间的相互作用力。"
+  },
+  {
+   "slide": 9,
+   "start": 266.88,
+   "end": 279.82,
+   "text": "两者的地位完全不同：内力总是成对出现、等值反向，所以在求和时两两相消；外力则不然，它没有「配对」的那一个，会完整地留在结果里。"
+  },
+  {
+   "slide": 9,
+   "start": 280.22,
+   "end": 290.3,
+   "text": "所以做动量定理的题目，第一步永远是先划定系统，把边界画出来——边界上的力是外力，边界里面的成对力是内力。"
+  },
+  {
+   "slide": 10,
+   "start": 291.72,
+   "end": 294.1,
+   "text": "再回到冲量本身。"
+  },
+  {
+   "slide": 10,
+   "start": 294.5,
+   "end": 300.6,
+   "text": "如果力是恒力，冲量等于力乘时间，在 F–t 图上就是一个矩形的面积。"
+  },
+  {
+   "slide": 10,
+   "start": 301.0,
+   "end": 309.11,
+   "text": "如果力是变力——实际碰撞中基本都是变力——就要把力对时间积分，冲量等于曲线下的面积。"
+  },
+  {
+   "slide": 10,
+   "start": 309.51,
+   "end": 315.68,
+   "text": "两种情况是一回事：都是 F–t 曲线下的面积，恒力只是变力的特例。"
+  },
+  {
+   "slide": 10,
+   "start": 316.08,
+   "end": 325.34,
+   "text": "由此还得一个很实用的概念：平均冲力，就是让面积相等的那条等高等的矩形，F 平均乘 Δt 等于冲量。"
+  },
+  {
+   "slide": 11,
+   "start": 326.82,
+   "end": 330.71,
+   "text": "动量定理最典型的应用就是碰撞问题。"
+  },
+  {
+   "slide": 11,
+   "start": 331.11,
+   "end": 345.01,
+   "text": "碰撞的特点是：作用时间极短、作用力急剧变化，直接用力乘时间根本算不出来；但冲量由动量变化决定，而动量变化好算，于是我们只关心平均冲力。"
+  },
+  {
+   "slide": 11,
+   "start": 345.41,
+   "end": 352.06,
+   "text": "关键结论在这里：动量变化一定时，作用时间越短，平均冲力就越大。"
+  },
+  {
+   "slide": 11,
+   "start": 352.46,
+   "end": 365.92,
+   "text": "回到开头那个鸡蛋：直接落在硬地上，碰撞时间极短，冲力极大，蛋壳撑不住；先垫一层厚软的东西，把碰撞时间拉长，冲力就降下来了，鸡蛋就不破。"
+  },
+  {
+   "slide": 12,
+   "start": 367.34,
+   "end": 369.21,
+   "text": "看例题一。"
+  },
+  {
+   "slide": 12,
+   "start": 369.61,
+   "end": 381.2,
+   "text": "一质量为 0.05 千克、速率为 10 米每秒的钢球，以与钢板法线呈 45 度角的方向撞击在钢板上，并以相同的速率和角度弹回来。"
+  },
+  {
+   "slide": 12,
+   "start": 381.6,
+   "end": 388.39,
+   "text": "设碰撞时间为 0.05 秒，求在此时间内钢板所受到的平均冲力。"
+  },
+  {
+   "slide": 12,
+   "start": 388.79,
+   "end": 400.21,
+   "text": "先注意两件事：速率不变，但速度方向变了，所以动量一定变了；而且碰撞时间给了我们，平均冲力就在这个方向上求。"
+  },
+  {
+   "slide": 13,
+   "start": 401.64,
+   "end": 406.2,
+   "text": "取坐标 Oxy，x 轴垂直于钢板向外。"
+  },
+  {
+   "slide": 13,
+   "start": 406.6,
+   "end": 414.18,
+   "text": "以钢球为研究对象，由动量定理：F 平均乘 Δt 等于 m v 二减 m v 一。"
+  },
+  {
+   "slide": 13,
+   "start": 414.58,
+   "end": 429.7,
+   "text": "沿 x 方向展开：初速度在 x 上的分量是负的 v cos45 度，末速度是正的 v cos45 度，两者相减得 2 v cos45 度；垂直于钢板的 y 方向没有受力，动量不变。"
+  },
+  {
+   "slide": 13,
+   "start": 430.1,
+   "end": 438.48,
+   "text": "代入数据：2 乘 0.05 乘 10 乘 cos45 度，再除以 0.05 秒，算出 14.1 牛顿。"
+  },
+  {
+   "slide": 13,
+   "start": 438.88,
+   "end": 442.89,
+   "text": "这个力就是钢板受到的平均冲力。"
+  },
+  {
+   "slide": 13,
+   "start": 443.29,
+   "end": 448.4,
+   "text": "方向与 x 轴正向相同，也就是垂直于钢板向外。"
+  },
+  {
+   "slide": 14,
+   "start": 449.94,
+   "end": 451.81,
+   "text": "例题二。"
+  },
+  {
+   "slide": 14,
+   "start": 452.21,
+   "end": 462.75,
+   "text": "一柔软链条长为 l，单位长度的质量为 λ；链条放在有一个小孔的桌上，一端由小孔稍微伸下，其余部分堆在小孔周围。"
+  },
+  {
+   "slide": 14,
+   "start": 463.15,
+   "end": 467.78,
+   "text": "由于某种扰动，链条因为自身重量开始下落。"
+  },
+  {
+   "slide": 14,
+   "start": 468.18,
+   "end": 472.81,
+   "text": "求链条下落速度 v 与下垂长度 y 之间的关系。"
+  },
+  {
+   "slide": 14,
+   "start": 473.21,
+   "end": 481.47,
+   "text": "题目设各处摩擦均不计，并且认为链条软得可以自由伸开——这两条保证了我们只考虑重力。"
+  },
+  {
+   "slide": 15,
+   "start": 482.95,
+   "end": 490.44,
+   "text": "以竖直悬挂的那一段和桌面上的那一段为一个系统，建立坐标系 Oy，向下为正。"
+  },
+  {
+   "slide": 15,
+   "start": 490.84,
+   "end": 504.59,
+   "text": "先算系统的总动量：只有下垂的那一段在动，它的质量是 λ 乘 y，速度是 v，所以系统总动量 p 等于 λ y v——桌上那一堆是静止的，动量是零。"
+  },
+  {
+   "slide": 15,
+   "start": 504.99,
+   "end": 513.1,
+   "text": "系统受到的合外力只有下垂段的重力 λ y g，桌上部分的重力被桌面支持力抵消了。"
+  },
+  {
+   "slide": 15,
+   "start": 513.5,
+   "end": 528.31,
+   "text": "由质点系动量定理，动量对时间求导等于合外力：λ d(y v)/dt 等于 λ y g，约掉 λ、对乘积求导展开，就得到 y dv/dt 加 v 方等于 y g。"
+  },
+  {
+   "slide": 15,
+   "start": 528.71,
+   "end": 536.01,
+   "text": "再强调一遍：桌上那一段是静止的，系统总动量完全由下垂的那一段贡献。"
+  },
+  {
+   "slide": 16,
+   "start": 537.49,
+   "end": 542.07,
+   "text": "现在这个方程里，时间和位置两个变量混在一起。"
+  },
+  {
+   "slide": 16,
+   "start": 542.47,
+   "end": 553.2,
+   "text": "用一个老办法：把 dv/dt 换成 v 乘 dv/dy，因为 dv/dt 等于 dv/dy 乘 dy/dt，而 dy/dt 就是 v。"
+  },
+  {
+   "slide": 16,
+   "start": 553.6,
+   "end": 558.38,
+   "text": "方程变成 y v dv/dy 加 v 方等于 y g。"
+  },
+  {
+   "slide": 16,
+   "start": 558.78,
+   "end": 566.46,
+   "text": "两边同乘以 2y，左边正好凑成 d(y 方 v 方)/dy，右边是 2 g y 方。"
+  },
+  {
+   "slide": 16,
+   "start": 566.86,
+   "end": 577.56,
+   "text": "对 y 积分，初始时 y 等于零、v 也等于零，所以积分常数是零，得到 y 方 v 方等于三分之二 g y 立方。"
+  },
+  {
+   "slide": 16,
+   "start": 577.96,
+   "end": 585.33,
+   "text": "开方就得到 v 等于根号下三分之二 g y——下落速度与下垂长度的平方根成正比。"
+  },
+  {
+   "slide": 17,
+   "start": 586.87,
+   "end": 588.74,
+   "text": "小结一下。"
+  },
+  {
+   "slide": 17,
+   "start": 589.14,
+   "end": 600.16,
+   "text": "这一节引入了两个新量：冲量，力对时间的积分，矢量，F–t 图上就是曲线下的面积；动量，质量乘速度，也是矢量。"
+  },
+  {
+   "slide": 17,
+   "start": 600.56,
+   "end": 605.65,
+   "text": "把它们连起来就是动量定理：冲量等于动量的增量。"
+  },
+  {
+   "slide": 17,
+   "start": 606.05,
+   "end": 617.14,
+   "text": "把它用到系统上，就是质点系动量定理：合外力的冲量等于系统总动量的增量——两式相加时内力成对相消，这是最关键的一步。"
+  },
+  {
+   "slide": 17,
+   "start": 617.54,
+   "end": 632.16,
+   "text": "两道例题也各有招法：钢球撞钢板用的是分量式，垂直于钢板的方向不受力、动量不变；链条下落用的是「只有动的那部分贡献动量」，最后积分得到 v 等于根号下三分之二 g y。"
+  }
+ ],
+ "build_ts": 1792455948,
+ "logoScale": 0.67
+}

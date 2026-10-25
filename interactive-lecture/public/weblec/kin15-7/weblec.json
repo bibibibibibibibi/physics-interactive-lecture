@@ -1,0 +1,2427 @@
+{
+ "title": "15-7 不确定关系",
+ "nav": "15-7　不确定关系",
+ "footer": "第十五章　量子物理",
+ "character": "aqiang",
+ "characters": [
+  {
+   "id": "aqiang",
+   "name": "阿强"
+  },
+  {
+   "id": "professor",
+   "name": "博士讲师"
+  },
+  {
+   "id": "zhongshan",
+   "name": "中山装先生"
+  }
+ ],
+ "duration": 272.62,
+ "slides": [
+  {
+   "id": 1,
+   "kind": "page",
+   "heading": "封面",
+   "narration": "第十五章第七节。15-7，不确定关系。它说的是：微观粒子的位置和动量，不能同时确定——这不是技术问题，是原理。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 282,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 十 五 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 300,
+     "y": 408,
+     "w": 1320,
+     "h": 170,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "量 子 物 理",
+        "size": 92,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 250,
+     "y": 588,
+     "w": 1420,
+     "h": 120,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "15-7　不确定关系",
+        "size": 44,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 220,
+     "y": 730,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "单缝衍射　·　$\\Delta x\\Delta p_x\\ge\\hbar/2$　·　物理意义",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 850,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "位置和动量，不能同时确定",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 0.0,
+    "2": 2.8,
+    "3": 6.22
+   },
+   "t_start": 0.0,
+   "t_end": 14.21,
+   "duration": 14.21,
+   "laser": []
+  },
+  {
+   "id": 2,
+   "kind": "page",
+   "heading": "本节路线",
+   "narration": "本节路线。先用单缝衍射把不确定关系「推」出来。再讲它的三条物理意义。然后是两个例题：子弹和电子，对比一下差多少。这个关系是量子力学的基础，后面讲波函数就要用它。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节路线",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 244,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "主线：单缝衍射 → 不确定关系 → 三条意义 → 两个例题",
+        "size": 25,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1　单缝衍射",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 386,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "用衍射说明不确定",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 458,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2　三条物理意义",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 512,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "微观、宏观、根源",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 584,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "3　两个例题",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 638,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "子弹 vs 电子",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 330,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4　量子力学的基础",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 386,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "后面用波函数描述",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 470,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一句话",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$\\Delta x\\Delta p_x\\ge\\hbar/2$",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "不是仪器不够好",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "是自然界的限制",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 770,
+     "w": 1580,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "本节收口：测量的精度有一个无法逾越的极限",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 15.01,
+    "2": 17.28,
+    "3": 21.33,
+    "4": 24.32,
+    "5": 29.57
+   },
+   "t_start": 15.01,
+   "t_end": 35.46,
+   "duration": 20.45,
+   "laser": []
+  },
+  {
+   "id": 3,
+   "kind": "page",
+   "heading": "一　用单缝衍射说明",
+   "narration": "先看一个实验：电子单缝衍射。一束电子垂直射向一条窄缝，缝宽是 a。穿过缝的时候，电子的 x 坐标就被限制在缝宽之内，所以位置不确定度 Δx 就等于 a。穿过去之后，电子在屏幕上形成衍射条纹。第一级暗纹对应的角度，满足 a sinθ 等于 λ。这说明电子在 x 方向上的动量也有一个不确定范围。想一想：如果把缝开得很宽，会怎么样？",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　用单缝衍射说明",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 415,
+     "name": "single_slit"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电子束射向窄缝",
+        "size": 26,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "缝宽 $a$",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "位置不确定：$\\Delta x=a$",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 416,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "穿过缝后出现衍射条纹",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 476,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第一级暗纹：$a\\sin\\theta=\\lambda$",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 536,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以 x 方向动量也不确定",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 620,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "位置限制得越紧（a 越小），衍射越宽 —— 两者此消彼长",
+        "size": 25,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 770,
+     "w": 1580,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "位置越确定，动量越不确定 —— 这就是衍射条纹的来历",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 36.26,
+    "2": 40.12,
+    "3": 45.2,
+    "4": 54.38,
+    "5": 59.46,
+    "6": 64.25
+   },
+   "t_start": 36.26,
+   "t_end": 75.09,
+   "duration": 38.83,
+   "laser": []
+  },
+  {
+   "id": 4,
+   "kind": "page",
+   "heading": "二　关系式的由来",
+   "narration": "接下来算一下。电子在 x 方向的动量不确定度，大约是 p 乘 sinθ。把 sinθ 用 λ 比 a 代进去，得到 Δp 约等于 h 比 a。写成式子就是：a 乘 Δp 约等于 h，而 a 就是 Δx。考虑次级衍射，严格的关系是 Δx 乘 Δp 大于等于 h 除以 4π，也就是 ħ 的一半。这就是海森伯 1927 年提出的不确定关系。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　关系式的由来",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "动量不确定度",
+        "size": 25,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 270,
+     "w": 760,
+     "h": 110,
+     "tex": "\\Delta p_x\\approx p\\sin\\theta",
+     "size": 26,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 410,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "代入 $\\sin\\theta=\\lambda/a$：",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 454,
+     "w": 760,
+     "h": 110,
+     "tex": "\\Delta p_x\\approx\\frac{h}{\\lambda}\\cdot\\frac{\\lambda}{a}=\\frac{h}{a}",
+     "size": 24,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 590,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "而 $a=\\Delta x$，所以",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 634,
+     "w": 760,
+     "h": 120,
+     "tex": "\\Delta x\\,\\Delta p_x\\ge\\frac{\\hbar}{2}",
+     "size": 32,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 210,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "海森伯，1927 年",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "微观粒子不能同时用",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "确定的位置和动量描述",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "1932 年诺贝尔奖",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 480,
+     "w": 740,
+     "h": 200,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "注意数量级",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$\\hbar/2\\approx1.05\\times10^{-34}$ J·s",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "小得几乎为零",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "所以宏观世界看不见它",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 770,
+     "w": 1580,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "不确定关系不是「附加假设」，是波粒二象性的直接结果",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 75.89,
+    "2": 78.26,
+    "3": 84.01,
+    "4": 90.65,
+    "5": 97.55,
+    "6": 106.3
+   },
+   "t_start": 75.89,
+   "t_end": 111.48,
+   "duration": 35.59,
+   "laser": []
+  },
+  {
+   "id": 5,
+   "kind": "page",
+   "heading": "三　三条物理意义",
+   "narration": "这个关系有三条物理意义。第一，微观粒子在同一方向上的坐标和动量，不能同时准确测量，它们的精度存在一个终极的、不可逾越的限制。第二，根源在波粒二象性——这不是仪器的问题，是粒子本身的属性。第三，对宏观粒子，因为 h 太小，位置和动量可以同时测得很准。不妨算一下：h 是 10 的负 34 次方，日常物体的动量是 10 的几次方？所以经典力学在宏观世界依然有效。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　三条物理意义",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 500,
+     "h": 230,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "① 不可逾越的限制",
+        "size": 23,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "同方向坐标与动量",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "不能同时准确测量",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "精度有终极上限",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 700,
+     "y": 226,
+     "w": 500,
+     "h": 230,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "② 根源：波粒二象性",
+        "size": 22,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "不是仪器不够好",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "是粒子的根本属性",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "衍射就是它的表现",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 1230,
+     "y": 226,
+     "w": 520,
+     "h": 230,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "③ 宏观可以同时测准",
+        "size": 22,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "因为 $h$ 极小",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "不确定度可忽略",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "经典力学仍有效",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 510,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以经典力学不是「错了」，而是量子力学在 h → 0 时的极限",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 580,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这一点和相对论很像：新理论把旧理论当作特例包含进去",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 660,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "记住这句话：不确定关系不是「测不准」，而是「本来就没有同时确定的值」",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "这是初学者最常混淆的一点",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 112.28,
+    "2": 115.9,
+    "3": 126.21,
+    "4": 133.07,
+    "5": 140.02
+   },
+   "t_start": 112.28,
+   "t_end": 152.31,
+   "duration": 40.03,
+   "laser": []
+  },
+  {
+   "id": 6,
+   "kind": "page",
+   "heading": "四　从不确定关系到量子力学",
+   "narration": "那量子力学怎么描述这种「不确定」？答案是：用概率。既然位置和动量不能同时有确定值，就只能从概率统计的角度去认识粒子的运动规律。在量子力学里，用波函数来描述微观粒子，波函数给出的是概率分布。所以不确定关系，是量子力学的基础之一。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　从不确定关系到量子力学",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不能同时确定 ⇒ 只能用概率描述",
+        "size": 26,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 286,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "没有确定的轨道，只有概率分布",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 346,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "量子力学用波函数描述粒子",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 410,
+     "w": 1580,
+     "h": 140,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "所以量子力学和经典力学的差别，不是精度，是「描述方式」",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "经典：位置和速度；量子：波函数（概率幅）",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 590,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "下一节开始讲波函数和薛定谔方程",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 650,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不确定关系会一直在背后起作用",
+        "size": 24,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 770,
+     "w": 1580,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "所以量子力学从一开始就是概率的理论",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 153.11,
+    "2": 157.07,
+    "3": 160.01,
+    "4": 167.44,
+    "5": 174.58
+   },
+   "t_start": 153.11,
+   "t_end": 179.44,
+   "duration": 26.33,
+   "laser": []
+  },
+  {
+   "id": 7,
+   "kind": "page",
+   "heading": "例 1　子弹的不确定度",
+   "narration": "看第一个例子：一颗子弹。质量 10 克，速率 200 米每秒，动量是 2 千克米每秒。假设动量的不确定度只有万分之一，也就是 2 乘十的负四次方。代进不确定关系，位置的不确定度约 3 乘十的负三十一次方米。这个数比原子核还小二十多个数量级。所以对子弹来说，位置和动量完全可以同时测准。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例 1　子弹的不确定度",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$m=10$ g，$v=200$ m/s",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 282,
+     "w": 760,
+     "h": 100,
+     "tex": "p=mv=2.0\\ \\mathrm{kg\\cdot m/s}",
+     "size": 26,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 396,
+     "w": 760,
+     "h": 100,
+     "tex": "\\Delta p=0.01\\%\\,p=2\\times10^{-4}",
+     "size": 24,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 510,
+     "w": 760,
+     "h": 100,
+     "tex": "\\Delta x\\ge\\frac{\\hbar}{2\\Delta p}\\approx3\\times10^{-31}\\ \\mathrm{m}",
+     "size": 22,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "这个数有多小",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "原子核约 $10^{-15}$ m",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "还小 16 个数量级",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "完全测不出来",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 470,
+     "w": 740,
+     "h": 180,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "所以",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "子弹有确定的位置和速度",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "经典力学完全够用",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 770,
+     "w": 1580,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "子弹：不确定度小到毫无影响",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 180.24,
+    "2": 183.71,
+    "3": 189.82,
+    "4": 196.44,
+    "5": 203.08,
+    "6": 207.42
+   },
+   "t_start": 180.24,
+   "t_end": 213.55,
+   "duration": 33.31,
+   "laser": []
+  },
+  {
+   "id": 8,
+   "kind": "page",
+   "heading": "例 2　电子的不确定度",
+   "narration": "再看电子。电子的速率是 3 乘十的六次方米每秒，动量约 2.7 乘十的负二十四次方。同样假设动量的不确定度是万分之一。代进去，位置的不确定度约 2 乘十的负四次方米，也就是 0.2 毫米。这个尺度在微观世界里已经很大了——比原子大十几万倍。所以对电子，位置和动量就不能同时确定了。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例 2　电子的不确定度",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$v=3.0\\times10^{6}$ m/s，精度 0.01%",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 282,
+     "w": 760,
+     "h": 100,
+     "tex": "p=m_ev=2.7\\times10^{-24}\\ \\mathrm{kg\\cdot m/s}",
+     "size": 24,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 396,
+     "w": 760,
+     "h": 100,
+     "tex": "\\Delta p=0.01\\%\\,p=2.7\\times10^{-28}",
+     "size": 24,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 510,
+     "w": 760,
+     "h": 100,
+     "tex": "\\Delta x\\ge\\frac{\\hbar}{2\\Delta p}\\approx2\\times10^{-4}\\ \\mathrm{m}",
+     "size": 22,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "这个数有多大",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "0.2 毫米",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "比原子大十几万倍",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "已经毫无意义",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 470,
+     "w": 740,
+     "h": 180,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "所以",
+        "size": 24,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "电子没有确定的轨道",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "只能用量子力学描述",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 770,
+     "w": 1580,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "电子：不确定度大到必须用量子力学",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 214.35,
+    "2": 216.62,
+    "3": 223.91,
+    "4": 228.25,
+    "5": 235.23,
+    "6": 241.01
+   },
+   "t_start": 214.35,
+   "t_end": 246.39,
+   "duration": 32.04,
+   "laser": []
+  },
+  {
+   "id": 9,
+   "kind": "page",
+   "heading": "本节小结",
+   "narration": "小结。不确定关系：Δx 乘 Δp 大于等于 ħ 的一半。它的根源是波粒二象性，不是测量技术的限制。对宏观物体，因为 h 太小，影响可以忽略。对微观粒子，它带来了概率描述的必要性——这是量子力学的起点。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 关系式",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\Delta x\\,\\Delta p_x\\ge\\hbar/2$",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 物理意义",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 408,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "微观不可同时测准",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 宏观对比",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "子弹 $10^{-31}$ m，电子 $10^{-4}$ m",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 356,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 后果",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 408,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "必须用概率（波函数）描述",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 1010,
+     "y": 470,
+     "w": 740,
+     "h": 170,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "下一节",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "15-8　量子力学简介",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "波函数与薛定谔方程",
+        "size": 21,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 490,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一句话",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "不是测不准",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "是本来就没有",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "位置和动量同时确定的值",
+        "size": 21,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 120,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "第十五章 7/15：量子力学的第一块基石",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 247.19,
+    "2": 249.46,
+    "3": 254.71,
+    "4": 259.41,
+    "5": 264.37
+   },
+   "t_start": 247.19,
+   "t_end": 271.24,
+   "duration": 24.05,
+   "laser": []
+  }
+ ],
+ "subtitles": [
+  {
+   "slide": 1,
+   "start": 0.0,
+   "end": 2.4,
+   "text": "第十五章第七节。"
+  },
+  {
+   "slide": 1,
+   "start": 2.8,
+   "end": 5.82,
+   "text": "15-7，不确定关系。"
+  },
+  {
+   "slide": 1,
+   "start": 6.22,
+   "end": 13.64,
+   "text": "它说的是：微观粒子的位置和动量，不能同时确定——这不是技术问题，是原理。"
+  },
+  {
+   "slide": 2,
+   "start": 15.01,
+   "end": 16.88,
+   "text": "本节路线。"
+  },
+  {
+   "slide": 2,
+   "start": 17.28,
+   "end": 20.93,
+   "text": "先用单缝衍射把不确定关系「推」出来。"
+  },
+  {
+   "slide": 2,
+   "start": 21.33,
+   "end": 23.92,
+   "text": "再讲它的三条物理意义。"
+  },
+  {
+   "slide": 2,
+   "start": 24.32,
+   "end": 29.17,
+   "text": "然后是两个例题：子弹和电子，对比一下差多少。"
+  },
+  {
+   "slide": 2,
+   "start": 29.57,
+   "end": 34.78,
+   "text": "这个关系是量子力学的基础，后面讲波函数就要用它。"
+  },
+  {
+   "slide": 3,
+   "start": 36.26,
+   "end": 39.72,
+   "text": "先看一个实验：电子单缝衍射。"
+  },
+  {
+   "slide": 3,
+   "start": 40.12,
+   "end": 44.8,
+   "text": "一束电子垂直射向一条窄缝，缝宽是 a。"
+  },
+  {
+   "slide": 3,
+   "start": 45.2,
+   "end": 53.98,
+   "text": "穿过缝的时候，电子的 x 坐标就被限制在缝宽之内，所以位置不确定度 Δx 就等于 a。"
+  },
+  {
+   "slide": 3,
+   "start": 54.38,
+   "end": 59.06,
+   "text": "穿过去之后，电子在屏幕上形成衍射条纹。"
+  },
+  {
+   "slide": 3,
+   "start": 59.46,
+   "end": 63.85,
+   "text": "第一级暗纹对应的角度，满足 a sinθ 等于 λ。"
+  },
+  {
+   "slide": 3,
+   "start": 64.25,
+   "end": 69.31,
+   "text": "这说明电子在 x 方向上的动量也有一个不确定范围。"
+  },
+  {
+   "slide": 3,
+   "start": 69.71,
+   "end": 74.03,
+   "text": "想一想：如果把缝开得很宽，会怎么样？"
+  },
+  {
+   "slide": 4,
+   "start": 75.89,
+   "end": 77.86,
+   "text": "接下来算一下。"
+  },
+  {
+   "slide": 4,
+   "start": 78.26,
+   "end": 83.61,
+   "text": "电子在 x 方向的动量不确定度，大约是 p 乘 sinθ。"
+  },
+  {
+   "slide": 4,
+   "start": 84.01,
+   "end": 90.25,
+   "text": "把 sinθ 用 λ 比 a 代进去，得到 Δp 约等于 h 比 a。"
+  },
+  {
+   "slide": 4,
+   "start": 90.65,
+   "end": 97.15,
+   "text": "写成式子就是：a 乘 Δp 约等于 h，而 a 就是 Δx。"
+  },
+  {
+   "slide": 4,
+   "start": 97.55,
+   "end": 105.9,
+   "text": "考虑次级衍射，严格的关系是 Δx 乘 Δp 大于等于 h 除以 4π，也就是 ħ 的一半。"
+  },
+  {
+   "slide": 4,
+   "start": 106.3,
+   "end": 110.74,
+   "text": "这就是海森伯 1927 年提出的不确定关系。"
+  },
+  {
+   "slide": 5,
+   "start": 112.28,
+   "end": 115.5,
+   "text": "这个关系有三条物理意义。"
+  },
+  {
+   "slide": 5,
+   "start": 115.9,
+   "end": 125.81,
+   "text": "第一，微观粒子在同一方向上的坐标和动量，不能同时准确测量，它们的精度存在一个终极的、不可逾越的限制。"
+  },
+  {
+   "slide": 5,
+   "start": 126.21,
+   "end": 132.67,
+   "text": "第二，根源在波粒二象性——这不是仪器的问题，是粒子本身的属性。"
+  },
+  {
+   "slide": 5,
+   "start": 133.07,
+   "end": 139.62,
+   "text": "第三，对宏观粒子，因为 h 太小，位置和动量可以同时测得很准。"
+  },
+  {
+   "slide": 5,
+   "start": 140.02,
+   "end": 146.72,
+   "text": "不妨算一下：h 是 10 的负 34 次方，日常物体的动量是 10 的几次方？"
+  },
+  {
+   "slide": 5,
+   "start": 147.37,
+   "end": 151.57,
+   "text": "所以经典力学在宏观世界依然有效。"
+  },
+  {
+   "slide": 6,
+   "start": 153.11,
+   "end": 156.42,
+   "text": "那量子力学怎么描述这种「不确定」？"
+  },
+  {
+   "slide": 6,
+   "start": 157.07,
+   "end": 159.61,
+   "text": "答案是：用概率。"
+  },
+  {
+   "slide": 6,
+   "start": 160.01,
+   "end": 167.04,
+   "text": "既然位置和动量不能同时有确定值，就只能从概率统计的角度去认识粒子的运动规律。"
+  },
+  {
+   "slide": 6,
+   "start": 167.44,
+   "end": 174.18,
+   "text": "在量子力学里，用波函数来描述微观粒子，波函数给出的是概率分布。"
+  },
+  {
+   "slide": 6,
+   "start": 174.58,
+   "end": 178.73,
+   "text": "所以不确定关系，是量子力学的基础之一。"
+  },
+  {
+   "slide": 7,
+   "start": 180.24,
+   "end": 183.31,
+   "text": "看第一个例子：一颗子弹。"
+  },
+  {
+   "slide": 7,
+   "start": 183.71,
+   "end": 189.42,
+   "text": "质量 10 克，速率 200 米每秒，动量是 2 千克米每秒。"
+  },
+  {
+   "slide": 7,
+   "start": 189.82,
+   "end": 196.04,
+   "text": "假设动量的不确定度只有万分之一，也就是 2 乘十的负四次方。"
+  },
+  {
+   "slide": 7,
+   "start": 196.44,
+   "end": 202.68,
+   "text": "代进不确定关系，位置的不确定度约 3 乘十的负三十一次方米。"
+  },
+  {
+   "slide": 7,
+   "start": 203.08,
+   "end": 207.02,
+   "text": "这个数比原子核还小二十多个数量级。"
+  },
+  {
+   "slide": 7,
+   "start": 207.42,
+   "end": 212.82,
+   "text": "所以对子弹来说，位置和动量完全可以同时测准。"
+  },
+  {
+   "slide": 8,
+   "start": 214.35,
+   "end": 216.22,
+   "text": "再看电子。"
+  },
+  {
+   "slide": 8,
+   "start": 216.62,
+   "end": 223.51,
+   "text": "电子的速率是 3 乘十的六次方米每秒，动量约 2.7 乘十的负二十四次方。"
+  },
+  {
+   "slide": 8,
+   "start": 223.91,
+   "end": 227.85,
+   "text": "同样假设动量的不确定度是万分之一。"
+  },
+  {
+   "slide": 8,
+   "start": 228.25,
+   "end": 234.83,
+   "text": "代进去，位置的不确定度约 2 乘十的负四次方米，也就是 0.2 毫米。"
+  },
+  {
+   "slide": 8,
+   "start": 235.23,
+   "end": 240.61,
+   "text": "这个尺度在微观世界里已经很大了——比原子大十几万倍。"
+  },
+  {
+   "slide": 8,
+   "start": 241.01,
+   "end": 245.67,
+   "text": "所以对电子，位置和动量就不能同时确定了。"
+  },
+  {
+   "slide": 9,
+   "start": 247.19,
+   "end": 249.06,
+   "text": "小结。"
+  },
+  {
+   "slide": 9,
+   "start": 249.46,
+   "end": 254.31,
+   "text": "不确定关系：Δx 乘 Δp 大于等于 ħ 的一半。"
+  },
+  {
+   "slide": 9,
+   "start": 254.71,
+   "end": 259.01,
+   "text": "它的根源是波粒二象性，不是测量技术的限制。"
+  },
+  {
+   "slide": 9,
+   "start": 259.41,
+   "end": 263.97,
+   "text": "对宏观物体，因为 h 太小，影响可以忽略。"
+  },
+  {
+   "slide": 9,
+   "start": 264.37,
+   "end": 270.56,
+   "text": "对微观粒子，它带来了概率描述的必要性——这是量子力学的起点。"
+  }
+ ],
+ "build_ts": 1792632977,
+ "logoScale": 0.67,
+ "theme": "wave"
+}

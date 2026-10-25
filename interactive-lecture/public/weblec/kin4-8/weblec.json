@@ -1,0 +1,2451 @@
+{
+ "title": "4-8 万有引力的牛顿命题",
+ "nav": "4-8　万有引力的牛顿命题",
+ "footer": "第四章　刚体转动和流体运动",
+ "character": "aqiang",
+ "characters": [
+  {
+   "id": "aqiang",
+   "name": "阿强"
+  },
+  {
+   "id": "professor",
+   "name": "博士讲师"
+  },
+  {
+   "id": "zhongshan",
+   "name": "中山装先生"
+  }
+ ],
+ "duration": 499.49,
+ "slides": [
+  {
+   "id": 1,
+   "kind": "page",
+   "heading": "封面",
+   "narration": "这一节 4-8，万有引力的牛顿命题。一六六五年，牛顿从行星绕太阳的圆轨道出发，导出引力与距离的平方成反比。但两个问题随即而来：第一，这条定律除了天体，对普通物体适用吗？第二，开普勒说行星走椭圆，万有引力能不能从椭圆轨道反推出来？这一节就回答这两问。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 292,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 四 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 300,
+     "y": 420,
+     "w": 1320,
+     "h": 160,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "刚体转动和流体运动",
+        "size": 76,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 340,
+     "y": 606,
+     "w": 1240,
+     "h": 130,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4-8　万有引力的牛顿命题",
+        "size": 50,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 766,
+     "w": 1480,
+     "h": 120,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "平方反比定律",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "对谁成立？",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 220,
+     "y": 900,
+     "w": 1480,
+     "h": 90,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "球壳定理　·　球体之间的引力　·　椭圆轨道的论证",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 0.0,
+    "2": 4.5,
+    "3": 12.34,
+    "4": 27.3
+   },
+   "t_start": 0.0,
+   "t_end": 30.53,
+   "duration": 30.53,
+   "laser": []
+  },
+  {
+   "id": 2,
+   "kind": "page",
+   "heading": "两个命题",
+   "narration": "先把问题摆清楚。命题一：万有引力定律除了计算天体之间的引力，是否还适用于其他物体之间？比如两块石头、一个人和地球。这其实是在问：平方反比是“天体特权”，还是普遍规律？命题二：开普勒从观测归纳出行星轨道是椭圆，那么从万有引力定律出发，能不能把椭圆轨道推出来？第一问需要算球壳的引力，第二问需要解轨道方程。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两个命题",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 1580,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "命题一：",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "万有引力定律除了天体，是否适用于其他物体之间？",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 360,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "—— 平方反比是“天体特权”，还是",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       },
+       {
+        "t": "普遍规律",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "？",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 480,
+     "w": 1580,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "命题二：",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "开普勒说轨道是椭圆，万有引力能否导出椭圆？",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 590,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "—— 从动力学方程出发，能不能得到",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       },
+       {
+        "t": "圆锥曲线轨道",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "？",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 720,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "第一问靠积分（球壳定理）；第二问靠两条守恒律",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 906,
+     "w": 1580,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这也是牛顿《自然哲学的数学原理》里的核心论证．",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 31.33,
+    "2": 34.15,
+    "3": 46.22,
+    "4": 52.37
+   },
+   "t_start": 31.33,
+   "t_end": 67.95,
+   "duration": 36.62,
+   "laser": []
+  },
+  {
+   "id": 3,
+   "kind": "page",
+   "heading": "一　引力与引力势能",
+   "narration": "先写下两个基本式子。万有引力定律：F 等于负 G m m′ 除以 r 方，再乘 e_r。负号表示引力指向对方，e_r 是沿位矢方向的单位矢量。对应的引力势能是 Ep 等于负 G m m′ 除以 r。注意这里取了无穷远处为零势能点，所以势能处处为负。为什么先写势能？因为势能是标量，积分比矢量积分容易得多；算完势能，再对 r 求导取负，就得到力。F 等于负 dEp/dr 乘 e_r——这一步是这套推导的关键技巧。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　引力与引力势能",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 130,
+     "tex": "\\vec F=-G\\frac{mm'}{r^2}\\vec e_r",
+     "size": 40,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 400,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "负号：引力指向对方；",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "e_r",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": " 为位矢方向的单位矢量．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 486,
+     "w": 1580,
+     "h": 120,
+     "tex": "E_{\\mathrm p}=-G\\frac{mm'}{r}",
+     "size": 40,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 640,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "取无穷远处势能为零 ⇒ 引力势能处处为负．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 720,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "为什么先算势能？",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "标量的积分比矢量容易．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 6,
+     "x": 170,
+     "y": 800,
+     "w": 1580,
+     "h": 130,
+     "tex": "\\vec F=-\\frac{\\mathrm dE_{\\mathrm p}}{\\mathrm dr}\\vec e_r",
+     "size": 38,
+     "color": "#C00000",
+     "align": "center"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 68.75,
+    "2": 78.77,
+    "3": 85.82,
+    "4": 91.31,
+    "5": 97.9,
+    "6": 108.41
+   },
+   "t_start": 68.75,
+   "t_end": 115.53,
+   "duration": 46.78,
+   "laser": []
+  },
+  {
+   "id": 4,
+   "kind": "page",
+   "heading": "二　球壳与质点",
+   "narration": "现在算球壳对球外一点的引力。方法是用微积分：把球壳切成一个个细圆环，每个环上所有点到 P 的距离相同，所以整个环对 P 的势能可以直接写出来。设球壳半径 R、面密度 σ，P 点距球心 r，且在球外。取一个由角度 θ 确定的细环，环的宽度是 R dθ，环的半径是 R sinθ。注意 θ 从 OP 连线量起。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 900,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　球壳与质点间的引力",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "把球壳切成一个个",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "细圆环",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "，",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 296,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "环上各点到 P 的距离相同．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 386,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "设球壳半径 R、面密度 σ，",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 444,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "P 距球心 r，且 r > R．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 534,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "取由 θ 确定的细环：",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 592,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "环宽 R dθ，环半径 R sinθ．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 682,
+     "w": 800,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "θ 从 OP 连线量起．",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 980,
+     "y": 300,
+     "w": 760,
+     "h": 360,
+     "name": "shell_ring"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 116.33,
+    "2": 119.87,
+    "3": 131.41,
+    "4": 138.03
+   },
+   "t_start": 116.33,
+   "t_end": 150.94,
+   "duration": 34.61,
+   "laser": []
+  },
+  {
+   "id": 5,
+   "kind": "page",
+   "heading": "二　细环的面积与质量",
+   "narration": "先算这个环的面积。周长是 2πR sinθ，宽度是 R dθ，所以面积 dA 等于 2πR 方 sinθ dθ。乘上面密度 σ，得到环的质量：dm′ 等于 2πR 方 σ sinθ dθ。这个环对 P 的引力势能是负 G m dm′ 除以 s，s 是环上任意点到 P 的距离。因为环上各点到 P 等距，这个式子对整个环都成立，不用再积分。代进去，得到 dEp 的表达式。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　细环的面积与质量",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 140,
+     "tex": "\\mathrm dA=2\\pi(R\\sin\\theta)\\,R\\,\\mathrm d\\theta=2\\pi R^2\\sin\\theta\\,\\mathrm d\\theta",
+     "size": 34,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 420,
+     "w": 1580,
+     "h": 120,
+     "tex": "\\mathrm dm'=2\\pi R^2\\sigma\\sin\\theta\\,\\mathrm d\\theta",
+     "size": 34,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 580,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "环对 P 的势能：",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "各点到 P 等距 s",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "，整个环可当作一个质量元．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 666,
+     "w": 1580,
+     "h": 160,
+     "tex": "\\mathrm dE_{\\mathrm p}=-G\\frac{m\\,\\mathrm dm'}{s}=-Gm\\,2\\pi R^2\\sigma\\frac{\\sin\\theta\\,\\mathrm d\\theta}{s}",
+     "size": 30,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 850,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "接下来要把 θ 换成 s——用余弦定理．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 151.74,
+    "2": 164.49,
+    "3": 172.11,
+    "4": 179.71,
+    "5": 186.4
+   },
+   "t_start": 151.74,
+   "t_end": 190.14,
+   "duration": 38.4,
+   "laser": []
+  },
+  {
+   "id": 6,
+   "kind": "page",
+   "heading": "二　积分",
+   "narration": "由余弦定理，s 方等于 R 方加 r 方减 2rR cosθ。两边微分，得到 2s ds 等于 2rR sinθ dθ。于是 sinθ dθ 除以 s 等于 ds 除以 Rr——这一步很漂亮，把角度积分换成了对 s 的积分。代回去：dEp 等于负 Gm2πRσ 除以 r，再乘 ds。s 的范围是从 r 减 R 到 r 加 R，积分结果就是 2R。把 2R 乘进去，4πR 方 σ 正好是球壳的总质量 m′。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　积分（换成对 s 积分）",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 110,
+     "tex": "s^2=R^2+r^2-2rR\\cos\\theta",
+     "size": 36,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 370,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两边微分：",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "2s ds = 2rR sinθ dθ",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 456,
+     "w": 1580,
+     "h": 120,
+     "tex": "\\frac{\\sin\\theta\\,\\mathrm d\\theta}{s}=\\frac{\\mathrm ds}{Rr}",
+     "size": 36,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 606,
+     "w": 1580,
+     "h": 120,
+     "tex": "\\mathrm dE_{\\mathrm p}=-\\frac{Gm\\,2\\pi R\\sigma}{r}\\,\\mathrm ds",
+     "size": 34,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 750,
+     "w": 1580,
+     "h": 150,
+     "tex": "E_{\\mathrm p}=-\\frac{Gm\\,2\\pi R\\sigma}{r}\\int_{r-R}^{r+R}\\mathrm ds=-\\frac{Gm\\,4\\pi R^2\\sigma}{r}",
+     "size": 30,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 926,
+     "w": 1580,
+     "h": 50,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "其中 ",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "4πR²σ = m′",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "（球壳总质量）．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 190.94,
+    "2": 197.05,
+    "3": 202.71,
+    "4": 212.95,
+    "5": 219.78,
+    "6": 226.59
+   },
+   "t_start": 190.94,
+   "t_end": 233.11,
+   "duration": 42.17,
+   "laser": []
+  },
+  {
+   "id": 7,
+   "kind": "page",
+   "heading": "二　球壳定理",
+   "narration": "于是得到 Ep 等于负 G m m′ 除以 r，条件是 r 大于 R。这说明什么？质点 m 放在匀质球壳外，它的引力势能，与把整个球壳的质量全部集中在球心的情况完全一样。再对 r 求导取负，得到力：F 等于负 G m m′ 除以 r 方乘 e_r。也就是说：匀质球壳外面的质点所受的引力，与把球壳质量集中于球心时一样。这就是球壳定理。所以命题一有了答案：平方反比对宏观物体也成立——只要物体是球对称的，就可以当质点处理。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　球壳定理",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 130,
+     "tex": "E_{\\mathrm p}=-G\\frac{mm'}{r}\\qquad(r>R)",
+     "size": 38,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 400,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质点 m 在匀质球壳外，势能",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "等同于质量集中于球心",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 490,
+     "w": 1580,
+     "h": 140,
+     "tex": "\\vec F=-\\frac{\\mathrm dE_{\\mathrm p}}{\\mathrm dr}\\vec e_r=-G\\frac{mm'}{r^2}\\vec e_r",
+     "size": 34,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 680,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "球壳外质点所受引力，与把球壳质量集中于球心时一样．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 770,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "平方反比不只属于天体：球对称物体都可当质点处理",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 946,
+     "w": 1580,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这就是“命题一”的答案．",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 233.91,
+    "2": 241.08,
+    "3": 252.26,
+    "4": 260.32,
+    "5": 267.54
+   },
+   "t_start": 233.91,
+   "t_end": 279.56,
+   "duration": 45.65,
+   "laser": []
+  },
+  {
+   "id": 8,
+   "kind": "page",
+   "heading": "三　匀质球体之间的引力",
+   "narration": "球壳解决了，球体就好办了：把实心球看成一层层同心球壳叠起来。对球外一点，每一层球壳都等价于把它的质量放在球心，叠加起来，整个球也等价于把全部质量放在球心。于是两个匀质球体之间的引力，等于把两球质量集中于球心——也就是视为两个质点——之间的引力。公式还是那个样子：Ep 等于负 G m₁ m₂′ 除以 r，F 等于负 G m₁ m₂′ 除以 r 方 e_r，其中 r 是两球心之间的距离。这就是为什么算地球对月球的引力，可以直接用两球心距，而不用管地球有多大。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　匀质球体之间的引力",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "实心球 = 一层层同心球壳叠加．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "每层球壳对外点都等价于球心 ⇒ ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "整个球也等价于球心",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 420,
+     "w": 1580,
+     "h": 150,
+     "tex": "E_{\\mathrm p}=-G\\frac{m_1m_2'}{r},\\qquad \\vec F=-G\\frac{m_1m_2'}{r^2}\\vec e_r",
+     "size": 34,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 620,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "r 为",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "两球心之间的距离",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 710,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以算地球对月球的引力，直接用球心距，不必管地球多大．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 800,
+     "w": 1580,
+     "h": 140,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "两匀质球体之间的引力 = 把质量集中于球心后的两个质点之间的引力",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 280.36,
+    "2": 287.31,
+    "3": 296.83,
+    "4": 305.87,
+    "5": 318.73
+   },
+   "t_start": 280.36,
+   "t_end": 326.18,
+   "duration": 45.82,
+   "laser": []
+  },
+  {
+   "id": 9,
+   "kind": "page",
+   "heading": "四　极坐标下的速度",
+   "narration": "回答第二问。行星受的是有心力，用极坐标最方便。取太阳为原点 O，行星位置用 r 和 θ 描述，两个单位矢量 e_r 沿位矢、e_θ 垂直于它。位移的微元可以写成两项：径向的 dr 乘 e_r，加上横向的 r dθ 乘 e_θ。除以 dt，速度就分解成径向速度和横向速度。注意横向速度是 r 乘 dθ/dt——正是上一节角动量的来源。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 900,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　椭圆轨道的论证",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "有心力 ⇒ 用",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "极坐标",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "最方便．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 320,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "位移微元：",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 388,
+     "w": 820,
+     "h": 120,
+     "tex": "\\mathrm d\\vec r=\\mathrm dr\\,\\vec e_r+r\\,\\mathrm d\\theta\\,\\vec e_\\theta",
+     "size": 28,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 530,
+     "w": 800,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "除以 dt，速度分解：",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 600,
+     "w": 820,
+     "h": 130,
+     "tex": "\\vec v=\\frac{\\mathrm dr}{\\mathrm dt}\\vec e_r+r\\frac{\\mathrm d\\theta}{\\mathrm dt}\\vec e_\\theta",
+     "size": 28,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 760,
+     "w": 800,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "横向速度 r dθ/dt 正是角动量的来源．",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1000,
+     "y": 290,
+     "w": 700,
+     "h": 500,
+     "name": "polar_vel"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 326.98,
+    "2": 333.66,
+    "3": 344.28,
+    "4": 354.18
+   },
+   "t_start": 326.98,
+   "t_end": 366.44,
+   "duration": 39.46,
+   "laser": []
+  },
+  {
+   "id": 10,
+   "kind": "page",
+   "heading": "四　两条守恒律",
+   "narration": "有心力有两个守恒量。第一，力矩为零，所以角动量守恒：L 等于 m r 方 dθ/dt 等于常量。第二，引力是保守力，机械能守恒：E 等于二分之一 m v 方减 G m m′ 除以 r 等于常量。这两个式子联立，就能解出轨道。思路是：从角动量式子里解出 dθ/dt，代入能量式，把时间消掉，得到 r 与 θ 的微分方程。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　两条守恒律",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "有心力 ⇒ 力矩为零 ⇒ ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "角动量守恒",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 1580,
+     "h": 130,
+     "tex": "L=mr^2\\frac{\\mathrm d\\theta}{\\mathrm dt}=\\text{常量}",
+     "size": 38,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 500,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "引力保守 ⇒ ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "机械能守恒",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 590,
+     "w": 1580,
+     "h": 130,
+     "tex": "E=\\frac{1}{2}mv^2-G\\frac{mm'}{r}=\\text{常量}",
+     "size": 38,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 760,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两步：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "① 由 L 解出 dθ/dt；② 代入 E，消去时间，得 r-θ 方程．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 860,
+     "w": 1580,
+     "h": 50,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "开普勒第二定律（面积速度不变）就是 L 守恒的几何表述．",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 367.24,
+    "2": 370.4,
+    "3": 378.31,
+    "4": 387.42,
+    "5": 391.47
+   },
+   "t_start": 367.24,
+   "t_end": 401.9,
+   "duration": 34.66,
+   "laser": []
+  },
+  {
+   "id": 11,
+   "kind": "page",
+   "heading": "四　圆锥曲线轨道",
+   "narration": "解出来的结果是一条圆锥曲线：r 分之一等于 A 乘 1 加 e cosθ。其中 A 等于 G m′ m 方除以 L 方，e 是离心率，等于根号下 1 加 2EL 方除以 G 方 m′ 方 m 三次方。行星绕太阳时，能量 E 小于零，所以 e 小于 1——轨道是椭圆。这就用万有引力论证了开普勒第一定律。顺便说，如果 E 等于零就是抛物线，E 大于零就是双曲线——彗星和探测器走的正是这两类。所以平方反比定律给出的不只是椭圆，而是一整族圆锥曲线，椭圆只是束缚态那一种。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　圆锥曲线轨道",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 300,
+     "y": 236,
+     "w": 1320,
+     "h": 130,
+     "tex": "\\frac{1}{r}=A(1+e\\cos\\theta)",
+     "size": 42,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 400,
+     "w": 1580,
+     "h": 150,
+     "tex": "A=\\frac{Gm'm^2}{L^2},\\qquad e=\\left(1+\\frac{2EL^2}{G^2m'^2m^3}\\right)^{1/2}",
+     "size": 30,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 590,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "行星束缚态 ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "E < 0 ⇒ e < 1 ⇒ 椭圆",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 690,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "E = 0 ⇒ 抛物线；",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "E > 0 ⇒ 双曲线",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "（彗星、探测器）．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 790,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "万有引力 ⇒ 圆锥曲线族；椭圆只是束缚态那一种",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 960,
+     "w": 1580,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这就是“命题二”的答案：开普勒第一定律被证明了．",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 402.7,
+    "2": 409.72,
+    "3": 419.91,
+    "4": 426.6,
+    "5": 431.13
+   },
+   "t_start": 402.7,
+   "t_end": 449.04,
+   "duration": 46.34,
+   "laser": []
+  },
+  {
+   "id": 12,
+   "kind": "page",
+   "heading": "本节小结",
+   "narration": "小结。两个命题，两个答案。命题一：平方反比是普遍规律。关键工具是引力势能——标量积分；球壳定理说明，球壳对球外质点的作用等价于质量集中于球心；叠加球壳得球体，所以球对称物体都可以当质点。命题二：从万有引力出发，用极坐标分解速度，再联立角动量守恒与机械能守恒，解出圆锥曲线轨道。能量小于零给椭圆，正是行星的轨道。这一节的方法值得记住：先算标量（势能），再求导得力；用守恒量降阶，而不是硬解微分方程。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "命题一",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "：平方反比是普遍规律．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 200,
+     "y": 310,
+     "w": 1560,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "球壳定理：球壳对外点 ≡ 质量集中于球心；叠加得球体．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 400,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "命题二",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "：极坐标 + 两守恒 ⇒ 圆锥曲线轨道．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 200,
+     "y": 470,
+     "w": 1560,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "E < 0 ⇒ 椭圆（行星）；E = 0 ⇒ 抛物线；E > 0 ⇒ 双曲线．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 560,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "方法",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "：先算标量（势能）再求导得力；用守恒量降阶．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 660,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "两个命题，一个方法：球壳定理 ＋ 守恒律",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 850,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "下一节：经典力学的成就和局限性．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 449.84,
+    "2": 455.25,
+    "3": 472.77,
+    "4": 482.89,
+    "5": 487.39
+   },
+   "t_start": 449.84,
+   "t_end": 497.94,
+   "duration": 48.1,
+   "laser": []
+  }
+ ],
+ "subtitles": [
+  {
+   "slide": 1,
+   "start": 0.0,
+   "end": 4.1,
+   "text": "这一节 4-8，万有引力的牛顿命题。"
+  },
+  {
+   "slide": 1,
+   "start": 4.5,
+   "end": 11.94,
+   "text": "一六六五年，牛顿从行星绕太阳的圆轨道出发，导出引力与距离的平方成反比。"
+  },
+  {
+   "slide": 1,
+   "start": 12.34,
+   "end": 18.75,
+   "text": "但两个问题随即而来：第一，这条定律除了天体，对普通物体适用吗？"
+  },
+  {
+   "slide": 1,
+   "start": 19.4,
+   "end": 26.65,
+   "text": "第二，开普勒说行星走椭圆，万有引力能不能从椭圆轨道反推出来？"
+  },
+  {
+   "slide": 1,
+   "start": 27.3,
+   "end": 29.82,
+   "text": "这一节就回答这两问。"
+  },
+  {
+   "slide": 2,
+   "start": 31.33,
+   "end": 33.75,
+   "text": "先把问题摆清楚。"
+  },
+  {
+   "slide": 2,
+   "start": 34.15,
+   "end": 41.52,
+   "text": "命题一：万有引力定律除了计算天体之间的引力，是否还适用于其他物体之间？"
+  },
+  {
+   "slide": 2,
+   "start": 42.17,
+   "end": 45.82,
+   "text": "比如两块石头、一个人和地球。"
+  },
+  {
+   "slide": 2,
+   "start": 46.22,
+   "end": 51.72,
+   "text": "这其实是在问：平方反比是“天体特权”，还是普遍规律？"
+  },
+  {
+   "slide": 2,
+   "start": 52.37,
+   "end": 61.85,
+   "text": "命题二：开普勒从观测归纳出行星轨道是椭圆，那么从万有引力定律出发，能不能把椭圆轨道推出来？"
+  },
+  {
+   "slide": 2,
+   "start": 62.5,
+   "end": 67.18,
+   "text": "第一问需要算球壳的引力，第二问需要解轨道方程。"
+  },
+  {
+   "slide": 3,
+   "start": 68.75,
+   "end": 71.32,
+   "text": "先写下两个基本式子。"
+  },
+  {
+   "slide": 3,
+   "start": 71.72,
+   "end": 78.37,
+   "text": "万有引力定律：F 等于负 G m m′ 除以 r 方，再乘 e_r。"
+  },
+  {
+   "slide": 3,
+   "start": 78.77,
+   "end": 85.42,
+   "text": "负号表示引力指向对方，e_r 是沿位矢方向的单位矢量。"
+  },
+  {
+   "slide": 3,
+   "start": 85.82,
+   "end": 90.91,
+   "text": "对应的引力势能是 Ep 等于负 G m m′ 除以 r。"
+  },
+  {
+   "slide": 3,
+   "start": 91.31,
+   "end": 97.5,
+   "text": "注意这里取了无穷远处为零势能点，所以势能处处为负。"
+  },
+  {
+   "slide": 3,
+   "start": 97.9,
+   "end": 99.99,
+   "text": "为什么先写势能？"
+  },
+  {
+   "slide": 3,
+   "start": 100.64,
+   "end": 108.01,
+   "text": "因为势能是标量，积分比矢量积分容易得多；算完势能，再对 r 求导取负，就得到力。"
+  },
+  {
+   "slide": 3,
+   "start": 108.41,
+   "end": 114.67,
+   "text": "F 等于负 dEp/dr 乘 e_r——这一步是这套推导的关键技巧。"
+  },
+  {
+   "slide": 4,
+   "start": 116.33,
+   "end": 119.47,
+   "text": "现在算球壳对球外一点的引力。"
+  },
+  {
+   "slide": 4,
+   "start": 119.87,
+   "end": 131.01,
+   "text": "方法是用微积分：把球壳切成一个个细圆环，每个环上所有点到 P 的距离相同，所以整个环对 P 的势能可以直接写出来。"
+  },
+  {
+   "slide": 4,
+   "start": 131.41,
+   "end": 137.63,
+   "text": "设球壳半径 R、面密度 σ，P 点距球心 r，且在球外。"
+  },
+  {
+   "slide": 4,
+   "start": 138.03,
+   "end": 146.31,
+   "text": "取一个由角度 θ 确定的细环，环的宽度是 R dθ，环的半径是 R sinθ。"
+  },
+  {
+   "slide": 4,
+   "start": 146.71,
+   "end": 150.26,
+   "text": "注意 θ 从 OP 连线量起。"
+  },
+  {
+   "slide": 5,
+   "start": 151.74,
+   "end": 154.14,
+   "text": "先算这个环的面积。"
+  },
+  {
+   "slide": 5,
+   "start": 154.54,
+   "end": 164.09,
+   "text": "周长是 2πR sinθ，宽度是 R dθ，所以面积 dA 等于 2πR 方 sinθ dθ。"
+  },
+  {
+   "slide": 5,
+   "start": 164.49,
+   "end": 171.71,
+   "text": "乘上面密度 σ，得到环的质量：dm′ 等于 2πR 方 σ sinθ dθ。"
+  },
+  {
+   "slide": 5,
+   "start": 172.11,
+   "end": 179.31,
+   "text": "这个环对 P 的引力势能是负 G m dm′ 除以 s，s 是环上任意点到 P 的距离。"
+  },
+  {
+   "slide": 5,
+   "start": 179.71,
+   "end": 186.0,
+   "text": "因为环上各点到 P 等距，这个式子对整个环都成立，不用再积分。"
+  },
+  {
+   "slide": 5,
+   "start": 186.4,
+   "end": 189.4,
+   "text": "代进去，得到 dEp 的表达式。"
+  },
+  {
+   "slide": 6,
+   "start": 190.94,
+   "end": 196.65,
+   "text": "由余弦定理，s 方等于 R 方加 r 方减 2rR cosθ。"
+  },
+  {
+   "slide": 6,
+   "start": 197.05,
+   "end": 202.31,
+   "text": "两边微分，得到 2s ds 等于 2rR sinθ dθ。"
+  },
+  {
+   "slide": 6,
+   "start": 202.71,
+   "end": 212.55,
+   "text": "于是 sinθ dθ 除以 s 等于 ds 除以 Rr——这一步很漂亮，把角度积分换成了对 s 的积分。"
+  },
+  {
+   "slide": 6,
+   "start": 212.95,
+   "end": 219.38,
+   "text": "代回去：dEp 等于负 Gm2πRσ 除以 r，再乘 ds。"
+  },
+  {
+   "slide": 6,
+   "start": 219.78,
+   "end": 226.19,
+   "text": "s 的范围是从 r 减 R 到 r 加 R，积分结果就是 2R。"
+  },
+  {
+   "slide": 6,
+   "start": 226.59,
+   "end": 232.37,
+   "text": "把 2R 乘进去，4πR 方 σ 正好是球壳的总质量 m′。"
+  },
+  {
+   "slide": 7,
+   "start": 233.91,
+   "end": 240.68,
+   "text": "于是得到 Ep 等于负 G m m′ 除以 r，条件是 r 大于 R。"
+  },
+  {
+   "slide": 7,
+   "start": 241.08,
+   "end": 242.95,
+   "text": "这说明什么？"
+  },
+  {
+   "slide": 7,
+   "start": 243.6,
+   "end": 251.86,
+   "text": "质点 m 放在匀质球壳外，它的引力势能，与把整个球壳的质量全部集中在球心的情况完全一样。"
+  },
+  {
+   "slide": 7,
+   "start": 252.26,
+   "end": 259.92,
+   "text": "再对 r 求导取负，得到力：F 等于负 G m m′ 除以 r 方乘 e_r。"
+  },
+  {
+   "slide": 7,
+   "start": 260.32,
+   "end": 267.14,
+   "text": "也就是说：匀质球壳外面的质点所受的引力，与把球壳质量集中于球心时一样。"
+  },
+  {
+   "slide": 7,
+   "start": 267.54,
+   "end": 269.87,
+   "text": "这就是球壳定理。"
+  },
+  {
+   "slide": 7,
+   "start": 270.27,
+   "end": 278.77,
+   "text": "所以命题一有了答案：平方反比对宏观物体也成立——只要物体是球对称的，就可以当质点处理。"
+  },
+  {
+   "slide": 8,
+   "start": 280.36,
+   "end": 286.91,
+   "text": "球壳解决了，球体就好办了：把实心球看成一层层同心球壳叠起来。"
+  },
+  {
+   "slide": 8,
+   "start": 287.31,
+   "end": 296.43,
+   "text": "对球外一点，每一层球壳都等价于把它的质量放在球心，叠加起来，整个球也等价于把全部质量放在球心。"
+  },
+  {
+   "slide": 8,
+   "start": 296.83,
+   "end": 305.47,
+   "text": "于是两个匀质球体之间的引力，等于把两球质量集中于球心——也就是视为两个质点——之间的引力。"
+  },
+  {
+   "slide": 8,
+   "start": 305.87,
+   "end": 318.33,
+   "text": "公式还是那个样子：Ep 等于负 G m₁ m₂′ 除以 r，F 等于负 G m₁ m₂′ 除以 r 方 e_r，其中 r 是两球心之间的距离。"
+  },
+  {
+   "slide": 8,
+   "start": 318.73,
+   "end": 325.5,
+   "text": "这就是为什么算地球对月球的引力，可以直接用两球心距，而不用管地球有多大。"
+  },
+  {
+   "slide": 9,
+   "start": 326.98,
+   "end": 329.0,
+   "text": "回答第二问。"
+  },
+  {
+   "slide": 9,
+   "start": 329.4,
+   "end": 333.26,
+   "text": "行星受的是有心力，用极坐标最方便。"
+  },
+  {
+   "slide": 9,
+   "start": 333.66,
+   "end": 343.88,
+   "text": "取太阳为原点 O，行星位置用 r 和 θ 描述，两个单位矢量 e_r 沿位矢、e_θ 垂直于它。"
+  },
+  {
+   "slide": 9,
+   "start": 344.28,
+   "end": 353.78,
+   "text": "位移的微元可以写成两项：径向的 dr 乘 e_r，加上横向的 r dθ 乘 e_θ。"
+  },
+  {
+   "slide": 9,
+   "start": 354.18,
+   "end": 359.24,
+   "text": "除以 dt，速度就分解成径向速度和横向速度。"
+  },
+  {
+   "slide": 9,
+   "start": 359.64,
+   "end": 365.69,
+   "text": "注意横向速度是 r 乘 dθ/dt——正是上一节角动量的来源。"
+  },
+  {
+   "slide": 10,
+   "start": 367.24,
+   "end": 370.0,
+   "text": "有心力有两个守恒量。"
+  },
+  {
+   "slide": 10,
+   "start": 370.4,
+   "end": 377.91,
+   "text": "第一，力矩为零，所以角动量守恒：L 等于 m r 方 dθ/dt 等于常量。"
+  },
+  {
+   "slide": 10,
+   "start": 378.31,
+   "end": 387.02,
+   "text": "第二，引力是保守力，机械能守恒：E 等于二分之一 m v 方减 G m m′ 除以 r 等于常量。"
+  },
+  {
+   "slide": 10,
+   "start": 387.42,
+   "end": 391.07,
+   "text": "这两个式子联立，就能解出轨道。"
+  },
+  {
+   "slide": 10,
+   "start": 391.47,
+   "end": 401.21,
+   "text": "思路是：从角动量式子里解出 dθ/dt，代入能量式，把时间消掉，得到 r 与 θ 的微分方程。"
+  },
+  {
+   "slide": 11,
+   "start": 402.7,
+   "end": 409.32,
+   "text": "解出来的结果是一条圆锥曲线：r 分之一等于 A 乘 1 加 e cosθ。"
+  },
+  {
+   "slide": 11,
+   "start": 409.72,
+   "end": 419.51,
+   "text": "其中 A 等于 G m′ m 方除以 L 方，e 是离心率，等于根号下 1 加 2EL 方除以 G 方 m′ 方 m 三次方。"
+  },
+  {
+   "slide": 11,
+   "start": 419.91,
+   "end": 426.2,
+   "text": "行星绕太阳时，能量 E 小于零，所以 e 小于 1——轨道是椭圆。"
+  },
+  {
+   "slide": 11,
+   "start": 426.6,
+   "end": 430.73,
+   "text": "这就用万有引力论证了开普勒第一定律。"
+  },
+  {
+   "slide": 11,
+   "start": 431.13,
+   "end": 439.53,
+   "text": "顺便说，如果 E 等于零就是抛物线，E 大于零就是双曲线——彗星和探测器走的正是这两类。"
+  },
+  {
+   "slide": 11,
+   "start": 439.93,
+   "end": 448.31,
+   "text": "所以平方反比定律给出的不只是椭圆，而是一整族圆锥曲线，椭圆只是束缚态那一种。"
+  },
+  {
+   "slide": 12,
+   "start": 449.84,
+   "end": 451.71,
+   "text": "小结。"
+  },
+  {
+   "slide": 12,
+   "start": 452.11,
+   "end": 454.85,
+   "text": "两个命题，两个答案。"
+  },
+  {
+   "slide": 12,
+   "start": 455.25,
+   "end": 458.87,
+   "text": "命题一：平方反比是普遍规律。"
+  },
+  {
+   "slide": 12,
+   "start": 459.27,
+   "end": 472.37,
+   "text": "关键工具是引力势能——标量积分；球壳定理说明，球壳对球外质点的作用等价于质量集中于球心；叠加球壳得球体，所以球对称物体都可以当质点。"
+  },
+  {
+   "slide": 12,
+   "start": 472.77,
+   "end": 482.49,
+   "text": "命题二：从万有引力出发，用极坐标分解速度，再联立角动量守恒与机械能守恒，解出圆锥曲线轨道。"
+  },
+  {
+   "slide": 12,
+   "start": 482.89,
+   "end": 486.99,
+   "text": "能量小于零给椭圆，正是行星的轨道。"
+  },
+  {
+   "slide": 12,
+   "start": 487.39,
+   "end": 497.13,
+   "text": "这一节的方法值得记住：先算标量（势能），再求导得力；用守恒量降阶，而不是硬解微分方程。"
+  }
+ ],
+ "build_ts": 1792399306,
+ "logoScale": 0.67
+}

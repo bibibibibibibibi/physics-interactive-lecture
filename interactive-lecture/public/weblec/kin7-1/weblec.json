@@ -1,0 +1,3631 @@
+{
+ "title": "7-1 磁场 磁感应强度",
+ "nav": "7-1　磁场　磁感应强度",
+ "footer": "第七章　恒定磁场",
+ "character": "aqiang",
+ "characters": [
+  {
+   "id": "aqiang",
+   "name": "阿强"
+  },
+  {
+   "id": "professor",
+   "name": "博士讲师"
+  },
+  {
+   "id": "zhongshan",
+   "name": "中山装先生"
+  }
+ ],
+ "duration": 529.1,
+ "slides": [
+  {
+   "id": 1,
+   "kind": "page",
+   "heading": "封面",
+   "narration": "从这一节开始，我们进入第七章，恒定磁场。前面两章讲的是静电场，源是静止的电荷。这一章的源换了：运动的电荷，也就是电流。磁现象很早就有记载，但直到一八二零年，奥斯特发现通电导线能让小磁针偏转，人们才意识到电和磁是一回事的两个面。这一节先把最基本的东西立起来：磁现象的本质是什么，磁场怎么描述，磁感应强度怎么定义，磁感线怎么画。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 292,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 七 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 300,
+     "y": 420,
+     "w": 1320,
+     "h": 160,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "恒 定 磁 场",
+        "size": 76,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 300,
+     "y": 606,
+     "w": 1320,
+     "h": 130,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "7-1　磁场　磁感应强度",
+        "size": 48,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 766,
+     "w": 1480,
+     "h": 90,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁现象的本质　·　磁感应强度　·　磁感线",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 220,
+     "y": 900,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "从「电」到「磁」",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 0.0,
+    "2": 5.2,
+    "3": 9.97,
+    "4": 15.1
+   },
+   "t_start": 0.0,
+   "t_end": 36.67,
+   "duration": 36.67,
+   "laser": []
+  },
+  {
+   "id": 2,
+   "kind": "page",
+   "heading": "本章路线",
+   "narration": "先看整章的路。第一步，认识基本磁现象，引入磁感应强度这个描述磁场的物理量，这是 7-1 的事。第二步，毕奥和萨伐尔给出电流产生磁场的定量规律，7-2。第三步，磁通量与磁场的高斯定理，它告诉我们磁感线是闭合的，7-3。第四步，安培环路定理，对称情形下不用积分就能求磁场，7-4。再往后是磁场对电荷和电流的作用：洛伦兹力、安培力、磁矩，最后是磁介质。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本章路线",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 58,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "主线：电流 → 磁场 → 对电流和运动电荷的作用",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 320,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1　磁场　磁感应强度",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 372,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "基本磁现象、B 的定义（7-1）",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 450,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2　毕奥-萨伐尔定律",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 502,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电流元产生磁场的定量规律（7-2）",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 580,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "3　磁通量　高斯定理",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 632,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁感线闭合，无磁单极子（7-3）",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 320,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4　安培环路定理",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 372,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "对称场免积分（7-4）",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 450,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "5　洛伦兹力",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 502,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁场对运动电荷的作用（7-5）",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 580,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "6　安培力　磁矩　磁介质",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 632,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁场对电流的作用（7-6～7-8）",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "两条线索并行",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "「源」：电流怎样产生磁场（毕奥-萨伐尔、安培环路）",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "「作用」：磁场怎样作用于电流与运动电荷（洛伦兹力、安培力）",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 37.47,
+    "2": 40.05,
+    "3": 48.2,
+    "4": 55.18,
+    "5": 62.9,
+    "6": 70.16
+   },
+   "t_start": 37.47,
+   "t_end": 78.34,
+   "duration": 40.87,
+   "laser": []
+  },
+  {
+   "id": 3,
+   "kind": "page",
+   "heading": "一　基本磁现象",
+   "narration": "一，基本磁现象。最熟悉的是磁铁：有两个极，同名磁极相斥，异名磁极相吸。而且磁极不能单独存在——你把磁铁切成两半，得到的是两个小磁铁，各有自己的南北极，永远找不到一个孤立的磁单极。第二个现象是电流的磁效应。一八二零年奥斯特把导线放在小磁针上方，通电的一瞬间，磁针偏转了。这说明电流周围有磁场。安培进一步提出假说：一切磁现象的根源都是电流，永磁体的磁性来自内部的分子电流。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 900,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　基本磁现象",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 磁铁：两个极，",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 292,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同名相斥、异名相吸．",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 372,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁极不能单独存在：",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 420,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "切成两半，得到两个小磁铁；",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 464,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不存在孤立的磁单极．",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 544,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 电流的磁效应（1820 奥斯特）",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 592,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "通电导线使小磁针偏转 ⇒",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 636,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电流周围存在磁场．",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 716,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 安培假说：",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 762,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一切磁现象都源于电流；永磁体的",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 804,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁性来自内部的分子电流．",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 876,
+     "w": 740,
+     "h": 120,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "电与磁不是两回事",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "磁，就是运动电荷产生的效应",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 507,
+     "name": "mag_phenomena"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 79.14,
+    "2": 82.18,
+    "3": 89.04,
+    "4": 99.62,
+    "5": 110.62
+   },
+   "t_start": 79.14,
+   "t_end": 122.84,
+   "duration": 43.7,
+   "laser": []
+  },
+  {
+   "id": 4,
+   "kind": "page",
+   "heading": "二　磁场",
+   "narration": "二，磁场。和电场一样，磁力不是超距作用，而是通过磁场传递的：电流在周围激发磁场，磁场再对另一个电流或运动电荷施力。所以描述磁场，就是描述这个「场」本身。最直观的工具是磁感线：线上每一点的切线方向，就是该点磁感应强度的方向。条形磁铁的磁感线从 N 极出发，绕到 S 极，在磁铁内部继续从 S 回到 N——注意它们是闭合的。这一点和电场线完全不同：电场线起于正电荷、止于负电荷，而磁感线没有起点也没有终点。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 900,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　磁场",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁力通过",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "磁场",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "传递：",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 300,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电流（或运动电荷）激发磁场，",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 344,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁场再对另一个电流施力．",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 420,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与电场完全平行：",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 470,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "场是局部存在的物质，",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 514,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不是「隔空施力」．",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 594,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁感线：",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "切线方向 = B 的方向",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 646,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "条形磁铁：外部 N → S，",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 690,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "内部 S → N，形成闭合曲线．",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 770,
+     "w": 740,
+     "h": 170,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "关键差别",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "电场线有起点、有终点；",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "磁感线无始无终，永远闭合",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 540,
+     "name": "mag_field_lines"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 123.64,
+    "2": 126.39,
+    "3": 137.49,
+    "4": 141.78
+   },
+   "t_start": 123.64,
+   "t_end": 168.11,
+   "duration": 44.47,
+   "laser": []
+  },
+  {
+   "id": 5,
+   "kind": "page",
+   "heading": "三　磁感线的性质",
+   "narration": "磁感线有几条性质要记住。第一，闭合：磁感线永远是闭合曲线，没有起点和终点。第二，不相交：否则交点处磁场会有两个方向。第三，疏密表强弱：线密的地方磁场强，线疏的地方弱。第四，方向：磁体外部从 N 到 S，内部从 S 到 N；通电直导线周围是同心圆，方向用右手螺旋判断——拇指指电流，四指绕磁场。把这几条记住，看到一个电流的磁感线图，就能读出它的磁场分布。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1000,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　磁感线的性质",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 170,
+     "y": 220,
+     "w": 760,
+     "h": 170,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "① 闭合",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "无起点、无终点，永远闭合",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 1010,
+     "y": 220,
+     "w": 740,
+     "h": 170,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "② 不相交",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "否则同一点 B 有两个方向",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 170,
+     "y": 416,
+     "w": 760,
+     "h": 170,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "③ 疏密表强弱",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "线密处 B 大，线疏处 B 小",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 1010,
+     "y": 416,
+     "w": 740,
+     "h": 170,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "④ 方向与右手螺旋",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "拇指指电流，四指绕磁场",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 626,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "通电直导线：",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "磁感线是以导线为轴的同心圆；",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "螺线管外部像条形磁铁．",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 700,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "记住这四条，看到电流的磁感线图，就能读出磁场分布．",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 170,
+     "y": 780,
+     "w": 1580,
+     "h": 230,
+     "name": "mag_field_loop"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 168.91,
+    "2": 172.5,
+    "3": 178.92,
+    "4": 184.29,
+    "5": 190.79,
+    "6": 203.74
+   },
+   "t_start": 168.91,
+   "t_end": 210.26,
+   "duration": 41.35,
+   "laser": []
+  },
+  {
+   "id": 6,
+   "kind": "page",
+   "heading": "四　磁感应强度",
+   "narration": "三，磁感应强度。怎样定量描述磁场？和电场一样，拿一个试探物体放进去。但磁场对静止电荷没有作用，必须用运动电荷。实验发现：电荷 q 以速度 v 运动时，所受的磁力 F 同时垂直于 v 和 B。写成矢量式就是 F 等于 q v 叉乘 B。大小上，F 等于 q v B sinθ，θ 是 v 与 B 的夹角；所以 B 等于 F 除以 q v sinθ。方向由右手螺旋决定：四指从 v 转向 B，拇指指向正电荷受力的方向。单位是特斯拉，一特斯拉等于一牛每安培米。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1000,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　磁感应强度",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁场对",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "静止电荷无作用",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "，",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 288,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "必须用",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "运动电荷",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "去试探．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 360,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "实验：F 同时垂直于 v 和 B",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 412,
+     "w": 720,
+     "h": 120,
+     "tex": "\\vec F=q\\vec v\\times\\vec B",
+     "size": 42,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 548,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "大小：",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "$F=qvB\\sin\\theta$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 600,
+     "w": 720,
+     "h": 110,
+     "tex": "B=\\dfrac{F}{qv\\sin\\theta}",
+     "size": 38,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 726,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "方向：",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "右手螺旋，v → B，",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 768,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "拇指为正电荷受力方向．",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 838,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "单位：1 T = 1 N/(A·m)",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 882,
+     "w": 740,
+     "h": 40,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（1 T = 10⁴ Gs）",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 540,
+     "name": "b_definition"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 211.06,
+    "2": 214.12,
+    "3": 226.42,
+    "4": 234.24,
+    "5": 238.96
+   },
+   "t_start": 211.06,
+   "t_end": 261.08,
+   "duration": 50.02,
+   "laser": []
+  },
+  {
+   "id": 7,
+   "kind": "page",
+   "heading": "五　洛伦兹力",
+   "narration": "这个力叫洛伦兹力。它有一个非常重要的性质：因为 F 始终垂直于速度 v，所以洛伦兹力永远不做功。不做功，速率就不变，动能也不变——磁场只能改变运动方向，不能改变快慢。于是最简单的情形出现了：如果 v 垂直于 B，力的大小恒定、方向始终指向圆心，电荷就做匀速圆周运动。由牛顿第二定律，q v B 等于 m v 方除以 r，解出半径 r 等于 m v 除以 q B。周期 T 等于 2πr 除以 v，等于 2πm 除以 q B——注意周期与速率无关，这是回旋加速器的原理基础。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 900,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五　洛伦兹力",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "F 始终垂直于 v",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 310,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "⇒ 洛伦兹力",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "永不做功",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 362,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "⇒ 速率不变、动能不变",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 410,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁场只改方向，不改快慢．",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 486,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "v ⊥ B：",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "匀速圆周运动",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 540,
+     "w": 720,
+     "h": 110,
+     "tex": "qvB=\\dfrac{mv^{2}}{r}",
+     "size": 34,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 660,
+     "w": 720,
+     "h": 110,
+     "tex": "r=\\dfrac{mv}{qB}",
+     "size": 38,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 784,
+     "w": 720,
+     "h": 110,
+     "tex": "T=\\dfrac{2\\pi r}{v}=\\dfrac{2\\pi m}{qB}",
+     "size": 34,
+     "color": "#0000CD",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 906,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "周期与速率无关 —— 回旋加速器的基础．",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 566,
+     "name": "lorentz_circle"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 261.88,
+    "2": 264.78,
+    "3": 273.2,
+    "4": 280.61,
+    "5": 290.8,
+    "6": 299.48
+   },
+   "t_start": 261.88,
+   "t_end": 309.28,
+   "duration": 47.4,
+   "laser": []
+  },
+  {
+   "id": 8,
+   "kind": "page",
+   "heading": "六　三种运动",
+   "narration": "把速度方向分成三种情形。第一，v 平行于 B：sinθ 等于零，洛伦兹力为零，电荷做匀速直线运动。第二，v 垂直于 B：做匀速圆周运动，半径和周期就是刚才那两个式子。第三，v 与 B 斜交：把速度分解成平行和垂直两个分量，垂直分量让它转圈，平行分量让它沿磁场方向匀速前进，合起来就是螺旋线。这三种情形，覆盖了带电粒子在匀强磁场中的全部运动。后面讲回旋加速器、质谱仪、磁约束，用的都是这几条。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1100,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "六　带电粒子在匀强磁场中的三种运动",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 760,
+     "h": 190,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "① v ∥ B",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "F = 0 ⇒ 匀速直线运动",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "速率、方向都不变",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 1010,
+     "y": 226,
+     "w": 740,
+     "h": 190,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "② v ⊥ B",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "匀速圆周运动",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "r = mv/(qB)，T = 2πm/(qB)",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 170,
+     "y": 442,
+     "w": 760,
+     "h": 190,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "③ v 与 B 斜交",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "分解为 v∥ 与 v⊥",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "⇒ 等距螺旋线",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 455,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三种情形覆盖全部",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 502,
+     "w": 740,
+     "h": 38,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "v∥：匀速直线",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 542,
+     "w": 740,
+     "h": 38,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "v⊥：圆周",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 582,
+     "w": 740,
+     "h": 38,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "斜交：螺旋",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 660,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "应用：回旋加速器（v⊥）、质谱仪（半径分辨质量）、磁约束（螺旋绕行）．",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 170,
+     "y": 720,
+     "w": 1580,
+     "h": 270,
+     "name": "charge_motion_three"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 310.08,
+    "2": 313.79,
+    "3": 321.94,
+    "4": 329.37,
+    "5": 342.44
+   },
+   "t_start": 310.08,
+   "t_end": 355.1,
+   "duration": 45.02,
+   "laser": []
+  },
+  {
+   "id": 9,
+   "kind": "page",
+   "heading": "七　磁通量",
+   "narration": "四，磁通量。和电通量完全平行：在磁场中取一个面元 dS，法线 n，磁感应强度与法线的夹角为 θ。穿过这个面元的磁通量定义为 B 点乘 dS，也就是 B dS cosθ。对整个曲面积分，Φ 等于 ∫ B 点乘 dS。单位是韦伯，一韦伯等于一特斯拉平方米。磁通量是代数量，正负由法线取向决定——闭合面习惯取外法线。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1000,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "七　磁通量",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "取面元 dS，法线 n，",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 288,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "B 与 n 的夹角为 θ．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 350,
+     "w": 720,
+     "h": 110,
+     "tex": "\\mathrm d\\Phi=B\\,\\mathrm dS\\cos\\theta",
+     "size": 36,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 480,
+     "w": 720,
+     "h": 120,
+     "tex": "\\Phi=\\int_S \\vec B\\cdot\\mathrm d\\vec S",
+     "size": 38,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 626,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "单位：韦伯（Wb）",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 674,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1 Wb = 1 T·m²",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 744,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "代数量：",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "正负由法线取向定．",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 792,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "闭合面习惯取外法线．",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 860,
+     "w": 740,
+     "h": 130,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "与电通量完全平行",
+        "size": 27,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "只是把 E 换成 B",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 593,
+     "name": "mag_flux"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 355.9,
+    "2": 358.63,
+    "3": 367.96,
+    "4": 374.82,
+    "5": 379.61
+   },
+   "t_start": 355.9,
+   "t_end": 391.37,
+   "duration": 35.47,
+   "laser": []
+  },
+  {
+   "id": 10,
+   "kind": "page",
+   "heading": "八　磁场的高斯定理",
+   "narration": "五，磁场的高斯定理。把磁通量的概念用到闭合曲面上。因为磁感线是闭合曲线，一条线进去必然从另一处出来，所以穿过任意闭合曲面的净磁通量恒为零。写成公式：∮ B 点乘 dS 等于零。这条定理的物理含义是：磁场是无源场，不存在磁单极子。对比电场的高斯定理，右边是 q 除以 ε₀——电荷是电场的源；而磁场的右边是零，因为没有「磁荷」。这是电场和磁场最本质的差别之一。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1100,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "八　磁场的高斯定理",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁感线闭合 ⇒",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 284,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "进多少，就出多少．",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 350,
+     "w": 720,
+     "h": 130,
+     "tex": "\\oint_S \\vec B\\cdot\\mathrm d\\vec S=0",
+     "size": 44,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 510,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "物理含义：",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 558,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 磁场是",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "无源场",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 606,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 不存在磁单极子",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 680,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与电场对比：",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 726,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "∮E·dS = Σq/ε₀（电荷是源）",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 768,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "∮B·dS = 0（没有磁荷）",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 840,
+     "w": 740,
+     "h": 150,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "这是电场与磁场最本质的差别",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "有源 / 无源，一眼分开",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 622,
+     "name": "mag_gauss"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 392.17,
+    "2": 395.62,
+    "3": 399.72,
+    "4": 409.46,
+    "5": 413.39
+   },
+   "t_start": 392.17,
+   "t_end": 433.14,
+   "duration": 40.97,
+   "laser": []
+  },
+  {
+   "id": 11,
+   "kind": "page",
+   "heading": "例　电子的回旋",
+   "narration": "看一个例子。一个电子以速率 v 垂直射入匀强磁场 B，求它做圆周运动的半径和周期。电子电荷量的大小是 e，质量 m。由洛伦兹力提供向心力：e v B 等于 m v 方除以 r，所以 r 等于 m v 除以 e B。周期 T 等于 2πr 除以 v，等于 2πm 除以 e B。代一组数：电子质量九点一乘十的负三十一次方千克，电荷一点六乘十的负十九次方库仑，磁场零点一特斯拉，速率十的七次方米每秒，算得半径约零点五七毫米，周期约三点六乘十的负十次方秒。可见在通常磁场下，电子的回旋半径很小、频率很高。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1100,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例　电子在匀强磁场中的回旋",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 238,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电子以速率 v 垂直射入匀强磁场 B，",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 282,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "求回旋半径与周期．",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 352,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "洛伦兹力提供向心力：",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 404,
+     "w": 720,
+     "h": 110,
+     "tex": "evB=\\dfrac{mv^{2}}{r}",
+     "size": 34,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 526,
+     "w": 720,
+     "h": 110,
+     "tex": "r=\\dfrac{mv}{eB}",
+     "size": 38,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 646,
+     "w": 720,
+     "h": 110,
+     "tex": "T=\\dfrac{2\\pi m}{eB}",
+     "size": 36,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 772,
+     "w": 740,
+     "h": 40,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "代入：m = 9.1×10⁻³¹ kg，",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 812,
+     "w": 740,
+     "h": 40,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "e = 1.6×10⁻¹⁹ C，B = 0.1 T，",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 852,
+     "w": 740,
+     "h": 40,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "v = 1×10⁷ m/s",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 902,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "r ≈ 0.57 mm，T ≈ 3.6×10⁻¹⁰ s",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 566,
+     "name": "lorentz_circle"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 433.94,
+    "2": 436.21,
+    "3": 443.4,
+    "4": 447.59,
+    "5": 456.22,
+    "6": 462.12
+   },
+   "t_start": 433.94,
+   "t_end": 485.37,
+   "duration": 51.43,
+   "laser": []
+  },
+  {
+   "id": 12,
+   "kind": "page",
+   "heading": "本节小结",
+   "narration": "这一节四件事。第一，磁现象的本质是电流，永磁体的磁性来自分子电流。第二，磁力通过磁场传递，磁感线闭合、不相交、疏密表强弱。第三，磁感应强度用运动电荷定义：F 等于 q v 叉乘 B，单位特斯拉。第四，洛伦兹力垂直于速度，不做功；v 垂直 B 时做匀速圆周，半径 m v 除以 q B，周期 2πm 除以 q B。下一节讲毕奥-萨伐尔定律：电流怎样定量地产生磁场。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 760,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 磁现象的本质",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 284,
+     "w": 760,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电流（运动的电荷）；",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 326,
+     "w": 760,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "永磁体 = 分子电流",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 404,
+     "w": 760,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 磁场与磁感线",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 452,
+     "w": 760,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "闭合、不相交、疏密表强弱",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 494,
+     "w": 760,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "右手螺旋定方向",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 磁感应强度",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 284,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\vec F=q\\vec v\\times\\vec B$",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 334,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$B=F/(qv\\sin\\theta)$，单位 T",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 404,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 洛伦兹力",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 452,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "垂直于 v，不做功；",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 494,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "v ⊥ B：$r=mv/(qB)$，$T=2\\pi m/(qB)$",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 590,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "⑤ 磁通量与高斯定理：",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "$\\Phi=\\int\\vec B\\cdot\\mathrm d\\vec S$，$\\oint\\vec B\\cdot\\mathrm d\\vec S=0$．",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 672,
+     "w": 1580,
+     "h": 190,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "下一节：毕奥-萨伐尔定律",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "电流元 Idl 在空间产生的磁场，怎样定量计算",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "这一节讲「场」，下一节给出「源」与场的定量关系",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 900,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "记住一句话：磁源于电，磁场对运动电荷只改方向、不改快慢．",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 486.17,
+    "2": 488.66,
+    "3": 495.11,
+    "4": 502.28,
+    "5": 510.26,
+    "6": 521.24
+   },
+   "t_start": 486.17,
+   "t_end": 527.52,
+   "duration": 41.35,
+   "laser": []
+  }
+ ],
+ "subtitles": [
+  {
+   "slide": 1,
+   "start": 0.0,
+   "end": 4.8,
+   "text": "从这一节开始，我们进入第七章，恒定磁场。"
+  },
+  {
+   "slide": 1,
+   "start": 5.2,
+   "end": 9.57,
+   "text": "前面两章讲的是静电场，源是静止的电荷。"
+  },
+  {
+   "slide": 1,
+   "start": 9.97,
+   "end": 14.7,
+   "text": "这一章的源换了：运动的电荷，也就是电流。"
+  },
+  {
+   "slide": 1,
+   "start": 15.1,
+   "end": 25.83,
+   "text": "磁现象很早就有记载，但直到一八二零年，奥斯特发现通电导线能让小磁针偏转，人们才意识到电和磁是一回事的两个面。"
+  },
+  {
+   "slide": 1,
+   "start": 26.23,
+   "end": 36.0,
+   "text": "这一节先把最基本的东西立起来：磁现象的本质是什么，磁场怎么描述，磁感应强度怎么定义，磁感线怎么画。"
+  },
+  {
+   "slide": 2,
+   "start": 37.47,
+   "end": 39.65,
+   "text": "先看整章的路。"
+  },
+  {
+   "slide": 2,
+   "start": 40.05,
+   "end": 47.8,
+   "text": "第一步，认识基本磁现象，引入磁感应强度这个描述磁场的物理量，这是 7-1 的事。"
+  },
+  {
+   "slide": 2,
+   "start": 48.2,
+   "end": 54.78,
+   "text": "第二步，毕奥和萨伐尔给出电流产生磁场的定量规律，7-2。"
+  },
+  {
+   "slide": 2,
+   "start": 55.18,
+   "end": 62.5,
+   "text": "第三步，磁通量与磁场的高斯定理，它告诉我们磁感线是闭合的，7-3。"
+  },
+  {
+   "slide": 2,
+   "start": 62.9,
+   "end": 69.76,
+   "text": "第四步，安培环路定理，对称情形下不用积分就能求磁场，7-4。"
+  },
+  {
+   "slide": 2,
+   "start": 70.16,
+   "end": 77.6,
+   "text": "再往后是磁场对电荷和电流的作用：洛伦兹力、安培力、磁矩，最后是磁介质。"
+  },
+  {
+   "slide": 3,
+   "start": 79.14,
+   "end": 81.78,
+   "text": "一，基本磁现象。"
+  },
+  {
+   "slide": 3,
+   "start": 82.18,
+   "end": 88.64,
+   "text": "最熟悉的是磁铁：有两个极，同名磁极相斥，异名磁极相吸。"
+  },
+  {
+   "slide": 3,
+   "start": 89.04,
+   "end": 99.22,
+   "text": "而且磁极不能单独存在——你把磁铁切成两半，得到的是两个小磁铁，各有自己的南北极，永远找不到一个孤立的磁单极。"
+  },
+  {
+   "slide": 3,
+   "start": 99.62,
+   "end": 102.79,
+   "text": "第二个现象是电流的磁效应。"
+  },
+  {
+   "slide": 3,
+   "start": 103.19,
+   "end": 110.22,
+   "text": "一八二零年奥斯特把导线放在小磁针上方，通电的一瞬间，磁针偏转了。"
+  },
+  {
+   "slide": 3,
+   "start": 110.62,
+   "end": 113.64,
+   "text": "这说明电流周围有磁场。"
+  },
+  {
+   "slide": 3,
+   "start": 114.04,
+   "end": 122.06,
+   "text": "安培进一步提出假说：一切磁现象的根源都是电流，永磁体的磁性来自内部的分子电流。"
+  },
+  {
+   "slide": 4,
+   "start": 123.64,
+   "end": 125.99,
+   "text": "二，磁场。"
+  },
+  {
+   "slide": 4,
+   "start": 126.39,
+   "end": 137.09,
+   "text": "和电场一样，磁力不是超距作用，而是通过磁场传递的：电流在周围激发磁场，磁场再对另一个电流或运动电荷施力。"
+  },
+  {
+   "slide": 4,
+   "start": 137.49,
+   "end": 141.38,
+   "text": "所以描述磁场，就是描述这个「场」本身。"
+  },
+  {
+   "slide": 4,
+   "start": 141.78,
+   "end": 148.69,
+   "text": "最直观的工具是磁感线：线上每一点的切线方向，就是该点磁感应强度的方向。"
+  },
+  {
+   "slide": 4,
+   "start": 149.09,
+   "end": 157.97,
+   "text": "条形磁铁的磁感线从 N 极出发，绕到 S 极，在磁铁内部继续从 S 回到 N——注意它们是闭合的。"
+  },
+  {
+   "slide": 4,
+   "start": 158.37,
+   "end": 167.37,
+   "text": "这一点和电场线完全不同：电场线起于正电荷、止于负电荷，而磁感线没有起点也没有终点。"
+  },
+  {
+   "slide": 5,
+   "start": 168.91,
+   "end": 172.1,
+   "text": "磁感线有几条性质要记住。"
+  },
+  {
+   "slide": 5,
+   "start": 172.5,
+   "end": 178.52,
+   "text": "第一，闭合：磁感线永远是闭合曲线，没有起点和终点。"
+  },
+  {
+   "slide": 5,
+   "start": 178.92,
+   "end": 183.89,
+   "text": "第二，不相交：否则交点处磁场会有两个方向。"
+  },
+  {
+   "slide": 5,
+   "start": 184.29,
+   "end": 190.39,
+   "text": "第三，疏密表强弱：线密的地方磁场强，线疏的地方弱。"
+  },
+  {
+   "slide": 5,
+   "start": 190.79,
+   "end": 203.34,
+   "text": "第四，方向：磁体外部从 N 到 S，内部从 S 到 N；通电直导线周围是同心圆，方向用右手螺旋判断——拇指指电流，四指绕磁场。"
+  },
+  {
+   "slide": 5,
+   "start": 203.74,
+   "end": 209.52,
+   "text": "把这几条记住，看到一个电流的磁感线图，就能读出它的磁场分布。"
+  },
+  {
+   "slide": 6,
+   "start": 211.06,
+   "end": 213.72,
+   "text": "三，磁感应强度。"
+  },
+  {
+   "slide": 6,
+   "start": 214.12,
+   "end": 216.62,
+   "text": "怎样定量描述磁场？"
+  },
+  {
+   "slide": 6,
+   "start": 217.27,
+   "end": 221.11,
+   "text": "和电场一样，拿一个试探物体放进去。"
+  },
+  {
+   "slide": 6,
+   "start": 221.51,
+   "end": 226.02,
+   "text": "但磁场对静止电荷没有作用，必须用运动电荷。"
+  },
+  {
+   "slide": 6,
+   "start": 226.42,
+   "end": 233.84,
+   "text": "实验发现：电荷 q 以速度 v 运动时，所受的磁力 F 同时垂直于 v 和 B。"
+  },
+  {
+   "slide": 6,
+   "start": 234.24,
+   "end": 238.56,
+   "text": "写成矢量式就是 F 等于 q v 叉乘 B。"
+  },
+  {
+   "slide": 6,
+   "start": 238.96,
+   "end": 247.96,
+   "text": "大小上，F 等于 q v B sinθ，θ 是 v 与 B 的夹角；所以 B 等于 F 除以 q v sinθ。"
+  },
+  {
+   "slide": 6,
+   "start": 248.36,
+   "end": 255.39,
+   "text": "方向由右手螺旋决定：四指从 v 转向 B，拇指指向正电荷受力的方向。"
+  },
+  {
+   "slide": 6,
+   "start": 255.79,
+   "end": 260.16,
+   "text": "单位是特斯拉，一特斯拉等于一牛每安培米。"
+  },
+  {
+   "slide": 7,
+   "start": 261.88,
+   "end": 264.38,
+   "text": "这个力叫洛伦兹力。"
+  },
+  {
+   "slide": 7,
+   "start": 264.78,
+   "end": 272.8,
+   "text": "它有一个非常重要的性质：因为 F 始终垂直于速度 v，所以洛伦兹力永远不做功。"
+  },
+  {
+   "slide": 7,
+   "start": 273.2,
+   "end": 280.21,
+   "text": "不做功，速率就不变，动能也不变——磁场只能改变运动方向，不能改变快慢。"
+  },
+  {
+   "slide": 7,
+   "start": 280.61,
+   "end": 290.4,
+   "text": "于是最简单的情形出现了：如果 v 垂直于 B，力的大小恒定、方向始终指向圆心，电荷就做匀速圆周运动。"
+  },
+  {
+   "slide": 7,
+   "start": 290.8,
+   "end": 299.08,
+   "text": "由牛顿第二定律，q v B 等于 m v 方除以 r，解出半径 r 等于 m v 除以 q B。"
+  },
+  {
+   "slide": 7,
+   "start": 299.48,
+   "end": 308.55,
+   "text": "周期 T 等于 2πr 除以 v，等于 2πm 除以 q B——注意周期与速率无关，这是回旋加速器的原理基础。"
+  },
+  {
+   "slide": 8,
+   "start": 310.08,
+   "end": 313.39,
+   "text": "把速度方向分成三种情形。"
+  },
+  {
+   "slide": 8,
+   "start": 313.79,
+   "end": 321.54,
+   "text": "第一，v 平行于 B：sinθ 等于零，洛伦兹力为零，电荷做匀速直线运动。"
+  },
+  {
+   "slide": 8,
+   "start": 321.94,
+   "end": 328.97,
+   "text": "第二，v 垂直于 B：做匀速圆周运动，半径和周期就是刚才那两个式子。"
+  },
+  {
+   "slide": 8,
+   "start": 329.37,
+   "end": 342.04,
+   "text": "第三，v 与 B 斜交：把速度分解成平行和垂直两个分量，垂直分量让它转圈，平行分量让它沿磁场方向匀速前进，合起来就是螺旋线。"
+  },
+  {
+   "slide": 8,
+   "start": 342.44,
+   "end": 348.06,
+   "text": "这三种情形，覆盖了带电粒子在匀强磁场中的全部运动。"
+  },
+  {
+   "slide": 8,
+   "start": 348.46,
+   "end": 354.36,
+   "text": "后面讲回旋加速器、质谱仪、磁约束，用的都是这几条。"
+  },
+  {
+   "slide": 9,
+   "start": 355.9,
+   "end": 358.23,
+   "text": "四，磁通量。"
+  },
+  {
+   "slide": 9,
+   "start": 358.63,
+   "end": 367.56,
+   "text": "和电通量完全平行：在磁场中取一个面元 dS，法线 n，磁感应强度与法线的夹角为 θ。"
+  },
+  {
+   "slide": 9,
+   "start": 367.96,
+   "end": 374.42,
+   "text": "穿过这个面元的磁通量定义为 B 点乘 dS，也就是 B dS cosθ。"
+  },
+  {
+   "slide": 9,
+   "start": 374.82,
+   "end": 379.21,
+   "text": "对整个曲面积分，Φ 等于 ∫ B 点乘 dS。"
+  },
+  {
+   "slide": 9,
+   "start": 379.61,
+   "end": 384.1,
+   "text": "单位是韦伯，一韦伯等于一特斯拉平方米。"
+  },
+  {
+   "slide": 9,
+   "start": 384.5,
+   "end": 390.64,
+   "text": "磁通量是代数量，正负由法线取向决定——闭合面习惯取外法线。"
+  },
+  {
+   "slide": 10,
+   "start": 392.17,
+   "end": 395.22,
+   "text": "五，磁场的高斯定理。"
+  },
+  {
+   "slide": 10,
+   "start": 395.62,
+   "end": 399.32,
+   "text": "把磁通量的概念用到闭合曲面上。"
+  },
+  {
+   "slide": 10,
+   "start": 399.72,
+   "end": 409.06,
+   "text": "因为磁感线是闭合曲线，一条线进去必然从另一处出来，所以穿过任意闭合曲面的净磁通量恒为零。"
+  },
+  {
+   "slide": 10,
+   "start": 409.46,
+   "end": 412.99,
+   "text": "写成公式：∮ B 点乘 dS 等于零。"
+  },
+  {
+   "slide": 10,
+   "start": 413.39,
+   "end": 418.91,
+   "text": "这条定理的物理含义是：磁场是无源场，不存在磁单极子。"
+  },
+  {
+   "slide": 10,
+   "start": 419.31,
+   "end": 428.31,
+   "text": "对比电场的高斯定理，右边是 q 除以 ε₀——电荷是电场的源；而磁场的右边是零，因为没有「磁荷」。"
+  },
+  {
+   "slide": 10,
+   "start": 428.71,
+   "end": 432.36,
+   "text": "这是电场和磁场最本质的差别之一。"
+  },
+  {
+   "slide": 11,
+   "start": 433.94,
+   "end": 435.81,
+   "text": "看一个例子。"
+  },
+  {
+   "slide": 11,
+   "start": 436.21,
+   "end": 443.0,
+   "text": "一个电子以速率 v 垂直射入匀强磁场 B，求它做圆周运动的半径和周期。"
+  },
+  {
+   "slide": 11,
+   "start": 443.4,
+   "end": 447.19,
+   "text": "电子电荷量的大小是 e，质量 m。"
+  },
+  {
+   "slide": 11,
+   "start": 447.59,
+   "end": 455.82,
+   "text": "由洛伦兹力提供向心力：e v B 等于 m v 方除以 r，所以 r 等于 m v 除以 e B。"
+  },
+  {
+   "slide": 11,
+   "start": 456.22,
+   "end": 461.72,
+   "text": "周期 T 等于 2πr 除以 v，等于 2πm 除以 e B。"
+  },
+  {
+   "slide": 11,
+   "start": 462.12,
+   "end": 478.78,
+   "text": "代一组数：电子质量九点一乘十的负三十一次方千克，电荷一点六乘十的负十九次方库仑，磁场零点一特斯拉，速率十的七次方米每秒，算得半径约零点五七毫米，周期约三点六乘十的负十次方秒。"
+  },
+  {
+   "slide": 11,
+   "start": 479.18,
+   "end": 484.58,
+   "text": "可见在通常磁场下，电子的回旋半径很小、频率很高。"
+  },
+  {
+   "slide": 12,
+   "start": 486.17,
+   "end": 488.26,
+   "text": "这一节四件事。"
+  },
+  {
+   "slide": 12,
+   "start": 488.66,
+   "end": 494.71,
+   "text": "第一，磁现象的本质是电流，永磁体的磁性来自分子电流。"
+  },
+  {
+   "slide": 12,
+   "start": 495.11,
+   "end": 501.88,
+   "text": "第二，磁力通过磁场传递，磁感线闭合、不相交、疏密表强弱。"
+  },
+  {
+   "slide": 12,
+   "start": 502.28,
+   "end": 509.86,
+   "text": "第三，磁感应强度用运动电荷定义：F 等于 q v 叉乘 B，单位特斯拉。"
+  },
+  {
+   "slide": 12,
+   "start": 510.26,
+   "end": 520.84,
+   "text": "第四，洛伦兹力垂直于速度，不做功；v 垂直 B 时做匀速圆周，半径 m v 除以 q B，周期 2πm 除以 q B。"
+  },
+  {
+   "slide": 12,
+   "start": 521.24,
+   "end": 526.78,
+   "text": "下一节讲毕奥-萨伐尔定律：电流怎样定量地产生磁场。"
+  }
+ ],
+ "build_ts": 1792482468,
+ "logoScale": 0.67
+}

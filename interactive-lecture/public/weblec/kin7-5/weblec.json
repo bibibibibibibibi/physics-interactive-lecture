@@ -1,0 +1,2784 @@
+{
+ "title": "7-5 带电粒子在电场和磁场中的运动",
+ "nav": "7-5　带电粒子在电磁场中的运动",
+ "footer": "第七章　恒定磁场",
+ "character": "aqiang",
+ "characters": [
+  {
+   "id": "aqiang",
+   "name": "阿强"
+  },
+  {
+   "id": "professor",
+   "name": "博士讲师"
+  },
+  {
+   "id": "zhongshan",
+   "name": "中山装先生"
+  }
+ ],
+ "duration": 458.64,
+ "slides": [
+  {
+   "id": 1,
+   "kind": "page",
+   "heading": "封面",
+   "narration": "这一节讲带电粒子在电场和磁场里怎么运动。核心是洛伦兹力：电场力沿电场方向，磁场力垂直于速度。两种力性质不同：电场力能改变速度大小，磁场力只能改变方向、不做功。这个差别决定了粒子的运动形态：磁场里走圆周，电场里被加速。最后讲三个应用：回旋加速器、质谱仪、霍尔效应。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 282,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 七 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 300,
+     "y": 408,
+     "w": 1320,
+     "h": 170,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "恒 定 磁 场",
+        "size": 80,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 300,
+     "y": 600,
+     "w": 1320,
+     "h": 140,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "7-5　带电粒子在电磁场中的运动",
+        "size": 44,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 770,
+     "w": 1480,
+     "h": 90,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "洛伦兹力　·　圆周与螺旋　·　三个应用",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 220,
+     "y": 900,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两种力，两种运动",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 0.0,
+    "2": 5.44,
+    "3": 11.89,
+    "4": 19.78
+   },
+   "t_start": 0.0,
+   "t_end": 33.29,
+   "duration": 33.29,
+   "laser": []
+  },
+  {
+   "id": 2,
+   "kind": "page",
+   "heading": "本节路线",
+   "narration": "先看结构。第一步，写出洛伦兹力：电场力和磁场力的合力。第二步，只看磁场：速度垂直于 B 时走圆周，半径和周期各有公式。第三步，把三种情形摆在一起：平行、垂直、斜交。第四步，三个应用：回旋加速器利用周期与速度无关；质谱仪利用半径与质量的关系；霍尔效应利用载流子的偏转。这三件东西看起来不同，用的都是同一个力。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节路线",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "主线：洛伦兹力 → 圆周运动 → 三种情形 → 三个应用",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 320,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1　洛伦兹力",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 372,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\vec F=q\\vec E+q\\vec v\\times\\vec B$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 444,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2　磁场中的圆周运动",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 496,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "半径 $r=mv/(qB)$，周期与速度无关",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 568,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "3　三种情形",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 620,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "平行、垂直、斜交",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 700,
+     "w": 740,
+     "h": 176,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一句话区分两种力",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "电场力做功，改速度大小",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "磁场力不做功，只改方向",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 985,
+     "y": 236,
+     "w": 765,
+     "h": 250,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "三个应用，一个力",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "回旋加速器：周期与 v 无关",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "质谱仪：半径与 m 有关",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "霍尔效应：载流子偏转",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 985,
+     "y": 516,
+     "w": 765,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "为什么重要",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "粒子物理、医学影像、半导体测量",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "都建立在这一节的公式上",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 34.09,
+    "2": 36.36,
+    "3": 41.66,
+    "4": 48.97,
+    "5": 55.32
+   },
+   "t_start": 34.09,
+   "t_end": 71.07,
+   "duration": 36.98,
+   "laser": []
+  },
+  {
+   "id": 3,
+   "kind": "page",
+   "heading": "一　洛伦兹力",
+   "narration": "先写总公式。电荷 q 在电场 E 和磁场 B 中，受的总力是电场力加上磁场力，这两项合成就是洛伦兹力。电场力 qE 沿电场方向，与速度无关——静止的电荷也受它。磁场力是 q v 叉乘 B，垂直于速度，也垂直于磁场。因为垂直于速度，所以磁场力永远不做功，只改变运动方向。这是它和电场力最关键的区别。还要注意，磁场力只对运动的电荷起作用。速度为零，磁场力就是零。这解释了我们第一节说的：磁场只对运动电荷施力。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　洛伦兹力",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 256,
+     "w": 740,
+     "h": 150,
+     "tex": "\\vec F=q\\vec E+q\\vec v\\times\\vec B",
+     "size": 40,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 420,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电场力 $q\\vec E$：",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "沿电场方向，与速度无关．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 476,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "静止的电荷也受电场力．",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 546,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁场力 $q\\vec v\\times\\vec B$：",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 600,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "垂直于速度，也垂直于磁场．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 668,
+     "w": 740,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "关键：磁场力",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "永远不做功",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 724,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只改方向，不改速度大小．",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 792,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$v=0$ ⇒ 磁场力为零：",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 842,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁场只对运动电荷施力．",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 985,
+     "y": 246,
+     "w": 765,
+     "h": 240,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "两项的对比",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "电场力：与 v 无关，做功",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "磁场力：与 v 垂直，不做功",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "所以磁场不能直接加速粒子",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 985,
+     "y": 516,
+     "w": 765,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "那怎么加速粒子？",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "靠电场加速（回旋加速器的缝隙）",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "磁场只负责把轨迹弯回来",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "2": 74.38,
+    "3": 83.66,
+    "4": 89.92,
+    "5": 95.58,
+    "6": 105.24
+   },
+   "t_start": 71.87,
+   "t_end": 119.61,
+   "duration": 47.74,
+   "laser": []
+  },
+  {
+   "id": 4,
+   "kind": "page",
+   "heading": "二　磁场中的圆周运动",
+   "narration": "只看磁场，速度垂直于 B 的情形。粒子受的磁场力垂直于速度，大小恒定，正好充当向心力。于是它做匀速圆周运动。由 qvB 等于 mv 平方除以 r，解出半径 r 等于 mv 除以 qB。这个式子说明：速度越大，半径越大；磁场越强，半径越小。再看周期：圆周长除以速度，把 r 代进去，速度就约掉了，得到 T 等于 2πm 除以 qB。周期与速度无关！这是回旋加速器能工作的全部秘密。还有一件事：洛伦兹力不做功，所以粒子的动能恒定，速率不变，只是方向在转。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　磁场中的圆周运动",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\vec v\\perp\\vec B$ 时：磁场力充当向心力．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 304,
+     "w": 740,
+     "h": 130,
+     "tex": "qvB=\\dfrac{mv^{2}}{r}",
+     "size": 36,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 444,
+     "w": 740,
+     "h": 130,
+     "tex": "r=\\dfrac{mv}{qB}",
+     "size": 40,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 590,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "速度越大半径越大；磁场越强半径越小．",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 654,
+     "w": 740,
+     "h": 130,
+     "tex": "T=\\dfrac{2\\pi r}{v}=\\dfrac{2\\pi m}{qB}",
+     "size": 34,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 800,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "周期与速度",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "无关",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "：回旋加速器的基础．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 866,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁场力不做功 ⇒ 动能不变，只是方向在转．",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 985,
+     "y": 246,
+     "w": 765,
+     "h": 430,
+     "name": "lorentz_circle"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 985,
+     "y": 696,
+     "w": 765,
+     "h": 176,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "两个结论要记牢",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "r = mv/(qB)：半径 ∝ 速度",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "T = 2πm/(qB)：周期与速度无关",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 120.41,
+    "2": 124.67,
+    "3": 131.17,
+    "4": 142.0,
+    "5": 149.0,
+    "6": 158.02
+   },
+   "t_start": 120.41,
+   "t_end": 173.57,
+   "duration": 53.16,
+   "laser": []
+  },
+  {
+   "id": 5,
+   "kind": "page",
+   "heading": "三　三种情形",
+   "narration": "把三种情形摆在一起看。第一种，速度与 B 平行。这时叉乘为零，磁场力为零，粒子做匀速直线运动，磁场对它毫无影响。第二种，速度与 B 垂直。刚才讲过，做匀速圆周运动。第三种，速度与 B 斜交。把速度分解成平行和垂直两个分量：平行分量不受力，匀速前进；垂直分量做圆周。两者合成，就是等距螺旋线。这三个情形可以用一句话概括：只有垂直于 B 的速度分量才受磁场力。螺旋的螺距也有公式：平行速度乘以周期，等于 2πm v平行除以 qB。这个式子后面讲磁聚焦时会用到。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　三种情形",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① $v\\parallel B$：",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "叉乘为零",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁场力为零 ⇒ 匀速直线运动．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 364,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② $v\\perp B$：",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "匀速圆周运动",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 420,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$r=mv/(qB)$，$T=2\\pi m/(qB)$．",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 488,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 斜交：分解成两个分量",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 542,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "平行分量：匀速前进；",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 590,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "垂直分量：圆周．合成为",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "等距螺旋",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 660,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一句话：只有垂直于 B 的分量受力．",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 726,
+     "w": 740,
+     "h": 176,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "螺距",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$h=v_{/\\!/}T=\\dfrac{2\\pi m v_{/\\!/}}{qB}$",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "磁聚焦：同一处出发、速度相近的粒子会聚",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 985,
+     "y": 246,
+     "w": 765,
+     "h": 420,
+     "name": "charge_motion_three"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 174.37,
+    "2": 177.55,
+    "3": 188.67,
+    "4": 196.31,
+    "5": 212.63
+   },
+   "t_start": 174.37,
+   "t_end": 231.73,
+   "duration": 57.36,
+   "laser": []
+  },
+  {
+   "id": 6,
+   "kind": "page",
+   "heading": "四　回旋加速器",
+   "narration": "第一个应用，回旋加速器。结构是：两个半圆柱形的金属盒，叫 D 形盒，中间留一条缝；整个装置放在均匀磁场里，磁场垂直于盒面。缝隙之间加交变电压。粒子每过一次缝隙，就被电场加速一次，动能增加 qU。进入 D 形盒内部后，没有电场，只有磁场，粒子做圆周运动，绕半圈再回到缝隙。关键在于：由上一页，圆周运动的周期与速度无关。所以粒子转得越来越快、半径越来越大，但每转半圈用的时间始终相同。于是交变电压的频率不需要变，只要等于粒子的回旋频率就行。这是它巧妙的地方。加速到最大半径时引出，动能等于 q 平方 B 平方 R 平方除以 2m。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　回旋加速器",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两个 D 形盒 + 垂直磁场的均匀磁场．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 306,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "缝隙加交变电压：",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 358,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "过一次缝隙，动能增加 $qU$．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 424,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "盒内只有磁场 ⇒ 半圆运动，再回缝隙．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 490,
+     "w": 740,
+     "h": 168,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "关键：周期与速度无关",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "半径越来越大，但每半圈时间相同",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "所以电压频率固定即可",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 684,
+     "w": 740,
+     "h": 130,
+     "tex": "f=\\dfrac{qB}{2\\pi m}",
+     "size": 36,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 6,
+     "x": 170,
+     "y": 826,
+     "w": 740,
+     "h": 130,
+     "tex": "E_k=\\dfrac{q^{2}B^{2}R^{2}}{2m}",
+     "size": 32,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 985,
+     "y": 246,
+     "w": 765,
+     "h": 440,
+     "name": "cyclotron"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 985,
+     "y": 706,
+     "w": 765,
+     "h": 60,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "能量上限受相对论效应限制：速度接近光速时质量变大，周期不再固定．",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 232.53,
+    "2": 236.03,
+    "3": 246.8,
+    "4": 255.83,
+    "5": 263.96,
+    "6": 277.5
+   },
+   "t_start": 232.53,
+   "t_end": 294.14,
+   "duration": 61.61,
+   "laser": []
+  },
+  {
+   "id": 7,
+   "kind": "page",
+   "heading": "五　质谱仪",
+   "narration": "第二个应用，质谱仪。它要解决的问题是：给一堆离子，怎么按质量把它们分开？第一步是速度选择器：同时加电场和磁场，让两者方向垂直。只有速度恰好等于 E 除以 B 的离子，电场力和磁场力才平衡，才能直线通过。这样出来的离子速度都一样了。第二步进入纯磁场区，速度垂直于 B，做圆周运动。半径等于 mv 除以 qB。速度相同、电荷相同，半径就只由质量决定：重的半径大，轻的半径小。打到屏幕上的位置不同，就能区分不同的同位素。这就是质谱仪测质量、定同位素丰度的原理。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五　质谱仪",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "目标：按质量把离子分开．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 306,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第一步　速度选择器：",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 358,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电场力与磁场力平衡 ⇒ 直线通过．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 414,
+     "w": 740,
+     "h": 130,
+     "tex": "qE=qvB\\ \\Rightarrow\\ v=\\dfrac{E}{B}",
+     "size": 30,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 556,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "出来的离子速度都相同．",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 622,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第二步　纯磁场区：",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 674,
+     "w": 740,
+     "h": 120,
+     "tex": "r=\\dfrac{mv}{qB}",
+     "size": 34,
+     "color": "#0000CD",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 810,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$v$、$q$ 相同 ⇒ $r$ 只由",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "质量",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "决定．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 872,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "重的半径大、轻的半径小 ⇒ 按位置区分同位素．",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 985,
+     "y": 246,
+     "w": 765,
+     "h": 430,
+     "name": "mass_spec"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 985,
+     "y": 696,
+     "w": 765,
+     "h": 176,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "两段各管一件事",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "速度选择器：把速度统一",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "磁场区：把质量分开",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 294.94,
+    "2": 298.08,
+    "3": 303.91,
+    "4": 318.05,
+    "5": 321.33,
+    "6": 330.79
+   },
+   "t_start": 294.94,
+   "t_end": 349.28,
+   "duration": 54.34,
+   "laser": []
+  },
+  {
+   "id": 8,
+   "kind": "page",
+   "heading": "六　霍尔效应",
+   "narration": "第三个应用，霍尔效应。一块导体或半导体，通电流 I，同时加一个垂直于电流、也垂直于板面的磁场 B。载流子在里边运动，受磁场力，向板的一侧偏转。偏转的结果是：一侧积累正电荷、另一侧积累负电荷，两边之间出现一个电压，叫霍尔电压。电荷积累到一定程度，产生的电场力与磁场力平衡，偏转就停止了。平衡时 qE 等于 qvB，把 E 写成 U 除以 d，得到霍尔电压等于 IB 除以 nqd。这个式子很有用：测出 U、I、B 和厚度 d，就能求出载流子浓度 n；由电压的正负，还能判断载流子带正电还是负电。霍尔效应就是靠这一点成为半导体测量的基本手段。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "六　霍尔效应",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "导体板通电流 $I$，加垂直磁场 $B$．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 306,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "载流子受磁场力，向一侧偏转．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 372,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "结果：两侧积累异号电荷，",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 420,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "出现",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "霍尔电压 $U_H$",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 488,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "平衡条件：电场力与磁场力相等．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 540,
+     "w": 740,
+     "h": 120,
+     "tex": "q\\dfrac{U_H}{d}=qvB",
+     "size": 32,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 680,
+     "w": 740,
+     "h": 140,
+     "tex": "U_H=\\dfrac{IB}{nqd}",
+     "size": 40,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 840,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "用途：测载流子浓度 $n$；",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 888,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "由电压正负判断载流子带正电还是负电．",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 985,
+     "y": 246,
+     "w": 765,
+     "h": 515,
+     "name": "hall_effect"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 350.08,
+    "2": 353.53,
+    "3": 361.23,
+    "4": 366.41,
+    "5": 375.07,
+    "6": 382.0
+   },
+   "t_start": 350.08,
+   "t_end": 407.15,
+   "duration": 57.07,
+   "laser": []
+  },
+  {
+   "id": 9,
+   "kind": "page",
+   "heading": "本节小结",
+   "narration": "小结。第一，洛伦兹力等于 qE 加 qv 叉乘 B；电场力做功，磁场力不做功。第二，磁场中速度垂直于 B 时做圆周运动：半径等于 mv 除以 qB，周期等于 2πm 除以 qB，周期与速度无关。第三，三种情形：平行走直线，垂直走圆，斜交走螺旋。只有垂直分量受力。第四，三个应用都建立在同一个力上：回旋加速器用「周期不变」，质谱仪用「半径定质量」，霍尔效应用「偏转产生横向电压」。下一节讲磁场对载流导线的作用，那是把单个电荷换成一整段电流。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 洛伦兹力",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 290,
+     "w": 700,
+     "h": 110,
+     "tex": "\\vec F=q\\vec E+q\\vec v\\times\\vec B",
+     "size": 28,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 424,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电场力做功，磁场力不做功．",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 490,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 圆周运动",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 544,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$r=\\dfrac{mv}{qB}$，$T=\\dfrac{2\\pi m}{qB}$（与 $v$ 无关）",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 626,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 三种情形",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 680,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "平行直线、垂直圆周、斜交螺旋．",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 985,
+     "y": 236,
+     "w": 765,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 三个应用",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 985,
+     "y": 290,
+     "w": 765,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "回旋加速器：周期与 v 无关",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 985,
+     "y": 338,
+     "w": 765,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质谱仪：半径定质量",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 985,
+     "y": 386,
+     "w": 765,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "霍尔效应：U_H = IB/(nqd)",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 985,
+     "y": 452,
+     "w": 765,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "⑤ 一条线索",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 985,
+     "y": 506,
+     "w": 765,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三件仪器，用的都是同一个力：",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 985,
+     "y": 554,
+     "w": 765,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁场只弯轨迹，电场才提速．",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 792,
+     "w": 1580,
+     "h": 150,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "下一节：磁场对载流导线的作用（安培力）",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "把单个电荷换成一整段电流，力的表达式会变成 I dl 叉乘 B",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 407.95,
+    "2": 410.22,
+    "3": 418.06,
+    "4": 428.85,
+    "5": 438.62,
+    "6": 449.96
+   },
+   "t_start": 407.95,
+   "t_end": 457.27,
+   "duration": 49.32,
+   "laser": []
+  }
+ ],
+ "subtitles": [
+  {
+   "slide": 1,
+   "start": 0.0,
+   "end": 5.04,
+   "text": "这一节讲带电粒子在电场和磁场里怎么运动。"
+  },
+  {
+   "slide": 1,
+   "start": 5.44,
+   "end": 11.49,
+   "text": "核心是洛伦兹力：电场力沿电场方向，磁场力垂直于速度。"
+  },
+  {
+   "slide": 1,
+   "start": 11.89,
+   "end": 19.38,
+   "text": "两种力性质不同：电场力能改变速度大小，磁场力只能改变方向、不做功。"
+  },
+  {
+   "slide": 1,
+   "start": 19.78,
+   "end": 26.31,
+   "text": "这个差别决定了粒子的运动形态：磁场里走圆周，电场里被加速。"
+  },
+  {
+   "slide": 1,
+   "start": 26.71,
+   "end": 32.61,
+   "text": "最后讲三个应用：回旋加速器、质谱仪、霍尔效应。"
+  },
+  {
+   "slide": 2,
+   "start": 34.09,
+   "end": 35.96,
+   "text": "先看结构。"
+  },
+  {
+   "slide": 2,
+   "start": 36.36,
+   "end": 41.26,
+   "text": "第一步，写出洛伦兹力：电场力和磁场力的合力。"
+  },
+  {
+   "slide": 2,
+   "start": 41.66,
+   "end": 48.57,
+   "text": "第二步，只看磁场：速度垂直于 B 时走圆周，半径和周期各有公式。"
+  },
+  {
+   "slide": 2,
+   "start": 48.97,
+   "end": 54.92,
+   "text": "第三步，把三种情形摆在一起：平行、垂直、斜交。"
+  },
+  {
+   "slide": 2,
+   "start": 55.32,
+   "end": 65.57,
+   "text": "第四步，三个应用：回旋加速器利用周期与速度无关；质谱仪利用半径与质量的关系；霍尔效应利用载流子的偏转。"
+  },
+  {
+   "slide": 2,
+   "start": 65.97,
+   "end": 70.34,
+   "text": "这三件东西看起来不同，用的都是同一个力。"
+  },
+  {
+   "slide": 3,
+   "start": 71.87,
+   "end": 73.98,
+   "text": "先写总公式。"
+  },
+  {
+   "slide": 3,
+   "start": 74.38,
+   "end": 83.26,
+   "text": "电荷 q 在电场 E 和磁场 B 中，受的总力是电场力加上磁场力，这两项合成就是洛伦兹力。"
+  },
+  {
+   "slide": 3,
+   "start": 83.66,
+   "end": 89.52,
+   "text": "电场力 qE 沿电场方向，与速度无关——静止的电荷也受它。"
+  },
+  {
+   "slide": 3,
+   "start": 89.92,
+   "end": 95.18,
+   "text": "磁场力是 q v 叉乘 B，垂直于速度，也垂直于磁场。"
+  },
+  {
+   "slide": 3,
+   "start": 95.58,
+   "end": 101.2,
+   "text": "因为垂直于速度，所以磁场力永远不做功，只改变运动方向。"
+  },
+  {
+   "slide": 3,
+   "start": 101.6,
+   "end": 104.84,
+   "text": "这是它和电场力最关键的区别。"
+  },
+  {
+   "slide": 3,
+   "start": 105.24,
+   "end": 109.66,
+   "text": "还要注意，磁场力只对运动的电荷起作用。"
+  },
+  {
+   "slide": 3,
+   "start": 110.06,
+   "end": 113.52,
+   "text": "速度为零，磁场力就是零。"
+  },
+  {
+   "slide": 3,
+   "start": 113.92,
+   "end": 118.72,
+   "text": "这解释了我们第一节说的：磁场只对运动电荷施力。"
+  },
+  {
+   "slide": 4,
+   "start": 120.41,
+   "end": 124.27,
+   "text": "只看磁场，速度垂直于 B 的情形。"
+  },
+  {
+   "slide": 4,
+   "start": 124.67,
+   "end": 130.77,
+   "text": "粒子受的磁场力垂直于速度，大小恒定，正好充当向心力。"
+  },
+  {
+   "slide": 4,
+   "start": 131.17,
+   "end": 134.34,
+   "text": "于是它做匀速圆周运动。"
+  },
+  {
+   "slide": 4,
+   "start": 134.74,
+   "end": 141.6,
+   "text": "由 qvB 等于 mv 平方除以 r，解出半径 r 等于 mv 除以 qB。"
+  },
+  {
+   "slide": 4,
+   "start": 142.0,
+   "end": 148.6,
+   "text": "这个式子说明：速度越大，半径越大；磁场越强，半径越小。"
+  },
+  {
+   "slide": 4,
+   "start": 149.0,
+   "end": 157.62,
+   "text": "再看周期：圆周长除以速度，把 r 代进去，速度就约掉了，得到 T 等于 2πm 除以 qB。"
+  },
+  {
+   "slide": 4,
+   "start": 158.02,
+   "end": 160.35,
+   "text": "周期与速度无关！"
+  },
+  {
+   "slide": 4,
+   "start": 161.0,
+   "end": 164.84,
+   "text": "这是回旋加速器能工作的全部秘密。"
+  },
+  {
+   "slide": 4,
+   "start": 165.24,
+   "end": 172.66,
+   "text": "还有一件事：洛伦兹力不做功，所以粒子的动能恒定，速率不变，只是方向在转。"
+  },
+  {
+   "slide": 5,
+   "start": 174.37,
+   "end": 177.15,
+   "text": "把三种情形摆在一起看。"
+  },
+  {
+   "slide": 5,
+   "start": 177.55,
+   "end": 180.65,
+   "text": "第一种，速度与 B 平行。"
+  },
+  {
+   "slide": 5,
+   "start": 181.05,
+   "end": 188.27,
+   "text": "这时叉乘为零，磁场力为零，粒子做匀速直线运动，磁场对它毫无影响。"
+  },
+  {
+   "slide": 5,
+   "start": 188.67,
+   "end": 191.93,
+   "text": "第二种，速度与 B 垂直。"
+  },
+  {
+   "slide": 5,
+   "start": 192.33,
+   "end": 195.91,
+   "text": "刚才讲过，做匀速圆周运动。"
+  },
+  {
+   "slide": 5,
+   "start": 196.31,
+   "end": 199.6,
+   "text": "第三种，速度与 B 斜交。"
+  },
+  {
+   "slide": 5,
+   "start": 200.0,
+   "end": 208.28,
+   "text": "把速度分解成平行和垂直两个分量：平行分量不受力，匀速前进；垂直分量做圆周。"
+  },
+  {
+   "slide": 5,
+   "start": 208.68,
+   "end": 212.23,
+   "text": "两者合成，就是等距螺旋线。"
+  },
+  {
+   "slide": 5,
+   "start": 212.63,
+   "end": 219.18,
+   "text": "这三个情形可以用一句话概括：只有垂直于 B 的速度分量才受磁场力。"
+  },
+  {
+   "slide": 5,
+   "start": 219.58,
+   "end": 226.47,
+   "text": "螺旋的螺距也有公式：平行速度乘以周期，等于 2πm v平行除以 qB。"
+  },
+  {
+   "slide": 5,
+   "start": 226.87,
+   "end": 230.71,
+   "text": "这个式子后面讲磁聚焦时会用到。"
+  },
+  {
+   "slide": 6,
+   "start": 232.53,
+   "end": 235.63,
+   "text": "第一个应用，回旋加速器。"
+  },
+  {
+   "slide": 6,
+   "start": 236.03,
+   "end": 246.4,
+   "text": "结构是：两个半圆柱形的金属盒，叫 D 形盒，中间留一条缝；整个装置放在均匀磁场里，磁场垂直于盒面。"
+  },
+  {
+   "slide": 6,
+   "start": 246.8,
+   "end": 249.85,
+   "text": "缝隙之间加交变电压。"
+  },
+  {
+   "slide": 6,
+   "start": 250.25,
+   "end": 255.43,
+   "text": "粒子每过一次缝隙，就被电场加速一次，动能增加 qU。"
+  },
+  {
+   "slide": 6,
+   "start": 255.83,
+   "end": 263.56,
+   "text": "进入 D 形盒内部后，没有电场，只有磁场，粒子做圆周运动，绕半圈再回到缝隙。"
+  },
+  {
+   "slide": 6,
+   "start": 263.96,
+   "end": 269.48,
+   "text": "关键在于：由上一页，圆周运动的周期与速度无关。"
+  },
+  {
+   "slide": 6,
+   "start": 269.88,
+   "end": 277.1,
+   "text": "所以粒子转得越来越快、半径越来越大，但每转半圈用的时间始终相同。"
+  },
+  {
+   "slide": 6,
+   "start": 277.5,
+   "end": 283.26,
+   "text": "于是交变电压的频率不需要变，只要等于粒子的回旋频率就行。"
+  },
+  {
+   "slide": 6,
+   "start": 283.66,
+   "end": 286.06,
+   "text": "这是它巧妙的地方。"
+  },
+  {
+   "slide": 6,
+   "start": 286.46,
+   "end": 293.18,
+   "text": "加速到最大半径时引出，动能等于 q 平方 B 平方 R 平方除以 2m。"
+  },
+  {
+   "slide": 7,
+   "start": 294.94,
+   "end": 297.68,
+   "text": "第二个应用，质谱仪。"
+  },
+  {
+   "slide": 7,
+   "start": 298.08,
+   "end": 303.26,
+   "text": "它要解决的问题是：给一堆离子，怎么按质量把它们分开？"
+  },
+  {
+   "slide": 7,
+   "start": 303.91,
+   "end": 310.1,
+   "text": "第一步是速度选择器：同时加电场和磁场，让两者方向垂直。"
+  },
+  {
+   "slide": 7,
+   "start": 310.5,
+   "end": 317.65,
+   "text": "只有速度恰好等于 E 除以 B 的离子，电场力和磁场力才平衡，才能直线通过。"
+  },
+  {
+   "slide": 7,
+   "start": 318.05,
+   "end": 320.93,
+   "text": "这样出来的离子速度都一样了。"
+  },
+  {
+   "slide": 7,
+   "start": 321.33,
+   "end": 327.04,
+   "text": "第二步进入纯磁场区，速度垂直于 B，做圆周运动。"
+  },
+  {
+   "slide": 7,
+   "start": 327.44,
+   "end": 330.39,
+   "text": "半径等于 mv 除以 qB。"
+  },
+  {
+   "slide": 7,
+   "start": 330.79,
+   "end": 338.4,
+   "text": "速度相同、电荷相同，半径就只由质量决定：重的半径大，轻的半径小。"
+  },
+  {
+   "slide": 7,
+   "start": 338.8,
+   "end": 343.41,
+   "text": "打到屏幕上的位置不同，就能区分不同的同位素。"
+  },
+  {
+   "slide": 7,
+   "start": 343.81,
+   "end": 348.3,
+   "text": "这就是质谱仪测质量、定同位素丰度的原理。"
+  },
+  {
+   "slide": 8,
+   "start": 350.08,
+   "end": 353.13,
+   "text": "第三个应用，霍尔效应。"
+  },
+  {
+   "slide": 8,
+   "start": 353.53,
+   "end": 360.83,
+   "text": "一块导体或半导体，通电流 I，同时加一个垂直于电流、也垂直于板面的磁场 B。"
+  },
+  {
+   "slide": 8,
+   "start": 361.23,
+   "end": 366.01,
+   "text": "载流子在里边运动，受磁场力，向板的一侧偏转。"
+  },
+  {
+   "slide": 8,
+   "start": 366.41,
+   "end": 374.67,
+   "text": "偏转的结果是：一侧积累正电荷、另一侧积累负电荷，两边之间出现一个电压，叫霍尔电压。"
+  },
+  {
+   "slide": 8,
+   "start": 375.07,
+   "end": 381.6,
+   "text": "电荷积累到一定程度，产生的电场力与磁场力平衡，偏转就停止了。"
+  },
+  {
+   "slide": 8,
+   "start": 382.0,
+   "end": 389.44,
+   "text": "平衡时 qE 等于 qvB，把 E 写成 U 除以 d，得到霍尔电压等于 IB 除以 nqd。"
+  },
+  {
+   "slide": 8,
+   "start": 389.84,
+   "end": 400.76,
+   "text": "这个式子很有用：测出 U、I、B 和厚度 d，就能求出载流子浓度 n；由电压的正负，还能判断载流子带正电还是负电。"
+  },
+  {
+   "slide": 8,
+   "start": 401.16,
+   "end": 406.32,
+   "text": "霍尔效应就是靠这一点成为半导体测量的基本手段。"
+  },
+  {
+   "slide": 9,
+   "start": 407.95,
+   "end": 409.82,
+   "text": "小结。"
+  },
+  {
+   "slide": 9,
+   "start": 410.22,
+   "end": 417.66,
+   "text": "第一，洛伦兹力等于 qE 加 qv 叉乘 B；电场力做功，磁场力不做功。"
+  },
+  {
+   "slide": 9,
+   "start": 418.06,
+   "end": 428.45,
+   "text": "第二，磁场中速度垂直于 B 时做圆周运动：半径等于 mv 除以 qB，周期等于 2πm 除以 qB，周期与速度无关。"
+  },
+  {
+   "slide": 9,
+   "start": 428.85,
+   "end": 435.35,
+   "text": "第三，三种情形：平行走直线，垂直走圆，斜交走螺旋。"
+  },
+  {
+   "slide": 9,
+   "start": 435.75,
+   "end": 438.22,
+   "text": "只有垂直分量受力。"
+  },
+  {
+   "slide": 9,
+   "start": 438.62,
+   "end": 449.56,
+   "text": "第四，三个应用都建立在同一个力上：回旋加速器用「周期不变」，质谱仪用「半径定质量」，霍尔效应用「偏转产生横向电压」。"
+  },
+  {
+   "slide": 9,
+   "start": 449.96,
+   "end": 456.46,
+   "text": "下一节讲磁场对载流导线的作用，那是把单个电荷换成一整段电流。"
+  }
+ ],
+ "build_ts": 1792482478,
+ "logoScale": 0.67
+}

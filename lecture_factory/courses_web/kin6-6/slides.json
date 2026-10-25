@@ -1,0 +1,1015 @@
+{
+ "title": "6-6 电容器的充放电",
+ "nav": "6-6　电容器的充放电",
+ "footer": "第六章　静电场中的导体与电介质",
+ "logoScale": 0.67,
+ "engine": "edge",
+ "voice": "zh-CN-YunxiNeural",
+ "pages": [
+  {
+   "id": 1,
+   "narration": "[[1]]6-6，电容器的充放电。[[2]]前面讲电容、讲储能，都是「充好电」以后的状态。[[3]]这一节看过程：把电容器接上电源，电荷是怎么一点点上去的？[[4]]结论是指数规律，时间常数是 RC。[[5]]这个规律在电路里到处都是，闪光灯、定时器、滤波器都靠它。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 292,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 六 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 300,
+     "y": 420,
+     "w": 1320,
+     "h": 150,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "6-6　电容器的充放电",
+        "size": 60,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 220,
+     "y": 630,
+     "w": 1480,
+     "h": 110,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "指数规律，时间常数 τ = RC",
+        "size": 40,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 790,
+     "w": 1480,
+     "h": 90,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "q = Cε (1 − e^(−t/RC))",
+        "size": 36,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "封面"
+  },
+  {
+   "id": 2,
+   "narration": "[[1]]一，充电电路。[[2]]把电容 C、电阻 R、电源电动势 epsilon 和开关串成一个回路。[[3]]开关合上的瞬间，电容还没充电，电压为零，全部电动势都加在电阻上，所以电流最大，等于 epsilon 除以 R。[[4]]随着电荷积累，电容电压升高，电阻上的电压就减小，电流随之下降。[[5]]当电容电压等于电动势时，电流为零，充电结束。[[6]]所以这是个「越来越慢」的过程，不是线性的。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　充电电路",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 244,
+     "w": 1580,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "串联：电容 $C$、电阻 $R$、电动势 $\\varepsilon$、开关．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 326,
+     "w": 1580,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "合上瞬间：$u_C=0$ ⇒ 电流最大 $I_0=\\varepsilon/R$．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 410,
+     "w": 1580,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "随电荷积累：$u_C$ 升高 ⇒ $u_R$ 减小 ⇒ 电流下降．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 494,
+     "w": 1580,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$u_C=\\varepsilon$ 时电流为零，充电结束．",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 578,
+     "w": 1580,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以是「越来越慢」的过程，不是线性．",
+        "size": 31,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 664,
+     "w": 1580,
+     "h": 160,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "回路方程",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "ε = iR + u_C，其中 u_C = q/C",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "一　充电电路"
+  },
+  {
+   "id": 3,
+   "narration": "[[1]]解这个回路方程，得到充电规律。[[2]]电荷随时间的变化是：q 等于 C epsilon 乘以括号一减 e 的负 t 比 RC 次方。[[3]]t 等于零时，指数项为一，q 为零，符合初始条件。[[4]]t 趋于无穷时，指数项趋于零，q 趋于 C epsilon，也就是充满。[[5]]电流是 q 的导数：i 等于 epsilon 除以 R 乘 e 的负 t 比 RC 次方，指数衰减。[[6]]注意 t 等于零时电流是最大值，之后单调下降——这与电荷的「先快后慢」正好呼应。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "充电规律",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 244,
+     "w": 1580,
+     "h": 140,
+     "tex": "q=C\\varepsilon\\left(1-\\mathrm e^{-t/RC}\\right)",
+     "size": 36,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 410,
+     "w": 1580,
+     "h": 140,
+     "tex": "i=\\dfrac{\\mathrm dq}{\\mathrm dt}=\\dfrac{\\varepsilon}{R}\\mathrm e^{-t/RC}",
+     "size": 34,
+     "color": "#0000CD",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 580,
+     "w": 1580,
+     "h": 52,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$t=0$：$q=0$，$i=\\varepsilon/R$（最大）．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 662,
+     "w": 1580,
+     "h": 52,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$t\\to\\infty$：$q\\to C\\varepsilon$（充满），$i\\to0$．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 744,
+     "w": 1580,
+     "h": 48,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电荷「先快后慢」，电流单调衰减——两者正好呼应．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "充电规律"
+  },
+  {
+   "id": 4,
+   "narration": "[[1]]指数里的 RC 有时间的量纲，叫时间常数，记作 tau。[[2]]它的意义是：经过一个 tau，电荷达到最终值的一减 e 分之一，也就是约百分之六十三。[[3]]经过三个 tau，达到百分之九十五；五个 tau，达到百分之九十九点三。[[4]]工程上通常认为五个 tau 就充满。[[5]]tau 越大，充得越慢。所以大电阻、大电容都会让过程变慢。[[6]]这也是为什么电源滤波要用大电容——它能把电压的波动「抹平」。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "时间常数 $\\tau=RC$",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 244,
+     "w": 1580,
+     "h": 52,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "RC 有时间量纲：$\\Omega\\cdot\\mathrm F=\\mathrm s$．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 326,
+     "w": 1580,
+     "h": 52,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "经过一个 $\\tau$：$q$ 达到终值的 $1-1/\\mathrm e\\approx63\\%$．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "table",
+     "step": 3,
+     "x": 170,
+     "y": 400,
+     "w": 1100,
+     "rows": [
+      [
+       "时间",
+       "达到终值的比例"
+      ],
+      [
+       "1 τ",
+       "63.2%"
+      ],
+      [
+       "3 τ",
+       "95.0%"
+      ],
+      [
+       "5 τ",
+       "99.3%"
+      ]
+     ],
+     "rowh": 66,
+     "size": 29,
+     "fill": "#CCFFCC"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 700,
+     "w": 1580,
+     "h": 52,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "工程上认为 $5\\tau$ 就充满．",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 782,
+     "w": 1580,
+     "h": 48,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\tau$ 越大，充得越慢：大电阻、大电容都使过程变慢．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 862,
+     "w": 1580,
+     "h": 48,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电源滤波用大电容，就是靠它把电压波动「抹平」．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "时间常数 τ = RC"
+  },
+  {
+   "id": 5,
+   "narration": "[[1]]再看放电。[[2]]把电源断开，让电容通过电阻放电。[[3]]此时回路方程变成 u_C 等于 iR，也就是 q 除以 C 等于负 R 乘 dq 比 dt。[[4]]解出来：q 等于 Q0 乘 e 的负 t 比 RC 次方。[[5]]电荷从初始值 Q0 开始指数衰减，时间常数还是 RC。[[6]]电流方向与充电时相反，大小也是指数衰减。注意放电时能量全部消耗在电阻上，变成热——这就是为什么大电容放电会打火、会烫。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "放电",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 244,
+     "w": 1580,
+     "h": 52,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "断开电源，电容通过电阻放电：$q/C=-R\\,\\mathrm dq/\\mathrm dt$．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 320,
+     "w": 1580,
+     "h": 140,
+     "tex": "q=Q_0\\,\\mathrm e^{-t/RC}",
+     "size": 38,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 490,
+     "w": 1580,
+     "h": 130,
+     "tex": "i=-\\dfrac{Q_0}{RC}\\mathrm e^{-t/RC}",
+     "size": 32,
+     "color": "#0000CD",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 654,
+     "w": 1580,
+     "h": 52,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电荷指数衰减，时间常数仍是 $RC$．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 736,
+     "w": 1580,
+     "h": 52,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "能量全部消耗在电阻上，变成热．",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 818,
+     "w": 1580,
+     "h": 48,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以大电容放电会打火、会烫——不要直接短接．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "放电"
+  },
+  {
+   "id": 6,
+   "narration": "[[1]]这个规律的应用很多。[[2]]相机闪光灯：先用高压把大电容充满，需要几秒；然后瞬间放电，几十微秒内放出全部能量，形成强闪光。[[3]]定时电路：用 RC 的充电时间做延时，改变 R 或 C 就能改时间。[[4]]滤波：大电容把整流后的脉动电压抹平，输出接近直流。[[5]]还有消抖、复位电路，都是同一个道理。[[6]]要注意：RC 充放电的「慢」是相对的，微秒到小时都可以，取决于 RC 的大小。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这些规律用在哪里",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 闪光灯：",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "几秒充满，几十微秒放完 ⇒ 强闪光．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 322,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 定时电路：",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "用 RC 充电时间做延时，改 $R$ 或 $C$ 即可调节．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 404,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 滤波：",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "大电容把脉动电压抹平，输出接近直流．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 486,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 消抖、复位电路：同一个道理．",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 578,
+     "w": 1580,
+     "h": 170,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "注意「慢」是相对的",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "RC 可以从微秒到小时，全看选多大的电阻和电容",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 796,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "充电时电源做功 $C\\varepsilon^{2}$，储能只有一半，另一半耗在电阻上．",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "这些规律用在哪里"
+  },
+  {
+   "id": 7,
+   "narration": "[[1]]小结。[[2]]充电：q 等于 C epsilon 乘一减 e 的负 t 比 RC，电流指数衰减。[[3]]放电：q 等于 Q0 乘 e 的负 t 比 RC。[[4]]时间常数 tau 等于 RC，一个 tau 到百分之六十三，五个 tau 基本充满。[[5]]能量方面：充电时电源做功 C epsilon 平方，一半储能、一半耗在电阻上。[[6]]这个「一半」是个反直觉但很重要的结论，做题时常考。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 充电：$q=C\\varepsilon(1-\\mathrm e^{-t/RC})$，$i=\\dfrac{\\varepsilon}{R}\\mathrm e^{-t/RC}$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 316,
+     "w": 1580,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 放电：$q=Q_0\\mathrm e^{-t/RC}$",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 396,
+     "w": 1580,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 时间常数 $\\tau=RC$；$1\\tau\\to63\\%$，$5\\tau\\to99\\%$．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 476,
+     "w": 1580,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 充电能量：电源做功 $C\\varepsilon^{2}$，储能 $\\frac12C\\varepsilon^{2}$，",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 220,
+     "y": 526,
+     "w": 1560,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "另一半消耗在电阻上（与 $R$ 无关）．",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 612,
+     "w": 1580,
+     "h": 170,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一个反直觉的结论",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "不管电阻多大，充电效率都只有 50%",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 830,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这也是开关电源要用电感而不是电阻限流的原因之一．",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "本节小结"
+  }
+ ]
+}

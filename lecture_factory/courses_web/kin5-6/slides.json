@@ -1,0 +1,1874 @@
+{
+ "title": "5-6 电势",
+ "nav": "5-6　电势",
+ "footer": "第五章　静电场",
+ "logoScale": 0.67,
+ "engine": "edge",
+ "voice": "zh-CN-YunxiNeural",
+ "pages": [
+  {
+   "id": 1,
+   "narration": "[[1]]5-6，电势。[[2]]上一节我们定义了电势能，但它与试探电荷成正比，不能用来描述场本身。[[3]]把 q0 除掉，就得到电势——一个只由场决定的标量。[[4]]标量的好处是：叠加时不用平行四边形，直接代数相加。这是静电学里最省力的一个量。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 300,
+     "w": 800,
+     "h": 90,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 五 章　静电场",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 300,
+     "y": 420,
+     "w": 1320,
+     "h": 150,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "5-6　电　势",
+        "size": 72,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 220,
+     "y": 630,
+     "w": 1480,
+     "h": 110,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一个只由场决定的标量",
+        "size": 42,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 790,
+     "w": 1480,
+     "h": 90,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "V = E p / q₀　　U AB = V A − V B",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "封面"
+  },
+  {
+   "id": 2,
+   "narration": "[[1]]一，电势差。[[2]]把单位正电荷从 A 移到 B，电场力做的功，定义为 A、B 两点之间的电势差。[[3]]写成积分，就是 U_AB 等于 V_A 减 V_B，等于从 A 到 B 的 E 点乘 dl 的积分。[[4]]注意这里的定义用的是单位正电荷，所以电势差的单位是焦耳每库仑，也就是伏特。[[5]]有了电势差，任意电荷 q 从 A 到 B 时电场力做的功就是 q 乘 U_AB，非常方便。[[6]]要注意符号：U_AB 等于 V_A 减 V_B，是从 A 到 B 的降低量，不是升高量。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　电势差",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 244,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "把单位正电荷从 $A$ 移到 $B$，电场力做的功：",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 320,
+     "w": 1200,
+     "h": 140,
+     "tex": "U_{AB}=V_A-V_B=\\int_A^B\\vec E\\cdot\\mathrm d\\vec l",
+     "size": 38,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 490,
+     "w": 1580,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "单位：$\\mathrm{J/C}=\\mathrm V$（伏特）．",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 576,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "于是任意电荷 $q$ 从 $A$ 到 $B$，电场力做功：",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "$W=qU_{AB}$",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 668,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "符号：",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "$U_{AB}=V_A-V_B$ 是",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "降低量",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "，不是升高量．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 762,
+     "w": 1580,
+     "h": 160,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "电势差是「场」的属性",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "与放什么电荷、放多少电荷都无关",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "一　电势差"
+  },
+  {
+   "id": 3,
+   "narration": "[[1]]电势差有多大量级？看这张表。[[2]]生物电只有毫伏量级，十的负三次方伏。[[3]]普通干电池一点五伏，汽车电瓶十二伏。[[4]]家用电器一百一十或二百二十伏。[[5]]高压输电线可以达到五点五乘十的五次方伏，也就是五十五万伏。[[6]]而闪电，是十的八次方到十的九次方伏——差了好几个数量级。这也说明，电势差本身没有「危险不危险」，要看能量和电流。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "几种常见的电势差",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "table",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 1580,
+     "rows": [
+      [
+       "场　合",
+       "电势差 / V",
+       "场　合",
+       "电势差 / V"
+      ],
+      [
+       "生物电",
+       "10⁻³",
+       "家用电器",
+       "110 或 220"
+      ],
+      [
+       "普通干电池",
+       "1.5",
+       "高压输电线",
+       "5.5×10⁵"
+      ],
+      [
+       "汽车电源",
+       "12",
+       "闪　电",
+       "10⁸ ~ 10⁹"
+      ]
+     ],
+     "rowh": 86,
+     "size": 32,
+     "fill": "#CCFFCC"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 640,
+     "w": 1580,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "生物电：毫伏量级——心电、脑电都是这个数量级．",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 716,
+     "w": 1580,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "干电池 1.5 V、汽车 12 V：日常电源．",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 792,
+     "w": 1580,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "家用 220 V：已经足以伤人，因为人体电阻有限．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 868,
+     "w": 1580,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "高压输电 5.5×10⁵ V、闪电 10⁸~10⁹ V：跨越六个数量级．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 944,
+     "w": 1580,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以「电压高不高」要看场合，不能脱离能量与电流谈危险．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "几种常见的电势差"
+  },
+  {
+   "id": 4,
+   "narration": "[[1]]二，点电荷的电势。[[2]]先规定无穷远处电势为零——这是一个约定，因为电势的绝对值没有意义，只有差值有意义。[[3]]从 r 处积分到无穷远：V 等于从 r 积到无穷的 E 点乘 dl。[[4]]把 E 等于 kq 除以 r 平方代进去，积分得 kq 乘以负的 r 分之一，从 r 到无穷。[[5]]代入上下限，就得到 V 等于 q 除以四派 epsilon 零 r。[[6]]这个式子要看清：q 为正时 V 为正，q 为负时 V 为负；等势面是以 q 为心的同心球面。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1100,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　点电荷的电势",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 780,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "规定：",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "$V_\\infty=0$",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "（电势的绝对值无意义）．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 780,
+     "h": 120,
+     "tex": "V=\\int_r^\\infty\\vec E\\cdot\\mathrm d\\vec l",
+     "size": 32,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 470,
+     "w": 780,
+     "h": 120,
+     "tex": "=\\int_r^\\infty\\dfrac{q\\,\\mathrm dr}{4\\pi\\varepsilon_0 r^{2}}",
+     "size": 30,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 610,
+     "w": 780,
+     "h": 140,
+     "tex": "V=\\dfrac{q}{4\\pi\\varepsilon_0 r}",
+     "size": 42,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 772,
+     "w": 780,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$q>0$ ⇒ $V>0$；$q<0$ ⇒ $V<0$．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1000,
+     "y": 236,
+     "w": 840,
+     "h": 644,
+     "name": "equipotential"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 856,
+     "w": 780,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "等势面：以 $q$ 为心的同心球面．",
+        "size": 31,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "二　点电荷的电势"
+  },
+  {
+   "id": 5,
+   "narration": "[[1]]电势是标量，所以叠加特别简单。[[2]]空间里多个电荷时，某点的电势等于各电荷单独存在时在该点电势的代数和。[[3]]注意是代数和，不是矢量和——不用作平行四边形，直接把数值带着符号相加。[[4]]这一点比场强的叠加省事得多。[[5]]所以计算电势时，优先用叠加法；只有当连续带电体的积分比场强积分更容易时，才用场强积分。[[6]]这也是为什么静电学里先算电势、再由电势求场强。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电势的叠加",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 1200,
+     "h": 140,
+     "tex": "V=\\sum_i V_i=\\sum_i\\dfrac{q_i}{4\\pi\\varepsilon_0 r_i}",
+     "size": 36,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 420,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "标量相加：",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "带着符号直接相加，不作平行四边形．",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 500,
+     "w": 1580,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "对比场强：$\\vec E=\\sum\\vec E_i$ 要矢量合成，麻烦得多．",
+        "size": 31,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 584,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "连续带电体：",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "$V=\\int\\dfrac{\\mathrm dq}{4\\pi\\varepsilon_0 r}$",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 682,
+     "w": 1580,
+     "h": 170,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "策略：能先算电势就先算电势",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "再由 E = −∇V 求场强，往往比直接积分容易",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 890,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这也是为什么教材把「电势」放在「场强」之后讲．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "电势的叠加"
+  },
+  {
+   "id": 6,
+   "narration": "[[1]]把算电势的方法归成两条。[[2]]第一条是叠加法：把带电体切成电荷元，写出每个元的电势，直接代数相加或积分。适合电荷分布已知、几何简单的情形。[[3]]第二条是场强积分法：先由高斯定理求出 E，再沿任意路径从该点积到无穷远。适合场强容易求、而电势叠加难算的情形。[[4]]两条路都要记住一个前提：零点取在无穷远，且电荷分布在有限区域。[[5]]如果电荷分布延伸到无穷远，比如无限长带电直线，就不能取无穷远为零点，要另选参考点。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "算电势的两条路",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 叠加法：",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 296,
+     "w": 1580,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$V=\\sum\\dfrac{q_i}{4\\pi\\varepsilon_0 r_i}$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 350,
+     "w": 1580,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "或 $V=\\int\\dfrac{\\mathrm dq}{4\\pi\\varepsilon_0 r}$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 220,
+     "y": 404,
+     "w": 1560,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "适合电荷分布已知、几何简单的情形．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 460,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 场强积分法：",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "先求 $\\vec E$，再 $V=\\int_P^\\infty\\vec E\\cdot\\mathrm d\\vec l$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 220,
+     "y": 516,
+     "w": 1560,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "适合场强易求（高斯定理）、电势叠加难算的情形．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 594,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "共同前提：",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "零点取无穷远，且电荷分布在有限区域．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 674,
+     "w": 1580,
+     "h": 176,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "反例：无限长带电直线",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "电荷延伸到无穷远，不能取无穷远为零点",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "要另选参考点（例如取某处为 0）",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 882,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这个例外在 5-7 讲电势梯度时还会提到．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "算电势的两条路"
+  },
+  {
+   "id": 7,
+   "narration": "[[1]]例一，玻尔氢原子模型。[[2]]电子在半径零点五二九乘十的负十次方米的圆轨道上，绕质子运动。求质子在该轨道处产生的电势，以及电子的电势能。[[3]]电势直接用点电荷公式：V 等于 e 除以四派 epsilon 零 r，代入数值得二十七点二伏。[[4]]电势能是负 e 乘 V，等于负二十七点二电子伏，也就是负四点三五乘十的负十八次方焦耳。[[5]]注意这里用了电子伏这个单位：一电子伏等于一点六乘十的负十九次方焦耳，在原子物理里非常方便。[[6]]负号很关键：它说明电子被束缚，要把它移到无穷远，必须外界做功。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例1　玻尔氢原子",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 238,
+     "w": 1580,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电子在 $r=0.529\\times10^{-10}\\ \\mathrm m$ 的圆轨道上绕质子运动．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 310,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "求：质子在该轨道处的电势；电子的电势能．",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 396,
+     "w": 780,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电势：",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 456,
+     "w": 780,
+     "h": 130,
+     "tex": "V=\\dfrac{e}{4\\pi\\varepsilon_0 r}=27.2\\ \\mathrm V",
+     "size": 32,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 606,
+     "w": 780,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电势能：",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 666,
+     "w": 780,
+     "h": 130,
+     "tex": "E_{\\mathrm p}=-eV=-27.2\\ \\mathrm{eV}",
+     "size": 32,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 810,
+     "w": 780,
+     "h": 110,
+     "tex": "=-4.35\\times10^{-18}\\ \\mathrm J",
+     "size": 30,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 980,
+     "y": 400,
+     "w": 780,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "单位换算：",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 980,
+     "y": 456,
+     "w": 840,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$1\\ \\mathrm{eV}=1.60\\times10^{-19}\\ \\mathrm J$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 980,
+     "y": 560,
+     "w": 780,
+     "h": 240,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "负号的含义",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "电子被束缚在原子中",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "要把它移到无穷远",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "外界必须做功 13.6 eV",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "例1　玻尔氢原子"
+  },
+  {
+   "id": 8,
+   "narration": "[[1]]例二，均匀带电圆环轴线上的电势。[[2]]这个题用电势叠加最快。[[3]]在环上取电荷元 dq，它到轴线上 P 点的距离都是根号下 R 平方加 x 平方。[[4]]因为距离相同，可以提到积分号外，积分就是总电荷 q。[[5]]所以 V 等于 q 除以四派 epsilon 零乘根号下 R 平方加 x 平方。[[6]]和上一节圆环轴线的场强对比一下：场强里有个 x 因子，环心处为零；而电势在环心处最大，等于 kq 除以 R。这是因为电势是标量，各电荷元的贡献同号相加，不会抵消。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例2　均匀带电圆环轴线上的电势",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 52,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "半径 $R$、电荷量 $q$，求轴线上距圆心 $x$ 处的 $V$．",
+        "size": 33,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 312,
+     "w": 1580,
+     "h": 52,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "取 $\\mathrm dq$：各元到 $P$ 的距离都是 $\\sqrt{R^{2}+x^{2}}$．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 386,
+     "w": 1580,
+     "h": 120,
+     "tex": "V=\\int\\dfrac{\\mathrm dq}{4\\pi\\varepsilon_0\\sqrt{R^{2}+x^{2}}}",
+     "size": 32,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 520,
+     "w": 1580,
+     "h": 140,
+     "tex": "V=\\dfrac{q}{4\\pi\\varepsilon_0\\sqrt{R^{2}+x^{2}}}",
+     "size": 38,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 686,
+     "w": 1580,
+     "h": 52,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "环心：$V_0=\\dfrac{kq}{R}$，",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "此处电势最大",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 762,
+     "w": 1580,
+     "h": 50,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "对比场强：$E_x=\\dfrac{kqx}{(R^{2}+x^{2})^{3/2}}$，环心为零．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 818,
+     "w": 1580,
+     "h": 48,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "原因：电势是标量，各元同号相加；场强是矢量，对称抵消．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "例2　带电圆环"
+  },
+  {
+   "id": 9,
+   "narration": "[[1]]例三，均匀带电圆盘轴线上的电势。[[2]]把圆盘切成同心细环，半径 r、宽 dr，电荷 dq 等于 sigma 乘二派 r dr。[[3]]每个环到 P 点的距离都是根号下 r 平方加 x 平方，代入圆环的结果再对 r 积分。[[4]]这个积分要注意：分子上有个 r，正好可以凑成对 r 平方的微分。[[5]]积出来是 sigma 除以二 epsilon 零，乘以根号下 x 平方加 R 平方减 x。[[6]]检验极限：x 远大于 R 时，括号里的式子约等于 R 平方除以二 x，V 约等于 Q 除以四派 epsilon 零 x——退化成点电荷，正确。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例3　均匀带电圆盘轴线上的电势",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 52,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "半径 $R$、面密度 $\\sigma$；切成同心细环：$\\mathrm dq=\\sigma\\cdot2\\pi r\\,\\mathrm dr$．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 312,
+     "w": 1580,
+     "h": 120,
+     "tex": "V=\\dfrac{1}{4\\pi\\varepsilon_0}\\int_0^R\\dfrac{\\sigma2\\pi r\\,\\mathrm dr}{\\sqrt{x^{2}+r^{2}}}",
+     "size": 28,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 450,
+     "w": 1580,
+     "h": 140,
+     "tex": "V=\\dfrac{\\sigma}{2\\varepsilon_0}\\left(\\sqrt{x^{2}+R^{2}}-x\\right)",
+     "size": 34,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 616,
+     "w": 1580,
+     "h": 50,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "检验：$x\\gg R$ 时 $\\sqrt{x^{2}+R^{2}}\\approx x+\\dfrac{R^{2}}{2x}$",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 686,
+     "w": 1580,
+     "h": 120,
+     "tex": "V\\approx\\dfrac{\\sigma\\pi R^{2}}{4\\pi\\varepsilon_0 x}=\\dfrac{Q}{4\\pi\\varepsilon_0 x}",
+     "size": 30,
+     "color": "#0000CD",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 830,
+     "w": 1580,
+     "h": 50,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "退化为点电荷，正确．",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 886,
+     "w": 1580,
+     "h": 48,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "注意：有限大带电体的电势，无穷远处才为零．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "例3　带电圆盘"
+  },
+  {
+   "id": 10,
+   "narration": "[[1]]把几个量的关系理清楚，别混。[[2]]电势 V：只由场决定，标量，单位伏特。[[3]]电势差 U_AB：两点电势之差，也由场决定。[[4]]电势能 Ep：等于 q 乘 V，与放入的电荷有关，单位焦耳。[[5]]电场力做功 W_AB 等于 q 乘 U_AB，等于 EpA 减 EpB。[[6]]一张表记住：V 描述场，Ep 描述「电荷 + 场」这个系统。判断一个量属于谁，就看它带不带 q。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "几个量别混",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "table",
+     "step": 1,
+     "x": 170,
+     "y": 244,
+     "w": 1580,
+     "rows": [
+      [
+       "量",
+       "定义",
+       "与电荷有关？",
+       "单位"
+      ],
+      [
+       "电势 $V$",
+       "$E_{\\mathrm p}/q_0$",
+       "无关",
+       "V"
+      ],
+      [
+       "电势差 $U_{AB}$",
+       "$V_A-V_B$",
+       "无关",
+       "V"
+      ],
+      [
+       "电势能 $E_{\\mathrm p}$",
+       "$qV$",
+       "有关",
+       "J"
+      ],
+      [
+       "电场力做功 $W_{AB}$",
+       "$qU_{AB}$",
+       "有关",
+       "J"
+      ]
+     ],
+     "rowh": 78,
+     "size": 29,
+     "fill": "#CCFFCC"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 660,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "判断归属的口诀：",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "带 $q$ 的量属于系统，不带 $q$ 的量属于场．",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 744,
+     "w": 1580,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$W_{AB}=qU_{AB}=E_{\\mathrm pA}-E_{\\mathrm pB}$",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 820,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这也解释了为什么工程上更常用「电压」：它只与两点有关，与接什么负载无关．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 890,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "而「耗电多少」要看电荷量，也就是电流乘时间．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "几个量别混"
+  },
+  {
+   "id": 11,
+   "narration": "[[1]]小结。[[2]]电势差定义为单位正电荷从 A 到 B 电场力做的功，U_AB 等于 V_A 减 V_B。[[3]]点电荷电势 V 等于 q 除以四派 epsilon 零 r，零点在无穷远。[[4]]多个电荷用标量叠加，连续体用积分。[[5]]算电势有两条路：叠加法、场强积分法，多数情况下叠加法更快。[[6]]下一节讲电势与场强的关系：E 等于负的梯度 V。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 电势差：",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "$U_{AB}=V_A-V_B=\\int_A^B\\vec E\\cdot\\mathrm d\\vec l$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 316,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 点电荷：",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "$V=\\dfrac{q}{4\\pi\\varepsilon_0 r}$，$V_\\infty=0$",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 400,
+     "w": 1580,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 叠加：$V=\\sum V_i$（标量，直接代数相加）．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 480,
+     "w": 1580,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 两条路：叠加法、场强积分法．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 556,
+     "w": 1580,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "⑤ 三个量的关系：$V$（场）、$E_{\\mathrm p}=qV$（系统）、$W=qU$（过程）．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 650,
+     "w": 1580,
+     "h": 170,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "下一节：场强与电势梯度",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "E = −∇V：知道电势分布，就能求出各点的场强",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 868,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第五章的「场」与「势」两条线，到下一节就合上了．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "本节小结"
+  }
+ ]
+}

@@ -1,0 +1,3163 @@
+{
+ "title": "14-1 伽利略变换式 经典力学的绝对时空观",
+ "nav": "14-1　伽利略变换式",
+ "footer": "第十四章　相对论",
+ "character": "aqiang",
+ "characters": [
+  {
+   "id": "aqiang",
+   "name": "阿强"
+  },
+  {
+   "id": "professor",
+   "name": "博士讲师"
+  },
+  {
+   "id": "zhongshan",
+   "name": "中山装先生"
+  }
+ ],
+ "duration": 383.76,
+ "slides": [
+  {
+   "id": 1,
+   "kind": "page",
+   "heading": "封面",
+   "narration": "第十四章，相对论。14-1，伽利略变换式，以及经典力学的绝对时空观。这一节先把经典力学对时间、空间的理解摆出来——后面我们会看到，它在高速世界里站不住脚。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 282,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 十 四 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 300,
+     "y": 408,
+     "w": 1320,
+     "h": 170,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "相 对 论",
+        "size": 92,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 250,
+     "y": 588,
+     "w": 1420,
+     "h": 120,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "14-1　伽利略变换式　经典力学的绝对时空观",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 220,
+     "y": 730,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "伽利略变换　·　绝对时空观　·　速度合成　·　光速佯谬",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 850,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "先看看，经典力学是怎么理解时间和空间的",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 0.0,
+    "2": 3.11,
+    "3": 9.27
+   },
+   "t_start": 0.0,
+   "t_end": 18.74,
+   "duration": 18.74,
+   "laser": []
+  },
+  {
+   "id": 2,
+   "kind": "page",
+   "heading": "本节路线",
+   "narration": "本节路线。先写出伽利略变换：两个惯性系之间坐标怎么换。由它得到速度变换和加速度变换，加速度不变，所以牛顿定律不变。这就是经典力学的相对性原理，背后是绝对时空观。但电磁现象不服从伽利略变换，光速成了麻烦。最后用投球和蟹状星云两个例子，看看矛盾有多尖锐。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节路线",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 244,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "主线：伽利略变换 → 速度与加速度 → 相对性原理 → 绝对时空观 → 光速佯谬",
+        "size": 27,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1　伽利略变换",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 386,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "坐标怎么换",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 458,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2　速度与加速度",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 512,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$v=v'+u$，$a=a'$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 584,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "3　绝对时空观",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 638,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "时间、空间都与运动无关",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 330,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4　相对性原理",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 386,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "牛顿定律形式不变",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 458,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "5　电磁现象的麻烦",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 512,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "光速不服从伽利略变换",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 584,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "6　两个反例",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 638,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "投球 · 蟹状星云",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "本节收口：经典时空观很自然，但它只是低速世界的近似",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 19.54,
+    "2": 21.81,
+    "3": 27.06,
+    "4": 34.64,
+    "5": 40.22,
+    "6": 45.64
+   },
+   "t_start": 19.54,
+   "t_end": 52.06,
+   "duration": 32.52,
+   "laser": []
+  },
+  {
+   "id": 3,
+   "kind": "page",
+   "heading": "一　伽利略变换",
+   "narration": "先看两个惯性系。S′ 系相对 S 系以匀速 u 沿 x 轴运动，t 等于零的时刻两原点重合。同一个事件 P，在 S 系里的坐标是 x、y、z，在 S′ 系里是 x′、y′、z′。经典力学说：x′ 等于 x 减 ut，y′ 等于 y，z′ 等于 z。最关键的是最后一条：t′ 等于 t——两系的钟读数一样。这四条就是伽利略变换。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　伽利略变换",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 437,
+     "name": "galilean_frames"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两个惯性系之间怎么换",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "S′ 相对 S 以 $u$ 沿 $x$ 轴匀速运动",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同一事件 $P$ 的坐标",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 416,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$x'=x-ut$，$y'=y$，$z'=z$",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 476,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "最关键的是：$t'=t$",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 522,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两系的钟读数一样",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 592,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "这四条意味着什么",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "时间与运动无关，是绝对的",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "长度也不变：$\\Delta x'=\\Delta x-0$",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "（长度与速度都按常识相加）",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 820,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "注意 $t'=t$：这不是「钟走得一样快」，而是「根本只有一个时间」",
+        "size": 26,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 52.86,
+    "2": 55.61,
+    "3": 63.11,
+    "4": 71.53,
+    "5": 78.22,
+    "6": 84.09
+   },
+   "t_start": 52.86,
+   "t_end": 87.97,
+   "duration": 35.11,
+   "laser": []
+  },
+  {
+   "id": 4,
+   "kind": "page",
+   "heading": "二　速度变换与加速度变换",
+   "narration": "把坐标对时间求导，就得到速度变换。vₓ 等于 v′ₓ 加 u。这和我们熟悉的速度合成完全一致：在船上走的人，地面看到的速度是船速加入速。再求一次导，就得到加速度变换。因为 u 是常量，求导后就没有了，所以 a′ₓ 等于 aₓ。加速度在不同惯性系里是一样的——这一点非常关键。想一想：为什么加速度不变，速度却变了？因为速度只差一个常量 u，求导就没了。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　速度变换与加速度变换",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 415,
+     "name": "velocity_add"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "对坐标求导",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "速度：$v_x=v'_x+u$",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "就是熟悉的速度合成",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 402,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "船速加入速 = 岸上看到的速度",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 462,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "加速度：再求一次导",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 518,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$u$ 是常量，求导后消失",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 6,
+     "x": 170,
+     "y": 566,
+     "w": 740,
+     "h": 110,
+     "tex": "a_x=a'_x",
+     "size": 36,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 690,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "加速度是伽利略变换下的不变量",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 760,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这个「不变量」，正是牛顿定律形式不变的根源",
+        "size": 26,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 88.77,
+    "2": 93.18,
+    "3": 95.93,
+    "4": 104.06,
+    "5": 107.87,
+    "6": 113.57
+   },
+   "t_start": 88.77,
+   "t_end": 129.23,
+   "duration": 40.46,
+   "laser": []
+  },
+  {
+   "id": 5,
+   "kind": "page",
+   "heading": "三　经典力学的相对性原理",
+   "narration": "既然加速度不变，牛顿第二定律就跟着不变。F 等于 ma，在两个系里形式完全一样。于是所有力学规律，在所有惯性系里都有相同的形式。这叫经典力学的相对性原理：你没法用任何力学实验，判断自己是静止还是在匀速运动。在封闭的船舱里，桌上的杯子、落下的苹果，都和地面上一样。所以「绝对静止」在力学上是测不出来的。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　经典力学的相对性原理",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "加速度不变 ⇒ 牛顿定律不变",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$F=ma$ 在两个系里形式相同",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所有力学规律在惯性系里同形式",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 416,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以：力学实验分不出静止与匀速",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 476,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "封闭船舱里的一切都和地面一样",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 536,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "「绝对静止」在力学上测不出来",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 220,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "伽利略的船舱",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "在匀速航行的船舱里",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "蝴蝶照样飞，水滴照样落",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "你无法判断船在动还是不动",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 486,
+     "w": 740,
+     "h": 190,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "这条原理的地位",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "不是推出来的，是经验",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "爱因斯坦把它推广到全部物理",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "包括电磁现象",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 700,
+     "w": 1580,
+     "h": 130,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "于是「绝对静止」成了一个多余的假设",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "既然任何力学实验都测不出来，那又何必假设它存在？",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 130.03,
+    "2": 135.13,
+    "3": 139.9,
+    "4": 145.48,
+    "5": 153.9,
+    "6": 160.32
+   },
+   "t_start": 130.03,
+   "t_end": 164.61,
+   "duration": 34.58,
+   "laser": []
+  },
+  {
+   "id": 6,
+   "kind": "page",
+   "heading": "四　经典力学的绝对时空观",
+   "narration": "这套理论背后，是一种关于时间和空间的看法。绝对空间：空间与物质的运动无关，永恒不变、绝对静止。空间的量度也与惯性系无关。绝对时间：时间与物质运动无关，均匀地流逝，所有惯性系有相同的时间。牛顿本人就是这么想的：时间像一条河，自顾自地流。这在日常生活中完全符合直觉——不妨问一句：它一定对吗？",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　经典力学的绝对时空观",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 760,
+     "h": 210,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "绝对空间",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "空间与物质运动无关",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "永恒不变、绝对静止",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "空间量度与惯性系无关",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 210,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "绝对时间",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "时间与物质运动无关",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "均匀流逝，处处相同",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "所有惯性系共用一个 $t$",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 486,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "空间的量度绝对不变 —— 一把尺子在哪里都那么长",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 546,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "时间的量度也绝对不变 —— 一只钟在哪里都走得一样快",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 616,
+     "w": 1580,
+     "h": 140,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "牛顿：绝对的空间，就其本性而言，与外界任何事物无关",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "绝对的时间，均匀地流逝，与一切外在事物无关",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 800,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这在日常经验里完全符合直觉 —— 但它只是低速世界的近似",
+        "size": 26,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 165.41,
+    "2": 170.27,
+    "3": 176.74,
+    "4": 180.43,
+    "5": 187.62,
+    "6": 193.54
+   },
+   "t_start": 165.41,
+   "t_end": 200.62,
+   "duration": 35.21,
+   "laser": []
+  },
+  {
+   "id": 7,
+   "kind": "page",
+   "heading": "五　经典相对性原理的边界",
+   "narration": "要注意，经典相对性原理是有适用范围的。在宏观、低速的范围内，它与实验结果完全一致。但在高速运动的情况下，它就不适用了。什么叫高速？当速度可以和光速相比的时候。日常生活里的速度，连光速的万分之一都不到，所以差别完全看不出来。问题在于，光速本身恰好就是那个「高速」的门槛。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五　经典相对性原理的边界",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "它是有适用范围的",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "✓ 宏观、低速",
+        "size": 28,
+        "color": "#2E8B57",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 342,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与实验完全一致",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "✗ 高速运动",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 342,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不再适用",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 412,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "「高速」= 可以和光速相比的速度",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 472,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "日常速度连光速的万分之一都不到",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 518,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以差别完全看不出来",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 580,
+     "w": 1580,
+     "h": 160,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "光速是那个门槛：c ≈ 3×10⁸ m/s",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "而一切电磁现象、以及光本身，都跑在这个门槛上",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 780,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以相对论不是推翻经典力学，而是把它圈定在低速范围里",
+        "size": 26,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 201.42,
+    "2": 206.6,
+    "3": 211.92,
+    "4": 216.33,
+    "5": 222.39,
+    "6": 228.96
+   },
+   "t_start": 201.42,
+   "t_end": 234.56,
+   "duration": 33.14,
+   "laser": []
+  },
+  {
+   "id": 8,
+   "kind": "page",
+   "heading": "六　电磁现象不服从伽利略变换",
+   "narration": "麻烦出在电磁学。麦克斯韦方程组给出真空中的光速，写成式子就是 c 等于一除以根号下 ε₀μ₀。它只由两个电磁常数决定，与光源、与观察者都没有关系。但麦克斯韦方程组不服从伽利略变换。如果按伽利略变换，换一个惯性系，光速就该变。可方程组说它不变。于是问题来了：到底是麦克斯韦方程组错了，还是伽利略变换错了？",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "六　电磁现象不服从伽利略变换",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "麦克斯韦方程组给出的光速",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 290,
+     "w": 740,
+     "h": 120,
+     "tex": "c=\\frac{1}{\\sqrt{\\varepsilon_0\\mu_0}}",
+     "size": 36,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 430,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只由两个电磁常数决定",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 476,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与光源、观察者都无关",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "但麦克斯韦方程组",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 292,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不服从伽利略变换",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 352,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "按伽利略变换，换个系光速就该变",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 398,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "可方程组说它不变",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 560,
+     "w": 1580,
+     "h": 160,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "二选一：麦克斯韦方程组错了，还是伽利略变换错了？",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "十九世纪的物理学家想给光找一个「绝对参考系」（以太）—— 下一节看实验怎么说",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 760,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这个矛盾，就是相对论的起点",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 235.36,
+    "2": 238.28,
+    "3": 245.98,
+    "4": 252.38,
+    "5": 256.76,
+    "6": 264.86
+   },
+   "t_start": 235.36,
+   "t_end": 272.22,
+   "duration": 36.86,
+   "laser": []
+  },
+  {
+   "id": 9,
+   "kind": "page",
+   "heading": "例　投球的光",
+   "narration": "看一个夸张的例子。一个人朝观察者投球，球出手前后各发一次光。按伽利略变换，投出前光速是 c，到达时间 Δt₁ 等于 d 比 c。投出后光速变成 c 加 v，到达时间 Δt₂ 等于 d 比 c 加 v。于是 Δt₂ 小于 Δt₁——观察者会先看到投出后的球，后看到投出前的球。这显然荒谬。所以光速不能和源的速度相加。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例　投球的光",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 437,
+     "name": "ball_light"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "球出手前后各发一次光",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "观察者在距离 $d$ 处",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "投出前：$\\Delta t_1=d/c$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 416,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "投出后：$\\Delta t_2=d/(c+v)$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 476,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "于是 $\\Delta t_2<\\Delta t_1$",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 522,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "先看到出球，后看到投球",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 592,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "荒谬在哪",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "因果被颠倒了",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "结果在原因之前出现",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "所以光速不能叠加",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 820,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只要承认「光速与源速相加」，就会推出看未来先于看过去",
+        "size": 26,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 273.02,
+    "2": 275.63,
+    "3": 281.17,
+    "4": 288.17,
+    "5": 294.79,
+    "6": 302.65
+   },
+   "t_start": 273.02,
+   "t_end": 309.45,
+   "duration": 36.43,
+   "laser": []
+  },
+  {
+   "id": 10,
+   "kind": "page",
+   "heading": "例　蟹状星云",
+   "narration": "再看一个真实的观测。公元 1054 年，中国史书记载了一颗「客星」，白天都能看见，在天空停留了 22 个月。它留下的就是金牛座蟹状星云。它距离我们 5000 光年，抛射物速度约 1500 公里每秒。按伽利略变换算，朝地球飞来的抛射物发光会「抢跑」，公众应该能看到约 25 年的强光。可实际只持续了 22 个月——差了十几倍。这说明光速确实不随源的速度改变。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例　蟹状星云",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 415,
+     "name": "crab_nebula"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "公元 1054 年的「客星」",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "白天可见，持续 22 个月",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "留下金牛座蟹状星云",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 416,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$l=5000$ 光年，$v=1500$ km/s",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 476,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "伽利略算法 ⇒ 约 25 年",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 536,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "实际只有 22 个月",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 596,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "差的是 $l/(c\\pm v)$ 这一步",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 700,
+     "w": 1580,
+     "h": 140,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "结论：光速与光源的运动无关",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "这是十九世纪末最硬的一条实验事实 —— 它直接指向相对论",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 310.25,
+    "2": 313.03,
+    "3": 321.21,
+    "4": 325.23,
+    "5": 330.79,
+    "6": 339.3
+   },
+   "t_start": 310.25,
+   "t_end": 348.12,
+   "duration": 37.87,
+   "laser": []
+  },
+  {
+   "id": 11,
+   "kind": "page",
+   "heading": "本节小结",
+   "narration": "小结。伽利略变换：x′ 等于 x 减 ut，t′ 等于 t。由此得到速度合成 v 等于 v′ 加 u，而加速度不变，所以牛顿定律形式不变。这就是经典相对性原理，背后是绝对时空观：时间、空间都与运动无关。但电磁现象不服从伽利略变换，光速是个常量。下一节看迈克耳孙-莫雷实验。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 伽利略变换",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$x'=x-ut$，$t'=t$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 速度与加速度",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 408,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$v=v'+u$，$a=a'$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 绝对时空观",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "时间、空间都与运动无关",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 356,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 矛盾",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 408,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电磁现象不服从伽利略变换",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 470,
+     "w": 740,
+     "h": 170,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "下一节",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "14-2　迈克耳孙-莫雷实验",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "绝对参考系存在吗",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 490,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一句话",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "经典时空观很自然",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "但只适用于低速",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "光速是它迈不过去的坎",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 120,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "第十四章 1/8：先把经典的地基看清楚，才知道要改哪里",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 348.92,
+    "2": 351.19,
+    "3": 356.7,
+    "4": 364.83,
+    "5": 372.77
+   },
+   "t_start": 348.92,
+   "t_end": 382.23,
+   "duration": 33.31,
+   "laser": []
+  }
+ ],
+ "subtitles": [
+  {
+   "slide": 1,
+   "start": 0.0,
+   "end": 2.71,
+   "text": "第十四章，相对论。"
+  },
+  {
+   "slide": 1,
+   "start": 3.11,
+   "end": 8.87,
+   "text": "14-1，伽利略变换式，以及经典力学的绝对时空观。"
+  },
+  {
+   "slide": 1,
+   "start": 9.27,
+   "end": 18.17,
+   "text": "这一节先把经典力学对时间、空间的理解摆出来——后面我们会看到，它在高速世界里站不住脚。"
+  },
+  {
+   "slide": 2,
+   "start": 19.54,
+   "end": 21.41,
+   "text": "本节路线。"
+  },
+  {
+   "slide": 2,
+   "start": 21.81,
+   "end": 26.66,
+   "text": "先写出伽利略变换：两个惯性系之间坐标怎么换。"
+  },
+  {
+   "slide": 2,
+   "start": 27.06,
+   "end": 34.24,
+   "text": "由它得到速度变换和加速度变换，加速度不变，所以牛顿定律不变。"
+  },
+  {
+   "slide": 2,
+   "start": 34.64,
+   "end": 39.82,
+   "text": "这就是经典力学的相对性原理，背后是绝对时空观。"
+  },
+  {
+   "slide": 2,
+   "start": 40.22,
+   "end": 45.24,
+   "text": "但电磁现象不服从伽利略变换，光速成了麻烦。"
+  },
+  {
+   "slide": 2,
+   "start": 45.64,
+   "end": 51.33,
+   "text": "最后用投球和蟹状星云两个例子，看看矛盾有多尖锐。"
+  },
+  {
+   "slide": 3,
+   "start": 52.86,
+   "end": 55.21,
+   "text": "先看两个惯性系。"
+  },
+  {
+   "slide": 3,
+   "start": 55.61,
+   "end": 62.71,
+   "text": "S′ 系相对 S 系以匀速 u 沿 x 轴运动，t 等于零的时刻两原点重合。"
+  },
+  {
+   "slide": 3,
+   "start": 63.11,
+   "end": 71.13,
+   "text": "同一个事件 P，在 S 系里的坐标是 x、y、z，在 S′ 系里是 x′、y′、z′。"
+  },
+  {
+   "slide": 3,
+   "start": 71.53,
+   "end": 77.82,
+   "text": "经典力学说：x′ 等于 x 减 ut，y′ 等于 y，z′ 等于 z。"
+  },
+  {
+   "slide": 3,
+   "start": 78.22,
+   "end": 83.69,
+   "text": "最关键的是最后一条：t′ 等于 t——两系的钟读数一样。"
+  },
+  {
+   "slide": 3,
+   "start": 84.09,
+   "end": 87.23,
+   "text": "这四条就是伽利略变换。"
+  },
+  {
+   "slide": 4,
+   "start": 88.77,
+   "end": 92.78,
+   "text": "把坐标对时间求导，就得到速度变换。"
+  },
+  {
+   "slide": 4,
+   "start": 93.18,
+   "end": 95.53,
+   "text": "vₓ 等于 v′ₓ 加 u。"
+  },
+  {
+   "slide": 4,
+   "start": 95.93,
+   "end": 103.66,
+   "text": "这和我们熟悉的速度合成完全一致：在船上走的人，地面看到的速度是船速加入速。"
+  },
+  {
+   "slide": 4,
+   "start": 104.06,
+   "end": 107.47,
+   "text": "再求一次导，就得到加速度变换。"
+  },
+  {
+   "slide": 4,
+   "start": 107.87,
+   "end": 113.17,
+   "text": "因为 u 是常量，求导后就没有了，所以 a′ₓ 等于 aₓ。"
+  },
+  {
+   "slide": 4,
+   "start": 113.57,
+   "end": 118.51,
+   "text": "加速度在不同惯性系里是一样的——这一点非常关键。"
+  },
+  {
+   "slide": 4,
+   "start": 118.91,
+   "end": 123.61,
+   "text": "想一想：为什么加速度不变，速度却变了？"
+  },
+  {
+   "slide": 4,
+   "start": 124.26,
+   "end": 128.36,
+   "text": "因为速度只差一个常量 u，求导就没了。"
+  },
+  {
+   "slide": 5,
+   "start": 130.03,
+   "end": 134.73,
+   "text": "既然加速度不变，牛顿第二定律就跟着不变。"
+  },
+  {
+   "slide": 5,
+   "start": 135.13,
+   "end": 139.5,
+   "text": "F 等于 ma，在两个系里形式完全一样。"
+  },
+  {
+   "slide": 5,
+   "start": 139.9,
+   "end": 145.08,
+   "text": "于是所有力学规律，在所有惯性系里都有相同的形式。"
+  },
+  {
+   "slide": 5,
+   "start": 145.48,
+   "end": 153.5,
+   "text": "这叫经典力学的相对性原理：你没法用任何力学实验，判断自己是静止还是在匀速运动。"
+  },
+  {
+   "slide": 5,
+   "start": 153.9,
+   "end": 159.92,
+   "text": "在封闭的船舱里，桌上的杯子、落下的苹果，都和地面上一样。"
+  },
+  {
+   "slide": 5,
+   "start": 160.32,
+   "end": 163.87,
+   "text": "所以「绝对静止」在力学上是测不出来的。"
+  },
+  {
+   "slide": 6,
+   "start": 165.41,
+   "end": 169.87,
+   "text": "这套理论背后，是一种关于时间和空间的看法。"
+  },
+  {
+   "slide": 6,
+   "start": 170.27,
+   "end": 176.34,
+   "text": "绝对空间：空间与物质的运动无关，永恒不变、绝对静止。"
+  },
+  {
+   "slide": 6,
+   "start": 176.74,
+   "end": 180.03,
+   "text": "空间的量度也与惯性系无关。"
+  },
+  {
+   "slide": 6,
+   "start": 180.43,
+   "end": 187.22,
+   "text": "绝对时间：时间与物质运动无关，均匀地流逝，所有惯性系有相同的时间。"
+  },
+  {
+   "slide": 6,
+   "start": 187.62,
+   "end": 193.14,
+   "text": "牛顿本人就是这么想的：时间像一条河，自顾自地流。"
+  },
+  {
+   "slide": 6,
+   "start": 193.54,
+   "end": 199.61,
+   "text": "这在日常生活中完全符合直觉——不妨问一句：它一定对吗？"
+  },
+  {
+   "slide": 7,
+   "start": 201.42,
+   "end": 206.2,
+   "text": "要注意，经典相对性原理是有适用范围的。"
+  },
+  {
+   "slide": 7,
+   "start": 206.6,
+   "end": 211.52,
+   "text": "在宏观、低速的范围内，它与实验结果完全一致。"
+  },
+  {
+   "slide": 7,
+   "start": 211.92,
+   "end": 215.93,
+   "text": "但在高速运动的情况下，它就不适用了。"
+  },
+  {
+   "slide": 7,
+   "start": 216.33,
+   "end": 218.2,
+   "text": "什么叫高速？"
+  },
+  {
+   "slide": 7,
+   "start": 218.85,
+   "end": 221.99,
+   "text": "当速度可以和光速相比的时候。"
+  },
+  {
+   "slide": 7,
+   "start": 222.39,
+   "end": 228.56,
+   "text": "日常生活里的速度，连光速的万分之一都不到，所以差别完全看不出来。"
+  },
+  {
+   "slide": 7,
+   "start": 228.96,
+   "end": 233.76,
+   "text": "问题在于，光速本身恰好就是那个「高速」的门槛。"
+  },
+  {
+   "slide": 8,
+   "start": 235.36,
+   "end": 237.88,
+   "text": "麻烦出在电磁学。"
+  },
+  {
+   "slide": 8,
+   "start": 238.28,
+   "end": 245.58,
+   "text": "麦克斯韦方程组给出真空中的光速，写成式子就是 c 等于一除以根号下 ε₀μ₀。"
+  },
+  {
+   "slide": 8,
+   "start": 245.98,
+   "end": 251.98,
+   "text": "它只由两个电磁常数决定，与光源、与观察者都没有关系。"
+  },
+  {
+   "slide": 8,
+   "start": 252.38,
+   "end": 256.36,
+   "text": "但麦克斯韦方程组不服从伽利略变换。"
+  },
+  {
+   "slide": 8,
+   "start": 256.76,
+   "end": 261.68,
+   "text": "如果按伽利略变换，换一个惯性系，光速就该变。"
+  },
+  {
+   "slide": 8,
+   "start": 262.08,
+   "end": 264.46,
+   "text": "可方程组说它不变。"
+  },
+  {
+   "slide": 8,
+   "start": 264.86,
+   "end": 271.17,
+   "text": "于是问题来了：到底是麦克斯韦方程组错了，还是伽利略变换错了？"
+  },
+  {
+   "slide": 9,
+   "start": 273.02,
+   "end": 275.23,
+   "text": "看一个夸张的例子。"
+  },
+  {
+   "slide": 9,
+   "start": 275.63,
+   "end": 280.77,
+   "text": "一个人朝观察者投球，球出手前后各发一次光。"
+  },
+  {
+   "slide": 9,
+   "start": 281.17,
+   "end": 287.77,
+   "text": "按伽利略变换，投出前光速是 c，到达时间 Δt₁ 等于 d 比 c。"
+  },
+  {
+   "slide": 9,
+   "start": 288.17,
+   "end": 294.39,
+   "text": "投出后光速变成 c 加 v，到达时间 Δt₂ 等于 d 比 c 加 v。"
+  },
+  {
+   "slide": 9,
+   "start": 294.79,
+   "end": 302.25,
+   "text": "于是 Δt₂ 小于 Δt₁——观察者会先看到投出后的球，后看到投出前的球。"
+  },
+  {
+   "slide": 9,
+   "start": 302.65,
+   "end": 304.76,
+   "text": "这显然荒谬。"
+  },
+  {
+   "slide": 9,
+   "start": 305.16,
+   "end": 308.66,
+   "text": "所以光速不能和源的速度相加。"
+  },
+  {
+   "slide": 10,
+   "start": 310.25,
+   "end": 312.63,
+   "text": "再看一个真实的观测。"
+  },
+  {
+   "slide": 10,
+   "start": 313.03,
+   "end": 320.81,
+   "text": "公元 1054 年，中国史书记载了一颗「客星」，白天都能看见，在天空停留了 22 个月。"
+  },
+  {
+   "slide": 10,
+   "start": 321.21,
+   "end": 324.83,
+   "text": "它留下的就是金牛座蟹状星云。"
+  },
+  {
+   "slide": 10,
+   "start": 325.23,
+   "end": 330.39,
+   "text": "它距离我们 5000 光年，抛射物速度约 1500 公里每秒。"
+  },
+  {
+   "slide": 10,
+   "start": 330.79,
+   "end": 338.9,
+   "text": "按伽利略变换算，朝地球飞来的抛射物发光会「抢跑」，公众应该能看到约 25 年的强光。"
+  },
+  {
+   "slide": 10,
+   "start": 339.3,
+   "end": 343.12,
+   "text": "可实际只持续了 22 个月——差了十几倍。"
+  },
+  {
+   "slide": 10,
+   "start": 343.52,
+   "end": 347.34,
+   "text": "这说明光速确实不随源的速度改变。"
+  },
+  {
+   "slide": 11,
+   "start": 348.92,
+   "end": 350.79,
+   "text": "小结。"
+  },
+  {
+   "slide": 11,
+   "start": 351.19,
+   "end": 356.3,
+   "text": "伽利略变换：x′ 等于 x 减 ut，t′ 等于 t。"
+  },
+  {
+   "slide": 11,
+   "start": 356.7,
+   "end": 364.43,
+   "text": "由此得到速度合成 v 等于 v′ 加 u，而加速度不变，所以牛顿定律形式不变。"
+  },
+  {
+   "slide": 11,
+   "start": 364.83,
+   "end": 372.37,
+   "text": "这就是经典相对性原理，背后是绝对时空观：时间、空间都与运动无关。"
+  },
+  {
+   "slide": 11,
+   "start": 372.77,
+   "end": 377.91,
+   "text": "但电磁现象不服从伽利略变换，光速是个常量。"
+  },
+  {
+   "slide": 11,
+   "start": 378.31,
+   "end": 381.5,
+   "text": "下一节看迈克耳孙-莫雷实验。"
+  }
+ ],
+ "build_ts": 1792589728,
+ "logoScale": 0.67,
+ "theme": "wave"
+}

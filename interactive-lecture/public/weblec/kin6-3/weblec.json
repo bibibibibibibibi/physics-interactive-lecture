@@ -1,0 +1,1676 @@
+{
+ "title": "6-3 电位移 有介质时的高斯定理",
+ "nav": "6-3　电位移　有介质高斯定理",
+ "footer": "第六章　静电场中的导体与电介质",
+ "character": "aqiang",
+ "characters": [
+  {
+   "id": "aqiang",
+   "name": "阿强"
+  },
+  {
+   "id": "professor",
+   "name": "博士讲师"
+  },
+  {
+   "id": "zhongshan",
+   "name": "中山装先生"
+  }
+ ],
+ "duration": 305.45,
+ "slides": [
+  {
+   "id": 1,
+   "kind": "page",
+   "heading": "封面",
+   "narration": "6-3，电位移与有介质时的高斯定理。上一节最后留下一个问题：介质里的高斯定理，右边除了自由电荷，还有束缚电荷。束缚电荷不好测、也不好算，能不能把它从式子里赶出去？能。办法是引入一个新的矢量，叫电位移 D。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 292,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 六 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 250,
+     "y": 420,
+     "w": 1420,
+     "h": 150,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "6-3　电位移　有介质的高斯定理",
+        "size": 56,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 220,
+     "y": 630,
+     "w": 1480,
+     "h": 110,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "把束缚电荷「藏」起来",
+        "size": 40,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 790,
+     "w": 1480,
+     "h": 90,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "∮ D · dS = Σ q₀（只算自由电荷）",
+        "size": 36,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 0.0,
+    "2": 4.84,
+    "3": 12.49
+   },
+   "t_start": 0.0,
+   "t_end": 26.81,
+   "duration": 26.81,
+   "laser": []
+  },
+  {
+   "id": 2,
+   "kind": "page",
+   "heading": "一　问题在哪里",
+   "narration": "先把问题摆清楚。真空中的高斯定理很干净：通量等于面内电荷除以 epsilon 零。有介质时，高斯面内除了自由电荷，还有束缚电荷——极化以后表面出现的那一层。于是式子变成：通量等于自由电荷加束缚电荷，再除以 epsilon 零。麻烦在于，束缚电荷取决于介质的极化和形状，很难事先知道。所以要进行改造，让式子右边只剩自由电荷。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　问题在哪里",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "真空中：$\\oint\\vec E\\cdot\\mathrm d\\vec S=\\dfrac{1}{\\varepsilon_0}\\sum q$",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "——很干净",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 322,
+     "w": 1580,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "有介质时，面内多了",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "束缚电荷",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "：",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 396,
+     "w": 1300,
+     "h": 130,
+     "tex": "\\oint\\vec E\\cdot\\mathrm d\\vec S=\\dfrac{1}{\\varepsilon_0}\\left(\\sum q_0+\\sum q'\\right)",
+     "size": 32,
+     "color": "#0000CD",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 556,
+     "w": 1580,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "束缚电荷 $q'$ 取决于介质极化与形状，",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "很难事先知道",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 640,
+     "w": 1580,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "目标：改造高斯定理，让右边",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "只剩自由电荷 $q_0$",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 160,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "办法：引入一个新矢量",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "让「束缚电荷」在数学上被吸收掉",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 27.61,
+    "2": 30.43,
+    "3": 36.88,
+    "4": 45.08,
+    "5": 51.94,
+    "6": 59.16
+   },
+   "t_start": 27.61,
+   "t_end": 64.74,
+   "duration": 37.13,
+   "laser": []
+  },
+  {
+   "id": 3,
+   "kind": "page",
+   "heading": "二　电位移矢量 D",
+   "narration": "二，定义电位移矢量。令 D 等于 epsilon 零 E 加 P。P 是极化强度，epsilon 零 E 是真空部分的贡献。这样定义的 D，单位是库仑每平方米——和 P 一样，也和面密度一样。对线性各向同性介质，P 正比于 E，于是 D 可以写成 epsilon 零 epsilon r E，简写为 epsilon E。epsilon 叫介质的绝对介电常数，等于 epsilon 零乘 epsilon r。这样 D 和 E 就同向且成正比了。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　电位移矢量 $\\vec D$",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 1580,
+     "h": 150,
+     "tex": "\\vec D=\\varepsilon_0\\vec E+\\vec P",
+     "size": 42,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 420,
+     "w": 1580,
+     "h": 50,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\varepsilon_0\\vec E$：真空部分的贡献；$\\vec P$：介质的极化贡献．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 500,
+     "w": 1580,
+     "h": 50,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "单位：$\\mathrm{C/m^{2}}$（与 $P$、面密度同）．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 578,
+     "w": 1580,
+     "h": 140,
+     "tex": "\\vec D=\\varepsilon_0\\varepsilon_r\\vec E=\\varepsilon\\vec E",
+     "size": 36,
+     "color": "#0000CD",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 54,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\varepsilon=\\varepsilon_0\\varepsilon_r$ 叫",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "绝对介电常数",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 814,
+     "w": 1580,
+     "h": 48,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "线性各向同性介质中，$\\vec D$ 与 $\\vec E$ 同向且成正比．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 65.54,
+    "2": 68.89,
+    "3": 72.41,
+    "4": 77.63,
+    "5": 84.13,
+    "6": 94.25
+   },
+   "t_start": 65.54,
+   "t_end": 105.16,
+   "duration": 39.62,
+   "laser": []
+  },
+  {
+   "id": 4,
+   "kind": "page",
+   "heading": "三　有介质的高斯定理",
+   "narration": "有了 D，高斯定理就变干净了。穿过任意闭合曲面的电位移通量，等于该曲面所包围的自由电荷的代数和。注意右边只有自由电荷，束缚电荷完全不出现。这就是它的价值：做题时只要数自由电荷，不用管介质极化成什么样。但要注意：D 的通量与自由电荷的关系，只在有介质的高斯定理这个形式下成立；D 本身并不是「场强」，它不直接给出力。真正对电荷施力的是 E。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　有介质时的高斯定理",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1300,
+     "h": 150,
+     "tex": "\\oint_S\\vec D\\cdot\\mathrm d\\vec S=\\sum_{S\\text{内}}q_0",
+     "size": 42,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 420,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "右边",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "只有自由电荷",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "，束缚电荷完全不出现．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 504,
+     "w": 1580,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "价值：做题只数自由电荷，不用管极化细节．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 588,
+     "w": 1580,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "但 $\\vec D$ 不是「场强」：它对电荷不直接施力，",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "施力的是 $\\vec E$",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 672,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以两条式子要配套用：先用 $D$ 求 $D$，再由 $D=\\varepsilon E$ 求 $E$．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 760,
+     "w": 1580,
+     "h": 160,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "记忆法",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "D 是「自由电荷的账」，E 是「真正施力的场」",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 105.96,
+    "2": 109.82,
+    "3": 116.6,
+    "4": 122.14,
+    "5": 129.26,
+    "6": 140.41
+   },
+   "t_start": 105.96,
+   "t_end": 143.95,
+   "duration": 37.99,
+   "laser": []
+  },
+  {
+   "id": 5,
+   "kind": "page",
+   "heading": "D、E、P 三者关系",
+   "narration": "把 D、E、P 三者的关系整理一下。定义式是 D 等于 epsilon 零 E 加 P，这是根本。对线性介质，P 等于 chi e epsilon 零 E，代进去得 D 等于 epsilon 零（一加 chi e）E。而一加 chi e 就是相对介电常数 epsilon r，所以 D 等于 epsilon 零 epsilon r E。这三条要能随手写出。还要注意：只有各向同性线性介质才有这么简单的正比关系；各向异性晶体里，D 与 E 不同向，要用张量描述。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\vec D$、$\\vec E$、$\\vec P$ 三者关系",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 54,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "定义式（根本）：",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "$\\vec D=\\varepsilon_0\\vec E+\\vec P$",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 322,
+     "w": 1580,
+     "h": 50,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "线性介质：$\\vec P=\\chi_e\\varepsilon_0\\vec E$",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 390,
+     "w": 1580,
+     "h": 130,
+     "tex": "\\vec D=\\varepsilon_0(1+\\chi_e)\\vec E=\\varepsilon_0\\varepsilon_r\\vec E",
+     "size": 32,
+     "color": "#0000CD",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 548,
+     "w": 1580,
+     "h": 50,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "其中 $1+\\chi_e=\\varepsilon_r$．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 628,
+     "w": 1580,
+     "h": 50,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三条要能随手写出：定义式、$P$ 与 $E$、$D$ 与 $E$．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 712,
+     "w": 1580,
+     "h": 48,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "注意：只有各向同性线性介质才有正比关系；",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 762,
+     "w": 1580,
+     "h": 48,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "各向异性晶体中 $D$ 与 $E$ 不同向，要用张量．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 144.75,
+    "2": 149.64,
+    "3": 154.5,
+    "4": 163.11,
+    "5": 171.14,
+    "6": 174.37
+   },
+   "t_start": 144.75,
+   "t_end": 185.09,
+   "duration": 40.34,
+   "laser": []
+  },
+  {
+   "id": 6,
+   "kind": "page",
+   "heading": "例1　介质中的点电荷",
+   "narration": "例一，介质中的点电荷。在相对介电常数为 epsilon r 的无限大均匀介质中，放一个自由电荷 q0。由球对称，取半径 r 的球面作高斯面，D 在面上处处相等、垂直于面。所以 D 乘四派 r 平方等于 q0，得 D 等于 q0 除以四派 r 平方。再由 D 等于 epsilon E，得 E 等于 q0 除以四派 epsilon 零 epsilon r r 平方。注意：D 的表达式与真空中完全一样，只是 E 多除了一个 epsilon r——这正是 D 的好处。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例1　介质中的点电荷",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 52,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "无限大均匀介质（$\\varepsilon_r$）中放自由电荷 $q_0$．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 320,
+     "w": 1580,
+     "h": 50,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "球对称：取半径 $r$ 的球面，$D$ 处处相等且垂直面．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 396,
+     "w": 1580,
+     "h": 130,
+     "tex": "D\\cdot4\\pi r^{2}=q_0\\ \\Rightarrow\\ D=\\dfrac{q_0}{4\\pi r^{2}}",
+     "size": 30,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 548,
+     "w": 1580,
+     "h": 130,
+     "tex": "E=\\dfrac{D}{\\varepsilon_0\\varepsilon_r}=\\dfrac{q_0}{4\\pi\\varepsilon_0\\varepsilon_r r^{2}}",
+     "size": 30,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 706,
+     "w": 1580,
+     "h": 52,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$D$ 的表达式与真空中",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "完全一样",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "；$E$ 多除一个 $\\varepsilon_r$．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 790,
+     "w": 1580,
+     "h": 48,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这就是 $D$ 的好处：束缚电荷被自动吸收．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 185.89,
+    "2": 189.27,
+    "3": 196.51,
+    "4": 203.73,
+    "5": 210.9,
+    "6": 218.16
+   },
+   "t_start": 185.89,
+   "t_end": 227.1,
+   "duration": 41.21,
+   "laser": []
+  },
+  {
+   "id": 7,
+   "kind": "page",
+   "heading": "例2　平行板填介质",
+   "narration": "例二，平行板电容器里填满介质。设极板上的自由电荷面密度为 sigma 零。取一个药盒形高斯面，一个底面在导体里、一个在介质里。导体里 D 为零，侧面通量为零，所以只剩介质里那个底面，D 乘 S 等于 sigma 零 S。得 D 等于 sigma 零，与介质无关。而 E 等于 sigma 零 除以 epsilon 零 epsilon r，比真空中小了 epsilon r 倍。这正是电容器填介质后电容变大的原因。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例2　平行板间填满介质",
+        "size": 44,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 50,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "极板自由电荷面密度 $\\sigma_0$；药盒形高斯面一底在导体、一底在介质．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 316,
+     "w": 1580,
+     "h": 50,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "导体中 $D=0$，侧面通量为零 ⇒ $D\\cdot S=\\sigma_0 S$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 390,
+     "w": 1580,
+     "h": 120,
+     "tex": "D=\\sigma_0",
+     "size": 34,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 380,
+     "y": 402,
+     "w": 700,
+     "h": 48,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（与介质无关）",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 520,
+     "w": 1580,
+     "h": 130,
+     "tex": "E=\\dfrac{\\sigma_0}{\\varepsilon_0\\varepsilon_r}",
+     "size": 36,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 674,
+     "w": 1580,
+     "h": 52,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$E$ 比真空中（$\\sigma_0/\\varepsilon_0$）",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "小了 $\\varepsilon_r$ 倍",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 758,
+     "w": 1580,
+     "h": 48,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这就是电容器填介质后电容变大的原因（6-4 用）．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 227.9,
+    "2": 232.4,
+    "3": 237.02,
+    "4": 242.72,
+    "5": 251.09,
+    "6": 254.95
+   },
+   "t_start": 227.9,
+   "t_end": 266.92,
+   "duration": 39.02,
+   "laser": []
+  },
+  {
+   "id": 8,
+   "kind": "page",
+   "heading": "本节小结",
+   "narration": "小结。电位移定义 D 等于 epsilon 零 E 加 P，线性介质中 D 等于 epsilon 零 epsilon r E。有介质的高斯定理：闭合面的 D 通量等于面内自由电荷代数和。它的价值是把束缚电荷吸收掉，做题只数自由电荷。但 D 不是场强，施力的是 E；两条式子要配套：先由 D 求 D，再由 D 等于 epsilon E 求 E。下一节讲电容——那里会直接用这一节的结果。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 定义：",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "$\\vec D=\\varepsilon_0\\vec E+\\vec P=\\varepsilon_0\\varepsilon_r\\vec E$",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 316,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 有介质高斯定理：",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "$\\oint\\vec D\\cdot\\mathrm d\\vec S=\\sum q_0$",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 396,
+     "w": 1580,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 价值：束缚电荷被吸收，只数自由电荷．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 476,
+     "w": 1580,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 但施力的是 $E$：先 $D$ 后 $E$，两条配套．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 566,
+     "w": 1580,
+     "h": 170,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "下一节：电容　电容器",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "C = Q/U，填介质后 C 增大 εr 倍",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 782,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电容是静电学里最「工程」的一个量，也是最好用的一个．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 267.72,
+    "2": 269.99,
+    "3": 277.61,
+    "4": 284.03,
+    "5": 290.53,
+    "6": 299.14
+   },
+   "t_start": 267.72,
+   "t_end": 304.13,
+   "duration": 36.41,
+   "laser": []
+  }
+ ],
+ "subtitles": [
+  {
+   "slide": 1,
+   "start": 0.0,
+   "end": 4.44,
+   "text": "6-3，电位移与有介质时的高斯定理。"
+  },
+  {
+   "slide": 1,
+   "start": 4.84,
+   "end": 12.09,
+   "text": "上一节最后留下一个问题：介质里的高斯定理，右边除了自由电荷，还有束缚电荷。"
+  },
+  {
+   "slide": 1,
+   "start": 12.49,
+   "end": 18.83,
+   "text": "束缚电荷不好测、也不好算，能不能把它从式子里赶出去？"
+  },
+  {
+   "slide": 1,
+   "start": 19.48,
+   "end": 21.35,
+   "text": "能。"
+  },
+  {
+   "slide": 1,
+   "start": 21.75,
+   "end": 26.12,
+   "text": "办法是引入一个新的矢量，叫电位移 D。"
+  },
+  {
+   "slide": 2,
+   "start": 27.61,
+   "end": 30.03,
+   "text": "先把问题摆清楚。"
+  },
+  {
+   "slide": 2,
+   "start": 30.43,
+   "end": 36.48,
+   "text": "真空中的高斯定理很干净：通量等于面内电荷除以 epsilon 零。"
+  },
+  {
+   "slide": 2,
+   "start": 36.88,
+   "end": 44.68,
+   "text": "有介质时，高斯面内除了自由电荷，还有束缚电荷——极化以后表面出现的那一层。"
+  },
+  {
+   "slide": 2,
+   "start": 45.08,
+   "end": 51.54,
+   "text": "于是式子变成：通量等于自由电荷加束缚电荷，再除以 epsilon 零。"
+  },
+  {
+   "slide": 2,
+   "start": 51.94,
+   "end": 58.76,
+   "text": "麻烦在于，束缚电荷取决于介质的极化和形状，很难事先知道。"
+  },
+  {
+   "slide": 2,
+   "start": 59.16,
+   "end": 64.01,
+   "text": "所以要进行改造，让式子右边只剩自由电荷。"
+  },
+  {
+   "slide": 3,
+   "start": 65.54,
+   "end": 68.49,
+   "text": "二，定义电位移矢量。"
+  },
+  {
+   "slide": 3,
+   "start": 68.89,
+   "end": 72.01,
+   "text": "令 D 等于 epsilon 零 E 加 P。"
+  },
+  {
+   "slide": 3,
+   "start": 72.41,
+   "end": 77.23,
+   "text": "P 是极化强度，epsilon 零 E 是真空部分的贡献。"
+  },
+  {
+   "slide": 3,
+   "start": 77.63,
+   "end": 83.73,
+   "text": "这样定义的 D，单位是库仑每平方米——和 P 一样，也和面密度一样。"
+  },
+  {
+   "slide": 3,
+   "start": 84.13,
+   "end": 93.85,
+   "text": "对线性各向同性介质，P 正比于 E，于是 D 可以写成 epsilon 零 epsilon r E，简写为 epsilon E。"
+  },
+  {
+   "slide": 3,
+   "start": 94.25,
+   "end": 100.13,
+   "text": "epsilon 叫介质的绝对介电常数，等于 epsilon 零乘 epsilon r。"
+  },
+  {
+   "slide": 3,
+   "start": 100.53,
+   "end": 104.37,
+   "text": "这样 D 和 E 就同向且成正比了。"
+  },
+  {
+   "slide": 4,
+   "start": 105.96,
+   "end": 109.42,
+   "text": "有了 D，高斯定理就变干净了。"
+  },
+  {
+   "slide": 4,
+   "start": 109.82,
+   "end": 116.2,
+   "text": "穿过任意闭合曲面的电位移通量，等于该曲面所包围的自由电荷的代数和。"
+  },
+  {
+   "slide": 4,
+   "start": 116.6,
+   "end": 121.74,
+   "text": "注意右边只有自由电荷，束缚电荷完全不出现。"
+  },
+  {
+   "slide": 4,
+   "start": 122.14,
+   "end": 128.86,
+   "text": "这就是它的价值：做题时只要数自由电荷，不用管介质极化成什么样。"
+  },
+  {
+   "slide": 4,
+   "start": 129.26,
+   "end": 140.01,
+   "text": "但要注意：D 的通量与自由电荷的关系，只在有介质的高斯定理这个形式下成立；D 本身并不是「场强」，它不直接给出力。"
+  },
+  {
+   "slide": 4,
+   "start": 140.41,
+   "end": 143.22,
+   "text": "真正对电荷施力的是 E。"
+  },
+  {
+   "slide": 5,
+   "start": 144.75,
+   "end": 149.24,
+   "text": "把 D、E、P 三者的关系整理一下。"
+  },
+  {
+   "slide": 5,
+   "start": 149.64,
+   "end": 154.1,
+   "text": "定义式是 D 等于 epsilon 零 E 加 P，这是根本。"
+  },
+  {
+   "slide": 5,
+   "start": 154.5,
+   "end": 162.71,
+   "text": "对线性介质，P 等于 chi e epsilon 零 E，代进去得 D 等于 epsilon 零（一加 chi e）E。"
+  },
+  {
+   "slide": 5,
+   "start": 163.11,
+   "end": 170.74,
+   "text": "而一加 chi e 就是相对介电常数 epsilon r，所以 D 等于 epsilon 零 epsilon r E。"
+  },
+  {
+   "slide": 5,
+   "start": 171.14,
+   "end": 173.97,
+   "text": "这三条要能随手写出。"
+  },
+  {
+   "slide": 5,
+   "start": 174.37,
+   "end": 184.35,
+   "text": "还要注意：只有各向同性线性介质才有这么简单的正比关系；各向异性晶体里，D 与 E 不同向，要用张量描述。"
+  },
+  {
+   "slide": 6,
+   "start": 185.89,
+   "end": 188.87,
+   "text": "例一，介质中的点电荷。"
+  },
+  {
+   "slide": 6,
+   "start": 189.27,
+   "end": 196.11,
+   "text": "在相对介电常数为 epsilon r 的无限大均匀介质中，放一个自由电荷 q0。"
+  },
+  {
+   "slide": 6,
+   "start": 196.51,
+   "end": 203.33,
+   "text": "由球对称，取半径 r 的球面作高斯面，D 在面上处处相等、垂直于面。"
+  },
+  {
+   "slide": 6,
+   "start": 203.73,
+   "end": 210.5,
+   "text": "所以 D 乘四派 r 平方等于 q0，得 D 等于 q0 除以四派 r 平方。"
+  },
+  {
+   "slide": 6,
+   "start": 210.9,
+   "end": 217.76,
+   "text": "再由 D 等于 epsilon E，得 E 等于 q0 除以四派 epsilon 零 epsilon r r 平方。"
+  },
+  {
+   "slide": 6,
+   "start": 218.16,
+   "end": 226.37,
+   "text": "注意：D 的表达式与真空中完全一样，只是 E 多除了一个 epsilon r——这正是 D 的好处。"
+  },
+  {
+   "slide": 7,
+   "start": 227.9,
+   "end": 232.0,
+   "text": "例二，平行板电容器里填满介质。"
+  },
+  {
+   "slide": 7,
+   "start": 232.4,
+   "end": 236.62,
+   "text": "设极板上的自由电荷面密度为 sigma 零。"
+  },
+  {
+   "slide": 7,
+   "start": 237.02,
+   "end": 242.32,
+   "text": "取一个药盒形高斯面，一个底面在导体里、一个在介质里。"
+  },
+  {
+   "slide": 7,
+   "start": 242.72,
+   "end": 250.69,
+   "text": "导体里 D 为零，侧面通量为零，所以只剩介质里那个底面，D 乘 S 等于 sigma 零 S。"
+  },
+  {
+   "slide": 7,
+   "start": 251.09,
+   "end": 254.55,
+   "text": "得 D 等于 sigma 零，与介质无关。"
+  },
+  {
+   "slide": 7,
+   "start": 254.95,
+   "end": 261.55,
+   "text": "而 E 等于 sigma 零 除以 epsilon 零 epsilon r，比真空中小了 epsilon r 倍。"
+  },
+  {
+   "slide": 7,
+   "start": 261.95,
+   "end": 266.13,
+   "text": "这正是电容器填介质后电容变大的原因。"
+  },
+  {
+   "slide": 8,
+   "start": 267.72,
+   "end": 269.59,
+   "text": "小结。"
+  },
+  {
+   "slide": 8,
+   "start": 269.99,
+   "end": 277.21,
+   "text": "电位移定义 D 等于 epsilon 零 E 加 P，线性介质中 D 等于 epsilon 零 epsilon r E。"
+  },
+  {
+   "slide": 8,
+   "start": 277.61,
+   "end": 283.63,
+   "text": "有介质的高斯定理：闭合面的 D 通量等于面内自由电荷代数和。"
+  },
+  {
+   "slide": 8,
+   "start": 284.03,
+   "end": 290.13,
+   "text": "它的价值是把束缚电荷吸收掉，做题只数自由电荷。"
+  },
+  {
+   "slide": 8,
+   "start": 290.53,
+   "end": 298.74,
+   "text": "但 D 不是场强，施力的是 E；两条式子要配套：先由 D 求 D，再由 D 等于 epsilon E 求 E。"
+  },
+  {
+   "slide": 8,
+   "start": 299.14,
+   "end": 303.39,
+   "text": "下一节讲电容——那里会直接用这一节的结果。"
+  }
+ ],
+ "build_ts": 1792400005,
+ "logoScale": 0.67
+}

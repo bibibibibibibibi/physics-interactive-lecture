@@ -1,0 +1,3312 @@
+{
+ "title": "10-4 惠更斯原理 波的衍射和干涉",
+ "nav": "10-4　惠更斯原理　波的衍射和干涉",
+ "footer": "第十章　波动",
+ "character": "aqiang",
+ "characters": [
+  {
+   "id": "aqiang",
+   "name": "阿强"
+  },
+  {
+   "id": "professor",
+   "name": "博士讲师"
+  },
+  {
+   "id": "zhongshan",
+   "name": "中山装先生"
+  }
+ ],
+ "duration": 482.02,
+ "slides": [
+  {
+   "id": 1,
+   "kind": "page",
+   "heading": "封面",
+   "narration": "这一节有两个关键词：衍射和干涉。先说一个几何工具，惠更斯原理——它只回答一个问题：波往哪里传。再用它解释衍射：波为什么能绕过障碍物。最后讲干涉：两列波叠加，为什么会出现稳定的加强与减弱。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 282,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 十 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 300,
+     "y": 408,
+     "w": 1320,
+     "h": 170,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "波 动",
+        "size": 92,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 300,
+     "y": 600,
+     "w": 1320,
+     "h": 140,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "10-4　惠更斯原理　波的衍射和干涉",
+        "size": 42,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 770,
+     "w": 1480,
+     "h": 90,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "子波　·　衍射　·　相干　·　波程差",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 220,
+     "y": 900,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两列波相遇之后",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 0.0,
+    "2": 4.48,
+    "3": 11.07,
+    "4": 15.41
+   },
+   "t_start": 0.0,
+   "t_end": 21.96,
+   "duration": 21.96,
+   "laser": []
+  },
+  {
+   "id": 2,
+   "kind": "page",
+   "heading": "本节路线",
+   "narration": "本节路线。先讲惠更斯原理：波面上每一点都是新的子波源。用它解释衍射：缝宽和波长可比时，波就绕过去。再看叠加原理：几列波相遇，位移相加。满足相干条件的两列波，叠加出稳定的加强与减弱。最后用波程差把干涉条件写成一句口诀，并做一道例题。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节路线",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 244,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "主线：子波 → 衍射 → 叠加 → 相干 → 波程差",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1　惠更斯原理",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 386,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "波面 → 子波 → 包迹",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 458,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2　衍射",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 512,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "缝宽与波长之比决定是否明显",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 584,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "3　叠加原理",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 638,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "位移相加，不是强度相加",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 330,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4　相干与干涉",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 386,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同频率、同振动方向、相位差恒定",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 458,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "5　波程差与例题",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 512,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\delta=k\\lambda$：加强",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 560,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\delta=(2k+1)\\lambda/2$：减弱",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 620,
+     "w": 740,
+     "h": 208,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "两个现象，一个根源",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "衍射：波绕过去",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "干涉：波叠起来",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "都来自「子波 + 叠加」",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 22.76,
+    "2": 25.03,
+    "3": 30.47,
+    "4": 36.13,
+    "5": 41.38,
+    "6": 47.06
+   },
+   "t_start": 22.76,
+   "t_end": 53.31,
+   "duration": 30.55,
+   "laser": []
+  },
+  {
+   "id": 3,
+   "kind": "page",
+   "heading": "一　惠更斯原理",
+   "narration": "先介绍一个几何工具：惠更斯原理。波传播到的每一个点，都可以看作一个新的波源，向各个方向发出子波。这些子波在介质里继续传播，彼此叠加。在稍后的时刻，所有子波的包络面，就是新的波面。于是一条规则就够了：知道某一时刻的波面，就能画出以后任何时刻的波面。它不解释波为什么这样传，但能回答波往哪里传——这正是它有用的地方。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　惠更斯原理",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 470,
+     "name": "huygens_principle"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "波面上的每一点",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 292,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "都可以看作新的子波源",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 348,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "向各个方向发出子波",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 408,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "子波在介质中继续传播",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 464,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "稍后时刻，子波的包迹",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 516,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "= 新的波面",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 590,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "这条规则能干什么",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "已知某时刻波面 ⇒ 画以后任一刻波面",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "回答「波往哪里传」",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "不回答「为什么这样传」",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 826,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "几何工具：只给传播方向，不给动力学",
+        "size": 28,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 54.11,
+    "2": 58.23,
+    "3": 64.53,
+    "4": 68.91,
+    "5": 74.11,
+    "6": 81.4
+   },
+   "t_start": 54.11,
+   "t_end": 89.03,
+   "duration": 34.92,
+   "laser": []
+  },
+  {
+   "id": 4,
+   "kind": "page",
+   "heading": "二　波的衍射",
+   "narration": "用它来解释衍射。波遇到一条窄缝，缝上的每一点都成了子波源。如果缝宽和波长差不多，这些子波向各个方向散开，包迹变成以缝为中心的圆弧，波就绕到了屏障后面。这就是衍射。如果缝很宽，中间大部分子波的包迹仍然是平的，只有边缘有点弯曲，波几乎直着走。所以衍射是否明显，取决于波长和缝宽的比值，而不取决于波本身「想不想拐弯」。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　波的衍射",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 236,
+     "w": 765,
+     "h": 656,
+     "name": "diffraction_gap"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "波遇到屏障上的缝",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 292,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "缝上每一点又成了子波源",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 352,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "缝宽 ≈ $\\lambda$：子波向各方向散开",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 408,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "包迹变成圆弧 ⇒ 波绕到屏障后",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 468,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "缝宽 ≫ $\\lambda$：中间仍是平面",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 520,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只有边缘略弯 ⇒ 几乎直行",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 590,
+     "w": 740,
+     "h": 190,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "衍射是否明显",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "取决于 $d/\\lambda$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$d\\sim\\lambda$ 明显；$d\\gg\\lambda$ 可忽略",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 812,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同一屏障对不同波长的波，效果不同",
+        "size": 28,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 89.83,
+    "2": 92.39,
+    "3": 97.4,
+    "4": 107.28,
+    "5": 109.67,
+    "6": 118.21
+   },
+   "t_start": 89.83,
+   "t_end": 126.74,
+   "duration": 36.91,
+   "laser": []
+  },
+  {
+   "id": 5,
+   "kind": "page",
+   "heading": "三　衍射明显的条件",
+   "narration": "把上一条说成判据。障碍物或缝的尺寸跟波长差不多，甚至比波长还小，衍射就明显。尺寸远大于波长时，衍射可以忽略，波近似沿直线传播。所以声波能绕过门框、绕过墙角：它的波长接近一米，和门、墙的尺寸是同一量级。而可见光波长只有几百纳米，日常物体远大于它，光看起来就沿直线走，只有在很细的缝或小孔后才明显衍射。记住：不是波的性质变了，而是波长与障碍物的比值变了。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　衍射明显的条件",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "判据只有一条：障碍物尺寸与波长之比",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 170,
+     "y": 310,
+     "w": 760,
+     "h": 220,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "$d\\sim\\lambda$ 或 $d<\\lambda$",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "衍射明显",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "波能绕到障碍物后面",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 1010,
+     "y": 310,
+     "w": 740,
+     "h": 220,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "$d\\gg\\lambda$",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "衍射可忽略",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "波近似沿直线传播",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 580,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "声波：$\\lambda\\sim1\\ \\mathrm m$，与门窗同量级 ⇒ 隔墙能听见",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 636,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "光波：$\\lambda\\sim5\\times10^{-7}\\ \\mathrm m$，远小于日常物体 ⇒ 看似直线",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 700,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以只有在很细的缝、很小的孔后面，才看得到光的衍射",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 776,
+     "w": 1580,
+     "h": 150,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "变的不是波，是「波长 ÷ 障碍物尺寸」这个比值",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 127.54,
+    "2": 130.32,
+    "3": 137.2,
+    "4": 143.77,
+    "5": 153.24,
+    "6": 164.03
+   },
+   "t_start": 127.54,
+   "t_end": 170.31,
+   "duration": 42.77,
+   "laser": []
+  },
+  {
+   "id": 6,
+   "kind": "page",
+   "heading": "四　波的叠加原理",
+   "narration": "再看两列波相遇会怎样。实验表明，几列波在同一介质中相遇后，各自保持原有的频率、波长和传播方向继续前进，互不干扰。但在相遇的那一点，质点的位移等于各列波单独存在时位移的矢量和。这叫波的叠加原理。注意是位移相加，不是强度相加——这个区别后面算干涉时会反复用到。所以两列波交叉之后，还是各自原来的样子，只是交叉处那一点的振动被改变了。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　波的叠加原理",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "几列波相遇时，会发生两件事",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 170,
+     "y": 312,
+     "w": 760,
+     "h": 230,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "① 各自独立传播",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "频率、波长、方向都不变",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "穿过之后还是原来的波",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 1010,
+     "y": 312,
+     "w": 740,
+     "h": 230,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "② 相遇处位移相加",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$\\vec y=\\vec y_1+\\vec y_2$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "是矢量相加",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 604,
+     "w": 1580,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这就是叠加原理：介质中任一点的位移，等于各波单独存在时位移的矢量和",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 682,
+     "w": 760,
+     "h": 210,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "注意",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "位移相加，不是强度相加",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "强度正比于振幅平方，平方之后才相加",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 682,
+     "w": 740,
+     "h": 210,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "另一个说法",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "波的传播是线性的",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "所以两列波可以「互不打扰」地穿过",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 171.11,
+    "2": 174.22,
+    "3": 183.98,
+    "4": 191.15,
+    "5": 193.97,
+    "6": 200.75
+   },
+   "t_start": 171.11,
+   "t_end": 208.65,
+   "duration": 37.54,
+   "laser": []
+  },
+  {
+   "id": 7,
+   "kind": "page",
+   "heading": "五　相干条件",
+   "narration": "如果两列波满足三个条件，叠加的结果会非常稳定，这就是干涉。第一，频率相同；否则相位差随时间变，加强和减弱会来回切换，看不到稳定图样。第二，振动方向相同；否则位移矢量不在一条线上，不能简单代数相加。第三，相位差恒定；这样空间各点的加强与减弱才是固定的。满足这三条的波源叫相干波源。普通灯泡发的光不是相干的：每个原子发光的时刻和相位都是随机的，所以看不到稳定的干涉条纹。想一想：两只手电筒同时照在墙上，为什么看不到干涉图样？",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五　相干条件",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三个条件同时满足，才叫相干",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 170,
+     "y": 312,
+     "w": 500,
+     "h": 240,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "① 频率相同",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "否则相位差随时间变",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 3,
+     "x": 720,
+     "y": 312,
+     "w": 500,
+     "h": 240,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "② 振动方向相同",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "否则不能代数相加",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 1270,
+     "y": 312,
+     "w": 480,
+     "h": 240,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "③ 相位差恒定",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "图样才稳定",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 604,
+     "w": 1580,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "满足这三条的波源，叫相干波源",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 664,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "普通灯泡：各原子发光的时刻与相位随机 ⇒ 不相干，看不到稳定条纹",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 736,
+     "w": 1580,
+     "h": 150,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "激光是相干的：同频率、同方向、相位一致",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 209.45,
+    "2": 215.85,
+    "3": 224.82,
+    "4": 232.32,
+    "5": 239.06,
+    "6": 243.16
+   },
+   "t_start": 209.45,
+   "t_end": 259.73,
+   "duration": 50.28,
+   "laser": []
+  },
+  {
+   "id": 8,
+   "kind": "page",
+   "heading": "六　相位差与波程差",
+   "narration": "现在把干涉写成定量关系。两个相干源 S1、S2，初相分别是 φ1、φ2，到 P 点的距离分别是 r1、r2。波传到 P 点时的相位，等于源的初相减去因传播落后的量，落后量是 2π 乘距离除以波长。两者相减，得到 P 点的相位差：φ2 减 φ1，再减去 2π 乘 r2 减 r1 除以 λ。其中 r2 减 r1 叫波程差，记作 δ。如果两个源同相，相位差就只由波程差决定；中垂线上 δ 等于零，永远加强。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "六　相位差与波程差",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 246,
+     "w": 765,
+     "h": 514,
+     "name": "interference_path"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两个相干源，到 $P$ 的距离 $r_1$、$r_2$",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "源在 $P$ 点引起的相位",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 350,
+     "w": 740,
+     "h": 110,
+     "tex": "\\varphi_1'=\\varphi_1-\\frac{2\\pi r_1}{\\lambda}",
+     "size": 28,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 486,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两者相减 = 相位差",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 546,
+     "w": 740,
+     "h": 120,
+     "tex": "\\Delta\\varphi=\\varphi_2-\\varphi_1-\\frac{2\\pi(r_2-r_1)}{\\lambda}",
+     "size": 26,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 690,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "波程差 $\\delta=r_2-r_1$",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 758,
+     "w": 740,
+     "h": 180,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "两源同相时",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$\\Delta\\varphi=2\\pi\\delta/\\lambda$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "中垂线 $\\delta=0$ ⇒ 永远加强",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 260.53,
+    "2": 264.34,
+    "3": 274.08,
+    "4": 282.66,
+    "5": 291.56,
+    "6": 297.07
+   },
+   "t_start": 260.53,
+   "t_end": 305.43,
+   "duration": 44.9,
+   "laser": []
+  },
+  {
+   "id": 9,
+   "kind": "page",
+   "heading": "七　合振幅：加强与减弱",
+   "narration": "合振幅由相位差决定。用矢量合成看最清楚：两个振幅矢量首尾相接，夹角就是相位差。由余弦定理，合振幅的平方等于 A1 平方加 A2 平方，再加 2 倍 A1 A2 乘余弦相位差。相位差是 2π 的整数倍时，余弦等于一，合振幅最大，等于两振幅之和，这叫加强。相位差是 π 的奇数倍时，余弦等于负一，合振幅最小，等于两振幅之差，这叫减弱。想一想：两列振幅相等的波，在减弱处合振幅为零，那能量去哪了？答案是重新分配——挪到了加强的地方。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "七　合振幅：加强与减弱",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 250,
+     "w": 765,
+     "h": 492,
+     "name": "interference_phasor"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "合振幅由相位差决定",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两个振幅矢量首尾相接，夹角 $=\\Delta\\varphi$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "余弦定理给出",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 410,
+     "w": 740,
+     "h": 120,
+     "tex": "A^2=A_1^2+A_2^2+2A_1A_2\\cos\\Delta\\varphi",
+     "size": 26,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 556,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\Delta\\varphi=\\pm2k\\pi$ ⇒ 加强",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 612,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$A=A_1+A_2$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 668,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\Delta\\varphi=\\pm(2k+1)\\pi$ ⇒ 减弱",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 724,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$A=|A_1-A_2|$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 800,
+     "w": 740,
+     "h": 150,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "$A_1=A_2$ 时：减弱处 $A=0$ 完全抵消",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "加强处 $A=2A_1$，强度变四倍",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 306.23,
+    "2": 309.53,
+    "3": 316.58,
+    "4": 325.84,
+    "5": 334.42,
+    "6": 342.88
+   },
+   "t_start": 306.23,
+   "t_end": 355.26,
+   "duration": 49.03,
+   "laser": []
+  },
+  {
+   "id": 10,
+   "kind": "page",
+   "heading": "八　用波程差表示",
+   "narration": "实际计算时，用波程差更方便。两个源同相时，相位差等于 2π 乘波程差除以波长。所以波程差是波长的整数倍时，相位差是 2π 的整数倍，$P$ 点加强。波程差是半波长的奇数倍时，相位差是 π 的奇数倍，$P$ 点减弱。看表：δ 等于零、λ、2λ 时加强；δ 等于 λ/2、3λ/2 时减弱。记忆要点：加强看「整波长」，减弱看「半波长的奇数倍」。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "八　用波程差表示",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同相波源：相位差只由波程差决定",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 306,
+     "w": 1580,
+     "h": 130,
+     "tex": "\\Delta\\varphi=2\\pi\\frac{\\delta}{\\lambda}",
+     "size": 34,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "table",
+     "step": 3,
+     "x": 170,
+     "y": 462,
+     "w": 1580,
+     "rows": [
+      [
+       "波程差 δ",
+       "相位差 Δφ",
+       "叠加结果"
+      ],
+      [
+       "0、λ、2λ …（kλ）",
+       "2π 的整数倍",
+       "加强，A = A₁ + A₂"
+      ],
+      [
+       "λ/2、3λ/2 …（(2k+1)λ/2）",
+       "π 的奇数倍",
+       "减弱，A = |A₁ − A₂|"
+      ]
+     ],
+     "rowh": 64,
+     "size": 29,
+     "fill": "#CCFFCC"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 690,
+     "w": 760,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "加强：$\\delta=\\pm k\\lambda$",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 690,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "减弱：$\\delta=\\pm(2k+1)\\lambda/2$",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 780,
+     "w": 1580,
+     "h": 160,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "口诀：加强看「整波长」，减弱看「半波长的奇数倍」",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 356.06,
+    "2": 360.2,
+    "3": 366.24,
+    "4": 374.13,
+    "6": 390.5
+   },
+   "t_start": 356.06,
+   "t_end": 396.84,
+   "duration": 40.78,
+   "laser": []
+  },
+  {
+   "id": 11,
+   "kind": "page",
+   "heading": "九　例题：判断加强与减弱",
+   "narration": "一道例题。两个相干波源同相，频率一百赫兹，波速三百四十米每秒，先求波长。波长等于波速除以频率，三百四十除以一百，等于三点四米。某点 P 到两源的距离分别是五点一米和八点五米，波程差三点四米，正好是一个波长。所以 P 点加强，合振幅等于两振幅之和。如果波程差是半个波长，也就是一点七米，P 点就减弱；两振幅相等时，P 点振幅为零，完全抵消。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "九　例题：判断加强与减弱",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两源同相：$\\nu=100\\ \\mathrm{Hz}$，$u=340\\ \\mathrm{m/s}$",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 300,
+     "w": 760,
+     "h": 130,
+     "tex": "\\lambda=\\frac{u}{\\nu}=\\frac{340}{100}=3.4\\ \\mathrm{m}",
+     "size": 30,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 1010,
+     "y": 316,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "波长 $3.4\\ \\mathrm m$",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 460,
+     "w": 1580,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$P$ 点到两源距离：$r_1=5.1\\ \\mathrm m$，$r_2=8.5\\ \\mathrm m$",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 522,
+     "w": 1580,
+     "h": 130,
+     "tex": "\\delta=r_2-r_1=3.4\\ \\mathrm{m}=\\lambda",
+     "size": 30,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 668,
+     "w": 1580,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\delta=\\lambda$ ⇒ $P$ 点加强，$A=A_1+A_2$",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 742,
+     "w": 760,
+     "h": 190,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "若 $\\delta=\\lambda/2=1.7\\ \\mathrm m$",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "则 $P$ 点减弱",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$A_1=A_2$ 时 $A=0$",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 742,
+     "w": 740,
+     "h": 190,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "判断三步",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "① 求 $\\lambda=u/\\nu$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "② 求 $\\delta=r_2-r_1$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "③ 比 $\\delta$ 与 $\\lambda$ 的倍数",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 397.64,
+    "2": 400.1,
+    "3": 407.36,
+    "4": 413.64,
+    "5": 421.84,
+    "6": 427.14
+   },
+   "t_start": 397.64,
+   "t_end": 437.53,
+   "duration": 39.89,
+   "laser": []
+  },
+  {
+   "id": 12,
+   "kind": "page",
+   "heading": "本节小结",
+   "narration": "小结。惠更斯原理：波面上每一点都是子波源，子波的包迹就是新波面。它解释衍射：缝宽与波长可比时，波明显绕到屏障后面；远大于波长时，近似直线传播。叠加原理：几列波各自独立传播，相遇处位移相加。相干条件：同频率、同振动方向、相位差恒定；合振幅由相位差决定。判据落到波程差：整波长加强，半波长的奇数倍减弱。下一节讲一个特例——驻波。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 760,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 惠更斯原理",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 292,
+     "w": 760,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "波面 ⇒ 子波 ⇒ 包迹 = 新波面",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 340,
+     "w": 760,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只回答「往哪传」",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 412,
+     "w": 760,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 衍射",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 468,
+     "w": 760,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$d\\sim\\lambda$：明显衍射",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 516,
+     "w": 760,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$d\\gg\\lambda$：近似直行",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 叠加与相干",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 292,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "各自传播，位移相加",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 340,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同频率、同方向、相位差恒定",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 412,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 加强 / 减弱",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 1010,
+     "y": 466,
+     "w": 710,
+     "h": 100,
+     "tex": "\\delta=\\pm k\\lambda",
+     "size": 28,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 572,
+     "w": 710,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "⇒ 加强",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 1010,
+     "y": 622,
+     "w": 710,
+     "h": 110,
+     "tex": "\\delta=\\pm(2k+1)\\frac{\\lambda}{2}",
+     "size": 28,
+     "color": "#0000CD",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 738,
+     "w": 710,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "⇒ 减弱",
+        "size": 27,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 660,
+     "w": 760,
+     "h": 210,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一句话",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "波遇到障碍会绕",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "两列波相遇会叠",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "叠得整齐就成了干涉",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 894,
+     "w": 1580,
+     "h": 100,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "下一节：驻波 —— 两列反向传播的波叠加",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 438.33,
+    "2": 440.6,
+    "3": 447.53,
+    "4": 456.76,
+    "5": 462.61,
+    "6": 470.55
+   },
+   "t_start": 438.33,
+   "t_end": 480.45,
+   "duration": 42.12,
+   "laser": []
+  }
+ ],
+ "subtitles": [
+  {
+   "slide": 1,
+   "start": 0.0,
+   "end": 4.08,
+   "text": "这一节有两个关键词：衍射和干涉。"
+  },
+  {
+   "slide": 1,
+   "start": 4.48,
+   "end": 10.67,
+   "text": "先说一个几何工具，惠更斯原理——它只回答一个问题：波往哪里传。"
+  },
+  {
+   "slide": 1,
+   "start": 11.07,
+   "end": 15.01,
+   "text": "再用它解释衍射：波为什么能绕过障碍物。"
+  },
+  {
+   "slide": 1,
+   "start": 15.41,
+   "end": 21.34,
+   "text": "最后讲干涉：两列波叠加，为什么会出现稳定的加强与减弱。"
+  },
+  {
+   "slide": 2,
+   "start": 22.76,
+   "end": 24.63,
+   "text": "本节路线。"
+  },
+  {
+   "slide": 2,
+   "start": 25.03,
+   "end": 30.07,
+   "text": "先讲惠更斯原理：波面上每一点都是新的子波源。"
+  },
+  {
+   "slide": 2,
+   "start": 30.47,
+   "end": 35.73,
+   "text": "用它解释衍射：缝宽和波长可比时，波就绕过去。"
+  },
+  {
+   "slide": 2,
+   "start": 36.13,
+   "end": 40.98,
+   "text": "再看叠加原理：几列波相遇，位移相加。"
+  },
+  {
+   "slide": 2,
+   "start": 41.38,
+   "end": 46.66,
+   "text": "满足相干条件的两列波，叠加出稳定的加强与减弱。"
+  },
+  {
+   "slide": 2,
+   "start": 47.06,
+   "end": 52.58,
+   "text": "最后用波程差把干涉条件写成一句口诀，并做一道例题。"
+  },
+  {
+   "slide": 3,
+   "start": 54.11,
+   "end": 57.83,
+   "text": "先介绍一个几何工具：惠更斯原理。"
+  },
+  {
+   "slide": 3,
+   "start": 58.23,
+   "end": 64.13,
+   "text": "波传播到的每一个点，都可以看作一个新的波源，向各个方向发出子波。"
+  },
+  {
+   "slide": 3,
+   "start": 64.53,
+   "end": 68.51,
+   "text": "这些子波在介质里继续传播，彼此叠加。"
+  },
+  {
+   "slide": 3,
+   "start": 68.91,
+   "end": 73.71,
+   "text": "在稍后的时刻，所有子波的包络面，就是新的波面。"
+  },
+  {
+   "slide": 3,
+   "start": 74.11,
+   "end": 81.0,
+   "text": "于是一条规则就够了：知道某一时刻的波面，就能画出以后任何时刻的波面。"
+  },
+  {
+   "slide": 3,
+   "start": 81.4,
+   "end": 88.29,
+   "text": "它不解释波为什么这样传，但能回答波往哪里传——这正是它有用的地方。"
+  },
+  {
+   "slide": 4,
+   "start": 89.83,
+   "end": 91.99,
+   "text": "用它来解释衍射。"
+  },
+  {
+   "slide": 4,
+   "start": 92.39,
+   "end": 97.0,
+   "text": "波遇到一条窄缝，缝上的每一点都成了子波源。"
+  },
+  {
+   "slide": 4,
+   "start": 97.4,
+   "end": 106.88,
+   "text": "如果缝宽和波长差不多，这些子波向各个方向散开，包迹变成以缝为中心的圆弧，波就绕到了屏障后面。"
+  },
+  {
+   "slide": 4,
+   "start": 107.28,
+   "end": 109.27,
+   "text": "这就是衍射。"
+  },
+  {
+   "slide": 4,
+   "start": 109.67,
+   "end": 117.81,
+   "text": "如果缝很宽，中间大部分子波的包迹仍然是平的，只有边缘有点弯曲，波几乎直着走。"
+  },
+  {
+   "slide": 4,
+   "start": 118.21,
+   "end": 126.01,
+   "text": "所以衍射是否明显，取决于波长和缝宽的比值，而不取决于波本身「想不想拐弯」。"
+  },
+  {
+   "slide": 5,
+   "start": 127.54,
+   "end": 129.92,
+   "text": "把上一条说成判据。"
+  },
+  {
+   "slide": 5,
+   "start": 130.32,
+   "end": 136.8,
+   "text": "障碍物或缝的尺寸跟波长差不多，甚至比波长还小，衍射就明显。"
+  },
+  {
+   "slide": 5,
+   "start": 137.2,
+   "end": 143.37,
+   "text": "尺寸远大于波长时，衍射可以忽略，波近似沿直线传播。"
+  },
+  {
+   "slide": 5,
+   "start": 143.77,
+   "end": 152.84,
+   "text": "所以声波能绕过门框、绕过墙角：它的波长接近一米，和门、墙的尺寸是同一量级。"
+  },
+  {
+   "slide": 5,
+   "start": 153.24,
+   "end": 163.63,
+   "text": "而可见光波长只有几百纳米，日常物体远大于它，光看起来就沿直线走，只有在很细的缝或小孔后才明显衍射。"
+  },
+  {
+   "slide": 5,
+   "start": 164.03,
+   "end": 169.57,
+   "text": "记住：不是波的性质变了，而是波长与障碍物的比值变了。"
+  },
+  {
+   "slide": 6,
+   "start": 171.11,
+   "end": 173.82,
+   "text": "再看两列波相遇会怎样。"
+  },
+  {
+   "slide": 6,
+   "start": 174.22,
+   "end": 183.58,
+   "text": "实验表明，几列波在同一介质中相遇后，各自保持原有的频率、波长和传播方向继续前进，互不干扰。"
+  },
+  {
+   "slide": 6,
+   "start": 183.98,
+   "end": 190.75,
+   "text": "但在相遇的那一点，质点的位移等于各列波单独存在时位移的矢量和。"
+  },
+  {
+   "slide": 6,
+   "start": 191.15,
+   "end": 193.57,
+   "text": "这叫波的叠加原理。"
+  },
+  {
+   "slide": 6,
+   "start": 193.97,
+   "end": 200.35,
+   "text": "注意是位移相加，不是强度相加——这个区别后面算干涉时会反复用到。"
+  },
+  {
+   "slide": 6,
+   "start": 200.75,
+   "end": 207.9,
+   "text": "所以两列波交叉之后，还是各自原来的样子，只是交叉处那一点的振动被改变了。"
+  },
+  {
+   "slide": 7,
+   "start": 209.45,
+   "end": 215.45,
+   "text": "如果两列波满足三个条件，叠加的结果会非常稳定，这就是干涉。"
+  },
+  {
+   "slide": 7,
+   "start": 215.85,
+   "end": 224.42,
+   "text": "第一，频率相同；否则相位差随时间变，加强和减弱会来回切换，看不到稳定图样。"
+  },
+  {
+   "slide": 7,
+   "start": 224.82,
+   "end": 231.92,
+   "text": "第二，振动方向相同；否则位移矢量不在一条线上，不能简单代数相加。"
+  },
+  {
+   "slide": 7,
+   "start": 232.32,
+   "end": 238.66,
+   "text": "第三，相位差恒定；这样空间各点的加强与减弱才是固定的。"
+  },
+  {
+   "slide": 7,
+   "start": 239.06,
+   "end": 242.76,
+   "text": "满足这三条的波源叫相干波源。"
+  },
+  {
+   "slide": 7,
+   "start": 243.16,
+   "end": 252.09,
+   "text": "普通灯泡发的光不是相干的：每个原子发光的时刻和相位都是随机的，所以看不到稳定的干涉条纹。"
+  },
+  {
+   "slide": 7,
+   "start": 252.49,
+   "end": 258.68,
+   "text": "想一想：两只手电筒同时照在墙上，为什么看不到干涉图样？"
+  },
+  {
+   "slide": 8,
+   "start": 260.53,
+   "end": 263.94,
+   "text": "现在把干涉写成定量关系。"
+  },
+  {
+   "slide": 8,
+   "start": 264.34,
+   "end": 273.68,
+   "text": "两个相干源 S1、S2，初相分别是 φ1、φ2，到 P 点的距离分别是 r1、r2。"
+  },
+  {
+   "slide": 8,
+   "start": 274.08,
+   "end": 282.26,
+   "text": "波传到 P 点时的相位，等于源的初相减去因传播落后的量，落后量是 2π 乘距离除以波长。"
+  },
+  {
+   "slide": 8,
+   "start": 282.66,
+   "end": 291.16,
+   "text": "两者相减，得到 P 点的相位差：φ2 减 φ1，再减去 2π 乘 r2 减 r1 除以 λ。"
+  },
+  {
+   "slide": 8,
+   "start": 291.56,
+   "end": 296.67,
+   "text": "其中 r2 减 r1 叫波程差，记作 δ。"
+  },
+  {
+   "slide": 8,
+   "start": 297.07,
+   "end": 304.7,
+   "text": "如果两个源同相，相位差就只由波程差决定；中垂线上 δ 等于零，永远加强。"
+  },
+  {
+   "slide": 9,
+   "start": 306.23,
+   "end": 309.13,
+   "text": "合振幅由相位差决定。"
+  },
+  {
+   "slide": 9,
+   "start": 309.53,
+   "end": 316.18,
+   "text": "用矢量合成看最清楚：两个振幅矢量首尾相接，夹角就是相位差。"
+  },
+  {
+   "slide": 9,
+   "start": 316.58,
+   "end": 325.44,
+   "text": "由余弦定理，合振幅的平方等于 A1 平方加 A2 平方，再加 2 倍 A1 A2 乘余弦相位差。"
+  },
+  {
+   "slide": 9,
+   "start": 325.84,
+   "end": 334.02,
+   "text": "相位差是 2π 的整数倍时，余弦等于一，合振幅最大，等于两振幅之和，这叫加强。"
+  },
+  {
+   "slide": 9,
+   "start": 334.42,
+   "end": 342.48,
+   "text": "相位差是 π 的奇数倍时，余弦等于负一，合振幅最小，等于两振幅之差，这叫减弱。"
+  },
+  {
+   "slide": 9,
+   "start": 342.88,
+   "end": 350.22,
+   "text": "想一想：两列振幅相等的波，在减弱处合振幅为零，那能量去哪了？"
+  },
+  {
+   "slide": 9,
+   "start": 350.87,
+   "end": 354.45,
+   "text": "答案是重新分配——挪到了加强的地方。"
+  },
+  {
+   "slide": 10,
+   "start": 356.06,
+   "end": 359.8,
+   "text": "实际计算时，用波程差更方便。"
+  },
+  {
+   "slide": 10,
+   "start": 360.2,
+   "end": 365.84,
+   "text": "两个源同相时，相位差等于 2π 乘波程差除以波长。"
+  },
+  {
+   "slide": 10,
+   "start": 366.24,
+   "end": 373.73,
+   "text": "所以波程差是波长的整数倍时，相位差是 2π 的整数倍，$P$ 点加强。"
+  },
+  {
+   "slide": 10,
+   "start": 374.13,
+   "end": 380.75,
+   "text": "波程差是半波长的奇数倍时，相位差是 π 的奇数倍，$P$ 点减弱。"
+  },
+  {
+   "slide": 10,
+   "start": 381.15,
+   "end": 390.1,
+   "text": "看表：δ 等于零、λ、2λ 时加强；δ 等于 λ/2、3λ/2 时减弱。"
+  },
+  {
+   "slide": 10,
+   "start": 390.5,
+   "end": 396.09,
+   "text": "记忆要点：加强看「整波长」，减弱看「半波长的奇数倍」。"
+  },
+  {
+   "slide": 11,
+   "start": 397.64,
+   "end": 399.7,
+   "text": "一道例题。"
+  },
+  {
+   "slide": 11,
+   "start": 400.1,
+   "end": 406.96,
+   "text": "两个相干波源同相，频率一百赫兹，波速三百四十米每秒，先求波长。"
+  },
+  {
+   "slide": 11,
+   "start": 407.36,
+   "end": 413.24,
+   "text": "波长等于波速除以频率，三百四十除以一百，等于三点四米。"
+  },
+  {
+   "slide": 11,
+   "start": 413.64,
+   "end": 421.44,
+   "text": "某点 P 到两源的距离分别是五点一米和八点五米，波程差三点四米，正好是一个波长。"
+  },
+  {
+   "slide": 11,
+   "start": 421.84,
+   "end": 426.74,
+   "text": "所以 P 点加强，合振幅等于两振幅之和。"
+  },
+  {
+   "slide": 11,
+   "start": 427.14,
+   "end": 436.79,
+   "text": "如果波程差是半个波长，也就是一点七米，P 点就减弱；两振幅相等时，P 点振幅为零，完全抵消。"
+  },
+  {
+   "slide": 12,
+   "start": 438.33,
+   "end": 440.2,
+   "text": "小结。"
+  },
+  {
+   "slide": 12,
+   "start": 440.6,
+   "end": 447.13,
+   "text": "惠更斯原理：波面上每一点都是子波源，子波的包迹就是新波面。"
+  },
+  {
+   "slide": 12,
+   "start": 447.53,
+   "end": 456.36,
+   "text": "它解释衍射：缝宽与波长可比时，波明显绕到屏障后面；远大于波长时，近似直线传播。"
+  },
+  {
+   "slide": 12,
+   "start": 456.76,
+   "end": 462.21,
+   "text": "叠加原理：几列波各自独立传播，相遇处位移相加。"
+  },
+  {
+   "slide": 12,
+   "start": 462.61,
+   "end": 470.15,
+   "text": "相干条件：同频率、同振动方向、相位差恒定；合振幅由相位差决定。"
+  },
+  {
+   "slide": 12,
+   "start": 470.55,
+   "end": 476.17,
+   "text": "判据落到波程差：整波长加强，半波长的奇数倍减弱。"
+  },
+  {
+   "slide": 12,
+   "start": 476.57,
+   "end": 479.67,
+   "text": "下一节讲一个特例——驻波。"
+  }
+ ],
+ "build_ts": 1792546335,
+ "logoScale": 0.67,
+ "theme": "wave"
+}

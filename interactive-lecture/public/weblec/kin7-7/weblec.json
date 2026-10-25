@@ -1,0 +1,2725 @@
+{
+ "title": "7-7 磁场对载流线圈的作用",
+ "nav": "7-7　磁场对载流线圈的作用",
+ "footer": "第七章　恒定磁场",
+ "character": "aqiang",
+ "characters": [
+  {
+   "id": "aqiang",
+   "name": "阿强"
+  },
+  {
+   "id": "professor",
+   "name": "博士讲师"
+  },
+  {
+   "id": "zhongshan",
+   "name": "中山装先生"
+  }
+ ],
+ "duration": 409.7,
+ "slides": [
+  {
+   "id": 1,
+   "kind": "page",
+   "heading": "封面",
+   "narration": "这一节讲磁场对载流线圈的作用。上一节讲过：闭合线圈在均匀磁场中合力为零。但合力为零不等于没有效果——线圈会转起来。这一节要引入一个新量，磁矩，用它把力矩写成很简洁的形式。磁矩是整章最重要的概念之一，后面讲磁介质、磁共振都要用它。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 282,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 七 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 300,
+     "y": 408,
+     "w": 1320,
+     "h": 170,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "恒 定 磁 场",
+        "size": 80,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 300,
+     "y": 600,
+     "w": 1320,
+     "h": 140,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "7-7　磁场对载流线圈的作用",
+        "size": 46,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 770,
+     "w": 1480,
+     "h": 90,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "磁矩　·　力矩　·　磁势能",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 220,
+     "y": 900,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "合力为零，力矩不为零",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 0.0,
+    "2": 3.78,
+    "3": 9.46,
+    "4": 14.37
+   },
+   "t_start": 0.0,
+   "t_end": 28.39,
+   "duration": 28.39,
+   "laser": []
+  },
+  {
+   "id": 2,
+   "kind": "page",
+   "heading": "本节路线",
+   "narration": "先看结构。第一步，定义磁矩：电流乘面积，再乘一个法线方向。第二步，为什么均匀磁场中线圈的合力为零——上一节的「弯曲导线等效连线」直接用得上。第三步，力矩：M 等于磁矩叉乘 B。第四步，磁矩在磁场中的势能，以及它和「稳定取向」的关系。最后是三个应用：电动机、磁电式仪表、磁共振。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节路线",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "主线：磁矩 → 合力为零 → 力矩 → 势能 → 应用",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 320,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1　磁矩的定义",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 372,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\vec p_m=IS\\hat n$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 444,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2　合力为零",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 496,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "闭合回路在均匀场中合力为零",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 568,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "3　力矩",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 620,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\vec M=\\vec p_m\\times\\vec B$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 692,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4　磁势能与应用",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 744,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电动机、电表、磁共振",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 985,
+     "y": 236,
+     "w": 765,
+     "h": 250,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "磁矩是什么",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "描述「这个线圈像不像一根小磁针」",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "大小 IS，方向沿法线",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "和电偶极矩 p = ql 地位相同",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 985,
+     "y": 516,
+     "w": 765,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "和电偶极子对照",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "电场：M = p × E，W = −p·E",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "磁场：M = p_m × B，W = −p_m·B",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 29.19,
+    "2": 31.46,
+    "3": 37.43,
+    "4": 45.8,
+    "5": 50.64,
+    "6": 56.44
+   },
+   "t_start": 29.19,
+   "t_end": 62.36,
+   "duration": 33.17,
+   "laser": []
+  },
+  {
+   "id": 3,
+   "kind": "page",
+   "heading": "一　磁矩",
+   "narration": "先定义磁矩。一个平面载流线圈，电流 I，面积 S。定义磁矩等于 I 乘 S，再乘一个单位法线 n。法线方向由右手定则给出：四指沿电流绕行，拇指指向的就是 n。所以磁矩是一个矢量，大小是电流乘面积，方向垂直于线圈平面。单位是安培乘平方米。为什么这样定义？因为这样定义之后，线圈在外磁场里的行为，和一根小磁针完全一样。它和电偶极矩 p 等于 q l 的地位完全相同：都是描述「一个整体对外表现的极性」。区别只在电场里是电荷分离，磁场里是电流环。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　磁矩",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "平面载流线圈，电流 $I$，面积 $S$：",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 306,
+     "w": 740,
+     "h": 150,
+     "tex": "\\vec p_m=I S\\,\\hat n",
+     "size": 44,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 470,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "法线 $\\hat n$ 由右手定则给出：",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 522,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四指沿电流绕行，拇指指向 $\\hat n$．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 590,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "大小：$IS$；方向：垂直线圈平面．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 658,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "单位：$\\mathrm{A\\cdot m^{2}}$．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 726,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "作用：线圈对外表现得像一根小磁针．",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 7,
+     "x": 170,
+     "y": 794,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与电偶极矩 $p=ql$ 地位相同，只是",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 7,
+     "x": 170,
+     "y": 840,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一个来自电荷分离，一个来自电流环．",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 985,
+     "y": 246,
+     "w": 765,
+     "h": 420,
+     "name": "mag_moment"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 985,
+     "y": 686,
+     "w": 765,
+     "h": 190,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一个有用的图像",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "原子里的电子绕核运动",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "就是一个极小的电流环 ⇒ 有磁矩",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "这是磁介质的微观来源（7-8）",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 63.16,
+    "2": 65.65,
+    "3": 75.77,
+    "4": 83.13,
+    "5": 90.11,
+    "6": 93.32,
+    "7": 102.22
+   },
+   "t_start": 63.16,
+   "t_end": 115.6,
+   "duration": 52.44,
+   "laser": []
+  },
+  {
+   "id": 4,
+   "kind": "page",
+   "heading": "二　合力为零",
+   "narration": "先说合力。闭合线圈放在均匀磁场里，合力一定为零。理由上一节已经给了：弯曲导线的合力等于两端连线所受的力。线圈是闭合的，起点和终点重合，连线长度为零，所以合力为零。这不是说每段都不受力。相反，每一小段都受 I dl 叉乘 B。只是这些力加起来互相抵消了。看图：矩形线圈的四条边都受力，但两两成对、方向相反、大小相等，矢量和为零。关键在于：力虽然抵消了，但它们的作用线不重合。一旦不共线，就会产生力矩。这就是下一件事。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　合力为零",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "闭合线圈在",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "均匀磁场",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "中：合力为零．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 306,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "理由：上一节的等效连线——",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 358,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "起点与终点重合 ⇒ 连线长度为零．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 426,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "但这不代表每段不受力：",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 478,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "每一小段都受 $I\\mathrm{d}\\vec l\\times\\vec B$，",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 526,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只是加起来互相抵消．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 594,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四条边两两成对：等大、反向．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 660,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "关键：力抵消了，但",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "作用线不重合",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 716,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不共线的力 ⇒ 产生力矩．",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 784,
+     "w": 740,
+     "h": 170,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一句话记住",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "合力为零 ⇏ 没有效果",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "线圈会转，这就是电动机的起点",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 985,
+     "y": 246,
+     "w": 765,
+     "h": 250,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "为什么合力为零",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$\\vec F=\\oint I\\mathrm{d}\\vec l\\times\\vec B$",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$=\\left(\\oint\\mathrm{d}\\vec l\\right)\\times\\vec B=0$",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "闭合回路的 $\\oint\\mathrm{d}\\vec l$ 恒为零",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 116.4,
+    "2": 118.67,
+    "3": 123.94,
+    "4": 137.48,
+    "5": 149.29,
+    "6": 158.5
+   },
+   "t_start": 116.4,
+   "t_end": 170.98,
+   "duration": 54.58,
+   "laser": []
+  },
+  {
+   "id": 5,
+   "kind": "page",
+   "heading": "三　力矩",
+   "narration": "现在是这一节的核心：力矩。把线圈看成磁矩。它在均匀磁场中受到的力矩，等于磁矩叉乘 B。写成大小就是：M 等于 I S B 正弦 θ，θ 是磁矩与磁场的夹角。方向也用右手定则：四指从磁矩弯向磁场，拇指就是力矩的方向。这个力矩的作用是让线圈转起来，转向是让磁矩与磁场同向——也就是转到稳定平衡的位置。看图：线圈上下两边受力等大反向，形成一个力偶，效果就是让线圈绕轴转。两个特例：θ 等于九十度时力矩最大，等于 I S B；θ 等于零时力矩为零，此时线圈处于稳定平衡，磁矩与磁场同向。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　力矩",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 246,
+     "w": 740,
+     "h": 150,
+     "tex": "\\vec M=\\vec p_m\\times\\vec B",
+     "size": 40,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 410,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "大小：",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 462,
+     "w": 740,
+     "h": 120,
+     "tex": "M=I S B\\sin\\theta=p_m B\\sin\\theta",
+     "size": 30,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 600,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\theta$：磁矩与磁场的夹角．",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 668,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "效果：使磁矩转向与 $B$ 同向（稳定平衡）．",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 736,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\theta=90^\\circ$：力矩最大 $ISB$；",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 784,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\theta=0$：力矩为零，稳定平衡．",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 852,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这就是电动机转起来的道理．",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 985,
+     "y": 246,
+     "w": 765,
+     "h": 420,
+     "name": "loop_torque"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 985,
+     "y": 686,
+     "w": 765,
+     "h": 190,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "方向怎么判",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "右手四指从 $p_m$ 弯向 $B$，拇指为 $M$",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$M \\perp p_m$，$M \\perp B$",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "力矩的转轴垂直于两者张成的平面",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 171.78,
+    "2": 175.56,
+    "3": 183.56,
+    "4": 191.74,
+    "5": 199.05,
+    "6": 207.37
+   },
+   "t_start": 171.78,
+   "t_end": 229.67,
+   "duration": 57.89,
+   "laser": []
+  },
+  {
+   "id": 6,
+   "kind": "page",
+   "heading": "四　磁矩的势能",
+   "narration": "力矩可以写成势能的导数，所以磁矩在磁场里也有势能。定义 W 等于负的磁矩点乘 B，也就是负的 p_m B 余弦 θ。这个定义有两个含义。第一，θ 等于零时，磁矩与磁场同向，势能最低，等于负的 p_m B。这是稳定平衡位置——线圈会自动转到这里。第二，θ 等于一百八十度时，磁矩与磁场反向，势能最高，等于正的 p_m B。这是不稳定平衡，稍微一碰就翻过去。注意这里的「势能零点」取在磁矩与磁场垂直的位置。这个式子和电偶极子在电场里的势能完全对应：把 p 换成 p_m，把 E 换成 B 就行。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　磁矩的势能",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 256,
+     "w": 740,
+     "h": 140,
+     "tex": "W=-\\vec p_m\\cdot\\vec B=-p_m B\\cos\\theta",
+     "size": 34,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 420,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两个特殊位置：",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 476,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\theta=0$（同向）：$W=-p_mB$",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 528,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "势能最低 ⇒ ",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "稳定平衡",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "，线圈自动转到这里．",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 600,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\theta=\\pi$（反向）：$W=+p_mB$",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 652,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "势能最高 ⇒ 不稳定，一碰就翻．",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 722,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "零点取在 $\\theta=90^\\circ$（垂直）．",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 7,
+     "x": 170,
+     "y": 790,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与电偶极子完全对应：$p\\to p_m$，$E\\to B$．",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 985,
+     "y": 246,
+     "w": 765,
+     "h": 250,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "把力矩和势能连起来",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$M=-\\mathrm{d}W/\\mathrm{d}\\theta$",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "力矩总是把系统推向势能更低处",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "所以线圈转向「磁矩与 B 同向」",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 985,
+     "y": 516,
+     "w": 765,
+     "h": 200,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一个常见问法",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "「线圈在磁场中能量最低的姿态是什么？」",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "答：磁矩与 B 同向（θ=0）",
+        "size": 25,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "2": 236.65,
+    "3": 244.06,
+    "4": 247.32,
+    "5": 259.95,
+    "6": 273.23,
+    "7": 278.43
+   },
+   "t_start": 230.47,
+   "t_end": 287.69,
+   "duration": 57.22,
+   "laser": []
+  },
+  {
+   "id": 7,
+   "kind": "page",
+   "heading": "五　三个应用",
+   "narration": "三个应用。第一，电动机。线圈在磁场中受力矩转动，但转到磁矩与磁场同向时力矩为零，会停下来。所以要加换向器：每转过平衡位置就换一次电流方向，使力矩始终朝同一侧。这就是直流电动机的基本结构。第二，磁电式仪表。指针连在一个线圈上，线圈在永磁体间隙里受力矩，力矩与电流成正比，指针的偏转角也就与电流成正比——这是模拟电表能读数的原理。第三，磁共振。原子核有自旋，相当于一个小磁矩。放在强磁场里，它的能级会分裂；再叠加一个特定频率的射频场，就能让它翻转。这个频率与磁场成正比，是磁共振成像的基础。三件事看起来无关，用的都是这一节的 M 等于 p_m 叉乘 B。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五　三个应用",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 电动机",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 292,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "线圈受力矩转动；到平衡位置力矩为零．",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 338,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "加换向器：每过半圈换一次电流方向．",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 404,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 磁电式仪表",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 456,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "线圈在永磁隙中，力矩 $\\propto I$．",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 502,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "指针偏转角 $\\propto$ 电流 ⇒ 能读数．",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 568,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 磁共振",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 620,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "原子核自旋 ≈ 小磁矩；强磁场中能级分裂．",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 666,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "射频频率与磁场成正比 ⇒ MRI 成像．",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 732,
+     "w": 740,
+     "h": 176,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "三个应用的共同点",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "都是「磁矩在磁场中受力矩」",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "差别只在磁矩的来源与大小",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 985,
+     "y": 246,
+     "w": 765,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一个数量级感受",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 985,
+     "y": 300,
+     "w": 765,
+     "h": 250,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "磁矩的量级",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "实验线圈：$IS\\sim 0.1\\ \\mathrm{A\\cdot m^2}$",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "电子自旋：$\\sim 10^{-23}\\ \\mathrm{A\\cdot m^2}$",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "相差二十多个数量级",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 985,
+     "y": 570,
+     "w": 765,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以 MRI 需要很强的磁场（1.5~3 T）才能让核磁矩",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 985,
+     "y": 618,
+     "w": 765,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "的能级差大到可以被测到．",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 288.49,
+    "2": 290.76,
+    "3": 313.09,
+    "4": 328.08,
+    "5": 347.8
+   },
+   "t_start": 288.49,
+   "t_end": 355.45,
+   "duration": 66.96,
+   "laser": []
+  },
+  {
+   "id": 8,
+   "kind": "page",
+   "heading": "本节小结",
+   "narration": "小结。第一，磁矩：p_m 等于 I S n，方向沿法线，右手定则定。第二，闭合线圈在均匀磁场中合力为零，因为 dl 的环路积分为零。第三，但有力矩：M 等于 p_m 叉乘 B，大小 I S B 正弦 θ。第四，磁势能 W 等于负的 p_m 点乘 B；θ 等于零时势能最低、稳定，θ 等于一百八十度时最高、不稳定。第五，电动机、电表、磁共振都是它的应用。下一节讲磁介质：把这一节的「小磁矩」铺满整块材料，看会有什么集体效应。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 磁矩",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 290,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\vec p_m=IS\\hat n$，方向沿法线．",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 合力为零",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 410,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "闭合回路在均匀场中 $\\oint\\mathrm{d}\\vec l=0$．",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 476,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 力矩",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 530,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\vec M=\\vec p_m\\times\\vec B$，$M=p_mB\\sin\\theta$．",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 985,
+     "y": 236,
+     "w": 765,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 磁势能",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 985,
+     "y": 290,
+     "w": 765,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$W=-\\vec p_m\\cdot\\vec B$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 985,
+     "y": 344,
+     "w": 765,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同向最低（稳定）、反向最高（不稳定）",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 985,
+     "y": 410,
+     "w": 765,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "⑤ 三个应用",
+        "size": 33,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 985,
+     "y": 464,
+     "w": 765,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "电动机、磁电式仪表、磁共振",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 985,
+     "y": 512,
+     "w": 765,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "都是「磁矩在磁场中受力矩」",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 622,
+     "w": 1580,
+     "h": 150,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "下一节：磁介质 磁场强度",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "把这一节的「小磁矩」铺满整块材料 —— 磁化、H 与 B 的关系",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 806,
+     "w": 1580,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这一节的三个公式，和电偶极子一一对应：p → p_m，E → B．",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 356.25,
+    "2": 358.52,
+    "3": 366.26,
+    "4": 373.16,
+    "5": 381.41,
+    "6": 394.67
+   },
+   "t_start": 356.25,
+   "t_end": 408.4,
+   "duration": 52.15,
+   "laser": []
+  }
+ ],
+ "subtitles": [
+  {
+   "slide": 1,
+   "start": 0.0,
+   "end": 3.38,
+   "text": "这一节讲磁场对载流线圈的作用。"
+  },
+  {
+   "slide": 1,
+   "start": 3.78,
+   "end": 9.06,
+   "text": "上一节讲过：闭合线圈在均匀磁场中合力为零。"
+  },
+  {
+   "slide": 1,
+   "start": 9.46,
+   "end": 13.97,
+   "text": "但合力为零不等于没有效果——线圈会转起来。"
+  },
+  {
+   "slide": 1,
+   "start": 14.37,
+   "end": 20.87,
+   "text": "这一节要引入一个新量，磁矩，用它把力矩写成很简洁的形式。"
+  },
+  {
+   "slide": 1,
+   "start": 21.27,
+   "end": 27.7,
+   "text": "磁矩是整章最重要的概念之一，后面讲磁介质、磁共振都要用它。"
+  },
+  {
+   "slide": 2,
+   "start": 29.19,
+   "end": 31.06,
+   "text": "先看结构。"
+  },
+  {
+   "slide": 2,
+   "start": 31.46,
+   "end": 37.03,
+   "text": "第一步，定义磁矩：电流乘面积，再乘一个法线方向。"
+  },
+  {
+   "slide": 2,
+   "start": 37.43,
+   "end": 45.4,
+   "text": "第二步，为什么均匀磁场中线圈的合力为零——上一节的「弯曲导线等效连线」直接用得上。"
+  },
+  {
+   "slide": 2,
+   "start": 45.8,
+   "end": 50.24,
+   "text": "第三步，力矩：M 等于磁矩叉乘 B。"
+  },
+  {
+   "slide": 2,
+   "start": 50.64,
+   "end": 56.04,
+   "text": "第四步，磁矩在磁场中的势能，以及它和「稳定取向」的关系。"
+  },
+  {
+   "slide": 2,
+   "start": 56.44,
+   "end": 61.62,
+   "text": "最后是三个应用：电动机、磁电式仪表、磁共振。"
+  },
+  {
+   "slide": 3,
+   "start": 63.16,
+   "end": 65.25,
+   "text": "先定义磁矩。"
+  },
+  {
+   "slide": 3,
+   "start": 65.65,
+   "end": 70.31,
+   "text": "一个平面载流线圈，电流 I，面积 S。"
+  },
+  {
+   "slide": 3,
+   "start": 70.71,
+   "end": 75.37,
+   "text": "定义磁矩等于 I 乘 S，再乘一个单位法线 n。"
+  },
+  {
+   "slide": 3,
+   "start": 75.77,
+   "end": 82.73,
+   "text": "法线方向由右手定则给出：四指沿电流绕行，拇指指向的就是 n。"
+  },
+  {
+   "slide": 3,
+   "start": 83.13,
+   "end": 89.71,
+   "text": "所以磁矩是一个矢量，大小是电流乘面积，方向垂直于线圈平面。"
+  },
+  {
+   "slide": 3,
+   "start": 90.11,
+   "end": 92.92,
+   "text": "单位是安培乘平方米。"
+  },
+  {
+   "slide": 3,
+   "start": 93.32,
+   "end": 95.41,
+   "text": "为什么这样定义？"
+  },
+  {
+   "slide": 3,
+   "start": 96.06,
+   "end": 101.82,
+   "text": "因为这样定义之后，线圈在外磁场里的行为，和一根小磁针完全一样。"
+  },
+  {
+   "slide": 3,
+   "start": 102.22,
+   "end": 109.13,
+   "text": "它和电偶极矩 p 等于 q l 的地位完全相同：都是描述「一个整体对外表现的极性」。"
+  },
+  {
+   "slide": 3,
+   "start": 109.53,
+   "end": 114.64,
+   "text": "区别只在电场里是电荷分离，磁场里是电流环。"
+  },
+  {
+   "slide": 4,
+   "start": 116.4,
+   "end": 118.27,
+   "text": "先说合力。"
+  },
+  {
+   "slide": 4,
+   "start": 118.67,
+   "end": 123.54,
+   "text": "闭合线圈放在均匀磁场里，合力一定为零。"
+  },
+  {
+   "slide": 4,
+   "start": 123.94,
+   "end": 129.72,
+   "text": "理由上一节已经给了：弯曲导线的合力等于两端连线所受的力。"
+  },
+  {
+   "slide": 4,
+   "start": 130.12,
+   "end": 137.08,
+   "text": "线圈是闭合的，起点和终点重合，连线长度为零，所以合力为零。"
+  },
+  {
+   "slide": 4,
+   "start": 137.48,
+   "end": 140.48,
+   "text": "这不是说每段都不受力。"
+  },
+  {
+   "slide": 4,
+   "start": 140.88,
+   "end": 145.03,
+   "text": "相反，每一小段都受 I dl 叉乘 B。"
+  },
+  {
+   "slide": 4,
+   "start": 145.43,
+   "end": 148.89,
+   "text": "只是这些力加起来互相抵消了。"
+  },
+  {
+   "slide": 4,
+   "start": 149.29,
+   "end": 158.1,
+   "text": "看图：矩形线圈的四条边都受力，但两两成对、方向相反、大小相等，矢量和为零。"
+  },
+  {
+   "slide": 4,
+   "start": 158.5,
+   "end": 163.66,
+   "text": "关键在于：力虽然抵消了，但它们的作用线不重合。"
+  },
+  {
+   "slide": 4,
+   "start": 164.06,
+   "end": 167.44,
+   "text": "一旦不共线，就会产生力矩。"
+  },
+  {
+   "slide": 4,
+   "start": 167.84,
+   "end": 169.95,
+   "text": "这就是下一件事。"
+  },
+  {
+   "slide": 5,
+   "start": 171.78,
+   "end": 175.16,
+   "text": "现在是这一节的核心：力矩。"
+  },
+  {
+   "slide": 5,
+   "start": 175.56,
+   "end": 178.1,
+   "text": "把线圈看成磁矩。"
+  },
+  {
+   "slide": 5,
+   "start": 178.5,
+   "end": 183.16,
+   "text": "它在均匀磁场中受到的力矩，等于磁矩叉乘 B。"
+  },
+  {
+   "slide": 5,
+   "start": 183.56,
+   "end": 191.34,
+   "text": "写成大小就是：M 等于 I S B 正弦 θ，θ 是磁矩与磁场的夹角。"
+  },
+  {
+   "slide": 5,
+   "start": 191.74,
+   "end": 198.65,
+   "text": "方向也用右手定则：四指从磁矩弯向磁场，拇指就是力矩的方向。"
+  },
+  {
+   "slide": 5,
+   "start": 199.05,
+   "end": 206.97,
+   "text": "这个力矩的作用是让线圈转起来，转向是让磁矩与磁场同向——也就是转到稳定平衡的位置。"
+  },
+  {
+   "slide": 5,
+   "start": 207.37,
+   "end": 214.86,
+   "text": "看图：线圈上下两边受力等大反向，形成一个力偶，效果就是让线圈绕轴转。"
+  },
+  {
+   "slide": 5,
+   "start": 215.26,
+   "end": 228.82,
+   "text": "两个特例：θ 等于九十度时力矩最大，等于 I S B；θ 等于零时力矩为零，此时线圈处于稳定平衡，磁矩与磁场同向。"
+  },
+  {
+   "slide": 6,
+   "start": 230.47,
+   "end": 236.25,
+   "text": "力矩可以写成势能的导数，所以磁矩在磁场里也有势能。"
+  },
+  {
+   "slide": 6,
+   "start": 236.65,
+   "end": 243.66,
+   "text": "定义 W 等于负的磁矩点乘 B，也就是负的 p_m B 余弦 θ。"
+  },
+  {
+   "slide": 6,
+   "start": 244.06,
+   "end": 246.92,
+   "text": "这个定义有两个含义。"
+  },
+  {
+   "slide": 6,
+   "start": 247.32,
+   "end": 254.93,
+   "text": "第一，θ 等于零时，磁矩与磁场同向，势能最低，等于负的 p_m B。"
+  },
+  {
+   "slide": 6,
+   "start": 255.33,
+   "end": 259.55,
+   "text": "这是稳定平衡位置——线圈会自动转到这里。"
+  },
+  {
+   "slide": 6,
+   "start": 259.95,
+   "end": 268.59,
+   "text": "第二，θ 等于一百八十度时，磁矩与磁场反向，势能最高，等于正的 p_m B。"
+  },
+  {
+   "slide": 6,
+   "start": 268.99,
+   "end": 272.83,
+   "text": "这是不稳定平衡，稍微一碰就翻过去。"
+  },
+  {
+   "slide": 6,
+   "start": 273.23,
+   "end": 278.03,
+   "text": "注意这里的「势能零点」取在磁矩与磁场垂直的位置。"
+  },
+  {
+   "slide": 6,
+   "start": 278.43,
+   "end": 286.78,
+   "text": "这个式子和电偶极子在电场里的势能完全对应：把 p 换成 p_m，把 E 换成 B 就行。"
+  },
+  {
+   "slide": 7,
+   "start": 288.49,
+   "end": 290.36,
+   "text": "三个应用。"
+  },
+  {
+   "slide": 7,
+   "start": 290.76,
+   "end": 293.04,
+   "text": "第一，电动机。"
+  },
+  {
+   "slide": 7,
+   "start": 293.44,
+   "end": 300.93,
+   "text": "线圈在磁场中受力矩转动，但转到磁矩与磁场同向时力矩为零，会停下来。"
+  },
+  {
+   "slide": 7,
+   "start": 301.33,
+   "end": 309.15,
+   "text": "所以要加换向器：每转过平衡位置就换一次电流方向，使力矩始终朝同一侧。"
+  },
+  {
+   "slide": 7,
+   "start": 309.55,
+   "end": 312.69,
+   "text": "这就是直流电动机的基本结构。"
+  },
+  {
+   "slide": 7,
+   "start": 313.09,
+   "end": 315.78,
+   "text": "第二，磁电式仪表。"
+  },
+  {
+   "slide": 7,
+   "start": 316.18,
+   "end": 327.68,
+   "text": "指针连在一个线圈上，线圈在永磁体间隙里受力矩，力矩与电流成正比，指针的偏转角也就与电流成正比——这是模拟电表能读数的原理。"
+  },
+  {
+   "slide": 7,
+   "start": 328.08,
+   "end": 330.58,
+   "text": "第三，磁共振。"
+  },
+  {
+   "slide": 7,
+   "start": 330.98,
+   "end": 334.84,
+   "text": "原子核有自旋，相当于一个小磁矩。"
+  },
+  {
+   "slide": 7,
+   "start": 335.24,
+   "end": 342.39,
+   "text": "放在强磁场里，它的能级会分裂；再叠加一个特定频率的射频场，就能让它翻转。"
+  },
+  {
+   "slide": 7,
+   "start": 342.79,
+   "end": 347.4,
+   "text": "这个频率与磁场成正比，是磁共振成像的基础。"
+  },
+  {
+   "slide": 7,
+   "start": 347.8,
+   "end": 354.38,
+   "text": "三件事看起来无关，用的都是这一节的 M 等于 p_m 叉乘 B。"
+  },
+  {
+   "slide": 8,
+   "start": 356.25,
+   "end": 358.12,
+   "text": "小结。"
+  },
+  {
+   "slide": 8,
+   "start": 358.52,
+   "end": 365.86,
+   "text": "第一，磁矩：p_m 等于 I S n，方向沿法线，右手定则定。"
+  },
+  {
+   "slide": 8,
+   "start": 366.26,
+   "end": 372.76,
+   "text": "第二，闭合线圈在均匀磁场中合力为零，因为 dl 的环路积分为零。"
+  },
+  {
+   "slide": 8,
+   "start": 373.16,
+   "end": 381.01,
+   "text": "第三，但有力矩：M 等于 p_m 叉乘 B，大小 I S B 正弦 θ。"
+  },
+  {
+   "slide": 8,
+   "start": 381.41,
+   "end": 394.27,
+   "text": "第四，磁势能 W 等于负的 p_m 点乘 B；θ 等于零时势能最低、稳定，θ 等于一百八十度时最高、不稳定。"
+  },
+  {
+   "slide": 8,
+   "start": 394.67,
+   "end": 400.07,
+   "text": "第五，电动机、电表、磁共振都是它的应用。"
+  },
+  {
+   "slide": 8,
+   "start": 400.47,
+   "end": 407.6,
+   "text": "下一节讲磁介质：把这一节的「小磁矩」铺满整块材料，看会有什么集体效应。"
+  }
+ ],
+ "build_ts": 1792471020,
+ "logoScale": 0.67
+}

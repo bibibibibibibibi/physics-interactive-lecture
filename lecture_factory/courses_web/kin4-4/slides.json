@@ -1,0 +1,2338 @@
+{
+ "title": "4-4 力矩做功 刚体绕定轴转动的动能定理",
+ "nav": "4-4　力矩做功 刚体绕定轴转动的动能定理",
+ "footer": "第四章　刚体转动和流体运动",
+ "logoScale": 0.67,
+ "engine": "edge",
+ "voice": "zh-CN-YunxiNeural",
+ "pages": [
+  {
+   "id": 1,
+   "narration": "[[1]]这一节 4-4。[[2]]上一节走的是“力矩对时间的累积”，得到角动量定理。[[3]]这一节换成“力矩对空间的累积”，也就是功——会得到力矩的功、转动动能，以及刚体定轴转动的动能定理。[[4]]整条线索仍然与平动平行：力做功改变动能，力矩做功改变转动动能。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 292,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 四 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 300,
+     "y": 420,
+     "w": 1320,
+     "h": 160,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "刚体转动和流体运动",
+        "size": 76,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 300,
+     "y": 606,
+     "w": 1320,
+     "h": 130,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4-4　力矩做功　刚体绕定轴转动的动能定理",
+        "size": 44,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 766,
+     "w": 1480,
+     "h": 120,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "力矩对空间的累积 ⟶ ",
+        "size": 44,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "力矩的功、转动动能、动能定理",
+        "size": 42,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 220,
+     "y": 900,
+     "w": 1480,
+     "h": 90,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "力矩的功　·　功率　·　转动动能　·　动能定理",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "封面"
+  },
+  {
+   "id": 2,
+   "narration": "[[1]]先对照一下。[[2]]力的空间累积：力乘位移的积分是功，功改变动能，这是动能定理。[[3]]把力换成力矩、位移换成角位移：力矩乘角位移的积分是力矩的功，它改变转动动能。[[4]]所以这一节要做的，就是把上一章“功与能”那一套，翻译成转动版本。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两条平行的线索",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "table",
+     "step": 1,
+     "x": 170,
+     "y": 262,
+     "w": 1580,
+     "rows": [
+      [
+       "力的空间累积效应",
+       "力矩的空间累积效应"
+      ],
+      [
+       "功　W = ∫F·dr",
+       "力矩的功　W = ∫M dθ"
+      ],
+      [
+       "动能　Ek = ½mv²",
+       "转动动能　Ek = ½Jω²"
+      ],
+      [
+       "动能定理",
+       "转动动能定理"
+      ]
+     ],
+     "rowh": 88,
+     "size": 36,
+     "fill": "#CCFFCC"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 690,
+     "w": 1580,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "左边：合外力做的功 = 动能的增量．",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 780,
+     "w": 1580,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "右边：",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "合外力矩做的功 = 转动动能的增量",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 890,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这一节就是把左边的公式，逐个字母换成转动量．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "引入　两条平行线索"
+  },
+  {
+   "id": 3,
+   "narration": "[[1]]先看力矩做的功。力 F 作用在刚体上的 P 点，P 点的位矢是 r。[[2]]当刚体转过一个微小角度 dθ，P 点走过一段微小弧长 ds，等于 r dθ。[[3]]功的定义是力点乘位移：dW 等于 F 点乘 dr，也就是 F 沿位移方向的分量乘上 ds。[[4]]位移是切向的，所以只有切向分量 F_t 做功；法向分量 F_n 垂直于位移，不做功。[[5]]于是 dW 等于 F_t 乘 r dθ，而 F_t r 正好是力矩 M，所以 dW 等于 M dθ。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 900,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　力矩做功",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 238,
+     "w": 780,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "力 F 作用在刚体上的 P 点，位矢 r．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 780,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "刚体转过 dθ ⇒ P 点弧长 ds = r dθ．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 424,
+     "w": 780,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "功的定义：",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 496,
+     "w": 780,
+     "h": 120,
+     "tex": "\\mathrm dW=\\vec F\\cdot\\mathrm d\\vec r=F_{\\mathrm t}\\,\\mathrm ds",
+     "size": 30,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 640,
+     "w": 780,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只有",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "切向分量",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "做功，法向不做功．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 736,
+     "w": 780,
+     "h": 130,
+     "tex": "\\mathrm dW=F_{\\mathrm t}r\\,\\mathrm d\\theta=M\\,\\mathrm d\\theta",
+     "size": 34,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 1000,
+     "y": 240,
+     "w": 700,
+     "h": 500,
+     "name": "work_torque"
+    }
+   ],
+   "heading": "一　力矩做功"
+  },
+  {
+   "id": 4,
+   "narration": "[[1]]把微元加起来，就得到力矩的功：W 等于 M 对 θ 的积分，从 θ₁ 到 θ₂。[[2]]注意这和力的功 W 等于 F 点乘 dr 的积分完全同构：F 换成 M，dr 换成 dθ。[[3]]如果 M 是常量，积分就退化成 M 乘（θ₂ 减 θ₁），力矩乘角位移。[[4]]还有一点：M 是代数量。M 与 dθ 同号，功为正，力矩推动转动；异号则功为负，力矩阻碍转动。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　力矩的功",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 300,
+     "y": 240,
+     "w": 1320,
+     "h": 150,
+     "tex": "W=\\int_{\\theta_1}^{\\theta_2}M\\,\\mathrm d\\theta",
+     "size": 46,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 430,
+     "w": 1580,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "比较：",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "$W=\\int\\vec F\\cdot\\mathrm d\\vec r$",
+        "size": 38,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "（力做功）",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 510,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "F ↔ M，dr ↔ dθ —— 完全同构．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 606,
+     "w": 1580,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "M 为常量时：",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "W = M(θ₂ − θ₁)",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 700,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "M 与 dθ ",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "同号",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "：功为正（推动转动）；",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 762,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "M 与 dθ ",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "异号",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "：功为负（阻碍转动）．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 860,
+     "w": 1580,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "力矩的功是代数量，正负由 M 与 dθ 的符号决定",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "一　力矩的功"
+  },
+  {
+   "id": 5,
+   "narration": "[[1]]功率是功对时间的变化率。把 dW 写成 M dθ，除以 dt，dθ/dt 就是 ω。[[2]]于是 P 等于 Mω。[[3]]和 p 等于 F 点乘 v 对照：力乘速度是功率，力矩乘角速度也是功率。[[4]]这个式子在工程上很有用：知道电机输出的力矩和转速，就能算出功率；反过来，给定功率和转速，就能算出能提供多大的力矩。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　力矩的功率",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 300,
+     "y": 250,
+     "w": 1320,
+     "h": 170,
+     "tex": "P=\\frac{\\mathrm dW}{\\mathrm dt}=M\\frac{\\mathrm d\\theta}{\\mathrm dt}=M\\omega",
+     "size": 42,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 470,
+     "w": 1580,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "比较：",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "P = F · v",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "（力的功率）",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 570,
+     "w": 1580,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "应用：若已知功率 P 与转速 ω，则能提供的力矩 ",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "M = P/ω",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 660,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "——转速越低，同样功率下力矩越大（汽车低挡爬坡的道理）．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 780,
+     "w": 1580,
+     "h": 130,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "P = Mω 与 P = Fv 是同一个式子的两种写法",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "heading": "二　力矩的功率"
+  },
+  {
+   "id": 6,
+   "narration": "[[1]]再看转动动能。刚体上每个质量元都在动，各有各的动能，总动能就是把它们加起来。[[2]]第 i 个质量元的动能是二分之一 Δm_i v_i 方，而 v_i 等于 r_i ω。[[3]]代进去，每个质量元贡献二分之一 Δm_i r_i 方 ω 方。[[4]]ω 对所有质量元都一样，可以提出求和号外，剩下括号里就是转动惯量。[[5]]于是 Ek 等于二分之一 Jω²。[[6]]对比平动的二分之一 m v 方，形式一模一样。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　转动动能",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 130,
+     "tex": "E_{\\mathrm k}=\\sum_i\\frac{1}{2}\\Delta m_iv_i^2",
+     "size": 40,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 396,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "代入 ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "v",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "i",
+        "size": 22,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " = r",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "i",
+        "size": 22,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "ω",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "：",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 470,
+     "w": 1580,
+     "h": 140,
+     "tex": "=\\frac{1}{2}\\left(\\sum_i\\Delta m_ir_i^2\\right)\\omega^2=\\frac{1}{2}J\\omega^2",
+     "size": 36,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 640,
+     "w": 1580,
+     "h": 62,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "比较：",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "Ek = ½mv²",
+        "size": 40,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "（平动动能）",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 748,
+     "w": 1580,
+     "h": 140,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "Ek = ½ J ω² —— 转动动能，J 对应 m，ω 对应 v",
+        "size": 38,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 920,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "注意：这里假设刚体绕定轴转动，各点角速度相同．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "三　转动动能"
+  },
+  {
+   "id": 7,
+   "narration": "[[1]]把力矩的功和转动动能连起来。W 等于 M 对 θ 的积分，把 M 换成 Jα，α 写成 dω/dt。[[2]]dθ 乘 dω/dt 可以换成 ω dω——和上一节求角速度时用的是同一个技巧。[[3]]于是积分变成 Jω 对 ω 的积分，从 ω₁ 到 ω₂。[[4]]积出来就是二分之一 Jω₂ 方减二分之一 Jω₁ 方。[[5]]这就得到了刚体定轴转动的动能定理：合外力矩做的功，等于转动动能的增量。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　刚体定轴转动的动能定理",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 170,
+     "tex": "W=\\int_{\\theta_1}^{\\theta_2}M\\,\\mathrm d\\theta=\\int_{\\theta_1}^{\\theta_2}J\\frac{\\mathrm d\\omega}{\\mathrm dt}\\,\\mathrm d\\theta=\\int_{\\omega_1}^{\\omega_2}J\\omega\\,\\mathrm d\\omega",
+     "size": 28,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 440,
+     "w": 1580,
+     "h": 150,
+     "tex": "W=\\frac{1}{2}J\\omega_2^2-\\frac{1}{2}J\\omega_1^2",
+     "size": 44,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 630,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "合外力矩对绕定轴转动的刚体所做的功，",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 690,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "等于刚体",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "转动动能的增量",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 790,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与平动动能定理 ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "W = ½mv₂² − ½mv₁²",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": " 一一对应．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 870,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "用它解题时，往往比用 M = Jα 再积分更省事．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "四　刚体定轴转动的动能定理"
+  },
+  {
+   "id": 8,
+   "narration": "[[1]]讲到这里，把三个典型系统的守恒情况放在一起对照，很有用。[[2]]子弹击入沙袋：沙袋挂在绳上，水平方向动量守恒，对悬点的角动量也守恒，但碰撞是完全非弹性的，机械能不守恒。[[3]]子弹击入杆：杆有固定轴，轴要提供约束力，所以动量不守恒；但对轴的角动量守恒，机械能也不守恒。[[4]]圆锥摆：摆球受重力和张力，动量方向一直在变，不守恒；但两个力都通过悬点，对悬点的角动量守恒；没有摩擦，机械能守恒。[[5]]所以判断守恒，一定要先说清楚：对哪个系统、对哪个点、对哪个方向。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "讨论　三个系统的守恒情况",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "table",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "rows": [
+      [
+       "系统",
+       "动量",
+       "角动量",
+       "机械能"
+      ],
+      [
+       "子弹击入沙袋",
+       "守恒（水平）",
+       "守恒（对悬点）",
+       "不守恒"
+      ],
+      [
+       "子弹击入杆",
+       "不守恒（轴有约束力）",
+       "守恒（对轴）",
+       "不守恒"
+      ],
+      [
+       "圆锥摆",
+       "不守恒（方向变）",
+       "守恒（对悬点）",
+       "守恒"
+      ]
+     ],
+     "rowh": 96,
+     "size": 32,
+     "fill": "#CCFFCC"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 640,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "判断守恒，先问三件事：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 200,
+     "y": 716,
+     "w": 1560,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 对哪个",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "系统",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "？",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "　② 对哪个",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "点",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "（力矩/角动量）？",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 200,
+     "y": 786,
+     "w": 1560,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 对哪个",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "方向",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "（动量分量）？",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 880,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "碰撞、冲击类问题：内力远大于外力，机械能通常不守恒．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "讨论　三个系统的守恒情况"
+  },
+  {
+   "id": 9,
+   "narration": "[[1]]看一个综合例题。长 l、质量 m 撇的杆可绕支点 O 自由转动。[[2]]质量 m、速率 v 的子弹射入杆内距支点 a 处，使杆的偏转角为 30 度。[[3]]求子弹的初速率。[[4]]这个过程分两段：碰撞瞬间，只有角动量守恒；碰后杆摆动，机械能守恒。[[5]]注意子弹击入后留在杆内，所以碰后是一起转动的。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 900,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例　子弹射入悬挂杆",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 238,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "长 l、质量 m′ 的杆可绕支点 O 自由",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 296,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "转动．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 386,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "质量 m、速率 v 的子弹射入杆内距支点",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 444,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "为 a 处，使杆偏转 30°．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 536,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "求：子弹的初速率 v．",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 632,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两段：",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "碰撞瞬间 L 守恒；",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 690,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "碰后摆动 ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "机械能守恒",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 786,
+     "w": 760,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "子弹留在杆内 ⇒ 碰后一起转动．",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 1000,
+     "y": 220,
+     "w": 560,
+     "h": 560,
+     "name": "bullet_rod"
+    }
+   ],
+   "heading": "例　子弹射入悬挂杆"
+  },
+  {
+   "id": 10,
+   "narration": "[[1]]第一段，碰撞瞬间。子弹与杆组成系统，碰撞时间极短，重力的冲量矩可以忽略，所以对 O 的角动量守恒。[[2]]碰前：只有子弹有角动量，m v a——子弹沿水平方向，力臂正好是 a。[[3]]碰后：子弹嵌在杆里距 O 为 a 处，杆绕 O 转，系统一起以 ω 转动。[[4]]转动惯量是杆的三分之一 m 撇 l 方，加上子弹的 m a 方。[[5]]于是 m v a 等于括号里那一堆乘 ω，这就是第一段的结果。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例　解（一）碰撞段",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "子弹 + 杆为系统，碰撞极短 ⇒ 对 O 的",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "角动量守恒",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 1580,
+     "h": 150,
+     "tex": "mva=\\left(\\frac{1}{3}m'l^2+ma^2\\right)\\omega",
+     "size": 40,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 512,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "碰前只有子弹有角动量（力臂 a）；碰后系统一起以 ω 转动．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 610,
+     "w": 1580,
+     "h": 62,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "杆的转动惯量：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "J",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "杆",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " = ⅓ m′l²（绕端点）",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 694,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "子弹：",
+        "size": 36,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "J",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "弹",
+        "size": 24,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": " = m a²",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 790,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "由此可解出 ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "ω = mva/(⅓m′l² + ma²)",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 866,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "但这个 ω 是碰后瞬间的，还要用能量关系定 v．",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "例　解（一）碰撞段"
+  },
+  {
+   "id": 11,
+   "narration": "[[1]]第二段，碰后摆动。以子弹、杆和地球为系统，只有重力做功，机械能守恒。[[2]]碰后瞬间的动能是二分之一 J ω 方；摆到 30 度时动能为零，全部变成重力势能。[[3]]势能有两项：子弹升高 a 乘（1 减 cos30°），杆的质心升高 l/2 乘（1 减 cos30°）。[[4]]把 ω 用 v 表示代进去，解出 v。[[5]]结果里带着（2 减根号 3）和两个因子，看着复杂，但每一步都是刚写过的式子。[[6]]量纲检查：根号里是 g 乘长度的平方乘质量平方，开方后是速度，再除以 m a，量纲正好。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例　解（二）摆动段",
+        "size": 48,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 232,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "以子弹、杆、地球为系统：只有重力做功 ⇒ ",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "机械能守恒",
+        "size": 34,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 312,
+     "w": 1580,
+     "h": 180,
+     "tex": "\\frac{1}{2}\\left(\\frac{1}{3}m'l^2+ma^2\\right)\\omega^2=mga(1-\\cos30^\\circ)+m'g\\frac{l}{2}(1-\\cos30^\\circ)",
+     "size": 24,
+     "color": "#111111",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 520,
+     "w": 1580,
+     "h": 56,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "代入 ",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "ω = mva/J",
+        "size": 32,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "，两边约去 ",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "(1 − cos30°) = (2 − √3)/2",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "：",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 610,
+     "w": 1580,
+     "h": 160,
+     "tex": "v=\\frac{1}{ma}\\sqrt{\\frac{g}{6}(2-\\sqrt{3})(m'l+2ma)(m'l^2+3ma^2)}",
+     "size": 30,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 800,
+     "w": 1580,
+     "h": 50,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "量纲检查：根号内是 g·长度²·质量²，开方后是速度×质量，",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 854,
+     "w": 1580,
+     "h": 50,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "再除以 m a，得速度 —— 量纲正确．",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 930,
+     "w": 1580,
+     "h": 50,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "每一步都只是刚写过的式子，不要被外形吓住．",
+        "size": 32,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "例　解（二）摆动段"
+  },
+  {
+   "id": 12,
+   "narration": "[[1]]做一道题。圆盘绕通过盘心、垂直盘面的水平轴转动，轴间摩擦不计。[[2]]两发质量相同、速度大小相同、方向相反、并在同一条直线上的子弹，同时射入圆盘并留在盘内。[[3]]注意这条直线离盘心有一段距离 d，所以两发子弹对轴的角动量是相加的——左边的向上、右边的向下，但两者对轴的转向相同。[[4]]一问：系统的角动量怎么变？两发子弹的角动量方向相同，加起来为正，所以 L 增大？[[5]]不对，要仔细看方向：左边的子弹向右运动、在轴上方，对轴产生逆时针；右边的向左运动、也在上方，产生顺时针。两者抵消。所以 L 不变，而转动惯量变大，ω 减小。选 B。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1500,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "随堂练习　两发子弹射入圆盘",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 232,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "圆盘绕通过盘心、垂直盘面的水平轴转动，轴间摩擦不计．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 290,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两发质量相同、速率相同、方向相反且在同一直线上的子弹，",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 348,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同时射入圆盘并留在盘内．则（　　）",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 240,
+     "y": 440,
+     "w": 660,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "A．L 增大，ω 增大",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 240,
+     "y": 530,
+     "w": 660,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "B．L 不变，ω 减小",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 980,
+     "y": 440,
+     "w": 660,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "C．L 不变，ω 不变",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 980,
+     "y": 530,
+     "w": 660,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "D．L 减小，ω 减小",
+        "size": 36,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 0,
+     "x": 1120,
+     "y": 590,
+     "w": 598,
+     "h": 405,
+     "name": "bullet_disc"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 660,
+     "w": 860,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两发子弹的角动量方向相反、大小相同，",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 714,
+     "w": 860,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "加起来为零 ⇒ L 不变；",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       },
+       {
+        "t": "J 变大 ⇒ ω 变小",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "interactions": [
+    {
+     "at": 2,
+     "q": "圆盘绕通过盘心、垂直盘面的水平轴转动。两发质量相同、速率相同、方向相反且在同一直线上的子弹，同时射入圆盘并留在盘内。则（　　）",
+     "answer": 1,
+     "options": [
+      "A．L 增大，ω 增大",
+      "B．L 不变，ω 减小",
+      "C．L 不变，ω 不变",
+      "D．L 减小，ω 减小"
+     ],
+     "explain": "两发子弹的动量等大反向（总动量为零），对轴的力臂相同，但转向相反，所以两个角动量恰好抵消，系统的总角动量不变。子弹留在盘内使转动惯量变大，由 Jω = 常量，角速度减小。选 B。"
+    }
+   ],
+   "heading": "随堂练习　两发子弹射入圆盘"
+  },
+  {
+   "id": 13,
+   "narration": "[[1]]小结。力矩的功 dW 等于 M dθ，W 等于 M 对 θ 的积分；M 为常量时就是 M 乘角位移。[[2]]力矩的功率 P 等于 Mω，和 P 等于 F v 对应。[[3]]转动动能 Ek 等于二分之一 Jω²，和 ½mv² 对应。[[4]]刚体定轴转动的动能定理：合外力矩做的功等于转动动能的增量。[[5]]这一节和上一节合起来，转动动力学的三件套就齐了：转动定律讲瞬时关系，角动量定理讲时间累积，动能定理讲空间累积。[[6]]下一节是选学的平面平行运动。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "力矩的功",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "：dW = M dθ，W = ∫M dθ；M 常量时 W = MΔθ．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "力矩的功率",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "：P = dW/dt = Mω．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 420,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "转动动能",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "：Ek = ½Jω²（对比 ½mv²）．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 510,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "动能定理",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       },
+       {
+        "t": "：W = ½Jω₂² − ½Jω₁²．",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 600,
+     "w": 1580,
+     "h": 56,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三件套：",
+        "size": 34,
+        "color": "#0000CD",
+        "b": true
+       },
+       {
+        "t": "M = Jα（瞬时）、∫M dt = ΔL（时间）、W = ΔEk（空间）．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 720,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "转动动力学的三条主线，与平动一一对应",
+        "size": 36,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 906,
+     "w": 1580,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "F = ma　↔　M = Jα　　∫F dt = Δp　↔　∫M dt = ΔL",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 960,
+     "w": 1580,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "W = ΔEk 在两边的形式完全相同．",
+        "size": 30,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "heading": "本节小结"
+  }
+ ]
+}

@@ -1,0 +1,3400 @@
+{
+ "title": "11-8 衍射光栅",
+ "nav": "11-8　衍射光栅",
+ "footer": "第十一章　光学",
+ "character": "aqiang",
+ "characters": [
+  {
+   "id": "aqiang",
+   "name": "阿强"
+  },
+  {
+   "id": "professor",
+   "name": "博士讲师"
+  },
+  {
+   "id": "zhongshan",
+   "name": "中山装先生"
+  }
+ ],
+ "duration": 562.06,
+ "slides": [
+  {
+   "id": 1,
+   "kind": "page",
+   "heading": "封面",
+   "narration": "第十一章，光学。第八节，衍射光栅。光栅是让光同时通过许多条等宽等距的缝，多缝干涉加上单缝衍射，得到又亮又细的谱线。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 292,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 十 一 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 300,
+     "y": 420,
+     "w": 1320,
+     "h": 160,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "光　　学",
+        "size": 110,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 420,
+     "y": 606,
+     "w": 1080,
+     "h": 130,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "11-8　衍射光栅",
+        "size": 56,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 766,
+     "w": 1480,
+     "h": 110,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "光栅方程　·　缺级　·　衍射光谱　·　布拉格公式",
+        "size": 34,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 220,
+     "y": 900,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "大学物理　第十一章",
+        "size": 34,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 0.0,
+    "2": 2.97,
+    "3": 6.27
+   },
+   "t_start": 0.0,
+   "t_end": 15.46,
+   "duration": 15.46,
+   "laser": []
+  },
+  {
+   "id": 2,
+   "kind": "page",
+   "heading": "一　光栅",
+   "narration": "先看什么是光栅。它是一组等宽、等距的狭缝。透光部分的宽度记作 b，不透光部分记作 b 撇。两者之和叫光栅常量，记作 d，等于 b 加 b 撇。光栅常量是光栅最重要的参数，常见的光栅每厘米有几千条刻痕，d 只有几微米。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　光栅",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 1150,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "等宽度、等距离的狭缝排列起来的光学元件，叫光栅．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 1400,
+     "y": 240,
+     "w": 350,
+     "h": 200,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 10,
+     "paras": [
+      [
+       {
+        "t": "常用光栅",
+        "size": 26,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "每厘米 300～6500 条",
+        "size": 22,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "d ≈ 1.5～33 μm",
+        "size": 22,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 380,
+     "w": 1580,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "透光宽度 b，不透光宽度 b′，二者之和为光栅常量 d．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 300,
+     "y": 500,
+     "w": 1320,
+     "h": 160,
+     "tex": "d=b+b'",
+     "size": 46,
+     "color": "#C00000",
+     "align": "center",
+     "important": true
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 700,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "每厘米刻痕数 N 与 d 的关系：d = 1/N．例：每厘米 6500 条 ⇒ d ≈ 1.54 μm．",
+        "size": 31,
+        "color": "#444",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [
+    {
+     "text": "d=b+b'",
+     "x": 960,
+     "y": 672,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 4
+    }
+   ],
+   "stepTimes": {
+    "1": 16.26,
+    "2": 22.73,
+    "3": 27.93,
+    "4": 33.92
+   },
+   "t_start": 16.26,
+   "t_end": 42.71,
+   "duration": 26.45,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 27.93,
+     "end": 32.93
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "kind": "page",
+   "heading": "二　条纹形成",
+   "narration": "再看条纹怎么形成。平行光照到光栅上，每条缝都衍射，各缝的衍射光再相互干涉。看图：光栅后面放透镜，把同一衍射角的光会聚到屏上同一点。相邻两缝到该点的光程差是 d 乘以 sinθ。当这个光程差等于波长的整数倍时，所有缝的光都同相叠加，形成又亮又细的主极大。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　光栅衍射条纹的形成",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "每条缝都衍射，各缝的衍射光再相互干涉——衍射与干涉的总效果．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 170,
+     "y": 350,
+     "w": 900,
+     "h": 465,
+     "name": "grating_setup"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 1120,
+     "y": 380,
+     "w": 620,
+     "h": 130,
+     "tex": "\\Delta=d\\sin\\theta",
+     "size": 42,
+     "color": "#0000CD",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1120,
+     "y": 540,
+     "w": 620,
+     "h": 160,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "Δ = kλ 时各缝同相叠加，形成主极大．",
+        "size": 31,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 43.51,
+    "2": 53.24,
+    "3": 60.17,
+    "4": 65.15
+   },
+   "t_start": 43.51,
+   "t_end": 74.16,
+   "duration": 30.65,
+   "laser": []
+  },
+  {
+   "id": 4,
+   "kind": "page",
+   "heading": "光栅方程",
+   "narration": "把条件写出来，就是光栅方程。d sinθ 等于正负 kλ，k 取零、一、二，等等。k 等于零是中央明纹，k 等于一是第一级，依此类推。光栅方程是本节所有计算的出发点。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　光栅方程",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 1580,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "主极大的位置由光栅方程给出：",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 300,
+     "y": 370,
+     "w": 1320,
+     "h": 180,
+     "tex": "d\\sin\\theta=\\pm k\\lambda\\quad(k=0,1,2,\\cdots)",
+     "size": 46,
+     "color": "#C00000",
+     "align": "center",
+     "important": true
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 600,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "k = 0 为中央明纹，k = 1、2 … 为第一级、第二级主极大．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 720,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "注意：这里用的是光栅常量 d，不是缝宽 b——这是与单缝衍射的关键区别．",
+        "size": 31,
+        "color": "#444",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 850,
+     "w": 1580,
+     "h": 90,
+     "fill": "#EDF3FB",
+     "line": "#EDF3FB",
+     "lw": 3,
+     "radius": 8,
+     "paras": [
+      [
+       {
+        "t": "多缝干涉决定“在哪里亮”，单缝衍射决定“亮到什么程度”．",
+        "size": 28,
+        "color": "#24456C",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    }
+   ],
+   "bullets": [
+    {
+     "text": "d\\sin\\theta=\\pm k\\lambda\\quad(k=0,1,2,\\cdots)",
+     "x": 960,
+     "y": 562,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 2
+    }
+   ],
+   "stepTimes": {
+    "1": 74.96,
+    "2": 78.98,
+    "3": 85.76,
+    "4": 92.04
+   },
+   "t_start": 74.96,
+   "t_end": 96.58,
+   "duration": 21.62,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 78.98,
+     "end": 83.98
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "kind": "page",
+   "heading": "最高级数",
+   "narration": "由光栅方程能看出级数有上限。因为 sinθ 不能超过 1，所以 k 不能超过 d 除以 λ。k 取能取到的最大整数，就是最高级数。所以光栅常量越小、波长越长，能看到的级数越少。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　条纹最高级数",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 1580,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "sinθ ≤ 1，所以级数有上限：",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 300,
+     "y": 360,
+     "w": 1320,
+     "h": 170,
+     "tex": "k_{\\max}\\le\\dfrac{d}{\\lambda}",
+     "size": 46,
+     "color": "#C00000",
+     "align": "center",
+     "important": true
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 580,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "k 取不超过 d/λ 的最大整数．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 700,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "d 越小、λ 越大，可观察的级数越少．",
+        "size": 31,
+        "color": "#444",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 820,
+     "w": 1580,
+     "h": 90,
+     "fill": "#EDF3FB",
+     "line": "#EDF3FB",
+     "lw": 3,
+     "radius": 8,
+     "paras": [
+      [
+       {
+        "t": "例：d = 2400 nm、λ = 600 nm ⇒ d/λ = 4，最高到第 4 级（且第 4 级在 90°）．",
+        "size": 27,
+        "color": "#24456C",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    }
+   ],
+   "bullets": [
+    {
+     "text": "k_{\\max}\\le\\dfrac{d}{\\lambda}",
+     "x": 960,
+     "y": 542,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 2
+    }
+   ],
+   "stepTimes": {
+    "1": 97.38,
+    "2": 101.81,
+    "3": 107.85,
+    "4": 112.5
+   },
+   "t_start": 97.38,
+   "t_end": 118.91,
+   "duration": 21.53,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 101.81,
+     "end": 106.81
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "kind": "page",
+   "heading": "缝数的影响",
+   "narration": "缝的条数会明显改变条纹的锐度。看图：两条缝时主极大很宽，六条缝时明显变窄，二十条缝时已经细成一条线。所以光栅的缝越多，谱线越细、越亮，这也是光栅比双缝更适合测波长的原因。想一想：如果只有两条缝，测波长会有什么问题？",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　缝数对条纹的影响",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "缝数 N 越多，主极大越细、越亮：",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 300,
+     "y": 330,
+     "w": 1200,
+     "h": 415,
+     "name": "grating_peaks"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 780,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "条纹宽度与 N 成反比；谱线越细，波长测量越精确．",
+        "size": 31,
+        "color": "#444",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 119.71,
+    "2": 124.02,
+    "3": 132.96
+   },
+   "t_start": 119.71,
+   "t_end": 147.05,
+   "duration": 27.34,
+   "laser": []
+  },
+  {
+   "id": 7,
+   "kind": "page",
+   "heading": "缺级",
+   "narration": "还有一个重要现象：缺级。主极大由多缝干涉决定，但每条缝自己还有衍射包络。如果某个主极大正好落在单缝衍射的暗纹上，这个主极大就消失了，这叫缺级。条件是两个方程同时满足：d sinθ 等于 kλ，同时 b sinθ 等于 k 撇 λ，于是 k 等于 d 除以 b 乘以 k 撇。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　缺级",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "主极大落在单缝衍射暗纹上时消失，叫缺级．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 700,
+     "y": 330,
+     "w": 940,
+     "h": 408,
+     "name": "missing_orders"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 430,
+     "w": 520,
+     "h": 140,
+     "tex": "k=\\dfrac{d}{b}k'",
+     "size": 36,
+     "color": "#0000CD",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 590,
+     "w": 520,
+     "h": 130,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "k′ = 1,2,…；d/b = 3 时，k = ±3、±6 … 缺级．",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 800,
+     "w": 1580,
+     "h": 90,
+     "fill": "#EDF3FB",
+     "line": "#EDF3FB",
+     "lw": 3,
+     "radius": 8,
+     "paras": [
+      [
+       {
+        "t": "缺级不是“缝间干涉”出错，而是被单缝衍射的暗纹挡住了．",
+        "size": 27,
+        "color": "#24456C",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 147.85,
+    "2": 151.44,
+    "3": 157.36,
+    "4": 165.44
+   },
+   "t_start": 147.85,
+   "t_end": 177.49,
+   "duration": 29.64,
+   "laser": []
+  },
+  {
+   "id": 8,
+   "kind": "page",
+   "heading": "三　衍射光谱",
+   "narration": "如果入射光不是单色光，而是白光，会出现什么？由 d sinθ 等于 kλ 可知，波长不同，同一级的衍射角不同。所以每一级都展开成一条彩色光带，叫衍射光谱。中央是白色，两侧对称地排列着第一级、第二级光谱，级次越高越靠外。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　衍射光谱",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1150,
+     "h": 120,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "白光入射时，同一级中不同波长的衍射角不同，展开成彩色光谱．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 1400,
+     "y": 230,
+     "w": 350,
+     "h": 220,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 10,
+     "paras": [
+      [
+       {
+        "t": "级次与颜色",
+        "size": 24,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "0 级：白",
+        "size": 22,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "1 级：紫→红",
+        "size": 22,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "2 级：更宽",
+        "size": 22,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 350,
+     "w": 1580,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "中央明纹为白色，两侧对称排列第一级、第二级光谱．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 300,
+     "y": 480,
+     "w": 1320,
+     "h": 90,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "白　│　紫 → 红　│　紫 → 红　│",
+        "size": 30,
+        "color": "#555",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 620,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "级次越高，光谱越宽、越容易与相邻级次重叠．",
+        "size": 31,
+        "color": "#444",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 800,
+     "w": 1580,
+     "h": 90,
+     "fill": "#EDF3FB",
+     "line": "#EDF3FB",
+     "lw": 3,
+     "radius": 8,
+     "paras": [
+      [
+       {
+        "t": "同一级里 λ 越大 θ 越大：紫在内、红在外，级次越高越展越宽．",
+        "size": 27,
+        "color": "#24456C",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 178.29,
+    "2": 184.2,
+    "3": 191.39,
+    "4": 197.41
+   },
+   "t_start": 178.29,
+   "t_end": 204.93,
+   "duration": 26.64,
+   "laser": []
+  },
+  {
+   "id": 9,
+   "kind": "page",
+   "heading": "光谱重叠与分类",
+   "narration": "级次一高，问题就来了：第二级的红光可能和第三级的紫光落在同一角度上，这叫光谱重叠。所以用光栅测波长时，要先判断有没有重叠，选不重叠的级次。想一想：怎样判断第二级红光会不会与第三级紫光重叠？按来源，光谱分三类：炽热固体发出连续光谱，放电管中的气体发出线状光谱，分子发出带状光谱。不同元素有各自特定的谱线，这就是光谱分析的依据。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　光谱重叠与光谱分类",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 1580,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "重叠条件：k 级红光与 k+1 级紫光同角，即 kλ_红 = (k+1)λ_紫．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 380,
+     "w": 1580,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "测波长时要选不重叠的级次．",
+        "size": 31,
+        "color": "#444",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 500,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "光谱分类：连续光谱（炽热物体）、线状光谱（气体放电）、带状光谱（分子）．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 620,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "每种元素有特定谱线——光谱分析据此判断物质成分．",
+        "size": 31,
+        "color": "#0000CD",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 750,
+     "w": 1580,
+     "h": 90,
+     "fill": "#EDF3FB",
+     "line": "#EDF3FB",
+     "lw": 3,
+     "radius": 8,
+     "paras": [
+      [
+       {
+        "t": "光栅 = 高精度“分光尺”：谱线细、色散大，是光谱仪的核心元件．",
+        "size": 28,
+        "color": "#24456C",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 205.73,
+    "2": 214.58,
+    "3": 227.23,
+    "4": 237.4
+   },
+   "t_start": 205.73,
+   "t_end": 243.22,
+   "duration": 37.49,
+   "laser": []
+  },
+  {
+   "id": 10,
+   "kind": "page",
+   "heading": "例1　题",
+   "narration": "例一。用白光垂直照射每厘米有 6500 条刻痕的平面光栅。白光波长范围约 400 到 760 纳米。求第三级光谱的张角。提示：先算光栅常量，再检查第三级是否所有波长都能出现。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例1　白光第三级光谱的张角",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 1580,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "白光垂直照射每厘米 6500 条刻痕的平面光栅．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 380,
+     "w": 1580,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "白光波长范围约 400 nm（紫）～ 760 nm（红）．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 510,
+     "w": 1580,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "求：第三级光谱的张角．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 660,
+     "w": 1580,
+     "h": 90,
+     "fill": "#EDF3FB",
+     "line": "#EDF3FB",
+     "lw": 3,
+     "radius": 8,
+     "paras": [
+      [
+       {
+        "t": "先算 d = 1/6500 cm，再检查 3λ ≤ d 是否对所有波长成立．",
+        "size": 28,
+        "color": "#24456C",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 1350,
+     "y": 330,
+     "w": 400,
+     "h": 210,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 10,
+     "paras": [
+      [
+       {
+        "t": "已知",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "N = 6500 /cm",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "λ = 400～760 nm",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 244.02,
+    "2": 252.38,
+    "3": 256.76,
+    "4": 259.85
+   },
+   "t_start": 244.02,
+   "t_end": 267.01,
+   "duration": 22.99,
+   "laser": []
+  },
+  {
+   "id": 11,
+   "kind": "page",
+   "heading": "例1　解",
+   "narration": "先算光栅常量：d 等于 1 厘米除以 6500，等于 1.54 乘以 10 的负 4 次方厘米，也就是 1538 纳米。检查第三级：红光要求 3 乘以 760 纳米等于 2280 纳米，已经大于 d，所以第三级的红光根本出不来。能出现的最大波长是 d 除以 3，等于 513 纳米，是绿光。所以第三级光谱只从 400 纳米到 513 纳米，张角等于 90 度减去紫光的衍射角。算出来约为 38.7 度。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例1　解",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "光栅常量：",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 300,
+     "y": 330,
+     "w": 1320,
+     "h": 160,
+     "tex": "d=\\dfrac{1\\ \\mathrm{cm}}{6500}=1.54\\times10^{-4}\\ \\mathrm{cm}=1538\\ \\mathrm{nm}",
+     "size": 34,
+     "color": "#0000CD",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 520,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第三级：3×760 nm = 2280 nm > d，红光出不来．",
+        "size": 31,
+        "color": "#C00000",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 300,
+     "y": 630,
+     "w": 1320,
+     "h": 150,
+     "tex": "\\lambda_{\\max}=\\dfrac{d}{3}=513\\ \\mathrm{nm}\\ (\\text{绿光})",
+     "size": 34,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 300,
+     "y": 800,
+     "w": 1320,
+     "h": 160,
+     "tex": "\\Delta\\theta=90^{\\circ}-\\arcsin\\dfrac{3\\times400}{1538}\\approx38.7^{\\circ}",
+     "size": 34,
+     "color": "#0000CD",
+     "align": "center"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 950,
+     "w": 1580,
+     "h": 55,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 8,
+     "paras": [
+      [
+       {
+        "t": "第三级光谱只有 400～513 nm，张角约 38.7°．",
+        "size": 27,
+        "color": "#C00000",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 267.81,
+    "2": 277.93,
+    "3": 288.84,
+    "4": 295.41,
+    "5": 304.19
+   },
+   "t_start": 267.81,
+   "t_end": 307.99,
+   "duration": 40.18,
+   "laser": []
+  },
+  {
+   "id": 12,
+   "kind": "page",
+   "heading": "例2　题",
+   "narration": "例二。波长 600 纳米的单色光垂直入射到平面透射光栅上。测得第二级主极大的衍射角为 30 度，且第三级缺级。求光栅常量 d、透光缝的最小宽度 b，以及实际能观察到哪几级明纹。提示：第二级用光栅方程；第三级缺级用 k 等于 d 除以 b 乘以 k 撇。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例2　光栅常量与缺级",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 1580,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "λ = 600 nm 的单色光垂直入射平面透射光栅．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 380,
+     "w": 1580,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第二级主极大的衍射角为 30°，且第三级缺级．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 510,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "求：d、b 的最小值，以及实际能看到的级次．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 670,
+     "w": 1580,
+     "h": 90,
+     "fill": "#EDF3FB",
+     "line": "#EDF3FB",
+     "lw": 3,
+     "radius": 8,
+     "paras": [
+      [
+       {
+        "t": "第二级用光栅方程；第三级缺级用 k = (d/b)k′，取 k′ = 1 得最小 b．",
+        "size": 28,
+        "color": "#24456C",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 1350,
+     "y": 330,
+     "w": 400,
+     "h": 210,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 10,
+     "paras": [
+      [
+       {
+        "t": "已知",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "λ = 600 nm",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "θ₂ = 30°",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "k = 3 缺级",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 308.79,
+    "2": 316.57,
+    "3": 322.44,
+    "4": 329.75
+   },
+   "t_start": 308.79,
+   "t_end": 337.52,
+   "duration": 28.73,
+   "laser": []
+  },
+  {
+   "id": 13,
+   "kind": "page",
+   "heading": "例2　解",
+   "narration": "第一问：由第二级的光栅方程，d 乘以 sin30 度等于 2 乘以 600 纳米。解出 d 等于 2400 纳米，也就是 2.4 微米。第二问：第三级缺级，说明 d 除以 b 等于 3，所以 b 等于 800 纳米。第三问：最高级数 d 除以 λ 等于 4，但第四级对应 90 度，看不到。再加上第三级缺级，实际能看到的是 0、正负 1、正负 2，共五条。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例2　解",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（1）由光栅方程：",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 300,
+     "y": 330,
+     "w": 1320,
+     "h": 150,
+     "tex": "d\\sin30^{\\circ}=2\\times600\\ \\mathrm{nm}\\ \\Rightarrow\\ d=2400\\ \\mathrm{nm}",
+     "size": 36,
+     "color": "#0000CD",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 510,
+     "w": 1580,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（2）第三级缺级，取 k′ = 1：",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 300,
+     "y": 600,
+     "w": 1320,
+     "h": 150,
+     "tex": "b=\\dfrac{d}{3}=800\\ \\mathrm{nm}",
+     "size": 38,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 780,
+     "w": 1580,
+     "h": 100,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（3）d/λ = 4，第 4 级在 90°，看不到；第 3 级缺级 ⇒ 只剩 0、±1、±2．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 910,
+     "w": 1580,
+     "h": 90,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 8,
+     "paras": [
+      [
+       {
+        "t": "d = 2400 nm，b = 800 nm，实际 5 条明纹（0、±1、±2）．",
+        "size": 28,
+        "color": "#C00000",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 338.32,
+    "2": 345.66,
+    "3": 350.64,
+    "4": 357.93,
+    "5": 365.39
+   },
+   "t_start": 338.32,
+   "t_end": 373.12,
+   "duration": 34.8,
+   "laser": []
+  },
+  {
+   "id": 14,
+   "kind": "page",
+   "heading": "四　X 射线衍射",
+   "narration": "最后看 X 射线的衍射。1895 年伦琴发现，高速电子打在金属上会发出穿透性很强的射线，叫 X 射线。X 射线波长只有零点几纳米，比可见光小三个数量级，所以普通光栅对它没用。1912 年劳厄想到：晶体里原子排列的间距正好是零点几纳米，可以当天然光栅。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　X 射线的衍射",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "X 射线：高速电子撞击金属发出的穿透性射线（伦琴，1895）．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 380,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "X 射线波长约 0.01～1 nm，比可见光小三个数量级．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 510,
+     "w": 1580,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "普通光栅对它无效——d 必须与 λ 同量级．",
+        "size": 31,
+        "color": "#C00000",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 630,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "晶体中原子间距正好是 0.1 nm 量级，可作天然光栅（劳厄，1912）．",
+        "size": 31,
+        "color": "#0000CD",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 760,
+     "w": 1580,
+     "h": 90,
+     "fill": "#EDF3FB",
+     "line": "#EDF3FB",
+     "lw": 3,
+     "radius": 8,
+     "paras": [
+      [
+       {
+        "t": "劳厄斑点：单晶片的 X 射线衍射图，斑点位置反映晶格结构．",
+        "size": 28,
+        "color": "#24456C",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 373.92,
+    "2": 377.39,
+    "3": 385.54,
+    "4": 393.57
+   },
+   "t_start": 373.92,
+   "t_end": 401.64,
+   "duration": 27.72,
+   "laser": []
+  },
+  {
+   "id": 15,
+   "kind": "page",
+   "heading": "布拉格公式",
+   "narration": "1913 年布拉格父子给出了定量解释。把晶体看成一层层平行的原子面，晶面间距记作 d。X 射线以掠射角 θ 入射，相邻两个晶面反射的射线光程差是 2d sinθ。干涉加强的条件就是 2d sinθ 等于 kλ，这叫布拉格公式。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　布拉格公式",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "晶体 = 一层层平行原子面，晶面间距 d，掠射角 θ．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 2,
+     "x": 170,
+     "y": 350,
+     "w": 820,
+     "h": 462,
+     "name": "bragg"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 1080,
+     "y": 380,
+     "w": 660,
+     "h": 150,
+     "tex": "2d\\sin\\theta=k\\lambda",
+     "size": 42,
+     "color": "#C00000",
+     "align": "left",
+     "important": true
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1080,
+     "y": 560,
+     "w": 660,
+     "h": 120,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "布拉格公式：k = 1,2,3 … 为衍射级次．",
+        "size": 30,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [
+    {
+     "text": "2d\\sin\\theta=k\\lambda",
+     "x": 1410,
+     "y": 542,
+     "qa": [],
+     "hotspot": false,
+     "important": true,
+     "elIdx": 3
+    }
+   ],
+   "stepTimes": {
+    "1": 402.44,
+    "2": 407.04,
+    "3": 412.77,
+    "4": 420.85
+   },
+   "t_start": 402.44,
+   "t_end": 428.41,
+   "duration": 25.97,
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 412.77,
+     "end": 417.77
+    }
+   ]
+  },
+  {
+   "id": 16,
+   "kind": "page",
+   "heading": "布拉格公式的用途",
+   "narration": "布拉格公式有两个用途。已知晶面间距 d，测出掠射角，就能算出 X 射线的波长，从而研究原子结构。反过来，已知波长，测出掠射角，就能求出晶面间距，从而研究晶体结构。DNA 双螺旋结构就是靠 X 射线衍射照片推出来的。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　布拉格公式的用途",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 780,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 已知 d，测 θ ⇒ 求 λ：研究 X 射线谱、原子结构．",
+        "size": 31,
+        "color": "#0000CD",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 420,
+     "w": 780,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 已知 λ，测 θ ⇒ 求 d：研究晶体结构、材料性能．",
+        "size": 31,
+        "color": "#C00000",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1000,
+     "y": 250,
+     "w": 750,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "DNA 双螺旋结构（1953）就来自 X 射线衍射照片．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1000,
+     "y": 420,
+     "w": 750,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "X 射线衍射已成为材料、生物、化学的常规手段．",
+        "size": 30,
+        "color": "#444",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 620,
+     "w": 1580,
+     "h": 96,
+     "fill": "#EDF3FB",
+     "line": "#EDF3FB",
+     "lw": 3,
+     "radius": 8,
+     "paras": [
+      [
+       {
+        "t": "布拉格公式把“测角”变成了“测长度”——这是 X 射线晶体学的起点．",
+        "size": 28,
+        "color": "#24456C",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 790,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "劳厄斑点的位置与强度，直接反映晶格的对称性和原子排列．",
+        "size": 30,
+        "color": "#444",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 429.21,
+    "2": 432.47,
+    "3": 440.45,
+    "4": 448.39
+   },
+   "t_start": 429.21,
+   "t_end": 453.91,
+   "duration": 24.7,
+   "laser": []
+  },
+  {
+   "id": 17,
+   "kind": "page",
+   "heading": "例3　题",
+   "narration": "例三。以铜为阳极靶的 X 射线管发出的特征谱线波长约 0.15 纳米。当它以掠射角 11 度 15 分照射某组晶面时，在反射方向测得第一级衍射极大。求这组晶面的间距。又问：若改用钨靶发出的连续 X 射线照射同一组晶面，在 36 度方向上，第一级衍射极大对应什么波长？",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例3　X 射线测晶面间距",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 250,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "铜靶特征谱线 λ ≈ 0.15 nm，掠射角 θ₁ = 11°15′，第一级极大．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 370,
+     "w": 1580,
+     "h": 80,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "求：该组晶面的间距 d．",
+        "size": 32,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 490,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "改用钨靶的连续谱，在 θ₂ = 36° 方向测得第一级极大，求对应波长．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 170,
+     "y": 640,
+     "w": 1580,
+     "h": 90,
+     "fill": "#EDF3FB",
+     "line": "#EDF3FB",
+     "lw": 3,
+     "radius": 8,
+     "paras": [
+      [
+       {
+        "t": "第一级取 k = 1；11°15′ = 11.25°．",
+        "size": 28,
+        "color": "#24456C",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 810,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第二问里晶面间距已由第一问求出，同一个 d 代回去即可．",
+        "size": 30,
+        "color": "#444",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 1350,
+     "y": 330,
+     "w": 400,
+     "h": 210,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 10,
+     "paras": [
+      [
+       {
+        "t": "已知",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "λ = 0.15 nm",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "θ₁ = 11.25°",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "θ₂ = 36°",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 454.71,
+    "2": 463.33,
+    "3": 471.36,
+    "4": 474.11
+   },
+   "t_start": 454.71,
+   "t_end": 485.05,
+   "duration": 30.34,
+   "laser": []
+  },
+  {
+   "id": 18,
+   "kind": "page",
+   "heading": "例3　解",
+   "narration": "第一问：由布拉格公式，取 k 等于 1，d 等于 λ 除以 2 sinθ₁。代入 0.15 纳米和 11.25 度，得 d 约 0.384 纳米。第二问：同一组晶面、同样的级次，波长正比于 sinθ。所以 λ₂ 等于 2 乘以 0.384 乘以 sin36 度，约 0.45 纳米。这也说明连续谱里只有满足布拉格条件的那个波长会被强烈反射。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例3　解",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 1580,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（1）由布拉格公式（k = 1）：",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 1400,
+     "y": 240,
+     "w": 350,
+     "h": 200,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 10,
+     "paras": [
+      [
+       {
+        "t": "答案",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "d = 0.384 nm",
+        "size": 22,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "λ₂ = 0.45 nm",
+        "size": 22,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 300,
+     "y": 330,
+     "w": 1320,
+     "h": 170,
+     "tex": "d=\\dfrac{\\lambda}{2\\sin\\theta_1}=\\dfrac{0.15}{2\\sin11.25^{\\circ}}=0.384\\ \\mathrm{nm}",
+     "size": 34,
+     "color": "#0000CD",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 530,
+     "w": 1580,
+     "h": 70,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（2）同一晶面、第一级：",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 300,
+     "y": 620,
+     "w": 1320,
+     "h": 170,
+     "tex": "\\lambda_2=2d\\sin\\theta_2=2\\times0.384\\times\\sin36^{\\circ}=0.45\\ \\mathrm{nm}",
+     "size": 34,
+     "color": "#C00000",
+     "align": "center"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 820,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "连续谱中只有 0.45 nm 这个波长满足 36° 的布拉格条件，被强烈反射．",
+        "size": 30,
+        "color": "#444",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 485.85,
+    "2": 492.78,
+    "3": 498.87,
+    "4": 504.89,
+    "5": 511.41
+   },
+   "t_start": 485.85,
+   "t_end": 518.27,
+   "duration": 32.42,
+   "laser": []
+  },
+  {
+   "id": 19,
+   "kind": "page",
+   "heading": "本节小结",
+   "narration": "小结。光栅常量 d 等于 b 加 b 撇，光栅方程 d sinθ 等于正负 kλ。最高级数由 k 小于等于 d 除以 λ 决定；缝数越多，主极大越细越亮。缺级：k 等于 d 除以 b 乘以 k 撇，此时该级主极大落在单缝暗纹上而消失。白光入射形成衍射光谱，级次高时要注意重叠。X 射线用晶体作光栅，满足布拉格公式 2d sinθ 等于 kλ。下一节讲光的偏振。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 52,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 760,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① d = b + b′；光栅方程 d sinθ = ±kλ．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 400,
+     "w": 760,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② k_max ≤ d/λ；N 越大，主极大越细越亮．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1000,
+     "y": 240,
+     "w": 750,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 缺级：k = (d/b)k′．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1000,
+     "y": 400,
+     "w": 750,
+     "h": 140,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 白光 → 衍射光谱；注意级次重叠．",
+        "size": 31,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 570,
+     "w": 1580,
+     "h": 96,
+     "fill": "#EDF3FB",
+     "line": "#EDF3FB",
+     "lw": 3,
+     "radius": 8,
+     "paras": [
+      [
+       {
+        "t": "光栅方程 d sinθ = kλ；布拉格公式 2d sinθ = kλ——一个是缝间，一个是晶面间．",
+        "size": 27,
+        "color": "#24456C",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111",
+     "decorative": true
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 700,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "下一节：光的偏振——光波是横波，振动方向可以有选择．",
+        "size": 32,
+        "color": "#0000CD",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 519.07,
+    "2": 528.29,
+    "3": 535.72,
+    "4": 543.7,
+    "5": 549.21,
+    "6": 556.67
+   },
+   "t_start": 519.07,
+   "t_end": 560.06,
+   "duration": 40.99,
+   "laser": []
+  }
+ ],
+ "subtitles": [
+  {
+   "slide": 1,
+   "start": 0.0,
+   "end": 2.57,
+   "text": "第十一章，光学。"
+  },
+  {
+   "slide": 1,
+   "start": 2.97,
+   "end": 5.87,
+   "text": "第八节，衍射光栅。"
+  },
+  {
+   "slide": 1,
+   "start": 6.27,
+   "end": 14.89,
+   "text": "光栅是让光同时通过许多条等宽等距的缝，多缝干涉加上单缝衍射，得到又亮又细的谱线。"
+  },
+  {
+   "slide": 2,
+   "start": 16.26,
+   "end": 18.52,
+   "text": "先看什么是光栅。"
+  },
+  {
+   "slide": 2,
+   "start": 18.92,
+   "end": 22.33,
+   "text": "它是一组等宽、等距的狭缝。"
+  },
+  {
+   "slide": 2,
+   "start": 22.73,
+   "end": 27.53,
+   "text": "透光部分的宽度记作 b，不透光部分记作 b 撇。"
+  },
+  {
+   "slide": 2,
+   "start": 27.93,
+   "end": 33.52,
+   "text": "两者之和叫光栅常量，记作 d，等于 b 加 b 撇。"
+  },
+  {
+   "slide": 2,
+   "start": 33.92,
+   "end": 42.03,
+   "text": "光栅常量是光栅最重要的参数，常见的光栅每厘米有几千条刻痕，d 只有几微米。"
+  },
+  {
+   "slide": 3,
+   "start": 43.51,
+   "end": 45.91,
+   "text": "再看条纹怎么形成。"
+  },
+  {
+   "slide": 3,
+   "start": 46.31,
+   "end": 52.84,
+   "text": "平行光照到光栅上，每条缝都衍射，各缝的衍射光再相互干涉。"
+  },
+  {
+   "slide": 3,
+   "start": 53.24,
+   "end": 59.77,
+   "text": "看图：光栅后面放透镜，把同一衍射角的光会聚到屏上同一点。"
+  },
+  {
+   "slide": 3,
+   "start": 60.17,
+   "end": 64.75,
+   "text": "相邻两缝到该点的光程差是 d 乘以 sinθ。"
+  },
+  {
+   "slide": 3,
+   "start": 65.15,
+   "end": 73.48,
+   "text": "当这个光程差等于波长的整数倍时，所有缝的光都同相叠加，形成又亮又细的主极大。"
+  },
+  {
+   "slide": 4,
+   "start": 74.96,
+   "end": 78.58,
+   "text": "把条件写出来，就是光栅方程。"
+  },
+  {
+   "slide": 4,
+   "start": 78.98,
+   "end": 85.36,
+   "text": "d sinθ 等于正负 kλ，k 取零、一、二，等等。"
+  },
+  {
+   "slide": 4,
+   "start": 85.76,
+   "end": 91.64,
+   "text": "k 等于零是中央明纹，k 等于一是第一级，依此类推。"
+  },
+  {
+   "slide": 4,
+   "start": 92.04,
+   "end": 95.95,
+   "text": "光栅方程是本节所有计算的出发点。"
+  },
+  {
+   "slide": 5,
+   "start": 97.38,
+   "end": 101.41,
+   "text": "由光栅方程能看出级数有上限。"
+  },
+  {
+   "slide": 5,
+   "start": 101.81,
+   "end": 107.45,
+   "text": "因为 sinθ 不能超过 1，所以 k 不能超过 d 除以 λ。"
+  },
+  {
+   "slide": 5,
+   "start": 107.85,
+   "end": 112.1,
+   "text": "k 取能取到的最大整数，就是最高级数。"
+  },
+  {
+   "slide": 5,
+   "start": 112.5,
+   "end": 118.28,
+   "text": "所以光栅常量越小、波长越长，能看到的级数越少。"
+  },
+  {
+   "slide": 6,
+   "start": 119.71,
+   "end": 123.62,
+   "text": "缝的条数会明显改变条纹的锐度。"
+  },
+  {
+   "slide": 6,
+   "start": 124.02,
+   "end": 132.56,
+   "text": "看图：两条缝时主极大很宽，六条缝时明显变窄，二十条缝时已经细成一条线。"
+  },
+  {
+   "slide": 6,
+   "start": 132.96,
+   "end": 140.81,
+   "text": "所以光栅的缝越多，谱线越细、越亮，这也是光栅比双缝更适合测波长的原因。"
+  },
+  {
+   "slide": 6,
+   "start": 141.21,
+   "end": 146.15,
+   "text": "想一想：如果只有两条缝，测波长会有什么问题？"
+  },
+  {
+   "slide": 7,
+   "start": 147.85,
+   "end": 151.04,
+   "text": "还有一个重要现象：缺级。"
+  },
+  {
+   "slide": 7,
+   "start": 151.44,
+   "end": 156.96,
+   "text": "主极大由多缝干涉决定，但每条缝自己还有衍射包络。"
+  },
+  {
+   "slide": 7,
+   "start": 157.36,
+   "end": 165.04,
+   "text": "如果某个主极大正好落在单缝衍射的暗纹上，这个主极大就消失了，这叫缺级。"
+  },
+  {
+   "slide": 7,
+   "start": 165.44,
+   "end": 176.86,
+   "text": "条件是两个方程同时满足：d sinθ 等于 kλ，同时 b sinθ 等于 k 撇 λ，于是 k 等于 d 除以 b 乘以 k 撇。"
+  },
+  {
+   "slide": 8,
+   "start": 178.29,
+   "end": 183.55,
+   "text": "如果入射光不是单色光，而是白光，会出现什么？"
+  },
+  {
+   "slide": 8,
+   "start": 184.2,
+   "end": 190.99,
+   "text": "由 d sinθ 等于 kλ 可知，波长不同，同一级的衍射角不同。"
+  },
+  {
+   "slide": 8,
+   "start": 191.39,
+   "end": 197.01,
+   "text": "所以每一级都展开成一条彩色光带，叫衍射光谱。"
+  },
+  {
+   "slide": 8,
+   "start": 197.41,
+   "end": 204.3,
+   "text": "中央是白色，两侧对称地排列着第一级、第二级光谱，级次越高越靠外。"
+  },
+  {
+   "slide": 9,
+   "start": 205.73,
+   "end": 214.18,
+   "text": "级次一高，问题就来了：第二级的红光可能和第三级的紫光落在同一角度上，这叫光谱重叠。"
+  },
+  {
+   "slide": 9,
+   "start": 214.58,
+   "end": 220.44,
+   "text": "所以用光栅测波长时，要先判断有没有重叠，选不重叠的级次。"
+  },
+  {
+   "slide": 9,
+   "start": 220.84,
+   "end": 226.58,
+   "text": "想一想：怎样判断第二级红光会不会与第三级紫光重叠？"
+  },
+  {
+   "slide": 9,
+   "start": 227.23,
+   "end": 237.0,
+   "text": "按来源，光谱分三类：炽热固体发出连续光谱，放电管中的气体发出线状光谱，分子发出带状光谱。"
+  },
+  {
+   "slide": 9,
+   "start": 237.4,
+   "end": 242.54,
+   "text": "不同元素有各自特定的谱线，这就是光谱分析的依据。"
+  },
+  {
+   "slide": 10,
+   "start": 244.02,
+   "end": 245.89,
+   "text": "例一。"
+  },
+  {
+   "slide": 10,
+   "start": 246.29,
+   "end": 251.98,
+   "text": "用白光垂直照射每厘米有 6500 条刻痕的平面光栅。"
+  },
+  {
+   "slide": 10,
+   "start": 252.38,
+   "end": 256.36,
+   "text": "白光波长范围约 400 到 760 纳米。"
+  },
+  {
+   "slide": 10,
+   "start": 256.76,
+   "end": 259.45,
+   "text": "求第三级光谱的张角。"
+  },
+  {
+   "slide": 10,
+   "start": 259.85,
+   "end": 266.33,
+   "text": "提示：先算光栅常量，再检查第三级是否所有波长都能出现。"
+  },
+  {
+   "slide": 11,
+   "start": 267.81,
+   "end": 277.53,
+   "text": "先算光栅常量：d 等于 1 厘米除以 6500，等于 1.54 乘以 10 的负 4 次方厘米，也就是 1538 纳米。"
+  },
+  {
+   "slide": 11,
+   "start": 277.93,
+   "end": 288.44,
+   "text": "检查第三级：红光要求 3 乘以 760 纳米等于 2280 纳米，已经大于 d，所以第三级的红光根本出不来。"
+  },
+  {
+   "slide": 11,
+   "start": 288.84,
+   "end": 295.01,
+   "text": "能出现的最大波长是 d 除以 3，等于 513 纳米，是绿光。"
+  },
+  {
+   "slide": 11,
+   "start": 295.41,
+   "end": 303.79,
+   "text": "所以第三级光谱只从 400 纳米到 513 纳米，张角等于 90 度减去紫光的衍射角。"
+  },
+  {
+   "slide": 11,
+   "start": 304.19,
+   "end": 307.31,
+   "text": "算出来约为 38.7 度。"
+  },
+  {
+   "slide": 12,
+   "start": 308.79,
+   "end": 310.66,
+   "text": "例二。"
+  },
+  {
+   "slide": 12,
+   "start": 311.06,
+   "end": 316.17,
+   "text": "波长 600 纳米的单色光垂直入射到平面透射光栅上。"
+  },
+  {
+   "slide": 12,
+   "start": 316.57,
+   "end": 322.04,
+   "text": "测得第二级主极大的衍射角为 30 度，且第三级缺级。"
+  },
+  {
+   "slide": 12,
+   "start": 322.44,
+   "end": 329.35,
+   "text": "求光栅常量 d、透光缝的最小宽度 b，以及实际能观察到哪几级明纹。"
+  },
+  {
+   "slide": 12,
+   "start": 329.75,
+   "end": 336.83,
+   "text": "提示：第二级用光栅方程；第三级缺级用 k 等于 d 除以 b 乘以 k 撇。"
+  },
+  {
+   "slide": 13,
+   "start": 338.32,
+   "end": 345.26,
+   "text": "第一问：由第二级的光栅方程，d 乘以 sin30 度等于 2 乘以 600 纳米。"
+  },
+  {
+   "slide": 13,
+   "start": 345.66,
+   "end": 350.24,
+   "text": "解出 d 等于 2400 纳米，也就是 2.4 微米。"
+  },
+  {
+   "slide": 13,
+   "start": 350.64,
+   "end": 357.53,
+   "text": "第二问：第三级缺级，说明 d 除以 b 等于 3，所以 b 等于 800 纳米。"
+  },
+  {
+   "slide": 13,
+   "start": 357.93,
+   "end": 364.99,
+   "text": "第三问：最高级数 d 除以 λ 等于 4，但第四级对应 90 度，看不到。"
+  },
+  {
+   "slide": 13,
+   "start": 365.39,
+   "end": 372.45,
+   "text": "再加上第三级缺级，实际能看到的是 0、正负 1、正负 2，共五条。"
+  },
+  {
+   "slide": 14,
+   "start": 373.92,
+   "end": 376.99,
+   "text": "最后看 X 射线的衍射。"
+  },
+  {
+   "slide": 14,
+   "start": 377.39,
+   "end": 385.14,
+   "text": "1895 年伦琴发现，高速电子打在金属上会发出穿透性很强的射线，叫 X 射线。"
+  },
+  {
+   "slide": 14,
+   "start": 385.54,
+   "end": 393.17,
+   "text": "X 射线波长只有零点几纳米，比可见光小三个数量级，所以普通光栅对它没用。"
+  },
+  {
+   "slide": 14,
+   "start": 393.57,
+   "end": 401.01,
+   "text": "1912 年劳厄想到：晶体里原子排列的间距正好是零点几纳米，可以当天然光栅。"
+  },
+  {
+   "slide": 15,
+   "start": 402.44,
+   "end": 406.64,
+   "text": "1913 年布拉格父子给出了定量解释。"
+  },
+  {
+   "slide": 15,
+   "start": 407.04,
+   "end": 412.37,
+   "text": "把晶体看成一层层平行的原子面，晶面间距记作 d。"
+  },
+  {
+   "slide": 15,
+   "start": 412.77,
+   "end": 420.45,
+   "text": "X 射线以掠射角 θ 入射，相邻两个晶面反射的射线光程差是 2d sinθ。"
+  },
+  {
+   "slide": 15,
+   "start": 420.85,
+   "end": 427.79,
+   "text": "干涉加强的条件就是 2d sinθ 等于 kλ，这叫布拉格公式。"
+  },
+  {
+   "slide": 16,
+   "start": 429.21,
+   "end": 432.07,
+   "text": "布拉格公式有两个用途。"
+  },
+  {
+   "slide": 16,
+   "start": 432.47,
+   "end": 440.05,
+   "text": "已知晶面间距 d，测出掠射角，就能算出 X 射线的波长，从而研究原子结构。"
+  },
+  {
+   "slide": 16,
+   "start": 440.45,
+   "end": 447.99,
+   "text": "反过来，已知波长，测出掠射角，就能求出晶面间距，从而研究晶体结构。"
+  },
+  {
+   "slide": 16,
+   "start": 448.39,
+   "end": 453.29,
+   "text": "DNA 双螺旋结构就是靠 X 射线衍射照片推出来的。"
+  },
+  {
+   "slide": 17,
+   "start": 454.71,
+   "end": 456.58,
+   "text": "例三。"
+  },
+  {
+   "slide": 17,
+   "start": 456.98,
+   "end": 462.93,
+   "text": "以铜为阳极靶的 X 射线管发出的特征谱线波长约 0.15 纳米。"
+  },
+  {
+   "slide": 17,
+   "start": 463.33,
+   "end": 470.96,
+   "text": "当它以掠射角 11 度 15 分照射某组晶面时，在反射方向测得第一级衍射极大。"
+  },
+  {
+   "slide": 17,
+   "start": 471.36,
+   "end": 473.71,
+   "text": "求这组晶面的间距。"
+  },
+  {
+   "slide": 17,
+   "start": 474.11,
+   "end": 484.09,
+   "text": "又问：若改用钨靶发出的连续 X 射线照射同一组晶面，在 36 度方向上，第一级衍射极大对应什么波长？"
+  },
+  {
+   "slide": 18,
+   "start": 485.85,
+   "end": 492.38,
+   "text": "第一问：由布拉格公式，取 k 等于 1，d 等于 λ 除以 2 sinθ₁。"
+  },
+  {
+   "slide": 18,
+   "start": 492.78,
+   "end": 498.47,
+   "text": "代入 0.15 纳米和 11.25 度，得 d 约 0.384 纳米。"
+  },
+  {
+   "slide": 18,
+   "start": 498.87,
+   "end": 504.49,
+   "text": "第二问：同一组晶面、同样的级次，波长正比于 sinθ。"
+  },
+  {
+   "slide": 18,
+   "start": 504.89,
+   "end": 511.01,
+   "text": "所以 λ₂ 等于 2 乘以 0.384 乘以 sin36 度，约 0.45 纳米。"
+  },
+  {
+   "slide": 18,
+   "start": 511.41,
+   "end": 517.6,
+   "text": "这也说明连续谱里只有满足布拉格条件的那个波长会被强烈反射。"
+  },
+  {
+   "slide": 19,
+   "start": 519.07,
+   "end": 520.94,
+   "text": "小结。"
+  },
+  {
+   "slide": 19,
+   "start": 521.34,
+   "end": 527.89,
+   "text": "光栅常量 d 等于 b 加 b 撇，光栅方程 d sinθ 等于正负 kλ。"
+  },
+  {
+   "slide": 19,
+   "start": 528.29,
+   "end": 535.32,
+   "text": "最高级数由 k 小于等于 d 除以 λ 决定；缝数越多，主极大越细越亮。"
+  },
+  {
+   "slide": 19,
+   "start": 535.72,
+   "end": 543.3,
+   "text": "缺级：k 等于 d 除以 b 乘以 k 撇，此时该级主极大落在单缝暗纹上而消失。"
+  },
+  {
+   "slide": 19,
+   "start": 543.7,
+   "end": 548.81,
+   "text": "白光入射形成衍射光谱，级次高时要注意重叠。"
+  },
+  {
+   "slide": 19,
+   "start": 549.21,
+   "end": 556.27,
+   "text": "X 射线用晶体作光栅，满足布拉格公式 2d sinθ 等于 kλ。"
+  },
+  {
+   "slide": 19,
+   "start": 556.67,
+   "end": 559.26,
+   "text": "下一节讲光的偏振。"
+  }
+ ],
+ "build_ts": 1792550296,
+ "logoScale": 0.67
+}

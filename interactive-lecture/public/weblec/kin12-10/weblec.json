@@ -1,0 +1,3061 @@
+{
+ "title": "12-10 实际气体的范德瓦耳斯方程",
+ "nav": "12-10　范德瓦耳斯方程",
+ "footer": "第十二章　气体动理论",
+ "character": "aqiang",
+ "characters": [
+  {
+   "id": "aqiang",
+   "name": "阿强"
+  },
+  {
+   "id": "professor",
+   "name": "博士讲师"
+  },
+  {
+   "id": "zhongshan",
+   "name": "中山装先生"
+  }
+ ],
+ "duration": 447.74,
+ "slides": [
+  {
+   "id": 1,
+   "kind": "page",
+   "heading": "封面",
+   "narration": "第十二章最后一节。12-10，实际气体的范德瓦耳斯方程。前面九节，气体一直被当成「没有体积、互不吸引」的小球。这一节把这两条假设还回去，看方程会变成什么样。改完之后，方程只多了两个常数，却能解释高压下的偏差，甚至预言气液之间的转变。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 0,
+     "y": 552,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 十 二 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 300,
+     "y": 400,
+     "w": 1320,
+     "h": 170,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "气 体 动 论",
+        "size": 92,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 250,
+     "y": 588,
+     "w": 1420,
+     "h": 120,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "12-10　实际气体的范德瓦耳斯方程",
+        "size": 40,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 220,
+     "y": 730,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "选学（教材标 *）　·　体积修正　·　压强修正",
+        "size": 31,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 850,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "把「没有体积、互不吸引」两条假设还回去",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 0.0,
+    "2": 2.92,
+    "3": 7.76
+   },
+   "t_start": 0.0,
+   "t_end": 27.82,
+   "duration": 27.82,
+   "laser": []
+  },
+  {
+   "id": 2,
+   "kind": "page",
+   "heading": "本节路线",
+   "narration": "本节路线。先看理想气体模型在哪儿失灵：高压、低温，还有临界点附近。然后做两处修正：分子有体积，所以自由空间要减去一块。分子有引力，所以撞壁的冲量要打折扣。两处合起来，就是范德瓦耳斯方程，里面只多出 a、b 两个常数。最后看这两个常数有多大、方程在哪儿准、在哪儿不准。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节路线",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 244,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "主线：理想模型的边界 → 减去体积 → 补上内压强 → 范氏方程 → a、b → 精度",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1　理想模型的边界",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 386,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "高压、低温、临界点",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 458,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2　体积修正",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 512,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$V\\to V-b$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 584,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "3　压强修正",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 638,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$p\\to p+a/V^{2}$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 330,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4　范德瓦耳斯方程",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 386,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两处修正合起来",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 458,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "5　$a$、$b$ 有多大",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 512,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与气体种类有关",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 584,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "6　在哪儿准、哪儿不准",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 638,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "低压极好，临界点失效",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "本节收口：从「理想」走到「真实」，只多两个常数",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 28.62,
+    "2": 30.89,
+    "3": 37.31,
+    "4": 43.57,
+    "5": 48.67,
+    "6": 55.29
+   },
+   "t_start": 28.62,
+   "t_end": 61.69,
+   "duration": 33.07,
+   "laser": []
+  },
+  {
+   "id": 3,
+   "kind": "page",
+   "heading": "一　理想模型的边界",
+   "narration": "先说理想气体模型在哪儿不管用。它的两条假设是：分子本身不占体积，分子之间除了碰撞没有作用力。在常压、常温下这两条很准，因为分子间距是直径的十倍，体积占比只有千分之一。但一加压，分子被挤近，体积不能忽略；一降温，分子跑得慢，引力就显出作用。想一想：到了临界点附近，气体会液化，理想气体方程为什么完全说不出这件事？因为它不承认引力。所以需要修——不是推翻，是把丢掉的两项补回去。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　理想模型的边界",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两条假设",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 分子不占体积",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 344,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 分子间除了碰撞没有作用",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 406,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "常温常压：两条都很准",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 458,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "间距是直径的 10 倍，体积占比千分之一",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 522,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "加压 → 挤近 → 体积不可忽略",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 570,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "降温 → 变慢 → 引力显出作用",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 640,
+     "w": 740,
+     "h": 190,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "临界点附近",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "气体会液化",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "理想气体方程完全离谱",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "因为液化是引力干的事",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 220,
+     "w": 740,
+     "h": 280,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "怎么修？",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "不推翻，是把丢掉的两项补回去",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "① 体积：$V$ 减去分子自己占的",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "② 压强：撞壁的冲量打折",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "其余全部照旧",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 860,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "修法很朴素：把两条假设各写成一项修正，其余照旧",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 62.49,
+    "2": 66.35,
+    "3": 73.57,
+    "4": 81.55,
+    "5": 89.65,
+    "6": 100.59
+   },
+   "t_start": 62.49,
+   "t_end": 106.0,
+   "duration": 43.51,
+   "laser": []
+  },
+  {
+   "id": 4,
+   "kind": "page",
+   "heading": "二　体积修正",
+   "narration": "先修体积。一摩尔气体占的体积是 V，但这个体积里有一部分被分子自己占着，分子能自由活动的只有 V 减掉那一块。减多少？不是分子体积的总和，而是一个「排斥球」——别的分子球心进不了半径 2r 的范围。算下来，每个分子实际排开的体积是自身体积的四倍，所以 b 等于四倍分子体积乘以阿伏伽德罗常量。于是物态方程里的 V 要换成 V 减 b。想一想：为什么减的不是分子体积的总和，而是它的四倍？因为排斥球大一圈。b 的量级是每摩尔几乘十的负五次方立方米，比二十二点四升小三个数量级——这也就说明了为什么常压下可以忽略。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　体积修正",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "分子能活动的空间变小",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 415,
+     "name": "molecule_excluded"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 300,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "容器体积 $V$，分子占去一块",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 360,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "减的不是分子体积，是「排斥球」",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 420,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "每个分子排开 $4v$ ⇒ $b=4N_A v$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 486,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "自由活动空间 $=V-b$",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 552,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "$b$ 有多大",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "氮气：$3.9\\times10^{-5}$ m³/mol",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "对比 22.4 L，小三个数量级",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "所以常压下可以忽略",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 800,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这一项只有在高压、分子被挤得很近时才显出来",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 106.8,
+    "2": 109.19,
+    "3": 119.17,
+    "4": 128.74,
+    "5": 138.69,
+    "6": 143.82
+   },
+   "t_start": 106.8,
+   "t_end": 164.52,
+   "duration": 57.72,
+   "laser": []
+  },
+  {
+   "id": 5,
+   "kind": "page",
+   "heading": "三　压强修正",
+   "narration": "再修压强。理想模型说分子撞壁的冲量只由速度决定。但真实气体里，撞壁的那个分子身后有一层分子在拉它——引力朝内，把它往回拽。结果撞上去的冲量变小了，测到的压强比理想值低。低多少？内压强正比于「撞壁分子数」乘「拉它的分子数」，两个都正比于数密度，所以正比于 n 平方，也就是正比于一除以 V 平方。记系数为 a，内压强就是 a 除以 V 平方。所以物态方程里的 p，要换成 p 加 a 除以 V 平方。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　压强修正",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "撞壁分子被身后拽了一把",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 437,
+     "name": "vdw_inner_pressure"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 300,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "内层分子对它施加引力",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 358,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "撞壁冲量变小 ⇒ 压强偏低",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 418,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "内压强 $\\propto n^{2}\\propto1/V^{2}$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 478,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$p_{\\mathrm{i}}=a/V^{2}$",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 546,
+     "w": 740,
+     "h": 190,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "为什么是 $n^{2}$",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "撞壁的分子数 $\\propto n$",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "拉它的分子数也 $\\propto n$",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "两者相乘 ⇒ $n^{2}$",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 790,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同样的道理：液体内压强大，是因为分子挤在一起，$1/V^{2}$ 这一项很大",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 165.32,
+    "2": 167.64,
+    "3": 172.5,
+    "4": 180.44,
+    "5": 186.02,
+    "6": 199.69
+   },
+   "t_start": 165.32,
+   "t_end": 211.09,
+   "duration": 45.77,
+   "laser": []
+  },
+  {
+   "id": 6,
+   "kind": "page",
+   "heading": "四　范德瓦耳斯方程",
+   "narration": "两处修正合起来，就是范德瓦耳斯方程。一摩尔气体：理想方程是 pV 等于 RT。体积换成 V 减 b，压强换成 p 加 a 除以 V 平方，就得到括号 p 加 a 除以 V 平方，乘以括号 V 减 b，等于 RT。如果有 ν 摩尔，两边同乘 ν 的平方关系，写成 p 加 ν 平方 a 除以 V 平方，乘以 V 减 νb，等于 νRT。注意它的结构：理想方程是两个因子相乘等于常数，范氏方程也是两个因子相乘，只是每个因子都加了一项修正。常数 a 和 b 不是理论算出来的，要由实验定——它们相当于给每种气体建了档案。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　范德瓦耳斯方程",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "从理想方程出发",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 292,
+     "w": 740,
+     "h": 120,
+     "tex": "pV=RT",
+     "size": 32,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 428,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两处替换",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 480,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$V\\to V-b$，$p\\to p+a/V^{2}$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 560,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一摩尔：",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 612,
+     "w": 740,
+     "h": 160,
+     "tex": "\\left(p+\\frac{a}{V^{2}}\\right)(V-b)=RT",
+     "size": 30,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\nu$ 摩尔：",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 1010,
+     "y": 288,
+     "w": 740,
+     "h": 160,
+     "tex": "\\left(p+\\frac{\\nu^{2}a}{V^{2}}\\right)(V-\\nu b)=\\nu RT",
+     "size": 27,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 470,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "结构没变",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "还是两个因子相乘",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "每个因子多一项修正",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$a$、$b$ 由实验定",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 806,
+     "w": 1580,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "理想：$pV=RT$　　范氏：$(p+a/V^{2})(V-b)=RT$",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "同一副骨架，各加一项 —— 这就是「修正」而不是「推翻」",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 211.89,
+    "2": 216.54,
+    "3": 221.36,
+    "4": 232.54,
+    "5": 242.76,
+    "6": 253.22
+   },
+   "t_start": 211.89,
+   "t_end": 260.73,
+   "duration": 48.84,
+   "laser": []
+  },
+  {
+   "id": 7,
+   "kind": "page",
+   "heading": "五　a、b 的物理意义",
+   "narration": "看几个实际的数。氦气：a 等于 0.0035，b 等于 2.4 乘十的负五次方。氮气：a 等于 0.137，b 等于 3.9 乘十的负五次方。二氧化碳：a 等于 0.364，b 等于 4.3 乘十的负五次方。规律很清楚：分子越大，b 越大；分子越容易被极化、引力越强，a 越大——二氧化碳的 a 是氦的一百倍。这两个常数各有物理意义：b 管「占多大地方」，a 管「拉得多紧」。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五　$a$、$b$ 的物理意义",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "每种气体一对常数",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "table",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 1100,
+     "rows": [
+      [
+       "气体",
+       "a /（Pa·m⁶·mol⁻²）",
+       "b /（10⁻⁵ m³·mol⁻¹）"
+      ],
+      [
+       "氦（He）",
+       "0.0035",
+       "2.4"
+      ],
+      [
+       "氮（N₂）",
+       "0.137",
+       "3.9"
+      ],
+      [
+       "二氧化碳（CO₂）",
+       "0.364",
+       "4.3"
+      ]
+     ],
+     "rowh": 72,
+     "size": 25,
+     "fill": "#CCFFCC"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 600,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$b$ 管「占多大地方」",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 652,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "分子越大，$b$ 越大",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 600,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$a$ 管「拉得多紧」",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 652,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "引力越强，$a$ 越大",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 720,
+     "w": 740,
+     "h": 150,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "对照",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "CO₂ 的 $a$ 是 He 的 100 倍",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "因为 CO₂ 分子大、易极化",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 730,
+     "w": 740,
+     "h": 150,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "它们不是理论值",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "由实验拟合，相当于气体的「档案」",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "这也说明范氏方程是半经验的",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 261.53,
+    "2": 264.07,
+    "3": 270.78,
+    "4": 277.3,
+    "5": 284.28,
+    "6": 295.0
+   },
+   "t_start": 261.53,
+   "t_end": 301.75,
+   "duration": 40.22,
+   "laser": []
+  },
+  {
+   "id": 8,
+   "kind": "page",
+   "heading": "六　与实验比较",
+   "narration": "那它到底有多准？低压下非常好：一个大气压、273 开，氮气的 pV 与理想值只差千分之二。到了十个大气压，差到百分之一；一百个大气压，差到百分之七——这时候范氏方程把偏差的方向和量级都算对了。但再往上、或者靠近临界点，它就不行了：算出来的等温线会出现一段「不该有」的弯曲，真实气体在那一段是气液共存。所以范氏方程是一个「一阶修正」：抓住了分子体积和引力这两件主要的事，但没抓住它们之间的关联。要更准，得用维里方程或者更复杂的模型。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "六　与实验比较",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "低压：几乎完美",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1 atm、273 K 的氮气",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 346,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$pV$ 与理想值差 0.2%",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 412,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "高压：方向对、量级对",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 464,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "10 atm 约差 1%，100 atm 约差 7%",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 530,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "临界点附近：失效",
+        "size": 30,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 582,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "等温线出现「不该有」的弯曲",
+        "size": 28,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 240,
+     "w": 740,
+     "h": 220,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "它是一阶修正",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "抓住了体积和引力",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "没抓住两者的关联",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "所以只在中等压强内可靠",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 500,
+     "w": 740,
+     "h": 200,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "要更准怎么办",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "维里方程：按密度逐阶展开",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "或直接用经验状态方程",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "工程上多用后者",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 764,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "范氏方程的价值不在「准」，在「说清了为什么不准」——体积和引力两条，方向都对",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 302.55,
+    "2": 305.38,
+    "3": 313.39,
+    "4": 323.77,
+    "5": 335.02,
+    "6": 344.37
+   },
+   "t_start": 302.55,
+   "t_end": 349.76,
+   "duration": 47.21,
+   "laser": []
+  },
+  {
+   "id": 9,
+   "kind": "page",
+   "heading": "七　成就与局限",
+   "narration": "最后说它的历史地位。范德瓦耳斯方程是 1873 年提出的，那时候还没有分子存在的直接证据。它第一次用「分子有体积、有引力」这两条，把气液之间的连续转变讲通了：温度高于某个值时，无论加多大压强都液化了，那个值就是临界温度。它还给出了「对应状态定律」：把所有气体的 p、V、T 用它自己的临界值归一化，方程形式完全一样——这就是为什么不同气体能共用同一张图表。当然，它的宏观框架是经典的，微观细节要靠统计物理补。但它证明了一件事：宏观的物态方程，可以从分子的性质推出来。这也是整章的落点。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "七　成就与局限",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1873 年，还没有分子存在的证据",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第一次讲通气液连续转变",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 346,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "高于临界温度，加多大压强都不液化",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 412,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "对应状态定律",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 462,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "用临界值归一化，所有气体同一个方程",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 528,
+     "w": 740,
+     "h": 46,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "局限：经典框架，微观细节要统计物理补",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 240,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "整章的落点",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "宏观的物态方程",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "可以从分子的性质推出来",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "这条路，就是统计物理",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 470,
+     "w": 740,
+     "h": 180,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "本章回顾",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "模型 → 分布 → 碰撞 → 迁移 → 修正",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "从「是什么」走到「怎么变」",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 700,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第十二章到此结束：从一条假设出发，最后回到真实气体的方程",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 790,
+     "w": 1580,
+     "h": 130,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一个 1873 年的方程，今天还在教科书里",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "不是因为它准，而是因为它把「为什么不准」讲清楚了",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 350.56,
+    "2": 353.48,
+    "3": 360.77,
+    "4": 373.15,
+    "5": 385.45,
+    "6": 392.07
+   },
+   "t_start": 350.56,
+   "t_end": 401.63,
+   "duration": 51.07,
+   "laser": []
+  },
+  {
+   "id": 10,
+   "kind": "page",
+   "heading": "本节小结",
+   "narration": "小结。理想气体模型的两条假设在高压低温下失效：分子有体积、分子有引力。体积修正：自由空间是 V 减 b，b 等于四倍分子体积乘以阿伏伽德罗常量。压强修正：撞壁分子被内层拽回，压强少了 a 除以 V 平方。合起来就是范德瓦耳斯方程，一摩尔时是 p 加 a 除以 V 平方，乘以 V 减 b，等于 RT。它在低压下极准，高压下方向对量级对，临界点附近失效。第十二章到此结束，下一章讲热力学。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 两处修正",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "体积：$V-b$；压强：$p+a/V^{2}$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 范氏方程（1 mol）",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 406,
+     "w": 740,
+     "h": 140,
+     "tex": "\\left(p+\\frac{a}{V^{2}}\\right)(V-b)=RT",
+     "size": 26,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ $a$、$b$ 的含义",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$b$ 管体积，$a$ 管引力，由实验定",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 356,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 精度",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 408,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "低压极好，高压方向对，临界点失效",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 480,
+     "w": 740,
+     "h": 170,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "下一章",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "热力学基础",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "从宏观定律再走一遍",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 580,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一句话",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "理想是骨架",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "修正让骨架长出血肉",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "两个常数，就装下了分子的体积与引力",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 810,
+     "w": 1580,
+     "h": 110,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "第十二章完：10 节，从分子模型走到真实气体方程",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 402.43,
+    "2": 404.7,
+    "3": 411.94,
+    "4": 420.02,
+    "5": 426.71,
+    "6": 435.46
+   },
+   "t_start": 402.43,
+   "t_end": 446.3,
+   "duration": 43.87,
+   "laser": []
+  }
+ ],
+ "subtitles": [
+  {
+   "slide": 1,
+   "start": 0.0,
+   "end": 2.52,
+   "text": "第十二章最后一节。"
+  },
+  {
+   "slide": 1,
+   "start": 2.92,
+   "end": 7.36,
+   "text": "12-10，实际气体的范德瓦耳斯方程。"
+  },
+  {
+   "slide": 1,
+   "start": 7.76,
+   "end": 13.4,
+   "text": "前面九节，气体一直被当成「没有体积、互不吸引」的小球。"
+  },
+  {
+   "slide": 1,
+   "start": 13.8,
+   "end": 19.1,
+   "text": "这一节把这两条假设还回去，看方程会变成什么样。"
+  },
+  {
+   "slide": 1,
+   "start": 19.5,
+   "end": 27.13,
+   "text": "改完之后，方程只多了两个常数，却能解释高压下的偏差，甚至预言气液之间的转变。"
+  },
+  {
+   "slide": 2,
+   "start": 28.62,
+   "end": 30.49,
+   "text": "本节路线。"
+  },
+  {
+   "slide": 2,
+   "start": 30.89,
+   "end": 36.91,
+   "text": "先看理想气体模型在哪儿失灵：高压、低温，还有临界点附近。"
+  },
+  {
+   "slide": 2,
+   "start": 37.31,
+   "end": 43.17,
+   "text": "然后做两处修正：分子有体积，所以自由空间要减去一块。"
+  },
+  {
+   "slide": 2,
+   "start": 43.57,
+   "end": 48.27,
+   "text": "分子有引力，所以撞壁的冲量要打折扣。"
+  },
+  {
+   "slide": 2,
+   "start": 48.67,
+   "end": 54.89,
+   "text": "两处合起来，就是范德瓦耳斯方程，里面只多出 a、b 两个常数。"
+  },
+  {
+   "slide": 2,
+   "start": 55.29,
+   "end": 60.95,
+   "text": "最后看这两个常数有多大、方程在哪儿准、在哪儿不准。"
+  },
+  {
+   "slide": 3,
+   "start": 62.49,
+   "end": 65.95,
+   "text": "先说理想气体模型在哪儿不管用。"
+  },
+  {
+   "slide": 3,
+   "start": 66.35,
+   "end": 73.17,
+   "text": "它的两条假设是：分子本身不占体积，分子之间除了碰撞没有作用力。"
+  },
+  {
+   "slide": 3,
+   "start": 73.57,
+   "end": 81.15,
+   "text": "在常压、常温下这两条很准，因为分子间距是直径的十倍，体积占比只有千分之一。"
+  },
+  {
+   "slide": 3,
+   "start": 81.55,
+   "end": 89.25,
+   "text": "但一加压，分子被挤近，体积不能忽略；一降温，分子跑得慢，引力就显出作用。"
+  },
+  {
+   "slide": 3,
+   "start": 89.65,
+   "end": 97.31,
+   "text": "想一想：到了临界点附近，气体会液化，理想气体方程为什么完全说不出这件事？"
+  },
+  {
+   "slide": 3,
+   "start": 97.96,
+   "end": 100.19,
+   "text": "因为它不承认引力。"
+  },
+  {
+   "slide": 3,
+   "start": 100.59,
+   "end": 105.2,
+   "text": "所以需要修——不是推翻，是把丢掉的两项补回去。"
+  },
+  {
+   "slide": 4,
+   "start": 106.8,
+   "end": 108.79,
+   "text": "先修体积。"
+  },
+  {
+   "slide": 4,
+   "start": 109.19,
+   "end": 118.77,
+   "text": "一摩尔气体占的体积是 V，但这个体积里有一部分被分子自己占着，分子能自由活动的只有 V 减掉那一块。"
+  },
+  {
+   "slide": 4,
+   "start": 119.17,
+   "end": 121.04,
+   "text": "减多少？"
+  },
+  {
+   "slide": 4,
+   "start": 121.69,
+   "end": 128.34,
+   "text": "不是分子体积的总和，而是一个「排斥球」——别的分子球心进不了半径 2r 的范围。"
+  },
+  {
+   "slide": 4,
+   "start": 128.74,
+   "end": 138.29,
+   "text": "算下来，每个分子实际排开的体积是自身体积的四倍，所以 b 等于四倍分子体积乘以阿伏伽德罗常量。"
+  },
+  {
+   "slide": 4,
+   "start": 138.69,
+   "end": 143.42,
+   "text": "于是物态方程里的 V 要换成 V 减 b。"
+  },
+  {
+   "slide": 4,
+   "start": 143.82,
+   "end": 149.99,
+   "text": "想一想：为什么减的不是分子体积的总和，而是它的四倍？"
+  },
+  {
+   "slide": 4,
+   "start": 150.64,
+   "end": 153.35,
+   "text": "因为排斥球大一圈。"
+  },
+  {
+   "slide": 4,
+   "start": 153.75,
+   "end": 163.59,
+   "text": "b 的量级是每摩尔几乘十的负五次方立方米，比二十二点四升小三个数量级——这也就说明了为什么常压下可以忽略。"
+  },
+  {
+   "slide": 5,
+   "start": 165.32,
+   "end": 167.24,
+   "text": "再修压强。"
+  },
+  {
+   "slide": 5,
+   "start": 167.64,
+   "end": 172.1,
+   "text": "理想模型说分子撞壁的冲量只由速度决定。"
+  },
+  {
+   "slide": 5,
+   "start": 172.5,
+   "end": 180.04,
+   "text": "但真实气体里，撞壁的那个分子身后有一层分子在拉它——引力朝内，把它往回拽。"
+  },
+  {
+   "slide": 5,
+   "start": 180.44,
+   "end": 185.62,
+   "text": "结果撞上去的冲量变小了，测到的压强比理想值低。"
+  },
+  {
+   "slide": 5,
+   "start": 186.02,
+   "end": 187.89,
+   "text": "低多少？"
+  },
+  {
+   "slide": 5,
+   "start": 188.54,
+   "end": 199.29,
+   "text": "内压强正比于「撞壁分子数」乘「拉它的分子数」，两个都正比于数密度，所以正比于 n 平方，也就是正比于一除以 V 平方。"
+  },
+  {
+   "slide": 5,
+   "start": 199.69,
+   "end": 204.37,
+   "text": "记系数为 a，内压强就是 a 除以 V 平方。"
+  },
+  {
+   "slide": 5,
+   "start": 204.77,
+   "end": 210.22,
+   "text": "所以物态方程里的 p，要换成 p 加 a 除以 V 平方。"
+  },
+  {
+   "slide": 6,
+   "start": 211.89,
+   "end": 216.14,
+   "text": "两处修正合起来，就是范德瓦耳斯方程。"
+  },
+  {
+   "slide": 6,
+   "start": 216.54,
+   "end": 220.96,
+   "text": "一摩尔气体：理想方程是 pV 等于 RT。"
+  },
+  {
+   "slide": 6,
+   "start": 221.36,
+   "end": 232.14,
+   "text": "体积换成 V 减 b，压强换成 p 加 a 除以 V 平方，就得到括号 p 加 a 除以 V 平方，乘以括号 V 减 b，等于 RT。"
+  },
+  {
+   "slide": 6,
+   "start": 232.54,
+   "end": 242.36,
+   "text": "如果有 ν 摩尔，两边同乘 ν 的平方关系，写成 p 加 ν 平方 a 除以 V 平方，乘以 V 减 νb，等于 νRT。"
+  },
+  {
+   "slide": 6,
+   "start": 242.76,
+   "end": 252.82,
+   "text": "注意它的结构：理想方程是两个因子相乘等于常数，范氏方程也是两个因子相乘，只是每个因子都加了一项修正。"
+  },
+  {
+   "slide": 6,
+   "start": 253.22,
+   "end": 260.01,
+   "text": "常数 a 和 b 不是理论算出来的，要由实验定——它们相当于给每种气体建了档案。"
+  },
+  {
+   "slide": 7,
+   "start": 261.53,
+   "end": 263.67,
+   "text": "看几个实际的数。"
+  },
+  {
+   "slide": 7,
+   "start": 264.07,
+   "end": 270.38,
+   "text": "氦气：a 等于 0.0035，b 等于 2.4 乘十的负五次方。"
+  },
+  {
+   "slide": 7,
+   "start": 270.78,
+   "end": 276.9,
+   "text": "氮气：a 等于 0.137，b 等于 3.9 乘十的负五次方。"
+  },
+  {
+   "slide": 7,
+   "start": 277.3,
+   "end": 283.88,
+   "text": "二氧化碳：a 等于 0.364，b 等于 4.3 乘十的负五次方。"
+  },
+  {
+   "slide": 7,
+   "start": 284.28,
+   "end": 294.6,
+   "text": "规律很清楚：分子越大，b 越大；分子越容易被极化、引力越强，a 越大——二氧化碳的 a 是氦的一百倍。"
+  },
+  {
+   "slide": 7,
+   "start": 295.0,
+   "end": 301.02,
+   "text": "这两个常数各有物理意义：b 管「占多大地方」，a 管「拉得多紧」。"
+  },
+  {
+   "slide": 8,
+   "start": 302.55,
+   "end": 304.73,
+   "text": "那它到底有多准？"
+  },
+  {
+   "slide": 8,
+   "start": 305.38,
+   "end": 312.99,
+   "text": "低压下非常好：一个大气压、273 开，氮气的 pV 与理想值只差千分之二。"
+  },
+  {
+   "slide": 8,
+   "start": 313.39,
+   "end": 323.37,
+   "text": "到了十个大气压，差到百分之一；一百个大气压，差到百分之七——这时候范氏方程把偏差的方向和量级都算对了。"
+  },
+  {
+   "slide": 8,
+   "start": 323.77,
+   "end": 334.62,
+   "text": "但再往上、或者靠近临界点，它就不行了：算出来的等温线会出现一段「不该有」的弯曲，真实气体在那一段是气液共存。"
+  },
+  {
+   "slide": 8,
+   "start": 335.02,
+   "end": 343.97,
+   "text": "所以范氏方程是一个「一阶修正」：抓住了分子体积和引力这两件主要的事，但没抓住它们之间的关联。"
+  },
+  {
+   "slide": 8,
+   "start": 344.37,
+   "end": 349.0,
+   "text": "要更准，得用维里方程或者更复杂的模型。"
+  },
+  {
+   "slide": 9,
+   "start": 350.56,
+   "end": 353.08,
+   "text": "最后说它的历史地位。"
+  },
+  {
+   "slide": 9,
+   "start": 353.48,
+   "end": 360.37,
+   "text": "范德瓦耳斯方程是 1873 年提出的，那时候还没有分子存在的直接证据。"
+  },
+  {
+   "slide": 9,
+   "start": 360.77,
+   "end": 372.75,
+   "text": "它第一次用「分子有体积、有引力」这两条，把气液之间的连续转变讲通了：温度高于某个值时，无论加多大压强都液化了，那个值就是临界温度。"
+  },
+  {
+   "slide": 9,
+   "start": 373.15,
+   "end": 385.05,
+   "text": "它还给出了「对应状态定律」：把所有气体的 p、V、T 用它自己的临界值归一化，方程形式完全一样——这就是为什么不同气体能共用同一张图表。"
+  },
+  {
+   "slide": 9,
+   "start": 385.45,
+   "end": 391.67,
+   "text": "当然，它的宏观框架是经典的，微观细节要靠统计物理补。"
+  },
+  {
+   "slide": 9,
+   "start": 392.07,
+   "end": 398.19,
+   "text": "但它证明了一件事：宏观的物态方程，可以从分子的性质推出来。"
+  },
+  {
+   "slide": 9,
+   "start": 398.59,
+   "end": 400.85,
+   "text": "这也是整章的落点。"
+  },
+  {
+   "slide": 10,
+   "start": 402.43,
+   "end": 404.3,
+   "text": "小结。"
+  },
+  {
+   "slide": 10,
+   "start": 404.7,
+   "end": 411.54,
+   "text": "理想气体模型的两条假设在高压低温下失效：分子有体积、分子有引力。"
+  },
+  {
+   "slide": 10,
+   "start": 411.94,
+   "end": 419.62,
+   "text": "体积修正：自由空间是 V 减 b，b 等于四倍分子体积乘以阿伏伽德罗常量。"
+  },
+  {
+   "slide": 10,
+   "start": 420.02,
+   "end": 426.31,
+   "text": "压强修正：撞壁分子被内层拽回，压强少了 a 除以 V 平方。"
+  },
+  {
+   "slide": 10,
+   "start": 426.71,
+   "end": 435.06,
+   "text": "合起来就是范德瓦耳斯方程，一摩尔时是 p 加 a 除以 V 平方，乘以 V 减 b，等于 RT。"
+  },
+  {
+   "slide": 10,
+   "start": 435.46,
+   "end": 441.24,
+   "text": "它在低压下极准，高压下方向对量级对，临界点附近失效。"
+  },
+  {
+   "slide": 10,
+   "start": 441.64,
+   "end": 445.5,
+   "text": "第十二章到此结束，下一章讲热力学。"
+  }
+ ],
+ "build_ts": 1792920822,
+ "logoScale": 0.67,
+ "theme": "wave"
+}

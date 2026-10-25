@@ -1,0 +1,4029 @@
+{
+ "title": "13-4 等温过程和绝热过程 多方过程",
+ "nav": "13-4　等温过程和绝热过程",
+ "footer": "第十三章　热力学基础",
+ "character": "aqiang",
+ "characters": [
+  {
+   "id": "aqiang",
+   "name": "阿强"
+  },
+  {
+   "id": "professor",
+   "name": "博士讲师"
+  },
+  {
+   "id": "zhongshan",
+   "name": "中山装先生"
+  }
+ ],
+ "duration": 546.96,
+ "slides": [
+  {
+   "id": 1,
+   "kind": "page",
+   "heading": "封面",
+   "narration": "第十三章第四节。13-4，理想气体的等温过程和绝热过程，还有多方过程。上一节锁住体积和压强，这一节锁住温度，或者干脆把热量断掉——四种基本过程，就都齐了。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 282,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 十 三 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 300,
+     "y": 408,
+     "w": 1320,
+     "h": 170,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "热 力 学 基 础",
+        "size": 92,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 250,
+     "y": 588,
+     "w": 1420,
+     "h": 120,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "13-4　等温过程和绝热过程　多方过程",
+        "size": 38,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 220,
+     "y": 730,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "等温　·　绝热　·　绝热方程　·　多方过程",
+        "size": 31,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 850,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "锁住温度，或者把热量断掉",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 0.0,
+    "2": 2.85,
+    "3": 9.59
+   },
+   "t_start": 0.0,
+   "t_end": 18.82,
+   "duration": 18.82,
+   "laser": []
+  },
+  {
+   "id": 2,
+   "kind": "page",
+   "heading": "本节路线",
+   "narration": "本节路线。先算等温过程：温度不变，内能不变，热全部变成功。再算绝热过程：不传热，功只能靠消耗内能。由此推出绝热过程方程，也就是 pV 的 γ 次方等于常量。然后把绝热线和等温线画在同一张图上，看谁更陡。接着是四个例子，最后用多方过程把这一章的过程统一起来。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节路线",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 244,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "主线：等温 → 绝热 → 绝热方程 → 斜率比较 → 四个例子 → 多方过程",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1　等温过程",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 386,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\Delta E=0$，$Q_T=W$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 458,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2　绝热过程",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 512,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\mathrm{d}Q=0$，$W=-\\Delta E$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 584,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "3　绝热过程方程",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 638,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$pV^{\\gamma}=$ 常量",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 330,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4　绝热线与等温线",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 386,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "谁更陡，为什么",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 458,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "5　四个例子",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 512,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "氢气 · 氮气 · 水 · 啤酒",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 584,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "6　多方过程",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 638,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "把四种过程统一成一族",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "本节收口：四种基本过程，一条多方过程方程全部收进来",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 19.62,
+    "2": 21.89,
+    "3": 28.24,
+    "4": 33.73,
+    "5": 39.94,
+    "6": 46.1
+   },
+   "t_start": 19.62,
+   "t_end": 52.4,
+   "duration": 32.78,
+   "laser": []
+  },
+  {
+   "id": 3,
+   "kind": "page",
+   "heading": "一　等温过程",
+   "narration": "先看等温过程。特征是温度不变，所以过程方程是 pV 等于常量——压强和体积成反比。温度不变，理想气体的内能就不变，ΔE 等于零。第一定律里 ΔE 一删，就得到 Q_T 等于 W：吸进来的热，全部拿去对外做功。功就是曲线下的面积，算出来是 νRT 乘以 ln(V₂/V₁)。注意这个式子只能用在等温过程上，换一个过程就不能套。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　等温过程",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 437,
+     "name": "pv_isotherm_area"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "特征：$T=$ 常量",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "过程方程：$pV=$ 常量",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 342,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "压强与体积成反比",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 404,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$T$ 不变 $\\Rightarrow \\Delta E=0$",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 464,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第一定律 $\\Rightarrow Q_T=W$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 516,
+     "w": 740,
+     "h": 100,
+     "tex": "W=\\int p\\,\\mathrm{d}V=\\nu RT\\ln\\frac{V_2}{V_1}",
+     "size": 28,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 640,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这个式子只对等温过程成立",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 706,
+     "w": 1580,
+     "h": 120,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "等温：热进来多少，就做多少功，内能一点不动",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "所以要维持温度不变，必须有一个恒温热源随时补热",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 53.2,
+    "2": 55.83,
+    "3": 63.36,
+    "4": 68.66,
+    "5": 77.36,
+    "6": 83.98
+   },
+   "t_start": 53.2,
+   "t_end": 90.11,
+   "duration": 36.91,
+   "laser": []
+  },
+  {
+   "id": 4,
+   "kind": "page",
+   "heading": "二　绝热过程",
+   "narration": "再看绝热过程。绝热就是与外界没有热量交换，dQ 等于零，缸壁和活塞都要用绝热材料做。第一定律变成零等于 dE 加 dW，也就是 dW 等于负 dE。气体对外做功，消耗的是自己的内能；外界对气体做功，内能就增加。所以绝热膨胀一定降温，绝热压缩一定升温。想一想：给自行车打气时，气筒为什么会发热？因为压缩得快，来不及散热，接近绝热压缩。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　绝热过程",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 437,
+     "name": "adiabatic_wall"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "特征：$\\mathrm{d}Q=0$",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "与外界没有热量交换",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第一定律：$0=\\mathrm{d}E+\\mathrm{d}W$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 404,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "即 $\\mathrm{d}W=-\\mathrm{d}E$",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 464,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "对外做功 ⇒ 内能减少",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 510,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "外界做功 ⇒ 内能增加",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 570,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "绝热膨胀必降温",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 616,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "绝热压缩必升温",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 690,
+     "w": 1580,
+     "h": 140,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "打气筒变热：压缩得快，来不及散热，就是绝热压缩",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "高压气瓶放气会结霜，反过来 —— 绝热膨胀降温",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 90.91,
+    "2": 93.49,
+    "3": 101.04,
+    "4": 107.56,
+    "5": 114.63,
+    "6": 119.95
+   },
+   "t_start": 90.91,
+   "t_end": 130.94,
+   "duration": 40.03,
+   "laser": []
+  },
+  {
+   "id": 5,
+   "kind": "page",
+   "heading": "三　绝热过程的功",
+   "narration": "绝热过程的功有两种算法。第一种从内能走：W 等于负的 ν C_V,m 乘以温度差。温度是升是降一目了然，适合已知初末温度的情况。第二种从压强体积走：W 等于 p₁V₁ 减 p₂V₂，再除以 γ 减一。这个式子要用到状态方程和绝热过程方程，适合已知初末压强或体积的情况。两式其实等价，用哪个取决于题目给了什么。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　绝热过程的功",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 437,
+     "name": "pv_adiabat_area"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两种算法",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 290,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 从内能走",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 336,
+     "w": 740,
+     "h": 100,
+     "tex": "W=-\\nu C_{V,\\mathrm{m}}(T_2-T_1)",
+     "size": 30,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 450,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "温度升降一目了然",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 510,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 从压强体积走",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 556,
+     "w": 740,
+     "h": 110,
+     "tex": "W=\\frac{p_1V_1-p_2V_2}{\\gamma-1}",
+     "size": 30,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 680,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两式等价，看题目给了什么",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 740,
+     "w": 1580,
+     "h": 130,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "绝热的功只跟初末状态有关，跟具体路径无关",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "因为 Q = 0，功全由内能变化定 —— 而内能是状态量",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 131.74,
+    "2": 135.21,
+    "3": 142.04,
+    "4": 147.43,
+    "5": 154.19,
+    "6": 162.53
+   },
+   "t_start": 131.74,
+   "t_end": 167.28,
+   "duration": 35.54,
+   "laser": []
+  },
+  {
+   "id": 6,
+   "kind": "page",
+   "heading": "四　绝热过程方程",
+   "narration": "那绝热过程的 p 和 V 到底怎么变？要从第一定律推。把 dQ 等于零代进去：ν C_V,m dT 等于负 p dV。再用状态方程 pV 等于 νRT 消掉温度，两边整理。积分出来，就是 pV 的 γ 次方等于常量。换个形式，还有 TV 的 γ 减一次方等于常量、p 的 1 减 γ 次方乘 T 的 γ 次方等于常量。三个式子说的是同一件事，用哪个看题目给的是哪一对参量。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　绝热过程方程",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 760,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "从第一定律出发",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 1,
+     "x": 170,
+     "y": 290,
+     "w": 760,
+     "h": 90,
+     "tex": "\\mathrm{d}Q=\\mathrm{d}E+p\\,\\mathrm{d}V=0",
+     "size": 28,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 400,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "把内能表达式 $\\mathrm{d}E$ 代进去",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 448,
+     "w": 760,
+     "h": 90,
+     "tex": "\\nu C_{V,\\mathrm{m}}\\,\\mathrm{d}T=-p\\,\\mathrm{d}V",
+     "size": 28,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 560,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "用 $pV=\\nu RT$ 消去 $T$",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 606,
+     "w": 760,
+     "h": 100,
+     "tex": "\\frac{\\mathrm{d}p}{p}+\\gamma\\frac{\\mathrm{d}V}{V}=0",
+     "size": 30,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "积分得",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 4,
+     "x": 1010,
+     "y": 290,
+     "w": 740,
+     "h": 150,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": null,
+     "tex": "pV^{\\gamma}=\\text{常量}",
+     "size": 34,
+     "align": "center",
+     "color": "#C00000"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 480,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "另外两种等价写法",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 1010,
+     "y": 526,
+     "w": 740,
+     "h": 100,
+     "tex": "TV^{\\gamma-1}=C,\\qquad p^{1-\\gamma}T^{\\gamma}=C",
+     "size": 24,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 740,
+     "w": 1580,
+     "h": 130,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "三个式子说的是同一件事",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "p、V、T 三个参量任取两个，就有一个绝热关系式",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 168.08,
+    "2": 175.15,
+    "3": 182.2,
+    "4": 188.24,
+    "5": 192.82,
+    "6": 201.76
+   },
+   "t_start": 168.08,
+   "t_end": 208.11,
+   "duration": 40.03,
+   "laser": []
+  },
+  {
+   "id": 7,
+   "kind": "page",
+   "heading": "五　绝热线与等温线",
+   "narration": "不妨把两条线画在同一张图上，差别一眼就看出来。等温线的斜率是负 p 比 V。绝热线的斜率是负 γ p 比 V。两者差一个 γ，而 γ 总大于一，所以绝热线更陡。图上从 A 点出发：体积增加同样的 ΔV，绝热线的压强掉得更多。道理也简单：等温时吸进来的热补充了做功的消耗，压强掉得慢；绝热时没有补充，只能烧内能。这一点在后面算循环效率时非常关键。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五　绝热线与等温线",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 437,
+     "name": "pv_iso_adiabat"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "斜率之比",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 290,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "等温线：$-p/V$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 346,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "绝热线：$-\\gamma p/V$",
+        "size": 29,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 404,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\gamma>1$ ⇒ 绝热线更陡",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 466,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "等温：吸热补充做功",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 512,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "绝热：只能烧内能",
+        "size": 27,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 576,
+     "w": 740,
+     "h": 190,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "为什么更陡",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "等温时温度不变，压强只随体积稀释",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "绝热时还有降温，两个因素叠加",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 985,
+     "y": 700,
+     "w": 765,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同样 ΔV，绝热的压降 Δp′ 更大",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 208.91,
+    "2": 214.49,
+    "3": 218.01,
+    "4": 221.79,
+    "5": 227.88,
+    "6": 234.83
+   },
+   "t_start": 208.91,
+   "t_end": 249.13,
+   "duration": 40.22,
+   "laser": []
+  },
+  {
+   "id": 8,
+   "kind": "page",
+   "heading": "例 1　把氢气压缩到 1/10 体积",
+   "narration": "看第一个例子。5 摩尔氢气，初温 293 开，压强 1.013 乘十的五次方帕，要把它压缩到原体积的十分之一。等温压缩：功等于 νRT ln(V₂/V₁)，代进去是负 2.80 乘十的四次方焦。负号表示外界对气体做功。绝热压缩：先由温度关系式算出 T₂ 是 753 开，再用 W 等于负 νC_V,m 乘温度差，得负 4.70 乘十的四次方焦。同样压缩到十分之一，绝热要多做功；压强的对比更悬殊：等温 1.01 乘十的六次方帕，绝热约 2.6 乘十的六次方帕。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例 1　把氢气压缩到原体积的 1/10",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "5 mol 氢气，$T_1=293$ K，$p_1=1.013\\times10^{5}$ Pa",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 288,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 等温压缩",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 334,
+     "w": 760,
+     "h": 90,
+     "tex": "W=\\nu RT\\ln\\frac{V_2}{V_1}=-2.80\\times10^{4}\\ \\mathrm{J}",
+     "size": 26,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 444,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 绝热压缩：先求 $T_2$",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 490,
+     "w": 760,
+     "h": 110,
+     "tex": "T_2=T_1\\left(\\frac{V_1}{V_2}\\right)^{\\gamma-1}=753\\ \\mathrm{K}",
+     "size": 26,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 616,
+     "w": 760,
+     "h": 40,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "再算功：",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 658,
+     "w": 760,
+     "h": 90,
+     "tex": "W=-\\nu C_{V,\\mathrm{m}}(T_2-T_1)=-4.70\\times10^{4}\\ \\mathrm{J}",
+     "size": 22,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 压缩后的压强",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 344,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "等温：$p_2'=1.01\\times10^{6}$ Pa",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 392,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "绝热：$p_2\\approx2.6\\times10^{6}$ Pa",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 440,
+     "w": 740,
+     "h": 40,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "（取 $\\gamma=1.41$、$C_{V,\\mathrm{m}}=20.44$）",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 780,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "同样是压缩到 1/10：绝热做的功约为等温的 1.7 倍",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "因为绝热压缩还要额外把气体加热，这份内能也得由外界做功补上",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 249.93,
+    "2": 252.25,
+    "3": 261.53,
+    "4": 269.44,
+    "5": 273.13,
+    "6": 286.25
+   },
+   "t_start": 249.93,
+   "t_end": 297.74,
+   "duration": 47.81,
+   "laser": []
+  },
+  {
+   "id": 9,
+   "kind": "page",
+   "heading": "例 2　氮气液化",
+   "narration": "第二个例子：氮气液化。把氮气装在绝热气缸里，开始时压强 50 个大气压、温度 300 开。急速膨胀到 1 个大气压，过程极快，来不及换热，所以当作绝热。氮气是双原子分子，γ 等于 1.40。由 p 的 1 减 γ 次方乘 T 的 γ 次方等于常量，解出 T₂ 等于 98.0 开。从 300 开降到 98 开，已经低于氮气的液化温度，这就是工业上液化气体的方法。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例 2　氮气液化",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "已知",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 282,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$p_1=50$ atm，$T_1=300$ K",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$p_2=1$ atm",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 396,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "急速膨胀，来不及换热 ⇒ 绝热",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 456,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "双原子分子：$\\gamma=1.40$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 516,
+     "w": 760,
+     "h": 140,
+     "tex": "T_2=T_1\\left(\\frac{p_2}{p_1}\\right)^{\\frac{\\gamma-1}{\\gamma}}=98.0\\ \\mathrm{K}",
+     "size": 26,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 226,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "为什么能液化",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "300 K → 98.0 K",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "低于氮气的液化温度",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "绝热膨胀是最快的降温手段",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 460,
+     "w": 740,
+     "h": 190,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "工业上的用法",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "高压气体通过节流阀或透平膨胀",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "一次不够就多级膨胀",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "林德循环就是这样",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 720,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "绝热膨胀降温，是制冷和气体液化最基本的一招",
+        "size": 27,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 298.54,
+    "2": 301.75,
+    "3": 308.53,
+    "4": 314.95,
+    "5": 319.77,
+    "6": 327.37
+   },
+   "t_start": 298.54,
+   "t_end": 335.74,
+   "duration": 37.2,
+   "laser": []
+  },
+  {
+   "id": 10,
+   "kind": "page",
+   "heading": "例 3　把 1 kg 水汽化",
+   "narration": "第三个例子换了对象：水汽化。一个气缸里装着水，缸壁导热，活塞上的压强保持不变，缓慢加热到 100 摄氏度，水变成水蒸气。这是等压过程：压强不变，体积从水的体积膨胀到水蒸气的体积。先算吸热：Q 等于质量乘汽化热，一千克水是 2.26 乘十的六次方焦。再算做功：W 等于 p 乘 ΔV，用密度算出体积变化约 1.67 立方米，所以 W 约 1.69 乘十的五次方焦。最后 ΔE 等于 Q 减 W，约 2.1 乘十的六次方焦——汽化热里绝大部分变成了内能，只有一小部分用来推开大气。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例 3　把 1 kg 水汽化",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "等压加热到 100 ℃：$p=1$ atm，$L=2.26\\times10^{6}$ J/kg",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 288,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 吸热",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 334,
+     "w": 760,
+     "h": 90,
+     "tex": "Q=mL=2.26\\times10^{6}\\ \\mathrm{J}",
+     "size": 28,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 448,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 体积变化",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 494,
+     "w": 760,
+     "h": 100,
+     "tex": "\\Delta V=m\\left(\\frac{1}{\\rho_{\\text{汽}}}-\\frac{1}{\\rho_{\\text{水}}}\\right)=1.67\\ \\mathrm{m^{3}}",
+     "size": 24,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 620,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 做功：$W=p\\Delta V=1.69\\times10^{5}$ J",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 内能变化",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 1010,
+     "y": 334,
+     "w": 740,
+     "h": 100,
+     "tex": "\\Delta E=Q-W=2.09\\times10^{6}\\ \\mathrm{J}",
+     "size": 26,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 452,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "只占汽化热的 7%",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "汽化热 ≠ 内能增量",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "1 kg 水汽化吸 2.26×10⁶ J，其中约 1.69×10⁵ J 用来推开大气，其余变成内能",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 336.54,
+    "2": 340.47,
+    "3": 349.7,
+    "4": 356.84,
+    "5": 364.56,
+    "6": 375.57
+   },
+   "t_start": 336.54,
+   "t_end": 386.75,
+   "duration": 50.21,
+   "laser": []
+  },
+  {
+   "id": 11,
+   "kind": "page",
+   "heading": "例 4　开啤酒瓶为什么冒白雾",
+   "narration": "第四个例子是个日常现象。打开啤酒瓶盖时，常看到白雾冒出来，这是为什么？开盖的瞬间瓶内压强远高于外界，气体急速膨胀。过程极快，来不及和外界交换热量，可以当成绝热膨胀。绝热膨胀对外做功，内能减少，温度骤降。温度一低，瓶内的水蒸气就凝结成小水珠，看上去就是白雾。从冰箱里拿出来的啤酒更容易起雾，因为起点温度本来就低。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例 4　开啤酒瓶为什么冒白雾",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一个日常现象，背后是绝热膨胀",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 300,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 开盖瞬间",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 348,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "瓶内压强远高于外界",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 396,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "气体急速膨胀",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 454,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 时间极短",
+        "size": 29,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 502,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "来不及换热 ⇒ 绝热膨胀",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 560,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 对外做功，内能减少",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 606,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "温度骤降，水蒸气凝结",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 220,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "链条",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "绝热膨胀 → 内能减 → 温度降",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "→ 水蒸气过饱和 → 凝成雾",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "所以白雾是「冷出来的」",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 486,
+     "w": 740,
+     "h": 180,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "从冰箱里拿出来的更好看",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "起点温度低，膨胀后更低",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "凝结得更彻底",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 700,
+     "w": 1580,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "同一个道理：高压气瓶放气会结霜，空调外机吹热风",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 387.55,
+    "2": 390.9,
+    "3": 396.69,
+    "4": 402.59,
+    "5": 408.39,
+    "6": 413.45
+   },
+   "t_start": 387.55,
+   "t_end": 426.43,
+   "duration": 38.88,
+   "laser": []
+  },
+  {
+   "id": 12,
+   "kind": "page",
+   "heading": "六　多方过程",
+   "narration": "最后把前面几种过程统一起来。把绝热方程 pV 的 γ 次方等于常量里的 γ 换成一个任意实数 n，就得到 pV 的 n 次方等于常量。这叫做多方过程方程，n 叫多方指数。它是前面所有过程的母方程：n 等于 γ 是绝热，n 等于 1 是等温。n 等于 0 时 p 等于常量，是等压；n 趋于无穷时 V 等于常量，是等容。所以四种基本过程，都是多方过程的特例。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "六　多方过程",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 437,
+     "name": "pv_polytropic"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "把 $\\gamma$ 换成任意实数 $n$",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 170,
+     "y": 290,
+     "w": 740,
+     "h": 140,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": null,
+     "tex": "pV^{n}=\\text{常量}",
+     "size": 34,
+     "align": "center",
+     "color": "#C00000"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 460,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$n$ 叫多方指数",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 518,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$n=\\gamma$：绝热",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 562,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$n=1$：等温",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 620,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$n=0$：等压",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 664,
+     "w": 740,
+     "h": 42,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$n\\to\\infty$：等容",
+        "size": 28,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 985,
+     "y": 700,
+     "w": 765,
+     "h": 160,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "四种基本过程",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "都是这条曲线族的特例",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "n 取什么，就锁住什么",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 427.23,
+    "2": 430.77,
+    "3": 439.69,
+    "4": 444.48,
+    "5": 450.86,
+    "6": 458.8
+   },
+   "t_start": 427.23,
+   "t_end": 464.26,
+   "duration": 37.03,
+   "laser": []
+  },
+  {
+   "id": 13,
+   "kind": "page",
+   "heading": "七　多方过程的功与热容",
+   "narration": "多方过程的功和热容，可以照搬前面的做法。功等于 p₁V₁ 减 p₂V₂ 除以 n 减一，把 n 换成 γ 就回到绝热。内能增量还是一样的：ΔE 等于 ν C_V,m ΔT，因为内能只由温度定。热量用第一定律算：Q 等于 ΔE 加 W。整理出来，多方过程的摩尔热容是 C_V,m 乘以 γ 减 n 除以 n 减一。这个式子很妙：n 等于 γ 时热容为零，正是绝热；n 等于 1 时热容无穷大，正是等温——温度不变，热容自然发散。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "七　多方过程的功与热容",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "功：把绝热式里的 $\\gamma$ 换成 $n$",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 288,
+     "w": 760,
+     "h": 110,
+     "tex": "W=\\frac{p_1V_1-p_2V_2}{n-1}",
+     "size": 30,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 418,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "内能增量不变：$\\Delta E=\\nu C_V\\Delta T$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 478,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "热量由第一定律：$Q=\\Delta E+W$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "摩尔热容",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 1010,
+     "y": 288,
+     "w": 740,
+     "h": 110,
+     "tex": "C_{n,\\mathrm{m}}=C_{V,\\mathrm{m}}\\frac{\\gamma-n}{n-1}",
+     "size": 30,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 1010,
+     "y": 430,
+     "w": 740,
+     "h": 210,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "两个极端",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$n=\\gamma$：$C=0$，绝热",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$n=1$：$C\\to\\infty$，等温",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "等温时温度不变，热容自然发散",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 560,
+     "w": 760,
+     "h": 200,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "为什么 $n=1$ 时热容无穷大",
+        "size": 26,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "热容是「吸热 / 升温」",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "等温时吸了热却不升温",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "分母为零，比值发散",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 800,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "n 从 0 变到无穷，热容从 $C_p$ 一路变到 $C_V$ —— 中间还会经过零和无穷",
+        "size": 26,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 465.06,
+    "2": 469.52,
+    "3": 475.97,
+    "4": 484.34,
+    "5": 489.73,
+    "6": 497.95
+   },
+   "t_start": 465.06,
+   "t_end": 509.53,
+   "duration": 44.47,
+   "laser": []
+  },
+  {
+   "id": 14,
+   "kind": "page",
+   "heading": "本节小结",
+   "narration": "小结。等温过程：温度不变，ΔE 等于零，Q 等于 W，等于 νRT ln(V₂/V₁)。绝热过程：dQ 等于零，W 等于负 ΔE，pV 的 γ 次方等于常量。绝热线比等温线陡，陡的倍数是 γ。多方过程 pV 的 n 次方等于常量，把四种基本过程统一成一族曲线。下一节讲循环过程和卡诺循环。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 等温过程",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$T$ 不变，$\\Delta E=0$，$Q_T=W$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 绝热过程",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 408,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$\\mathrm{d}Q=0$，$W=-\\Delta E$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 绝热方程",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$pV^{\\gamma}=C$，$TV^{\\gamma-1}=C$",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 356,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 斜率",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 408,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "绝热线是等温线的 $\\gamma$ 倍陡",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 470,
+     "w": 740,
+     "h": 170,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "下一节",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "13-5　循环过程 卡诺循环",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "把过程接成一圈，就有了热机",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 490,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一句话",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "锁住 $T$：热全变成功",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "断掉热：功靠烧内能",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "多方过程把四者串成一族",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 120,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "第十三章 4/9：四种基本过程到此齐全",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 510.33,
+    "2": 512.6,
+    "3": 521.06,
+    "4": 529.14,
+    "5": 533.6
+   },
+   "t_start": 510.33,
+   "t_end": 545.25,
+   "duration": 34.92,
+   "laser": []
+  }
+ ],
+ "subtitles": [
+  {
+   "slide": 1,
+   "start": 0.0,
+   "end": 2.45,
+   "text": "第十三章第四节。"
+  },
+  {
+   "slide": 1,
+   "start": 2.85,
+   "end": 9.19,
+   "text": "13-4，理想气体的等温过程和绝热过程，还有多方过程。"
+  },
+  {
+   "slide": 1,
+   "start": 9.59,
+   "end": 18.25,
+   "text": "上一节锁住体积和压强，这一节锁住温度，或者干脆把热量断掉——四种基本过程，就都齐了。"
+  },
+  {
+   "slide": 2,
+   "start": 19.62,
+   "end": 21.49,
+   "text": "本节路线。"
+  },
+  {
+   "slide": 2,
+   "start": 21.89,
+   "end": 27.84,
+   "text": "先算等温过程：温度不变，内能不变，热全部变成功。"
+  },
+  {
+   "slide": 2,
+   "start": 28.24,
+   "end": 33.33,
+   "text": "再算绝热过程：不传热，功只能靠消耗内能。"
+  },
+  {
+   "slide": 2,
+   "start": 33.73,
+   "end": 39.54,
+   "text": "由此推出绝热过程方程，也就是 pV 的 γ 次方等于常量。"
+  },
+  {
+   "slide": 2,
+   "start": 39.94,
+   "end": 45.7,
+   "text": "然后把绝热线和等温线画在同一张图上，看谁更陡。"
+  },
+  {
+   "slide": 2,
+   "start": 46.1,
+   "end": 51.67,
+   "text": "接着是四个例子，最后用多方过程把这一章的过程统一起来。"
+  },
+  {
+   "slide": 3,
+   "start": 53.2,
+   "end": 55.43,
+   "text": "先看等温过程。"
+  },
+  {
+   "slide": 3,
+   "start": 55.83,
+   "end": 62.96,
+   "text": "特征是温度不变，所以过程方程是 pV 等于常量——压强和体积成反比。"
+  },
+  {
+   "slide": 3,
+   "start": 63.36,
+   "end": 68.26,
+   "text": "温度不变，理想气体的内能就不变，ΔE 等于零。"
+  },
+  {
+   "slide": 3,
+   "start": 68.66,
+   "end": 76.96,
+   "text": "第一定律里 ΔE 一删，就得到 Q_T 等于 W：吸进来的热，全部拿去对外做功。"
+  },
+  {
+   "slide": 3,
+   "start": 77.36,
+   "end": 83.58,
+   "text": "功就是曲线下的面积，算出来是 νRT 乘以 ln(V₂/V₁)。"
+  },
+  {
+   "slide": 3,
+   "start": 83.98,
+   "end": 89.38,
+   "text": "注意这个式子只能用在等温过程上，换一个过程就不能套。"
+  },
+  {
+   "slide": 4,
+   "start": 90.91,
+   "end": 93.09,
+   "text": "再看绝热过程。"
+  },
+  {
+   "slide": 4,
+   "start": 93.49,
+   "end": 100.64,
+   "text": "绝热就是与外界没有热量交换，dQ 等于零，缸壁和活塞都要用绝热材料做。"
+  },
+  {
+   "slide": 4,
+   "start": 101.04,
+   "end": 107.16,
+   "text": "第一定律变成零等于 dE 加 dW，也就是 dW 等于负 dE。"
+  },
+  {
+   "slide": 4,
+   "start": 107.56,
+   "end": 114.23,
+   "text": "气体对外做功，消耗的是自己的内能；外界对气体做功，内能就增加。"
+  },
+  {
+   "slide": 4,
+   "start": 114.63,
+   "end": 119.55,
+   "text": "所以绝热膨胀一定降温，绝热压缩一定升温。"
+  },
+  {
+   "slide": 4,
+   "start": 119.95,
+   "end": 124.8,
+   "text": "想一想：给自行车打气时，气筒为什么会发热？"
+  },
+  {
+   "slide": 4,
+   "start": 125.45,
+   "end": 130.13,
+   "text": "因为压缩得快，来不及散热，接近绝热压缩。"
+  },
+  {
+   "slide": 5,
+   "start": 131.74,
+   "end": 134.81,
+   "text": "绝热过程的功有两种算法。"
+  },
+  {
+   "slide": 5,
+   "start": 135.21,
+   "end": 141.64,
+   "text": "第一种从内能走：W 等于负的 ν C_V,m 乘以温度差。"
+  },
+  {
+   "slide": 5,
+   "start": 142.04,
+   "end": 147.03,
+   "text": "温度是升是降一目了然，适合已知初末温度的情况。"
+  },
+  {
+   "slide": 5,
+   "start": 147.43,
+   "end": 153.79,
+   "text": "第二种从压强体积走：W 等于 p₁V₁ 减 p₂V₂，再除以 γ 减一。"
+  },
+  {
+   "slide": 5,
+   "start": 154.19,
+   "end": 162.13,
+   "text": "这个式子要用到状态方程和绝热过程方程，适合已知初末压强或体积的情况。"
+  },
+  {
+   "slide": 5,
+   "start": 162.53,
+   "end": 166.54,
+   "text": "两式其实等价，用哪个取决于题目给了什么。"
+  },
+  {
+   "slide": 6,
+   "start": 168.08,
+   "end": 171.82,
+   "text": "那绝热过程的 p 和 V 到底怎么变？"
+  },
+  {
+   "slide": 6,
+   "start": 172.47,
+   "end": 174.75,
+   "text": "要从第一定律推。"
+  },
+  {
+   "slide": 6,
+   "start": 175.15,
+   "end": 181.8,
+   "text": "把 dQ 等于零代进去：ν C_V,m dT 等于负 p dV。"
+  },
+  {
+   "slide": 6,
+   "start": 182.2,
+   "end": 187.84,
+   "text": "再用状态方程 pV 等于 νRT 消掉温度，两边整理。"
+  },
+  {
+   "slide": 6,
+   "start": 188.24,
+   "end": 192.42,
+   "text": "积分出来，就是 pV 的 γ 次方等于常量。"
+  },
+  {
+   "slide": 6,
+   "start": 192.82,
+   "end": 201.36,
+   "text": "换个形式，还有 TV 的 γ 减一次方等于常量、p 的 1 减 γ 次方乘 T 的 γ 次方等于常量。"
+  },
+  {
+   "slide": 6,
+   "start": 201.76,
+   "end": 207.3,
+   "text": "三个式子说的是同一件事，用哪个看题目给的是哪一对参量。"
+  },
+  {
+   "slide": 7,
+   "start": 208.91,
+   "end": 214.09,
+   "text": "不妨把两条线画在同一张图上，差别一眼就看出来。"
+  },
+  {
+   "slide": 7,
+   "start": 214.49,
+   "end": 217.61,
+   "text": "等温线的斜率是负 p 比 V。"
+  },
+  {
+   "slide": 7,
+   "start": 218.01,
+   "end": 221.39,
+   "text": "绝热线的斜率是负 γ p 比 V。"
+  },
+  {
+   "slide": 7,
+   "start": 221.79,
+   "end": 227.48,
+   "text": "两者差一个 γ，而 γ 总大于一，所以绝热线更陡。"
+  },
+  {
+   "slide": 7,
+   "start": 227.88,
+   "end": 234.43,
+   "text": "图上从 A 点出发：体积增加同样的 ΔV，绝热线的压强掉得更多。"
+  },
+  {
+   "slide": 7,
+   "start": 234.83,
+   "end": 243.54,
+   "text": "道理也简单：等温时吸进来的热补充了做功的消耗，压强掉得慢；绝热时没有补充，只能烧内能。"
+  },
+  {
+   "slide": 7,
+   "start": 243.94,
+   "end": 248.33,
+   "text": "这一点在后面算循环效率时非常关键。"
+  },
+  {
+   "slide": 8,
+   "start": 249.93,
+   "end": 251.85,
+   "text": "看第一个例子。"
+  },
+  {
+   "slide": 8,
+   "start": 252.25,
+   "end": 261.13,
+   "text": "5 摩尔氢气，初温 293 开，压强 1.013 乘十的五次方帕，要把它压缩到原体积的十分之一。"
+  },
+  {
+   "slide": 8,
+   "start": 261.53,
+   "end": 269.04,
+   "text": "等温压缩：功等于 νRT ln(V₂/V₁)，代进去是负 2.80 乘十的四次方焦。"
+  },
+  {
+   "slide": 8,
+   "start": 269.44,
+   "end": 272.73,
+   "text": "负号表示外界对气体做功。"
+  },
+  {
+   "slide": 8,
+   "start": 273.13,
+   "end": 285.85,
+   "text": "绝热压缩：先由温度关系式算出 T₂ 是 753 开，再用 W 等于负 νC_V,m 乘温度差，得负 4.70 乘十的四次方焦。"
+  },
+  {
+   "slide": 8,
+   "start": 286.25,
+   "end": 297.0,
+   "text": "同样压缩到十分之一，绝热要多做功；压强的对比更悬殊：等温 1.01 乘十的六次方帕，绝热约 2.6 乘十的六次方帕。"
+  },
+  {
+   "slide": 9,
+   "start": 298.54,
+   "end": 301.35,
+   "text": "第二个例子：氮气液化。"
+  },
+  {
+   "slide": 9,
+   "start": 301.75,
+   "end": 308.13,
+   "text": "把氮气装在绝热气缸里，开始时压强 50 个大气压、温度 300 开。"
+  },
+  {
+   "slide": 9,
+   "start": 308.53,
+   "end": 314.55,
+   "text": "急速膨胀到 1 个大气压，过程极快，来不及换热，所以当作绝热。"
+  },
+  {
+   "slide": 9,
+   "start": 314.95,
+   "end": 319.37,
+   "text": "氮气是双原子分子，γ 等于 1.40。"
+  },
+  {
+   "slide": 9,
+   "start": 319.77,
+   "end": 326.97,
+   "text": "由 p 的 1 减 γ 次方乘 T 的 γ 次方等于常量，解出 T₂ 等于 98.0 开。"
+  },
+  {
+   "slide": 9,
+   "start": 327.37,
+   "end": 335.0,
+   "text": "从 300 开降到 98 开，已经低于氮气的液化温度，这就是工业上液化气体的方法。"
+  },
+  {
+   "slide": 10,
+   "start": 336.54,
+   "end": 340.07,
+   "text": "第三个例子换了对象：水汽化。"
+  },
+  {
+   "slide": 10,
+   "start": 340.47,
+   "end": 349.3,
+   "text": "一个气缸里装着水，缸壁导热，活塞上的压强保持不变，缓慢加热到 100 摄氏度，水变成水蒸气。"
+  },
+  {
+   "slide": 10,
+   "start": 349.7,
+   "end": 356.44,
+   "text": "这是等压过程：压强不变，体积从水的体积膨胀到水蒸气的体积。"
+  },
+  {
+   "slide": 10,
+   "start": 356.84,
+   "end": 364.16,
+   "text": "先算吸热：Q 等于质量乘汽化热，一千克水是 2.26 乘十的六次方焦。"
+  },
+  {
+   "slide": 10,
+   "start": 364.56,
+   "end": 375.17,
+   "text": "再算做功：W 等于 p 乘 ΔV，用密度算出体积变化约 1.67 立方米，所以 W 约 1.69 乘十的五次方焦。"
+  },
+  {
+   "slide": 10,
+   "start": 375.57,
+   "end": 386.01,
+   "text": "最后 ΔE 等于 Q 减 W，约 2.1 乘十的六次方焦——汽化热里绝大部分变成了内能，只有一小部分用来推开大气。"
+  },
+  {
+   "slide": 11,
+   "start": 387.55,
+   "end": 390.5,
+   "text": "第四个例子是个日常现象。"
+  },
+  {
+   "slide": 11,
+   "start": 390.9,
+   "end": 396.04,
+   "text": "打开啤酒瓶盖时，常看到白雾冒出来，这是为什么？"
+  },
+  {
+   "slide": 11,
+   "start": 396.69,
+   "end": 402.19,
+   "text": "开盖的瞬间瓶内压强远高于外界，气体急速膨胀。"
+  },
+  {
+   "slide": 11,
+   "start": 402.59,
+   "end": 407.99,
+   "text": "过程极快，来不及和外界交换热量，可以当成绝热膨胀。"
+  },
+  {
+   "slide": 11,
+   "start": 408.39,
+   "end": 413.05,
+   "text": "绝热膨胀对外做功，内能减少，温度骤降。"
+  },
+  {
+   "slide": 11,
+   "start": 413.45,
+   "end": 419.64,
+   "text": "温度一低，瓶内的水蒸气就凝结成小水珠，看上去就是白雾。"
+  },
+  {
+   "slide": 11,
+   "start": 420.04,
+   "end": 425.63,
+   "text": "从冰箱里拿出来的啤酒更容易起雾，因为起点温度本来就低。"
+  },
+  {
+   "slide": 12,
+   "start": 427.23,
+   "end": 430.37,
+   "text": "最后把前面几种过程统一起来。"
+  },
+  {
+   "slide": 12,
+   "start": 430.77,
+   "end": 439.29,
+   "text": "把绝热方程 pV 的 γ 次方等于常量里的 γ 换成一个任意实数 n，就得到 pV 的 n 次方等于常量。"
+  },
+  {
+   "slide": 12,
+   "start": 439.69,
+   "end": 444.08,
+   "text": "这叫做多方过程方程，n 叫多方指数。"
+  },
+  {
+   "slide": 12,
+   "start": 444.48,
+   "end": 450.46,
+   "text": "它是前面所有过程的母方程：n 等于 γ 是绝热，n 等于 1 是等温。"
+  },
+  {
+   "slide": 12,
+   "start": 450.86,
+   "end": 458.4,
+   "text": "n 等于 0 时 p 等于常量，是等压；n 趋于无穷时 V 等于常量，是等容。"
+  },
+  {
+   "slide": 12,
+   "start": 458.8,
+   "end": 463.53,
+   "text": "所以四种基本过程，都是多方过程的特例。"
+  },
+  {
+   "slide": 13,
+   "start": 465.06,
+   "end": 469.12,
+   "text": "多方过程的功和热容，可以照搬前面的做法。"
+  },
+  {
+   "slide": 13,
+   "start": 469.52,
+   "end": 475.57,
+   "text": "功等于 p₁V₁ 减 p₂V₂ 除以 n 减一，把 n 换成 γ 就回到绝热。"
+  },
+  {
+   "slide": 13,
+   "start": 475.97,
+   "end": 483.94,
+   "text": "内能增量还是一样的：ΔE 等于 ν C_V,m ΔT，因为内能只由温度定。"
+  },
+  {
+   "slide": 13,
+   "start": 484.34,
+   "end": 489.33,
+   "text": "热量用第一定律算：Q 等于 ΔE 加 W。"
+  },
+  {
+   "slide": 13,
+   "start": 489.73,
+   "end": 497.55,
+   "text": "整理出来，多方过程的摩尔热容是 C_V,m 乘以 γ 减 n 除以 n 减一。"
+  },
+  {
+   "slide": 13,
+   "start": 497.95,
+   "end": 508.8,
+   "text": "这个式子很妙：n 等于 γ 时热容为零，正是绝热；n 等于 1 时热容无穷大，正是等温——温度不变，热容自然发散。"
+  },
+  {
+   "slide": 14,
+   "start": 510.33,
+   "end": 512.2,
+   "text": "小结。"
+  },
+  {
+   "slide": 14,
+   "start": 512.6,
+   "end": 520.66,
+   "text": "等温过程：温度不变，ΔE 等于零，Q 等于 W，等于 νRT ln(V₂/V₁)。"
+  },
+  {
+   "slide": 14,
+   "start": 521.06,
+   "end": 528.74,
+   "text": "绝热过程：dQ 等于零，W 等于负 ΔE，pV 的 γ 次方等于常量。"
+  },
+  {
+   "slide": 14,
+   "start": 529.14,
+   "end": 533.2,
+   "text": "绝热线比等温线陡，陡的倍数是 γ。"
+  },
+  {
+   "slide": 14,
+   "start": 533.6,
+   "end": 540.32,
+   "text": "多方过程 pV 的 n 次方等于常量，把四种基本过程统一成一族曲线。"
+  },
+  {
+   "slide": 14,
+   "start": 540.72,
+   "end": 544.51,
+   "text": "下一节讲循环过程和卡诺循环。"
+  }
+ ],
+ "build_ts": 1792586350,
+ "logoScale": 0.67,
+ "theme": "wave"
+}

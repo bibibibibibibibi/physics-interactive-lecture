@@ -1,0 +1,2823 @@
+{
+ "title": "13-9 信息熵简介",
+ "nav": "13-9　信息熵简介",
+ "footer": "第十三章　热力学基础",
+ "character": "aqiang",
+ "characters": [
+  {
+   "id": "aqiang",
+   "name": "阿强"
+  },
+  {
+   "id": "professor",
+   "name": "博士讲师"
+  },
+  {
+   "id": "zhongshan",
+   "name": "中山装先生"
+  }
+ ],
+ "duration": 317.98,
+ "slides": [
+  {
+   "id": 1,
+   "kind": "page",
+   "heading": "封面",
+   "narration": "第十三章最后一节，选学。13-9，信息熵简介。这一节我们跳出热学，看看「熵」这个字后来跑到了哪里。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 560,
+     "y": 282,
+     "w": 800,
+     "h": 100,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "第 十 三 章",
+        "size": 56,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 0,
+     "x": 300,
+     "y": 408,
+     "w": 1320,
+     "h": 170,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "热 力 学 基 础",
+        "size": 92,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 250,
+     "y": 588,
+     "w": 1420,
+     "h": 120,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "13-9　信息熵简介",
+        "size": 40,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 220,
+     "y": 730,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "选学（教材标 *）　·　信息量　·　比特　·　香农熵",
+        "size": 31,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 220,
+     "y": 850,
+     "w": 1480,
+     "h": 80,
+     "align": "center",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "同一个「熵」，两种度量",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 0.0,
+    "2": 3.78,
+    "3": 7.32
+   },
+   "t_start": 0.0,
+   "t_end": 13.8,
+   "duration": 13.8,
+   "laser": []
+  },
+  {
+   "id": 2,
+   "kind": "page",
+   "heading": "本节路线",
+   "narration": "本节路线。先看信息与熵这两个概念的相遇。再用麦克斯韦妖说明信息与熵的关系。然后定义信息量的单位比特，算一个字符的例子。由此写出信息熵的公式，并算一个天气预报的例子。最后把两种熵放在一起，看它们为什么是同一个东西。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1200,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节路线",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 244,
+     "w": 1580,
+     "h": 54,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "主线：信息与熵 → 麦克斯韦妖 → 比特 → 信息熵 → 两种熵的统一",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 330,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1　信息与熵",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 386,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两个领域的同一个词",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 458,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "2　麦克斯韦妖",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 512,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "信息能换熵吗",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 584,
+     "w": 760,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "3　信息量的单位",
+        "size": 32,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 638,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "1 bit 是什么",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 330,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4　信息熵",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 386,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$H=-\\sum p\\log_2 p$",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 458,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "5　两种熵",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 512,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "为什么是一回事",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 584,
+     "w": 740,
+     "h": 52,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "6　小结",
+        "size": 33,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 638,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本章收口",
+        "size": 29,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 120,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "本节收口：熵不只是热学的概念 —— 凡是「不确定」，都能用它度量",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 14.6,
+    "2": 16.87,
+    "3": 20.51,
+    "4": 24.68,
+    "5": 29.52,
+    "6": 34.29
+   },
+   "t_start": 14.6,
+   "t_end": 39.51,
+   "duration": 24.91,
+   "laser": []
+  },
+  {
+   "id": 3,
+   "kind": "page",
+   "heading": "一　信息与熵",
+   "narration": "最后这一节，我们跳出热学，看看「熵」这个字跑到了哪里。信息学和热力学，本来是两个不相干的领域。不妨把两个「熵」并排看一看。热力学的熵，描述分子运动的混乱程度。信息熵，描述一件事的不确定程度。1948 年香农提出信息熵以后，人们发现两者在数学上是同一个东西。这种巧合，其实不是巧合。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一　信息与熵",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 760,
+     "h": 200,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "热力学的熵",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$S=k\\ln W$",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "描述分子运动的混乱程度",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "平衡态熵最大",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 1010,
+     "y": 240,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "信息熵",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "1948 年，香农提出",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "描述一件事的不确定程度",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "越不确定，熵越大",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 480,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两个不相干的领域，用了同一个词",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 540,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "热力学：分子越乱 ⇒ 熵越大",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 600,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "信息学：越猜不准 ⇒ 熵越大",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 670,
+     "w": 1580,
+     "h": 150,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "1948 年，香农（Shannon）把两者统一在同一个数学形式下",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "不是巧合 —— 它们度量的都是「不确定性」",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 860,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "熵从一个热学概念，变成了一个关于「信息与秩序」的普遍概念",
+        "size": 26,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 40.31,
+    "2": 46.18,
+    "3": 50.64,
+    "4": 53.82,
+    "5": 58.37,
+    "6": 62.51
+   },
+   "t_start": 40.31,
+   "t_end": 73.77,
+   "duration": 33.46,
+   "laser": []
+  },
+  {
+   "id": 4,
+   "kind": "page",
+   "heading": "二　麦克斯韦妖",
+   "narration": "最能说明两者联系的，是麦克斯韦妖。设想一个容器被隔板分成两半，隔板上开一扇小门。有个小妖守在门口：看到快分子过来就开门放它去右边，看到慢分子就放它去左边。这样不需要做功，右边越来越热、左边越来越冷。这直接违反了第二定律。问题出在哪？出在小妖必须「看」——看就需要获取信息，而获取信息本身要付出熵的代价。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "二　麦克斯韦妖",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 240,
+     "w": 765,
+     "h": 437,
+     "name": "maxwell_demon"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "一个挑战第二定律的设想",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "容器分两半，隔板上开一扇门",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "小妖只放快分子向右",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 402,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "慢分子向左",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 462,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不做功，却造出了温差",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 522,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "这违反第二定律",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 592,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "问题出在「看」",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "小妖必须获取信息",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "获取信息要付出熵的代价",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "算上这笔账，第二定律不破",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 820,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以：信息不是免费的 —— 用信息换熵，总账仍然平",
+        "size": 26,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 74.57,
+    "2": 78.91,
+    "3": 84.64,
+    "4": 92.26,
+    "5": 97.63,
+    "6": 100.67
+   },
+   "t_start": 74.57,
+   "t_end": 110.79,
+   "duration": 36.22,
+   "laser": []
+  },
+  {
+   "id": 5,
+   "kind": "page",
+   "heading": "三　信息量的单位",
+   "narration": "那信息怎么度量？先定单位。在两种并列的、互不相关的可能性之间作出一个选择，所需要的信息量就叫 1 比特。比如抛一枚硬币，结果有两种可能，知道结果就得到 1 比特。如果有 4 种等可能的可能，要确定是哪一个，需要 2 比特。8 种就要 3 比特。所以 n 种等概率的可能，确定一个需要 log₂n 比特。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "三　信息量的单位",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 250,
+     "w": 765,
+     "h": 372,
+     "name": "bit_choice"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两种可能，选一个 = 1 bit",
+        "size": 29,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "单位：比特（bit）",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "抛硬币：两种可能 ⇒ 1 bit",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 416,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "4 种可能 ⇒ 2 bit",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 472,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "8 种可能 ⇒ 3 bit",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 6,
+     "x": 170,
+     "y": 532,
+     "w": 740,
+     "h": 100,
+     "tex": "\\text{信息量}=\\log_2 n",
+     "size": 34,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 660,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "为什么是 log₂：每多一次「是/否」的判断，可能数就翻一倍",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "所以信息量随可能数按对数增长 —— 这就是比特的来历",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 111.59,
+    "2": 116.5,
+    "3": 124.2,
+    "4": 130.38,
+    "5": 136.49,
+    "6": 139.24
+   },
+   "t_start": 111.59,
+   "t_end": 145.36,
+   "duration": 33.77,
+   "laser": []
+  },
+  {
+   "id": 6,
+   "kind": "page",
+   "heading": "例 1　一个英文字符带多少信息",
+   "narration": "看一个例子。英文书里，字母加标点符号一共 32 种。假设它们出现的概率都相等，那么每个字符携带多少信息？32 等于 2 的 5 次方，所以是 5 比特。这就是为什么早期计算机用 5 位二进制编码英文字符。当然实际语言里字母出现的概率并不相等，所以真实的信息量要小于 5 比特。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例 1　一个英文字符带多少信息",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "英文书：字母 + 标点共 32 种",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 288,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "假设等概率出现",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 348,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "每个字符的信息量",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 4,
+     "x": 170,
+     "y": 396,
+     "w": 760,
+     "h": 110,
+     "tex": "H=\\log_2 32=5\\ \\mathrm{bit}",
+     "size": 36,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 530,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "32 = 2⁵ ⇒ 5 位二进制",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 576,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "早期电传码就是 5 位",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "现实中的修正",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 344,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "字母出现的概率并不相等",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 390,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "E、T、A 常见，Z、Q 罕见",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 436,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以真实信息量 < 5 bit",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 660,
+     "w": 1580,
+     "h": 150,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "等概率时信息量最大",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "概率越不均，平均信息量越小 —— 这正是「信息熵」要处理的事",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 146.16,
+    "2": 148.43,
+    "3": 153.22,
+    "4": 159.63,
+    "5": 163.92,
+    "6": 169.74
+   },
+   "t_start": 146.16,
+   "t_end": 178.01,
+   "duration": 31.85,
+   "laser": []
+  },
+  {
+   "id": 7,
+   "kind": "page",
+   "heading": "四　信息熵",
+   "narration": "但等概率只是特例。现实中的可能性，往往不是等概率的。这时信息量就要分成两部分：一部分是有效信息，一部分是不确定的信息。不确定的那部分，就叫信息熵。写成式子是 H 等于负的、概率乘 log₂概率、再对所有可能求和。概率越平均，熵越大；越集中，熵越小。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "四　信息熵",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "diagram",
+     "step": 1,
+     "x": 985,
+     "y": 250,
+     "w": 765,
+     "h": 437,
+     "name": "binary_entropy"
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 48,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不是等概率怎么办",
+        "size": 30,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 296,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "现实中各可能性的概率不同",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "信息量 = 有效信息 + 不确定信息",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 412,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不确定的那部分，叫信息熵",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 468,
+     "w": 740,
+     "h": 110,
+     "tex": "H=-\\sum_{i=1}^{n}p_i\\log_2 p_i",
+     "size": 32,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 600,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "概率越平均 ⇒ $H$ 越大",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 646,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "概率越集中 ⇒ $H$ 越小",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 712,
+     "w": 1580,
+     "h": 130,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "两个极端：掷硬币的公平与作弊",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "公平硬币：两种结果各半，最不确定，$H=1$ bit；两面都正：结果已知，$H=0$",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 178.81,
+    "2": 181.8,
+    "3": 185.9,
+    "4": 193.14,
+    "5": 196.83,
+    "6": 203.52
+   },
+   "t_start": 178.81,
+   "t_end": 209.31,
+   "duration": 30.5,
+   "laser": []
+  },
+  {
+   "id": 8,
+   "kind": "page",
+   "heading": "例 2　天气预报的信息熵",
+   "narration": "看第二个例子。某地下雨的概率是 0.2，不下雨是 0.8。代进式子，信息熵是 0.72 比特。如果预报更准，下雨概率变成 0.1、不下雨 0.9，熵就降到 0.47 比特。熵变小，说明不确定性变小，也就是信息源提供的有效信息增加了。所以「熵减」在信息学里是好事，在热学里却是要付出代价的。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "例 2　天气预报的信息熵",
+        "size": 46,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 226,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 下雨 0.2，不下雨 0.8",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 2,
+     "x": 170,
+     "y": 276,
+     "w": 760,
+     "h": 90,
+     "tex": "H=-(0.2\\log_2 0.2+0.8\\log_2 0.8)",
+     "size": 24,
+     "color": "#111111",
+     "align": "left"
+    },
+    {
+     "type": "tex",
+     "step": 3,
+     "x": 170,
+     "y": 380,
+     "w": 760,
+     "h": 100,
+     "tex": "=0.72\\ \\mathrm{bit}",
+     "size": 32,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 500,
+     "w": 760,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 预报更准：0.1 与 0.9",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "tex",
+     "step": 5,
+     "x": 170,
+     "y": 548,
+     "w": 760,
+     "h": 90,
+     "tex": "H=-(0.1\\log_2 0.1+0.9\\log_2 0.9)=0.47\\ \\mathrm{bit}",
+     "size": 22,
+     "color": "#C00000",
+     "align": "left"
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 1010,
+     "y": 276,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "熵变小意味着什么",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 332,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "不确定性变小",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 378,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "有效信息量增加",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 1010,
+     "y": 424,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "0.72 → 0.47 bit",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 680,
+     "w": 1580,
+     "h": 140,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "注意：「熵减」在信息学里是好事",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "它表示预报更准、不确定性更小 —— 而在热学里，熵减是要外界付出代价的",
+        "size": 26,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 210.11,
+    "2": 212.41,
+    "3": 217.2,
+    "4": 221.46,
+    "5": 229.04,
+    "6": 235.54
+   },
+   "t_start": 210.11,
+   "t_end": 242.15,
+   "duration": 32.04,
+   "laser": []
+  },
+  {
+   "id": 9,
+   "kind": "page",
+   "heading": "五　两种熵是同一个东西",
+   "narration": "把两种熵放在一起看。热力学熵 S 等于 k 乘 ln W，W 是微观状态数。信息熵 H 等于负的、Σ p 乘 log₂ p。如果把 p 解释成「系统处在某个微观状态的概率」，两者只差一个常数因子。所以它们本质上是同一个东西：都是对「不确定性」的度量。一个用自然对数、带玻耳兹曼常量；一个用 2 为底、以比特为单位。想一想：为什么底不同还能是同一个东西？因为对数换底只差一个常数因子。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1580,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "五　两种熵是同一个东西",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 1,
+     "x": 170,
+     "y": 240,
+     "w": 760,
+     "h": 190,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "热力学熵",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$S=k\\ln W$",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$W$：微观状态数",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "自然对数，带 $k$",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 2,
+     "x": 1010,
+     "y": 240,
+     "w": 740,
+     "h": 190,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "信息熵",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "$H=-\\sum p_i\\log_2 p_i$",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "$p_i$：各状态的概率",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "2 为底，单位 bit",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 170,
+     "y": 470,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "把 $p_i$ 解释成「处在某个微观状态的概率」",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 170,
+     "y": 530,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两者只差一个常数因子",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 5,
+     "x": 170,
+     "y": 590,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本质相同：都是对「不确定性」的度量",
+        "size": 28,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 6,
+     "x": 170,
+     "y": 660,
+     "w": 1580,
+     "h": 160,
+     "fill": "#FDF2F5",
+     "line": "#C000C0",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "底不同不影响「是同一个东西」",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "对数换底只差一个常数：$\\log_2 W=\\ln W/\\ln 2$，常量 $k$ 正好吸收掉它",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "text",
+     "step": 6,
+     "x": 170,
+     "y": 860,
+     "w": 1580,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "所以「熵」从一个热学量，变成了一个关于信息与秩序的普遍概念",
+        "size": 26,
+        "color": "#777",
+        "b": false
+       }
+      ]
+     ]
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 242.95,
+    "2": 245.75,
+    "3": 251.84,
+    "4": 256.75,
+    "5": 263.49,
+    "6": 269.17
+   },
+   "t_start": 242.95,
+   "t_end": 285.45,
+   "duration": 42.5,
+   "laser": []
+  },
+  {
+   "id": 10,
+   "kind": "page",
+   "heading": "本节小结",
+   "narration": "小结。信息量以比特为单位：两种等可能的选择是 1 比特，n 种是 log₂n。信息熵 H 等于负 Σ p log₂ p，衡量信息的不确定程度。熵越小，信息越确定；熵越大，越不确定。它和热力学熵在数学上是同一个东西——都是对无序、对不确定的度量。第十三章到这里就结束了。",
+   "elements": [
+    {
+     "type": "text",
+     "step": 0,
+     "x": 170,
+     "y": 137,
+     "w": 1400,
+     "h": 90,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "本节小结",
+        "size": 50,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "① 信息量",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 1,
+     "x": 170,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "两种可能 1 bit；$n$ 种 $\\log_2 n$ bit",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 356,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "② 信息熵",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 2,
+     "x": 170,
+     "y": 408,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "$H=-\\sum p\\log_2 p$",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 236,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "③ 熵的含义",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 3,
+     "x": 1010,
+     "y": 288,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "越不确定熵越大，越确定熵越小",
+        "size": 26,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 356,
+     "w": 740,
+     "h": 50,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "④ 两种熵",
+        "size": 31,
+        "color": "#0000CD",
+        "b": true
+       }
+      ]
+     ]
+    },
+    {
+     "type": "text",
+     "step": 4,
+     "x": 1010,
+     "y": 408,
+     "w": 740,
+     "h": 44,
+     "align": "left",
+     "valign": "center",
+     "paras": [
+      [
+       {
+        "t": "数学上同一个东西，只差常数因子",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 1010,
+     "y": 470,
+     "w": 740,
+     "h": 170,
+     "fill": "#EFF6FF",
+     "line": "#0000CD",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "第十三章完",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "从准静态过程到信息熵",
+        "size": 25,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "热学、统计、信息，一条线",
+        "size": 25,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 490,
+     "w": 740,
+     "h": 200,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "一句话",
+        "size": 28,
+        "color": "#C00000",
+        "b": true
+       }
+      ],
+      [
+       {
+        "t": "熵 = 不确定性的度量",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "热学里叫混乱度",
+        "size": 27,
+        "color": "#111111",
+        "b": false
+       }
+      ],
+      [
+       {
+        "t": "信息学里叫信息熵",
+        "size": 24,
+        "color": "#666",
+        "b": false
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    },
+    {
+     "type": "box",
+     "step": 5,
+     "x": 170,
+     "y": 730,
+     "w": 1580,
+     "h": 120,
+     "fill": "#CCFFCC",
+     "line": "#2E8B57",
+     "lw": 3,
+     "radius": 0,
+     "paras": [
+      [
+       {
+        "t": "第十三章 9/9 完成：从「功与热」走到「信息与熵」",
+        "size": 27,
+        "color": "#C00000",
+        "b": true
+       }
+      ]
+     ],
+     "tex": null,
+     "size": 40,
+     "align": "center",
+     "color": "#111111"
+    }
+   ],
+   "bullets": [],
+   "stepTimes": {
+    "1": 286.25,
+    "2": 288.52,
+    "3": 295.33,
+    "4": 301.47,
+    "5": 306.81
+   },
+   "t_start": 286.25,
+   "t_end": 316.54,
+   "duration": 30.29,
+   "laser": []
+  }
+ ],
+ "subtitles": [
+  {
+   "slide": 1,
+   "start": 0.0,
+   "end": 3.38,
+   "text": "第十三章最后一节，选学。"
+  },
+  {
+   "slide": 1,
+   "start": 3.78,
+   "end": 6.92,
+   "text": "13-9，信息熵简介。"
+  },
+  {
+   "slide": 1,
+   "start": 7.32,
+   "end": 13.22,
+   "text": "这一节我们跳出热学，看看「熵」这个字后来跑到了哪里。"
+  },
+  {
+   "slide": 2,
+   "start": 14.6,
+   "end": 16.47,
+   "text": "本节路线。"
+  },
+  {
+   "slide": 2,
+   "start": 16.87,
+   "end": 20.11,
+   "text": "先看信息与熵这两个概念的相遇。"
+  },
+  {
+   "slide": 2,
+   "start": 20.51,
+   "end": 24.28,
+   "text": "再用麦克斯韦妖说明信息与熵的关系。"
+  },
+  {
+   "slide": 2,
+   "start": 24.68,
+   "end": 29.12,
+   "text": "然后定义信息量的单位比特，算一个字符的例子。"
+  },
+  {
+   "slide": 2,
+   "start": 29.52,
+   "end": 33.89,
+   "text": "由此写出信息熵的公式，并算一个天气预报的例子。"
+  },
+  {
+   "slide": 2,
+   "start": 34.29,
+   "end": 38.78,
+   "text": "最后把两种熵放在一起，看它们为什么是同一个东西。"
+  },
+  {
+   "slide": 3,
+   "start": 40.31,
+   "end": 45.78,
+   "text": "最后这一节，我们跳出热学，看看「熵」这个字跑到了哪里。"
+  },
+  {
+   "slide": 3,
+   "start": 46.18,
+   "end": 50.24,
+   "text": "信息学和热力学，本来是两个不相干的领域。"
+  },
+  {
+   "slide": 3,
+   "start": 50.64,
+   "end": 53.42,
+   "text": "不妨把两个「熵」并排看一看。"
+  },
+  {
+   "slide": 3,
+   "start": 53.82,
+   "end": 57.97,
+   "text": "热力学的熵，描述分子运动的混乱程度。"
+  },
+  {
+   "slide": 3,
+   "start": 58.37,
+   "end": 62.11,
+   "text": "信息熵，描述一件事的不确定程度。"
+  },
+  {
+   "slide": 3,
+   "start": 62.51,
+   "end": 69.28,
+   "text": "1948 年香农提出信息熵以后，人们发现两者在数学上是同一个东西。"
+  },
+  {
+   "slide": 3,
+   "start": 69.68,
+   "end": 72.97,
+   "text": "这种巧合，其实不是巧合。"
+  },
+  {
+   "slide": 4,
+   "start": 74.57,
+   "end": 78.51,
+   "text": "最能说明两者联系的，是麦克斯韦妖。"
+  },
+  {
+   "slide": 4,
+   "start": 78.91,
+   "end": 84.24,
+   "text": "设想一个容器被隔板分成两半，隔板上开一扇小门。"
+  },
+  {
+   "slide": 4,
+   "start": 84.64,
+   "end": 91.86,
+   "text": "有个小妖守在门口：看到快分子过来就开门放它去右边，看到慢分子就放它去左边。"
+  },
+  {
+   "slide": 4,
+   "start": 92.26,
+   "end": 97.23,
+   "text": "这样不需要做功，右边越来越热、左边越来越冷。"
+  },
+  {
+   "slide": 4,
+   "start": 97.63,
+   "end": 100.27,
+   "text": "这直接违反了第二定律。"
+  },
+  {
+   "slide": 4,
+   "start": 100.67,
+   "end": 102.81,
+   "text": "问题出在哪？"
+  },
+  {
+   "slide": 4,
+   "start": 103.46,
+   "end": 109.99,
+   "text": "出在小妖必须「看」——看就需要获取信息，而获取信息本身要付出熵的代价。"
+  },
+  {
+   "slide": 5,
+   "start": 111.59,
+   "end": 113.58,
+   "text": "那信息怎么度量？"
+  },
+  {
+   "slide": 5,
+   "start": 114.23,
+   "end": 116.1,
+   "text": "先定单位。"
+  },
+  {
+   "slide": 5,
+   "start": 116.5,
+   "end": 123.8,
+   "text": "在两种并列的、互不相关的可能性之间作出一个选择，所需要的信息量就叫 1 比特。"
+  },
+  {
+   "slide": 5,
+   "start": 124.2,
+   "end": 129.98,
+   "text": "比如抛一枚硬币，结果有两种可能，知道结果就得到 1 比特。"
+  },
+  {
+   "slide": 5,
+   "start": 130.38,
+   "end": 136.09,
+   "text": "如果有 4 种等可能的可能，要确定是哪一个，需要 2 比特。"
+  },
+  {
+   "slide": 5,
+   "start": 136.49,
+   "end": 138.84,
+   "text": "8 种就要 3 比特。"
+  },
+  {
+   "slide": 5,
+   "start": 139.24,
+   "end": 144.54,
+   "text": "所以 n 种等概率的可能，确定一个需要 log₂n 比特。"
+  },
+  {
+   "slide": 6,
+   "start": 146.16,
+   "end": 148.03,
+   "text": "看一个例子。"
+  },
+  {
+   "slide": 6,
+   "start": 148.43,
+   "end": 152.82,
+   "text": "英文书里，字母加标点符号一共 32 种。"
+  },
+  {
+   "slide": 6,
+   "start": 153.22,
+   "end": 158.98,
+   "text": "假设它们出现的概率都相等，那么每个字符携带多少信息？"
+  },
+  {
+   "slide": 6,
+   "start": 159.63,
+   "end": 163.52,
+   "text": "32 等于 2 的 5 次方，所以是 5 比特。"
+  },
+  {
+   "slide": 6,
+   "start": 163.92,
+   "end": 169.34,
+   "text": "这就是为什么早期计算机用 5 位二进制编码英文字符。"
+  },
+  {
+   "slide": 6,
+   "start": 169.74,
+   "end": 177.25,
+   "text": "当然实际语言里字母出现的概率并不相等，所以真实的信息量要小于 5 比特。"
+  },
+  {
+   "slide": 7,
+   "start": 178.81,
+   "end": 181.4,
+   "text": "但等概率只是特例。"
+  },
+  {
+   "slide": 7,
+   "start": 181.8,
+   "end": 185.5,
+   "text": "现实中的可能性，往往不是等概率的。"
+  },
+  {
+   "slide": 7,
+   "start": 185.9,
+   "end": 192.74,
+   "text": "这时信息量就要分成两部分：一部分是有效信息，一部分是不确定的信息。"
+  },
+  {
+   "slide": 7,
+   "start": 193.14,
+   "end": 196.43,
+   "text": "不确定的那部分，就叫信息熵。"
+  },
+  {
+   "slide": 7,
+   "start": 196.83,
+   "end": 203.12,
+   "text": "写成式子是 H 等于负的、概率乘 log₂概率、再对所有可能求和。"
+  },
+  {
+   "slide": 7,
+   "start": 203.52,
+   "end": 208.58,
+   "text": "概率越平均，熵越大；越集中，熵越小。"
+  },
+  {
+   "slide": 8,
+   "start": 210.11,
+   "end": 212.01,
+   "text": "看第二个例子。"
+  },
+  {
+   "slide": 8,
+   "start": 212.41,
+   "end": 216.8,
+   "text": "某地下雨的概率是 0.2，不下雨是 0.8。"
+  },
+  {
+   "slide": 8,
+   "start": 217.2,
+   "end": 221.06,
+   "text": "代进式子，信息熵是 0.72 比特。"
+  },
+  {
+   "slide": 8,
+   "start": 221.46,
+   "end": 228.64,
+   "text": "如果预报更准，下雨概率变成 0.1、不下雨 0.9，熵就降到 0.47 比特。"
+  },
+  {
+   "slide": 8,
+   "start": 229.04,
+   "end": 235.14,
+   "text": "熵变小，说明不确定性变小，也就是信息源提供的有效信息增加了。"
+  },
+  {
+   "slide": 8,
+   "start": 235.54,
+   "end": 241.42,
+   "text": "所以「熵减」在信息学里是好事，在热学里却是要付出代价的。"
+  },
+  {
+   "slide": 9,
+   "start": 242.95,
+   "end": 245.35,
+   "text": "把两种熵放在一起看。"
+  },
+  {
+   "slide": 9,
+   "start": 245.75,
+   "end": 251.44,
+   "text": "热力学熵 S 等于 k 乘 ln W，W 是微观状态数。"
+  },
+  {
+   "slide": 9,
+   "start": 251.84,
+   "end": 256.35,
+   "text": "信息熵 H 等于负的、Σ p 乘 log₂ p。"
+  },
+  {
+   "slide": 9,
+   "start": 256.75,
+   "end": 263.09,
+   "text": "如果把 p 解释成「系统处在某个微观状态的概率」，两者只差一个常数因子。"
+  },
+  {
+   "slide": 9,
+   "start": 263.49,
+   "end": 268.77,
+   "text": "所以它们本质上是同一个东西：都是对「不确定性」的度量。"
+  },
+  {
+   "slide": 9,
+   "start": 269.17,
+   "end": 275.6,
+   "text": "一个用自然对数、带玻耳兹曼常量；一个用 2 为底、以比特为单位。"
+  },
+  {
+   "slide": 9,
+   "start": 276.0,
+   "end": 280.37,
+   "text": "想一想：为什么底不同还能是同一个东西？"
+  },
+  {
+   "slide": 9,
+   "start": 281.02,
+   "end": 284.6,
+   "text": "因为对数换底只差一个常数因子。"
+  },
+  {
+   "slide": 10,
+   "start": 286.25,
+   "end": 288.12,
+   "text": "小结。"
+  },
+  {
+   "slide": 10,
+   "start": 288.52,
+   "end": 294.93,
+   "text": "信息量以比特为单位：两种等可能的选择是 1 比特，n 种是 log₂n。"
+  },
+  {
+   "slide": 10,
+   "start": 295.33,
+   "end": 301.07,
+   "text": "信息熵 H 等于负 Σ p log₂ p，衡量信息的不确定程度。"
+  },
+  {
+   "slide": 10,
+   "start": 301.47,
+   "end": 306.41,
+   "text": "熵越小，信息越确定；熵越大，越不确定。"
+  },
+  {
+   "slide": 10,
+   "start": 306.81,
+   "end": 312.67,
+   "text": "它和热力学熵在数学上是同一个东西——都是对无序、对不确定的度量。"
+  },
+  {
+   "slide": 10,
+   "start": 313.07,
+   "end": 315.81,
+   "text": "第十三章到这里就结束了。"
+  }
+ ],
+ "build_ts": 1792589197,
+ "logoScale": 0.67,
+ "theme": "wave"
+}
