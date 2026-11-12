@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>驻波配套动画 · 大学物理</title>
+<style>
+:root{color-scheme:light;--bg:#f5f7fa;--ink:#182b40;--muted:#536579;--line:#d1dbe5;--blue:#1468ad;--orange:#b56206;--red:#b32b3b;--purple:#6d43ac;--green:#146b55}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+main{max-width:1140px;margin:auto;padding:28px 30px 40px}h1{font-size:30px;line-height:1.25;margin:0 0 8px}h2{font-size:23px;margin:20px 0 12px}p{margin:8px 0}.intro{color:var(--muted)}
+nav{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 16px}button,select{font:inherit;color:inherit;background:white;border:1px solid #afbfce;border-radius:6px;padding:8px 14px;cursor:pointer}button:hover{background:#edf3f9}button[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:white}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #6c99c2;outline-offset:3px}
+.clock{display:flex;align-items:center;gap:10px;flex-wrap:wrap;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 0}.clock output{margin-left:auto;font-variant-numeric:tabular-nums}.clock select{padding:7px 10px}.controls{display:grid;grid-template-columns:repeat(4,minmax(130px,1fr));gap:14px 24px;margin:14px 0}.controls label{display:block;font-weight:500}.controls output{font-variant-numeric:tabular-nums}.controls input{display:block;width:100%;accent-color:var(--blue);margin:8px 0}.controls select{display:block;width:100%;margin:6px 0}.boundary-controls{grid-template-columns:2fr 1fr 1fr}.boundary-controls select{display:block;width:100%;margin:6px 0}
+.formula{font-family:system-ui,-apple-system,"PingFang SC",sans-serif;background:#e9eff5;padding:10px 14px;border-radius:5px;overflow-wrap:anywhere}.formula .math{font-variant-numeric:tabular-nums}.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:15px;margin:12px 0 4px}.legend span,.legend label{display:inline-flex;gap:7px;align-items:center}.legend input{accent-color:var(--blue)}.swatch{display:inline-block;width:23px;height:0;border-top:3px solid}.blue{color:var(--blue)}.orange{color:var(--orange)}.red{color:var(--red)}.purple{color:var(--purple)}.gray{color:#657789}.dash{border-top:2px dashed #7c8794}.node-dot{width:9px;height:9px;background:var(--red);border-radius:50%}.anti-dot{width:9px;height:9px;border:2px solid var(--blue);background:white;border-radius:50%}
+.preset-row{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 2px}.preset-row button{font-size:15px;padding:6px 11px}.preset-row button.active{background:#e2edf7;border-color:#5f89ad;color:#173b5d;font-weight:600}.result-box{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}.result-card{background:white;border:1px solid var(--line);border-radius:8px;padding:13px 15px}.result-card strong{display:block;font-size:15px;margin-bottom:5px}.result-card output{font-size:24px;font-weight:700;color:var(--blue);font-variant-numeric:tabular-nums}.measure-note{padding:10px 14px;border-left:4px solid var(--orange);background:#fff8ed}.callout{padding:13px 15px;background:#eef6f3;border-left:4px solid var(--green);margin:14px 0}.discussion-link{display:inline-block;background:var(--ink);color:white;text-decoration:none;border-radius:6px;padding:9px 15px;margin-top:8px}.discussion-link:hover{background:#294a6b}.compact-canvas{height:300px}.capture-only{display:none}
+canvas{display:block;width:100%;height:360px;background:white;border:1px solid var(--line);border-radius:4px;margin:8px 0}.detail{color:var(--ink);font-weight:500}.hint{font-size:15px;color:var(--muted)}table{width:100%;border-collapse:collapse;margin:10px 0;font-size:16px}th,td{text-align:left;padding:8px;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}th{font-weight:600}.table-wrap{overflow-x:auto}.mode{margin:18px 0}.mode h3{font-size:18px;margin:5px 0}.mode canvas{height:220px}.mode-readout{display:flex;gap:25px;flex-wrap:wrap;font-variant-numeric:tabular-nums}.mode-formula{font-size:16px;margin:4px 0;color:var(--muted)}[hidden]{display:none!important}footer{border-top:1px solid var(--line);padding-top:16px;margin-top:22px;font-size:15px;color:var(--muted)}
+@media(max-width:700px){main{padding:18px 15px 28px}h1{font-size:26px}h2{font-size:21px}body{font-size:16px}.controls{grid-template-columns:1fr 1fr;gap:10px 16px}.boundary-controls{grid-template-columns:1fr 1fr}.boundary-controls label:first-child{grid-column:1/-1}.clock output{margin-left:0}canvas{height:320px}.mode canvas{height:210px}.legend{gap:9px 16px}.result-box{grid-template-columns:1fr}.discussion-link{display:block;text-align:center}}
+@media(max-width:480px){.controls{grid-template-columns:1fr}nav button{flex:1 1 46%}.clock{display:grid;grid-template-columns:repeat(3,1fr)}.clock button{width:100%}.clock #reset{grid-column:span 2}.clock label{display:flex;align-items:center;gap:7px}.clock select{min-width:0;width:100%}.clock output{grid-column:1/-1;width:100%}}
+body.capture main{max-width:none;padding:12px}body.capture h1,body.capture .intro,body.capture nav,body.capture footer{display:none}body.capture .clock{border-top:0}
+</style>
+</head>
+<body>
+<main id="standing-wave-lab">
+<h1>驻波互动实验室</h1>
+<p class="intro">按课堂顺序观察两波叠加、测量波节和波腹，再用微波炉热斑估算光速。波形振幅为教学示意，横纵比例不按实物绘制。</p>
+<nav role="tablist" aria-label="驻波教学视图">
+<button type="button" role="tab" id="tab-1" aria-controls="view-1" aria-selected="true" data-view="1">1 · 驻波的形成</button>
+<button type="button" role="tab" id="tab-2" aria-controls="view-2" aria-selected="false" data-view="2" tabindex="-1">2 · 波节、波腹与相位</button>
+<button type="button" role="tab" id="tab-3" aria-controls="view-3" aria-selected="false" data-view="3" tabindex="-1">3 · 微波炉测光速</button>
+<button type="button" role="tab" id="tab-4" aria-controls="view-4" aria-selected="false" data-view="4" tabindex="-1">4 · 边界与二维驻波</button>
+</nav>
+<div class="clock"><button type="button" id="play-toggle">暂停</button><button type="button" id="step-back">− T/8</button><button type="button" id="step-forward">+ T/8</button><button type="button" id="reset">复位 t = 0</button><label>速度 <select id="time-scale"><option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label><output id="clock">t = 0.00 s</output></div>
+<section id="view-1" role="tabpanel" aria-labelledby="tab-1">
+<h2>同频、同方向振动、反向传播的两列波</h2>
+<div class="preset-row" aria-label="形成条件对照"><button type="button" data-preset="standing" class="active">理想驻波</button><button type="button" data-preset="unequal">振幅不等</button><button type="button" data-preset="detuned">频率不等</button><button type="button" data-preset="same-direction">同向传播</button><button type="button" data-preset="phase-shift">相位差改变</button></div>
+<div class="controls">
+<label for="a1">A₁ = <output id="a1-value">0.60 m</output><input id="a1" type="range" min="0.1" max="1" step="0.05" value="0.6" data-view="1" data-param="a1"></label>
+<label for="a2">A₂ = <output id="a2-value">0.60 m</output><input id="a2" type="range" min="0.1" max="1" step="0.05" value="0.6" data-view="1" data-param="a2"></label>
+<label for="nu1">频率 f₁ = <output id="nu1-value">1.00 Hz</output><input id="nu1" type="range" min="0.5" max="2" step="0.05" value="1" data-view="1" data-param="nu1"></label>
+<label for="nu1b">频率 f₂ = <output id="nu1b-value">1.00 Hz</output><input id="nu1b" type="range" min="0.5" max="2" step="0.05" value="1" data-view="1" data-param="nu2"></label>
+<label for="speed1">介质波速 v = <output id="speed1-value">2.00 m/s</output><input id="speed1" type="range" min="1" max="4" step="0.1" value="2" data-view="1" data-param="u"></label>
+<label for="phi2">第二列波初相 φ₂ = <output id="phi2-value">0.00 rad</output><input id="phi2" type="range" min="0" max="6.283" step="0.05" value="0" data-view="1" data-param="phi2"></label>
+<label for="direction2">第二列波方向<select id="direction2" data-view="1" data-param="direction2"><option value="left">向左，与 y₁ 反向</option><option value="right">向右，与 y₁ 同向</option></select></label>
+</div>
+<div class="formula"><span class="blue">y₁ = A₁ cos(ω₁t − k₁x) →</span>　<span class="orange" id="wave2-formula">← y₂ = A₂ cos(ω₂t + k₂x + φ₂)</span><br><span class="math">同一介质中 λ₁ = v/f₁，λ₂ = v/f₂；y = y₁ + y₂</span></div>
+<div class="legend"><label><input type="checkbox" id="show-wave1" checked><i class="swatch blue"></i>y₁</label><label><input type="checkbox" id="show-wave2" checked><i class="swatch orange"></i>y₂</label><label><input type="checkbox" id="show-sum" checked><i class="swatch red"></i>合成波</label><label><input type="checkbox" id="show-envelope" checked><i class="swatch dash"></i>包络</label></div>
+<canvas id="superposition" role="img" aria-label="两列反向行波及其合成波的位移随位置变化曲线">两列反向行波与合成波；等幅时形成固定波节，不等幅时最小振幅不为零。</canvas>
+<p class="detail" id="envelope-readout"></p>
+<p class="hint" id="formation-hint">点选上方的对照条件，观察“波节是否始终不动”。相位差改变会移动波节位置，不会破坏理想驻波。</p>
+</section>
+<section id="view-2" role="tabpanel" aria-labelledby="tab-2" hidden>
+<h2>空间振幅 × 时间振动：固定质点的运动</h2>
+<div class="controls">
+<label for="a">每列波 A = <output id="a-value">0.60 m</output><input id="a" type="range" min="0.2" max="1" step="0.05" value="0.6" data-view="2" data-param="a"></label>
+<label for="lambda2">波长 λ = <output id="lambda2-value">2.00 m</output><input id="lambda2" type="range" min="1" max="4" step="0.1" value="2" data-view="2" data-param="lambda"></label>
+<label for="speed2">介质波速 v = <output id="speed2-value">2.00 m/s</output><input id="speed2" type="range" min="1" max="4" step="0.1" value="2" data-view="2" data-param="u"></label>
+<label for="probe1">测量点 x₁ = <output id="probe1-value">0.00 m</output><input id="probe1" type="range" min="0" max="4" step="0.01" value="0" data-view="2" data-param="x1"></label>
+<label for="probe2">测量点 x₂ = <output id="probe2-value">1.00 m</output><input id="probe2" type="range" min="0" max="4" step="0.01" value="1" data-view="2" data-param="x2"></label>
+</div>
+<div class="formula">y(x,t) = 2A cos(kx) cos(ωt)；振幅 B(x) = |2A cos(kx)|；f = v/λ<br>波节：x = (2j + 1)λ/4；波腹：x = jλ/2（取显示区间内的位置）</div>
+<div class="legend"><span><i class="swatch blue"></i>驻波瞬时位移</span><span><i class="swatch dash"></i>振幅包络 ±B(x)</span><span><i class="node-dot"></i>波节：始终静止</span><span><i class="anti-dot"></i>波腹：上下振动</span><span><i class="swatch purple"></i>可拖动测量点 x₁ / x₂</span></div>
+<canvas id="standing" role="img" aria-label="等幅驻波及固定波节、振动波腹和三个固定质点">驻波方程、包络、波节波腹、固定点 x=0、0.5、1 米的运动。</canvas>
+<p class="detail" id="spacing-readout"></p>
+<p class="measure-note" id="probe-readout"></p>
+<div class="table-wrap"><table aria-label="两个固定质点的位移、振幅与相位"><thead><tr><th>测量点</th><th>固定位置 x</th><th>瞬时位移 y</th><th>振幅 B(x)</th><th>相位</th></tr></thead><tbody id="tracked-points"></tbody></table></div>
+<p class="hint">空间因子为正：初相位 0；为负：初相位 π。波节振幅为零，振动相位无定义。相邻波节之间各点同相，跨过波节两侧反相。</p>
+</section>
+<section id="view-3" role="tabpanel" aria-labelledby="tab-3" hidden>
+<h2>从热斑间距到光速</h2>
+<p>取下微波炉转盘，短时间加热薄层巧克力。电场波腹附近吸收功率较大，会先出现规律热斑。相邻热斑间距约为半个波长。</p>
+<div class="controls">
+<label for="microwave-frequency">微波频率 f = <output id="microwave-frequency-value">2.450 GHz</output><input id="microwave-frequency" type="range" min="2.40" max="2.50" step="0.001" value="2.45" data-view="3" data-param="fGHz"></label>
+<label for="interval-count">测量间隔数 n = <output id="interval-count-value">4</output><input id="interval-count" type="range" min="1" max="6" step="1" value="4" data-view="3" data-param="n"></label>
+<label for="total-distance">总测量长度 L = <output id="total-distance-value">24.4 cm</output><input id="total-distance" type="range" min="5" max="42" step="0.1" value="24.4" data-view="3" data-param="Lcm"></label>
+</div>
+<canvas id="microwave" class="compact-canvas" role="img" aria-label="微波炉中巧克力热斑和测量标尺"></canvas>
+<div class="result-box"><div class="result-card"><strong>相邻热斑间距</strong><output id="hotspot-spacing">6.10 cm</output><div>d = L/n</div></div><div class="result-card"><strong>估算光速</strong><output id="light-speed">2.99 × 10⁸ m/s</output><div>c = fλ = 2fd</div></div></div>
+<div class="formula" id="microwave-calculation"></div>
+<p class="measure-note" id="microwave-error"></p>
+<p class="hint">为减小定位单个热斑中心的误差，尽量测量多个间隔，再用总长度除以间隔数。实验时只能短时间加热，并遵守微波炉的使用要求。</p>
+</section>
+<section id="view-4" role="tabpanel" aria-labelledby="tab-4" hidden>
+<h2>边界条件选择允许的波长与频率</h2>
+<div class="controls boundary-controls">
+<label for="boundary">端点条件（N = 位移波节；A = 位移波腹）<select id="boundary" data-view="4" data-param="boundary"><option value="NN">NN · 两端位移波节</option><option value="AA">AA · 两端位移波腹</option><option value="NA">NA · 左波节、右波腹</option></select></label>
+<label for="length">长度 L = <output id="length-value">1.00 m</output><input id="length" type="range" min="0.5" max="3" step="0.1" value="1" data-view="4" data-param="L"></label>
+<label for="speed">波速 v = <output id="speed-value">2.00 m/s</output><input id="speed" type="range" min="0.5" max="4" step="0.1" value="2" data-view="4" data-param="u"></label>
+</div>
+<div class="formula" id="boundary-formula"></div>
+<p class="hint">yₙ(x,t) = C ψₙ(x) cos(2πfₙt)，以下用 C = 1 的归一化位移展示；三图为分别存在的独立模式，不是三个模式的叠加。</p>
+<div class="legend"><span><i class="swatch blue"></i>瞬时归一化位移 yₙ/C</span><span><i class="swatch dash"></i>振幅包络 ±|ψₙ(x)|</span><span><i class="node-dot"></i>位移波节 N</span><span><i class="anti-dot"></i>位移波腹 A</span></div>
+<div class="mode"><h3>第 1 阶非零模式</h3><div class="mode-readout" id="mode-readout-1"></div><p class="mode-formula" id="mode-formula-1"></p><canvas id="mode-1" role="img" aria-label="第一阶边界模式的归一化位移和端点条件"></canvas></div>
+<div class="mode"><h3>第 2 阶非零模式</h3><div class="mode-readout" id="mode-readout-2"></div><p class="mode-formula" id="mode-formula-2"></p><canvas id="mode-2" role="img" aria-label="第二阶边界模式的归一化位移和端点条件"></canvas></div>
+<div class="mode"><h3>第 3 阶非零模式</h3><div class="mode-readout" id="mode-readout-3"></div><p class="mode-formula" id="mode-formula-3"></p><canvas id="mode-3" role="img" aria-label="第三阶边界模式的归一化位移和端点条件"></canvas></div>
+<p class="hint">AA 展示 n = 1、2、3；n = 0 为零频率的均匀位移，不属于此处的非零振动模式。位移波腹边界对应 ∂y/∂x = 0；位移波节边界对应 y = 0。</p>
+<div class="callout">同一根吉他弦，按住更靠近琴桥的品位后，音调为什么会升高？选择 NN 并保持波速不变，比较 L = 1.0 m 与 L = 0.5 m 时前三阶允许频率，再进入课后讨论。<br><a class="discussion-link" href="/" target="_top">进入吉他弦苏格拉底式讨论</a></div>
+<h2>二维驻波的节线</h2>
+<div class="controls"><label for="mode2d">矩形水面模式<select id="mode2d"><option value="1,1">(1,1)</option><option value="2,1">(2,1)</option><option value="2,2" selected>(2,2)</option><option value="3,2">(3,2)</option></select></label></div>
+<canvas id="basin" class="compact-canvas" role="img" aria-label="二维驻波的水面高度和节线"></canvas>
+</section>
+<footer>模型说明：波节和波腹均指<strong>位移振幅</strong>，不直接代表声压分布。本动画采用理想、无耗散、线性的波动模型。视图 1 和视图 2 保持介质波速 v 不变，频率与波长按 v = λf 联动。</footer>
+</main>
+<script>
+'use strict';
+(() => {
+  const $ = id => document.getElementById(id);
+  const TAU = 2 * Math.PI;
+  const C0 = 299792458;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const state = {
+    view: 1, t: 0, playing: !reduced, timeScale: 1,
+    params: {
+      1: {a1:.6, a2:.6, nu1:1, nu2:1, u:2, phi2:0, direction2:'left'},
+      2: {a:.6, lambda:2, u:2, x1:0, x2:1},
+      3: {fGHz:2.45, n:4, Lcm:24.4},
+      4: {boundary:'NN', L:1, u:2}
+    },
+    layers: {wave1:true, wave2:true, sum:true, envelope:true}
+  };
+  const colors = {ink:'#182b40', muted:'#536579', grid:'#dfe6ee', blue:'#1468ad', orange:'#b56206', red:'#b32b3b', purple:'#6d43ac', envelope:'#7c8794', green:'#146b55'};
+  const inputMap = {
+    1:{a1:'a1',a2:'a2',nu1:'nu1',nu2:'nu1b',u:'speed1',phi2:'phi2',direction2:'direction2'},
+    2:{a:'a',lambda:'lambda2',u:'speed2',x1:'probe1',x2:'probe2'},
+    3:{fGHz:'microwave-frequency',n:'interval-count',Lcm:'total-distance'},
+    4:{boundary:'boundary',L:'length',u:'speed'}
+  };
+  const limits = {
+    1:{a1:[.1,1],a2:[.1,1],nu1:[.5,2],nu2:[.5,2],u:[1,4],phi2:[0,TAU]},
+    2:{a:[.2,1],lambda:[1,4],u:[1,4],x1:[0,4],x2:[0,4]},
+    3:{fGHz:[2.4,2.5],n:[1,6],Lcm:[5,42]},
+    4:{L:[.5,3],u:[.5,4]}
+  };
+  const presets = {
+    standing:{a1:.6,a2:.6,nu1:1,nu2:1,u:2,phi2:0,direction2:'left'},
+    unequal:{a1:.6,a2:.35,nu1:1,nu2:1,u:2,phi2:0,direction2:'left'},
+    detuned:{a1:.6,a2:.6,nu1:1,nu2:1.2,u:2,phi2:0,direction2:'left'},
+    'same-direction':{a1:.6,a2:.6,nu1:1,nu2:1,u:2,phi2:0,direction2:'right'},
+    'phase-shift':{a1:.6,a2:.6,nu1:1,nu2:1,u:2,phi2:Math.PI/2,direction2:'left'}
+  };
+  const fmt = (v,n=2) => (Math.abs(v)<5e-8?0:v).toFixed(n);
+  const close = (a,b,t=1e-8) => Math.abs(a-b)<t;
+
+  function period(){
+    if(state.view===1) return 1/state.params[1].nu1;
+    if(state.view===2) return state.params[2].lambda/state.params[2].u;
+    if(state.view===4) return 1/mode(1).f;
+    return 1;
+  }
+  function superposition(x,t,p=state.params[1]){
+    const w1=TAU*p.nu1,w2=TAU*p.nu2,k1=w1/p.u,k2=w2/p.u;
+    const y1=p.a1*Math.cos(w1*t-k1*x);
+    const phase2=w2*t+(p.direction2==='left'?k2*x:-k2*x)+p.phi2;
+    const y2=p.a2*Math.cos(phase2);
+    return {y1,y2,y:y1+y2,k1,k2};
+  }
+  function fixedEnvelope(x,p=state.params[1]){
+    if(p.direction2!=='left'||!close(p.nu1,p.nu2,1e-7)) return null;
+    const k=TAU*p.nu1/p.u;
+    return Math.sqrt(p.a1*p.a1+p.a2*p.a2+2*p.a1*p.a2*Math.cos(2*k*x+p.phi2));
+  }
+  function standing(x,t,p=state.params[2]){
+    const c=2*p.a*Math.cos(TAU*x/p.lambda),nu=p.u/p.lambda;
+    return {y:c*Math.cos(TAU*nu*t),amplitude:Math.abs(c),coefficient:c,phase:Math.abs(c)<1e-7?null:(c>0?0:Math.PI)};
+  }
+  function mode(n,p=state.params[4]){
+    if(!Number.isInteger(n)||n<1||n>3) throw new RangeError('仅支持第1至3阶非零模式');
+    const q=p.boundary==='NA'?(2*n-1)*Math.PI/(2*p.L):n*Math.PI/p.L;
+    const cosine=p.boundary==='AA';
+    return {n,k:q,lambda:TAU/q,f:p.u*q/TAU,psi:x=>cosine?Math.cos(q*x):Math.sin(q*x)};
+  }
+  function frame(canvas,xmax,ymax,normalized=false){
+    const rect=canvas.getBoundingClientRect(),W=Math.max(rect.width,280),H=canvas.clientHeight||canvas.getBoundingClientRect().height||300,dpr=Math.min(devicePixelRatio||1,2);
+    const bw=Math.round(W*dpr),bh=Math.round(H*dpr);if(canvas.width!==bw||canvas.height!==bh){canvas.width=bw;canvas.height=bh}
+    const ctx=canvas.getContext('2d');ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,W,H);
+    const box={left:66,right:W-26,top:normalized?52:(canvas.id==='standing'?(W<520?84:52):29),bottom:H-45};
+    const X=x=>box.left+x/xmax*(box.right-box.left),Y=y=>box.bottom-(y+ymax)/(2*ymax)*(box.bottom-box.top);
+    ctx.font='13px system-ui, sans-serif';ctx.lineWidth=1;ctx.strokeStyle=colors.grid;ctx.fillStyle=colors.muted;
+    const yticks=normalized?[-1,0,1]:[-2,-1,0,1,2];
+    for(const y of yticks){ctx.beginPath();ctx.moveTo(box.left,Y(y));ctx.lineTo(box.right,Y(y));ctx.stroke();ctx.textAlign='right';ctx.fillText(String(y),box.left-10,Y(y)+4)}
+    for(let i=0;i<=4;i++){const x=xmax*i/4;ctx.beginPath();ctx.moveTo(X(x),box.top);ctx.lineTo(X(x),box.bottom);ctx.stroke();ctx.textAlign=i===4?'right':(i===0?'left':'center');ctx.fillText(fmt(x,2),X(x),box.bottom+20)}
+    ctx.strokeStyle='#91a2b3';ctx.beginPath();ctx.moveTo(box.left,box.top);ctx.lineTo(box.left,box.bottom);ctx.lineTo(box.right,box.bottom);ctx.stroke();ctx.beginPath();ctx.moveTo(box.left,Y(0));ctx.lineTo(box.right,Y(0));ctx.stroke();
+    ctx.fillStyle=colors.ink;ctx.textAlign='left';ctx.fillText(normalized?'yₙ/C（归一化位移）':'位移 y / m',12,17);ctx.textAlign='right';ctx.fillText('位置 x / m',box.right,H-8);
+    return {ctx,W,H,box,X,Y,xmax,ymax};
+  }
+  function curve(g,fn,color,width=2.2,dashed=false){
+    const {ctx,X,Y,box}=g;ctx.save();ctx.beginPath();ctx.rect(box.left-1,box.top-1,box.right-box.left+2,box.bottom-box.top+2);ctx.clip();ctx.strokeStyle=color;ctx.lineWidth=width;ctx.setLineDash(dashed?[5,5]:[]);ctx.beginPath();const N=Math.max(450,Math.ceil(box.right-box.left));
+    for(let i=0;i<=N;i++){const x=g.xmax*i/N,y=fn(x);i?ctx.lineTo(X(x),Y(y)):ctx.moveTo(X(x),Y(y))}ctx.stroke();ctx.restore();
+  }
+  function dot(g,x,y,color,hollow=false,r=4){const {ctx,X,Y}=g;ctx.beginPath();ctx.arc(X(x),Y(y),r,0,TAU);ctx.fillStyle=hollow?'white':color;ctx.fill();ctx.strokeStyle=color;ctx.lineWidth=1.6;ctx.stroke()}
+  function positions(lambda,offset,xmax){const a=[];for(let j=-10;j<40;j++){const x=offset+j*lambda/2;if(x>xmax+1e-8)break;if(x>=-1e-8)a.push(Math.min(x,xmax))}return a}
+  function standingNodes(p=state.params[1]){
+    const k=TAU*p.nu1/p.u,out=[];
+    for(let m=-20;m<40;m++){const x=((2*m+1)*Math.PI-p.phi2)/(2*k);if(x>4)break;if(x>=0)out.push(x)}
+    return out;
+  }
+  function drawSuper(){
+    const p=state.params[1],g=frame($('superposition'),4,2.2),fixed=p.direction2==='left'&&close(p.nu1,p.nu2,1e-7);
+    if(state.layers.envelope&&fixed){curve(g,x=>fixedEnvelope(x,p),colors.envelope,1.5,true);curve(g,x=>-fixedEnvelope(x,p),colors.envelope,1.5,true)}
+    if(state.layers.wave1)curve(g,x=>superposition(x,state.t,p).y1,colors.blue,2);
+    if(state.layers.wave2)curve(g,x=>superposition(x,state.t,p).y2,colors.orange,2);
+    if(state.layers.sum)curve(g,x=>superposition(x,state.t,p).y,colors.red,2.7);
+    if(fixed&&close(p.a1,p.a2,1e-7))for(const x of standingNodes(p))dot(g,x,0,colors.red,false,3.8);
+  }
+  function drawStanding(){
+    const p=state.params[2],g=frame($('standing'),4,2.2);
+    curve(g,x=>standing(x,0,p).amplitude,colors.envelope,1.5,true);curve(g,x=>-standing(x,0,p).amplitude,colors.envelope,1.5,true);curve(g,x=>standing(x,state.t,p).y,colors.blue,2.7);
+    for(const x of positions(p.lambda,p.lambda/4,4))dot(g,x,0,colors.red,false,4);
+    for(const x of positions(p.lambda,0,4))dot(g,x,standing(x,state.t,p).y,colors.blue,true,4.7);
+    [[p.x1,'x₁',colors.purple],[p.x2,'x₂',colors.green]].forEach(([x,label,color])=>{const y=standing(x,state.t,p).y;dot(g,x,y,color,false,4);g.ctx.save();g.ctx.strokeStyle=color;g.ctx.setLineDash([3,5]);g.ctx.beginPath();g.ctx.moveTo(g.X(x),g.box.top);g.ctx.lineTo(g.X(x),g.box.bottom);g.ctx.stroke();g.ctx.fillStyle=color;g.ctx.textAlign='center';g.ctx.font='bold 12px system-ui';g.ctx.fillText(label,g.X(x),g.box.top-8);g.ctx.restore()});
+    const xa=Math.min(p.x1,p.x2),xb=Math.max(p.x1,p.x2),yb=g.box.bottom-9;g.ctx.strokeStyle=colors.orange;g.ctx.lineWidth=2;g.ctx.beginPath();g.ctx.moveTo(g.X(xa),yb);g.ctx.lineTo(g.X(xb),yb);g.ctx.moveTo(g.X(xa),yb-6);g.ctx.lineTo(g.X(xa),yb+6);g.ctx.moveTo(g.X(xb),yb-6);g.ctx.lineTo(g.X(xb),yb+6);g.ctx.stroke();
+  }
+  function drawMicrowave(){
+    const c=$('microwave'),rect=c.getBoundingClientRect(),W=Math.max(rect.width,280),H=c.clientHeight||300,dpr=Math.min(devicePixelRatio||1,2);c.width=Math.round(W*dpr);c.height=Math.round(H*dpr);const x=c.getContext('2d');x.setTransform(dpr,0,0,dpr,0,0);x.clearRect(0,0,W,H);
+    const p=state.params[3],left=54,right=W-36,top=44,bottom=H-62,n=p.n,span=(right-left)*.72,start=left+(right-left-span)/2,step=span/n;
+    const bg=x.createLinearGradient(0,top,0,bottom);bg.addColorStop(0,'#7c4628');bg.addColorStop(1,'#452414');x.fillStyle=bg;x.strokeStyle='#283848';x.lineWidth=4;x.beginPath();x.roundRect(left,top,right-left,bottom-top,18);x.fill();x.stroke();
+    for(let i=0;i<=n;i++){const px=start+i*step,grad=x.createRadialGradient(px,(top+bottom)/2,2,px,(top+bottom)/2,Math.max(20,step*.55));grad.addColorStop(0,'rgba(255,217,92,.95)');grad.addColorStop(.4,'rgba(238,118,49,.72)');grad.addColorStop(1,'rgba(129,47,24,0)');x.fillStyle=grad;x.fillRect(px-step*.7,top+5,step*1.4,bottom-top-10);x.fillStyle='#ffe7a5';x.beginPath();x.arc(px,(top+bottom)/2,5,0,TAU);x.fill()}
+    x.fillStyle='#f7fbff';x.font='bold 15px system-ui';x.textAlign='left';x.fillText('巧克力薄层',left+14,top+24);x.fillStyle=colors.orange;x.strokeStyle=colors.orange;x.lineWidth=2;x.beginPath();x.moveTo(start,bottom+23);x.lineTo(start+span,bottom+23);x.moveTo(start,bottom+17);x.lineTo(start,bottom+29);x.moveTo(start+span,bottom+17);x.lineTo(start+span,bottom+29);x.stroke();x.fillStyle=colors.ink;x.textAlign='center';x.fillText(`L = ${fmt(p.Lcm,1)} cm，共 ${n} 个间隔`,start+span/2,bottom+47);
+  }
+  function drawModes(){
+    const p=state.params[4];for(let n=1;n<=3;n++){const m=mode(n,p),g=frame($('mode-'+n),p.L,1.25,true);curve(g,x=>Math.abs(m.psi(x)),colors.envelope,1.3,true);curve(g,x=>-Math.abs(m.psi(x)),colors.envelope,1.3,true);curve(g,x=>m.psi(x)*Math.cos(TAU*m.f*state.t),colors.blue,2.6);
+      const nodes=p.boundary==='AA'?positions(m.lambda,m.lambda/4,p.L):positions(m.lambda,0,p.L),antis=p.boundary==='AA'?positions(m.lambda,0,p.L):positions(m.lambda,m.lambda/4,p.L);for(const x of nodes)dot(g,x,0,colors.red,false,3.5);for(const x of antis)dot(g,x,m.psi(x)*Math.cos(TAU*m.f*state.t),colors.blue,true,4.3);
+      g.ctx.fillStyle=colors.ink;g.ctx.font='13px system-ui';g.ctx.textAlign='left';g.ctx.fillText('左端 '+(p.boundary==='AA'?'A（波腹）':'N（波节）'),g.box.left+4,g.box.top-10);g.ctx.textAlign='right';g.ctx.fillText('右端 '+(p.boundary==='NN'?'N（波节）':'A（波腹）'),g.box.right-4,g.box.top-10)}
+  }
+  function drawBasin(){
+    const c=$('basin'),rect=c.getBoundingClientRect(),W=Math.max(rect.width,280),H=c.clientHeight||300,dpr=Math.min(devicePixelRatio||1,2);c.width=Math.round(W*dpr);c.height=Math.round(H*dpr);const ctx=c.getContext('2d');ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,W,H);
+    const vals=$('mode2d').value.split(',').map(Number),m=vals[0],n=vals[1],L=22,T=20,R=W-30,B=H-28,cell=4,phase=Math.cos(TAU*.35*state.t);
+    for(let y=T;y<B;y+=cell)for(let x=L;x<R;x+=cell){const sx=(x-L)/(R-L),sy=(y-T)/(B-T),z=Math.sin(m*Math.PI*sx)*Math.sin(n*Math.PI*sy)*phase,a=Math.min(1,Math.abs(z));ctx.fillStyle=z>=0?`rgba(34,122,184,${.18+.72*a})`:`rgba(219,103,63,${.18+.72*a})`;ctx.fillRect(x,y,cell+1,cell+1)}
+    ctx.strokeStyle='#fff';ctx.lineWidth=2;ctx.setLineDash([5,5]);for(let i=1;i<m;i++){const x=L+(R-L)*i/m;ctx.beginPath();ctx.moveTo(x,T);ctx.lineTo(x,B);ctx.stroke()}for(let j=1;j<n;j++){const y=T+(B-T)*j/n;ctx.beginPath();ctx.moveTo(L,y);ctx.lineTo(R,y);ctx.stroke()}ctx.setLineDash([]);ctx.strokeStyle='#263f56';ctx.lineWidth=3;ctx.strokeRect(L,T,R-L,B-T);ctx.fillStyle=colors.ink;ctx.font='14px system-ui';ctx.textAlign='left';ctx.fillText(`模式 (${m},${n})；白色虚线为节线`,L,T-5);
+  }
+  function labelFor(key,v){
+    if(key==='direction2'||key==='boundary')return String(v);
+    if(key==='n')return String(Math.round(v));
+    if(key==='fGHz')return fmt(v,3)+' GHz';
+    if(key==='Lcm')return fmt(v,1)+' cm';
+    if(key==='nu1'||key==='nu2')return fmt(v)+' Hz';
+    if(key==='u')return fmt(v)+' m/s';
+    if(key==='phi2')return fmt(v)+' rad';
+    return fmt(v)+' m';
+  }
+  function phaseName(q){return q.phase===null?'无定义（波节）':(q.phase===0?'0（同相区）':'π（反相区）')}
+  function staticReadouts(){
+    for(const [view,map] of Object.entries(inputMap))for(const [key,id] of Object.entries(map)){const el=$(id),v=state.params[view][key];el.value=v;if($(id+'-value'))$(id+'-value').textContent=labelFor(key,v)}
+    const p1=state.params[1],sameF=close(p1.nu1,p1.nu2,1e-7),opposite=p1.direction2==='left',equal=close(p1.a1,p1.a2,1e-7),l1=p1.u/p1.nu1,l2=p1.u/p1.nu2;
+    let verdict='';if(opposite&&sameF&&equal)verdict='满足理想驻波条件：固定波节始终不动。';else if(opposite&&sameF)verdict='形成部分驻波：包络固定，但最小振幅不为零。';else if(opposite)verdict='频率不同：相位差随时间改变，波节位置不再固定。';else verdict='两波同向传播：合成图样随时间移动，不形成驻波。';
+    $('envelope-readout').textContent=`λ₁ = ${fmt(l1)} m；λ₂ = ${fmt(l2)} m。${verdict}`;$('wave2-formula').textContent=(opposite?'← y₂ = A₂ cos(ω₂t + k₂x + φ₂)':'y₂ = A₂ cos(ω₂t − k₂x + φ₂) →');
+    const p2=state.params[2],q1=standing(p2.x1,state.t,p2),q2=standing(p2.x2,state.t,p2),dx=Math.abs(p2.x2-p2.x1),relation=q1.phase===null||q2.phase===null?'至少一个测量点是波节，相位无定义':q1.phase===q2.phase?'两点同相':'两点反相';
+    $('spacing-readout').textContent=`相邻波节 / 相邻波腹间距 λ/2 = ${fmt(p2.lambda/2)} m；波节到相邻波腹 λ/4 = ${fmt(p2.lambda/4)} m；f = v/λ = ${fmt(p2.u/p2.lambda)} Hz。`;
+    $('probe-readout').textContent=`|x₂ − x₁| = ${fmt(dx)} m；${relation}。拖动两个测量点，对照 λ/2 和 λ/4。`;
+    const p3=state.params[3],dcm=p3.Lcm/p3.n,c=2*p3.fGHz*1e9*dcm/100,err=(c-C0)/C0*100;$('hotspot-spacing').textContent=fmt(dcm,2)+' cm';$('light-speed').textContent=fmt(c/1e8,3)+' × 10⁸ m/s';$('microwave-calculation').textContent=`d = L/n = ${fmt(p3.Lcm,1)} cm / ${p3.n} = ${fmt(dcm,2)} cm；λ ≈ 2d = ${fmt(2*dcm,2)} cm；c = fλ = 2fd ≈ ${c.toExponential(3)} m/s`;$('microwave-error').textContent=`与真空光速 2.998 × 10⁸ m/s 相比，本次估算的相对偏差为 ${err>=0?'+':''}${fmt(err,2)}%。`;
+    const p4=state.params[4],desc={NN:'NN：ψₙ(x) = sin(nπx/L)，λₙ = 2L/n，fₙ = nv/(2L)。',AA:'AA：ψₙ(x) = cos(nπx/L)，λₙ = 2L/n，fₙ = nv/(2L)。',NA:'NA：ψₙ(x) = sin[(2n−1)πx/(2L)]，λₙ = 4L/(2n−1)，fₙ = (2n−1)v/(4L)。'};$('boundary-formula').textContent=desc[p4.boundary];for(let n=1;n<=3;n++){const m=mode(n,p4);$('mode-readout-'+n).innerHTML=`<span>λₙ = ${fmt(m.lambda,3)} m</span><span>fₙ = ${fmt(m.f,3)} Hz</span><span>fₙλₙ = v = ${fmt(p4.u)} m/s</span>`;$('mode-formula-'+n).textContent=`ψₙ(x) = ${p4.boundary==='AA'?'cos':'sin'}(${fmt(m.k,3)}x)，x以m为单位。`}
+  }
+  function liveReadouts(){
+    $('clock').textContent='t = '+fmt(state.t)+' s';$('play-toggle').textContent=state.playing?'暂停':'继续';$('play-toggle').setAttribute('aria-pressed',String(!state.playing));
+    if(state.view===2){const p=state.params[2];$('tracked-points').innerHTML=[[p.x1,'x₁'],[p.x2,'x₂']].map(([x,name])=>{const q=standing(x,state.t,p);return `<tr><td>${name}</td><td>${fmt(x)} m</td><td>${fmt(q.y,3)} m</td><td>${fmt(q.amplitude,3)} m</td><td>${phaseName(q)}</td></tr>`}).join('')}
+  }
+  function draw(){if(state.view===1)drawSuper();else if(state.view===2)drawStanding();else if(state.view===3)drawMicrowave();else{drawModes();drawBasin()}liveReadouts()}
+  function setView(v){v=Number(v);if(![1,2,3,4].includes(v))throw new RangeError('视图编号须为1至4');state.view=v;state.t=0;last=performance.now();for(let i=1;i<=4;i++){$('view-'+i).hidden=i!==v;$('tab-'+i).setAttribute('aria-selected',String(i===v));$('tab-'+i).tabIndex=i===v?0:-1}staticReadouts();draw()}
+  function setParam(v,key,value){v=Number(v);if(!inputMap[v]||!Object.hasOwn(inputMap[v],key))throw new RangeError('未知参数');if(key==='direction2'){if(!['left','right'].includes(value))throw new RangeError('未知方向')}else if(key==='boundary'){if(!['NN','AA','NA'].includes(value))throw new RangeError('未知边界')}else{value=Number(value);const range=limits[v][key];if(!Number.isFinite(value)||value<range[0]||value>range[1])throw new RangeError('参数超出控件范围');if(key==='n')value=Math.round(value)}state.params[v][key]=value;state.t=0;last=performance.now();document.querySelectorAll('[data-preset]').forEach(b=>b.classList.remove('active'));staticReadouts();draw()}
+  function setPreset(name){if(!presets[name])return;state.params[1]={...presets[name]};state.t=0;last=performance.now();document.querySelectorAll('[data-preset]').forEach(b=>b.classList.toggle('active',b.dataset.preset===name));staticReadouts();draw()}
+  function pause(){state.playing=false;draw()}function play(){state.playing=true;last=performance.now();draw()}function reset(){state.t=0;state.playing=false;last=performance.now();draw()}function step(sign){state.playing=false;state.t=Math.max(0,state.t+sign*period()/8);draw()}
+  let last=performance.now();
+  for(const tab of document.querySelectorAll('[role="tab"]')){tab.addEventListener('click',()=>setView(tab.dataset.view));tab.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;e.preventDefault();const v=e.key==='Home'?1:e.key==='End'?4:((state.view-1+(e.key==='ArrowRight'?1:3))%4+1);setView(v);$('tab-'+v).focus()})}
+  for(const el of document.querySelectorAll('input[data-param],select[data-param]'))el.addEventListener('input',()=>setParam(el.dataset.view,el.dataset.param,el.value));
+  for(const b of document.querySelectorAll('[data-preset]'))b.addEventListener('click',()=>setPreset(b.dataset.preset));
+  [['show-wave1','wave1'],['show-wave2','wave2'],['show-sum','sum'],['show-envelope','envelope']].forEach(([id,key])=>$(id).addEventListener('change',()=>{state.layers[key]=$(id).checked;draw()}));
+  $('play-toggle').addEventListener('click',()=>state.playing?pause():play());$('reset').addEventListener('click',reset);$('step-back').addEventListener('click',()=>step(-1));$('step-forward').addEventListener('click',()=>step(1));$('time-scale').addEventListener('change',()=>{state.timeScale=Number($('time-scale').value)});$('mode2d').addEventListener('change',draw);
+  document.addEventListener('visibilitychange',()=>{last=performance.now()});const observer=new ResizeObserver(()=>draw());for(const c of document.querySelectorAll('canvas'))observer.observe(c);
+  function tick(now){const elapsed=Math.max(0,(now-last)/1000);last=now;if(state.playing&&!document.hidden){state.t+=elapsed*state.timeScale;draw()}requestAnimationFrame(tick)}
+  const qs=new URLSearchParams(location.search),viewMap={formation:1,features:2,microwave:3,modes:4};if(qs.get('capture')==='slide')document.body.classList.add('capture');
+  window.standingLab=Object.freeze({setView,setParam,setPreset,pause,play,reset,getState:()=>JSON.parse(JSON.stringify(state)),superposition,standing,mode});
+  staticReadouts();setView(viewMap[qs.get('view')]||Number(qs.get('view'))||1);requestAnimationFrame(tick);
+})();
+</script>
+</body>
+</html>

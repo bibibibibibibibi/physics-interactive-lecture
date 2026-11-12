@@ -63,7 +63,20 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "电位移与高斯定理",
+     "qa": [
+      {
+       "q": "电位移 D 是什么？",
+       "a": "为把束缚电荷从高斯定理中消去而引入的辅助矢量，使有介质时的高斯定理只含自由电荷。"
+      },
+      {
+       "q": "有介质时的高斯定理怎么写？",
+       "a": "$\\oint \\mathbf{D}\\cdot d\\mathbf{S}=\\sum q_0$，右边只算自由电荷。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -83,6 +96,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "消去束缚电荷",
+     "qa": [
+      {
+       "q": "为什么要把束缚电荷藏起来？",
+       "a": "束缚电荷难以测量也难以计算，引入 D 后可只用自由电荷表述高斯定理。"
+      }
      ]
     },
     {
@@ -103,10 +124,74 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "D 的高斯定理公式",
+     "qa": [
+      {
+       "q": "公式右边的 q₀ 指什么？",
+       "a": "指高斯面内包围的自由电荷，不含束缚电荷。"
+      },
+      {
+       "q": "D 的通量与 E 的通量有何区别？",
+       "a": "$\\oint \\mathbf{D}\\cdot d\\mathbf{S}$ 只由自由电荷决定，而 $\\oint \\mathbf{E}\\cdot d\\mathbf{S}$ 还含束缚电荷。"
+      }
+     ],
+     "important": true
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "电位移与高斯定理",
+     "x": 960,
+     "y": 582,
+     "qa": [
+      {
+       "q": "电位移 D 是什么？",
+       "a": "为把束缚电荷从高斯定理中消去而引入的辅助矢量，使有介质时的高斯定理只含自由电荷。"
+      },
+      {
+       "q": "有介质时的高斯定理怎么写？",
+       "a": "$\\oint \\mathbf{D}\\cdot d\\mathbf{S}=\\sum q_0$，右边只算自由电荷。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 1
+    },
+    {
+     "text": "消去束缚电荷",
+     "x": 960,
+     "y": 752,
+     "qa": [
+      {
+       "q": "为什么要把束缚电荷藏起来？",
+       "a": "束缚电荷难以测量也难以计算，引入 D 后可只用自由电荷表述高斯定理。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 2
+    },
+    {
+     "text": "D 的高斯定理公式",
+     "x": 960,
+     "y": 892,
+     "qa": [
+      {
+       "q": "公式右边的 q₀ 指什么？",
+       "a": "指高斯面内包围的自由电荷，不含束缚电荷。"
+      },
+      {
+       "q": "D 的通量与 E 的通量有何区别？",
+       "a": "$\\oint \\mathbf{D}\\cdot d\\mathbf{S}$ 只由自由电荷决定，而 $\\oint \\mathbf{E}\\cdot d\\mathbf{S}$ 还含束缚电荷。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    }
+   ],
    "stepTimes": {
     "1": 0.0,
     "2": 4.84,
@@ -115,7 +200,23 @@
    "t_start": 0.0,
    "t_end": 26.81,
    "duration": 26.81,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 0.0,
+     "end": 5.0
+    },
+    {
+     "bullet": 1,
+     "start": 4.84,
+     "end": 9.84
+    },
+    {
+     "bullet": 2,
+     "start": 12.49,
+     "end": 17.49
+    }
+   ]
   },
   {
    "id": 2,
@@ -167,6 +268,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "真空中高斯定理",
+     "qa": [
+      {
+       "q": "真空中的高斯定理为什么说很干净？",
+       "a": "因为右边只有面内自由电荷，$\\oint\\vec E\\cdot\\mathrm d\\vec S=\\frac{1}{\\varepsilon_0}\\sum q$，无需考虑其他电荷。"
+      }
      ]
     },
     {
@@ -211,7 +320,16 @@
      "tex": "\\oint\\vec E\\cdot\\mathrm d\\vec S=\\dfrac{1}{\\varepsilon_0}\\left(\\sum q_0+\\sum q'\\right)",
      "size": 32,
      "color": "#0000CD",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "介质中高斯定理",
+     "qa": [
+      {
+       "q": "有介质时高斯定理多了什么？",
+       "a": "面内除自由电荷 $q_0$ 外还有束缚电荷 $q'$，通量等于 $(\\sum q_0+\\sum q')/\\varepsilon_0$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -243,7 +361,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "束缚电荷难确定",
+     "qa": [
+      {
+       "q": "为什么束缚电荷很难事先知道？",
+       "a": "因为 $q'$ 取决于介质的极化程度和形状，需先解出电场才能确定，形成循环依赖。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -275,6 +402,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "改造目标",
+     "qa": [
+      {
+       "q": "改造高斯定理的目标是什么？",
+       "a": "让等式右边只剩自由电荷 $q_0$，把难以预知的束缚电荷 $q'$ 吸收掉。"
+      }
      ]
     },
     {
@@ -312,7 +447,64 @@
      "color": "#111111"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "真空中高斯定理",
+     "x": 960,
+     "y": 306,
+     "qa": [
+      {
+       "q": "真空中的高斯定理为什么说很干净？",
+       "a": "因为右边只有面内自由电荷，$\\oint\\vec E\\cdot\\mathrm d\\vec S=\\frac{1}{\\varepsilon_0}\\sum q$，无需考虑其他电荷。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 1
+    },
+    {
+     "text": "介质中高斯定理",
+     "x": 820,
+     "y": 538,
+     "qa": [
+      {
+       "q": "有介质时高斯定理多了什么？",
+       "a": "面内除自由电荷 $q_0$ 外还有束缚电荷 $q'$，通量等于 $(\\sum q_0+\\sum q')/\\varepsilon_0$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "束缚电荷难确定",
+     "x": 960,
+     "y": 620,
+     "qa": [
+      {
+       "q": "为什么束缚电荷很难事先知道？",
+       "a": "因为 $q'$ 取决于介质的极化程度和形状，需先解出电场才能确定，形成循环依赖。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    },
+    {
+     "text": "改造目标",
+     "x": 960,
+     "y": 704,
+     "qa": [
+      {
+       "q": "改造高斯定理的目标是什么？",
+       "a": "让等式右边只剩自由电荷 $q_0$，把难以预知的束缚电荷 $q'$ 吸收掉。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 5
+    }
+   ],
    "stepTimes": {
     "1": 27.61,
     "2": 30.43,
@@ -324,7 +516,28 @@
    "t_start": 27.61,
    "t_end": 64.74,
    "duration": 37.13,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 27.61,
+     "end": 32.61
+    },
+    {
+     "bullet": 1,
+     "start": 36.88,
+     "end": 41.88
+    },
+    {
+     "bullet": 2,
+     "start": 45.08,
+     "end": 50.08
+    },
+    {
+     "bullet": 3,
+     "start": 51.94,
+     "end": 56.94
+    }
+   ]
   },
   {
    "id": 3,
@@ -362,7 +575,20 @@
      "tex": "\\vec D=\\varepsilon_0\\vec E+\\vec P",
      "size": 42,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "电位移矢量定义",
+     "qa": [
+      {
+       "q": "电位移矢量 D 是怎么定义的？",
+       "a": "$\\vec D=\\varepsilon_0\\vec E+\\vec P$，其中 $\\varepsilon_0\\vec E$ 是真空部分贡献，$\\vec P$ 是介质极化贡献。"
+      },
+      {
+       "q": "D 的单位是什么？",
+       "a": "单位是 $\\mathrm{C/m^2}$，与极化强度 $P$ 和面密度相同。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -414,7 +640,16 @@
      "tex": "\\vec D=\\varepsilon_0\\varepsilon_r\\vec E=\\varepsilon\\vec E",
      "size": 36,
      "color": "#0000CD",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "线性介质 D-E 关系",
+     "qa": [
+      {
+       "q": "线性各向同性介质中 D 和 E 有什么关系？",
+       "a": "$\\vec D=\\varepsilon_0\\varepsilon_r\\vec E=\\varepsilon\\vec E$，二者同向且成正比。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -446,6 +681,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "绝对介电常数",
+     "qa": [
+      {
+       "q": "绝对介电常数 ε 和 εr 是什么关系？",
+       "a": "$\\varepsilon=\\varepsilon_0\\varepsilon_r$，即真空介电常数乘以相对介电常数。"
+      }
      ]
     },
     {
@@ -469,7 +712,54 @@
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "电位移矢量定义",
+     "x": 960,
+     "y": 412,
+     "qa": [
+      {
+       "q": "电位移矢量 D 是怎么定义的？",
+       "a": "$\\vec D=\\varepsilon_0\\vec E+\\vec P$，其中 $\\varepsilon_0\\vec E$ 是真空部分贡献，$\\vec P$ 是介质极化贡献。"
+      },
+      {
+       "q": "D 的单位是什么？",
+       "a": "单位是 $\\mathrm{C/m^2}$，与极化强度 $P$ 和面密度相同。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 1
+    },
+    {
+     "text": "线性介质 D-E 关系",
+     "x": 960,
+     "y": 730,
+     "qa": [
+      {
+       "q": "线性各向同性介质中 D 和 E 有什么关系？",
+       "a": "$\\vec D=\\varepsilon_0\\varepsilon_r\\vec E=\\varepsilon\\vec E$，二者同向且成正比。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    },
+    {
+     "text": "绝对介电常数",
+     "x": 960,
+     "y": 796,
+     "qa": [
+      {
+       "q": "绝对介电常数 ε 和 εr 是什么关系？",
+       "a": "$\\varepsilon=\\varepsilon_0\\varepsilon_r$，即真空介电常数乘以相对介电常数。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 5
+    }
+   ],
    "stepTimes": {
     "1": 65.54,
     "2": 68.89,
@@ -481,7 +771,23 @@
    "t_start": 65.54,
    "t_end": 105.16,
    "duration": 39.62,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 65.54,
+     "end": 70.54
+    },
+    {
+     "bullet": 1,
+     "start": 77.63,
+     "end": 82.63
+    },
+    {
+     "bullet": 2,
+     "start": 84.13,
+     "end": 89.13
+    }
+   ]
   },
   {
    "id": 4,
@@ -519,7 +825,20 @@
      "tex": "\\oint_S\\vec D\\cdot\\mathrm d\\vec S=\\sum_{S\\text{内}}q_0",
      "size": 42,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "有介质高斯定理",
+     "qa": [
+      {
+       "q": "公式右边的 q0 是什么电荷？",
+       "a": "是闭合曲面 S 内包围的自由电荷代数和，束缚电荷不出现在右边。"
+      },
+      {
+       "q": "D 的通量为什么只和自由电荷有关？",
+       "a": "因为极化产生的束缚电荷对 D 通量的贡献相互抵消，只剩自由电荷项。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -551,6 +870,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "束缚电荷不出现",
+     "qa": [
+      {
+       "q": "束缚电荷真的完全不用考虑吗？",
+       "a": "在 D 的高斯定理右边不出现，但介质极化仍影响 E，需由 $D=\\varepsilon E$ 换算。"
+      }
      ]
     },
     {
@@ -603,7 +930,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "D 不是场强",
+     "qa": [
+      {
+       "q": "D 是电场强度吗？",
+       "a": "不是。D 不直接对电荷施力，真正施力的是 $\\vec E$，D 只是辅助量。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -623,6 +959,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "D 与 E 配套使用",
+     "qa": [
+      {
+       "q": "求出 D 后怎么得到 E？",
+       "a": "用本构关系 $D=\\varepsilon E$ 换算，$\\varepsilon$ 为介质的介电常数。"
+      }
      ]
     },
     {
@@ -660,7 +1004,68 @@
      "color": "#111111"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "有介质高斯定理",
+     "x": 820,
+     "y": 402,
+     "qa": [
+      {
+       "q": "公式右边的 q0 是什么电荷？",
+       "a": "是闭合曲面 S 内包围的自由电荷代数和，束缚电荷不出现在右边。"
+      },
+      {
+       "q": "D 的通量为什么只和自由电荷有关？",
+       "a": "因为极化产生的束缚电荷对 D 通量的贡献相互抵消，只剩自由电荷项。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 1
+    },
+    {
+     "text": "束缚电荷不出现",
+     "x": 960,
+     "y": 486,
+     "qa": [
+      {
+       "q": "束缚电荷真的完全不用考虑吗？",
+       "a": "在 D 的高斯定理右边不出现，但介质极化仍影响 E，需由 $D=\\varepsilon E$ 换算。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 2
+    },
+    {
+     "text": "D 不是场强",
+     "x": 960,
+     "y": 652,
+     "qa": [
+      {
+       "q": "D 是电场强度吗？",
+       "a": "不是。D 不直接对电荷施力，真正施力的是 $\\vec E$，D 只是辅助量。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    },
+    {
+     "text": "D 与 E 配套使用",
+     "x": 960,
+     "y": 732,
+     "qa": [
+      {
+       "q": "求出 D 后怎么得到 E？",
+       "a": "用本构关系 $D=\\varepsilon E$ 换算，$\\varepsilon$ 为介质的介电常数。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 5
+    }
+   ],
    "stepTimes": {
     "1": 105.96,
     "2": 109.82,
@@ -672,7 +1077,28 @@
    "t_start": 105.96,
    "t_end": 143.95,
    "duration": 37.99,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 105.96,
+     "end": 110.96
+    },
+    {
+     "bullet": 1,
+     "start": 109.82,
+     "end": 114.82
+    },
+    {
+     "bullet": 2,
+     "start": 122.14,
+     "end": 127.14
+    },
+    {
+     "bullet": 3,
+     "start": 129.26,
+     "end": 134.26
+    }
+   ]
   },
   {
    "id": 5,
@@ -917,6 +1343,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "高斯面选取与对称性",
+     "qa": [
+      {
+       "q": "为什么可以取球面作高斯面？",
+       "a": "介质无限大且电荷为点电荷，场具有球对称性，$D$ 在半径 $r$ 的球面上处处相等且垂直于面。"
+      }
      ]
     },
     {
@@ -929,7 +1363,20 @@
      "tex": "D\\cdot4\\pi r^{2}=q_0\\ \\Rightarrow\\ D=\\dfrac{q_0}{4\\pi r^{2}}",
      "size": 30,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "介质中高斯定理求D",
+     "qa": [
+      {
+       "q": "为什么高斯定理右边只有 $q_0$？",
+       "a": "$D$ 的高斯定理只计自由电荷，束缚电荷被自动吸收，故 $D\\cdot4\\pi r^2=q_0$。"
+      },
+      {
+       "q": "$D$ 的表达式是什么？",
+       "a": "$D=\\dfrac{q_0}{4\\pi r^{2}}$，与真空中完全相同。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -941,7 +1388,16 @@
      "tex": "E=\\dfrac{D}{\\varepsilon_0\\varepsilon_r}=\\dfrac{q_0}{4\\pi\\varepsilon_0\\varepsilon_r r^{2}}",
      "size": 30,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "介质中点电荷的场强",
+     "qa": [
+      {
+       "q": "为什么 $E$ 要多除一个 $\\varepsilon_r$？",
+       "a": "由 $D=\\varepsilon_0\\varepsilon_r E$，介质极化削弱场强，故 $E=\\dfrac{q_0}{4\\pi\\varepsilon_0\\varepsilon_r r^{2}}$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -993,10 +1449,79 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "D的好处",
+     "qa": [
+      {
+       "q": "引入 $D$ 有什么好处？",
+       "a": "$D$ 只由自由电荷决定，束缚电荷被自动吸收，表达式与真空一致，求 $E$ 时再除以 $\\varepsilon_r$。"
+      }
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "高斯面选取与对称性",
+     "x": 960,
+     "y": 382,
+     "qa": [
+      {
+       "q": "为什么可以取球面作高斯面？",
+       "a": "介质无限大且电荷为点电荷，场具有球对称性，$D$ 在半径 $r$ 的球面上处处相等且垂直于面。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 2
+    },
+    {
+     "text": "介质中高斯定理求D",
+     "x": 960,
+     "y": 538,
+     "qa": [
+      {
+       "q": "为什么高斯定理右边只有 $q_0$？",
+       "a": "$D$ 的高斯定理只计自由电荷，束缚电荷被自动吸收，故 $D\\cdot4\\pi r^2=q_0$。"
+      },
+      {
+       "q": "$D$ 的表达式是什么？",
+       "a": "$D=\\dfrac{q_0}{4\\pi r^{2}}$，与真空中完全相同。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "介质中点电荷的场强",
+     "x": 960,
+     "y": 690,
+     "qa": [
+      {
+       "q": "为什么 $E$ 要多除一个 $\\varepsilon_r$？",
+       "a": "由 $D=\\varepsilon_0\\varepsilon_r E$，介质极化削弱场强，故 $E=\\dfrac{q_0}{4\\pi\\varepsilon_0\\varepsilon_r r^{2}}$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    },
+    {
+     "text": "D的好处",
+     "x": 960,
+     "y": 850,
+     "qa": [
+      {
+       "q": "引入 $D$ 有什么好处？",
+       "a": "$D$ 只由自由电荷决定，束缚电荷被自动吸收，表达式与真空一致，求 $E$ 时再除以 $\\varepsilon_r$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 6
+    }
+   ],
    "stepTimes": {
     "1": 185.89,
     "2": 189.27,
@@ -1008,7 +1533,28 @@
    "t_start": 185.89,
    "t_end": 227.1,
    "duration": 41.21,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 189.27,
+     "end": 194.27
+    },
+    {
+     "bullet": 1,
+     "start": 196.51,
+     "end": 201.51
+    },
+    {
+     "bullet": 2,
+     "start": 203.73,
+     "end": 208.73
+    },
+    {
+     "bullet": 3,
+     "start": 218.16,
+     "end": 223.16
+    }
+   ]
   },
   {
    "id": 7,
@@ -1054,6 +1600,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "高斯面选取",
+     "qa": [
+      {
+       "q": "为什么高斯面要一底在导体、一底在介质？",
+       "a": "导体中 $D=0$、侧面通量为零，只剩介质底面贡献通量，便于求 $D$。"
+      }
      ]
     },
     {
@@ -1074,7 +1628,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "高斯定理求D",
+     "qa": [
+      {
+       "q": "为什么侧面通量为零？",
+       "a": "侧面与 $D$ 平行（或 $D$ 沿法向），点积为零，故无通量贡献。"
+      },
+      {
+       "q": "导体里为什么 $D=0$？",
+       "a": "静电平衡下导体内部无自由电荷、场为零，故 $D=0$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -1086,7 +1653,16 @@
      "tex": "D=\\sigma_0",
      "size": 34,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "D与介质无关",
+     "qa": [
+      {
+       "q": "$D=\\sigma_0$ 为什么和介质无关？",
+       "a": "由自由电荷面密度决定，高斯定理只涉及自由电荷，介质不影响 $D$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1118,7 +1694,15 @@
      "tex": "E=\\dfrac{\\sigma_0}{\\varepsilon_0\\varepsilon_r}",
      "size": 36,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "介质中E的公式",
+     "qa": [
+      {
+       "q": "$E$ 为什么比真空小 $\\varepsilon_r$ 倍？",
+       "a": "介质极化削弱场，$E=\\sigma_0/(\\varepsilon_0\\varepsilon_r)$，比真空小 $\\varepsilon_r$ 倍。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -1173,7 +1757,68 @@
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "高斯面选取",
+     "x": 960,
+     "y": 298,
+     "qa": [
+      {
+       "q": "为什么高斯面要一底在导体、一底在介质？",
+       "a": "导体中 $D=0$、侧面通量为零，只剩介质底面贡献通量，便于求 $D$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 1
+    },
+    {
+     "text": "高斯定理求D",
+     "x": 960,
+     "y": 378,
+     "qa": [
+      {
+       "q": "为什么侧面通量为零？",
+       "a": "侧面与 $D$ 平行（或 $D$ 沿法向），点积为零，故无通量贡献。"
+      },
+      {
+       "q": "导体里为什么 $D=0$？",
+       "a": "静电平衡下导体内部无自由电荷、场为零，故 $D=0$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "D与介质无关",
+     "x": 960,
+     "y": 522,
+     "qa": [
+      {
+       "q": "$D=\\sigma_0$ 为什么和介质无关？",
+       "a": "由自由电荷面密度决定，高斯定理只涉及自由电荷，介质不影响 $D$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "介质中E的公式",
+     "x": 960,
+     "y": 662,
+     "qa": [
+      {
+       "q": "$E$ 为什么比真空小 $\\varepsilon_r$ 倍？",
+       "a": "介质极化削弱场，$E=\\sigma_0/(\\varepsilon_0\\varepsilon_r)$，比真空小 $\\varepsilon_r$ 倍。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 5
+    }
+   ],
    "stepTimes": {
     "1": 227.9,
     "2": 232.4,
@@ -1185,7 +1830,28 @@
    "t_start": 227.9,
    "t_end": 266.92,
    "duration": 39.02,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 227.9,
+     "end": 232.9
+    },
+    {
+     "bullet": 1,
+     "start": 232.4,
+     "end": 237.4
+    },
+    {
+     "bullet": 2,
+     "start": 237.02,
+     "end": 242.02
+    },
+    {
+     "bullet": 3,
+     "start": 242.72,
+     "end": 247.72
+    }
+   ]
   },
   {
    "id": 8,
@@ -1237,7 +1903,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "电位移定义",
+     "qa": [
+      {
+       "q": "D 和 E、P 是什么关系？",
+       "a": "$\\vec D=\\varepsilon_0\\vec E+\\vec P$，线性介质中化为 $\\vec D=\\varepsilon_0\\varepsilon_r\\vec E$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1263,7 +1938,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "有介质高斯定理",
+     "qa": [
+      {
+       "q": "有介质时高斯定理怎么写？",
+       "a": "闭合面的 $D$ 通量等于面内自由电荷代数和：$\\oint\\vec D\\cdot d\\vec S=\\sum q_0$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1283,6 +1967,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "只数自由电荷",
+     "qa": [
+      {
+       "q": "为什么用 D 做题方便？",
+       "a": "束缚电荷被吸收进 $D$ 中，求 $D$ 时只需数面内自由电荷，不必管极化电荷。"
+      }
      ]
     },
     {
@@ -1303,6 +1995,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "先D后E配套",
+     "qa": [
+      {
+       "q": "求出 D 就能直接算力吗？",
+       "a": "不能。施力的是 $E$，须再由 $\\vec D=\\varepsilon\\vec E$ 求 $E$，两条式子配套使用。"
+      }
      ]
     },
     {
@@ -1360,7 +2060,64 @@
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "电位移定义",
+     "x": 960,
+     "y": 302,
+     "qa": [
+      {
+       "q": "D 和 E、P 是什么关系？",
+       "a": "$\\vec D=\\varepsilon_0\\vec E+\\vec P$，线性介质中化为 $\\vec D=\\varepsilon_0\\varepsilon_r\\vec E$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 1
+    },
+    {
+     "text": "有介质高斯定理",
+     "x": 960,
+     "y": 382,
+     "qa": [
+      {
+       "q": "有介质时高斯定理怎么写？",
+       "a": "闭合面的 $D$ 通量等于面内自由电荷代数和：$\\oint\\vec D\\cdot d\\vec S=\\sum q_0$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "只数自由电荷",
+     "x": 960,
+     "y": 460,
+     "qa": [
+      {
+       "q": "为什么用 D 做题方便？",
+       "a": "束缚电荷被吸收进 $D$ 中，求 $D$ 时只需数面内自由电荷，不必管极化电荷。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 3
+    },
+    {
+     "text": "先D后E配套",
+     "x": 960,
+     "y": 540,
+     "qa": [
+      {
+       "q": "求出 D 就能直接算力吗？",
+       "a": "不能。施力的是 $E$，须再由 $\\vec D=\\varepsilon\\vec E$ 求 $E$，两条式子配套使用。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    }
+   ],
    "stepTimes": {
     "1": 267.72,
     "2": 269.99,
@@ -1372,7 +2129,28 @@
    "t_start": 267.72,
    "t_end": 304.13,
    "duration": 36.41,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 267.72,
+     "end": 272.72
+    },
+    {
+     "bullet": 1,
+     "start": 269.99,
+     "end": 274.99
+    },
+    {
+     "bullet": 2,
+     "start": 277.61,
+     "end": 282.61
+    },
+    {
+     "bullet": 3,
+     "start": 284.03,
+     "end": 289.03
+    }
+   ]
   }
  ],
  "subtitles": [
@@ -1671,6 +2449,6 @@
    "text": "下一节讲电容——那里会直接用这一节的结果。"
   }
  ],
- "build_ts": 1792400005,
+ "build_ts": 1794446538,
  "logoScale": 0.67
 }

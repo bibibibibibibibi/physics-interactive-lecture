@@ -55,13 +55,14 @@ export default function Sidebar({
 
   return (
     <aside
-      className={`relative rounded-xl bg-[#0f2a4a] flex flex-col sticky top-6 overflow-hidden w-full lg:w-[var(--sidew)] transition-[width] duration-200 ${collapsed ? 'h-auto lg:h-[620px]' : 'h-[620px]'}`}
+      className={`chrome-panel relative flex flex-col sticky top-6 overflow-hidden w-full lg:w-[var(--sidew)] transition-[width] duration-200 ${collapsed ? 'h-auto lg:h-[620px]' : 'h-[620px]'}`}
       style={{ '--sidew': collapsed ? '44px' : `${sideW}px` } as CSSProperties}
     >
       {collapsed ? (
         <button
           onClick={() => setCollapsed(false)}
-          className="flex-1 flex flex-col items-center gap-3 py-4 text-slate-300 hover:text-[#ffb703] transition"
+          className="flex-1 flex flex-col items-center gap-3 py-4 transition"
+          style={{ color: 'var(--c-mute)' }}
           title="展开侧栏"
         >
           <span className="text-lg leading-none">«</span>
@@ -72,16 +73,17 @@ export default function Sidebar({
           {/* 左缘宽度拖拽手柄 */}
           <div
             onMouseDown={e => startDrag(e, 'width')}
-            className="hidden lg:block absolute left-0 top-0 bottom-0 w-1.5 cursor-ew-resize z-10 hover:bg-[#4cc9f0]/40 active:bg-[#4cc9f0]/60"
+            className="hidden lg:block absolute left-0 top-0 bottom-0 w-1.5 cursor-ew-resize z-10 hover:bg-[#47675b]/25 active:bg-[#47675b]/40"
             title="拖动调整侧栏宽度"
           />
-          <div className="border-b border-slate-700 px-4 py-2 flex items-baseline justify-between shrink-0">
-            <span className="text-sm font-semibold text-[#4cc9f0]">讲解字幕</span>
+          <div className="px-4 py-2 flex items-baseline justify-between shrink-0" style={{ borderBottom: '1px solid var(--c-rule)' }}>
+            <span className="text-sm chrome-label">讲解字幕</span>
             <div className="flex items-center gap-2">
-              <span className="text-xs text-slate-500">点击句子提问</span>
+              <span className="text-xs" style={{ color: 'var(--c-faint)' }}>点击句子提问</span>
               <button
                 onClick={() => setCollapsed(true)}
-                className="text-slate-400 hover:text-[#ffb703] text-sm leading-none px-1"
+                className="text-sm leading-none px-1"
+                style={{ color: 'var(--c-faint)' }}
                 title="收起侧栏"
               >
                 »
@@ -98,7 +100,8 @@ export default function Sidebar({
           {/* 高度拖拽分隔条 */}
           <div
             onMouseDown={e => startDrag(e, 'subH')}
-            className="h-1.5 shrink-0 cursor-ns-resize bg-slate-700/50 hover:bg-[#4cc9f0]/60 active:bg-[#4cc9f0]/80"
+            className="h-1.5 shrink-0 cursor-ns-resize hover:bg-[#47675b]/30 active:bg-[#47675b]/50"
+            style={{ background: 'var(--c-rule)' }}
             title="拖动调整字幕区高度"
           />
           <TutorPanel

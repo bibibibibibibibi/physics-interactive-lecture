@@ -94,7 +94,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "平方反比定律适用范围",
+     "qa": [
+      {
+       "q": "万有引力平方反比定律只适用于天体吗？",
+       "a": "不是。牛顿命题要论证它对普通物体同样成立，本节用球壳定理把结论推广到任意球体。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -114,7 +123,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "球壳定理与椭圆轨道论证",
+     "qa": [
+      {
+       "q": "如何从椭圆轨道反推出万有引力？",
+       "a": "先用球壳定理把球体引力化为质点，再证明椭圆轨道对应 $F\\propto 1/r^2$ 的中心力。"
+      },
+      {
+       "q": "球壳定理说明了什么？",
+       "a": "均匀球壳对壳外质点等效于质量集中于球心，对壳内质点引力为零，从而球体引力可当质点处理。"
+      }
+     ],
+     "important": true
     }
    ],
    "heading": "封面"
@@ -167,7 +189,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "万有引力普适性",
+     "qa": [
+      {
+       "q": "万有引力定律只适用于天体吗？",
+       "a": "不。平方反比是普遍规律，两块石头、人与地球之间同样适用，只是质量小引力弱。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -225,7 +256,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "由引力导出椭圆轨道",
+     "qa": [
+      {
+       "q": "从万有引力能推出椭圆轨道吗？",
+       "a": "能。由动力学方程结合能量与角动量守恒，可解出轨道为圆锥曲线，椭圆是其中一种。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -283,7 +323,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "球壳定理与守恒律",
+     "qa": [
+      {
+       "q": "两个命题分别用什么方法解决？",
+       "a": "第一问用积分（球壳定理）求球体引力；第二问用能量和角动量两条守恒律解轨道方程。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -342,7 +390,16 @@
      "tex": "\\vec F=-G\\frac{mm'}{r^2}\\vec e_r",
      "size": 40,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "万有引力定律",
+     "qa": [
+      {
+       "q": "公式里的负号是什么意思？",
+       "a": "负号表示引力指向对方，即与位矢方向相反；$\\vec e_r$ 是沿位矢方向的单位矢量。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -386,7 +443,16 @@
      "tex": "E_{\\mathrm p}=-G\\frac{mm'}{r}",
      "size": 40,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "引力势能公式",
+     "qa": [
+      {
+       "q": "为什么引力势能是负的？",
+       "a": "因为取无穷远处势能为零，而引力为吸引，靠近时势能更低，故处处为负。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -432,6 +498,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "先算势能的原因",
+     "qa": [
+      {
+       "q": "为什么先算势能而不是先算力？",
+       "a": "势能是标量，积分比矢量积分容易得多，算完再求导得力。"
+      }
      ]
     },
     {
@@ -444,7 +518,15 @@
      "tex": "\\vec F=-\\frac{\\mathrm dE_{\\mathrm p}}{\\mathrm dr}\\vec e_r",
      "size": 38,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "由势能求力",
+     "qa": [
+      {
+       "q": "怎样从势能得到引力？",
+       "a": "对 $r$ 求导取负：$\\vec F=-\\dfrac{\\mathrm dE_{\\mathrm p}}{\\mathrm dr}\\vec e_r$，这是关键技巧。"
+      }
+     ]
     }
    ],
    "heading": "一　引力与引力势能"
@@ -503,7 +585,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "微元法切圆环",
+     "qa": [
+      {
+       "q": "为什么要把球壳切成细圆环？",
+       "a": "同一细环上各点到 P 距离相同，可整体写出该环的势能，再积分求和。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -523,6 +614,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "等距简化",
+     "qa": [
+      {
+       "q": "环上各点到 P 距离相同有什么用？",
+       "a": "距离相同则每段质量对 P 的势能贡献形式一致，可把环当作一个整体处理。"
+      }
      ]
     },
     {
@@ -563,6 +662,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "球外条件",
+     "qa": [
+      {
+       "q": "为什么强调 r > R？",
+       "a": "本页只讨论球壳对球外一点的引力，P 在球外才满足 $r>R$。"
+      }
      ]
     },
     {
@@ -583,7 +690,20 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "细环几何参量",
+     "qa": [
+      {
+       "q": "细环的宽度和半径怎么表示？",
+       "a": "环宽 $R\\,d\\theta$，环半径 $R\\sin\\theta$，$\\theta$ 从 OP 连线量起。"
+      },
+      {
+       "q": "θ 从哪里开始量？",
+       "a": "从 OP 连线（球心到 P 的方向）量起。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -671,7 +791,16 @@
      "tex": "\\mathrm dA=2\\pi(R\\sin\\theta)\\,R\\,\\mathrm d\\theta=2\\pi R^2\\sin\\theta\\,\\mathrm d\\theta",
      "size": 34,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "细环面积元",
+     "qa": [
+      {
+       "q": "为什么面积元是 $2\\pi R^2\\sin\\theta\\,d\\theta$？",
+       "a": "环周长 $2\\pi R\\sin\\theta$，宽度 $R\\,d\\theta$，相乘得 $dA=2\\pi R^2\\sin\\theta\\,d\\theta$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -683,7 +812,16 @@
      "tex": "\\mathrm dm'=2\\pi R^2\\sigma\\sin\\theta\\,\\mathrm d\\theta",
      "size": 34,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "细环质量元",
+     "qa": [
+      {
+       "q": "质量元怎么由面积元得到？",
+       "a": "面积元乘面密度：$dm'=2\\pi R^2\\sigma\\sin\\theta\\,d\\theta$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -715,6 +853,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "环势能等距简化",
+     "qa": [
+      {
+       "q": "为什么环对 P 的势能不用对环积分？",
+       "a": "环上各点到 P 等距为 $s$，整个环可视为一个质量元，直接用 $-Gm\\,dm'/s$。"
+      }
      ]
     },
     {
@@ -786,7 +932,15 @@
      "tex": "s^2=R^2+r^2-2rR\\cos\\theta",
      "size": 36,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "余弦定理几何关系",
+     "qa": [
+      {
+       "q": "为什么用余弦定理表示 s²？",
+       "a": "球壳上圆环到质点的距离 s 由 r、R 和夹角 θ 决定，$s^2=R^2+r^2-2rR\\cos\\theta$。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -812,6 +966,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "微分换元",
+     "qa": [
+      {
+       "q": "两边微分是怎么得到的？",
+       "a": "对 $s^2=R^2+r^2-2rR\\cos\\theta$ 求微分，r、R 为常量，得 $2s\\,ds=2rR\\sin\\theta\\,d\\theta$。"
+      }
      ]
     },
     {
@@ -824,7 +986,16 @@
      "tex": "\\frac{\\sin\\theta\\,\\mathrm d\\theta}{s}=\\frac{\\mathrm ds}{Rr}",
      "size": 36,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "角度积分换为s积分",
+     "qa": [
+      {
+       "q": "这一步换元有什么好处？",
+       "a": "把 $\\sin\\theta\\,d\\theta/s$ 换成 $ds/(Rr)$，角度积分变为对 s 的简单积分，s 从 $r-R$ 到 $r+R$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -848,7 +1019,20 @@
      "tex": "E_{\\mathrm p}=-\\frac{Gm\\,2\\pi R\\sigma}{r}\\int_{r-R}^{r+R}\\mathrm ds=-\\frac{Gm\\,4\\pi R^2\\sigma}{r}",
      "size": 30,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "球壳势能结果",
+     "qa": [
+      {
+       "q": "积分结果为什么是 2R？",
+       "a": "$\\int_{r-R}^{r+R}ds=2R$，代入得 $E_p=-Gm\\,4\\pi R^2\\sigma/r$，即球壳等效为总质量集中于球心。"
+      },
+      {
+       "q": "4πR²σ 代表什么？",
+       "a": "它是球壳的总质量 $m'$，所以 $E_p=-Gmm'/r$，与点质量势能形式一致。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -919,7 +1103,16 @@
      "tex": "E_{\\mathrm p}=-G\\frac{mm'}{r}\\qquad(r>R)",
      "size": 38,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "球壳外势能公式",
+     "qa": [
+      {
+       "q": "为什么球壳外势能可以写成 $-Gmm'/r$？",
+       "a": "因为球壳外质点的势能与质量全部集中于球心时相同，条件为 $r>R$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -945,6 +1138,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "球壳定理（势能）",
+     "qa": [
+      {
+       "q": "球壳外质点的势能等价于什么？",
+       "a": "等价于把整个球壳质量全部集中在球心时的势能。"
+      }
      ]
     },
     {
@@ -957,7 +1158,16 @@
      "tex": "\\vec F=-\\frac{\\mathrm dE_{\\mathrm p}}{\\mathrm dr}\\vec e_r=-G\\frac{mm'}{r^2}\\vec e_r",
      "size": 34,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "球壳外引力公式",
+     "qa": [
+      {
+       "q": "这个力公式是怎么来的？",
+       "a": "由 $F=-\\mathrm dE_{\\mathrm p}/\\mathrm dr$ 对势能求导取负得到，方向沿 $\\vec e_r$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -977,6 +1187,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "球壳定理（引力）",
+     "qa": [
+      {
+       "q": "匀质球壳外质点受力有何特点？",
+       "a": "与把球壳质量集中于球心时完全相同，这就是球壳定理。"
+      }
      ]
     },
     {
@@ -1070,6 +1288,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "球体视为球壳叠加",
+     "qa": [
+      {
+       "q": "为什么实心球可以看成同心球壳叠加？",
+       "a": "把实心球沿半径方向切成无数薄球壳，每层都是均匀球壳，叠加即得整个球的质量分布。"
+      }
      ]
     },
     {
@@ -1102,7 +1328,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "球壳对外等效球心",
+     "qa": [
+      {
+       "q": "为什么球外的点可以把球壳质量看成集中在球心？",
+       "a": "均匀球壳对球外一点的引力与质量集中于球心的质点相同，这是球壳定理的结论。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -1114,7 +1349,15 @@
      "tex": "E_{\\mathrm p}=-G\\frac{m_1m_2'}{r},\\qquad \\vec F=-G\\frac{m_1m_2'}{r^2}\\vec e_r",
      "size": 34,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "引力势能与引力公式",
+     "qa": [
+      {
+       "q": "这里的 $r$ 指什么距离？",
+       "a": "$r$ 是两球心之间的距离，$E_{\\mathrm p}=-G\\frac{m_1m_2'}{r}$，$\\vec F=-G\\frac{m_1m_2'}{r^2}\\vec e_r$。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -1192,7 +1435,16 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "球体等效为质点",
+     "qa": [
+      {
+       "q": "两个匀质球体之间的引力怎么算？",
+       "a": "把两球质量都集中于各自球心，按两质点间的万有引力公式计算，$r$ 取两球心距。"
+      }
+     ],
+     "important": true
     }
    ],
    "heading": "三　匀质球体之间的引力"
@@ -1251,6 +1503,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "有心力用极坐标",
+     "qa": [
+      {
+       "q": "为什么行星问题要用极坐标？",
+       "a": "行星受有心力，力沿位矢方向，取太阳为原点用 $r$、$\\theta$ 描述最方便。"
+      }
      ]
     },
     {
@@ -1283,7 +1543,16 @@
      "tex": "\\mathrm d\\vec r=\\mathrm dr\\,\\vec e_r+r\\,\\mathrm d\\theta\\,\\vec e_\\theta",
      "size": 28,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "位移微元分解",
+     "qa": [
+      {
+       "q": "为什么位移微元有两项？",
+       "a": "径向变化 $\\mathrm dr\\,\\vec e_r$ 加横向转动 $r\\,\\mathrm d\\theta\\,\\vec e_\\theta$，极坐标下位置由 $r$ 和 $\\theta$ 共同决定。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1315,7 +1584,20 @@
      "tex": "\\vec v=\\frac{\\mathrm dr}{\\mathrm dt}\\vec e_r+r\\frac{\\mathrm d\\theta}{\\mathrm dt}\\vec e_\\theta",
      "size": 28,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "极坐标速度分解",
+     "qa": [
+      {
+       "q": "极坐标下速度怎么分解？",
+       "a": "$\\vec v=\\frac{\\mathrm dr}{\\mathrm dt}\\vec e_r+r\\frac{\\mathrm d\\theta}{\\mathrm dt}\\vec e_\\theta$，即径向速度加横向速度。"
+      },
+      {
+       "q": "横向速度为什么是 $r\\frac{\\mathrm d\\theta}{\\mathrm dt}$ 而不是 $\\frac{\\mathrm d\\theta}{\\mathrm dt}$？",
+       "a": "因为横向位移是 $r\\,\\mathrm d\\theta$，弧长随半径放大，除以 $\\mathrm dt$ 得 $r\\frac{\\mathrm d\\theta}{\\mathrm dt}$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1335,6 +1617,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "横向速度与角动量",
+     "qa": [
+      {
+       "q": "横向速度和角动量有什么关系？",
+       "a": "横向速度 $r\\frac{\\mathrm d\\theta}{\\mathrm dt}$ 乘质量与半径即得角动量，是上一节角动量的来源。"
+      }
      ]
     },
     {
@@ -1409,7 +1699,20 @@
      "tex": "L=mr^2\\frac{\\mathrm d\\theta}{\\mathrm dt}=\\text{常量}",
      "size": 38,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "角动量守恒",
+     "qa": [
+      {
+       "q": "为什么有心力下角动量守恒？",
+       "a": "有心力对力心力矩为零，故 $L=mr^2\\dot\\theta$ 为常量。"
+      },
+      {
+       "q": "L 的几何意义是什么？",
+       "a": "$L$ 守恒即面积速度不变，正是开普勒第二定律。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1447,7 +1750,16 @@
      "tex": "E=\\frac{1}{2}mv^2-G\\frac{mm'}{r}=\\text{常量}",
      "size": 38,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "机械能守恒",
+     "qa": [
+      {
+       "q": "为什么机械能守恒？",
+       "a": "引力是保守力，只有保守力做功，故 $E=\\frac12mv^2-G\\frac{mm'}{r}$ 为常量。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1473,6 +1785,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "轨道求解思路",
+     "qa": [
+      {
+       "q": "怎样由守恒律求轨道？",
+       "a": "由 $L$ 解出 $\\dot\\theta$，代入 $E$ 消去时间，得 $r$-$\\theta$ 微分方程。"
+      }
      ]
     },
     {
@@ -1493,6 +1813,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "面积速度不变",
+     "qa": [
+      {
+       "q": "开普勒第二定律与 L 守恒什么关系？",
+       "a": "面积速度不变就是 $L$ 守恒的几何表述，二者等价。"
+      }
      ]
     }
    ],
@@ -1532,7 +1860,20 @@
      "tex": "\\frac{1}{r}=A(1+e\\cos\\theta)",
      "size": 42,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "圆锥曲线轨道方程",
+     "qa": [
+      {
+       "q": "这个 $1/r=A(1+e\\cos\\theta)$ 是怎么来的？",
+       "a": "由万有引力下解出的轨道方程，$r$ 为极径、$\\theta$ 为极角，$A$、$e$ 由能量和角动量决定。"
+      },
+      {
+       "q": "为什么用 $1/r$ 而不用 $r$ 表示？",
+       "a": "因为平方反比力下 $1/r$ 随 $\\cos\\theta$ 线性变化，形式最简洁，便于判断轨道类型。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -1544,7 +1885,20 @@
      "tex": "A=\\frac{Gm'm^2}{L^2},\\qquad e=\\left(1+\\frac{2EL^2}{G^2m'^2m^3}\\right)^{1/2}",
      "size": 30,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "A与离心率表达式",
+     "qa": [
+      {
+       "q": "离心率 $e$ 由什么决定？",
+       "a": "$e=\\sqrt{1+2EL^2/(G^2m'^2m^3)}$，由能量 $E$ 和角动量 $L$ 共同决定。"
+      },
+      {
+       "q": "$A$ 的物理意义是什么？",
+       "a": "$A=Gm'm^2/L^2$，只与引力常数、质量和角动量有关，反映轨道尺度。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1570,6 +1924,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "束缚态为椭圆",
+     "qa": [
+      {
+       "q": "为什么行星轨道是椭圆？",
+       "a": "行星束缚态 $E<0$，代入 $e$ 的表达式得 $e<1$，故轨道为椭圆。"
+      }
      ]
     },
     {
@@ -1602,6 +1964,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "抛物线与双曲线轨道",
+     "qa": [
+      {
+       "q": "彗星和探测器走什么轨道？",
+       "a": "$E=0$ 时为抛物线，$E>0$ 时为双曲线，彗星和探测器多属这两类非束缚轨道。"
+      }
      ]
     },
     {
@@ -1721,7 +2091,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "球壳定理",
+     "qa": [
+      {
+       "q": "为什么球对称物体可以当质点处理？",
+       "a": "球壳对外点等效于质量集中于球心，叠加各球壳得球体，故球对称物体可视为质点。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1747,6 +2126,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "极坐标两守恒求轨道",
+     "qa": [
+      {
+       "q": "怎么从万有引力解出轨道？",
+       "a": "用极坐标分解速度，联立角动量守恒与机械能守恒，解出圆锥曲线轨道。"
+      }
      ]
     },
     {
@@ -1767,7 +2154,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "轨道能量判据",
+     "qa": [
+      {
+       "q": "能量正负如何决定轨道形状？",
+       "a": "$E<0$ 为椭圆，$E=0$ 为抛物线，$E>0$ 为双曲线；行星轨道对应 $E<0$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1793,6 +2189,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "先标量后求导方法",
+     "qa": [
+      {
+       "q": "为什么先算势能而不是直接解微分方程？",
+       "a": "势能是标量积分更易算，求导即得力；再用守恒量降阶，避免硬解微分方程。"
+      }
      ]
     },
     {

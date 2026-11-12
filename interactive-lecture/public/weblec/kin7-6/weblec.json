@@ -103,7 +103,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "安培力与弯曲导线",
+     "qa": [
+      {
+       "q": "弯曲导线受到的安培力怎么算？",
+       "a": "等效为连接首尾的直线电流，$\\vec{F}=\\int I\\,d\\vec{l}\\times\\vec{B}$，弯曲形状不影响合力。"
+      },
+      {
+       "q": "两平行导线之间有什么作用力？",
+       "a": "同向电流相互吸引，反向电流相互排斥，单位长度受力 $F/l=\\mu_0 I_1I_2/(2\\pi d)$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -123,10 +136,52 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "从电荷到导线的类比",
+     "qa": [
+      {
+       "q": "安培力公式和洛伦兹力有什么关系？",
+       "a": "把 $q\\vec{v}$ 换成 $I\\,d\\vec{l}$ 即得 $d\\vec{F}=I\\,d\\vec{l}\\times\\vec{B}$，本质是大量电荷受力的叠加。"
+      }
+     ],
+     "important": true
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "安培力与弯曲导线",
+     "x": 960,
+     "y": 872,
+     "qa": [
+      {
+       "q": "弯曲导线受到的安培力怎么算？",
+       "a": "等效为连接首尾的直线电流，$\\vec{F}=\\int I\\,d\\vec{l}\\times\\vec{B}$，弯曲形状不影响合力。"
+      },
+      {
+       "q": "两平行导线之间有什么作用力？",
+       "a": "同向电流相互吸引，反向电流相互排斥，单位长度受力 $F/l=\\mu_0 I_1I_2/(2\\pi d)$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "从电荷到导线的类比",
+     "x": 960,
+     "y": 992,
+     "qa": [
+      {
+       "q": "安培力公式和洛伦兹力有什么关系？",
+       "a": "把 $q\\vec{v}$ 换成 $I\\,d\\vec{l}$ 即得 $d\\vec{F}=I\\,d\\vec{l}\\times\\vec{B}$，本质是大量电荷受力的叠加。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    }
+   ],
    "stepTimes": {
     "1": 0.0,
     "2": 5.01,
@@ -136,7 +191,18 @@
    "t_start": 0.0,
    "t_end": 26.21,
    "duration": 26.21,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 12.23,
+     "end": 17.23
+    },
+    {
+     "bullet": 1,
+     "start": 18.46,
+     "end": 23.46
+    }
+   ]
   },
   {
    "id": 2,
@@ -222,7 +288,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "电流元受力公式",
+     "qa": [
+      {
+       "q": "电流元受力方向怎么判断？",
+       "a": "用叉乘：$\\mathrm{d}\\vec F=I\\mathrm{d}\\vec l\\times\\vec B$，方向由右手定则确定，垂直于 $\\mathrm{d}\\vec l$ 与 $\\vec B$ 所在平面。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -262,7 +337,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "直导线安培力公式",
+     "qa": [
+      {
+       "q": "公式里的 $\\theta$ 是什么角？",
+       "a": "$\\theta$ 是导线电流方向与磁场 $\\vec B$ 的夹角；$\\theta=90^\\circ$ 时力最大 $F=BIL$，平行时为零。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -302,6 +386,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "弯曲导线等效结论",
+     "qa": [
+      {
+       "q": "弯曲导线的合力为什么只看两端？",
+       "a": "均匀磁场中各电流元的力矢量叠加，弯曲部分相互抵消，合力等于两端连线直导线的受力。"
+      }
      ]
     },
     {
@@ -322,6 +414,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "平行导线与安培定义",
+     "qa": [
+      {
+       "q": "安培这个单位是怎么定义的？",
+       "a": "由两平行长直导线间的磁力定义：真空中相距 1 m 的两导线通同向电流，每米受力为 $2\\times10^{-7}$ N 时电流为 1 A。"
+      }
      ]
     },
     {
@@ -479,7 +579,64 @@
      "color": "#111111"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "电流元受力公式",
+     "x": 540,
+     "y": 430,
+     "qa": [
+      {
+       "q": "电流元受力方向怎么判断？",
+       "a": "用叉乘：$\\mathrm{d}\\vec F=I\\mathrm{d}\\vec l\\times\\vec B$，方向由右手定则确定，垂直于 $\\mathrm{d}\\vec l$ 与 $\\vec B$ 所在平面。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "直导线安培力公式",
+     "x": 540,
+     "y": 554,
+     "qa": [
+      {
+       "q": "公式里的 $\\theta$ 是什么角？",
+       "a": "$\\theta$ 是导线电流方向与磁场 $\\vec B$ 的夹角；$\\theta=90^\\circ$ 时力最大 $F=BIL$，平行时为零。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 5
+    },
+    {
+     "text": "弯曲导线等效结论",
+     "x": 540,
+     "y": 678,
+     "qa": [
+      {
+       "q": "弯曲导线的合力为什么只看两端？",
+       "a": "均匀磁场中各电流元的力矢量叠加，弯曲部分相互抵消，合力等于两端连线直导线的受力。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 7
+    },
+    {
+     "text": "平行导线与安培定义",
+     "x": 540,
+     "y": 756,
+     "qa": [
+      {
+       "q": "安培这个单位是怎么定义的？",
+       "a": "由两平行长直导线间的磁力定义：真空中相距 1 m 的两导线通同向电流，每米受力为 $2\\times10^{-7}$ N 时电流为 1 A。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 8
+    }
+   ],
    "stepTimes": {
     "1": 27.01,
     "2": 29.28,
@@ -491,7 +648,28 @@
    "t_start": 27.01,
    "t_end": 62.39,
    "duration": 35.38,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 29.28,
+     "end": 34.28
+    },
+    {
+     "bullet": 1,
+     "start": 34.77,
+     "end": 39.77
+    },
+    {
+     "bullet": 2,
+     "start": 42.8,
+     "end": 47.8
+    },
+    {
+     "bullet": 3,
+     "start": 51.65,
+     "end": 56.65
+    }
+   ]
   },
   {
    "id": 3,
@@ -529,7 +707,20 @@
      "tex": "\\mathrm{d}\\vec F=I\\,\\mathrm{d}\\vec l\\times\\vec B",
      "size": 40,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "安培力公式",
+     "qa": [
+      {
+       "q": "电流元受力的公式是什么？",
+       "a": "$\\mathrm{d}\\vec F=I\\,\\mathrm{d}\\vec l\\times\\vec B$，方向由右手定则判定。"
+      },
+      {
+       "q": "公式里各量含义？",
+       "a": "$I$ 为电流，$\\mathrm{d}\\vec l$ 沿电流方向，$\\vec B$ 为磁感应强度。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -549,7 +740,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "方向右手定则",
+     "qa": [
+      {
+       "q": "怎么判断安培力方向？",
+       "a": "右手四指从 $I\\mathrm{d}\\vec l$ 弯向 $\\vec B$，拇指指向 $\\mathrm{d}\\vec F$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -629,6 +829,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "安培力大小",
+     "qa": [
+      {
+       "q": "力的大小怎么算？",
+       "a": "$\\mathrm{d}F=\\mathrm{d}l\\,IB\\sin\\theta$，$\\theta$ 为电流与磁场夹角。"
+      }
      ]
     },
     {
@@ -649,6 +857,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "平行时力为零",
+     "qa": [
+      {
+       "q": "电流与磁场平行时受力吗？",
+       "a": "不受力。$\\theta=0$ 或 $\\pi$ 时 $\\sin\\theta=0$，力为零。"
+      }
      ]
     },
     {
@@ -703,7 +919,68 @@
      "color": "#111111"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "安培力公式",
+     "x": 540,
+     "y": 418,
+     "qa": [
+      {
+       "q": "电流元受力的公式是什么？",
+       "a": "$\\mathrm{d}\\vec F=I\\,\\mathrm{d}\\vec l\\times\\vec B$，方向由右手定则判定。"
+      },
+      {
+       "q": "公式里各量含义？",
+       "a": "$I$ 为电流，$\\mathrm{d}\\vec l$ 沿电流方向，$\\vec B$ 为磁感应强度。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 1
+    },
+    {
+     "text": "方向右手定则",
+     "x": 540,
+     "y": 480,
+     "qa": [
+      {
+       "q": "怎么判断安培力方向？",
+       "a": "右手四指从 $I\\mathrm{d}\\vec l$ 弯向 $\\vec B$，拇指指向 $\\mathrm{d}\\vec F$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "安培力大小",
+     "x": 540,
+     "y": 720,
+     "qa": [
+      {
+       "q": "力的大小怎么算？",
+       "a": "$\\mathrm{d}F=\\mathrm{d}l\\,IB\\sin\\theta$，$\\theta$ 为电流与磁场夹角。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 6
+    },
+    {
+     "text": "平行时力为零",
+     "x": 540,
+     "y": 786,
+     "qa": [
+      {
+       "q": "电流与磁场平行时受力吗？",
+       "a": "不受力。$\\theta=0$ 或 $\\pi$ 时 $\\sin\\theta=0$，力为零。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 7
+    }
+   ],
    "stepTimes": {
     "2": 65.99,
     "3": 72.82,
@@ -714,7 +991,28 @@
    "t_start": 63.19,
    "t_end": 110.93,
    "duration": 47.74,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 65.99,
+     "end": 70.99
+    },
+    {
+     "bullet": 1,
+     "start": 72.82,
+     "end": 77.82
+    },
+    {
+     "bullet": 2,
+     "start": 90.59,
+     "end": 95.59
+    },
+    {
+     "bullet": 3,
+     "start": 99.29,
+     "end": 104.29
+    }
+   ]
   },
   {
    "id": 4,
@@ -772,7 +1070,20 @@
      "tex": "F=BIL\\sin\\theta",
      "size": 44,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "安培力公式",
+     "qa": [
+      {
+       "q": "直导线在均匀磁场中受的力怎么算？",
+       "a": "$F=BIL\\sin\\theta$，$\\theta$ 是导线与 $B$ 的夹角。"
+      },
+      {
+       "q": "为什么公式里有 $\\sin\\theta$？",
+       "a": "只有垂直于 $B$ 的电流分量受力，故取夹角正弦。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -818,7 +1129,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "垂直时力最大",
+     "qa": [
+      {
+       "q": "什么时候安培力最大？",
+       "a": "$\\theta=90^\\circ$ 时 $\\sin\\theta=1$，$F=BIL$ 最大。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -844,6 +1164,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "平行时力为零",
+     "qa": [
+      {
+       "q": "导线平行磁场放置会受力吗？",
+       "a": "不会，$\\theta=0$ 或 $180^\\circ$ 时 $\\sin\\theta=0$，$F=0$。"
+      }
      ]
     },
     {
@@ -904,6 +1232,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "公式适用前提",
+     "qa": [
+      {
+       "q": "非均匀磁场能用 $F=BIL\\sin\\theta$ 吗？",
+       "a": "不能，必须回到 $\\int I\\,\\mathrm{d}\\vec l\\times\\vec B$ 的积分形式。"
+      }
      ]
     },
     {
@@ -958,7 +1294,68 @@
      "color": "#111111"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "安培力公式",
+     "x": 540,
+     "y": 468,
+     "qa": [
+      {
+       "q": "直导线在均匀磁场中受的力怎么算？",
+       "a": "$F=BIL\\sin\\theta$，$\\theta$ 是导线与 $B$ 的夹角。"
+      },
+      {
+       "q": "为什么公式里有 $\\sin\\theta$？",
+       "a": "只有垂直于 $B$ 的电流分量受力，故取夹角正弦。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "垂直时力最大",
+     "x": 540,
+     "y": 590,
+     "qa": [
+      {
+       "q": "什么时候安培力最大？",
+       "a": "$\\theta=90^\\circ$ 时 $\\sin\\theta=1$，$F=BIL$ 最大。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    },
+    {
+     "text": "平行时力为零",
+     "x": 540,
+     "y": 654,
+     "qa": [
+      {
+       "q": "导线平行磁场放置会受力吗？",
+       "a": "不会，$\\theta=0$ 或 $180^\\circ$ 时 $\\sin\\theta=0$，$F=0$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 5
+    },
+    {
+     "text": "公式适用前提",
+     "x": 540,
+     "y": 838,
+     "qa": [
+      {
+       "q": "非均匀磁场能用 $F=BIL\\sin\\theta$ 吗？",
+       "a": "不能，必须回到 $\\int I\\,\\mathrm{d}\\vec l\\times\\vec B$ 的积分形式。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 8
+    }
+   ],
    "stepTimes": {
     "1": 111.73,
     "2": 115.73,
@@ -971,7 +1368,28 @@
    "t_start": 111.73,
    "t_end": 163.71,
    "duration": 51.98,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 115.73,
+     "end": 120.73
+    },
+    {
+     "bullet": 1,
+     "start": 129.35,
+     "end": 134.35
+    },
+    {
+     "bullet": 2,
+     "start": 137.98,
+     "end": 142.98
+    },
+    {
+     "bullet": 3,
+     "start": 154.81,
+     "end": 159.81
+    }
+   ]
   },
   {
    "id": 5,
@@ -1049,7 +1467,20 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "弯曲导线合力结论",
+     "qa": [
+      {
+       "q": "弯曲导线受的总力怎么算？",
+       "a": "等于从起点到终点连一条直导线所受的力，中间形状不影响结果。"
+      },
+      {
+       "q": "为什么中间怎么弯都不影响？",
+       "a": "因为 $\\int \\mathrm{d}\\vec l$ 只取决于起点和终点，与路径形状无关。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1101,7 +1532,16 @@
      "tex": "\\vec F=\\int I\\mathrm{d}\\vec l\\times\\vec B=I\\left(\\int\\mathrm{d}\\vec l\\right)\\times\\vec B",
      "size": 24,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "安培力积分公式",
+     "qa": [
+      {
+       "q": "这个公式怎么推导出来的？",
+       "a": "$\\vec F=\\int I\\mathrm{d}\\vec l\\times\\vec B$，$\\vec B$ 为常矢量可提出，得 $I(\\int\\mathrm{d}\\vec l)\\times\\vec B$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1121,6 +1561,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "路径积分几何意义",
+     "qa": [
+      {
+       "q": "$\\int \\mathrm{d}\\vec l$ 等于什么？",
+       "a": "等于从起点指向终点的矢量，与具体路径无关。"
+      }
      ]
     },
     {
@@ -1161,6 +1609,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "结论适用前提",
+     "qa": [
+      {
+       "q": "这个结论什么时候不能用？",
+       "a": "磁场不均匀时 $\\vec B$ 提不出积分号，必须老老实实积分。"
+      }
      ]
     },
     {
@@ -1215,7 +1671,68 @@
      "color": "#111111"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "弯曲导线合力结论",
+     "x": 540,
+     "y": 366,
+     "qa": [
+      {
+       "q": "弯曲导线受的总力怎么算？",
+       "a": "等于从起点到终点连一条直导线所受的力，中间形状不影响结果。"
+      },
+      {
+       "q": "为什么中间怎么弯都不影响？",
+       "a": "因为 $\\int \\mathrm{d}\\vec l$ 只取决于起点和终点，与路径形状无关。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "安培力积分公式",
+     "x": 540,
+     "y": 622,
+     "qa": [
+      {
+       "q": "这个公式怎么推导出来的？",
+       "a": "$\\vec F=\\int I\\mathrm{d}\\vec l\\times\\vec B$，$\\vec B$ 为常矢量可提出，得 $I(\\int\\mathrm{d}\\vec l)\\times\\vec B$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 5
+    },
+    {
+     "text": "路径积分几何意义",
+     "x": 540,
+     "y": 688,
+     "qa": [
+      {
+       "q": "$\\int \\mathrm{d}\\vec l$ 等于什么？",
+       "a": "等于从起点指向终点的矢量，与具体路径无关。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 6
+    },
+    {
+     "text": "结论适用前提",
+     "x": 540,
+     "y": 826,
+     "qa": [
+      {
+       "q": "这个结论什么时候不能用？",
+       "a": "磁场不均匀时 $\\vec B$ 提不出积分号，必须老老实实积分。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 8
+    }
+   ],
    "stepTimes": {
     "1": 164.51,
     "2": 169.16,
@@ -1228,7 +1745,28 @@
    "t_start": 164.51,
    "t_end": 228.85,
    "duration": 64.34,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 169.16,
+     "end": 174.16
+    },
+    {
+     "bullet": 1,
+     "start": 186.24,
+     "end": 191.24
+    },
+    {
+     "bullet": 2,
+     "start": 196.07,
+     "end": 201.07
+    },
+    {
+     "bullet": 3,
+     "start": 220.38,
+     "end": 225.38
+    }
+   ]
   },
   {
    "id": 6,
@@ -1286,7 +1824,15 @@
      "tex": "B_1=\\dfrac{\\mu_0 I_1}{2\\pi d}",
      "size": 30,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "单根导线磁场",
+     "qa": [
+      {
+       "q": "为什么分母是 2πd？",
+       "a": "无限长直导线磁场呈圆柱对称，安培环路定理得 $B=\\mu_0 I/(2\\pi d)$，d 为到导线的距离。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -1318,7 +1864,20 @@
      "tex": "\\dfrac{F}{l}=I_2 B_1=\\dfrac{\\mu_0 I_1 I_2}{2\\pi d}",
      "size": 30,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "单位长度安培力",
+     "qa": [
+      {
+       "q": "为什么用单位长度的力？",
+       "a": "无限长导线总受力无穷大，故取每米受力 $F/l=\\mu_0 I_1I_2/(2\\pi d)$ 才有意义。"
+      },
+      {
+       "q": "这个公式怎么来的？",
+       "a": "把 $B_1=\\mu_0 I_1/(2\\pi d)$ 代入 $F/l=I_2B_1$，即得 $\\mu_0 I_1I_2/(2\\pi d)$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1350,7 +1909,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "电流方向与吸斥",
+     "qa": [
+      {
+       "q": "同向电流为什么相吸？",
+       "a": "同向时一导线在另一导线处的磁场与电流方向满足左手定则，安培力指向对方，故相吸。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1412,7 +1980,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "安培的历史定义",
+     "qa": [
+      {
+       "q": "为什么现在不用这个定义？",
+       "a": "2019 年国际单位制改用基本电荷 e 定义安培，更精确稳定，此力学定义成为历史。"
+      }
+     ]
     },
     {
      "type": "diagram",
@@ -1424,7 +2000,68 @@
      "name": "parallel_wires"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "单根导线磁场",
+     "x": 540,
+     "y": 426,
+     "qa": [
+      {
+       "q": "为什么分母是 2πd？",
+       "a": "无限长直导线磁场呈圆柱对称，安培环路定理得 $B=\\mu_0 I/(2\\pi d)$，d 为到导线的距离。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 2
+    },
+    {
+     "text": "单位长度安培力",
+     "x": 540,
+     "y": 626,
+     "qa": [
+      {
+       "q": "为什么用单位长度的力？",
+       "a": "无限长导线总受力无穷大，故取每米受力 $F/l=\\mu_0 I_1I_2/(2\\pi d)$ 才有意义。"
+      },
+      {
+       "q": "这个公式怎么来的？",
+       "a": "把 $B_1=\\mu_0 I_1/(2\\pi d)$ 代入 $F/l=I_2B_1$，即得 $\\mu_0 I_1I_2/(2\\pi d)$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    },
+    {
+     "text": "电流方向与吸斥",
+     "x": 540,
+     "y": 696,
+     "qa": [
+      {
+       "q": "同向电流为什么相吸？",
+       "a": "同向时一导线在另一导线处的磁场与电流方向满足左手定则，安培力指向对方，故相吸。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 5
+    },
+    {
+     "text": "安培的历史定义",
+     "x": 540,
+     "y": 958,
+     "qa": [
+      {
+       "q": "为什么现在不用这个定义？",
+       "a": "2019 年国际单位制改用基本电荷 e 定义安培，更精确稳定，此力学定义成为历史。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 7
+    }
+   ],
    "stepTimes": {
     "1": 229.65,
     "2": 233.39,
@@ -1436,7 +2073,28 @@
    "t_start": 229.65,
    "t_end": 277.75,
    "duration": 48.1,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 229.65,
+     "end": 234.65
+    },
+    {
+     "bullet": 1,
+     "start": 241.52,
+     "end": 246.52
+    },
+    {
+     "bullet": 2,
+     "start": 246.74,
+     "end": 251.74
+    },
+    {
+     "bullet": 3,
+     "start": 261.48,
+     "end": 266.48
+    }
+   ]
   },
   {
    "id": 7,
@@ -1562,7 +2220,20 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "等效法求安培力",
+     "qa": [
+      {
+       "q": "为什么可以用两端连线代替弯曲导线？",
+       "a": "均匀磁场中，弯曲导线所受安培力的合力等于连接两端点的直导线所受的力，故可用等效线段替代。"
+      },
+      {
+       "q": "等效线段的长度和方向怎么定？",
+       "a": "长度取两端点连线长，方向由电流起点指向终点。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -1574,7 +2245,16 @@
      "tex": "F=BI\\cdot 2R",
      "size": 40,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "半圆导线安培力公式",
+     "qa": [
+      {
+       "q": "半圆导线合力大小是多少？",
+       "a": "$F=BI\\cdot 2R$，即 $BIL$ 中 $L$ 取两端连线长 $2R$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1594,6 +2274,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "安培力方向判定",
+     "qa": [
+      {
+       "q": "合力方向怎么判断？",
+       "a": "取起点到终点的连线方向为等效电流方向，再用右手定则判定。"
+      }
      ]
     },
     {
@@ -1648,7 +2336,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "闭合线圈合力为零",
+     "qa": [
+      {
+       "q": "补成整圆后合力为什么是零？",
+       "a": "两端重合，等效连线长度为零，故合力为零，与闭合线圈在均匀场中合力为零一致。"
+      }
+     ]
     },
     {
      "type": "box",
@@ -1751,7 +2447,68 @@
      "color": "#111111"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "等效法求安培力",
+     "x": 540,
+     "y": 554,
+     "qa": [
+      {
+       "q": "为什么可以用两端连线代替弯曲导线？",
+       "a": "均匀磁场中，弯曲导线所受安培力的合力等于连接两端点的直导线所受的力，故可用等效线段替代。"
+      },
+      {
+       "q": "等效线段的长度和方向怎么定？",
+       "a": "长度取两端点连线长，方向由电流起点指向终点。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 5
+    },
+    {
+     "text": "半圆导线安培力公式",
+     "x": 540,
+     "y": 700,
+     "qa": [
+      {
+       "q": "半圆导线合力大小是多少？",
+       "a": "$F=BI\\cdot 2R$，即 $BIL$ 中 $L$ 取两端连线长 $2R$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 6
+    },
+    {
+     "text": "安培力方向判定",
+     "x": 540,
+     "y": 758,
+     "qa": [
+      {
+       "q": "合力方向怎么判断？",
+       "a": "取起点到终点的连线方向为等效电流方向，再用右手定则判定。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 7
+    },
+    {
+     "text": "闭合线圈合力为零",
+     "x": 540,
+     "y": 996,
+     "qa": [
+      {
+       "q": "补成整圆后合力为什么是零？",
+       "a": "两端重合，等效连线长度为零，故合力为零，与闭合线圈在均匀场中合力为零一致。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 9
+    }
+   ],
    "stepTimes": {
     "1": 278.55,
     "2": 282.55,
@@ -1764,7 +2521,28 @@
    "t_start": 278.55,
    "t_end": 335.33,
    "duration": 56.78,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 294.96,
+     "end": 299.96
+    },
+    {
+     "bullet": 1,
+     "start": 294.96,
+     "end": 299.96
+    },
+    {
+     "bullet": 2,
+     "start": 300.06,
+     "end": 305.06
+    },
+    {
+     "bullet": 3,
+     "start": 315.62,
+     "end": 320.62
+    }
+   ]
   },
   {
    "id": 8,
@@ -1822,7 +2600,16 @@
      "tex": "\\mathrm{d}\\vec F=I\\mathrm{d}\\vec l\\times\\vec B",
      "size": 26,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "电流元受力公式",
+     "qa": [
+      {
+       "q": "电流元受力方向怎么判断？",
+       "a": "由 $\\mathrm{d}\\vec F=I\\mathrm{d}\\vec l\\times\\vec B$ 的叉乘方向定，用右手定则，力同时垂直于电流和磁场。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1882,7 +2669,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "直导线安培力",
+     "qa": [
+      {
+       "q": "为什么平行时受力为零？",
+       "a": "$F=BIL\\sin\\theta$，平行时 $\\theta=0$，$\\sin\\theta=0$；垂直时 $\\theta=90^\\circ$ 受力最大。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1922,6 +2718,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "弯曲导线等效",
+     "qa": [
+      {
+       "q": "弯曲导线的合力怎么算？",
+       "a": "均匀场中合力等于两端连线所受的力，因为 $\\mathrm{d}\\vec l$ 的积分就是两端位移矢量。"
+      }
      ]
     },
     {
@@ -1962,6 +2766,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "平行导线间作用力",
+     "qa": [
+      {
+       "q": "两平行导线是相吸还是相斥？",
+       "a": "同向电流相吸，反向电流相斥；单位长度受力 $F/l=\\mu_0 I_1I_2/(2\\pi d)$。"
+      }
      ]
     },
     {
@@ -2079,7 +2891,64 @@
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "电流元受力公式",
+     "x": 520,
+     "y": 412,
+     "qa": [
+      {
+       "q": "电流元受力方向怎么判断？",
+       "a": "由 $\\mathrm{d}\\vec F=I\\mathrm{d}\\vec l\\times\\vec B$ 的叉乘方向定，用右手定则，力同时垂直于电流和磁场。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "直导线安培力",
+     "x": 540,
+     "y": 598,
+     "qa": [
+      {
+       "q": "为什么平行时受力为零？",
+       "a": "$F=BIL\\sin\\theta$，平行时 $\\theta=0$，$\\sin\\theta=0$；垂直时 $\\theta=90^\\circ$ 受力最大。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 5
+    },
+    {
+     "text": "弯曲导线等效",
+     "x": 540,
+     "y": 718,
+     "qa": [
+      {
+       "q": "弯曲导线的合力怎么算？",
+       "a": "均匀场中合力等于两端连线所受的力，因为 $\\mathrm{d}\\vec l$ 的积分就是两端位移矢量。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 7
+    },
+    {
+     "text": "平行导线间作用力",
+     "x": 1368,
+     "y": 348,
+     "qa": [
+      {
+       "q": "两平行导线是相吸还是相斥？",
+       "a": "同向电流相吸，反向电流相斥；单位长度受力 $F/l=\\mu_0 I_1I_2/(2\\pi d)$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 9
+    }
+   ],
    "stepTimes": {
     "1": 336.13,
     "2": 338.4,
@@ -2091,7 +2960,28 @@
    "t_start": 336.13,
    "t_end": 385.74,
    "duration": 49.61,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 336.13,
+     "end": 341.13
+    },
+    {
+     "bullet": 1,
+     "start": 338.4,
+     "end": 343.4
+    },
+    {
+     "bullet": 2,
+     "start": 345.54,
+     "end": 350.54
+    },
+    {
+     "bullet": 3,
+     "start": 354.32,
+     "end": 359.32
+    }
+   ]
   }
  ],
  "subtitles": [
@@ -2450,6 +3340,6 @@
    "text": "下一节讲磁场对载流线圈的作用：线圈在均匀场里合力为零，但会受力矩——那是电动机和磁电式仪表的原理。"
   }
  ],
- "build_ts": 1792482481,
+ "build_ts": 1794446545,
  "logoScale": 0.67
 }

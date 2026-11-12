@@ -1,0 +1,1703 @@
+{
+ "id": "ch07",
+ "title": "恒定磁场",
+ "subject": "electromagnetism",
+ "chapter": 7,
+ "week": "Week 7",
+ "difficulty": "★★★★☆（矢量关系多：毕奥-萨伐尔定律与安培力的方向判断；计算以对称性磁场 + 洛伦兹力圆周运动为主）",
+ "source": "马文蔚《物理学》第七版 第七章（OCR fixed 版转换 + 人工精选作业）",
+ "blocks": [
+  {
+   "type": "intro",
+   "summary": "本章研究恒定电流（恒定磁场）的规律。先建立恒定电流的描述：电流密度 j、电流的连续性方程与恒定电流条件、欧姆定律的微分形式 j = γE、电源与电动势；然后从磁场对运动电荷的作用力定义磁感强度 B（洛伦兹力 F = qv × B）；核心规律是毕奥-萨伐尔定律，用它计算长直导线、圆电流轴线上的磁场并引入磁矩 m = IS·e_n 与运动电荷的磁场；接着讨论反映磁场性质的两大定理——磁场的高斯定理（∮B·dS = 0，磁场是无源场）与安培环路定理（∮B·dl = μ₀ΣI，磁场是涡旋场），并用后者求解螺线管、环形螺线管、圆柱导体的磁场；然后研究带电粒子在磁场中的运动（回旋半径 R = mv/qB、磁聚焦、磁镜、质谱仪、回旋加速器、霍耳效应）；再研究磁场对载流导线的作用（安培力 dF = Idl × B、载流线圈的磁力矩 M = m × B）；最后介绍磁介质：顺磁质/抗磁质/铁磁质、磁化强度 M、磁场强度 H 与磁介质中的安培环路定理、磁滞回线与磁屏蔽。"
+  },
+  {
+   "type": "text",
+   "html": "<p>人们发现磁现象要比发现电现象早得多。早在公元前数百年，古籍中就有了磁石(Fe$_3$O$_4$)能吸铁的记述。我国东汉时期的王充指出古代的\"司南勺\"是个指南器，并在11世纪的《武经总要》(成书于1044年)中叙述了制造指南针的方法.12世纪初，我国已将指南针用于航海船上。指南针传入欧洲则是12世纪末(1190年)了。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>但直到1820年，人们虽曾在自然现象中观察到闪电能使钢针磁化或使磁针退磁等现象，但也没能把电现象与磁现象联系起来。因此，长期以来，人们普遍认为电现象和磁现象是互不相关的。在电磁学发展史上，1820年是取得光辉成就的一年。丹麦物理学家奥斯特崇尚康德的各种自然现象是相互关联的学说，他认为闪电过后钢针被磁化绝非偶然现象，他还认为电流流过导体既然能产生热效应、化学效应，为什么不能产生磁效应呢。为此，他从1807年到1820年间，用了近13年的时间，寻找电流对磁针的作用，但因方法不对而未获结果。直到1820年4月的一次实验，他终于发现在通电直导线附近的小磁针确有偏转。不久，他又发现磁铁也可使通电导线发生偏转。奥斯特的电流与磁体间相互作用的实验于同年7月21日以论文形式发表后，在欧洲物理学界引起了极大的关注。特别是法国物理学家的工作，将奥斯特的发现推进到了新的更高阶段。同年9月4日安培得知奥斯特的实验后，于9月18日进而发现圆电流与磁针有相似的作用，9月25日又报告了两平行通电直导线间和两圆电流间也都存在相互作用，安培还发现了直电流附近小磁针取向的右手螺旋定则，而所有这些都是在一个星期里完成的。这一年的12月毕奥和萨伐尔发表了长直载流导线所激发的磁场正比于电流 $I$，而反比于与导线的垂直距离 $r$ 的实验结果。虽然不久在这个实验的基础上，拉普拉斯又从数学上找出了电流元磁场的公式，但由于主要的实验工作是毕奥和萨伐尔完成的，所以通常就称该公式为毕奥-萨伐尔定律。法国物理学家关于电流磁效应的实验和理论研究成果传到了英国以后，英国同行备受鼓舞。法拉第认为既然\"电能生磁\"，那么\"磁也应能生电\".从1821年开始，法拉第就从事\"磁变电\"的研究，直到1831年8月才发现了电磁感应现象，从而为现代电磁理论和现代电工学的发展和应用奠定了基础。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>本章着重讨论恒定电流(或相对参考系以恒定速度运动的电荷)激发磁场的规律和性质。主要内容有：恒定电流的电流密度，欧姆定律的微分形式，电源的电动势，描述磁场的物理量——磁感强度 $\\mathbf{B}$；电流激发磁场的规律——毕奥-萨伐尔定律；反映磁场性质的基本定理——磁场的高斯定理和安培环路定理；以及磁场对运动电荷的作用力——洛伦兹力和磁场对电流的作用力——安培力；磁场中的磁介质等。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>奥斯特(Hans Christian Oersted,1777—1851)，丹麦物理学家。他深信自然界不同现象之间是相互联系的，从这个思想出发，他发现了电流对磁针的作用，从而导致了19世纪中叶电磁理论的统一和发展。法拉第在评论奥斯特的实验时说：\"它突然打开了科学领域中一扇黑暗的大门.\"</p>"
+  },
+  {
+   "type": "section",
+   "number": "7.1",
+   "title": "恒定电流"
+  },
+  {
+   "type": "text",
+   "html": "<h4>一、电流 电流密度</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>虽然金属导体中的自由电子总是在不停地作无规则热运动，但它们沿任意方向运动的概率是相等的，所以，导体在静电平衡时，其内部的电场强度 $E = 0$，这时导体内没有电荷作定向运动，因而导体内不能形成电流。然而，如在导体两端加上电势差(即电压)后，就可使导体内出现电场，这样导体内的自由电子除作热运动外，还要在电场力作用下作宏观的定向运动，从而形成了电流。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>概而言之，电流是由大量电荷作定向运动形成的。一般地说，电荷的携带者可以是自由电子、质子、正负离子，这些带电粒子亦称为载流子。由带电粒子定向运动形成的电流叫做传导电流。而带电物体作机械运动时形成的电流叫做运流电流。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在金属导体内，载流子是自由电子，它作定向移动的方向是由低电势到高电势。但在历史上，人们把正电荷从高电势向低电势移动的方向规定为电流的方向，因此电流的方向与负电荷的移动方向恰好相反。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如图7-1所示，在截面积为 $S$ 的一段导体中，有正电荷从左向右移动。若在时间间隔 $\\mathrm{d}t$ 内，通过截面 $S$ 的电荷为 $\\mathrm{d}q$，则在导体中的电流 $I$ 为通过截面 $S$ 的电荷随时间的变化率，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "I = \\frac{\\mathrm{d}q}{\\mathrm{d}t}",
+   "label": "式（7-1）"
+  },
+  {
+   "type": "text",
+   "html": "<p>如果导体中的电流不随时间而变化，这种电流叫做恒定电流。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>电流 $I$ 的单位名称为安培①，其符号为 $\\mathrm{A}$，$1\\ \\mathrm{A} = 1\\ \\mathrm{C \\cdot s^{-1}}$.常用的电流单位还有 $\\mathrm{mA}$ 和 $\\mathrm{\\mu A}$：</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "1\\ \\mathrm{\\mu A} = 10^{-3}\\ \\mathrm{mA} = 10^{-6}\\ \\mathrm{A}"
+  },
+  {
+   "type": "text",
+   "html": "<p>应当指出，电流是标量，不是矢量。虽然人们在实际应用中常说\"电流的方向\"，但这只是指一群\"正电荷的流向\"而已。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>当电流在大块导体中流动时，导体内各处的电流分布将是不均匀的。图7-2为半球形接地电极，图中仿照画电场线的办法用带有箭头的线段标示电流的流向，这称为电流线，电流线的密度表示电流的大小。从图中可以看到，在半球形电极外侧的导体中，电流的分布是不均匀的。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch07/pages_250_300_b41c2a01f8fc79f79f84a44db8cf54217e2d05346a6b0880d9be517783e32141.png",
+   "caption": "图 7-2 半球形接地电极的电流线分布"
+  },
+  {
+   "type": "text",
+   "html": "<p>为了细致地描述导体内各点电流分布的情况，引入一个新的物理量——电流密度 $\\mathbf{j}$.电流密度是矢量，电流密度的方向和大小规定如下：导体中任意一点电流密度 $\\mathbf{j}$ 的方向为该点正电荷的运动方向；$\\mathbf{j}$ 的大小等于单位时间内通过该点附近垂直于正电荷运动方向的单位面积的电荷。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如图7-3所示，设想在导体中点 $P$ 处取一面积元 $\\Delta S$，并使 $\\Delta S$ 的单位法线矢量 $\\mathbf{e}_{\\mathrm{n}}$ 与正电荷的运动方向(即电流密度 $\\mathbf{j}$ 的方向)间成 $\\alpha$ 角。若在时间 $\\Delta t$ 内有正电荷 $\\Delta Q$ 通过面积元 $\\Delta S$，那么按上述规定可得，点 $P$ 处电流密度的大小为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "j = \\frac{\\Delta I}{\\Delta S\\cos\\alpha} = \\frac{\\Delta Q}{\\Delta t \\Delta S\\cos\\alpha}",
+   "label": "式（7-2）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $\\Delta S\\cos\\alpha$ 为面积元 $\\Delta S$ 在垂直于电流密度方向上的投影。则上式可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\Delta I = \\mathbf{j} \\cdot \\Delta\\mathbf{S}",
+   "label": "式（7-3a）"
+  },
+  {
+   "type": "text",
+   "html": "<p>通过导体任一有限截面 $S$ 的电流为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "I = \\int_S \\mathbf{j} \\cdot \\mathrm{d}\\mathbf{S}",
+   "label": "式（7-3b）"
+  },
+  {
+   "type": "text",
+   "html": "<p>下面我们来简略讨论金属导体中的电流和电流密度与自由电子的数密度和漂移速度之间的关系。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>从导电机制来看，金属中大量的自由电子除了作热运动以外，还在电场力的作用下，沿着与电场强度 $\\mathbf{E}$ 相反的方向作定向运动。我们把自由电子在电场力作用下作定向运动的平均速度叫做漂移速度，用符号 $\\mathbf{v}_{\\mathrm{d}}$ 表示。正是由于漂移速度的存在，才在导体中形成了宏观电流。漂移速度 $\\mathbf{v}_{\\mathrm{d}}$ 的大小也叫漂移速率。如图7-4所示，设导体中自由电子的数密度为 $n$，每个电子的漂移速度均为 $\\mathbf{v}_{\\mathrm{d}}$.在导体内取一面积元 $\\Delta S$，且 $\\Delta S$ 与 $\\mathbf{v}_{\\mathrm{d}}$ 垂直，于是在时间间隔 $\\Delta t$ 内，在任一长为 $v_{\\mathrm{d}}\\Delta t$、截面积为 $\\Delta S$ 的柱体里的自由电子都要通过截面 $\\Delta S$，即有 $n v_{\\mathrm{d}}\\Delta t\\Delta S$ 个电子通过 $\\Delta S$.考虑到每个电子电荷的绝对值为 $e$，故在时间 $\\Delta t$ 内通过 $\\Delta S$ 的电荷为 $\\Delta q = e n v_{\\mathrm{d}}\\Delta t\\Delta S$.由式(7-1)和式(7-2)可得，导体中 $\\Delta S$ 处的电流和电流密度为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\Delta I = e n v_{\\mathrm{d}}\\Delta S",
+   "label": "式（7-4）"
+  },
+  {
+   "type": "text",
+   "html": "<p>和</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "j = e n v_{\\mathrm{d}}",
+   "label": "式（7-5）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上述两式均表明，金属导体中的电流和电流密度均与自由电子的数密度和自由电子的漂移速率成正比。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>式(7-4)和式(7-5)对一般导体或半导体也适用，只不过把电子的电荷换成载流子的电荷 $q$，把自由电子的漂移速率换成载流子的平均定向运动速率 $v$ 就可以了。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch07/fig7_1_original.png",
+   "caption": "图 7-1 导体中的电流：正电荷定向移动通过截面 S 形成电流 I（archive 教材原图扫描件；第三轮目检撤下 tex 臆造重绘）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch07/pages_250_300_92f43b495e9760380c0b3a652bb65458e550282448d2bc9ee3619524220ea15b.png",
+   "caption": "图 7-3 电流密度矢量 j 的定义（法线 e_n 与 j 成 α 角）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch07/fig7_4_original.png",
+   "caption": "图 7-4 电流与电子漂移速度的关系：ΔS、j、v_d、v_dΔt（archive 教材原图扫描件；第三轮目检撤下 tex 臆造重绘）"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（7.1 节 · 例 1）",
+   "problem": "(1)设每个铜原子贡献一个自由电子，问铜导线中自由电子的数密度为多少？<br>(2)在一般家用线路中，容许的电流最大值为15 A，铜导线的半径为0.81 mm.试问在这种情况下，自由电子的漂移速率是多少？<br>(3)若铜导线中电流密度是均匀的，则电流密度的值是多少？",
+   "solution_steps": [
+    "(1)设以 $\\rho$ 表示铜的质量密度，$\\rho = 8.95 \\times 10^3\\ \\mathrm{kg \\cdot m^{-3}}$，$M$ 表示铜的摩尔质量 $M = 63.5 \\times 10^{-3}\\ \\mathrm{kg \\cdot mol^{-1}}$，$N_A$ 表示阿伏伽德罗常量，那么铜导线内自由电子的数密度为",
+    "$$n = \\frac{\\rho N_A}{M} = \\frac{8.95 \\times 10^3 \\times 6.02 \\times 10^{23}}{63.5 \\times 10^{-3}}\\ \\mathrm{m^{-3}} = 8.48 \\times 10^{28}\\ \\mathrm{m^{-3}}$$",
+    "(2)已知电子电荷的绝对值为 $e = 1.60 \\times 10^{-19}\\ \\mathrm{C}$.由式(7-4)可得，自由电子的漂移速率为",
+    "$$v_{\\mathrm{d}} = \\frac{I}{e n \\pi r^2} = \\frac{15}{1.60 \\times 10^{-19} \\times 8.48 \\times 10^{28} \\times \\pi \\times (0.81 \\times 10^{-3})^2}\\ \\mathrm{m \\cdot s^{-1}} \\approx 5.36 \\times 10^{-4}\\ \\mathrm{m \\cdot s^{-1}}$$",
+    "显然，自由电子的漂移速率比蜗牛的爬行速率还要略小一点。",
+    "(3)电流密度为",
+    "$$j = \\frac{I}{\\pi r^2} = \\frac{15}{\\pi \\times (0.81 \\times 10^{-3})^2}\\ \\mathrm{A \\cdot m^{-2}} \\approx 7.28 \\times 10^6\\ \\mathrm{A \\cdot m^{-2}}$$"
+   ],
+   "answer": null
+  },
+  {
+   "type": "text",
+   "html": "<h4>二、电流的连续性方程 恒定电流条件</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>考虑如图7-5(a)所示的闭合曲面，并规定曲面上任意点的法线方向总是向外。这样，在单位时间内从闭合曲面内向外流出的电荷，即通过闭合曲面向外的总传导电流为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "I = \\oint_S \\mathbf{j} \\cdot \\mathrm{d}\\mathbf{S}"
+  },
+  {
+   "type": "text",
+   "html": "<p>然而，根据电荷守恒定律，在单位时间内通过闭合曲面向外流出的电荷，应等于此闭合曲面内单位时间所减少的电荷。如以 $-\\frac{\\mathrm{d}Q_{\\mathrm{i}}}{\\mathrm{d}t}$ 表示闭合曲面内单位时间减少的电荷，则有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\frac{\\mathrm{d}Q}{\\mathrm{d}t} = -\\frac{\\mathrm{d}Q_{\\mathrm{i}}}{\\mathrm{d}t}"
+  },
+  {
+   "type": "text",
+   "html": "<p>把它与上式相比较，可得</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\oint_S \\mathbf{j} \\cdot \\mathrm{d}\\mathbf{S} = -\\frac{\\mathrm{d}Q_{\\mathrm{i}}}{\\mathrm{d}t}",
+   "label": "式（7-6a）"
+  },
+  {
+   "type": "text",
+   "html": "<p>它表明，单位时间内通过闭合曲面向外流出的电荷，等于此时间内闭合曲面里电荷的减少量。这就是通常所说的电流的连续性。上式叫做电流的连续性方程。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>下面我们从电流连续性方程出发，讨论恒定电流存在的条件。如图7-5(b)所示，我们在导体中取一个任意闭合曲面 $S$，如果此闭合曲面内的电荷不随时间变化，既不增加也不减少，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\frac{\\mathrm{d}Q_{\\mathrm{i}}}{\\mathrm{d}t} = 0"
+  },
+  {
+   "type": "text",
+   "html": "<p>则可得</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\oint_S \\mathbf{j} \\cdot \\mathrm{d}\\mathbf{S} = 0 \\quad \\text{或} \\quad \\oint_S \\mathrm{d}I = 0",
+   "label": "式（7-6b）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式表明，在闭合曲面内，若电荷不随时间变化，则电流密度矢量 $\\mathbf{j}$ 对闭合曲面的面积分为零。这就是说，从闭合曲面 $S$ 上某一部分流入的电流，等于从闭合曲面 $S$ 其他部分流出的电流。总之，当导体中任意闭合曲面满足式(7-6b)时，闭合曲面内没有电荷被积累起来，此时通过闭合曲面的电流也是恒定的。故式(7-6b)为恒定电流条件。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch07/pages_250_300_169099066097e685e92e0bd5147c927b08d037d445dd2fb3054696944d77a9cb.png",
+   "caption": "图 7-5(a) 电流的连续性方程（流出闭合曲面的电流等于内部电荷的减少率）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch07/pages_250_300_0a4caff419e00843f50ec85b34fa6b634a6d3aeba79937c03f2f32420ab1f7cc.png",
+   "caption": "图 7-5(b) 恒定电流条件（闭合曲面内无电荷积累，流入 = 流出）"
+  },
+  {
+   "type": "text",
+   "html": "<h4>三、欧姆定律的微分形式</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>按金属导电的机理，导体中各点的电流密度应与导体中的电场分布有关。现在就来定量讨论这个问题。如图7-6所示，在导体中取一长为 $\\mathrm{d}l$、截面积为 $\\mathrm{d}S$ 的柱体元，$\\mathrm{d}S$ 上的电流密度 $\\mathbf{j}$ 与 $\\mathrm{d}S$ 相垂直。设柱体元两端面之间的电压为 $\\mathrm{d}U$，由欧姆定律可知，通过柱体元端面 $\\mathrm{d}S$ 的电流为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathrm{d}I = \\frac{\\mathrm{d}U}{R}"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $R$ 为柱体元的电阻。导体的电阻率为 $\\rho$，则有 $R = \\rho\\mathrm{d}l/\\mathrm{d}S$.于是上式可写为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathrm{d}I = \\frac{1}{\\rho}\\frac{\\mathrm{d}U}{\\mathrm{d}l}\\mathrm{d}S"
+  },
+  {
+   "type": "text",
+   "html": "<p>有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\frac{\\mathrm{d}I}{\\mathrm{d}S} = \\frac{1}{\\rho}\\frac{\\mathrm{d}U}{\\mathrm{d}l}"
+  },
+  {
+   "type": "text",
+   "html": "<p>因为 $j = \\mathrm{d}I/\\mathrm{d}S$，且 $\\mathrm{d}U = E\\mathrm{d}l$，所以由上式可得</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "j = \\frac{1}{\\rho}E = \\gamma E"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $\\gamma$ 叫做电导率，$E$ 是导体内的电场强度。考虑到上式中电流密度和电场强度均为矢量，且方向相同，故有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{j} = \\frac{1}{\\rho}\\mathbf{E} = \\gamma\\mathbf{E}",
+   "label": "式（7-7）"
+  },
+  {
+   "type": "text",
+   "html": "<p>这就是欧姆定律的微分形式。它表明，通过导体中任一点的电流密度 $\\mathbf{j}$ 与电场强度 $\\mathbf{E}$ 成正比，电场强度大的地方，电流密度也大；两者方向相同，大小成正比关系。可见，电流密度和导体材料的性质有关，而与导体的形状和大小无关。一般来说，在导体内的电场强度 $E < 10^2\\ \\mathrm{V \\cdot m^{-1}}$ 的情况下，金属导体的电阻率 $\\rho$(或电导率 $\\gamma$)可以视为常量，此时，式(7-7)中 $\\mathbf{j}$ 与 $\\mathbf{E}$ 之间的关系为线性关系。当金属导体内的 $E > 10^3 \\sim 10^4\\ \\mathrm{V \\cdot m^{-1}}$ 时，电导率 $\\gamma$ 也要受 $E$ 的影响，即 $\\gamma = \\gamma(E)$，这时 $\\mathbf{j}$ 与 $\\mathbf{E}$ 之间就是非线性关系了。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>根据式(7-6a)和式(7-7)，在恒定电流的情况下，在导体内部任取一闭合曲面 $S$，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\oint_S \\mathbf{j} \\cdot \\mathrm{d}\\mathbf{S} = \\oint_S \\gamma\\mathbf{E} \\cdot \\mathrm{d}\\mathbf{S} = 0"
+  },
+  {
+   "type": "text",
+   "html": "<p>如果导体的电导率 $\\gamma$ 是均匀的，则对导体内任一闭合曲面 $S$，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\oint_S \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{S} = 0"
+  },
+  {
+   "type": "text",
+   "html": "<p>根据高斯定理[式(5-16)]①，结合上式可知，在恒定电流的情况下，电导率均匀的导体内部没有净电荷，电荷只能分布在导体的表面处(或分界面上).</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch07/fig7_6_redraw.png",
+   "caption": "图 7-6 推导欧姆定律微分形式的柱体元（j 与 E 同方向；原图过小，按教材放大重绘）"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（7.1 节 · 例 2）",
+   "problem": "如图7-7所示，一内半径为 $R_1$、外半径为 $R_2$ 的金属圆柱筒，长度为 $l$，电阻率为 $\\rho$.若圆柱筒内缘的电势高于外缘的电势，则它们的电势差为 $U$ 时，圆柱体中沿径向的电流为多少？<br><img src=\"assets/images/ch07/pages_250_300_28fee5b359c6192bb5efff29c43fb36e0c8e78969628de9cb2e96e19e5ebc470.png\" style=\"max-width:60%\"><br><div class=\"figcap\">图 7-7 例 2 题图（金属圆柱筒的径向电流）</div>",
+   "solution_steps": [
+    "以半径 $r$ 和 $r + \\mathrm{d}r$ 作两个圆柱面，则圆柱面的面积为 $S = 2\\pi rl$.由电阻的定义可得，两圆柱面间的电阻为",
+    "$$\\mathrm{d}R = \\rho\\frac{\\mathrm{d}r}{S} = \\rho\\frac{\\mathrm{d}r}{2\\pi rl}$$",
+    "于是，圆柱筒的径向总电阻为",
+    "$$R = \\int_{R_1}^{R_2} \\rho\\frac{\\mathrm{d}r}{2\\pi rl} = \\frac{\\rho}{2\\pi l}\\ln\\frac{R_2}{R_1}$$",
+    "由于圆柱筒内外缘之间的电势差为 $U$，因此由欧姆定律可求得，圆柱筒的径向电流为",
+    "$$I = \\frac{U}{R} = \\frac{2\\pi l U}{\\rho\\ln(R_2/R_1)}$$"
+   ],
+   "answer": null
+  },
+  {
+   "type": "section",
+   "number": "7.2",
+   "title": "电源 电动势"
+  },
+  {
+   "type": "text",
+   "html": "<p>不难设想，若在导体两端维持恒定的电势差，那么导体中就会有恒定的电流流过。怎样才能维持恒定的电势差呢？</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在图7-8(a)所示的导电回路中，如开始时极板A和B分别带有正、负电荷，则A、B之间有电势差，这时在导线中有电场。在电场力作用下，正电荷从极板A通过导线移到极板B，并与极板B上的负电荷中和，直至两极板间的电势差消失。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>但是，如果我们能把正电荷从负极板B沿着两极板间另一路径，移至正极板A上，并使两极板维持正、负电荷量不变，这样两极板间就有恒定的电势差，导线中也就有恒定的电流通过。显然，要把正电荷从极板B移至极板A必须有非静电力 $\\mathbf{F}'$ 作用才行。这种能提供非静电力的装置称为电源。在电源内部，依靠非静电力 $\\mathbf{F}'$ 克服静电力 $\\mathbf{F}$ 对正电荷做功，才能使正电荷从极板B经电源内部输送到极板A上去[图7-8(b)].可见，电源中非静电力 $\\mathbf{F}'$ 的做功过程，就是把其他形式的能量转化为电能的过程。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>为了表述不同电源转化能量的能力，人们引入了电动势这一物理量。我们定义单位正电荷绕闭合回路一周时，非静电力所做的功为电源的电动势。如以 $\\mathbf{E}_{\\mathrm{k}}$ 表示非静电电场强度①，$W$ 为非静电力所做的功，$\\mathcal{E}$ 表示电源电动势，那么由上述电动势的定义，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathcal{E} = \\frac{W}{q} = \\oint \\mathbf{E}_{\\mathrm{k}} \\cdot \\mathrm{d}\\mathbf{l}",
+   "label": "式（7-8）"
+  },
+  {
+   "type": "text",
+   "html": "<p>考虑到在如图7-8(a)所示的闭合回路中，外电路的导线中没有非静电场，非静电电场强度 $\\mathbf{E}_{\\mathrm{k}}$ 只存在于电源内部，故在外电路上有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\int_{\\text{外}} \\mathbf{E}_{\\mathrm{k}} \\cdot \\mathrm{d}\\mathbf{l} = 0"
+  },
+  {
+   "type": "text",
+   "html": "<p>这样，式(7-8)可改写为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathcal{E} = \\oint \\mathbf{E}_{\\mathrm{k}} \\cdot \\mathrm{d}\\mathbf{l} = \\int_{\\text{内}} \\mathbf{E}_{\\mathrm{k}} \\cdot \\mathrm{d}\\mathbf{l}",
+   "label": "式（7-9）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式(7-9)表示电源电动势的大小等于把单位正电荷从负极经电源内部移至正极时非静电力所做的功。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>电动势虽不是矢量，但为了便于判断在电流通过时非静电力是做正功还是做负功，通常把电源内部电势升高的方向，即从负极经电源内部到正极的方向，规定为电动势的方向。电动势的单位和电势的单位相同。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>电源电动势的大小只取决于电源本身的性质。一定的电源具有一定的电动势，与外电路无关。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch07/fig7_8a_original.png",
+   "caption": "图 7-8(a) 导电回路：极板 A(+) 电荷经导线移至 B(−) 中和（archive 教材原图扫描件；第三轮目检撤下 tex 臆造重绘）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch07/fig7_8b_original.png",
+   "caption": "图 7-8(b) 电源内非静电力 F′ 克服静电力 F 把正电荷从负极板 B 移至正极板 A（archive 教材原图扫描件；第三轮目检撤下 tex 臆造重绘）"
+  },
+  {
+   "type": "section",
+   "number": "7.3",
+   "title": "磁场 磁感强度"
+  },
+  {
+   "type": "video",
+   "source": "bilibili",
+   "bvid": "BV1eK4y1E7Cb",
+   "page": 31,
+   "title": "📺 视频学习：恒定电流 磁场",
+   "caption": "东北大学《大学物理》MOOC 课堂录播（马文蔚《物理学》配套课程），第 1 次课 配套；本讲对应教材 7-1 恒定电流、7-2 电源 电动势、7-3 磁场 磁感强度，时长 35:28。视频课程讲次编号与教材小节编号不完全一致，本站按内容对应教材小节归位；<a href=\"https://www.bilibili.com/video/BV1eK4y1E7Cb?p=31\" target=\"_blank\" rel=\"noopener\">在 B 站打开本讲 ↗</a>（嵌入加载失败、或想看弹幕与讲义时点此）"
+  },
+  {
+   "type": "text",
+   "html": "<p>从静电场的研究中我们已经知道，在静止电荷周围的空间存在着电场，静止电荷间的相互作用是通过电场来传递的。可是，运动电荷间除了仍具有电场力作用之外，还具有一种场的作用，这种场称为磁场。磁场是存在于运动电荷(包括电流)周围空间的一种特殊物质。磁场对位于其中的运动电荷(或电流)有力的作用。因此，运动电荷与运动电荷之间、电流与电流之间、电流(或运动电荷)与磁铁之间的相互作用，都可以看成是它们中任意一个所激发的磁场对另一个施加作用力的结果。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在静电学中，为了考察空间某处是否有电场存在，可以在该处放一静止试验电荷 $q_0$，若 $q_0$ 受到力 $\\mathbf{F}$ 的作用，我们就可以说该处存在电场，并以电场强度 $\\mathbf{E} = \\mathbf{F}/q_0$ 来定量地描述该处的电场。与此类似，我们将从磁场对运动电荷的作用力，引出磁感强度 $\\mathbf{B}$ 来定量地描述磁场。但是，磁场作用在运动电荷上的力不仅与电荷的多少有关，而且还与电荷运动的速度大小及方向有关。所以，磁场作用在运动电荷上的力比电场作用在静止电荷上的力要复杂得多。因此，对 $\\mathbf{B}$ 的定义比对 $\\mathbf{E}$ 的定义也要复杂些。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在图7-9(a)所示的实验装置示意图中，1与2为两组匝数较多的平行线圈。当两线圈内通以流向相同的电流时，在两线圈轴线中心附近的区域可获得比较均匀的磁场①.其间放置一个充有少量氩气的圆形玻璃泡，泡内的电子枪M可发射不同速率的电子束，而在电子束所经过的路径上，由于氩气被电离而发出辉光，从而可显示出电子束的偏转情况。图7-9(b)为实物装置图。此外，玻璃泡也能绕水平轴 $OO'$ 旋转，使电子的运动方向随之改变，这样，通过分析电子束的偏转情况就可知道电子所受磁场力的大小和方向了。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>进一步的实验发现，电荷在磁场中运动时，它所受的磁场力不仅与电荷的正、负有关，而且还与电荷运动速度的大小和方向有密切关系。依此，定义磁感强度② $\\mathbf{B}$ 的方向和大小如下：</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(1)正电荷 $+q$ 以速度 $\\mathbf{v}$ 经过磁场中某点，若它不受磁场力作用(即 $\\mathbf{F} = 0$)，则规定此时正电荷的速度方向为磁感强度 $\\mathbf{B}$ 的方向[图7-10(a)].这个方向与将小磁针置于此处时小磁针N极的指向是一致的。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(2)当正电荷经过磁场中某点的速度 $\\mathbf{v}$ 的方向与磁感强度 $\\mathbf{B}$ 的方向垂直时[图7-10(b)]，它所受的磁场力最大，为 $F_{\\perp}$，且 $F_{\\perp}$ 与乘积 $qv$ 成正比。显然，若电荷经过此处的速率不同，则 $F_{\\perp}$ 值也不同；然而，对磁场中某一定点来说，比值 $F_{\\perp}/qv$ 却必是一定的。这种比值在磁场中不同位置处有不同的量值，它如实地反映了磁场的空间分布。我们把这个比值规定为磁场中某点的磁感强度 $\\mathbf{B}$ 的大小，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "B = \\frac{F_{\\perp}}{qv}",
+   "label": "式（7-10）"
+  },
+  {
+   "type": "text",
+   "html": "<p>这就如同用 $E = F/q_0$ 来描述电场的强弱一样，现在我们用 $B = F_{\\perp}/qv$ 来描述磁场的强弱。从图7-10(b)中还可以看出，对以速度 $\\mathbf{v}$ 运动的负电荷来说，其所受磁场力的方向，则与正电荷所受磁场力的方向相反，大小却是相同的。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>由上述讨论可以知道，磁场力 $\\mathbf{F}$ 既与运动电荷的速度垂直，又与磁感强度 $\\mathbf{B}$ 垂直，且相互构成右手螺旋关系，故它们间的矢量关系式可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{F} = q\\mathbf{v} \\times \\mathbf{B}",
+   "label": "式（7-11）"
+  },
+  {
+   "type": "text",
+   "html": "<p>如 $\\mathbf{v}$ 与 $\\mathbf{B}$ 之间夹角为 $\\theta$，那么 $\\mathbf{F}$ 的大小为 $F = qvB\\sin\\theta$.显然，当 $\\theta = 0$ 或 $\\pi$，即 $\\mathbf{v} \\parallel \\mathbf{B}$ 时，$F = 0$；当 $\\theta = \\pi/2$，即 $\\mathbf{v} \\perp \\mathbf{B}$ 时，$F = F_{\\perp}$，这与实验结果都是一致的。最后还需指出，对正电荷($q > 0$)来说，$\\mathbf{F}$ 的方向与 $\\mathbf{v} \\times \\mathbf{B}$ 的方向相同；而负电荷($q < 0$)的 $\\mathbf{F}$ 方向则与 $\\mathbf{v} \\times \\mathbf{B}$ 的方向相反。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在国际单位制中，$\\mathbf{B}$ 的单位是 $\\mathrm{N \\cdot s \\cdot C^{-1} \\cdot m^{-1}}$ 或 $\\mathrm{N \\cdot A^{-1} \\cdot m^{-1}}$，其名称为特斯拉①，符号为 $\\mathrm{T}$，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "1\\ \\mathrm{T} = 1\\ \\mathrm{N \\cdot A^{-1} \\cdot m^{-1}}"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "场源",
+    "磁场/T"
+   ],
+   "rows": [
+    [
+     "中子星的磁场",
+     "$10^8$ (估算)"
+    ],
+    [
+     "超导电磁铁的磁场",
+     "$5 \\sim 40$"
+    ],
+    [
+     "大型电磁铁的磁场",
+     "$1 \\sim 2$"
+    ],
+    [
+     "地球赤道附近的磁场",
+     "$3 \\times 10^{-5}$"
+    ],
+    [
+     "地球两极附近的磁场",
+     "$6 \\times 10^{-5}$"
+    ],
+    [
+     "太阳在地球轨道上的磁场",
+     "$3 \\times 10^{-9}$"
+    ],
+    [
+     "人体的磁场",
+     "$10^{-12}$"
+    ]
+   ],
+   "caption": "表 7-1 自然界中的一些磁场（近似值）"
+  },
+  {
+   "type": "text",
+   "html": "<p>顺便指出，如果磁场中某一区域内各点的磁感强度 $\\mathbf{B}$ 都相同，即该区域内各点 $\\mathbf{B}$ 的方向一致、大小相等，那么，该区域内的磁场就叫做均匀磁场。不符合上述情况的磁场就是非均匀磁场。下面将讨论的长直密绕螺线管内中部的磁场，就是常见的均匀磁场。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch07/pages_250_300_2079b9c2647680de556ad16a27c340b3d7372edc9491bcf4b147ae6518511319.jpg",
+   "caption": "图 7-9(a) 观察电子束在磁场中偏转的实验装置示意图（1、2 为平行线圈，M 为电子枪）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch07/pages_250_300_1d45ca5d66d17cdd66a564b83bb4b4ae23ca4c1717a8542b5221bc7a727045a1.jpg",
+   "caption": "图 7-9(b) 实验装置实物（洛伦兹力演示仪）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch07/fig7_10a_original.png",
+   "caption": "图 7-10(a) v∥B 时 F=0：正、负电荷沿磁场方向运动均不受力（archive 教材原图扫描件；第三轮目检撤下 tex 臆造重绘）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch07/fig7_10b_original.png",
+   "caption": "图 7-10(b) v⊥B 时 F=F⊥：正、负电荷受力方向相反（archive 教材原图扫描件；第三轮目检撤下 tex 臆造重绘，旧件 F 与 B 同向有误）"
+  },
+  {
+   "type": "section",
+   "number": "7.4",
+   "title": "毕奥-萨伐尔定律"
+  },
+  {
+   "type": "video",
+   "source": "bilibili",
+   "bvid": "BV1eK4y1E7Cb",
+   "page": 32,
+   "title": "📺 视频学习：毕奥-萨伐尔定律",
+   "caption": "东北大学《大学物理》MOOC 课堂录播（马文蔚《物理学》配套课程），第 1 次课 配套；本讲对应教材 7-4 毕奥-萨伐尔定律（含磁矩、运动电荷的磁场），时长 54:51。视频课程讲次编号与教材小节编号不完全一致，本站按内容对应教材小节归位；<a href=\"https://www.bilibili.com/video/BV1eK4y1E7Cb?p=32\" target=\"_blank\" rel=\"noopener\">在 B 站打开本讲 ↗</a>（嵌入加载失败、或想看弹幕与讲义时点此）"
+  },
+  {
+   "type": "text",
+   "html": "<p>这一节我们将介绍恒定电流激发磁场的规律。恒定电流的磁场亦称为静磁场或恒定磁场。在静磁场中，任意一点的磁感强度 $\\mathbf{B}$ 仅是空间坐标的函数，而与时间无关。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>一、毕奥-萨伐尔定律</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在静电场中计算任意带电体在某点的电场强度 $\\mathbf{E}$ 时，我们曾把带电体先分成无限多个电荷元 $\\mathrm{d}q$，求出每个电荷元在该点的电场强度 $\\mathrm{d}\\mathbf{E}$，而所有电荷元在该点的 $\\mathrm{d}\\mathbf{E}$ 的叠加，即为此带电体在该点的电场强度 $\\mathbf{E}$.现在对于载流导线来说，可以仿此思路，把流过某一线元矢量 $\\mathrm{d}\\mathbf{l}$ 的电流 $I$ 与 $\\mathrm{d}\\mathbf{l}$ 的乘积称为电流元，而且把电流元中电流的流向就作为线元矢量的方向。那么，我们就可以把一载流导线看成是由许多个电流元 $I\\mathrm{d}\\mathbf{l}$ 连接而成的。这样，载流导线在磁场中某点所激发的磁感强度 $\\mathbf{B}$，就是这导线的所有电流元在该点 $\\mathrm{d}\\mathbf{B}$ 的叠加。那么，电流元 $I\\mathrm{d}\\mathbf{l}$ 与它所激发的磁感强度 $\\mathrm{d}\\mathbf{B}$ 之间的关系如何呢？</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如图7-11所示，载流导线上有一电流元 $I\\mathrm{d}\\mathbf{l}$，在真空中某点 $P$ 处的磁感强度 $\\mathrm{d}\\mathbf{B}$ 的大小，与电流元的大小 $I\\mathrm{d}l$ 成正比，与电流元 $I\\mathrm{d}\\mathbf{l}$ 和电流元到点 $P$ 的矢量 $\\mathbf{r}$ 间的夹角 $\\theta$ 的正弦成正比，并与电流元到点 $P$ 的距离 $r$ 的二次方成反比，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathrm{d}B = \\frac{\\mu_0}{4\\pi}\\frac{I\\mathrm{d}l\\sin\\theta}{r^2}",
+   "label": "式（7-12a）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $\\mu_0$ 叫做真空磁导率。在国际单位制中，其值为 $\\mu_0 = 4\\pi \\times 10^{-7}\\ \\mathrm{N \\cdot A^{-2}}$.而 $\\mathrm{d}\\mathbf{B}$ 的方向垂直于 $\\mathrm{d}\\mathbf{l}$ 和 $\\mathbf{r}$ 所组成的平面，并沿矢积 $\\mathrm{d}\\mathbf{l} \\times \\mathbf{r}$ 的方向，即由 $I\\mathrm{d}\\mathbf{l}$ 经小于 $180^{\\circ}$ 的角转向 $\\mathbf{r}$ 时的右螺旋前进方向(图7-11).</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>若用矢量式表示，则有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathrm{d}\\mathbf{B} = \\frac{\\mu_0}{4\\pi}\\frac{I\\mathrm{d}\\mathbf{l} \\times \\mathbf{e}_r}{r^2}",
+   "label": "式（7-12b）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $\\mathbf{e}_r$ 为沿矢量 $\\mathbf{r}$ 的单位矢量。式(7-12)就是毕奥-萨伐尔定律。由于 $\\mathbf{e}_r = \\mathbf{r}/r$，故毕奥-萨伐尔定律也可以写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathrm{d}\\mathbf{B} = \\frac{\\mu_0}{4\\pi}\\frac{I\\mathrm{d}\\mathbf{l} \\times \\mathbf{r}}{r^3}",
+   "label": "式（7-12c）"
+  },
+  {
+   "type": "text",
+   "html": "<p>这样，任意载流导线在点 $P$ 处的磁感强度 $\\mathbf{B}$ 可以由式(7-12)求得：</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{B} = \\int \\mathrm{d}\\mathbf{B} = \\frac{\\mu_0}{4\\pi}\\int \\frac{I\\mathrm{d}\\mathbf{l} \\times \\mathbf{e}_r}{r^2}",
+   "label": "式（7-13）"
+  },
+  {
+   "type": "text",
+   "html": "<p>本章开始时曾指出，毕奥-萨伐尔定律虽是以毕奥和萨伐尔的实验为基础，又由拉普拉斯①经过科学抽象得到的，但它不能由实验直接证明，然而由这个定律出发得出的结果都很好地和实验相符合。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch07/fig7_11_original.png",
+   "caption": "图 7-11 电流元的磁感强度方向：Idl 与 e_r 夹角 θ，dB 垂直于 Idl 与 r 构成的平面（archive 教材原图扫描件；第三轮目检撤下 tex 臆造重绘）"
+  },
+  {
+   "type": "text",
+   "html": "<h4>二、毕奥-萨伐尔定律应用举例</h4>"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（7.4 节 · 例 1）",
+   "problem": "<strong>载流长直导线的磁场</strong>　在真空中有一通有电流 $I$ 的长直导线 $CD$，试求此长直导线附近任意一点 $P$ 处的磁感强度 $\\mathbf{B}$.已知点 $P$ 与长直导线间的垂直距离为 $r_0$.",
+   "solution_steps": [
+    "选取如图7-12所示的坐标系，其中 $Oy$ 轴通过点 $P$，$Oz$ 轴沿载流长直导线 $CD$.在载流长直导线上取一电流元 $I\\mathrm{d}z$，根据毕奥-萨伐尔定律，此电流元在点 $P$ 所激起的磁感强度 $\\mathrm{d}B$ 的大小为",
+    "$$\\mathrm{d}B = \\frac{\\mu_0}{4\\pi}\\frac{I\\mathrm{d}z\\sin\\theta}{r^2}$$",
+    "式中 $\\theta$ 为电流元 $I\\mathrm{d}z$ 与矢量 $\\mathbf{r}$ 之间的夹角。 $\\mathrm{d}\\mathbf{B}$ 的方向垂直于 $I\\mathrm{d}z$ 与 $\\mathbf{r}$ 所组成的平面(即 $yOz$ 平面)，沿 $Ox$ 轴负方向。从图中可以看出，长直导线上各个电流元的 $\\mathrm{d}\\mathbf{B}$ 的方向都相同。因此点 $P$ 的磁感强度的大小就等于各个电流元的磁感强度之和，用积分表示，有",
+    "$$B = \\int \\mathrm{d}B = \\frac{\\mu_0}{4\\pi}\\int_{CD}\\frac{I\\mathrm{d}z\\sin\\theta}{r^2}$$",
+    "从图中可以看出 $z$、$r$ 和 $\\theta$ 之间有如下关系：",
+    "$$z = -r_0\\cot\\theta, \\quad r = r_0/\\sin\\theta$$",
+    "于是，$\\mathrm{d}z = r_0\\mathrm{d}\\theta/\\sin^2\\theta$，因而上式可写成",
+    "$$B = \\frac{\\mu_0 I}{4\\pi r_0}\\int_{\\theta_1}^{\\theta_2}\\sin\\theta\\mathrm{d}\\theta$$",
+    "$\\theta_1$ 和 $\\theta_2$ 分别是直电流的始点 $C$ 和终点 $D$ 处电流流向与该处到点 $P$ 的矢量 $\\mathbf{r}$ 间的夹角(图7-12).由上式的积分得",
+    "$$B = \\frac{\\mu_0 I}{4\\pi r_0}(\\cos\\theta_1- \\cos\\theta_2) \\tag{1}$$",
+    "若载流长直导线可视为\"无限长\"直导线，则可近似取 $\\theta_1 = 0$，$\\theta_2 = \\pi$.这样由上式可得",
+    "$$B = \\frac{\\mu_0 I}{2\\pi r_0} \\tag{2}$$",
+    "这就是\"无限长\"载流直导线附近的磁感强度，它表明，其磁感强度与电流 $I$ 成正比，与场点到导线的垂直距离成反比。可以指出，上述结论与毕奥-萨伐尔早期的实验结果是一致的。",
+    "电流钳(也叫电流枪)是一种测量导线内电流的仪器。使用时无须将其接入电路，只要将钳形口夹在导线四周，通过测量导线内电流产生的磁场的强弱就可以知道电流的大小。这实际上利用了毕奥-萨伐尔定律 $B$ 正比于 $I$ 的结果，而 $B$ 的测量则利用电流钳中的霍耳元件进行①.",
+    "<img src=\"assets/images/ch07/pages_250_300_4b1f537960283d3817ebb4a8761c178ea594b4d3009425d6ff018b338259dc4c.png\" style=\"max-width:60%\">",
+    "<div class=\"figcap\">图 7-12 例 1 题图（载流长直导线 CD 附近点 P 的磁场）</div>"
+   ],
+   "answer": null
+  },
+  {
+   "type": "example",
+   "title": "教材例题（7.4 节 · 例 2）",
+   "problem": "<strong>圆形载流导线轴线上的磁场</strong>　设在真空中，有一半径为 $R$ 的载流导线，通过的电流为 $I$，这通常称为圆电流。试求通过圆心并垂直于圆形导线平面的轴线上任意点 $P$ 处的磁感强度。",
+   "solution_steps": [
+    "选取如图7-13所示的坐标系，其中 $Ox$ 轴通过圆心 $O$，并垂直于圆形导线的平面。",
+    "在圆形导线上任取一电流元 $I\\mathrm{d}\\mathbf{l}$，该电流元到点 $P$ 的矢量为 $\\mathbf{r}$，它在点 $P$ 处所激起的磁感强度为",
+    "$$\\mathrm{d}\\mathbf{B} = \\frac{\\mu_0}{4\\pi}\\frac{I\\mathrm{d}\\mathbf{l} \\times \\mathbf{e}_r}{r^2}$$",
+    "由于 $\\mathrm{d}\\mathbf{l}$ 与 $\\mathbf{r}$ 的单位矢量 $\\mathbf{e}_r$ 垂直，因此 $\\theta = 90^{\\circ}$，则 $\\mathrm{d}B$ 的值为",
+    "$$\\mathrm{d}B = \\frac{\\mu_0}{4\\pi}\\frac{I\\mathrm{d}l}{r^2}$$",
+    "而 $\\mathrm{d}\\mathbf{B}$ 的方向垂直于电流元 $I\\mathrm{d}\\mathbf{l}$ 与矢量 $\\mathbf{r}$ 所组成的平面，即 $\\mathrm{d}\\mathbf{B}$ 与 $Ox$ 轴的夹角为 $\\alpha$.因此，我们可以把 $\\mathrm{d}\\mathbf{B}$ 分解成两个分量：一是沿 $Ox$ 轴的分量 $\\mathrm{d}B_{\\parallel} = \\mathrm{d}B\\cos\\alpha$；另一是垂直于 $Ox$ 轴的分量 $\\mathrm{d}B_{\\perp} = \\mathrm{d}B\\sin\\alpha$.考虑到圆上任一直径两端的电流元对 $Ox$ 轴的对称性，故所有电流元在点 $P$ 处的磁感强度的分量 $\\mathrm{d}B_{\\perp}$ 的总和应等于零。所以，点 $P$ 处磁感强度的值为",
+    "$$B = \\int_l \\mathrm{d}B_{\\parallel} = \\int_l \\mathrm{d}B\\cos\\alpha = \\int_l \\frac{\\mu_0}{4\\pi}\\frac{I\\mathrm{d}l}{r^2}\\cos\\alpha$$",
+    "由于 $\\cos\\alpha = R/r$，且对给定点 $P$ 来说，$r$、$I$ 和 $R$ 都是常量，故有",
+    "$$B = \\frac{\\mu_0 I R}{4\\pi r^3}\\int_0^{2\\pi R}\\mathrm{d}l = \\frac{\\mu_0 I R^2}{2r^3} = \\frac{\\mu_0 I R^2}{2(x^2 + R^2)^{3/2}} \\tag{1}$$",
+    "$\\mathbf{B}$ 的方向垂直于圆形导线平面且沿 $Ox$ 轴正向。",
+    "由式(1)可以看出，当 $x = 0$ 时，圆心点 $O$ 处的磁感强度 $\\mathbf{B}$ 的值为",
+    "$$B = \\frac{\\mu_0 I}{2R} \\tag{2}$$",
+    "当 $x \\gg R$ 时，$(x^2 + R^2)^{3/2} \\approx x^3$，则",
+    "$$B \\approx \\frac{\\mu_0 I R^2}{2x^3}$$",
+    "<img src=\"assets/images/ch07/pages_250_300_2a00fcf4b39d5e9cc1d6d9e5daa94012dcdb4eca3a6a50c0e1158e2792f12f48.png\" style=\"max-width:60%\">",
+    "<div class=\"figcap\">图 7-13 例 2 题图（圆电流轴线上点 P 的磁场）</div>"
+   ],
+   "answer": null
+  },
+  {
+   "type": "text",
+   "html": "<h4>三、磁矩</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>从例2中式(1)可以看到，圆电流轴线上远离圆心处的磁感强度与 $\\mu_0$、圆电流的面积 $\\pi R^2$ 和电流 $I$ 的乘积成正比。为此，我们引入磁矩的概念。圆电流的磁矩 $\\mathbf{m}$ 定义为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{m} = IS\\mathbf{e}_{\\mathrm{n}}"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $S$ 为圆电流所包围的面积，$\\mathbf{e}_{\\mathrm{n}}$ 为面积的法线方向，它与电流流向之间满足右手螺旋关系。对于任意形状的载流平面线圈，其磁矩均可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{m} = IS\\mathbf{e}_{\\mathrm{n}}"
+  },
+  {
+   "type": "text",
+   "html": "<p>磁矩是矢量，其方向为线圈平面的法线方向。利用磁矩的概念，例2中式(1)可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "B = \\frac{\\mu_0}{2\\pi}\\frac{m}{(x^2 + R^2)^{3/2}}"
+  },
+  {
+   "type": "text",
+   "html": "<p>而在远离圆电流处，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "B \\approx \\frac{\\mu_0}{2\\pi}\\frac{m}{x^3}"
+  },
+  {
+   "type": "text",
+   "html": "<p>这与电偶极子轴线上电场强度的表达式 $E = \\frac{1}{4\\pi\\varepsilon_0}\\frac{2p}{x^3}$ 是类似的。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch07/pages_250_300_8a1d678042413cab072718f0f0cec16e2634d62479560a4eb4992aa5cc67717c.png",
+   "caption": "圆电流的磁矩 m = IS·e_n：e_n 与电流流向满足右手螺旋关系（原被错锚至图 7-14 图槽，已归位本节）"
+  },
+  {
+   "type": "text",
+   "html": "<h4>四、运动电荷的磁场</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>电流是由大量电荷定向运动形成的，因此电流激发的磁场，实际上是运动电荷所激发的磁场的叠加。下面从毕奥-萨伐尔定律出发，讨论一个运动电荷所激发的磁感强度。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>设有一电流元 $I\\mathrm{d}\\mathbf{l}$，其截面积为 $S$，载流子(设其为正电荷)的数密度为 $n$，每个载流子所带电荷为 $q$，漂移速度为 $\\mathbf{v}$.那么，电流 $I = nqvS$，则</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "I\\mathrm{d}\\mathbf{l} = nqvS\\mathrm{d}\\mathbf{l} = nqS\\mathrm{d}l\\mathbf{v}"
+  },
+  {
+   "type": "text",
+   "html": "<p>而 $S\\mathrm{d}l = \\mathrm{d}V$ 为电流元的体积，故</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "I\\mathrm{d}\\mathbf{l} = nq\\mathrm{d}V\\mathbf{v}"
+  },
+  {
+   "type": "text",
+   "html": "<p>将上式代入毕奥-萨伐尔定律式(7-12c)，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathrm{d}\\mathbf{B} = \\frac{\\mu_0}{4\\pi}\\frac{nq\\mathrm{d}V\\mathbf{v} \\times \\mathbf{r}}{r^3}"
+  },
+  {
+   "type": "text",
+   "html": "<p>在电流元 $I\\mathrm{d}\\mathbf{l}$ 内，有 $N = n\\mathrm{d}V$ 个载流子以速度 $\\mathbf{v}$ 运动着。显然，$I\\mathrm{d}\\mathbf{l}$ 所激发的磁场，就是这 $N$ 个运动电荷共同激发的磁场。这样，一个以速度 $\\mathbf{v}$ 运动的电荷 $q$ 在距它为 $\\mathbf{r}$ 处所激发的磁感强度为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{B} = \\frac{\\mu_0}{4\\pi}\\frac{q\\mathbf{v} \\times \\mathbf{r}}{r^3}",
+   "label": "式（7-14）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式表明，运动电荷激发的磁感强度 $\\mathbf{B}$ 的大小与 $q$ 和 $v$ 成正比，与距离 $r$ 的平方成反比，其方向垂直于 $\\mathbf{v}$ 与 $\\mathbf{r}$ 所组成的平面。这就是运动电荷的磁场公式。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch07/pages_250_300_2720ac1ad8fed7ee7444400b0e0a09cc20e20bf6d2140412115043defe9fc452.png",
+   "caption": "运动电荷的磁场方向（a）：正电荷 q 以 v 运动，B 沿 v × r 的方向（图中 ⊗ 表示 B 垂直纸面向里；原被错锚至图 7-17 图槽，已归位本节）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch07/pages_250_300_bd46b14c3b91fbe53561d2ed30d59a4e404dd3fc52dc023b60a4ed4958251958.png",
+   "caption": "运动电荷的磁场方向（b）：负电荷的 B 与 v × r 方向相反（⊙ 表示 B 垂直纸面向外；原被错锚至图 7-17 图槽，已归位本节）"
+  },
+  {
+   "type": "section",
+   "number": "7.5",
+   "title": "磁通量 磁场的高斯定理"
+  },
+  {
+   "type": "text",
+   "html": "<h4>一、磁感线</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>为了形象地描述磁场分布，就像在静电场中用电场线来描述电场分布那样，我们也可用磁感线(即磁感应线)来描述磁场分布。我们规定：磁感线上各点的切线方向与该点处磁感强度 $\\mathbf{B}$ 的方向一致；通过磁场中某点处垂直于 $\\mathbf{B}$ 的单位面积上磁感线的数目，等于该点处 $\\mathbf{B}$ 的大小。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>图7-14是几种典型磁场的磁感线分布图。从磁感线的图示中，可以总结出磁感线有以下特性：(1)磁感线是无头无尾的闭合曲线，这与静电场的电场线不一样；(2)任意两条磁感线不会相交；(3)磁感线的环绕方向与电流的流向相互服从右手螺旋定则。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch07/pages_250_300_998245e256054d92179701184378a9eb0305f2066e6a7402666159b81b638541.png",
+   "caption": "图 7-14(a) 长直载流导线周围磁针的取向（磁针 N 极指向即该处 B 的方向；原被错锚至 7-8 节，已归位）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch07/pages_250_300_4a30068b735f629f5a95a1a60e9254669f17c20ddf9b6b7ecef086a6f88ba63a.png",
+   "caption": "图 7-14(b) 铁屑显示的长直载流导线的磁感线（同心圆；原被错锚至 7-8 节，已归位）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch07/pages_250_300_790efb1f8b4d544cd6a2dedf0dc547d800fd2ddb26a7a4061694a2e7a325f6b8.png",
+   "caption": "图 7-14(c) 长直载流导线磁感线的环绕方向与电流流向服从右手螺旋定则（原被错锚至 7-8 节，已归位）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch07/pages_250_300_3c666b9dc723d8fdfbc806497b7bf1f18071d6a337effc7be32754b2c2a1694c.png",
+   "caption": "图 7-14(d) 圆电流的磁感线分布（原被错锚至 7-8 节，已归位）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch07/pages_250_300_7887b9b81c0aac9346a7967585993625a8e2f8e4e4be1fae88745875041c0f72.png",
+   "caption": "图 7-14(e) 载流长直螺线管的磁感线分布（与条形磁铁相似；原被错锚至 7-8 节，已归位）"
+  },
+  {
+   "type": "text",
+   "html": "<h4>二、磁通量 磁场的高斯定理</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>通过磁场中某一给定曲面的磁感线数目，叫做通过此曲面的磁通量，简称磁通，用符号 $\\Phi_B$ 表示。在任意曲面 $S$ 上取面积元 $\\mathrm{d}S$，$\\mathrm{d}S$ 的正法线方向与该处 $\\mathbf{B}$ 的夹角为 $\\theta$，则通过面积元 $\\mathrm{d}S$ 的磁通量为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathrm{d}\\Phi_B = \\mathbf{B} \\cdot \\mathrm{d}\\mathbf{S} = B\\cos\\theta\\mathrm{d}S"
+  },
+  {
+   "type": "text",
+   "html": "<p>于是，通过曲面 $S$ 的磁通量为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\Phi_B = \\int_S \\mathbf{B} \\cdot \\mathrm{d}\\mathbf{S}",
+   "label": "式（7-15）"
+  },
+  {
+   "type": "text",
+   "html": "<p>在国际单位制中，磁通量的单位为韦伯，符号为 $\\mathrm{Wb}$，$1\\ \\mathrm{Wb} = 1\\ \\mathrm{T \\cdot m^2}$.</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch07/pages_250_300_3d620d29f040d888cfb5d12eb89d43396dc2bfd9dee9badb02c9befed7add617.png",
+   "caption": "磁通量的定义：(a) 平面 S 的法线 e_n 与 B 成 θ 角时 Φ = BS·cosθ；(b) 任意曲面上面积元 dS 的磁通 dΦ = B·dS（原被错锚至图 7-22 图槽，已归位本节）"
+  },
+  {
+   "type": "text",
+   "html": "<p>由于磁感线是无头无尾的闭合曲线，对磁场中任意闭合曲面来说，穿入闭合曲面的磁感线数目必等于穿出闭合曲面的磁感线数目。因此，通过磁场中任意闭合曲面 $S$ 的磁通量恒等于零，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\oint_S \\mathbf{B} \\cdot \\mathrm{d}\\mathbf{S} = 0",
+   "label": "式（7-16）"
+  },
+  {
+   "type": "text",
+   "html": "<p>这就是真空中磁场的高斯定理。上式与静电场中的高斯定理 $\\oint_S \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{S} = \\sum q/\\varepsilon_0$ 相比较，静电场的高斯定理表明静电场是有源场，而磁场的高斯定理则表明磁场是无源场(或涡旋场).</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>磁单极子问题简介</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>近代物理学的理论研究和实验探索都试图找到磁单极子，即在自然界中是否存在单独的N极或S极。如果磁单极子确实存在，则磁场的高斯定理就应改写为 $\\oint_S \\mathbf{B} \\cdot \\mathrm{d}\\mathbf{S} = \\mu_0 Q_{\\mathrm{m}}$，式中 $Q_{\\mathrm{m}}$ 为闭合曲面 $S$ 内磁单极子的磁荷量。这样，磁场也就成为有源场了。近代一些物理理论还预言磁单极子的质量约为质子质量的 $10^{16}$ 倍。然而，迄今为止，人们还没有确实可靠的实验证据肯定磁单极子的存在。因此，磁场的高斯定理仍取式(7-16)的形式。</p>"
+  },
+  {
+   "type": "section",
+   "number": "7.6",
+   "title": "安培环路定理"
+  },
+  {
+   "type": "video",
+   "source": "bilibili",
+   "bvid": "BV1eK4y1E7Cb",
+   "page": 33,
+   "title": "📺 视频学习：磁场的高斯定理 安培环路定理",
+   "caption": "东北大学《大学物理》MOOC 课堂录播（马文蔚《物理学》配套课程），第 2 次课 配套；本讲对应教材 7-5 磁通量 磁场的高斯定理、7-6 安培环路定理，时长 49:10。视频课程讲次编号与教材小节编号不完全一致，本站按内容对应教材小节归位；<a href=\"https://www.bilibili.com/video/BV1eK4y1E7Cb?p=33\" target=\"_blank\" rel=\"noopener\">在 B 站打开本讲 ↗</a>（嵌入加载失败、或想看弹幕与讲义时点此）"
+  },
+  {
+   "type": "text",
+   "html": "<h4>一、安培环路定理</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在静电场中，电场强度 $\\mathbf{E}$ 沿任意闭合回路的线积分为零，即 $\\oint_l \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{l} = 0$，这是静电场是保守场的必然结果。那么，在磁场中，磁感强度 $\\mathbf{B}$ 沿任意闭合回路的线积分是多少呢？</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>下面先以\"无限长\"载流直导线为例进行讨论。设有一\"无限长\"载流直导线，通过的电流为 $I$.由式(2)已知，在与导线垂直的平面内，环绕导线以 $r$ 为半径作一圆形回路，则圆周上各点 $\\mathbf{B}$ 的大小均为 $B = \\mu_0 I/(2\\pi r)$.取圆周的绕行方向与电流 $I$ 的流向满足右手螺旋关系，则 $\\mathbf{B}$ 沿此圆形回路的线积分为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\oint_l \\mathbf{B} \\cdot \\mathrm{d}\\mathbf{l} = \\oint_l B\\mathrm{d}l = B \\cdot 2\\pi r = \\frac{\\mu_0 I}{2\\pi r} \\cdot 2\\pi r = \\mu_0 I"
+  },
+  {
+   "type": "text",
+   "html": "<p>可以证明，上述结果对任意形状的闭合回路，以及回路包围有多根载流导线时也是成立的。普遍地说，在真空中的恒定磁场内，磁感强度 $\\mathbf{B}$ 沿任意闭合回路 $l$ 的线积分(亦称 $\\mathbf{B}$ 的环流)，等于该闭合回路所包围的电流的代数和的 $\\mu_0$ 倍，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\oint_l \\mathbf{B} \\cdot \\mathrm{d}\\mathbf{l} = \\mu_0 \\sum I_i",
+   "label": "式（7-17）"
+  },
+  {
+   "type": "text",
+   "html": "<p>这就是真空中磁场的安培环路定理。在定理中闭合回路的绕行方向与它所包围的电流的正负满足右手螺旋定则：若电流流向与回路绕行方向满足右手螺旋定则，则电流 $I$ 取正值；反之，$I$ 取负值。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>安培环路定理表明，磁场不是保守场，而是涡旋场。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>二、安培环路定理的应用举例</h4>"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（7.6 节 · 例 1）",
+   "problem": "<strong>长直密绕螺线管内的磁场</strong>　设有一长直密绕螺线管，单位长度上的匝数为 $n$，通有电流 $I$.求螺线管内中部一点的磁感强度。",
+   "solution_steps": [
+    "由于螺线管是长直密绕的，管内中部的磁场可视为均匀的，方向与管轴平行；管外附近的磁场很弱，可略去不计。选取如图7-15所示的矩形闭合回路 $abcda$，其中 $ab$ 段在管内且平行于管轴。按安培环路定理，有",
+    "<img src=\"assets/images/ch07/fig7_15_redraw.png\" style=\"max-width:55%\">",
+    "<div class=\"figcap\">图 7-15 例 1 题图（长直密绕螺线管与矩形安培回路 abcda；原图槽内容与本例题无关，按教材重绘）</div>",
+    "$$\\oint_l \\mathbf{B} \\cdot \\mathrm{d}\\mathbf{l} = \\int_{ab} \\mathbf{B} \\cdot \\mathrm{d}\\mathbf{l} + \\int_{bc} \\mathbf{B} \\cdot \\mathrm{d}\\mathbf{l} + \\int_{cd} \\mathbf{B} \\cdot \\mathrm{d}\\mathbf{l} + \\int_{da} \\mathbf{B} \\cdot \\mathrm{d}\\mathbf{l}$$",
+    "在 $bc$ 和 $da$ 段，$\\mathbf{B}$ 与 $\\mathrm{d}\\mathbf{l}$ 垂直，积分值为零；在 $cd$ 段，$B = 0$.因此",
+    "$$\\oint_l \\mathbf{B} \\cdot \\mathrm{d}\\mathbf{l} = B \\cdot ab$$",
+    "而回路包围的电流为 $n \\cdot ab \\cdot I$，由安培环路定理得",
+    "$$B \\cdot ab = \\mu_0 n \\cdot ab \\cdot I$$",
+    "$$B = \\mu_0 nI \\tag{1}$$",
+    "这就是长直密绕螺线管内部磁感强度的公式。"
+   ],
+   "answer": null
+  },
+  {
+   "type": "example",
+   "title": "教材例题（7.6 节 · 例 2）",
+   "problem": "<strong>环形螺线管内的磁场</strong>　在如图7-16所示的环形螺线管中，环的平均半径为 $R$，总匝数为 $N$，通有电流 $I$.求环形螺线管内距环心为 $r$ 处一点的磁感强度。<br><img src=\"assets/images/ch07/fig7_16_redraw.png\" style=\"max-width:50%\"><br><div class=\"figcap\">图 7-16 例 2 题图（环形螺线管与圆形安培回路 l；原图槽内容与本例题无关，按教材重绘）</div>",
+   "solution_steps": [
+    "由对称性可知，管内磁感线是以环心为圆心的同心圆。取与环心相距为 $r$ 的圆形回路 $l$，回路的绕行方向与电流满足右手螺旋关系。按安培环路定理有",
+    "$$\\oint_l \\mathbf{B} \\cdot \\mathrm{d}\\mathbf{l} = B \\cdot 2\\pi r = \\mu_0 NI$$",
+    "$$B = \\frac{\\mu_0 NI}{2\\pi r} \\tag{2}$$",
+    "当环形螺线管截面很窄，即 $r \\approx R$ 时，$B \\approx \\frac{\\mu_0 NI}{2\\pi R} = \\mu_0 nI$，其中 $n = N/(2\\pi R)$ 为单位长度上的匝数。这与长直螺线管的结果一致。"
+   ],
+   "answer": null
+  },
+  {
+   "type": "example",
+   "title": "教材例题（7.6 节 · 例 3）",
+   "problem": "<strong>\"无限长\"载流圆柱导体内外的磁场</strong>　设有一半径为 $R$ 的\"无限长\"圆柱形导体，电流 $I$ 沿轴向流动，且在导体截面上均匀分布。求圆柱体内外的磁感强度。",
+   "solution_steps": [
+    "由于电流分布具有轴对称性，磁场的分布也具有轴对称性。在垂直于轴线的平面上，以与轴线相交的点为圆心、$r$ 为半径作圆形回路。由安培环路定理有：",
+    "(1) 圆柱体外($r > R$)：",
+    "$$\\oint_l \\mathbf{B} \\cdot \\mathrm{d}\\mathbf{l} = B \\cdot 2\\pi r = \\mu_0 I$$",
+    "$$B = \\frac{\\mu_0 I}{2\\pi r} \\quad (r > R) \\tag{3}$$",
+    "(2) 圆柱体内($r < R$)：",
+    "电流密度 $j = I/(\\pi R^2)$，回路包围的电流为 $j \\cdot \\pi r^2 = I r^2/R^2$，故",
+    "$$\\oint_l \\mathbf{B} \\cdot \\mathrm{d}\\mathbf{l} = B \\cdot 2\\pi r = \\mu_0 \\frac{I r^2}{R^2}$$",
+    "$$B = \\frac{\\mu_0 I r}{2\\pi R^2} \\quad (r < R) \\tag{4}$$",
+    "可见，圆柱体内 $B$ 与 $r$ 成正比，圆柱体外 $B$ 与 $r$ 成反比。"
+   ],
+   "answer": null
+  },
+  {
+   "type": "section",
+   "number": "7.7",
+   "title": "带电粒子在磁场中的运动"
+  },
+  {
+   "type": "simulation",
+   "simId": "cyclotron-lab",
+   "title": "回旋运动实验室",
+   "hint": "调节粒子速率 v、磁感强度 B 与比荷 q/m：回旋半径 R = mv/(qB) 随 v 增大、随 B 增大而减小；回旋周期 T = 2πm/(qB) 与速率无关——这正是回旋加速器的设计依据。给 v 加上平行于 B 的分量，轨迹变成螺旋线（对照磁聚焦）。"
+  },
+  {
+   "type": "video",
+   "source": "bilibili",
+   "bvid": "BV1eK4y1E7Cb",
+   "page": 34,
+   "title": "📺 视频学习：带电粒子在电场和磁场中的运动",
+   "caption": "东北大学《大学物理》MOOC 课堂录播（马文蔚《物理学》配套课程），第 2 次课 配套；本讲对应教材 7-7 带电粒子在磁场中的运动（质谱仪、回旋加速器、霍耳效应），时长 39:19。视频课程讲次编号与教材小节编号不完全一致，本站按内容对应教材小节归位；<a href=\"https://www.bilibili.com/video/BV1eK4y1E7Cb?p=34\" target=\"_blank\" rel=\"noopener\">在 B 站打开本讲 ↗</a>（嵌入加载失败、或想看弹幕与讲义时点此）"
+  },
+  {
+   "type": "text",
+   "html": "<h4>一、带电粒子在电场和磁场中所受的力</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>从式(7-11)已知，在磁场中运动的带电粒子要受到磁场力(即洛伦兹力)的作用。如果空间同时存在电场和磁场，则运动电荷将同时受到电场力和磁场力的作用，其所受合力为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{F} = q(\\mathbf{E} + \\mathbf{v} \\times \\mathbf{B})",
+   "label": "式（7-18）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式称为洛伦兹力公式。我们在第5-2节中已讨论过电场力的作用，本节的下面部分及第7-8节将主要讨论磁场力的作用。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>二、带电粒子在磁场中运动举例</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<h5>1. 回旋半径和回旋频率</h5>"
+  },
+  {
+   "type": "text",
+   "html": "<p>设有一质量为 $m$、电荷为 $+q$ 的粒子，以速度 $\\mathbf{v}$ 在磁感强度为 $\\mathbf{B}$ 的均匀磁场中运动，且 $\\mathbf{v} \\perp \\mathbf{B}$.由式(7-11)可知，粒子所受的洛伦兹力为 $F = qvB$，方向垂直于 $\\mathbf{v}$ 和 $\\mathbf{B}$.这个力就是粒子作圆周运动的向心力。由牛顿第二定律有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "qvB = m\\frac{v^2}{R}"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $R$ 为圆周运动的半径，称为回旋半径。于是</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "R = \\frac{mv}{qB}",
+   "label": "式（7-19a）"
+  },
+  {
+   "type": "text",
+   "html": "<p>粒子绕圆周运动一周所需的时间(周期)为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "T = \\frac{2\\pi R}{v} = \\frac{2\\pi m}{qB}",
+   "label": "式（7-19b）"
+  },
+  {
+   "type": "text",
+   "html": "<p>单位时间内粒子绕圆周运动的圈数称为回旋频率，用 $f$ 表示：</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "f = \\frac{1}{T} = \\frac{qB}{2\\pi m}",
+   "label": "式（7-19c）"
+  },
+  {
+   "type": "text",
+   "html": "<p>可见，回旋半径 $R$ 与粒子的速率 $v$ 成正比，而回旋周期 $T$ 和回旋频率 $f$ 与粒子的速率无关。这是回旋加速器的基本设计依据。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>若粒子速度 $\\mathbf{v}$ 与磁感强度 $\\mathbf{B}$ 的方向不垂直，而是成 $\\theta$ 角，则可将 $\\mathbf{v}$ 分解为平行于 $\\mathbf{B}$ 的分量 $v_{\\parallel} = v\\cos\\theta$ 和垂直于 $\\mathbf{B}$ 的分量 $v_{\\perp} = v\\sin\\theta$.平行于 $\\mathbf{B}$ 的分量不受磁场力影响，粒子保持匀速直线运动；垂直于 $\\mathbf{B}$ 的分量使粒子作圆周运动。两种运动的合成结果使粒子沿螺旋线运动。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h5>2. 磁聚焦</h5>"
+  },
+  {
+   "type": "text",
+   "html": "<p>由上述分析可知，从同一点发出的、具有相同 $v_{\\perp}$ 但不同 $v_{\\parallel}$ 的带电粒子，在均匀磁场中经过一个回旋周期后，又会重新会聚于另一点。这种利用磁场使带电粒子束会聚的现象称为磁聚焦。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h5>3. 磁镜简介与范艾仑辐射带</h5>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在非均匀磁场中，带电粒子会向磁场较强的区域运动时受到阻碍，即粒子从弱磁场区向强磁场区运动时，其垂直于磁场的动能增大，而平行于磁场的动能减小，最终可能被反射回来，就像光被镜面反射一样。这种非均匀磁场称为磁镜。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>地球磁场就是一个天然的磁镜。地球两极磁场较强，赤道附近磁场较弱，从太阳射来的带电粒子(如质子和电子)在地球磁场中被俘获，在两磁极间来回振荡，形成范艾仑辐射带。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h5>4. 电子的反粒子 电子偶</h5>"
+  },
+  {
+   "type": "text",
+   "html": "<p>1932年安德森在利用云室研究宇宙射线时，发现了一种与电子质量相等、电荷符号相反的粒子，称为正电子(或阳电子).正电子是电子的反粒子。正、负电子相遇时会湮没，转化为两个 $\\gamma$ 光子。安德森因发现正电子而获得1936年诺贝尔物理学奖。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>三、带电粒子在电场和磁场中运动举例</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<h5>1. 质谱仪</h5>"
+  },
+  {
+   "type": "text",
+   "html": "<p>质谱仪是利用电场和磁场来分析同位素的仪器。如图7-17所示，从离子源发出的带电荷为 $q$ 的正离子，先经电势差为 $U$ 的电场加速，获得动能</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch07/fig7_17_redraw.png",
+   "caption": "图 7-17 质谱仪原理图：离子经电压 U 加速后进入匀强磁场作半圆周运动，半径 R 与 √m 成正比（OCR 未提取，按教材重绘）"
+  },
+  {
+   "type": "formula",
+   "latex": "\\frac{1}{2}mv^2 = qU"
+  },
+  {
+   "type": "text",
+   "html": "<p>然后进入磁感强度为 $\\mathbf{B}$ 的均匀磁场，在磁场中离子作半径为 $R$ 的圆周运动。由式(7-19a)有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "R = \\frac{mv}{qB} = \\frac{1}{B}\\sqrt{\\frac{2mU}{q}}"
+  },
+  {
+   "type": "text",
+   "html": "<p>由上式可知，$R$ 与离子的质量 $m$ 的平方根成正比。测定离子在感光板上留下的位置即可推算出离子的质量，从而鉴别同位素。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h5>2. 回旋加速器</h5>"
+  },
+  {
+   "type": "text",
+   "html": "<p>回旋加速器是使带电粒子在电场和磁场作用下反复加速的装置。其主要部分是两个半圆形的D形金属盒(D形电极).D形盒置于磁感强度为 $\\mathbf{B}$ 的均匀磁场中，两D形盒之间加上交变电压。粒子源在中心发出带电粒子，粒子在D形盒内受洛伦兹力作半圆形运动。当粒子到达两D形盒之间的缝隙时，恰好遇上交变电场，使粒子得到加速。粒子每经过缝隙一次，动能增加 $qU$.经过多次加速后，粒子的动能可达很高值：</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "E_{\\mathrm{k}} = \\frac{1}{2}mv^2 = \\frac{q^2 B^2 R^2}{2m}"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $R$ 为D形盒的半径。回旋加速器在核物理实验和医疗(如质子治疗)等方面有广泛的应用。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h5>3. 霍耳效应</h5>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如图7-18所示，在一块宽为 $h$、厚为 $b$ 的导体(或半导体)薄片中，沿纵向通以电流 $I$，并在垂直于薄片的方向加上磁感强度为 $\\mathbf{B}$ 的磁场，则在薄片的横向两侧会产生电势差 $U_{\\mathrm{H}}$.这个现象称为霍耳效应，$U_{\\mathrm{H}}$ 称为霍耳电压。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch07/fig7_18_redraw.png",
+   "caption": "图 7-18 霍耳效应：薄片通纵向电流 I、加垂直磁场 B，横向两侧产生霍耳电压 U_H（原图槽内容与本节无关，按教材重绘）"
+  },
+  {
+   "type": "text",
+   "html": "<p>霍耳效应的产生是由于运动电荷在磁场中受到洛伦兹力作用，正、负电荷分别向两侧偏转而形成横向电场。在平衡状态下，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "q\\frac{U_{\\mathrm{H}}}{h} = qvB"
+  },
+  {
+   "type": "text",
+   "html": "<p>而电流 $I = nqvhb$，其中 $n$ 为载流子数密度。由这两式可得</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "U_{\\mathrm{H}} = \\frac{IB}{nqb} = R_{\\mathrm{H}}\\frac{IB}{b}",
+   "label": "式（7-20）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $R_{\\mathrm{H}} = 1/(nq)$ 称为霍耳系数。对于半导体，载流子数密度远小于金属，故霍耳电压大得多。霍耳元件在测量磁场、电流、半导体材料的导电类型($n$型或 $p$型)等方面有广泛的应用。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>量子霍耳效应</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>1980年，冯·克利青在极低温度和强磁场条件下，发现二维电子系统的霍耳电阻是量子化的，$R_{\\mathrm{H}} = h/(ne^2)$，式中 $h$ 为普朗克常量，$n$ 为整数。这种现象称为整数量子霍耳效应。为此，冯·克利青获得1985年诺贝尔物理学奖。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>分数量子霍耳效应</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>1982年，崔琦、斯特默和劳夫林发现了分数量子霍耳效应，即霍耳电阻出现分数平台。劳夫林从理论上给出解释，三人因此分享1998年诺贝尔物理学奖。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>量子反常霍耳效应的实验发现</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>2013年，由薛其坤领衔的中国团队，在磁性掺杂拓扑绝缘体中首次观测到了量子反常霍耳效应。即在无外加磁场的条件下，材料本身的自发磁化导致了量子霍耳效应。这为发展低能耗电子器件开辟了新途径。</p>"
+  },
+  {
+   "type": "section",
+   "number": "7.8",
+   "title": "载流导线在磁场中所受的力"
+  },
+  {
+   "type": "video",
+   "source": "bilibili",
+   "bvid": "BV1eK4y1E7Cb",
+   "page": 35,
+   "title": "📺 视频学习：载流导线在磁场中所受的力",
+   "caption": "东北大学《大学物理》MOOC 课堂录播（马文蔚《物理学》配套课程），第 3 次课 配套；本讲对应教材 7-8 载流导线在磁场中所受的力（安培力、磁力矩），时长 34:04。视频课程讲次编号与教材小节编号不完全一致，本站按内容对应教材小节归位；<a href=\"https://www.bilibili.com/video/BV1eK4y1E7Cb?p=35\" target=\"_blank\" rel=\"noopener\">在 B 站打开本讲 ↗</a>（嵌入加载失败、或想看弹幕与讲义时点此）"
+  },
+  {
+   "type": "text",
+   "html": "<h4>一、安培力</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>电流元 $I\\mathrm{d}\\mathbf{l}$ 在磁场中所受的作用力 $\\mathrm{d}\\mathbf{F}$，可由式(7-11)导出。电流元中的载流子数为 $nS\\mathrm{d}l$，每个载流子受洛伦兹力 $q\\mathbf{v} \\times \\mathbf{B}$，故电流元所受的力为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathrm{d}\\mathbf{F} = nS\\mathrm{d}l \\cdot q\\mathbf{v} \\times \\mathbf{B} = I\\mathrm{d}\\mathbf{l} \\times \\mathbf{B}",
+   "label": "式（7-21）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式就是安培力公式。有限长载流导线在磁场中所受的安培力为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{F} = \\int_l I\\mathrm{d}\\mathbf{l} \\times \\mathbf{B}",
+   "label": "式（7-22）"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（7.8 节 · 例 1）",
+   "problem": "如图7-19所示，在磁感强度为 $B$ 的均匀磁场中，有一长为 $l$ 的载流直导线，通过的电流为 $I$，直导线与 $\\mathbf{B}$ 的夹角为 $\\theta$.求该直导线所受的安培力。<br><img src=\"assets/images/ch07/fig7_19_redraw.png\" style=\"max-width:45%\"><br><div class=\"figcap\">图 7-19 例 1 题图（载流直导线与匀强磁场 B 成 θ 角；原图槽内容与本例题无关，按教材重绘）</div>",
+   "solution_steps": [
+    "由安培力公式(7-22)，直导线上各电流元所受安培力的方向均相同，所以直导线所受安培力的大小为",
+    "$$F = \\int_0^l IB\\sin\\theta\\mathrm{d}l = IBl\\sin\\theta$$",
+    "安培力的方向垂直于直导线与 $\\mathbf{B}$ 所组成的平面。当 $\\theta = 90^{\\circ}$，即直导线与 $\\mathbf{B}$ 垂直时，$F = IBl$."
+   ],
+   "answer": null
+  },
+  {
+   "type": "example",
+   "title": "教材例题（7.8 节 · 例 2）",
+   "problem": "如图7-20所示，两根\"无限长\"平行载流直导线，相距为 $d$，分别通有同向电流 $I_1$ 和 $I_2$.求单位长度导线所受的安培力。<br><img src=\"assets/images/ch07/fig7_20_redraw.png\" style=\"max-width:45%\"><br><div class=\"figcap\">图 7-20 例 2 题图（两平行载流直导线间的安培力；原图槽内容与本例题无关，按教材重绘）</div>",
+   "solution_steps": [
+    "载流导线1在导线2处所激发的磁感强度为 $B_1 = \\frac{\\mu_0 I_1}{2\\pi d}$，方向与导线2垂直。导线2单位长度所受的安培力的大小为",
+    "$$F_2 = I_2 B_1 = \\frac{\\mu_0 I_1 I_2}{2\\pi d}$$",
+    "方向指向导线1.同理，导线1单位长度所受安培力的大小也为 $\\frac{\\mu_0 I_1 I_2}{2\\pi d}$，方向指向导线2.可见，两平行同向载流导线相互吸引；若电流反向，则相互排斥。",
+    "在国际单位制中，电流单位\"安培\"的定义即基于此：在真空中相距1 m的两根无限长平行直导线，通以相等的恒定电流，若使每米长度导线所受的力为 $2 \\times 10^{-7}\\ \\mathrm{N}$，则每根导线中的电流为1 A."
+   ],
+   "answer": null
+  },
+  {
+   "type": "text",
+   "html": "<h4>二、磁场作用于载流线圈的磁力矩</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如图7-21所示，设在磁感强度为 $\\mathbf{B}$ 的均匀磁场中，有一刚性矩形载流线圈 $abcd$，各边长分别为 $l_1$ 和 $l_2$，线圈中电流为 $I$，线圈平面的法线 $\\mathbf{e}_{\\mathrm{n}}$ 与 $\\mathbf{B}$ 的夹角为 $\\theta$.</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch07/fig7_21_redraw.png",
+   "caption": "图 7-21 均匀磁场中的矩形载流线圈：法线 e_n 与 B 成 θ 角，F_ab 与 F_cd 大小相等方向相反形成力偶（原图槽内容与本节无关，按教材重绘）"
+  },
+  {
+   "type": "text",
+   "html": "<p>线圈的 $ab$ 边和 $cd$ 边所受的安培力分别为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "F_{ab} = I l_1 B\\sin(90^{\\circ}) = I l_1 B"
+  },
+  {
+   "type": "formula",
+   "latex": "F_{cd} = I l_1 B\\sin(90^{\\circ}) = I l_1 B"
+  },
+  {
+   "type": "text",
+   "html": "<p>两力大小相等、方向相反，但不在同一直线上，形成力偶。力偶的力臂为 $l_2\\sin\\theta$，所以作用在线圈上的磁力矩的大小为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "M = I l_1 B \\cdot l_2\\sin\\theta = I S B\\sin\\theta"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $S = l_1 l_2$ 为线圈的面积。考虑到线圈的磁矩 $\\mathbf{m} = IS\\mathbf{e}_{\\mathrm{n}}$，磁力矩的矢量表达式为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{M} = \\mathbf{m} \\times \\mathbf{B}",
+   "label": "式（7-23）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式虽然是从矩形线圈得出的，但可以证明对任意形状的平面线圈都是正确的。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>由式(7-23)可以看出，当 $\\theta = 0$，即 $\\mathbf{m}$ 与 $\\mathbf{B}$ 同向时，$M = 0$，线圈处于稳定平衡位置；当 $\\theta = \\pi/2$ 时，$M$ 最大；当 $\\theta = \\pi$ 时，$M = 0$，但线圈处于不稳定平衡位置。</p>"
+  },
+  {
+   "type": "section",
+   "number": "7.9",
+   "title": "磁场中的磁介质"
+  },
+  {
+   "type": "video",
+   "source": "bilibili",
+   "bvid": "BV1eK4y1E7Cb",
+   "page": 36,
+   "title": "📺 视频学习：磁场中的磁介质",
+   "caption": "东北大学《大学物理》MOOC 课堂录播（马文蔚《物理学》配套课程），第 3 次课 配套；本讲对应教材 7-9 磁场中的磁介质（介质中的安培环路定理），时长 24:38。视频课程讲次编号与教材小节编号不完全一致，本站按内容对应教材小节归位；<a href=\"https://www.bilibili.com/video/BV1eK4y1E7Cb?p=36\" target=\"_blank\" rel=\"noopener\">在 B 站打开本讲 ↗</a>（嵌入加载失败、或想看弹幕与讲义时点此）"
+  },
+  {
+   "type": "text",
+   "html": "<h4>一、磁介质 磁化强度</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<h5>1. 磁介质</h5>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在磁场中，任何物质都会受到磁场的作用，并对磁场产生一定的影响。我们把能够影响磁场的物质称为磁介质。磁介质放入磁场中要被磁化，磁化了的磁介质也要产生附加磁场，从而影响原来的磁场。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>设没有磁介质时某处的磁感强度为 $\\mathbf{B}_0$，放入磁介质后磁介质被磁化，产生了附加磁感强度 $\\mathbf{B}'$，则该处的磁感强度 $\\mathbf{B}$ 为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{B} = \\mathbf{B}_0 + \\mathbf{B}'"
+  },
+  {
+   "type": "text",
+   "html": "<p>实验表明，不同磁介质对磁场的影响不同。根据影响的不同，可将磁介质分为三类：</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(1)顺磁质：$\\mathbf{B}'$ 与 $\\mathbf{B}_0$ 同向，$\\mathbf{B} > \\mathbf{B}_0$，如锰、铬、铝等；</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(2)抗磁质：$\\mathbf{B}'$ 与 $\\mathbf{B}_0$ 反向，$\\mathbf{B} < \\mathbf{B}_0$，如铜、汞、铋等；</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(3)铁磁质：$\\mathbf{B}'$ 与 $\\mathbf{B}_0$ 同向，且 $\\mathbf{B} \\gg \\mathbf{B}_0$，如铁、镍、钴等。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>对于顺磁质和抗磁质，$\\mathbf{B}'$ 很小，对磁场的影响很微弱。因此，在一般电工技术中，顺磁质和抗磁质常统称为非铁磁质。而铁磁质对磁场的影响很大，在电工技术中有广泛应用。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>定义物质的相对磁导率 $\\mu_{\\mathrm{r}}$ 为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mu_{\\mathrm{r}} = \\frac{B}{B_0}"
+  },
+  {
+   "type": "text",
+   "html": "<p>对于顺磁质，$\\mu_{\\mathrm{r}} > 1$；对于抗磁质，$\\mu_{\\mathrm{r}} < 1$；对于铁磁质，$\\mu_{\\mathrm{r}} \\gg 1$，且不是常数。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h5>2. 顺磁质和抗磁质的磁化</h5>"
+  },
+  {
+   "type": "text",
+   "html": "<p>从物质的微观结构来看，原子中的电子绕核作轨道运动，同时还有自旋运动。电子的这些运动相当于微小的环形电流，因而具有一定的磁矩。根据磁矩的来源，可分为轨道磁矩和自旋磁矩。整个原子的磁矩是其中所有电子磁矩的矢量和。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>顺磁质的原子或分子本身具有不为零的固有磁矩。在无外磁场时，由于热运动，各原子磁矩的取向是无序的，因而对外不显磁性。在外磁场作用下，原子磁矩趋向于沿外磁场方向排列，产生与外磁场同向的附加磁场，这就是顺磁性。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>抗磁质的原子或分子本身没有固有磁矩。在外磁场作用下，电子轨道运动将发生进动，从而产生一个与外磁场方向相反的附加磁矩。这就使得抗磁质产生与外磁场反向的附加磁场。应当指出，顺磁质中也存在抗磁效应，但顺磁效应通常比抗磁效应强，所以顺磁质对外表现顺磁性。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h5>3. 磁化强度</h5>"
+  },
+  {
+   "type": "text",
+   "html": "<p>为了描述磁介质的磁化程度，引入磁化强度矢量 $\\mathbf{M}$.磁化强度的定义是单位体积内分子磁矩的矢量和，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{M} = \\frac{\\sum \\mathbf{m}}{\\Delta V}"
+  },
+  {
+   "type": "text",
+   "html": "<p>$\\mathbf{M}$ 的单位是 $\\mathrm{A \\cdot m^{-1}}$.</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>二、磁介质中的安培环路定理 磁场强度</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在有磁介质的情况下，磁介质被磁化后，安培环路定理中除了传导电流外，还要考虑磁化电流(亦称束缚电流).可以证明，磁介质中的安培环路定理可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\oint_l \\mathbf{B} \\cdot \\mathrm{d}\\mathbf{l} = \\mu_0 \\left( \\sum I + \\sum I_{\\mathrm{s}} \\right)"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $\\sum I_{\\mathrm{s}}$ 为穿过回路的磁化电流的代数和。为了消除磁化电流，引入一个辅助物理量——磁场强度 $\\mathbf{H}$，定义为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{H} = \\frac{\\mathbf{B}}{\\mu_0} - \\mathbf{M}",
+   "label": "式（7-24）"
+  },
+  {
+   "type": "text",
+   "html": "<p>可以证明，$\\mathbf{H}$ 沿任意闭合回路的线积分等于该回路所包围的传导电流的代数和，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\oint_l \\mathbf{H} \\cdot \\mathrm{d}\\mathbf{l} = \\sum I",
+   "label": "式（7-25）"
+  },
+  {
+   "type": "text",
+   "html": "<p>这就是磁介质中的安培环路定理.$\\mathbf{H}$ 的单位是 $\\mathrm{A \\cdot m^{-1}}$.</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>对于各向同性的非铁磁质，实验表明 $\\mathbf{M}$ 与 $\\mathbf{H}$ 成正比，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{M} = \\kappa \\mathbf{H}"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $\\kappa$ 称为磁化率。将上式代入式(7-24)得</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{B} = \\mu_0(1 + \\kappa)\\mathbf{H} = \\mu_0\\mu_{\\mathrm{r}}\\mathbf{H} = \\mu\\mathbf{H}",
+   "label": "式（7-26）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $\\mu_{\\mathrm{r}} = 1 + \\kappa$ 为相对磁导率，$\\mu = \\mu_0\\mu_{\\mathrm{r}}$ 为磁导率。对于顺磁质，$\\kappa > 0$，$\\mu_{\\mathrm{r}} > 1$；对于抗磁质，$\\kappa < 0$，$\\mu_{\\mathrm{r}} < 1$.</p>"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（7.9 节 · 例）",
+   "problem": "在如图7-22所示的环形螺线管中，环的平均半径为 $R$，总匝数为 $N$，通有电流 $I$，环内充满相对磁导率为 $\\mu_{\\mathrm{r}}$ 的均匀磁介质。求环内的磁场强度 $\\mathbf{H}$ 和磁感强度 $\\mathbf{B}$.<br><img src=\"assets/images/ch07/fig7_16_redraw.png\" style=\"max-width:50%\"><br><div class=\"figcap\">图 7-22 例题图（环内充满相对磁导率 μ_r 磁介质的环形螺线管；原图槽内容与本例题无关，按教材重绘，结构同图 7-16）</div>",
+   "solution_steps": [
+    "由对称性可知，管内磁场是与环共轴的同心圆。取半径为 $R$ 的圆形回路，由磁介质中的安培环路定理(7-25)有",
+    "$$\\oint_l \\mathbf{H} \\cdot \\mathrm{d}\\mathbf{l} = H \\cdot 2\\pi R = NI$$",
+    "$$H = \\frac{NI}{2\\pi R} = nI$$",
+    "式中 $n = N/(2\\pi R)$ 为单位长度上的匝数。再由式(7-26)可得",
+    "$$B = \\mu_0\\mu_{\\mathrm{r}}H = \\mu_0\\mu_{\\mathrm{r}}nI$$",
+    "与空心环形螺线管相比，磁感强度增大为原来的 $\\mu_{\\mathrm{r}}$ 倍。"
+   ],
+   "answer": null
+  },
+  {
+   "type": "text",
+   "html": "<h4>三、铁磁质</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<h5>1. 磁畴</h5>"
+  },
+  {
+   "type": "text",
+   "html": "<p>铁磁质的磁化机理与顺磁质和抗磁质不同。在铁磁质内部，由于电子间存在着一种强耦合作用(交换作用)，使得相邻原子的磁矩在小范围内自发地平行排列起来，形成一个个微小的自发磁化区域，称为磁畴。每个磁畴中磁矩已饱和，但不同磁畴的磁矩方向是随机的，所以未经外磁场磁化的铁磁质，对外不呈现磁性。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在外磁场作用下，磁矩方向与外磁场方向相近的磁畴的体积将扩大，而方向相反的磁畴的体积缩小；随着外磁场的增强，磁畴的磁矩方向逐渐转向外磁场方向。当所有磁畴的磁矩都与外磁场方向一致时，铁磁质的磁化就达到了饱和。由于磁畴的存在，铁磁质在较小的外磁场下就能磁化到很大程度，具有很高的磁导率。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h5>2. 磁化曲线 磁滞回线</h5>"
+  },
+  {
+   "type": "text",
+   "html": "<p>铁磁质的磁化规律可用磁化曲线和磁滞回线来描述。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p><strong>起始磁化曲线</strong>：从未磁化状态开始，逐渐增大外磁场 $H$，测出对应的磁感强度 $B$，可得 $B\\!-\\!H$ 曲线。起初 $B$ 随 $H$ 缓慢增大(起始段)，然后急剧增大(陡峭段)，最后趋于饱和(饱和段).饱和时的磁感强度称为饱和磁感强度 $B_{\\mathrm{s}}$.</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p><strong>磁滞回线</strong>：当铁磁质磁化达到饱和后，逐渐减小 $H$ 至零，$B$ 并不沿起始磁化曲线返回，而是沿另一条路径下降。当 $H = 0$ 时，$B$ 不为零，而保留一定值 $B_{\\mathrm{r}}$，称为剩余磁感强度。要使 $B$ 降为零，必须加上反向的磁场 $H_{\\mathrm{c}}$，称为矫顽力。继续增大反向磁场，可使铁磁质在反方向达到饱和。当 $H$ 再由反向最大值变为零再变到正向最大值时，$B$ 沿一条闭合曲线变化，此闭合曲线称为磁滞回线。磁滞回线所包围的面积正比于铁磁质在一个磁化循环中所损耗的能量。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h5>3. 铁磁性材料</h5>"
+  },
+  {
+   "type": "text",
+   "html": "<p>按矫顽力 $H_{\\mathrm{c}}$ 的大小，铁磁材料可分为两类：</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p><strong>(1) 金属磁性材料</strong></p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>软磁材料：$H_{\\mathrm{c}}$ 小，磁滞回线窄而长，如纯铁、硅钢、坡莫合金等，适用于变压器、电机、继电器的铁芯。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>硬磁材料：$H_{\\mathrm{c}}$ 大，磁滞回线宽，剩余磁感强度大，如碳钢、钨钢、铝镍钴合金等，适用于制造永久磁铁。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p><strong>(2) 非金属磁性材料——铁氧体</strong></p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>铁氧体是由氧化铁与其他金属氧化物(如锰、锌、镍的氧化物)烧结而成的陶瓷材料。它的电阻率很高(比金属磁性材料高 $10^6 \\sim 10^{12}$ 倍)，因而在高频磁场中涡流损耗小，适用于高频电子器件。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h5>4. 磁屏蔽</h5>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在有些场合(如精密电磁测量）中，需要排除地磁场或其他外磁场的影响。利用铁磁材料制成空腔，由于铁磁材料的磁导率远大于空气，磁感线大部分集中通过铁磁材料壁面，空腔内的磁场会很弱，这样就达到了屏蔽外磁场的目的 这就是磁屏蔽。</p>"
+  },
+  {
+   "type": "homework",
+   "title": "本章作业",
+   "allowRetry": 2,
+   "showAnswerAfter": true,
+   "batches": [
+    {
+     "title": "第 1 次作业（7-1 ～ 7-3：恒定电流·电动势·磁场与磁感强度）",
+     "items": [
+      {
+       "type": "fill",
+       "question": "［教材习题 7-6］北京正负电子对撞机的贮存环是周长为 240 m 的近似圆形轨道。当环中电子移动产生的电流为 8 mA 时，整个环中运行的电子数为 ______ ×10¹⁰ 个（保留 2 位有效数字；电子速率接近光速 c = 3.0×10⁸ m/s，e = 1.6×10⁻¹⁹ C）。",
+       "blanks": [
+        {
+         "answer": "4.0",
+         "tolerance": 0.1
+        }
+       ],
+       "explanation": "电子绕环一周的时间 T = L/c，电流 I = Ne/T = Nec/L，故 N = IL/(ec) = 8×10⁻³×240/(1.6×10⁻¹⁹×3.0×10⁸) ≈ 4.0×10¹⁰ 个。"
+      },
+      {
+       "type": "choice",
+       "question": "［概念辨析］关于电源电动势，下列说法正确的是（　）",
+       "options": [
+        "电动势就是电源两极之间的电压",
+        "电动势是把单位正电荷从负极经电源内部移到正极时，非静电力所做的功",
+        "电动势越大的电源，储存的电能一定越多",
+        "电动势的大小随外电路电阻的改变而改变"
+       ],
+       "answer": 1,
+       "explanation": "电动势的定义是 ε = W非/q，反映电源把其他形式能量转化为电能的本领，由电源自身决定，与外电路无关。路端电压才随外电路变化。"
+      },
+      {
+       "type": "fill",
+       "question": "［教材 7-1 节内容］一横截面积为 2.0 mm² 的铜导线通过 3.0 A 的恒定电流，则导线中的电流密度大小为 ______ A/mm²。",
+       "blanks": [
+        {
+         "answer": "1.5",
+         "tolerance": 0.01
+        }
+       ],
+       "explanation": "j = I/S = 3.0 / 2.0 = 1.5 A/mm²。"
+      }
+     ],
+     "dueDate": "2026-12-15T23:59:59+08:00"
+    },
+    {
+     "title": "第 2 次作业（7-4 ～ 7-6：毕奥-萨伐尔定律·磁高斯定理·安培环路定理）",
+     "items": [
+      {
+       "type": "choice",
+       "question": "［教材习题 7-1］两根长度相同的细导线分别密绕在半径为 R 和 r 的两个长直圆筒上，形成两个螺线管。两个螺线管的长度相同，且 R = 2r，螺线管中通过的电流均为 I，则两螺线管中的磁感强度大小 B_R、B_r 满足（　）",
+       "options": [
+        "B_R = 2B_r",
+        "B_R = B_r",
+        "2B_R = B_r",
+        "B_R = 4B_r"
+       ],
+       "answer": 2,
+       "explanation": "选 C。导线总长度相同，匝数 N = L_线/(2πR_筒)，故半径加倍匝数减半：N_r = 2N_R。螺线管长度相同，单位长度匝数 n = N/l，B = μ₀nI，所以 B_r = μ₀(N_r/l)I = 2μ₀(N_R/l)I = 2B_R，即 2B_R = B_r。注意：B 只取决于单位长度匝数与电流，与螺线管粗细无直接关系。"
+      },
+      {
+       "type": "calculation",
+       "question": "［教材习题 7-9］已知地球北极地磁场磁感强度 B = 6.0×10⁻⁵ T。假设此地磁场是由地球赤道上一个圆电流所激发的，估算此电流的大小（以 10⁹ A 为单位填数值，保留 3 位有效数字；地球半径 R = 6.37×10⁶ m，μ₀ = 4π×10⁻⁷ N·A⁻²）。",
+       "answer": 1.72,
+       "unit": "×10⁹ A",
+       "tolerance": 0.03,
+       "solution": "北极在赤道圆电流的轴线上，x = R，由圆电流轴线磁场公式 B = μ₀IR²/[2(R² + x²)^(3/2)] = μ₀I/(4√2·R)，解得 I = 4√2·R·B/μ₀ = 4×1.414×6.37×10⁶×6.0×10⁻⁵/(4π×10⁻⁷) ≈ 1.72×10⁹ A。（流向：从北极上空俯视沿顺时针方向，即自东向西——这样才能在北极处产生指向地面的磁场。）"
+      },
+      {
+       "type": "qa",
+       "question": "［教材问题 7-4］你能说出一些有关电流元 Idl 激发磁场 dB 与电荷元 dq 激发电场 dE 的异同吗？",
+       "rubric": "相同点：都与场源「元」的量成正比、与距离平方成反比、都满足叠加原理，都可用于积分求任意分布场源的场（4 分）；不同点：dE 方向沿径矢 r （点电荷球对称），dB 方向由 dl × r 决定、垂直于 dl 与 r 组成的平面，大小还含 sinθ 因子，场源 Idl 本身是矢量（4 分）；比例系数与场性质不同（1/4πε₀ 对应有源场，μ₀/4π 对应无源涡旋场）（2 分）",
+       "reference": "相同点：① 都与场源「元」的大小成正比（dq 或 Idl）；② 都与场点到场源的距离平方成反比；③ 都满足叠加原理，任意带电体/载流导线的场都可用积分求得。不同点：① 方向规则不同：dE 沿径矢 r 的方向（点电荷的场球对称），而 dB 垂直于 dl 与 r 组成的平面，沿 dl × r 的右螺旋方向；② 大小因子不同：dB 含 sinθ（θ 为 dl 与 r 的夹角），在电流元延长线上 dB = 0，dE 没有这种角度依赖；③ 场源性质不同：dq 是标量，Idl 是矢量，这正反映了电场是有源场、磁场是无源（涡旋）场的本质区别。",
+       "maxScore": 10
+      },
+      {
+       "type": "choice",
+       "question": "［教材习题 7-3］下列说法正确的是（　）",
+       "options": [
+        "闭合回路上各点磁感强度都为零时，回路内一定没有电流穿过",
+        "闭合回路上各点磁感强度都为零时，回路内穿过电流的代数和必定为零",
+        "磁感强度沿闭合回路的积分为零时，回路上各点的磁感强度必定为零",
+        "磁感强度沿闭合回路的积分不为零时，回路上任意一点的磁感强度都不可能为零"
+       ],
+       "answer": 1,
+       "explanation": "选 B。由安培环路定理 ∮B·dl = μ₀ΣI：回路上 B 处处为零，则环流必为零，故 ΣI = 0（可以有无电流或等值反向电流穿过）。A 错：等值反向的两电流穿过时 ΣI = 0 且可使回路上 B = 0，但回路内「有」电流穿过；C 错：环流为零只要求积分为零，不要求 B 逐点为零（如问题 7-12 的情形）；D 错：环流不为零时，回路上个别点的 B 仍可为零。"
+      },
+      {
+       "type": "fill",
+       "question": "［教材习题 7-16(2)］已知 10 mm² 裸铜线允许通过 50 A 电流而不致过热，电流在横截面上均匀分布。则导线表面处的磁感强度为 ______ ×10⁻³ T（保留 2 位有效数字；μ₀ = 4π×10⁻⁷ N·A⁻²）。",
+       "blanks": [
+        {
+         "answer": "5.6",
+         "tolerance": 0.15
+        }
+       ],
+       "explanation": "导线半径 R = √(S/π) = √(10/π) ≈ 1.78 mm。由安培环路定理，表面处 B = μ₀I/(2πR) = 2×10⁻⁷×50/(1.78×10⁻³) ≈ 5.6×10⁻³ T。（导线内部 B = μ₀Ir/(2πR²) 随 r 线性增大，外部按 1/r 衰减，表面处最大。）"
+      },
+      {
+       "type": "qa",
+       "question": "［教材问题 7-11］在下面三种情况下，能否用安培环路定理来求磁感强度？为什么？(1) 有限长载流直导线产生的磁场；(2) 圆电流产生的磁场；(3) 两个无限长同轴载流圆柱面之间的磁场。",
+       "rubric": "明确安培环路定理求 B 的前提：磁场分布具有足够对称性，使 B 能从积分号内提出（4 分）；(1)(2) 不能并说明对称性不足（3 分）；(3) 能，轴对称使同心圆回路上 B 大小相等且沿切线（3 分）",
+       "reference": "(1) 不能。有限长直导线的磁场没有足够对称性：与导线等距的各点 B 大小虽相同，但不存在一条闭合回路使 B 处处沿回路方向且大小不变，B 无法从积分号内提出，只能由毕奥-萨伐尔定律积分求解。(2) 不能。圆电流的磁场沿轴线逐点变化，空间无合适的对称回路，同样只能用毕奥-萨伐尔定律。(3) 能。两无限长同轴圆柱面之间的磁场具有轴对称性：在垂直于轴的平面内取以轴为中心的圆形回路，回路上 B 大小相等、方向沿切线，∮B·dl = B·2πr = μ₀ΣI，即可求出 B。",
+       "maxScore": 10
+      }
+     ],
+     "dueDate": "2026-12-22T23:59:59+08:00"
+    },
+    {
+     "title": "第 3 次作业（7-7 ～ 7-9：带电粒子的运动·安培力·磁介质）",
+     "items": [
+      {
+       "type": "calculation",
+       "question": "［教材习题 7-29］在 B = 0.01 T 的均匀磁场中，电子以 v = 10⁴ m/s 的速度运动，速度方向与 B 的夹角为 30°。求电子螺旋轨道的半径（单位 μm，保留 3 位有效数字；e = 1.60×10⁻¹⁹ C，mₑ = 9.11×10⁻³¹ kg）。",
+       "answer": 2.84,
+       "unit": "μm",
+       "tolerance": 0.05,
+       "solution": "只有垂直于 B 的速度分量决定回旋半径：v⊥ = v·sin30° = 5.0×10³ m/s。R = mₑv⊥/(eB) = 9.11×10⁻³¹×5.0×10³/(1.60×10⁻¹⁹×0.01) ≈ 2.84×10⁻⁶ m = 2.84 μm。（旋转频率 f = eB/(2πmₑ) ≈ 2.80×10⁸ Hz，与速率无关；平行分量 v∥ 使轨迹成为螺旋线。）"
+      },
+      {
+       "type": "choice",
+       "question": "［教材习题 7-5］半径为 R 的圆柱形无限长载流直导线置于均匀无限大磁介质之中，导线中电流为 I，磁介质相对磁导率 μ_r（μ_r < 1）。则与导线接触的磁介质表面上的磁化电流面密度为（　）",
+       "options": [
+        "−(μ_r − 1)I/(2πR)",
+        "(μ_r − 1)I/(2πR)",
+        "μ_r·I/(2πR)",
+        "I/(2πμ_rR)"
+       ],
+       "answer": 1,
+       "explanation": "选 B。导线表面处 H = I/(2πR)，磁化强度 M = (μ_r − 1)H = (μ_r − 1)I/(2πR)，磁化电流面密度 j′ = M。μ_r < 1（抗磁质）时 j′ < 0，即磁化电流与传导电流方向相反，部分抵消传导电流的磁场，故 B < B₀。"
+      },
+      {
+       "type": "fill",
+       "question": "［教材习题 7-43］为测某磁性材料的相对磁导率，将其做成截面为矩形的圆环样品并绕成螺绕环：圆环平均周长 0.10 m，横截面积 0.50×10⁻⁴ m²，线圈 200 匝。通 0.10 A 电流时测得穿过横截面的磁通量为 6.0×10⁻⁵ Wb。则该材料的相对磁导率 μ_r ≈ ______ ×10³（保留 3 位有效数字；μ₀ = 4π×10⁻⁷ N·A⁻²）。",
+       "blanks": [
+        {
+         "answer": "4.78",
+         "tolerance": 0.1
+        }
+       ],
+       "explanation": "B = Φ/S = 6.0×10⁻⁵/(0.50×10⁻⁴) = 1.2 T；由磁介质中的安培环路定理 H = NI/L = 200×0.10/0.10 = 200 A/m；μ_r = B/(μ₀H) = 1.2/(4π×10⁻⁷×200) ≈ 4.78×10³。"
+      },
+      {
+       "type": "calculation",
+       "question": "［教材习题 7-37］一根长直导线载有电流 I₁ = 30 A，旁边共面放置载流矩形回路，I₂ = 20 A；回路靠近导线的边距导线 d = 1.0 cm，该边长 l = 0.12 m，回路宽 b = 8.0 cm（两长边均与直导线平行）。求作用在回路上的合力大小（以 10⁻³ N 为单位填数值，保留 3 位有效数字；μ₀ = 4π×10⁻⁷ N·A⁻²）。",
+       "answer": 1.28,
+       "unit": "×10⁻³ N",
+       "tolerance": 0.02,
+       "solution": "两短边上的安培力相互抵消。近边（r = d）：F₁ = I₂l·μ₀I₁/(2πd) = 20×0.12×2×10⁻⁷×30/0.01 = 1.44×10⁻³ N，指向直导线（同向电流相吸）；远边（r = d + b = 9.0 cm）：F₂ = 20×0.12×2×10⁻⁷×30/0.09 = 1.6×10⁻⁴ N，背离直导线。合力 F = F₁ − F₂ = 1.28×10⁻³ N，方向指向长直导线。"
+      },
+      {
+       "type": "qa",
+       "question": "［教材问题 7-22］一根有限长的载流直导线在均匀磁场中沿着磁感线移动，磁力对它是否总是做功？什么情况下磁力做功？什么情况下磁力不做功？",
+       "rubric": "写出安培力方向：F = Il × B，垂直于导线与 B 组成的平面（3 分）；沿磁感线方向移动时 F 与位移垂直，不做功（3 分）；导线在 F 方向上有位移分量（横向移动）时磁力才做功（2 分）；指出磁力做功的能量最终来自维持电流的电源（洛伦兹力本身不做功）（2 分）",
+       "reference": "不总是做功。载流直导线受的安培力 F = Il × B，方向垂直于导线与 B 组成的平面，大小方向都不随导线位置改变。当导线沿磁感线（即沿 B 方向）平移时，位移与 F 垂直，磁力不做功。只有当导线的位移在 F 的方向上有分量时（例如横向移向或远离磁场边界、沿 F 方向运动），磁力才做功。深层看：洛伦兹力对电荷永不做功，安培力做功的能量实际上来自维持电流恒定的电源——导线移动时载流子合速度改变，洛伦兹力沿导线方向的分量阻碍漂移运动，电源为克服它（反电动势）而多消耗的电能，正好等于安培力对外所做的功。",
+       "maxScore": 10
+      }
+     ],
+     "dueDate": "2026-12-29T23:59:59+08:00"
+    }
+   ],
+   "socratic": {
+    "type": "socratic",
+    "chapter": "7 恒定磁场",
+    "sessions": [
+     {
+      "label": "第 1 次课讨论（7-1 ～ 7-3：电流、电动势与磁场）",
+      "topics": [
+       {
+        "title": "电子漂移速率只有每秒零点几毫米，电灯为什么一按就亮？",
+        "question": "金属导线中自由电子的定向漂移速率仅约 10⁻⁴ m/s 量级，可合上开关的瞬间，远处的灯立刻就亮了。到底是「什么」传播得快？试区分电场建立的速度与电子漂移的速度，并用这个图像解释恒定电流的形成。"
+       }
+      ]
+     },
+     {
+      "label": "第 2 次课讨论（7-4 ～ 7-6：毕奥-萨伐尔与安培环路）",
+      "topics": [
+       {
+        "title": "电流元激发的 dB 为什么不像电荷元激发的 dE 那样沿径向？（教材问题 7-4、7-5）",
+        "question": "电荷元 dq 激发的电场 dE 总是沿径矢 r 的方向；而电流元 Idl 激发的磁场 dB 却垂直于 dl 与 r 组成的平面。同样是一个「元」激发的场，为什么方向规则差别这么大？追问：电流元和电荷元的本质区别是什么——Idl 是标量还是矢量？既然场源本身有方向（电流流向），dB 还可能像 dE 那样球对称吗？再追问：把电流元放在原点、电流沿 z 轴，它在 z 轴上各点激发的 dB 是多大（sinθ = ?）？在 x 轴上呢？dB 在 x 方向的分量又是什么（教材问题 7-5 的三个选项你怎么排除）？深一层：毕奥-萨伐尔定律不能由实验直接验证，那我们凭什么相信它？"
+       },
+       {
+        "title": "回路不包围电流时 ∮B·dl = 0，能不能说回路上各点的 B 为零？（教材问题 7-12）",
+        "question": "在圆电流的平面内取一个与它同轴、同心但不包含电流的圆形回路，由安培环路定理 ∮B·dl = 0。能否由此说回路上各点的磁感强度为零？追问：∮B·dl 是一个积分，积分值为零意味着被积函数处处为零吗？圆电流在这个回路上各点的 B 方向是怎样的（垂直于回路平面还是沿回路切线）？B·dl 逐点等于什么？再追问：静电场的 ∮E·dl = 0 对任意回路成立，磁场的 ∮B·dl 只对「不包围电流的回路」为零——这两个「零」的物理含义一样吗？（保守场与涡旋场的区别在哪里？）类比追问：磁场高斯定理 ∮B·dS = 0 对任意闭曲面成立，它说的「无源」和这里的「有旋」矛盾吗？"
+       }
+      ]
+     },
+     {
+      "label": "第 3 次课讨论（7-7 ～ 7-9：洛伦兹力·安培力·磁介质）",
+      "topics": [
+       {
+        "title": "洛伦兹力永不做功，安培力却能推动电动机对外做功——矛盾吗？（教材问题 7-22 延伸）",
+        "question": "洛伦兹力 F = qv × B 始终垂直于电荷速度，对运动电荷永不做功；但载流导线在磁场中受的安培力（本质上就是导线中各载流子所受洛伦兹力的宏观表现）却能推动导线运动、让电动机对外做功。功是从哪里来的？追问：导线不动时，载流子的速度只有沿导线的漂移速度，洛伦兹力把它推向侧面（这正是霍耳效应）。导线一旦被推动而横向运动，载流子的合速度还是沿导线方向吗？洛伦兹力相对合速度仍垂直，但它沿导线方向的分量呢？再追问：这个沿导线的分量阻碍漂移运动，要维持电流不变，电源必须多做功——电动机的能量说到底是谁提供的？（「磁力做功」的账应该怎样记？）"
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ]
+}

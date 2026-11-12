@@ -89,7 +89,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "熵增加原理",
+     "qa": [
+      {
+       "q": "熵增加原理的内容是什么？",
+       "a": "孤立系统（或绝热过程）中熵永不减少，$\\Delta S \\geq 0$，可逆取等号，不可逆则增大。"
+      },
+      {
+       "q": "熵变怎么计算？",
+       "a": "在初末态间设计可逆路径，用 $\\Delta S=\\int \\frac{dQ}{T}$ 计算，熵是态函数与路径无关。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -109,7 +122,20 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "熵的定义与意义",
+     "qa": [
+      {
+       "q": "熵到底是怎么定义的？",
+       "a": "熵是态函数，由热温比 $\\int \\frac{dQ}{T}$ 定义，把不可逆的方向性变成可计算的量。"
+      },
+      {
+       "q": "为什么说熵把「方向」变成能算的量？",
+       "a": "上一节只说过程不能自发反向，熵用 $\\Delta S$ 的数值正负定量判断过程方向。"
+      }
+     ],
+     "important": true
     }
    ],
    "heading": "封面"
@@ -236,7 +262,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "环积分为零",
+     "qa": [
+      {
+       "q": "为什么可逆循环的环积分等于零？",
+       "a": "任意可逆循环可切成许多小卡诺循环，每个小卡诺循环热温比之和为零，累加即得 $\\oint \\mathrm{d}Q/T=0$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -276,7 +311,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "熵的定义式",
+     "qa": [
+      {
+       "q": "熵为什么是态函数？",
+       "a": "因 $\\oint \\mathrm{d}Q/T=0$，$\\Delta S=\\int \\mathrm{d}Q/T$ 只取决于初末状态，与可逆路径无关。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -316,6 +360,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "熵变计算假设",
+     "qa": [
+      {
+       "q": "不可逆过程怎么算熵变？",
+       "a": "熵是态函数，可假设一条连接同样初末态的可逆路径，用 $\\Delta S=\\int \\mathrm{d}Q/T$ 计算。"
+      }
      ]
     },
     {
@@ -396,6 +448,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "熵增加原理",
+     "qa": [
+      {
+       "q": "熵增加原理有什么用？",
+       "a": "它是过程方向的判据：孤立系统中 $\\Delta S\\ge 0$，自发过程只朝熵增大的方向进行。"
+      }
      ]
     },
     {
@@ -478,7 +538,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "热温比定义",
+     "qa": [
+      {
+       "q": "热温比中的 T 是系统温度还是热源温度？",
+       "a": "是热源温度，即系统吸放热时外界热源的温度。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -538,7 +607,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "卡诺循环热温比为零",
+     "qa": [
+      {
+       "q": "为什么可逆卡诺循环的热温比总和为零？",
+       "a": "因 $Q_1/Q_2=T_1/T_2$，故 $Q_1/T_1-Q_2/T_2=0$，两项大小相等、符号相反。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -578,6 +656,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "暗示存在状态量",
+     "qa": [
+      {
+       "q": "热温比总和为零说明了什么？",
+       "a": "绕闭合循环积分为零，暗示存在一个只由状态决定的状态量（即熵）。"
+      }
      ]
     },
     {
@@ -628,7 +714,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "结论成立条件",
+     "qa": [
+      {
+       "q": "热温比总和为零对任意循环都成立吗？",
+       "a": "此处结论只在可逆卡诺循环上成立，一般循环需用克劳修斯等式讨论。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -744,6 +838,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "小循环热温比为零",
+     "qa": [
+      {
+       "q": "每个小循环的热温比之和为什么为零？",
+       "a": "每个小循环都是卡诺循环，其热温比之和为零，这是卡诺循环的已知结论。"
+      }
      ]
     },
     {
@@ -764,6 +866,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "内部边界抵消",
+     "qa": [
+      {
+       "q": "为什么内部边界会抵消？",
+       "a": "相邻两个小卡诺循环共用边界，但绕行方向相反，热温比一正一负正好相加为零。"
+      }
      ]
     },
     {
@@ -776,7 +886,16 @@
      "tex": "\\oint \\frac{\\mathrm{d}Q}{T}=0",
      "size": 36,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "热温比环积分",
+     "qa": [
+      {
+       "q": "为什么环积分等于零？",
+       "a": "把循环切成许多小卡诺循环，每个小循环热温比之和为零；内部边界方向相反两两抵消，只剩最外圈，故 $\\oint \\mathrm{d}Q/T=0$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -838,7 +957,20 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "克劳修斯等式",
+     "qa": [
+      {
+       "q": "为什么说这个等式是熵存在的数学前提？",
+       "a": "因为任意可逆循环的 $\\oint \\mathrm{d}Q/T=0$，说明 $\\mathrm{d}Q/T$ 与路径无关，只由初末态决定，故可定义态函数熵。"
+      },
+      {
+       "q": "这个等式对不可逆循环成立吗？",
+       "a": "不成立。本页结论只针对任意可逆循环，不可逆时环积分小于零。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -974,7 +1106,20 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "熵的定义",
+     "qa": [
+      {
+       "q": "熵是怎么定义的？",
+       "a": "ΔS=S_B−S_A=∫_A^B dQ/T，沿可逆过程积分，只由初末状态决定。"
+      },
+      {
+       "q": "为什么熵可以定义成态函数？",
+       "a": "因为热温比积分与路径无关，只由初末状态决定，故可定义状态函数S。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -986,7 +1131,16 @@
      "tex": "\\Delta S=S_B-S_A=\\int_{A}^{B}\\frac{\\mathrm{d}Q}{T}",
      "size": 28,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "熵变积分公式",
+     "qa": [
+      {
+       "q": "熵变公式怎么写？",
+       "a": "$\\Delta S=S_B-S_A=\\int_A^B \\frac{\\mathrm{d}Q}{T}$，沿可逆路径积分。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1006,6 +1160,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "熵的微分形式",
+     "qa": [
+      {
+       "q": "熵的微分形式是什么？",
+       "a": "$\\mathrm{d}S=\\mathrm{d}Q/T$，其中dQ为可逆过程吸热，T为温度。"
+      }
      ]
     },
     {
@@ -1060,7 +1222,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "可逆过程要求",
+     "qa": [
+      {
+       "q": "不可逆过程能直接积分求熵变吗？",
+       "a": "不能。必须另找一条连接相同初末态的可逆路径来积分。"
+      }
+     ]
     }
    ],
    "heading": "三　熵是态函数"
@@ -1157,7 +1327,20 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "熵是态函数",
+     "qa": [
+      {
+       "q": "为什么熵变与过程无关？",
+       "a": "熵是态函数，只由初末态决定，与路径无关，因此可在初末态间任选一条可逆路径计算。"
+      },
+      {
+       "q": "实际过程不可逆怎么办？",
+       "a": "不可逆过程不能直接积分，但可另设一条连接同样初末态的可逆路径来算熵变。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "box",
@@ -1207,7 +1390,16 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "熵变积分公式",
+     "qa": [
+      {
+       "q": "熵变用什么公式算？",
+       "a": "沿假设的可逆路径积分：$\\Delta S=\\int \\mathrm{d}Q/T$，结果与所选路径无关。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "box",
@@ -1257,7 +1449,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "熵的可加性",
+     "qa": [
+      {
+       "q": "系统分几部分时熵变怎么算？",
+       "a": "各部分的熵变之和等于系统总熵变，可分别计算再相加。"
+      }
+     ]
     },
     {
      "type": "box",
@@ -1406,7 +1606,16 @@
      "tex": "0.3c(363-T)+0.7c(293-T)=0\\ \\Rightarrow\\ T=314\\ \\mathrm{K}=41\\mathrm{^{\\circ}C}",
      "size": 20,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "能量守恒求平衡温度",
+     "qa": [
+      {
+       "q": "为什么平衡温度是 41 ℃？",
+       "a": "无能量交换时，冷水吸热等于热水放热：$0.3c(363-T)=0.7c(T-293)$，解得 $T=314\\,\\mathrm{K}=41\\,^{\\circ}\\mathrm{C}$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1438,7 +1647,15 @@
      "tex": "\\Delta S=mc\\ln\\frac{T_2}{T_1}",
      "size": 28,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "熵变积分公式",
+     "qa": [
+      {
+       "q": "为什么用 $mc\\ln(T_2/T_1)$？",
+       "a": "等压可逆过程中 $dS=mc\\,dT/T$，积分得 $\\Delta S=mc\\ln(T_2/T_1)$。"
+      }
+     ]
     },
     {
      "type": "tex",
@@ -1512,7 +1729,16 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "熵变只认初末态",
+     "qa": [
+      {
+       "q": "混合不可逆，为什么能假设可逆路径算熵？",
+       "a": "熵是状态函数，只取决于初末态，故可设计可逆等压路径积分计算，结果与不可逆过程相同。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "box",
@@ -1562,7 +1788,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "孤立系统熵增判据",
+     "qa": [
+      {
+       "q": "熵增加说明什么？",
+       "a": "孤立系统无吸热而熵增 $20.7\\,\\mathrm{J\\cdot K^{-1}}$，说明混合过程不可逆，符合熵增原理。"
+      }
+     ]
     }
    ],
    "heading": "例 1　不同温度的水混合"
@@ -1641,7 +1875,16 @@
      "tex": "\\mathrm{d}S_A=-\\frac{\\mathrm{d}Q}{T_A},\\qquad \\mathrm{d}S_B=+\\frac{\\mathrm{d}Q}{T_B}",
      "size": 26,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "各自熵变公式",
+     "qa": [
+      {
+       "q": "为什么A的熵变是负的？",
+       "a": "A放热，dQ从A流出，故 $\\mathrm{d}S_A=-\\mathrm{d}Q/T_A$；B吸热则为正。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1673,7 +1916,16 @@
      "tex": "\\mathrm{d}S=\\mathrm{d}Q\\left(\\frac{1}{T_B}-\\frac{1}{T_A}\\right)>0",
      "size": 28,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "总熵变公式",
+     "qa": [
+      {
+       "q": "总熵变为什么写成这个形式？",
+       "a": "$\\mathrm{d}S=\\mathrm{d}Q(1/T_B-1/T_A)$，由两部分相加并提取公因子 $\\mathrm{d}Q$ 得到。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1753,6 +2005,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "热传导熵增结论",
+     "qa": [
+      {
+       "q": "温差很小时熵还增加吗？",
+       "a": "增加，只是增加得慢；只要 $T_A>T_B$，$\\mathrm{d}S>0$，过程不可逆。"
+      }
      ]
     },
     {
@@ -1787,7 +2047,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "不可逆性判据",
+     "qa": [
+      {
+       "q": "有限温差传热为什么不可逆？",
+       "a": "因总熵增加；只有温差趋于零的传热才可能可逆。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -1863,7 +2131,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "熵增加原理",
+     "qa": [
+      {
+       "q": "熵增加原理的内容是什么？",
+       "a": "孤立系统的熵永不减少：可逆过程熵不变，不可逆过程熵增加。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1935,7 +2212,20 @@
      "tex": "\\Delta S\\ge 0",
      "size": 40,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "熵变判据公式",
+     "qa": [
+      {
+       "q": "ΔS≥0 中等号何时成立？",
+       "a": "等号只在可逆过程成立，不可逆过程 ΔS>0。"
+      },
+      {
+       "q": "这个公式的适用条件是什么？",
+       "a": "必须是孤立系统或绝热过程，否则不能直接用。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1955,6 +2245,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "适用条件",
+     "qa": [
+      {
+       "q": "熵增加原理对非孤立系统成立吗？",
+       "a": "不直接成立，条件必须是孤立系统或绝热过程。"
+      }
      ]
     },
     {
@@ -2005,7 +2303,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "自发过程判据",
+     "qa": [
+      {
+       "q": "怎样用熵变判断过程能否自发？",
+       "a": "算熵变：ΔS>0 能自发进行，ΔS<0 不可能发生。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -2112,7 +2418,20 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "熵增加原理",
+     "qa": [
+      {
+       "q": "熵增加原理的准确表述是什么？",
+       "a": "孤立系统中一切自发过程总是朝熵增加的方向进行，平衡态时熵最大、过程停止。"
+      },
+      {
+       "q": "熵增加原理和热力学第二定律是什么关系？",
+       "a": "它是第二定律的另一种（定量）表述，把热传导、功热转化、自由膨胀等方向性统一为熵增。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2212,7 +2531,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "平衡态熵最大",
+     "qa": [
+      {
+       "q": "为什么平衡态时过程会停止？",
+       "a": "平衡态熵达到最大，不再增加，没有可用的能量差，宏观过程自然停止。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2306,7 +2634,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "熵增即第二定律",
+     "qa": [
+      {
+       "q": "为什么说熵增加原理是第二定律的定量表述？",
+       "a": "「不能自发」的种种说法最终都落在同一个量——熵上，自发方向即熵增方向。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -2326,6 +2662,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "一潭死水的本质",
+     "qa": [
+      {
+       "q": "孤立系统最终变成一潭死水是因为能量耗尽了吗？",
+       "a": "不是。能量守恒并未减少，而是熵到了最大、能量差消失，无法再做功。"
+      }
      ]
     }
    ],
@@ -2405,7 +2749,16 @@
      "tex": "\\Delta S_1=mc\\ln\\frac{T_2}{T_1}=1.01\\times10^{3}\\ \\mathrm{J/K}",
      "size": 24,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "水的熵变公式",
+     "qa": [
+      {
+       "q": "为什么水的熵变用 ln 而不是直接 ΔQ/T？",
+       "a": "水温从 $T_1$ 连续升到 $T_2$，各温度下 $\\mathrm{d}S=mc\\,\\mathrm{d}T/T$，积分得 $mc\\ln(T_2/T_1)$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2437,7 +2790,15 @@
      "tex": "\\Delta S_2=-\\frac{mc(T_2-T_1)}{T_2}=-8.96\\times10^{2}\\ \\mathrm{J/K}",
      "size": 22,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "热源熵变计算",
+     "qa": [
+      {
+       "q": "热源熵变为什么用 373 K 而不是它的温度变化？",
+       "a": "热源温度恒为 $T_2$，放热 $mc(T_2-T_1)$，故 $\\Delta S_2=-Q/T_2$，为负值。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -2469,7 +2830,16 @@
      "tex": "\\Delta S=\\Delta S_1+\\Delta S_2=1.1\\times10^{2}\\ \\mathrm{J/K}",
      "size": 24,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "总熵变判据",
+     "qa": [
+      {
+       "q": "总熵变为什么大于零？",
+       "a": "$\\Delta S_1+\\Delta S_2\\approx1.1\\times10^2\\ \\mathrm{J/K}>0$，孤立系统熵增，过程不可逆。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2509,6 +2879,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "有限温差传热不可逆",
+     "qa": [
+      {
+       "q": "为什么有限温差传热一定产生熵？",
+       "a": "低温处同量热量引起的熵增大于高温处的熵减，净熵变恒为正，过程不可逆。"
+      }
      ]
     },
     {
@@ -2919,7 +3297,20 @@
      "tex": "\\Delta S=\\nu C_{V,\\mathrm{m}}\\ln\\frac{T_2}{T_1}+\\nu R\\ln\\frac{V_2}{V_1}",
      "size": 22,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "一般熵变公式",
+     "qa": [
+      {
+       "q": "这个一般式怎么来的？",
+       "a": "由 $dS=\\nu C_{V,m}\\frac{dT}{T}+\\nu R\\frac{dV}{V}$ 积分得到，两项分别对应温度和体积变化。"
+      },
+      {
+       "q": "公式里两项各代表什么？",
+       "a": "第一项是温度变化对熵的贡献，第二项是体积变化对熵的贡献。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2971,7 +3362,15 @@
      "tex": "\\Delta S=\\nu R\\ln\\frac{V_2}{V_1}",
      "size": 24,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "等温熵变",
+     "qa": [
+      {
+       "q": "等温时为什么只剩体积项？",
+       "a": "等温时 $T_2=T_1$，$\\ln(T_2/T_1)=0$，温度项为零，只剩 $\\nu R\\ln(V_2/V_1)$。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -3003,7 +3402,15 @@
      "tex": "\\Delta S=\\nu C_{V,\\mathrm{m}}\\ln\\frac{T_2}{T_1}",
      "size": 24,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "等容熵变",
+     "qa": [
+      {
+       "q": "等容时熵变怎么算？",
+       "a": "体积不变，$\\ln(V_2/V_1)=0$，只剩 $\\nu C_{V,m}\\ln(T_2/T_1)$。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -3035,7 +3442,16 @@
      "tex": "\\Delta S=\\nu C_{p,\\mathrm{m}}\\ln\\frac{T_2}{T_1}",
      "size": 24,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "等压熵变",
+     "qa": [
+      {
+       "q": "等压时为什么用 $C_p$？",
+       "a": "等压过程用定压热容 $C_{p,m}$ 代替 $C_{V,m}$，得 $\\Delta S=\\nu C_{p,m}\\ln(T_2/T_1)$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "box",

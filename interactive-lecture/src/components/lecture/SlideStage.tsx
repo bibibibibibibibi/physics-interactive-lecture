@@ -323,6 +323,22 @@ export default function SlideStage({
     return s
   }, [curPage, t])
 
+  /** 换页交叉淡化：旧页的静态元素（文字/公式/盒子/图/表）以快照形式保留一层
+      淡出（约 0.45s），新页整层淡入，替代原来的瞬间切换。
+      video/html 媒体元素不进快照——重挂载会重启媒体/模拟，直接随旧页消失。 */
+  const [leaving, setLeaving] = useState<{ page: WebPage; seq: number } | null>(null)
+  const prevPageRef = useRef<WebPage | null>(null)
+  const leaveSeq = useRef(0)
+  useEffect(() => {
+    const prev = prevPageRef.current
+    prevPageRef.current = curPage
+    if (!prev || !curPage || prev.id === curPage.id) return
+    const seq = ++leaveSeq.current
+    setLeaving({ page: prev, seq })
+    const id = setTimeout(() => setLeaving(l => (l?.seq === seq ? null : l)), 480)
+    return () => clearTimeout(id)
+  }, [curPage])
+
   /** html 元素的步进消息：步 reveal 时向 iframe postMessage({type})。
       已发集合按「页:元素:步」记账，换页清空；seek 回退到该步之前则销账，
       重放到该步会再发一次（模拟侧自行处理重复演示）。 */
@@ -474,6 +490,10 @@ export default function SlideStage({
       <style>{`
         @keyframes wl-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
         .wl-in{animation:wl-in .5s ease-out}
+        @keyframes wl-page-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+        .wl-page-in{animation:wl-page-in .45s ease-out}
+        @keyframes wl-page-out{from{opacity:1}to{opacity:0}}
+        .wl-page-out{animation:wl-page-out .45s ease-in forwards}
         @keyframes ul-in{from{transform:scaleX(0);opacity:0}to{transform:scaleX(1);opacity:1}}
         .anim-ul{animation:ul-in .4s ease-out;transform-origin:left center}
         @keyframes laser-orbit{to{transform:rotate(360deg)}}
@@ -483,7 +503,7 @@ export default function SlideStage({
         onMouseMove={pokeFsBtn} onMouseEnter={pokeFsBtn} onTouchStart={pokeFsBtn}
         style={fs ? { width: fullscreenStageWidth } : undefined}>
         <div className={`relative w-full aspect-video overflow-hidden ${fs ? '' : 'rounded-xl shadow-2xl'}`}
-          style={{ background: th.background }}>
+          style={{ background: th.background, transition: 'background .6s ease' }}>
           <audio ref={mediaRef} src={`${COURSE_BASE}audio.mp3${weblec?.build_ts ? `?v=${weblec.build_ts}` : ''}`} preload="auto"
             onTimeUpdate={e => onTimeUpdate((e.target as HTMLAudioElement).currentTime)}
             onPlay={e => {
@@ -538,21 +558,36 @@ export default function SlideStage({
               }} />
             )}
 
-            {/* 页面元素：按步揭示 */}
-            {curPage?.elements.map((el, i) => (
-              el.step <= curStep
-                ? <div key={`${curPage.id}-${i}`} data-elidx={i} className="wl-in">
-                    <Element el={el} t={t} theme={th}
-                      videoClock={el.type === 'video' && el.timelineSync ? {
-                        time: Math.max(0, t - (curPage.stepTimes[String(el.step)] ?? curPage.t_start)), playing, rate,
-                        readTime: () => Math.max(0, (mediaRef.current?.currentTime ?? t)
-                          - (curPage.stepTimes[String(el.step)] ?? curPage.t_start)),
-                      } : undefined}
-                      iframeRef={el.type === 'html' ? (n => { n ? htmlRefs.current.set(i, n) : htmlRefs.current.delete(i) }) : undefined}
-                      onIframeLoad={el.type === 'html' && (el.msgs || el.timelineSync) ? () => flushHtmlMsgs(i, el) : undefined} />
-                  </div>
-                : null
-            ))}
+            {/* 旧页快照：换页时静态元素淡出（媒体元素除外），垫在新页下面 */}
+            {leaving && leaving.page.id !== curPage?.id && (
+              <div key={`leave-${leaving.seq}`} className="wl-page-out"
+                style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
+                {leaving.page.elements.map((el, i) =>
+                  el.type === 'video' || el.type === 'html' ? null : (
+                    <div key={i}>
+                      <Element el={el} t={leaving.page.duration} theme={th} />
+                    </div>
+                  ))}
+              </div>
+            )}
+
+            {/* 页面元素：按步揭示；整层随换页淡入 */}
+            <div key={curPage?.id ?? 0} className="wl-page-in" style={{ position: 'absolute', inset: 0 }}>
+              {curPage?.elements.map((el, i) => (
+                el.step <= curStep
+                  ? <div key={`${curPage.id}-${i}`} data-elidx={i} className="wl-in">
+                      <Element el={el} t={t} theme={th}
+                        videoClock={el.type === 'video' && el.timelineSync ? {
+                          time: Math.max(0, t - (curPage.stepTimes[String(el.step)] ?? curPage.t_start)), playing, rate,
+                          readTime: () => Math.max(0, (mediaRef.current?.currentTime ?? t)
+                            - (curPage.stepTimes[String(el.step)] ?? curPage.t_start)),
+                        } : undefined}
+                        iframeRef={el.type === 'html' ? (n => { n ? htmlRefs.current.set(i, n) : htmlRefs.current.delete(i) }) : undefined}
+                        onIframeLoad={el.type === 'html' && (el.msgs || el.timelineSync) ? () => flushHtmlMsgs(i, el) : undefined} />
+                    </div>
+                  : null
+              ))}
+            </div>
 
             {/* 热点：要点元素上的隐形热区，暂停时悬停显描边（播放中不打扰） */}
             {curPage?.bullets.map((b, bi) => {
@@ -569,7 +604,7 @@ export default function SlideStage({
                   }}
                   title={stripMath(b.text)}>
                   {!playing && (
-                    <span className="absolute inset-0 rounded ring-2 ring-transparent transition group-hover:ring-[#4cc9f0]/70 group-hover:bg-[#4cc9f0]/10" />
+                    <span className="absolute inset-0 rounded ring-2 ring-transparent transition group-hover:ring-[#47675b]/60 group-hover:bg-[#47675b]/10" />
                   )}
                 </button>
               )
@@ -654,43 +689,41 @@ export default function SlideStage({
         </div>
       )}
 
-      {/* 播放控制条 */}
-      <div className={`mt-3 flex items-center gap-3 ${fs ? 'w-full px-6' : ''}`}
-        style={fs ? { maxWidth: fullscreenStageWidth } : undefined}>
-        <button onClick={() => goPage(-1)} className="rounded bg-[#123a63] px-2.5 py-1.5 text-sm text-slate-200 hover:bg-[#1a4a7a]" title="上一页（←）">⏮</button>
+      {/* 播放控制条：与幻灯片同款浮起卡片（背景也随课程主题，非全屏时） */}
+      <div className={`mt-3 flex items-center gap-3 ${fs ? 'w-full px-6' : 'rounded-xl px-4 py-2.5 shadow-2xl'}`}
+        style={fs ? { maxWidth: fullscreenStageWidth } : { background: th.background, transition: 'background .6s ease' }}>
+        <button onClick={() => goPage(-1)} className="chrome-btn px-2.5 py-1.5 text-sm" title="上一页（←）">⏮</button>
         <button onClick={togglePlay}
-          className="rounded bg-[#ffb703] px-3.5 py-1.5 text-sm font-bold text-[#0b1f38] hover:brightness-110"
+          className="chrome-btn chrome-btn-gold px-3.5 py-1.5 text-sm"
           title="播放/暂停（空格）">
           {playing ? '⏸' : '▶'}
         </button>
-        <button onClick={() => goPage(1)} className="rounded bg-[#123a63] px-2.5 py-1.5 text-sm text-slate-200 hover:bg-[#1a4a7a]" title="下一页（→）">⏭</button>
-        <div className="relative h-2.5 flex-1 cursor-pointer rounded-full bg-[#123a63]"
+        <button onClick={() => goPage(1)} className="chrome-btn px-2.5 py-1.5 text-sm" title="下一页（→）">⏭</button>
+        <div className="relative h-2.5 flex-1 cursor-pointer rounded-full bg-[#dfe3d5] ring-1 ring-[#d8dcd0]"
           onClick={e => {
             const r = (e.currentTarget as HTMLElement).getBoundingClientRect()
             const ratio = Math.min(1, Math.max(0, (e.clientX - r.left) / r.width))
             if (weblec) seekTo(ratio * weblec.duration, playing)
           }}>
-          <div className="absolute left-0 top-0 h-full rounded-full bg-[#ffb703]"
+          <div className="absolute left-0 top-0 h-full rounded-full bg-[#47675b]"
             style={{ width: `${weblec ? (t / weblec.duration) * 100 : 0}%` }} />
           {/* 分段刻度：大段起点（= 该段第一页 t_start）处画竖刻线 */}
           {weblec?.sections?.map(s => {
             const pg = pages.find(p => p.id === s.page)
             if (!pg || !weblec.duration) return null
             return (
-              <div key={s.page} className="absolute top-[-2px] h-[14px] w-[2px] rounded bg-white/70"
+              <div key={s.page} className="absolute top-[-2px] h-[14px] w-[2px] rounded bg-[#47675b]/60"
                 style={{ left: `${(pg.t_start / weblec.duration) * 100}%` }}
                 title={`${s.title}`} />
             )
           })}
         </div>
-        <span className="shrink-0 text-xs text-slate-400 tabular-nums">
+        <span className="shrink-0 text-xs text-[#8a948c] tabular-nums">
           {fmt(t)} / {fmt(weblec?.duration ?? 0)}
         </span>
         {curPage && (
           <button onClick={onToggleNav}
-            className={`shrink-0 rounded px-2 py-1 text-xs transition ${
-              navOpen ? 'bg-[#ffb703] text-[#0b1f38] font-semibold' : 'bg-[#123a63] text-slate-300 hover:bg-[#1a4a7a]'
-            }`}
+            className={`chrome-btn shrink-0 px-2 py-1 text-xs ${navOpen ? 'chrome-btn-active font-semibold' : ''}`}
             title={navOpen ? '收起章节导航' : '展开章节导航'}>
             {curSection
               ? `${String(curSectionIdx + 1).padStart(2, '0')} · ${curSection.title}`

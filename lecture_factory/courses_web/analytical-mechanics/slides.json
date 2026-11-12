@@ -151,6 +151,14 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "单摆约束条件",
+     "qa": [
+      {
+       "q": "单摆的位置坐标满足什么条件？",
+       "a": "绳长不变，位置坐标须满足长度约束；θ从竖直向下量起，向右为正。"
+      }
      ]
     },
     {
@@ -163,7 +171,16 @@
      "tex": "\\underbrace{\\mathbf F}_{\\text{重力}}+\\underbrace{\\mathbf R}_{\\text{张力}}=m\\ddot{\\mathbf r}",
      "size": 36,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "牛顿方程含未知约束力",
+     "qa": [
+      {
+       "q": "为什么张力R会成为未知量？",
+       "a": "张力大小未知，且与位置坐标约束同时进入方程，故牛顿方程中R无法直接确定。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -175,7 +192,20 @@
      "tex": "ml\\ddot\\theta=-mg\\sin\\theta",
      "size": 43,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "切向投影消去张力",
+     "qa": [
+      {
+       "q": "为什么切向投影能消去张力？",
+       "a": "张力沿绳方向，无切向分量，故切向方程只含摆角θ，质量约去后得 $l\\ddot\\theta=-g\\sin\\theta$。"
+      },
+      {
+       "q": "这个方程说明什么？",
+       "a": "允许运动只有一个独立方向，约束力可在合适投影中消去。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "img",
@@ -297,7 +327,20 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "独立广义坐标选择",
+     "qa": [
+      {
+       "q": "为什么要选独立的广义坐标？",
+       "a": "约束使坐标不独立，选独立广义坐标可消去约束，减少方程数目。"
+      },
+      {
+       "q": "选择广义坐标的依据是什么？",
+       "a": "依据约束条件与自由度数目，使所选坐标彼此独立且能描述系统位形。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -318,7 +361,20 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "虚位移与达朗贝尔原理",
+     "qa": [
+      {
+       "q": "虚位移为什么固定时间？",
+       "a": "虚位移是同一时刻的假想位移，$\\delta t=0$，只比较约束允许的位形变化。"
+      },
+      {
+       "q": "理想约束为什么能消去约束力？",
+       "a": "理想约束力在虚位移上做功之和为零，故虚功关系中约束力项消失。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -339,6 +395,18 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "拉格朗日方程与检验",
+     "qa": [
+      {
+       "q": "建立方程后如何检验结果？",
+       "a": "用另一种方法求解，或取简单极限（如质量比、小角近似）检查是否合理。"
+      },
+      {
+       "q": "消去张力是否意味着张力不存在？",
+       "a": "不是，张力仍存在，只是被约束条件消去，不出现在方程中。"
+      }
      ]
     }
    ]
@@ -431,6 +499,14 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "约束与独立坐标",
+     "qa": [
+      {
+       "q": "坐标个数等于自由度吗？",
+       "a": "不等。约束减少独立坐标数，需用约束选出局部独立的坐标。"
+      }
      ]
     },
     {
@@ -443,7 +519,20 @@
      "tex": "f_\\alpha(x,y,t)=0\\quad(\\alpha:\\text{约束编号})",
      "size": 43,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "约束的数学表示",
+     "qa": [
+      {
+       "q": "约束方程里的 α 是什么？",
+       "a": "α 只是约束的编号，不是变量；自变量是位置矢量与时间。"
+      },
+      {
+       "q": "为什么约束写成等于零？",
+       "a": "把限制移项成 $f_\\alpha(x,y,t)=0$，便于统一处理多个约束。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -455,7 +544,16 @@
      "tex": "x^2+y^2=l^2",
      "size": 43,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "单摆约束方程",
+     "qa": [
+      {
+       "q": "单摆为什么只需一个参数描述？",
+       "a": "约束 $x^2+y^2=l^2$ 使两点坐标不独立，沿圆周只需一个连续参数如摆角。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -476,6 +574,18 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "杆与绳的区别",
+     "qa": [
+      {
+       "q": "绳的约束能直接写成等式吗？",
+       "a": "不能。绳只能拉不能推，松弛时距离小于 $l$；只有确认绷紧才可取等号。"
+      },
+      {
+       "q": "解出结果后还要检查什么？",
+       "a": "要回查绳是否绷紧、接触是否保持等条件，它决定解在哪些阶段有效。"
+      }
      ]
     },
     {
@@ -576,6 +686,18 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "独立约束与重复约束",
+     "qa": [
+      {
+       "q": "同一约束写两遍会多减一次吗？",
+       "a": "不会，重复的约束不独立，不能再减少自由度。"
+      },
+      {
+       "q": "初始速度为零算约束吗？",
+       "a": "不算几何约束，不能从自由度中再减一。"
+      }
      ]
     },
     {
@@ -588,7 +710,20 @@
      "tex": "n=3N-k\\quad(\\operatorname{rank}D_{\\mathbf r}f=k)",
      "size": 44,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "自由度计数公式",
+     "qa": [
+      {
+       "q": "公式成立需要什么条件？",
+       "a": "约束需相互独立且正则，即 $\\operatorname{rank}D_{\\mathbf r}f=k$。"
+      },
+      {
+       "q": "为什么是 $3N-k$？",
+       "a": "三维中 $N$ 个质点有 $3N$ 个坐标，减去 $k$ 个独立约束即得局部自由度。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -609,7 +744,20 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "符号含义与计数公式",
+     "qa": [
+      {
+       "q": "N 和 n 有什么区别？",
+       "a": "大写 $N$ 是质点数，小写 $n$ 是局部自由度，二者不可混淆。"
+      },
+      {
+       "q": "k 指什么？",
+       "a": "$k$ 是相互独立且正则的完整等式约束数。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -630,6 +778,18 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "单摆自由度实例",
+     "qa": [
+      {
+       "q": "空间单摆为什么是 2 个自由度？",
+       "a": "3 个空间坐标减去 1 个定长约束，得 $3-1=2$。"
+      },
+      {
+       "q": "平面单摆为何只算 1？",
+       "a": "平面运动已作为模型条件，$2-1=1$，与空间计数一致。"
+      }
      ]
     }
    ]
@@ -742,7 +902,20 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "完整与非完整约束",
+     "qa": [
+      {
+       "q": "看到速度约束就一定是非完整约束吗？",
+       "a": "不一定。若速度约束能积分成位置与时间的等式，如 $\\dot x=a\\dot\\phi$ 积分为 $x-a\\phi=C$，仍属完整约束。"
+      },
+      {
+       "q": "完整约束的判据是什么？",
+       "a": "约束能写成只含位置坐标与时间的等式，即为完整约束；不能积分为这种位置关系的速度约束通常为非完整约束。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -763,7 +936,20 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "定常与非定常约束",
+     "qa": [
+      {
+       "q": "定常约束和完整约束是一回事吗？",
+       "a": "不是。定常指约束不显含时间，完整指可化为位置等式，两者回答不同问题，互不蕴含。"
+      },
+      {
+       "q": "支点移动的单摆属于哪类约束？",
+       "a": "长度关系仍是完整约束，但支点按给定函数移动使约束显含时间，故为非定常约束。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -775,7 +961,15 @@
      "tex": "\\dot x=a\\dot\\phi\\Rightarrow x-a\\phi=C\\quad(a:\\text{半径},\\ \\phi:\\text{转角},\\ C:\\text{常数})",
      "size": 44,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "无滑滚动积分式",
+     "qa": [
+      {
+       "q": "直线无滑滚动的速度关系为何能当完整约束？",
+       "a": "$\\dot x=a\\dot\\phi$ 可积分为 $x-a\\phi=C$，是位置等式，故按完整约束处理。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -796,6 +990,14 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "本课约束适用范围",
+     "qa": [
+      {
+       "q": "独立广义坐标法能直接用于非完整约束吗？",
+       "a": "不能。它适用于正则完整等式约束及已积分为位置关系的约束，一般非完整约束需另行处理变分与乘子。"
+      }
      ]
     }
    ]
@@ -887,6 +1089,14 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "局部独立坐标",
+     "qa": [
+      {
+       "q": "广义坐标要覆盖所有构型吗？",
+       "a": "不要求，它往往是局部的坐标图；应选保持独立、避免奇异且使动能简单的参数。"
+      }
      ]
     },
     {
@@ -899,7 +1109,20 @@
      "tex": "q=\\theta,\\qquad x=l\\sin\\theta,\\quad y=-l\\cos\\theta",
      "size": 43,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "单摆坐标参数化",
+     "qa": [
+      {
+       "q": "为什么单摆选摆角 θ 作广义坐标？",
+       "a": "θ 能独立确定构型，且 $x=l\\sin\\theta,\\ y=-l\\cos\\theta$ 自动满足长度约束。"
+      },
+      {
+       "q": "θ 增加时摆球往哪边动？",
+       "a": "沿圆周切向向右移动，与 $dx/d\\theta=l\\cos\\theta>0$ 的约定一致。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -920,6 +1143,14 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "角度作坐标",
+     "qa": [
+      {
+       "q": "广义坐标一定要是长度吗？",
+       "a": "不一定，可以是角度或其他合适参数；θ 以弧度进入微分与方程。"
+      }
      ]
     },
     {
@@ -953,7 +1184,20 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "坐标图的局部性",
+     "qa": [
+      {
+       "q": "能不能直接用横坐标 x 作广义坐标？",
+       "a": "只能在下半圆且避开水平位置的局部区域用，须限定分支并避开 $\\cos\\theta=0$。"
+      },
+      {
+       "q": "为什么 x 作坐标会出问题？",
+       "a": "同一 x 常对应上下两个位置，且最远点 $dx/d\\theta=l\\cos\\theta=0$，反解奇异。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "img",
@@ -1054,6 +1298,14 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "约束选独立坐标",
+     "qa": [
+      {
+       "q": "为什么要用约束选局部独立坐标？",
+       "a": "完整约束使位置函数自动满足约束，只需 n 个独立广义坐标即可描述系统。"
+      }
      ]
     },
     {
@@ -1066,7 +1318,20 @@
      "tex": "\\mathbf r_i=\\mathbf r_i(q_1,\\ldots,q_n,t),\\quad i=1,\\ldots,N",
      "size": 44,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "位置矢量函数",
+     "qa": [
+      {
+       "q": "位置矢量为什么显含时间 t？",
+       "a": "非定常约束下约束随时间变化，位置函数须保留 t；定常时可选取不显含 t 的形式。"
+      },
+      {
+       "q": "i 和 n 分别表示什么？",
+       "a": "$i=1,\\ldots,N$ 为质点编号，$q_1,\\ldots,q_n$ 为 n 个独立广义坐标。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -1099,6 +1364,14 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "点号与偏导区别",
+     "qa": [
+      {
+       "q": "坐标上方的点和 ∂ 有什么不同？",
+       "a": "点号是沿真实运动对时间求导；∂ 是固定其余自变量、只对该变量求偏导。"
+      }
      ]
     }
    ]
@@ -1335,6 +1608,14 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "虚位移比较方式",
+     "qa": [
+      {
+       "q": "虚位移与实际位移比较的本质区别是什么？",
+       "a": "虚位移比较同一时刻的不同构型，实际位移比较相邻两个时刻的构型。"
+      }
      ]
     },
     {
@@ -1359,7 +1640,20 @@
      "tex": "\\delta\\mathbf r_i=\\sum_j\\frac{\\partial\\mathbf r_i}{\\partial q_j}\\delta q_j\\quad(\\delta t=0)",
      "size": 44,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "虚位移定义式",
+     "qa": [
+      {
+       "q": "虚位移公式中为什么 $\\delta t=0$？",
+       "a": "虚位移是同一时刻约束允许的构型比较，时间固定，故只保留广义坐标变分项。"
+      },
+      {
+       "q": "定常约束下实际一阶位移是允许虚位移吗？",
+       "a": "是。约束不随时间移动时实际一阶位移满足 $\\delta t=0$ 的约束条件，但任意虚位移仍不等于该实际位移。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1380,7 +1674,20 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "显含时间约束",
+     "qa": [
+      {
+       "q": "显含时间约束下实际位移为何多出额外项？",
+       "a": "对位置函数取全微分，除广义坐标变化项外还有 $\\partial \\mathbf r/\\partial t\\,dt$ 项，即约束移动的贡献。"
+      },
+      {
+       "q": "非定常约束下虚位移与实际位移方向集合有何不同？",
+       "a": "虚位移固定时间，切于当前约束面；实际位移还跟随约束面移动，方向集合可能不同。"
+      }
+     ],
+     "important": true
     }
    ]
   },
@@ -1661,6 +1968,14 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "虚位移的含义",
+     "qa": [
+      {
+       "q": "虚位移是在什么条件下取的？",
+       "a": "固定时间，沿约束允许的方向比较相邻构型，即满足约束的无穷小位移 $\\delta\\mathbf r_i$。"
+      }
      ]
     },
     {
@@ -1673,7 +1988,16 @@
      "tex": "\\mathbf F_i:\\text{主动力},\\qquad\\mathbf R_i:\\text{约束力}",
      "size": 44,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "主动力与约束力",
+     "qa": [
+      {
+       "q": "主动力和约束力怎么区分？",
+       "a": "主动力 $\\mathbf F_i$ 是保留描述的力（重力、驱动力等）；约束力 $\\mathbf R_i$ 是维持约束的反力，划分依赖模型选择。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -1685,7 +2009,20 @@
      "tex": "\\sum_{i=1}^{N}\\mathbf R_i\\cdot\\delta\\mathbf r_i=0\\quad\\text{对任意允许 }\\delta\\mathbf r_i",
      "size": 44,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "理想约束定义",
+     "qa": [
+      {
+       "q": "理想约束的数学条件是什么？",
+       "a": "对任意允许虚位移，所有约束力总虚功为零：$\\sum_i \\mathbf R_i\\cdot\\delta\\mathbf r_i=0$。"
+      },
+      {
+       "q": "是否要求每个约束力虚功都为零？",
+       "a": "不要求。只要求总和为零，如刚杆两端内力虚功可各自非零但相互抵消。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1706,6 +2043,14 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "三个“为零”辨析",
+     "qa": [
+      {
+       "q": "总虚功为零是否意味着实际功总为零？",
+       "a": "不是。非定常理想约束可输入或取走机械能，消去的是总约束虚功而非实际功。"
+      }
      ]
     }
    ]
@@ -1809,7 +2154,15 @@
      "tex": "\\mathbf F_i+\\mathbf R_i=m_i\\ddot{\\mathbf r}_i",
      "size": 44,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "牛顿第二定律含约束力",
+     "qa": [
+      {
+       "q": "这里的 R_i 是什么力？",
+       "a": "$\\mathbf R_i$ 是第 i 个质点所受的约束反力，与主动力 $\\mathbf F_i$ 一起决定加速度。"
+      }
+     ]
     },
     {
      "type": "tex",
@@ -1821,7 +2174,15 @@
      "tex": "\\sum_i(\\mathbf F_i+\\mathbf R_i-m_i\\ddot{\\mathbf r}_i)\\cdot\\delta\\mathbf r_i=0",
      "size": 44,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "虚位移点乘求和",
+     "qa": [
+      {
+       "q": "为什么这个求和等于零？",
+       "a": "每个括号内正是牛顿方程左减右，本身为零，故对全部质点求和仍为零。"
+      }
+     ]
     },
     {
      "type": "tex",
@@ -1833,7 +2194,20 @@
      "tex": "\\boxed{\\sum_i(\\mathbf F_i-m_i\\ddot{\\mathbf r}_i)\\cdot\\delta\\mathbf r_i=0}",
      "size": 44,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "达朗贝尔原理",
+     "qa": [
+      {
+       "q": "惯性力是新的真实力吗？",
+       "a": "不是，$-m_i\\ddot{\\mathbf r}_i$ 只是牛顿方程的重排，并非新的真实相互作用。"
+      },
+      {
+       "q": "为什么不能直接令每个括号为零？",
+       "a": "虚位移受约束不独立，只能整体求和为零，否则会把约束力错误设为零。"
+      }
+     ],
+     "important": true
     }
    ]
   },
@@ -1925,6 +2299,14 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "化为广义量",
+     "qa": [
+      {
+       "q": "代入后要做什么？",
+       "a": "交换求和次序，按 $\\delta q_j$ 收集，得广义力与惯性项投影两部分系数。"
+      }
      ]
     },
     {
@@ -1937,7 +2319,16 @@
      "tex": "\\sum_i(\\mathbf F_i-m_i\\ddot{\\mathbf r}_i)\\cdot\\delta\\mathbf r_i=0",
      "size": 44,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "达朗贝尔虚功原理",
+     "qa": [
+      {
+       "q": "这个方程为什么等于零？",
+       "a": "达朗贝尔原理把惯性力并入受力，理想约束下主动力与惯性力在允许虚位移上做的总虚功为零。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -1949,7 +2340,20 @@
      "tex": "\\delta\\mathbf r_i=\\sum_j\\frac{\\partial\\mathbf r_i}{\\partial q_j}\\delta q_j",
      "size": 44,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "虚位移的广义坐标展开",
+     "qa": [
+      {
+       "q": "为什么偏导里没有对时间的项？",
+       "a": "虚位移定义中时间固定，$\\delta t=0$，故只有对 $q_j$ 的偏导项。"
+      },
+      {
+       "q": "偏导矢量表示什么？",
+       "a": "只改变 $q_j$ 时各质点移动的方向与比例，即约束允许的投影方向。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -2052,6 +2456,14 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "主动力与惯性项分离",
+     "qa": [
+      {
+       "q": "为什么要把主动力和惯性项分别化为广义量？",
+       "a": "虚功中两部分来源不同：主动力给出 $Q_j$，惯性项给出 $\\frac{d}{dt}\\frac{\\partial T}{\\partial\\dot q_j}-\\frac{\\partial T}{\\partial q_j}$，分别处理才能得拉格朗日方程。"
+      }
      ]
     },
     {
@@ -2064,7 +2476,16 @@
      "tex": "\\delta W=\\sum_i\\mathbf F_i\\cdot\\delta\\mathbf r_i=\\sum_j Q_j\\delta q_j",
      "size": 44,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "主动力虚功展开",
+     "qa": [
+      {
+       "q": "总虚功为什么能写成广义力乘坐标变分之和？",
+       "a": "把 $\\delta\\mathbf r_i=\\sum_j\\frac{\\partial\\mathbf r_i}{\\partial q_j}\\delta q_j$ 代入后交换求和，按 $\\delta q_j$ 归并即得。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -2076,7 +2497,20 @@
      "tex": "\\boxed{Q_j=\\sum_{i=1}^{N}\\mathbf F_i\\cdot\\frac{\\partial\\mathbf r_i}{\\partial q_j}}",
      "size": 44,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "广义力定义式",
+     "qa": [
+      {
+       "q": "广义力 Q_j 的定义是什么？",
+       "a": "$Q_j=\\sum_i\\mathbf F_i\\cdot\\frac{\\partial\\mathbf r_i}{\\partial q_j}$，即全部主动力与位置偏导矢量的内积之和。"
+      },
+      {
+       "q": "Q_j 就是某个力的大小吗？",
+       "a": "不是。它是与坐标 q_j 共轭的广义力，量纲随坐标而变，不一定是牛顿。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2097,6 +2531,14 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "广义力量纲",
+     "qa": [
+      {
+       "q": "广义力的量纲怎么判断？",
+       "a": "看对应坐标：q 为长度时 Q 是力，q 为角度时 Q 是力矩量；$Q_j\\delta q_j$ 恒为能量量纲。"
+      }
      ]
     }
    ]
@@ -2188,6 +2630,14 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "主动力化广义量",
+     "qa": [
+      {
+       "q": "张力和驱动力矩怎么处理？",
+       "a": "张力垂直于 $\\partial\\mathbf r/\\partial\\theta$，不进广义力；沿正摆角方向的驱动力矩直接加到 $Q_\\theta$ 上。"
+      }
      ]
     },
     {
@@ -2200,7 +2650,15 @@
      "tex": "\\frac{\\partial\\mathbf r}{\\partial\\theta}=(l\\cos\\theta,\\ l\\sin\\theta)",
      "size": 36,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "位置对摆角偏导",
+     "qa": [
+      {
+       "q": "为什么偏导矢量的两个分量都是正的？",
+       "a": "摆角从竖直向下量起，$\\theta$ 增大时摆球向右上方移动，故横、纵分量分别为 $l\\cos\\theta$、$l\\sin\\theta$。"
+      }
+     ]
     },
     {
      "type": "tex",
@@ -2212,7 +2670,20 @@
      "tex": "\\mathbf F_g=(0,-mg)\\quad\\Rightarrow\\quad Q_\\theta=-mgl\\sin\\theta",
      "size": 36,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "单摆广义力公式",
+     "qa": [
+      {
+       "q": "为什么 $Q_\\theta$ 里多出一个 $l$？",
+       "a": "广义力是力与 $\\partial\\mathbf r/\\partial\\theta$ 的点乘，后者含长度因子 $l$，故 $Q_\\theta=-mgl\\sin\\theta$。"
+      },
+      {
+       "q": "负号代表什么？",
+       "a": "表示在正摆角处重力使摆角减小，起回复作用，正是重力对支点的力矩。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2233,7 +2704,16 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "负号与力臂含义",
+     "qa": [
+      {
+       "q": "角度无量纲，广义力单位是什么？",
+       "a": "用弧度时 $Q_\\theta$ 单位为牛顿米，即力矩；微分中的角度必须以弧度计。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "img",
@@ -2610,6 +3090,14 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "左侧推导思路",
+     "qa": [
+      {
+       "q": "左侧是怎么算的？",
+       "a": "沿真实运动对 $\\partial\\mathbf r_i/\\partial q_j$ 求时间导数，用链式法则得混合偏导乘 $\\dot q_\\alpha$ 求和，再加对时间的混合偏导。"
+      }
      ]
     },
     {
@@ -2643,6 +3131,14 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "右侧推导思路",
+     "qa": [
+      {
+       "q": "对速度求坐标偏导时固定什么？",
+       "a": "固定所有广义速度和时间，导数只作用在位置的偏导系数上。"
+      }
      ]
     },
     {
@@ -2676,6 +3172,14 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "光滑性交换次序",
+     "qa": [
+      {
+       "q": "为什么两种计算逐项相同？",
+       "a": "位置函数足够光滑时混合二阶偏导可交换次序，故两边逐项相等。"
+      }
      ]
     },
     {
@@ -2688,7 +3192,20 @@
      "tex": "\\boxed{\\frac d{dt}\\frac{\\partial\\mathbf r_i}{\\partial q_j}=\\frac{\\partial\\mathbf v_i}{\\partial q_j}}",
      "size": 44,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "核心恒等式",
+     "qa": [
+      {
+       "q": "这个等式成立需要什么条件？",
+       "a": "依赖速度链式法则、求偏导时固定广义速度，以及位置函数足够光滑使混合偏导可交换。"
+      },
+      {
+       "q": "它要求定常约束吗？",
+       "a": "不要求。若位置显含时间，最后那项在两边都出现，等式仍成立。"
+      }
+     ],
+     "important": true
     }
    ]
   },
@@ -2779,6 +3296,14 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "广义量化的达朗贝尔关系",
+     "qa": [
+      {
+       "q": "本页最终得到什么关系？",
+       "a": "$\\frac{d}{dt}\\frac{\\partial T}{\\partial\\dot q_j}=\\frac{\\partial T}{\\partial q_j}+$惯性投影，移项即得所需之差。"
+      }
      ]
     },
     {
@@ -2833,6 +3358,14 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "乘积求导两项含义",
+     "qa": [
+      {
+       "q": "乘积求导的两部分分别对应什么？",
+       "a": "第一部分对速度求导得质量乘加速度与位置偏导的内积（惯性投影）；第二部分保留速度对位置偏导求时间导数。"
+      }
      ]
     },
     {
@@ -2866,7 +3399,16 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "第二项识别为动能偏导",
+     "qa": [
+      {
+       "q": "第二项如何识别为 $\\partial T/\\partial q_j$？",
+       "a": "用第二恒等式改写为 $m\\dot q\\cdot\\partial\\dot q/\\partial q_j$，对动能求坐标偏导恰好得到它，因质量常量、$\\dot q$ 与 $t$ 固定。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -2899,7 +3441,20 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "乘积法则第二项",
+     "qa": [
+      {
+       "q": "为什么乘积求导的第二项不能省略？",
+       "a": "第二项正是 $\\partial T/\\partial q_j$，一般曲线坐标下不为零，省略会误以为惯性投影等于 $\\frac{d}{dt}\\frac{\\partial T}{\\partial\\dot q_j}$。"
+      },
+      {
+       "q": "什么情况下第二项可以忽略？",
+       "a": "仅在特殊坐标中 $\\partial T/\\partial q_j=0$ 时才可能为零，一般曲线坐标下必须保留。"
+      }
+     ],
+     "important": true
     }
    ]
   },
@@ -2990,6 +3545,14 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "主动力与惯性项广义化",
+     "qa": [
+      {
+       "q": "为什么要分别把主动力和惯性项化成广义量？",
+       "a": "主动力投影得广义力 $Q_j$，惯性项投影得动能导数组合，两边同用广义坐标 $q_j$ 表述才能建立拉格朗日方程。"
+      }
      ]
     },
     {
@@ -3011,6 +3574,14 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "移项得完整表达",
+     "qa": [
+      {
+       "q": "移项后等式两边分别是什么？",
+       "a": "左边是质量乘加速度与位置偏导的内积之和，右边是 $\\frac{d}{dt}\\frac{\\partial T}{\\partial\\dot q_j}-\\frac{\\partial T}{\\partial q_j}$。"
+      }
      ]
     },
     {
@@ -3044,7 +3615,20 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "单摆核对",
+     "qa": [
+      {
+       "q": "单摆核对具体检查了什么？",
+       "a": "$T=\\frac12 ml^2\\dot\\theta^2$，$\\partial T/\\partial\\theta=0$，$\\frac{d}{dt}(ml^2\\dot\\theta)=ml^2\\ddot\\theta$，与重力广义力矩相等得单摆方程。"
+      },
+      {
+       "q": "为什么单摆核对不能代替一般证明？",
+       "a": "它只验证了差号与长度幂次，未覆盖常质量、惯性系、光滑参数化等一般证明所用条件。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -3077,7 +3661,20 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "惯性项动能恒等式",
+     "qa": [
+      {
+       "q": "这个恒等式到底把什么集中到了动能里？",
+       "a": "把各质点质量乘加速度与位置偏导的内积之和，化为 $\\frac{d}{dt}\\frac{\\partial T}{\\partial \\dot q_j}-\\frac{\\partial T}{\\partial q_j}$。"
+      },
+      {
+       "q": "为什么能用单个标量 $T$ 代替大量加速度投影？",
+       "a": "因为位置参数化光滑，各质点的 $\\partial \\mathbf r_i/\\partial q_j$ 与 $\\dot q_j$ 关系统一，求和后正好凑成 $T$ 的偏导组合。"
+      }
+     ],
+     "important": true
     }
    ]
   },
@@ -3129,7 +3726,20 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "拉格朗日方程结论",
+     "qa": [
+      {
+       "q": "最终得到的方程是什么？",
+       "a": "$\\frac{d}{dt}\\frac{\\partial T}{\\partial \\dot q_j}-\\frac{\\partial T}{\\partial q_j}=Q_j$，共 $n$ 个方程。"
+      },
+      {
+       "q": "方程数为什么等于自由度数？",
+       "a": "约束反力由理想虚功消去，坐标约束由独立参数化消去，剩下 $n$ 个独立坐标。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "box",
@@ -3168,6 +3778,14 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "广义力与惯性项",
+     "qa": [
+      {
+       "q": "主动力和惯性项如何化为广义量？",
+       "a": "用广义力定义和动能恒等式，把虚功中的主动力与惯性项分别写成广义坐标形式。"
+      }
      ]
     },
     {
@@ -3201,7 +3819,20 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "独立变分推方程",
+     "qa": [
+      {
+       "q": "为什么可以把其他坐标变分设为零？",
+       "a": "完整约束已由位置函数满足，广义坐标局部独立，故可单独变分一个坐标。"
+      },
+      {
+       "q": "为什么系数必须为零？",
+       "a": "等式对任意大小和正负的允许变分成立，故每个独立变分前的系数只能为零。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -3317,7 +3948,20 @@
      "tex": "Q_j=-\\frac{\\partial V(q,t)}{\\partial q_j}+Q_j^{\\rm nc}",
      "size": 44,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "广义力分解",
+     "qa": [
+      {
+       "q": "非保守广义力为什么要单独保留？",
+       "a": "阻尼力矩等与速度有关，不能写成位置势能的偏导，只能作为 $Q_j^{\\rm nc}$ 留在方程右边。"
+      },
+      {
+       "q": "保守部分广义力怎么表示？",
+       "a": "若势能 $V(q,t)$ 不含广义速度，则保守广义力为 $-\\partial V/\\partial q_j$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -3329,7 +3973,20 @@
      "tex": "\\mathcal L=T-V,\\qquad\\frac{\\partial V}{\\partial\\dot q_j}=0",
      "size": 44,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "拉格朗日函数定义",
+     "qa": [
+      {
+       "q": "拉格朗日函数怎么定义？",
+       "a": "$\\mathcal L=T-V$，其中 $V$ 不含广义速度，故 $\\partial V/\\partial\\dot q_j=0$。"
+      },
+      {
+       "q": "为什么 $\\partial\\mathcal L/\\partial\\dot q_j$ 只含动能？",
+       "a": "因为势能不依赖广义速度，$\\partial V/\\partial\\dot q_j=0$，所以偏导等于动能的偏导。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -3455,7 +4112,20 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "方程成立条件",
+     "qa": [
+      {
+       "q": "拉格朗日方程成立需要哪些前提？",
+       "a": "惯性参考系、常质量质点或刚体、独立完整且光滑的广义坐标、理想约束。"
+      },
+      {
+       "q": "方程成立要求约束定常吗？",
+       "a": "不要求。方程成立本身与约束是否定常无关，定常只是能量守恒的额外条件。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -3476,7 +4146,16 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "拉格朗日函数取法",
+     "qa": [
+      {
+       "q": "为什么取 $L=T-V$ 时要求 $V$ 不含速度？",
+       "a": "普通势能只依赖位置，若 $V$ 含广义速度则需另行处理，非保守主动力留在 $Q^{nc}$ 中。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -3497,6 +4176,18 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "机械能守恒条件",
+     "qa": [
+      {
+       "q": "什么时候 $T+V$ 守恒？",
+       "a": "定常约束、无外部显式时间驱动、只有保守主动力做功时，$T+V$ 守恒。"
+      },
+      {
+       "q": "理想约束就能保证能量不变吗？",
+       "a": "不能。支点被外界按规律移动时，理想约束反力也可能输入能量。"
+      }
      ]
     }
    ]
@@ -3588,6 +4279,14 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "建模求解流程",
+     "qa": [
+      {
+       "q": "这类题的一般解题步骤是什么？",
+       "a": "先找约束定坐标，再写动能与势能，列方程求解，最后检验结果。"
+      }
      ]
     },
     {
@@ -3609,6 +4308,18 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "系统与惯性系设定",
+     "qa": [
+      {
+       "q": "为什么强调地面是惯性系？",
+       "a": "牛顿定律只在惯性系成立，取地面系才能直接对两物块和滑轮列方程。"
+      },
+      {
+       "q": "滑轮轴固定、轴承无阻力意味着什么？",
+       "a": "滑轮只绕固定轴转动，无摩擦阻力矩，转动方程中不必加阻力项。"
+      }
      ]
     },
     {
@@ -3630,7 +4341,20 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "理想绳与无滑条件",
+     "qa": [
+      {
+       "q": "为什么绳不可伸长且不打滑很关键？",
+       "a": "它把两物块位移与滑轮转角联系起来，使系统只剩一个独立坐标。"
+      },
+      {
+       "q": "绳轻、绷紧的作用是什么？",
+       "a": "绳质量可忽略且各处张力大小相同，便于对两物块分别列牛顿方程。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -3642,7 +4366,20 @@
      "tex": "I_p=\\frac12MR^2,\\qquad q=x\\ (m_2\\text{向下为正})",
      "size": 43,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "滑轮惯量与广义坐标",
+     "qa": [
+      {
+       "q": "为什么不能直接用 $I_p=\\frac12MR^2$？",
+       "a": "该式只适用于均质圆盘；薄环等质量分布不同，必须换用相应转动惯量。"
+      },
+      {
+       "q": "为什么选 $q=x$ 且 $m_2$ 向下为正？",
+       "a": "单坐标即可描述全系统；方向固定后势能符号与张力核对都依赖此约定。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "img",
@@ -3754,7 +4491,20 @@
      "tex": "\\begin{aligned}y_1&=y_{10}+x,\\quad y_2=y_{20}-x\\\\ \\phi&=\\phi_0+\\frac{x}{R}\\end{aligned}",
      "size": 36,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "位置关系与独立坐标",
+     "qa": [
+      {
+       "q": "为什么两个物块的位置只用一个坐标x就能描述？",
+       "a": "绳长不变使两高度之和为常量，故$y_1=y_{10}+x$、$y_2=y_{20}-x$，只需一个独立坐标$x$。"
+      },
+      {
+       "q": "参考值$y_{10}$、$y_{20}$、$\\phi_0$一定要取运动初值吗？",
+       "a": "不必，它们对应$x=0$的构型，可任选，不要求运动初值为零。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -3766,7 +4516,20 @@
      "tex": "\\dot y_1=\\dot x,\\quad\\dot y_2=-\\dot x,\\quad\\dot\\phi=\\frac{\\dot x}{R}",
      "size": 36,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "速度与角速度关系",
+     "qa": [
+      {
+       "q": "右物块速度是负的，动能要写成负的吗？",
+       "a": "不能，动能用速度平方，$\\dot y_2^2=\\dot x^2$，两物块速率相同。"
+      },
+      {
+       "q": "滑轮角速度与x的关系是什么？",
+       "a": "对$\\phi=\\phi_0+x/R$求导得$\\dot\\phi=\\dot x/R$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -3778,7 +4541,19 @@
      "tex": "\\begin{aligned}\\delta W_{\\rm rope}={}&(T_1-T_2)\\delta x\\\\&+(T_2-T_1)R\\delta\\phi=0\\end{aligned}",
      "size": 36,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "约束力虚功相消",
+     "qa": [
+      {
+       "q": "为什么张力虚功总和为零？",
+       "a": "物块项$(T_1-T_2)\\delta x$与滑轮项$(T_2-T_1)R\\delta\\phi$由$\\delta\\phi=\\delta x/R$相消。"
+      },
+      {
+       "q": "需要先假设两侧张力相等吗？",
+       "a": "不需要，有质量滑轮需净力矩，$T_1\\neq T_2$，差异可在求出加速度后恢复。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -3932,7 +4707,20 @@
      "tex": "T=\\frac12m_1\\dot x^2+\\frac12m_2\\dot x^2+\\frac12 I_p\\left(\\frac{\\dot x}{R}\\right)^2",
      "size": 44,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "总动能三项构成",
+     "qa": [
+      {
+       "q": "为什么动能有三项？",
+       "a": "左、右物块各有平动动能 $\\frac12 m\\dot x^2$，滑轮绕固定轴转动贡献 $\\frac12 I_p(\\dot x/R)^2$。"
+      },
+      {
+       "q": "滑轮为什么没有平动动能？",
+       "a": "滑轮轴固定不动，质心无平动速度，故只有转动动能。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -3965,7 +4753,20 @@
      "tex": "T=\\frac12\\left(m_1+m_2+\\frac{I_p}{R^2}\\right)\\dot x^2",
      "size": 44,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "等效质量合并",
+     "qa": [
+      {
+       "q": "$I_p/R^2$ 是什么量？",
+       "a": "量纲为质量，表示该坐标下滑轮转动带来的等效惯性，与两物块质量相加。"
+      },
+      {
+       "q": "能再加 $\\frac12 m_p\\dot x^2$ 吗？",
+       "a": "不能，那会把滑轮惯性重复计算，轴不动无平动动能。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -3998,7 +4799,19 @@
      "tex": "V=(m_1-m_2)gx+\\mathrm{const},\\qquad Q_x^{\\rm nc}=0",
      "size": 44,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "重力势能与驱动方向",
+     "qa": [
+      {
+       "q": "势能斜率负说明什么？",
+       "a": "$V=(m_1-m_2)gx$，右侧更重时 $x$ 增大势能下降，负斜率对应右侧向下驱动。"
+      },
+      {
+       "q": "为何可直接用 $L=T-V$？",
+       "a": "系统无非保守广义力，$Q_x^{\\rm nc}=0$，故拉格朗日函数取 $T-V$。"
+      }
+     ]
     }
    ]
   },
@@ -4089,6 +4902,14 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "解题流程",
+     "qa": [
+      {
+       "q": "这类题的一般步骤是什么？",
+       "a": "先定约束与坐标，写动能和势能得 $\\mathcal L$，再代入欧拉-拉格朗日方程，最后检验符号与极限。"
+      }
      ]
     },
     {
@@ -4101,7 +4922,20 @@
      "tex": "\\mathcal L=\\frac12\\left(m_1+m_2+\\frac{I_p}{R^2}\\right)\\dot x^2-(m_1-m_2)gx",
      "size": 44,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "拉格朗日函数",
+     "qa": [
+      {
+       "q": "有效惯性项为什么含 $I_p/R^2$？",
+       "a": "滑轮转动惯量折算到平动坐标上，等效附加质量为 $I_p/R^2$，与两物块质量相加。"
+      },
+      {
+       "q": "势能项为什么是 $-(m_1-m_2)gx$？",
+       "a": "取右向下为正，位移 $x$ 使左块上升、右块下降，势能变化为 $-(m_1-m_2)gx$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -4228,7 +5062,20 @@
      "tex": "\\dot x=v_0+at,\\qquad x=x_0+v_0t+\\frac12at^2",
      "size": 44,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "常加速度运动解",
+     "qa": [
+      {
+       "q": "这个公式和普通的匀加速公式有什么区别？",
+       "a": "形式相同，但 $a$ 是由约束、动能与势能方程解出的常加速度，是完整运动解而非单一加速度公式。"
+      },
+      {
+       "q": "从静止释放时怎么用？",
+       "a": "取 $v_0=0$，$x=x_0+\\frac12at^2$，$v=at$，代入本页解出的 $a$ 即可。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -4249,6 +5096,18 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "简单极限检验",
+     "qa": [
+      {
+       "q": "为什么 $m_1=m_2$ 时加速度为零？",
+       "a": "两侧重力相等，净驱动力为零，故 $a=0$；但若有初速度，理想无阻力下仍匀速运动。"
+      },
+      {
+       "q": "滑轮惯量增大为什么加速度变小？",
+       "a": "驱动力不变而总惯性 $m_1+m_2+I_p/R^2$ 增大，故 $|a|$ 减小；$I_p\\to0$ 恢复轻滑轮结果。"
+      }
      ]
     },
     {
@@ -4261,7 +5120,20 @@
      "tex": "\\frac d{dt}(T+V)=\\dot x\\left[\\left(m_1+m_2+\\frac{I_p}{R^2}\\right)a+(m_1-m_2)g\\right]=0",
      "size": 44,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "能量守恒检验",
+     "qa": [
+      {
+       "q": "为什么动能变化率加势能变化率等于零？",
+       "a": "代入运动方程后括号内为零，两项相消，说明解满足能量守恒并核对了符号与转动项。"
+      },
+      {
+       "q": "括号里的 $I_p/R^2$ 是什么？",
+       "a": "是滑轮转动惯量折算到绳上的等效质量，与 $m_1+m_2$ 一起构成总有效惯性。"
+      }
+     ],
+     "important": true
     }
    ]
   },
@@ -4364,7 +5236,20 @@
      "tex": "\\begin{aligned}T_1&=m_1(g+a)\\\\T_2&=m_2(g-a)\\end{aligned}",
      "size": 43,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "两侧张力表达式",
+     "qa": [
+      {
+       "q": "为什么左张力是 m₁(g+a)，右张力是 m₂(g−a)？",
+       "a": "由牛顿方程：左物块 T₁−m₁g=m₁a，右物块 m₂g−T₂=m₂a，解出即得。"
+      },
+      {
+       "q": "两侧张力为什么不同？",
+       "a": "因滑轮有惯量且 a≠0，需净力矩驱动，故 T₂≠T₁。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -4376,7 +5261,20 @@
      "tex": "(T_2-T_1)R=I_p\\frac aR",
      "size": 43,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "滑轮转动方程",
+     "qa": [
+      {
+       "q": "净力矩为什么是 (T₂−T₁)R？",
+       "a": "两张力对轴产生相反力矩，净顺时针力矩为张力差乘半径，等于 $I_p\\frac{a}{R}$。"
+      },
+      {
+       "q": "角加速度与 a 的关系？",
+       "a": "无滑条件下 $\\alpha=a/R$，滑轮顺时针角加速度即 a 除以半径。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -4397,6 +5295,18 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "张力为正与无滑假设",
+     "qa": [
+      {
+       "q": "张力为正说明什么？",
+       "a": "说明绳处于绷紧状态，符合绳能拉不能推的要求，是必要条件。"
+      },
+      {
+       "q": "能由此推出绳轮一定不打滑吗？",
+       "a": "不能。无滑是已声明的模型假设，需足够摩擦维持，不能从加速度公式反推。"
+      }
      ]
     },
     {
@@ -4509,7 +5419,20 @@
      "tex": "a=\\frac{(m_2-m_1)g}{m_1+m_2+M/2}",
      "size": 38,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "含滑轮质量加速度公式",
+     "qa": [
+      {
+       "q": "为什么分母多出 $M/2$？",
+       "a": "滑轮转动惯量 $I=\\frac12MR^2$，约束 $a=R\\alpha$ 把转动惯量折算为等效质量 $M/2$。"
+      },
+      {
+       "q": "滑轮质量增大，加速度如何变？",
+       "a": "分子驱动力不变，分母增大，故 $a$ 减小；$M=0,1,4$ kg 时约 3.27、2.80、1.96 m/s²。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -4530,6 +5453,14 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "控制变量设置",
+     "qa": [
+      {
+       "q": "改变滑轮质量时哪些量不变？",
+       "a": "$m_1=1$ kg、$m_2=2$ kg 及质量差 1 kg 不变，仅 $M$ 取 0、1、4 kg。"
+      }
      ]
     },
     {
@@ -4551,7 +5482,20 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "张力差提供力矩",
+     "qa": [
+      {
+       "q": "有质量滑轮两侧张力还相等吗？",
+       "a": "不相等。张力差 $(T_2-T_1)R$ 提供转动所需净力矩；零质量滑轮 $I=0$ 时两侧张力相等。"
+      },
+      {
+       "q": "为什么要记录 $T_1$、$T_2$？",
+       "a": "用于检验张力差是否承担滑轮转动所需力矩，而非比较哪侧物块更快。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "html",
@@ -4707,7 +5651,20 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "阻尼力矩与参数",
+     "qa": [
+      {
+       "q": "阻尼力矩的方向和量纲是什么？",
+       "a": "$\\tau_d=-b\\dot\\theta$，与角速度反向；$b$ 单位 N·m·s，$b>0$。"
+      },
+      {
+       "q": "为什么阻尼力矩带负号？",
+       "a": "因为阻尼总是阻碍运动，力矩方向与 $\\dot\\theta$ 相反，故取负号。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -4719,7 +5676,20 @@
      "tex": "\\text{写出 }T,\\ V,\\ Q_\\theta^{\\rm nc},\\ \\text{运动方程与 }\\dot E",
      "size": 44,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "建模四要素",
+     "qa": [
+      {
+       "q": "独立建模需要写出哪些量？",
+       "a": "独立坐标 $q=\\theta$、动能 $T$、势能 $V$、非保守广义力 $Q_\\theta^{\\rm nc}$，再列运动方程。"
+      },
+      {
+       "q": "非保守广义力怎么求？",
+       "a": "由虚功 $\\delta W=\\tau_d\\,\\delta\\theta$ 得 $Q_\\theta^{\\rm nc}=\\tau_d=-b\\dot\\theta$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -4740,6 +5710,18 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "能量与自检",
+     "qa": [
+      {
+       "q": "如何检验方程正确性？",
+       "a": "令 $b=0$ 应回到无阻尼单摆方程；并判断 $\\dot E$ 的符号。"
+      },
+      {
+       "q": "机械能变化率的符号如何？",
+       "a": "阻尼耗散能量，$\\dot E=\\tau_d\\dot\\theta=-b\\dot\\theta^2\\le 0$，即机械能不增。"
+      }
      ]
     }
    ],
@@ -4872,7 +5854,20 @@
      "tex": "T=\\frac12ml^2\\dot\\theta^2,\\quad V=mgl(1-\\cos\\theta),\\quad Q_\\theta^{\\rm nc}=-b\\dot\\theta",
      "size": 44,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "动能势能与广义力",
+     "qa": [
+      {
+       "q": "为什么阻尼广义力写成 $-b\\dot\\theta$？",
+       "a": "用角坐标时，非保守广义力直接对应角速度的负比项，方向与转动相反。"
+      },
+      {
+       "q": "势能零点为什么取最低点？",
+       "a": "取最低点为零得 $V=mgl(1-\\cos\\theta)$，零点选择不影响势能导数。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -4884,7 +5879,20 @@
      "tex": "ml^2\\ddot\\theta+b\\dot\\theta+mgl\\sin\\theta=0",
      "size": 44,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "含阻尼运动方程",
+     "qa": [
+      {
+       "q": "这个方程里各项分别是什么？",
+       "a": "$ml^2\\ddot\\theta$ 是惯性项，$b\\dot\\theta$ 是阻尼项，$mgl\\sin\\theta$ 是重力项。"
+      },
+      {
+       "q": "漏掉阻尼项会怎样？",
+       "a": "会把所有力当成可消去的约束力，能量守恒的结论就错了。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -4896,7 +5904,19 @@
      "tex": "E=T+V,\\qquad\\dot E=\\dot\\theta(ml^2\\ddot\\theta+mgl\\sin\\theta)=-b\\dot\\theta^2\\le0",
      "size": 44,
      "color": "#172B45",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "机械能变化率",
+     "qa": [
+      {
+       "q": "为什么 $\\dot E\\le0$？",
+       "a": "合并后 $\\dot E=\\dot\\theta(ml^2\\ddot\\theta+mgl\\sin\\theta)$，用运动方程得 $-b\\dot\\theta^2\\le0$。"
+      },
+      {
+       "q": "这个结果除了说明能量不守恒，还有什么用？",
+       "a": "它检查阻尼符号是否正确：符号错则 $\\dot E$ 会变正。"
+      }
+     ]
     }
    ]
   },
@@ -4987,6 +6007,14 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "方程适用条件",
+     "qa": [
+      {
+       "q": "拉格朗日方程的使用有什么前提？",
+       "a": "需理想约束、独立广义坐标，且约束状态（如绳绷紧、无滑）成立；状态改变时方程形式或有效区间随之改变。"
+      }
      ]
     },
     {
@@ -5008,7 +6036,20 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "推导逻辑链",
+     "qa": [
+      {
+       "q": "这条推导链的关键环节是什么？",
+       "a": "约束定构型→独立坐标→固定时间变分得$\\delta\\mathbf r$→理想约束虚功消反力→主动力虚功定义$Q$→惯性项化为$T$的导数→独立$\\delta q$得方程。"
+      },
+      {
+       "q": "为什么最后能用独立变分得到方程？",
+       "a": "因为$\\delta q$彼此独立，各系数必须为零，从而逐项得到拉格朗日方程。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -5041,7 +6082,20 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "六步建模流程",
+     "qa": [
+      {
+       "q": "实际建模应按什么顺序进行？",
+       "a": "明确系统与参考系→列约束与假设→选独立坐标定正方向→写位置或速度关系→算$T$、$V$及必要$Q$→列方程求解并检验。"
+      },
+      {
+       "q": "检验环节要检查哪些内容？",
+       "a": "量纲、方向、简单极限、另一种方法及约束状态（绳绷紧、接触、无滑），并据此限定解的有效区间。"
+      }
+     ],
+     "important": true
     }
    ]
   },
@@ -5162,7 +6216,20 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "拉格朗日法适用前提",
+     "qa": [
+      {
+       "q": "拉格朗日方程在什么系统下可直接使用？",
+       "a": "惯性系中、常质量、取独立完整坐标且约束为理想约束的系统。"
+      },
+      {
+       "q": "非惯性系能直接用本节结果吗？",
+       "a": "不能，需扩展模型，加入与速度相关的惯性作用项。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -5183,7 +6250,20 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "拉格朗日函数与模型边界",
+     "qa": [
+      {
+       "q": "拉格朗日函数如何取？非保守力怎么办？",
+       "a": "$L=T-V$，$V$ 不含速度；非保守广义力单独列入方程右端。"
+      },
+      {
+       "q": "接触或绳状态改变时能沿用吗？",
+       "a": "不能，需检查模型边界并扩展模型后再用。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -5204,6 +6284,14 @@
         "font": "PingFang SC, Microsoft YaHei, sans-serif"
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "课后拓展范围",
+     "qa": [
+      {
+       "q": "刚体滚动、物理摆等属于课堂内容吗？",
+       "a": "不属本节五十分钟标准课堂，安排为课后选读与练习。"
+      }
      ]
     }
    ]

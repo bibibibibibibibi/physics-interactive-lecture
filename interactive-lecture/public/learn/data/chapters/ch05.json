@@ -1,0 +1,1973 @@
+{
+ "id": "ch05",
+ "title": "静电场",
+ "subject": "electromagnetism",
+ "chapter": 5,
+ "week": "Week 5",
+ "difficulty": "★★★★☆（首个矢量场，高斯定理与电势概念抽象，是电磁学奠基章）",
+ "source": "马文蔚《物理学》第七版 第五章（OCR fixed 版转换 + 人工精选作业）",
+ "blocks": [
+  {
+   "type": "intro",
+   "summary": "本章是电磁学的开篇：从电荷的量子化与电荷守恒定律出发，由库仑定律引入电场的概念，建立描述电场性质的第一个物理量——电场强度（叠加原理）；再借电场线引入电场强度通量，导出静电场的基本定理——高斯定理；随后从电场力做功与路径无关出发建立环路定理，引入电势能与电势，给出电势叠加原理与电势的计算方法；最后建立电场强度与电势梯度的关系，并讨论静电场中的电偶极子。密立根油滴实验（5-4 节）是电荷量子化的实验基础。"
+  },
+  {
+   "type": "section",
+   "number": "5.1",
+   "title": "电荷的量子化 电荷守恒定律 库仑定律"
+  },
+  {
+   "type": "video",
+   "source": "bilibili",
+   "bvid": "BV1eK4y1E7Cb",
+   "page": 19,
+   "title": "📺 视频学习：电荷量子化 电荷守恒定律 库仑定律",
+   "caption": "东北大学《大学物理》MOOC 课堂录播（马文蔚《物理学》配套课程），第 1 次课 配套；本讲对应教材 5-1 电荷的量子化 电荷守恒定律 库仑定律，时长 36:18。注意：视频标题里的 5.x 是该课程的讲次编号，与教材小节号含义不同，请以本卡片标注的教材小节为准。<a href=\"https://www.bilibili.com/video/BV1eK4y1E7Cb?p=19\" target=\"_blank\" rel=\"noopener\">在 B 站打开本讲 ↗</a>（嵌入加载失败、或想看弹幕与讲义时点此）"
+  },
+  {
+   "type": "text",
+   "html": "<p>按照原子理论，在每个原子里，电子环绕由中子和质子组成的原子核运动，这些电子的状况可视为如图5-1所示的电子云。原子核的线度比电子云的线度要小得多。一般来说，原子核的线度约为 $5 \\times 10^{-15}\\ \\mathrm{m}$，电子云的线度(即原子的直径)约为 $2 \\times 10^{-10}\\ \\mathrm{m}$.这就是说，原子的线度约为原子核线度的 $10^5$ 倍。原子中的中子不带电，质子带正电，电子带负电，质子与电子所具有的电荷量(简称电荷)的绝对值是相等的。在正常情况下，每个原子中的电子数与质子数相等，故物体呈电中性，当物体经受摩擦等作用而造成物体中的电子过多或不足时，我们说物体带了电。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_150_200_05f8daaed75c382d3c0302b37789af4c47ac903462421c794b1570762ff5a044.jpg",
+   "caption": "图 5-1 电子云（原子的电子云模型示意）"
+  },
+  {
+   "type": "text",
+   "html": "<h4>一、电荷的量子化</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>1897年J.J.汤姆孙从实验中测量阴极射线粒子的电荷值与质量之比时，得出阴极射线粒子的电荷值与质量之比较之氢离子要大约2000倍。这种粒子后来被称为电子。所以一般认为J.J.汤姆孙是电子的发现者。电子的电荷 $-e$ 与质量 $m_e$ 之比称为电子的荷质比① $(-e/m)$.通过数年努力，1913年R.A.密立根终于从实验中得出带电体的电荷是 $\\pm e$ 的整数倍的结论②，即 $q = \\pm ne$，$n$ 为1,2,3,….这是自然界存在不连续性(即量子化)的又一个例子。电荷的这种只能取离散的、不连续的量值的性质，叫做电荷的量子化。电子电荷的绝对值 $e$ 称为元电荷，或称为电荷的量子。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>电荷的单位名称为库仑，简称库，符号为C，在通常的计算中，电子电荷的绝对值的近似值为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "e = 1.602 \\times 10^{-19}\\ \\mathrm{C}"
+  },
+  {
+   "type": "text",
+   "html": "<p>现在知道的自然界中的微观粒子，包括电子、质子、中子在内，已有几百种，其中带电粒子所具有的电荷或者是 $+e$、$-e$，或者是它们的整数倍。因此可以说，电荷量子化是一个普遍的量子化规则。量子化是近代物理学中的一个基本概念，当研究的范围达到原子线度大小时，很多物理量如角动量、能量等也都是量子化的。这些内容将在光的量子性、原子结构等章节中再加以介绍。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>二、电荷守恒定律</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>前面已指出，在正常状态下，物体是电中性的，物体里正、负电荷的代数和为零。如果在一个系统中有两个电中性的物体，由于某些原因，使一些电子从一个物体移到另一个物体上，则前者带正电，后者带负电，不过两物体正、负电荷的代数和仍为零。总之，不管系统中的电荷如何迁移，系统的电荷的代数和保持不变，这就是电荷守恒定律。电荷守恒定律就像能量守恒定律、动量守恒定律和角动量守恒定律那样，也是自然界的基本守恒定律。无论是在宏观领域里，还是在原子、原子核和粒子范围内，电荷守恒定律都是成立的。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>三、库仑定律</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>1785年法国物理学家库仑用扭秤实验测定了两个带电球体之间相互作用的电力。库仑在实验的基础上提出了两个点电荷之间相互作用的规律，即库仑定律①.\"点电荷\"是一个抽象的模型。当两带电体本身的线度 $d$ 比问题中所涉及的距离 $r$ 小很多，即 $d \\ll r$ 时，带电体就可近似当成\"点电荷\".库仑定律的表述为：</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在真空中，两个静止的点电荷之间的相互作用力，其大小与它们电荷的乘积成正比，与它们之间距离的二次方成反比；作用力的方向沿着两点电荷的连线，同号电荷相斥，异号电荷相吸。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如图5-2所示，两个点电荷分别为 $q_1$ 和 $q_2$，由电荷 $q_1$ 指向电荷 $q_2$ 的矢量用 $\\mathbf{r}$ 表示。那么，电荷 $q_2$ 受到电荷 $q_1$ 的作用力 $\\mathbf{F}$ 为</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_150_200_56c8b83619837ca803812526768c8e3930327d12af93a854f51ad21099c685d7.png",
+   "caption": "图 5-2 库仑定律（位矢 r 与单位矢量 e_r）"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{F} = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q_1q_2}{r^2}\\mathbf{e}_r",
+   "label": "式（5-1）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $\\mathbf{e}_r$ 为从电荷 $q_1$ 指向电荷 $q_2$ 的单位矢量，即 $\\mathbf{e}_r = \\mathbf{r}/r$. $\\varepsilon_0$ 叫做真空电容率②，是电学中常用到的一个物理量。一般计算时，其值为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\varepsilon_0 = 8.85 \\times 10^{-12}\\ \\mathrm{C^{2} \\cdot N^{-1} \\cdot m^{-2}} = 8.85 \\times 10^{-12}\\ \\mathrm{F \\cdot m^{-1}}"
+  },
+  {
+   "type": "text",
+   "html": "<p>由上式可以看出，当 $q_1$ 和 $q_2$ 同号时，$q_1q_2 > 0$，$q_2$ 受到斥力作用；当 $q_1$ 和 $q_2$ 异号时，$q_1q_2 < 0$，$q_2$ 受到引力作用。静止电荷间的电作用力，又称为库仑力。应当指出，两静止点电荷之间的库仑力遵守牛顿第三定律。由于我们所研究的电荷或是处于静止，或是其速率非常小($v \\ll c$)，都属于低速运动的情况，牛顿第二定律以及由牛顿第二定律所导出的结论，也都能适用于有库仑力作用的情形。</p>"
+  },
+  {
+   "type": "section",
+   "number": "5.2",
+   "title": "电场强度"
+  },
+  {
+   "type": "video",
+   "source": "bilibili",
+   "bvid": "BV1eK4y1E7Cb",
+   "page": 20,
+   "title": "📺 视频学习：电场强度 场强叠加原理",
+   "caption": "东北大学《大学物理》MOOC 课堂录播（马文蔚《物理学》配套课程），第 1 次课 配套；本讲对应教材 5-2 电场强度（定义·点电荷场强·叠加原理·电偶极子的场强），时长 49:25。注意：视频标题里的 5.x 是该课程的讲次编号，与教材小节号含义不同，请以本卡片标注的教材小节为准。<a href=\"https://www.bilibili.com/video/BV1eK4y1E7Cb?p=20\" target=\"_blank\" rel=\"noopener\">在 B 站打开本讲 ↗</a>（嵌入加载失败、或想看弹幕与讲义时点此）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_150_200_c2b300b78931f7893c9b2066d0c5c075431dc399c7e9165f302a438b639b0492.png",
+   "caption": "图 5-3 试验电荷在电场中不同位置受电场力的情况"
+  },
+  {
+   "type": "text",
+   "html": "<h4>一、静电场</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>任何电荷在其周围都将激发起电场，电荷间的相互作用是通过电场对电荷的作用来实现的。场是一种特殊形态的物质，它和物质的另一种形态——实物一起，构成了物质世界非常丰富的图景。静电场存在于静止电荷的周围，并分布在一定的空间。场和实物的最明显区别在于：场分布范围非常广泛，具有分散性，而实物则集中在有限范围内，具有集中性。所以对场的描述需要逐点进行，不像实物那样只需作整体描述。我们知道，处于万有引力场中的物体要受到万有引力的作用，并且当物体移动时，引力要对它做功。同样，处于静电场中的电荷也要受到电场力的作用，并且当电荷在电场中运动时电场力也要对它做功。我们将从施力和做功这两方面来研究静电场的性质，分别引出描述电场性质的两个物理量——电场强度和电势。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>二、电场强度</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>图 5-5 点电荷的电场具有对称性</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_150_200_41b608255cde34cec77d41fa66f24fe09f66459e8207ba78393a7e0f5230dac0.png",
+   "caption": "图 5-4 点电荷的电场强度"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_150_200_0d3ca2f3a8a1ad4178a738c3534bcb3d7e0f037c0341c6d4f7f8e53066455a70.png",
+   "caption": "图 5-5 点电荷的电场具有球对称性"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_150_200_2f19b2077d984b1f849d1e9ebaf52ac5162d4b1025c2a7b970e2d74a678e6569.png",
+   "caption": "图 5-6(a) 点电荷系对试验电荷 q₀ 的作用力叠加"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_150_200_a022dfbd2b194b77e6781cce4cc73a19c9c5c07ffd3a1e2ec8de30eec3bc8af5.png",
+   "caption": "图 5-6(b) 电场强度的叠加（矢量合成）"
+  },
+  {
+   "type": "text",
+   "html": "<p>为了表述电场对处于其中的电荷施以作用力的性质，我们把一个试验电荷 $q_0$ 放到电场中不同位置，观察电场对试验电荷 $q_0$ 的作用力的情况。试验电荷必须满足如下要求：①试验电荷必须是点电荷；②它的电荷量应足够小，以致把它放进电场中时对原有的电场几乎没有什么影响。为叙述方便，我们取试验电荷为正电荷($q_0 > 0$)①.</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如图5-3所示，在静止电荷 $Q$ 周围的静电场中，先后将试验电荷 $q_0$ 放到电场中 $A$、$B$ 和 $C$ 三个不同的位置。我们发现，试验电荷 $q_0$ 在电场中不同位置所受到的电场力 $\\mathbf{F}$ 的值和方向均不相同。另一方面，就电场中某一点而言，试验电荷 $q_0$ 在该处所受的电场力 $\\mathbf{F}$ 的值与 $q_0$ 的大小有关；但 $\\mathbf{F}$ 与 $q_0$ 之比，则与 $q_0$ 无关，为一不变的矢量。显然，这个不变的矢量只与该处的电场有关，所以该矢量称为电场强度，用符号 $\\mathbf{E}$ 表示，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{E} = \\frac{\\mathbf{F}}{q_0}",
+   "label": "式（5-2）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式(5-2)为电场强度的定义式。它表明，电场中某点处的电场强度 $\\mathbf{E}$ 等于位于该点处的单位试验电荷所受的电场力。电场强度是空间位置的函数。 $\\mathbf{E}$ 的方向与正试验电荷所受力 $\\mathbf{F}$ 的方向相同。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在国际单位制中，电场强度的单位为牛顿每库仑，符号为 $\\mathrm{N \\cdot C^{-1}}$；电场强度的单位亦为伏特每米，符号为 $\\mathrm{V \\cdot m^{-1}}$.本章第5-7节中将说明 $\\mathrm{V \\cdot m^{-1}}$ 与 $\\mathrm{N \\cdot C^{-1}}$ 是一样的。不过 $\\mathrm{V \\cdot m^{-1}}$ 较 $\\mathrm{N \\cdot C^{-1}}$ 使用得更普遍些。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>应当指出，在已知电场强度分布的电场中，若某点的电场强度为 $\\mathbf{E}$，那么由式(5-2)知点电荷 $q$ 在该点所受的电场力 $\\mathbf{F}$ 为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{F} = q\\mathbf{E}"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_150_200_66b6dad16da102ea0c580723bb9f513e665c566807ad0e24b9083677f51cce93.png",
+   "caption": "图 5-7 带电体的电场强度（电荷元 dq 的积分）"
+  },
+  {
+   "type": "text",
+   "html": "<h4>三、点电荷的电场强度</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>由库仑定律及电场强度定义式，可求得真空中点电荷周围电场的电场强度。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如图5-4(a)所示，在真空中，点电荷 $Q$ 位于直角坐标系的原点 $O$，由原点 $O$ 指向场点 $P$ 的位矢为 $\\mathbf{r}$.若把试验电荷 $q_0$ 置于场点 $P$，由库仑定律式(5-1)和电场强度定义式(5-2)可得场点 $P$ 的电场强度为</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_150_200_2ed898dff8395e24fb64046fd28d372ef09446aff90f0bde495ea95ae73742f1.png",
+   "caption": "图 5-8 电偶极子轴线延长线上一点的电场强度"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{E} = \\frac{1}{4\\pi\\varepsilon_0}\\frac{Q}{r^2}\\mathbf{e}_r",
+   "label": "式（5-3）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $\\mathbf{e}_r$ 为位矢 $\\mathbf{r}$ 的单位矢量。上式是在真空中点电荷 $Q$ 所激发的电场中，任意点 $P$ 处的电场强度表示式。从式(5-3)可以看出，如果点电荷为正电荷(即 $Q > 0$)，$\\mathbf{E}$ 的方向与 $\\mathbf{e}_r$ 的方向相同；如点电荷为负电荷(即 $Q < 0$)，则 $\\mathbf{E}$ 的方向与 $\\mathbf{e}_r$ 的方向相反[图5-4(b)].</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如图5-5所示，若将正点电荷 $Q$ 放在原点 $O$，并以 $r$ 为半径作一球面，则球面上各处 $\\mathbf{E}$ 的大小相等，$\\mathbf{E}$ 的方向均沿径矢 $\\mathbf{r}$，故真空中点电荷的电场是具有对称性的非均匀场。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>四、电场强度叠加原理</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>一般来说，空间可能存在由许多个点电荷组成的点电荷系，那么点电荷系的电场强度如何计算呢？下面我们先介绍由力的叠加原理得到的电场强度叠加原理。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>设真空中一点电荷系由正电荷 $Q_1$、$Q_2$ 和负电荷 $-Q_3$ 三个点电荷组成[图5-6(a)]，在场点 $P$ 处放置一试验电荷 $q_0$，且 $Q_1$、$Q_2$ 和 $-Q_3$ 到点 $P$ 的矢量为 $\\mathbf{r}_1$、$\\mathbf{r}_2$ 和 $\\mathbf{r}_3$.若试验电荷 $q_0$ 受到 $Q_1$、$Q_2$ 和 $-Q_3$ 的作用力分别为 $\\mathbf{F}_1$、$\\mathbf{F}_2$ 和 $\\mathbf{F}_3$，根据力的叠加原理可得作用在试验电荷 $q_0$ 上的力 $\\mathbf{F}$ 为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{F} = \\mathbf{F}_1 + \\mathbf{F}_2 + \\mathbf{F}_3"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_150_200_abbe8ae1df40a6ed9c454420d06b88c520886a1cecae82ab1564a689329a1ecd.png",
+   "caption": "图 5-9 电偶极子轴线中垂线上一点的电场强度"
+  },
+  {
+   "type": "text",
+   "html": "<p>由库仑定律可知 $\\mathbf{F}_1$、$\\mathbf{F}_2$ 和 $\\mathbf{F}_3$ 分别为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{F}_1 = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q_0Q_1}{r_1^2}\\mathbf{e}_1,\\ \\mathbf{F}_2 = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q_0Q_2}{r_2^2}\\mathbf{e}_2,\\ \\mathbf{F}_3 = \\frac{-1}{4\\pi\\varepsilon_0}\\frac{q_0Q_3}{r_3^2}\\mathbf{e}_3"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $\\mathbf{e}_1$、$\\mathbf{e}_2$ 和 $\\mathbf{e}_3$ 分别为矢量 $\\mathbf{r}_1$、$\\mathbf{r}_2$ 和 $\\mathbf{r}_3$ 的单位矢量。另外，按照电场强度定义式(5-2)，可得点 $P$ 处的电场强度为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{E} = \\frac{\\mathbf{F}}{q_0} = \\frac{\\mathbf{F}_1}{q_0} + \\frac{\\mathbf{F}_2}{q_0} + \\frac{\\mathbf{F}_3}{q_0}"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_150_200_586ce73fa10a5f194ee15aebb6c9b05bf189dc2cd2a6fe45b16fc7cb231f021f.png",
+   "caption": "图 5-10 均匀带电圆环轴线上的电场（5-2 节 例1）"
+  },
+  {
+   "type": "text",
+   "html": "<p>于是，点 $P$ 处的电场强度为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{E} = \\mathbf{E}_1 + \\mathbf{E}_2 + \\mathbf{E}_3",
+   "label": "式（5-4a）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式(5-4a)表明，三个点电荷在点 $P$ 处激发的电场强度等于各个点电荷单独存在时该处电场强度的矢量和。上述结论虽是从三个点电荷组成的点电荷系得出的，显然不难推广至由任意数目点电荷所组成的点电荷系，故可以得出普遍结论如下：点电荷系所激发的电场中某点处的电场强度等于各个点电荷单独存在时对该点所激发的电场强度的矢量和。这就是电场强度的叠加原理，其数学表达式为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{E} = \\sum_{i=1}^{n} \\mathbf{E}_i = \\frac{1}{4\\pi\\varepsilon_0}\\sum_{i=1}^{n}\\frac{Q_i}{r_i^2}\\mathbf{e}_i",
+   "label": "式（5-4b）"
+  },
+  {
+   "type": "text",
+   "html": "<p>根据电场强度叠加原理，我们可以计算电荷连续分布的电荷系的电场强度。这只是计算电场强度的一种方法，还有其他的方法，以后我们再陆续介绍。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如图5-7所示，有一体积为 $V$，电荷连续分布的带电体，现在来计算点 $P$ 处的电场强度。首先，我们在带电体上取一电荷元 $\\mathrm{d}q$，其线度相对于 $V$ 可视为无限小，从而可将 $\\mathrm{d}q$ 作为一个点电荷对待。于是，$\\mathrm{d}q$ 在点 $P$ 处激发的电场强度为 $\\mathrm{d}\\mathbf{E} = \\frac{1}{4\\pi\\varepsilon_0}\\frac{\\mathrm{d}q}{r^2}\\mathbf{e}_r$，式中 $\\mathbf{e}_r$ 为由 $\\mathrm{d}q$ 指向点 $P$ 的单位矢量。其次，取各电荷元对点 $P$ 处的电场强度，并求矢量积分。于是可得电荷系在点 $P$ 处激发的电场强度 $\\mathbf{E}$ 为</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_150_200_afcd1d407f63e02a97984e1994543473bd5b0d7b90c2bda0fb6d53df9bfbad1e.png",
+   "caption": "图 5-12 均匀带电薄圆盘轴线上的电场（5-2 节 例2）"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{E} = \\int_V \\mathrm{d}\\mathbf{E} = \\int_V \\frac{1}{4\\pi\\varepsilon_0}\\frac{\\mathbf{e}_r}{r^2}\\mathrm{d}q",
+   "label": "式（5-5）"
+  },
+  {
+   "type": "text",
+   "html": "<p>若 $\\mathrm{d}V$ 为电荷元 $\\mathrm{d}q$ 的体积元，$\\rho$ 为其电荷体密度，则 $\\mathrm{d}q = \\rho\\mathrm{d}V$.于是，式(5-5)亦可写成 $\\mathbf{E} = \\int_V \\frac{1}{4\\pi\\varepsilon_0}\\frac{\\rho\\mathbf{e}_r}{r^2}\\mathrm{d}V$ (5-6a).顺便指出，对于电荷连续分布的线带电体和面带电体来说，电荷元 $\\mathrm{d}q$ 可分别表示为 $\\mathrm{d}q = \\lambda\\mathrm{d}l$ 和 $\\mathrm{d}q = \\sigma\\mathrm{d}S$，其中 $\\lambda$ 为电荷线密度，$\\sigma$ 为电荷面密度，则由式(5-5)可得它们的电场强度分别为 $\\mathbf{E} = \\int_l \\frac{1}{4\\pi\\varepsilon_0}\\frac{\\lambda\\mathbf{e}_r}{r^2}\\mathrm{d}l$ 和 $\\mathbf{E} = \\int_S \\frac{1}{4\\pi\\varepsilon_0}\\frac{\\sigma\\mathbf{e}_r}{r^2}\\mathrm{d}S$ (5-6b).</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>五、电偶极子的电场强度</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>由两个电荷量相等、符号相反、相距为 $r_0$ 的点电荷 $+q$ 和 $-q$($q > 0$)构成的电荷系称为电偶极子。从 $-q$ 指向 $+q$ 的矢量 $\\mathbf{r}_0$ 为电偶极子的轴，$q\\mathbf{r}_0$ 称为电偶极子的电偶极矩(简称电矩)，用符号 $\\mathbf{p}$ 表示，则有 $\\mathbf{p} = q\\mathbf{r}_0$.在研究电介质的极化等问题时，常要用到电偶极子的概念，以及电偶极子对电场的影响。下面分别讨论：①电偶极子轴线延长线上一点的电场强度；②电偶极子轴线中垂线上一点的电场强度。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(1) 如图5-8所示，以电偶极子轴线的中点为坐标原点 $O$，沿轴的延长线为 $Ox$ 轴，轴上任意点 $A$ 到原点 $O$ 的距离为 $x$.由式(5-3)可得点电荷 $+q$ 和 $-q$ 在点 $A$ 激发的电场强度分别为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "E_+ = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q}{(x - r_0/2)^2}\\mathbf{i},\\quad E_- = -\\frac{1}{4\\pi\\varepsilon_0}\\frac{q}{(x + r_0/2)^2}\\mathbf{i}"
+  },
+  {
+   "type": "text",
+   "html": "<p>上两式表明，$E_+$ 和 $E_-$ 的方向都沿 $Ox$ 轴，但方向相反。由电场强度叠加原理可知，点 $A$ 处的 $\\mathbf{E}$ 为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{E} = \\mathbf{E}_+ + \\mathbf{E}_- = \\frac{q}{4\\pi\\varepsilon_0}\\frac{2xr_0}{(x^2- r_0^2/4)^2}\\mathbf{i}"
+  },
+  {
+   "type": "text",
+   "html": "<p>当场点 $A$ 到电偶极子的距离比电偶极子中 $-q$ 和 $+q$ 之间的距离大得多时，即 $x \\gg r_0$ 时，则 $(x^2- r_0^2/4) \\approx x^2$，于是上式可写为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{E} = \\frac{1}{4\\pi\\varepsilon_0}\\frac{2qr_0}{x^3}\\mathbf{i}"
+  },
+  {
+   "type": "text",
+   "html": "<p>由于电矩 $\\mathbf{p} = q\\mathbf{r}_0 = qr_0\\mathbf{i}$，所以上式为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{E} = \\frac{1}{4\\pi\\varepsilon_0}\\frac{2\\mathbf{p}}{x^3}",
+   "label": "式（5-7）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式(5-7)表明，在电偶极子轴线的延长线上任意点 $A$ 处的电场强度 $\\mathbf{E}$ 的大小与电偶极子的电矩 $\\mathbf{p}$ 的大小成正比，与电偶极子中点 $O$ 到点 $A$ 的距离 $x$ 的三次方成反比；电场强度 $\\mathbf{E}$ 的方向与电矩 $\\mathbf{p}$ 的方向相同。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(2) 以电偶极子轴线的中点为坐标原点 $O$，并取 $Ox$ 轴和 $Oy$ 轴如图5-9所示。由式(5-3)可得点电荷 $+q$ 和 $-q$ 对中垂线上点 $B$ 的电场强度。根据电场强度叠加原理，可得点 $B$ 处的电场强度 $\\mathbf{E}$ 为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{E} = \\mathbf{E}_+ + \\mathbf{E}_- = -\\frac{1}{4\\pi\\varepsilon_0}\\frac{q\\mathbf{r}_0}{r^3}"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $r = \\sqrt{y^2 + (r_0/2)^2}$.当 $y \\gg r_0$ 时，$y^2 + (r_0/2)^2 \\approx y^2$，于是上式为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{E} = -\\frac{1}{4\\pi\\varepsilon_0}\\frac{\\mathbf{p}}{y^3}",
+   "label": "式（5-8）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式(5-8)表明，在电偶极子的中垂线上任意点 $B$ 处的电场强度 $\\mathbf{E}$ 的大小与电矩 $\\mathbf{p}$ 的大小成正比，与电偶极子的中点到点 $B$ 的距离 $y$ 的三次方成反比；电场强度 $\\mathbf{E}$ 的方向与电矩 $\\mathbf{p}$ 的方向相反①.</p>"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（5.2 节 · 例 1）",
+   "problem": "如图5-10所示，正电荷 $q$ 均匀地分布在半径为 $R$ 的圆环上。计算通过环心点 $O$，并垂直圆环平面的轴线上任一点 $P$ 处的电场强度。",
+   "solution_steps": [
+    "设坐标原点与环心相重合，点 $P$ 与环心 $O$ 的距离为 $x$.由题意知圆环上的电荷是均匀分布的，故其电荷线密度 $\\lambda = q/(2\\pi R)$.在环上取线元 $\\mathrm{d}l$，其电荷元 $\\mathrm{d}q = \\lambda\\mathrm{d}l$，此电荷元对点 $P$ 处激起的电场强度为 $\\mathrm{d}\\mathbf{E} = \\frac{1}{4\\pi\\varepsilon_0}\\frac{\\lambda\\mathrm{d}l}{r^2}\\mathbf{e}_r$.",
+    "由于电荷分布的对称性，圆环上各电荷元对点 $P$ 处激起的电场强度 $\\mathrm{d}\\mathbf{E}$ 的分布也具有对称性，且它们在垂直于 $x$ 轴方向上的分量 $\\mathrm{d}E_{\\perp}$ 将互相抵消，即 $\\mathrm{d}E_{\\perp} = 0$；而各电荷元在点 $P$ 的电场强度 $\\mathrm{d}\\mathbf{E}$ 沿 $x$ 轴的分量 $\\mathrm{d}E_x$ 都具有相同的方向，且 $\\mathrm{d}E_x = \\mathrm{d}E\\cos\\theta$.故点 $P$ 的电场强度为",
+    "$$E = \\int \\mathrm{d}E_x = \\int \\mathrm{d}E\\cos\\theta$$",
+    "式中 $r = (x^2 + R^2)^{1/2}$，$\\cos\\theta = x/r$.于是有",
+    "$$E = \\frac{1}{4\\pi\\varepsilon_0}\\frac{qx}{(x^2 + R^2)^{3/2}}$$",
+    "讨论：(1)若 $x \\gg R$，则 $(x^2 + R^2)^{3/2} \\approx x^3$，这时有 $E \\approx \\frac{1}{4\\pi\\varepsilon_0}\\frac{q}{x^2}$，即在远离圆环的地方，可把带电圆环看成点电荷。这与前面对点电荷的论述相一致.(2)若 $x \\approx 0$，则 $E \\approx 0$，这表明环心处的电场强度为零.(3)由 $\\mathrm{d}E/\\mathrm{d}x = 0$ 可求得电场强度极大的位置为 $x = \\pm\\frac{\\sqrt{2}}{2}R$.这表明，圆环轴线上具有最大电场强度的位置，位于原点 $O$ 两侧的 $\\frac{\\sqrt{2}}{2}R$ 处。"
+   ],
+   "answer": null
+  },
+  {
+   "type": "example",
+   "title": "教材例题（5.2 节 · 例 2）",
+   "problem": "如图5-12所示，一半径为 $R$，电荷均匀分布的薄圆盘的电荷面密度为 $\\sigma$.求通过盘心且垂直盘面的轴线上任意一点处的电场强度。",
+   "solution_steps": [
+    "取如图所示的坐标系，薄圆盘的平面在 $yz$ 平面内，盘心位于坐标原点 $O$.由于圆盘上的电荷分布是均匀的，故圆盘上的电荷为 $q = \\sigma\\pi R^2$.",
+    "我们把圆盘分成许多细圆环带，其中半径为 $r$、宽度为 $\\mathrm{d}r$ 的环带面积为 $2\\pi r\\mathrm{d}r$，此环带上的电荷为 $\\mathrm{d}q = \\sigma \\cdot 2\\pi r\\mathrm{d}r$.由例1可知，环带上的电荷对 $x$ 轴上点 $P$ 处激起的电场强度为",
+    "$$\\mathrm{d}E = \\frac{1}{4\\pi\\varepsilon_0}\\frac{x\\mathrm{d}q}{(x^2 + r^2)^{3/2}} = \\frac{\\sigma x}{2\\varepsilon_0}\\frac{r\\mathrm{d}r}{(x^2 + r^2)^{3/2}}$$",
+    "由于圆盘上所有带电的环带在点 $P$ 处的电场强度都沿 $x$ 轴同一方向，故由上式积分可得带电圆盘的轴线上点 $P$ 处的电场强度为",
+    "$$E = \\int_0^R \\frac{\\sigma x}{2\\varepsilon_0}\\frac{r\\mathrm{d}r}{(x^2 + r^2)^{3/2}} = \\frac{\\sigma}{2\\varepsilon_0}\\left(1- \\frac{x}{\\sqrt{x^2 + R^2}}\\right)$$",
+    "讨论：如果 $x \\ll R$，带电圆盘可看作是\"无限大\"的均匀带电平面，这时",
+    "$$E = \\frac{\\sigma}{2\\varepsilon_0}$$",
+    "上式表明，很大的均匀带电平面附近的电场强度 $E$ 的值是一个常量，$E$ 的方向与平面垂直。因此，很大的均匀带电平面附近的电场可看作均匀电场。",
+    "此外，若有两个相互平行、彼此相隔很近的平面，它们的电荷面密度各为 $\\pm\\sigma$.利用上述结论及电场强度的叠加原理，很容易求得两平行带电平面中部的电场强度为 $E = \\sigma/\\varepsilon_0$.这是获得均匀电场的一种常用方法，我们还将在电容器中提及。均匀电场又称匀强电场，在这种电场中 $\\mathbf{E}$ 处处相等。"
+   ],
+   "answer": null
+  },
+  {
+   "type": "section",
+   "number": "5.3",
+   "title": "电场强度通量 高斯定理"
+  },
+  {
+   "type": "video",
+   "source": "bilibili",
+   "bvid": "BV1eK4y1E7Cb",
+   "page": 21,
+   "title": "📺 视频学习：电场强度通量 高斯定理",
+   "caption": "东北大学《大学物理》MOOC 课堂录播（马文蔚《物理学》配套课程），第 2 次课 配套；本讲对应教材 5-3 电场强度通量 高斯定理（含对称性电场应用举例），时长 44:01。注意：视频标题里的 5.x 是该课程的讲次编号，与教材小节号含义不同，请以本卡片标注的教材小节为准。<a href=\"https://www.bilibili.com/video/BV1eK4y1E7Cb?p=21\" target=\"_blank\" rel=\"noopener\">在 B 站打开本讲 ↗</a>（嵌入加载失败、或想看弹幕与讲义时点此）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上一节我们研究了描述电场性质的一个重要物理量——电场强度，并从叠加原理出发讨论了点电荷系和带电体的电场强度。为了更形象地描述电场，这一节将在介绍电场线①的基础上，引进电场强度通量的概念；并导出静电场的重要定理——高斯定理。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>一、电场线</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>图5-13是几种带电系统的电场线。在电场线上每一点处电场强度 $\\mathbf{E}$ 的方向沿着该点的切线，并以电场线箭头的指向表示电场强度的方向。例如，在图5-13(a)、(b)所示的点电荷附近，电场线呈径向分布，电场线是从正电荷出发会聚于负电荷；图5-13(d)是电偶极子的电场线，图中M、N两点处 $\\mathbf{E}$ 的方向都与该点电场线的切线方向相同。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_150_200_8e1a438906310394c6c184c11977e752cdb366b045b5f16397fc9872ca0ef459.png",
+   "caption": "图 5-13(a) 正点电荷的电场线"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_150_200_87ae76d521c7c43125066192d8be68de2232b83cf0bb69fe62fe2b508fdf2dbb.png",
+   "caption": "图 5-13(b) 负点电荷的电场线"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_150_200_3b116667ea7e6e1bcb790019146ebb925374f87c4d12eb380b95192616e94661.png",
+   "caption": "图 5-13(c) 两个等量正电荷的电场线"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_150_200_0cf94b6183e72916692b06a8d4a8ad89df7d643fb2198d40e6a5f84d67c61e74.png",
+   "caption": "图 5-13(d) 两个等量异号电荷（电偶极子）的电场线"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/fig5_13e_redraw.png",
+   "caption": "图 5-13(e) 两个不等量异号电荷的电场线（数值重绘）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/fig5_13f_redraw.png",
+   "caption": "图 5-13(f) 带等值异号电荷两平行板的电场线（数值重绘）"
+  },
+  {
+   "type": "text",
+   "html": "<p>(f) 带等值异号电荷的两平行板 图 5-13 几种典型电场的电场线分布图</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>静电场的电场线有如下特点：①电场线总是始于正电荷，终止于负电荷，不形成闭合曲线；②任何两条电场线都不能相交，这是因为电场中每一点处的电场强度只能有一个确定的方向。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>电场线不仅能表示电场强度的方向，而且电场线在空间的密度分布还能表示电场强度的大小。在某区域内，电场线的密度较大，则该处 $\\mathbf{E}$ 较强；电场线的密度较小，则该处 $\\mathbf{E}$ 较弱。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>为了给出电场线密度和电场强度间的数量关系，我们对电场线的密度作如下规定：在电场中任一点，想象地作一个面积元 $\\mathrm{d}S$，并使它与该点的 $\\mathbf{E}$ 垂直(图5-14)，$\\mathrm{d}S$ 面上各点的 $\\mathbf{E}$ 可认为是相同的，则通过面积元 $\\mathrm{d}S$ 的电场线数 $\\mathrm{d}N$ 与该点的 $\\mathbf{E}$ 的大小有如下关系：</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\frac{\\mathrm{d}N}{\\mathrm{d}S} = E",
+   "label": "式（5-9）"
+  },
+  {
+   "type": "text",
+   "html": "<p>这就是说，通过电场中某点垂直于 $\\mathbf{E}$ 的单位面积的电场线数等于该点处电场强度 $\\mathbf{E}$ 的大小。 $\\mathrm{d}N/\\mathrm{d}S$ 也叫做电场线密度。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>虽然电场中并不存在电场线，但引入电场线概念可以形象地描绘出电场的总体情况，对于分析某些实际问题很有帮助。在研究某些复杂的电场时，常用模拟的方法把它们的电场线画出来，这对诸如研究电子管内部的电场、高压电器设备附近的电场分布是非常直观有用的。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_150_200_451dcbce90f027164faa2b567828ad88bb8b60276e3cf9af87711ee7bf3b0f7d.png",
+   "caption": "图 5-14 电场线密度与电场强度"
+  },
+  {
+   "type": "text",
+   "html": "<h4>二、电场强度通量</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>我们把通过电场中某一个面的电场线数目，叫做通过这个面的电场强度通量，用符号 $\\Phi_{\\mathrm{e}}$ 表示。下面先讨论匀强电场中的电场强度通量 $\\Phi_{\\mathrm{e}}$.设在匀强电场中取一个平面 $S$，并使它和电场强度方向垂直[图5-15(a)].由于匀强电场的电场强度处处相等，所以电场线密度也应处处相等。这样，通过面 $S$ 的电场强度通量为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\Phi_{\\mathrm{e}} = ES",
+   "label": "式（5-10）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_150_200_59b0361579ad2e923952979d78636baa26a361a64118653d6eff7f7169d9fa1a.png",
+   "caption": "图 5-15(a) 平面与 E 垂直：Φₑ = ES"
+  },
+  {
+   "type": "text",
+   "html": "<p>(a) $\\Phi_{\\mathrm{e}} = ES$</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_150_200_2122127d71a58187a355583e28a8c15cc016ed06a797fe10229aa1f629a5baca.png",
+   "caption": "图 5-15(b) 平面与 E 成 θ 角：Φₑ = E·S"
+  },
+  {
+   "type": "text",
+   "html": "<p>(b) $\\Phi_{\\mathrm{e}} = \\mathbf{E} \\cdot \\mathbf{S}$</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_150_200_c27280bf4aa11c66f121004e4505a213bf0e3138202c874402efaada6c65b017.png",
+   "caption": "图 5-15(c) 任意曲面：Φₑ = ∫E·dS"
+  },
+  {
+   "type": "text",
+   "html": "<p>(c) $\\Phi_{\\mathrm{e}} = \\int_S \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{S}$ 图 5-15 电场强度通量的计算</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如果平面 $S$ 与匀强电场的 $\\mathbf{E}$ 不垂直，那么面 $S$ 在电场空间可取许多方位。为了把面 $S$ 在电场中的大小和方位同时表示出来，我们引入面积矢量 $\\mathbf{S}$，其大小为 $S$，其方向用单位法线矢量 $\\mathbf{e}_{\\mathrm{n}}$ 来表示，则有 $\\mathbf{S} = S\\mathbf{e}_{\\mathrm{n}}$.在图5-15(b)中，$\\mathbf{e}_{\\mathrm{n}}$ 与 $\\mathbf{E}$ 之间的夹角为 $\\theta$.因此，这时通过面 $S$ 的电场强度通量为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\Phi_{\\mathrm{e}} = ES\\cos\\theta",
+   "label": "式（5-11a）"
+  },
+  {
+   "type": "text",
+   "html": "<p>由矢量标积的定义可知，$ES\\cos\\theta$ 为矢量 $\\mathbf{E}$ 和 $\\mathbf{S}$ 的标积，故上式可用矢量表示为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\Phi_{\\mathrm{e}} = \\mathbf{E} \\cdot \\mathbf{S} = \\mathbf{E} \\cdot \\mathbf{e}_{\\mathrm{n}} S",
+   "label": "式（5-11b）"
+  },
+  {
+   "type": "text",
+   "html": "<p>如果电场是非匀强电场，并且面 $S$ 是任意曲面[图5-15(c)]，则可以把曲面分成无限多个面积元 $\\mathrm{d}S$，每个面积元 $\\mathrm{d}S$ 都可看成是一个小平面，在面积元 $\\mathrm{d}S$ 上，$\\mathbf{E}$ 也处处相等。仿照上面的办法，若 $\\mathbf{e}_{\\mathrm{n}}$ 为面积元 $\\mathrm{d}S$ 的单位法线矢量，则 $\\mathbf{e}_{\\mathrm{n}}\\mathrm{d}S = \\mathrm{d}\\mathbf{S}$.如果 $\\mathbf{e}_{\\mathrm{n}}$ 与 $\\mathbf{E}$ 成 $\\theta$ 角，则通过面积元 $\\mathrm{d}S$ 的电场强度通量为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathrm{d}\\Phi_{\\mathrm{e}} = E\\mathrm{d}S\\cos\\theta = \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{S}",
+   "label": "式（5-12）"
+  },
+  {
+   "type": "text",
+   "html": "<p>所以通过曲面 $S$ 的电场强度通量 $\\Phi_{\\mathrm{e}}$，就等于通过面 $S$ 上所有面积元 $\\mathrm{d}S$ 的电场强度通量 $\\mathrm{d}\\Phi_{\\mathrm{e}}$ 的总和，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\Phi_{\\mathrm{e}} = \\int_S \\mathrm{d}\\Phi_{\\mathrm{e}} = \\int_S E\\cos\\theta \\mathrm{d}S = \\int_S \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{S}",
+   "label": "式（5-13）"
+  },
+  {
+   "type": "text",
+   "html": "<p>如果曲面是闭合曲面，式(5-13)中的曲面积分应换成对闭合曲面积分，闭合曲面积分用\"$\\oint_S$\"表示，故通过闭合曲面的电场强度通量为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\Phi_{\\mathrm{e}} = \\oint_S E\\cos\\theta \\mathrm{d}S = \\oint_S \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{S}",
+   "label": "式（5-14）"
+  },
+  {
+   "type": "text",
+   "html": "<p>一般来说，通过闭合曲面的电场线，有些是\"穿进\"的，有些是\"穿出\"的。这也就是说，通过曲面上各个面积元的电场强度通量 $\\mathrm{d}\\Phi_{\\mathrm{e}}$ 有正、有负。为此规定：曲面上某点的法线矢量的方向是垂直指向曲面外侧的①.依照这个规定，如图5-16所示，在曲面的A处，电场线从外穿进曲面里，$\\theta > \\pi/2$，所以 $\\mathrm{d}\\Phi_{\\mathrm{e}}$ 为负；在B处，电场线从曲面里向外穿出，$\\theta < \\pi/2$，所以 $\\mathrm{d}\\Phi_{\\mathrm{e}}$ 为正；而在C处，电场线与曲面相切，$\\theta = \\pi/2$，所以 $\\mathrm{d}\\Phi_{\\mathrm{e}}$ 为零。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_150_200_b3b9394d527528ee8dbaeadefbb58fecda6545680f359a6fa4c36ecb43f58df3.png",
+   "caption": "图 5-16 闭合曲面上电场强度通量正负的判别"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（5.3 节 · 例 1）",
+   "problem": "三棱柱体放在如图5-17所示的匀强电场中。求通过此三棱柱体的电场强度通量。",
+   "solution_steps": [
+    "三棱柱体的表面为一闭合曲面，由5个平面构成。其中MNPOM所围的面积为 $S_1$，MNQM和OPRO所围的面积为 $S_2$ 和 $S_3$，MORQM和NPRQN所围的面积为 $S_4$ 和 $S_5$.那么，在此匀强电场中通过 $S_1$、$S_2$、$S_3$、$S_4$ 和 $S_5$ 的电场强度通量分别为 $\\Phi_{\\mathrm{e}1}$、$\\Phi_{\\mathrm{e}2}$、$\\Phi_{\\mathrm{e}3}$、$\\Phi_{\\mathrm{e}4}$ 和 $\\Phi_{\\mathrm{e}5}$.故通过闭合曲面的电场强度通量为",
+    "$$\\Phi_{\\mathrm{e}} = \\Phi_{\\mathrm{e}1} + \\Phi_{\\mathrm{e}2} + \\Phi_{\\mathrm{e}3} + \\Phi_{\\mathrm{e}4} + \\Phi_{\\mathrm{e}5}$$",
+    "由式(5-13)可求得通过 $S_1$ 的电场强度通量为",
+    "$$\\Phi_{\\mathrm{e}1} = \\int_{S_1} \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{S}$$",
+    "从图中可见，面 $S_1$ 的正法线矢量 $\\mathbf{e}_{\\mathrm{n}}$ 的方向与 $\\mathbf{E}$ 的方向之间夹角为 $\\pi$，故",
+    "$$\\Phi_{\\mathrm{e}1} = ES_1\\cos\\pi = -ES_1$$",
+    "而面 $S_2$、$S_3$ 和 $S_4$ 的正法线矢量 $\\mathbf{e}_{\\mathrm{n}}$ 均与 $\\mathbf{E}$ 垂直，故",
+    "$$\\Phi_{\\mathrm{e}2} = \\Phi_{\\mathrm{e}3} = \\Phi_{\\mathrm{e}4} = \\int_S \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{S} = 0$$",
+    "对于面 $S_5$，其正法线矢量 $\\mathbf{e}_{\\mathrm{n}}$ 与 $\\mathbf{E}$ 的夹角 $0 < \\theta < \\pi/2$，故",
+    "$$\\Phi_{\\mathrm{e}5} = \\int_{S_5} \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{S} = E\\cos\\theta S_5$$",
+    "而 $S_5\\cos\\theta = S_1$，所以",
+    "$$\\Phi_{\\mathrm{e}5} = ES_1$$",
+    "把它们代入有",
+    "$$\\Phi_{\\mathrm{e}} = \\Phi_{\\mathrm{e}1} + \\Phi_{\\mathrm{e}2} + \\Phi_{\\mathrm{e}3} + \\Phi_{\\mathrm{e}4} + \\Phi_{\\mathrm{e}5} = -ES_1 + ES_1 = 0$$",
+    "上述结果表明，在匀强电场中穿入三棱柱体的电场线与穿出三棱柱体的电场线相等，即穿过闭合曲面(三棱柱体表面)的电场强度通量为零。",
+    "<img src=\"assets/images/ch05/pages_150_200_0237236fb8cd57580b7c482782340b7e52caf34327d611e36b64fb2451b0dabf.png\" style=\"max-width:60%\">",
+    "<div class=\"figcap\">图 5-17 匀强电场中的三棱柱体（例1）</div>"
+   ],
+   "answer": null
+  },
+  {
+   "type": "text",
+   "html": "<h4>三、高斯定理</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>既然静电场是由电荷所激发的，那么，通过电场空间某一给定闭合曲面的电场强度通量与激发电场的场源电荷必有确定的关系。这就是著名的高斯定理。我们先从简单情况开始，逐步导出这个定理。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>设真空中有一个正点电荷 $q$，被置于半径为 $R$ 的球面中心处(图5-18).由点电荷电场强度公式(5-3)可知，球面上各点电场强度 $\\mathbf{E}$ 的大小均等于</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "E = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q}{R^2}"
+  },
+  {
+   "type": "text",
+   "html": "<p>$\\mathbf{E}$ 的方向则沿径矢方向向外。在球面上任取一面积元 $\\mathrm{d}S$，其正单位法线矢量 $\\mathbf{e}_{\\mathrm{n}}$ 与场强 $\\mathbf{E}$ 的方向相同，即 $\\mathbf{E}$ 与面积元垂直。根据式(5-12)，通过 $\\mathrm{d}S$ 的电场强度通量为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathrm{d}\\Phi_{\\mathrm{e}} = \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{S} = E\\mathrm{d}S = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q}{R^2}\\mathrm{d}S"
+  },
+  {
+   "type": "text",
+   "html": "<p>于是通过整个球面的电场强度通量为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\Phi_{\\mathrm{e}} = \\oint_S \\mathrm{d}\\Phi_{\\mathrm{e}} = \\oint_S \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{S} = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q}{R^2}\\oint_S \\mathrm{d}S = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q}{R^2} \\cdot 4\\pi R^2"
+  },
+  {
+   "type": "text",
+   "html": "<p>得</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\Phi_{\\mathrm{e}} = \\oint_S \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{S} = \\frac{q}{\\varepsilon_0}",
+   "label": "式（5-15）"
+  },
+  {
+   "type": "text",
+   "html": "<p>即通过球面的电场强度通量等于球面所包围的电荷 $q$ 除以真空电容率。于是，从电场线的观点看来，若 $q$ 为正电荷，从 $q$ 穿出球面的电场线数为 $q/\\varepsilon_0$；若 $q$ 为负电荷，则穿入球面并会聚于 $q$ 的电场线数为 $q/\\varepsilon_0$.</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_150_200_d0bd651f9beea5e4779c9be03948ba84e0697fc3eb51d6704d06d256bf4e56b6.png",
+   "caption": "图 5-18 推导高斯定理用图（点电荷在球面中心）"
+  },
+  {
+   "type": "text",
+   "html": "<p>C. F. 高斯(Carl Friedrich Gauss,1777—1855)，德国数学家、天文学家和物理学家。高斯在数学上建树颇丰，有\"数学王子\"美称。他与另一位德国物理学家 W.E.韦伯(Wilhelm Eduard Weber,1804—1891)制成第一台有线电报机和建立了地磁观测台。高斯还创立了电磁学量的绝对单位制。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>上面讨论的是一种很特殊的情况，包围点电荷的闭合曲面是以点电荷为球心的球面。如果包围点电荷的闭合曲面形状是任意的，式(5-15)仍能成立。下面小号字内容将予以证明。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如图5-19所示，点电荷 $q$ 放在点 $O$ 处，它被任意形状的闭合曲面所包围。我们将此闭合曲面分成许多面积元。设点电荷 $q$ 至某一面积元 $\\mathrm{d}S$ 的矢量为 $\\mathbf{r}$，此面积元的正法线矢量 $\\mathbf{e}_{\\mathrm{n}}$ 与面积元所在处电场强度 $\\mathbf{E}$ 之间的夹角为 $\\theta$.由式(5-12)可知，穿过面积元 $\\mathrm{d}S$ 的电场强度通量为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathrm{d}\\Phi_{\\mathrm{e}} = \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{S} = E\\mathrm{d}S\\cos\\theta"
+  },
+  {
+   "type": "text",
+   "html": "<p>将点电荷的电场强度公式(5-3)代入上式，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathrm{d}\\Phi_{\\mathrm{e}} = \\frac{q}{4\\pi\\varepsilon_0}\\frac{\\mathrm{d}S\\cos\\theta}{r^2} = \\frac{q}{4\\pi\\varepsilon_0}\\frac{\\mathrm{d}S'}{r^2}"
+  },
+  {
+   "type": "text",
+   "html": "<p>从数学上可知，$\\mathrm{d}S\\cos\\theta/r^2$ 为面积元 $\\mathrm{d}S$ 对点 $O$ 所张开的立体角 $\\mathrm{d}\\Omega$，即 $\\mathrm{d}\\Omega = \\mathrm{d}S\\cos\\theta/r^2$，故上式为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathrm{d}\\Phi_{\\mathrm{e}} = \\frac{q}{4\\pi\\varepsilon_0}\\mathrm{d}\\Omega"
+  },
+  {
+   "type": "text",
+   "html": "<p>由上式可以看出，在点电荷的电场中，通过任意面积元 $\\mathrm{d}S$ 的电场强度通量，只与点电荷 $q$ 以及面积元 $\\mathrm{d}S$ 对 $O$ 所在点张开的立体角的大小有关。于是包围 $q$ 的任意闭合曲面的电场强度通量为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\Phi_{\\mathrm{e}} = \\oint_S \\mathrm{d}\\Phi_{\\mathrm{e}} = \\oint_S \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{S} = \\frac{q}{4\\pi\\varepsilon_0}\\oint_S \\mathrm{d}\\Omega"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中立体角对闭合曲面的积分 $\\oint_S \\mathrm{d}\\Omega = 4\\pi$，于是上式为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\Phi_{\\mathrm{e}} = \\oint_S \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{S} = \\frac{q}{\\varepsilon_0}"
+  },
+  {
+   "type": "text",
+   "html": "<p>这与式(5-15)是相同的。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>从以上讨论中可以看出，在点电荷 $q$ 的电场中，通过包围 $q$ 的闭合曲面的电场强度通量与闭合曲面的形状无关，其值都等于 $q/\\varepsilon_0$.当 $q > 0$ 时，$\\Phi_{\\mathrm{e}} > 0$，这表示电场线从闭合曲面内向外穿出，或者说电场线从正电荷发出；当 $q < 0$ 时，$\\Phi_{\\mathrm{e}} < 0$，这表示电场线从外面穿进闭合曲面，或者说电场线会聚于负电荷。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如果点电荷位于闭合曲面之外(图5-20)，那么通过此闭合曲面的电场强度通量又将为多少呢？从图中可以看出，进入闭合曲面的电场线数与穿出闭合曲面的电场线数相等，故穿过闭合曲面的电场强度通量为零。由此不难推断，若在电场中所取的闭合曲面内不含有电荷，或者所含电荷的代数和为零时，穿过此闭合曲面的电场强度通量必为零，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\Phi_{\\mathrm{e}} = \\oint_S \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{S} = 0"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_150_200_8506d5cb302be97b73db2281d91ee05020b5c593a9f6c3e45fd66feef1c35246.jpg",
+   "caption": "图 5-19 穿过包围点电荷的任意闭合曲面的通量"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_150_200_df9a602d9637a00a8140b1e144c7317ef8ed868dad7bfb585c23a394c0cbfa45.png",
+   "caption": "图 5-20 点电荷在闭合曲面之外（通量为零）"
+  },
+  {
+   "type": "text",
+   "html": "<p>下面我们进一步讨论在闭合曲面内含有任意电荷系时，穿过闭合曲面的电场强度通量。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>我们已知任意电荷系可看作诸点电荷的集合体，而由电场强度的叠加原理知道，诸点电荷在电场空间某点激发的电场强度应是各点电荷在该点激发的电场强度的矢量和，因此，穿过电场中任意闭合曲面的电场强度通量应为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\oint_S \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{S} = \\oint_S \\mathbf{E}_1 \\cdot \\mathrm{d}\\mathbf{S} + \\oint_S \\mathbf{E}_2 \\cdot \\mathrm{d}\\mathbf{S} + \\cdots + \\oint_S \\mathbf{E}_n \\cdot \\mathrm{d}\\mathbf{S}"
+  },
+  {
+   "type": "formula",
+   "latex": "= \\Phi_{\\mathrm{e}1} + \\Phi_{\\mathrm{e}2} + \\cdots + \\Phi_{\\mathrm{e}n}"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $\\Phi_{\\mathrm{e}1},\\Phi_{\\mathrm{e}2},\\cdots,\\Phi_{\\mathrm{e}n}$ 是电荷 $q_1,q_2,\\cdots,q_n$ 各自激发的电场穿过闭合曲面的电场强度通量。由上面的讨论已知，当电荷 $q_i$ 在闭合曲面内时，电场强度通量 $\\Phi_{\\mathrm{e}i} = q_i/\\varepsilon_0$；当电荷 $q_i$ 在闭合曲面外时，电场强度通量 $\\Phi_{\\mathrm{e}i} = 0$.所以，穿过闭合曲面的电场强度通量仅与此闭合曲面内的电荷有关。于是，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\oint_S \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{S} = \\frac{1}{\\varepsilon_0}\\sum_{i=1}^{n} q_i^{\\mathrm{in}}",
+   "label": "式（5-16）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $\\sum_{i=1}^{n} q_i^{\\mathrm{in}}$ 是闭合曲面内所含电荷的代数和。式(5-16)表明：在真空静电场中，穿过任意闭合曲面的电场强度通量等于该闭合曲面所包围的所有电荷的代数和除以 $\\varepsilon_0$.这就是真空中静电场的高斯定理。在高斯定理中，我们常把所选取的闭合曲面称为高斯面，所以，穿过任意高斯面的电场强度通量只与高斯面所包围的电荷系有关，而与高斯面的形状无关，也与电荷系的电荷分布情况无关。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>应当指出，虽然高斯定理是在库仑定律的基础上得出的，但库仑定律是从电荷间的作用反映静电场的性质，而高斯定理则是从场和场源电荷间的关系反映静电场的性质。从场的研究方面来看，高斯定理比库仑定律更基本，应用范围更广泛。库仑定律只适用于静电场，而高斯定理不但适用于静电场，而且对变化的电场也是适用的，它是电磁场理论的基本方程之一，关于这一点，我们将在第八章电磁感应与电磁场中论述。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>四、高斯定理应用举例</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>高斯定理的一个应用就是计算带电体周围电场的电场强度①.当所论及的电场是均匀的电场，或者电场的分布是对称的时，这就为我们选取合适的闭合曲面(即高斯面)提供了条件，从而使面积分变得简单易算。所以分析电场的对称性是取高斯面求电场强度的一个重要的问题。下面举几个例子，说明如何应用高斯定理来计算对称分布的电场的电场强度或电荷分布。</p>"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（5.3 节 · 例 2）",
+   "problem": "设有一半径为 $R$，均匀带电荷量为 $Q$ 的球面。求球面内部和外部任意点的电场强度。",
+   "solution_steps": [
+    "电荷 $Q$ 可近似认为均匀分布在半径为 $R$ 的球面上。由于电荷分布是球对称的，所以 $\\mathbf{E}$ 的分布也是球对称的。因此，如以半径 $r$ 作一球面，则在同一球面上各点 $\\mathbf{E}$ 的大小相等，且 $\\mathbf{E}$ 与球面上各处的面积元相垂直。",
+    "取点 $P$ 在如图5-21(a)所示的球面内部，以球心到点 $P$ 的距离为 $r(<R)$，以 $r$ 为半径作的球面——高斯面内没有电荷，即 $\\sum q = 0$.由高斯定理式(5-16)可得",
+    "$$\\oint_S \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{S} = E \\cdot 4\\pi r^2 = 0$$",
+    "$$E = 0 \\quad (r < R) \\tag{1}$$",
+    "上式表明，均匀带电球面内部的电场强度为零。",
+    "如图5-21(b)所示，因为电荷 $Q$ 均匀分布在半径为 $R$ 的球面上，所以，以球心到球面外部点 $P$ 的距离 $r(>R)$ 为半径作一球面。此球面上的电场强度 $\\mathbf{E}$ 的分布是对称分布，故可取此球面为高斯面，它所包围的电荷为 $Q$.由高斯定理可得",
+    "$$\\oint_S \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{S} = E \\cdot 4\\pi r^2 = \\frac{Q}{\\varepsilon_0}$$",
+    "于是点 $P$ 的电场强度为",
+    "$$\\mathbf{E} = \\frac{1}{4\\pi\\varepsilon_0}\\frac{Q}{r^2}\\mathbf{e}_r \\quad (r > R) \\tag{2}$$",
+    "上式表明，均匀带电球面在其外部的电场强度，与等量电荷全部集中在球心时的电场强度相同。",
+    "由式(1)和式(2)可作图5-21(c)所示的 $E\\!-\\!r$ 曲线。从曲线上可以看出，球面内($r<R$)的 $E$ 为零，球面外($r>R$)的 $E$ 与 $r^2$ 成反比，球面处($r=R$)的电场强度有跃变。",
+    "<img src=\"assets/images/ch05/pages_150_200_de3d15e80b4b0b81cb815d909c74dd9c9a8c8fc3cbbd6968452a88a8459c37f9.png\" style=\"max-width:60%\">",
+    "<div class=\"figcap\">图 5-21(a) 高斯面在带电球面内部（Σq = 0）</div>",
+    "(a) 高斯面在带电球面内部，$\\sum q = 0$",
+    "<img src=\"assets/images/ch05/pages_150_200_894d92ad750a0bc37a59bbdde2bdff5f704cbcabf47887186065885de95f6529.png\" style=\"max-width:60%\">",
+    "<div class=\"figcap\">图 5-21(b) 高斯面在带电球面外部（Σq = Q）</div>",
+    "(b) 高斯面在带电球面外部，$\\sum q = Q$",
+    "<img src=\"assets/images/ch05/pages_150_200_1463e39eb873f0ee4353a75342f47d44889d386da8cc365055b505aa2c18967f.png\" style=\"max-width:60%\">",
+    "<div class=\"figcap\">图 5-21(c) 均匀带电球面 E 随 r 的变化曲线</div>",
+    "(c) 均匀带电球面 $E$ 随 $r$ 的变化曲线"
+   ],
+   "answer": null
+  },
+  {
+   "type": "example",
+   "title": "教材例题（5.3 节 · 例 3）",
+   "problem": "设有一无限长①均匀带电直线，单位长度上的电荷(即电荷线密度)为 $\\lambda$.求距离该直线为 $r$ 处某点的电场强度。",
+   "solution_steps": [
+    "由于带电直线无限长，且电荷分布是均匀的，所以其电场的 $\\mathbf{E}$ 沿垂直于该直线的径矢方向，而且在距直线等距离处各点的 $\\mathbf{E}$ 的大小相等。这就是说，无限长均匀带电直线的电场是轴对称的。如图5-22所示，直线沿 $z$ 轴放置；点 $P$ 在 $xy$ 平面上距 $z$ 轴为 $r$.我们取以 $z$ 轴为轴线的正圆柱面为高斯面，它的高度为 $h$，底面半径为 $r$.由于 $\\mathbf{E}$ 与上、下底面的法线垂直，所以通过圆柱两个底面的电场强度通量为零，而通过圆柱侧面的电场强度通量为 $E \\cdot 2\\pi rh$.又，此高斯面所包围的电荷为 $\\lambda h$.所以，根据高斯定理有",
+    "$$E \\cdot 2\\pi rh = \\frac{\\lambda h}{\\varepsilon_0}$$",
+    "由此可得",
+    "$$E = \\frac{\\lambda}{2\\pi\\varepsilon_0 r}$$",
+    "即无限长均匀带电直线外一点的电场强度，与该点到带电直线的垂直距离成反比，与电荷线密度 $\\lambda$ 成正比。",
+    "<img src=\"assets/images/ch05/pages_150_200_0e78513f3a12cce9644c2bacbd1424154aaa8edba7fbc2c2d1559a9ebf874746.png\" style=\"max-width:60%\">",
+    "<div class=\"figcap\">图 5-22 无限长均匀带电直线的圆柱形高斯面（例3）</div>"
+   ],
+   "answer": null
+  },
+  {
+   "type": "example",
+   "title": "教材例题（5.3 节 · 例 4）",
+   "problem": "设有一无限大的均匀带电平面，单位面积上所带的电荷(即电荷面密度)为 $\\sigma$.求距离该平面为 $r$ 处某点的电场强度。",
+   "solution_steps": [
+    "本题曾在第5-2节例2中，用电场强度叠加原理进行过计算。现在用高斯定理再计算此题，就能体会到对具有对称性的电场，用高斯定理计算电场强度要方便多了。由于均匀带电平面是无限大的，带电平面两侧附近的电场具有对称性，所以平面两侧的电场强度垂直于该平面(图5-23).取如图所示的高斯面，此高斯面是个圆柱面，它穿过带电平面，且对带电平面是对称的。其侧面的法线与电场强度垂直，所以，通过侧面的电场强度通量为零。而底面的法线与电场强度平行，且底面上电场强度大小相等，所以通过两底面的电场强度通量各为 $ES$，此处 $S$ 是底面的面积。已知带电平面的电荷面密度为 $\\sigma$，根据高斯定理可有",
+    "$$2ES = \\frac{\\sigma S}{\\varepsilon_0}$$",
+    "得",
+    "$$E = \\frac{\\sigma}{2\\varepsilon_0} \\tag{1}$$",
+    "上式表明，无限大均匀带电平面的 $\\mathbf{E}$ 与场点到平面的距离无关，而且 $\\mathbf{E}$ 的方向与带电平面垂直。无限大带电平面两侧的电场为均匀电场。",
+    "利用上述结果，可求得两带等量异号电荷的无限大平行平面之间的电场强度。设两无限大平行平面 $A$ 和 $B$ 的电荷面密度分别为 $+\\sigma$ 和 $-\\sigma$.它们所建立的电场强度分别为 $\\mathbf{E}_A$ 和 $\\mathbf{E}_B$，大小均为 $\\sigma/2\\varepsilon_0$；而它们的方向，在两个平面之间是相同的，在两平面之外则相反，如图5-23(b)所示。由电场强度叠加原理可得两无限大均匀带电平面之外的电场强度 $E = 0$；而两带电平面之间的电场强度 $E$ 的大小为",
+    "$$E = \\frac{\\sigma}{\\varepsilon_0} \\tag{2}$$",
+    "$\\mathbf{E}$ 的方向由带正电的平面指向带负电的平面。由上述结果可以看出，两无限大均匀带电平面之间的电场是均匀电场。",
+    "<img src=\"assets/images/ch05/pages_200_250_6eaf24b90791bd9292c16144d53c802e60a1808eec6327a61de5b20fbb233124.jpg\" style=\"max-width:60%\">",
+    "<div class=\"figcap\">图 5-23 无限大均匀带电平面的高斯面（例4）</div>"
+   ],
+   "answer": null
+  },
+  {
+   "type": "example",
+   "title": "教材例题（5.3 节 · 例 5）",
+   "problem": "地球大气中电场强度的大小随高度的增加而减小。若在地面上方 $h_1 = 200\\ \\mathrm{m}$ 处，$E_1 = 100\\ \\mathrm{N \\cdot C^{-1}}$；$h_2 = 300\\ \\mathrm{m}$ 处，$E_2 = 50\\ \\mathrm{N \\cdot C^{-1}}$；$\\mathbf{E}$ 的方向均垂直指向地面。试估算在此范围内地球大气中的平均电荷体密度。",
+   "solution_steps": [
+    "设地球半径为 $R$，分别取半径为 $R+h_1$ 和 $R+h_2$ 的球形高斯面。若两高斯面包围的总电荷分别为 $Q_1$ 和 $Q_2$，则对两高斯面分别运用高斯定理，有",
+    "$$-E_1 \\cdot 4\\pi(R+h_1)^2 = \\frac{Q_1}{\\varepsilon_0} \\tag{1}$$",
+    "$$-E_2 \\cdot 4\\pi(R+h_2)^2 = \\frac{Q_2}{\\varepsilon_0} \\tag{2}$$",
+    "(1)、(2)两式相减，考虑到 $R \\gg h_1, R \\gg h_2$，有",
+    "$$-4\\pi R^2(E_2- E_1) = \\frac{Q_2- Q_1}{\\varepsilon_0} = \\frac{\\rho \\cdot \\frac{4}{3}\\pi[(R+h_2)^3- (R+h_1)^3]}{\\varepsilon_0} \\approx \\frac{\\rho \\cdot 4\\pi R^2(h_2- h_1)}{\\varepsilon_0}$$",
+    "所以",
+    "$$\\rho = -\\frac{\\varepsilon_0(E_2- E_1)}{h_2- h_1} > 0$$",
+    "$\\rho > 0$，表明大气带正电荷。",
+    "从上面所举的几个例子以及其他类似的问题可以看出，在应用高斯定理求电场强度时，高斯面上的电场分布必须具有对称性。只有在这种情况下，才能用式(5-16)形式的高斯定理较简便地求得电场强度。"
+   ],
+   "answer": null
+  },
+  {
+   "type": "section",
+   "number": "5.4",
+   "title": "密立根测定电子电荷的实验"
+  },
+  {
+   "type": "text",
+   "html": "<p>在历史上，电子的电荷最早是美国物理学家密立根(R.A.Millikan,1868—1953)领导的小组于1907—1913年从实验中测得的。为此，他于1923年获诺贝尔物理学奖。这个实验要观察均匀电场中带电油滴的运动，实验装置如图5-24所示。油滴从喷雾器喷出，并通过平板顶上的一个小孔落到两个水平放置的平行平板之间的空间。由于喷嘴处的摩擦作用，或由于油滴受到X射线、$\\gamma$ 射线等的作用，都会使得一些油滴带电。设一油滴带的电荷为 $-q$，如果两板间没有电场，则油滴将在重力作用下下落。在下落过程中，油滴速度逐渐增加，此时它除受到向下的重力作用外，还要受到两板间的流体(即空气)对它的黏性力作用，黏性力方向是竖直向上的，因此油滴将很快地达到以恒定的速度(即终极速度) $v_1$ 下落。终极速度 $v_1$ 依赖于油滴的尺寸、油质和流体的性质等因素。如以 $\\mathbf{P}$ 代表油滴所受的重力，$\\mathbf{F}_{\\mathrm{f}}$ 代表油滴在空气中所受的黏性力，当没有外电场作用，且油滴达到终极速度时，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{P} + \\mathbf{F}_{\\mathrm{f}} = 0"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $\\mathbf{F}_{\\mathrm{f}} = 6\\pi\\eta r\\mathbf{v}_1$，$r$ 为油滴的半径，$\\eta$ 为气体的黏度。如以 $m$ 代表油滴的质量，于是有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "v_1 = \\frac{mg}{6\\pi\\eta r}",
+   "label": "式（5-17）"
+  },
+  {
+   "type": "text",
+   "html": "<p>油滴的质量 $m$ 很小，不能从实验直接测得，但是油滴的终极速度 $v_1$ 和半径 $r$ 可由显微镜观察测得，$\\eta$ 是已知的，所以由式(5-17)可算出油滴的质量。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>当两板加以如图所示的给定电压时，两板间就存在电场强度大小为 $E$、方向竖直向下的静电场，这时带电的油滴又要受到 $\\mathbf{F}_{\\mathrm{e}} = -q\\mathbf{E}$ 的电场力作用。在这种情况下，油滴将受到重力 $\\mathbf{P}$、黏性力 $\\mathbf{F}_{\\mathrm{f}}$ 和电场力 $\\mathbf{F}_{\\mathrm{e}}$ 三个力的作用。改变两板间的电压，即改变两板间的 $E$，可使油滴达到新的终极速度 $v_2$.此时，作用在油滴上的合力又为零了，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{P} + \\mathbf{F}_{\\mathrm{f}} + \\mathbf{F}_{\\mathrm{e}} = 0"
+  },
+  {
+   "type": "text",
+   "html": "<p>即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "mg - 6\\pi\\eta r v_2- qE = 0"
+  },
+  {
+   "type": "text",
+   "html": "<p>于是有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "v_2 = \\frac{-qE + mg}{6\\pi\\eta r}",
+   "label": "式（5-18）"
+  },
+  {
+   "type": "text",
+   "html": "<p>从式(5-17)和式(5-18)中消去 $mg$，可求得油滴所带的电荷为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "q = \\frac{6\\pi\\eta r(v_1- v_2)}{E}",
+   "label": "式（5-19）"
+  },
+  {
+   "type": "text",
+   "html": "<p>由于 $r$、$v_1$、$v_2$ 和 $E$ 均可由实验测定，而 $\\eta$ 是已知的，故可由上式求出油滴所带的电荷。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>应当指出，各个油滴所带电荷的符号和多少是很不相同的，所以，在实验过程中，必须改变加在两平行板间的电压，才能选出某个欲测的油滴来。量度具有不同电荷的油滴的终极速度 $v_1$ 和 $v_2$ 以及相应的电场强度，就可以算出油滴可能具有的电荷了。在1907年到1913年期间，密立根及其合作者经过长时期的实验研究，得出了所测电荷 $q$ 是电子电荷的绝对值 $e = 1.602 \\times 10^{-19}\\ \\mathrm{C}$ 的整数倍的结论，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "q = ne, \\quad n = 1,2,3,\\cdots"
+  },
+  {
+   "type": "text",
+   "html": "<p>在这以后，人们还做了很多其他实验，都得出了与密立根实验相同的结果。因此，可以认为在自然界中所观察到的电荷均为电子电荷的绝对值 $e$ 的整数倍。这也是自然界中一条基本的定律，它表明电荷是量子化的。直到现在，还没有找到足够的实验证据来否定这条定律.①</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>最后讲述一些有关油滴实验的事。密立根在实验早期是用水滴进行测量的，因水滴易于蒸发，实验结果很不稳定.1913年密立根的博士生哈维·弗雷彻(Harvey Fletcher)用油滴替代水滴，并改进了实验设备。他们一起进行实验得出较水滴要稳定得多的结果。论文以密立根署名发表，后来弗雷彻以博士论文单独具名发表。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>中国学者李耀邦(1884—1940)在芝加哥大学跟随密立根从事电荷的测定工作.1914年，他用紫胶替代油滴，测得的 $e$ 平均值较之油滴实验结果要精确得多。他并于1914年以《以密立根方法利用固体球测定 $e$ 值》为题发表了他的博士论文，刊登在《物理评论》上。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_200_250_ba5be3a5891f6f7bd9be79d57f343f9eb292efb867d85aa5692c05d96796235a.png",
+   "caption": "图 5-24 密立根油滴实验装置示意图"
+  },
+  {
+   "type": "section",
+   "number": "5.5",
+   "title": "静电场的环路定理 电势能"
+  },
+  {
+   "type": "video",
+   "source": "bilibili",
+   "bvid": "BV1eK4y1E7Cb",
+   "page": 22,
+   "title": "📺 视频学习：静电场环路定理 电势能",
+   "caption": "东北大学《大学物理》MOOC 课堂录播（马文蔚《物理学》配套课程），第 3 次课 配套；本讲对应教材 5-5 静电场的环路定理 电势能，时长 46:17。注意：视频标题里的 5.x 是该课程的讲次编号，与教材小节号含义不同，请以本卡片标注的教材小节为准。<a href=\"https://www.bilibili.com/video/BV1eK4y1E7Cb?p=22\" target=\"_blank\" rel=\"noopener\">在 B 站打开本讲 ↗</a>（嵌入加载失败、或想看弹幕与讲义时点此）"
+  },
+  {
+   "type": "text",
+   "html": "<p>在牛顿力学中，我们曾论证了保守力——万有引力和弹性力对质点做功只与起始和终了位置有关，而与路径无关这一重要特性，并由此而引入相应的势能概念。那么静电场力——库仑力的情况怎样呢？是否也具有保守力做功的特性而可引入电势能的概念？</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>一、静电场力所做的功</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如图5-25所示，一正点电荷 $q$ 固定于原点 $O$，试验电荷 $q_0$ 在 $q$ 的电场中由点 $A$ 沿任意路径 $ACB$ 到达点 $B$.在路径上的点 $C$ 处取位移元 $\\mathrm{d}\\mathbf{l}$，从原点 $O$ 到点 $C$ 的位矢为 $\\mathbf{r}$.电场力对 $q_0$ 做的元功为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathrm{d}W = q_0\\mathbf{E} \\cdot \\mathrm{d}\\mathbf{l}"
+  },
+  {
+   "type": "text",
+   "html": "<p>已知点电荷的电场强度为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{E} = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q}{r^2}\\mathbf{e}_r"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $\\mathbf{e}_r$ 为沿位矢的单位矢量，于是元功可写为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathrm{d}W = \\frac{1}{4\\pi\\varepsilon_0}\\frac{qq_0}{r^2}\\mathbf{e}_r \\cdot \\mathrm{d}\\mathbf{l}"
+  },
+  {
+   "type": "text",
+   "html": "<p>从图5-25可以看出 $\\mathbf{e}_r \\cdot \\mathrm{d}\\mathbf{l} = \\mathrm{d}l\\cos\\theta = \\mathrm{d}r$，式中 $\\theta$ 是 $\\mathbf{E}$ 与 $\\mathrm{d}\\mathbf{l}$ 之间的夹角。所以上式可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathrm{d}W = \\frac{1}{4\\pi\\varepsilon_0}\\frac{qq_0}{r^2}\\mathrm{d}r"
+  },
+  {
+   "type": "text",
+   "html": "<p>于是，在试验电荷 $q_0$ 从点 $A$ 移至点 $B$ 的过程中，电场力所做的功为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "W = \\int \\mathrm{d}W = \\frac{qq_0}{4\\pi\\varepsilon_0}\\int_{r_A}^{r_B}\\frac{\\mathrm{d}r}{r^2} = \\frac{qq_0}{4\\pi\\varepsilon_0}\\left(\\frac{1}{r_A} - \\frac{1}{r_B}\\right)",
+   "label": "式（5-20）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $r_A$ 和 $r_B$ 分别为试验电荷移动时的起点和终点距点电荷 $q$ 的距离。上式表明，在点电荷 $q$ 的非匀强电场中，电场力对试验电荷 $q_0$ 所做的功，只与其移动时的起始和终了位置有关，而与所经历的路径无关。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>任意带电体都可看成由许多点电荷组成的点电荷系。由电场强度叠加原理已知，点电荷系的电场强度 $\\mathbf{E}$ 为各点电荷电场强度的叠加，即 $\\mathbf{E} = \\mathbf{E}_1 + \\mathbf{E}_2 + \\cdots$，因此任意点电荷系的电场力对试验电荷 $q_0$ 所做的功，等于组成此点电荷系的各点电荷的电场力所做功的代数和，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "W = q_0\\int_l \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{l} = q_0\\int_l \\mathbf{E}_1 \\cdot \\mathrm{d}\\mathbf{l} + q_0\\int_l \\mathbf{E}_2 \\cdot \\mathrm{d}\\mathbf{l} + \\cdots"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式中每一项都与路径无关，所以它们的代数和也必然与路径无关。由此得出如下结论：一试验电荷 $q_0$ 在静电场中从一点沿任意路径运动到另一点时，静电场力对它所做的功，仅与试验电荷 $q_0$ 及路径的起点和终点位置有关，而与该路径的形状无关。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_200_250_2fbab96088c41e364320ce97034e263ff487e75a31300f6366c127b9f1a54223.png",
+   "caption": "图 5-25 非匀强电场中电场力所做的功"
+  },
+  {
+   "type": "text",
+   "html": "<h4>二、静电场的环路定理</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在静电场中，若将试验电荷 $q_0$ 沿闭合路径移动一周，电场力做的功可表示为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "W = \\oint_l q_0\\mathbf{E} \\cdot \\mathrm{d}\\mathbf{l} = q_0\\oint_l \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{l}"
+  },
+  {
+   "type": "text",
+   "html": "<p>由电场力做功与路径无关，只与起始和终了位置有关这一性质出发，下面即将证明：将试验电荷沿闭合路径移动一周，电场力的功为零，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "q_0\\oint_l \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{l} = 0",
+   "label": "式（5-21）"
+  },
+  {
+   "type": "text",
+   "html": "<p>如图5-26所示，设试验电荷 $q_0$ 在静电场中运动，经历的闭合路径为 $ABCDA$，电场力的功为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "W = q_0\\oint_l \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{l} = q_0\\int_{ABC} \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{l} + q_0\\int_{CDA} \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{l}"
+  },
+  {
+   "type": "text",
+   "html": "<p>由于</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\int_{CDA} \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{l} = -\\int_{ADC} \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{l}"
+  },
+  {
+   "type": "text",
+   "html": "<p>而且电场力做功与路径无关，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "q_0\\int_{ADC} \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{l} = q_0\\int_{ABC} \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{l}"
+  },
+  {
+   "type": "text",
+   "html": "<p>这样，把它们代入式(5-22)得</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "q_0\\oint_l \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{l} = q_0\\int_{ABC} \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{l} - q_0\\int_{ADC} \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{l} = 0",
+   "label": "式（5-22）"
+  },
+  {
+   "type": "text",
+   "html": "<p>此结果即式(5-21).</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在式(5-21)中，由于试验电荷 $q_0$ 不为零，故式(5-21)成立的条件必须为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\oint_l \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{l} = 0",
+   "label": "式（5-23）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式表明，在静电场中，电场强度 $\\mathbf{E}$ 沿任意闭合路径的线积分为零。 $\\mathbf{E}$ 沿任意闭合路径的线积分又叫做 $\\mathbf{E}$ 的环流，故上式也表明，在静电场中电场强度 $\\mathbf{E}$ 的环流为零，这叫做静电场的环路定理。它与高斯定理一样，也是表述静电场性质的一个重要定理。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>至此，我们明白了静电场力与万有引力、弹性力一样，也都是保守力；静电场也是保守场。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_200_250_77a992bf580fa0630277bdf26162982df9b30eacbfbed3004ed7bbafa07574ee.png",
+   "caption": "图 5-26 试验电荷沿闭合路径移动一周电场力做功为零"
+  },
+  {
+   "type": "text",
+   "html": "<h4>三、电势能</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在力学中，由于重力、弹性力这一类保守力做功具有与路径无关的特点，我们曾引进重力势能和弹性势能。从上面的讨论中我们知道，静电场力也是保守力，它对试验电荷所做的功也具有与路径无关的特性，因此电荷在静电场中的一定位置上具有一定的电势能，这个电势能是属于电荷-电场系统的。这样静电场力对电荷所做的功就等于电荷电势能的改变量。如果以 $E_{\\mathrm{p}A}$ 和 $E_{\\mathrm{p}B}$ 分别表示试验电荷 $q_0$ 在电场中点 $A$ 和点 $B$ 处的电势能，则试验电荷从 $A$ 移动到 $B$，静电场力对它做的功为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "W_{AB} = E_{\\mathrm{p}A} - E_{\\mathrm{p}B} = -(E_{\\mathrm{p}B} - E_{\\mathrm{p}A})"
+  },
+  {
+   "type": "text",
+   "html": "<p>或</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "q_0\\int_{AB} \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{l} = E_{\\mathrm{p}A} - E_{\\mathrm{p}B} = -(E_{\\mathrm{p}B} - E_{\\mathrm{p}A})",
+   "label": "式（5-24）"
+  },
+  {
+   "type": "text",
+   "html": "<p>电势能也和重力势能一样，是一个相对的量。因此，要决定电荷在电场中某一点电势能的值，也必须先选择一个电势能参考点，并设电荷在该点的电势能为零。这个参考点的选择是任意的，处理问题时怎样方便就怎样选取。在式(5-24)中，若选 $q_0$ 在点 $B$ 处的电势能为零，即 $E_{\\mathrm{p}B} = 0$，则有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "E_{\\mathrm{p}A} = q_0\\int_{AB} \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{l} \\quad (E_{\\mathrm{p}B} = 0)",
+   "label": "式（5-25）"
+  },
+  {
+   "type": "text",
+   "html": "<p>这表明，试验电荷 $q_0$ 在电场中某点处的电势能，就等于把它从该点移到零电势能处静电场力所做的功。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在国际单位制中，电势能的单位名称是焦耳，符号为 $\\mathrm{J}$.</p>"
+  },
+  {
+   "type": "section",
+   "number": "5.6",
+   "title": "电势"
+  },
+  {
+   "type": "simulation",
+   "simId": "efield-lab",
+   "title": "电场实验室",
+   "hint": "切换五种典型电荷布局（正负点电荷、电偶极子、双正电荷、平行板），背景色表示电势高低（红正蓝负），白线为电场线；拖动探针读任意点的电势 V 与场强 E——体会「电场线垂直等势面、E 指向电势降低方向」。"
+  },
+  {
+   "type": "text",
+   "html": "<h4>一、电势</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>电势是描述静电场性质的另一个重要物理量。在式(5-24)中，如取</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "V_A = E_{\\mathrm{p}A}/q_0, \\quad V_B = E_{\\mathrm{p}B}/q_0"
+  },
+  {
+   "type": "text",
+   "html": "<p>$V_A$ 和 $V_B$ 分别称为点 $A$ 和点 $B$ 的电势，那么式(5-24)可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "V_A = \\int_{AB} \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{l} + V_B",
+   "label": "式（5-26）"
+  },
+  {
+   "type": "text",
+   "html": "<p>从上式可以看出，要确定点 $A$ 的电势，不仅要知道将单位正试验电荷从点 $A$ 移至点 $B$ 时电场力所做的功，而且还要知道点 $B$ 的电势。所以点 $B$ 的电势 $V_B$ 常叫做参考电势。原则上参考电势 $V_B$ 可取任意值。但是为方便起见，对电荷分布在有限空间的情况来说，点 $B$ 通常取在无限远处，并令无限远处的电势能和电势为零，即 $E_{\\mathrm{p}B} = 0, V_B = 0$.于是，电场中点 $A$ 的电势为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "V_A = \\int_{A\\infty} \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{l}",
+   "label": "式（5-27）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式表明，电场中某一点 $A$ 的电势 $V_A$，在数值上等于把单位正试验电荷从点 $A$ 移到无限远处时，静电场力所做的功。上式亦可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "V_A = -\\int_{\\infty A} \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{l}"
+  },
+  {
+   "type": "text",
+   "html": "<p>这样，电场中某一点 $A$ 的电势，在数值上也等于把单位正试验电荷从无限远处移到点 $A$ 时，静电场力所做功的负值。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>电势是标量。在国际单位制中，电势的单位名称是伏特，简称伏，符号为 $\\mathrm{V}$①.电场中点 $A$ 和点 $B$ 两点间的电势差用符号 $U_{AB}$ 表示，则式(5-26)可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "U_{AB} = V_A - V_B = \\int_{AB} \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{l}",
+   "label": "式（5-28）"
+  },
+  {
+   "type": "text",
+   "html": "<p>这就是说，静电场中 $A$、$B$ 两点的电势差 $U_{AB}$，在数值上等于把单位正试验电荷从点 $A$ 移到点 $B$ 时，静电场力做的功。因此，如果知道了 $A$、$B$ 两点间的电势差 $U_{AB}$，就可以很方便地求得把电荷 $q$ 从点 $A$ 移到点 $B$ 时，静电场力所做的功 $W_{AB}$，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "W_{AB} = q\\int_{AB} \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{l} = qU_{AB} = q(V_A - V_B) = -q(V_B - V_A)",
+   "label": "式（5-29）"
+  },
+  {
+   "type": "text",
+   "html": "<p>表5-1显示生物电的常见电势差只有 $10^{-3}\\ \\mathrm{V}$ 的量级，医学上心电图测量的基本原理就是，通过测量心脏活动引起的人体体表不同部位的微小电势差随时间的变化情况，来检查心脏功能有无异常。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>表 5-1 几种常见的电势差</p>"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "类型",
+    "电势差"
+   ],
+   "rows": [
+    [
+     "生物电",
+     "$10^{-3}\\ \\mathrm{V}$"
+    ],
+    [
+     "普通干电池",
+     "$1.5\\ \\mathrm{V}$"
+    ],
+    [
+     "汽车电源",
+     "$12\\ \\mathrm{V}$"
+    ],
+    [
+     "家用电源",
+     "$110$ 或 $220\\ \\mathrm{V}$"
+    ],
+    [
+     "特高压交流输电",
+     "已达 $1.0 \\times 10^6\\ \\mathrm{V}$"
+    ],
+    [
+     "特高压直流输电",
+     "已达 $1.1 \\times 10^6\\ \\mathrm{V}$"
+    ],
+    [
+     "闪电",
+     "$10^8 \\sim 10^9\\ \\mathrm{V}$"
+    ]
+   ],
+   "caption": null
+  },
+  {
+   "type": "text",
+   "html": "<p>顺便指出，在原子物理、核物理中，电子、质子等粒子的能量常以电子伏(符号为 $\\mathrm{eV}$)为单位，$1\\ \\mathrm{eV}$ 表示电子通过 $1\\ \\mathrm{V}$ 电势差时所获得的能量。 $\\mathrm{eV}$ 与 $\\mathrm{J}$ 间的关系为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "1\\ \\mathrm{eV} = 1.602 \\times 10^{-19}\\ \\mathrm{J}"
+  },
+  {
+   "type": "text",
+   "html": "<p>在实用中，常取大地的电势为零。这样，任何导体接地后，就认为它的电势也为零。如某点相对于大地的电势差为 $380\\ \\mathrm{V}$，那么该点的电势就为 $380\\ \\mathrm{V}$.在电子仪器中，常取机壳或公共地线的电势为零，各点的电势值就等于它们与公共地线(或机壳)之间的电势差；只要测出这些电势差的数值，就可判定仪器工作是否正常。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>我国于2008年投入运行的长治—荆门 $1000\\ \\mathrm{kV}$ 交流输电系统，仍是目前世界上电压等级最高的交流输电系统。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>2018年，我国自主设计建设的世界首个 $\\pm 1100\\ \\mathrm{kV}$ 特高压直流输电工程淮东—皖南特高压输电工程启用送电。它是目前世界上电压等级最高、输送距离最远的直流输电系统。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>二、点电荷电场的电势</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>设在点电荷 $q$ 的电场中，点 $A$ 距点电荷 $q$ 的距离为 $r$.由式(5-27)和式(5-3)可得点 $A$ 的电势为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "V_A = \\int_{A\\infty} \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{l} = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q}{r}",
+   "label": "式（5-30）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式表明，当 $q > 0$ 时，电场中各点的电势都是正值，随 $r$ 的增加而减小；但当 $q < 0$ 时，电场中各点的电势则都是负值，而在无限远处的电势虽为零，但电势却最高。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>三、电势的叠加原理</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如图5-27所示，真空中有一点电荷系，各电荷分别为 $q_1,q_2,\\cdots,q_i,\\cdots,q_n$，其中有的是正电荷，有的是负电荷。这个点电荷系所激发的电场中某点的电势如何计算呢？</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>从电场强度叠加原理我们知道，点电荷系的电场中某点的电场强度 $\\mathbf{E}$，等于各个点电荷单独存在时在该点建立的电场强度的矢量和，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{E} = \\mathbf{E}_1 + \\mathbf{E}_2 + \\cdots + \\mathbf{E}_i + \\cdots + \\mathbf{E}_n"
+  },
+  {
+   "type": "text",
+   "html": "<p>于是，根据电势的定义式(5-27)，可得点电荷系电场中点 $A$ 的电势为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "V_A = \\int_{A\\infty} \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{l}"
+  },
+  {
+   "type": "formula",
+   "latex": "= \\int_{A\\infty} \\mathbf{E}_1 \\cdot \\mathrm{d}\\mathbf{l} + \\int_{A\\infty} \\mathbf{E}_2 \\cdot \\mathrm{d}\\mathbf{l} + \\cdots + \\int_{A\\infty} \\mathbf{E}_n \\cdot \\mathrm{d}\\mathbf{l}"
+  },
+  {
+   "type": "formula",
+   "latex": "= V_1 + V_2 + \\cdots + V_n"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $V_1,V_2,\\cdots,V_n$ 分别为点电荷 $q_1,q_2,\\cdots,q_n$ 独立激发的电场中点 $A$ 的电势。由点电荷电势的计算式(5-30)，上式可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "V_A = \\frac{1}{4\\pi\\varepsilon_0}\\sum_{i=1}^{n}\\frac{q_i}{r_i}",
+   "label": "式（5-31）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式表明，点电荷系所激发的电场中某点的电势，等于各点电荷单独存在时在该点建立的电势的代数和。这一结论叫做静电场的电势叠加原理。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>若一带电体上的电荷是连续分布的，则可把它分成如图5-28所示的无限多个电荷元，电荷元 $\\mathrm{d}q$ 在电场中点 $A$ 的电势为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathrm{d}V = \\frac{1}{4\\pi\\varepsilon_0}\\frac{\\mathrm{d}q}{r}"
+  },
+  {
+   "type": "text",
+   "html": "<p>而该点的电势则为这些电荷元电势的叠加，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "V = \\frac{1}{4\\pi\\varepsilon_0}\\int \\frac{\\mathrm{d}q}{r}",
+   "label": "式（5-32）"
+  },
+  {
+   "type": "text",
+   "html": "<p>在真空中，当电荷系的电荷分布已知时，计算电势的方法有两种。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(1) 利用式(5-26)</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "V_A = \\int_{AB} \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{l} + V_B"
+  },
+  {
+   "type": "text",
+   "html": "<p>计算点 $A$ 的电势。但应注意参考点 $B$ 的电势的选取，只有电荷分布在有限空间里，才能选点 $B$ 在无限远处，且其电势为零($V_{\\infty} = 0$)；还应注意，在积分路径上 $\\mathbf{E}$ 的函数表达式必须是知道的。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(2) 利用式(5-32)所表达的点电荷电势的叠加原理计算，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "V = \\frac{1}{4\\pi\\varepsilon_0}\\int \\frac{\\mathrm{d}q}{r}"
+  },
+  {
+   "type": "text",
+   "html": "<p>下面举几个用上述两种方法计算电势的例子，供大家分析比较。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_200_250_6d4458281de3de92f3bcf90e0bcae68c663a688e394da825eca8e2bf304ddb9e.png",
+   "caption": "图 5-27 电势叠加原理用图"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_200_250_67cc6a773d9196bfbdda591eeb0c59ec706a39652a88bb709450bc2283f91f9e.png",
+   "caption": "图 5-28 电荷连续分布带电体的电势"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（5.6 节 · 例 1）",
+   "problem": "在玻尔的氢原子模型中①，处于最低能量状态的电子位于以原子核(一个质子)为中心的半径为 $0.529 \\times 10^{-10}\\ \\mathrm{m}$ 的圆轨道上。求质子在该轨道处产生的电势和电子在此轨道上的电势能。",
+   "solution_steps": [
+    "电子在圆轨道上各点与核的距离 $r = 0.529 \\times 10^{-10}\\ \\mathrm{m}$，因此，质子在该处产生的电势为",
+    "$$V = \\frac{1}{4\\pi\\varepsilon_0}\\frac{e}{r} = \\frac{9.0 \\times 10^9 \\times 1.6 \\times 10^{-19}}{0.529 \\times 10^{-10}}\\ \\mathrm{V} = 27.2\\ \\mathrm{V}$$",
+    "电子在该轨道上的电势能为",
+    "$$E_{\\mathrm{p}} = (-e)V = -27.2\\ \\mathrm{eV}$$",
+    "在讨论电子等微观粒子时，常用电子伏($\\mathrm{eV}$)作为能量单位。"
+   ],
+   "answer": null
+  },
+  {
+   "type": "example",
+   "title": "教材例题（5.6 节 · 例 2）",
+   "problem": "如图5-29所示，正电荷 $q$ 均匀地分布在半径为 $R$ 的细圆环上，环心在点 $O$.试计算在环的轴线上坐标为 $x$ 处点 $P$ 的电势。",
+   "solution_steps": [
+    "设圆环在如图5-29(a)所示的 $yz$ 平面上，坐标原点与环心 $O$ 相重合。在圆环上取一线元 $\\mathrm{d}l$，其电荷线密度为 $\\lambda$，故电荷元 $\\mathrm{d}q = \\lambda\\mathrm{d}l = \\frac{q}{2\\pi R}\\mathrm{d}l$.把它代入式(5-32)，有",
+    "$$V_P = \\frac{1}{4\\pi\\varepsilon_0}\\int_l \\frac{q}{2\\pi R}\\frac{1}{r}\\mathrm{d}l = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q}{r} = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q}{\\sqrt{x^2 + R^2}} \\tag{1}$$",
+    "图5-29(b)给出了 $x$ 轴上的电势 $V$ 随坐标 $x$ 而变化的曲线。",
+    "利用上述结果，容易计算出通过一均匀带电圆平面中心且垂直圆平面的轴线上任意点的电势。",
+    "如图5-30所示，圆平面的半径为 $R$，其中心与坐标原点 $O$ 相重合，点 $P$ 距原点为 $x$.圆平面的电荷面密度为 $\\sigma = Q/\\pi R^2$.把它分成许多个小圆环，图中画出了一个半径为 $r$、宽为 $\\mathrm{d}r$ 的小圆环，该圆环的电荷为 $\\mathrm{d}q = \\sigma \\cdot 2\\pi r\\mathrm{d}r$.",
+    "利用本例式(1)的结果，可得带电圆平面在点 $P$ 的电势为",
+    "$$V = \\frac{1}{4\\pi\\varepsilon_0}\\int_0^R \\frac{\\sigma 2\\pi r\\mathrm{d}r}{\\sqrt{x^2 + r^2}} = \\frac{\\sigma}{2\\varepsilon_0}\\int_0^R \\frac{r\\mathrm{d}r}{\\sqrt{x^2 + r^2}} = \\frac{\\sigma}{2\\varepsilon_0}(\\sqrt{x^2 + R^2} - x) \\tag{2}$$",
+    "显然，当 $x \\gg R$ 时，$\\sqrt{x^2 + R^2} \\approx x + \\frac{R^2}{2x}$.由式(2)，有",
+    "$$V \\approx \\frac{\\sigma}{2\\varepsilon_0}\\frac{R^2}{2x} = \\frac{1}{4\\pi\\varepsilon_0}\\frac{\\sigma\\pi R^2}{x} = \\frac{1}{4\\pi\\varepsilon_0}\\frac{Q}{x} \\quad (x \\gg R)$$",
+    "式中 $Q = \\sigma\\pi R^2$ 为圆平面所带的电荷。由这个结果可以看出，场点 $P$ 距场源很远时，也可以把带电圆平面视为点电荷。",
+    "<img src=\"assets/images/ch05/pages_200_250_5b2b0da7eb9536cdf98b201df52a3b89c92ce033fe883e1d3a4ff2125bd0a2f6.png\" style=\"max-width:60%\">",
+    "<div class=\"figcap\">图 5-29(a) 均匀带电圆环轴线上一点的电势（例2）</div>",
+    "<img src=\"assets/images/ch05/pages_200_250_ecab89f857b13795f6052a28d984654b3adc5ffa2eea990d86ae0745b30f5fb7.png\" style=\"max-width:60%\">",
+    "<div class=\"figcap\">图 5-29(b) 圆环轴线上电势 V 随 x 的变化曲线</div>",
+    "图5-29 (b)",
+    "<img src=\"assets/images/ch05/pages_200_250_46c200b6c77cad96479f1193090f7cc2ee55a58e8e1fc9278dcbea50b9a8bece.png\" style=\"max-width:60%\">",
+    "<div class=\"figcap\">图 5-30 均匀带电圆平面轴线上一点的电势</div>"
+   ],
+   "answer": null
+  },
+  {
+   "type": "example",
+   "title": "教材例题（5.6 节 · 例 3）",
+   "problem": "在真空中，有一电荷为 $Q$，半径为 $R$ 的均匀带电球面。试求：(1)球面外任意两点间的电势差；(2)球面内任意两点间的电势差；(3)球面外任意点的电势；(4)球面内任意点的电势。",
+   "solution_steps": [
+    "(1)从第5-3节的例2，已知均匀带电球面外任意点的电场强度为",
+    "$$\\mathbf{E} = \\frac{1}{4\\pi\\varepsilon_0}\\frac{Q}{r^2}\\mathbf{e}_r \\tag{1}$$",
+    "$\\mathbf{e}_r$ 为沿径矢的单位矢量。若在如图5-31(a)所示的径向取 $A$、$B$ 两点，它们与球心的距离分别为 $r_A$ 和 $r_B$，那么，由式(5-28)可得 $A$、$B$ 两点之间的电势差为",
+    "$$V_A - V_B = \\int_{r_A}^{r_B} \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{r}$$",
+    "从图5-31(a)中可见 $\\mathrm{d}\\mathbf{r} = \\mathrm{d}r\\mathbf{e}_r$，把式(1)代入上式，积分后得",
+    "$$V_A - V_B = \\frac{Q}{4\\pi\\varepsilon_0}\\left(\\frac{1}{r_A} - \\frac{1}{r_B}\\right) \\tag{2}$$",
+    "上式表明，均匀带电球面外两点的电势差，与球面上电荷全部集中于球心时该两点的电势差是一样的。",
+    "(2)从第5-3节的例2，已知均匀带电球面内部任意点的电场强度为",
+    "$$\\mathbf{E} = 0 \\tag{3}$$",
+    "故由式(5-28)可得如图5-31(b)所示的球面内 $A$、$B$ 两点间的电势差为",
+    "$$V_A - V_B = \\int_{r_A}^{r_B} \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{r} = 0 \\tag{4}$$",
+    "这表明，球面内各处的电势均相等，球面为一等势体。",
+    "(3)若取 $r_B \\approx \\infty$ 时 $V_B = 0$，那么由式(2)可得，均匀带电球面外任意点的电势为",
+    "$$V(r) = \\frac{Q}{4\\pi\\varepsilon_0 r} \\quad (r \\geqslant R) \\tag{5}$$",
+    "上式表明，均匀带电球面外任意点的电势，与球面上电荷全部集中于球心时的电势是一样的。",
+    "(4)由于带电球面为一等势体，故球面内的电势应与球面上的电势相等。球面上的电势为",
+    "$$V(R) = \\frac{Q}{4\\pi\\varepsilon_0 R} \\tag{6}$$",
+    "这也就是球面内各处的电势。由式(5)和式(6)可得均匀带电球面内、外的电势分布曲线，如图5-32所示。",
+    "<img src=\"assets/images/ch05/pages_200_250_bcebb82743df5a1bb1db16c1706269a256ba499e85de5e95baed82c9b7c53261.png\" style=\"max-width:60%\">",
+    "<div class=\"figcap\">图 5-31(a) 球面外两点间的电势差（例3）</div>",
+    "<img src=\"assets/images/ch05/pages_200_250_c3710000ba5410f752c4c29fa87e98373218054450fab86b2e4e4a0001222b1c.png\" style=\"max-width:60%\">",
+    "<div class=\"figcap\">图 5-31(b) 球面内两点间的电势差</div>",
+    "<img src=\"assets/images/ch05/pages_200_250_3f69152469642e59a36b729028f7a28d5ef4802b8c8fc5f0cada49fed074f39c.png\" style=\"max-width:60%\">",
+    "<div class=\"figcap\">图 5-32 均匀带电球面内、外的电势分布曲线</div>"
+   ],
+   "answer": null
+  },
+  {
+   "type": "example",
+   "title": "教材例题（5.6 节 · 例 4）",
+   "problem": "\"无限长\"带电直导线的电势。在第5-3节的例3，我们曾用高斯定理计算了电荷线密度为 $\\lambda$ 的\"无限长\"均匀带电直导线的电场强度。这里我们来计算该带电直导线的电势。",
+   "solution_steps": [
+    "由第5-6节的式(5-26)",
+    "$$V_A = \\int_{AB} \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{l} + V_B$$",
+    "要确定电场中点 $A$ 的电势，必须要选定参考点 $B$ 的电势 $V_B$.前面在计算电荷分布在有限空间(如带电球面、电偶极子等)的电势时，曾选取\"无限远\"处作为电势为零的参考点，这种选取也是符合实际的。但是，对\"无限长\"带电直导线所建立的电场，其中任意点的电势是不能选取\"无限远\"处为零电势参考点的。因为，我们不能使带电直导线伸至\"无限远\"的同时，又把\"无限远\"处选定为电势为零的参考点，所以必须另选零电势的参考点。从原则上来说，除\"无限远\"处外，其他地方都可选。但就本题而言，可选取图5-33中点 $B$ 处的电势为零电势的参考点，即 $V_B = 0$.则点 $P$ 的电势为",
+    "$$V_P = \\int_{r}^{r_B} \\mathbf{E} \\cdot \\mathrm{d}\\mathbf{r}$$",
+    "由第5-3节的例3中已知，\"无限长\"均匀带电直导线的电场强度为",
+    "$$\\mathbf{E} = \\frac{\\lambda}{2\\pi\\varepsilon_0 r}\\mathbf{e}_r$$",
+    "把它代入上式，可得选点 $B$ 为零电势的参考点时，点 $P$ 的电势为",
+    "$$V_P = \\frac{\\lambda}{2\\pi\\varepsilon_0}\\int_{r}^{r_B}\\frac{\\mathrm{d}r}{r} = \\frac{\\lambda}{2\\pi\\varepsilon_0}\\ln\\frac{r_B}{r} \\quad (V_B = 0)$$",
+    "<img src=\"assets/images/ch05/pages_200_250_026f7984887d014f1bf8174b441fa99dac4574d1ca3506d04d93c3fe02deebaf.png\" style=\"max-width:60%\">",
+    "<div class=\"figcap\">图 5-33 无限长带电直导线的电势（参考点 B 不在无限远）（例4）</div>"
+   ],
+   "answer": null
+  },
+  {
+   "type": "section",
+   "number": "5.7",
+   "title": "电场强度与电势梯度"
+  },
+  {
+   "type": "video",
+   "source": "bilibili",
+   "bvid": "BV1eK4y1E7Cb",
+   "page": 23,
+   "title": "📺 视频学习：电势叠加原理 电场强度与电势梯度",
+   "caption": "东北大学《大学物理》MOOC 课堂录播（马文蔚《物理学》配套课程），第 3 次课 配套；本讲对应教材 5-6 电势（电势叠加原理）～ 5-7 电场强度与电势梯度，时长 48:57。注意：视频标题里的 5.x 是该课程的讲次编号，与教材小节号含义不同，请以本卡片标注的教材小节为准。<a href=\"https://www.bilibili.com/video/BV1eK4y1E7Cb?p=23\" target=\"_blank\" rel=\"noopener\">在 B 站打开本讲 ↗</a>（嵌入加载失败、或想看弹幕与讲义时点此）"
+  },
+  {
+   "type": "text",
+   "html": "<h4>一、等势面</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>前面，我们曾用电场线来形象地描绘电场中电场强度的分布。这里，我们将用等势面来形象地描绘电场中电势的分布，并指出两者的联系。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>电场中电势相等的点所构成的面，叫做等势面。当电荷 $q$ 沿等势面运动时，电场力对电荷不做功，即 $q\\mathbf{E} \\cdot \\mathrm{d}\\mathbf{l} = 0$.由于 $q$、$\\mathbf{E}$ 和 $\\mathrm{d}\\mathbf{l}$ 均不为零，故上式成立的条件是：$\\mathbf{E}$ 必须与 $\\mathrm{d}\\mathbf{l}$ 垂直，即某点的电场强度与通过该点的等势面垂直。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>前面曾用电场线的疏密程度来表示电场的强弱，这里我们也可以用等势面的疏密程度来表示电场的强弱。为此，对等势面的疏密作这样的规定：电场中任意两个相邻等势面之间的电势差都相等。根据这样的规定，图5-34示出了一些典型电场的等势面和电场线的图形。图中实线代表电场线，虚线代表等势面。从图可以看出，等势面愈密的地方，电场强度也愈大，这一点将在下面证明。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在实用中，由于电势差易于测量，因此常常是先测出电场中等电势的各点，并把这些点连起来，画出电场的等势面，再根据某点的电场强度与通过该点的等势面相垂直的特点而画出电场线，从而对电场有较全面的定性的直观了解。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_200_250_896a3aa392874dabc90438b79dfee237757db63bd0089832c5cea3a1f61b5c93.png",
+   "caption": "图 5-34(a) 电场线与等势面（实线为电场线，虚线为等势面）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_200_250_a22c5ecb6e4375ed82d92231ca4c4419166e34b3fe8e8e6f84be6c459756f286.png",
+   "caption": "图 5-34(b) 电场线与等势面"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_200_250_3fdf8f90706ebf0034a028ae4389fd7f1aa8b2f07bf6ea4e3a9b2bda697158d0.png",
+   "caption": "图 5-34(c) 电场线与等势面"
+  },
+  {
+   "type": "text",
+   "html": "<h4>二、电场强度与电势梯度</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如图5-35所示，设想在静电场中有两个靠得很近的等势面Ⅰ和Ⅱ，它们的电势分别为 $V$ 和 $V + \\Delta V$.在两等势面上分别取点 $A$ 和点 $B$，这两点非常靠近，间距为 $\\Delta l$，因此，它们之间的电场强度 $\\mathbf{E}$ 可以认为是不变的。设 $\\Delta\\mathbf{l}$ 与 $\\mathbf{E}$ 之间的夹角为 $\\theta$，则将单位正电荷由点 $A$ 移到点 $B$，电场力所做的功由式(5-28)得</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "-\\Delta V = \\mathbf{E} \\cdot \\Delta\\mathbf{l} = E\\Delta l\\cos\\theta",
+   "label": "式（5-33）"
+  },
+  {
+   "type": "text",
+   "html": "<p>而电场强度 $\\mathbf{E}$ 在 $\\Delta\\mathbf{l}$ 上的分量为 $E\\cos\\theta = E_l$，所以有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "E_l = -\\frac{\\Delta V}{\\Delta l}",
+   "label": "式（5-34）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $\\Delta V/\\Delta l$ 为电势沿 $\\Delta\\mathbf{l}$ 方向的单位长度上电势的变化率。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>从式(5-34)可以看出，等势面密集处的电场强度大，等势面稀疏处的电场强度小。因此从等势面的分布可以定性地看出电场强度的强弱分布情况。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>若把 $\\Delta l$ 取得极小，则 $\\Delta V/\\Delta l$ 的极限值可写作</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\lim_{\\Delta l \\to 0}\\frac{\\Delta V}{\\Delta l} = \\frac{\\mathrm{d}V}{\\mathrm{d}l}"
+  },
+  {
+   "type": "text",
+   "html": "<p>于是，式(5-34)可写为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "E_l = -\\frac{\\mathrm{d}V}{\\mathrm{d}l}",
+   "label": "式（5-35）"
+  },
+  {
+   "type": "text",
+   "html": "<p>$\\mathrm{d}V/\\mathrm{d}l$ 是沿 $l$ 方向单位长度的电势变化率。式(5-35)表明，电场中某一点的电场强度沿任一方向的分量，等于这一点的电势沿该方向的电势变化率的负值。这就是电场强度与电势的关系。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>显然，电势沿不同方向的单位长度的变化率是不同的。这里，我们只讨论电势沿两个有代表性方向的单位长度的变化率。我们知道，等势面上各点的电势是相等的。因此，电场中某一点的电势在沿等势面任一方向上的 $\\mathrm{d}V/\\mathrm{d}l_{\\mathrm{t}} = 0$，这说明，等势面上任一点电场强度的切向分量为零，即 $E_{\\mathrm{t}} = 0$.此外，如图5-36所示，由于两等势面相距很近，且两等势面法线方向的单位矢量为 $\\mathbf{e}_{\\mathrm{n}}$，它的方向通常规定由低电势指向高电势。于是由式(5-35)可知，电场强度沿法线方向的分量 $E_{\\mathrm{n}}$ 为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "E_{\\mathrm{n}} = -\\frac{\\mathrm{d}V}{\\mathrm{d}l_{\\mathrm{n}}}"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $\\mathrm{d}V/\\mathrm{d}l_{\\mathrm{n}}$ 是沿法线方向单位长度上电势的变化率；而且不难明白，它比任何方向上的空间变化率都大，是电势空间变化率的最大值。此外，因为等势面上任一点电场强度的切向分量为零，所以，电场中任意点 $\\mathbf{E}$ 的大小就是该点 $\\mathbf{E}$ 的法向分量 $E_{\\mathrm{n}}$.于是，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "E = -\\frac{\\mathrm{d}V}{\\mathrm{d}l_{\\mathrm{n}}}"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中负号表示，当 $\\frac{\\mathrm{d}V}{\\mathrm{d}l_{\\mathrm{n}}} < 0$ 时，$E > 0$，即 $\\mathbf{E}$ 的方向总是由高电势指向低电势，$\\mathbf{E}$ 的方向与 $\\mathbf{e}_{\\mathrm{n}}$ 的方向相反。写成矢量式，则有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{E} = -\\frac{\\mathrm{d}V}{\\mathrm{d}l_{\\mathrm{n}}}\\mathbf{e}_{\\mathrm{n}}",
+   "label": "式（5-36）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式表明，在电场中任意一点的电场强度 $\\mathbf{E}$，等于该点的电势沿等势面法线方向的变化率的负值。这也就是说，在电场中任一点 $\\mathbf{E}$ 的大小，等于该点电势沿等势面法线方向的空间变化率，$\\mathbf{E}$ 的方向与法线方向相反。式(5-36)是电场强度与电势关系的矢量表达式，较之式(5-35)更具普遍性。式(5-36)也是电场强度常用伏每米(即 $\\mathrm{V \\cdot m^{-1}}$)作为其单位名称的缘由。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>一般说来，在直角坐标系中，电势 $V$ 是坐标 $x$、$y$ 和 $z$ 的函数。因此，如果把 $x$ 轴、$y$ 轴和 $z$ 轴正方向分别取作 $\\Delta\\mathbf{l}$ 的方向，则由式(5-35)可得，电场强度在这三个方向上的分量分别为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "E_x = -\\frac{\\partial V}{\\partial x},\\ E_y = -\\frac{\\partial V}{\\partial y},\\ E_z = -\\frac{\\partial V}{\\partial z}",
+   "label": "式（5-37）"
+  },
+  {
+   "type": "text",
+   "html": "<p>于是电场强度与电势关系的矢量表达式可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{E} = -\\left(\\frac{\\partial V}{\\partial x}\\mathbf{i} + \\frac{\\partial V}{\\partial y}\\mathbf{j} + \\frac{\\partial V}{\\partial z}\\mathbf{k}\\right)",
+   "label": "式（5-38）"
+  },
+  {
+   "type": "text",
+   "html": "<p>应当指出，电势 $V$ 是标量，与矢量 $\\mathbf{E}$ 相比，$V$ 比较容易计算，因此在实际计算时，常是先计算电势 $V$，然后再用式(5-38)来求出电场强度 $\\mathbf{E}$.</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在数学上，常把标量函数 $f(x,y,z)$ 的梯度 $\\mathrm{grad}\\,f$ 定义为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathrm{grad}\\,f = \\frac{\\partial f}{\\partial x}\\mathbf{i} + \\frac{\\partial f}{\\partial y}\\mathbf{j} + \\frac{\\partial f}{\\partial z}\\mathbf{k}"
+  },
+  {
+   "type": "text",
+   "html": "<p>$\\mathrm{grad}\\,f$ 是坐标 $x,y,z$ 的矢量函数，也可以写成 $\\nabla f$.因此式(5-38)可写为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{E} = -\\mathrm{grad}\\,V = -\\nabla V"
+  },
+  {
+   "type": "text",
+   "html": "<p>即电场强度 $\\mathbf{E}$ 等于电势梯度的负值。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_200_250_658394175613dbcc8e0a9b35475c4ff6f93ce929f27516623bbf5caba19d8428.png",
+   "caption": "图 5-35 电场强度与电势的关系"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_200_250_cf9fa6028563a31b84d7ffc05cbcf0c6d2f19488803f59ff8474f23d16a6f05b.png",
+   "caption": "图 5-36 场强方向与等势面法线方向相反"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（5.7 节 · 例 1）",
+   "problem": "用电场强度与电势的关系，求均匀带电细圆环轴线上一点的电场强度。",
+   "solution_steps": [
+    "在第5-6节的例2中，我们已求得在 $x$ 轴上点 $P$ 的电势为",
+    "$$V = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q}{(x^2 + R^2)^{1/2}}$$",
+    "式中 $R$ 为圆环的半径。由式(5-37)可得点 $P$ 的电场强度为",
+    "$$E = E_x = -\\frac{\\partial V}{\\partial x} = -\\frac{\\partial}{\\partial x}\\left[\\frac{1}{4\\pi\\varepsilon_0}\\frac{q}{(x^2 + R^2)^{1/2}}\\right] = \\frac{1}{4\\pi\\varepsilon_0}\\frac{qx}{(x^2 + R^2)^{3/2}}$$",
+    "这个结果虽与第5-2节例1的结果相同，但计算要简便得多。"
+   ],
+   "answer": null
+  },
+  {
+   "type": "example",
+   "title": "教材例题（5.7 节 · 例 2）",
+   "problem": "求电偶极子电场中任意一点 $A$ 的电势和电场强度。",
+   "solution_steps": [
+    "图5-37所示的电偶极子的电偶极矩为 $\\mathbf{p} = q\\mathbf{r}_0$.设点 $A$ 与 $-q$ 和 $+q$ 均在 $Oxy$ 平面内，点 $A$ 到点 $O$ 的距离为 $r$. $+q$ 及 $-q$ 在点 $A$ 的电势分别为",
+    "$$V_+ = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q}{r_+}$$",
+    "和",
+    "$$V_- = -\\frac{1}{4\\pi\\varepsilon_0}\\frac{q}{r_-}$$",
+    "根据电势的叠加原理，点 $A$ 的电势为",
+    "$$V = V_+ + V_- = \\frac{q}{4\\pi\\varepsilon_0}\\left(\\frac{1}{r_+} - \\frac{1}{r_-}\\right) = \\frac{q}{4\\pi\\varepsilon_0}\\left(\\frac{r_- - r_+}{r_+ r_-}\\right)$$",
+    "对电偶极子来说，$r_0 \\ll r$，所以 $r_- - r_+ \\approx r_0\\cos\\theta$，及 $r_- r_+ \\approx r^2$，于是，上式可写成",
+    "$$V \\approx \\frac{q}{4\\pi\\varepsilon_0}\\frac{r_0\\cos\\theta}{r^2} = \\frac{1}{4\\pi\\varepsilon_0}\\frac{p\\cos\\theta}{r^2}$$",
+    "这表明，在电偶极子的电场中，远离电偶极子一点的电势与电偶极矩 $p$ 的大小成正比，与 $p$ 和 $r$ 之间夹角的余弦成正比，而与 $r$ 的二次方成反比。",
+    "式(1)也可用点 $A$ 的坐标 $x$、$y$ 写成",
+    "$$V = \\frac{p}{4\\pi\\varepsilon_0}\\frac{x}{(x^2 + y^2)^{3/2}}$$",
+    "故由上式和式(5-37)可得点 $A$ 的电场强度 $\\mathbf{E}$ 在 $x$、$y$ 轴的分量分别为",
+    "$$E_x = -\\frac{\\partial V}{\\partial x} = -\\frac{p}{4\\pi\\varepsilon_0}\\frac{y^2- 2x^2}{(x^2 + y^2)^{5/2}}$$",
+    "$$E_y = -\\frac{\\partial V}{\\partial y} = \\frac{p}{4\\pi\\varepsilon_0}\\frac{3xy}{(x^2 + y^2)^{5/2}}$$",
+    "于是，点 $A$ 的电场强度 $\\mathbf{E}$ 的值为",
+    "$$E = \\frac{p}{4\\pi\\varepsilon_0}\\frac{(4x^2 + y^2)^{1/2}}{(x^2 + y^2)^2} \\tag{2}$$",
+    "当 $y = 0$ 时，即点 $A$ 在电偶极子的延长线上，有",
+    "$$E = \\frac{2p}{4\\pi\\varepsilon_0 x^3} \\tag{3}$$",
+    "当 $x = 0$ 时，即点 $A$ 在电偶极子的中垂线上，有",
+    "$$E = \\frac{p}{4\\pi\\varepsilon_0}\\frac{1}{y^3} \\tag{4}$$",
+    "式(3)和式(4)与第5-2节所得的结果也是相同的。",
+    "<img src=\"assets/images/ch05/pages_200_250_4f84bae863ff867d083960daeb990feb6f1a51917d52ded244f283aab2373603.png\" style=\"max-width:60%\">",
+    "<div class=\"figcap\">图 5-37 电偶极子电场中任意点的电势与场强（例2）</div>"
+   ],
+   "answer": null
+  },
+  {
+   "type": "section",
+   "number": "5.8",
+   "title": "静电场中的电偶极子"
+  },
+  {
+   "type": "text",
+   "html": "<p>在研究电介质的极化机理、电场对有极分子的作用等问题时，电场对电偶极子的作用以及电偶极子对电场的影响都是十分重要的问题。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>一、外电场对电偶极子的力矩和取向作用</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如图5-38所示，在电场强度为 $\\mathbf{E}$ 的均匀电场中，放置一电偶极矩为 $\\mathbf{p} = q\\mathbf{r}_0$ 的电偶极子。电场作用在 $+q$ 和 $-q$ 上的力分别为 $\\mathbf{F}_+ = q\\mathbf{E}$ 和 $\\mathbf{F}_- = -q\\mathbf{E}$.于是作用在电偶极子上的合力为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{F} = \\mathbf{F}_+ + \\mathbf{F}_- = q\\mathbf{E} - q\\mathbf{E} = 0"
+  },
+  {
+   "type": "text",
+   "html": "<p>这表明，在均匀电场中，电偶极子不受电场力的作用。但是，由于力 $\\mathbf{F}_+$ 和 $\\mathbf{F}_-$ 的作用线不在同一直线上，它们构成力矩。根据力矩的定义，电偶极子所受的力矩为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "M = qr_0E\\sin\\theta = pE\\sin\\theta",
+   "label": "式（5-39）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式的矢量形式为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{M} = \\mathbf{p} \\times \\mathbf{E}",
+   "label": "式（5-40）"
+  },
+  {
+   "type": "text",
+   "html": "<p>在力矩作用下，电偶极子将在图示情况下作顺时针转动。当 $\\theta = 0$，即电偶极子的电矩 $\\mathbf{p}$ 的方向与电场强度 $\\mathbf{E}$ 的方向相同时，电偶极子所受力矩为零，这个位置是电偶极子的稳定平衡位置。应当指出，当 $\\theta = \\pi$，即 $\\mathbf{p}$ 的方向与 $\\mathbf{E}$ 的方向相反时，电偶极子所受的力矩虽也为零，但这时电偶极子处于非稳定平衡位置，只要 $\\theta$ 稍微偏离这个位置，电偶极子将在力矩作用下，使 $\\mathbf{p}$ 的方向转至与 $\\mathbf{E}$ 的方向相一致。关于这一点，下面我们还将从电势能的角度作些讨论。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如果电偶极子放在不均匀电场中，这时作用在 $+q$ 和 $-q$ 上的力为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{F} = \\mathbf{F}_+ + \\mathbf{F}_- = q\\mathbf{E}_+ - q\\mathbf{E}_- \\neq 0"
+  },
+  {
+   "type": "text",
+   "html": "<p>所以，在非均匀电场中，电偶极子不仅要转动，而且还会在电场力作用下发生移动。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch05/pages_200_250_de4107c3f00db75db2088ccd756cf20001e45dcb019ff96fcfa6f00ba9ec0fbd.png",
+   "caption": "图 5-38 均匀电场中电偶极子所受的力矩"
+  },
+  {
+   "type": "text",
+   "html": "<h4>二、电偶极子在电场中的电势能和平衡位置</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>仍如图5-38所示，电矩为 $\\mathbf{p} = q\\mathbf{r}_0$ 的电偶极子处于电场强度为 $\\mathbf{E}$ 的均匀电场中。设 $+q$ 和 $-q$ 所在处的电势分别为 $V_+$ 和 $V_-$，则此电偶极子的电势能为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "E_{\\mathrm{p}} = qV_+ - qV_- = -q\\left(-\\frac{V_+ - V_-}{r_0\\cos\\theta}\\right)r_0\\cos\\theta = -qr_0E\\cos\\theta"
+  },
+  {
+   "type": "text",
+   "html": "<p>有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "E_{\\mathrm{p}} = -\\mathbf{p} \\cdot \\mathbf{E}",
+   "label": "式（5-41）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式表明，在均匀电场中电偶极子的电势能与电偶极矩在电场中的方位有关。当电偶极子的电偶极矩 $\\mathbf{p}$ 的方向与 $\\mathbf{E}$ 一致时($\\theta = 0$)，其电势能 $E_{\\mathrm{p}} = -pE$，此时，电势能最低；当 $\\mathbf{p}$ 与 $\\mathbf{E}$ 垂直时($\\theta = \\pi/2$)，其电势能为零；当 $\\mathbf{p}$ 的方向与 $\\mathbf{E}$ 的相反时($\\theta = \\pi$)，其电势能 $E_{\\mathrm{p}} = pE$，此时，电势能最大。从能量的观点来看，能量越低，系统的状态越稳定。由此可见，电偶极子电势能最低的位置，即为稳定平衡位置。这就是说，在电场中的电偶极子，一般情况下总具有使自己的 $\\mathbf{p}$ 转向 $\\theta = 0$ 的趋势。电偶极子的这个特性对理解电介质中有极分子的极化现象是非常重要的，我们将在第六章第6-2节中讲到。</p>"
+  },
+  {
+   "type": "homework",
+   "title": "本章作业",
+   "allowRetry": 2,
+   "showAnswerAfter": true,
+   "batches": [
+    {
+     "title": "第 1 次作业（5-1 ～ 5-2 电荷·库仑定律·电场强度）",
+     "dueDate": "2026-11-20T23:59:59+08:00",
+     "items": [
+      {
+       "type": "choice",
+       "question": "［教材习题改编·比例分析］两个点电荷相距 r 时，库仑力大小为 F。若两个点电荷的电荷量都加倍、且距离增大为 2r，则它们之间的库仑力大小变为（　）",
+       "options": [
+        "F/4",
+        "F/2",
+        "F",
+        "4F"
+       ],
+       "answer": 2,
+       "explanation": "选 C。F′ = k(2q₁)(2q₂)/(2r)² = 4kq₁q₂/(4r²) = F。电荷加倍的「×4」与距离加倍的「÷4」恰好抵消。（上册无答案册，本答案按公式推定）"
+      },
+      {
+       "type": "fill",
+       "question": "［教材习题 5-6］中子由一个带 +2e/3 的上夸克和两个带 −e/3 的下夸克构成。将夸克作为经典粒子处理，中子内两个下夸克之间相距 2.60×10⁻¹⁵ m，则它们之间的相互作用力大小为 ______ N（保留 2 位小数，e = 1.602×10⁻¹⁹ C）。",
+       "blanks": [
+        {
+         "answer": "3.80",
+         "tolerance": 0.15
+        }
+       ],
+       "explanation": "两下夸克各带 −e/3，斥力 F = (1/4πε₀)·(e/3)²/r² = 9.0×10⁹×(1.602×10⁻¹⁹/3)²/(2.60×10⁻¹⁵)² ≈ 3.80 N。在核尺度上这是很大的力，说明夸克间还有更强的强相互作用约束。（答案按公式推定，依据同上）"
+      },
+      {
+       "type": "calculation",
+       "question": "［教材习题 5-5］精密实验表明，电子与质子电荷之差不超过 ±10⁻²¹e，中子电荷与零之差也不超过 ±10⁻²¹e。从最极端情况考虑，一个由 8 个电子、8 个质子和 8 个中子构成的氧原子，将原子视作质点，则两个氧原子间的库仑力与万有引力大小之比为 ______ ×10⁻⁶（保留 1 位小数；氧原子质量 m ≈ 2.66×10⁻²⁶ kg）。",
+       "answer": 2.8,
+       "unit": "×10⁻⁶",
+       "tolerance": 0.4,
+       "solution": "极端情形净电荷 q_max = (8+8+8)×10⁻²¹e = 24×10⁻²¹×1.602×10⁻¹⁹ ≈ 3.84×10⁻³⁹ C。F_C/F_G = kq²/(Gm²) = 9.0×10⁹×(3.84×10⁻³⁹)²/(6.67×10⁻¹¹×(2.66×10⁻²⁶)²) ≈ 2.8×10⁻⁶。即使按最极端估计，电 neutrality 的残余电力也只有引力的约 3×10⁻⁶ 倍——这正是「大物体之间引力占主导」的原因。（答案按公式推定，依据同上）"
+      },
+      {
+       "type": "qa",
+       "question": "［教材问题 5-5］有人说，点电荷在电场中一定是沿电场线运动的，电场线就是电荷的运动轨迹。这样说对吗？为什么？",
+       "rubric": "明确「不对」（2 分）；指出电场线描述的是每点电场力（加速度）的方向，而非速度方向（4 分）；给出反例：点电荷在匀强电场中若有垂直于电场线的初速度，轨迹为抛物线（类抛体运动）（4 分）",
+       "reference": "不对。电场线上每一点的切线方向是该点电场强度（即正电荷所受电场力、加速度）的方向，而不是电荷运动速度的方向。只有在电场线为直线、且电荷初速度为零或初速度沿电场线方向时，电荷才沿电场线运动。反例：在匀强电场中，若点电荷具有垂直于电场线方向的初速度，它将做类抛体运动，轨迹是抛物线而非电场线；在非匀强电场中，由于惯性，轨迹一般也不与弯曲的电场线重合。",
+       "maxScore": 10
+      }
+     ]
+    },
+    {
+     "title": "第 2 次作业（5-3 ～ 5-4 电通量·高斯定理·密立根实验）",
+     "dueDate": "2026-11-27T23:59:59+08:00",
+     "items": [
+      {
+       "type": "choice",
+       "question": "［教材习题 5-2］下列说法正确的是（　）",
+       "options": [
+        "闭合曲面上各点电场强度都为零时，曲面内一定没有电荷",
+        "闭合曲面上各点电场强度都为零时，曲面内电荷的代数和必定为零",
+        "闭合曲面的电场强度通量为零时，曲面上各点的电场强度必定为零",
+        "闭合曲面的电场强度通量不为零时，曲面上任意一点的电场强度都不可能为零"
+       ],
+       "answer": 1,
+       "explanation": "选 B。面上各点 E = 0 → 通量必为零 → 由高斯定理面内电荷代数和为零（B 对）；但面内可以没有净电荷却有等量异号电荷（A 错）。通量为零只要求穿入穿出抵消，面上 E 可以处处不为零（C 错）；通量不为零时面上个别点的 E 仍可为零（D 错）。（上册无答案册，本答案按概念推定）"
+      },
+      {
+       "type": "fill",
+       "question": "［教材习题 5-17］晴天大气电场的平均电场强度约为 120 V/m，方向指向地面。由高斯定理（取贴地的柱形高斯面），地球表面单位面积所带电荷以每平方厘米的电子数表示约为 ______ ×10⁵ 个/cm²（保留 2 位小数，ε₀ = 8.85×10⁻¹² F/m，e = 1.602×10⁻¹⁹ C）。",
+       "blanks": [
+        {
+         "answer": "6.63",
+         "tolerance": 0.3
+        }
+       ],
+       "explanation": "面电荷密度大小 σ = ε₀E = 8.85×10⁻¹²×120 ≈ 1.06×10⁻⁹ C/m² = 1.06×10⁻¹³ C/cm²；电子数 n = σ/e ≈ 1.06×10⁻¹³/1.602×10⁻¹⁹ ≈ 6.63×10⁵ 个/cm²（带负电）。（答案按公式推定，依据同上）"
+      },
+      {
+       "type": "calculation",
+       "question": "［教材习题 5-34(2)］两根同轴圆柱面（R₁ = 3.00×10⁻² m，R₂ = 0.10 m）带等量异号电荷，两者电势差为 450 V。求 r = 0.05 m 处的电场强度（单位 V/m，取整数）。",
+       "answer": 7476,
+       "unit": "V/m",
+       "tolerance": 120,
+       "solution": "两圆柱面间 E = λ/(2πε₀r)，电势差 U = ∫E dr = (λ/2πε₀)ln(R₂/R₁)，故 λ = 2πε₀U/ln(R₂/R₁) = 2π×8.85×10⁻¹²×450/ln(0.10/0.03) ≈ 2.08×10⁻⁸ C/m。于是 E(0.05) = λ/(2πε₀×0.05) ≈ 7476 V/m，方向沿径向。（答案按公式推定，依据同上）"
+      },
+      {
+       "type": "qa",
+       "question": "［教材问题 5-13］在高斯定理 ∮E·dS = Σq/ε₀ 中，Σq 是闭合曲面内的电荷代数和。那么，闭合曲面上每一点的电场强度 E 是否仅由 Σq 所确定？",
+       "rubric": "明确「不是」（2 分）；指出面上 E 由空间所有电荷（面内+面外）共同激发（4 分）；说明高斯定理只把「通量」与面内电荷联系起来，面外电荷对通量的净贡献为零、但对面上 E 有贡献（4 分）",
+       "reference": "不是。闭合曲面上每一点的电场强度 E 是由空间所有电荷（包括面内和面外的电荷）共同激发的。高斯定理说的是穿过闭合曲面的「总通量」只取决于面内电荷的代数和——面外电荷的电场线穿入又会穿出闭合面，对总通量的净贡献为零，但它们确实改变了面上各点 E 的大小和方向。因此，只有当电荷分布具有高度对称性、能把 E 从积分号内提出时，才能用高斯定理直接求 E。",
+       "maxScore": 10
+      }
+     ]
+    },
+    {
+     "title": "第 3 次作业（5-5 ～ 5-8 电势·电势梯度·电偶极子）",
+     "dueDate": "2026-12-04T23:59:59+08:00",
+     "items": [
+      {
+       "type": "choice",
+       "question": "［教材习题 5-3］下列说法正确的是（　）",
+       "options": [
+        "电场强度为零的点，电势也一定为零",
+        "电场强度不为零的点，电势也一定不为零",
+        "电势为零的点，电场强度也一定为零",
+        "电势在某一区域内为常量，则电场强度在该区域内必定为零"
+       ],
+       "answer": 3,
+       "explanation": "选 D。E = −dV/dl：V 在某区域为常量 → 各方向变化率为零 → E = 0（D 对）。电势零点可任意选取：E = 0 处 V 可为任意常量（A 错）；E ≠ 0 处 V 也可以取零（如等量异号电荷中垂面上 V = 0 而 E ≠ 0，B、C 错）。（上册无答案册，本答案按概念推定）"
+      },
+      {
+       "type": "fill",
+       "question": "［教材习题 5-27］水分子电偶极矩 p = 6.17×10⁻³⁰ C·m。在距分子 r = 5.00×10⁻⁹ m 处（远场近似 V = pcosθ/(4πε₀r²)），θ = 0° 时电势为 ______ mV，θ = 45° 时为 ______ mV，θ = 90° 时为 ______ mV（均保留 2 位小数）。",
+       "blanks": [
+        {
+         "answer": "2.22",
+         "tolerance": 0.05
+        },
+        {
+         "answer": "1.57",
+         "tolerance": 0.05
+        },
+        {
+         "answer": "0",
+         "tolerance": 0.01
+        }
+       ],
+       "explanation": "V = 9.0×10⁹×6.17×10⁻³⁰×cosθ/(5.00×10⁻⁹)² ≈ 2.22×10⁻³·cosθ V。θ = 0°：2.22 mV；θ = 45°：1.57 mV；θ = 90°：0（中垂面上电偶极子电势处处为零）。（答案按公式推定，依据同上）"
+      },
+      {
+       "type": "calculation",
+       "question": "［教材习题 5-28］一个球形雨滴半径 0.40 mm，带电荷 1.6 pC。两个这样的雨滴相遇后合并为一个较大雨滴（总体积守恒），则合并后大雨滴表面的电势为 ______ V（保留 1 位小数）。",
+       "answer": 57.1,
+       "unit": "V",
+       "tolerance": 0.8,
+       "solution": "单滴电势 V₀ = (1/4πε₀)q/R = 9.0×10⁹×1.6×10⁻¹²/(0.40×10⁻³) = 36 V。合并后 q′ = 2q，体积加倍 → R′ = 2^(1/3)R，故 V′ = (1/4πε₀)·2q/(2^(1/3)R) = 2^(2/3)·V₀ ≈ 1.587×36 ≈ 57.1 V。（答案按公式推定，依据同上）"
+      },
+      {
+       "type": "qa",
+       "question": "［教材问题 5-25］在电场中，电场强度为零的点，电势是否一定为零？电势为零的点，电场强度是否一定为零？试举例说明。",
+       "rubric": "明确两个「不一定」（2 分）；E = 0 例：均匀带电球面内部 E = 0 但 V = Q/(4πε₀R) ≠ 0（4 分）；V = 0 例：等量异号点电荷中垂面上 V = 0 但 E ≠ 0（或取无穷远为零点时两异号电荷连线中点）（4 分）",
+       "reference": "都不一定。电势是相对量、零点可任选，而电场强度取决于电势的空间变化率。例一：均匀带电球面内部 E = 0，但球内电势等于球面电势 Q/(4πε₀R)，并不为零。例二：两个等量异号点电荷的中垂面上各点电势均为零（到两电荷等距、电势抵消），但中垂面上电场强度并不为零（方向垂直于中垂面）。可见 V = 0 与 E = 0 没有必然联系，只有「V 在某区域处处相等」才能推出「该区域 E = 0」。",
+       "maxScore": 10
+      }
+     ]
+    }
+   ],
+   "socratic": {
+    "type": "socratic",
+    "chapter": "5 静电场",
+    "sessions": [
+     {
+      "label": "第 1 次课讨论（5-1 ～ 5-2 电荷·库仑定律·电场强度）",
+      "topics": [
+       {
+        "title": "r → 0 时 E 真的趋于无限大吗？（教材问题 5-7）",
+        "question": "点电荷的场强公式 E = q/(4πε₀r²) 中，若 r → 0，则 E 将趋于无限大。这合理吗？追问：当 r 小于带电体本身的线度时，「点电荷」这个前提还成立吗（d ≪ r 的条件被破坏）？若把电荷看作均匀分布的球体，球内 r → 0 处按高斯定理 E 应是多少？「数学上的发散」与「物理模型的失效」是一回事吗——公式没有错，错的是在哪儿用它？"
+       }
+      ]
+     },
+     {
+      "label": "第 2 次课讨论（5-3 ～ 5-4 高斯定理·密立根实验）",
+      "topics": [
+       {
+        "title": "点电荷在球形高斯面内移动，通量变不变？（教材问题 5-15）",
+        "question": "一点电荷放在球形高斯面的球心处。讨论：(1) 若此球形高斯面被一与它相切的正方体表面所代替；(2) 点电荷离开球心，但仍在球内；(3) 另一个电荷放在球面外；(4) 另一个电荷放在球面内——四种情形下电场强度通量各如何变化？追问：哪些情形改变的是「通量」、哪些情形改变的只是「面上 E 的分布」？情形 (3) 中面外电荷对面上的 E 有没有贡献？有贡献却不改变通量，这矛盾吗？（提示：穿入与穿出相互抵消）高斯定理成立的前提（平方反比）若被破坏，上述结论哪个最先垮掉？"
+       }
+      ]
+     },
+     {
+      "label": "第 3 次课讨论（5-5 ～ 5-8 电势·电势梯度·电偶极子）",
+      "topics": [
+       {
+        "title": "电势更低的地方，电势能反而更大？（教材问题 5-21）",
+        "question": "电荷 q 从电场中的点 A 移到点 B，能否使点 B 的电势比点 A 低，而点 B 的电势能又比点 A 大？追问：电势 V 由谁决定（场源），电势能 E_p = qV 还与谁有关（试探电荷的正负）？对 q < 0 的电荷，V 越小意味着 E_p 越大——举负电荷在正点电荷电场中的实例验证。由此说明：沿电场线方向电势一定降低，但负电荷沿电场线自由运动时电势能如何变化、它实际上会沿电场线运动吗？"
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ]
+}

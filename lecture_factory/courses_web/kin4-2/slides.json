@@ -68,7 +68,20 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "力矩与转动定律",
+     "qa": [
+      {
+       "q": "力矩和转动定律是什么关系？",
+       "a": "力矩是使刚体产生角加速度的原因，转动定律 $M=J\\alpha$ 给出二者的定量关系。"
+      },
+      {
+       "q": "本节要建立什么核心公式？",
+       "a": "转动定律 $M=J\\alpha$，其中 $M$ 为力矩，$J$ 为转动惯量，$\\alpha$ 为角加速度。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -112,7 +125,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "转动与平动类比",
+     "qa": [
+      {
+       "q": "转动定律和平动牛顿第二定律有何对应？",
+       "a": "$M=J\\alpha$ 与 $F=ma$ 地位相同：力矩对应力，转动惯量对应质量，角加速度对应加速度。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -132,6 +154,18 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "转动惯量与平行轴定理",
+     "qa": [
+      {
+       "q": "平行轴定理解决什么问题？",
+       "a": "用于由绕质心轴的转动惯量求绕平行轴的转动惯量，$J=J_c+md^2$。"
+      },
+      {
+       "q": "力矩的正负怎么判断？",
+       "a": "按力矩方向规定正负，通常使刚体逆时针转动的力矩为正、顺时针为负。"
+      }
      ]
     }
    ],
@@ -303,7 +337,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "平衡需合力矩为零",
+     "qa": [
+      {
+       "q": "合外力为零物体为什么还会转？",
+       "a": "一对等大反向、不共线的力合力为零，但形成力偶产生转动，故平衡还需合力矩为零。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -329,7 +372,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "力矩",
+     "qa": [
+      {
+       "q": "为什么要引入力矩这个物理量？",
+       "a": "因为仅用合力无法描述转动，力矩是描述转动效果的新物理量，对应合力矩为零的条件。"
+      }
+     ],
+     "important": true
     }
    ],
    "interactions": [
@@ -412,7 +464,20 @@
      "tex": "M=Fr\\sin\\theta=Fd",
      "size": 42,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "力矩公式",
+     "qa": [
+      {
+       "q": "力矩的大小怎么计算？",
+       "a": "$M=Fr\\sin\\theta=Fd$，$\\theta$ 是位矢 $r$ 与力 $F$ 的夹角，$d$ 为力臂。"
+      },
+      {
+       "q": "为什么力矩有两个表达式？",
+       "a": "$Fr\\sin\\theta$ 用夹角算，$Fd$ 用力臂算，$d=r\\sin\\theta$，两者等价。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -444,6 +509,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "力臂定义",
+     "qa": [
+      {
+       "q": "力臂 d 是什么？",
+       "a": "$d$ 是转轴到力的作用线的垂直距离，等于 $r\\sin\\theta$。"
+      }
      ]
     },
     {
@@ -456,7 +529,16 @@
      "tex": "\\vec M=\\vec r\\times\\vec F",
      "size": 44,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "力矩矢量式",
+     "qa": [
+      {
+       "q": "力矩的矢量式怎么写？",
+       "a": "$\\vec M=\\vec r\\times\\vec F$，是叉乘，结果为矢量。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -488,6 +570,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "力矩方向判定",
+     "qa": [
+      {
+       "q": "力矩方向怎么判断？",
+       "a": "用右手螺旋定则：四指由 $\\vec r$ 转向 $\\vec F$，拇指指向即 $\\vec M$ 方向。"
+      }
      ]
     },
     {
@@ -638,7 +728,15 @@
      "tex": "\\vec F=\\vec F_z+\\vec F_\\perp",
      "size": 38,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "力的分解",
+     "qa": [
+      {
+       "q": "力不在转动平面内时该怎么处理？",
+       "a": "把力分解为平行于转轴的分量 $\\vec F_z$ 和垂直于转轴（落在转动平面内）的分量 $\\vec F_\\perp$。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -664,7 +762,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "轴向分量力矩为零",
+     "qa": [
+      {
+       "q": "为什么 $F_z$ 对轴的力矩为零？",
+       "a": "因为 $F_z$ 的作用线平行于转轴，到轴的距离（力臂）为零，所以力矩为零，它只拉紧或压紧轴。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -696,7 +803,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "只有垂直分量产生力矩",
+     "qa": [
+      {
+       "q": "哪个分量使刚体转动？",
+       "a": "只有 $F_\\perp$ 产生对转轴的力矩，$F_z$ 不使刚体转动。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -708,7 +824,15 @@
      "tex": "M_z=rF_\\perp\\sin\\theta",
      "size": 40,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "转轴力矩公式",
+     "qa": [
+      {
+       "q": "$M_z$ 怎么计算？",
+       "a": "$M_z=rF_\\perp\\sin\\theta$，其中 $F_\\perp$ 是力在转动平面内的分量，$\\theta$ 为 $r$ 与 $F_\\perp$ 的夹角。"
+      }
+     ]
     },
     {
      "type": "diagram",
@@ -788,7 +912,16 @@
      "tex": "\\vec M=\\vec M_1+\\vec M_2+\\vec M_3+\\cdots",
      "size": 44,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "合力矩矢量和",
+     "qa": [
+      {
+       "q": "多个力作用时合力矩怎么算？",
+       "a": "按矢量相加：$\\vec M=\\vec M_1+\\vec M_2+\\vec M_3+\\cdots$"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -852,7 +985,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "定轴力矩代数和",
+     "qa": [
+      {
+       "q": "定轴转动时力矩为什么可以直接加减？",
+       "a": "各力矩都沿同一轴，只有正反两方向，矢量加法退化为代数和，同向取正、反向取负。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "box",
@@ -898,6 +1040,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "定轴转动简化原因",
+     "qa": [
+      {
+       "q": "为什么定轴转动问题比一般刚体问题简单？",
+       "a": "因为力矩共轴，矢量加法退化为代数和，只需按正负号相加即可。"
+      }
      ]
     }
    ],
@@ -957,7 +1107,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "内力矩抵消",
+     "qa": [
+      {
+       "q": "刚体内力力矩为什么要抵消？",
+       "a": "作用力与反作用力沿同一直线、等大反向，对同一点合力矩为零，故内力矩成对抵消。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1017,6 +1176,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "等大反向共线",
+     "qa": [
+      {
+       "q": "i、j 间的作用力有什么特点？",
+       "a": "两力沿同一条连线，大小相等、方向相反，符合牛顿第三定律。"
+      }
      ]
     },
     {
@@ -1049,6 +1216,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "合力矩为零",
+     "qa": [
+      {
+       "q": "为什么这对力对同一点的合力矩为零？",
+       "a": "两力共线且等大反向，对同一点的力臂相同，力矩大小相等、方向相反，合为零。"
+      }
      ]
     },
     {
@@ -1093,7 +1268,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "只计外力矩",
+     "qa": [
+      {
+       "q": "求刚体合力矩时要算内力矩吗？",
+       "a": "不用。内力矩成对抵消，只需计算所有外力对轴的力矩之和。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "diagram",
@@ -1223,7 +1407,15 @@
      "tex": "\\vec F_i+\\vec F_i'=\\Delta m_i\\vec a_i",
      "size": 38,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "牛顿第二定律用于质元",
+     "qa": [
+      {
+       "q": "为什么要把外力和内力相加？",
+       "a": "对第 $i$ 个质元用牛顿第二定律，它受外力 $\\vec F_i$ 和内力 $\\vec F_i'$，合力决定其加速度。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -1267,7 +1459,20 @@
      "tex": "F_{i\\mathrm t}+F_{i\\mathrm t}'=\\Delta m_i a_{i\\mathrm t}=\\Delta m_i r_i\\alpha",
      "size": 30,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "切向动力学方程",
+     "qa": [
+      {
+       "q": "为什么只取切向分量？",
+       "a": "质元绕轴作圆周运动，法向分量只改变速度方向，切向分量才与角加速度 $\\alpha$ 相关。"
+      },
+      {
+       "q": "式中的 $a_{it}$ 怎么换成 $\\alpha$？",
+       "a": "由角量与线量关系 $a_{it}=r_i\\alpha$，代入得 $F_{it}+F_{it}'=\\Delta m_i r_i\\alpha$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1323,6 +1528,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "线量与角量关系",
+     "qa": [
+      {
+       "q": "$a_t=r\\alpha$ 是怎么来的？",
+       "a": "切向加速度等于半径乘角加速度，是上一节角量与线量关系，用于把 $a_{it}$ 换成 $r_i\\alpha$。"
+      }
      ]
     },
     {
@@ -1566,7 +1779,20 @@
      "tex": "M=J\\alpha",
      "size": 50,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "转动定律公式",
+     "qa": [
+      {
+       "q": "转动定律的公式怎么写？",
+       "a": "$M=J\\alpha$，合外力矩等于转动惯量乘角加速度。"
+      },
+      {
+       "q": "公式里各符号什么意思？",
+       "a": "$M$ 是合外力矩，$J$ 是转动惯量，$\\alpha$ 是角加速度。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1642,7 +1868,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "转动定律表述",
+     "qa": [
+      {
+       "q": "转动定律的文字表述是什么？",
+       "a": "刚体定轴转动的角加速度与合外力矩成正比，与转动惯量成反比。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1720,6 +1955,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "转动惯性定律",
+     "qa": [
+      {
+       "q": "合外力矩为零时角速度怎样？",
+       "a": "$M=0$ 时 $\\omega$ 保持不变，这就是转动中的惯性定律。"
+      }
      ]
     },
     {
@@ -1770,6 +2013,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "与平动对照",
+     "qa": [
+      {
+       "q": "转动定律和平动牛顿第二定律怎么对应？",
+       "a": "$M\\leftrightarrow F$，$J\\leftrightarrow m$，$\\alpha\\leftrightarrow a$，地位完全相当。"
+      }
      ]
     },
     {
@@ -1829,7 +2080,16 @@
      "tex": "J=\\sum_i\\Delta m_ir_i^2",
      "size": 44,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "转动惯量定义式",
+     "qa": [
+      {
+       "q": "转动惯量的定义式是什么？",
+       "a": "$J=\\sum_i\\Delta m_i r_i^2$，即各质量元质量乘其到轴距离平方再求和。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -1841,7 +2101,16 @@
      "tex": "J=\\int r^2\\,\\mathrm dm",
      "size": 44,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "连续体转动惯量",
+     "qa": [
+      {
+       "q": "连续分布刚体的转动惯量怎么算？",
+       "a": "求和变为积分：$J=\\int r^2\\,\\mathrm{d}m$，$r$ 为质量元到轴的距离。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1945,7 +2214,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "J 的影响因素",
+     "qa": [
+      {
+       "q": "转动惯量由哪些因素决定？",
+       "a": "取决于总质量、质量分布（离轴越远贡献越大）以及转轴的位置与方向。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -1971,6 +2248,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "转动惯性的量度",
+     "qa": [
+      {
+       "q": "转动惯量的物理意义是什么？",
+       "a": "它是转动惯性的量度：质量相同时 $J$ 越大，越难改变转动状态。"
+      }
      ]
     },
     {
@@ -2076,7 +2361,16 @@
      "tex": "J=\\sum_j\\Delta m_jr_j^2=m_1r_1^2+m_2r_2^2+\\cdots",
      "size": 36,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "离散分布转动惯量",
+     "qa": [
+      {
+       "q": "离散质量分布的转动惯量怎么算？",
+       "a": "把每个质点的质量乘其到轴距离的平方，再全部相加：$J=\\sum_j\\Delta m_j r_j^2$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2108,7 +2402,20 @@
      "tex": "J=\\int r^2\\,\\mathrm dm=\\int_V\\rho r^2\\,\\mathrm dV",
      "size": 36,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "连续分布转动惯量",
+     "qa": [
+      {
+       "q": "连续分布时积分公式怎么写？",
+       "a": "$J=\\int r^2\\,\\mathrm dm=\\int_V\\rho r^2\\,\\mathrm dV$，求和换成对质量元或体积元的积分。"
+      },
+      {
+       "q": "知道体密度 ρ 后怎么用？",
+       "a": "把 $\\mathrm dm$ 写成 $\\rho\\,\\mathrm dV$，则 $J=\\int_V\\rho r^2\\,\\mathrm dV$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2128,6 +2435,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "质量元与体密度",
+     "qa": [
+      {
+       "q": "dm、dV、ρ 分别是什么？",
+       "a": "$\\mathrm dm$ 是质量元，$\\mathrm dV$ 是体积元，$\\rho$ 是体密度，满足 $\\mathrm dm=\\rho\\,\\mathrm dV$。"
+      }
      ]
     },
     {
@@ -2154,6 +2469,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "计算两步法",
+     "qa": [
+      {
+       "q": "做转动惯量题第一步做什么？",
+       "a": "先取质量元并写出 $\\mathrm dm$，第二步再代入公式积分。"
+      }
      ]
     }
    ],
@@ -2233,6 +2556,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "与体密度有关",
+     "qa": [
+      {
+       "q": "为什么体密度会影响转动惯量？",
+       "a": "密度决定质量分布，质量离轴越远，$J$ 越大。"
+      }
      ]
     },
     {
@@ -2265,6 +2596,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "与几何形状有关",
+     "qa": [
+      {
+       "q": "几何形状为什么会影响 J？",
+       "a": "形状决定质量如何分布，分布不同则 $J$ 不同。"
+      }
      ]
     },
     {
@@ -2297,7 +2636,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "与转轴位置有关",
+     "qa": [
+      {
+       "q": "同一物体绕不同轴转，J 一样吗？",
+       "a": "不一样。转轴位置不同，$J$ 就不同，这是最关键的因素。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "box",
@@ -2343,7 +2691,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "J 须指明转轴",
+     "qa": [
+      {
+       "q": "说转动惯量时要注意什么？",
+       "a": "必须说明是“对哪一条轴”的转动惯量，否则没有意义。"
+      }
+     ],
+     "important": true
     }
    ],
    "heading": "三　与哪些因素有关"
@@ -2436,6 +2793,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "质量元取法",
+     "qa": [
+      {
+       "q": "为什么要取 dm = λ dr？",
+       "a": "细棒线密度为 λ，距轴 r 处取长 dr 的小段，其质量即为 $\\lambda\\,dr$，作为积分质量元。"
+      }
      ]
     },
     {
@@ -2448,7 +2813,15 @@
      "tex": "\\mathrm dJ=r^2\\,\\mathrm dm=r^2\\lambda\\,\\mathrm dr",
      "size": 36,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "质量元转动惯量",
+     "qa": [
+      {
+       "q": "dJ 为什么等于 r² dm？",
+       "a": "质点转动惯量定义为 $mr^2$，质量元距轴 r，故 $dJ=r^2dm=r^2\\lambda\\,dr$。"
+      }
+     ]
     },
     {
      "type": "tex",
@@ -2460,7 +2833,16 @@
      "tex": "J_C=\\int_{-l/2}^{l/2}r^2\\lambda\\,\\mathrm dr=2\\int_0^{l/2}r^2\\frac{m}{l}\\,\\mathrm dr",
      "size": 28,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "对称性积分",
+     "qa": [
+      {
+       "q": "积分限为什么从 -l/2 到 l/2？",
+       "a": "轴过棒中心，两侧对称，可写为 $2\\int_0^{l/2}$，并把 λ 换成 $m/l$ 后积分。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -2472,7 +2854,16 @@
      "tex": "J_C=\\frac{1}{12}ml^2",
      "size": 44,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "细棒中心轴转动惯量",
+     "qa": [
+      {
+       "q": "细棒绕中心垂直轴的 J 是多少？",
+       "a": "结果为 $J_C=\\frac{1}{12}ml^2$，是均匀细棒绕中心垂直轴的转动惯量。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "diagram",
@@ -2592,7 +2983,20 @@
      "tex": "J_O=J_C+md^2",
      "size": 44,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "平行轴定理公式",
+     "qa": [
+      {
+       "q": "平行轴定理的公式是什么？",
+       "a": "$J_O=J_C+md^2$，其中 $J_C$ 为过质心轴的转动惯量，$d$ 为两平行轴间距。"
+      },
+      {
+       "q": "公式里的 d 是什么距离？",
+       "a": "$d$ 是两条互相平行的轴之间的距离，其中一条必须过质心。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2624,6 +3028,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "定理适用条件",
+     "qa": [
+      {
+       "q": "平行轴定理能随便用吗？",
+       "a": "不能，只能用于一条过质心、另一条与它平行的一对轴。"
+      }
      ]
     },
     {
@@ -2656,7 +3068,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "质心轴 J 最小",
+     "qa": [
+      {
+       "q": "为什么质心轴的转动惯量最小？",
+       "a": "由 $J_O=J_C+md^2$，$d\\ge 0$，故 $d=0$ 即质心轴时 $J$ 最小。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "diagram",
@@ -2736,7 +3157,16 @@
      "tex": "J=J_C+m\\left(\\frac{l}{2}\\right)^2",
      "size": 38,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "平行轴定理应用",
+     "qa": [
+      {
+       "q": "为什么这里可以用平行轴定理？",
+       "a": "端点轴与质心轴平行，相距 $d=l/2$，故 $J=J_C+md^2$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -2748,7 +3178,16 @@
      "tex": "=\\frac{1}{12}ml^2+\\frac{1}{4}ml^2=\\frac{1}{3}ml^2",
      "size": 38,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "端点轴转动惯量推导",
+     "qa": [
+      {
+       "q": "三分之一是怎么算出来的？",
+       "a": "$\\frac{1}{12}ml^2+\\frac{1}{4}ml^2=\\frac{1}{3}ml^2$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2774,6 +3213,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "细棒绕端点转动惯量",
+     "qa": [
+      {
+       "q": "细棒绕端点转动的 J 是多少？",
+       "a": "$J=\\frac{1}{3}ml^2$，是绕质心时的 4 倍。"
+      }
      ]
     },
     {
@@ -2794,6 +3241,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "离轴越远J越大",
+     "qa": [
+      {
+       "q": "为什么绕端点比绕中心大？",
+       "a": "质量分布离轴越远，转动惯量越大，端点轴比质心轴远，故大 4 倍。"
+      }
      ]
     },
     {
@@ -2946,6 +3401,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "绳与滑轮无滑动",
+     "qa": [
+      {
+       "q": "为什么绳与滑轮间无滑动很重要？",
+       "a": "无滑动保证绳上各点与滑轮边缘线速度相同，故两物块加速度大小相等，且滑轮角加速度 $\\alpha=a/R$。"
+      }
      ]
     },
     {
@@ -2966,7 +3429,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "联接体加速度求解",
+     "qa": [
+      {
+       "q": "两物体加速度大小为什么相等？",
+       "a": "绳不可伸长且与滑轮无滑动，A、B 沿绳方向加速度大小相同，设为 $a$。"
+      },
+      {
+       "q": "求加速度要用哪些方程？",
+       "a": "对 A、B 分别用牛顿第二定律，对滑轮用转动定律 $T_B R-T_A R=I\\alpha$，联立解出 $a$ 与两张力。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2986,7 +3462,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "两段绳张力不等",
+     "qa": [
+      {
+       "q": "为什么两段绳的张力不相等？",
+       "a": "滑轮有质量、有转动惯量，需净力矩产生角加速度，故 $T_B\\neq T_A$；只有滑轮无质量时两者才相等。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -3006,6 +3491,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "落距求速率",
+     "qa": [
+      {
+       "q": "B 落下 y 时的速率怎么求？",
+       "a": "由匀加速 $v^2=2ay$，代入已求出的 $a$ 即可；也可用机械能守恒，含滑轮转动动能 $\\tfrac12 I\\omega^2$。"
+      }
      ]
     },
     {
@@ -3138,6 +3631,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "A的牛顿第二定律",
+     "qa": [
+      {
+       "q": "为什么A水平方向只有绳的拉力？",
+       "a": "A在水平方向只受绳的拉力$F_{T1}$，故由牛顿第二定律得$F_{T1}=m_Aa$。"
+      }
      ]
     },
     {
@@ -3200,6 +3701,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "B的平动方程",
+     "qa": [
+      {
+       "q": "B的方程为什么是重力减拉力？",
+       "a": "取向下为正方向，B受重力$m_Bg$向下、绳拉力$F_{T2}$向上，故$m_Bg-F_{T2}=m_Ba$。"
+      }
      ]
     },
     {
@@ -3264,7 +3773,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "滑轮的转动方程",
+     "qa": [
+      {
+       "q": "滑轮方程为什么是两拉力之差乘R？",
+       "a": "两段绳对滑轮拉力方向相反，形成力偶矩$RF_{T2}-RF_{T1}$，等于$J\\alpha$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -3290,7 +3808,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "无滑动约束条件",
+     "qa": [
+      {
+       "q": "为什么a等于Rα？",
+       "a": "绳不打滑时，绳的线加速度等于轮缘切向加速度，即$a=R\\alpha$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -3452,7 +3979,16 @@
      "tex": "a=\\frac{m_{\\mathrm B}g}{m_{\\mathrm A}+m_{\\mathrm B}+m_{\\mathrm C}/2}",
      "size": 40,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "加速度公式",
+     "qa": [
+      {
+       "q": "分母里的 mC/2 是怎么来的？",
+       "a": "由滑轮转动惯量 $J=\\frac12 m_C R^2$ 与 $a=R\\alpha$ 代入后 $R$ 约去得到，相当于折算的等效力质量。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -3464,7 +4000,15 @@
      "tex": "F_{\\mathrm T1}=\\frac{m_{\\mathrm A}m_{\\mathrm B}g}{m_{\\mathrm A}+m_{\\mathrm B}+m_{\\mathrm C}/2}",
      "size": 32,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "水平段张力",
+     "qa": [
+      {
+       "q": "水平段张力为什么等于 $m_A a$？",
+       "a": "对物体 A 水平方向只受 $F_{T1}$，由牛顿第二定律 $F_{T1}=m_A a$。"
+      }
+     ]
     },
     {
      "type": "tex",
@@ -3520,7 +4064,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "等效力质量",
+     "qa": [
+      {
+       "q": "为什么说 mC/2 是等效力质量？",
+       "a": "滑轮转动惯量折算到平动方程中，效果等同于分母增加 $m_C/2$ 的质量。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -3564,6 +4117,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "张力差驱动转动",
+     "qa": [
+      {
+       "q": "为什么 $F_{T2}>F_{T1}$？",
+       "a": "两段张力差提供滑轮转动的力矩，差值正是让滑轮转起来的原因。"
+      }
      ]
     }
    ],
@@ -3623,7 +4184,20 @@
      "tex": "v=\\sqrt{2ay}=\\sqrt{\\frac{2m_{\\mathrm B}gy}{m_{\\mathrm A}+m_{\\mathrm B}+m_{\\mathrm C}/2}}",
      "size": 36,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "匀加速下落速率公式",
+     "qa": [
+      {
+       "q": "为什么可以直接用 v²=2ay 求 B 的速率？",
+       "a": "B 从静止作匀加速直线运动，a 为常量，故由 $v^2=2ay$ 直接得 $v=\\sqrt{2ay}$。"
+      },
+      {
+       "q": "式中的 a 是怎么来的？",
+       "a": "a 由牛顿第二定律解出，代入 $a=\\frac{m_B g}{m_A+m_B+m_C/2}$ 即得结果。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -3697,7 +4271,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "轻滑轮极限检验",
+     "qa": [
+      {
+       "q": "令 mC=0 为什么两段张力相等？",
+       "a": "滑轮质量为零时转动惯量为零，无需力矩即可转动，故 $F_{T1}=F_{T2}$，回到阿特伍德机。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -3773,6 +4356,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "自由落体退化检验",
+     "qa": [
+      {
+       "q": "再令 mA=0 结果为什么变成自由落体？",
+       "a": "此时 B 只受重力，$v=\\sqrt{2gy}$，正是自由落体速率，说明公式合理。"
+      }
      ]
     },
     {
@@ -3799,7 +4390,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "极限检验方法",
+     "qa": [
+      {
+       "q": "为什么要养成令量趋于零检验的习惯？",
+       "a": "极限情形可退化为已知结果，能快速判断公式是否合理、有无量纲或符号错误。"
+      }
+     ]
     }
    ],
    "heading": "例3　解（2）"
@@ -3898,6 +4497,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "不稳定平衡",
+     "qa": [
+      {
+       "q": "为什么竖直位置是不稳定平衡？",
+       "a": "杆竖直时重力作用线过 O，力矩为零；但受微小扰动后重力矩使杆偏离，故不稳定。"
+      }
      ]
     },
     {
@@ -3962,6 +4569,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "求α与ω",
+     "qa": [
+      {
+       "q": "本题要求什么物理量？",
+       "a": "求杆转到与竖直线成 $\\theta$ 角时的角加速度 $\\alpha$ 和角速度 $\\omega$。"
+      }
      ]
     },
     {
@@ -3982,7 +4597,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "重力矩随θ变化",
+     "qa": [
+      {
+       "q": "为什么角加速度不是常量？",
+       "a": "重力矩 $M=\\frac{1}{2}mgl\\sin\\theta$ 随 $\\theta$ 变化，由 $M=J\\alpha$ 知 $\\alpha$ 随 $\\theta$ 变化。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -4002,7 +4626,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "用积分求ω",
+     "qa": [
+      {
+       "q": "为什么不能用匀变速公式？",
+       "a": "$\\alpha$ 不是常量，须用 $\\alpha=\\frac{d\\omega}{dt}=\\omega\\frac{d\\omega}{d\\theta}$ 积分求 $\\omega$。"
+      },
+      {
+       "q": "求角速度的正确方法是什么？",
+       "a": "由 $\\omega\\frac{d\\omega}{d\\theta}=\\alpha$ 分离变量积分，而非套用 $\\omega=\\omega_0+\\alpha t$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "diagram",
@@ -4064,6 +4701,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "力矩分析",
+     "qa": [
+      {
+       "q": "为什么铰链约束力不产生力矩？",
+       "a": "约束力作用线通过转轴 O，力臂为零，故对 O 的力矩为零。"
+      }
      ]
     },
     {
@@ -4076,7 +4721,15 @@
      "tex": "M=\\frac{1}{2}mgl\\sin\\theta",
      "size": 40,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "重力矩公式",
+     "qa": [
+      {
+       "q": "重力矩为什么是 $\\frac{1}{2}mgl\\sin\\theta$？",
+       "a": "重力作用于质心，力臂为 $\\frac{l}{2}\\sin\\theta$，故 $M=mg\\cdot\\frac{l}{2}\\sin\\theta$。"
+      }
+     ]
     },
     {
      "type": "tex",
@@ -4088,7 +4741,16 @@
      "tex": "\\frac{1}{2}mgl\\sin\\theta=J\\alpha",
      "size": 38,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "转动定律",
+     "qa": [
+      {
+       "q": "这里用的什么定律？",
+       "a": "定轴转动定律 $M=J\\alpha$，合外力矩等于转动惯量乘角加速度。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -4132,7 +4794,20 @@
      "tex": "\\alpha=\\frac{3g}{2l}\\sin\\theta",
      "size": 46,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "角加速度结果",
+     "qa": [
+      {
+       "q": "角加速度怎么算出来的？",
+       "a": "由 $\\frac{1}{2}mgl\\sin\\theta=\\frac{1}{3}ml^2\\alpha$ 解得 $\\alpha=\\frac{3g}{2l}\\sin\\theta$。"
+      },
+      {
+       "q": "为什么 θ 越大杆倒得越快？",
+       "a": "因为 $\\alpha\\propto\\sin\\theta$，θ 增大时角加速度增大，杆越倒越快。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -4223,7 +4898,16 @@
      "tex": "\\omega\\,\\mathrm d\\omega=\\frac{3g}{2l}\\sin\\theta\\,\\mathrm d\\theta",
      "size": 36,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "分离变量法",
+     "qa": [
+      {
+       "q": "为什么要写成 $\\omega\\,\\mathrm d\\omega$ 而不是直接对 $t$ 积分？",
+       "a": "$\\alpha$ 是 $\\theta$ 的函数，用 $\\alpha=\\omega\\,\\mathrm d\\omega/\\mathrm d\\theta$ 换元后可分离变量，两边分别对 $\\omega$ 和 $\\theta$ 积分。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -4267,7 +4951,15 @@
      "tex": "\\frac{1}{2}\\omega^2=\\frac{3g}{2l}(1-\\cos\\theta)",
      "size": 34,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "角速度平方积分式",
+     "qa": [
+      {
+       "q": "积分上下限怎么定？",
+       "a": "由初始条件 $\\theta=0$ 时 $\\omega=0$，左边从 $0$ 到 $\\omega$，右边从 $0$ 到 $\\theta$，得 $\\frac12\\omega^2=\\frac{3g}{2l}(1-\\cos\\theta)$。"
+      }
+     ]
     },
     {
      "type": "tex",
@@ -4279,7 +4971,16 @@
      "tex": "\\omega=\\sqrt{\\frac{3g}{l}(1-\\cos\\theta)}",
      "size": 40,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "角速度结果",
+     "qa": [
+      {
+       "q": "$\\theta=90^\\circ$ 时结果对吗？",
+       "a": "代入得 $\\omega=\\sqrt{3g/l}$，与能量守恒 $\\frac12 I\\omega^2=mgl/2$ 一致，可作检验。"
+      }
+     ],
+     "important": true
     }
    ],
    "heading": "例4　解　角速度"
@@ -4406,6 +5107,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "结论 α₂>α₁",
+     "qa": [
+      {
+       "q": "本题应选哪个选项？",
+       "a": "选 A。直接拉时张力为 $P$，挂物时张力小于 $P$，力矩更大故 $\\alpha_2>\\alpha_1$。"
+      }
      ]
     },
     {
@@ -4506,7 +5215,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "张力大小比较",
+     "qa": [
+      {
+       "q": "为什么挂物体时绳的张力小于 P？",
+       "a": "物体加速下落，由 $P-F_T=ma$ 得 $F_T=P-ma<P$；直接拉时张力就等于 $P$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -4526,7 +5244,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "力矩决定角加速度",
+     "qa": [
+      {
+       "q": "为什么张力大角加速度就大？",
+       "a": "滑轮转动惯量相同，张力越大对轴的力矩越大，由 $M=J\\alpha$ 得 $\\alpha$ 越大。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "box",
@@ -4667,7 +5394,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "力矩的定义",
+     "qa": [
+      {
+       "q": "力矩的大小怎么算？",
+       "a": "$M=r\\times F$，大小 $Fr\\sin\\theta=Fd$，方向由右手螺旋定则确定。"
+      },
+      {
+       "q": "定轴转动中力矩方向怎么表示？",
+       "a": "用正负号表示，方向沿转轴，由右手螺旋定则判定。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -4761,7 +5501,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "转动定律",
+     "qa": [
+      {
+       "q": "转动定律和牛顿第二定律什么关系？",
+       "a": "$M=J\\alpha$ 与 $F=ma$ 地位相同，是转动的基本动力学方程。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -4787,6 +5536,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "转动惯量",
+     "qa": [
+      {
+       "q": "转动惯量由什么决定？",
+       "a": "$J=\\sum\\Delta m r^2=\\int r^2dm$，由质量分布和轴的位置共同决定。"
+      }
      ]
     },
     {
@@ -4869,6 +5626,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "平行轴定理",
+     "qa": [
+      {
+       "q": "换轴后转动惯量怎么算？",
+       "a": "用平行轴定理 $J_O=J_C+md^2$，$d$ 为两平行轴间距。"
+      }
      ]
     },
     {

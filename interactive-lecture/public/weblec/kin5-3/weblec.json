@@ -161,6 +161,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "切线方向为场强方向",
+     "qa": [
+      {
+       "q": "电场线的切线方向代表什么？",
+       "a": "电场线上某点的切线方向就是该点场强 $\\vec E$ 的方向。"
+      }
      ]
     },
     {
@@ -181,6 +189,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "疏密表场强大小",
+     "qa": [
+      {
+       "q": "电场线越密说明什么？",
+       "a": "线密处 $E$ 大，线疏处 $E$ 小，疏密表示场强大小。"
+      }
      ]
     },
     {
@@ -201,6 +217,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "静电场线不闭合",
+     "qa": [
+      {
+       "q": "静电场线为什么不能闭合？",
+       "a": "静电场线起于正电荷，止于负电荷或无穷远，因此不闭合。"
+      }
      ]
     },
     {
@@ -283,7 +307,20 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "通量的电场线图像",
+     "qa": [
+      {
+       "q": "怎么直观理解电通量？",
+       "a": "把通量想成曲面被多少根电场线穿过，这是理解高斯定理最省力的图像。"
+      },
+      {
+       "q": "这个图像有什么适用条件？",
+       "a": "只在「线的密度正比于 $E$」的画法下成立。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -335,7 +372,68 @@
      "name": "line_props"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "切线方向为场强方向",
+     "x": 540,
+     "y": 300,
+     "qa": [
+      {
+       "q": "电场线的切线方向代表什么？",
+       "a": "电场线上某点的切线方向就是该点场强 $\\vec E$ 的方向。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 1
+    },
+    {
+     "text": "疏密表场强大小",
+     "x": 540,
+     "y": 376,
+     "qa": [
+      {
+       "q": "电场线越密说明什么？",
+       "a": "线密处 $E$ 大，线疏处 $E$ 小，疏密表示场强大小。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 2
+    },
+    {
+     "text": "静电场线不闭合",
+     "x": 540,
+     "y": 450,
+     "qa": [
+      {
+       "q": "静电场线为什么不能闭合？",
+       "a": "静电场线起于正电荷，止于负电荷或无穷远，因此不闭合。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 3
+    },
+    {
+     "text": "通量的电场线图像",
+     "x": 540,
+     "y": 782,
+     "qa": [
+      {
+       "q": "怎么直观理解电通量？",
+       "a": "把通量想成曲面被多少根电场线穿过，这是理解高斯定理最省力的图像。"
+      },
+      {
+       "q": "这个图像有什么适用条件？",
+       "a": "只在「线的密度正比于 $E$」的画法下成立。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 6
+    }
+   ],
    "stepTimes": {
     "1": 32.67,
     "2": 38.59,
@@ -347,7 +445,28 @@
    "t_start": 32.67,
    "t_end": 67.59,
    "duration": 34.92,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 32.67,
+     "end": 37.67
+    },
+    {
+     "bullet": 1,
+     "start": 38.59,
+     "end": 43.59
+    },
+    {
+     "bullet": 2,
+     "start": 43.43,
+     "end": 48.43
+    },
+    {
+     "bullet": 3,
+     "start": 56.57,
+     "end": 61.57
+    }
+   ]
   },
   {
    "id": 3,
@@ -425,7 +544,20 @@
      "tex": "\\mathrm d\\Phi_e=E\\,\\mathrm dS\\cos\\theta",
      "size": 32,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "通量定义式",
+     "qa": [
+      {
+       "q": "为什么通量要用点乘而不是直接相乘？",
+       "a": "只有垂直于面元的场强分量才穿过面元，点乘正好取 $E\\cos\\theta$ 这一有效分量。"
+      },
+      {
+       "q": "这个公式里 $\\theta$ 是什么角？",
+       "a": "$\\theta$ 是场强 $\\vec E$ 与面元法矢 $\\hat n$ 之间的夹角。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -465,7 +597,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "投影面积的几何意义",
+     "qa": [
+      {
+       "q": "为什么是 $\\mathrm dS\\cos\\theta$ 而不是 $\\mathrm dS\\sin\\theta$？",
+       "a": "面元在垂直于场强方向的投影面积等于 $\\mathrm dS\\cos\\theta$，只有穿过该投影的场线才计入通量。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -485,6 +626,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "场线平行时通量为零",
+     "qa": [
+      {
+       "q": "场线与面元平行时通量为什么是零？",
+       "a": "此时 $\\theta=90^\\circ$，$\\cos\\theta=0$，场线贴着面走没有穿过，故通量为零。"
+      }
      ]
     },
     {
@@ -505,6 +654,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "曲面总通量积分式",
+     "qa": [
+      {
+       "q": "整个曲面的通量怎么算？",
+       "a": "把各面元通量累加，即 $\\Phi_e=\\int_S\\vec E\\cdot\\mathrm d\\vec S$。"
+      }
      ]
     },
     {
@@ -517,7 +674,68 @@
      "name": "flux_plane"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "通量定义式",
+     "x": 570,
+     "y": 504,
+     "qa": [
+      {
+       "q": "为什么通量要用点乘而不是直接相乘？",
+       "a": "只有垂直于面元的场强分量才穿过面元，点乘正好取 $E\\cos\\theta$ 这一有效分量。"
+      },
+      {
+       "q": "这个公式里 $\\theta$ 是什么角？",
+       "a": "$\\theta$ 是场强 $\\vec E$ 与面元法矢 $\\hat n$ 之间的夹角。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "投影面积的几何意义",
+     "x": 570,
+     "y": 630,
+     "qa": [
+      {
+       "q": "为什么是 $\\mathrm dS\\cos\\theta$ 而不是 $\\mathrm dS\\sin\\theta$？",
+       "a": "面元在垂直于场强方向的投影面积等于 $\\mathrm dS\\cos\\theta$，只有穿过该投影的场线才计入通量。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 5
+    },
+    {
+     "text": "场线平行时通量为零",
+     "x": 570,
+     "y": 712,
+     "qa": [
+      {
+       "q": "场线与面元平行时通量为什么是零？",
+       "a": "此时 $\\theta=90^\\circ$，$\\cos\\theta=0$，场线贴着面走没有穿过，故通量为零。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 6
+    },
+    {
+     "text": "曲面总通量积分式",
+     "x": 588,
+     "y": 794,
+     "qa": [
+      {
+       "q": "整个曲面的通量怎么算？",
+       "a": "把各面元通量累加，即 $\\Phi_e=\\int_S\\vec E\\cdot\\mathrm d\\vec S$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 7
+    }
+   ],
    "stepTimes": {
     "1": 68.39,
     "2": 71.79,
@@ -529,7 +747,28 @@
    "t_start": 68.39,
    "t_end": 107.89,
    "duration": 39.5,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 77.85,
+     "end": 82.85
+    },
+    {
+     "bullet": 1,
+     "start": 82.43,
+     "end": 87.43
+    },
+    {
+     "bullet": 2,
+     "start": 89.41,
+     "end": 94.41
+    },
+    {
+     "bullet": 3,
+     "start": 99.15,
+     "end": 104.15
+    }
+   ]
   },
   {
    "id": 4,
@@ -575,7 +814,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "通量正负由法线定",
+     "qa": [
+      {
+       "q": "为什么通量会有正负？",
+       "a": "通量是代数量，正负取决于法线取向：场线与法线成锐角为正，成钝角为负。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -601,7 +849,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "闭合面外法线约定",
+     "qa": [
+      {
+       "q": "闭合曲面的法线为什么指向外部？",
+       "a": "这是习惯约定，叫外法线。由此穿出为正、穿入为负，便于统一计算净通量。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -633,6 +890,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "穿出为正",
+     "qa": [
+      {
+       "q": "场线穿出曲面时通量为什么为正？",
+       "a": "穿出时场线与外法线成锐角，$\\vec E\\cdot\\mathrm d\\vec S>0$，故通量为正。"
+      }
      ]
     },
     {
@@ -697,6 +962,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "净通量的定义",
+     "qa": [
+      {
+       "q": "净通量怎么算？",
+       "a": "净通量等于穿出的通量减去穿入的通量，即闭合面上 $\\Phi_e=\\oint_S\\vec E\\cdot\\mathrm d\\vec S$。"
+      }
      ]
     },
     {
@@ -743,7 +1016,64 @@
      "name": "flux_sign"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "通量正负由法线定",
+     "x": 540,
+     "y": 300,
+     "qa": [
+      {
+       "q": "为什么通量会有正负？",
+       "a": "通量是代数量，正负取决于法线取向：场线与法线成锐角为正，成钝角为负。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 1
+    },
+    {
+     "text": "闭合面外法线约定",
+     "x": 540,
+     "y": 380,
+     "qa": [
+      {
+       "q": "闭合曲面的法线为什么指向外部？",
+       "a": "这是习惯约定，叫外法线。由此穿出为正、穿入为负，便于统一计算净通量。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "穿出为正",
+     "x": 540,
+     "y": 458,
+     "qa": [
+      {
+       "q": "场线穿出曲面时通量为什么为正？",
+       "a": "穿出时场线与外法线成锐角，$\\vec E\\cdot\\mathrm d\\vec S>0$，故通量为正。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 3
+    },
+    {
+     "text": "净通量的定义",
+     "x": 540,
+     "y": 734,
+     "qa": [
+      {
+       "q": "净通量怎么算？",
+       "a": "净通量等于穿出的通量减去穿入的通量，即闭合面上 $\\Phi_e=\\oint_S\\vec E\\cdot\\mathrm d\\vec S$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 6
+    }
+   ],
    "stepTimes": {
     "1": 108.69,
     "2": 112.38,
@@ -755,7 +1085,28 @@
    "t_start": 108.69,
    "t_end": 147.64,
    "duration": 38.95,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 108.69,
+     "end": 113.69
+    },
+    {
+     "bullet": 1,
+     "start": 112.38,
+     "end": 117.38
+    },
+    {
+     "bullet": 2,
+     "start": 122.81,
+     "end": 127.81
+    },
+    {
+     "bullet": 3,
+     "start": 133.5,
+     "end": 138.5
+    }
+   ]
   },
   {
    "id": 5,
@@ -793,7 +1144,20 @@
      "tex": "\\mathrm d\\Omega=\\dfrac{\\mathrm dS\\cos\\theta}{r^{2}}",
      "size": 40,
      "color": "#0000CD",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "立体角定义式",
+     "qa": [
+      {
+       "q": "为什么立体角公式里要除以 $r^2$？",
+       "a": "面元投影面积 $\\mathrm dS\\cos\\theta$ 与 $r^2$ 成正比，除以 $r^2$ 后只反映张开的「视角」大小，与距离无关。"
+      },
+      {
+       "q": "公式中的 $\\theta$ 是什么角？",
+       "a": "$\\theta$ 是面元法线与到球心连线（半径方向）的夹角，$\\mathrm dS\\cos\\theta$ 即投影到球面上的面积。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -813,6 +1177,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "立体角单位",
+     "qa": [
+      {
+       "q": "立体角的单位是什么？整个球面是多少？",
+       "a": "单位是球面度（sr），整个球面对球心张开的立体角为 $4\\pi$。"
+      }
      ]
     },
     {
@@ -853,7 +1225,20 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "闭合曲面立体角",
+     "qa": [
+      {
+       "q": "为什么点在闭合曲面内时立体角是 $4\\pi$？",
+       "a": "此时整个球面被曲面完整包围，各面元投影恰好铺满整个球面，故 $\\oint\\mathrm d\\Omega=4\\pi$。"
+      },
+      {
+       "q": "点在面外时为什么是零？",
+       "a": "进入曲面的立体角与穿出的立体角大小相等、符号相反，正好抵消，故积分为零。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -955,7 +1340,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "立体角与形状无关",
+     "qa": [
+      {
+       "q": "换一个形状不同的曲面，立体角会变吗？",
+       "a": "不会。立体角只取决于曲面对球心张开的「视角」，与曲面具体形状无关。"
+      }
+     ]
     },
     {
      "type": "diagram",
@@ -967,7 +1360,72 @@
      "name": "solid_angle"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "立体角定义式",
+     "x": 520,
+     "y": 392,
+     "qa": [
+      {
+       "q": "为什么立体角公式里要除以 $r^2$？",
+       "a": "面元投影面积 $\\mathrm dS\\cos\\theta$ 与 $r^2$ 成正比，除以 $r^2$ 后只反映张开的「视角」大小，与距离无关。"
+      },
+      {
+       "q": "公式中的 $\\theta$ 是什么角？",
+       "a": "$\\theta$ 是面元法线与到球心连线（半径方向）的夹角，$\\mathrm dS\\cos\\theta$ 即投影到球面上的面积。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 1
+    },
+    {
+     "text": "立体角单位",
+     "x": 540,
+     "y": 478,
+     "qa": [
+      {
+       "q": "立体角的单位是什么？整个球面是多少？",
+       "a": "单位是球面度（sr），整个球面对球心张开的立体角为 $4\\pi$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 2
+    },
+    {
+     "text": "闭合曲面立体角",
+     "x": 540,
+     "y": 610,
+     "qa": [
+      {
+       "q": "为什么点在闭合曲面内时立体角是 $4\\pi$？",
+       "a": "此时整个球面被曲面完整包围，各面元投影恰好铺满整个球面，故 $\\oint\\mathrm d\\Omega=4\\pi$。"
+      },
+      {
+       "q": "点在面外时为什么是零？",
+       "a": "进入曲面的立体角与穿出的立体角大小相等、符号相反，正好抵消，故积分为零。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    },
+    {
+     "text": "立体角与形状无关",
+     "x": 540,
+     "y": 972,
+     "qa": [
+      {
+       "q": "换一个形状不同的曲面，立体角会变吗？",
+       "a": "不会。立体角只取决于曲面对球心张开的「视角」，与曲面具体形状无关。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 8
+    }
+   ],
    "stepTimes": {
     "1": 148.44,
     "2": 153.62,
@@ -978,7 +1436,28 @@
    "t_start": 148.44,
    "t_end": 191.66,
    "duration": 43.22,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 148.44,
+     "end": 153.44
+    },
+    {
+     "bullet": 1,
+     "start": 153.62,
+     "end": 158.62
+    },
+    {
+     "bullet": 2,
+     "start": 165.61,
+     "end": 170.61
+    },
+    {
+     "bullet": 3,
+     "start": 173.59,
+     "end": 178.59
+    }
+   ]
   },
   {
    "id": 6,
@@ -1288,7 +1767,20 @@
      "tex": "\\oint\\vec E\\cdot\\mathrm d\\vec S=E\\oint\\mathrm dS=E\\cdot4\\pi r^{2}",
      "size": 31,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "球面通量积分推导",
+     "qa": [
+      {
+       "q": "为什么可以把 E 提到积分号外？",
+       "a": "球面上各点 E 大小相同且垂直于 dS，故 $\\vec E\\cdot d\\vec S=E\\,dS$，E 为常量可提出。"
+      },
+      {
+       "q": "对 dS 积分为什么等于 $4\\pi r^2$？",
+       "a": "因为积分面是半径 r 的完整球面，$\\oint dS$ 就是球面积 $4\\pi r^2$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -1300,7 +1792,16 @@
      "tex": "=\\dfrac{q}{4\\pi\\varepsilon_0 r^{2}}\\cdot4\\pi r^{2}=\\dfrac{q}{\\varepsilon_0}",
      "size": 31,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "高斯定理结果",
+     "qa": [
+      {
+       "q": "最终通量等于多少？",
+       "a": "化简得 $\\oint\\vec E\\cdot d\\vec S=\\dfrac{q}{\\varepsilon_0}$，与球半径无关。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1332,6 +1833,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "通量与半径无关",
+     "qa": [
+      {
+       "q": "为什么 r 被约掉了？",
+       "a": "E 含 $1/r^2$，球面积含 $r^2$，两者相乘抵消，通量只由 q 决定。"
+      }
      ]
     },
     {
@@ -1352,6 +1861,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "高斯定理第一特征",
+     "qa": [
+      {
+       "q": "高斯定理只关心什么？",
+       "a": "只问高斯面内包围了多少电荷，与面的形状、大小无关。"
+      }
      ]
     },
     {
@@ -1384,7 +1901,68 @@
      "name": "gauss_sphere"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "球面通量积分推导",
+     "x": 520,
+     "y": 568,
+     "qa": [
+      {
+       "q": "为什么可以把 E 提到积分号外？",
+       "a": "球面上各点 E 大小相同且垂直于 dS，故 $\\vec E\\cdot d\\vec S=E\\,dS$，E 为常量可提出。"
+      },
+      {
+       "q": "对 dS 积分为什么等于 $4\\pi r^2$？",
+       "a": "因为积分面是半径 r 的完整球面，$\\oint dS$ 就是球面积 $4\\pi r^2$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    },
+    {
+     "text": "高斯定理结果",
+     "x": 520,
+     "y": 698,
+     "qa": [
+      {
+       "q": "最终通量等于多少？",
+       "a": "化简得 $\\oint\\vec E\\cdot d\\vec S=\\dfrac{q}{\\varepsilon_0}$，与球半径无关。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 5
+    },
+    {
+     "text": "通量与半径无关",
+     "x": 540,
+     "y": 778,
+     "qa": [
+      {
+       "q": "为什么 r 被约掉了？",
+       "a": "E 含 $1/r^2$，球面积含 $r^2$，两者相乘抵消，通量只由 q 决定。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 6
+    },
+    {
+     "text": "高斯定理第一特征",
+     "x": 540,
+     "y": 854,
+     "qa": [
+      {
+       "q": "高斯定理只关心什么？",
+       "a": "只问高斯面内包围了多少电荷，与面的形状、大小无关。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 7
+    }
+   ],
    "stepTimes": {
     "1": 242.1,
     "2": 249.44,
@@ -1396,7 +1974,28 @@
    "t_start": 242.1,
    "t_end": 285.37,
    "duration": 43.27,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 256.27,
+     "end": 261.27
+    },
+    {
+     "bullet": 1,
+     "start": 262.41,
+     "end": 267.41
+    },
+    {
+     "bullet": 2,
+     "start": 267.9,
+     "end": 272.9
+    },
+    {
+     "bullet": 3,
+     "start": 277.83,
+     "end": 282.83
+    }
+   ]
   },
   {
    "id": 8,
@@ -1454,7 +2053,16 @@
      "tex": "\\vec E\\cdot\\mathrm d\\vec S=\\dfrac{q}{4\\pi\\varepsilon_0}\\,\\mathrm d\\Omega",
      "size": 30,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "面元通量立体角改写",
+     "qa": [
+      {
+       "q": "为什么 $\\vec E\\cdot\\mathrm d\\vec S$ 能写成 $\\frac{q}{4\\pi\\varepsilon_0}\\mathrm d\\Omega$？",
+       "a": "因为 $\\vec E\\cdot\\mathrm d\\vec S=E\\,\\mathrm dS\\cos\\theta$，而 $\\mathrm d\\Omega=\\mathrm dS\\cos\\theta/r^2$，代入点电荷场强即得。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1486,7 +2094,16 @@
      "tex": "\\oint_S\\vec E\\cdot\\mathrm d\\vec S=\\dfrac{q}{4\\pi\\varepsilon_0}\\oint\\mathrm d\\Omega",
      "size": 29,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "闭合面积分转立体角",
+     "qa": [
+      {
+       "q": "整个闭合面积分怎么化简？",
+       "a": "提出常数 $\\frac{q}{4\\pi\\varepsilon_0}$，剩下 $\\oint\\mathrm d\\Omega$ 即闭合曲面对 q 的总立体角。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1506,6 +2123,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "面内电荷通量结论",
+     "qa": [
+      {
+       "q": "q 在面内时总立体角为什么是 $4\\pi$？",
+       "a": "闭合曲面把 q 完全包围，各方向立体角之和恰为整个球面的 $4\\pi$，故通量为 $q/\\varepsilon_0$。"
+      }
      ]
     },
     {
@@ -1526,6 +2151,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "面外电荷通量为零",
+     "qa": [
+      {
+       "q": "q 在面外时通量为什么是 0？",
+       "a": "穿入与穿出的立体角相互抵消，总立体角为 0，故净通量为 0。"
+      }
      ]
     },
     {
@@ -1598,7 +2231,64 @@
      "name": "gauss_any"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "面元通量立体角改写",
+     "x": 520,
+     "y": 422,
+     "qa": [
+      {
+       "q": "为什么 $\\vec E\\cdot\\mathrm d\\vec S$ 能写成 $\\frac{q}{4\\pi\\varepsilon_0}\\mathrm d\\Omega$？",
+       "a": "因为 $\\vec E\\cdot\\mathrm d\\vec S=E\\,\\mathrm dS\\cos\\theta$，而 $\\mathrm d\\Omega=\\mathrm dS\\cos\\theta/r^2$，代入点电荷场强即得。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "闭合面积分转立体角",
+     "x": 520,
+     "y": 612,
+     "qa": [
+      {
+       "q": "整个闭合面积分怎么化简？",
+       "a": "提出常数 $\\frac{q}{4\\pi\\varepsilon_0}$，剩下 $\\oint\\mathrm d\\Omega$ 即闭合曲面对 q 的总立体角。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    },
+    {
+     "text": "面内电荷通量结论",
+     "x": 540,
+     "y": 696,
+     "qa": [
+      {
+       "q": "q 在面内时总立体角为什么是 $4\\pi$？",
+       "a": "闭合曲面把 q 完全包围，各方向立体角之和恰为整个球面的 $4\\pi$，故通量为 $q/\\varepsilon_0$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 5
+    },
+    {
+     "text": "面外电荷通量为零",
+     "x": 540,
+     "y": 762,
+     "qa": [
+      {
+       "q": "q 在面外时通量为什么是 0？",
+       "a": "穿入与穿出的立体角相互抵消，总立体角为 0，故净通量为 0。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 6
+    }
+   ],
    "stepTimes": {
     "1": 286.17,
     "2": 289.4,
@@ -1610,7 +2300,28 @@
    "t_start": 286.17,
    "t_end": 325.67,
    "duration": 39.5,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 286.17,
+     "end": 291.17
+    },
+    {
+     "bullet": 1,
+     "start": 289.4,
+     "end": 294.4
+    },
+    {
+     "bullet": 2,
+     "start": 297.53,
+     "end": 302.53
+    },
+    {
+     "bullet": 3,
+     "start": 303.35,
+     "end": 308.35
+    }
+   ]
   },
   {
    "id": 9,
@@ -1662,7 +2373,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "静电场有源场",
+     "qa": [
+      {
+       "q": "为什么说静电场是有源场？",
+       "a": "因为电场线起于正电荷、止于负电荷，电荷就是场的「源」，场线不闭合。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1702,7 +2422,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "正源负汇",
+     "qa": [
+      {
+       "q": "正负电荷在通量上有什么区别？",
+       "a": "正电荷是源，发出场线；负电荷是汇，终止场线。面内正电荷多则净通量为正。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1742,6 +2471,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "普适规律",
+     "qa": [
+      {
+       "q": "高斯定理只适用于静电场吗？",
+       "a": "不是。麦克斯韦把它推广到变化场，成为电磁场方程组的第一方程，是普适规律。"
+      }
      ]
     },
     {
@@ -1782,6 +2519,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "与磁场对照",
+     "qa": [
+      {
+       "q": "磁场的高斯定理为什么右边为零？",
+       "a": "因为不存在磁单极子，磁场无源，场线闭合，净通量恒为零。"
+      }
      ]
     },
     {
@@ -1929,7 +2674,64 @@
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "静电场有源场",
+     "x": 540,
+     "y": 302,
+     "qa": [
+      {
+       "q": "为什么说静电场是有源场？",
+       "a": "因为电场线起于正电荷、止于负电荷，电荷就是场的「源」，场线不闭合。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 1
+    },
+    {
+     "text": "正源负汇",
+     "x": 540,
+     "y": 438,
+     "qa": [
+      {
+       "q": "正负电荷在通量上有什么区别？",
+       "a": "正电荷是源，发出场线；负电荷是汇，终止场线。面内正电荷多则净通量为正。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "普适规律",
+     "x": 540,
+     "y": 568,
+     "qa": [
+      {
+       "q": "高斯定理只适用于静电场吗？",
+       "a": "不是。麦克斯韦把它推广到变化场，成为电磁场方程组的第一方程，是普适规律。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 5
+    },
+    {
+     "text": "与磁场对照",
+     "x": 540,
+     "y": 698,
+     "qa": [
+      {
+       "q": "磁场的高斯定理为什么右边为零？",
+       "a": "因为不存在磁单极子，磁场无源，场线闭合，净通量恒为零。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 7
+    }
+   ],
    "stepTimes": {
     "1": 326.47,
     "2": 330.42,
@@ -1941,7 +2743,28 @@
    "t_start": 326.47,
    "t_end": 373.34,
    "duration": 46.87,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 326.47,
+     "end": 331.47
+    },
+    {
+     "bullet": 1,
+     "start": 330.42,
+     "end": 335.42
+    },
+    {
+     "bullet": 2,
+     "start": 339.84,
+     "end": 344.84
+    },
+    {
+     "bullet": 3,
+     "start": 349.37,
+     "end": 354.37
+    }
+   ]
   },
   {
    "id": 10,
@@ -2013,7 +2836,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "球壳内部无场",
+     "qa": [
+      {
+       "q": "为什么球壳内部场强为零？",
+       "a": "取半径 $r<R$ 的高斯面，面内无电荷，通量为零；由对称性 $E\\cdot4\\pi r^2=0$，故 $E=0$。"
+      },
+      {
+       "q": "球壳内部真的完全没有电场吗？",
+       "a": "是的，均匀带电球壳内部处处 $E=0$，这是高斯定理与球对称性共同给出的结论。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -2025,7 +2861,15 @@
      "tex": "E\\cdot4\\pi r^{2}=0\\ \\Rightarrow\\ E=0",
      "size": 32,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "内部高斯定理推导",
+     "qa": [
+      {
+       "q": "这个式子里的 $4\\pi r^2$ 是什么？",
+       "a": "是半径为 $r$ 的球形高斯面的面积，通量等于 $E$ 乘该面积。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -2075,7 +2919,20 @@
      "tex": "E=\\dfrac{q}{4\\pi\\varepsilon_0 r^{2}}=\\dfrac{kq}{r^{2}}",
      "size": 34,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "球壳外部场强公式",
+     "qa": [
+      {
+       "q": "球壳外部场强怎么算？",
+       "a": "取 $r>R$ 的高斯面，包围电荷 $q$，得 $E=\\dfrac{kq}{r^2}$，等效于电荷集中在球心。"
+      },
+      {
+       "q": "为什么外部可以看成点电荷？",
+       "a": "高斯面包住全部电荷 $q$，由球对称性结果只依赖总电荷，与球心点电荷相同。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2095,6 +2952,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "球壳场分布结论",
+     "qa": [
+      {
+       "q": "球壳内外场强分布如何总结？",
+       "a": "球内 $E=0$；球外 $E=\\dfrac{kq}{r^2}$，等效于球心点电荷。"
+      }
      ]
     },
     {
@@ -2107,7 +2972,72 @@
      "name": "gauss_shell"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "球壳内部无场",
+     "x": 560,
+     "y": 396,
+     "qa": [
+      {
+       "q": "为什么球壳内部场强为零？",
+       "a": "取半径 $r<R$ 的高斯面，面内无电荷，通量为零；由对称性 $E\\cdot4\\pi r^2=0$，故 $E=0$。"
+      },
+      {
+       "q": "球壳内部真的完全没有电场吗？",
+       "a": "是的，均匀带电球壳内部处处 $E=0$，这是高斯定理与球对称性共同给出的结论。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "内部高斯定理推导",
+     "x": 560,
+     "y": 524,
+     "qa": [
+      {
+       "q": "这个式子里的 $4\\pi r^2$ 是什么？",
+       "a": "是半径为 $r$ 的球形高斯面的面积，通量等于 $E$ 乘该面积。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 3
+    },
+    {
+     "text": "球壳外部场强公式",
+     "x": 560,
+     "y": 852,
+     "qa": [
+      {
+       "q": "球壳外部场强怎么算？",
+       "a": "取 $r>R$ 的高斯面，包围电荷 $q$，得 $E=\\dfrac{kq}{r^2}$，等效于电荷集中在球心。"
+      },
+      {
+       "q": "为什么外部可以看成点电荷？",
+       "a": "高斯面包住全部电荷 $q$，由球对称性结果只依赖总电荷，与球心点电荷相同。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 6
+    },
+    {
+     "text": "球壳场分布结论",
+     "x": 560,
+     "y": 920,
+     "qa": [
+      {
+       "q": "球壳内外场强分布如何总结？",
+       "a": "球内 $E=0$；球外 $E=\\dfrac{kq}{r^2}$，等效于球心点电荷。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 7
+    }
+   ],
    "stepTimes": {
     "1": 374.14,
     "2": 380.37,
@@ -2118,7 +3048,28 @@
    "t_start": 374.14,
    "t_end": 429.1,
    "duration": 54.96,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 380.37,
+     "end": 385.37
+    },
+    {
+     "bullet": 1,
+     "start": 380.37,
+     "end": 385.37
+    },
+    {
+     "bullet": 2,
+     "start": 395.32,
+     "end": 400.32
+    },
+    {
+     "bullet": 3,
+     "start": 405.54,
+     "end": 410.54
+    }
+   ]
   },
   {
    "id": 11,
@@ -2190,6 +3141,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "球外场强",
+     "qa": [
+      {
+       "q": "球外为什么和球壳一样？",
+       "a": "外部高斯面包住全部电荷$q$，由球对称性等效为球心点电荷，故$E=kq/r^2$。"
+      }
      ]
     },
     {
@@ -2228,7 +3187,15 @@
      "tex": "q_{\\text{内}}=q\\dfrac{r^{3}}{R^{3}}",
      "size": 31,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "内部包围电荷",
+     "qa": [
+      {
+       "q": "内部高斯面包住多少电荷？",
+       "a": "按体积比例：$q_{\\text{内}}=q\\dfrac{r^3}{R^3}$，因电荷均匀分布在体积内。"
+      }
+     ]
     },
     {
      "type": "tex",
@@ -2252,7 +3219,20 @@
      "tex": "E=\\dfrac{qr}{4\\pi\\varepsilon_0 R^{3}}=\\dfrac{\\rho r}{3\\varepsilon_0}",
      "size": 30,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "球内场强公式",
+     "qa": [
+      {
+       "q": "球内场强怎么算出来的？",
+       "a": "代入高斯定理$E\\cdot4\\pi r^2=q_{\\text{内}}/\\varepsilon_0$，得$E=\\dfrac{qr}{4\\pi\\varepsilon_0 R^3}=\\dfrac{\\rho r}{3\\varepsilon_0}$。"
+      },
+      {
+       "q": "为什么球内场强随r线性增大？",
+       "a": "因为$q_{\\text{内}}\\propto r^3$，而面积$\\propto r^2$，相除后$E\\propto r$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2272,7 +3252,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "场强分布结论",
+     "qa": [
+      {
+       "q": "球内场强最大值在哪？",
+       "a": "在球面$r=R$处最大，内部线性增大，外部按$1/r^2$衰减。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2304,7 +3293,68 @@
      "name": "gauss_solid_sphere"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "球外场强",
+     "x": 540,
+     "y": 374,
+     "qa": [
+      {
+       "q": "球外为什么和球壳一样？",
+       "a": "外部高斯面包住全部电荷$q$，由球对称性等效为球心点电荷，故$E=kq/r^2$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 2
+    },
+    {
+     "text": "内部包围电荷",
+     "x": 520,
+     "y": 568,
+     "qa": [
+      {
+       "q": "内部高斯面包住多少电荷？",
+       "a": "按体积比例：$q_{\\text{内}}=q\\dfrac{r^3}{R^3}$，因电荷均匀分布在体积内。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    },
+    {
+     "text": "球内场强公式",
+     "x": 520,
+     "y": 812,
+     "qa": [
+      {
+       "q": "球内场强怎么算出来的？",
+       "a": "代入高斯定理$E\\cdot4\\pi r^2=q_{\\text{内}}/\\varepsilon_0$，得$E=\\dfrac{qr}{4\\pi\\varepsilon_0 R^3}=\\dfrac{\\rho r}{3\\varepsilon_0}$。"
+      },
+      {
+       "q": "为什么球内场强随r线性增大？",
+       "a": "因为$q_{\\text{内}}\\propto r^3$，而面积$\\propto r^2$，相除后$E\\propto r$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 6
+    },
+    {
+     "text": "场强分布结论",
+     "x": 540,
+     "y": 882,
+     "qa": [
+      {
+       "q": "球内场强最大值在哪？",
+       "a": "在球面$r=R$处最大，内部线性增大，外部按$1/r^2$衰减。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 7
+    }
+   ],
    "stepTimes": {
     "1": 429.9,
     "2": 435.65,
@@ -2316,7 +3366,28 @@
    "t_start": 429.9,
    "t_end": 472.98,
    "duration": 43.08,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 435.65,
+     "end": 440.65
+    },
+    {
+     "bullet": 1,
+     "start": 443.47,
+     "end": 448.47
+    },
+    {
+     "bullet": 2,
+     "start": 455.75,
+     "end": 460.75
+    },
+    {
+     "bullet": 3,
+     "start": 464.67,
+     "end": 469.67
+    }
+   ]
   },
   {
    "id": 12,
@@ -2362,6 +3433,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "高斯面选取",
+     "qa": [
+      {
+       "q": "为什么高斯面要取同轴圆柱面？",
+       "a": "因为电荷分布轴对称，取同轴圆柱面可使侧面上场强大小处处相等且沿径向，便于计算通量。"
+      }
      ]
     },
     {
@@ -2408,6 +3487,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "侧面通量",
+     "qa": [
+      {
+       "q": "侧面上为什么场强与法线平行？",
+       "a": "由轴对称性，场强沿径向向外，圆柱侧面法线也沿径向，故 $\\hat n\\parallel\\vec E$，通量为 $E\\cdot2\\pi rl$。"
+      }
      ]
     },
     {
@@ -2454,6 +3541,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "底面通量为零",
+     "qa": [
+      {
+       "q": "两个底面的通量为什么是零？",
+       "a": "底面法线沿轴向，与径向场强垂直，$\\hat n\\perp\\vec E$，故通过底面的通量为零。"
+      }
      ]
     },
     {
@@ -2498,7 +3593,20 @@
      "tex": "E=\\dfrac{\\lambda}{2\\pi\\varepsilon_0 r}",
      "size": 34,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "圆柱场强公式",
+     "qa": [
+      {
+       "q": "无限长带电圆柱外的场强怎么算？",
+       "a": "由高斯定理得 $E=\\dfrac{\\lambda}{2\\pi\\varepsilon_0 r}$，与用积分法所得结果一致。"
+      },
+      {
+       "q": "这个结果和点电荷的场强有何不同？",
+       "a": "圆柱场强随 $r$ 一次方反比衰减，而点电荷随 $r^2$ 反比衰减。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2530,7 +3638,68 @@
      "name": "gauss_cyl"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "高斯面选取",
+     "x": 570,
+     "y": 302,
+     "qa": [
+      {
+       "q": "为什么高斯面要取同轴圆柱面？",
+       "a": "因为电荷分布轴对称，取同轴圆柱面可使侧面上场强大小处处相等且沿径向，便于计算通量。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 1
+    },
+    {
+     "text": "侧面通量",
+     "x": 570,
+     "y": 434,
+     "qa": [
+      {
+       "q": "侧面上为什么场强与法线平行？",
+       "a": "由轴对称性，场强沿径向向外，圆柱侧面法线也沿径向，故 $\\hat n\\parallel\\vec E$，通量为 $E\\cdot2\\pi rl$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 3
+    },
+    {
+     "text": "底面通量为零",
+     "x": 570,
+     "y": 562,
+     "qa": [
+      {
+       "q": "两个底面的通量为什么是零？",
+       "a": "底面法线沿轴向，与径向场强垂直，$\\hat n\\perp\\vec E$，故通过底面的通量为零。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 5
+    },
+    {
+     "text": "圆柱场强公式",
+     "x": 570,
+     "y": 880,
+     "qa": [
+      {
+       "q": "无限长带电圆柱外的场强怎么算？",
+       "a": "由高斯定理得 $E=\\dfrac{\\lambda}{2\\pi\\varepsilon_0 r}$，与用积分法所得结果一致。"
+      },
+      {
+       "q": "这个结果和点电荷的场强有何不同？",
+       "a": "圆柱场强随 $r$ 一次方反比衰减，而点电荷随 $r^2$ 反比衰减。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 8
+    }
+   ],
    "stepTimes": {
     "1": 473.78,
     "2": 477.13,
@@ -2542,7 +3711,28 @@
    "t_start": 473.78,
    "t_end": 518.06,
    "duration": 44.28,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 473.78,
+     "end": 478.78
+    },
+    {
+     "bullet": 1,
+     "start": 477.13,
+     "end": 482.13
+    },
+    {
+     "bullet": 2,
+     "start": 483.87,
+     "end": 488.87
+    },
+    {
+     "bullet": 3,
+     "start": 502.35,
+     "end": 507.35
+    }
+   ]
   },
   {
    "id": 13,
@@ -2786,6 +3976,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "两板电荷分布",
+     "qa": [
+      {
+       "q": "两板的电荷面密度为什么是一正一负？",
+       "a": "这是平行板电容器的典型带电方式，两板分别带 $+\\sigma$ 和 $-\\sigma$，等量异号。"
+      }
      ]
     },
     {
@@ -2806,6 +4004,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "单板场强公式",
+     "qa": [
+      {
+       "q": "为什么单块无限大带电板的场是 $\\sigma/(2\\varepsilon_0)$？",
+       "a": "无限大均匀带电板由高斯定理可得单侧场强 $E_0=\\sigma/(2\\varepsilon_0)$，方向垂直板面。"
+      }
      ]
     },
     {
@@ -2870,7 +4076,20 @@
      "tex": "E_{\\text{内}}=\\dfrac{\\sigma}{\\varepsilon_0},\\qquad E_{\\text{外}}=0",
      "size": 33,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "板间板外场强",
+     "qa": [
+      {
+       "q": "板间场强为什么是 $\\sigma/\\varepsilon_0$ 而不是 $\\sigma/(2\\varepsilon_0)$？",
+       "a": "板间两板产生的场同向叠加：$\\sigma/(2\\varepsilon_0)+\\sigma/(2\\varepsilon_0)=\\sigma/\\varepsilon_0$。"
+      },
+      {
+       "q": "板外场强为什么为零？",
+       "a": "板外两板产生的场大小相等、方向相反，正好抵消，故 $E_{\\text{外}}=0$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2890,7 +4109,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "场集中于板间",
+     "qa": [
+      {
+       "q": "平行板电容器的电场分布有什么特点？",
+       "a": "场全部集中在两板之间，外部没有场，这是理想平行板电容器的关键结论。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2956,7 +4184,68 @@
      "name": "parallel_plates"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "两板电荷分布",
+     "x": 540,
+     "y": 296,
+     "qa": [
+      {
+       "q": "两板的电荷面密度为什么是一正一负？",
+       "a": "这是平行板电容器的典型带电方式，两板分别带 $+\\sigma$ 和 $-\\sigma$，等量异号。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 1
+    },
+    {
+     "text": "单板场强公式",
+     "x": 540,
+     "y": 374,
+     "qa": [
+      {
+       "q": "为什么单块无限大带电板的场是 $\\sigma/(2\\varepsilon_0)$？",
+       "a": "无限大均匀带电板由高斯定理可得单侧场强 $E_0=\\sigma/(2\\varepsilon_0)$，方向垂直板面。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 2
+    },
+    {
+     "text": "板间板外场强",
+     "x": 520,
+     "y": 678,
+     "qa": [
+      {
+       "q": "板间场强为什么是 $\\sigma/\\varepsilon_0$ 而不是 $\\sigma/(2\\varepsilon_0)$？",
+       "a": "板间两板产生的场同向叠加：$\\sigma/(2\\varepsilon_0)+\\sigma/(2\\varepsilon_0)=\\sigma/\\varepsilon_0$。"
+      },
+      {
+       "q": "板外场强为什么为零？",
+       "a": "板外两板产生的场大小相等、方向相反，正好抵消，故 $E_{\\text{外}}=0$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 5
+    },
+    {
+     "text": "场集中于板间",
+     "x": 540,
+     "y": 756,
+     "qa": [
+      {
+       "q": "平行板电容器的电场分布有什么特点？",
+       "a": "场全部集中在两板之间，外部没有场，这是理想平行板电容器的关键结论。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 6
+    }
+   ],
    "stepTimes": {
     "1": 565.79,
     "2": 574.11,
@@ -2968,7 +4257,28 @@
    "t_start": 565.79,
    "t_end": 603.45,
    "duration": 37.66,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 565.79,
+     "end": 570.79
+    },
+    {
+     "bullet": 1,
+     "start": 574.11,
+     "end": 579.11
+    },
+    {
+     "bullet": 2,
+     "start": 592.71,
+     "end": 597.71
+    },
+    {
+     "bullet": 3,
+     "start": 599.06,
+     "end": 603.45
+    }
+   ]
   },
   {
    "id": 15,
@@ -3044,7 +4354,16 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "分析对称性",
+     "qa": [
+      {
+       "q": "为什么没有对称性就求不出场强？",
+       "a": "高斯定理只给出总通量，无对称性时无法把 $E$ 从积分号提出，只能求通量，求不出每点的 $E$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "box",
@@ -3086,7 +4405,20 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "选取高斯面",
+     "qa": [
+      {
+       "q": "高斯面怎么选才好算？",
+       "a": "让面上 $E$ 大小相等，且 $\\vec n$ 与 $\\vec E$ 平行或垂直，这样积分号才能提出或该项为零。"
+      },
+      {
+       "q": "为什么说关键在第二步？",
+       "a": "高斯面选得好，通量积分两行就完；选得不好，积分无法化简，寸步难行。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "box",
@@ -3128,7 +4460,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "计算通量",
+     "qa": [
+      {
+       "q": "算通量时怎么简化？",
+       "a": "能提出积分号的把 $E$ 提出，$\\vec E\\perp\\vec n$ 的部分通量为零，直接划掉。"
+      }
+     ]
     },
     {
      "type": "box",
@@ -3170,7 +4510,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "算面内电荷求E",
+     "qa": [
+      {
+       "q": "面内电荷怎么算？",
+       "a": "按电荷分布取体积、面积或长度积分，代入 $\\oint \\vec E\\cdot d\\vec S=q_{内}/\\varepsilon_0$ 解出 $E$。"
+      }
+     ]
     },
     {
      "type": "box",
@@ -3227,7 +4575,68 @@
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "分析对称性",
+     "x": 550,
+     "y": 458,
+     "qa": [
+      {
+       "q": "为什么没有对称性就求不出场强？",
+       "a": "高斯定理只给出总通量，无对称性时无法把 $E$ 从积分号提出，只能求通量，求不出每点的 $E$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 1
+    },
+    {
+     "text": "选取高斯面",
+     "x": 1380,
+     "y": 458,
+     "qa": [
+      {
+       "q": "高斯面怎么选才好算？",
+       "a": "让面上 $E$ 大小相等，且 $\\vec n$ 与 $\\vec E$ 平行或垂直，这样积分号才能提出或该项为零。"
+      },
+      {
+       "q": "为什么说关键在第二步？",
+       "a": "高斯面选得好，通量积分两行就完；选得不好，积分无法化简，寸步难行。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "计算通量",
+     "x": 550,
+     "y": 698,
+     "qa": [
+      {
+       "q": "算通量时怎么简化？",
+       "a": "能提出积分号的把 $E$ 提出，$\\vec E\\perp\\vec n$ 的部分通量为零，直接划掉。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 3
+    },
+    {
+     "text": "算面内电荷求E",
+     "x": 1380,
+     "y": 698,
+     "qa": [
+      {
+       "q": "面内电荷怎么算？",
+       "a": "按电荷分布取体积、面积或长度积分，代入 $\\oint \\vec E\\cdot d\\vec S=q_{内}/\\varepsilon_0$ 解出 $E$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    }
+   ],
    "stepTimes": {
     "1": 604.25,
     "2": 607.31,
@@ -3239,7 +4648,28 @@
    "t_start": 604.25,
    "t_end": 649.92,
    "duration": 45.67,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 604.25,
+     "end": 609.25
+    },
+    {
+     "bullet": 1,
+     "start": 607.31,
+     "end": 612.31
+    },
+    {
+     "bullet": 2,
+     "start": 621.65,
+     "end": 626.65
+    },
+    {
+     "bullet": 3,
+     "start": 629.75,
+     "end": 634.75
+    }
+   ]
   },
   {
    "id": 16,
@@ -3323,7 +4753,16 @@
      "tex": "E\\cdot2\\pi rl=\\dfrac{\\rho\\pi R^{2}l}{\\varepsilon_0}",
      "size": 30,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "外部高斯定理应用",
+     "qa": [
+      {
+       "q": "为什么外部高斯面内电荷用 $\\rho\\pi R^2 l$？",
+       "a": "高斯面半径 $r>R$，只有半径 $R$ 的圆柱体内有电荷，体积为 $\\pi R^2 l$，故电荷为 $\\rho\\pi R^2 l$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -3335,7 +4774,16 @@
      "tex": "E=\\dfrac{\\rho R^{2}}{2\\varepsilon_0 r}",
      "size": 32,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "外部场强公式",
+     "qa": [
+      {
+       "q": "外部场强为什么按 $1/r$ 衰减？",
+       "a": "由 $E\\cdot2\\pi rl=\\rho\\pi R^2 l/\\varepsilon_0$ 得 $E=\\dfrac{\\rho R^2}{2\\varepsilon_0 r}$，与 $r$ 成反比。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -3373,7 +4821,15 @@
      "tex": "E=\\dfrac{\\rho r}{2\\varepsilon_0}",
      "size": 32,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "内部场强公式",
+     "qa": [
+      {
+       "q": "内部为什么随 $r$ 线性增大？",
+       "a": "面内电荷为 $\\rho\\pi r^2 l$，代入高斯定理得 $E=\\dfrac{\\rho r}{2\\varepsilon_0}$，正比于 $r$。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -3413,6 +4869,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "场强连续性检验",
+     "qa": [
+      {
+       "q": "怎么检验结果对不对？",
+       "a": "令 $r=R$，内外两式都等于 $\\dfrac{\\rho R}{2\\varepsilon_0}$，场强连续，说明结果自洽。"
+      }
      ]
     },
     {
@@ -3425,7 +4889,64 @@
      "name": "gauss_cyl_solid"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "外部高斯定理应用",
+     "x": 520,
+     "y": 494,
+     "qa": [
+      {
+       "q": "为什么外部高斯面内电荷用 $\\rho\\pi R^2 l$？",
+       "a": "高斯面半径 $r>R$，只有半径 $R$ 的圆柱体内有电荷，体积为 $\\pi R^2 l$，故电荷为 $\\rho\\pi R^2 l$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "外部场强公式",
+     "x": 520,
+     "y": 618,
+     "qa": [
+      {
+       "q": "外部场强为什么按 $1/r$ 衰减？",
+       "a": "由 $E\\cdot2\\pi rl=\\rho\\pi R^2 l/\\varepsilon_0$ 得 $E=\\dfrac{\\rho R^2}{2\\varepsilon_0 r}$，与 $r$ 成反比。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    },
+    {
+     "text": "内部场强公式",
+     "x": 520,
+     "y": 808,
+     "qa": [
+      {
+       "q": "内部为什么随 $r$ 线性增大？",
+       "a": "面内电荷为 $\\rho\\pi r^2 l$，代入高斯定理得 $E=\\dfrac{\\rho r}{2\\varepsilon_0}$，正比于 $r$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 6
+    },
+    {
+     "text": "场强连续性检验",
+     "x": 540,
+     "y": 920,
+     "qa": [
+      {
+       "q": "怎么检验结果对不对？",
+       "a": "令 $r=R$，内外两式都等于 $\\dfrac{\\rho R}{2\\varepsilon_0}$，场强连续，说明结果自洽。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 8
+    }
+   ],
    "stepTimes": {
     "1": 650.72,
     "2": 658.01,
@@ -3436,7 +4957,28 @@
    "t_start": 650.72,
    "t_end": 697.54,
    "duration": 46.82,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 658.01,
+     "end": 663.01
+    },
+    {
+     "bullet": 1,
+     "start": 665.9,
+     "end": 670.9
+    },
+    {
+     "bullet": 2,
+     "start": 676.5,
+     "end": 681.5
+    },
+    {
+     "bullet": 3,
+     "start": 685.59,
+     "end": 690.59
+    }
+   ]
   },
   {
    "id": 17,
@@ -3494,7 +5036,15 @@
      "tex": "\\Phi_e=\\int_S\\vec E\\cdot\\mathrm d\\vec S",
      "size": 26,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "电通量定义",
+     "qa": [
+      {
+       "q": "为什么闭合面通量要取外法线？",
+       "a": "取外法线使穿出为正、穿入为负，净通量才能直接对应面内电荷的正负。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -3526,7 +5076,20 @@
      "tex": "\\oint_S\\vec E\\cdot\\mathrm d\\vec S=\\dfrac{\\sum q_{\\text{内}}}{\\varepsilon_0}",
      "size": 24,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "高斯定理",
+     "qa": [
+      {
+       "q": "高斯定理中的电荷为什么只算面内的？",
+       "a": "面外电荷的场线穿入又穿出，对闭合面净通量贡献为零，故只需 $\\sum q_{\\text{内}}$。"
+      },
+      {
+       "q": "高斯定理说明静电场有什么性质？",
+       "a": "闭合面净通量由面内电荷决定，说明静电场是有源场，源头是电荷。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -3572,7 +5135,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "三个对称结果",
+     "qa": [
+      {
+       "q": "这几个结果分别对应什么对称性？",
+       "a": "球对称（球壳、球内）、轴对称（无限长圆柱 $E\\propto1/r$）、平面对称（无限大平面 $E$ 为常量）。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -3678,6 +5250,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "高斯定理四步法",
+     "qa": [
+      {
+       "q": "用高斯定理解题的步骤是什么？",
+       "a": "看对称 → 选面 → 算通量 → 算电荷：先判断对称性，选合适高斯面，再分别求 $\\Phi_e$ 与 $\\sum q_{\\text{内}}$。"
+      }
      ]
     },
     {
@@ -3743,7 +5323,68 @@
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "电通量定义",
+     "x": 520,
+     "y": 386,
+     "qa": [
+      {
+       "q": "为什么闭合面通量要取外法线？",
+       "a": "取外法线使穿出为正、穿入为负，净通量才能直接对应面内电荷的正负。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 2
+    },
+    {
+     "text": "高斯定理",
+     "x": 520,
+     "y": 562,
+     "qa": [
+      {
+       "q": "高斯定理中的电荷为什么只算面内的？",
+       "a": "面外电荷的场线穿入又穿出，对闭合面净通量贡献为零，故只需 $\\sum q_{\\text{内}}$。"
+      },
+      {
+       "q": "高斯定理说明静电场有什么性质？",
+       "a": "闭合面净通量由面内电荷决定，说明静电场是有源场，源头是电荷。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    },
+    {
+     "text": "三个对称结果",
+     "x": 1380,
+     "y": 294,
+     "qa": [
+      {
+       "q": "这几个结果分别对应什么对称性？",
+       "a": "球对称（球壳、球内）、轴对称（无限长圆柱 $E\\propto1/r$）、平面对称（无限大平面 $E$ 为常量）。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 6
+    },
+    {
+     "text": "高斯定理四步法",
+     "x": 960,
+     "y": 700,
+     "qa": [
+      {
+       "q": "用高斯定理解题的步骤是什么？",
+       "a": "看对称 → 选面 → 算通量 → 算电荷：先判断对称性，选合适高斯面，再分别求 $\\Phi_e$ 与 $\\sum q_{\\text{内}}$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 11
+    }
+   ],
    "stepTimes": {
     "1": 698.34,
     "2": 704.33,
@@ -3755,7 +5396,28 @@
    "t_start": 698.34,
    "t_end": 744.49,
    "duration": 46.15,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 698.34,
+     "end": 703.34
+    },
+    {
+     "bullet": 1,
+     "start": 704.33,
+     "end": 709.33
+    },
+    {
+     "bullet": 2,
+     "start": 720.47,
+     "end": 725.47
+    },
+    {
+     "bullet": 3,
+     "start": 729.92,
+     "end": 734.92
+    }
+   ]
   }
  ],
  "subtitles": [
@@ -4426,6 +6088,6 @@
    "text": "下一节 5-5 讲环路定理，那里会说明静电场还有一个性质：它是无旋场。"
   }
  ],
- "build_ts": 1792482686,
+ "build_ts": 1794446521,
  "logoScale": 0.67
 }

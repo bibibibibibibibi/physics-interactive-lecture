@@ -88,7 +88,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "进动的定义",
+     "qa": [
+      {
+       "q": "什么是进动？",
+       "a": "高速自转的物体，其自转轴绕另一轴（如竖直轴）缓慢转动的现象。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -108,6 +117,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "进动三问",
+     "qa": [
+      {
+       "q": "这一节要解决哪些问题？",
+       "a": "进动的原因、自转速度为何不变、进动方向如何判断，均由角动量定理统一解释。"
+      }
      ]
     }
    ],
@@ -181,6 +198,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "进动现象",
+     "qa": [
+      {
+       "q": "为什么陀螺转起来就不倒？",
+       "a": "高速自转时陀螺不倒下，而是自转轴绕竖直方向慢慢画圈，即发生进动。"
+      }
      ]
     },
     {
@@ -233,7 +258,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "进动定义",
+     "qa": [
+      {
+       "q": "什么是进动？",
+       "a": "自转轴绕另一条轴（如竖直方向）缓慢转动的现象，也叫旋进。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -273,7 +307,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "两种转动角速度",
+     "qa": [
+      {
+       "q": "进动中同时存在哪两种转动？",
+       "a": "绕自身轴的快速自转，角速度 $\\omega$；自转轴绕竖直轴的慢速进动，角速度 $\\Omega$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -305,6 +348,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "快慢关系",
+     "qa": [
+      {
+       "q": "自转与进动的角速度大小关系如何？",
+       "a": "通常自转远快于进动，即 $\\omega \\gg \\Omega$。"
+      }
      ]
     },
     {
@@ -367,7 +418,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "角动量定理",
+     "qa": [
+      {
+       "q": "为什么进动要用角动量定理分析？",
+       "a": "对定点转动，力矩等于角动量的变化率 $M=dL/dt$，力矩方向决定角动量（自转轴）如何改变方向。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -399,7 +459,16 @@
      "tex": "\\vec M_O=\\vec r\\times m\\vec g",
      "size": 38,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "重力矩公式",
+     "qa": [
+      {
+       "q": "为什么只有重力产生力矩？",
+       "a": "支持力过 O 点，力臂为零，力矩为零；重力矩 $M_O=\\vec r\\times m\\vec g$，$\\vec r$ 为 O 到质心的位矢。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -443,6 +512,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "力矩方向",
+     "qa": [
+      {
+       "q": "重力矩的方向指向哪里？",
+       "a": "M 垂直于重力，也垂直于自转轴，即垂直于 $\\vec r$ 与 $m\\vec g$ 张成的平面，故使自转轴绕竖直方向转动。"
+      }
      ]
     },
     {
@@ -475,7 +552,15 @@
      "tex": "\\vec L_O=J\\vec\\omega",
      "size": 42,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "角动量近似",
+     "qa": [
+      {
+       "q": "为什么角动量可写成 $J\\omega$？",
+       "a": "因 $\\omega\\gg\\Omega$，陀螺对 O 的角动量近似为自转角动量 $\\vec L_O=J\\vec\\omega$，方向沿自转轴。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -560,7 +645,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "角动量定理增量形式",
+     "qa": [
+      {
+       "q": "为什么可以把 M = dL/dt 写成 dL = M dt？",
+       "a": "把角动量定理两边同乘 $dt$，得到微小时间内的角动量增量 $d\\vec L=\\vec M\\,dt$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -586,7 +680,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "dL 垂直于 L",
+     "qa": [
+      {
+       "q": "为什么 dL 一定垂直于 L？",
+       "a": "因为 $\\vec M\\perp\\vec L$，而 $d\\vec L=\\vec M\\,dt$ 与 $\\vec M$ 同向，故 $d\\vec L\\perp\\vec L$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -610,7 +713,15 @@
      "tex": "|\\vec L'|=|\\vec L|\\quad(\\mathrm d\\vec L\\perp\\vec L)",
      "size": 34,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "大小不变的证明",
+     "qa": [
+      {
+       "q": "加了 dL 后长度为什么不变？",
+       "a": "因 $d\\vec L\\perp\\vec L$，$|\\vec L'|=\\sqrt{L^2+(dL)^2}\\approx L$，长度不变。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -680,6 +791,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "进动与 ω 不变",
+     "qa": [
+      {
+       "q": "方向变和大小不变分别意味着什么？",
+       "a": "方向变说明自转轴在转，即进动；大小不变说明角速度 $\\omega$ 不变。"
+      }
      ]
     },
     {
@@ -754,7 +873,15 @@
      "tex": "|\\mathrm d\\vec L|=L\\sin\\theta\\,\\mathrm d\\theta",
      "size": 38,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "进动微元关系",
+     "qa": [
+      {
+       "q": "为什么 |dL| 等于 L sinθ dθ？",
+       "a": "L 端点作半径 $L\\sin\\theta$ 的圆周运动，转过 dθ 时弧长为 $L\\sin\\theta\\,d\\theta$，即 $|\\mathrm d\\vec L|$。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -810,7 +937,16 @@
      "tex": "M=L\\sin\\theta\\cdot\\Omega",
      "size": 38,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "进动基本方程",
+     "qa": [
+      {
+       "q": "M = L sinθ Ω 是怎么来的？",
+       "a": "由 $|\\mathrm d\\vec L|=L\\sin\\theta\\,d\\theta$ 两边除以 dt，得 $M=L\\sin\\theta\\,\\Omega$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -822,7 +958,20 @@
      "tex": "\\Omega=\\frac{M}{L\\sin\\theta}=\\frac{M}{J\\omega\\sin\\theta}",
      "size": 40,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "进动角速度公式",
+     "qa": [
+      {
+       "q": "进动角速度的最终表达式是什么？",
+       "a": "$\\Omega=\\dfrac{M}{L\\sin\\theta}=\\dfrac{M}{J\\omega\\sin\\theta}$。"
+      },
+      {
+       "q": "为什么 θ 出现在分母里？",
+       "a": "因为端点圆周半径是 $L\\sin\\theta$，θ 越小半径越小，同样的 M 对应更大的 Ω。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -842,6 +991,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "Ω与ω成反比",
+     "qa": [
+      {
+       "q": "为什么转得越快进动越慢？",
+       "a": "由 $\\Omega=\\dfrac{M}{J\\omega\\sin\\theta}$，Ω 与 ω 成反比，自转越快进动越慢。"
+      }
      ]
     }
    ],
@@ -907,7 +1064,20 @@
      "tex": "\\Omega=\\frac{M}{J\\omega\\sin\\theta}=\\frac{mgs\\sin\\theta}{J\\omega\\sin\\theta}=\\frac{mgs}{J\\omega}",
      "size": 36,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "进动角速度公式",
+     "qa": [
+      {
+       "q": "为什么 sinθ 能约掉？",
+       "a": "分子 $M=mgs\\sin\\theta$ 与分母的 $\\sin\\theta$ 相消，得 $\\Omega=\\frac{mgs}{J\\omega}$。"
+      },
+      {
+       "q": "Ω 与哪些量有关？",
+       "a": "$\\Omega$ 只与 $mgs$、$J$、$\\omega$ 有关，与倾角 $\\theta$ 无关。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -939,7 +1109,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "进动与倾角无关",
+     "qa": [
+      {
+       "q": "倾角变了进动会变吗？",
+       "a": "不会。$\\sin\\theta$ 约掉后 $\\Omega=\\frac{mgs}{J\\omega}$，与 $\\theta$ 无关。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -965,6 +1144,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "无力矩无进动",
+     "qa": [
+      {
+       "q": "重心支在支点上会怎样？",
+       "a": "合重力矩为零，$\\Omega=0$，不发生进动。"
+      }
      ]
     },
     {
@@ -1017,6 +1204,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "转速越大越稳",
+     "qa": [
+      {
+       "q": "为什么转得快陀螺更稳？",
+       "a": "由 $\\Omega=\\frac{mgs}{J\\omega}$，$\\omega$ 越大 $\\Omega$ 越小，进动越慢越稳。"
+      }
      ]
     },
     {
@@ -1090,7 +1285,20 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "进动方向判据",
+     "qa": [
+      {
+       "q": "为什么 dL 与 M 同向？",
+       "a": "由角动量定理 $d\\vec L=\\vec M\\,dt$，$dt>0$ 时 $d\\vec L$ 与 $\\vec M$ 同向。"
+      },
+      {
+       "q": "M 怎么算？",
+       "a": "$\\vec M=\\vec r\\times m\\vec g$，$\\vec r$ 从支点指向质心。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1116,6 +1324,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "判断步骤",
+     "qa": [
+      {
+       "q": "判断进动方向有几步？",
+       "a": "四步：定 $\\vec M$ 方向 → 定 $d\\vec L$ 方向 → 看 $\\vec L$ 端点转向 → 得进动方向。"
+      }
      ]
     },
     {
@@ -1176,6 +1392,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "右手螺旋定则",
+     "qa": [
+      {
+       "q": "需要背进动方向口诀吗？",
+       "a": "不用。按右手螺旋对 $\\vec r\\times m\\vec g$ 走一遍即可定出 $\\vec M$ 与进动方向。"
+      }
      ]
     },
     {
@@ -1202,7 +1426,16 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "M反向则进动反向",
+     "qa": [
+      {
+       "q": "支点换到上方，进动方向变吗？",
+       "a": "变。$\\vec r$ 由斜向上变斜向下，$\\vec M$ 反向，进动随之反向。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1301,6 +1534,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "自转角速度恒定",
+     "qa": [
+      {
+       "q": "为什么自转角速度恒定？",
+       "a": "在 ω≫Ω 条件下，重力矩只改变角动量方向，不改变其大小，故自转 ω 近似恒定。"
+      }
      ]
     },
     {
@@ -1321,6 +1562,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "进动方向与自转有关",
+     "qa": [
+      {
+       "q": "进动方向由什么决定？",
+       "a": "由自转方向决定：进动方向与自转方向相关，反转自转则进动方向也改变。"
+      }
      ]
     },
     {
@@ -1341,7 +1590,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "进动角速度反比关系",
+     "qa": [
+      {
+       "q": "进动角速度与自转角速度什么关系？",
+       "a": "近似成反比：$\\omega\\uparrow \\Rightarrow \\Omega\\downarrow$，即自转越快进动越慢。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1409,7 +1667,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "进动与圆周运动类比",
+     "qa": [
+      {
+       "q": "进动和圆周运动为什么可以类比？",
+       "a": "向心力垂直于速度只改方向；重力矩垂直于角动量只改方向，结构完全相同。"
+      }
+     ],
+     "important": true
     }
    ],
    "heading": "五　结论与类比"
@@ -1462,7 +1729,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "陀螺仪定轴性",
+     "qa": [
+      {
+       "q": "为什么陀螺仪转子高速自转后轴方向能保持稳定？",
+       "a": "高速自转的转子角动量很大，外力矩很小时进动极慢，故轴方向近似不变，可作惯性导航基准。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1508,7 +1784,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "飞轮调姿",
+     "qa": [
+      {
+       "q": "航天器如何靠飞轮改变姿态？",
+       "a": "电机使飞轮加速或减速，飞轮对航天器施加反作用力矩，航天器反向转动，从而调整姿态。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1554,6 +1839,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "角动量守恒",
+     "qa": [
+      {
+       "q": "飞轮调姿背后的物理规律是什么？",
+       "a": "系统无外力矩时角动量守恒：飞轮转速变化，航天器反向转动，总角动量保持不变。"
+      }
      ]
     },
     {
@@ -1600,6 +1893,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "地球岁差",
+     "qa": [
+      {
+       "q": "地球岁差是什么现象？",
+       "a": "地球自转轴绕黄道法线缓慢进动画圈，周期约 26000 年，属进动现象。"
+      }
      ]
     },
     {
@@ -1699,7 +2000,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "引力矩致进动",
+     "qa": [
+      {
+       "q": "为什么地球自转轴会进动？",
+       "a": "赤道隆起受日月引力产生不为零的力矩，使自转轴像陀螺一样绕黄道法线画圈。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1751,6 +2061,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "倾角不变",
+     "qa": [
+      {
+       "q": "岁差过程中地轴倾角会变吗？",
+       "a": "不会，倾角保持 $23^\\circ5'$ 不变，变化的是自转轴指向的方向。"
+      }
      ]
     },
     {
@@ -1783,7 +2101,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "岁差周期",
+     "qa": [
+      {
+       "q": "岁差的周期是多长？",
+       "a": "约 26000 年，即自转轴绕黄道法线画一圈所需的时间。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1803,6 +2130,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "北极星更替",
+     "qa": [
+      {
+       "q": "北极星会一直是同一颗吗？",
+       "a": "不会，由于岁差，北极星每隔几千年就换一颗。"
+      }
      ]
     },
     {
@@ -2011,7 +2346,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "进动角速度公式",
+     "qa": [
+      {
+       "q": "进动角速度由什么决定？",
+       "a": "$\\Omega=\\frac{mgs}{J\\omega}$，与重力矩成正比，与自转角速度成反比。"
+      },
+      {
+       "q": "为什么 ω 增大 Ω 减小？",
+       "a": "分子 $mgs$ 不变，分母含 $\\omega$，故 $\\Omega\\propto 1/\\omega$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2031,7 +2379,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "Ω与ω成反比",
+     "qa": [
+      {
+       "q": "自转角速度加倍，进动角速度怎么变？",
+       "a": "$\\Omega$ 与 $\\omega$ 成反比，$\\omega$ 加倍则 $\\Omega$ 减半，选 B。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2051,6 +2408,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "陀螺稳定性解释",
+     "qa": [
+      {
+       "q": "为什么转得快的陀螺更稳？",
+       "a": "自转越快进动越慢，轴方向变化越小，看起来就越定。"
+      }
      ]
     },
     {
@@ -2188,7 +2553,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "进动定义",
+     "qa": [
+      {
+       "q": "什么是进动？",
+       "a": "高速自转的物体，其自转轴绕另一条轴缓慢转动的现象。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2214,7 +2588,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "进动成因",
+     "qa": [
+      {
+       "q": "为什么进动时角动量大小不变？",
+       "a": "$M \\perp L$，故 $dL \\perp L$，$dL$ 只改变 $L$ 的方向而不改变其大小。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2240,6 +2623,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "进动角速度公式",
+     "qa": [
+      {
+       "q": "进动角速度与倾角有关吗？",
+       "a": "代入重力矩后 $\\Omega = mgs/(J\\omega)$，与倾角 $\\theta$ 无关，且与自转速度成反比。"
+      }
      ]
     },
     {
@@ -2266,6 +2657,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "进动三条结论",
+     "qa": [
+      {
+       "q": "进动方向怎么判断？",
+       "a": "按力矩 $M$ 的方向用右手螺旋定则确定。"
+      }
      ]
     },
     {

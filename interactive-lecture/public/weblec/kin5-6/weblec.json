@@ -83,7 +83,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "电势是标量",
+     "qa": [
+      {
+       "q": "为什么说电势是标量更方便？",
+       "a": "标量叠加时直接代数相加，不用平行四边形法则，计算电场叠加时最省力。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -103,10 +112,56 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "电势定义式",
+     "qa": [
+      {
+       "q": "电势为什么等于电势能除以试探电荷？",
+       "a": "电势能与 $q_0$ 成正比，除以 $q_0$ 后只由场决定，与试探电荷无关，故可描述场本身。"
+      },
+      {
+       "q": "电势差和电势能差有什么关系？",
+       "a": "$U_{AB}=V_A-V_B$，即两点电势差等于单位电荷的电势能差。"
+      }
+     ],
+     "important": true
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "电势是标量",
+     "x": 960,
+     "y": 752,
+     "qa": [
+      {
+       "q": "为什么说电势是标量更方便？",
+       "a": "标量叠加时直接代数相加，不用平行四边形法则，计算电场叠加时最省力。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "电势定义式",
+     "x": 960,
+     "y": 892,
+     "qa": [
+      {
+       "q": "电势为什么等于电势能除以试探电荷？",
+       "a": "电势能与 $q_0$ 成正比，除以 $q_0$ 后只由场决定，与试探电荷无关，故可描述场本身。"
+      },
+      {
+       "q": "电势差和电势能差有什么关系？",
+       "a": "$U_{AB}=V_A-V_B$，即两点电势差等于单位电荷的电势能差。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    }
+   ],
    "stepTimes": {
     "1": 0.0,
     "2": 2.85,
@@ -115,7 +170,18 @@
    "t_start": 0.0,
    "t_end": 25.39,
    "duration": 25.39,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 2.85,
+     "end": 7.85
+    },
+    {
+     "bullet": 1,
+     "start": 10.11,
+     "end": 15.11
+    }
+   ]
   },
   {
    "id": 2,
@@ -161,7 +227,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "电势差的定义",
+     "qa": [
+      {
+       "q": "电势差是怎么定义的？",
+       "a": "把单位正电荷从 $A$ 移到 $B$ 时电场力做的功，即 $U_{AB}$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -173,7 +248,16 @@
      "tex": "U_{AB}=V_A-V_B=\\int_A^B\\vec E\\cdot\\mathrm d\\vec l",
      "size": 38,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "电势差的积分式",
+     "qa": [
+      {
+       "q": "电势差和电场强度有什么关系？",
+       "a": "$U_{AB}=V_A-V_B=\\int_A^B\\vec E\\cdot\\mathrm d\\vec l$，是场强沿路径的线积分。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -219,6 +303,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "电场力做功公式",
+     "qa": [
+      {
+       "q": "任意电荷从 A 到 B 电场力做功怎么算？",
+       "a": "$W=qU_{AB}$，用电荷量乘以两点间电势差即可。"
+      }
      ]
     },
     {
@@ -257,6 +349,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "电势差的符号",
+     "qa": [
+      {
+       "q": "$U_{AB}$ 是升高量还是降低量？",
+       "a": "$U_{AB}=V_A-V_B$，表示从 $A$ 到 $B$ 的电势降低量，不是升高量。"
+      }
      ]
     },
     {
@@ -294,7 +394,64 @@
      "color": "#111111"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "电势差的定义",
+     "x": 960,
+     "y": 310,
+     "qa": [
+      {
+       "q": "电势差是怎么定义的？",
+       "a": "把单位正电荷从 $A$ 移到 $B$ 时电场力做的功，即 $U_{AB}$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 1
+    },
+    {
+     "text": "电势差的积分式",
+     "x": 770,
+     "y": 472,
+     "qa": [
+      {
+       "q": "电势差和电场强度有什么关系？",
+       "a": "$U_{AB}=V_A-V_B=\\int_A^B\\vec E\\cdot\\mathrm d\\vec l$，是场强沿路径的线积分。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "电场力做功公式",
+     "x": 960,
+     "y": 644,
+     "qa": [
+      {
+       "q": "任意电荷从 A 到 B 电场力做功怎么算？",
+       "a": "$W=qU_{AB}$，用电荷量乘以两点间电势差即可。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    },
+    {
+     "text": "电势差的符号",
+     "x": 960,
+     "y": 734,
+     "qa": [
+      {
+       "q": "$U_{AB}$ 是升高量还是降低量？",
+       "a": "$U_{AB}=V_A-V_B$，表示从 $A$ 到 $B$ 的电势降低量，不是升高量。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 5
+    }
+   ],
    "stepTimes": {
     "1": 26.19,
     "2": 28.85,
@@ -306,7 +463,28 @@
    "t_start": 26.19,
    "t_end": 73.35,
    "duration": 47.16,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 26.19,
+     "end": 31.19
+    },
+    {
+     "bullet": 1,
+     "start": 28.85,
+     "end": 33.85
+    },
+    {
+     "bullet": 2,
+     "start": 45.66,
+     "end": 50.66
+    },
+    {
+     "bullet": 3,
+     "start": 54.03,
+     "end": 59.03
+    }
+   ]
   },
   {
    "id": 3,
@@ -388,6 +566,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "生物电数量级",
+     "qa": [
+      {
+       "q": "心电、脑电的电压有多大？",
+       "a": "毫伏量级，即 $10^{-3}$ V 左右，远小于日常电源电压。"
+      }
      ]
     },
     {
@@ -408,6 +594,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "日常电源电压",
+     "qa": [
+      {
+       "q": "干电池和汽车电瓶的电压分别是多少？",
+       "a": "干电池 1.5 V，汽车电瓶 12 V，都属于低电压日常电源。"
+      }
      ]
     },
     {
@@ -448,7 +642,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "高压与闪电量级",
+     "qa": [
+      {
+       "q": "高压输电和闪电的电压差多少个数量级？",
+       "a": "高压输电约 $5.5\\times10^5$ V，闪电 $10^8\\sim10^9$ V，相差约三到四个数量级。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -468,10 +671,76 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "电压危险性看场合",
+     "qa": [
+      {
+       "q": "电压越高就越危险吗？",
+       "a": "不一定，危险程度取决于能量与电流，不能脱离具体场合单看电压高低。"
+      }
+     ],
+     "important": true
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "生物电数量级",
+     "x": 960,
+     "y": 702,
+     "qa": [
+      {
+       "q": "心电、脑电的电压有多大？",
+       "a": "毫伏量级，即 $10^{-3}$ V 左右，远小于日常电源电压。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 2
+    },
+    {
+     "text": "日常电源电压",
+     "x": 960,
+     "y": 778,
+     "qa": [
+      {
+       "q": "干电池和汽车电瓶的电压分别是多少？",
+       "a": "干电池 1.5 V，汽车电瓶 12 V，都属于低电压日常电源。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 3
+    },
+    {
+     "text": "高压与闪电量级",
+     "x": 960,
+     "y": 930,
+     "qa": [
+      {
+       "q": "高压输电和闪电的电压差多少个数量级？",
+       "a": "高压输电约 $5.5\\times10^5$ V，闪电 $10^8\\sim10^9$ V，相差约三到四个数量级。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 5
+    },
+    {
+     "text": "电压危险性看场合",
+     "x": 960,
+     "y": 1002,
+     "qa": [
+      {
+       "q": "电压越高就越危险吗？",
+       "a": "不一定，危险程度取决于能量与电流，不能脱离具体场合单看电压高低。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 6
+    }
+   ],
    "stepTimes": {
     "1": 74.15,
     "2": 79.67,
@@ -483,7 +752,28 @@
    "t_start": 74.15,
    "t_end": 113.32,
    "duration": 39.17,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 79.67,
+     "end": 84.67
+    },
+    {
+     "bullet": 1,
+     "start": 84.56,
+     "end": 89.56
+    },
+    {
+     "bullet": 2,
+     "start": 93.52,
+     "end": 98.52
+    },
+    {
+     "bullet": 3,
+     "start": 99.85,
+     "end": 104.85
+    }
+   ]
   },
   {
    "id": 4,
@@ -541,6 +831,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "零电势参考点约定",
+     "qa": [
+      {
+       "q": "为什么规定无穷远处电势为零？",
+       "a": "电势绝对值无意义，只有差值有意义，选无穷远为零是方便约定，使点电荷电势式简洁。"
+      }
      ]
     },
     {
@@ -553,7 +851,15 @@
      "tex": "V=\\int_r^\\infty\\vec E\\cdot\\mathrm d\\vec l",
      "size": 32,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "电势的积分定义",
+     "qa": [
+      {
+       "q": "电势为什么用从 r 积到无穷远的线积分定义？",
+       "a": "$V=\\int_r^\\infty \\vec E\\cdot d\\vec l$，即把单位正电荷从 r 移到无穷远电场力做的功，因 $V_\\infty=0$。"
+      }
+     ]
     },
     {
      "type": "tex",
@@ -577,7 +883,20 @@
      "tex": "V=\\dfrac{q}{4\\pi\\varepsilon_0 r}",
      "size": 42,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "点电荷电势公式",
+     "qa": [
+      {
+       "q": "点电荷电势公式怎么来的？",
+       "a": "把 $E=\\frac{q}{4\\pi\\varepsilon_0 r^2}$ 代入 $\\int_r^\\infty E\\,dr$ 积分，得 $V=\\frac{q}{4\\pi\\varepsilon_0 r}$。"
+      },
+      {
+       "q": "这个公式里 r 是什么距离？",
+       "a": "r 是场点到点电荷 q 的距离，V 随 r 增大而减小，正比于 $1/r$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -597,6 +916,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "电势正负与电荷符号",
+     "qa": [
+      {
+       "q": "点电荷电势的正负由什么决定？",
+       "a": "由 q 的符号决定：$q>0$ 时 $V>0$，$q<0$ 时 $V<0$，与距离 r 无关。"
+      }
      ]
     },
     {
@@ -629,7 +956,68 @@
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "零电势参考点约定",
+     "x": 560,
+     "y": 306,
+     "qa": [
+      {
+       "q": "为什么规定无穷远处电势为零？",
+       "a": "电势绝对值无意义，只有差值有意义，选无穷远为零是方便约定，使点电荷电势式简洁。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 1
+    },
+    {
+     "text": "电势的积分定义",
+     "x": 560,
+     "y": 462,
+     "qa": [
+      {
+       "q": "电势为什么用从 r 积到无穷远的线积分定义？",
+       "a": "$V=\\int_r^\\infty \\vec E\\cdot d\\vec l$，即把单位正电荷从 r 移到无穷远电场力做的功，因 $V_\\infty=0$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 2
+    },
+    {
+     "text": "点电荷电势公式",
+     "x": 560,
+     "y": 762,
+     "qa": [
+      {
+       "q": "点电荷电势公式怎么来的？",
+       "a": "把 $E=\\frac{q}{4\\pi\\varepsilon_0 r^2}$ 代入 $\\int_r^\\infty E\\,dr$ 积分，得 $V=\\frac{q}{4\\pi\\varepsilon_0 r}$。"
+      },
+      {
+       "q": "这个公式里 r 是什么距离？",
+       "a": "r 是场点到点电荷 q 的距离，V 随 r 增大而减小，正比于 $1/r$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    },
+    {
+     "text": "电势正负与电荷符号",
+     "x": 560,
+     "y": 834,
+     "qa": [
+      {
+       "q": "点电荷电势的正负由什么决定？",
+       "a": "由 q 的符号决定：$q>0$ 时 $V>0$，$q<0$ 时 $V<0$，与距离 r 无关。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 5
+    }
+   ],
    "stepTimes": {
     "1": 114.12,
     "2": 117.33,
@@ -641,7 +1029,28 @@
    "t_start": 114.12,
    "t_end": 156.07,
    "duration": 41.95,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 114.12,
+     "end": 119.12
+    },
+    {
+     "bullet": 1,
+     "start": 117.33,
+     "end": 122.33
+    },
+    {
+     "bullet": 2,
+     "start": 132.36,
+     "end": 137.36
+    },
+    {
+     "bullet": 3,
+     "start": 140.58,
+     "end": 145.58
+    }
+   ]
   },
   {
    "id": 5,
@@ -679,7 +1088,20 @@
      "tex": "V=\\sum_i V_i=\\sum_i\\dfrac{q_i}{4\\pi\\varepsilon_0 r_i}",
      "size": 36,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "电势叠加公式",
+     "qa": [
+      {
+       "q": "多个点电荷在某点的电势怎么算？",
+       "a": "各电荷单独在该点产生的电势代数和：$V=\\sum_i \\dfrac{q_i}{4\\pi\\varepsilon_0 r_i}$。"
+      },
+      {
+       "q": "为什么电势可以直接相加？",
+       "a": "因为电势是标量，叠加时只作数值相加，无需矢量合成。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -705,7 +1127,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "标量代数和",
+     "qa": [
+      {
+       "q": "电势相加要注意什么？",
+       "a": "带着正负号直接相加，不作平行四边形，与场强的矢量合成不同。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -751,6 +1182,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "连续带电体电势",
+     "qa": [
+      {
+       "q": "连续带电体的电势怎么求？",
+       "a": "对电荷元积分：$V=\\int \\dfrac{\\mathrm dq}{4\\pi\\varepsilon_0 r}$。"
+      }
      ]
     },
     {
@@ -785,7 +1224,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "先电势后场强策略",
+     "qa": [
+      {
+       "q": "为什么优先算电势？",
+       "a": "电势是标量，叠加简单；再由 $\\vec E=-\\nabla V$ 求场强，常比直接积分容易。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -808,7 +1255,68 @@
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "电势叠加公式",
+     "x": 770,
+     "y": 402,
+     "qa": [
+      {
+       "q": "多个点电荷在某点的电势怎么算？",
+       "a": "各电荷单独在该点产生的电势代数和：$V=\\sum_i \\dfrac{q_i}{4\\pi\\varepsilon_0 r_i}$。"
+      },
+      {
+       "q": "为什么电势可以直接相加？",
+       "a": "因为电势是标量，叠加时只作数值相加，无需矢量合成。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 1
+    },
+    {
+     "text": "标量代数和",
+     "x": 960,
+     "y": 486,
+     "qa": [
+      {
+       "q": "电势相加要注意什么？",
+       "a": "带着正负号直接相加，不作平行四边形，与场强的矢量合成不同。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "连续带电体电势",
+     "x": 960,
+     "y": 652,
+     "qa": [
+      {
+       "q": "连续带电体的电势怎么求？",
+       "a": "对电荷元积分：$V=\\int \\dfrac{\\mathrm dq}{4\\pi\\varepsilon_0 r}$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    },
+    {
+     "text": "先电势后场强策略",
+     "x": 960,
+     "y": 864,
+     "qa": [
+      {
+       "q": "为什么优先算电势？",
+       "a": "电势是标量，叠加简单；再由 $\\vec E=-\\nabla V$ 求场强，常比直接积分容易。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 5
+    }
+   ],
    "stepTimes": {
     "1": 156.87,
     "2": 161.01,
@@ -820,7 +1328,28 @@
    "t_start": 156.87,
    "t_end": 195.37,
    "duration": 38.5,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 156.87,
+     "end": 161.87
+    },
+    {
+     "bullet": 1,
+     "start": 161.01,
+     "end": 166.01
+    },
+    {
+     "bullet": 2,
+     "start": 176.02,
+     "end": 181.02
+    },
+    {
+     "bullet": 3,
+     "start": 179.71,
+     "end": 184.71
+    }
+   ]
   },
   {
    "id": 6,
@@ -866,7 +1395,20 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "叠加法求电势",
+     "qa": [
+      {
+       "q": "叠加法求电势的适用条件是什么？",
+       "a": "电荷分布已知、几何简单时，把带电体切成电荷元，各元电势代数相加或积分。"
+      },
+      {
+       "q": "为什么电势可以直接代数相加？",
+       "a": "因为电势是标量，无方向，各电荷元产生的电势直接代数求和即可。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -952,7 +1494,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "场强积分法",
+     "qa": [
+      {
+       "q": "场强积分法怎么算电势？",
+       "a": "先用高斯定理求 $\\vec E$，再沿任意路径从该点积到无穷远：$V=\\int_P^\\infty\\vec E\\cdot\\mathrm d\\vec l$。"
+      },
+      {
+       "q": "什么时候用场强积分法？",
+       "a": "场强易由高斯定理求出、而电势叠加难算时，如球对称、柱对称带电体。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -998,6 +1553,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "零点取无穷远前提",
+     "qa": [
+      {
+       "q": "算电势的共同前提是什么？",
+       "a": "零点取在无穷远，且电荷分布在有限区域内，两条路都需满足。"
+      }
      ]
     },
     {
@@ -1040,7 +1603,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "无限长线反例",
+     "qa": [
+      {
+       "q": "无限长带电直线为什么不能取无穷远为零点？",
+       "a": "电荷延伸到无穷远，积分发散，须另选参考点（如取某处为 0）。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -1063,7 +1634,72 @@
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "叠加法求电势",
+     "x": 960,
+     "y": 306,
+     "qa": [
+      {
+       "q": "叠加法求电势的适用条件是什么？",
+       "a": "电荷分布已知、几何简单时，把带电体切成电荷元，各元电势代数相加或积分。"
+      },
+      {
+       "q": "为什么电势可以直接代数相加？",
+       "a": "因为电势是标量，无方向，各电荷元产生的电势直接代数求和即可。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 1
+    },
+    {
+     "text": "场强积分法",
+     "x": 960,
+     "y": 528,
+     "qa": [
+      {
+       "q": "场强积分法怎么算电势？",
+       "a": "先用高斯定理求 $\\vec E$，再沿任意路径从该点积到无穷远：$V=\\int_P^\\infty\\vec E\\cdot\\mathrm d\\vec l$。"
+      },
+      {
+       "q": "什么时候用场强积分法？",
+       "a": "场强易由高斯定理求出、而电势叠加难算时，如球对称、柱对称带电体。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 5
+    },
+    {
+     "text": "零点取无穷远前提",
+     "x": 960,
+     "y": 660,
+     "qa": [
+      {
+       "q": "算电势的共同前提是什么？",
+       "a": "零点取在无穷远，且电荷分布在有限区域内，两条路都需满足。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 7
+    },
+    {
+     "text": "无限长线反例",
+     "x": 960,
+     "y": 862,
+     "qa": [
+      {
+       "q": "无限长带电直线为什么不能取无穷远为零点？",
+       "a": "电荷延伸到无穷远，积分发散，须另选参考点（如取某处为 0）。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 8
+    }
+   ],
    "stepTimes": {
     "1": 196.17,
     "2": 199.81,
@@ -1074,7 +1710,28 @@
    "t_start": 196.17,
    "t_end": 242.47,
    "duration": 46.3,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 196.17,
+     "end": 201.17
+    },
+    {
+     "bullet": 1,
+     "start": 199.81,
+     "end": 204.81
+    },
+    {
+     "bullet": 2,
+     "start": 212.52,
+     "end": 217.52
+    },
+    {
+     "bullet": 3,
+     "start": 225.85,
+     "end": 230.85
+    }
+   ]
   },
   {
    "id": 7,
@@ -1172,7 +1829,16 @@
      "tex": "V=\\dfrac{e}{4\\pi\\varepsilon_0 r}=27.2\\ \\mathrm V",
      "size": 32,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "点电荷电势公式",
+     "qa": [
+      {
+       "q": "为什么电势可以直接用点电荷公式算？",
+       "a": "质子可视为点电荷，轨道处电势 $V=\\frac{e}{4\\pi\\varepsilon_0 r}$，代入 $r$ 得 $27.2\\ \\mathrm V$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1204,7 +1870,16 @@
      "tex": "E_{\\mathrm p}=-eV=-27.2\\ \\mathrm{eV}",
      "size": 32,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "电子电势能",
+     "qa": [
+      {
+       "q": "电势能为什么是负的？",
+       "a": "电子电荷为 $-e$，故 $E_p=-eV=-27.2\\ \\mathrm{eV}$，负号表示电子被束缚。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -1256,6 +1931,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "电子伏换算",
+     "qa": [
+      {
+       "q": "电子伏和焦耳怎么换算？",
+       "a": "$1\\ \\mathrm{eV}=1.60\\times10^{-19}\\ \\mathrm J$，原子物理中常用它表示能量。"
+      }
      ]
     },
     {
@@ -1306,10 +1989,75 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "负号的物理含义",
+     "qa": [
+      {
+       "q": "电势能为负说明什么？",
+       "a": "说明电子被束缚在原子中，要把它移到无穷远，外界必须做功。"
+      }
+     ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "点电荷电势公式",
+     "x": 560,
+     "y": 598,
+     "qa": [
+      {
+       "q": "为什么电势可以直接用点电荷公式算？",
+       "a": "质子可视为点电荷，轨道处电势 $V=\\frac{e}{4\\pi\\varepsilon_0 r}$，代入 $r$ 得 $27.2\\ \\mathrm V$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    },
+    {
+     "text": "电子电势能",
+     "x": 560,
+     "y": 808,
+     "qa": [
+      {
+       "q": "电势能为什么是负的？",
+       "a": "电子电荷为 $-e$，故 $E_p=-eV=-27.2\\ \\mathrm{eV}$，负号表示电子被束缚。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 6
+    },
+    {
+     "text": "电子伏换算",
+     "x": 1400,
+     "y": 518,
+     "qa": [
+      {
+       "q": "电子伏和焦耳怎么换算？",
+       "a": "$1\\ \\mathrm{eV}=1.60\\times10^{-19}\\ \\mathrm J$，原子物理中常用它表示能量。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 9
+    },
+    {
+     "text": "负号的物理含义",
+     "x": 1370,
+     "y": 812,
+     "qa": [
+      {
+       "q": "电势能为负说明什么？",
+       "a": "说明电子被束缚在原子中，要把它移到无穷远，外界必须做功。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 10
+    }
+   ],
    "stepTimes": {
     "1": 243.27,
     "2": 246.55,
@@ -1321,7 +2069,28 @@
    "t_start": 243.27,
    "t_end": 293.5,
    "duration": 50.23,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 258.39,
+     "end": 263.39
+    },
+    {
+     "bullet": 1,
+     "start": 266.97,
+     "end": 271.97
+    },
+    {
+     "bullet": 2,
+     "start": 285.53,
+     "end": 290.53
+    },
+    {
+     "bullet": 3,
+     "start": 285.53,
+     "end": 290.53
+    }
+   ]
   },
   {
    "id": 8,
@@ -1399,7 +2168,16 @@
      "tex": "V=\\int\\dfrac{\\mathrm dq}{4\\pi\\varepsilon_0\\sqrt{R^{2}+x^{2}}}",
      "size": 32,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "电势叠加积分",
+     "qa": [
+      {
+       "q": "为什么可以把距离提到积分号外？",
+       "a": "环上各电荷元到 P 点距离都是 $\\sqrt{R^2+x^2}$，与 dq 无关，故可提出。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -1411,7 +2189,16 @@
      "tex": "V=\\dfrac{q}{4\\pi\\varepsilon_0\\sqrt{R^{2}+x^{2}}}",
      "size": 38,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "圆环轴线电势公式",
+     "qa": [
+      {
+       "q": "这个公式在环心处成立吗？",
+       "a": "成立，令 $x=0$ 得 $V=\\frac{q}{4\\pi\\varepsilon_0 R}=\\frac{kq}{R}$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1443,6 +2230,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "环心电势最大",
+     "qa": [
+      {
+       "q": "为什么环心处电势最大？",
+       "a": "各电荷元到环心距离最小且同号相加，$V_0=\\frac{kq}{R}$ 为最大值。"
+      }
      ]
     },
     {
@@ -1463,6 +2258,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "与场强对比",
+     "qa": [
+      {
+       "q": "为什么场强在环心为零而电势不为零？",
+       "a": "场强是矢量，对称电荷元贡献相互抵消；电势是标量，同号相加不抵消。"
+      }
      ]
     },
     {
@@ -1486,7 +2289,64 @@
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "电势叠加积分",
+     "x": 960,
+     "y": 518,
+     "qa": [
+      {
+       "q": "为什么可以把距离提到积分号外？",
+       "a": "环上各电荷元到 P 点距离都是 $\\sqrt{R^2+x^2}$，与 dq 无关，故可提出。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "圆环轴线电势公式",
+     "x": 960,
+     "y": 672,
+     "qa": [
+      {
+       "q": "这个公式在环心处成立吗？",
+       "a": "成立，令 $x=0$ 得 $V=\\frac{q}{4\\pi\\varepsilon_0 R}=\\frac{kq}{R}$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    },
+    {
+     "text": "环心电势最大",
+     "x": 960,
+     "y": 750,
+     "qa": [
+      {
+       "q": "为什么环心处电势最大？",
+       "a": "各电荷元到环心距离最小且同号相加，$V_0=\\frac{kq}{R}$ 为最大值。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 5
+    },
+    {
+     "text": "与场强对比",
+     "x": 960,
+     "y": 824,
+     "qa": [
+      {
+       "q": "为什么场强在环心为零而电势不为零？",
+       "a": "场强是矢量，对称电荷元贡献相互抵消；电势是标量，同号相加不抵消。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 6
+    }
+   ],
    "stepTimes": {
     "1": 294.3,
     "2": 298.47,
@@ -1498,7 +2358,28 @@
    "t_start": 294.3,
    "t_end": 340.5,
    "duration": 46.2,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 301.99,
+     "end": 306.99
+    },
+    {
+     "bullet": 1,
+     "start": 310.02,
+     "end": 315.02
+    },
+    {
+     "bullet": 2,
+     "start": 315.56,
+     "end": 320.56
+    },
+    {
+     "bullet": 3,
+     "start": 322.66,
+     "end": 327.66
+    }
+   ]
   },
   {
    "id": 9,
@@ -1544,6 +2425,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "圆盘微元法",
+     "qa": [
+      {
+       "q": "为什么把圆盘切成同心细环？",
+       "a": "每个细环到轴线上 P 点距离相同，可直接套用圆环电势结果，再对半径积分。"
+      }
      ]
     },
     {
@@ -1556,7 +2445,16 @@
      "tex": "V=\\dfrac{1}{4\\pi\\varepsilon_0}\\int_0^R\\dfrac{\\sigma2\\pi r\\,\\mathrm dr}{\\sqrt{x^{2}+r^{2}}}",
      "size": 28,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "电势积分式",
+     "qa": [
+      {
+       "q": "这个积分怎么算？",
+       "a": "分子中的 $r\\,\\mathrm dr$ 凑成 $\\tfrac12\\mathrm d(r^2)$，令 $u=r^2+x^2$ 即可积分。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -1568,7 +2466,16 @@
      "tex": "V=\\dfrac{\\sigma}{2\\varepsilon_0}\\left(\\sqrt{x^{2}+R^{2}}-x\\right)",
      "size": 34,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "圆盘电势结果",
+     "qa": [
+      {
+       "q": "圆盘轴线上电势的最终表达式是什么？",
+       "a": "$V=\\dfrac{\\sigma}{2\\varepsilon_0}\\left(\\sqrt{x^{2}+R^{2}}-x\\right)$，由细环电势积分得到。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1600,7 +2507,15 @@
      "tex": "V\\approx\\dfrac{\\sigma\\pi R^{2}}{4\\pi\\varepsilon_0 x}=\\dfrac{Q}{4\\pi\\varepsilon_0 x}",
      "size": 30,
      "color": "#0000CD",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "远场退化检验",
+     "qa": [
+      {
+       "q": "为什么 $x\\gg R$ 时结果变成点电荷？",
+       "a": "此时 $\\sqrt{x^2+R^2}\\approx x+\\dfrac{R^2}{2x}$，代入得 $V\\approx\\dfrac{Q}{4\\pi\\varepsilon_0 x}$。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -1643,7 +2558,64 @@
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "圆盘微元法",
+     "x": 960,
+     "y": 300,
+     "qa": [
+      {
+       "q": "为什么把圆盘切成同心细环？",
+       "a": "每个细环到轴线上 P 点距离相同，可直接套用圆环电势结果，再对半径积分。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 1
+    },
+    {
+     "text": "电势积分式",
+     "x": 960,
+     "y": 444,
+     "qa": [
+      {
+       "q": "这个积分怎么算？",
+       "a": "分子中的 $r\\,\\mathrm dr$ 凑成 $\\tfrac12\\mathrm d(r^2)$，令 $u=r^2+x^2$ 即可积分。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "圆盘电势结果",
+     "x": 960,
+     "y": 602,
+     "qa": [
+      {
+       "q": "圆盘轴线上电势的最终表达式是什么？",
+       "a": "$V=\\dfrac{\\sigma}{2\\varepsilon_0}\\left(\\sqrt{x^{2}+R^{2}}-x\\right)$，由细环电势积分得到。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "远场退化检验",
+     "x": 960,
+     "y": 818,
+     "qa": [
+      {
+       "q": "为什么 $x\\gg R$ 时结果变成点电荷？",
+       "a": "此时 $\\sqrt{x^2+R^2}\\approx x+\\dfrac{R^2}{2x}$，代入得 $V\\approx\\dfrac{Q}{4\\pi\\varepsilon_0 x}$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 5
+    }
+   ],
    "stepTimes": {
     "1": 341.3,
     "2": 345.68,
@@ -1655,7 +2627,28 @@
    "t_start": 341.3,
    "t_end": 389.2,
    "duration": 47.9,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 341.3,
+     "end": 346.3
+    },
+    {
+     "bullet": 1,
+     "start": 345.68,
+     "end": 350.68
+    },
+    {
+     "bullet": 2,
+     "start": 354.14,
+     "end": 359.14
+    },
+    {
+     "bullet": 3,
+     "start": 368.38,
+     "end": 373.38
+    }
+   ]
   },
   {
    "id": 10,
@@ -1749,7 +2742,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "判断归属口诀",
+     "qa": [
+      {
+       "q": "怎么快速判断一个量属于场还是系统？",
+       "a": "看它带不带 $q$：带 $q$ 的量（如 $E_{\\mathrm p}$、$W$）属于「电荷+场」系统，不带 $q$ 的（如 $V$、$U$）只属于场。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1769,7 +2771,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "功与电势能关系",
+     "qa": [
+      {
+       "q": "电场力做功和电势差、电势能是什么关系？",
+       "a": "$W_{AB}=qU_{AB}=E_{\\mathrm pA}-E_{\\mathrm pB}$，即做功等于电荷量乘电势差，也等于电势能的减少量。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1789,6 +2800,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "电压的普适性",
+     "qa": [
+      {
+       "q": "为什么工程上更常用「电压」而不是电势？",
+       "a": "电压即电势差，只与两点有关，与接什么负载无关，所以更通用。"
+      }
      ]
     },
     {
@@ -1809,10 +2828,75 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "耗电量与电荷量",
+     "qa": [
+      {
+       "q": "耗电多少由什么决定？",
+       "a": "耗电看电荷量，即电流乘时间，而不是只看电压。"
+      }
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "判断归属口诀",
+     "x": 960,
+     "y": 726,
+     "qa": [
+      {
+       "q": "怎么快速判断一个量属于场还是系统？",
+       "a": "看它带不带 $q$：带 $q$ 的量（如 $E_{\\mathrm p}$、$W$）属于「电荷+场」系统，不带 $q$ 的（如 $V$、$U$）只属于场。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "功与电势能关系",
+     "x": 960,
+     "y": 808,
+     "qa": [
+      {
+       "q": "电场力做功和电势差、电势能是什么关系？",
+       "a": "$W_{AB}=qU_{AB}=E_{\\mathrm pA}-E_{\\mathrm pB}$，即做功等于电荷量乘电势差，也等于电势能的减少量。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "电压的普适性",
+     "x": 960,
+     "y": 880,
+     "qa": [
+      {
+       "q": "为什么工程上更常用「电压」而不是电势？",
+       "a": "电压即电势差，只与两点有关，与接什么负载无关，所以更通用。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    },
+    {
+     "text": "耗电量与电荷量",
+     "x": 960,
+     "y": 950,
+     "qa": [
+      {
+       "q": "耗电多少由什么决定？",
+       "a": "耗电看电荷量，即电流乘时间，而不是只看电压。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 5
+    }
+   ],
    "stepTimes": {
     "1": 390.0,
     "2": 393.59,
@@ -1823,7 +2907,28 @@
    "t_start": 390.0,
    "t_end": 430.08,
    "duration": 40.08,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 393.59,
+     "end": 398.59
+    },
+    {
+     "bullet": 1,
+     "start": 398.65,
+     "end": 403.65
+    },
+    {
+     "bullet": 2,
+     "start": 405.03,
+     "end": 410.03
+    },
+    {
+     "bullet": 3,
+     "start": 411.81,
+     "end": 416.81
+    }
+   ]
   },
   {
    "id": 11,
@@ -1875,7 +2980,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "电势差定义",
+     "qa": [
+      {
+       "q": "电势差 U_AB 和电场力做功有什么关系？",
+       "a": "$U_{AB}=V_A-V_B=\\int_A^B\\vec E\\cdot d\\vec l$，即单位正电荷从 A 到 B 电场力做的功。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1901,7 +3015,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "点电荷电势",
+     "qa": [
+      {
+       "q": "点电荷电势公式里零点为什么取无穷远？",
+       "a": "$V=\\dfrac{q}{4\\pi\\varepsilon_0 r}$，取 $V_\\infty=0$，则距电荷 r 处的电势即为该式。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1921,6 +3044,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "电势标量叠加",
+     "qa": [
+      {
+       "q": "多个电荷的电势怎么求？",
+       "a": "电势是标量，$V=\\sum V_i$，直接代数相加，不用考虑方向。"
+      }
      ]
     },
     {
@@ -1941,6 +3072,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "算电势两条路",
+     "qa": [
+      {
+       "q": "算电势用叠加法还是场强积分法？",
+       "a": "两条路都行：叠加法 $V=\\sum V_i$ 或积分，场强积分法用 $\\int\\vec E\\cdot d\\vec l$，多数情况叠加法更快。"
+      }
      ]
     },
     {
@@ -2018,7 +3157,64 @@
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "电势差定义",
+     "x": 960,
+     "y": 302,
+     "qa": [
+      {
+       "q": "电势差 U_AB 和电场力做功有什么关系？",
+       "a": "$U_{AB}=V_A-V_B=\\int_A^B\\vec E\\cdot d\\vec l$，即单位正电荷从 A 到 B 电场力做的功。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 1
+    },
+    {
+     "text": "点电荷电势",
+     "x": 960,
+     "y": 384,
+     "qa": [
+      {
+       "q": "点电荷电势公式里零点为什么取无穷远？",
+       "a": "$V=\\dfrac{q}{4\\pi\\varepsilon_0 r}$，取 $V_\\infty=0$，则距电荷 r 处的电势即为该式。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "电势标量叠加",
+     "x": 960,
+     "y": 464,
+     "qa": [
+      {
+       "q": "多个电荷的电势怎么求？",
+       "a": "电势是标量，$V=\\sum V_i$，直接代数相加，不用考虑方向。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 3
+    },
+    {
+     "text": "算电势两条路",
+     "x": 960,
+     "y": 544,
+     "qa": [
+      {
+       "q": "算电势用叠加法还是场强积分法？",
+       "a": "两条路都行：叠加法 $V=\\sum V_i$ 或积分，场强积分法用 $\\int\\vec E\\cdot d\\vec l$，多数情况叠加法更快。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    }
+   ],
    "stepTimes": {
     "1": 430.88,
     "2": 433.15,
@@ -2030,7 +3226,28 @@
    "t_start": 430.88,
    "t_end": 467.05,
    "duration": 36.17,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 430.88,
+     "end": 435.88
+    },
+    {
+     "bullet": 1,
+     "start": 433.15,
+     "end": 438.15
+    },
+    {
+     "bullet": 2,
+     "start": 442.81,
+     "end": 447.81
+    },
+    {
+     "bullet": 3,
+     "start": 449.52,
+     "end": 454.52
+    }
+   ]
   }
  ],
  "subtitles": [
@@ -2461,6 +3678,6 @@
    "text": "下一节讲电势与场强的关系：E 等于负的梯度 V。"
   }
  ],
- "build_ts": 1792397649,
+ "build_ts": 1794446535,
  "logoScale": 0.67
 }

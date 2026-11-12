@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="康普顿散射交互演示：调节散射角和入射波长，观察散射光子、反冲电子及波长和能量变化。">
+<title>康普顿散射｜光子—电子碰撞交互演示</title>
+<style>
+:root{
+  --bg:#edf6fb;--card:#ffffff;--ink:#243d3a;--green:#0b7566;
+  --blue:#2e6597;--red:#a63d2c;--muted:#6f858e;--line:#c9d9de;
+  --pale:#dcebe8;--gold:#d89a32;--shadow:0 14px 34px rgba(36,61,58,.10);
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink)}
+body{font-family:"DengXian","等线","Microsoft YaHei",Arial,sans-serif;font-size:20px;line-height:1.45;overflow-x:hidden}
+button,input{font:inherit}
+header{height:92px;padding:18px 30px 14px;display:flex;align-items:center;gap:22px;border-bottom:1px solid rgba(11,117,102,.14);background:rgba(237,246,251,.94)}
+.brand{display:flex;align-items:center;min-width:0}
+h1{font-size:31px;line-height:1.2;margin:0;color:var(--green);font-weight:800;white-space:nowrap}
+.subtitle{font-size:16px;color:var(--muted);margin-top:3px}
+.head-chip{margin-left:auto;padding:9px 18px;border-radius:999px;background:var(--pale);color:var(--green);font-size:17px;font-weight:700;white-space:nowrap}
+main{display:grid;grid-template-columns:330px minmax(620px,1fr) 330px;gap:16px;padding:16px 20px 18px;max-width:1680px;margin:auto}
+.card{background:var(--card);border:1px solid rgba(111,133,142,.20);border-radius:16px;box-shadow:var(--shadow)}
+.controls,.data{padding:16px 18px}
+.controls h2,.data h2{font-size:22px;color:var(--green);margin:0 0 12px;font-weight:800}
+.group{padding:13px 0;border-top:1px solid #e7eff1}
+.group:first-of-type{border-top:0;padding-top:2px}
+.labelrow{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:19px;font-weight:700}
+output{color:var(--blue);font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}
+input[type=range]{width:100%;height:34px;accent-color:var(--green);cursor:pointer}
+.scale{display:flex;justify-content:space-between;margin-top:-6px;font-size:13px;color:#91a2a8}
+.preset,.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+button{border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);padding:8px 13px;cursor:pointer;font-weight:700;transition:.16s ease}
+button:hover{border-color:var(--green);color:var(--green);transform:translateY(-1px)}
+button.active,.primary{background:var(--green);border-color:var(--green);color:#fff}
+button.primary:hover{color:#fff;background:#08675a}
+.ghost{color:var(--muted)}
+.note{font-size:16px;color:var(--muted);background:#f5fafb;border-left:4px solid var(--blue);border-radius:8px;padding:9px 11px;margin-top:9px}
+.stage{min-width:0;display:flex;flex-direction:column;overflow:hidden}
+.stage-head{display:flex;justify-content:space-between;align-items:center;padding:13px 18px 8px}
+.stage-head h2{font-size:22px;color:var(--green);margin:0;font-weight:800}
+.status{font-size:16px;color:var(--red);font-weight:700;background:#fff7f3;border:1px solid #efd9d1;border-radius:999px;padding:5px 12px}
+#scene{display:block;width:100%;height:auto;min-height:470px;background:#fff}
+#scene .scene-label{paint-order:stroke fill;stroke:#fff;stroke-width:7px;stroke-linejoin:round}
+.stage-foot{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:8px 18px 14px;color:var(--muted);font-size:15px}
+.stage-foot b{color:var(--ink)}
+.formula{background:var(--pale);border-radius:12px;padding:13px 10px;text-align:center;margin-bottom:14px}
+.formula .main{font:700 25px/1.3 "Times New Roman",serif;color:var(--green);white-space:nowrap}
+.formula .sub{font:18px/1.35 "Times New Roman",serif;color:var(--ink);margin-top:7px}
+.spectrum{margin:0 0 12px;padding:9px 10px 7px;background:#f9fcfd;border:1px solid #dfeaec;border-radius:12px}
+.spectrum h3{font-size:17px;color:var(--green);margin:0 0 3px;font-weight:800}
+.spectrum svg{display:block;width:100%;height:auto}
+.spectrum-note{text-align:center;color:var(--muted);font-size:13px;margin-top:-2px}
+.metric{display:grid;grid-template-columns:1fr auto;gap:3px 12px;padding:10px 2px;border-bottom:1px solid #e7eff1;align-items:baseline}
+.metric span{font-size:17px;color:var(--muted)}
+.metric strong{font-size:21px;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+.metric.em strong{color:var(--red)}
+.metric.blue strong{color:var(--blue)}
+.conclusion{margin-top:13px;border-radius:12px;padding:12px 13px;background:#fff8f4;border:1px solid #efd9d1;color:var(--red);font-size:18px;font-weight:700}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:15px;color:var(--muted)}
+.swatch{display:inline-flex;align-items:center;gap:6px}.dot{width:11px;height:11px;border-radius:50%;display:inline-block}
+.kbd{font:13px ui-monospace,SFMono-Regular,Menlo,monospace;border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:2px 6px;background:#fff}
+body.slide header{height:74px;padding-top:10px;padding-bottom:8px}
+body.slide .subtitle,body.slide .stage-foot .help{display:none}
+body.slide main{padding-top:10px}
+@media(max-width:1250px){main{grid-template-columns:300px 1fr}.data{grid-column:1/-1;display:grid;grid-template-columns:250px repeat(3,1fr);gap:10px}.data h2{grid-column:1/-1}.formula{margin:0}.conclusion{margin:0}.metric{padding:7px}}
+@media(max-width:850px){header{height:auto;align-items:flex-start}.head-chip{display:none}h1{font-size:25px;white-space:normal}main{grid-template-columns:1fr}.data{display:block}.stage{order:-1}#scene{min-height:370px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div><h1>康普顿散射：光子—电子碰撞</h1><div class="subtitle">拖动参数，观察一次碰撞中波长、方向、能量和动量如何同时改变</div></div>
+  </div>
+  <div class="head-chip">相对论能量—动量守恒</div>
+</header>
+
+<main>
+  <aside class="card controls">
+    <h2>实验控制</h2>
+    <div class="group">
+      <div class="labelrow"><label for="angle">光子散射角 θ</label><output id="angleOut">90°</output></div>
+      <input id="angle" type="range" min="0" max="180" step="1" value="90">
+      <div class="scale"><span>0° 前向</span><span>180° 背向</span></div>
+      <div class="preset" aria-label="散射角预设">
+        <button type="button" data-angle="45">45°</button>
+        <button type="button" data-angle="90" class="active">90°</button>
+        <button type="button" data-angle="135">135°</button>
+        <button type="button" data-angle="180">180°</button>
+      </div>
+    </div>
+    <div class="group">
+      <div class="labelrow"><label for="wavelength">入射波长 λ₀</label><output id="waveOut">0.0709 nm</output></div>
+      <input id="wavelength" type="range" min="0.0200" max="0.2000" step="0.0001" value="0.0709">
+      <div class="scale"><span>短波 · 高能</span><span>长波 · 低能</span></div>
+      <div class="preset" aria-label="入射波长预设">
+        <button type="button" data-wave="0.0500">0.050 nm</button>
+        <button type="button" data-wave="0.0709" class="active">Mo Kα</button>
+        <button type="button" data-wave="0.1200">0.120 nm</button>
+      </div>
+    </div>
+    <div class="group">
+      <div class="actions">
+        <button type="button" id="play" class="primary">▶ 演示碰撞</button>
+        <button type="button" id="pause">暂停</button>
+        <button type="button" id="reset" class="ghost">复位</button>
+      </div>
+      <div class="note"><b>课堂观察：</b>先保持 λ₀ 不变，只增大 θ。关注 Δλ，而不是示意波纹的绝对疏密。</div>
+      <div class="note"><b>显示说明：</b>波纹间距和粒子位移均按比例放大；箭头表示方向，不代表真实尺度。</div>
+    </div>
+  </aside>
+
+  <section class="card stage">
+    <div class="stage-head"><h2>碰撞过程</h2><div id="status" class="status">准备：电子静止</div></div>
+    <svg id="scene" viewBox="0 0 900 520" role="img" aria-label="康普顿散射中入射光子与静止电子碰撞，产生散射光子和反冲电子">
+      <defs>
+        <marker id="arrowBlue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#2e6597"/></marker>
+        <marker id="arrowRed" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#a63d2c"/></marker>
+        <marker id="arrowGold" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d89a32"/></marker>
+        <filter id="glowBlue" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <filter id="glowRed" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#243d3a" flood-opacity=".12"/></filter>
+        <linearGradient id="sceneBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f2f9fa"/></linearGradient>
+        <radialGradient id="zoneFill"><stop offset="0" stop-color="#dcebe8" stop-opacity=".72"/><stop offset=".55" stop-color="#edf6fb" stop-opacity=".38"/><stop offset="1" stop-color="#edf6fb" stop-opacity="0"/></radialGradient>
+        <radialGradient id="electronFill" cx="35%" cy="30%"><stop offset="0" stop-color="#fff5c9"/><stop offset=".38" stop-color="#f4bd58"/><stop offset="1" stop-color="#c9821d"/></radialGradient>
+        <radialGradient id="bluePulse" cx="35%" cy="30%"><stop offset="0" stop-color="#d9efff"/><stop offset=".42" stop-color="#4c88bc"/><stop offset="1" stop-color="#214d7a"/></radialGradient>
+        <radialGradient id="redPulse" cx="35%" cy="30%"><stop offset="0" stop-color="#ffe5da"/><stop offset=".42" stop-color="#c75a45"/><stop offset="1" stop-color="#7f281c"/></radialGradient>
+      </defs>
+      <rect x="12" y="6" width="876" height="502" rx="25" fill="url(#sceneBg)"/>
+      <circle cx="430" cy="270" r="128" fill="url(#zoneFill)"/>
+      <circle cx="430" cy="270" r="77" fill="none" stroke="#b9d6d1" stroke-width="1.5" stroke-dasharray="4 8" opacity=".8"/>
+      <path id="angleSector" fill="#0b7566" opacity=".08"/>
+      <line x1="62" y1="270" x2="838" y2="270" stroke="#9fb1b7" stroke-width="1.6" stroke-dasharray="8 9"/>
+      <line id="incomingGuide" x1="76" y1="270" x2="414" y2="270" stroke="#2e6597" stroke-width="2.2" marker-end="url(#arrowBlue)" opacity=".42"/>
+      <text x="70" y="303" fill="#91a2a8" font-size="17">入射方向</text>
+      <path id="incomingWave" fill="none" stroke="#2e6597" stroke-width="4.5" stroke-linecap="round"/>
+      <path id="scatteredWave" fill="none" stroke="#a63d2c" stroke-width="4.5" stroke-linecap="round"/>
+      <line id="photonGuide" stroke="#a63d2c" stroke-width="2.2" marker-end="url(#arrowRed)" opacity=".55"/>
+      <line id="electronGuide" stroke="#d89a32" stroke-width="3" marker-end="url(#arrowGold)" opacity=".7"/>
+      <path id="angleArc" fill="none" stroke="#0b7566" stroke-width="3"/>
+      <text id="angleLabel" class="scene-label" fill="#0b7566" font-size="24" font-weight="700">θ</text>
+      <path id="electronArc" fill="none" stroke="#d89a32" stroke-width="2" stroke-dasharray="5 5"/>
+      <text id="electronAngleLabel" class="scene-label" fill="#a56f17" font-size="20" font-weight="700">φ</text>
+      <circle id="targetHalo" cx="430" cy="270" r="44" fill="#dcebe8" opacity=".82"/>
+      <circle cx="430" cy="270" r="29" fill="none" stroke="#85ada6" stroke-width="1.6" opacity=".8"/>
+      <circle id="targetElectron" cx="430" cy="270" r="20" fill="url(#electronFill)" stroke="#8f651e" stroke-width="2.5" filter="url(#softShadow)"/>
+      <text id="targetCharge" x="430" y="278" text-anchor="middle" fill="#70480f" font-size="25" font-weight="800" pointer-events="none">−</text>
+      <text id="targetLabel" class="scene-label" x="430" y="337" text-anchor="middle" fill="#243d3a" font-size="21" font-weight="700">自由电子（初始静止）</text>
+      <g id="burst" opacity="0" transform="translate(430 270)">
+        <circle r="31" fill="none" stroke="#d89a32" stroke-width="5"/>
+        <path d="M0-51V-35M36-36L25-25M51 0H35M36 36L25 25M0 51V35M-36 36L-25 25M-51 0H-35M-36-36L-25-25" stroke="#d89a32" stroke-width="5" stroke-linecap="round"/>
+      </g>
+      <circle id="photonPulse" r="10" fill="url(#bluePulse)" filter="url(#glowBlue)"/>
+      <circle id="recoilElectron" r="18" fill="url(#electronFill)" stroke="#8f651e" stroke-width="2.5" opacity="0" filter="url(#softShadow)"/>
+      <text id="recoilCharge" text-anchor="middle" fill="#70480f" font-size="23" font-weight="800" opacity="0" pointer-events="none">−</text>
+      <text id="incomingLabel" class="scene-label" fill="#2e6597" font-size="22" font-weight="700">入射光子  λ₀</text>
+      <text id="scatteredLabel" class="scene-label" fill="#a63d2c" font-size="22" font-weight="700">散射光子  λ′</text>
+      <text id="recoilLabel" class="scene-label" fill="#a56f17" font-size="21" font-weight="700">反冲电子</text>
+      <g id="momentumBox" transform="translate(590 389)" filter="url(#softShadow)">
+        <rect width="258" height="88" rx="14" fill="#ffffff" fill-opacity=".93" stroke="#c9d9de"/>
+        <rect width="6" height="88" rx="3" fill="#0b7566"/>
+        <text x="20" y="27" fill="#6f858e" font-size="15">矢量动量守恒</text>
+        <text x="20" y="60" fill="#243d3a" font-size="23" font-family="Times New Roman">p₀ = p′ + pₑ</text>
+        <text x="20" y="80" fill="#6f858e" font-size="14">横向动量由反冲电子平衡</text>
+      </g>
+    </svg>
+    <div class="stage-foot">
+      <div class="legend"><span class="swatch"><i class="dot" style="background:var(--blue)"></i>入射光子</span><span class="swatch"><i class="dot" style="background:var(--red)"></i>散射光子</span><span class="swatch"><i class="dot" style="background:var(--gold)"></i>反冲电子</span></div>
+      <div class="help"><span class="kbd">Space</span> 播放/暂停　<span class="kbd">R</span> 复位　<span class="kbd">F</span> 投影模式</div>
+    </div>
+  </section>
+
+  <aside class="card data">
+    <h2>实时计算</h2>
+    <div class="formula">
+      <div class="main">λ′ − λ₀ = λ<sub>C</sub>(1 − cos θ)</div>
+      <div class="sub">λ<sub>C</sub> = h/(m<sub>e</sub>c) = 0.002426 nm</div>
+    </div>
+    <div class="spectrum">
+      <h3>固定 θ 下的散射光谱：一条曲线 · 两个峰</h3>
+      <svg id="spectrumPlot" viewBox="0 0 300 158" role="img" aria-label="同一条散射强度随波长变化的光谱曲线，包含未移动峰和康普顿峰">
+        <line x1="34" y1="127" x2="290" y2="127" stroke="#8ca0a7" stroke-width="1.5"/>
+        <line x1="34" y1="127" x2="34" y2="18" stroke="#8ca0a7" stroke-width="1.5"/>
+        <text x="18" y="24" fill="#6f858e" font-size="13" font-weight="700">I</text>
+        <text x="258" y="150" fill="#6f858e" font-size="13" font-weight="700">λ / nm</text>
+        <path id="spectrumCurve" fill="none" stroke="#243d3a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <line id="lambda0Marker" y1="30" y2="127" stroke="#2e6597" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <line id="lambda1Marker" y1="30" y2="127" stroke="#a63d2c" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <text id="lambda0PeakLabel" y="22" text-anchor="middle" fill="#2e6597" font-size="15" font-weight="700">λ₀</text>
+        <text id="lambda1PeakLabel" y="22" text-anchor="middle" fill="#a63d2c" font-size="15" font-weight="700">λ′</text>
+        <line id="deltaBracket" y1="112" y2="112" stroke="#a63d2c" stroke-width="1.7"/>
+        <line id="deltaTick0" y1="107" y2="117" stroke="#a63d2c" stroke-width="1.7"/>
+        <line id="deltaTick1" y1="107" y2="117" stroke="#a63d2c" stroke-width="1.7"/>
+        <text id="deltaLabel" y="106" text-anchor="middle" fill="#a63d2c" font-size="13" font-weight="700">Δλ</text>
+      </svg>
+      <div id="spectrumCaption" class="spectrum-note" aria-live="polite">蓝线位置固定，红线随 θ 向长波方向移动</div>
+    </div>
+    <div class="metric blue"><span>入射波长 λ₀</span><strong id="mLambda0">0.0709 nm</strong></div>
+    <div class="metric em"><span>波长改变量 Δλ</span><strong id="mDelta">0.0024 nm</strong></div>
+    <div class="metric em"><span>散射波长 λ′</span><strong id="mLambda1">0.0733 nm</strong></div>
+    <div class="metric blue"><span>入射光子能量 E₀</span><strong id="mE0">17.49 keV</strong></div>
+    <div class="metric"><span>散射光子能量 E′</span><strong id="mE1">16.91 keV</strong></div>
+    <div class="metric"><span>电子动能 Kₑ</span><strong id="mKe">0.58 keV</strong></div>
+    <div class="metric"><span>电子反冲角 φ</span><strong id="mPhi">43.4°</strong></div>
+    <div class="metric"><span>能量核对</span><strong id="mCheck">E₀ = E′ + Kₑ</strong></div>
+    <div class="conclusion" id="conclusion">θ 增大 → 光子波长增加 → 光子把更多能量和动量交给电子</div>
+  </aside>
+</main>
+
+<script>
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const angle = $('angle'), wavelength = $('wavelength');
+  const C = { lambdaC: 0.00242631023867, hc: 1.239841984 };// keV·nm
+  const O = {x:430,y:270}, inStart = {x:82,y:270};
+  let theta = +angle.value, lambda0 = +wavelength.value;
+  let playing = false, progress = 0, last = 0, raf = 0;
+
+  function clamp(v,a,b){return Math.max(a,Math.min(b,v))}
+  function fmt(v,n){return Number(v).toFixed(n)}
+  function physics(){
+    const tr = theta*Math.PI/180;
+    const delta = C.lambdaC*(1-Math.cos(tr));
+    const lambda1 = lambda0+delta;
+    const E0 = C.hc/lambda0;
+    const E1 = C.hc/lambda1;
+    const Ke = E0-E1;
+    const p0 = E0, p1 = E1; // keV/c; c cancels in direction
+    const px = p0-p1*Math.cos(tr), py = p1*Math.sin(tr);
+    const phi = Math.hypot(px,py)<1e-10 ? NaN : Math.atan2(py,px)*180/Math.PI;
+    return {tr,delta,lambda1,E0,E1,Ke,phi,px,py};
+  }
+  function pointAt(origin,len,ang){return {x:origin.x+len*Math.cos(ang),y:origin.y-len*Math.sin(ang)}}
+  function wavePath(x1,y1,x2,y2,visualLambda,amp=10){
+    const dx=x2-x1,dy=y2-y1,L=Math.hypot(dx,dy),ux=dx/L,uy=dy/L,nx=-uy,ny=ux;
+    const count=Math.max(30,Math.ceil(L/4));let d='';
+    for(let i=0;i<=count;i++){
+      const s=L*i/count, envelope=Math.pow(Math.sin(Math.PI*i/count),.32);
+      const off=amp*envelope*Math.sin(2*Math.PI*s/visualLambda);
+      const x=x1+ux*s+nx*off,y=y1+uy*s+ny*off;
+      d+=(i?'L':'M')+x.toFixed(2)+' '+y.toFixed(2)+' ';
+    }return d;
+  }
+  function arcPath(cx,cy,r,a0,a1){
+    const p0=pointAt({x:cx,y:cy},r,a0),p1=pointAt({x:cx,y:cy},r,a1);
+    const large=Math.abs(a1-a0)>Math.PI?1:0;
+    const sweep=a1<a0?1:0;
+    return `M${p0.x} ${p0.y} A${r} ${r} 0 ${large} ${sweep} ${p1.x} ${p1.y}`;
+  }
+  function sectorPath(cx,cy,r,a0,a1){
+    if(Math.abs(a1-a0)<1e-6)return '';
+    const p0=pointAt({x:cx,y:cy},r,a0),p1=pointAt({x:cx,y:cy},r,a1);
+    const large=Math.abs(a1-a0)>Math.PI?1:0,sweep=a1<a0?1:0;
+    return `M${cx} ${cy} L${p0.x} ${p0.y} A${r} ${r} 0 ${large} ${sweep} ${p1.x} ${p1.y} Z`;
+  }
+  function setLine(el,a,b){el.setAttribute('x1',a.x);el.setAttribute('y1',a.y);el.setAttribute('x2',b.x);el.setAttribute('y2',b.y)}
+  function updateSpectrum(q){
+    const left=34,right=290,top=28,base=127;
+    const xMin=lambda0-0.00135,xMax=lambda0+2*C.lambdaC+0.00135;
+    const sx=v=>left+(v-xMin)/(xMax-xMin)*(right-left);
+    const x0=sx(lambda0),x1=sx(q.lambda1),sigma=0.00027;
+    let pts=[],maxI=0;
+    for(let i=0;i<=120;i++){
+      const lam=xMin+(xMax-xMin)*i/120;
+      const fixed=.90*Math.exp(-.5*((lam-lambda0)/sigma)**2);
+      const shifted=.76*Math.exp(-.5*((lam-q.lambda1)/(sigma*1.08))**2);
+      const intensity=fixed+shifted;maxI=Math.max(maxI,intensity);pts.push({lam,intensity});
+    }
+    const d=pts.map((p,i)=>`${i?'L':'M'}${sx(p.lam).toFixed(2)} ${(base-(p.intensity/maxI)*(base-top)).toFixed(2)}`).join(' ');
+    $('spectrumCurve').setAttribute('d',d);
+    for(const id of ['lambda0Marker','deltaTick0']){$(id).setAttribute('x1',x0);$(id).setAttribute('x2',x0)}
+    for(const id of ['lambda1Marker','deltaTick1']){$(id).setAttribute('x1',x1);$(id).setAttribute('x2',x1)}
+    $('deltaBracket').setAttribute('x1',x0);$('deltaBracket').setAttribute('x2',x1);
+    $('deltaLabel').setAttribute('x',(x0+x1)/2);
+    if(Math.abs(x1-x0)<18){
+      $('lambda0PeakLabel').setAttribute('x',x0-12);$('lambda1PeakLabel').setAttribute('x',x1+14);
+      $('lambda0PeakLabel').textContent='λ₀';$('lambda1PeakLabel').textContent='λ′';
+    }else{
+      $('lambda0PeakLabel').setAttribute('x',x0);$('lambda1PeakLabel').setAttribute('x',x1);
+      $('lambda0PeakLabel').textContent='λ₀';$('lambda1PeakLabel').textContent='λ′';
+    }
+    const same=q.delta<0.00001;
+    $('lambda1Marker').style.opacity=same?'0':'1';$('lambda1PeakLabel').style.opacity=same?'0':'1';
+    $('deltaBracket').style.opacity=same?'0':'1';$('deltaTick0').style.opacity=same?'0':'1';$('deltaTick1').style.opacity=same?'0':'1';$('deltaLabel').style.opacity=same?'0':'1';
+    $('spectrumCaption').textContent=same
+      ? 'θ = 0°：两个成分峰位重合，曲线上只见一个峰'
+      : `同一条总光谱：λ₀=${fmt(lambda0,4)} nm，λ′=${fmt(q.lambda1,4)} nm`;
+  }
+  function updateScene(){
+    const q=physics(), outEnd=pointAt(O,340,q.tr);
+    const recoilAng=-Math.atan2(q.py,q.px||1e-9), recoilLen=clamp(150+q.Ke*5,150,245);
+    const eEnd=pointAt(O,recoilLen,recoilAng);
+    const visualIn=clamp(30+lambda0*260,34,78);
+    const visualOut=clamp(30+q.lambda1*260,34,82);
+    $('incomingWave').setAttribute('d',wavePath(90,270,414,270,visualIn,10));
+    $('scatteredWave').setAttribute('d',wavePath(447,270,outEnd.x,outEnd.y,visualOut,10));
+    setLine($('photonGuide'),O,outEnd);setLine($('electronGuide'),O,eEnd);
+    $('angleSector').setAttribute('d',sectorPath(O.x,O.y,68,0,q.tr));
+    $('angleArc').setAttribute('d',arcPath(O.x,O.y,70,0,q.tr));
+    const al=pointAt(O,91,q.tr/2);$('angleLabel').setAttribute('x',al.x);$('angleLabel').setAttribute('y',al.y);$('angleLabel').textContent=`θ=${theta}°`;
+    if(Number.isFinite(q.phi)&&theta>1){
+      $('electronArc').setAttribute('d',arcPath(O.x,O.y,51,0,recoilAng));
+      const ep=pointAt(O,68,recoilAng/2);$('electronAngleLabel').setAttribute('x',ep.x);$('electronAngleLabel').setAttribute('y',ep.y+20);$('electronAngleLabel').textContent=`φ=${fmt(q.phi,1)}°`;
+    }else{$('electronArc').setAttribute('d','');$('electronAngleLabel').textContent=''}
+    $('incomingLabel').setAttribute('x',145);$('incomingLabel').setAttribute('y',225);
+    const sl=pointAt(O,275,q.tr);$('scatteredLabel').setAttribute('x',clamp(sl.x-70,82,710));$('scatteredLabel').setAttribute('y',clamp(sl.y-18,52,450));
+    const rl=pointAt(O,recoilLen*.72,recoilAng);$('recoilLabel').setAttribute('x',clamp(rl.x-20,80,760));$('recoilLabel').setAttribute('y',clamp(rl.y+28,80,475));
+    drawFrame(progress,q,outEnd,eEnd);
+  }
+  function drawFrame(t,q,outEnd,eEnd){
+    const pulse=$('photonPulse'), electron=$('recoilElectron'), recoilCharge=$('recoilCharge');
+    const target=$('targetElectron'), targetCharge=$('targetCharge'), burst=$('burst');
+    if(t<.48){
+      const u=t/.48, x=inStart.x+(O.x-inStart.x)*u;
+      pulse.setAttribute('cx',x);pulse.setAttribute('cy',O.y);pulse.setAttribute('fill','url(#bluePulse)');pulse.setAttribute('filter','url(#glowBlue)');pulse.setAttribute('opacity','1');
+      electron.setAttribute('opacity','0');recoilCharge.setAttribute('opacity','0');target.setAttribute('opacity','1');targetCharge.setAttribute('opacity','1');burst.setAttribute('opacity','0');
+      $('targetLabel').textContent='自由电子（初始静止）';
+      $('status').textContent=u<.75?'入射：光子接近静止电子':'即将碰撞';
+    }else{
+      const u=clamp((t-.48)/.52,0,1),ease=1-Math.pow(1-u,2.2);
+      const ex=O.x+(eEnd.x-O.x)*ease,ey=O.y+(eEnd.y-O.y)*ease;
+      pulse.setAttribute('cx',O.x+(outEnd.x-O.x)*ease);pulse.setAttribute('cy',O.y+(outEnd.y-O.y)*ease);pulse.setAttribute('fill','url(#redPulse)');pulse.setAttribute('filter','url(#glowRed)');pulse.setAttribute('opacity','1');
+      electron.setAttribute('cx',ex);electron.setAttribute('cy',ey);electron.setAttribute('opacity',q.Ke<1e-8?'0':'1');
+      recoilCharge.setAttribute('x',ex);recoilCharge.setAttribute('y',ey+8);recoilCharge.setAttribute('opacity',q.Ke<1e-8?'0':'1');
+      target.setAttribute('opacity',q.Ke<1e-8?'1':String(1-u));
+      targetCharge.setAttribute('opacity',q.Ke<1e-8?'1':String(1-u));
+      $('targetLabel').textContent=q.Ke<1e-8?'自由电子（初始静止）':'碰撞位置';
+      burst.setAttribute('opacity',String(Math.max(0,1-u*4)));
+      burst.setAttribute('transform',`translate(${O.x} ${O.y}) scale(${1+u*.7})`);
+      $('status').textContent=u<.18?'碰撞：交换能量和动量':'散射：光子红移，电子反冲';
+    }
+  }
+  function updateData(){
+    const q=physics();
+    $('angleOut').textContent=`${theta}°`;$('waveOut').textContent=`${fmt(lambda0,4)} nm`;
+    $('mLambda0').textContent=`${fmt(lambda0,4)} nm`;$('mDelta').textContent=`${fmt(q.delta,4)} nm`;$('mLambda1').textContent=`${fmt(q.lambda1,4)} nm`;
+    $('mE0').textContent=`${fmt(q.E0,2)} keV`;$('mE1').textContent=`${fmt(q.E1,2)} keV`;$('mKe').textContent=`${fmt(q.Ke,2)} keV`;$('mPhi').textContent=Number.isFinite(q.phi)?`${fmt(q.phi,1)}°`:'—';
+    $('mCheck').textContent=`${fmt(q.E0,2)} = ${fmt(q.E1,2)} + ${fmt(q.Ke,2)} keV`;
+    if(theta===0)$('conclusion').textContent='θ = 0° 时 Δλ = 0：前向散射不产生康普顿波移';
+    else if(theta===180)$('conclusion').textContent='θ = 180° 时 Δλ = 2λC：康普顿波移达到最大值';
+    else $('conclusion').textContent='θ 增大 → 光子波长增加 → 光子把更多能量和动量交给电子';
+    document.querySelectorAll('[data-angle]').forEach(b=>b.classList.toggle('active',+b.dataset.angle===theta));
+    document.querySelectorAll('[data-wave]').forEach(b=>b.classList.toggle('active',Math.abs(+b.dataset.wave-lambda0)<1e-7));
+    updateSpectrum(q);
+    updateScene();
+  }
+  function tick(ts){
+    if(!playing)return;
+    if(!last)last=ts;
+    progress+=(ts-last)/3600;last=ts;
+    if(progress>=1){progress=0;last=ts}
+    updateScene();raf=requestAnimationFrame(tick);
+  }
+  function play(){if(playing)return;playing=true;last=0;$('play').textContent='▶ 演示中';raf=requestAnimationFrame(tick)}
+  function pause(){playing=false;cancelAnimationFrame(raf);$('play').textContent='▶ 继续演示';$('status').textContent='已暂停'}
+  function reset(){playing=false;cancelAnimationFrame(raf);progress=0;last=0;$('play').textContent='▶ 演示碰撞';$('status').textContent='准备：电子静止';updateScene()}
+  angle.addEventListener('input',()=>{theta=+angle.value;progress=0;updateData()});
+  wavelength.addEventListener('input',()=>{lambda0=+wavelength.value;progress=0;updateData()});
+  document.querySelectorAll('[data-angle]').forEach(b=>b.addEventListener('click',()=>{theta=+b.dataset.angle;angle.value=theta;progress=0;updateData()}));
+  document.querySelectorAll('[data-wave]').forEach(b=>b.addEventListener('click',()=>{lambda0=+b.dataset.wave;wavelength.value=lambda0;progress=0;updateData()}));
+  $('play').addEventListener('click',play);$('pause').addEventListener('click',pause);$('reset').addEventListener('click',reset);
+  addEventListener('keydown',e=>{
+    if(e.code==='Space'){e.preventDefault();playing?pause():play()}
+    if(e.key.toLowerCase()==='r')reset();
+    if(e.key.toLowerCase()==='f')document.body.classList.toggle('slide');
+  });
+  updateData();
+})();
+</script>
+</body>
+</html>

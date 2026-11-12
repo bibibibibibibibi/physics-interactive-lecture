@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="圆孔的夫琅禾费衍射（爱里图样）：从惠更斯–菲涅耳原理出发的六步推导、数值图像与分辨本领的物理意义。">
+<title>圆孔的夫琅禾费衍射：从惠更斯–菲涅耳原理到爱里图样</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]})"></script>
+<style>
+:root{
+  --ink:#1f2937;
+  --ink2:#4b5563;
+  --ink3:#6b7280;
+  --accent:#b91c1c;
+  --line:#e5e7eb;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{
+  margin:0;background:#ffffff;color:var(--ink);
+  font-size:17px;line-height:1.8;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Source Han Sans SC","Noto Sans CJK SC","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+::selection{background:#fee2e2}
+h1,h2{font-family:"Songti SC","STSong","Noto Serif SC","Source Han Serif SC","SimSun",serif;text-wrap:balance}
+.hero{max-width:860px;margin:0 auto;padding:46px 24px 8px}
+.kicker{font-size:12.5px;letter-spacing:.22em;color:var(--accent);font-weight:700;margin:0 0 10px}
+h1{font-size:34px;line-height:1.35;margin:0 0 12px;font-weight:700}
+.lead{color:var(--ink2);font-size:16.5px;margin:0;text-wrap:pretty}
+nav{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.95);border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+nav .wrap{max-width:860px;margin:0 auto;padding:0 12px;display:flex;overflow-x:auto;scrollbar-width:none}
+nav .wrap::-webkit-scrollbar{display:none}
+nav a{flex:none;color:var(--ink2);text-decoration:none;font-size:13.5px;padding:11px 11px 9px;border-bottom:2px solid transparent;white-space:nowrap}
+nav a:hover{color:var(--accent)}
+nav a.active{color:var(--accent);border-bottom-color:var(--accent)}
+main{max-width:860px;margin:0 auto;padding:6px 24px 32px}
+section{margin-top:54px}
+h2{font-size:23px;font-weight:700;margin:0 0 18px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+h2 .no{color:var(--accent);margin-right:10px;font-size:19px}
+h3{font-size:17.5px;font-weight:700;margin:26px 0 8px}
+p{margin:12px 0;text-wrap:pretty}
+li{text-wrap:pretty}
+strong{font-weight:650}
+.katex-display{margin:16px 0;overflow-x:auto;overflow-y:hidden;padding:2px 0}
+.why{border:1px dashed #d1d5db;background:#fcfcfa;padding:12px 16px;margin:16px 0 8px;font-size:15px;color:var(--ink2);line-height:1.75}
+.why .wtag{color:var(--accent);font-weight:700;margin-right:6px}
+.template{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:14px 10px;margin:24px 0;text-align:center;font-size:16px}
+figure{margin:28px 0}
+.frame{border:1px solid var(--line);padding:16px;background:#fff}
+canvas{display:block}
+#airyCanvas{width:min(100%,430px);aspect-ratio:1/1;margin:0 auto}
+#curveCanvas{width:100%;height:370px}
+#rayCanvas{width:100%;height:330px}
+.ctrl{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin:12px auto 0;width:min(100%,430px);font-size:14px;color:var(--ink2)}
+.ctrl.wide{width:100%}
+.ctrl label{white-space:nowrap}
+.ctrl input[type=range]{flex:1;min-width:150px;accent-color:var(--accent)}
+.ctrl output{font-variant-numeric:tabular-nums;font-weight:650;color:var(--ink);white-space:nowrap}
+figcaption{font-size:14px;color:var(--ink3);line-height:1.75;margin-top:10px;text-wrap:pretty}
+figcaption b{color:var(--ink2);font-weight:650}
+table{border-collapse:collapse;width:100%;margin:18px 0;font-size:15px;font-variant-numeric:tabular-nums}
+th,td{border-bottom:1px solid var(--line);padding:8px 12px;text-align:left;vertical-align:top;line-height:1.7}
+thead th{border-bottom:1.5px solid #9ca3af;font-size:13.5px;color:var(--ink3);font-weight:650;white-space:nowrap}
+tbody tr:last-child td{border-bottom:1px solid #d1d5db}
+.summary{border:1.5px solid var(--ink);padding:18px 26px 20px;margin:24px 0}
+.summary h3{margin-top:2px}
+.summary ol{margin:8px 0;padding-left:24px}
+.summary li{margin:6px 0}
+details{border-bottom:1px solid var(--line);padding:12px 2px}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{cursor:pointer;font-weight:650;list-style:none;position:relative;padding-left:24px}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+";position:absolute;left:3px;top:0;color:var(--accent);font-weight:700}
+details[open] summary::before{content:"−"}
+summary:hover{color:var(--accent)}
+.ans{margin-top:8px;color:var(--ink2);font-size:15.5px}
+.refs{font-size:13.5px;color:var(--ink3);margin-top:40px;padding-top:14px;border-top:1px solid var(--line)}
+footer{max-width:860px;margin:0 auto;padding:0 24px 60px;font-size:13.5px;color:var(--ink3)}
+@media (max-width:640px){h1{font-size:26px}body{font-size:16px}h2{font-size:20px}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <p class="kicker">波动光学 · 夫琅禾费衍射 · 教学推导页</p>
+  <h1>圆孔的夫琅禾费衍射：从惠更斯–菲涅耳原理到爱里图样</h1>
+  <p class="lead">光一旦被孔径限制，就永远得不到绝对锐利的像——本页从「波前上每一点都是相干次波源」出发，用六步小步积分推导圆孔远场衍射的精确公式 \(I=I_0\left[2J_1(u)/u\right]^2\)，读出暗环、次极大与能量分布，并解释它如何为望远镜、显微镜和眼睛划下分辨率的极限。</p>
+</header>
+
+<nav>
+  <div class="wrap">
+    <a href="#s1">现象</a>
+    <a href="#s2">原理</a>
+    <a href="#s3">单缝热身</a>
+    <a href="#s4">圆孔推导</a>
+    <a href="#s5">图像解读</a>
+    <a href="#s6">物理意义</a>
+    <a href="#s7">傅里叶一瞥</a>
+    <a href="#s8">小结·思考</a>
+  </div>
+</nav>
+
+<main>
+
+<section id="s1">
+  <h2><span class="no">一</span>现象：光穿圆孔，为什么得不到边缘清晰的亮斑</h2>
+  <p>把一束激光（或干脆是远处的灯光）照向一枚钻在挡板上的小圆孔，屏上得到的不是几何光学预言的那种边缘清晰的圆亮斑，而是一个比孔大得多的中央亮斑，外面环绕着一圈圈迅速变暗的同心圆环。这个中央亮斑叫<strong>爱里斑</strong>（Airy disk），整幅花样叫<strong>爱里图样</strong>（Airy pattern），1835 年由英国天文学家 G. B. Airy 给出定量描述。</p>
+  <p>几何光学会说：光沿直线走，屏上亮斑应该和孔一样大。实际亮斑却大得多，而且明暗相间——这是光的<strong>波动性</strong>的直接证据：孔面各处发出的次波到达屏上时走过不同路程，相位各异，某些方向同相相长、某些方向相消。衍射不是「光会拐弯」的例外现象，而是波动传播被边界限制之后的必然结果。真正的问题是：<strong>亮暗如何分布？</strong>这需要定量计算。图 1 就是这个分布——它由本页脚本用衍射公式逐像素实时算出，你还可以拖动滑杆先「玩」一下口径的作用。</p>
+
+  <figure>
+    <div class="frame">
+      <canvas id="airyCanvas" role="img" aria-label="逐像素计算绘制的爱里图样，口径可调"></canvas>
+      <div class="ctrl">
+        <label for="dSlider">口径 D（以 λ 为单位）</label>
+        <input type="range" id="dSlider" min="3" max="20" step="0.5" value="8" aria-label="调节口径与波长之比">
+        <output id="dOut">D/λ = 8.0</output>
+        <output id="t1Out">sinθ₁ = 1.22λ/D = 0.153</output>
+      </div>
+    </div>
+    <figcaption><b>图 1　爱里图样（实时计算）。</b>颜色为强度的 \(I^{0.4}\) 拉伸映射——线性显示下第一亮环只有主极大的 1.75%，肉眼几乎看不见，γ 拉伸是天文图像处理的标准做法。拖动滑杆改变口径：口径越大，中央亮斑与环系越小越密。虚线圆标出第一暗环，其角半径 \(\theta_1=1.22\,\lambda/D\) 中的「1.22」正是第 4 节要推导的目标。</figcaption>
+  </figure>
+</section>
+
+<section id="s2">
+  <h2><span class="no">二</span>预备：惠更斯–菲涅耳原理与远场近似</h2>
+  <p><strong>惠更斯原理</strong>说：任一时刻波前上的每一点，都可以看作发射球面次波的新波源，下一时刻的波前是这些次波的包络。但惠更斯只用了「包络」这一半，能解释光往哪里走，却给不出强度怎么分布。<strong>菲涅耳补上关键的另一半：这些次波是相干的。</strong>观察点 P 处的复振幅，是孔面 \(\Sigma\) 上全部次波复振幅的叠加：</p>
+  $$U(P)=C\iint_{\Sigma}\,U_0\,\frac{e^{ikr}}{r}\,K(\chi)\,\mathrm{d}S$$
+  <p>其中 \(r\) 是面元到 P 的距离，\(k=2\pi/\lambda\)，\(K(\chi)\) 是随倾斜角缓变的倾斜因子。整个衍射问题归结为一句话：<strong>对波前做复振幅积分</strong>。困难只在于 \(r\) 同时出现在分母、指数和倾斜因子里。</p>
+  <p><strong>夫琅禾费衍射</strong>（远场衍射）处理的是距离足够远的极限：观察距离远大于 \(a^2/\lambda\)（a 为孔半径）时，孔面上各面元到 P 的方向几乎平行，可以统一取成同一个方向 \(\mathbf{s}\)（与孔轴成 \(\theta\) 角）。于是分母中的 \(r\) 与倾斜因子在孔面上近似为常数，统统并入 \(C\)（只影响整体亮度，不影响亮暗分布）；指数中的 \(r\) 必须保留——它决定干涉。设面元位置为 \(\mathbf{r}_Q\)，由 \(r\approx r_0-\mathbf{s}\cdot\mathbf{r}_Q\)，积分化为</p>
+  $$U(\theta)\ \propto\ \iint_{\Sigma} t(x,y)\,e^{-ik(s_x x+s_y y)}\,\mathrm{d}x\,\mathrm{d}y$$
+  <p>相位变成了位置的<strong>线性函数</strong>：每一个观察方向对应一个平面波相位因子。若距离不够远、需要保留相位的二阶项，那就是菲涅耳衍射——本页不处理。实验上也不必真把屏搬到几十米外：<strong>凸透镜的后焦平面与无穷远方向一一对应</strong>，焦平面就是「搬进实验室的无穷远屏」，所以实验室里在透镜焦面上看到的就是夫琅禾费衍射花样。这句话在第 6 节会把角半径换算成焦面上的线半径。</p>
+</section>
+
+<section id="s3">
+  <h2><span class="no">三</span>一维热身：单缝衍射与方法模板</h2>
+  <p>在攻圆孔之前，先用更简单的单缝把方法跑通。缝宽 \(a\)，波前是一段长为 \(a\) 的线段。把它切成宽 \(\mathrm{d}x\) 的窄条：每条对 \(\theta\) 方向的贡献幅度正比于 \(\mathrm{d}x\)，相位由程差决定——以缝中心为原点，位于 \(x\) 处的窄条沿该方向比中心少走 \(x\sin\theta\) 的路程，故其相位因子为 \(e^{-ikx\sin\theta}\)。总振幅就是全部窄条的求和：</p>
+  $$U(\theta)\propto\int_{-a/2}^{a/2}e^{-ikx\sin\theta}\,dx=a\,\frac{\sin\beta}{\beta},\qquad \beta=\frac{\pi a}{\lambda}\sin\theta$$
+  <p>（先积出原函数 \(e^{-ikx\sin\theta}/(-ik\sin\theta)\)，代入上下限，再用 \(e^{i\beta}-e^{-i\beta}=2i\sin\beta\) 合并。）强度与暗纹位置为</p>
+  $$I=I_0\Big(\frac{\sin\beta}{\beta}\Big)^2,\qquad \text{暗纹：}\ \sin\theta=m\frac{\lambda}{a}\quad(m=\pm1,\pm2,\dots)$$
+  <p>推导里没有任何新物理，全部工作只是「给相位、求和」。真正要带走的是方法模板：</p>
+  <div class="template"><strong>方法模板：振幅 = 对波前上每个面元的相位因子求积分；强度 = 振幅的模方。</strong><br>单缝之所以简单，只因波前是一维线段、相位因子是 \(e^{-ikx\sin\theta}\)。</div>
+  <p>下一步把「线段」换成「圆盘」。你会看到：<strong>物理原理一字不改，改变的只是几何</strong>——而几何将通过对称性彻底改写积分的结果。</p>
+</section>
+
+<section id="s4">
+  <h2><span class="no">四</span>主推导：圆孔的六步积分</h2>
+
+  <h3>第 (1) 步　几何设置：先写下每一点的相位因子</h3>
+  <p>孔是半径 \(a\)、直径 \(D=2a\) 的圆，波沿轴入射并沿轴出射。观察方向 \(\mathbf{s}\) 与轴成 \(\theta\) 角。由于孔是圆对称的，可以不失一般性地把 \(\mathbf{s}\) 在孔面上的投影方向取为 \(x\) 轴。孔面内任一点 Q 用极坐标 \((\rho,\varphi)\) 描述，其直角坐标为 \(x_Q=\rho\cos\varphi\)。按第 2 节的远场结论，Q 点次波相对孔心 O 点次波的程差是位移在观察方向上的投影：</p>
+  $$\Delta=-\mathbf{s}\cdot\mathbf{r}_Q=-\rho\sin\theta\cos\varphi\quad\Longrightarrow\quad \text{相位因子}\ \ e^{-ik\rho\sin\theta\cos\varphi}\tag{1}$$
+  <p>负号的含义：当 Q 沿 \(\mathbf{s}\) 的投影方向偏移（\(\cos\varphi&gt;0\)）时，到远场观察点的路程更短，相位超前。</p>
+  <div class="why"><span class="wtag">为什么可以这样做</span>夫琅禾费条件下，所有面元的观察方向相同，程差是「位移在观察方向上的投影」的线性函数；二阶项 \(\propto\rho^2/r_0\) 在远场可忽略——这正是「夫琅禾费衍射」的定义本身，而不是额外近似。θ 与 (ρ, φ) 的几何关系见图 2。</div>
+
+  <figure>
+    <div class="frame">
+      <svg viewBox="0 0 860 320" style="width:100%;height:auto;display:block" role="img" aria-label="圆孔衍射几何：侧视图与孔面正视图">
+        <defs>
+          <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#374151"/></marker>
+          <marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#9ca3af"/></marker>
+        </defs>
+        <text x="24" y="28" font-size="14" font-weight="600" fill="#1f2937">（a）侧视：θ 与程差 Δ</text>
+        <text x="520" y="28" font-size="14" font-weight="600" fill="#1f2937">（b）正对孔面看：极坐标 (ρ, φ)</text>
+        <!-- (a) 入射平面波 -->
+        <line x1="35" y1="150" x2="75" y2="150" stroke="#9ca3af" stroke-width="1.4" marker-end="url(#arrG)"/>
+        <line x1="35" y1="195" x2="75" y2="195" stroke="#9ca3af" stroke-width="1.4" marker-end="url(#arrG)"/>
+        <line x1="35" y1="240" x2="75" y2="240" stroke="#9ca3af" stroke-width="1.4" marker-end="url(#arrG)"/>
+        <text x="28" y="132" font-size="12.5" fill="#6b7280">入射平面波</text>
+        <!-- (a) 孔屏与孔径标注 -->
+        <line x1="120" y1="40" x2="120" y2="120" stroke="#374151" stroke-width="3"/>
+        <line x1="120" y1="240" x2="120" y2="300" stroke="#374151" stroke-width="3"/>
+        <line x1="102" y1="124" x2="102" y2="236" stroke="#374151" stroke-width="1.2" marker-start="url(#arr)" marker-end="url(#arr)"/>
+        <text x="94" y="258" font-size="13" fill="#374151" text-anchor="middle">D = 2a</text>
+        <!-- (a) 轴 -->
+        <line x1="120" y1="180" x2="398" y2="180" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="6 4" marker-end="url(#arrG)"/>
+        <text x="396" y="197" font-size="12.5" fill="#6b7280" text-anchor="end">z 轴</text>
+        <circle cx="120" cy="180" r="2.6" fill="#1f2937"/>
+        <text x="128" y="172" font-size="13" fill="#1f2937">O</text>
+        <!-- (a) 观察方向与 θ -->
+        <line x1="120" y1="180" x2="390" y2="69" stroke="#374151" stroke-width="1.6" marker-end="url(#arr)"/>
+        <path d="M 160 180 A 40 40 0 0 0 156.3 163.1" fill="none" stroke="#b91c1c" stroke-width="1.5"/>
+        <text x="170" y="172" font-size="14" fill="#b91c1c" font-style="italic">θ</text>
+        <text x="318" y="70" font-size="12.5" fill="#374151">观察方向 s</text>
+        <!-- (a) Q 点与其平行光线 -->
+        <circle cx="120" cy="145" r="2.6" fill="#b91c1c"/>
+        <line x1="120" y1="145" x2="390" y2="19" stroke="#6b7280" stroke-width="1.2" marker-end="url(#arrG)"/>
+        <text x="131" y="140" font-size="13" fill="#374151">Q</text>
+        <!-- (a) 波前与程差 -->
+        <line x1="90.4" y1="116.6" x2="143.2" y2="229.8" stroke="#9ca3af" stroke-width="1" stroke-dasharray="5 4"/>
+        <text x="150" y="244" font-size="12.5" fill="#6b7280">波前（⊥ s，过 O）</text>
+        <line x1="120" y1="145" x2="102.8" y2="153" stroke="#b91c1c" stroke-width="2.4"/>
+        <text x="99" y="140" font-size="13.5" fill="#b91c1c" font-weight="600" text-anchor="middle">Δ</text>
+        <line x1="112" y1="177" x2="112" y2="148" stroke="#6b7280" stroke-width="1" marker-start="url(#arrG)" marker-end="url(#arrG)"/>
+        <text x="103" y="167" font-size="12.5" fill="#6b7280" text-anchor="middle" font-style="italic">x</text>
+        <!-- (b) 孔面正视图 -->
+        <circle cx="660" cy="180" r="105" fill="none" stroke="#374151" stroke-width="1.8"/>
+        <line x1="545" y1="180" x2="818" y2="180" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="6 4" marker-end="url(#arrG)"/>
+        <text x="816" y="168" font-size="12.5" fill="#6b7280" text-anchor="end">x（= s 在孔面上的投影）</text>
+        <line x1="660" y1="62" x2="660" y2="298" stroke="#d1d5db" stroke-width="1" stroke-dasharray="6 4"/>
+        <text x="670" y="72" font-size="12" fill="#9ca3af" font-style="italic">y</text>
+        <line x1="660" y1="180" x2="555" y2="180" stroke="#374151" stroke-width="1.2"/>
+        <text x="602" y="171" font-size="13" fill="#374151" text-anchor="middle">半径 a</text>
+        <line x1="660" y1="180" x2="723" y2="131" stroke="#374151" stroke-width="1.5"/>
+        <text x="688" y="151" font-size="13.5" fill="#374151" text-anchor="end" font-style="italic">ρ</text>
+        <circle cx="723" cy="131" r="2.6" fill="#b91c1c"/>
+        <text x="731" y="126" font-size="13" fill="#374151">Q (ρ, φ)</text>
+        <path d="M 690 180 A 30 30 0 0 0 683.6 161.5" fill="none" stroke="#b91c1c" stroke-width="1.5"/>
+        <text x="701" y="164" font-size="14" fill="#b91c1c" font-style="italic">φ</text>
+      </svg>
+    </div>
+    <figcaption><b>图 2　第 (1) 步的几何。</b>（a）侧视：入射平面波沿轴穿过圆孔；观察方向 s 与轴成 θ。孔内点 Q 相对孔心 O 沿观察方向「提前」了 \(x\sin\theta\) 的路程（\(x=\rho\cos\varphi\)），故程差 \(\Delta=-\rho\sin\theta\cos\varphi\)，相位因子即式 (1)。（b）正对孔面看：极坐标 \((\rho,\varphi)\) 的定义，φ 从 x 轴（s 的投影方向）量起。θ 与线段长度为清晰起见均已夸大。</figcaption>
+  </figure>
+
+  <h3>第 (2) 步　振幅积分：把惠更斯–菲涅耳原理写成算式</h3>
+  <p>方法模板说：总复振幅 = 孔面上所有相位因子的求和。孔面是二维面元，在极坐标下面元 \(\mathrm{d}S=\rho\,\mathrm{d}\rho\,\mathrm{d}\varphi\)。对整个孔积分：</p>
+  $$U(\theta)\propto\int_0^a\!\!\int_0^{2\pi}e^{-ik\rho\sin\theta\cos\varphi}\,\rho\,d\varphi\,d\rho\tag{2}$$
+  <div class="why"><span class="wtag">为什么可以这样做</span>积分域是圆盘，直角坐标下圆边界 \(x^2+y^2\le a^2\) 会让上下限互相纠缠；极坐标把域变成矩形 \(0\le\rho\le a\)、\(0\le\varphi\le2\pi\)，边界消失了，代价只是雅可比因子 ρ。「圆盘比线段难算」的第一个原因不在相位，而在测度。</div>
+
+  <h3>第 (3) 步　角向积分：对称性自动给出贝塞尔函数</h3>
+  <p>被积函数对 φ 的依赖全部藏在 \(\cos\varphi\) 里，而「平面波在单位圆上对所有方位角取平均」恰好是零阶贝塞尔函数的积分表示：</p>
+  $$J_0(x)=\frac{1}{2\pi}\int_0^{2\pi}e^{ix\cos\varphi}\,d\varphi$$
+  <p>把式 (2) 的 φ 积分对照此定义（并利用 \(J_0(-x)=J_0(x)\) 的偶性）立即得</p>
+  $$U(\theta)\propto 2\pi\int_0^a \rho\,J_0\!\big(k\rho\sin\theta\big)\,d\rho\tag{3}$$
+  <div class="why"><span class="wtag">为什么可以这样做</span>这一步的含义是：圆对称波前按平面波展开时，同一倾角 θ 上所有方位角的子波叠加自动给出 \(J_0\)——零阶贝塞尔函数就是「圆对称版的 sinc」。单缝问题一维相位核积出 \(\sin\beta/\beta\)；圆孔问题二维相位核先积角向，积出 \(J_0\)。<strong>对称性决定积分核</strong>，这是整个计算的枢纽。</div>
+
+  <h3>第 (4) 步　径向积分：一条恒等式收口</h3>
+  <p>剩下 \(\int_0^a \rho J_0(b\rho)\,d\rho\)，其中记 \(b\equiv k\sin\theta\)。它没有初等原函数，但有标准的贝塞尔恒等式 \(\dfrac{d}{dx}\big[xJ_1(x)\big]=xJ_0(x)\)（把 \(J_0,J_1\) 的级数代入即可逐项验证）。凑微分：令 \(x=b\rho\)，\(\mathrm{d}x=b\,\mathrm{d}\rho\)，</p>
+  $$\int_0^a \rho\,J_0(b\rho)\,d\rho=\frac{1}{b}\int_0^{ab}x\,J_0(x)\,dx=\frac{1}{b}\Big[xJ_1(x)\Big]_0^{ab}=\frac{aJ_1(ab)}{b}\tag{4}$$
+  <p>（下限处 \(xJ_1(x)\to0\)，因为 \(J_1(x)\approx x/2\)。）代回式 (3)：</p>
+  $$U(\theta)\propto\frac{2\pi\,a\,J_1\!\big(ka\sin\theta\big)}{k\sin\theta}$$
+  <div class="why"><span class="wtag">为什么可以这样做</span>直接引用恒等式而不现场推导，是合法的：\(\mathrm{d}[xJ_1]/\mathrm{d}x=xJ_0\) 与 \(J_1(x)\approx x/2\) 是贝塞尔函数的基本性质，任何数理方法教材都可查证。本页的物理不在这一步的代数里，而在第 (3) 步「对称性给出核」与第 (5) 步「归一化消常数」。</div>
+
+  <h3>第 (5) 步　归一化：与轴上值相除，消去一切常数</h3>
+  <p>到目前 \(U\) 还带着未知常数（照明强度、距离、倾斜因子都藏在比例号里）。处理办法：与轴上值相除。当 \(\theta=0\) 时所有点同相、相位因子恒为 1，故 \(U(0)\propto\pi a^2\)（孔的面积）。把 \(k\sin\theta=u/a\) 代入上式再相除，\(2\pi\) 与 \(\pi a^2\) 全部消去：</p>
+  $$\frac{U(\theta)}{U(0)}=\frac{2\pi a^2 J_1(u)/u}{\pi a^2}=\frac{2J_1(u)}{u},\qquad u=ka\sin\theta=\frac{\pi D}{\lambda}\sin\theta\tag{5}$$
+  <p>注意 \(u\) 的定义里出现的是直径 \(D\)——这是历史与文献的约定，记住它，第 6 节的 \(1.22\lambda/D\) 才不会写错。</p>
+  <div class="why"><span class="wtag">为什么可以这样做</span>我们唯一关心的可观测量是强度分布的「形状」；归一化不改变形状，只除掉与 θ 无关的因子。同时 \(U/U_0\) 的定义让轴上值恰好为 1，给后面所有百分比（如次极大 1.75%）一个干净的参照。</div>
+
+  <h3>第 (6) 步　取模方：从振幅到光强</h3>
+  <p>探测器测的是 \(|U|^2\)：</p>
+  $$I(\theta)=I_0\Big[\frac{2J_1(u)}{u}\Big]^2,\qquad I_0=I(0)\tag{6}$$
+  <p>六步链条一句话：<strong>几何给相位 (1) → 叠加成积分 (2) → 对称性选核 (3) → 恒等式收口 (4) → 归一化去常数 (5) → 取模方 (6)</strong>。</p>
+
+  <h3>极限检查：中心为什么是主极大</h3>
+  <p>式 (6) 在 \(u\to0\) 时分子分母同时趋零——这是 <strong>0/0 型极限，不能直接代 \(u=0\)</strong>。用小宗量展开 \(J_1(u)=\dfrac{u}{2}-\dfrac{u^3}{16}+O(u^5)\)：</p>
+  $$\lim_{u\to0}\frac{2J_1(u)}{u}=1-\frac{u^2}{8}+\cdots\ \longrightarrow\ 1$$
+  <p>所以中心 \(U/U_0=1\)，是主极大——轴方向上全部次波同相叠加，理应最亮。同一个极限在数值计算里以另一种面目出现：绘图程序直接算 \(2J_1(u)/u\) 会在 \(u=0\) 处除零，必须按展开式单独取值。图 1 的脚本正是这样处理的（见页内 <code>airy()</code> 对小 \(u\) 的特判）——「解析上的 0/0」与「计算上的除零」是同一件事的两种表现。</p>
+</section>
+
+<section id="s5">
+  <h2><span class="no">五</span>图像解读：暗环、次极大与能量分布</h2>
+  <p>孔是圆的，花样就绕轴旋转对称，二维图样完全由一维剖面 \(I(u)\) 决定。函数 \(\left[2J_1(u)/u\right]^2\) 的行为由 \(J_1\) 的零点与极值点决定：\(J_1(u)=0\) 处光强为零，形成<strong>暗环</strong>；相邻暗环之间出现<strong>次极大</strong>。全部关键数值列于表 1，这些数字都可用页内脚本独立复算。</p>
+
+  <table>
+    <thead><tr><th>特征位置</th><th>u</th><th>sinθ（以 λ/a 计）</th><th>sinθ（以 λ/D 计）</th><th>I/I₀</th></tr></thead>
+    <tbody>
+      <tr><td>中央主极大（爱里斑中心）</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+      <tr><td>第一暗环</td><td>3.832</td><td>0.610</td><td>1.22</td><td>0</td></tr>
+      <tr><td>第一亮环（次极大）</td><td>≈5.14</td><td>≈0.82</td><td>≈1.63</td><td>1.75%</td></tr>
+      <tr><td>第二暗环</td><td>7.016</td><td>1.116</td><td>2.23</td><td>0</td></tr>
+      <tr><td>第二亮环</td><td>≈8.42</td><td>≈1.34</td><td>≈2.68</td><td>0.42%</td></tr>
+      <tr><td>第三暗环</td><td>10.174</td><td>1.619</td><td>3.24</td><td>0</td></tr>
+      <tr><td>第三亮环</td><td>≈11.62</td><td>≈1.85</td><td>≈3.70</td><td>0.16%</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:14px;color:var(--ink3);margin-top:-8px">表 1　暗环条件为 \(J_1(u)=0\)，零点 \(u=3.832,\,7.016,\,10.174,\,13.324,\dots\)；换算 \(\sin\theta=u\lambda/(\pi D)=u\lambda/(2\pi a)\)。次极大位置由 \(J_1\) 的极值点确定。</p>
+
+  <p><strong>能量集中度</strong>：把强度对盘面积分（每个亮环的能量即相邻两暗环之间那一份份额），第一暗环以内集中约 <strong>83.8%</strong> 的总能量，第一亮环约 <strong>7.2%</strong>，第二亮环约 <strong>2.8%</strong>。也就是说，中央亮斑拿走六分之五弱的能量，其余 16.2% 摊在一串迅速变暗的环上——这正是「爱里斑」这个名字通常只指中央亮斑的原因：讨论分辨率时它就是主角，外面的环是杂散光的主要来源。</p>
+
+  <h3>与单缝对照：「1.22」从哪里来</h3>
+  <p>把缝宽取作与孔直径相等（\(a=D\)），则单缝的 \(\beta=\pi D\sin\theta/\lambda=u\)，两条曲线可以画在同一横轴上直接比较：</p>
+
+  <table>
+    <thead><tr><th>特征量</th><th>单缝（宽 a = D）</th><th>圆孔（直径 D）</th></tr></thead>
+    <tbody>
+      <tr><td>振幅函数</td><td>\(\sin\beta/\beta\)（sinc）</td><td>\(2J_1(u)/u\)</td></tr>
+      <tr><td>第一暗纹 / 暗环</td><td>\(\sin\theta=\lambda/a\)（\(u=\pi=3.1416\)）</td><td>\(\sin\theta=1.22\,\lambda/D\)（\(u=3.8317\)）</td></tr>
+      <tr><td>第二暗纹 / 暗环</td><td>\(\sin\theta=2\lambda/a\)（\(u=2\pi\)）</td><td>\(\sin\theta=2.23\,\lambda/D\)（\(u=7.016\)）</td></tr>
+      <tr><td>第一旁瓣强度</td><td>4.72%（\(u=4.493\)）</td><td>1.75%（\(u\approx5.14\)）</td></tr>
+      <tr><td>数学来源</td><td>一维矩形函数的傅里叶变换</td><td>二维圆盘函数的傅里叶变换</td></tr>
+    </tbody>
+  </table>
+
+  <p>第一暗环与单缝第一零点之比 \(3.8317/\pi=1.2197\approx1.22\)——这就是那个神秘系数的身世：<strong>它不是经验拟合参数，而是第一类一阶贝塞尔函数第一个零点与 π 之比，是「圆对称取代矩形对称」在零点位置上的精确数学后果</strong>。同时注意圆孔的旁瓣（1.75%）远低于单缝旁瓣（4.72%）：同样的能量，圆对称把它更紧地压向中心。</p>
+
+  <figure>
+    <div class="frame">
+      <canvas id="curveCanvas" role="img" aria-label="圆孔爱里图样与单缝强度剖面的对比曲线"></canvas>
+    </div>
+    <figcaption><b>图 3　横截面强度对比。</b>红实线：圆孔 \(I/I_0=[2J_1(u)/u]^2\)；灰虚线：单缝 \(I/I_0=(\sin u/u)^2\)（缝宽取 \(a=D\)，故单缝的 \(\beta=u\)，两曲线同轴可比）。圆孔第一暗环 \(u_1=3.83\) 比单缝第一零点 \(u=\pi\approx3.14\) 推远 1.22 倍；红点标出的次极大依次为 1.75%、0.42%、0.16%，均远低于单缝第一旁瓣的 4.72%——能量更向中心集中。</figcaption>
+  </figure>
+</section>
+
+<section id="s6">
+  <h2><span class="no">六</span>物理意义：分辨本领的极限</h2>
+  <p>第一暗环的位置，就是「一个点源的像有多大」的度量。由 \(u_1=3.8317=\pi D\sin\theta_1/\lambda\) 得</p>
+  $$\theta_1\approx\sin\theta_1=1.22\,\frac{\lambda}{D}$$
+  <p>这是<strong>爱里斑的角半径</strong>。若用焦距 \(f\) 的透镜观察（第 2 节：焦平面即无穷远屏），焦面上的线半径为</p>
+  $$r_1=f\tan\theta_1\approx 1.22\,\frac{\lambda f}{D}$$
+  <p>两个点源——双星、光谱双线、显微镜里的两个荧光分子——的像是两幅一模一样的爱里图样。<strong>瑞利判据</strong>（Lord Rayleigh, 1879）：当一个像的主极大恰好落在另一个像的第一暗环上，即两源角距离</p>
+  $$\Delta\theta\ \ge\ \theta_1=1.22\,\frac{\lambda}{D}$$
+  <p>时，认为二者「恰好可分辨」。此时合成强度曲线出现一个浅鞍点，其强度约为峰值的 73.5%——「有没有凹陷」就是眼睛和探测器判断「一个还是两个」的依据。判据本身带有人为约定的成分（把判据上移或下移一点并无原则性错误），但它抓住了本质：<strong>分辨极限由 \(\theta_1=1.22\lambda/D\) 决定——口径越大、波长越短，分辨越细；放大率再大也无效</strong>，因为放大率放大的是已经模糊的像，不是信息。</p>
+
+  <figure>
+    <div class="frame">
+      <canvas id="rayCanvas" role="img" aria-label="两个点源像的非相干叠加随角距离的变化"></canvas>
+      <div class="ctrl wide">
+        <label for="raySlider">角距离 d（以 θ₁ 为单位）</label>
+        <input type="range" id="raySlider" min="0.4" max="3" step="0.02" value="1" aria-label="调节两源角距离">
+        <output id="rayOut">d = 1.00 θ₁，鞍点/峰值 ≈ 73.5%</output>
+      </div>
+    </div>
+    <figcaption><b>图 4　瑞利判据实时演示。</b>灰细线为两个点源各自的爱里剖面，红粗线为非相干叠加。拖动滑杆：d 明显小于 1 时凹陷消失、融为一个斑；d = 1（判据位置）时鞍点约为峰值的 73.5%；d 继续增大，两峰分开。曲线由页内脚本用式 (6) 实时计算。</figcaption>
+  </figure>
+
+  <h3>三个数量级：眼睛、哈勃与射电阵列</h3>
+
+  <table>
+    <thead><tr><th>成像系统</th><th>口径 D</th><th>波长 λ</th><th>θ₁ = 1.22λ/D</th><th>备注</th></tr></thead>
+    <tbody>
+      <tr><td>人眼（日间瞳孔）</td><td>≈2 mm</td><td>550 nm</td><td>3.4×10⁻⁴ rad ≈ 1 角分</td><td>焦面上亮斑半径 \(f\theta_1\approx5.7\) μm，约两个视锥细胞间距</td></tr>
+      <tr><td>哈勃空间望远镜</td><td>2.4 m</td><td>550 nm</td><td>2.8×10⁻⁷ rad ≈ 0.06″</td><td>约为人眼的 1/1200</td></tr>
+      <tr><td>射电干涉阵列（等效口径 = 基线 B）</td><td>≈1×10⁴ km</td><td>1.3 mm</td><td>≈λ/B ≈ 1.2×10⁻¹⁰ rad ≈ 25 μas</td><td>事件视界望远镜，按 λ/B 估算</td></tr>
+    </tbody>
+  </table>
+
+  <p>人眼这一行值得多看一眼：眼球焦距约 17 mm，把 \(\theta_1\) 的亮斑画在视网膜上，半径 \(r=f\theta_1\approx5.7\) μm，恰好覆盖约两个中央凹视锥细胞（间距 2.5~3 μm）。感光细胞的密度再提高也买不到更多细节——<strong>瓶颈在衍射，不在采样</strong>；演化把两者调到了同一量级，谁也不浪费。</p>
+  <p>射电这一行则展示另一条路：射电波长在毫米—米量级，比可见光长四到六个数量级。要靠单天线达到角秒级分辨，由 \(\theta_1=1.22\lambda/D\) 反推需要 \(D\approx1.22\lambda/\theta_1\)——对 λ = 21 cm 的氢线，这意味着约 50 km 的口径，工程上不可能。于是改用<strong>干涉</strong>：相距 B 的两台天线相干叠加，等效口径是基线 B 而非天线直径，分辨角按 λ/B 计算。把基线拉到地球尺度（乃至空间 VLBI），毫米波上的分辨本领推进到微角秒量级，超过哈勃两千余倍——这是「用几何布局买口径」，是衍射极限公式的胜利而非违背。</p>
+
+  <h3>为什么显微镜偏爱短波长</h3>
+  <p>同样的公式指向另一端：\(\theta_1\propto\lambda\)，波长越短，分辨越细。把照明从 550 nm 换到 365 nm 的紫外，分辨本领立刻提高 1.5 倍；更彻底的是电子——德布罗意波长 \(\lambda=h/p\)，经 100 kV 加速的电子波长仅约 3.7 pm，比可见光短约 \(1.5\times10^5\) 倍。因此透射电子显微镜尽管数值孔径远小于光学物镜，仍能把分辨推进到原子量级（约 0.1~0.2 nm，而可见光极限约 200 nm）。「用更短的波去看更小的东西」——从紫外显微到电镜到 X 射线显微，全部是 \(\theta_1=1.22\lambda/D\) 的应用清单。</p>
+</section>
+
+<section id="s7">
+  <h2><span class="no">七</span>傅里叶光学一瞥（选读）</h2>
+  <p>回头看第 2 节末尾的积分：设孔径透过率为 \(t(x,y)\)（孔内为 1、孔外为 0），则</p>
+  $$U(\theta)\ \propto\ \iint t(x,y)\,e^{-ik(s_x x+s_y y)}\,dx\,dy\ =\ \tilde{t}\Big(\frac{s_x}{\lambda},\frac{s_y}{\lambda}\Big)$$
+  <p><strong>夫琅禾费衍射花样就是孔径透过率函数的二维傅里叶变换的模方</strong>，观察方向 \((s_x,s_y)\) 与空间频率一一对应。圆域函数（圆盘）的变换恰是爱里图样，矩形孔的变换是 sinc×sinc——第 4、5 节的全部结果，都是这个一般命题的特例。这个观点的威力在于：透镜焦平面就是<strong>频谱面</strong>，在焦面上放置掩模板等于在频域滤波（空间滤波）——挡掉高频成分图像变柔和，挡掉零频成分轮廓增强，阿贝成像理论更把显微镜的分辨本领表述为「物镜孔径能接收到多少级衍射谱」。本页的式 (5)，就是这个现代观点最经典的第一个例子。</p>
+</section>
+
+<section id="s8">
+  <h2><span class="no">八</span>小结与思考题</h2>
+
+  <div class="summary">
+    <h3>一条推导链</h3>
+    <ol>
+      <li>惠更斯–菲涅耳原理：总场 = 波前上相干次波的叠加；远场时相位线性化。</li>
+      <li>几何给出相位因子 \(e^{-ik\rho\sin\theta\cos\varphi}\)——式 (1)。</li>
+      <li>对圆盘积分 \(\rho\,d\rho\,d\varphi\)——式 (2)；角向积分由对称性给出 \(J_0\)——式 (3)。</li>
+      <li>径向积分用 \(\mathrm{d}[xJ_1]/\mathrm{d}x=xJ_0\) 收口——式 (4)。</li>
+      <li>归一化得 \(U/U_0=2J_1(u)/u\)，\(u=\pi D\sin\theta/\lambda\)——式 (5)；取模方 \(I=I_0[2J_1(u)/u]^2\)——式 (6)。</li>
+      <li>极限 \(J_1(u)\approx u/2\) 保证中心为主极大；第一暗环 \(u_1=3.8317\) 给出 \(\theta_1=1.22\lambda/D\)。</li>
+    </ol>
+    <h3>三句话带走</h3>
+    <ol>
+      <li>衍射花样 = 孔径形状的二维傅里叶变换的模方；对称性决定积分核。</li>
+      <li>爱里斑角半径 \(\theta_1=1.22\lambda/D\)，其中集中 83.8% 的能量。</li>
+      <li>一切成像系统的分辨极限由它决定，与放大率和焦距无关。</li>
+    </ol>
+  </div>
+
+  <h3>思考题</h3>
+  <details>
+    <summary>1. 晴夜用望远镜拍亮星，照片里星星周围有一圈圈细光环。它和镜头污渍造成的「鬼影」如何区分？为什么亮星的环明显、暗星的环几乎看不见？</summary>
+    <div class="ans">点源经圆孔成像必然呈现爱里图样：环的位置由 \(\theta_m=1.22,\,2.23,\,3.24\times\lambda/D\) 严格决定，随口径变化可重复，且完美同心、旋转对称——这是衍射环的指纹；污渍鬼影的位置随污渍移动、通常不对称、不随 D 改变。亮星信号强，即便第一亮环只有主极大的 1.75%，也仍高于背景噪声而被记录下来；暗星信号弱，同样比例的环早已淹没在噪声里。环的有无不反映镜头优劣，恰是「这台望远镜口径多大」的波动学签名。</div>
+  </details>
+  <details>
+    <summary>2. 望远镜换用更长焦距 f 的物镜，焦面上爱里斑变大吗？角分辨本领变吗？</summary>
+    <div class="ans">焦面上的线半径 \(r_1=1.22\,\lambda f/D\propto f\)，变大；但角半径 \(\theta_1=1.22\lambda/D\) 与 f 无关。f 只是决定「把角谱放大成多大线尺寸」的标尺——衍射发生在孔径上，与焦距无关。所以加大 f 能放大像的线尺寸（方便配像素尺寸合适的探测器），却丝毫不能提高角分辨本领；同理，放大率放大的是已经模糊的像。</div>
+  </details>
+  <details>
+    <summary>3. 射电天文学家为什么不把单台天线做大做完，而要建造相距几千公里的天线阵列？</summary>
+    <div class="ans">射电波长在毫米—米量级，比可见光长四到六个数量级。由 \(\theta_1=1.22\lambda/D\)，对 λ = 21 cm 想达到 1 角秒的分辨需要口径约 50 km，单天线工程上不可能（500 m 的 FAST 在 21 cm 波长也只有约 1.8 角分）。干涉阵列让相距 B 的两天线信号相干叠加，等效口径是基线 B，分辨角约 λ/B；把基线拉到地球直径量级，毫米波的分辨达微角秒级，超过哈勃两千余倍。单孔径的衍射极限没有被打破——是用了更大的「等效孔径」。</div>
+  </details>
+
+  <p class="refs">推导与数值与以下标准教材一致：E. Hecht, <em>Optics</em>（第 5 版）第 10 章；M. Born &amp; E. Wolf, <em>Principles of Optics</em> §8.5；赵凯华、钟锡华《光学》。本页全部图示由页内脚本实时计算绘制，保存为单个 HTML 文件即可离线使用（公式渲染需联网加载 KaTeX）。</p>
+</section>
+
+</main>
+
+<footer>圆孔的夫琅禾费衍射 · 爱里图样 · 教学推导页</footer>
+
+<script>
+(function(){
+"use strict";
+
+/* ===== 一阶贝塞尔函数（Abramowitz–Stegun 多项式逼近，精度约 1e-6，足够绘图）===== */
+function besselJ1(x){
+  const ax=Math.abs(x);
+  if(ax<8){
+    const y=x*x;
+    const num=x*(72362614232.0+y*(-7895059235.0+y*(242396853.1+y*(-2972611.439+y*(15704.48260+y*(-30.16036606))))));
+    const den=144725228442.0+y*(2300535178.0+y*(18583304.74+y*(99447.43394+y*(376.9991397+y))));
+    return num/den;
+  }
+  const z=8.0/ax,y=z*z,xx=ax-2.356194491;
+  const p=1.0+y*(0.183105e-2+y*(-0.3516396496e-4+y*(0.2457520174e-5+y*(-0.240337019e-6))));
+  const q=0.04687499995+y*(-0.2002690873e-3+y*(0.8449199096e-5+y*(-0.88228987e-6+y*0.105787412e-6)));
+  const ans=Math.sqrt(0.636619772/ax)*(Math.cos(xx)*p-z*Math.sin(xx)*q);
+  return x<0?-ans:ans;
+}
+/* u→0 为 0/0 型极限，用 J1(u)≈u/2 单独取值（解析极限检查在页面对应小节）*/
+function airy(u){ return Math.abs(u)<1e-9 ? 1 : Math.pow(2*besselJ1(u)/u,2); }
+function sinc2(u){ return Math.abs(u)<1e-9 ? 1 : Math.pow(Math.sin(u)/u,2); }
+
+const U1=3.8317, U2=7.0156, U3=10.1735;
+const SEC1=5.1356, SEC2=8.4172, SEC3=11.6198;
+const CANVAS_FONT="13px -apple-system,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif";
+
+/* ===== 图 1：逐像素爱里图样 =====
+   视场角固定：D/λ=8 时第一暗环位于 0.42 倍半宽处；改变 D/λ 即改变 u 的标度。 */
+const SIGMA_EDGE=(1.22/8)/0.42;
+function drawAiryPattern(cv,dOnLambda){
+  const dpr=Math.min(window.devicePixelRatio||1,2);
+  const N=Math.max(320,Math.min(560,Math.round((cv.clientWidth||430)*dpr)));
+  if(cv.width!==N||cv.height!==N){cv.width=N;cv.height=N;}
+  const ctx=cv.getContext("2d");
+  const img=ctx.createImageData(N,N);
+  const data=img.data;
+  const half=(N-1)/2;
+  const uEdge=Math.PI*dOnLambda*SIGMA_EDGE;
+  const LUT=new Uint8ClampedArray(4096);
+  for(let i=0;i<4096;i++){LUT[i]=Math.round(255*Math.pow(i/4095,0.4));}
+  const bg=[14,17,25];
+  let p=0;
+  for(let j=0;j<N;j++){
+    const dy=(j-half)/half;
+    for(let i=0;i<N;i++){
+      const dx=(i-half)/half;
+      const u=uEdge*Math.sqrt(dx*dx+dy*dy);
+      const I=airy(u);
+      const v=LUT[Math.max(0,Math.min(4095,Math.round(I*4095)))];
+      data[p++]=bg[0]+(255-bg[0])*v/255;
+      data[p++]=bg[1]+(255-bg[1])*v/255;
+      data[p++]=bg[2]+(255-bg[2])*v/255;
+      data[p++]=255;
+    }
+  }
+  ctx.putImageData(img,0,0);
+  /* 标注第一暗环 */
+  const r1=half*U1/uEdge;
+  ctx.font=CANVAS_FONT;
+  ctx.textAlign="center";
+  if(r1<half*0.97){
+    ctx.strokeStyle="rgba(125,211,252,0.95)";
+    ctx.lineWidth=1.2;
+    ctx.setLineDash([5,5]);
+    ctx.beginPath();
+    ctx.arc(half,half,r1,0,Math.PI*2);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle="rgba(224,242,254,0.95)";
+    ctx.fillText("虚线圆 = 第一暗环位置",half,N-12);
+  }else{
+    ctx.fillStyle="rgba(224,242,254,0.95)";
+    ctx.fillText("孔径太小：第一暗环在当前视场之外",half,N-12);
+  }
+}
+
+/* ===== 通用画布设置 ===== */
+function setupCanvas(cv){
+  const dpr=Math.min(window.devicePixelRatio||1,2);
+  const w=Math.max(80,Math.round(cv.clientWidth));
+  const h=Math.max(80,Math.round(cv.clientHeight));
+  const W=Math.round(w*dpr),H=Math.round(h*dpr);
+  if(cv.width!==W||cv.height!==H){cv.width=W;cv.height=H;}
+  const ctx=cv.getContext("2d");
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  ctx.clearRect(0,0,w,h);
+  return {ctx:ctx,w:w,h:h};
+}
+
+/* ===== 图 3：爱里 sinc² 剖面对比 ===== */
+function drawProfileCurve(cv){
+  const s=setupCanvas(cv);
+  const ctx=s.ctx,W=s.w,H=s.h;
+  const padL=52,padR=14,padT=34,padB=56;
+  const umax=14;
+  const X=function(u){return padL+(u/umax)*(W-padL-padR);};
+  const Y=function(I){return H-padB-I*(H-padT-padB);};
+  /* 水平参考线 */
+  ctx.strokeStyle="#f3f4f6";ctx.lineWidth=1;
+  [0.25,0.5,0.75].forEach(function(g){ctx.beginPath();ctx.moveTo(X(0),Y(g));ctx.lineTo(X(umax),Y(g));ctx.stroke();});
+  /* 坐标轴 */
+  ctx.strokeStyle="#9ca3af";ctx.lineWidth=1.2;
+  ctx.beginPath();
+  ctx.moveTo(X(0),Y(0)+0.5);ctx.lineTo(X(umax),Y(0)+0.5);
+  ctx.moveTo(X(0)+0.5,Y(0));ctx.lineTo(X(0)+0.5,Y(1.04));
+  ctx.stroke();
+  /* 轴刻度与标目 */
+  ctx.fillStyle="#6b7280";
+  ctx.font="12px -apple-system,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif";
+  ctx.textAlign="center";
+  [0.25,0.5,0.75,1].forEach(function(g){
+    ctx.fillText(g.toFixed(2),X(0)-8,Y(g)+4);
+    ctx.beginPath();ctx.moveTo(X(0)-4,Y(g));ctx.lineTo(X(0),Y(g));ctx.strokeStyle="#9ca3af";ctx.stroke();
+  });
+  ctx.fillText("0",X(0)-10,Y(0)+16);
+  const ticks=[[0,"0"],[Math.PI,"π"],[U1,"3.83"],[U2,"7.02"],[U3,"10.17"],[umax,"14"]];
+  ticks.forEach(function(t){
+    ctx.beginPath();ctx.moveTo(X(t[0]),Y(0));ctx.lineTo(X(t[0]),Y(0)+4);ctx.stroke();
+    ctx.fillText(t[1],X(t[0]),Y(0)+17);
+  });
+  ctx.font=CANVAS_FONT;
+  ctx.fillText("u = (πD/λ)·sinθ",(padL+W-padR)/2,H-10);
+  ctx.textAlign="left";
+  ctx.font="13px -apple-system,'PingFang SC','Microsoft YaHei',sans-serif";
+  ctx.fillText("I/I₀",8,16);
+  /* 单缝第一零点 π 的小标记 */
+  ctx.strokeStyle="#94a3b8";ctx.setLineDash([3,3]);
+  ctx.beginPath();ctx.moveTo(X(Math.PI),Y(0));ctx.lineTo(X(Math.PI),Y(0.55));ctx.stroke();
+  ctx.setLineDash([]);
+  /* 第一暗环标注 */
+  ctx.strokeStyle="rgba(185,28,28,0.4)";ctx.setLineDash([5,4]);
+  ctx.beginPath();ctx.moveTo(X(U1),Y(0));ctx.lineTo(X(U1),Y(1.02));ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.fillStyle="#b91c1c";
+  ctx.textAlign="left";
+  ctx.font="12.5px -apple-system,'PingFang SC','Microsoft YaHei',sans-serif";
+  ctx.fillText("第一暗环 u₁ = 3.83",X(U1)+7,20);
+  /* 单缝曲线（灰虚线） */
+  ctx.strokeStyle="#64748b";ctx.lineWidth=1.6;ctx.setLineDash([6,4]);
+  ctx.beginPath();
+  for(let u=0;u<=umax+1e-9;u+=0.02){
+    const y=Y(sinc2(u));
+    if(u===0){ctx.moveTo(X(u),y);}else{ctx.lineTo(X(u),y);}
+  }
+  ctx.stroke();
+  ctx.setLineDash([]);
+  /* 爱里曲线（红实线） */
+  ctx.strokeStyle="#b91c1c";ctx.lineWidth=2.2;
+  ctx.beginPath();
+  for(let u=0;u<=umax+1e-9;u+=0.02){
+    const y=Y(airy(u));
+    if(u===0){ctx.moveTo(X(u),y);}else{ctx.lineTo(X(u),y);}
+  }
+  ctx.stroke();
+  /* 次极大点 */
+  ctx.fillStyle="#b91c1c";
+  [[SEC1,0.0175],[SEC2,0.00416],[SEC3,0.0016]].forEach(function(m){
+    ctx.beginPath();ctx.arc(X(m[0]),Y(m[1]),3,0,Math.PI*2);ctx.fill();
+  });
+  ctx.fillStyle="#4b5563";
+  ctx.font="12.5px -apple-system,'PingFang SC','Microsoft YaHei',sans-serif";
+  ctx.fillText("次极大 1.75%",X(SEC1)+8,Y(0.0175)-7);
+  /* 图例 */
+  const lw=208,lh=56,lx=W-padR-lw-6,ly=padT-6;
+  ctx.fillStyle="rgba(255,255,255,0.92)";
+  ctx.fillRect(lx,ly,lw,lh);
+  ctx.strokeStyle="#e5e7eb";ctx.lineWidth=1;
+  ctx.strokeRect(lx+0.5,ly+0.5,lw,lh);
+  ctx.strokeStyle="#b91c1c";ctx.lineWidth=2.2;
+  ctx.beginPath();ctx.moveTo(lx+10,ly+18);ctx.lineTo(lx+38,ly+18);ctx.stroke();
+  ctx.fillStyle="#1f2937";ctx.font=CANVAS_FONT;ctx.textAlign="left";
+  ctx.fillText("圆孔 [2J₁(u)/u]²",lx+46,ly+22);
+  ctx.strokeStyle="#64748b";ctx.lineWidth=1.6;ctx.setLineDash([6,4]);
+  ctx.beginPath();ctx.moveTo(lx+10,ly+40);ctx.lineTo(lx+38,ly+40);ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.fillText("单缝 (sin u/u)²（a=D）",lx+46,ly+44);
+}
+
+/* ===== 图 4：瑞利判据 ===== */
+function profileA(x){return airy(U1*x);}
+function sumProfile(x,d){return profileA(x-d/2)+profileA(x+d/2);}
+function saddleRatio(d){
+  let mx=0;
+  for(let x=-3.2;x<=3.2001;x+=0.005){const v=sumProfile(x,d);if(v>mx)mx=v;}
+  return sumProfile(0,d)/mx;
+}
+function drawRayleigh(cv,d){
+  const s=setupCanvas(cv);
+  const ctx=s.ctx,W=s.w,H=s.h;
+  const padL=46,padR=16,padT=20,padB=50;
+  const x0=-3.2,x1=3.2;
+  const X=function(x){return padL+((x-x0)/(x1-x0))*(W-padL-padR);};
+  const Y=function(I){return H-padB-I*(H-padT-padB);};
+  let Smax=0;
+  for(let x=x0;x<=x1+1e-9;x+=0.005){const v=sumProfile(x,d);if(v>Smax)Smax=v;}
+  /* 鞍点水平参考线 */
+  const sad=sumProfile(0,d)/Smax;
+  ctx.strokeStyle="rgba(185,28,28,0.28)";ctx.lineWidth=1;ctx.setLineDash([4,4]);
+  ctx.beginPath();ctx.moveTo(X(x0+0.2),Y(sad));ctx.lineTo(X(x1-0.2),Y(sad));ctx.stroke();
+  ctx.setLineDash([]);
+  /* 坐标轴 */
+  ctx.strokeStyle="#9ca3af";ctx.lineWidth=1.2;
+  ctx.beginPath();
+  ctx.moveTo(X(x0),Y(0)+0.5);ctx.lineTo(X(x1),Y(0)+0.5);
+  ctx.moveTo(X(0)+0.5,Y(0));ctx.lineTo(X(0)+0.5,Y(1.06));
+  ctx.stroke();
+  ctx.fillStyle="#6b7280";
+  ctx.font="12px -apple-system,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif";
+  ctx.textAlign="center";
+  [1,0.5].forEach(function(g){
+    ctx.fillText(g.toFixed(1),X(0)-8,Y(g)+4);
+    ctx.beginPath();ctx.moveTo(X(0)-4,Y(g));ctx.lineTo(X(0),Y(g));ctx.stroke();
+  });
+  for(let t=-3;t<=3;t++){
+    ctx.beginPath();ctx.moveTo(X(t),Y(0));ctx.lineTo(X(t),Y(0)+4);ctx.stroke();
+    ctx.fillText(String(t),X(t),Y(0)+17);
+  }
+  ctx.font=CANVAS_FONT;
+  ctx.fillText("角位置（单位 θ₁）",(padL+W-padR)/2,H-10);
+  ctx.textAlign="left";
+  ctx.font="13px -apple-system,'PingFang SC','Microsoft YaHei',sans-serif";
+  ctx.fillText("I（归一化）",8,14);
+  /* 两源中心标记 */
+  ctx.strokeStyle="#9ca3af";ctx.setLineDash([4,4]);
+  [-d/2,d/2].forEach(function(c){
+    ctx.beginPath();ctx.moveTo(X(c),Y(0));ctx.lineTo(X(c),Y(1.03));ctx.stroke();
+  });
+  ctx.setLineDash([]);
+  /* 各自剖面（浅灰） */
+  ctx.strokeStyle="#cbd5e1";ctx.lineWidth=1.3;
+  [d/2,-d/2].forEach(function(c){
+    ctx.beginPath();
+    for(let x=x0;x<=x1+1e-9;x+=0.02){
+      const y=Y(profileA(x-c));
+      if(x===x0){ctx.moveTo(X(x),y);}else{ctx.lineTo(X(x),y);}
+    }
+    ctx.stroke();
+  });
+  /* 合成曲线（红） */
+  ctx.strokeStyle="#b91c1c";ctx.lineWidth=2.2;
+  ctx.beginPath();
+  for(let x=x0;x<=x1+1e-9;x+=0.02){
+    const y=Y(sumProfile(x,d)/Smax);
+    if(x===x0){ctx.moveTo(X(x),y);}else{ctx.lineTo(X(x),y);}
+  }
+  ctx.stroke();
+  /* 鞍点标记 */
+  ctx.fillStyle="#b91c1c";
+  ctx.beginPath();ctx.arc(X(0),Y(sad),3,0,Math.PI*2);ctx.fill();
+}
+
+/* ===== 自查钩子（供提取脚本在 node 中复算数值；浏览器中仅暴露只读函数）===== */
+if(typeof globalThis!=="undefined"){
+  globalThis.__airy={besselJ1:besselJ1,airy:airy,sinc2:sinc2,
+    segmentEnergy:function(a,b){
+      const n=2000,h=(b-a)/n;let sum=0;
+      for(let i=0;i<=n;i++){
+        const u=a+i*h;
+        let f;
+        if(u<1e-12){f=0;}else{const j=besselJ1(u);f=4*j*j/u;}
+        sum+=f*(i===0||i===n?1:(i%2?4:2));
+      }
+      return sum*h/3;
+    }};
+}
+
+/* ===== 页面初始化 ===== */
+function init(){
+  const $=function(id){return document.getElementById(id);};
+  const airyCanvas=$("airyCanvas"),curveCanvas=$("curveCanvas"),rayCanvas=$("rayCanvas");
+  const dSlider=$("dSlider"),dOut=$("dOut"),t1Out=$("t1Out");
+  const raySlider=$("raySlider"),rayOut=$("rayOut");
+  if(!airyCanvas||!curveCanvas||!rayCanvas)return;
+  let dVal=parseFloat(dSlider.value);
+  let rayVal=parseFloat(raySlider.value);
+  function updatePattern(){
+    dOut.textContent="D/λ = "+dVal.toFixed(1);
+    t1Out.textContent="sinθ₁ = 1.22λ/D = "+(1.22/dVal).toFixed(3);
+    drawAiryPattern(airyCanvas,dVal);
+  }
+  function updateRay(){
+    rayOut.textContent="d = "+rayVal.toFixed(2)+" θ₁，鞍点/峰值 ≈ "+(saddleRatio(rayVal)*100).toFixed(1)+"%";
+    drawRayleigh(rayCanvas,rayVal);
+  }
+  function redrawAll(){updatePattern();drawProfileCurve(curveCanvas);updateRay();}
+  dSlider.addEventListener("input",function(){dVal=parseFloat(dSlider.value);updatePattern();});
+  raySlider.addEventListener("input",function(){rayVal=parseFloat(raySlider.value);updateRay();});
+  let rT=null;
+  window.addEventListener("resize",function(){
+    if(rT)clearTimeout(rT);
+    rT=setTimeout(redrawAll,150);
+  });
+  redrawAll();
+  /* 锚点导航高亮 */
+  const links=Array.prototype.slice.call(document.querySelectorAll("nav a[href^='#']"));
+  if("IntersectionObserver" in window&&links.length){
+    const byId={};
+    links.forEach(function(l){byId[l.getAttribute("href").slice(1)]=l;});
+    const obs=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          links.forEach(function(l){l.classList.remove("active");});
+          const l=byId[e.target.id];
+          if(l)l.classList.add("active");
+        }
+      });
+    },{rootMargin:"-40% 0px -55% 0px"});
+    document.querySelectorAll("main section[id]").forEach(function(sec){obs.observe(sec);});
+  }
+}
+if(typeof document!=="undefined"){
+  if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",init);}
+  else{init();}
+}
+})();
+</script>
+</body>
+</html>

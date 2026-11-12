@@ -21,10 +21,8 @@ export default function ChapterNav({ chapters, currentId, onSeek, cols = 6 }: Pr
           key={c.id}
           onClick={() => onSeek(c.t_start + 0.01)}
           title={c.heading}
-          className={`min-w-0 rounded-lg px-1.5 py-1.5 text-xs transition truncate ${
-            currentId === c.id
-              ? 'bg-[#ffb703] text-[#0b1f38] font-semibold'
-              : 'bg-[#123a63] text-slate-300 hover:bg-[#1a4a7a]'
+          className={`chrome-btn min-w-0 rounded-lg px-1.5 py-1.5 text-xs truncate ${
+            currentId === c.id ? 'chrome-btn-active font-semibold' : ''
           }`}
         >
           {c.id}. {c.heading}

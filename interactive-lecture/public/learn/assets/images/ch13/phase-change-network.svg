@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 520" role="img" aria-labelledby="title desc">
+  <title id="title">固、液、气三相之间的六种相变</title>
+  <desc id="desc">三角形顶点为固相、液相和气相，双向箭头标出熔化、凝固、汽化、液化、升华和凝华。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f4f8ff"/><stop offset="1" stop-color="#edfdf8"/>
+    </linearGradient>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#2f6fd0"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#e07b24"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#1b385f" flood-opacity=".13"/>
+    </filter>
+  </defs>
+  <rect width="920" height="520" rx="28" fill="url(#bg)"/>
+  <text x="460" y="52" text-anchor="middle" font-size="29" font-weight="700" fill="#17324d" font-family="PingFang SC,Microsoft YaHei,sans-serif">三相之间的六种相变</text>
+
+  <g fill="none" stroke-linecap="round" stroke-width="5">
+    <path d="M315 342 Q458 415 605 342" stroke="#e07b24" marker-end="url(#arrowOrange)"/>
+    <path d="M603 315 Q458 374 317 315" stroke="#2f6fd0" marker-end="url(#arrowBlue)"/>
+    <path d="M290 283 Q315 170 420 133" stroke="#e07b24" marker-end="url(#arrowOrange)"/>
+    <path d="M438 151 Q355 194 326 287" stroke="#2f6fd0" marker-end="url(#arrowBlue)"/>
+    <path d="M493 133 Q603 168 630 283" stroke="#e07b24" marker-end="url(#arrowOrange)"/>
+    <path d="M595 288 Q568 194 476 151" stroke="#2f6fd0" marker-end="url(#arrowBlue)"/>
+  </g>
+
+  <g font-family="PingFang SC,Microsoft YaHei,sans-serif" text-anchor="middle">
+    <g filter="url(#shadow)">
+      <rect x="365" y="73" width="190" height="82" rx="22" fill="#fff" stroke="#7b8aa0" stroke-width="2"/>
+      <text x="460" y="124" font-size="28" font-weight="700" fill="#334155">固相</text>
+      <rect x="170" y="283" width="190" height="82" rx="22" fill="#fff" stroke="#4f91df" stroke-width="2"/>
+      <text x="265" y="334" font-size="28" font-weight="700" fill="#245b9e">液相</text>
+      <rect x="560" y="283" width="190" height="82" rx="22" fill="#fff" stroke="#37a277" stroke-width="2"/>
+      <text x="655" y="334" font-size="28" font-weight="700" fill="#227052">气相</text>
+    </g>
+
+    <text x="460" y="326" font-size="22" fill="#e07b24" font-weight="700">汽化（吸热）</text>
+    <text x="460" y="397" font-size="22" fill="#2f6fd0" font-weight="700">液化（放热）</text>
+    <text x="312" y="197" font-size="21" fill="#e07b24" font-weight="700" transform="rotate(-57 312 197)">熔化（吸热）</text>
+    <text x="363" y="224" font-size="21" fill="#2f6fd0" font-weight="700" transform="rotate(-57 363 224)">凝固（放热）</text>
+    <text x="608" y="196" font-size="21" fill="#e07b24" font-weight="700" transform="rotate(57 608 196)">升华（吸热）</text>
+    <text x="557" y="224" font-size="21" fill="#2f6fd0" font-weight="700" transform="rotate(57 557 224)">凝华（放热）</text>
+
+    <rect x="160" y="446" width="600" height="44" rx="22" fill="#17324d" opacity=".93"/>
+    <text x="460" y="475" font-size="20" fill="#fff">相变发生时，系统的结构和宏观性质发生突变，并伴随能量交换</text>
+  </g>
+</svg>

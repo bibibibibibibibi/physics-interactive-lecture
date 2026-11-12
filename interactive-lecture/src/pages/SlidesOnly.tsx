@@ -6,6 +6,7 @@ import { stripMath, VIDEO_H, VIDEO_W } from '@/lib/lecture'
 import { resolveTheme } from '@/lib/theme'
 import type { WebElement, WebLec, WebPage } from '@/lib/weblec'
 import { COURSE_BASE, COURSE_ID, DEFAULT_COURSE } from '@/lib/course'
+import '@/chrome.css'
 
 declare global {
   interface Window {
@@ -224,6 +225,21 @@ export default function SlidesOnly() {
     setAnimT(v)
   }
 
+  /** 换页交叉淡化：旧页静态元素以快照保留一层淡出，新页整层淡入（与交互课堂一致）。
+      video/html 媒体不进快照，避免重挂载重启。 */
+  const [leaving, setLeaving] = useState<{ page: WebPage; seq: number } | null>(null)
+  const prevPageRef = useRef<WebPage | null>(null)
+  const leaveSeq = useRef(0)
+  useEffect(() => {
+    const prev = prevPageRef.current
+    prevPageRef.current = page
+    if (!prev || !page || prev.id === page.id) return
+    const seq = ++leaveSeq.current
+    setLeaving({ page: prev, seq })
+    const id = setTimeout(() => setLeaving(l => (l?.seq === seq ? null : l)), 480)
+    return () => clearTimeout(id)
+  }, [page])
+
   /** 步进：前进先走当前页的步，步尽翻下一页；后退对称，页首回上一页最后一步 */
   const nav = useCallback(
     (d: number) => {
@@ -416,14 +432,14 @@ export default function SlidesOnly() {
   const pageNoteCount = (ann.notes[pageKey] ?? []).length
 
   if (!weblec || !page) {
-    return <div className="flex h-screen items-center justify-center bg-white text-slate-400">加载中…</div>
+    return <div className="chrome flex h-screen items-center justify-center" style={{ color: 'var(--c-faint)' }}>加载中…</div>
   }
   /** 页面版式主题：缺省/未知回落 default（与交互课堂同一套 token） */
   const th = resolveTheme(weblec.theme)
 
   return (
     <div
-      className="flex h-screen w-screen select-none items-center justify-center overflow-hidden bg-white"
+      className="chrome flex h-screen w-screen select-none items-center justify-center overflow-hidden"
       style={{ cursor: annotate ? 'crosshair' : 'pointer' }}
       onClick={() => !annotate && !activeQuiz && nav(1)}
       onContextMenu={e => {
@@ -434,6 +450,10 @@ export default function SlidesOnly() {
       <style>{`
         @keyframes wl-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
         .wl-in{animation:wl-in .5s ease-out}
+        @keyframes wl-page-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+        .wl-page-in{animation:wl-page-in .45s ease-out}
+        @keyframes wl-page-out{from{opacity:1}to{opacity:0}}
+        .wl-page-out{animation:wl-page-out .45s ease-in forwards}
       `}</style>
       {/* 缩放后的可视框 */}
       <div
@@ -447,6 +467,7 @@ export default function SlidesOnly() {
             position: 'absolute', width: VIDEO_W, height: VIDEO_H,
             transform: `scale(${scale})`, transformOrigin: 'top left',
             color: '#111', background: th.background, overflow: 'hidden',
+            transition: 'background .6s ease',
           }}
           onClick={() => !annotate && !activeQuiz && nav(1)}
         >
@@ -492,14 +513,27 @@ export default function SlidesOnly() {
             }} />
           )}
 
-          {/* 页面元素：按步揭示（与交互课堂同一渲染组件，t 驱动动画图示） */}
-          {page.elements.map((el, i) =>
-            el.step <= curStep
-              ? <div key={`${page.id}-${i}`} className="wl-in"><Element el={el} t={animT} theme={th}
-                  iframeRef={node => { if (node) htmlRefs.current.set(i, node); else htmlRefs.current.delete(i) }}
-                  onIframeLoad={() => sendHtmlTimeline(i, el)} /></div>
-              : null,
+          {/* 旧页快照：换页时静态元素淡出（媒体元素除外），垫在新页下面 */}
+          {leaving && leaving.page.id !== page.id && (
+            <div key={`leave-${leaving.seq}`} className="wl-page-out"
+              style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
+              {leaving.page.elements.map((el, i) =>
+                el.type === 'video' || el.type === 'html' ? null : (
+                  <div key={i}><Element el={el} t={ANIM_SPAN} theme={th} /></div>
+                ))}
+            </div>
           )}
+
+          {/* 页面元素：按步揭示（与交互课堂同一渲染组件，t 驱动动画图示）；整层随换页淡入 */}
+          <div key={page.id} className="wl-page-in" style={{ position: 'absolute', inset: 0 }}>
+            {page.elements.map((el, i) =>
+              el.step <= curStep
+                ? <div key={`${page.id}-${i}`} className="wl-in"><Element el={el} t={animT} theme={th}
+                    iframeRef={node => { if (node) htmlRefs.current.set(i, node); else htmlRefs.current.delete(i) }}
+                    onIframeLoad={() => sendHtmlTimeline(i, el)} /></div>
+                : null,
+            )}
+          </div>
 
           {/* 批注画布：覆盖整页，设计坐标 1920×1080 */}
           {annotate && (
@@ -524,30 +558,30 @@ export default function SlidesOnly() {
           只在当页图示确实会动时出现（hasAnim）；静态图不出现，免得拖了没反应。 */}
       {hasAnim && !annotate && !activeQuiz && (
         <div
-          className="fixed bottom-16 left-1/2 z-40 flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full bg-white/95 px-3 py-1 text-sm shadow-lg ring-1 ring-slate-200 transition-opacity duration-500"
+          className="chrome-pill fixed bottom-16 left-1/2 z-40 flex -translate-x-1/2 items-center gap-2 whitespace-nowrap px-3 py-1 text-sm transition-opacity duration-500"
           style={{ opacity: hintOn || !animRun ? 1 : 0.45 }}
           onMouseEnter={() => setHintOn(true)}
           onClick={e => e.stopPropagation()}
           onContextMenu={e => { e.preventDefault(); e.stopPropagation() }}
           title="图示动画：暂停定格某一瞬间，或拖滑块手动扫相位"
         >
-          <span className="pl-1 text-[11px] font-bold tracking-wider text-slate-400">动画</span>
+          <span className="pl-1 text-[11px] font-bold tracking-wider text-[#8a948c]">动画</span>
           <button onClick={() => setAnimRun(v => !v)}
-            className="rounded px-2 py-0.5 text-slate-700 hover:bg-slate-100"
+            className="rounded px-2 py-0.5 hover:bg-[#ecefe4]"
             title="暂停 / 继续动画（P）">{animRun ? '⏸ 暂停' : '▶ 继续'}</button>
           <input type="range" min={0} max={ANIM_SPAN} step={0.05}
             value={Math.min(animT, ANIM_SPAN)} onChange={e => scrubAnim(Number(e.target.value))}
-            className="accent-[#1971c2]" style={{ width: 280 }} title="拖动可定格到任意瞬间" />
-          <span className="w-11 text-right tabular-nums text-slate-500">{Math.min(animT, ANIM_SPAN).toFixed(1)}s</span>
+            className="accent-[#47675b]" style={{ width: 280 }} title="拖动可定格到任意瞬间" />
+          <span className="w-11 text-right tabular-nums text-[#8a948c]">{Math.min(animT, ANIM_SPAN).toFixed(1)}s</span>
           <button onClick={resetAnim}
-            className="rounded px-2 py-0.5 text-slate-500 hover:bg-slate-100" title="从头重演">↺</button>
+            className="rounded px-2 py-0.5 text-[#8a948c] hover:bg-[#ecefe4]" title="从头重演">↺</button>
         </div>
       )}
 
       {/* 返回所在目录页（同目录的单文件目录，export_slides.py 注入 __WEBLEC_HOME__） */}
       {home && !annotate && !activeQuiz && (
         <a href={home.href}
-          className="fixed bottom-16 left-3 z-40 rounded-full bg-white/90 px-3.5 py-1.5 text-xs font-bold text-slate-600 shadow-md ring-1 ring-slate-200 transition-opacity duration-500 hover:bg-white"
+          className="chrome-pill fixed bottom-16 left-3 z-40 px-3.5 py-1.5 text-xs font-bold transition-opacity duration-500 hover:bg-white"
           style={{ opacity: hintOn ? 1 : 0.4 }}
           onMouseEnter={() => setHintOn(true)}
           onClick={e => e.stopPropagation()}>
@@ -562,7 +596,7 @@ export default function SlidesOnly() {
           onClick={e => e.stopPropagation()}>
           {page.interactions.map((_, i) => (
             <button key={i} onClick={() => setQuizIdx(i)}
-              className="rounded-full bg-[#0b1f38] px-4 py-2 text-sm text-white shadow-lg">
+              className="rounded-full bg-[#47675b] px-4 py-2 text-sm text-[#faf8e9] shadow-lg">
               互动题{page.interactions!.length > 1 ? ` ${i + 1}` : ''}
             </button>
           ))}
@@ -579,10 +613,10 @@ export default function SlidesOnly() {
       {/* 批注工具条 */}
       {annotate && (
         <div
-          className="fixed left-1/2 top-3 z-50 flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full bg-white/95 px-4 py-1.5 text-sm shadow-lg ring-1 ring-slate-200"
+          className="chrome-pill fixed left-1/2 top-3 z-50 flex -translate-x-1/2 items-center gap-2 whitespace-nowrap px-4 py-1.5 text-sm"
           onClick={e => e.stopPropagation()}
         >
-          <span className="font-medium text-slate-600">🖊 批注</span>
+          <span className="font-medium">🖊 批注</span>
           {PEN_COLORS.map(c => (
             <button
               key={c}
@@ -595,13 +629,13 @@ export default function SlidesOnly() {
               title={c}
             />
           ))}
-          <button onClick={undoStroke} className="rounded px-2 py-0.5 text-slate-600 hover:bg-slate-100">撤销</button>
-          <button onClick={clearPage} className="rounded px-2 py-0.5 text-slate-600 hover:bg-slate-100">清除本页</button>
-          <button onClick={addNote} className="rounded px-2 py-0.5 text-slate-600 hover:bg-slate-100">
+          <button onClick={undoStroke} className="rounded px-2 py-0.5 hover:bg-[#ecefe4]">撤销</button>
+          <button onClick={clearPage} className="rounded px-2 py-0.5 hover:bg-[#ecefe4]">清除本页</button>
+          <button onClick={addNote} className="rounded px-2 py-0.5 hover:bg-[#ecefe4]">
             备注{pageNoteCount > 0 ? `(${pageNoteCount})` : ''}
           </button>
-          <button onClick={exportAnnotations} className="rounded bg-[#1971c2] px-2.5 py-0.5 text-white hover:brightness-110">导出批注</button>
-          <button onClick={() => setAnnotate(false)} className="rounded px-2 py-0.5 text-slate-400 hover:bg-slate-100" title="退出批注（A / Esc）">退出</button>
+          <button onClick={exportAnnotations} className="rounded bg-[#47675b] px-2.5 py-0.5 text-[#faf8e9] hover:brightness-110">导出批注</button>
+          <button onClick={() => setAnnotate(false)} className="rounded px-2 py-0.5 text-[#8a948c] hover:bg-[#ecefe4]" title="退出批注（A / Esc）">退出</button>
         </div>
       )}
 
@@ -611,30 +645,30 @@ export default function SlidesOnly() {
         onCancel={e => { e.preventDefault(); setNoteDraft(null) }}
         onClick={e => e.stopPropagation()}
         onContextMenu={e => e.stopPropagation()}
-        style={{ width: 'min(560px,92vw)', borderRadius: 12, padding: 24, color: '#111', background: '#fff' }}>
+        style={{ width: 'min(560px,92vw)', borderRadius: 12, padding: 24, color: '#273d3a', background: '#fdfdf9', border: '1px solid #d8dcd0' }}>
         <form onSubmit={e => { e.preventDefault(); saveNote() }}>
           <h2 id="slide-note-title" style={{ fontSize: 20, fontWeight: 700, marginBottom: 12 }}>第 {pageKey} 页备注</h2>
           <label htmlFor="slide-note-text" style={{ display: 'block', marginBottom: 8 }}>备注文字（随批注导出）</label>
           <textarea id="slide-note-text" autoFocus value={noteDraft ?? ''}
             onChange={e => setNoteDraft(e.target.value)}
-            style={{ width: '100%', minHeight: 120, border: '1px solid #94a3b8', borderRadius: 6, padding: 8, fontSize: 16, userSelect: 'text' }} />
+            style={{ width: '100%', minHeight: 120, border: '1px solid #d8dcd0', borderRadius: 6, padding: 8, fontSize: 16, userSelect: 'text' }} />
           <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 12, marginTop: 12 }}>
             <button type="button" onClick={() => setNoteDraft(null)} style={{ padding: '8px 16px' }}>取消</button>
-            <button type="submit" style={{ padding: '8px 16px', borderRadius: 6, background: '#1971c2', color: '#fff' }}>保存备注</button>
+            <button type="submit" style={{ padding: '8px 16px', borderRadius: 6, background: '#47675b', color: '#faf8e9' }}>保存备注</button>
           </div>
         </form>
       </dialog>
 
       {/* 底部操作提示：浮动胶囊，静止时自动隐去 */}
       <div
-        className="pointer-events-none fixed bottom-0 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white/90 px-4 py-0 text-[11px] leading-[14px] text-slate-500 shadow-md ring-1 ring-slate-200 transition-opacity duration-500"
-        style={{ opacity: hintOn ? 1 : 0 }}
+        className="chrome-pill pointer-events-none fixed bottom-0 left-1/2 -translate-x-1/2 whitespace-nowrap px-4 py-0 text-[11px] leading-[14px] transition-opacity duration-500"
+        style={{ opacity: hintOn ? 1 : 0, color: 'var(--c-faint)' }}
       >
         → / 空格 / 单击 下一步 · ← / 右键 上一步 · PgUp / PgDn 翻页 · F 全屏 · A 批注
         {hasAnim && <span> · P 暂停动画 · 拖滑块定格</span>}
         {!!page.interactions?.length && <span> · Q 互动题</span>}
         {pageStrokeCount > 0 && <span className="ml-2 text-[#e03131]">●{pageStrokeCount} 笔</span>}
-        <span className="ml-3 text-slate-500">{pageIdx + 1} / {pages.length}</span>
+        <span className="ml-3">{pageIdx + 1} / {pages.length}</span>
       </div>
     </div>
   )

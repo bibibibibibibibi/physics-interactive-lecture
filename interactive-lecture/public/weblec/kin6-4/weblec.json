@@ -83,7 +83,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "电容的物理意义",
+     "qa": [
+      {
+       "q": "电容描述的是什么本领？",
+       "a": "电容描述导体或导体组储存电荷的本领，只由几何与介质决定。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -103,10 +112,56 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "电容定义式",
+     "qa": [
+      {
+       "q": "电容的公式是什么？",
+       "a": "电容定义为 $C=Q/U$，即导体所带电荷量与电势差的比值。"
+      },
+      {
+       "q": "电容与电荷量、电压有关吗？",
+       "a": "无关。$C=Q/U$ 只是定义式，电容只由几何形状和介质决定。"
+      }
+     ],
+     "important": true
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "电容的物理意义",
+     "x": 960,
+     "y": 752,
+     "qa": [
+      {
+       "q": "电容描述的是什么本领？",
+       "a": "电容描述导体或导体组储存电荷的本领，只由几何与介质决定。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "电容定义式",
+     "x": 960,
+     "y": 892,
+     "qa": [
+      {
+       "q": "电容的公式是什么？",
+       "a": "电容定义为 $C=Q/U$，即导体所带电荷量与电势差的比值。"
+      },
+      {
+       "q": "电容与电荷量、电压有关吗？",
+       "a": "无关。$C=Q/U$ 只是定义式，电容只由几何形状和介质决定。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    }
+   ],
    "stepTimes": {
     "1": 0.0,
     "2": 3.62,
@@ -115,7 +170,18 @@
    "t_start": 0.0,
    "t_end": 23.16,
    "duration": 23.16,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 3.62,
+     "end": 8.62
+    },
+    {
+     "bullet": 1,
+     "start": 8.44,
+     "end": 13.44
+    }
+   ]
   },
   {
    "id": 2,
@@ -173,7 +239,20 @@
      "tex": "C=\\dfrac{Q}{V}",
      "size": 44,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "电容定义式",
+     "qa": [
+      {
+       "q": "电容的定义公式是什么？",
+       "a": "孤立导体的电容定义为 $C=\\dfrac{Q}{V}$，即电荷量与电势之比。"
+      },
+      {
+       "q": "为什么电容可以用 Q 除以 V 表示？",
+       "a": "因为实验表明 $Q\\propto V$，比值恒定，故用 $C=Q/V$ 定义电容。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -193,7 +272,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "电容只由导体决定",
+     "qa": [
+      {
+       "q": "电容与带电量和电势有关吗？",
+       "a": "无关。电容只与导体的形状、大小有关，与 $Q$、$V$ 无关。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -213,6 +301,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "电容单位法拉",
+     "qa": [
+      {
+       "q": "电容的单位是什么？",
+       "a": "单位是法拉，$\\mathrm{F}=\\mathrm{C/V}$，即一库仑每伏特。"
+      }
      ]
     },
     {
@@ -267,10 +363,79 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "电容的物理意义",
+     "qa": [
+      {
+       "q": "电容的物理意义怎么理解？",
+       "a": "电容表示每伏特能装多少电荷，而不是已经装了多少电荷。"
+      }
+     ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "电容定义式",
+     "x": 960,
+     "y": 484,
+     "qa": [
+      {
+       "q": "电容的定义公式是什么？",
+       "a": "孤立导体的电容定义为 $C=\\dfrac{Q}{V}$，即电荷量与电势之比。"
+      },
+      {
+       "q": "为什么电容可以用 Q 除以 V 表示？",
+       "a": "因为实验表明 $Q\\propto V$，比值恒定，故用 $C=Q/V$ 定义电容。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "电容只由导体决定",
+     "x": 960,
+     "y": 558,
+     "qa": [
+      {
+       "q": "电容与带电量和电势有关吗？",
+       "a": "无关。电容只与导体的形状、大小有关，与 $Q$、$V$ 无关。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "电容单位法拉",
+     "x": 960,
+     "y": 640,
+     "qa": [
+      {
+       "q": "电容的单位是什么？",
+       "a": "单位是法拉，$\\mathrm{F}=\\mathrm{C/V}$，即一库仑每伏特。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    },
+    {
+     "text": "电容的物理意义",
+     "x": 960,
+     "y": 920,
+     "qa": [
+      {
+       "q": "电容的物理意义怎么理解？",
+       "a": "电容表示每伏特能装多少电荷，而不是已经装了多少电荷。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 6
+    }
+   ],
    "stepTimes": {
     "1": 23.96,
     "2": 27.26,
@@ -282,7 +447,28 @@
    "t_start": 23.96,
    "t_end": 58.78,
    "duration": 34.82,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 27.26,
+     "end": 32.26
+    },
+    {
+     "bullet": 1,
+     "start": 32.08,
+     "end": 37.08
+    },
+    {
+     "bullet": 2,
+     "start": 38.43,
+     "end": 43.43
+    },
+    {
+     "bullet": 3,
+     "start": 48.87,
+     "end": 53.87
+    }
+   ]
   },
   {
    "id": 3,
@@ -360,6 +546,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "电容器结构",
+     "qa": [
+      {
+       "q": "电容器由什么构成？",
+       "a": "两个靠近的导体，带等量异号电荷，电场集中在板间，外界干扰小。"
+      }
      ]
     },
     {
@@ -372,7 +566,20 @@
      "tex": "C=\\dfrac{Q}{U}",
      "size": 44,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "电容定义式",
+     "qa": [
+      {
+       "q": "电容的定义式是什么？",
+       "a": "$C=\\dfrac{Q}{U}$，$Q$ 为一个极板电荷量的绝对值，$U$ 为两板电势差。"
+      },
+      {
+       "q": "为什么电容用 Q/U 定义而不是 Q 本身？",
+       "a": "因为 $Q$ 与 $U$ 成正比，比值 $C$ 只由导体形状、尺寸和介质决定。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -392,6 +599,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "Q与U的含义",
+     "qa": [
+      {
+       "q": "定义式中的 Q 和 U 分别指什么？",
+       "a": "$Q$ 是一个极板电荷量的绝对值，$U$ 是两板间的电势差。"
+      }
      ]
     },
     {
@@ -412,7 +627,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "U取板间电势差",
+     "qa": [
+      {
+       "q": "U 是对无穷远的电势吗？",
+       "a": "不是，$U$ 是两板之间的电势差，这正是电容器能做小体积大容量的原因。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -435,7 +659,68 @@
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "电容器结构",
+     "x": 960,
+     "y": 392,
+     "qa": [
+      {
+       "q": "电容器由什么构成？",
+       "a": "两个靠近的导体，带等量异号电荷，电场集中在板间，外界干扰小。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 2
+    },
+    {
+     "text": "电容定义式",
+     "x": 960,
+     "y": 570,
+     "qa": [
+      {
+       "q": "电容的定义式是什么？",
+       "a": "$C=\\dfrac{Q}{U}$，$Q$ 为一个极板电荷量的绝对值，$U$ 为两板电势差。"
+      },
+      {
+       "q": "为什么电容用 Q/U 定义而不是 Q 本身？",
+       "a": "因为 $Q$ 与 $U$ 成正比，比值 $C$ 只由导体形状、尺寸和介质决定。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "Q与U的含义",
+     "x": 960,
+     "y": 644,
+     "qa": [
+      {
+       "q": "定义式中的 Q 和 U 分别指什么？",
+       "a": "$Q$ 是一个极板电荷量的绝对值，$U$ 是两板间的电势差。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    },
+    {
+     "text": "U取板间电势差",
+     "x": 960,
+     "y": 726,
+     "qa": [
+      {
+       "q": "U 是对无穷远的电势吗？",
+       "a": "不是，$U$ 是两板之间的电势差，这正是电容器能做小体积大容量的原因。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 5
+    }
+   ],
    "stepTimes": {
     "1": 59.58,
     "2": 62.31,
@@ -447,7 +732,28 @@
    "t_start": 59.58,
    "t_end": 96.71,
    "duration": 37.13,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 62.31,
+     "end": 67.31
+    },
+    {
+     "bullet": 1,
+     "start": 67.05,
+     "end": 72.05
+    },
+    {
+     "bullet": 2,
+     "start": 73.23,
+     "end": 78.23
+    },
+    {
+     "bullet": 3,
+     "start": 79.34,
+     "end": 84.34
+    }
+   ]
   },
   {
    "id": 4,
@@ -525,7 +831,15 @@
      "tex": "E=\\dfrac{\\sigma_0}{\\varepsilon_0\\varepsilon_r}",
      "size": 40,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "板间场强公式",
+     "qa": [
+      {
+       "q": "为什么场强里没有 d？",
+       "a": "由高斯定理，板间场强只由自由电荷面密度决定：$E=\\sigma_0/(\\varepsilon_0\\varepsilon_r)$，与间距无关。"
+      }
+     ]
     },
     {
      "type": "tex",
@@ -537,7 +851,15 @@
      "tex": "U=Ed=\\dfrac{\\sigma_0 d}{\\varepsilon_0\\varepsilon_r}",
      "size": 32,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "电势差与场强关系",
+     "qa": [
+      {
+       "q": "U 为什么等于 E 乘 d？",
+       "a": "板间是匀强电场，电势差等于场强沿距离的积分，故 $U=Ed=\\sigma_0 d/(\\varepsilon_0\\varepsilon_r)$。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -569,7 +891,20 @@
      "tex": "C=\\dfrac{\\varepsilon_0\\varepsilon_r S}{d}",
      "size": 36,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "平行板电容公式",
+     "qa": [
+      {
+       "q": "这个公式怎么推出来的？",
+       "a": "由 $C=Q/U$，代入 $Q=\\sigma_0 S$ 与 $U=\\sigma_0 d/(\\varepsilon_0\\varepsilon_r)$，约去 $\\sigma_0$ 得 $C=\\varepsilon_0\\varepsilon_r S/d$。"
+      },
+      {
+       "q": "介质的作用体现在哪？",
+       "a": "体现在 $\\varepsilon_r$：介质使场强减弱为原来的 $1/\\varepsilon_r$，电容增大 $\\varepsilon_r$ 倍。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -589,7 +924,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "电容影响因素结论",
+     "qa": [
+      {
+       "q": "为什么实际电容器做成薄膜卷绕？",
+       "a": "因为 $S$ 大、$d$ 小、$\\varepsilon_r$ 大则 $C$ 大，薄膜卷绕可在小体积内获得大面积和小间距。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "diagram",
@@ -601,7 +945,68 @@
      "name": "cap_parallel"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "板间场强公式",
+     "x": 555,
+     "y": 534,
+     "qa": [
+      {
+       "q": "为什么场强里没有 d？",
+       "a": "由高斯定理，板间场强只由自由电荷面密度决定：$E=\\sigma_0/(\\varepsilon_0\\varepsilon_r)$，与间距无关。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 3
+    },
+    {
+     "text": "电势差与场强关系",
+     "x": 555,
+     "y": 682,
+     "qa": [
+      {
+       "q": "U 为什么等于 E 乘 d？",
+       "a": "板间是匀强电场，电势差等于场强沿距离的积分，故 $U=Ed=\\sigma_0 d/(\\varepsilon_0\\varepsilon_r)$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    },
+    {
+     "text": "平行板电容公式",
+     "x": 555,
+     "y": 906,
+     "qa": [
+      {
+       "q": "这个公式怎么推出来的？",
+       "a": "由 $C=Q/U$，代入 $Q=\\sigma_0 S$ 与 $U=\\sigma_0 d/(\\varepsilon_0\\varepsilon_r)$，约去 $\\sigma_0$ 得 $C=\\varepsilon_0\\varepsilon_r S/d$。"
+      },
+      {
+       "q": "介质的作用体现在哪？",
+       "a": "体现在 $\\varepsilon_r$：介质使场强减弱为原来的 $1/\\varepsilon_r$，电容增大 $\\varepsilon_r$ 倍。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 6
+    },
+    {
+     "text": "电容影响因素结论",
+     "x": 555,
+     "y": 968,
+     "qa": [
+      {
+       "q": "为什么实际电容器做成薄膜卷绕？",
+       "a": "因为 $S$ 大、$d$ 小、$\\varepsilon_r$ 大则 $C$ 大，薄膜卷绕可在小体积内获得大面积和小间距。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 7
+    }
+   ],
    "stepTimes": {
     "1": 97.51,
     "2": 111.6,
@@ -613,7 +1018,28 @@
    "t_start": 97.51,
    "t_end": 147.48,
    "duration": 49.97,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 111.6,
+     "end": 116.6
+    },
+    {
+     "bullet": 1,
+     "start": 118.26,
+     "end": 123.26
+    },
+    {
+     "bullet": 2,
+     "start": 129.07,
+     "end": 134.07
+    },
+    {
+     "bullet": 3,
+     "start": 135.49,
+     "end": 140.49
+    }
+   ]
   },
   {
    "id": 5,
@@ -691,7 +1117,15 @@
      "tex": "E=\\dfrac{\\lambda}{2\\pi\\varepsilon_0\\varepsilon_r r}",
      "size": 32,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "板间场强公式",
+     "qa": [
+      {
+       "q": "为什么场强 E 与 r 成反比？",
+       "a": "由高斯定理，取半径 r、长 l 的圆柱面，通量 $E\\cdot 2\\pi r l=\\lambda l/\\varepsilon_0\\varepsilon_r$，故 $E\\propto 1/r$。"
+      }
+     ]
     },
     {
      "type": "tex",
@@ -703,7 +1137,15 @@
      "tex": "U=\\int_{R_1}^{R_2}E\\,\\mathrm dr=\\dfrac{\\lambda}{2\\pi\\varepsilon_0\\varepsilon_r}\\ln\\dfrac{R_2}{R_1}",
      "size": 26,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "电势差积分",
+     "qa": [
+      {
+       "q": "电势差为什么用 E 从 R1 积到 R2？",
+       "a": "$U=\\int_{R_1}^{R_2}E\\,\\mathrm dr$，因 E 沿径向，积分得 $\\frac{\\lambda}{2\\pi\\varepsilon_0\\varepsilon_r}\\ln\\frac{R_2}{R_1}$。"
+      }
+     ]
     },
     {
      "type": "tex",
@@ -715,7 +1157,20 @@
      "tex": "C=\\dfrac{2\\pi\\varepsilon_0\\varepsilon_r l}{\\ln(R_2/R_1)}",
      "size": 30,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "圆柱电容器电容",
+     "qa": [
+      {
+       "q": "为什么把 λl 当成 Q？",
+       "a": "内导体总电荷 $Q=\\lambda l$，代入 $C=Q/U$ 即得 $C=\\frac{2\\pi\\varepsilon_0\\varepsilon_r l}{\\ln(R_2/R_1)}$。"
+      },
+      {
+       "q": "电容与哪些量有关？",
+       "a": "只与几何尺寸 $R_1,R_2,l$ 和介质 $\\varepsilon_r$ 有关，与所带电荷无关。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -755,7 +1210,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "单位长度电容",
+     "qa": [
+      {
+       "q": "为什么单位长度电容重要？",
+       "a": "同轴电缆 $C$ 与长度成正比，$C/l=\\frac{2\\pi\\varepsilon_0\\varepsilon_r}{\\ln(R_2/R_1)}$ 是电缆的关键参数。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "diagram",
@@ -767,7 +1231,68 @@
      "name": "cap_cyl"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "板间场强公式",
+     "x": 555,
+     "y": 518,
+     "qa": [
+      {
+       "q": "为什么场强 E 与 r 成反比？",
+       "a": "由高斯定理，取半径 r、长 l 的圆柱面，通量 $E\\cdot 2\\pi r l=\\lambda l/\\varepsilon_0\\varepsilon_r$，故 $E\\propto 1/r$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 3
+    },
+    {
+     "text": "电势差积分",
+     "x": 555,
+     "y": 680,
+     "qa": [
+      {
+       "q": "电势差为什么用 E 从 R1 积到 R2？",
+       "a": "$U=\\int_{R_1}^{R_2}E\\,\\mathrm dr$，因 E 沿径向，积分得 $\\frac{\\lambda}{2\\pi\\varepsilon_0\\varepsilon_r}\\ln\\frac{R_2}{R_1}$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    },
+    {
+     "text": "圆柱电容器电容",
+     "x": 555,
+     "y": 842,
+     "qa": [
+      {
+       "q": "为什么把 λl 当成 Q？",
+       "a": "内导体总电荷 $Q=\\lambda l$，代入 $C=Q/U$ 即得 $C=\\frac{2\\pi\\varepsilon_0\\varepsilon_r l}{\\ln(R_2/R_1)}$。"
+      },
+      {
+       "q": "电容与哪些量有关？",
+       "a": "只与几何尺寸 $R_1,R_2,l$ 和介质 $\\varepsilon_r$ 有关，与所带电荷无关。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 5
+    },
+    {
+     "text": "单位长度电容",
+     "x": 555,
+     "y": 972,
+     "qa": [
+      {
+       "q": "为什么单位长度电容重要？",
+       "a": "同轴电缆 $C$ 与长度成正比，$C/l=\\frac{2\\pi\\varepsilon_0\\varepsilon_r}{\\ln(R_2/R_1)}$ 是电缆的关键参数。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 7
+    }
+   ],
    "stepTimes": {
     "1": 148.28,
     "2": 159.93,
@@ -779,7 +1304,28 @@
    "t_start": 148.28,
    "t_end": 199.35,
    "duration": 51.07,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 159.93,
+     "end": 164.93
+    },
+    {
+     "bullet": 1,
+     "start": 168.23,
+     "end": 173.23
+    },
+    {
+     "bullet": 2,
+     "start": 173.14,
+     "end": 178.14
+    },
+    {
+     "bullet": 3,
+     "start": 191.13,
+     "end": 196.13
+    }
+   ]
   },
   {
    "id": 6,
@@ -837,7 +1383,15 @@
      "tex": "E=\\dfrac{Q}{4\\pi\\varepsilon_0\\varepsilon_r r^{2}}",
      "size": 32,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "板间场强公式",
+     "qa": [
+      {
+       "q": "为什么球形电容器板间场强可以按点电荷公式算？",
+       "a": "由高斯定理，内球电荷Q对称分布，球外场强等效于电荷集中于球心的点电荷场，故$E=\\frac{Q}{4\\pi\\varepsilon_0\\varepsilon_r r^2}$。"
+      }
+     ]
     },
     {
      "type": "tex",
@@ -849,7 +1403,15 @@
      "tex": "U=\\dfrac{Q}{4\\pi\\varepsilon_0\\varepsilon_r}\\\\left(\\dfrac{1}{R_1}-\\dfrac{1}{R_2}\\right)",
      "size": 25,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "电势差积分",
+     "qa": [
+      {
+       "q": "电势差为什么是E从R1积到R2？",
+       "a": "$U=\\int_{R_1}^{R_2}E\\,dr$，代入E积分得$U=\\frac{Q}{4\\pi\\varepsilon_0\\varepsilon_r}\\left(\\frac{1}{R_1}-\\frac{1}{R_2}\\right)$。"
+      }
+     ]
     },
     {
      "type": "tex",
@@ -861,7 +1423,16 @@
      "tex": "C=\\dfrac{4\\pi\\varepsilon_0\\varepsilon_r R_1R_2}{R_2-R_1}",
      "size": 28,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "球形电容器电容",
+     "qa": [
+      {
+       "q": "球形电容器的电容公式怎么来的？",
+       "a": "由定义$C=Q/U$，代入$U=\\frac{Q}{4\\pi\\varepsilon_0\\varepsilon_r}\\left(\\frac{1}{R_1}-\\frac{1}{R_2}\\right)$化简得$C=\\frac{4\\pi\\varepsilon_0\\varepsilon_r R_1R_2}{R_2-R_1}$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -881,6 +1452,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "孤立球极限",
+     "qa": [
+      {
+       "q": "外半径趋于无穷时电容变成什么？",
+       "a": "此时$R_2\\to\\infty$，$\\frac{R_2}{R_2-R_1}\\to1$，退化为孤立球$C=4\\pi\\varepsilon_0\\varepsilon_r R_1$。"
+      }
      ]
     },
     {
@@ -933,7 +1512,64 @@
      "name": "cap_sph"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "板间场强公式",
+     "x": 555,
+     "y": 464,
+     "qa": [
+      {
+       "q": "为什么球形电容器板间场强可以按点电荷公式算？",
+       "a": "由高斯定理，内球电荷Q对称分布，球外场强等效于电荷集中于球心的点电荷场，故$E=\\frac{Q}{4\\pi\\varepsilon_0\\varepsilon_r r^2}$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 2
+    },
+    {
+     "text": "电势差积分",
+     "x": 555,
+     "y": 626,
+     "qa": [
+      {
+       "q": "电势差为什么是E从R1积到R2？",
+       "a": "$U=\\int_{R_1}^{R_2}E\\,dr$，代入E积分得$U=\\frac{Q}{4\\pi\\varepsilon_0\\varepsilon_r}\\left(\\frac{1}{R_1}-\\frac{1}{R_2}\\right)$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 3
+    },
+    {
+     "text": "球形电容器电容",
+     "x": 555,
+     "y": 788,
+     "qa": [
+      {
+       "q": "球形电容器的电容公式怎么来的？",
+       "a": "由定义$C=Q/U$，代入$U=\\frac{Q}{4\\pi\\varepsilon_0\\varepsilon_r}\\left(\\frac{1}{R_1}-\\frac{1}{R_2}\\right)$化简得$C=\\frac{4\\pi\\varepsilon_0\\varepsilon_r R_1R_2}{R_2-R_1}$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    },
+    {
+     "text": "孤立球极限",
+     "x": 555,
+     "y": 860,
+     "qa": [
+      {
+       "q": "外半径趋于无穷时电容变成什么？",
+       "a": "此时$R_2\\to\\infty$，$\\frac{R_2}{R_2-R_1}\\to1$，退化为孤立球$C=4\\pi\\varepsilon_0\\varepsilon_r R_1$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 5
+    }
+   ],
    "stepTimes": {
     "1": 200.15,
     "2": 206.96,
@@ -945,7 +1581,28 @@
    "t_start": 200.15,
    "t_end": 245.75,
    "duration": 45.6,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 206.96,
+     "end": 211.96
+    },
+    {
+     "bullet": 1,
+     "start": 214.42,
+     "end": 219.42
+    },
+    {
+     "bullet": 2,
+     "start": 218.71,
+     "end": 223.71
+    },
+    {
+     "bullet": 3,
+     "start": 226.41,
+     "end": 231.41
+    }
+   ]
   },
   {
    "id": 7,
@@ -1043,7 +1700,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "分层视为串联",
+     "qa": [
+      {
+       "q": "为什么一半厚度填介质要看成串联？",
+       "a": "两层介质中电场方向相同、电荷量相同，等效为两电容器串联。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -1055,7 +1721,15 @@
      "tex": "C_1=\\dfrac{2\\varepsilon_0 S}{d},\\quad C_2=\\dfrac{2\\varepsilon_0\\varepsilon_r S}{d}",
      "size": 24,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "两层电容公式",
+     "qa": [
+      {
+       "q": "为什么每层电容是 $2\\varepsilon_0 S/d$？",
+       "a": "每层厚度为 $d/2$，由 $C=\\varepsilon S/(d/2)$ 得 $2\\varepsilon S/d$。"
+      }
+     ]
     },
     {
      "type": "tex",
@@ -1067,7 +1741,15 @@
      "tex": "C=\\dfrac{C_1C_2}{C_1+C_2}",
      "size": 30,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "串联电容公式",
+     "qa": [
+      {
+       "q": "串联总电容怎么算？",
+       "a": "用 $C=C_1C_2/(C_1+C_2)$，即串联等效电容公式。"
+      }
+     ]
     },
     {
      "type": "tex",
@@ -1079,7 +1761,20 @@
      "tex": "C=\\dfrac{2\\varepsilon_0\\varepsilon_r S}{(1+\\varepsilon_r)d}",
      "size": 28,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "总电容结果",
+     "qa": [
+      {
+       "q": "总电容为什么是 $2\\varepsilon_0\\varepsilon_r S/[(1+\\varepsilon_r)d]$？",
+       "a": "将 $C_1,C_2$ 代入串联公式化简即得该结果。"
+      },
+      {
+       "q": "如何检验结果正确？",
+       "a": "令 $\\varepsilon_r=1$ 得 $\\varepsilon_0 S/d$，与真空电容器一致。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1131,7 +1826,68 @@
      "name": "cap_half_dielectric"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "分层视为串联",
+     "x": 555,
+     "y": 444,
+     "qa": [
+      {
+       "q": "为什么一半厚度填介质要看成串联？",
+       "a": "两层介质中电场方向相同、电荷量相同，等效为两电容器串联。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "两层电容公式",
+     "x": 555,
+     "y": 604,
+     "qa": [
+      {
+       "q": "为什么每层电容是 $2\\varepsilon_0 S/d$？",
+       "a": "每层厚度为 $d/2$，由 $C=\\varepsilon S/(d/2)$ 得 $2\\varepsilon S/d$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    },
+    {
+     "text": "串联电容公式",
+     "x": 555,
+     "y": 738,
+     "qa": [
+      {
+       "q": "串联总电容怎么算？",
+       "a": "用 $C=C_1C_2/(C_1+C_2)$，即串联等效电容公式。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 5
+    },
+    {
+     "text": "总电容结果",
+     "x": 555,
+     "y": 878,
+     "qa": [
+      {
+       "q": "总电容为什么是 $2\\varepsilon_0\\varepsilon_r S/[(1+\\varepsilon_r)d]$？",
+       "a": "将 $C_1,C_2$ 代入串联公式化简即得该结果。"
+      },
+      {
+       "q": "如何检验结果正确？",
+       "a": "令 $\\varepsilon_r=1$ 得 $\\varepsilon_0 S/d$，与真空电容器一致。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 6
+    }
+   ],
    "stepTimes": {
     "1": 246.55,
     "2": 251.34,
@@ -1143,7 +1899,28 @@
    "t_start": 246.55,
    "t_end": 291.55,
    "duration": 45.0,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 251.34,
+     "end": 256.34
+    },
+    {
+     "bullet": 1,
+     "start": 259.16,
+     "end": 264.16
+    },
+    {
+     "bullet": 2,
+     "start": 268.25,
+     "end": 273.25
+    },
+    {
+     "bullet": 3,
+     "start": 268.25,
+     "end": 273.25
+    }
+   ]
   },
   {
    "id": 8,
@@ -1209,7 +1986,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "串联电荷相同",
+     "qa": [
+      {
+       "q": "为什么串联电容器每个带的电荷量相同？",
+       "a": "中间两板由导线连通且原不带电，感应后带等量异号电荷，故每个电容器电荷量 $Q$ 相同。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1241,7 +2027,16 @@
      "tex": "\\dfrac{1}{C}=\\dfrac{1}{C_1}+\\dfrac{1}{C_2}+\\cdots",
      "size": 34,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "串联电容公式",
+     "qa": [
+      {
+       "q": "串联总电容怎么算？",
+       "a": "由 $U=U_1+U_2+\\cdots$ 与 $U=Q/C$ 得 $\\dfrac{1}{C}=\\dfrac{1}{C_1}+\\dfrac{1}{C_2}+\\cdots$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1273,6 +2068,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "串联电容变小",
+     "qa": [
+      {
+       "q": "串联后总电容比每个都小吗？",
+       "a": "是的，$1/C$ 为各倒数之和，故 $C$ 比任何一个电容器都小。"
+      }
      ]
     },
     {
@@ -1339,6 +2142,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "串联耐压提高",
+     "qa": [
+      {
+       "q": "串联电容器有什么好处？",
+       "a": "总电压被分摊到各电容器上，耐压提高。"
+      }
      ]
     },
     {
@@ -1351,7 +2162,64 @@
      "name": "cap_series"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "串联电荷相同",
+     "x": 555,
+     "y": 366,
+     "qa": [
+      {
+       "q": "为什么串联电容器每个带的电荷量相同？",
+       "a": "中间两板由导线连通且原不带电，感应后带等量异号电荷，故每个电容器电荷量 $Q$ 相同。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "串联电容公式",
+     "x": 555,
+     "y": 614,
+     "qa": [
+      {
+       "q": "串联总电容怎么算？",
+       "a": "由 $U=U_1+U_2+\\cdots$ 与 $U=Q/C$ 得 $\\dfrac{1}{C}=\\dfrac{1}{C_1}+\\dfrac{1}{C_2}+\\cdots$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    },
+    {
+     "text": "串联电容变小",
+     "x": 555,
+     "y": 694,
+     "qa": [
+      {
+       "q": "串联后总电容比每个都小吗？",
+       "a": "是的，$1/C$ 为各倒数之和，故 $C$ 比任何一个电容器都小。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 5
+    },
+    {
+     "text": "串联耐压提高",
+     "x": 555,
+     "y": 912,
+     "qa": [
+      {
+       "q": "串联电容器有什么好处？",
+       "a": "总电压被分摊到各电容器上，耐压提高。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 8
+    }
+   ],
    "stepTimes": {
     "1": 292.35,
     "2": 304.6,
@@ -1363,7 +2231,28 @@
    "t_start": 292.35,
    "t_end": 337.45,
    "duration": 45.1,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 292.35,
+     "end": 297.35
+    },
+    {
+     "bullet": 1,
+     "start": 309.63,
+     "end": 314.63
+    },
+    {
+     "bullet": 2,
+     "start": 313.08,
+     "end": 318.08
+    },
+    {
+     "bullet": 3,
+     "start": 325.43,
+     "end": 330.43
+    }
+   ]
   },
   {
    "id": 9,
@@ -1409,6 +2298,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "并联电压相同",
+     "qa": [
+      {
+       "q": "并联时每个电容器的电压为什么相同？",
+       "a": "因为各电容器两端接在同一对节点上，所以电压都等于 $U$。"
+      }
      ]
     },
     {
@@ -1449,6 +2346,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "总电荷相加",
+     "qa": [
+      {
+       "q": "并联电容器的总电荷怎么算？",
+       "a": "总电荷等于各电容器电荷之和：$Q=Q_1+Q_2+\\cdots$。"
+      }
      ]
     },
     {
@@ -1461,7 +2366,20 @@
      "tex": "C=C_1+C_2+\\cdots",
      "size": 36,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "并联电容公式",
+     "qa": [
+      {
+       "q": "并联后的等效电容公式是什么？",
+       "a": "由 $Q=CU$ 代入电荷和得 $C=C_1+C_2+\\cdots$。"
+      },
+      {
+       "q": "并联电容为什么变大？",
+       "a": "相当于增大极板面积，故 $C$ 比任何一个都大。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1559,7 +2477,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "并联串联用法",
+     "qa": [
+      {
+       "q": "什么时候用并联、什么时候用串联？",
+       "a": "要大容量就并联，要耐高压就串联。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1591,7 +2518,68 @@
      "name": "cap_parallel2"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "并联电压相同",
+     "x": 555,
+     "y": 312,
+     "qa": [
+      {
+       "q": "并联时每个电容器的电压为什么相同？",
+       "a": "因为各电容器两端接在同一对节点上，所以电压都等于 $U$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 1
+    },
+    {
+     "text": "总电荷相加",
+     "x": 555,
+     "y": 448,
+     "qa": [
+      {
+       "q": "并联电容器的总电荷怎么算？",
+       "a": "总电荷等于各电容器电荷之和：$Q=Q_1+Q_2+\\cdots$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 3
+    },
+    {
+     "text": "并联电容公式",
+     "x": 555,
+     "y": 614,
+     "qa": [
+      {
+       "q": "并联后的等效电容公式是什么？",
+       "a": "由 $Q=CU$ 代入电荷和得 $C=C_1+C_2+\\cdots$。"
+      },
+      {
+       "q": "并联电容为什么变大？",
+       "a": "相当于增大极板面积，故 $C$ 比任何一个都大。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    },
+    {
+     "text": "并联串联用法",
+     "x": 555,
+     "y": 912,
+     "qa": [
+      {
+       "q": "什么时候用并联、什么时候用串联？",
+       "a": "要大容量就并联，要耐高压就串联。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 8
+    }
+   ],
    "stepTimes": {
     "1": 338.25,
     "2": 348.82,
@@ -1603,7 +2591,28 @@
    "t_start": 338.25,
    "t_end": 377.03,
    "duration": 38.78,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 338.25,
+     "end": 343.25
+    },
+    {
+     "bullet": 1,
+     "start": 348.82,
+     "end": 353.82
+    },
+    {
+     "bullet": 2,
+     "start": 352.87,
+     "end": 357.87
+    },
+    {
+     "bullet": 3,
+     "start": 370.68,
+     "end": 375.68
+    }
+   ]
   },
   {
    "id": 10,
@@ -1669,7 +2678,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "电容定义式",
+     "qa": [
+      {
+       "q": "电容定义中的 U 指什么？",
+       "a": "U 是电容器两极板间的电势差，$C=Q/U$ 中 Q 为一极板所带电荷量。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1709,7 +2727,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "平行板电容公式",
+     "qa": [
+      {
+       "q": "平行板电容与哪些量有关？",
+       "a": "与介电常数、极板面积 S 成正比，与板间距 d 成反比：$C=\\varepsilon_0\\varepsilon_r S/d$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1749,6 +2776,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "圆柱形电容公式",
+     "qa": [
+      {
+       "q": "圆柱形电容与长度和半径比的关系？",
+       "a": "与长度 l 成正比，与 $\\ln(R_2/R_1)$ 成反比：$C=2\\pi\\varepsilon_0\\varepsilon_r l/\\ln(R_2/R_1)$。"
+      }
      ]
     },
     {
@@ -1847,7 +2882,19 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "电容串并联规律",
+     "qa": [
+      {
+       "q": "串联电容为什么耐压提高？",
+       "a": "串联时 $1/C=\\sum 1/C_i$，总电容变小，但各电容分压，整体耐压提高。"
+      },
+      {
+       "q": "并联电容如何变化？",
+       "a": "并联时 $C=\\sum C_i$，总电容变大，各电容电压相同。"
+      }
+     ]
     },
     {
      "type": "box",
@@ -1884,7 +2931,68 @@
      "color": "#111111"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "电容定义式",
+     "x": 555,
+     "y": 366,
+     "qa": [
+      {
+       "q": "电容定义中的 U 指什么？",
+       "a": "U 是电容器两极板间的电势差，$C=Q/U$ 中 Q 为一极板所带电荷量。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "平行板电容公式",
+     "x": 555,
+     "y": 502,
+     "qa": [
+      {
+       "q": "平行板电容与哪些量有关？",
+       "a": "与介电常数、极板面积 S 成正比，与板间距 d 成反比：$C=\\varepsilon_0\\varepsilon_r S/d$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    },
+    {
+     "text": "圆柱形电容公式",
+     "x": 555,
+     "y": 636,
+     "qa": [
+      {
+       "q": "圆柱形电容与长度和半径比的关系？",
+       "a": "与长度 l 成正比，与 $\\ln(R_2/R_1)$ 成反比：$C=2\\pi\\varepsilon_0\\varepsilon_r l/\\ln(R_2/R_1)$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 6
+    },
+    {
+     "text": "电容串并联规律",
+     "x": 1380,
+     "y": 656,
+     "qa": [
+      {
+       "q": "串联电容为什么耐压提高？",
+       "a": "串联时 $1/C=\\sum 1/C_i$，总电容变小，但各电容分压，整体耐压提高。"
+      },
+      {
+       "q": "并联电容如何变化？",
+       "a": "并联时 $C=\\sum C_i$，总电容变大，各电容电压相同。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 9
+    }
+   ],
    "stepTimes": {
     "1": 377.83,
     "2": 380.1,
@@ -1896,7 +3004,28 @@
    "t_start": 377.83,
    "t_end": 414.98,
    "duration": 37.15,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 377.83,
+     "end": 382.83
+    },
+    {
+     "bullet": 1,
+     "start": 380.1,
+     "end": 385.1
+    },
+    {
+     "bullet": 2,
+     "start": 385.52,
+     "end": 390.52
+    },
+    {
+     "bullet": 3,
+     "start": 401.97,
+     "end": 406.97
+    }
+   ]
   }
  ],
  "subtitles": [
@@ -2297,6 +3426,6 @@
    "text": "下一节讲静电场的能量：电容器储能到底是存在电荷上，还是存在场里。"
   }
  ],
- "build_ts": 1792396263,
+ "build_ts": 1794446539,
  "logoScale": 0.67
 }

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>课本内容 · 物理课堂</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="/learn/css/style.css">
+<link rel="stylesheet" href="/learn/css/blocks.css">
+<style>
+  /* ===== 阅读页骨架：与主站「格物」浅色体系一致；内容区排版归 blocks.css ===== */
+  :root {
+    --c-bg: #f7f7f0; --c-head: #fafaf5; --c-ink: #273d3a; --c-body: #3d4f48;
+    --c-mute: #61716a; --c-faint: #8a948c; --c-accent: #47675b; --c-rule: #d8dcd0;
+    --c-hover: #ecefe4; --c-gold: #e5c98b; --c-gold-ink: #203f32;
+    --c-serif: Georgia, "Songti SC", "Noto Serif CJK SC", SimSun, serif;
+  }
+  body { background: var(--c-bg); color: var(--c-ink); }
+  .tb-head { background: var(--c-head); border-bottom: 1px solid var(--c-rule);
+             position: sticky; top: 0; z-index: 30; }
+  .tb-bar { width: min(1080px, calc(100% - 40px)); margin-inline: auto;
+            display: flex; align-items: center; gap: 14px; min-height: 60px; flex-wrap: wrap; padding-block: 8px; }
+  .tb-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; }
+  .tb-brand img { width: 44px; height: auto; display: block; }
+  .tb-title { font: 500 18px/1.3 var(--c-serif); color: var(--c-ink); }
+  .tb-title small { display: block; font: 11px/1.4 sans-serif; color: var(--c-faint); letter-spacing: .06em; }
+  .tb-links { margin-left: auto; display: flex; gap: 8px; flex-wrap: wrap; }
+  .tb-links a { display: inline-flex; align-items: center; gap: 5px; font-size: 13px;
+                color: var(--c-body); background: #fff; border: 1px solid var(--c-rule);
+                border-radius: 8px; padding: 6px 12px; text-decoration: none; }
+  .tb-links a:hover { background: var(--c-hover); }
+  .tb-links a.tb-live { background: var(--c-accent); border-color: var(--c-accent); color: #faf8e9; }
+  .tb-wrap { width: min(860px, calc(100% - 40px)); margin-inline: auto; padding: 26px 0 10px; }
+  .tb-pagenav { width: min(860px, calc(100% - 40px)); margin: 18px auto 46px;
+                display: flex; justify-content: space-between; gap: 12px; }
+  .tb-pagenav a { font-size: 13px; color: var(--c-accent); text-decoration: none;
+                  border: 1px solid var(--c-rule); border-radius: 8px; padding: 8px 14px; background: #fff; }
+  .tb-pagenav a:hover { background: var(--c-hover); }
+  .tb-pagenav span { visibility: hidden; }
+  .tb-loading { text-align: center; color: var(--c-faint); padding: 80px 0; font-size: 14px; }
+  /* 阅读页正文排版微調：让 blocks.css 的内容在纸本底上更贴合 */
+  .tb-wrap .b-section { scroll-margin-top: 76px; }
+
+  /* ===== 课本排版：纸本阅读感（仅本页生效，不影响其他学习页） ===== */
+  .tb-wrap .b-text { font-size: 16.5px; }
+  .tb-wrap .b-text p {
+    font-family: var(--c-serif);
+    line-height: 2.05; color: var(--c-body); letter-spacing: .015em;
+    margin: 0 0 16px; text-align: justify; text-indent: 2em;
+  }
+  /* 小节内标题层级：h3 = 「一、二、…」，h4 = 「1. 2. …」 */
+  .tb-wrap .b-text h3 {
+    font-family: var(--c-serif); font-size: 20px; font-weight: 700; color: var(--c-ink);
+    line-height: 1.5; margin: 42px 0 14px; padding-left: 12px;
+    border-left: 3px solid var(--c-gold);
+  }
+  .tb-wrap .b-text h4 {
+    font-family: var(--c-serif); font-size: 16.5px; font-weight: 700; color: var(--c-ink);
+    line-height: 1.6; margin: 26px 0 8px;
+  }
+  /* 独立公式：去卡片、收紧占地，编号与公式同行居右（书本式） */
+  .tb-wrap .b-formula {
+    display: flex; align-items: center; gap: 18px;
+    background: none; border: none; border-radius: 0;
+    padding: 0; margin: 16px 0; text-align: left;
+  }
+  .tb-wrap .b-formula .f-body { flex: 1 1 auto; min-width: 0; text-align: center; overflow-x: auto; }
+  .tb-wrap .b-formula .f-label {
+    flex: 0 0 auto; display: block; margin: 0; white-space: nowrap;
+    font-size: 13px; color: var(--c-faint); letter-spacing: .04em;
+  }
+  .tb-wrap .katex-display { margin: .35em 0; }
+  /* 插图：嵌入式小图，控制幅面，图注紧贴 */
+  .tb-wrap .b-figure { margin: 20px 0; }
+  .tb-wrap .b-figure img {
+    max-width: min(460px, 92%); max-height: 400px; object-fit: contain;
+    border-radius: 6px; box-shadow: 0 1px 5px rgba(39, 61, 58, .07);
+  }
+  .tb-wrap .b-figure figcaption { font-size: 12.5px; color: var(--c-mute); margin-top: 8px; }
+  /* 例题解答等内联图片同样收敛 */
+  .tb-wrap .b-text img, .tb-wrap .b-example img { max-width: min(440px, 100%); }
+  /* 表格随正文走衬线 */
+  .tb-wrap .b-table table { font-family: var(--c-serif); }
+  .tb-wrap .b-table caption { font-family: var(--c-serif); }
+  /* 导学页摘要 */
+  .tb-wrap .b-intro .summary {
+    font-family: var(--c-serif); font-size: 16.5px; line-height: 2.05;
+    color: var(--c-body); text-align: justify; text-indent: 2em;
+  }
+  @media (max-width: 640px) {
+    .tb-title { font-size: 16px; }
+    .tb-links a { font-size: 12px; padding: 5px 9px; }
+  }
+</style>
+</head>
+<body>
+<header class="tb-head">
+  <div class="tb-bar">
+    <a class="tb-brand" href="/">
+      <img src="/assets/gewu-header.svg" alt="">
+      <span class="tb-title" id="tb-title">课本内容<small>物理课堂 · 暨南大学物理学系</small></span>
+    </a>
+    <nav class="tb-links" id="tb-links">
+      <a href="/" id="tb-back">← 课程目录</a>
+    </nav>
+  </div>
+</header>
+<main class="tb-wrap" id="tb-content"><div class="tb-loading">正在加载课本内容…</div></main>
+<nav class="tb-pagenav" id="tb-pagenav" style="display:none">
+  <a id="tb-prev" href="#">← 上一节</a>
+  <a id="tb-intro" href="#" style="margin-left:auto;margin-right:auto">本章导学</a>
+  <a id="tb-next" href="#">下一节 →</a>
+</nav>
+
+<script src="/vendor/katex/katex.min.js"></script>
+<script src="/vendor/katex/contrib/auto-render.min.js"></script>
+<script src="/learn/js/renderer.js"></script>
+<script src="/learn/js/media.js"></script>
+<script src="/learn/js/anims/presets.js"></script>
+<script src="/learn/js/textbook-ask.js"></script>
+<script>
+(function () {
+  'use strict';
+  var q = new URLSearchParams(location.search);
+  var ch = q.get('ch'), sec = q.get('sec');
+  var host = document.getElementById('tb-content');
+
+  function fail(msg) {
+    host.innerHTML = '<div class="tb-loading">' + msg + ' · <a href="/">返回课程目录</a></div>';
+  }
+  if (!ch || !sec) { fail('缺少章节参数'); return; }
+
+  /* 按需加载：只有当本小节确实含仿真/3D 场景时才拉 three 与 sims */
+  function loadScript(src) {
+    return new Promise(function (res, rej) {
+      var s = document.createElement('script');
+      s.src = src; s.onload = res; s.onerror = function () { rej(new Error(src)); };
+      document.head.appendChild(s);
+    });
+  }
+
+  var sectionUrl = '/learn/reading/' + ch + '/' + String(sec).replace('.', '-') + '.json';
+  Promise.all([
+    fetch(sectionUrl).then(function (r) { if (!r.ok) throw new Error('section'); return r.json(); }),
+    fetch('/learn/reading/index.json').then(function (r) { return r.json(); }),
+  ]).then(function (pair) {
+    var data = pair[0], index = pair[1];
+
+    /* 页头标题 + 并行入口（交互课堂 / 静态幻灯片）；导学页 data.sec 为 null，不拼 § 号 */
+    var chapterLabel = '第 ' + data.chapter + ' 章 · ' + data.title;
+    var secLabel = data.sec ? '§' + data.sec + ' ' + data.secTitle : data.secTitle;
+    document.title = secLabel + ' · ' + data.title;
+    document.getElementById('tb-title').innerHTML =
+      secLabel + '<small>' + chapterLabel + '</small>';
+    var links = document.getElementById('tb-links');
+    if (data.courseId) {
+      var live = document.createElement('a');
+      live.className = 'tb-live';
+      live.href = '/?course=' + data.courseId;
+      live.textContent = '▶ 交互课堂';
+      var slides = document.createElement('a');
+      slides.href = '/slides.html?course=' + data.courseId;
+      slides.textContent = '📑 静态幻灯片';
+      links.insertBefore(slides, links.firstChild);
+      links.insertBefore(live, links.firstChild);
+    }
+
+    /* 上一节 / 下一节 / 本章导学 */
+    var chInfo = index[ch];
+    if (chInfo) {
+      var secs = chInfo.sections.map(function (s) { return String(s.sec); });
+      var i = secs.indexOf(String(sec));
+      var nav = document.getElementById('tb-pagenav');
+      nav.style.display = '';
+      var prev = document.getElementById('tb-prev');
+      var next = document.getElementById('tb-next');
+      var intro = document.getElementById('tb-intro');
+      if (i > 0) { prev.href = '/learn/textbook.html?ch=' + ch + '&sec=' + secs[i - 1]; }
+      else { var p = document.createElement('span'); prev.replaceWith(p); }
+      if (i >= 0 && i < secs.length - 1) { next.href = '/learn/textbook.html?ch=' + ch + '&sec=' + secs[i + 1]; }
+      else if (String(sec) === 'intro' && secs.length) { next.href = '/learn/textbook.html?ch=' + ch + '&sec=' + secs[0]; }
+      else { var n2 = document.createElement('span'); next.replaceWith(n2); }
+      intro.href = '/learn/textbook.html?ch=' + ch + '&sec=intro';
+    }
+
+    /* 按需加载仿真/3D 依赖，然后渲染 */
+    var jobs = [];
+    var needSim = data.blocks.some(function (b) { return b.type === 'simulation'; });
+    var need3D = data.blocks.some(function (b) { return b.type === 'interactive-3d'; });
+    if (need3D) {
+      jobs.push(loadScript('/vendor/three/three.min.js')
+        .then(function () { return loadScript('/learn/js/scenes/pvt-surface.js'); }));
+    }
+    if (needSim) {
+      ['collision-lab','cyclotron-lab','efield-lab','emf-lab','incline-block','maxwell-dist',
+       'pe-lab','projectile','pv-diagram','rc-lab','relat-lab','rotation-lab',
+       'shm-lab','single-slit','wave-lab','young-double-slit'].forEach(function (name) {
+        jobs.push(loadScript('/learn/js/sims/' + name + '.js'));
+      });
+    }
+    return Promise.all(jobs.map(function (j) { return j.catch(function () {}); })).then(function () {
+      host.innerHTML = '';
+      window.Renderer.render(data, host);
+      /* 滚动渐显：渲染器给内容块加 .reveal（opacity:0），要靠 IntersectionObserver
+         在进入视口时补 .visible；观察器不可用时直接全部显示，保证内容兜底可见 */
+      var revealEls = host.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+          });
+        }, { rootMargin: '0px 0px -8% 0px' });
+        revealEls.forEach(function (n) { io.observe(n); });
+      } else {
+        revealEls.forEach(function (n) { n.classList.add('visible'); });
+      }
+      if (window.renderMathInElement) {
+        window.renderMathInElement(host, { throwOnError: false, delimiters: [
+          { left: '\\[', right: '\\]', display: true },
+          { left: '\\(', right: '\\)', display: false },
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false },
+        ] });
+      }
+      /* 划词问 AI 的上下文来源标记 */
+      window.TextbookAsk && window.TextbookAsk.attach(host, {
+        chapter: chapterLabel, section: secLabel,
+      });
+    });
+  }).catch(function () { fail('本小节内容加载失败'); });
+})();
+</script>
+</body>
+</html>

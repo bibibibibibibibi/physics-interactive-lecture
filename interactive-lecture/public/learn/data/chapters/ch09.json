@@ -1,0 +1,1757 @@
+{
+ "id": "ch09",
+ "title": "振动",
+ "subject": "oscillation",
+ "chapter": 9,
+ "week": "Week 9",
+ "difficulty": "★★★☆☆（相位与旋转矢量是全新工具，但规律性强；是振动、波动与光学的公共基座）",
+ "source": "马文蔚《物理学》第七版 第九章（OCR fixed 版转换 + 人工精选作业）",
+ "blocks": [
+  {
+   "type": "intro",
+   "summary": "本章是振动与波动全篇的基座：从弹簧振子出发建立简谐振动的判据 a = −ω²x 与运动方程 x = Acos(ωt+φ)，弄清振幅、周期（频率）与相位三个特征量，其中相位概念尤为重要；随后引入旋转矢量这一形象工具；再讨论单摆与复摆、简谐振动的能量；进而研究简谐振动的合成（同方向同频率、相互垂直、不同频率的拍）；最后讨论阻尼振动、受迫振动与共振，并介绍 LC 电磁振荡与非线性系统初步。相位与旋转矢量是本章也是后续波动、光学（光程差、干涉）的关键工具。"
+  },
+  {
+   "type": "section",
+   "number": "9.1",
+   "title": "简谐振动 振幅 周期和频率 相位"
+  },
+  {
+   "type": "text",
+   "html": "<h4>一、简谐振动</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>外力为零，位置O叫做平衡位置。取平衡位置0为坐标原点，水平向右为 $O x$ 轴的正方向。现将物体向右移到位置B[图9-1(b)].此时，由于弹簧被拉长而使物体受到一个指向平衡位置的弹性力。撤去外力后，物体将会在弹性力的作用下向</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>左加速运动，当抵达平衡位置时，物体所受的弹性力减小到零。但物体的惯性会使它继续向左运动，致使弹簧被压缩，因弹簧被压缩而出现的弹性力将阻碍物体的运动，使物体的运动速度减小，到达点C时，速度减小到零[图9-1(c)].此时物体又将在弹性力的作用下，从C点返回，向右运动。这样，在弹性力作用下，物体将在平衡位置附近作往复运动，这一包含轻质弹簧和物体的振动系统</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch09/fig9_1_original.png",
+   "caption": "图 9-1 弹簧振子的振动：(a) 平衡位置 O；(b) 拉伸至 B；(c) 压缩至 C（archive 教材原图扫描件；第三轮目检撤下 tex 重绘，旧件缺 x 轴）"
+  },
+  {
+   "type": "text",
+   "html": "<p>由胡克定律可知，物体所受到的弹性力F与物体相对于平衡位置的位移x成正比，其方向与位移的方向相反，始终指向平衡位置，故此力常称为恢复力。于是有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\boxed {F = - k x}"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中比例常量为弹簧的弹性系数，它由弹簧本身的性质(材料、形状、大小等)所决定，负号表示力与位移的方向相反。根据牛顿第二定律，物体的加速度为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "a = {\\cfrac {F} {m}} = - {\\cfrac {k} {m}} x",
+   "label": "式（9-1）"
+  },
+  {
+   "type": "text",
+   "html": "<p>对于一个给定的弹簧振子，k与m都是常量，而且都是正值，其比值可用另一个常量 $\\omega$ 的二次方表示，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "{\\frac {k} {m}} = {\\omega}^{2}",
+   "label": "式（9-2）"
+  },
+  {
+   "type": "text",
+   "html": "<p>这样式(9-1)可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "a = - {\\omega}^{2} x",
+   "label": "式（9-3）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式说明，弹簧振子的加速度 $a$ 与位移的大小x成正比，而且方向相反。人们把具有这种特征的振动叫做简谐振动。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>式(9-3)也可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "{\\frac {\\operatorname {d}^{2} {\\boldsymbol {x}}} {\\operatorname {d} t^{2}}} = - \\omega^{2} {\\boldsymbol {x}}",
+   "label": "式（9-4）"
+  },
+  {
+   "type": "text",
+   "html": "<p>这就是简谐振动的运动微分方程，其解为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "x = A \\cos ( \\omega t + \\varphi )",
+   "label": "式（9-5）"
+  },
+  {
+   "type": "text",
+   "html": "<p>它是简谐振动的运动方程，简称简谐振动方程。式中A和φ是积分常量，它们的物理意义将在下面讨论：由上式可知，当物体作简谐振动时，其位移是时间的余弦函数①.这也就是为什么把运动方程具有式(9-3)一式(9-5)形式的振动叫做简谐振动的原因。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>将式(9-5)对时间求一阶、二阶导数，可分别得到简谐振动物体的速度v和加速度a：</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "v = {\\frac {\\mathrm{d} x} {\\mathrm{d} t}} = - \\omega A \\sin \\left( \\omega t + \\varphi \\right)",
+   "label": "式（9-6）"
+  },
+  {
+   "type": "formula",
+   "latex": "a = {\\frac {\\mathrm{d}^{2} x} {\\mathrm{d} t^{2}}} = - \\omega^{2} A \\cos \\left( \\omega t + \\varphi \\right)",
+   "label": "式（9-7）"
+  },
+  {
+   "type": "text",
+   "html": "<p>由式(9-5)、式(9-6)和式(9-7),可作出图9-2所示的 $x - t , v - t$ 和 a-t 图。由图可以看出，物体作简谐振动时，它的位移、速度和加速度都是作相同周期性变化的。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>现在我们来讨论式(9-5)中描述简谐振动特征的物理量 $A \\setminus \\omega \\setminus \\left( \\omega t + \\varphi \\right)$ 及其相关概念：振</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch09/pages_0_50_9c0dd64e07be0d83b9d377effe6a7ad1906180b05cc4cddf104dc92f63c9bfe5.png",
+   "caption": "图 9-2 简谐振动的 x-t、v-t、a-t 图线（φ = 0）"
+  },
+  {
+   "type": "text",
+   "html": "<p>幅、周期(频率、角频率)和相位(初相位），其中相位的概念尤为重要。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>二、振幅</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在简谐振动方程 $x = A \\cos \\left( \\omega t + \\varphi \\right)$ 中，因为 $\\cos {\\left( \\omega t + \\varphi \\right)}$ 的值在+1和-1之间，所以物体的位移亦在+A和-A之间。我们把简谐振动物体离开平衡位置最大位移的绝对值A，称为振幅。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>三、周期和频率</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>物体作一次完全振动所经历的时间叫做振动的周期，用T表示，周期的单位名称是秒，符号为s.例如在图9-1中，物体自位置B经0到达C，然后再回到B.所经历的时间就是一个周期。所以物体在任意时刻t的位移和速度，应与物体在时刻t+T的位移和速度完全相同，于是有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "x = A \\cos \\left( \\omega t + \\varphi \\right) = A \\cos \\left[ \\omega \\left( t + T \\right) + \\varphi \\right] = A \\cos \\left( \\omega t + \\varphi + \\omega T \\right)"
+  },
+  {
+   "type": "text",
+   "html": "<p>由于余弦函数的周期性，物体作一次完全振动后应有 $\\omega T = 2 \\pi .$ 于是，可得</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "T {=} \\frac {2 \\pi} {\\omega}",
+   "label": "式（9-8）"
+  },
+  {
+   "type": "text",
+   "html": "<p>由于弹簧振子的 $\\omega = \\sqrt {k / m}$ ，所以弹簧振子的周期为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "T = 2 \\pi {\\sqrt {\\frac {m} {k}}}",
+   "label": "式（9-9）"
+  },
+  {
+   "type": "text",
+   "html": "<p>单位时间内物体所作的完全振动的次数叫做频率，用ν表示，它的单位名称是赫兹，符号为Hz.显然，频率与周期的关系为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\nu = {\\frac {1} {T}} = {\\frac {\\omega} {2 \\pi}}",
+   "label": "式（9-10）"
+  },
+  {
+   "type": "text",
+   "html": "<p>由此还可知</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\omega = 2 \\pi \\nu",
+   "label": "式（9-11）"
+  },
+  {
+   "type": "text",
+   "html": "<p>即 $\\omega$ 等于物体在单位时间内所作的完全振动次数的2π倍， $\\omega$ 叫做角频率(又称圆频率），单位是 $\\mathrm{{r a d}} \\cdot \\mathrm{{s}}^{- 1} ,$ (弧度每秒).至于弹簧振子的频率，不难得知为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\nu = \\frac {1} {2 \\pi} \\ \\sqrt {\\frac {k} {m}}",
+   "label": "式（9-12）"
+  },
+  {
+   "type": "text",
+   "html": "<p>由于弹簧振子的角频率 $\\omega = \\sqrt {k / m}$ 是由弹簧振子的质量m和弹性系数k所决定的，所以周期和频率只和振动系统本身的物理性质有关。这种只由振动系统本身的固有属性所决定的周期和频率，叫做振动的固有周期和固有频率。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>四、相位</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在力学中，物体在某一时刻的运动状态可用位矢和速度来描述，下面可以看到，对振幅和角频率都已给定的简谐振动，它的运动状态可用“相位”这一物理量来决定。由式(9-5)和式(9-6)可看出，当振幅A和角频率 $\\omega$ 一定时，振动物体在任一时刻相对平衡位置的位移和速度都取决于物理量 $\\left( \\omega t + \\varphi \\right)$ .也就是说，$( \\omega t + \\varphi )$ 既决定了振动物体在任意时刻相对平衡位置的位移，也决定了它在该时刻的速度。 $( \\omega t {+} \\varphi )$ 叫做振动的相位，它是决定简谐振动物体运动状态的物理量。例如图9-1中的弹簧振子，当相位 $\\left( \\omega t_{1} + \\varphi \\right) = \\pi / 2$ 时， $x = 0 , v = - \\omega A$ ,即在 $t_{1}$ 时刻物体在平衡位置，并以速率ωA向左运动；而当相位 $\\left( \\omega t_{2} + \\varphi \\right) = 3 \\pi / 2$ 时， $x = 0v = \\omega A$ ,即在 $t_{2}$ 时刻物体也在平衡位置，但以速率ωA向右运动。可见，在 $t_{1}$ 和 $t_{2}$ 两时刻，由于振动的相位不同，物体的运动状态也不相同。此外，当振动物体的相位经历了 $2 \\pi$ 的变化，亦即相位由 $\\left( \\omega t + \\varphi \\right)$ 变为 $\\left( \\omega t + \\varphi + 2 \\pi \\right) = \\left[ \\omega \\left( {{t + T}} \\right) + \\varphi \\right]$ ,振动经历了一个周期时，物体恢复到原来的运动状态。由此可见，用相位描述物体的运动状态，还能充分体现出简谐振动的周期性。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>当 $t = 0$ 时，相位 $( \\omega t + \\varphi ) = \\varphi$ 故 $\\nsupseteq$ 叫做初相位，简称初相。它是决定初始时刻(即开始计时的起点)振动物体运动状态的物理量。例如，若 $\\varphi = 0$ ,则在 $t = 0$ 时，由式(9-5)和式(9-6)可分别得出 $x_{0} = A$ 及 $v_{0} = 0$ ，这表示我们所选的计时起点，是物体位于正最大位移处且速率为零的这一时刻</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>五、常量A和 $\\varphi$ 的确定</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如前所述，简谐振动方程 $x = A \\cos \\left( \\omega t + \\varphi \\right)$ 中的角频率 $\\omega$ 是由振动系统本身的性质所决定的。那么，现在来说明在角频率已经确定的条件下，如果已经知道了 $t = 0$ 时物体相对平衡位置的位移 $x_{0}$ 和速度 $v_{0}$ ，就可确定出振动的振幅A和初相 $\\varphi .$ 由式(9-5)和(9-6)可得</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\begin{array} {c} {{x_{0} = A \\cos \\varphi}} \\\\ {{}} \\\\ {{{v_{0} = - \\omega A \\sin \\varphi}}} \\end{array}"
+  },
+  {
+   "type": "text",
+   "html": "<p>其中 $\\omega A$ 即为简谐振动的最大速率。当速率最大时振子的位移为零。而由此两式可得A、φ的解为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "A = \\sqrt {x_{0}^{2} + \\frac {v_{0}^{2}} {\\omega^{2}}}",
+   "label": "式（9-13）"
+  },
+  {
+   "type": "formula",
+   "latex": "\\tan \\ \\varphi = {\\frac {- v_{0}} {\\omega x_{0}}}",
+   "label": "式（9-14）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $\\varphi$ 所在象限可由 $x_{0}$ 及 $v_{0}$ 的正负号确定。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>一般约定：当 $x_{0} {>} 0 \\ 、 v_{0} {<} 0$ 时的 $\\varphi$ 取在第一象限的值： $\\mathrm{\\Delta} x_{0} < 0 \\mathrm{\\Delta} , v_{0} < 0$ 时的 $\\varphi$ 取在第二象限的值 $\\circ_{\\ast} x_{0} < 0 \\dots v_{0} > 0$ 时的 $\\varphi$ 取在第三象限的值 $\\mathrm{;} x_{0} \\mathrm{>} 0 \\mathrm{~ .} v_{0} \\mathrm{>} 0$ 时的 $\\varphi$ 取在第四象限的值。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>物体在 $t = 0$ 时的位移 $x_{0}$ 和速度 $v_{\\mathrm{0}}$ 叫做初始条件。上述结果说明，对一定的弹簧振子(即ω为已知量），它的振幅A和初相 $\\varphi$ 是由初始条件决定的。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>总之，对干给定的振动系统。周期(或频率)由振动系统本身的性质决定，而 振幅和初相则由初始条件决定。</p>"
+  },
+  {
+   "type": "section",
+   "number": "9.2",
+   "title": "旋转矢量"
+  },
+  {
+   "type": "simulation",
+   "simId": "shm-lab",
+   "title": "简谐振动实验室",
+   "hint": "左侧旋转矢量与弹簧振子联动、右侧实时描出 x-t 图线。拖动 A、ω、φ 三个滑块，体会「振幅定大小、角频率定快慢、初相定起点」；读数窗给出当前相位、位移、速度——注意速度最大时位移为零、位移最大时速度为零（相位差 π/2）。"
+  },
+  {
+   "type": "video",
+   "source": "bilibili",
+   "bvid": "BV1eK4y1E7Cb",
+   "page": 43,
+   "title": "📺 视频学习：简谐振动 旋转矢量",
+   "caption": "东北大学《大学物理》MOOC 课堂录播（马文蔚《物理学》配套课程），第 1 次课 配套；本讲对应教材 9-1 简谐振动（振幅·周期·相位）～ 9-2 旋转矢量，时长 45:54。注意：视频标题里的 9.x 是该课程的讲次编号，与教材小节号含义不同，请以本卡片标注的教材小节为准。<a href=\"https://www.bilibili.com/video/BV1eK4y1E7Cb?p=43\" target=\"_blank\" rel=\"noopener\">在 B 站打开本讲 ↗</a>（嵌入加载失败、或想看弹幕与讲义时点此）"
+  },
+  {
+   "type": "text",
+   "html": "<p>本节介绍简谐振动的旋转矢量表示法。如图9-3所示，自 $O x$ 轴的原点0作一矢量A,它的模等于振动的振幅A,使矢量A在Oxy平面内绕点0作逆时针方向的匀角速转动，其角速度与振动的角频率ω相等，这个矢量就叫做旋转矢量设在 $t = 0$ 时，矢量A的矢端在位置 $M_{0}$ ,它与 Ox轴的夹角为 φ;在时刻 t,矢量 A的矢端在位置M.在这过程中，矢量A沿逆时针方向转过了角度ωt，它与$O x$ 轴间的夹角为 $\\omega t^{+} \\varphi .$ 由图可见，矢量A在Ox轴上的投影为 $x = \\boldsymbol {A} \\cos \\ \\left( \\omega \\boldsymbol {t} + \\varphi \\right) \\mathbb {0}$ 与式(9-5)比较，它恰是沿Ox轴作简谐振动的物体在t时刻相对于原点 0的位移。因此，旋转矢量A的矢端M在 $O x$ 轴上的投影点P的运动，可表示物体在 $O x$ 轴上的简谐振动。矢量A以角速度 $\\omega$ 旋转一周，相当于物体在x轴上作一次完全振动。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在旋转矢量图上，不仅可以确定作简谐振动的物体的位移x，而且也能确定它的速度v和加速度a.由于作匀速圆周运动的物体的速度是 $v_{\\mathrm{m}} = \\omega A$ ,在时刻t，它在 $O x$ 轴上的投影是 $v = v_{\\mathrm{m}} \\cos ( \\omega t {+} \\varphi {+} \\pi / 2 ) = {-} \\omega A \\sin \\left( \\omega t {+} \\varphi \\right)$ ，这正是式(9-6)给出的物体作简谐振动的速度公式。作匀速圆周运动的物体的向心加速度是$a_{\\mathrm{n}} = {\\omega}^{2} A$ ,在时刻t,它在Ox轴上的投影是 $a = a_{\\mathrm{n}} \\cos \\left( \\omega t + \\varphi + \\pi \\right) = \\left. - \\omega^{2} A \\cos \\left( \\omega t + \\varphi \\right) \\right.$ 这正是式(9-7)给出的物体作简谐振动的加速度公式(见图9-4).</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch09/fig9_3_original.png",
+   "caption": "图 9-3 旋转矢量图：A 以角速度 ω 逆时针旋转，x = Acos(ωt+φ)（archive 教材原图扫描件；第三轮目检撤下 tex 重绘，旧件角度标注逻辑混乱）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch09/fig9_4_original.png",
+   "caption": "图 9-4 旋转矢量图中的速度 v_m 和加速度 a_n 及其投影（archive 教材原图扫描件；第三轮目检撤下 tex 重绘）"
+  },
+  {
+   "type": "text",
+   "html": "<p>必须强调指出，旋转矢量本身并不作简谐振动，我们是利用旋转矢量端点在Ox轴上的投影点的运动，来形象地展示简谐振动的规律的。下面我们就用这个方法来描绘某一简谐振动 $x = A \\cos ( \\omega t + \\pi / 4 )$ 的位移-时间(x-t)图线，并以此来帮助大家领会这层意思。如图9-5所示，若把旋转矢量图的 $O x$ 轴正方向画成竖直向上，则可在其右侧作出简谐振动的x-t图线，这只需平行地画出Ox轴，并使t轴水平向右就行了。在 $t = 0$ 时，矢量A与 $O x$ 轴的夹角为初相 $\\varphi = \\pi / 4$ ,矢端位于$a$ 点，而a点在 $O x$ 轴上的投影便是x-t图中的 $\\boldsymbol {a^{\\prime}}$ 点，此时物体位于 $x = A / {\\sqrt {2}}$ 处，并开始朝 $O x$ 轴的负方向运动。经过T/8时间 $, A$ 转过 $\\pi / 4$ 角度，使相位 $\\left( \\omega t + \\varphi \\right) =\\pi / 2$ ,则其矢端位于b点，而b点在Ox轴上的投影点即是x-t图中的 $b^{\\prime}$ 点，此时物体位于平衡位置，并继续朝 $O x$ 轴的负方向运动……这样经过一个周期的时间，相位变化了 $2 \\pi$ ，一切又将重复进行下去。大家已经看到，旋转矢量图不仅为我们提供了一幅直观而清晰的简谐振动图像，而且借此我们能一目了然地弄清相位的概念和作用，对进一步研究振动问题十分有益。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch09/pages_0_50_197c2f4bd9002d5351b80b9ac9c33062573114fe37c8ad99991310bea5dea881.png",
+   "caption": "图 9-5 旋转矢量图与简谐振动的 x-t 图线（φ = π/4）"
+  },
+  {
+   "type": "text",
+   "html": "<p>利用旋转矢量还可以比较两个同频率简谐振动的“步调”如何。设有下列两个简谐振动：</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\begin{array} {l} {x_{1} = A_{_{1}} \\cos \\left( \\omega t {+} \\varphi_{{1}} \\right)} \\\\ {x_{{2}} = A_{_{2}} \\cos \\left( \\omega t {+} \\varphi_{{2}} \\right)} \\end{array}"
+  },
+  {
+   "type": "text",
+   "html": "<p>它们的相位之差叫相位差，用 $\\Delta \\varphi$ 表示：</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\Delta \\varphi = \\left( \\omega t + \\varphi_{_2} \\right) - \\left( \\omega t + \\varphi_{_1} \\right) = \\varphi_{_2} - \\varphi_{1}",
+   "label": "式（9-15）"
+  },
+  {
+   "type": "text",
+   "html": "<p>即两个同频率的简谐振动在任意时刻的相位差，都等于其初相差如果 $\\Delta \\varphi =\\varphi_{2} - \\varphi_{1} > 0 \\vert$ 图 $9- 6 ( a ) \\mathrm{~} ]$ ,我们就说 $x_{2}$ 振动超前 $x_{1}$ 振动 $\\Delta \\varphi$ ,或者说 $x_{1}$ 振动落后 $x_{2}$ 振动 $\\Delta \\varphi . \\overleftrightarrow {\\mathcal {H}}$ 一方面，由于简谐振动具有连续性，所以为简便计，常把 $\\Delta \\varphi \\mid$ 的值限定为 $\\leqslant \\pi$ 的值。例如当 $\\Delta \\varphi = 3 \\pi / 2$ 时[图9-6(b)]，我们通常不说 $x_{2}$ 振动超前 $x_{1}$ 振动 $3 \\pi / 2$ ，而说成 $x_{2}$ 振动落后 $x_{1}$ 振动 $\\pi / 2$ ,或说 $x_{1}$ 振动超前 $x_{2}$ 振动 $\\pi / 2$</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch09/fig9_6_redraw.png",
+   "caption": "图 9-6 两个同频率简谐振动的相位差：(a) Δφ = π/2，x₂ 超前；(b) Δφ = 3π/2（常说 x₂ 落后 π/2）"
+  },
+  {
+   "type": "text",
+   "html": "<p>如果 $\\Delta \\varphi = 0$ (或者 $2 \\pi$ 的整数倍），我们就说两个振动是同相的，即它们将同时到达正最大位移处，同时到达平衡位置，又同时到达负最大位移处，两个振动的“步调”完全一致。如果 $\\Delta \\varphi = \\pi \\cdot$ （或者π的奇数倍），就说两个振动是反相的，即当它们中的一个到达正最大位移处时，另一个却到达负最大位移处，两个振动的“步调”完全相反。同相和反相的旋转矢量及x-t曲线如图9-7所示。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch09/fig9_7_redraw.png",
+   "caption": "图 9-7 同相和反相的旋转矢量及 x-t 曲线"
+  },
+  {
+   "type": "text",
+   "html": "<p>仿此，我们不难从相位上来比较简谐振动的位移、速度和加速度相互间的“步调”如何。事实上，这只需将简谐振动的速度式(9-6)改写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "v = - \\omega A \\sin \\left( \\omega t + \\varphi \\right) = \\omega A \\cos \\left( \\omega t + \\varphi + \\frac {\\pi} {2} \\right)"
+  },
+  {
+   "type": "text",
+   "html": "<p>并将加速度式(9-7)改写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "a = - \\omega^{2} A \\cos \\left( \\omega t + \\varphi \\right) = \\omega^{2} A \\cos \\left( \\omega t + \\varphi + \\pi \\right)"
+  },
+  {
+   "type": "text",
+   "html": "<p>从而可以看出：加速度与位移反相，速度比位移超前 $\\pi / 2$ ，而比加速度落后 $\\pi / 2$</p>"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（9.2 节 · 例）",
+   "problem": "<img src=\"assets/images/ch09/fig9_9_redraw.png\" style=\"max-width:50%\"><br><div class=\"figcap\">图 9-9 例题的旋转矢量图（φ = π/3，OCR 未提取，数值重绘）</div><br>一质量为0.01 kg的物体作简谐振动，其振幅为0.08m，周期为4 s,起始时刻物体在$x = 0.04 \\mathrm{~ m ~}$ 处，向0x轴负方向运动（图9-8).试求：<br>(1) $\\mathit {t} = 1.0 \\mathrm{~ s ~}$ 时，物体所处的位置和所受的力；<br>(2) 由起始位置运动到 $x = - 0.04 \\textrm {m}$ 处所需要的最短时间。<br><img src=\"assets/images/ch09/pages_0_50_73d1556273fb4910bd0987a3c7f6ec6111caccaf41fbbef75d741b4ce5852373.png\" style=\"max-width:60%\"><br><div class=\"figcap\">图 9-8 例题用图（t = 0 时物体在 x = 0.04 m 处，向 x 轴负方向运动）</div>",
+   "solution_steps": [
+    "解 先求简谐振动方程。设",
+    "$$x = A \\cos \\left( \\omega t + \\varphi \\right)$$",
+    "按题意 $\\lrcorner A = 0.08 \\mathrm{~ m ~}$ 因为 $T = 4 \\mathrm{~ s ~}$ ,由式(9-8)有",
+    "$$\\omega = {\\frac {2 \\pi} {T}} {=} {\\frac {\\pi} {2}} \\ \\mathrm{r a d} \\ {\\cdot} \\ \\mathbf {s}^{- 1}$$",
+    "以 $t = 0$ 时， $x = 0.04 \\mathrm{~ m ~}$ ,代人简谐振动方程得",
+    "$$0.04 = 0.08 \\mathrm{c o s} \\ \\varphi$$",
+    "所以",
+    "$$\\varphi = \\pm \\frac {\\pi} {3}$$",
+    "作旋转矢量图9-9，从图中可知，应取",
+    "得",
+    "$$\\varphi = \\frac {\\pi} {3}$$",
+    "$$x = 0.08 \\cos ( \\frac {\\pi} {2} t + \\frac {\\pi} {3} )$$",
+    "（1）将t=1.0s 代入上式，得",
+    "$$x = - 0.069 \\textrm {m}$$",
+    "负号说明物体在平衡位置0的左方。受力为",
+    "$$\\begin{array} {l} {{\\displaystyle F = - k x = - m \\omega^{2} x}} \\\\ {~} \\\\ {{\\displaystyle ~ = - 0.01 \\times \\left( \\frac {\\pi} {2} \\right)^{2} \\times ( - 0.069 ) \\mathrm{N}}} \\\\ {{~}} \\\\ {{\\displaystyle ~ = 1.70 \\times 10^{- 3} \\mathrm{N}}} \\end{array}$$",
+    "力的方向沿 $O x$ 轴的正方向，指向平衡位置。",
+    "(2) 设物体由起始位置运动到 $x = - 0.04 \\textrm {m}$ 处所需的最短时间为t. 把 $x = - 0.04 \\textrm {m}$ 代人运动方程，得",
+    "$$- 0.04 = 0.08 \\mathrm{c o s} \\Bigg ( \\frac {\\pi} {2} t + \\frac {\\pi} {3} \\Bigg )$$",
+    "所以",
+    "$$t = {\\frac {\\operatorname {a r c c o s} {\\Bigl (} {\\begin{array} {c} {1} \\\\ {2} \\end{array}} {\\Bigr )} - {\\frac {\\pi} {3}}} {\\pi}} \\operatorname {s} = {\\frac {2} {3}} \\operatorname {s} = 0.667 \\ {\\mathrm{s}}$$",
+    "求t的另一个更简便的方法是，直接从矢量图9-9中即可看出",
+    "$$\\omega t = \\frac {\\pi} {3}$$",
+    "故",
+    "$$t = {\\frac {\\pi / 3} {\\pi / 2}} ~ \\mathrm{s} = {\\frac {2} {3}} ~ \\mathrm{s} = 0.667 ~ \\mathrm{s}$$"
+   ],
+   "answer": null
+  },
+  {
+   "type": "section",
+   "number": "9.3",
+   "title": "单摆和复摆"
+  },
+  {
+   "type": "text",
+   "html": "<h4>一、单摆</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如图9-10所示，细线的一端固定在点A，另一端悬挂一体积很小、质量为m的重物，细线的质量和伸长可忽略不计。细线静止地处于竖直位置时，重物在位置0.此时，作用在重物上的合外力为零，位置0即为平衡位置。若把重物从平衡</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>位置略微移开后放手，重物就在平衡位置附近往复地运动。这一振动系统叫做单摆。通常把重物叫做摆锤，把细线叫做摆线。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>设在某一时刻，单摆的摆线偏离竖直线的角位移为θ(图9-10),并规定摆锤在平衡位置的右方时θ为正，在左方时θ为负。若悬线长为l,则重力P对点A的力矩为 $M = - m g l {\\sin \\theta}$ ,负号表示力矩方向与角位移θ的方向相反。拉力$\\mathbf{F}_{\\mathrm{T}}$ 对该点的力矩为零。当角位移θ很小时(小于 $5^{\\circ} )\\sin \\ \\theta \\approx \\theta^{\\mathrm{{( 1 )}}}$ ，则摆锤所受的力矩为</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch09/fig9_10_redraw.png",
+   "caption": "图 9-10 单摆"
+  },
+  {
+   "type": "formula",
+   "latex": "M = - m g l \\theta"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中M与θ的关系，恰似弹性力F与位移x的关系①.根据转动定律 $M = J {\\cfrac {\\mathrm{d}^{2} \\theta} {\\mathrm{d} t^{2}}}$ ,单摆的角加速度为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "{\\frac {\\operatorname {d}^{2} \\theta} {\\operatorname {d} t^{2}}} = - {\\frac {m g l} {J}} \\theta"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中J是摆锤对悬挂点A的转动惯量 $( J = m l^{2} )$ .因此，上式可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "{\\frac {\\operatorname {d}^{2} \\theta} {\\operatorname {d} t^{2}}} = - {\\frac {g} {l}} \\theta",
+   "label": "式（9-16）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式表明，在θ很小时，单摆的角加速度与角位移成正比但方向相反，这与式(9-4)的形式完全一样。可见单摆的运动具有简谐振动的特征，因而也是简谐振动。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>把上式与式(9-4)比较，可得单摆的角频率和周期分别为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\omega = \\sqrt {\\frac {g} {l}} , \\quad T = 2 \\pi \\sqrt {\\frac {l} {g}}",
+   "label": "式（9-17）"
+  },
+  {
+   "type": "text",
+   "html": "<p>可见，单摆的周期取决于摆长和该处的重力加速度。利用上式，可通过测量单摆的周期以确定该地点的重力加速度。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>二、复摆</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如图9-11所示，质量为m的任意形状的物体，被支持在无摩擦的水平轴0上。将它拉开一个微小角位移θ后释放，物体将绕轴0作微小的自由摆动。这样的装置叫做复摆复摆对轴0的转动惯量为J,复摆的质心 C到O的距离OC=l.</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>复摆在某一时刻受到的重力矩为 $M = - m g l {\\sin \\theta} .$ 当摆角很小时， $\\sin \\ \\theta \\approx \\theta$ ,有 ${M = - m g l \\theta}$ ,若不计空气阻力，则由转动定律得</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "{\\frac {\\operatorname {d}^{2} \\theta} {\\operatorname {d} t^{2}}} = - {\\frac {m g l} {J}} \\theta",
+   "label": "式（9-18）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch09/fig9_11_redraw.png",
+   "caption": "图 9-11 复摆"
+  },
+  {
+   "type": "text",
+   "html": "<p>复摆的角频率和周期为（式(9-19) OCR 丢失，按教材补全）：</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\omega = \\sqrt {\\frac {m g l} {J}} , \\quad T = 2 \\pi \\sqrt {\\frac {J} {m g l}}",
+   "label": "式（9-19）"
+  },
+  {
+   "type": "section",
+   "number": "9.4",
+   "title": "简谐振动的能量"
+  },
+  {
+   "type": "video",
+   "source": "bilibili",
+   "bvid": "BV1eK4y1E7Cb",
+   "page": 44,
+   "title": "📺 视频学习：单摆和复摆 简谐运动",
+   "caption": "东北大学《大学物理》MOOC 课堂录播（马文蔚《物理学》配套课程），第 2 次课 配套；本讲对应教材 9-3 单摆和复摆 ～ 9-4 简谐振动的能量，时长 36:20。注意：视频标题里的 9.x 是该课程的讲次编号，与教材小节号含义不同，请以本卡片标注的教材小节为准。<a href=\"https://www.bilibili.com/video/BV1eK4y1E7Cb?p=44\" target=\"_blank\" rel=\"noopener\">在 B 站打开本讲 ↗</a>（嵌入加载失败、或想看弹幕与讲义时点此）"
+  },
+  {
+   "type": "text",
+   "html": "<p>在近代物理中采用弹簧振子模型研究微观粒子运动时，常采用如图9-14所示的弹簧振子的势能曲线。图中横轴表示位移，纵轴表示势能，曲线BOC是势能 $E_{\\mathrm{p}}$ 随位移 x的变化关系，而对应于任意位移x，总能量与势能之差就表示动能，见例1.</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch09/pages_0_50_ecb47107b3bfa1c306e18ae07ced0b965213851ac8a25ebefd9faa48685d07ac.png",
+   "caption": "图 9-14 简谐振动的势能曲线"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（9.4 节 · 例 1）",
+   "problem": "<img src=\"assets/images/ch09/pages_0_50_a7f66390565bc4ccdae89573f1e5eec2fb0d1eedd7d2b3a896cf3c08eed0479f.png\" style=\"max-width:60%\"><br><div class=\"figcap\">图 9-15 弹簧振子动能 E_k 随位移 x 的变化（例1）</div><br>弹簧振子的动能 $E_{\\mathrm{k}}$ 与位移x的关系如图9-15所示，如果其最大动能为 $E_{\\mathrm{k , m a x}} = 32 \\mathrm{~ J ~}$<br>弹簧振子质量为 $m = 1 \\ \\mathrm{k g}$ ,则弹簧振子的角频率ω是多少？",
+   "solution_steps": [
+    "解由图可知，弹簧振子的振幅 $A = 2 {\\mathrm{~ m ~}}$ ,而弹簧振子的最大速度为 $\\omega A$ ,所以有",
+    "$$\\frac {1} {2} m \\left( \\omega A \\right)^{2} = E_{\\mathrm{k , m a x}}$$",
+    "则得",
+    "$$\\omega = {\\sqrt {\\frac {2 E_{\\mathrm{\\ k , \\ m a x}}} {m A^{2}}}} = 4 {\\mathrm{\\ r a d \\}} \\cdot {\\mathrm{\\ s}}^{- 1}$$"
+   ],
+   "answer": null
+  },
+  {
+   "type": "text",
+   "html": "<p>对一定的弹簧振子系统来说，振动的总能量与振幅的二次方成正比，这个结论不仅对弹簧振子，而且对非弹簧振子系统也是适用的。简谐振动的总能量保持恒定，体现在振动过程中就是振幅保持不变，换句话说，简谐振动是一种等幅振动。在第9-1节，我们曾讲过振幅A的值由初始条件决定，这个初始条件实际上就是起始时刻的总能量。假设起始时刻的动能 $E_{\\mathrm{k 0}} = {\\frac {1} {2}} m v_{\\mathrm{0}}^{2}$ ,势能 $E_{_{\\mathrm{p 0}}} = \\frac {1} {2} k x_{_{0}}^{2}$ ,那么总能量为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "E = E_{\\mathrm{k 0}} + E_{\\mathrm{p 0}} = {\\frac {1} {2}} m v_{0}^{2} + {\\frac {1} {2}} k x_{0}^{2} = {\\frac {1} {2}} k A^{2}"
+  },
+  {
+   "type": "text",
+   "html": "<p>利用 $\\omega^{2} = k / m$ ，从而即得</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "A = \\sqrt {x_{0}^{2} + \\frac {v_{0}^{2}} {\\omega^{2}}}"
+  },
+  {
+   "type": "text",
+   "html": "<p>这与式(9-13)给出的振幅相同。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>我们还可以根据能量守恒来推导出简谐振动的微分方程。已知系统能量为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "E = {\\frac {1} {2}} m v^{2} + {\\frac {1} {2}} k x^{2} = {\\stackrel {\\wedge} {\\Pi}}^{*} \\varXi"
+  },
+  {
+   "type": "text",
+   "html": "<p>将上式对时间求导，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "{\\frac {\\mathrm{d}} {\\mathrm{d} t}} \\left( {\\frac {1} {2}} m v^{2} + {\\frac {1} {2}} k x^{2} \\right) = 0"
+  },
+  {
+   "type": "text",
+   "html": "<p>即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "m v {\\frac {\\mathrm{d} v} {\\mathrm{d} t}} {+} k x {\\frac {\\mathrm{d} x} {\\mathrm{d} t}} {=} 0"
+  },
+  {
+   "type": "text",
+   "html": "<p>由于</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "v = {\\frac {\\mathrm{d} {\\boldsymbol {x}}} {\\mathrm{d} t}} , \\quad {\\frac {\\mathrm{d} v} {\\mathrm{d} t}} = {\\frac {\\mathrm{d}^{2} {\\boldsymbol {x}}} {\\mathrm{d} t^{2}}}"
+  },
+  {
+   "type": "text",
+   "html": "<p>故得</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "{\\frac {\\mathrm{d}^{2} x} {\\mathrm{d} t^{2}}} + {\\frac {k} {m}} x = 0"
+  },
+  {
+   "type": "text",
+   "html": "<p>这与式(9-4)给出的简谐振动的微分方程是一样的。这种从能量守恒导出简谐振动方程的思路，对于研究其他形式的振动十分有利，只不过那时已不采用受力分析的方法了，如第9-7节中的无阻尼电磁振荡方程。</p>"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（9.4 节 · 例 2）",
+   "problem": "<img src=\"assets/images/ch09/fig9_16_redraw.png\" style=\"max-width:60%\"><br><div class=\"figcap\">图 9-16 油滴-容器-弹簧装置（OCR 未提取，按题面重绘）</div><br>如图9-16所示，轻质弹簧的弹性系数为k，一端固定在墙上，另一端连接质量为 $m^{\\prime}$ 的<br>容器。容器可在光滑水平面上运动，当弹簧处于原长时容器位于点0.现使容器自点0左端l处从静止开始运动，每经过点 $O$ 一次时，从上方滴管中滴入一滴质量为m的油滴。当容器被滴入n滴油滴后，问：<br>(1)容器运动到离点0的最远距离A是多少？<br>(2) 容器运动到被滴入 $n + 1$ 滴油滴的时间t是多少？",
+   "solution_steps": [
+    "解（1）因容器、弹簧与油滴系统在运动方向不受外力，所以水平方向动量始终守恒，则在第n滴油滴滴入容器后的动量一定与容器初始运动到点0时的动量相等，有",
+    "$$m^{\\prime} v_{0} = \\left( m^{\\prime} + n m \\right) v_{n}$$",
+    "此外，容器初始运动到点0时的动能与容器初始势能相等，则有",
+    "$${\\frac {1} {2}} m^{\\prime} v_{0}^{2} = {\\frac {1} {2}} k l^{2}$$",
+    "最后，因第n滴油滴滴入后，其系统的动能等于系统的最大势能，则有",
+    "$$\\frac {1} {2} k A^{2} = \\frac {1} {2} \\big ( m^{\\prime} + n m \\big ) v_{n}^{2}$$",
+    "由上述三式可得离点O的最远距离A为",
+    "$$A = l \\sqrt {\\frac {m^{\\prime}} {m^{\\prime} + n m}}$$",
+    "(2)从第n滴油滴滴入容器到第n+1滴油滴滴入容器，所经历的时间为质量为 $( m^{\\prime} +$ nm)的弹簧系统振动周期的1/2,所以有",
+    "$$t = {\\frac {1} {2}} T = \\pi {\\sqrt {\\frac {m^{\\prime} + n m} {k}}}$$"
+   ],
+   "answer": null
+  },
+  {
+   "type": "section",
+   "number": "9.5",
+   "title": "简谐振动的合成"
+  },
+  {
+   "type": "video",
+   "source": "bilibili",
+   "bvid": "BV1eK4y1E7Cb",
+   "page": 45,
+   "title": "📺 视频学习：简谐运动的合成",
+   "caption": "东北大学《大学物理》MOOC 课堂录播（马文蔚《物理学》配套课程），第 2 次课 配套；本讲对应教材 9-5 简谐振动的合成（同方向·垂直·拍），时长 32:53。注意：视频标题里的 9.x 是该课程的讲次编号，与教材小节号含义不同，请以本卡片标注的教材小节为准。<a href=\"https://www.bilibili.com/video/BV1eK4y1E7Cb?p=45\" target=\"_blank\" rel=\"noopener\">在 B 站打开本讲 ↗</a>（嵌入加载失败、或想看弹幕与讲义时点此）"
+  },
+  {
+   "type": "text",
+   "html": "<p>振动的合成有实际意义。例如，轮船中悬挂的钟摆在船体破浪行驶时，摆的运动就是多种振动合成的运动。一般的振动合成是比较复杂的，下面讨论儿种简单的但属基本的简谐振动的合成，往往更为复杂的振动都可看作是由若十个或无限多个简谐振动合成而得。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>一、两个同方向同频率简谐振动的合成</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>若两个同方向的简谐振动的角频率都是 $\\omega$ ，振幅分别为 $A_{1}$ 和 $A_{2}$ ，初相分别为 $\\varphi_{1}$ 和 $\\varphi_{2}$ ，则它们的振动方程分别为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\begin{array} {l} {x_{1} = A_{_{1}} \\cos \\left( {\\omega t {+} {\\varphi_{1}}} \\right)} \\\\ {x_{2} = A_{_{2}} \\cos \\left( {\\omega t {+} {\\varphi_{2}}} \\right)} \\end{array}"
+  },
+  {
+   "type": "text",
+   "html": "<p>因振动是同方向的，所以这两个简谐振动在任一时刻的合位移x仍应在同一直线上，而且等于这两个分振动位移的代数和，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "{\\boldsymbol {x}} = {\\boldsymbol {x}}_{1} + {\\boldsymbol {x}}_{2}"
+  },
+  {
+   "type": "text",
+   "html": "<p>合位移x也可以用旋转矢量法求出。如图9-17所示，两分振动的旋转矢量分别为 $A_{1}$ 和 $A_{2}$ ,开始时 $( \\ t = 0 )$ ，它们与 $O x$ 轴的夹角分别为φ₁和 $\\varphi_{1}\\varphi_{2}$ ,在 $O x$ 轴上的投影分别为 $x_{1}$ 及x₂.由平行四边形法则，可得合矢量 $x_{2} .\\mathbf{A} = \\mathbf{A}_{1} + \\mathbf{A}_{2}$ 由于 $A_{1} \\setminus A_{2}$ 以相同的ω绕点0作逆时针旋转，它们的夹角 $\\left( \\varphi_{2} - \\varphi_{1} \\right)$ 在旋转过程中保持不变，所以矢量A的大小也保持不变，并以相同的角速度 $\\omega$ 绕点0作逆时针旋转。从</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>图9-17中可以看出，任一时刻合矢量A在 Ox轴上的投影 ${\\boldsymbol {x}} = {\\boldsymbol {x}}_{1} + {\\boldsymbol {x}}_{2}$ ，因此合矢量A即为合振动所对应的旋转矢量，而开始时矢量A与 $O x$ 轴的夹角即为合振动的初相$\\varphi .$ 由图可得合位移为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "x {=} A \\cos \\left( \\omega t {+} \\varphi \\right)"
+  },
+  {
+   "type": "text",
+   "html": "<p>这就表明合振动仍是简谐振动，它的角频</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch09/fig9_17_original.png",
+   "caption": "图 9-17 用旋转矢量法求振动的合成：A = A₁ + A₂（archive 教材原图扫描件；第三轮目检撤下 tex 重绘）"
+  },
+  {
+   "type": "text",
+   "html": "<p>率与分振动的角频率相同，而其合振幅由平行四边形对角线求得：</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "A = \\sqrt {A_{1}^{2} + A_{2}^{2} + 2 A_{1} A_{2} \\cos \\left( \\varphi_{2} - \\varphi_{1} \\right)}",
+   "label": "式（9-23）"
+  },
+  {
+   "type": "text",
+   "html": "<p>合振动的初相为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\tan \\varphi = \\frac {A_{1} \\sin \\varphi_{1} + A_{2} \\sin \\varphi_{2}} {A_{1} \\cos \\varphi_{1} + A_{2} \\cos \\varphi_{2}}",
+   "label": "式（9-24）"
+  },
+  {
+   "type": "text",
+   "html": "<p>从式(9-23)可以看出，合振幅与两分振动的振幅以及它们的相位差$\\left( \\varphi_{2} - \\varphi_{1} \\right)$ 有关。下面我们讨论两个特例：</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(1）若相位差 $\\left( \\varphi_{2} \\mathrm{-} \\varphi_{1} \\right) = 2 k \\pi \\left( k = 0 , \\pm 1 , \\pm 2 , \\cdots \\right)$ ,则</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "A = \\sqrt {A_{1}^{2} + A_{2}^{2} + 2 A_{1} A_{2}} = A_{1} + A_{2}",
+   "label": "式（9-25）"
+  },
+  {
+   "type": "text",
+   "html": "<p>即当两分振动的相位相同或相位差为2π的整数倍时，合振幅等于两分振动的振幅之和，合成结果为相互加强。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(2) 若相位差 $\\left( \\varphi_{2} \\mathrm{-} \\varphi_{1} \\right) = \\left( 2 k \\mathrm{+} 1 \\right) \\pi \\left( k = 0 , \\pm 1 , \\pm 2 , \\cdots \\right)$ ,则</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "A = \\sqrt {A_{1}^{2} + A_{2}^{2} - 2 A_{1} A_{2}} = \\left| \\begin{array} {l} {A_{1} - A_{2}} \\end{array} \\right|",
+   "label": "式（9-26）"
+  },
+  {
+   "type": "text",
+   "html": "<p>即当两分振动的相位相反或相位差为 $\\pi$ 的奇数倍时，合振幅等于两分振动振幅之差的绝对值，合成结果为相互减弱。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在一般情形 $\\top$ ，相位差 $\\left( \\varphi_{2} - \\varphi_{1} \\right)$ 可取任意值，而合振幅值则在 $A_{1} + A_{2}$ 和$\\mid A_{1} - A_{2} \\mid$ 之间。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>二、两个相互垂直同频率简谐振动的合成</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>设有两个相互垂直的同频率的简谐振动，它们分别在x、y轴上运动，其简谐振动方程为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\begin{array} {r} {x = A_{1} \\cos \\left( \\omega t + \\varphi_{1} \\right)} \\\\ {y = A_{2} \\cos \\left( \\omega t + \\varphi_{2} \\right)} \\end{array}"
+  },
+  {
+   "type": "text",
+   "html": "<p>将上两式中的t消去，可得到合振动的轨迹方程：</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "{\\frac {x^{2}} {A_{1}^{2}}} + {\\frac {y^{2}} {A_{2}^{2}}} - {\\frac {2 x y} {A_{1} A_{2}}} \\cos {( \\varphi_{2} - \\varphi_{1} )} = \\sin^{2} ( \\varphi_{2} - \\varphi_{1} )",
+   "label": "式（9-27）"
+  },
+  {
+   "type": "text",
+   "html": "<p>这是一个椭圆方程，它的形状由两分振动的振幅及相位差 $\\varphi_{2} - \\varphi_{1}$ 的值决定。下面讨论几种特殊情况。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>若相位差 $\\Delta \\varphi = {\\varphi_{2}} - {\\varphi_{1}} = 0$ ,则式(9-27)写为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "y = {\\frac {A_{2}} {A_{1}}} x"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch09/fig9_18_redraw.png",
+   "caption": "图 9-18 两个相互垂直的同频率简谐振动的合成（各相位差下的轨迹）"
+  },
+  {
+   "type": "text",
+   "html": "<p>此时合振动的轨迹是一条通过坐标原点的直线，其斜率等于两个分振动振幅之比[图9-18(a)、(b)].</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>若 $\\Delta \\varphi = \\varphi_{2} - \\varphi_{1} = \\pi / 2$ ,则式(9-27)写为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\frac {x^{2}} {A_{1}^{2}} + \\frac {y^{2}} {A_{2}^{2}} = 1"
+  },
+  {
+   "type": "text",
+   "html": "<p>合振动的轨迹为一正椭圆[图9-18(d)].当 $A_{1} = A_{2}$ 时，上式变为圆方程，合振动的轨迹为一圆[图9-18(c)].</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>两个分振动的相位差为 $\\pi / 4$ 时，合振动的轨迹为斜椭圆[图9-18(e)、(f) ].</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>现在我们借助旋转矢量，用作图法来描绘 $\\Delta \\varphi = \\pi / 4 \\left( \\varphi_{_1} = \\pi / 4 , \\varphi_{_2} = \\pi / 2 \\right)A_{2} / A_{1} = 2$ 时合振动的轨迹。如图9-19所示，取原点为 $O$ ，画出 $O x , O y$ 坐标轴，在$O y$ 轴的延长线上取一点 $O_{1}$ ，以 $O_{1}$ 为圆 $\\therefore \\dot {\\operatorname {L}} \\setminus A_{1}$ 为半径画一圆。作起始时刻振幅矢量 $\\overrightarrow {O_{1} a}$ ,使它与 $O x$ 轴正向成 $\\varphi_{1} = \\pi / 4$ 角。从 $a$ 开始将圆周分成若干等份(图中分成8等份），各分点沿逆时针方向依次标以 $a , b , c , \\cdots , h$ ，而后过各分点画一组平行于 $O y$ 轴的直线，这组平行直线与 $O x$ 轴的交点，表示矢量 $\\mathbb {A}_{1}$ 的端点每隔 T/8(T为周期)在 $O x$ 轴上的投影，即各时刻x方向分振动的坐标。再在 $O x$ 轴的延长线上取一点 $O_{2}$ ，以 $O_{2}$ 为圆 $\\therefore A_{2} ( {\\bf \\alpha} = 2 A_{1} )$ 为半径画一圆。作起始时刻振幅矢量$\\overrightarrow {O_{2} a^{\\prime}}$ ,使它与 $O y$ 轴正向成 $\\varphi_{2} = \\pi / 2$ 角。从 $\\boldsymbol {a^{\\prime}}$ 开始沿逆时针方向也将圆周分成8等份，并将各分点依次标以 $a^{\\prime} , b^{\\prime} , c^{\\prime} , \\cdots , h^{\\prime}$ .而后过各分点画一组平行于 $O x$ 轴的直线，这些直线与 $O y$ 轴的交点，即为每隔 $T / 8$ 矢量 $A_{2}$ 的端点在 $O y$ 轴上的投影，亦即各时刻 $\\mathcal {Y}$ 方向分振动的坐标。上述两组互相垂直的直线的交点 $a a^{\\prime} , b b^{\\prime}c c^{\\prime} , \\cdots , h h^{\\prime}$ ，即为 $t = 0 , T / 8 , 2 T / 8 , \\cdots , 7 T / 8$ 等时刻合振动的位置，把它们用曲线连起来，就得到合振动的轨迹，这就是图9-18(f)所给出的斜椭圆。从图上还可以看出该椭圆是按顺时针方向旋转的，称为右旋椭圆运动。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch09/fig9_19_redraw.png",
+   "caption": "图 9-19 借助旋转矢量描绘两个相互垂直同频率简谐振动合成的轨迹"
+  },
+  {
+   "type": "text",
+   "html": "<p>图9-20为两个相互垂直的同频率的简谐振动在不同相位差下的合成轨迹在 $\\pi < \\Delta \\varphi < 2 \\pi$ 的情形下，椭圆作逆时针方向旋转，称为左旋椭圆运动。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch09/fig9_20_redraw.png",
+   "caption": "图 9-20 两个相互垂直的同频率而不同相位差的简谐振动的合成轨迹"
+  },
+  {
+   "type": "text",
+   "html": "<h4>三、多个同方向同频率简谐振动的合成</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>上面所讲的用旋转矢量求简谐振动合成的方法，可以推广到N个简谐振动的合成。这里我们只讨论一种有用的特殊情况(在第十一章讨论光的衍射时将用到），即这N个简谐振动不仅振动方向相同、频率相同、振幅相同，而且依次间的相位差恒为 $\\Delta \\varphi .$ 如果适当选择计时起点，使某个简谐振动的初相为零，则可写出这N个简谐振动分别为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\begin{array} {r l} & {x_{1} = A_{1} \\cos {\\omega t}} \\\\ & {x_{2} = A_{2} \\cos {\\left( \\omega t + \\Delta \\varphi \\right)}} \\\\ & {x_{3} = A_{3} \\cos {\\left( \\omega t + 2 \\Delta \\varphi \\right)}} \\\\ & {\\dots \\dots \\dots \\dots} \\\\ & {x_{N} = A_{N} \\cos {\\left[ \\omega t + \\left( N - 1 \\right) \\Delta \\varphi \\right]}} \\end{array}"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $A_{1} = A_{2} = \\cdots = A_{_{N}} = A_{_{0}} .$ 由前面的讨论可以推知，这N个简谐振动的合振动仍为简谐振动，设其表达式为n</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "x = A \\cos \\left( \\omega t + \\varphi \\right)"
+  },
+  {
+   "type": "text",
+   "html": "<p>现在的任务是求出合振动的振幅A和初相 $\\varphi .$</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如图9-21所示，N个旋转矢量 $A_{1} , A_{2} , \\cdots , A_{N}$ 依次相接， $\\angle O P B = \\Delta \\varphi , P O = P B = \\cdots = P Q = R .$ 现在过点P作 $A_{1}$ 和 $A_{2}$ 的垂线，则两条垂线对P所张的角就等于 $\\Delta \\varphi .$ 根据多个矢量合成的法则，由点0指向点Q的矢量A就是合矢量。显然，合矢量A对P所张的角 $\\angle O P Q = N \\Delta \\varphi .$ 于是由几何关系，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "A = 2 R \\mathrm{s i n} \\Bigg ( \\frac {N \\Delta \\varphi} {2} \\Bigg )"
+  },
+  {
+   "type": "formula",
+   "latex": "A_{\\ L_{0}} = 2 R \\mathrm{s i n} \\Bigg ( \\frac {\\Delta \\varphi} {2} \\Bigg )"
+  },
+  {
+   "type": "text",
+   "html": "<p>两式相比，得合振动的振幅</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch09/pages_0_50_57c811abd844004f62cc5b288c94fefb38a87dd6745c193d9508a0dd69cfcb4c.png",
+   "caption": "图 9-21 N 个等幅、依次相位差 Δφ 的简谐振动的矢量合成"
+  },
+  {
+   "type": "text",
+   "html": "<p>图9-21 用矢量法求 N 个同方向同频率且依次间相位差为 $\\Delta \\varphi$ 的等幅简谐振动之合振动的A和 $\\varphi$</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "A = A_{0} \\frac {\\sin \\left( \\frac {N \\Delta \\varphi} {2} \\right)} {\\sin \\left( \\frac {\\Delta \\varphi} {2} \\right)}",
+   "label": "式（9-28）"
+  },
+  {
+   "type": "text",
+   "html": "<p>又从等腰三角形 POQ 及 POB 可得</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\begin{array} {c} {{2 \\angle P O Q = \\pi - N \\Delta \\varphi}} \\\\ {{2 \\angle P O B = \\pi - \\Delta \\varphi}} \\end{array}"
+  },
+  {
+   "type": "text",
+   "html": "<p>从而得合振动的初相</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\varphi = \\angle P O B - \\angle P O Q = \\frac {N - 1} {2} \\Delta \\varphi"
+  },
+  {
+   "type": "text",
+   "html": "<p>下面讨论两种特殊情况：</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(1) 若 $\\Delta \\varphi = 2 k \\pi ( \\mathrm{\\Delta} k = 0 , \\pm 1 , \\pm 2 , \\cdots )$ ，即N个同相位简谐振动的合成，由式(9-28)给出</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "A = \\operatorname* {l i m}_{\\Delta \\varphi 0} A_{0} \\frac {\\sin ( \\displaystyle \\frac {N \\Delta \\varphi} {2} )} {\\sin ( \\displaystyle \\frac {\\Delta \\varphi} {2} )} = N A_{0}"
+  },
+  {
+   "type": "text",
+   "html": "<p>这种情况在矢量图中就是N个矢量 $A_{1} , A_{2} , \\cdots , A_{N}$ 的方向都相同[图9-22(a)]，因而合振动的振幅最大， $A = N A_{0}$</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(2) 若 $N \\Delta \\varphi = 2 k^{\\prime} \\pi ( k^{\\prime} = \\pm 1 , \\pm 2 , \\cdots$ ，但不含N的整数倍），这时，在矢量图中N个矢量依次相接而构成了一个闭合的图形图9-22(b），显然合振幅应为零。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch09/fig9_22_redraw.png",
+   "caption": "图 9-22 N 个矢量合成的两种特例：(a) Δφ = 2kπ 加强；(b) NΔφ = 2k′π 闭合为零"
+  },
+  {
+   "type": "text",
+   "html": "<h4>四、两个同方向不同频率简谐振动的合成　拍</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>当两个同方向、不同频率的简谐振动合成时，由于这两个分振动的频率不同，因此它们的相位差随时间改变，合振动一般不再是简谐振动，情况比较复杂。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>这里只讨论两个简谐振动的频率 $\\nu_{1} , \\nu_{2}$ 都比较大，而两频率之差却很小，即 $\\left| \\nu_{2} - \\nu_{1} \\right| \\ll \\left( \\nu_{2} + \\nu_{1} \\right)$ 的情况。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如果两个频率相差很小的音叉同时振动，就会听到时而加强和时而减弱的声音，这叫做“拍音”。在吹奏双簧管时，簧管两个簧片的频率略有差别，因此人们就能听到时强时弱的悦耳的拍音。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>上述现象可用位移-时间曲线来说明。为简明计，设两简谐振动的振幅分别为 $A_{1}$ 和 $A_{2} ( \\mathbf {\\Phi} = A_{1} \\mathbf {\\Phi} )$ ,初相分别为 $\\varphi_{1}$ 和 $\\varphi_{2}$ ,角频率分别为 $\\omega_{1}$ 和 $\\omega_{2}$ ,并设 $\\omega_{2} > \\omega_{1}$ ，且呈简单的两整数比(图9-23).图(a)和图(b)分别表示两个分振动的位移-时间曲线，图(c)表示合振动的位移-时间曲线。由图可知，在 $t_{1}$ 时刻，两分振动的相位相同，合振幅最大；在 $t_{2}$ 时刻，两分振动的相位相反，合振幅最小；在 $t_{3}$ 时刻，两分振动的相位相同，合振幅又最大。图(c)中的虚线表示合振动的振幅随时间作周期性缓慢变化。这种频率较大而频率之差很小的两个同方向简谐振动合成时，其合振动的振幅时而加强时而减弱的现象叫做拍。下面从合振动方程出发对拍现象作定量讨论。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch09/fig9_23_redraw.png",
+   "caption": "图 9-23 拍：(a)(b) 两个分振动的 x-t 曲线；(c) 合振动及其包络"
+  },
+  {
+   "type": "text",
+   "html": "<p>设两简谐振动不仅振幅相同 $\\left( \\boldsymbol {A}_{1} = \\boldsymbol {A}_{2} \\right)$ ，而且初相都为零，它们的振动方程分别为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\begin{array} {r} {\\boldsymbol {x}_{1} = \\boldsymbol {A}_{1} \\cos \\ \\omega_{1} t = \\boldsymbol {A}_{1} \\cos \\ 2 \\pi \\nu_{1} t} \\\\ \\\\ {\\boldsymbol {x}_{2} = \\boldsymbol {A}_{2} \\cos \\ \\omega_{2} t = \\boldsymbol {A}_{2} \\cos \\ 2 \\pi \\nu_{2} t} \\end{array}"
+  },
+  {
+   "type": "text",
+   "html": "<p>合振动的位移为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "x = x_{1} + x_{2} = A_{1} \\cos 2 \\pi \\nu_{1} t + A_{2} \\cos 2 \\pi \\nu_{2} t"
+  },
+  {
+   "type": "text",
+   "html": "<p>已知 $A_{1} = A_{2}$ ，故合振动的振动方程为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "x = \\left( 2 A_{1} \\cos {2 \\pi} \\frac {\\nu_{2} - \\nu_{1}} {2} t \\right) \\cos {2 \\pi} \\frac {\\nu_{2} + \\nu_{1}} {2} t",
+   "label": "式（9-29）"
+  },
+  {
+   "type": "text",
+   "html": "<p>由于 $\\left| \\begin{array} {l} {\\nu_{2} - \\nu_{1}} \\end{array} \\right| < < \\left( \\begin{array} {l} {\\nu_{2} + \\nu_{1}} \\end{array} \\right)$ ，因此可将式中 $\\frac {\\nu_{2} + \\nu_{1}} {2}$ 看成是合振动的频率，$\\left| 2 {{A}_{1}} \\cos 2 \\pi \\frac {{{\\nu}_{2}} - {{\\nu}_{1}}} {2} t \\right|$ 看成是合振动的振幅。这样，合振动的振幅随时间作缓慢的周</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>期性变化，从而出现振幅时大时小的现象，合振幅在 $0 \\sim 2 A_{1}$ 范围内。因为余弦函 数的绝对值以 $\\pi$ 为周期，所以有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\begin{array} {r l} {{| 2 A_{\\mathrm{1}} \\cos 2 \\pi \\frac {\\nu_{2} - \\nu_{1}} {2} t | = | ~ 2 A_{\\mathrm{1}} \\cos \\Biggl ( 2 \\pi \\frac {\\nu_{2} - \\nu_{1}} {2} t + \\pi \\Biggr ) ~ |}} \\\\ & {= | ~ 2 A_{\\mathrm{1}} \\cos ~ 2 \\pi \\frac {\\nu_{2} - \\nu_{1}} {2} \\Biggl ( t + \\frac {1} {\\nu_{2} - \\nu_{1}} \\Biggr ) ~ |} \\end{array}"
+  },
+  {
+   "type": "text",
+   "html": "<p>可见，合振幅变化的周期 $T {=} 1 / ( \\nu_{2} {-} \\nu_{1} )$ .因此合振幅变化的频率，即拍频为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\nu = \\nu_{2} - \\nu_{1}"
+  },
+  {
+   "type": "text",
+   "html": "<p>拍频为两个分振动的频率之差。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>上述结果也可用旋转矢量合成法求得。在图9-24中，因为 $\\boldsymbol {A}_{1}$ 和 $\\boldsymbol {A}_{2}$ 的角速度不同，所以在旋转过程中，$\\boldsymbol {A}_{1}$ 和 $\\boldsymbol {A}_{2}$ 的方向有时一致，合振幅最大；有时相反，合振幅最小。设 $\\omega_{2} > \\omega_{1}$ ，则 $\\boldsymbol {A}_{2}$ 相对于 $\\boldsymbol {A}_{1}$ 的旋转角速度为 $\\omega_{2} - \\omega_{1}$ ，那么 $\\boldsymbol {A}_{2}$ 前后相邻两次与 $\\boldsymbol {A}_{1}$ 方向一致时所需的时间 $T = \\frac {2 \\pi} {\\omega_{2} - \\omega_{1}} = \\frac {1} {\\nu_{2} - \\nu_{1}}$ ，T为相邻两次振动最强之间的时间(图9-23)，亦即拍的周期。因此，拍频 $\\nu = \\frac {1} {T} = \\nu_{2} - \\nu_{1}$</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch09/fig9_24_redraw.png",
+   "caption": "图 9-24 两个同方向不同频率简谐振动的旋转矢量合成"
+  },
+  {
+   "type": "text",
+   "html": "<p>对于两个频率相近的振动，若其中一个振动频率已知，那么通过拍频的测量就可以知道另一个待测振动的频率。例如，乐队里的“定音”就是根据此法。此法在声学、速度测量、无线电技术和卫星跟踪等领域也得到了应用。</p>"
+  },
+  {
+   "type": "section",
+   "number": "9.6",
+   "title": "阻尼振动 受迫振动 共振"
+  },
+  {
+   "type": "text",
+   "html": "<h4>一、阻尼振动</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>前面所讨论的简谐振动，在振动过程中系统的机械能是守恒的，是一种无阻尼的自由振动。然而实际的振动总要受到阻力的影响，由于克服阻力做功，振动系统的能量不断地减少。同时，由于振动系统与其周围弹性介质的相互作用向外传播形成波(参阅第十章),随着波的传播，振动系统的能量也不断地减少。由于能量与振幅的二次方成正比,因此振幅将逐渐地减小。这种振幅随时间而减小的振动叫做阻尼振动。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>实验指出，当物体以不太大的速率在黏性介质中运动时，物体受到的阻力与其运动的速率成正比，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\boldsymbol {F}_{\\mathrm{r}} = - C \\boldsymbol {v}"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中比例系数C叫做阻力系数，它与物体的形状、大小及介质的性质有关，负号表示阻力与速度方向相反。对弹簧振子，在弹性力 $F = - k x$ 及阻力 $\\boldsymbol {F_{\\mathrm{r}}} = - C \\boldsymbol {v}$ 的作用下，根据牛顿第二定律有</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>- k x - C v = m a</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>或</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "m {\\frac {\\mathrm{d}^{2} x} {\\mathrm{d} t^{2}}} + C {\\frac {\\mathrm{d} x} {\\mathrm{d} t}} + k x = 0"
+  },
+  {
+   "type": "text",
+   "html": "<p>对一给定的振动系统，m、k、C均为常量。若令 $k / m = \\omega_{0}^{2} , C / m = 2 \\delta$ ，则上式可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\frac {\\mathrm{d}^{2} x} {\\mathrm{d} t^{2}} {+} 2 \\delta \\frac {\\mathrm{d} x} {\\mathrm{d} t} {+} \\omega_{0}^{2} x = 0",
+   "label": "式（9-31）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $\\omega_{0} = \\sqrt {k / m}$ 是振动系统的固有角频率，它由系统本身的性质决定； $\\delta = C / 2 m$ 叫做阻尼系数，对一给定的振动系统，它由阻力系数决定。显然，δ值越大，阻力影响就越大。理论与实验研究都表明，当阻尼系数较小即 $\\delta^{2} < \\omega_{0}^{2}$ 时，系统的振幅是逐渐减小的，因而方程(9-31)的解可写为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "x = A \\mathrm{e}^{- \\delta t} \\cos \\left( \\omega t + \\varphi \\right)",
+   "label": "式（9-32）"
+  },
+  {
+   "type": "text",
+   "html": "<p>将式(9-32)代入式(9-31)即可确定出式中 $\\omega = \\sqrt {\\omega_{0}^{2} - \\delta^{2}}^{\\textcircled {1}}$ ，而A、φ是积分常量，由初始条件决定。以x为纵坐标、t为横坐标作阻尼振动的位移-时间曲线，如图9-25和图9-26曲线a所示。它可以看成是振幅为Ae−、角频率为ω的振动。 $A \\mathrm{e}^{- \\delta t}\\omega$</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch09/fig9_25_redraw.png",
+   "caption": "图 9-25 阻尼振动的位移-时间曲线（φ = 0）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch09/fig9_26_redraw.png",
+   "caption": "图 9-26 三种阻尼的比较（a 欠阻尼；b 过阻尼；c 临界阻尼）"
+  },
+  {
+   "type": "text",
+   "html": "<p>位移-时间曲线(φ=0) 图9-26 三种阻尼的比较 a—欠阻尼;b—过阻尼；c—临界阻尼</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>可以看出，阻尼振动的振幅 $A \\mathrm{e}^{- \\delta t}$ 是随时间t作指数衰减的，阻尼越大，振幅衰减得越快因此，阻尼振动不是简谐振动，但在阻尼不大时，可近似地看作一种振幅逐渐减小的简谐振动，它的周期 $T = 2 \\pi / \\omega = 2 \\pi / \\sqrt {\\omega_{0}^{2} - \\delta^{2}}$ 即有阻尼时的振动周期T大于无阻尼时的自由振动周期 $T_{0} = 2 \\pi / \\omega_{0}$</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>若阻尼很大，当 $\\delta^{2} \\geqslant \\omega_{0}^{2}$ 时，则式(9-32)就不再是式(9-31)的解了。若 $\\delta^{2} > \\omega_{0}^{2}$ ，物体从开始的最大位移处缓慢地逼近平衡位置，完全不可能再作往复运动了。这种情况称为过阻尼，见图9-26 中曲线 b.</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>若 $\\delta^{2} = {\\omega}_{0}^{2}$ ,则 $\\omega = 0$ 0,这是物体不能作往复运动的临界情况，这时物体将从最大位移处逐渐回到平衡位置并静止下来。这种情况称为临界阻尼，见图9-26中曲线c.</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在生产和技术上，人们可以根据实际需要用不同的办法改变阻尼的大小，以控制系统的振动情况。如在灵敏电流计内，表头中的指针是和通电线圈相连的，当它在磁场中运动时，会受到电磁阻尼的作用；若电磁阻尼过小或过大，会使指针摆动不停或到达平衡点的时间过长，而不便于测量读数，因此必须调整电路电阻，使电表在 $\\delta^{2} = {\\omega}_{0}^{2}$ 的临界阻尼状态下工作。类似的情况在使用精密天平时也会遇到，故在精密天平中一般都加有阻尼气垫，以防止其长时间摆动，因而可节约时间，便于测量。再如各类机器的避震器①，大都采用一系列的阻尼装置，目的是使频繁的撞击变为缓慢的振动，并迅速衰减，从而达到保护机器的目的。</p>"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（9.6 节 · 例）",
+   "problem": "一单摆在空气（室温为20℃）中来回摆动，其摆线长l=1.0m，摆锤是一个半径$r = 5.0 \\times 10^{- 3} \\mathrm{~ m ~}$ 的铅球。求：<br>（1) 摆动周期；<br>（2)振幅减小10%所需的时间；<br>（3)能量减小10%所需的时间；<br>（4）从以上所得结果说明空气的黏性对单摆周期、振幅和能量的影响。<br>(已知铅球密度为 $\\rho = 2.65 \\times 10^{3} \\mathrm{k g} \\cdot \\mathrm{m}^{- 3}$ ,20℃时空气黏度为 $\\eta = 1.78 \\times 10^{- 5} \\ \\mathrm{P a} \\cdot \\ \\mathrm{s .} \\ )$",
+   "solution_steps": [
+    "解（1）单摆的固有角频率为",
+    "$$\\omega_{0} = \\sqrt {\\frac {g} {l}} = \\sqrt {\\frac {9.8 \\mathrm{~ m ~}^{\\ast} \\mathrm{~ s}^{- 2}} {1.0 \\mathrm{~ m ~}}} = 3.13 \\mathrm{~ s}^{- 1}$$",
+    "空气作用在铅球上的黏性阻力为",
+    "$$\\boldsymbol {F}_{\\mathrm{r}} = - \\boldsymbol {C} \\boldsymbol {v}$$",
+    "此处",
+    "阻尼系数为",
+    "$$C = 6 \\pi r \\eta$$",
+    "$$\\begin{array} {l l l} {\\displaystyle \\delta = \\frac {C} {2 m} = \\frac {6 \\pi r \\eta} {2 \\left( \\frac {4} {3} \\pi r^{3} \\right) \\rho} {\\left( \\frac {4} {3} \\pi r^{3} \\right) \\rho} = \\frac {9 \\eta} {4 r^{2} \\rho}} \\\\ {\\displaystyle} \\\\ {\\displaystyle} \\\\ {\\displaystyle} \\\\ {= \\frac {16 \\pi^{5} \\left( 5 \\times 1.78 \\times 10^{- 5} {\\mathrm{~ P a}} \\cdot {\\mathrm{~ s}} \\right)^{- 1}} {4 \\times {\\left( 5 \\times 10^{- 3} {\\mathrm{~ m}} \\right)}^{2} \\left( 2.65 \\times 10^{3} {\\mathrm{~ k g}} \\cdot {\\mathrm{~ m}}^{- 3} \\right)} = 6.04 \\times 10^{- 4} {\\mathrm{~ s}}^{- 1}} \\end{array}$$",
+    "可见 $\\delta {\\ll} \\omega_{0} ,$ 于是 $\\omega = \\sqrt {\\omega_{0}^{2} - \\delta^{2}} \\approx \\omega_{0}$ ,因而有阻尼时摆的周期为",
+    "$$T {=} \\frac {2 \\pi} {\\omega} {\\approx} \\frac {2 \\pi} {\\omega_{0}} {=} \\frac {2 \\pi} {3.13 \\mathrm{~ s}^{- 1}} {\\approx} 2 \\mathrm{~ s}$$",
+    "(2)在有阻尼的情况下，单摆的振幅为",
+    "$$A^{\\prime} {=} A \\mathbf {e}^{- \\delta t}$$",
+    "设振幅减小10%所需的时间为 $t_{1}$ ,则有",
+    "$$0.9 A = A \\mathrm{e}^{- \\delta t_{1}}$$",
+    "$$t_{1} = \\frac {\\ln {\\cfrac {1} {0.9}}} {\\delta} = \\frac {\\ln {\\cfrac {1} {0.9}}} {6.04 \\times 10^{- 4} ~ \\mathrm{s}^{- 1}} = 174 ~ \\mathrm{s} \\approx 3 ~ \\mathrm{m i n}$$",
+    "(3)因为能量与振幅的二次方成正比 $\\textcircled{1}$ ,所以有",
+    "$${\\frac {E^{\\prime}} {E}} = \\left( {\\frac {A^{\\prime}} {A}} \\right)^{2} = \\mathrm{e}^{- 2 \\delta t}$$",
+    "设能量减小10%所需的时间为 $t_{2}$ ,则有",
+    "$$0.9 = \\mathbf {e}^{- 2 \\delta t_{2}}$$",
+    "$$t_{2} = {\\cfrac {\\ln {\\cfrac {1} {0.9}}} {2 \\delta}} = 87 ~ {\\mathrm{s}} \\approx 1.5 ~ {\\mathrm{m i n}}$$",
+    "(4)从以上所求结果可见，空气的黏性对单摆的周期几乎没有影响，而对振幅和能量有显著的影响 ${\\bf \\nabla} , t_{2} < t_{1}$ 表明能量比振幅减小得快 $t_{2} \\approx 44 T$ ，即单摆振动大约44次，其能量就减小了10%，因此要维持等幅振动，就需要设法补充能量。下面将介绍的受迫振动就是在有阻尼的情况下，靠外界补充能量以维持等幅振动。"
+   ],
+   "answer": null
+  },
+  {
+   "type": "text",
+   "html": "<h4>二、受迫振动</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在实际的振动系统中，阻尼总是客观存在的。要使振动持续不断地进行，须对系统施加一周期性的外力。系统在周期性外力作用下所进行的振动，叫做受迫振动。如停泊在水面上的渔船被水浪反复冲撞而引起的左右摆动、机器运转时引起的基座的振动，都是受迫振动。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>设一系统在弹性力 $- k x$ ,阻力 $- C v$ 和周期性外力 $F \\cos \\omega_{\\mathrm{p}} t$ 的作用下作受迫振动。周期性外力也叫驱动力，F是驱动力的最大值，叫做力幅，$\\omega_{\\mathrm{p}}$ 是驱动力的角频率。根据牛顿第二定律，有 $F \\cos \\omega_{\\mathrm{p}} t = m a$</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "- k x - C {\\boldsymbol {v}} + F \\cos \\omega_{\\mathrm{p}} t = m a"
+  },
+  {
+   "type": "text",
+   "html": "<p>或</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "m {\\frac {\\mathrm{d}^{2} x} {\\mathrm{d} t^{2}}} + C {\\frac {\\mathrm{d} x} {\\mathrm{d} t}} + k x = F {\\cos \\omega_{\\mathrm{p}}} t"
+  },
+  {
+   "type": "text",
+   "html": "<p>对一定的振动系统、一定的环境介质、一定的驱动力，m、k、C、F、ω分别为常量。令 $\\omega_{\\mathrm{{p}}}k / m = {\\omega}_{0}^{2}$ 2$C / m = 2 \\delta$ 和 $F / m = f ,$ 则上式可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\frac {\\mathrm{d}^{2} x} {\\mathrm{d} t^{2}} + 2 \\delta \\frac {\\mathrm{d} x} {\\mathrm{d} t} + \\omega_{0}^{2} x = f \\mathrm{c o s} \\omega_{\\mathrm{p}} t",
+   "label": "式（9-33）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上述微分方程的解为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "x = A_{\\mathrm{0}} \\mathrm{e}^{- \\delta t} \\cos \\left( \\omega t + \\varphi \\right) + A \\cos \\left( \\omega_{\\mathrm{p}} t + \\psi \\right)",
+   "label": "式（9-34）"
+  },
+  {
+   "type": "text",
+   "html": "<p>即受迫振动是由阻尼振动 $A_{0} \\mathrm{e}^{- \\delta t} \\cos \\left( \\omega t + \\varphi \\right)$ 和简谐振动 $A \\cos {\\big (} \\omega_{\\mathrm{p}} t + \\psi {\\big )}$ 合成的。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>实际上，在驱动力刚开始作用时，受迫振动的情况是相当复杂的，经过不太长的时间，阻尼振动就衰减到可以忽略不计，即式(9-34)右方第一项趋于零，受迫振动达到稳定状态。这时，振动的周期即是驱动力的周期，振动的振幅保持稳定不变。于是受迫振动变为简谐振动，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "x = \\boldsymbol {A} \\cos \\left( \\omega_{\\mathrm{p}} t + \\psi \\right)",
+   "label": "式（9-35）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中振动的角频率就是驱动力的角频率ω。，而振幅A、初相ψ既和振动系统的性质及阻尼情 $\\omega_{\\mathrm{{p}}}\\psi$ 况有关，也和驱动力的频率及力幅有关。把式(9-35)代入式(9-33)中可定出A和ψ：</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "A = \\frac {f} {\\sqrt {\\big ( \\omega_{\\mathrm{0}}^{2} - \\omega_{\\mathrm{p}}^{2} \\big )^{2} + 4 \\delta^{2} \\omega_{\\mathrm{p}}^{2}}}",
+   "label": "式（9-36）"
+  },
+  {
+   "type": "formula",
+   "latex": "\\tan \\psi = \\frac {- 2 \\delta \\omega_{\\mathrm{p}}} {\\omega_{\\mathrm{0}}^{2} - \\omega_{\\mathrm{p}}^{2}}",
+   "label": "式（9-37）"
+  },
+  {
+   "type": "text",
+   "html": "<p>从能量的角度看，当受迫振动达到稳定后，周期性外力在一个周期内对振动系统做功而提供的能量，恰好用来补偿系统在一个周期内克服阻力做功所消耗的能量，因而受迫振动的振幅保持稳定不变。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>三、共振</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>由式(9-36)可知，稳定状态下受迫振动的一个重要特点是：振幅A的大小与驱动力的角频率ω。有很大 $\\omega_{\\mathrm{{p}}}$ 的关系。图9-27是对应于不同δ值的A-ω曲线，即在不 $A {-} \\omega_{\\mathrm{p}}$ 同阻尼时，振幅A随外力的角频率ω变化的关系曲线， $\\omega_{\\mathrm{{p}}}$ 图中ω。是振动系统的固有角频率。当驱动力的角频率 $\\omega_{0}\\omega_{\\mathrm{{p}}}$ 与固有角频率ω。相差较大时，受迫振动的振幅A比 $\\omega_{0}$ 较小；而当ω接近ω0时,振幅A将随之增大；在ω。为某 $\\omega_{\\mathfrak {p}}\\omega_{0}\\omega_{\\mathrm{{p}}}$ 一定值时，振幅A达到最大值。我们把驱动力的角频率为某一定值时，受迫振动的振幅达到极大的现象叫做共振。共振时的角频率叫做共振角频率，以ω,表示。将式 $\\omega_{\\mathrm{r}}$ (9-36)对 $\\omega_{\\mathrm{{p}}}$ 求导数，并令其为零，即</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch09/fig9_27_redraw.png",
+   "caption": "图 9-27 不同阻尼下的共振曲线（A 随驱动力角频率 ω_p 的变化）"
+  },
+  {
+   "type": "formula",
+   "latex": "\\begin{array} {l} {\\displaystyle \\frac {\\mathrm{d} A} {\\mathrm{d} \\omega_{\\mathrm{p}}} {=} \\frac {\\mathrm{d}} {\\mathrm{d} \\omega_{\\mathrm{p}}} \\Bigg [ \\frac {f} {\\sqrt {\\big ( \\omega_{\\mathrm{0}}^{2} - \\omega_{\\mathrm{p}}^{2} \\big )^{2} + 4 \\delta^{2} \\omega_{\\mathrm{p}}^{2}}} \\Bigg ]} \\\\ {\\displaystyle {=} \\frac {2 \\omega_{\\mathrm{p}} f} {\\big [ \\big ( \\omega_{\\mathrm{0}}^{2} - \\omega_{\\mathrm{p}}^{2} \\big )^{2} + 4 \\delta^{2} \\omega_{\\mathrm{p}}^{2} \\big ]^{3 / 2}} \\big ( \\omega_{\\mathrm{0}}^{2} {-} 2 \\delta^{2} {-} \\omega_{\\mathrm{p}}^{2} \\big ) = 0} \\end{array}"
+  },
+  {
+   "type": "text",
+   "html": "<p>可见当 $\\big ( \\omega_{\\scriptscriptstyle 0}^{2} - 2 \\delta^{2} - \\omega_{\\scriptscriptstyle \\mathrm{p}}^{2} \\big ) = 0$ 时，振幅A有最大值。这时驱动力的角频率ω等于共振角频率ω，即 $\\omega_{\\mathrm{{p}}}\\omega_{\\mathrm{{r}}}$</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\omega_{\\mathrm{r}} = \\sqrt {\\omega_{\\mathrm{0}}^{2} - 2 \\delta^{2}}",
+   "label": "式（9-38）"
+  },
+  {
+   "type": "text",
+   "html": "<p>因此，系统的共振频率是由固有角频率ω。和阻尼系数δ决定的，将式(9-38)代入式(9-36) $\\omega_{0}$ 可得共振时的振幅</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "A_{\\mathrm{r}} = \\frac {f} {2 \\delta \\sqrt {\\omega_{0}^{2} - \\delta^{2}}}",
+   "label": "式（9-39）"
+  },
+  {
+   "type": "text",
+   "html": "<p>由上两式可知，阻尼系数越小，共振角频率ω，越接近于系统的固有角频率ω。，同时共振的振 $\\omega_{;}\\omega_{0}$ 幅A也越大;若阻尼系数趋近于零，则ω趋近于ω。，A将趋于无限大(图9-27). $\\omega_{\\mathrm{{r}}}\\omega_{0}$</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>共振现象在实际中有着广泛的应用，例如钢琴、小提琴等乐器的木质琴身，就是利用了共振现象使其成为一共鸣盒，将优美悦耳的音乐发送出去，以提高音响效果。收音机的调谐装置也是利用了共振现象，以接收某一频率的电台广播。再如用超声波发生器测量金属的厚度，则是利用超声波发生器的频率可均匀地改变，当该发生器与金属壁接触时，若发生器的振荡频率正好等于金属壁的固有频率，金属壁所产生的振动就特别强烈，根据金属壁的振动强度可测出其厚度。但是共振现象也有其危害性，例如共振时振动系统的振幅过大，建筑物、机器设备等就会受到严重的破坏；又如汽车行驶时，若发动机运转的频率接近车身的固有频率，车身也会产生强烈的共振而受到损坏。因此，为了不产生共振现象或减小共振的影响，可采取一些办法，如破坏外力的周期性，改变物体的固有频率，改变外力的频率，增大系统的阻尼等来达到目的①.</p>"
+  },
+  {
+   "type": "section",
+   "number": "9.7",
+   "title": "电磁振荡"
+  },
+  {
+   "type": "text",
+   "html": "<p>电磁振荡的物理原理是谐振器、电磁波以及许多电子技术的基础，对今后学习相关课程会有帮助。同时，它也是理解物理学中振荡偶极子这一理想模型的基础</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>一、振荡电路无阻尼自由电磁振荡</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在电路中，电流和电荷以及与之相伴随的电场和磁场的振动，就是电磁振荡。本节介绍最简单最基本的无阻尼自由电磁振荡，它由LC电路(即电容C和自感L组成的电路)产生。如图9-28所示，先由电源对电容器充电，使两极板间</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>的电势差 $U_{0}$ 等于电源的电动势，这时电容器两极板A、B上分别带有等量异号的电荷+ $Q_{0}$ 和 $- Q_{0}$ 然后用转换开关S使电容器和自感线圈相连接，在电容器放电之前瞬间，电路中没有电流。电场的能量全部集中在电容器的两极板间[图9-29(a)].</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch09/fig9_28_original.png",
+   "caption": "图 9-28 LC 电磁振荡电路：(a)~(d) 电荷、电场、磁场、电流的周期性转换（archive 教材原图扫描件；第三轮目检撤下 tex 重绘）"
+  },
+  {
+   "type": "text",
+   "html": "<p>当电容器放电时，电流就在自感线圈中激起磁场，由电磁感应定律可知，在自感线圈中将激起感应电动势，以反抗电流的增大。因此在放电过程中，电路中</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>的电流将逐渐增大到最大值，两极板上的电荷也相应地逐渐减少到零。在放电终了时，电容器两极板间的电场能量全部转化成了线圈中的磁场能量[图9-29(b)」。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在电容器放电完毕时，电路中的电流达到最大值，这时，由于线圈的自感作用，就要对电容器作反方向的充电。结果，使B板带正电，A板带负电。随着电流的逐渐减弱到零，电容器两极板上的电荷也相应地逐渐增加到最大值。这时，磁场能量又全部转化成电场能量[图9-29(c)].</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>然后，电容器又通过线圈放电，电路中的电流逐渐增大，不过这时电流的方向与图9-29(b)中的相反，电场能量又转化成了磁场能量[图 9-29(d)].</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch09/fig9_29_redraw.png",
+   "caption": "图 9-29 无阻尼自由电磁振荡：电场能与磁场能的相互转化"
+  },
+  {
+   "type": "text",
+   "html": "<p>此后，电容器又被充电，恢复到原状态，完成了一个完全的振荡过程。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>由上所述可知，在只有电容C和自感L组成的LC电路中，电荷和电流都随时间作周期性的变化，相应地电场能量和磁场能量也都随时间作周期性变化，而且不断地相互转化着：这种电荷和电流、电场和磁场随时间作周期性变化的现象，叫做电磁振荡。如电路中没有任何能量耗散(转化为焦耳热、电磁辐射等），那么这种变化过程将在电路中一直继续下去，这种电磁振荡叫做无阻尼自由电磁振荡，亦称LC电磁振荡。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>二、无阻尼电磁振荡的方程</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>下面来定量讨论LC电磁振荡电路中，电荷和电流随时间变化的规律。在图9-28中，设某一时刻电路中的电流为i.根据欧姆定律，在无阻尼的情形下，任一瞬时的自感电动势为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "- L {\\frac {\\mathrm{d} i} {\\mathrm{d} t}} {=} V_{\\mathrm{A}} - V_{\\mathrm{B}} = {\\frac {q} {C}}"
+  },
+  {
+   "type": "text",
+   "html": "<p>由于 $i = \\mathrm{d} q / \\mathrm{d} t$ ，上式可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "{\\frac {\\mathrm{d}^{2} q} {{\\mathrm{d}} t^{2}}} = - {\\frac {1} {L C}} q",
+   "label": "式（9-40）"
+  },
+  {
+   "type": "text",
+   "html": "<p>$\\omega^{2} = 1 / L C$ ,有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "{\\frac {\\operatorname {d}^{2} q} {\\operatorname {d} t^{2}}} = - \\omega^{2} q"
+  },
+  {
+   "type": "text",
+   "html": "<p>这正是我们已在第9-1节中所熟知的简谐振动微分方程，其解为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "q = Q_{\\mathrm{0}} \\cos ( \\omega t {+} \\varphi )",
+   "label": "式（9-41）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中q为任一时刻电容器极板上的电荷，Q。是其最大值，叫做电荷振幅，φ是初 $qQ_{\\mathfrak {d}}\\varphi$ 相，Q。和φ的数值是由初始条件决定的；ω是振荡的角频率，而频率和周期分 $Q_{0}\\varphi\\omega$ 别为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\nu = \\frac {\\omega} {2 \\pi} = \\frac {1} {2 \\pi \\sqrt {L C}} , T = 2 \\pi \\sqrt {L C}",
+   "label": "式（9-42）"
+  },
+  {
+   "type": "text",
+   "html": "<p>将q对时间求导数，可得电路中任意时刻的电流为 $q$</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "i = \\frac {\\mathrm{d} q} {\\mathrm{d} t} {=} - \\omega Q_{\\mathrm{0}} \\sin ( \\omega t {+} \\varphi )"
+  },
+  {
+   "type": "text",
+   "html": "<p>令 ${\\bar {I}}_{0}$ 为电流的最大值，叫做电流振幅，则 $\\omega Q_{0} = I_{0}$ ,上式为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "i = - I_{0} \\sin \\left( \\omega t + \\varphi \\right) = I_{0} \\cos \\left( \\omega t + \\varphi + \\frac {\\pi} {2} \\right)",
+   "label": "式（9-43）"
+  },
+  {
+   "type": "text",
+   "html": "<p>由式(9-41)和式(9-43)可以看出，在LC电磁振荡电路中，电荷和电流都随时间作相同周期的变化，但电流的相位比电荷的相位超前π/2.当电容器的两 $\\overline {{\\mathfrak {M}}} / 2.$ 板上所带的电荷最大时，电路中的电流为零，反之，电流最大时，电荷为零图9-30表示电荷和电流随时间变化的情况。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>由式(9-42)可以看出，LC电路电磁振荡的频率ν是由振荡电路本身的性质，即由线圈的自感L和电容器的电容C所决定的。图9-31为一简单的半导体收音机调谐电路，改变电路中的电容C或自感L就可得到所需的频率或周期。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch09/fig9_30_original.png",
+   "caption": "图 9-30 无阻尼电磁振荡中电荷 q 和电流 i 随时间的变化（相位差 π/2）（archive 教材原图扫描件；第三轮目检撤下 tex 重绘）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch09/pages_0_50_65f3ad78aac405ea11f8486cabe85744384fb1fdee4dda58ac432c3e7e5332f2.png",
+   "caption": "图 9-31 半导体收音机的调谐电路"
+  },
+  {
+   "type": "text",
+   "html": "<h4>三、无阻尼电磁振荡的能量</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>我们进而可定量讨论LC电磁振荡电路中的电场能量、磁场能量和总能量。设电容器的极板上带有电荷q,则电容器中的电场能量为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "{\\mathbb {W}}_{\\mathrm{e}} = {\\frac {q^{2}} {2 C}} = {\\frac {Q_{0}^{2}} {2 C}} \\cos^{2} ( \\ \\omega t + \\varphi )",
+   "label": "式（9-44）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式表明LC振荡电路中电场能量是随时间作周期性变化的。当自感线圈中通过电流i时，线圈中的磁场能量为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\ b {W}_{\\mathrm{{m}}} = \\frac {1} {2} \\ b {L i}^{2} = \\frac {1} {2} \\ b {L I}_{0}^{2} \\sin^{2} ( \\omega t + \\varphi ) = \\frac {Q_{0}^{2}} {2 C} \\mathrm{s i n}^{2} ( \\omega t + \\varphi )",
+   "label": "式（9-45）"
+  },
+  {
+   "type": "text",
+   "html": "<p>这表明，LC振荡电路中的磁场能量也是随时间作周期性变化的。于是LC振荡电路中的总能量为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\boldsymbol {W}_{\\mathrm{s s}} = \\boldsymbol {W}_{\\mathrm{e}} + \\boldsymbol {W}_{\\mathrm{m}} = \\frac {1} {2} L \\boldsymbol {I}_{0}^{2} = \\frac {Q_{0}^{2}} {2 C}",
+   "label": "式（9-46）"
+  },
+  {
+   "type": "text",
+   "html": "<p>可见，在无阻尼自由电磁振荡过程中，电场能量和磁场能量不断地相互转化，但在任何时刻，其总和保持不变。在电场能量最大时，磁场能量为零；反之，在磁场能量最大时，电场能量为零。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>应当指出， $_{L C}$ 振荡电路中的电磁场能量守恒是有条件的。首先，电路中的电阻必须为零，这样在电路中才能避免因电阻产生的焦耳热而损耗电磁能；其次，电路中不存在任何电动势，即没有其他形式的能量在电路中交换；最后，电磁能还不能以电磁波的形式辐射出去。但实际上任何振荡电路都有电阻，电磁能量不断地转化为焦耳热，而且在振荡过程中，电磁能量不可避免地还会以电磁波的形式辐射出去。因此LC电磁振荡电路是一个理想化的振荡电路模型。</p>"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（9.7 节 · 例）",
+   "problem": "在LC 电路中，已知 $L = 260 ~ {\\mu \\mathrm{H}} , C = 120 ~ \\mathrm{p F}$ ，初始时电容器两极板间的电势差 $U_{0} = 1 \\mathrm{~ V ~}$ 且电流为零。试求：<br>(1)振荡频率；<br>(2) 最大电流；<br>(3)电容器两极板间的电场能量随时间变化的关系；<br>(4) 自感线圈中的磁场能量随时间变化的关系；<br>(5）试证明在任意时刻电场能量与磁场能量之和总是等于初始时的电场能量。",
+   "solution_steps": [
+    "解(1)由式(9-42)得振荡频率为",
+    "$$\\nu = \\frac {1} {2 \\pi \\sqrt {L C}}$$",
+    "将已知数据代入，得",
+    "$$\\nu = 9.01 \\times 10^{5} ~ \\mathrm{H z}$$",
+    "(2) 已知 $t = 0$ 时， $i_{0} = 0 , q_{0} = C U_{0}$ ,代入式(9-41)和式(9-43),得",
+    "$$C U_{0} = Q_{0} \\cos \\varphi , 0 = - \\omega Q_{0} \\sin \\varphi$$",
+    "解得",
+    "$$\\varphi = 0 , \\quad Q_{\\scriptscriptstyle 0} = C U_{\\scriptscriptstyle 0}$$",
+    "而电流的最大值 $I_{0} = \\omega Q_{0} = \\omega C U_{0} = \\sqrt {\\frac {C} {L}} U_{0}$ ，代人数据，有",
+    "$$I_{0} = 0.679 \\mathrm{\\ m A}$$",
+    "(3)由式(9-44)可知，电容器两极板间的电场能量为",
+    "$${\\boldsymbol {W}}_{\\mathrm{e}} = {\\frac {1} {2}} C {\\boldsymbol {U}}_{0}^{2} {\\cos^{2} {\\omega t}} = \\left( 6. \\ 0 {\\times} 10^{- 11} \\ \\mathbf {J} \\right) {\\cos^{2}} {\\omega t}$$",
+    "(4)由式(9-45)可知，线圈中的磁场能量为",
+    "$$\\begin{array} {l} {{\\displaystyle {\\cal W}_{\\mathrm{\\scriptsize ~ {s} ~}} = \\frac {1} {2} {\\cal L} I_{0}^{2} \\sin^{2} \\omega t}} \\\\ {{\\displaystyle ~ \\ = ( 6.0 \\times 10^{- 11} \\mathrm{~ J} ) \\sin^{2} \\omega t}} \\end{array}$$",
+    "(5)由以上计算结果可知",
+    "$$\\varPsi_{\\mathrm{e}} + \\varPsi_{\\mathrm{m}} = 6.0 {\\times} 10^{- 11} \\mathrm{~ J}$$",
+    "而初始电场能量 $\\boldsymbol {W}_{\\mathrm{e 0}} = \\frac {1} {2} \\boldsymbol {C} \\boldsymbol {U}_{0}^{2} = 6. \\boldsymbol {0 \\times} 10^{- 11}$ J.所以在任一时刻电场能量与磁场能量之和总是等于初始电场能量"
+   ],
+   "answer": null
+  },
+  {
+   "type": "section",
+   "number": "9.8",
+   "title": "简述非线性系统"
+  },
+  {
+   "type": "text",
+   "html": "<p>人们时常习惯于这样的结果：使用两台功率相同的扬声器，在同一广播条件下，收听到的声音强度是其中任意一台的两倍。依此类推：若质量为m的物体，受力F作用而获得的加速度为a，则当n个同样大小、方向相同的力F同时作用在此物体上，所获得的加速度就应是na，这也是依照牛顿第二定律得出的结论。其实上述结果之所以成立，更深一层的原因就在于它们都属于线性系统凡线性系统均有如下特征：动力学行为可由(一组)线性微分方程表示，其解满足线性叠加原理；结合初始条件或边界条件，其解能够精确反映动力学的过程。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>例如，在第9-3节中介绍过的小角度单摆就是一个线性系统。其线性微分方程为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\frac {\\mathrm{d}^{2} \\theta} {{\\mathrm{d} t}^{2}} {+ \\omega}_{0}^{2} \\theta = 0"
+  },
+  {
+   "type": "text",
+   "html": "<p>若此摆同时参与两个振动，并各自满足上式，即对 $\\theta_{1}$ 有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\frac {\\mathrm{d}^{2} \\theta_{1}} {\\mathrm{d} t^{2}} {+} \\omega_{0}^{2} \\theta_{1} = 0",
+   "label": "式（9-47）"
+  },
+  {
+   "type": "text",
+   "html": "<p>对 $\\theta_{2}$ 有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\frac {\\mathrm{d}^{2} \\theta_{2}} {\\mathrm{d} t^{2}} {+} \\omega_{0}^{2} \\theta_{2} = 0",
+   "label": "式（9-48）"
+  },
+  {
+   "type": "text",
+   "html": "<p>当将式(9-47)与式(9-48)相加并令 $\\boldsymbol {\\theta} = \\boldsymbol {\\theta}_{1} + \\boldsymbol {\\theta}_{2}$ 时，则θ仍满足</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\frac {\\mathrm{d}^{2} \\theta} {{\\mathrm{d} t}^{2}} {+} {\\omega}_{0}^{2} \\theta = 0"
+  },
+  {
+   "type": "text",
+   "html": "<p>这就是线性叠加原理，此外，上述线性方程的解为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\theta {=} \\theta_{0} \\cos \\left( \\omega_{0} t {+} \\varphi \\right)"
+  },
+  {
+   "type": "text",
+   "html": "<p>当由任一初始条件决定了θ和φ的值以后，此式就能精确地描述以后所有时刻该线性系统 $\\theta_{0}\\varphi$</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>的一切物理状态(位置、速度、加速度、能量等).</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>但是，线性系统只是理想的或者说是近似的(上例中就是小角度近似），它是真实系统在特定状态附近的线性化结果。绝大多数实际系统是非线性的，比如大角度摆。那么，非线性会有些什么特点呢？</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>下面就以大角度摆为例来讨论。由于大角度摆的θ较大，这时sinθ并不近似等于θ,所以式(9-16)或式(9-18)应写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\frac {\\mathrm{d}^{2} \\theta} {\\mathrm{d} t^{2}} {+} \\omega_{0}^{2} \\sin \\ \\theta = 0",
+   "label": "式（9-49）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $\\omega_{0}$ 是由式(9-17)或式(9-19)表示的角频率。将sinθ展开为级数：</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\sin \\ \\theta = \\theta - \\frac {\\theta^{3}} {3 !} + \\frac {\\theta^{5}} {5 !} + \\cdots"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式第三项及以后的各项，相对前两项都是很小的量，可以忽略不计，故可仅取前两项并代入式(9-49),得</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\frac {\\mathrm{d}^{2} \\theta} {{\\mathrm{d} \\ t}^{2}} {+} {\\omega}_{0}^{2} \\theta = {\\omega}_{0}^{2} \\frac {\\theta^{3}} {6}",
+   "label": "式（9-50）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式(9-49)或式(9-50)均已是非线性方程了，显然已不再满足叠加原理，而且很难求得精确的解析解。但研究表明可以应用迭代法求得其一次迭代的近似解为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\theta = A \\cos \\ \\omega t + {\\frac {A^{3}} {192}} \\cos \\ 3 \\omega t",
+   "label": "式（9-51）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\omega = \\omega_{\\scriptscriptstyle 0} \\bigg ( 1 {-} \\frac {A^{2}} {16} \\bigg )"
+  },
+  {
+   "type": "text",
+   "html": "<p>式(9-51)表明，此时摆的运动已不是前述那种单一的简谐振动，而是一种较为复杂的、由两种振动组成的合振动，即由一个以ω为角频率的简谐振动与一个以3ω为角频率的振动叠加而成的合振动，并且初始条件将会影响摆的运动形式。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>图9-32示出了三种不同的起始能量所导致的摆的三种不同运动。图(a)是起始能量较小的情况，摆在偏离一定角度θ后，摆锤将沿原路摆回作往复性运动；图(b)所示的起始能量较大，摆锤将不会沿原路返回，运动将不再具有往复性；图(c)表示起始能量更大时，摆锤将在竖直平面内作圆周运动，而这已不是通常意义上的摆动了。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch09/fig9_32_redraw.png",
+   "caption": "图 9-32 起始能量不同导致大角度摆的三种不同运动"
+  },
+  {
+   "type": "text",
+   "html": "<p>物体的运动状态可以在所谓相图中表示出来。因为描述质点运动状态的量是x和v，则以x、v为坐标可作如图9-33所示的相图。图中点 $P ( x , v )$ 表示质点在某一时刻的运动状态，而图中的曲线则描述了质点在给定时间内运动状态的变化。于是可用相图9-34中的(a)、(c)来表示图9-32中的(a)、(c)两种运动(振动和转动)，而轨迹(b)是振动(a)和转动(c)两种运动形式的分界线。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch09/pages_0_50_2f135cb15e91a2bede0b3dd050f4850c51c469cbe38d2859134752bf247fd653.png",
+   "caption": "图 9-33 相图（以 x、v 描述运动状态）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch09/fig9_34_redraw.png",
+   "caption": "图 9-34 不同初始条件的相轨迹（a 振动；b 分界线；c 转动）"
+  },
+  {
+   "type": "text",
+   "html": "<p>对于非线性系统，可能还会出现更复杂的“混沌”运动状态。这是在确定性动力学系统中存在的一种随机运动，其特征是：初始条件的微小差异就会导致极不相同的后果，使系统的未来运动状态无法预料而呈现为随机的运动。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>当然，不是所有非线性系统都会出现混沌，比如式(9-49)或式(9-50)所描述的运动系统并不会出现混沌，即便考虑了该系统具有的阻尼也不会出现混沌。为了看到混沌，可以对摆施加周期性的外力，使它成为受迫摆。施加周期性外力的方法很多，如果质点由铁磁材料制成，可以把摆放在交变外磁场里；也可以设法周期性地改变摆的有效长度，小孩荡秋千时不断地蹲下和立起，就是在改变摆的有效长度使摆的频率发生周期性的变化，相当于对摆施加了周期性外力。当周期性外力沿重力方向，则大摆角方程式(9-49)成为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\frac {\\mathrm{d}^{2} \\theta} {\\mathrm{d} t^{2}} {+ 2 \\delta} \\frac {\\mathrm{d} \\theta} {\\mathrm{d} t} {+ \\omega_{0}^{2}} \\bigl [ 1 {+ A} \\sin \\left( \\varOmega t \\right) \\bigr ] \\sin \\theta = 0",
+   "label": "式（9-52）"
+  },
+  {
+   "type": "text",
+   "html": "<p>这是一个由参量A(即外驱动力的力幅，代表着能量，体现了初始条件)驱动的阻尼摆，Ω是外驱动力的角频率。研究表明，当参量A在某些区域里，可以出现不同的振动或转动，或者两者</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>交替出现；但在另外一些区域内，则可能出现很随机的混沌运动。图9-35就是相平面上一条混沌轨道的一小段，对比图9-34可以看到，在A值的某些区域内，摆的运动形式已不能严格区分了，而状态则呈现为永不重复的绕来绕去，并最终会把相平面的一大片涂成黑色。这意味着大角度摆此时的运动已经无法预料。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>归纳起来，非线性系统具有如下特征：</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>（1）叠加原理不再成立；</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch09/fig9_35_redraw.png",
+   "caption": "图 9-35 相平面上的混沌轨道（受迫阻尼摆数值解的一小段）"
+  },
+  {
+   "type": "text",
+   "html": "<p>（2）初始条件的不同，会导致很不相同的运动形式；</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(3) 可能出现完全随机的混沌运动。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>应当指出，对于多数显示出混沌的非线性系统来说，要给它精确选定初始条件并确定其结果，在实际上是办不到的，因为这种系统的运动具有显著的随机性。例如地球表面附近的大气层就是个相当复杂的非线性系统，而大气环流、海洋潮汐、太阳活动等因素的某些偶然变化，都会使仅仅靠求解气象方程来精确预报长期天气成为不可能和不现实的事。</p>"
+  },
+  {
+   "type": "homework",
+   "title": "本章作业",
+   "allowRetry": 2,
+   "showAnswerAfter": true,
+   "batches": [
+    {
+     "title": "第 1 次作业（9-1 ～ 9-5：简谐振动·旋转矢量·能量·振动的合成）",
+     "items": [
+      {
+       "type": "choice",
+       "question": "［教材习题 9-4］一质点作简谐振动，周期为 T。质点由平衡位置向 x 轴正方向运动，从 1/2 最大位移处运动到最大位移处这段路程所需要的时间为（　）",
+       "options": [
+        "T/12",
+        "T/8",
+        "T/6",
+        "T/4"
+       ],
+       "answer": 2,
+       "explanation": "选 C。用旋转矢量：平衡位置（向 +x）对应相位 −π/2；x = A/2 处相位 −π/3；最大位移处相位 0。从 A/2 到 A，相位变化 π/3，时间 t = (π/3)/(2π)·T = T/6。（下册有习题答案，本题为教材原题）"
+      },
+      {
+       "type": "fill",
+       "question": "［教材习题 9-8(1)］简谐振动方程为 x = 0.10cos(20πt + π/4)（x 以 m 计，t 以 s 计）。其振幅为 ______ m，频率为 ______ Hz，初相为 ______ π（填系数，如 0.25）。",
+       "blanks": [
+        {
+         "answer": "0.10",
+         "tolerance": 0.005
+        },
+        {
+         "answer": "10",
+         "tolerance": 0.2
+        },
+        {
+         "answer": "0.25",
+         "tolerance": 0.01
+        }
+       ],
+       "explanation": "对照标准式 x = Acos(ωt+φ)：A = 0.10 m，ω = 20π rad/s → ν = ω/2π = 10 Hz （T = 0.10 s），φ = π/4。"
+      },
+      {
+       "type": "calculation",
+       "question": "［教材习题 9-22］为测月球表面重力加速度，宇航员把地球上的「秒摆」（周期 2.00 s）拿到月球，测得周期为 4.90 s。求月球表面的重力加速度（单位 m/s²，保留 2 位小数；地球 g = 9.80 m/s²）。",
+       "answer": 1.63,
+       "unit": "m/s²",
+       "tolerance": 0.03,
+       "solution": "单摆 T = 2π√(l/g)，同一摆 l 不变，故 g ∝ 1/T²。g_月 = g·(T_地/T_月)² = 9.80×(2.00/4.90)² = 9.80×0.1665 ≈ 1.63 m/s²。"
+      },
+      {
+       "type": "qa",
+       "question": "［教材问题 9-3］一质量未知的物体挂在一弹性系数未知的弹簧上，只要测得此物体所引起弹簧的静平衡伸长量，就可以知道此振动系统的周期。试讨论其原因，并阐述其中科学方法的意义。",
+       "rubric": "写出静平衡条件 mg = kl（3 分）；代入 T = 2π√(m/k) 得 T = 2π√(l/g)，m、k 同时消去（4 分）；指出方法意义：用静力学测量替代动力学测量、未知参量整体消去的化归思想（3 分）",
+       "reference": "静平衡时 mg = kl，即 m/k = l/g。代入弹簧振子周期公式得 T = 2π√(m/k) = 2π√(l/g)：只需测出静伸长 l，周期即定，m 与 k 两个未知量同时消去。方法意义：① 把「测周期」转化为「测长度」——静态测量比动态计时简便精确；② 体现化归思想与参量整体消去：不必分别知道 m 和 k，只需其比值对应的可测静量。这一思想在传感器设计（如用静变形标定动态特性）中广泛应用。",
+       "maxScore": 10
+      },
+      {
+       "type": "choice",
+       "question": "［教材习题 9-5］当质点以频率 ν 作简谐振动时，它的动能的变化频率为（　）",
+       "options": [
+        "ν/2",
+        "ν",
+        "2ν",
+        "4ν"
+       ],
+       "answer": 2,
+       "explanation": "选 C。E_k = ½mω²A²sin²(ωt+φ) = ¼mω²A²[1−cos2(ωt+φ)]，含 2ω 项，故动能变化频率为 2ν（一个振动周期内动能两次达到最大）。"
+      },
+      {
+       "type": "fill",
+       "question": "［教材习题 9-30(1)］质量 m = 10 g 的小球与轻弹簧组成振动系统，按 x = 0.5cos(8πt + π/3)（x 以 cm 计，t 以 s 计）作自由振动。其角频率为 ______ π rad/s，周期为 ______ s，振幅为 ______ cm。",
+       "blanks": [
+        {
+         "answer": "8",
+         "tolerance": 0.1
+        },
+        {
+         "answer": "0.25",
+         "tolerance": 0.01
+        },
+        {
+         "answer": "0.5",
+         "tolerance": 0.02
+        }
+       ],
+       "explanation": "对照标准式：ω = 8π rad/s，T = 2π/ω = 0.25 s，A = 0.5 cm，初相 φ = π/3。"
+      },
+      {
+       "type": "calculation",
+       "question": "［教材习题 9-31(1)］两个同方向同频率简谐振动 x₁ = 0.05cos(10t + 0.75π)、x₂ = 0.06cos(10t + 0.25π)（SI 制）。求合振动的振幅（单位 m，保留 3 位小数）。",
+       "answer": 0.078,
+       "unit": "m",
+       "tolerance": 0.002,
+       "solution": "相位差 Δφ = 0.75π − 0.25π = 0.5π，cosΔφ = 0。A = √(A₁²+A₂²) = √(0.05²+0.06²) = √0.0061 ≈ 0.0781 m。（初相 tanφ = (A₁sinφ₁+A₂sinφ₂)/(A₁cosφ₁+A₂cosφ₂) = 11.0，φ ≈ 84.8°。）"
+      },
+      {
+       "type": "qa",
+       "question": "［教材问题 9-14］怎样利用拍音来测定一音叉的频率？",
+       "rubric": "说明用已知频率 ν₀ 的标准音叉与待测音叉同时发声（3 分）；数出拍频 ν_拍 = |ν − ν₀|（3 分）；判断高低的方法：在待测音叉上加小质量，拍频减小则 ν > ν₀，反之 ν < ν₀（4 分）",
+       "reference": "将待测音叉与频率已知（ν₀）的标准音叉同时敲响，耳朵听（或示波器测）拍音，数出每秒强弱变化的次数即拍频 ν_拍 = |ν − ν₀|，于是 ν = ν₀ ± ν_拍。为确定正负号：在待测音叉一端粘一小块橡皮泥（等效质量增大、频率降低），若拍频变小，说明原来 ν > ν₀，取 ν = ν₀ + ν_拍；若拍频变大，则取 ν = ν₀ − ν_拍。",
+       "maxScore": 10
+      }
+     ],
+     "dueDate": "2027-03-03T23:59:59+08:00"
+    },
+    {
+     "title": "第 2 次作业（9-6 ～ 9-8：阻尼·受迫振动·共振·电磁振荡）",
+     "items": [
+      {
+       "type": "choice",
+       "question": "［概念辨析］关于受迫振动稳定后的状态，下列说法正确的是（　）",
+       "options": [
+        "振动频率等于系统的固有频率",
+        "振动频率等于驱动力的频率，与系统固有性质无关",
+        "振幅只由驱动力的力幅决定，与频率无关",
+        "驱动力频率越接近固有频率，振幅一定越小"
+       ],
+       "answer": 1,
+       "explanation": "选 B。稳态受迫振动 x = Acos(ω_p t + ψ)，频率即驱动力频率 ω_p（A 错、B 对）；振幅 A = f/√((ω₀²−ω_p²)²+4δ²ω_p²) 与 ω_p 强相关（C 错）；ω_p 接近共振频率 ω_r ≈ ω₀ 时振幅反而极大（D 错）。"
+      },
+      {
+       "type": "fill",
+       "question": "［教材习题 9-32］频率 348 Hz 的标准音叉与一待测音叉合成，测得拍频为 3.0 Hz。在待测音叉一端加上一小块物体后拍频减小，则待测音叉的固有频率为 ______ Hz（取整数）。",
+       "blanks": [
+        {
+         "answer": "351",
+         "tolerance": 0.5
+        }
+       ],
+       "explanation": "ν_x = 348±3。加小物体后 ν_x 降低：若 ν_x = 345 Hz，拍频将变为 >3 Hz（增大），不合题意；故 ν_x = 348+3 = 351 Hz（降低后拍频 348→ν_x 差减小，符合）。"
+      },
+      {
+       "type": "calculation",
+       "question": "［教材习题 9-37(2)］弹簧振子 m = 1.0 kg、k = 900 N/m，阻尼系数 δ = 10.0 s⁻¹，加周期性外力 F = 100cos(30t)（SI 制）。若外力角频率可调，其值为多少时系统共振？共振角频率为 ______ rad/s（保留 1 位小数）。",
+       "answer": 26.5,
+       "unit": "rad/s",
+       "tolerance": 0.3,
+       "solution": "ω₀ = √(k/m) = √900 = 30 rad/s。共振角频率 ω_r = √(ω₀²−2δ²) = √(900−200) = √700 ≈ 26.5 rad/s。（共振振幅 A_r = f/(2δ√(ω₀²−δ²)) = 100/(20×√800) ≈ 0.177 m。）"
+      },
+      {
+       "type": "qa",
+       "question": "［教材问题 9-18］无阻尼自由电磁振荡过程中，哪些量随时间作正弦（余弦）变化？哪些量是常量？与弹簧振子简谐振动的对应关系是怎样的？",
+       "rubric": "正弦变化量：q、i、W_e、W_m（4 分）；常量：Q₀、I₀、ω、总能量 W（3 分）；对应关系 q↔x、i↔v、L↔m、1/C↔k、W_e↔E_p、W_m↔E_k（3 分）",
+       "reference": "随时间正弦（余弦）变化的量：电荷 q = Q₀cos(ωt+φ)、电流 i = −I₀sin(ωt+φ)、电场能 W_e = (Q₀²/2C)cos²(ωt+φ)、磁场能 W_m = (Q₀²/2C)sin²(ωt+φ)；保持不变的量：电荷振幅 Q₀、电流振幅 I₀、角频率 ω = 1/√(LC)、总能量 W = Q₀²/2C。与弹簧振子的对应：q↔x，i↔v，L↔m（惯性），1/C↔k（弹性），W_e↔E_p，W_m↔E_k；电流相位超前电荷 π/2，正如速度超前位移 π/2。",
+       "maxScore": 10
+      }
+     ],
+     "dueDate": "2027-03-06T23:59:59+08:00"
+    }
+   ],
+   "socratic": {
+    "type": "socratic",
+    "chapter": "9 振动",
+    "sessions": [
+     {
+      "label": "第 1 次课讨论（9-1 ～ 9-5：简谐振动及其合成）",
+      "topics": [
+       {
+        "title": "把单摆拉开的角度 φ，就是振动的「初相」吗？（教材问题 9-8）",
+        "question": "把单摆从平衡位置拉开，使悬线与竖直方向成一小角度 φ，放手任其摆动。若从放手时计时，这个 φ 是振动的初相吗？单摆摆动的角速度是振动的角频率吗？追问：初相的定义是什么（t=0 时的相位）？放手时摆球在最大角位移处、角速度为零，对应的运动方程 θ = θ₀cos(ωt+φ₀) 中 φ₀ 应取多少？摆球来回摆动的角速度 dθ/dt 随时间变化，而 ω 是常量——两个「角速度」差在哪？符号撞车（同一个 φ 既是几何角度又是相位符号）是不是你混淆的根源？"
+       },
+       {
+        "title": "弹簧剪成两半，每半根的 k 还是 k 吗？（教材问题 9-4）",
+        "question": "弹簧的弹性系数 k 是只由材料决定的「材料常量」吗？若把一根弹簧均分为两段，每段的弹性系数还是 k 吗？把同一物体分别挂在分割前、后的弹簧下，两个振子的频率一样吗？追问：同样拉力 F 下，半根弹簧的伸长量是整根的几分之几（每匝的变形不变、匝数减半）？由此 k′ = F/x′ 是 k 的几倍？再由 ν = (1/2π)√(k/m) 推频率关系。这说明 k 与哪些因素有关——材料、匝数、粗细，还是「整根弹簧」这个整体？"
+       }
+      ]
+     },
+     {
+      "label": "第 2 次课讨论（9-6 ～ 9-8：阻尼、共振与电磁振荡）",
+      "topics": [
+       {
+        "title": "两种「简谐振动」真的一样吗？（教材问题 9-16）",
+        "question": "弹簧振子的无阻尼自由振动是简谐振动；同一弹簧在简谐驱动力作用下的稳态受迫振动也是简谐振动。这两种简谐振动有什么不同？追问：两者的角频率各由谁决定（√(k/m) 还是驱动力 ω_p）？振幅各由谁决定（初始条件还是式(9-36)）？能量从何而来、是否守恒？暂态项消失后，系统还「记得」自己的固有频率吗——共振峰为什么偏偏出现在 ω₀ 附近？"
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ]
+}

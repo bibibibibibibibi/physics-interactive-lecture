@@ -68,7 +68,20 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "场的物理实在性",
+     "qa": [
+      {
+       "q": "引入电场是不是只是换个说法？",
+       "a": "不是。场是实在的物理对象，携带能量和动量，还能脱离电荷独立存在，如电磁波。"
+      },
+      {
+       "q": "两个电荷不接触，力怎么传递？",
+       "a": "甲在周围产生电场，电场再对乙施力，力通过场传递，而非超距作用。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -88,7 +101,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "电荷—场—电荷模型",
+     "qa": [
+      {
+       "q": "「电荷→场→电荷」这个链条怎么理解？",
+       "a": "把甲对乙的力拆成两步：甲产生场，场对乙施力，场是中间媒介。"
+      }
+     ],
+     "important": true
     }
    ],
    "heading": "封面"
@@ -135,7 +157,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "电场的概念",
+     "qa": [
+      {
+       "q": "电场到底是什么？",
+       "a": "电荷周围存在的一种特殊物质，置于场中的任何电荷都会受到场给它的力。"
+      },
+      {
+       "q": "为什么要引入电场？",
+       "a": "把「甲推乙」改为甲激发场、场对乙施力两步，使力的传递不再是超距作用。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -213,7 +248,15 @@
      "tex": "\\text{甲}\\ \\longrightarrow\\ \\text{场}\\ \\longrightarrow\\ \\text{乙}",
      "size": 34,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "场传递力的图式",
+     "qa": [
+      {
+       "q": "甲对乙的作用怎么表示？",
+       "a": "写成 $\\text{甲}\\to\\text{场}\\to\\text{乙}$：甲先激发场，场再对乙施力。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -279,7 +322,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "静电场的定义",
+     "qa": [
+      {
+       "q": "什么是静电场？",
+       "a": "相对于观察者静止的电荷所激发的电场，它不随时间变化。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "diagram",
@@ -330,7 +382,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "场的物质性",
+     "qa": [
+      {
+       "q": "场是真实存在的吗？",
+       "a": "是。场不是数学虚构，它携带能量与动量，可以脱离电荷独立存在，如电磁波。"
+      }
+     ]
     }
    ],
    "heading": "一　静电场"
@@ -417,6 +477,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "试探电荷电量要求",
+     "qa": [
+      {
+       "q": "试探电荷为什么要电量足够小？",
+       "a": "电量足够小才不会扰动原来的电荷分布，保证测到的是原场的性质。"
+      }
      ]
     },
     {
@@ -437,6 +505,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "试探电荷线度要求",
+     "qa": [
+      {
+       "q": "为什么要求试探电荷线度足够小？",
+       "a": "线度足够小才可视为点电荷，这样测到的才是电场中某一点的场强。"
+      }
      ]
     },
     {
@@ -449,7 +525,20 @@
      "tex": "\\vec E=\\dfrac{\\vec F}{q_0}",
      "size": 44,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "电场强度定义式",
+     "qa": [
+      {
+       "q": "电场强度为什么用 F/q₀ 定义？",
+       "a": "E 等于放在该点的试探电荷所受的力除以其电荷量，即 $\\vec E=\\vec F/q_0$，反映场本身性质。"
+      },
+      {
+       "q": "E 的方向怎么确定？",
+       "a": "$\\vec E$ 是矢量，方向规定为正电荷在该点受力的方向。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -515,6 +604,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "场强单位",
+     "qa": [
+      {
+       "q": "N/C 和 V/m 有什么区别？",
+       "a": "两者完全等价，都是电场强度的单位，$\\mathrm{N/C}=\\mathrm{V/m}$。"
+      }
      ]
     },
     {
@@ -725,7 +822,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "比值 F/q₀ 恒定",
+     "qa": [
+      {
+       "q": "为什么 F/q₀ 始终相同？",
+       "a": "试探电荷变为 2q₀、3q₀ 时受力也按比例变为 2F、3F，故比值 $F/q_0$ 不变。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -745,6 +851,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "比值由场源与位置决定",
+     "qa": [
+      {
+       "q": "这个比值跟什么有关？",
+       "a": "只由场源 Q 和场点 P 的位置决定，与试探电荷的大小、正负无关。"
+      }
      ]
     },
     {
@@ -765,7 +879,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "电场强度定义",
+     "qa": [
+      {
+       "q": "电场强度是怎么定义的？",
+       "a": "定义为 $E=F/q_0$，即该点试探电荷所受的力与其电荷量之比。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -785,6 +908,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "E 描述场本身",
+     "qa": [
+      {
+       "q": "E 是描述什么的物理量？",
+       "a": "E 描述的是场本身的性质，与用什么电荷去测量无关。"
+      }
      ]
     },
     {
@@ -893,7 +1024,15 @@
      "tex": "\\vec F=k\\dfrac{Qq_0}{r^{2}}\\hat{\\vec r}",
      "size": 40,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "库仑定律",
+     "qa": [
+      {
+       "q": "试探电荷受到的力由什么决定？",
+       "a": "由库仑定律 $\\vec F=k\\dfrac{Qq_0}{r^2}\\hat{\\vec r}$，方向沿 $Q$ 与 $q_0$ 的连线。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -925,7 +1064,20 @@
      "tex": "\\vec E=\\dfrac{\\vec F}{q_0}=k\\dfrac{Q}{r^{2}}\\hat{\\vec r}",
      "size": 44,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "点电荷场强公式",
+     "qa": [
+      {
+       "q": "为什么场强公式里没有试探电荷 q0？",
+       "a": "因为 $\\vec E=\\vec F/q_0$，$q_0$ 被约掉，$\\vec E$ 只由场源 $Q$ 和距离 $r$ 决定。"
+      },
+      {
+       "q": "公式中 $\\hat{\\vec r}$ 表示什么方向？",
+       "a": "$\\hat{\\vec r}$ 是从场源 $Q$ 指向场点 $P$ 的单位矢量，$Q$ 为正时 $\\vec E$ 沿它向外。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -937,7 +1089,15 @@
      "tex": "=\\dfrac{1}{4\\pi\\varepsilon_0}\\dfrac{Q}{r^{2}}\\hat{\\vec r}",
      "size": 38,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "用 ε0 表示场强",
+     "qa": [
+      {
+       "q": "$k$ 和 $\\varepsilon_0$ 是什么关系？",
+       "a": "$k=\\dfrac{1}{4\\pi\\varepsilon_0}$，所以 $k\\dfrac{Q}{r^2}=\\dfrac{1}{4\\pi\\varepsilon_0}\\dfrac{Q}{r^2}$。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -957,7 +1117,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "场强只由场源决定",
+     "qa": [
+      {
+       "q": "场强与试探电荷有关吗？",
+       "a": "无关。$q_0$ 被约掉，$\\vec E$ 只由场源 $Q$ 与距离 $r$ 决定，这正是场强的意义。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "diagram",
@@ -1421,7 +1590,16 @@
      "tex": "E_\\perp=k\\dfrac{p}{r^{3}}",
      "size": 42,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "中垂线场强公式",
+     "qa": [
+      {
+       "q": "为什么中垂线上场强是 $kp/r^3$ 而不是 $2kp/r^3$？",
+       "a": "两电荷场强垂直于中垂线的分量互相抵消，只剩沿中垂线分量相加，化简得 $E=kp/r^3$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1473,7 +1651,16 @@
      "tex": "E_\\parallel=k\\dfrac{2p}{r^{3}}",
      "size": 42,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "延长线场强公式",
+     "qa": [
+      {
+       "q": "延长线上为什么是 2 倍？",
+       "a": "两场强都沿轴线但方向相反，相减后剩 $k\\cdot 2p/r^3$，方向与 $\\vec p$ 相同。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1513,6 +1700,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "偶极子矢量式",
+     "qa": [
+      {
+       "q": "中垂线的矢量式怎么写？",
+       "a": "$\\vec E=-k\\vec p/r^3$，负号表示方向与 $\\vec p$ 相反。"
+      }
      ]
     },
     {
@@ -1553,6 +1748,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "偶极子场衰减规律",
+     "qa": [
+      {
+       "q": "为什么偶极子场按 $1/r^3$ 衰减？",
+       "a": "正负电荷的场在远处大部分相互抵消，只剩差值，比点电荷的 $1/r^2$ 多降一阶。"
+      }
      ]
     },
     {
@@ -1682,6 +1885,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "电荷线密度定义",
+     "qa": [
+      {
+       "q": "电荷线密度 λ 是什么意思？",
+       "a": "单位长度上的电荷量，$\\lambda=\\mathrm{d}q/\\mathrm{d}x$，均匀时处处相同。"
+      }
      ]
     },
     {
@@ -1742,6 +1953,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "电荷元视为点电荷",
+     "qa": [
+      {
+       "q": "为什么可以把 dx 当成点电荷？",
+       "a": "长度元足够小，其上电荷 $\\mathrm{d}q=\\lambda\\mathrm{d}x$ 可视为集中于一点的点电荷。"
+      }
      ]
     },
     {
@@ -1754,7 +1973,16 @@
      "tex": "\\mathrm dE=k\\dfrac{\\lambda\\,\\mathrm dx}{r^{2}}",
      "size": 36,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "场强元公式",
+     "qa": [
+      {
+       "q": "dE 的表达式怎么来的？",
+       "a": "由点电荷场强公式，$\\mathrm{d}E=k\\dfrac{\\mathrm{d}q}{r^{2}}=k\\dfrac{\\lambda\\,\\mathrm{d}x}{r^{2}}$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1826,7 +2054,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "对称性抵消平行分量",
+     "qa": [
+      {
+       "q": "为什么平行分量不用积分？",
+       "a": "无限长直线关于垂足对称，配对元的平行分量大小相等方向相反，相互抵消。"
+      },
+      {
+       "q": "那最后只需积什么？",
+       "a": "只需把垂直分量 $\\mathrm{d}E_\\perp$ 沿整条直线积分即可。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1914,7 +2155,20 @@
      "tex": "E=\\dfrac{\\lambda}{2\\pi\\varepsilon_0 a}",
      "size": 44,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "无限长直线场强公式",
+     "qa": [
+      {
+       "q": "为什么分母是 $2\\pi\\varepsilon_0 a$ 而不是 $4\\pi\\varepsilon_0 a^2$？",
+       "a": "这是无限长直线的结果，场按 $1/a$ 衰减，不是点电荷的 $1/a^2$。"
+      },
+      {
+       "q": "公式里的 $a$ 指什么？",
+       "a": "$a$ 是场点到直线的垂直距离，场强方向垂直于直线。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -1926,7 +2180,15 @@
      "tex": "=\\dfrac{2k\\lambda}{a}",
      "size": 36,
      "color": "#0000CD",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "用 $k$ 表示的等价式",
+     "qa": [
+      {
+       "q": "$2k\\lambda/a$ 和原式怎么换算？",
+       "a": "由 $k=1/(4\\pi\\varepsilon_0)$ 得 $2k=\\dfrac{1}{2\\pi\\varepsilon_0}$，两式等价。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -1998,7 +2260,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "$E\\propto 1/",
+     "qa": [
+      {
+       "q": "为什么直线电荷的场衰减比点电荷慢？",
+       "a": "直线无限长，离得再远两端仍持续贡献，故按 $1/a$ 而非 $1/a^2$ 衰减。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2058,6 +2329,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "有限长退化为无限长",
+     "qa": [
+      {
+       "q": "有限长直线的场强公式是什么样？",
+       "a": "结果含两个角度，只有当长度趋于无穷时才退化成 $\\lambda/(2\\pi\\varepsilon_0 a)$。"
+      }
      ]
     },
     {
@@ -2200,7 +2479,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "对称性抵消",
+     "qa": [
+      {
+       "q": "为什么垂直轴线的分量会抵消？",
+       "a": "环上关于轴线对称的电荷元成对出现，其垂直分量大小相等、方向相反，绕环一周求和为零。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2240,6 +2528,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "分量投影因子",
+     "qa": [
+      {
+       "q": "$\\cos\\theta$ 为什么等于 $x/\\sqrt{R^2+x^2}$？",
+       "a": "轴线与 $\\mathrm dE$ 连线夹角为 $\\theta$，由直角三角形得邻边 $x$、斜边 $\\sqrt{R^2+x^2}$。"
+      }
      ]
     },
     {
@@ -2252,7 +2548,20 @@
      "tex": "E=\\int\\mathrm dE_x=k\\dfrac{qx}{(R^{2}+x^{2})^{3/2}}",
      "size": 36,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "轴线场强公式",
+     "qa": [
+      {
+       "q": "为什么分母是 $(R^2+x^2)^{3/2}$ 而不是 $R^2+x^2$？",
+       "a": "因为 $\\mathrm dE$ 沿轴分量含 $\\cos\\theta=x/\\sqrt{R^2+x^2}$，再乘 $1/(R^2+x^2)$ 得三次方。"
+      },
+      {
+       "q": "这个公式的方向怎么判断？",
+       "a": "沿轴线方向；$q>0$ 时背离环心，$q<0$ 时指向环心。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2292,6 +2601,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "远场点电荷极限",
+     "qa": [
+      {
+       "q": "为什么 $x\\gg R$ 时变成点电荷公式？",
+       "a": "此时 $R^2+x^2\\approx x^2$，分母化为 $x^3$，得 $E\\approx kq/x^2$，与点电荷场一致。"
+      }
      ]
     },
     {
@@ -2388,6 +2705,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "细环电荷元",
+     "qa": [
+      {
+       "q": "为什么电荷元是 $\\sigma 2\\pi r\\mathrm dr$？",
+       "a": "细环面积约为周长 $2\\pi r$ 乘宽 $\\mathrm dr$，再乘面密度 $\\sigma$ 即得电荷。"
+      }
      ]
     },
     {
@@ -2400,7 +2725,20 @@
      "tex": "E=\\dfrac{\\sigma}{2\\varepsilon_0}\\left(1-\\dfrac{x}{\\sqrt{R^{2}+x^{2}}}\\right)",
      "size": 36,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "圆盘轴线场强公式",
+     "qa": [
+      {
+       "q": "这个公式是怎么来的？",
+       "a": "把圆盘切成半径 $r$、宽 $\\mathrm dr$ 的细环，环电荷 $\\sigma 2\\pi r\\mathrm dr$，代入圆环结果后对 $r$ 从 0 积到 $R$。"
+      },
+      {
+       "q": "公式中括号里的项物理意义是什么？",
+       "a": "它体现有限大小圆盘相对无限大平面的修正，$x/\\sqrt{R^2+x^2}$ 反映边缘效应。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2426,7 +2764,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "无限大平面匀强场",
+     "qa": [
+      {
+       "q": "$R\\to\\infty$ 时为什么场强与距离无关？",
+       "a": "此时 $x/\\sqrt{R^2+x^2}\\to 0$，得 $E=\\sigma/(2\\varepsilon_0)$，是匀强场，与 $x$ 无关。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2452,6 +2799,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "远场退化为点电荷",
+     "qa": [
+      {
+       "q": "$x\\gg R$ 时公式如何变成点电荷场？",
+       "a": "此时 $\\sqrt{R^2+x^2}\\approx x$，括号约 $R^2/(2x^2)$，代入得 $E\\approx kq/x^2$。"
+      }
      ]
     },
     {
@@ -2560,7 +2915,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "电场线切线方向",
+     "qa": [
+      {
+       "q": "电场线上某点的切线方向代表什么？",
+       "a": "代表该点电场强度 $\\vec E$ 的方向，这是电场线的规定。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2580,6 +2944,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "点电荷电场线分布",
+     "qa": [
+      {
+       "q": "正负电荷的电场线方向有何区别？",
+       "a": "正电荷电场线向外发出呈放射状，负电荷电场线从四面八方汇聚到它。"
+      }
      ]
     },
     {
@@ -2612,7 +2984,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "匀强电场的电场线",
+     "qa": [
+      {
+       "q": "什么样的电场线表示匀强电场？",
+       "a": "电场线彼此平行且间距相等，如带电平行板之间，即为匀强电场。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2644,6 +3025,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "电场线的假想性",
+     "qa": [
+      {
+       "q": "电场线是真实存在的吗？",
+       "a": "不是，电场线是法拉第引入的假想曲线，并非真实存在的物质。"
+      }
      ]
     },
     {
@@ -2722,7 +3111,16 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "电场线不闭合",
+     "qa": [
+      {
+       "q": "静电场线为什么不能闭合？",
+       "a": "静电场线起于正电荷、止于负电荷或伸向无穷远，有源有汇，故不闭合。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "box",
@@ -2764,7 +3162,16 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "电场线不相交",
+     "qa": [
+      {
+       "q": "两条电场线能相交吗？",
+       "a": "不能。若相交，交点处场强将有两个方向，与场强单值性矛盾。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "box",
@@ -2806,7 +3213,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "疏密表场强",
+     "qa": [
+      {
+       "q": "电场线的疏密表示什么？",
+       "a": "表示场强大小：线密处 $E$ 大，线疏处 $E$ 小。"
+      }
+     ]
     },
     {
      "type": "box",
@@ -2848,7 +3263,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "与导体表面垂直",
+     "qa": [
+      {
+       "q": "电场线为什么垂直于导体表面？",
+       "a": "否则表面电荷受切向力会沿表面移动，直到场线垂直表面为止。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -2967,7 +3390,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "场强定义",
+     "qa": [
+      {
+       "q": "为什么E与试探电荷q0无关？",
+       "a": "$\\vec E=\\vec F/q_0$ 中 $q_0$ 只是探测工具，比值由场源决定，是场本身的属性。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -3007,7 +3439,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "点电荷场强",
+     "qa": [
+      {
+       "q": "点电荷场强方向怎么定？",
+       "a": "$\\vec E=kQ\\hat r/r^{2}$，$\\hat r$ 沿径向，正电荷向外、负电荷指向电荷。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -3047,6 +3488,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "连续体叠加积分",
+     "qa": [
+      {
+       "q": "连续带电体怎么求场强？",
+       "a": "切成电荷元 $\\mathrm dq$，每个元按点电荷处理，再矢量积分 $\\vec E=\\int k\\mathrm dq\\,\\hat r/r^{2}$。"
+      }
      ]
     },
     {
@@ -3067,6 +3516,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "四个典型结果",
+     "qa": [
+      {
+       "q": "这四个结果分别是什么依赖关系？",
+       "a": "点电荷 $1/r^{2}$、电偶极子 $1/r^{3}$、无限长直线 $1/a$、无限大平面匀强。"
+      }
      ]
     },
     {

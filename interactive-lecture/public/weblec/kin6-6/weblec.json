@@ -83,7 +83,20 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "时间常数RC",
+     "qa": [
+      {
+       "q": "时间常数 τ = RC 的物理意义是什么？",
+       "a": "τ 是电荷涨到最终值约 63% 所需时间，反映充放电快慢，单位是秒。"
+      },
+      {
+       "q": "R 或 C 越大，充放电越慢吗？",
+       "a": "是的，τ = RC 越大，过程越慢；R 大限制电流，C 大需更多电荷。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -103,10 +116,60 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "充电指数规律",
+     "qa": [
+      {
+       "q": "这个公式里 q 最终会到多少？",
+       "a": "t→∞ 时 e^(−t/RC)→0，q→Cε，即充满电时电荷量为 Cε。"
+      },
+      {
+       "q": "为什么充电是指数规律而不是线性？",
+       "a": "因为充电电流随电荷积累而减小，dq/dt 正比于剩余量，解得指数形式。"
+      }
+     ],
+     "important": true
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "时间常数RC",
+     "x": 960,
+     "y": 752,
+     "qa": [
+      {
+       "q": "时间常数 τ = RC 的物理意义是什么？",
+       "a": "τ 是电荷涨到最终值约 63% 所需时间，反映充放电快慢，单位是秒。"
+      },
+      {
+       "q": "R 或 C 越大，充放电越慢吗？",
+       "a": "是的，τ = RC 越大，过程越慢；R 大限制电流，C 大需更多电荷。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "充电指数规律",
+     "x": 960,
+     "y": 892,
+     "qa": [
+      {
+       "q": "这个公式里 q 最终会到多少？",
+       "a": "t→∞ 时 e^(−t/RC)→0，q→Cε，即充满电时电荷量为 Cε。"
+      },
+      {
+       "q": "为什么充电是指数规律而不是线性？",
+       "a": "因为充电电流随电荷积累而减小，dq/dt 正比于剩余量，解得指数形式。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    }
+   ],
    "stepTimes": {
     "1": 0.0,
     "2": 3.66,
@@ -115,7 +178,18 @@
    "t_start": 0.0,
    "t_end": 27.67,
    "duration": 27.67,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 3.66,
+     "end": 8.66
+    },
+    {
+     "bullet": 1,
+     "start": 9.1,
+     "end": 14.1
+    }
+   ]
   },
   {
    "id": 2,
@@ -181,7 +255,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "初始电流最大",
+     "qa": [
+      {
+       "q": "为什么开关刚合上时电流最大？",
+       "a": "此时电容未充电，$u_C=0$，全部电动势加在电阻上，故 $I_0=\\varepsilon/R$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -201,6 +284,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "充电电流衰减",
+     "qa": [
+      {
+       "q": "充电过程中电流为什么会下降？",
+       "a": "电荷积累使 $u_C$ 升高，电阻分压 $u_R$ 减小，由 $i=u_R/R$ 知电流下降。"
+      }
      ]
     },
     {
@@ -221,6 +312,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "充电结束条件",
+     "qa": [
+      {
+       "q": "充电什么时候结束？",
+       "a": "当 $u_C=\\varepsilon$ 时，电阻上无电压，电流为零，充电结束。"
+      }
      ]
     },
     {
@@ -275,10 +374,76 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "回路方程",
+     "qa": [
+      {
+       "q": "充电电路的基本方程是什么？",
+       "a": "由基尔霍夫定律：$\\varepsilon=iR+u_C$，其中 $u_C=q/C$。"
+      }
+     ],
+     "important": true
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "初始电流最大",
+     "x": 960,
+     "y": 390,
+     "qa": [
+      {
+       "q": "为什么开关刚合上时电流最大？",
+       "a": "此时电容未充电，$u_C=0$，全部电动势加在电阻上，故 $I_0=\\varepsilon/R$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "充电电流衰减",
+     "x": 960,
+     "y": 474,
+     "qa": [
+      {
+       "q": "充电过程中电流为什么会下降？",
+       "a": "电荷积累使 $u_C$ 升高，电阻分压 $u_R$ 减小，由 $i=u_R/R$ 知电流下降。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 3
+    },
+    {
+     "text": "充电结束条件",
+     "x": 960,
+     "y": 558,
+     "qa": [
+      {
+       "q": "充电什么时候结束？",
+       "a": "当 $u_C=\\varepsilon$ 时，电阻上无电压，电流为零，充电结束。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    },
+    {
+     "text": "回路方程",
+     "x": 960,
+     "y": 836,
+     "qa": [
+      {
+       "q": "充电电路的基本方程是什么？",
+       "a": "由基尔霍夫定律：$\\varepsilon=iR+u_C$，其中 $u_C=q/C$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 6
+    }
+   ],
    "stepTimes": {
     "1": 28.47,
     "2": 31.32,
@@ -290,7 +455,28 @@
    "t_start": 28.47,
    "t_end": 66.13,
    "duration": 37.66,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 31.32,
+     "end": 36.32
+    },
+    {
+     "bullet": 1,
+     "start": 38.01,
+     "end": 43.01
+    },
+    {
+     "bullet": 2,
+     "start": 47.96,
+     "end": 52.96
+    },
+    {
+     "bullet": 3,
+     "start": 61.07,
+     "end": 66.07
+    }
+   ]
   },
   {
    "id": 3,
@@ -328,7 +514,16 @@
      "tex": "q=C\\varepsilon\\left(1-\\mathrm e^{-t/RC}\\right)",
      "size": 36,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "充电电荷公式",
+     "qa": [
+      {
+       "q": "为什么电荷随时间是这样变化的？",
+       "a": "由回路方程解得 $q=C\\varepsilon(1-\\mathrm e^{-t/RC})$，$t=0$ 时 $q=0$，$t\\to\\infty$ 时 $q\\to C\\varepsilon$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -340,7 +535,16 @@
      "tex": "i=\\dfrac{\\mathrm dq}{\\mathrm dt}=\\dfrac{\\varepsilon}{R}\\mathrm e^{-t/RC}",
      "size": 34,
      "color": "#0000CD",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "充电电流公式",
+     "qa": [
+      {
+       "q": "电流为什么是负指数衰减？",
+       "a": "电流为电荷的导数 $i=\\frac{\\varepsilon}{R}\\mathrm e^{-t/RC}$，随时间单调衰减，$t=0$ 时最大。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -360,6 +564,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "初始条件",
+     "qa": [
+      {
+       "q": "刚接通时电荷和电流各是多少？",
+       "a": "$t=0$ 时 $q=0$，$i=\\varepsilon/R$ 达到最大值，符合初始条件。"
+      }
      ]
     },
     {
@@ -380,6 +592,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "稳态极限",
+     "qa": [
+      {
+       "q": "充电最终会怎样？",
+       "a": "$t\\to\\infty$ 时 $q\\to C\\varepsilon$ 充满，电流 $i\\to0$。"
+      }
      ]
     },
     {
@@ -403,7 +623,64 @@
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "充电电荷公式",
+     "x": 960,
+     "y": 396,
+     "qa": [
+      {
+       "q": "为什么电荷随时间是这样变化的？",
+       "a": "由回路方程解得 $q=C\\varepsilon(1-\\mathrm e^{-t/RC})$，$t=0$ 时 $q=0$，$t\\to\\infty$ 时 $q\\to C\\varepsilon$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 1
+    },
+    {
+     "text": "充电电流公式",
+     "x": 960,
+     "y": 562,
+     "qa": [
+      {
+       "q": "电流为什么是负指数衰减？",
+       "a": "电流为电荷的导数 $i=\\frac{\\varepsilon}{R}\\mathrm e^{-t/RC}$，随时间单调衰减，$t=0$ 时最大。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "初始条件",
+     "x": 960,
+     "y": 644,
+     "qa": [
+      {
+       "q": "刚接通时电荷和电流各是多少？",
+       "a": "$t=0$ 时 $q=0$，$i=\\varepsilon/R$ 达到最大值，符合初始条件。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 3
+    },
+    {
+     "text": "稳态极限",
+     "x": 960,
+     "y": 726,
+     "qa": [
+      {
+       "q": "充电最终会怎样？",
+       "a": "$t\\to\\infty$ 时 $q\\to C\\varepsilon$ 充满，电流 $i\\to0$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    }
+   ],
    "stepTimes": {
     "1": 66.93,
     "2": 71.31,
@@ -414,7 +691,28 @@
    "t_start": 66.93,
    "t_end": 109.65,
    "duration": 42.72,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 66.93,
+     "end": 71.93
+    },
+    {
+     "bullet": 1,
+     "start": 71.31,
+     "end": 76.31
+    },
+    {
+     "bullet": 2,
+     "start": 79.58,
+     "end": 84.58
+    },
+    {
+     "bullet": 3,
+     "start": 85.88,
+     "end": 90.88
+    }
+   ]
   },
   {
    "id": 4,
@@ -629,7 +927,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "放电回路方程",
+     "qa": [
+      {
+       "q": "为什么放电方程右边有负号？",
+       "a": "因为放电时电荷减少，$\\mathrm dq/\\mathrm dt<0$，负号使 $iR$ 为正，符合 $u_C=iR$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -641,7 +948,16 @@
      "tex": "q=Q_0\\,\\mathrm e^{-t/RC}",
      "size": 38,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "电荷指数衰减",
+     "qa": [
+      {
+       "q": "放电时电荷随时间怎么变化？",
+       "a": "$q=Q_0\\mathrm e^{-t/RC}$，从 $Q_0$ 开始指数衰减，时间常数仍为 $RC$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -653,7 +969,15 @@
      "tex": "i=-\\dfrac{Q_0}{RC}\\mathrm e^{-t/RC}",
      "size": 32,
      "color": "#0000CD",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "放电电流表达式",
+     "qa": [
+      {
+       "q": "放电电流方向和大小如何？",
+       "a": "方向与充电相反，大小 $|i|=\\frac{Q_0}{RC}\\mathrm e^{-t/RC}$，也指数衰减。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -693,6 +1017,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "放电能量耗散",
+     "qa": [
+      {
+       "q": "放电时储存在电容的能量去哪了？",
+       "a": "全部消耗在电阻上变成热，所以大电容放电会打火、发烫。"
+      }
      ]
     },
     {
@@ -716,7 +1048,64 @@
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "放电回路方程",
+     "x": 960,
+     "y": 308,
+     "qa": [
+      {
+       "q": "为什么放电方程右边有负号？",
+       "a": "因为放电时电荷减少，$\\mathrm dq/\\mathrm dt<0$，负号使 $iR$ 为正，符合 $u_C=iR$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 1
+    },
+    {
+     "text": "电荷指数衰减",
+     "x": 960,
+     "y": 472,
+     "qa": [
+      {
+       "q": "放电时电荷随时间怎么变化？",
+       "a": "$q=Q_0\\mathrm e^{-t/RC}$，从 $Q_0$ 开始指数衰减，时间常数仍为 $RC$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "放电电流表达式",
+     "x": 960,
+     "y": 632,
+     "qa": [
+      {
+       "q": "放电电流方向和大小如何？",
+       "a": "方向与充电相反，大小 $|i|=\\frac{Q_0}{RC}\\mathrm e^{-t/RC}$，也指数衰减。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 3
+    },
+    {
+     "text": "放电能量耗散",
+     "x": 960,
+     "y": 800,
+     "qa": [
+      {
+       "q": "放电时储存在电容的能量去哪了？",
+       "a": "全部消耗在电阻上变成热，所以大电容放电会打火、发烫。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 5
+    }
+   ],
    "stepTimes": {
     "1": 150.44,
     "2": 152.71,
@@ -728,7 +1117,28 @@
    "t_start": 150.44,
    "t_end": 192.06,
    "duration": 41.62,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 150.44,
+     "end": 155.44
+    },
+    {
+     "bullet": 1,
+     "start": 152.71,
+     "end": 157.71
+    },
+    {
+     "bullet": 2,
+     "start": 156.81,
+     "end": 161.81
+    },
+    {
+     "bullet": 3,
+     "start": 171.1,
+     "end": 176.1
+    }
+   ]
   },
   {
    "id": 6,
@@ -780,6 +1190,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "闪光灯RC放电",
+     "qa": [
+      {
+       "q": "为什么闪光灯要先用几秒充电再瞬间放电？",
+       "a": "充电慢、放电快：几秒内把大电容充满储能，再在几十微秒内释放全部能量，功率极大，形成强闪光。"
+      }
      ]
     },
     {
@@ -806,7 +1224,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "RC定时电路",
+     "qa": [
+      {
+       "q": "怎样改变RC延时电路的时间？",
+       "a": "延时由时间常数 $\\tau=RC$ 决定，改变 $R$ 或 $C$ 即可调节延时长短。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -832,6 +1259,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "电容滤波",
+     "qa": [
+      {
+       "q": "滤波为什么要用大电容？",
+       "a": "大电容充放电慢，能把整流后的脉动电压抹平，使输出接近直流。"
+      }
      ]
     },
     {
@@ -886,7 +1321,16 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "RC时间尺度相对性",
+     "qa": [
+      {
+       "q": "RC充放电的“慢”到底有多慢？",
+       "a": "是相对的，由 $\\tau=RC$ 决定，可从微秒到小时，全看所选电阻和电容的大小。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -909,7 +1353,64 @@
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "闪光灯RC放电",
+     "x": 960,
+     "y": 306,
+     "qa": [
+      {
+       "q": "为什么闪光灯要先用几秒充电再瞬间放电？",
+       "a": "充电慢、放电快：几秒内把大电容充满储能，再在几十微秒内释放全部能量，功率极大，形成强闪光。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 1
+    },
+    {
+     "text": "RC定时电路",
+     "x": 960,
+     "y": 388,
+     "qa": [
+      {
+       "q": "怎样改变RC延时电路的时间？",
+       "a": "延时由时间常数 $\\tau=RC$ 决定，改变 $R$ 或 $C$ 即可调节延时长短。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "电容滤波",
+     "x": 960,
+     "y": 470,
+     "qa": [
+      {
+       "q": "滤波为什么要用大电容？",
+       "a": "大电容充放电慢，能把整流后的脉动电压抹平，使输出接近直流。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 3
+    },
+    {
+     "text": "RC时间尺度相对性",
+     "x": 960,
+     "y": 760,
+     "qa": [
+      {
+       "q": "RC充放电的“慢”到底有多慢？",
+       "a": "是相对的，由 $\\tau=RC$ 决定，可从微秒到小时，全看所选电阻和电容的大小。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 5
+    }
+   ],
    "stepTimes": {
     "1": 192.86,
     "2": 195.71,
@@ -921,7 +1422,28 @@
    "t_start": 192.86,
    "t_end": 233.2,
    "duration": 40.34,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 192.86,
+     "end": 197.86
+    },
+    {
+     "bullet": 1,
+     "start": 195.71,
+     "end": 200.71
+    },
+    {
+     "bullet": 2,
+     "start": 206.65,
+     "end": 211.65
+    },
+    {
+     "bullet": 3,
+     "start": 220.31,
+     "end": 225.31
+    }
+   ]
   },
   {
    "id": 7,
@@ -967,7 +1489,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "充电过程公式",
+     "qa": [
+      {
+       "q": "充电时电流为什么越来越小？",
+       "a": "电流 $i=\\frac{\\varepsilon}{R}\\mathrm e^{-t/RC}$，随电容电压升高，电阻上压降减小，故指数衰减。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -987,6 +1518,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "放电过程公式",
+     "qa": [
+      {
+       "q": "放电时电荷按什么规律减少？",
+       "a": "$q=Q_0\\mathrm e^{-t/RC}$，呈指数衰减，时间常数仍为 $RC$。"
+      }
      ]
     },
     {
@@ -1007,7 +1546,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "时间常数",
+     "qa": [
+      {
+       "q": "时间常数 $\\tau=RC$ 有什么物理意义？",
+       "a": "$1\\tau$ 时达约 63%，$5\\tau$ 时约 99%，可视为基本充满或放完。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1027,6 +1575,18 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "充电能量分配",
+     "qa": [
+      {
+       "q": "为什么充电效率只有 50%？",
+       "a": "电源做功 $C\\varepsilon^2$，储能仅 $\\frac12C\\varepsilon^2$，另一半耗在电阻上，且与 $R$ 无关。"
+      },
+      {
+       "q": "电阻越小损耗越少吗？",
+       "a": "不是。损耗总量恒为 $\\frac12C\\varepsilon^2$，与 $R$ 无关，只影响快慢。"
+      }
      ]
     },
     {
@@ -1104,7 +1664,68 @@
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "充电过程公式",
+     "x": 960,
+     "y": 302,
+     "qa": [
+      {
+       "q": "充电时电流为什么越来越小？",
+       "a": "电流 $i=\\frac{\\varepsilon}{R}\\mathrm e^{-t/RC}$，随电容电压升高，电阻上压降减小，故指数衰减。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 1
+    },
+    {
+     "text": "放电过程公式",
+     "x": 960,
+     "y": 380,
+     "qa": [
+      {
+       "q": "放电时电荷按什么规律减少？",
+       "a": "$q=Q_0\\mathrm e^{-t/RC}$，呈指数衰减，时间常数仍为 $RC$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 2
+    },
+    {
+     "text": "时间常数",
+     "x": 960,
+     "y": 460,
+     "qa": [
+      {
+       "q": "时间常数 $\\tau=RC$ 有什么物理意义？",
+       "a": "$1\\tau$ 时达约 63%，$5\\tau$ 时约 99%，可视为基本充满或放完。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "充电能量分配",
+     "x": 960,
+     "y": 538,
+     "qa": [
+      {
+       "q": "为什么充电效率只有 50%？",
+       "a": "电源做功 $C\\varepsilon^2$，储能仅 $\\frac12C\\varepsilon^2$，另一半耗在电阻上，且与 $R$ 无关。"
+      },
+      {
+       "q": "电阻越小损耗越少吗？",
+       "a": "不是。损耗总量恒为 $\\frac12C\\varepsilon^2$，与 $R$ 无关，只影响快慢。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    }
+   ],
    "stepTimes": {
     "1": 234.0,
     "2": 236.27,
@@ -1116,7 +1737,28 @@
    "t_start": 234.0,
    "t_end": 269.3,
    "duration": 35.3,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 234.0,
+     "end": 239.0
+    },
+    {
+     "bullet": 1,
+     "start": 236.27,
+     "end": 241.27
+    },
+    {
+     "bullet": 2,
+     "start": 244.09,
+     "end": 249.09
+    },
+    {
+     "bullet": 3,
+     "start": 249.24,
+     "end": 254.24
+    }
+   ]
   }
  ],
  "subtitles": [
@@ -1379,6 +2021,6 @@
    "text": "这个「一半」是个反直觉但很重要的结论，做题时常考。"
   }
  ],
- "build_ts": 1792400047,
+ "build_ts": 1794446540,
  "logoScale": 0.67
 }

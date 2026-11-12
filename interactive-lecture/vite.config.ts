@@ -96,6 +96,9 @@ export default defineConfig(({ mode }) => {
     build: {
       // Preserve old hashed assets and revision candidates; no permanent cleanup.
       emptyOutDir: false,
+      // public/learn/textbook 是被系统进程锁住的残留目录（拒绝访问），内置
+      // copyDir 扫到它会 EPERM 中断；改由 scripts/copy-public.mjs 精确跳过它。
+      copyPublicDir: false,
       // 多页构建：交互课堂 index.html + 静态幻灯片 slides.html 都要进 dist
       rollupOptions: {
         input: {

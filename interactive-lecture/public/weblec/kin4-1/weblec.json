@@ -121,7 +121,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "运动分解结论",
+     "qa": [
+      {
+       "q": "为什么可以把物体运动拆成平动加转动？",
+       "a": "这是上一节的核心结论：任意运动可分解为随质心的平动和绕质心的转动，本章专门处理转动部分。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -141,10 +150,56 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "刚体模型与转动描述",
+     "qa": [
+      {
+       "q": "刚体模型的核心假设是什么？",
+       "a": "刚体是任意两质点间距离保持不变的理想模型，即形变可忽略，从而只需描述整体平动与转动。"
+      },
+      {
+       "q": "描述定轴转动需要哪些物理量？",
+       "a": "用角坐标 $\\theta$、角速度 $\\omega=\\frac{d\\theta}{dt}$、角加速度 $\\alpha=\\frac{d\\omega}{dt}$ 来描述。"
+      }
+     ],
+     "important": true
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "运动分解结论",
+     "x": 960,
+     "y": 898,
+     "qa": [
+      {
+       "q": "为什么可以把物体运动拆成平动加转动？",
+       "a": "这是上一节的核心结论：任意运动可分解为随质心的平动和绕质心的转动，本章专门处理转动部分。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "刚体模型与转动描述",
+     "x": 960,
+     "y": 1002,
+     "qa": [
+      {
+       "q": "刚体模型的核心假设是什么？",
+       "a": "刚体是任意两质点间距离保持不变的理想模型，即形变可忽略，从而只需描述整体平动与转动。"
+      },
+      {
+       "q": "描述定轴转动需要哪些物理量？",
+       "a": "用角坐标 $\\theta$、角速度 $\\omega=\\frac{d\\theta}{dt}$、角加速度 $\\alpha=\\frac{d\\omega}{dt}$ 来描述。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    }
+   ],
    "stepTimes": {
     "1": 0.0,
     "2": 2.27,
@@ -154,7 +209,18 @@
    "t_start": 0.0,
    "t_end": 30.5,
    "duration": 30.5,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 6.63,
+     "end": 11.63
+    },
+    {
+     "bullet": 1,
+     "start": 17.83,
+     "end": 22.83
+    }
+   ]
   },
   {
    "id": 2,
@@ -258,7 +324,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "刚体定义",
+     "qa": [
+      {
+       "q": "刚体到底是什么？",
+       "a": "在外力作用下形状和大小都不发生变化的物体，是理想模型。"
+      },
+      {
+       "q": "刚体与质点有何区别？",
+       "a": "质点忽略形状大小，刚体则要求形状大小不变，可研究转动。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -330,7 +409,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "刚体的质点系表述",
+     "qa": [
+      {
+       "q": "刚体严格定义是什么？",
+       "a": "任意两质点间距离保持不变的特殊质点系。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -356,6 +444,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "刚体是理想模型",
+     "qa": [
+      {
+       "q": "刚体是真实存在的物体吗？",
+       "a": "不是，刚体是理想模型，为简化问题而引进。"
+      }
      ]
     },
     {
@@ -416,6 +512,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "刚体模型适用条件",
+     "qa": [
+      {
+       "q": "什么时候能用刚体模型？",
+       "a": "真实物体受外力总会形变，只有形变很小可忽略时才可用刚体模型。"
+      }
      ]
     },
     {
@@ -428,7 +532,68 @@
      "name": "rigid_model"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "刚体定义",
+     "x": 550,
+     "y": 486,
+     "qa": [
+      {
+       "q": "刚体到底是什么？",
+       "a": "在外力作用下形状和大小都不发生变化的物体，是理想模型。"
+      },
+      {
+       "q": "刚体与质点有何区别？",
+       "a": "质点忽略形状大小，刚体则要求形状大小不变，可研究转动。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "刚体的质点系表述",
+     "x": 550,
+     "y": 692,
+     "qa": [
+      {
+       "q": "刚体严格定义是什么？",
+       "a": "任意两质点间距离保持不变的特殊质点系。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 6
+    },
+    {
+     "text": "刚体是理想模型",
+     "x": 550,
+     "y": 786,
+     "qa": [
+      {
+       "q": "刚体是真实存在的物体吗？",
+       "a": "不是，刚体是理想模型，为简化问题而引进。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 7
+    },
+    {
+     "text": "刚体模型适用条件",
+     "x": 550,
+     "y": 986,
+     "qa": [
+      {
+       "q": "什么时候能用刚体模型？",
+       "a": "真实物体受外力总会形变，只有形变很小可忽略时才可用刚体模型。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 10
+    }
+   ],
    "stepTimes": {
     "1": 31.3,
     "2": 37.68,
@@ -438,7 +603,28 @@
    "t_start": 31.3,
    "t_end": 75.36,
    "duration": 44.06,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 37.68,
+     "end": 42.68
+    },
+    {
+     "bullet": 1,
+     "start": 50.65,
+     "end": 55.65
+    },
+    {
+     "bullet": 2,
+     "start": 61.73,
+     "end": 66.73
+    },
+    {
+     "bullet": 3,
+     "start": 61.73,
+     "end": 66.73
+    }
+   ]
   },
   {
    "id": 3,
@@ -534,7 +720,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "平动定义",
+     "qa": [
+      {
+       "q": "什么是刚体的平动？",
+       "a": "刚体中所有点的运动轨迹都保持完全相同，即整体平移，各点轨迹为同一曲线。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -574,7 +769,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "平动特点",
+     "qa": [
+      {
+       "q": "平动时各点的速度和加速度相同吗？",
+       "a": "相同。轨迹相同，故各点 $v$、$a$ 等运动状态处处一样。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -638,6 +842,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "平动化质点",
+     "qa": [
+      {
+       "q": "为什么平动可当作质点运动处理？",
+       "a": "各点运动状态相同，任选一点作代表即可，刚体平动就化成质点运动。"
+      }
      ]
     },
     {
@@ -670,7 +882,50 @@
      "name": "rigid_trans"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "平动定义",
+     "x": 580,
+     "y": 414,
+     "qa": [
+      {
+       "q": "什么是刚体的平动？",
+       "a": "刚体中所有点的运动轨迹都保持完全相同，即整体平移，各点轨迹为同一曲线。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "平动特点",
+     "x": 580,
+     "y": 586,
+     "qa": [
+      {
+       "q": "平动时各点的速度和加速度相同吗？",
+       "a": "相同。轨迹相同，故各点 $v$、$a$ 等运动状态处处一样。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    },
+    {
+     "text": "平动化质点",
+     "x": 580,
+     "y": 832,
+     "qa": [
+      {
+       "q": "为什么平动可当作质点运动处理？",
+       "a": "各点运动状态相同，任选一点作代表即可，刚体平动就化成质点运动。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 6
+    }
+   ],
    "stepTimes": {
     "1": 76.16,
     "2": 82.62,
@@ -680,7 +935,23 @@
    "t_start": 76.16,
    "t_end": 111.1,
    "duration": 34.94,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 82.62,
+     "end": 87.62
+    },
+    {
+     "bullet": 1,
+     "start": 95.99,
+     "end": 100.99
+    },
+    {
+     "bullet": 2,
+     "start": 101.84,
+     "end": 106.84
+    }
+   ]
   },
   {
    "id": 4,
@@ -770,7 +1041,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "定轴转动",
+     "qa": [
+      {
+       "q": "定轴转动有什么特点？",
+       "a": "转轴固定，刚体各点都在垂直于轴的平面内作圆周运动，半径不同但转过的角度相同。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -816,6 +1096,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "非定轴转动",
+     "qa": [
+      {
+       "q": "非定轴转动和定轴转动有什么区别？",
+       "a": "非定轴转动的转轴本身在动，如陀螺、翻滚的板；定轴转动的转轴固定不动。"
+      }
      ]
     },
     {
@@ -854,7 +1142,20 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "一般运动分解",
+     "qa": [
+      {
+       "q": "刚体的一般运动如何分解？",
+       "a": "刚体的任何运动都可看成随质心的平动加上绕质心的转动。"
+      },
+      {
+       "q": "车轮滚动怎么理解？",
+       "a": "车轮滚动就是质心平动与轮子绕质心转动的合成，是典型的一般运动。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -906,6 +1207,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "本课讨论范围",
+     "qa": [
+      {
+       "q": "为什么本课只讨论定轴转动？",
+       "a": "因为定轴转动最简单也最常用，是后续学习的基础。"
+      }
      ]
     },
     {
@@ -918,7 +1227,68 @@
      "name": "rigid_rot"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "定轴转动",
+     "x": 600,
+     "y": 414,
+     "qa": [
+      {
+       "q": "定轴转动有什么特点？",
+       "a": "转轴固定，刚体各点都在垂直于轴的平面内作圆周运动，半径不同但转过的角度相同。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "非定轴转动",
+     "x": 600,
+     "y": 586,
+     "qa": [
+      {
+       "q": "非定轴转动和定轴转动有什么区别？",
+       "a": "非定轴转动的转轴本身在动，如陀螺、翻滚的板；定轴转动的转轴固定不动。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    },
+    {
+     "text": "一般运动分解",
+     "x": 600,
+     "y": 686,
+     "qa": [
+      {
+       "q": "刚体的一般运动如何分解？",
+       "a": "刚体的任何运动都可看成随质心的平动加上绕质心的转动。"
+      },
+      {
+       "q": "车轮滚动怎么理解？",
+       "a": "车轮滚动就是质心平动与轮子绕质心转动的合成，是典型的一般运动。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 5
+    },
+    {
+     "text": "本课讨论范围",
+     "x": 600,
+     "y": 874,
+     "qa": [
+      {
+       "q": "为什么本课只讨论定轴转动？",
+       "a": "因为定轴转动最简单也最常用，是后续学习的基础。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 7
+    }
+   ],
    "stepTimes": {
     "1": 111.9,
     "2": 119.06,
@@ -928,7 +1298,28 @@
    "t_start": 111.9,
    "t_end": 151.57,
    "duration": 39.67,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 119.06,
+     "end": 124.06
+    },
+    {
+     "bullet": 1,
+     "start": 130.24,
+     "end": 135.24
+    },
+    {
+     "bullet": 2,
+     "start": 136.5,
+     "end": 141.5
+    },
+    {
+     "bullet": 3,
+     "start": 136.5,
+     "end": 141.5
+    }
+   ]
   },
   {
    "id": 5,
@@ -986,6 +1377,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "质点作圆周运动",
+     "qa": [
+      {
+       "q": "定轴转动时刚体上每个质点的轨迹是什么？",
+       "a": "每个质点都作圆周运动，圆面即转动平面，圆心在转轴上。"
+      }
      ]
     },
     {
@@ -1018,7 +1417,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "单自由度",
+     "qa": [
+      {
+       "q": "为什么定轴转动只有一个自由度？",
+       "a": "各质点转过的角度相同，只需一个角坐标即可描述整个刚体，故为单自由度。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1050,7 +1458,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "角量相同",
+     "qa": [
+      {
+       "q": "刚体上不同质点的角速度一样吗？",
+       "a": "一样。任一质点的角位移 $\\Delta\\theta$、角速度 $\\omega$、角加速度 $\\alpha$ 都相同。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1082,6 +1499,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "线量随半径变",
+     "qa": [
+      {
+       "q": "为什么离轴越远的质点线速度越大？",
+       "a": "因 $v=\\omega r$、$a=\\alpha r$，$\\omega$、$\\alpha$ 相同，$r$ 越大则 $v$、$a$ 越大。"
+      }
      ]
     },
     {
@@ -1111,7 +1536,64 @@
      "color": "#111111"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "质点作圆周运动",
+     "x": 960,
+     "y": 330,
+     "qa": [
+      {
+       "q": "定轴转动时刚体上每个质点的轨迹是什么？",
+       "a": "每个质点都作圆周运动，圆面即转动平面，圆心在转轴上。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 1
+    },
+    {
+     "text": "单自由度",
+     "x": 960,
+     "y": 470,
+     "qa": [
+      {
+       "q": "为什么定轴转动只有一个自由度？",
+       "a": "各质点转过的角度相同，只需一个角坐标即可描述整个刚体，故为单自由度。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "角量相同",
+     "x": 960,
+     "y": 610,
+     "qa": [
+      {
+       "q": "刚体上不同质点的角速度一样吗？",
+       "a": "一样。任一质点的角位移 $\\Delta\\theta$、角速度 $\\omega$、角加速度 $\\alpha$ 都相同。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "线量随半径变",
+     "x": 960,
+     "y": 694,
+     "qa": [
+      {
+       "q": "为什么离轴越远的质点线速度越大？",
+       "a": "因 $v=\\omega r$、$a=\\alpha r$，$\\omega$、$\\alpha$ 相同，$r$ 越大则 $v$、$a$ 越大。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    }
+   ],
    "stepTimes": {
     "1": 152.37,
     "2": 156.27,
@@ -1121,7 +1603,28 @@
    "t_start": 152.37,
    "t_end": 188.85,
    "duration": 36.48,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 152.37,
+     "end": 157.37
+    },
+    {
+     "bullet": 1,
+     "start": 156.27,
+     "end": 161.27
+    },
+    {
+     "bullet": 2,
+     "start": 163.8,
+     "end": 168.8
+    },
+    {
+     "bullet": 3,
+     "start": 163.8,
+     "end": 168.8
+    }
+   ]
   },
   {
    "id": 6,
@@ -1159,7 +1662,16 @@
      "tex": "\\theta=\\theta(t)",
      "size": 46,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "角坐标定义",
+     "qa": [
+      {
+       "q": "角坐标 θ 是什么？",
+       "a": "θ 是描述转动位置的坐标，随时间变化，写作 $\\theta=\\theta(t)$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1197,6 +1709,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "逆时针取正",
+     "qa": [
+      {
+       "q": "θ 的正负怎么规定？",
+       "a": "从参考方向起，逆时针转动 θ>0，顺时针转动 θ<0。"
+      }
      ]
     },
     {
@@ -1235,6 +1755,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "顺时针取负",
+     "qa": [
+      {
+       "q": "顺时针转动的角坐标是正还是负？",
+       "a": "顺时针转动 θ<0，取负值。"
+      }
      ]
     },
     {
@@ -1267,7 +1795,16 @@
      "tex": "\\Delta\\theta=\\theta(t+\\Delta t)-\\theta(t)",
      "size": 36,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "角位移公式",
+     "qa": [
+      {
+       "q": "角位移 Δθ 怎么计算？",
+       "a": "$\\Delta\\theta=\\theta(t+\\Delta t)-\\theta(t)$，即位矢扫过的角。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1331,7 +1868,64 @@
      "name": "rot_theta"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "角坐标定义",
+     "x": 520,
+     "y": 382,
+     "qa": [
+      {
+       "q": "角坐标 θ 是什么？",
+       "a": "θ 是描述转动位置的坐标，随时间变化，写作 $\\theta=\\theta(t)$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 1
+    },
+    {
+     "text": "逆时针取正",
+     "x": 550,
+     "y": 470,
+     "qa": [
+      {
+       "q": "θ 的正负怎么规定？",
+       "a": "从参考方向起，逆时针转动 θ>0，顺时针转动 θ<0。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 2
+    },
+    {
+     "text": "顺时针取负",
+     "x": 550,
+     "y": 536,
+     "qa": [
+      {
+       "q": "顺时针转动的角坐标是正还是负？",
+       "a": "顺时针转动 θ<0，取负值。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 3
+    },
+    {
+     "text": "角位移公式",
+     "x": 550,
+     "y": 782,
+     "qa": [
+      {
+       "q": "角位移 Δθ 怎么计算？",
+       "a": "$\\Delta\\theta=\\theta(t+\\Delta t)-\\theta(t)$，即位矢扫过的角。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 5
+    }
+   ],
    "stepTimes": {
     "1": 189.65,
     "2": 198.3,
@@ -1341,7 +1935,28 @@
    "t_start": 189.65,
    "t_end": 225.27,
    "duration": 35.62,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 189.65,
+     "end": 194.65
+    },
+    {
+     "bullet": 1,
+     "start": 198.3,
+     "end": 203.3
+    },
+    {
+     "bullet": 2,
+     "start": 198.3,
+     "end": 203.3
+    },
+    {
+     "bullet": 3,
+     "start": 207.99,
+     "end": 212.99
+    }
+   ]
   },
   {
    "id": 7,
@@ -1379,7 +1994,20 @@
      "tex": "\\omega=\\lim_{\\Delta t\\to 0}\\frac{\\Delta\\theta}{\\Delta t}=\\frac{\\mathrm d\\theta}{\\mathrm dt}",
      "size": 42,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "角速度定义式",
+     "qa": [
+      {
+       "q": "角速度的定义是什么？",
+       "a": "角位移对时间的变化率：$\\omega=\\lim_{\\Delta t\\to0}\\frac{\\Delta\\theta}{\\Delta t}=\\frac{\\mathrm d\\theta}{\\mathrm dt}$。"
+      },
+      {
+       "q": "角速度的单位是什么？",
+       "a": "弧度每秒，即 $\\mathrm{rad\\cdot s^{-1}}$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1423,7 +2051,16 @@
      "tex": "\\omega=2\\pi n",
      "size": 44,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "角速度与转速关系",
+     "qa": [
+      {
+       "q": "转速 n 和角速度 ω 怎么换算？",
+       "a": "$\\omega=2\\pi n$，因为一转对应 $2\\pi$ 弧度。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1487,6 +2124,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "角速度的方向",
+     "qa": [
+      {
+       "q": "角速度的方向怎么确定？",
+       "a": "$\\omega$ 沿转轴，由右手螺旋定则确定：四指顺转动方向弯曲，拇指指向 $\\omega$。"
+      }
      ]
     },
     {
@@ -1519,10 +2164,79 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "定轴转动正负号",
+     "qa": [
+      {
+       "q": "定轴转动时怎么表示转动方向？",
+       "a": "可用正负号表示：规定一个正方向后，反向转动取负值。"
+      }
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "角速度定义式",
+     "x": 960,
+     "y": 432,
+     "qa": [
+      {
+       "q": "角速度的定义是什么？",
+       "a": "角位移对时间的变化率：$\\omega=\\lim_{\\Delta t\\to0}\\frac{\\Delta\\theta}{\\Delta t}=\\frac{\\mathrm d\\theta}{\\mathrm dt}$。"
+      },
+      {
+       "q": "角速度的单位是什么？",
+       "a": "弧度每秒，即 $\\mathrm{rad\\cdot s^{-1}}$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 1
+    },
+    {
+     "text": "角速度与转速关系",
+     "x": 960,
+     "y": 698,
+     "qa": [
+      {
+       "q": "转速 n 和角速度 ω 怎么换算？",
+       "a": "$\\omega=2\\pi n$，因为一转对应 $2\\pi$ 弧度。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "角速度的方向",
+     "x": 960,
+     "y": 886,
+     "qa": [
+      {
+       "q": "角速度的方向怎么确定？",
+       "a": "$\\omega$ 沿转轴，由右手螺旋定则确定：四指顺转动方向弯曲，拇指指向 $\\omega$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 5
+    },
+    {
+     "text": "定轴转动正负号",
+     "x": 960,
+     "y": 966,
+     "qa": [
+      {
+       "q": "定轴转动时怎么表示转动方向？",
+       "a": "可用正负号表示：规定一个正方向后，反向转动取负值。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 6
+    }
+   ],
    "stepTimes": {
     "1": 228.82,
     "2": 237.81,
@@ -1532,7 +2246,28 @@
    "t_start": 226.07,
    "t_end": 259.96,
    "duration": 33.89,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 228.82,
+     "end": 233.82
+    },
+    {
+     "bullet": 1,
+     "start": 240.56,
+     "end": 245.56
+    },
+    {
+     "bullet": 2,
+     "start": 248.59,
+     "end": 253.59
+    },
+    {
+     "bullet": 3,
+     "start": 248.59,
+     "end": 253.59
+    }
+   ]
   },
   {
    "id": 8,
@@ -1584,7 +2319,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "右手螺旋定则",
+     "qa": [
+      {
+       "q": "角速度方向为什么不在转动平面内？",
+       "a": "由右手螺旋定则：四指沿转动方向弯曲，拇指指向即 $\\omega$ 的方向，拇指垂直于转动平面，故 $\\omega$ 沿轴。"
+      },
+      {
+       "q": "怎么用右手判断 $\\omega$ 的指向？",
+       "a": "右手四指顺着转动方向弯曲，伸直的拇指所指方向就是 $\\omega$ 的方向。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1616,7 +2364,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "定轴转动ω的正负",
+     "qa": [
+      {
+       "q": "定轴转动时 $\\omega$ 有几个方向？",
+       "a": "轴方向不变，$\\omega$ 只有沿轴正、反两种可能，约定沿轴向上为正、向下为负，用正负号代替矢量。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "diagram",
@@ -1628,7 +2385,40 @@
      "name": "rot_omega"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "右手螺旋定则",
+     "x": 960,
+     "y": 308,
+     "qa": [
+      {
+       "q": "角速度方向为什么不在转动平面内？",
+       "a": "由右手螺旋定则：四指沿转动方向弯曲，拇指指向即 $\\omega$ 的方向，拇指垂直于转动平面，故 $\\omega$ 沿轴。"
+      },
+      {
+       "q": "怎么用右手判断 $\\omega$ 的指向？",
+       "a": "右手四指顺着转动方向弯曲，伸直的拇指所指方向就是 $\\omega$ 的方向。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 1
+    },
+    {
+     "text": "定轴转动ω的正负",
+     "x": 960,
+     "y": 374,
+     "qa": [
+      {
+       "q": "定轴转动时 $\\omega$ 有几个方向？",
+       "a": "轴方向不变，$\\omega$ 只有沿轴正、反两种可能，约定沿轴向上为正、向下为负，用正负号代替矢量。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    }
+   ],
    "stepTimes": {
     "1": 260.76,
     "3": 279.65
@@ -1636,7 +2426,18 @@
    "t_start": 260.76,
    "t_end": 292.03,
    "duration": 31.27,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 260.76,
+     "end": 265.76
+    },
+    {
+     "bullet": 1,
+     "start": 279.65,
+     "end": 284.65
+    }
+   ]
   },
   {
    "id": 9,
@@ -1662,7 +2463,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "角加速度定义",
+     "qa": [
+      {
+       "q": "角加速度是怎么定义的？",
+       "a": "$\\alpha=\\lim_{\\Delta t\\to0}\\frac{\\Delta\\omega}{\\Delta t}=\\frac{d\\omega}{dt}=\\frac{d^2\\theta}{dt^2}$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -1706,6 +2516,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "α与ω同向加速",
+     "qa": [
+      {
+       "q": "什么时候是加速转动？",
+       "a": "$\\alpha$ 与 $\\omega$ 同向时，角速度增大，为加速转动。"
+      }
      ]
     },
     {
@@ -1738,6 +2556,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "α与ω反向减速",
+     "qa": [
+      {
+       "q": "什么时候是减速转动？",
+       "a": "$\\alpha$ 与 $\\omega$ 反向时，角速度减小，为减速转动。"
+      }
      ]
     },
     {
@@ -1778,7 +2604,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "符号判断加减速",
+     "qa": [
+      {
+       "q": "如何快速判断加速还是减速？",
+       "a": "看 $\\alpha\\omega$ 的符号：$\\alpha\\omega>0$ 加速，$\\alpha\\omega<0$ 减速，与直线运动 $av$ 关系一致。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "diagram",
@@ -1790,7 +2625,64 @@
      "name": "rot_alpha"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "角加速度定义",
+     "x": 620,
+     "y": 239,
+     "qa": [
+      {
+       "q": "角加速度是怎么定义的？",
+       "a": "$\\alpha=\\lim_{\\Delta t\\to0}\\frac{\\Delta\\omega}{\\Delta t}=\\frac{d\\omega}{dt}=\\frac{d^2\\theta}{dt^2}$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 0
+    },
+    {
+     "text": "α与ω同向加速",
+     "x": 560,
+     "y": 544,
+     "qa": [
+      {
+       "q": "什么时候是加速转动？",
+       "a": "$\\alpha$ 与 $\\omega$ 同向时，角速度增大，为加速转动。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 2
+    },
+    {
+     "text": "α与ω反向减速",
+     "x": 560,
+     "y": 626,
+     "qa": [
+      {
+       "q": "什么时候是减速转动？",
+       "a": "$\\alpha$ 与 $\\omega$ 反向时，角速度减小，为减速转动。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 3
+    },
+    {
+     "text": "符号判断加减速",
+     "x": 560,
+     "y": 798,
+     "qa": [
+      {
+       "q": "如何快速判断加速还是减速？",
+       "a": "看 $\\alpha\\omega$ 的符号：$\\alpha\\omega>0$ 加速，$\\alpha\\omega<0$ 减速，与直线运动 $av$ 关系一致。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 5
+    }
+   ],
    "stepTimes": {
     "1": 292.83,
     "2": 306.93,
@@ -1800,7 +2692,23 @@
    "t_start": 292.83,
    "t_end": 332.67,
    "duration": 39.84,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 1,
+     "start": 306.93,
+     "end": 311.93
+    },
+    {
+     "bullet": 2,
+     "start": 314.72,
+     "end": 319.72
+    },
+    {
+     "bullet": 3,
+     "start": 321.82,
+     "end": 326.82
+    }
+   ]
   },
   {
    "id": 10,
@@ -1858,7 +2766,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "定轴转动自由度",
+     "qa": [
+      {
+       "q": "刚体定轴转动为什么只有一个自由度？",
+       "a": "轴已固定，所有质点转过的角度相同，只需一个独立变量 $\\theta$ 即可描述。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2054,10 +2971,48 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "自由度对比结论",
+     "qa": [
+      {
+       "q": "空间自由刚体有几个自由度？定轴转动呢？",
+       "a": "空间自由刚体有 6 个（3 平动 + 3 转动）；定轴转动只剩 1 个。"
+      }
+     ],
+     "important": true
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "定轴转动自由度",
+     "x": 960,
+     "y": 324,
+     "qa": [
+      {
+       "q": "刚体定轴转动为什么只有一个自由度？",
+       "a": "轴已固定，所有质点转过的角度相同，只需一个独立变量 $\\theta$ 即可描述。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 1
+    },
+    {
+     "text": "自由度对比结论",
+     "x": 1380,
+     "y": 922,
+     "qa": [
+      {
+       "q": "空间自由刚体有几个自由度？定轴转动呢？",
+       "a": "空间自由刚体有 6 个（3 平动 + 3 转动）；定轴转动只剩 1 个。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 9
+    }
+   ],
    "stepTimes": {
     "1": 333.47,
     "2": 345.04
@@ -2065,7 +3020,18 @@
    "t_start": 333.47,
    "t_end": 364.62,
    "duration": 31.15,
-   "laser": [],
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 333.47,
+     "end": 338.47
+    },
+    {
+     "bullet": 1,
+     "start": 345.04,
+     "end": 350.04
+    }
+   ],
    "interactions": [
     {
      "t": 345.04,
@@ -2149,7 +3115,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "匀变速转动定义",
+     "qa": [
+      {
+       "q": "什么是匀变速转动？",
+       "a": "当角加速度 $\\alpha$ 为常量时，刚体作匀变速转动。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "table",
@@ -2203,7 +3178,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "线角量对应记法",
+     "qa": [
+      {
+       "q": "角量公式怎么记？",
+       "a": "把线量公式中 $v\\to\\omega$、$a\\to\\alpha$、$x\\to\\theta$ 一一替换即可。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2223,10 +3207,61 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "替换法解题技巧",
+     "qa": [
+      {
+       "q": "做角量题容易出错怎么办？",
+       "a": "先在草稿上写线量公式，再逐字母替换为角量，最不容易错。"
+      }
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "匀变速转动定义",
+     "x": 960,
+     "y": 324,
+     "qa": [
+      {
+       "q": "什么是匀变速转动？",
+       "a": "当角加速度 $\\alpha$ 为常量时，刚体作匀变速转动。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 1
+    },
+    {
+     "text": "线角量对应记法",
+     "x": 960,
+     "y": 874,
+     "qa": [
+      {
+       "q": "角量公式怎么记？",
+       "a": "把线量公式中 $v\\to\\omega$、$a\\to\\alpha$、$x\\to\\theta$ 一一替换即可。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "替换法解题技巧",
+     "x": 960,
+     "y": 962,
+     "qa": [
+      {
+       "q": "做角量题容易出错怎么办？",
+       "a": "先在草稿上写线量公式，再逐字母替换为角量，最不容易错。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    }
+   ],
    "stepTimes": {
     "1": 365.42,
     "2": 370.86,
@@ -2236,7 +3271,23 @@
    "t_start": 365.42,
    "t_end": 402.88,
    "duration": 37.46,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 365.42,
+     "end": 370.42
+    },
+    {
+     "bullet": 1,
+     "start": 381.94,
+     "end": 386.94
+    },
+    {
+     "bullet": 2,
+     "start": 394.77,
+     "end": 399.77
+    }
+   ]
   },
   {
    "id": 12,
@@ -2274,7 +3325,16 @@
      "tex": "v=r\\omega\\,e_{\\mathrm t}",
      "size": 40,
      "color": "#0000CD",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "线速度与角速度",
+     "qa": [
+      {
+       "q": "速度方向为什么沿切向？",
+       "a": "质点做圆周运动，瞬时速度方向沿轨迹切线，即 $\\vec e_{\\mathrm t}$ 方向，大小为 $r\\omega$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -2286,7 +3346,15 @@
      "tex": "a_{\\mathrm t}=r\\alpha",
      "size": 40,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "切向加速度",
+     "qa": [
+      {
+       "q": "切向加速度改变什么？",
+       "a": "$a_{\\mathrm t}=r\\alpha$，改变速度的大小，方向沿切向。"
+      }
+     ]
     },
     {
      "type": "tex",
@@ -2298,7 +3366,15 @@
      "tex": "a_{\\mathrm n}=r\\omega^2",
      "size": 40,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "法向加速度",
+     "qa": [
+      {
+       "q": "法向加速度为什么是 $r\\omega^2$？",
+       "a": "法向加速度改变速度方向，大小 $a_{\\mathrm n}=r\\omega^2$，指向圆心。"
+      }
+     ]
     },
     {
      "type": "tex",
@@ -2310,7 +3386,16 @@
      "tex": "\\vec a=r\\alpha\\,\\vec e_{\\mathrm t}+r\\omega^2\\,\\vec e_{\\mathrm n}",
      "size": 32,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "加速度矢量合成",
+     "qa": [
+      {
+       "q": "总加速度怎么表示？",
+       "a": "$\\vec a=r\\alpha\\,\\vec e_{\\mathrm t}+r\\omega^2\\,\\vec e_{\\mathrm n}$，切向与法向分量矢量相加。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2374,7 +3459,64 @@
      "name": "rot_kin"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "线速度与角速度",
+     "x": 550,
+     "y": 368,
+     "qa": [
+      {
+       "q": "速度方向为什么沿切向？",
+       "a": "质点做圆周运动，瞬时速度方向沿轨迹切线，即 $\\vec e_{\\mathrm t}$ 方向，大小为 $r\\omega$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 1
+    },
+    {
+     "text": "切向加速度",
+     "x": 550,
+     "y": 488,
+     "qa": [
+      {
+       "q": "切向加速度改变什么？",
+       "a": "$a_{\\mathrm t}=r\\alpha$，改变速度的大小，方向沿切向。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 2
+    },
+    {
+     "text": "法向加速度",
+     "x": 550,
+     "y": 598,
+     "qa": [
+      {
+       "q": "法向加速度为什么是 $r\\omega^2$？",
+       "a": "法向加速度改变速度方向，大小 $a_{\\mathrm n}=r\\omega^2$，指向圆心。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 3
+    },
+    {
+     "text": "加速度矢量合成",
+     "x": 560,
+     "y": 738,
+     "qa": [
+      {
+       "q": "总加速度怎么表示？",
+       "a": "$\\vec a=r\\alpha\\,\\vec e_{\\mathrm t}+r\\omega^2\\,\\vec e_{\\mathrm n}$，切向与法向分量矢量相加。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    }
+   ],
    "stepTimes": {
     "1": 403.68,
     "2": 408.45,
@@ -2384,7 +3526,28 @@
    "t_start": 403.68,
    "t_end": 445.7,
    "duration": 42.02,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 403.68,
+     "end": 408.68
+    },
+    {
+     "bullet": 1,
+     "start": 408.45,
+     "end": 413.45
+    },
+    {
+     "bullet": 2,
+     "start": 408.45,
+     "end": 413.45
+    },
+    {
+     "bullet": 3,
+     "start": 419.43,
+     "end": 424.43
+    }
+   ]
   },
   {
    "id": 13,
@@ -2482,7 +3645,20 @@
      "tex": "n=n_{\\mathrm m}\\left(1-\\mathrm e^{-t/\\tau}\\right)",
      "size": 44,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "转速变化规律",
+     "qa": [
+      {
+       "q": "这个转速公式里 $n_m$ 和 $\\tau$ 各表示什么？",
+       "a": "$n_m=540\\ \\mathrm{r/s}$ 是最终稳定转速，$\\tau=2.0\\ \\mathrm s$ 是时间常数，反映转速趋近稳定的快慢。"
+      },
+      {
+       "q": "为什么不能用匀变速公式算？",
+       "a": "因为转速随时间按指数规律变化，角加速度不是常量，属于变加速转动，必须回到定义积分求解。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2566,6 +3742,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "求瞬时转速",
+     "qa": [
+      {
+       "q": "t=6 s 时转速怎么算？",
+       "a": "直接代入 $n=n_m(1-\\mathrm e^{-t/\\tau})$，得 $n=540(1-\\mathrm e^{-3})\\approx 513\\ \\mathrm{r/s}$。"
+      }
      ]
     },
     {
@@ -2586,7 +3770,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "转过的圈数",
+     "qa": [
+      {
+       "q": "圈数为什么用积分而不是 $n\\times t$？",
+       "a": "转速在变，需对 $n(t)$ 积分：$N=\\int_0^6 n\\,\\mathrm dt$，不能直接用末速乘时间。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2606,10 +3799,79 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "角加速度规律",
+     "qa": [
+      {
+       "q": "角加速度怎么由转速求？",
+       "a": "由 $\\beta=\\mathrm d\\omega/\\mathrm dt$，$\\omega=2\\pi n$，得 $\\beta=\\frac{2\\pi n_m}{\\tau}\\mathrm e^{-t/\\tau}$，随时间指数衰减。"
+      }
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "转速变化规律",
+     "x": 960,
+     "y": 642,
+     "qa": [
+      {
+       "q": "这个转速公式里 $n_m$ 和 $\\tau$ 各表示什么？",
+       "a": "$n_m=540\\ \\mathrm{r/s}$ 是最终稳定转速，$\\tau=2.0\\ \\mathrm s$ 是时间常数，反映转速趋近稳定的快慢。"
+      },
+      {
+       "q": "为什么不能用匀变速公式算？",
+       "a": "因为转速随时间按指数规律变化，角加速度不是常量，属于变加速转动，必须回到定义积分求解。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    },
+    {
+     "text": "求瞬时转速",
+     "x": 960,
+     "y": 846,
+     "qa": [
+      {
+       "q": "t=6 s 时转速怎么算？",
+       "a": "直接代入 $n=n_m(1-\\mathrm e^{-t/\\tau})$，得 $n=540(1-\\mathrm e^{-3})\\approx 513\\ \\mathrm{r/s}$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 7
+    },
+    {
+     "text": "转过的圈数",
+     "x": 960,
+     "y": 908,
+     "qa": [
+      {
+       "q": "圈数为什么用积分而不是 $n\\times t$？",
+       "a": "转速在变，需对 $n(t)$ 积分：$N=\\int_0^6 n\\,\\mathrm dt$，不能直接用末速乘时间。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 8
+    },
+    {
+     "text": "角加速度规律",
+     "x": 960,
+     "y": 970,
+     "qa": [
+      {
+       "q": "角加速度怎么由转速求？",
+       "a": "由 $\\beta=\\mathrm d\\omega/\\mathrm dt$，$\\omega=2\\pi n$，得 $\\beta=\\frac{2\\pi n_m}{\\tau}\\mathrm e^{-t/\\tau}$，随时间指数衰减。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 9
+    }
+   ],
    "stepTimes": {
     "1": 446.5,
     "2": 458.61,
@@ -2618,7 +3880,28 @@
    "t_start": 446.5,
    "t_end": 487.88,
    "duration": 41.38,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 458.61,
+     "end": 463.61
+    },
+    {
+     "bullet": 1,
+     "start": 471.51,
+     "end": 476.51
+    },
+    {
+     "bullet": 2,
+     "start": 471.51,
+     "end": 476.51
+    },
+    {
+     "bullet": 3,
+     "start": 471.51,
+     "end": 476.51
+    }
+   ]
   },
   {
    "id": 14,
@@ -2676,7 +3959,20 @@
      "tex": "n=n_{\\mathrm m}\\left(1-\\mathrm e^{-t/\\tau}\\right)=540\\left(1-\\mathrm e^{-3}\\right)",
      "size": 36,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "转速随时间变化公式",
+     "qa": [
+      {
+       "q": "为什么转速公式里要出现 $e^{-t/\\tau}$？",
+       "a": "这是电动机启动时转速按指数规律趋近最大转速 $n_m$，$\\tau$ 为时间常数。"
+      },
+      {
+       "q": "$n_m$ 和 $\\tau$ 分别是什么？",
+       "a": "$n_m=540\\ \\mathrm{r\\cdot s^{-1}}$ 是最大转速，$\\tau=2\\ \\mathrm s$ 是时间常数。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -2688,7 +3984,15 @@
      "tex": "n=0.95\\,n_{\\mathrm m}=513\\ \\mathrm{r\\cdot s^{-1}}",
      "size": 40,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "代入求转速",
+     "qa": [
+      {
+       "q": "为什么 $e^{-3}$ 约等于 0.05？",
+       "a": "$e^{-3}\\approx0.0498$，故括号内 $1-0.05=0.95$，得 $n\\approx513\\ \\mathrm{r\\cdot s^{-1}}$。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -2732,10 +4036,74 @@
      "tex": "=2.21\\times 10^{3}\\ \\mathrm r",
      "size": 40,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "圈数为转速的积分",
+     "qa": [
+      {
+       "q": "为什么圈数等于转速对时间积分？",
+       "a": "转速是每秒转过的圈数，对时间积分即得总圈数，结果约 $2.21\\times10^3$ 圈。"
+      },
+      {
+       "q": "积分结果 $t+\\tau e^{-t/\\tau}$ 怎么来的？",
+       "a": "对 $1-e^{-t/\\tau}$ 积分得 $t+\\tau e^{-t/\\tau}$，代入 0 到 6 s 上下限计算。"
+      }
+     ],
+     "important": true
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "转速随时间变化公式",
+     "x": 960,
+     "y": 472,
+     "qa": [
+      {
+       "q": "为什么转速公式里要出现 $e^{-t/\\tau}$？",
+       "a": "这是电动机启动时转速按指数规律趋近最大转速 $n_m$，$\\tau$ 为时间常数。"
+      },
+      {
+       "q": "$n_m$ 和 $\\tau$ 分别是什么？",
+       "a": "$n_m=540\\ \\mathrm{r\\cdot s^{-1}}$ 是最大转速，$\\tau=2\\ \\mathrm s$ 是时间常数。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "代入求转速",
+     "x": 960,
+     "y": 616,
+     "qa": [
+      {
+       "q": "为什么 $e^{-3}$ 约等于 0.05？",
+       "a": "$e^{-3}\\approx0.0498$，故括号内 $1-0.05=0.95$，得 $n\\approx513\\ \\mathrm{r\\cdot s^{-1}}$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 3
+    },
+    {
+     "text": "圈数为转速的积分",
+     "x": 960,
+     "y": 1008,
+     "qa": [
+      {
+       "q": "为什么圈数等于转速对时间积分？",
+       "a": "转速是每秒转过的圈数，对时间积分即得总圈数，结果约 $2.21\\times10^3$ 圈。"
+      },
+      {
+       "q": "积分结果 $t+\\tau e^{-t/\\tau}$ 怎么来的？",
+       "a": "对 $1-e^{-t/\\tau}$ 积分得 $t+\\tau e^{-t/\\tau}$，代入 0 到 6 s 上下限计算。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 6
+    }
+   ],
    "stepTimes": {
     "1": 488.68,
     "2": 501.19
@@ -2743,7 +4111,23 @@
    "t_start": 488.68,
    "t_end": 530.9,
    "duration": 42.22,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 488.68,
+     "end": 493.68
+    },
+    {
+     "bullet": 1,
+     "start": 488.68,
+     "end": 493.68
+    },
+    {
+     "bullet": 2,
+     "start": 501.19,
+     "end": 506.19
+    }
+   ]
   },
   {
    "id": 15,
@@ -2801,7 +4185,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "角加速度定义",
+     "qa": [
+      {
+       "q": "角加速度为什么等于 dω/dt？",
+       "a": "角加速度是角速度对时间的变化率，故 $\\alpha=\\dfrac{\\mathrm d\\omega}{\\mathrm dt}$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2845,7 +4238,20 @@
      "tex": "\\alpha=\\frac{\\mathrm d\\omega}{\\mathrm dt}=\\frac{2\\pi n_{\\mathrm m}}{\\tau}\\mathrm e^{-t/\\tau}",
      "size": 38,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "角加速度公式",
+     "qa": [
+      {
+       "q": "为什么求导后负号消失了？",
+       "a": "对 $n=n_{\\mathrm m}\\mathrm e^{-t/\\tau}$ 求导得 $-\\frac{n_{\\mathrm m}}{\\tau}\\mathrm e^{-t/\\tau}$，与 $2\\pi$ 前的负号相消，故结果为正。"
+      },
+      {
+       "q": "这个公式怎么来的？",
+       "a": "由 $\\omega=2\\pi n$ 得 $\\alpha=2\\pi\\dfrac{\\mathrm dn}{\\mathrm dt}=\\dfrac{2\\pi n_{\\mathrm m}}{\\tau}\\mathrm e^{-t/\\tau}$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -2857,7 +4263,15 @@
      "tex": "\\alpha=540\\pi\\,\\mathrm e^{-t/2}\\ \\ \\mathrm{rad\\cdot s^{-2}}",
      "size": 42,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "代入数值结果",
+     "qa": [
+      {
+       "q": "540π 是怎么算出来的？",
+       "a": "代入 $n_{\\mathrm m}=540$、$\\tau=2$：$\\alpha=\\dfrac{2\\pi\\times540}{2}\\mathrm e^{-t/2}=540\\pi\\,\\mathrm e^{-t/2}$。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -2877,6 +4291,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "α 随时间衰减",
+     "qa": [
+      {
+       "q": "为什么刚起动时角加速度最大？",
+       "a": "因 $\\alpha\\propto\\mathrm e^{-t/\\tau}$，$t=0$ 时指数为 1 取最大值，随后按指数衰减。"
+      }
      ]
     },
     {
@@ -2900,7 +4322,68 @@
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "角加速度定义",
+     "x": 960,
+     "y": 314,
+     "qa": [
+      {
+       "q": "角加速度为什么等于 dω/dt？",
+       "a": "角加速度是角速度对时间的变化率，故 $\\alpha=\\dfrac{\\mathrm d\\omega}{\\mathrm dt}$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 1
+    },
+    {
+     "text": "角加速度公式",
+     "x": 960,
+     "y": 550,
+     "qa": [
+      {
+       "q": "为什么求导后负号消失了？",
+       "a": "对 $n=n_{\\mathrm m}\\mathrm e^{-t/\\tau}$ 求导得 $-\\frac{n_{\\mathrm m}}{\\tau}\\mathrm e^{-t/\\tau}$，与 $2\\pi$ 前的负号相消，故结果为正。"
+      },
+      {
+       "q": "这个公式怎么来的？",
+       "a": "由 $\\omega=2\\pi n$ 得 $\\alpha=2\\pi\\dfrac{\\mathrm dn}{\\mathrm dt}=\\dfrac{2\\pi n_{\\mathrm m}}{\\tau}\\mathrm e^{-t/\\tau}$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "代入数值结果",
+     "x": 960,
+     "y": 728,
+     "qa": [
+      {
+       "q": "540π 是怎么算出来的？",
+       "a": "代入 $n_{\\mathrm m}=540$、$\\tau=2$：$\\alpha=\\dfrac{2\\pi\\times540}{2}\\mathrm e^{-t/2}=540\\pi\\,\\mathrm e^{-t/2}$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    },
+    {
+     "text": "α 随时间衰减",
+     "x": 960,
+     "y": 854,
+     "qa": [
+      {
+       "q": "为什么刚起动时角加速度最大？",
+       "a": "因 $\\alpha\\propto\\mathrm e^{-t/\\tau}$，$t=0$ 时指数为 1 取最大值，随后按指数衰减。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 5
+    }
+   ],
    "stepTimes": {
     "1": 531.7,
     "2": 543.87,
@@ -2910,7 +4393,28 @@
    "t_start": 531.7,
    "t_end": 581.12,
    "duration": 49.42,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 531.7,
+     "end": 536.7
+    },
+    {
+     "bullet": 1,
+     "start": 543.87,
+     "end": 548.87
+    },
+    {
+     "bullet": 2,
+     "start": 553.82,
+     "end": 558.82
+    },
+    {
+     "bullet": 3,
+     "start": 561.49,
+     "end": 566.49
+    }
+   ]
   },
   {
    "id": 16,
@@ -2976,7 +4480,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "角加速度正比时间",
+     "qa": [
+      {
+       "q": "为什么设角加速度与时间成正比？",
+       "a": "题目条件给出 $\\alpha$ 随时间线性增大，故设 $\\alpha=ct$，$c$ 为比例常数。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -3002,6 +4515,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "转速单位换算",
+     "qa": [
+      {
+       "q": "18000 r/min 怎么换成每秒转数？",
+       "a": "除以 60：$18000/60=300\\ \\mathrm{r\\cdot s^{-1}}$。"
+      }
      ]
     },
     {
@@ -3014,7 +4535,15 @@
      "tex": "\\omega=2\\pi n=600\\pi\\ \\ \\mathrm{rad\\cdot s^{-1}}",
      "size": 38,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "角速度与转速关系",
+     "qa": [
+      {
+       "q": "转速怎么换成角速度？",
+       "a": "用 $\\omega=2\\pi n$，$n=300\\ \\mathrm{r/s}$，得 $\\omega=600\\pi\\ \\mathrm{rad/s}$。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -3058,7 +4587,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "角速度积分公式",
+     "qa": [
+      {
+       "q": "由 $\\alpha=ct$ 如何求角速度？",
+       "a": "积分 $\\mathrm d\\omega=ct\\,\\mathrm dt$，得 $\\omega=\\frac12 ct^2$，因 $\\omega_0=0$。"
+      },
+      {
+       "q": "积分常数为什么是零？",
+       "a": "初始角速度 $\\omega_0=0$，代入 $t=0$ 时 $\\omega=0$，故常数项为零。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -3073,7 +4615,68 @@
      "align": "left"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "角加速度正比时间",
+     "x": 920,
+     "y": 440,
+     "qa": [
+      {
+       "q": "为什么设角加速度与时间成正比？",
+       "a": "题目条件给出 $\\alpha$ 随时间线性增大，故设 $\\alpha=ct$，$c$ 为比例常数。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "转速单位换算",
+     "x": 920,
+     "y": 542,
+     "qa": [
+      {
+       "q": "18000 r/min 怎么换成每秒转数？",
+       "a": "除以 60：$18000/60=300\\ \\mathrm{r\\cdot s^{-1}}$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 3
+    },
+    {
+     "text": "角速度与转速关系",
+     "x": 920,
+     "y": 690,
+     "qa": [
+      {
+       "q": "转速怎么换成角速度？",
+       "a": "用 $\\omega=2\\pi n$，$n=300\\ \\mathrm{r/s}$，得 $\\omega=600\\pi\\ \\mathrm{rad/s}$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    },
+    {
+     "text": "角速度积分公式",
+     "x": 920,
+     "y": 790,
+     "qa": [
+      {
+       "q": "由 $\\alpha=ct$ 如何求角速度？",
+       "a": "积分 $\\mathrm d\\omega=ct\\,\\mathrm dt$，得 $\\omega=\\frac12 ct^2$，因 $\\omega_0=0$。"
+      },
+      {
+       "q": "积分常数为什么是零？",
+       "a": "初始角速度 $\\omega_0=0$，代入 $t=0$ 时 $\\omega=0$，故常数项为零。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 5
+    }
+   ],
    "stepTimes": {
     "1": 581.92,
     "2": 602.1,
@@ -3083,7 +4686,28 @@
    "t_start": 581.92,
    "t_end": 625.72,
    "duration": 43.8,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 581.92,
+     "end": 586.92
+    },
+    {
+     "bullet": 1,
+     "start": 602.1,
+     "end": 607.1
+    },
+    {
+     "bullet": 2,
+     "start": 602.1,
+     "end": 607.1
+    },
+    {
+     "bullet": 3,
+     "start": 611.09,
+     "end": 616.09
+    }
+   ]
   },
   {
    "id": 17,
@@ -3121,7 +4745,16 @@
      "tex": "c=\\frac{2\\omega}{t^2}=\\frac{2\\times 600\\pi}{300^2}=\\frac{\\pi}{75}\\ \\ \\mathrm{rad\\cdot s^{-3}}",
      "size": 36,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "角加速度常数c求解",
+     "qa": [
+      {
+       "q": "为什么用 c=2ω/t² 求 c？",
+       "a": "由 ω=½ct² 反解，代入 t=300 s、ω=600π 得 c=π/75 rad·s⁻³。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -3133,7 +4766,15 @@
      "tex": "\\omega=\\frac{1}{2}ct^2=\\frac{\\pi}{150}t^2",
      "size": 38,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "角速度随时间变化",
+     "qa": [
+      {
+       "q": "ω 与 t 是什么关系？",
+       "a": "匀角加速转动，ω=½ct²=πt²/150，与 t 平方成正比。"
+      }
+     ]
     },
     {
      "type": "tex",
@@ -3145,7 +4786,16 @@
      "tex": "\\theta=\\int_0^t\\omega\\,\\mathrm dt=\\frac{\\pi}{450}t^3",
      "size": 38,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "角位移积分公式",
+     "qa": [
+      {
+       "q": "θ 怎么由 ω 得到？",
+       "a": "对 ω 从 0 到 t 积分：θ=∫ω dt=πt³/450。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -3177,10 +4827,75 @@
      "tex": "N=\\frac{\\theta}{2\\pi}=\\frac{\\pi}{2\\pi\\times 450}(300)^3=3\\times 10^{4}",
      "size": 36,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "圈数换算",
+     "qa": [
+      {
+       "q": "圈数 N 怎么算？",
+       "a": "N=θ/2π，代入 t=300 s 得 N=3×10⁴ 圈。"
+      }
+     ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "角加速度常数c求解",
+     "x": 960,
+     "y": 402,
+     "qa": [
+      {
+       "q": "为什么用 c=2ω/t² 求 c？",
+       "a": "由 ω=½ct² 反解，代入 t=300 s、ω=600π 得 c=π/75 rad·s⁻³。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 1
+    },
+    {
+     "text": "角速度随时间变化",
+     "x": 960,
+     "y": 558,
+     "qa": [
+      {
+       "q": "ω 与 t 是什么关系？",
+       "a": "匀角加速转动，ω=½ct²=πt²/150，与 t 平方成正比。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 2
+    },
+    {
+     "text": "角位移积分公式",
+     "x": 960,
+     "y": 718,
+     "qa": [
+      {
+       "q": "θ 怎么由 ω 得到？",
+       "a": "对 ω 从 0 到 t 积分：θ=∫ω dt=πt³/450。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "圈数换算",
+     "x": 960,
+     "y": 974,
+     "qa": [
+      {
+       "q": "圈数 N 怎么算？",
+       "a": "N=θ/2π，代入 t=300 s 得 N=3×10⁴ 圈。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 5
+    }
+   ],
    "stepTimes": {
     "1": 626.52,
     "2": 637.89,
@@ -3190,7 +4905,28 @@
    "t_start": 626.52,
    "t_end": 665.16,
    "duration": 38.64,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 626.52,
+     "end": 631.52
+    },
+    {
+     "bullet": 1,
+     "start": 637.89,
+     "end": 642.89
+    },
+    {
+     "bullet": 2,
+     "start": 643.02,
+     "end": 648.02
+    },
+    {
+     "bullet": 3,
+     "start": 653.14,
+     "end": 658.14
+    }
+   ]
   },
   {
    "id": 18,
@@ -3294,6 +5030,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "路程与角度",
+     "qa": [
+      {
+       "q": "同一时间内路程和转角如何比较？",
+       "a": "$s=r\\theta$，A 半径大故 $s_A=2s_B$；转角 $\\theta_A=\\theta_B$。"
+      }
      ]
     },
     {
@@ -3370,6 +5114,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "线速度与角速度",
+     "qa": [
+      {
+       "q": "A、B 的线速度和角速度谁大？",
+       "a": "$v=r\\omega$，A 半径是 B 的两倍，故 $v_A=2v_B$；而 $\\omega_A=\\omega_B$。"
+      }
      ]
     },
     {
@@ -3470,7 +5222,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "线量与角量比较",
+     "qa": [
+      {
+       "q": "为什么线加速度和角加速度的关系不同？",
+       "a": "线加速度 $a=r\\alpha$ 带 r，A 半径大故 a 大；角加速度 α 不带 r，两者相等。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -3490,7 +5251,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "角量相同线量成比例",
+     "qa": [
+      {
+       "q": "这题的核心结论是什么？",
+       "a": "同一刚体上各点角量（θ、ω、α）相同，线量（s、v、a）与半径 r 成正比。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "diagram",
@@ -3502,7 +5272,64 @@
      "name": "flywheel_ab"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "路程与角度",
+     "x": 730,
+     "y": 554,
+     "qa": [
+      {
+       "q": "同一时间内路程和转角如何比较？",
+       "a": "$s=r\\theta$，A 半径大故 $s_A=2s_B$；转角 $\\theta_A=\\theta_B$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 3
+    },
+    {
+     "text": "线速度与角速度",
+     "x": 730,
+     "y": 714,
+     "qa": [
+      {
+       "q": "A、B 的线速度和角速度谁大？",
+       "a": "$v=r\\omega$，A 半径是 B 的两倍，故 $v_A=2v_B$；而 $\\omega_A=\\omega_B$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 5
+    },
+    {
+     "text": "线量与角量比较",
+     "x": 730,
+     "y": 890,
+     "qa": [
+      {
+       "q": "为什么线加速度和角加速度的关系不同？",
+       "a": "线加速度 $a=r\\alpha$ 带 r，A 半径大故 a 大；角加速度 α 不带 r，两者相等。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 7
+    },
+    {
+     "text": "角量相同线量成比例",
+     "x": 960,
+     "y": 994,
+     "qa": [
+      {
+       "q": "这题的核心结论是什么？",
+       "a": "同一刚体上各点角量（θ、ω、α）相同，线量（s、v、a）与半径 r 成正比。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 8
+    }
+   ],
    "stepTimes": {
     "1": 665.96,
     "2": 676.72,
@@ -3511,7 +5338,28 @@
    "t_start": 665.96,
    "t_end": 709.52,
    "duration": 43.56,
-   "laser": [],
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 665.96,
+     "end": 670.96
+    },
+    {
+     "bullet": 1,
+     "start": 665.96,
+     "end": 670.96
+    },
+    {
+     "bullet": 2,
+     "start": 676.72,
+     "end": 681.72
+    },
+    {
+     "bullet": 3,
+     "start": 685.42,
+     "end": 690.42
+    }
+   ],
    "interactions": [
     {
      "t": 676.72,
@@ -3577,6 +5425,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "刚体定义",
+     "qa": [
+      {
+       "q": "刚体为什么是理想模型？",
+       "a": "真实物体受力会形变，刚体假设任意两点距离不变，忽略形变以简化分析。"
+      }
      ]
     },
     {
@@ -3629,7 +5485,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "三个角量",
+     "qa": [
+      {
+       "q": "角量的方向怎么确定？",
+       "a": "$\\theta,\\omega,\\alpha$ 都是矢量，方向沿转轴，由右手螺旋定则确定；定轴时用正负号表示。"
+      },
+      {
+       "q": "$\\omega$ 和 $\\alpha$ 的定义是什么？",
+       "a": "$\\omega=d\\theta/dt$，$\\alpha=d\\omega/dt$，即角坐标对时间的一阶、二阶导数。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -3655,6 +5524,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "匀变速转动公式",
+     "qa": [
+      {
+       "q": "匀变速转动公式怎么记？",
+       "a": "与匀变速直线运动一一对应：$v\\to\\omega$，$a\\to\\alpha$，$x\\to\\theta$，公式形式完全相同。"
+      }
      ]
     },
     {
@@ -3681,7 +5558,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "角量与线量关系",
+     "qa": [
+      {
+       "q": "线量和角量的换算公式有哪些？",
+       "a": "$v=r\\omega$，$a_t=r\\alpha$，$a_n=r\\omega^2$，线量随半径 $r$ 成比例。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "box",
@@ -3730,7 +5616,68 @@
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "刚体定义",
+     "x": 960,
+     "y": 314,
+     "qa": [
+      {
+       "q": "刚体为什么是理想模型？",
+       "a": "真实物体受力会形变，刚体假设任意两点距离不变，忽略形变以简化分析。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 1
+    },
+    {
+     "text": "三个角量",
+     "x": 960,
+     "y": 514,
+     "qa": [
+      {
+       "q": "角量的方向怎么确定？",
+       "a": "$\\theta,\\omega,\\alpha$ 都是矢量，方向沿转轴，由右手螺旋定则确定；定轴时用正负号表示。"
+      },
+      {
+       "q": "$\\omega$ 和 $\\alpha$ 的定义是什么？",
+       "a": "$\\omega=d\\theta/dt$，$\\alpha=d\\omega/dt$，即角坐标对时间的一阶、二阶导数。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "匀变速转动公式",
+     "x": 960,
+     "y": 614,
+     "qa": [
+      {
+       "q": "匀变速转动公式怎么记？",
+       "a": "与匀变速直线运动一一对应：$v\\to\\omega$，$a\\to\\alpha$，$x\\to\\theta$，公式形式完全相同。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    },
+    {
+     "text": "角量与线量关系",
+     "x": 960,
+     "y": 700,
+     "qa": [
+      {
+       "q": "线量和角量的换算公式有哪些？",
+       "a": "$v=r\\omega$，$a_t=r\\alpha$，$a_n=r\\omega^2$，线量随半径 $r$ 成比例。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 5
+    }
+   ],
    "stepTimes": {
     "1": 710.32,
     "2": 720.02,
@@ -3741,7 +5688,28 @@
    "t_start": 710.32,
    "t_end": 769.74,
    "duration": 59.42,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 710.32,
+     "end": 715.32
+    },
+    {
+     "bullet": 1,
+     "start": 730.39,
+     "end": 735.39
+    },
+    {
+     "bullet": 2,
+     "start": 746.64,
+     "end": 751.64
+    },
+    {
+     "bullet": 3,
+     "start": 746.64,
+     "end": 751.64
+    }
+   ]
   }
  ],
  "subtitles": [
@@ -4400,6 +6368,6 @@
    "text": "下一节，我们来找转动的原因——力矩，以及它和转动惯量、角加速度的关系。"
   }
  ],
- "build_ts": 1792456004,
+ "build_ts": 1794446512,
  "logoScale": 0.67
 }

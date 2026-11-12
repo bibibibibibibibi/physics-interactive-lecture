@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>公式速查 · 大学物理</title>
+<link rel="stylesheet" href="/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/blocks.css">
+<style>
+  .fx-wrap { max-width: 1080px; margin: 0 auto; padding: 28px 20px 80px; }
+  .fx-head h1 { font-size: 26px; margin: 18px 0 6px; }
+  .fx-head .sub { color: var(--ink-soft, #667); font-size: 13.5px; margin-bottom: 18px; }
+  .fx-tools { position: sticky; top: 64px; z-index: 20; background: rgba(255,255,255,.94);
+              backdrop-filter: blur(6px); padding: 10px 0; border-bottom: 1px solid #e8e8ee; }
+  .fx-search { width: 100%; box-sizing: border-box; padding: 10px 14px; font-size: 14.5px;
+               border: 1px solid #d8d8e2; border-radius: 10px; outline: none; }
+  .fx-search:focus { border-color: #3B82F6; }
+  .fx-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .fx-chip { padding: 4px 12px; font-size: 13px; border-radius: 999px; cursor: pointer;
+             border: 1px solid #d8d8e2; background: #fff; color: #445; }
+  .fx-chip.on { color: #fff; border-color: transparent; }
+  .fx-count { font-size: 12.5px; color: var(--ink-soft, #667); margin-top: 8px; }
+  .fx-subject { margin-top: 30px; }
+  .fx-subject > h2 { font-size: 19px; padding-left: 12px; border-left: 4px solid var(--sc, #3B82F6); }
+  .fx-chapter { margin: 16px 0 26px; }
+  .fx-chapter > h3 { font-size: 16px; margin: 0 0 10px; }
+  .fx-chapter > h3 a { color: inherit; text-decoration: none; }
+  .fx-chapter > h3 a:hover { color: #3B82F6; }
+  .fx-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 10px; }
+  .fx-item { border: 1px solid #e8e8ee; border-radius: 10px; padding: 12px 14px 8px;
+             background: #fff; overflow-x: auto; }
+  .fx-item .katex-display { margin: 4px 0; }
+  .fx-meta { display: flex; justify-content: space-between; gap: 10px; margin-top: 6px;
+             font-size: 12px; color: var(--ink-soft, #667); }
+  .fx-meta .sec { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .fx-empty { color: var(--ink-soft, #667); padding: 40px 0; text-align: center; }
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <a class="brand" href="/"><span class="owl">🦉</span>大学物理</a>
+  <a class="nav-link" href="/#catalog">章节学习</a>
+  <a class="nav-link" href="formulas.html">公式速查</a>
+  <a class="nav-link" href="knowledge-map.html">知识图谱</a>
+  <span class="spacer"></span>
+  <span class="nav-meta">配套教材：马文蔚《物理学》第七版</span>
+</nav>
+
+<div class="fx-wrap">
+  <div class="fx-head">
+    <h1>公式速查</h1>
+    <div class="sub">十五章全部独立公式，按学科与章节分组；键入式号、章节名或公式片段过滤</div>
+  </div>
+  <div class="fx-tools">
+    <input id="fx-q" class="fx-search" placeholder="过滤：如 13-32 / 熵 / 高斯 / pV">
+    <div class="fx-chips" id="fx-chips"></div>
+    <div class="fx-count" id="fx-count"></div>
+  </div>
+  <div id="fx-root"></div>
+</div>
+
+<script src="/vendor/katex/katex.min.js"></script>
+<script src="js/formulas.js"></script>
+</body>
+</html>

@@ -37,10 +37,10 @@ export default function SubtitlePanel({ subs, curSubStart, t, height, onOpenSubt
             onClick={e => { e.currentTarget.blur(); onOpenSubtitle(s) }}
             className={`block w-full rounded-lg px-3 py-1.5 text-left text-sm leading-snug transition ${
               isCur
-                ? 'bg-[#ffb703]/15 text-[#ffb703] border-l-2 border-[#ffb703]'
+                ? 'bg-[#e5ebdc] text-[#385545] border-l-2 border-[#47675b] font-medium'
                 : isPast
-                  ? 'text-slate-500 hover:bg-[#123a63] hover:text-slate-300'
-                  : 'text-slate-300 hover:bg-[#123a63]'
+                  ? 'text-[#8a948c] hover:bg-[#ecefe4] hover:text-[#3d4f48]'
+                  : 'text-[#3d4f48] hover:bg-[#ecefe4]'
             }`}
           >
             {s.text}

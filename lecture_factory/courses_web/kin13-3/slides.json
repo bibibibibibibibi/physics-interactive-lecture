@@ -69,7 +69,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "等容与等压过程",
+     "qa": [
+      {
+       "q": "等容过程和等压过程有什么区别？",
+       "a": "等容过程体积不变，$W=0$，$Q=\\Delta U$；等压过程压强不变，$W=p\\Delta V$，$Q=\\Delta U+p\\Delta V$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -89,7 +98,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "摩尔热容与迈耶公式",
+     "qa": [
+      {
+       "q": "迈耶公式是什么？",
+       "a": "定压摩尔热容与定容摩尔热容之差等于气体常量：$C_p-C_V=R$。"
+      },
+      {
+       "q": "摩尔热容表示什么？",
+       "a": "1 mol 气体温度升高 1 K 所吸收的热量，等容时为 $C_V$，等压时为 $C_p$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -236,7 +258,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "等容过程",
+     "qa": [
+      {
+       "q": "等容过程为什么不做功？",
+       "a": "体积不变即 $\\Delta V=0$，故 $W=p\\Delta V=0$，吸收的热量全部转化为内能增量。"
+      },
+      {
+       "q": "等容过程的热量怎么算？",
+       "a": "由第一定律 $Q_V=\\Delta E$，热量全部用于增加内能。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -276,7 +311,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "摩尔定容热容",
+     "qa": [
+      {
+       "q": "摩尔定容热容为什么是 $iR/2$？",
+       "a": "等容时 $Q_V=\\Delta E$，而理想气体内能只由温度定，每摩尔每升 1 K 需 $\\frac{i}{2}R$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -316,6 +360,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "等压过程做功",
+     "qa": [
+      {
+       "q": "等压过程为什么吸热更多？",
+       "a": "既要升温增加内能，又要对外做功 $W=p(V_2-V_1)$，所以吸热比等容多。"
+      }
      ]
     },
     {
@@ -356,6 +408,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "迈耶公式",
+     "qa": [
+      {
+       "q": "迈耶公式说明什么？",
+       "a": "$C_{p,\\mathrm{m}}=C_{V,\\mathrm{m}}+R$，等压摩尔热容比等容的大一个 $R$，差值即每摩尔每升 1 K 所做的功。"
+      }
      ]
     },
     {
@@ -481,7 +541,16 @@
      "tex": "pV=\\nu RT",
      "size": 34,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "理想气体状态方程",
+     "qa": [
+      {
+       "q": "状态方程适用于哪些气体？",
+       "a": "理想气体状态方程 $pV=\\nu RT$ 是所有气体共有的基础关系，本页作为四块基础之一。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -513,7 +582,16 @@
      "tex": "\\mathrm{d}Q=\\mathrm{d}E+p\\,\\mathrm{d}V",
      "size": 32,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "热力学第一定律",
+     "qa": [
+      {
+       "q": "第一定律的微分和积分形式怎么对应？",
+       "a": "微分形式 $\\mathrm{d}Q=\\mathrm{d}E+p\\,\\mathrm{d}V$，积分得 $Q=\\Delta E+\\int p\\,\\mathrm{d}V$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -545,7 +623,15 @@
      "tex": "E=E(T)",
      "size": 34,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "内能只是温度的函数",
+     "qa": [
+      {
+       "q": "为什么内能可以脱离过程单独算？",
+       "a": "理想气体 $E=E(T)$ 只由温度决定，故 $\\Delta E$ 只与初末温度有关，与过程无关。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -585,6 +671,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "等值过程参量特性",
+     "qa": [
+      {
+       "q": "等容、等压、等温各锁住哪个参量？",
+       "a": "等容 $V$ 不变，等压 $p$ 不变，等温 $T$ 不变，剩下两个参量按状态方程联动。"
+      }
      ]
     },
     {
@@ -978,7 +1072,16 @@
      "tex": "C_{V,\\mathrm{m}}=\\frac{\\mathrm{d}Q_{V,\\mathrm{m}}}{\\mathrm{d}T}",
      "size": 36,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "摩尔定容热容定义",
+     "qa": [
+      {
+       "q": "摩尔定容热容是怎么定义的？",
+       "a": "一摩尔气体等容吸热 $\\mathrm{d}Q_V$、升温 $\\mathrm{d}T$，比值 $C_{V,\\mathrm{m}}=\\frac{\\mathrm{d}Q_{V,\\mathrm{m}}}{\\mathrm{d}T}$ 即定义。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1030,7 +1133,16 @@
      "tex": "\\mathrm{d}Q_V=\\mathrm{d}E=\\nu C_{V,\\mathrm{m}}\\,\\mathrm{d}T",
      "size": 30,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "等容吸热与内能",
+     "qa": [
+      {
+       "q": "为什么等容下 $\\mathrm{d}Q_V=\\mathrm{d}E$？",
+       "a": "等容过程不做功，热力学第一定律给出 $\\mathrm{d}Q_V=\\mathrm{d}E$，热量全部转为内能。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1062,7 +1174,15 @@
      "tex": "Q_V=\\nu C_{V,\\mathrm{m}}(T_2-T_1)=E_2-E_1",
      "size": 28,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "等容过程热量公式",
+     "qa": [
+      {
+       "q": "有限温度变化时等容吸热怎么算？",
+       "a": "积分得 $Q_V=\\nu C_{V,\\mathrm{m}}(T_2-T_1)=E_2-E_1$，直接由热容和温差求内能变化。"
+      }
+     ]
     },
     {
      "type": "box",
@@ -1096,7 +1216,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "热容由自由度决定",
+     "qa": [
+      {
+       "q": "理想气体 $C_{V,\\mathrm{m}}$ 由什么决定？",
+       "a": "只由自由度 $i$ 决定：$C_{V,\\mathrm{m}}=\\frac{i}{2}R$，单原子 $1.5R$，双原子 $2.5R$。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -1172,6 +1300,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "等压过程特性",
+     "qa": [
+      {
+       "q": "等压过程的特性是什么？",
+       "a": "压强保持不变，$p=$常量，活塞可自由移动以维持压强恒定。"
+      }
      ]
     },
     {
@@ -1212,7 +1348,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "等压做功公式",
+     "qa": [
+      {
+       "q": "等压膨胀时气体做功怎么算？",
+       "a": "气体推外界做功，$W=p(V_2-V_1)$，即压强乘体积变化。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -1224,7 +1369,16 @@
      "tex": "\\mathrm{d}Q_p=\\mathrm{d}E+\\mathrm{d}W",
      "size": 30,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "等压第一定律",
+     "qa": [
+      {
+       "q": "等压过程第一定律怎么写？",
+       "a": "$\\mathrm{d}Q_p=\\mathrm{d}E+\\mathrm{d}W$，吸热一部分升内能，一部分对外做功。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1244,6 +1398,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "等压过程方程",
+     "qa": [
+      {
+       "q": "等压过程体积和温度什么关系？",
+       "a": "由$pV=\\nu RT$得$V/T=$常量，体积与温度成正比。"
+      }
      ]
     },
     {
@@ -1393,7 +1555,15 @@
      "tex": "C_{p,\\mathrm{m}}=\\frac{\\mathrm{d}Q_{p,\\mathrm{m}}}{\\mathrm{d}T}",
      "size": 34,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "摩尔定压热容定义",
+     "qa": [
+      {
+       "q": "摩尔定压热容是怎么定义的？",
+       "a": "$C_{p,\\mathrm{m}}=\\frac{\\mathrm{d}Q_{p,\\mathrm{m}}}{\\mathrm{d}T}$，即等压过程中每摩尔气体温度升高 1 K 所吸的热。"
+      }
+     ]
     },
     {
      "type": "tex",
@@ -1405,7 +1575,15 @@
      "tex": "\\mathrm{d}Q_p=\\nu C_{p,\\mathrm{m}}\\,\\mathrm{d}T=\\mathrm{d}E+p\\,\\mathrm{d}V",
      "size": 27,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "等压吸热与做功",
+     "qa": [
+      {
+       "q": "等压过程吸收的热量去哪了？",
+       "a": "$\\mathrm{d}Q_p=\\mathrm{d}E+p\\,\\mathrm{d}V$，一部分增加内能，一部分对外做功。"
+      }
+     ]
     },
     {
      "type": "tex",
@@ -1417,7 +1595,15 @@
      "tex": "\\mathrm{d}E=\\nu C_{V,\\mathrm{m}}\\,\\mathrm{d}T,\\quad p\\,\\mathrm{d}V=\\nu R\\,\\mathrm{d}T",
      "size": 25,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "内能与功的替换",
+     "qa": [
+      {
+       "q": "为什么 $p\\,\\mathrm{d}V$ 能换成 $\\nu R\\,\\mathrm{d}T$？",
+       "a": "由理想气体状态方程 $pV=\\nu RT$，等压下取微分得 $p\\,\\mathrm{d}V=\\nu R\\,\\mathrm{d}T$。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -1454,7 +1640,20 @@
      "tex": "C_{p,\\mathrm{m}}=C_{V,\\mathrm{m}}+R",
      "size": 38,
      "align": "center",
-     "color": "#C00000"
+     "color": "#C00000",
+     "hotspot": true,
+     "label": "迈耶公式",
+     "qa": [
+      {
+       "q": "迈耶公式说明什么？",
+       "a": "$C_{p,\\mathrm{m}}=C_{V,\\mathrm{m}}+R$，定压热容比定容热容大，差值恰为 $R$。"
+      },
+      {
+       "q": "为什么 $C_p$ 总大于 $C_V$？",
+       "a": "等压时同样温升还要额外对外做功，故多吸一份 $R$ 的热。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1624,7 +1823,16 @@
      "tex": "W=p(V_2-V_1)=\\nu R(T_2-T_1)",
      "size": 30,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "等压过程功的公式",
+     "qa": [
+      {
+       "q": "等压过程的功为什么等于 $\\nu R(T_2-T_1)$？",
+       "a": "由 $W=p(V_2-V_1)$，再用理想气体状态方程 $p\\Delta V=\\nu R\\Delta T$ 替换即可。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1656,7 +1864,16 @@
      "tex": "Q_p=\\nu C_{p,\\mathrm{m}}(T_2-T_1)",
      "size": 30,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "等压过程热量公式",
+     "qa": [
+      {
+       "q": "为什么等压过程热量用 $C_{p,\\mathrm{m}}$ 而不是 $C_{V,\\mathrm{m}}$？",
+       "a": "等压时气体膨胀对外做功，吸热更多，故用定压摩尔热容 $C_{p,\\mathrm{m}}$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1688,7 +1905,15 @@
      "tex": "E_2-E_1=\\nu C_{V,\\mathrm{m}}(T_2-T_1)",
      "size": 30,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "内能变化公式",
+     "qa": [
+      {
+       "q": "内能变化为什么用 $C_{V,\\mathrm{m}}$？",
+       "a": "理想气体内能只由温度决定，$\\Delta E=\\nu C_{V,\\mathrm{m}}\\Delta T$，与过程无关。"
+      }
+     ]
     },
     {
      "type": "box",
@@ -1714,7 +1939,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "三式同构记忆法",
+     "qa": [
+      {
+       "q": "三个公式怎么记不容易混？",
+       "a": "都是「系数×温度差」，只是系数不同：$R$ 配功、$C_p$ 配热、$C_V$ 配内能。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -1793,7 +2026,16 @@
      "tex": "\\gamma=\\frac{C_{p,\\mathrm{m}}}{C_{V,\\mathrm{m}}}",
      "size": 36,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "摩尔热容比定义",
+     "qa": [
+      {
+       "q": "摩尔热容比 γ 是怎么定义的？",
+       "a": "γ 等于定压摩尔热容与定容摩尔热容之比：$\\gamma=C_{p,\\mathrm{m}}/C_{V,\\mathrm{m}}$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1813,7 +2055,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "γ 与自由度的关系",
+     "qa": [
+      {
+       "q": "γ 和自由度 i 有什么关系？",
+       "a": "代入迈耶公式得 $\\gamma=1+2/i$，自由度越大 γ 越小。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "table",
@@ -1895,7 +2146,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "典型气体 γ 数值",
+     "qa": [
+      {
+       "q": "为什么理论值和实测值有差别？",
+       "a": "因为实际分子不是刚性的，存在振动等额外自由度，故略有偏差。"
+      }
+     ]
     },
     {
      "type": "box",
@@ -2024,6 +2283,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "热容定义",
+     "qa": [
+      {
+       "q": "热容 C 的物理意义是什么？",
+       "a": "整个系统升高 1 K 所需吸收的热量，$C=\\mathrm{d}Q/\\mathrm{d}T$，单位 J·K⁻¹，与物质的量有关。"
+      }
      ]
     },
     {
@@ -2064,7 +2331,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "比热容定义",
+     "qa": [
+      {
+       "q": "比热容和热容有什么区别？",
+       "a": "比热容是单位质量的热容，$c=\\mathrm{d}Q/(m\\,\\mathrm{d}T)$，单位 J·kg⁻¹·K⁻¹，工程最常用。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -2076,7 +2352,16 @@
      "tex": "c=\\frac{C_{\\mathrm{m}}}{M}",
      "size": 38,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "比热与摩尔热容关系",
+     "qa": [
+      {
+       "q": "比热容和摩尔热容怎么换算？",
+       "a": "比热容等于摩尔热容除以摩尔质量：$c=C_{\\mathrm{m}}/M$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2256,7 +2541,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "两套热容的选用",
+     "qa": [
+      {
+       "q": "为什么工程用比热容、物理用摩尔热容？",
+       "a": "工程按质量称量方便用比热容；物理按分子数算，摩尔热容才看得出微观自由度规律。"
+      }
+     ]
     }
    ],
    "heading": "八　比热容"
@@ -2323,7 +2616,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "等容过程",
+     "qa": [
+      {
+       "q": "等容过程为什么 W=0？",
+       "a": "体积不变即 $\\Delta V=0$，气体不做功，故 $W=0$，热量全部转化为内能 $Q_V=\\Delta E$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2363,7 +2665,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "等压过程",
+     "qa": [
+      {
+       "q": "等压过程的热量为什么比等容多？",
+       "a": "$Q_p=\\Delta E+W$，除升温内能外还要对外做功 $W=p\\Delta V$，故比等容多吸热。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2403,6 +2714,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "定容摩尔热容",
+     "qa": [
+      {
+       "q": "$C_{V,m}$ 公式里的 i 是什么？",
+       "a": "$i$ 是分子自由度，$C_{V,\\mathrm{m}}=\\frac{i}{2}R$，单原子 i=3，双原子 i=5。"
+      }
      ]
     },
     {
@@ -2423,6 +2742,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "迈耶公式",
+     "qa": [
+      {
+       "q": "为什么 $C_{p,m}=C_{V,m}+R$？",
+       "a": "等压时多出 $p\\Delta V$ 的功，对 1 mol 理想气体 $p\\Delta V=R\\Delta T$，故多出 R。"
+      }
      ]
     },
     {

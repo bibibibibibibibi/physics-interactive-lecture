@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>交互实验 · 物理课堂</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+  :root {
+    --ink: #273d3a; --mute: #61716a; --accent: #47675b; --rule: #d8dcd0;
+    --gold: #e5c98b; --gold-ink: #203f32;
+    --serif: Georgia, "Songti SC", "Noto Serif CJK SC", SimSun, serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #f7f7f0; color: var(--ink);
+         font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { width: min(1080px, calc(100% - 48px)); margin-inline: auto; }
+  header { background: #fafaf5; border-bottom: 1px solid var(--rule);
+           position: sticky; top: 0; z-index: 10; }
+  .bar { display: flex; align-items: center; gap: 14px; min-height: 64px; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand img { width: 54px; height: auto; display: block; }
+  .brand-name { font: 500 17px/1.1 var(--serif); letter-spacing: .11em; color: #304c40; }
+  .brand-dept { font-size: 9px; letter-spacing: .12em; color: #647367; margin-top: 3px; }
+  .back { margin-left: auto; font-size: 13px; color: var(--mute);
+          border: 1px solid var(--rule); border-radius: 8px; padding: 7px 12px; background: #fff; }
+  .back:hover { background: #ecefe4; }
+  h1 { font: 500 34px/1.3 var(--serif); margin: 34px 0 6px; }
+  .sub { color: var(--mute); font-size: 14px; margin-bottom: 26px; }
+  h2 { font: 500 19px/1.4 var(--serif); color: var(--accent);
+       margin: 26px 0 10px; display: flex; align-items: baseline; gap: 10px; }
+  h2 small { font: 12px/1.4 sans-serif; color: var(--mute); letter-spacing: .05em; }
+  ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
+  li a { display: flex; align-items: center; gap: 10px; background: #fdfdf9;
+         border: 1px solid var(--rule); border-radius: 10px; padding: 13px 16px; font-size: 14px;
+         transition: background .15s ease; }
+  li a:hover { background: #ecefe4; }
+  li a::before { content: ''; width: 8px; height: 8px; border-radius: 50%;
+                 background: var(--gold); border: 1.5px solid #b38e4f; flex: none; }
+  li a::after { content: '↗'; margin-left: auto; color: var(--mute); font-size: 12px; }
+  footer { margin-top: 44px; padding-block: 20px; border-top: 1px solid var(--rule);
+           color: var(--mute); font-size: 12px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+<header><div class="wrap bar">
+  <a class="brand" href="/">
+    <img src="/assets/gewu-header.svg" alt="" onerror="this.style.display='none'">
+    <span><span class="brand-name">物理课堂</span><div class="brand-dept">暨南大学物理学系</div></span>
+  </a>
+  <a class="back" href="/">← 返回课程目录</a>
+</div></header>
+<main class="wrap">
+  <h1>交互实验</h1>
+  <p class="sub">可调参数的物理模拟：拖动、暂停、换条件，把公式变成手上的感觉。</p>
+
+  <h2>力学 <small>第四章 · 刚体转动</small></h2>
+  <ul>
+    <li><a href="/labs/angular-momentum-conservation-3d.html">角动量守恒 · 转台收臂实验（3D）</a></li>
+  </ul>
+
+  <h2>电磁学 <small>第八章 · 电磁感应</small></h2>
+  <ul>
+    <li><a href="/labs/electromagnetic-induction-lab.html">电磁感应交互实验室</a></li>
+  </ul>
+
+  <h2>振动与波 <small>第十章 · 波动</small></h2>
+  <ul>
+    <li><a href="/labs/standing-wave-lab.html">驻波配套动画</a></li>
+  </ul>
+
+  <h2>光学 <small>第十一章 · 光学</small></h2>
+  <ul>
+    <li><a href="/labs/circular-aperture-diffraction-principles.html">圆孔衍射原理 · 从惠更斯–菲涅耳到艾里图样</a></li>
+    <li><a href="/labs/circular-aperture-diffraction-3d.html">圆孔的夫琅禾费衍射 · 艾里图样（3D）</a></li>
+    <li><a href="/labs/diffraction-grating-lab.html">衍射光栅交互实验室</a></li>
+  </ul>
+
+  <h2>量子与粒子物理 <small>第十五章 · 量子物理</small></h2>
+  <ul>
+    <li><a href="/labs/compton-scattering-collision.html">康普顿散射 · 光子—电子碰撞演示</a></li>
+  </ul>
+
+  <footer><span>物理课堂 · 暨南大学物理学系</span><a href="/learn/formulas.html">公式速查</a><a href="/learn/knowledge-map.html">知识图谱</a></footer>
+</main>
+</body>
+</html>

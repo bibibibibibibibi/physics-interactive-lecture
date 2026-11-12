@@ -7,8 +7,10 @@ import type { AskContext } from '@/lib/qa'
 import { stripMath } from '@/lib/lecture'
 import type { Active, Bullet, Msg, Pose, Slide, Sub, Timeline } from '@/lib/lecture'
 import type { WebLec, WebPage, WebQuiz } from '@/lib/weblec'
-import { COURSE_BASE, COURSE_ID } from '@/lib/course'
+import { COURSE_BASE, COURSE_ID, CHAPTER_FILES } from '@/lib/course'
 import CourseMenu from '@/pages/CourseMenu'
+import PageChrome from '@/components/PageChrome'
+import '@/chrome.css'
 
 /** 三个板块平级（大学物理课程 / 分析力学 / 教学节段专题），顶部互相切换 */
 function menuNav(cur: 'physics' | 'analysis' | 'special') {
@@ -32,35 +34,48 @@ export default function Home() {
     // 下面的旧参数（mechanics / foundation）落到大学物理目录，兼容旧链接。
     if (menu === 'analysis' || menu === 'analytical') {
       return <CourseMenu nav={menuNav('analysis')}
-        title="分析力学 · 课程目录" subtitle="从约束、虚功到拉格朗日方程"
+        title="分析力学" subtitle="从约束、虚功到拉格朗日方程"
         groups={[{ name: '拉格朗日力学', src: '/weblec/courses_analytical.json' }]} />
     }
     if (menu === 'special') {
       return <CourseMenu nav={menuNav('special')}
-        title="教学节段专题 · 课程目录" subtitle="跨篇选讲：每讲一个主题，独立成节"
+        title="教学节段专题" subtitle="跨篇选讲：每讲一个主题，独立成节"
         groups={[{ name: '示范课节段', src: '/weblec/courses_special.json' }]} />
     }
     return <CourseMenu nav={menuNav('physics')}
-      title="大学物理 · 课程目录" subtitle="力学 · 电磁学 · 振动与波 · 光学 · 热学 · 相对论 · 量子物理"
+      title="大学物理" subtitle="按章节进入交互课堂，或打开幻灯片复习。"
+      extraLinks={[
+        { href: '/labs/index.html', label: '交互实验' },
+        { href: '/learn/formulas.html', label: '公式速查' },
+        { href: '/learn/knowledge-map.html', label: '知识图谱' },
+      ]}
       groups={[
         { name: '力学', chapters: [
           { title: '第一章　质点运动学', src: '/weblec/courses_mechanics.json' },
           { title: '第二章　牛顿定律', src: '/weblec/courses_newton.json' },
           { title: '第三章　动量守恒定律和能量守恒定律', src: '/weblec/courses_momentum.json' },
-          { title: '第四章　刚体转动和流体运动', src: '/weblec/courses_rotation.json' },
+          { title: '第四章　刚体转动和流体运动', src: '/weblec/courses_rotation.json',
+            labs: [{ href: '/labs/angular-momentum-conservation-3d.html', label: '角动量守恒 · 转台收臂（3D）' }] },
         ] },
         { name: '电磁学', chapters: [
           { title: '第五章　静电场', src: '/weblec/courses_electric.json' },
           { title: '第六章　导体与电介质', src: '/weblec/courses_conductor.json' },
           { title: '第七章　恒定磁场', src: '/weblec/courses_magnetic.json' },
-          { title: '第八章　电磁感应', src: '/weblec/courses_induction.json' },
+          { title: '第八章　电磁感应', src: '/weblec/courses_induction.json',
+            labs: [{ href: '/labs/electromagnetic-induction-lab.html', label: '电磁感应实验' }] },
         ] },
         { name: '振动与波', chapters: [
           { title: '第九章　振动', src: '/weblec/courses.json' },
-          { title: '第十章　波动', src: '/weblec/courses_wave.json' },
+          { title: '第十章　波动', src: '/weblec/courses_wave.json',
+            labs: [{ href: '/labs/standing-wave-lab.html', label: '驻波配套动画' }] },
         ] },
         { name: '光学', chapters: [
-          { title: '第十一章　光学', src: '/weblec/courses_optics.json' },
+          { title: '第十一章　光学', src: '/weblec/courses_optics.json',
+            labs: [
+              { href: '/labs/circular-aperture-diffraction-principles.html', label: '圆孔衍射原理' },
+              { href: '/labs/circular-aperture-diffraction-3d.html', label: '圆孔衍射 · 艾里图样（3D）' },
+              { href: '/labs/diffraction-grating-lab.html', label: '衍射光栅实验' },
+            ] },
         ] },
         { name: '热学', chapters: [
           { title: '第十二章　气体动理论', src: '/weblec/courses_thermal.json' },
@@ -70,7 +85,8 @@ export default function Home() {
           { title: '第十四章　相对论', src: '/weblec/courses_relativity.json' },
         ] },
         { name: '量子与粒子物理', chapters: [
-          { title: '第十五章　量子物理', src: '/weblec/courses_quantum.json' },
+          { title: '第十五章　量子物理', src: '/weblec/courses_quantum.json',
+            labs: [{ href: '/labs/compton-scattering-collision.html', label: '康普顿散射演示' }] },
           { title: '第十六章　原子核与粒子物理', src: '/weblec/courses_nuclear.json' },
         ] },
         { name: '数学基础（预备）', chapters: [
@@ -112,19 +128,47 @@ function SpecialLecture() {
 
   if (course && course.lectureAvailable !== false) return <Lecture />
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center gap-5 bg-[#0b1f38] px-6 text-center text-slate-100">
-      <h1 className="text-2xl font-bold">{course?.title ?? '教学节段专题'}</h1>
-      <p className="max-w-xl text-slate-300">
+    <div className="chrome flex min-h-screen flex-col items-center justify-center gap-5 px-6 text-center">
+      <h1 className="text-2xl font-semibold" style={{ fontFamily: 'var(--c-serif)' }}>{course?.title ?? '教学节段专题'}</h1>
+      <p className="max-w-xl" style={{ color: 'var(--c-mute)' }}>
         {course ? course.desc ?? '本课有声课堂尚待验收，可先查看静态课件。'
           : failed ? '暂时无法读取课程状态，请刷新后重试。' : '正在读取课程状态…'}
       </p>
       {course && <a href={course.slidesUrl ?? `/slides.html?course=${course.id}`}
-        className="rounded-lg bg-[#ffb703] px-4 py-2 font-bold text-[#0b1f38]">
+        className="chrome-btn chrome-btn-gold px-4 py-2">
         查看静态审阅稿
       </a>}
-      <a href="/?menu=special" className="text-slate-400 hover:text-slate-200">← 教学节段专题</a>
+      <a href="/?menu=special" className="text-sm underline underline-offset-4" style={{ color: 'var(--c-mute)' }}>← 教学节段专题</a>
     </div>
   )
+}
+
+interface CourseEntry { id: string; title: string }
+
+/** 上一节/下一节：在所属章节清单里找当前课的相邻课程（跨章不串） */
+function useCourseSiblings() {
+  const [siblings, setSiblings] = useState<{ prev: CourseEntry | null; next: CourseEntry | null } | null>(null)
+  useEffect(() => {
+    if (!COURSE_ID) return
+    const controller = new AbortController()
+    Promise.all(CHAPTER_FILES.map(f =>
+      fetch(`/weblec/${f}`, { signal: controller.signal })
+        .then(r => r.ok ? r.json() as Promise<CourseEntry[]> : [])
+        .catch(() => [] as CourseEntry[])))
+      .then(lists => {
+        if (controller.signal.aborted) return
+        for (const list of lists) {
+          const i = list.findIndex(c => c.id === COURSE_ID)
+          if (i >= 0) {
+            setSiblings({ prev: list[i - 1] ?? null, next: list[i + 1] ?? null })
+            break
+          }
+        }
+      })
+      .catch(() => { /* 清单读取失败时隐藏相邻导航 */ })
+    return () => controller.abort()
+  }, [])
+  return siblings
 }
 
 function Lecture() {
@@ -460,26 +504,31 @@ function Lecture() {
     ? sections.reduce((acc, s, i) => (s.page <= curPage.id ? i + 1 : acc), 0)
     : curTime?.id
 
+  const siblings = useCourseSiblings()
+
   if (!weblec) return (
-    <div className="flex min-h-screen flex-col items-center justify-center gap-5 bg-[#0b1f38] px-6 text-center text-slate-100">
-      <h1 className="text-2xl font-bold">{loadFailed ? '课件读取失败' : '正在加载课件…'}</h1>
+    <div className="chrome flex min-h-screen flex-col items-center justify-center gap-5 px-6 text-center">
+      <h1 className="text-xl font-semibold" style={{ fontFamily: 'var(--c-serif)' }}>{loadFailed ? '课件读取失败' : '正在加载课件…'}</h1>
       {loadFailed && <button onClick={() => window.location.reload()}
-        className="rounded bg-[#ffb703] px-4 py-2 font-bold text-[#0b1f38]">重新加载</button>}
-      <a href={courseHome(COURSE_ID).href} className="text-slate-400 hover:text-slate-200">← 课程目录</a>
+        className="chrome-btn chrome-btn-gold px-4 py-2">重新加载</button>}
+      <a href={courseHome(COURSE_ID).href} className="text-sm underline underline-offset-4" style={{ color: 'var(--c-mute)' }}>← 课程目录</a>
     </div>
   )
 
-  return (
-    <div className="min-h-screen bg-[#0b1f38] text-slate-100">
-      <header className="border-b border-[#ffb703]/40 bg-[#0f2a4a] px-6 py-4 flex items-baseline gap-4">
-        <h1 className="text-xl font-bold">{weblec?.title ?? '加载中…'}</h1>
-        <span className="text-sm text-slate-400">交互式课堂 · 点击知识点或字幕提问 · 空格播放 · B 黑屏 · F 全屏</span>
-        <a href={courseHome(COURSE_ID).href}
-          className="ml-auto rounded bg-[#123a63] px-2.5 py-1 text-xs text-slate-300 hover:bg-[#1a4a7a]">
-          {courseHome(COURSE_ID).label}
-        </a>
-      </header>
+  const board: 'physics' | 'analysis' | 'special' =
+    /^sp\d+$/.test(COURSE_ID ?? '') ? 'special' : COURSE_ID === 'analytical-mechanics' ? 'analysis' : 'physics'
 
+  const siblingBtn = (entry: CourseEntry | null, label: string) =>
+    entry
+      ? <a href={`/?course=${entry.id}`} title={entry.title} className="chrome-btn px-3 py-1.5 text-xs">{label}</a>
+      : <span className="chrome-btn px-3 py-1.5 text-xs opacity-40 pointer-events-none">{label}</span>
+
+  return (
+    <PageChrome title={weblec.title}
+      hint="交互式课堂 · 点击知识点或字幕提问 · 空格播放 · B 黑屏 · F 全屏"
+      back={siblings ? undefined : courseHome(COURSE_ID)}
+      actions={siblings ? <>{siblingBtn(siblings.prev, '← 上一节')}{siblingBtn(siblings.next, '下一节 →')}</> : undefined}
+      nav={menuNav(board)}>
       <main className="mx-auto max-w-7xl px-4 py-6 grid grid-cols-1 lg:grid-cols-[1fr_auto] lg:gap-16 gap-6">
         {/* 左侧：网页幻灯片 + 章节导航 + 本页关键知识点 */}
         <div>
@@ -534,6 +583,6 @@ function Lecture() {
         <QuizCard key={`${activeQuiz.pageId}:${activeQuiz.quiz.t}`}
           quiz={activeQuiz.quiz} largeDisplay={!!weblec?.projectedSubtitles} onContinue={finishQuiz} />, quizHost
       )}
-    </div>
+    </PageChrome>
   )
 }

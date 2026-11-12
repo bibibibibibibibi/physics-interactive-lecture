@@ -103,7 +103,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "平面简谐波波函数",
+     "qa": [
+      {
+       "q": "为什么波函数里是 $t-x/u$ 而不是 $t+x/u$？",
+       "a": "波沿 x 正方向传播，x 处振动比源点延迟 $x/u$，故用 $t-x/u$。"
+      },
+      {
+       "q": "这个式子里两个变量分别是什么？",
+       "a": "位置 $x$ 与时间 $t$，固定 $x$ 得该点振动，固定 $t$ 得该时刻波形。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -123,10 +136,51 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "波函数双变量",
+     "qa": [
+      {
+       "q": "为什么说波函数是「一个式子，两个变量」？",
+       "a": "$y$ 同时依赖 $x$ 和 $t$，既描述各点振动，也描述波形随时间的传播。"
+      }
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "平面简谐波波函数",
+     "x": 960,
+     "y": 882,
+     "qa": [
+      {
+       "q": "为什么波函数里是 $t-x/u$ 而不是 $t+x/u$？",
+       "a": "波沿 x 正方向传播，x 处振动比源点延迟 $x/u$，故用 $t-x/u$。"
+      },
+      {
+       "q": "这个式子里两个变量分别是什么？",
+       "a": "位置 $x$ 与时间 $t$，固定 $x$ 得该点振动，固定 $t$ 得该时刻波形。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "波函数双变量",
+     "x": 960,
+     "y": 992,
+     "qa": [
+      {
+       "q": "为什么说波函数是「一个式子，两个变量」？",
+       "a": "$y$ 同时依赖 $x$ 和 $t$，既描述各点振动，也描述波形随时间的传播。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    }
+   ],
    "stepTimes": {
     "1": 0.0,
     "2": 3.52,
@@ -136,7 +190,18 @@
    "t_start": 0.0,
    "t_end": 25.9,
    "duration": 25.9,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 10.15,
+     "end": 15.15
+    },
+    {
+     "bullet": 1,
+     "start": 17.68,
+     "end": 22.68
+    }
+   ]
   },
   {
    "id": 2,
@@ -222,6 +287,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "延迟时间",
+     "qa": [
+      {
+       "q": "为什么延迟时间是 $x/u$？",
+       "a": "波以速度 $u$ 传播，源点振动传到 $x$ 处需时间 $x/u$，故该处振动落后源点 $\\Delta t=x/u$。"
+      }
      ]
     },
     {
@@ -262,7 +335,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "波函数表达式",
+     "qa": [
+      {
+       "q": "这个式子怎么来的？",
+       "a": "把源点振动 $A\\cos(\\omega t+\\varphi)$ 中的 $t$ 换成延迟后的 $t-x/u$，即得 $y=A\\cos[\\omega(t-x/u)+\\varphi]$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -302,7 +384,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "角波数与等价写法",
+     "qa": [
+      {
+       "q": "角波数 $k$ 是什么？",
+       "a": "$k=2\\pi/\\lambda$，表示单位长度内相位变化，相位式可写成 $\\omega t-kx+\\varphi$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -342,6 +433,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "传播方向判别",
+     "qa": [
+      {
+       "q": "怎么由符号判断传播方向？",
+       "a": "$\\omega t-kx$ 中 $x$ 与 $t$ 异号，波沿 $+x$ 传播；$\\omega t+kx$ 同号，沿 $-x$ 传播。"
+      }
      ]
     },
     {
@@ -435,7 +534,64 @@
      "color": "#111111"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "延迟时间",
+     "x": 550,
+     "y": 442,
+     "qa": [
+      {
+       "q": "为什么延迟时间是 $x/u$？",
+       "a": "波以速度 $u$ 传播，源点振动传到 $x$ 处需时间 $x/u$，故该处振动落后源点 $\\Delta t=x/u$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 3
+    },
+    {
+     "text": "波函数表达式",
+     "x": 550,
+     "y": 568,
+     "qa": [
+      {
+       "q": "这个式子怎么来的？",
+       "a": "把源点振动 $A\\cos(\\omega t+\\varphi)$ 中的 $t$ 换成延迟后的 $t-x/u$，即得 $y=A\\cos[\\omega(t-x/u)+\\varphi]$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 5
+    },
+    {
+     "text": "角波数与等价写法",
+     "x": 550,
+     "y": 694,
+     "qa": [
+      {
+       "q": "角波数 $k$ 是什么？",
+       "a": "$k=2\\pi/\\lambda$，表示单位长度内相位变化，相位式可写成 $\\omega t-kx+\\varphi$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 7
+    },
+    {
+     "text": "传播方向判别",
+     "x": 1380,
+     "y": 442,
+     "qa": [
+      {
+       "q": "怎么由符号判断传播方向？",
+       "a": "$\\omega t-kx$ 中 $x$ 与 $t$ 异号，波沿 $+x$ 传播；$\\omega t+kx$ 同号，沿 $-x$ 传播。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 9
+    }
+   ],
    "stepTimes": {
     "1": 26.7,
     "2": 28.97,
@@ -447,7 +603,28 @@
    "t_start": 26.7,
    "t_end": 53.99,
    "duration": 27.29,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 28.97,
+     "end": 33.97
+    },
+    {
+     "bullet": 1,
+     "start": 35.78,
+     "end": 40.78
+    },
+    {
+     "bullet": 2,
+     "start": 38.96,
+     "end": 43.96
+    },
+    {
+     "bullet": 3,
+     "start": 43.58,
+     "end": 48.58
+    }
+   ]
   },
   {
    "id": 3,
@@ -542,6 +719,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "传播延迟时间",
+     "qa": [
+      {
+       "q": "波传到 P 点需要多久？",
+       "a": "$\\Delta t=x/u$，即传播距离除以波速，这就是各点振动依次落后的原因。"
+      }
      ]
     },
     {
@@ -582,6 +767,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "波形整体平移",
+     "qa": [
+      {
+       "q": "蓝线和红线是什么关系？",
+       "a": "蓝线是红线整体向右平移 $\\Delta t$，形状完全一样，只是相位落后。"
+      }
      ]
     },
     {
@@ -652,7 +845,20 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "波函数延迟复制",
+     "qa": [
+      {
+       "q": "波函数为什么可以看成源点振动的延迟复制？",
+       "a": "波传到 x 处需 $\\Delta t=x/u$，该点重复源点振动但晚 $\\Delta t$，故波形整体右移、相位落后。"
+      },
+      {
+       "q": "括号里的 $-x/u$ 是怎么来的？",
+       "a": "因为 P 点比源点晚 $\\Delta t=x/u$ 才开始振动，时间上要减去这段延迟，所以写成 $t-x/u$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -672,10 +878,80 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "相位落后公式",
+     "qa": [
+      {
+       "q": "相位落后与延迟时间是什么关系？",
+       "a": "$\\Delta\\varphi=\\omega\\Delta t=kx$，延迟越大相位落后越多，且与距离 x 成正比。"
+      }
+     ],
+     "important": true
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "传播延迟时间",
+     "x": 540,
+     "y": 416,
+     "qa": [
+      {
+       "q": "波传到 P 点需要多久？",
+       "a": "$\\Delta t=x/u$，即传播距离除以波速，这就是各点振动依次落后的原因。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    },
+    {
+     "text": "波形整体平移",
+     "x": 540,
+     "y": 528,
+     "qa": [
+      {
+       "q": "蓝线和红线是什么关系？",
+       "a": "蓝线是红线整体向右平移 $\\Delta t$，形状完全一样，只是相位落后。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 6
+    },
+    {
+     "text": "波函数延迟复制",
+     "x": 540,
+     "y": 828,
+     "qa": [
+      {
+       "q": "波函数为什么可以看成源点振动的延迟复制？",
+       "a": "波传到 x 处需 $\\Delta t=x/u$，该点重复源点振动但晚 $\\Delta t$，故波形整体右移、相位落后。"
+      },
+      {
+       "q": "括号里的 $-x/u$ 是怎么来的？",
+       "a": "因为 P 点比源点晚 $\\Delta t=x/u$ 才开始振动，时间上要减去这段延迟，所以写成 $t-x/u$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 8
+    },
+    {
+     "text": "相位落后公式",
+     "x": 540,
+     "y": 902,
+     "qa": [
+      {
+       "q": "相位落后与延迟时间是什么关系？",
+       "a": "$\\Delta\\varphi=\\omega\\Delta t=kx$，延迟越大相位落后越多，且与距离 x 成正比。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 9
+    }
+   ],
    "stepTimes": {
     "1": 54.79,
     "2": 59.64,
@@ -687,7 +963,28 @@
    "t_start": 54.79,
    "t_end": 92.95,
    "duration": 38.16,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 66.5,
+     "end": 71.5
+    },
+    {
+     "bullet": 1,
+     "start": 78.66,
+     "end": 83.66
+    },
+    {
+     "bullet": 2,
+     "start": 85.83,
+     "end": 90.83
+    },
+    {
+     "bullet": 3,
+     "start": 85.83,
+     "end": 90.83
+    }
+   ]
   },
   {
    "id": 4,
@@ -767,7 +1064,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "波的延迟量",
+     "qa": [
+      {
+       "q": "为什么延迟量是 $x/u$？",
+       "a": "波以速度 $u$ 沿 $+x$ 传播，传到距离 $x$ 处所需时间即为 $\\Delta t=x/u$。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -799,7 +1104,15 @@
      "tex": "y(0,t)=A\\cos(\\omega t+\\varphi)",
      "size": 30,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "源点振动方程",
+     "qa": [
+      {
+       "q": "为什么源点振动写成 $A\\cos(\\omega t+\\varphi)$？",
+       "a": "这是简谐振动标准形式，$A$ 为振幅，$\\omega$ 为角频率，$\\varphi$ 为初相，$x=0$ 处质点的振动状态。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -891,7 +1204,20 @@
      "tex": "y(x,t)=A\\cos\\left[\\omega\\left(t-\\frac{x}{u}\\right)+\\varphi\\right]",
      "size": 29,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "平面简谐波波函数",
+     "qa": [
+      {
+       "q": "波函数中 $t-x/u$ 表示什么？",
+       "a": "$x$ 处在 $t$ 时刻的状态等于源点在 $t-x/u$ 时刻的状态，体现波传播的时间延迟。"
+      },
+      {
+       "q": "波函数为什么有两个自变量？",
+       "a": "$y$ 同时依赖位置 $x$ 和时间 $t$，描述的是时空中的波动图像，缺一不可。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "box",
@@ -953,7 +1279,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "波与振动的区别",
+     "qa": [
+      {
+       "q": "波和振动最根本的区别是什么？",
+       "a": "振动只有一个自变量 $t$；波有两个自变量 $x$、$t$，是「时空里的一张图」。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "box",
@@ -982,7 +1317,68 @@
      "color": "#111111"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "波的延迟量",
+     "x": 1380,
+     "y": 358,
+     "qa": [
+      {
+       "q": "为什么延迟量是 $x/u$？",
+       "a": "波以速度 $u$ 沿 $+x$ 传播，传到距离 $x$ 处所需时间即为 $\\Delta t=x/u$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 2
+    },
+    {
+     "text": "源点振动方程",
+     "x": 540,
+     "y": 552,
+     "qa": [
+      {
+       "q": "为什么源点振动写成 $A\\cos(\\omega t+\\varphi)$？",
+       "a": "这是简谐振动标准形式，$A$ 为振幅，$\\omega$ 为角频率，$\\varphi$ 为初相，$x=0$ 处质点的振动状态。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    },
+    {
+     "text": "平面简谐波波函数",
+     "x": 560,
+     "y": 802,
+     "qa": [
+      {
+       "q": "波函数中 $t-x/u$ 表示什么？",
+       "a": "$x$ 处在 $t$ 时刻的状态等于源点在 $t-x/u$ 时刻的状态，体现波传播的时间延迟。"
+      },
+      {
+       "q": "波函数为什么有两个自变量？",
+       "a": "$y$ 同时依赖位置 $x$ 和时间 $t$，描述的是时空中的波动图像，缺一不可。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 9
+    },
+    {
+     "text": "波与振动的区别",
+     "x": 960,
+     "y": 908,
+     "qa": [
+      {
+       "q": "波和振动最根本的区别是什么？",
+       "a": "振动只有一个自变量 $t$；波有两个自变量 $x$、$t$，是「时空里的一张图」。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 11
+    }
+   ],
    "stepTimes": {
     "1": 93.75,
     "2": 97.99,
@@ -994,7 +1390,28 @@
    "t_start": 93.75,
    "t_end": 139.11,
    "duration": 45.36,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 93.75,
+     "end": 98.75
+    },
+    {
+     "bullet": 1,
+     "start": 97.99,
+     "end": 102.99
+    },
+    {
+     "bullet": 2,
+     "start": 116.4,
+     "end": 121.4
+    },
+    {
+     "bullet": 3,
+     "start": 130.59,
+     "end": 135.59
+    }
+   ]
   },
   {
    "id": 5,
@@ -1082,7 +1499,16 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "角波数定义",
+     "qa": [
+      {
+       "q": "角波数 $k$ 的单位为什么是 rad/m？",
+       "a": "$k=2\\pi/\\lambda$，$2\\pi$ 是弧度，除以波长（米），故为 $\\mathrm{rad/m}$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1114,7 +1540,15 @@
      "tex": "y=A\\cos\\left[\\omega\\left(t-\\frac{x}{u}\\right)+\\varphi\\right]",
      "size": 28,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "波函数波速形式",
+     "qa": [
+      {
+       "q": "括号里的 $t-x/u$ 是什么意思？",
+       "a": "表示波沿 $x$ 正方向传播，$x/u$ 是波传到 $x$ 处所需的时间延迟。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -1146,7 +1580,20 @@
      "tex": "y=A\\cos(\\omega t-kx+\\varphi)",
      "size": 30,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "角波数形式波函数",
+     "qa": [
+      {
+       "q": "为什么 $k$ 形式最常用？",
+       "a": "$\\omega t$ 是时间相位、$kx$ 是空间相位，物理意义最清楚，形式也最简洁。"
+      },
+      {
+       "q": "$k$ 是什么？",
+       "a": "$k=\\omega/u=2\\pi/\\lambda$，叫角波数，单位 $\\mathrm{rad/m}$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1238,7 +1685,15 @@
      "tex": "y=A\\cos\\left[2\\pi\\left(\\frac{t}{T}-\\frac{x}{\\lambda}\\right)+\\varphi\\right]",
      "size": 27,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "周期波长形式波函数",
+     "qa": [
+      {
+       "q": "这个形式和前面等价吗？",
+       "a": "等价，只是用 $\\omega=2\\pi/T$、$k=2\\pi/\\lambda$ 换了一组参数。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -1261,7 +1716,68 @@
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "角波数定义",
+     "x": 1380,
+     "y": 548,
+     "qa": [
+      {
+       "q": "角波数 $k$ 的单位为什么是 rad/m？",
+       "a": "$k=2\\pi/\\lambda$，$2\\pi$ 是弧度，除以波长（米），故为 $\\mathrm{rad/m}$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "波函数波速形式",
+     "x": 540,
+     "y": 518,
+     "qa": [
+      {
+       "q": "括号里的 $t-x/u$ 是什么意思？",
+       "a": "表示波沿 $x$ 正方向传播，$x/u$ 是波传到 $x$ 处所需的时间延迟。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    },
+    {
+     "text": "角波数形式波函数",
+     "x": 540,
+     "y": 694,
+     "qa": [
+      {
+       "q": "为什么 $k$ 形式最常用？",
+       "a": "$\\omega t$ 是时间相位、$kx$ 是空间相位，物理意义最清楚，形式也最简洁。"
+      },
+      {
+       "q": "$k$ 是什么？",
+       "a": "$k=\\omega/u=2\\pi/\\lambda$，叫角波数，单位 $\\mathrm{rad/m}$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 6
+    },
+    {
+     "text": "周期波长形式波函数",
+     "x": 540,
+     "y": 908,
+     "qa": [
+      {
+       "q": "这个形式和前面等价吗？",
+       "a": "等价，只是用 $\\omega=2\\pi/T$、$k=2\\pi/\\lambda$ 换了一组参数。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 11
+    }
+   ],
    "stepTimes": {
     "1": 139.91,
     "2": 145.42,
@@ -1273,7 +1789,28 @@
    "t_start": 139.91,
    "t_end": 189.01,
    "duration": 49.1,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 139.91,
+     "end": 144.91
+    },
+    {
+     "bullet": 1,
+     "start": 145.42,
+     "end": 150.42
+    },
+    {
+     "bullet": 2,
+     "start": 152.83,
+     "end": 157.83
+    },
+    {
+     "bullet": 3,
+     "start": 171.63,
+     "end": 176.63
+    }
+   ]
   },
   {
    "id": 6,
@@ -1368,7 +1905,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "波形平移规律",
+     "qa": [
+      {
+       "q": "波形在 Δt 内移动了多少？",
+       "a": "波形整体右移 $u\\Delta t$，其中 $u$ 为波速，即波形以波速匀速前进。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1388,6 +1934,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "质点不随波迁移",
+     "qa": [
+      {
+       "q": "质点 P 会随波形向右移动吗？",
+       "a": "不会。质点 P 只在竖直方向上下振动，不向右迁移，右移的是波形本身。"
+      }
      ]
     },
     {
@@ -1458,7 +2012,20 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "波速与质点速度",
+     "qa": [
+      {
+       "q": "波速和质点振动速度有什么区别？",
+       "a": "波速 $u=\\omega/k=\\lambda/T$ 恒定，描述波形整体前进；质点速度 $v=\\partial y/\\partial t$ 随时间变化，只沿竖直方向。"
+      },
+      {
+       "q": "为什么波速恒定而质点速度会变？",
+       "a": "波速由介质决定，是波形传播速度；质点做简谐振动，速度随相位变化，两者大小方向无关。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1478,10 +2045,79 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "波形与位移分布",
+     "qa": [
+      {
+       "q": "同一时刻不同位置质点位移相同吗？",
+       "a": "不同。同一时刻不同 $x$ 处质点位移不同，这正是波形曲线所反映的位移分布。"
+      }
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "波形平移规律",
+     "x": 540,
+     "y": 412,
+     "qa": [
+      {
+       "q": "波形在 Δt 内移动了多少？",
+       "a": "波形整体右移 $u\\Delta t$，其中 $u$ 为波速，即波形以波速匀速前进。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    },
+    {
+     "text": "质点不随波迁移",
+     "x": 540,
+     "y": 468,
+     "qa": [
+      {
+       "q": "质点 P 会随波形向右移动吗？",
+       "a": "不会。质点 P 只在竖直方向上下振动，不向右迁移，右移的是波形本身。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 5
+    },
+    {
+     "text": "波速与质点速度",
+     "x": 540,
+     "y": 778,
+     "qa": [
+      {
+       "q": "波速和质点振动速度有什么区别？",
+       "a": "波速 $u=\\omega/k=\\lambda/T$ 恒定，描述波形整体前进；质点速度 $v=\\partial y/\\partial t$ 随时间变化，只沿竖直方向。"
+      },
+      {
+       "q": "为什么波速恒定而质点速度会变？",
+       "a": "波速由介质决定，是波形传播速度；质点做简谐振动，速度随相位变化，两者大小方向无关。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 7
+    },
+    {
+     "text": "波形与位移分布",
+     "x": 540,
+     "y": 848,
+     "qa": [
+      {
+       "q": "同一时刻不同位置质点位移相同吗？",
+       "a": "不同。同一时刻不同 $x$ 处质点位移不同，这正是波形曲线所反映的位移分布。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 8
+    }
+   ],
    "stepTimes": {
     "1": 189.81,
     "2": 193.04,
@@ -1493,7 +2129,28 @@
    "t_start": 189.81,
    "t_end": 226.99,
    "duration": 37.18,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 198.65,
+     "end": 203.65
+    },
+    {
+     "bullet": 1,
+     "start": 204.35,
+     "end": 209.35
+    },
+    {
+     "bullet": 2,
+     "start": 216.12,
+     "end": 221.12
+    },
+    {
+     "bullet": 3,
+     "start": 216.12,
+     "end": 221.12
+    }
+   ]
   },
   {
    "id": 7,
@@ -1539,6 +2196,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "延迟变提前",
+     "qa": [
+      {
+       "q": "为什么沿 −x 传播时相位里是 t+x/u 而不是 t−x/u？",
+       "a": "波先到 x 处再到源点，x 处振动比源点早，故时间提前，$t\\to t+x/u$。"
+      }
      ]
     },
     {
@@ -1551,7 +2216,16 @@
      "tex": "y=A\\cos\\left[\\omega\\left(t+\\frac{x}{u}\\right)+\\varphi\\right]=A\\cos(\\omega t+kx+\\varphi)",
      "size": 30,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "沿−x波函数",
+     "qa": [
+      {
+       "q": "沿 −x 方向传播的波函数怎么写？",
+       "a": "$y=A\\cos[\\omega(t+x/u)+\\varphi]=A\\cos(\\omega t+kx+\\varphi)$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1571,7 +2245,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "传播方向判别",
+     "qa": [
+      {
+       "q": "怎样由波函数判断波沿哪个方向传播？",
+       "a": "看括号内 $\\omega t$ 与 $kx$ 的符号：同号沿 $-x$，异号沿 $+x$。"
+      },
+      {
+       "q": "ωt 与 kx 同号说明什么？",
+       "a": "说明波沿 $-x$ 方向传播，这是常考判别口诀。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1641,7 +2328,54 @@
      "fill": "#CCFFCC"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "延迟变提前",
+     "x": 960,
+     "y": 296,
+     "qa": [
+      {
+       "q": "为什么沿 −x 传播时相位里是 t+x/u 而不是 t−x/u？",
+       "a": "波先到 x 处再到源点，x 处振动比源点早，故时间提前，$t\\to t+x/u$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 1
+    },
+    {
+     "text": "沿−x波函数",
+     "x": 960,
+     "y": 462,
+     "qa": [
+      {
+       "q": "沿 −x 方向传播的波函数怎么写？",
+       "a": "$y=A\\cos[\\omega(t+x/u)+\\varphi]=A\\cos(\\omega t+kx+\\varphi)$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "传播方向判别",
+     "x": 960,
+     "y": 542,
+     "qa": [
+      {
+       "q": "怎样由波函数判断波沿哪个方向传播？",
+       "a": "看括号内 $\\omega t$ 与 $kx$ 的符号：同号沿 $-x$，异号沿 $+x$。"
+      },
+      {
+       "q": "ωt 与 kx 同号说明什么？",
+       "a": "说明波沿 $-x$ 方向传播，这是常考判别口诀。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    }
+   ],
    "stepTimes": {
     "1": 227.79,
     "2": 231.46,
@@ -1652,7 +2386,23 @@
    "t_start": 227.79,
    "t_end": 265.49,
    "duration": 37.7,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 227.79,
+     "end": 232.79
+    },
+    {
+     "bullet": 1,
+     "start": 231.46,
+     "end": 236.46
+    },
+    {
+     "bullet": 2,
+     "start": 240.64,
+     "end": 245.64
+    }
+   ]
   },
   {
    "id": 8,
@@ -1947,7 +2697,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "波函数读信息",
+     "qa": [
+      {
+       "q": "从波函数能直接读出哪些量？",
+       "a": "标准形式 $y=A\\cos(\\omega t-kx)$，可读出振幅、$\\omega$、$k$，进而求 $T$、$\\lambda$、$u$ 和传播方向。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -1971,7 +2730,15 @@
      "tex": "T=\\frac{2\\pi}{\\omega}=0.5\\ \\mathrm{s}",
      "size": 30,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "周期与角频率",
+     "qa": [
+      {
+       "q": "$T$ 为什么是 0.5 s？",
+       "a": "$\\omega=4\\pi$，由 $T=2\\pi/\\omega=2\\pi/(4\\pi)=0.5\\ \\mathrm{s}$。"
+      }
+     ]
     },
     {
      "type": "tex",
@@ -1983,7 +2750,15 @@
      "tex": "\\lambda=\\frac{2\\pi}{k}=4\\ \\mathrm{m}",
      "size": 30,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "波长与波数",
+     "qa": [
+      {
+       "q": "$\\lambda$ 怎么算？",
+       "a": "$k=0.5\\pi$，由 $\\lambda=2\\pi/k=2\\pi/(0.5\\pi)=4\\ \\mathrm{m}$。"
+      }
+     ]
     },
     {
      "type": "tex",
@@ -2015,7 +2790,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "波的传播方向",
+     "qa": [
+      {
+       "q": "为什么沿 $+x$ 方向传播？",
+       "a": "$t$ 与 $x$ 系数异号，相位 $\\omega t-kx$ 恒定要求 $x$ 随 $t$ 增大，故沿 $+x$ 传播。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2076,7 +2860,64 @@
      "color": "#111111"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "波函数读信息",
+     "x": 960,
+     "y": 292,
+     "qa": [
+      {
+       "q": "从波函数能直接读出哪些量？",
+       "a": "标准形式 $y=A\\cos(\\omega t-kx)$，可读出振幅、$\\omega$、$k$，进而求 $T$、$\\lambda$、$u$ 和传播方向。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 1
+    },
+    {
+     "text": "周期与角频率",
+     "x": 1380,
+     "y": 442,
+     "qa": [
+      {
+       "q": "$T$ 为什么是 0.5 s？",
+       "a": "$\\omega=4\\pi$，由 $T=2\\pi/\\omega=2\\pi/(4\\pi)=0.5\\ \\mathrm{s}$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 3
+    },
+    {
+     "text": "波长与波数",
+     "x": 550,
+     "y": 562,
+     "qa": [
+      {
+       "q": "$\\lambda$ 怎么算？",
+       "a": "$k=0.5\\pi$，由 $\\lambda=2\\pi/k=2\\pi/(0.5\\pi)=4\\ \\mathrm{m}$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    },
+    {
+     "text": "波的传播方向",
+     "x": 960,
+     "y": 648,
+     "qa": [
+      {
+       "q": "为什么沿 $+x$ 方向传播？",
+       "a": "$t$ 与 $x$ 系数异号，相位 $\\omega t-kx$ 恒定要求 $x$ 随 $t$ 增大，故沿 $+x$ 传播。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 6
+    }
+   ],
    "stepTimes": {
     "1": 307.67,
     "2": 311.48,
@@ -2088,7 +2929,28 @@
    "t_start": 307.67,
    "t_end": 359.46,
    "duration": 51.79,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 307.67,
+     "end": 312.67
+    },
+    {
+     "bullet": 1,
+     "start": 323.37,
+     "end": 328.37
+    },
+    {
+     "bullet": 2,
+     "start": 332.12,
+     "end": 337.12
+    },
+    {
+     "bullet": 3,
+     "start": 342.43,
+     "end": 347.43
+    }
+   ]
   },
   {
    "id": 10,
@@ -2198,7 +3060,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "由初始状态定初相",
+     "qa": [
+      {
+       "q": "为什么 $y(0,0)=A$ 就能得出 $\\varphi=0$？",
+       "a": "通式在 $t=0,x=0$ 时为 $A\\cos\\varphi$，等于 $A$ 需 $\\cos\\varphi=1$，故 $\\varphi=0$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -2210,7 +3081,15 @@
      "tex": "y=0.1\\cos(\\pi t-0.5\\pi x)\\ \\ \\mathrm{(SI)}",
      "size": 32,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "例题波函数结果",
+     "qa": [
+      {
+       "q": "本题的波函数是什么？",
+       "a": "$y=0.1\\cos(\\pi t-0.5\\pi x)$（SI），由 $A=0.1$、$\\omega=\\pi$、$k=0.5\\pi$、$\\varphi=0$ 代入通式得到。"
+      }
+     ]
     },
     {
      "type": "box",
@@ -2260,7 +3139,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "初相不能默认零",
+     "qa": [
+      {
+       "q": "初相一定要取零吗？",
+       "a": "不一定。如 $t=0$ 原点过平衡位置向 $-y$ 动时 $\\varphi=\\pi/2$，初相由初始状态决定。"
+      }
+     ]
     },
     {
      "type": "box",
@@ -2310,10 +3197,76 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "写波函数三步法",
+     "qa": [
+      {
+       "q": "由波形写波函数的一般步骤是什么？",
+       "a": "①由 $\\omega=2\\pi/T$、$k=2\\pi/\\lambda$ 算系数；②由初始状态定初相 $\\varphi$；③代入 $A\\cos(\\omega t-kx+\\varphi)$。"
+      }
+     ],
+     "important": true
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "由初始状态定初相",
+     "x": 960,
+     "y": 570,
+     "qa": [
+      {
+       "q": "为什么 $y(0,0)=A$ 就能得出 $\\varphi=0$？",
+       "a": "通式在 $t=0,x=0$ 时为 $A\\cos\\varphi$，等于 $A$ 需 $\\cos\\varphi=1$，故 $\\varphi=0$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 5
+    },
+    {
+     "text": "例题波函数结果",
+     "x": 960,
+     "y": 720,
+     "qa": [
+      {
+       "q": "本题的波函数是什么？",
+       "a": "$y=0.1\\cos(\\pi t-0.5\\pi x)$（SI），由 $A=0.1$、$\\omega=\\pi$、$k=0.5\\pi$、$\\varphi=0$ 代入通式得到。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 6
+    },
+    {
+     "text": "初相不能默认零",
+     "x": 550,
+     "y": 972,
+     "qa": [
+      {
+       "q": "初相一定要取零吗？",
+       "a": "不一定。如 $t=0$ 原点过平衡位置向 $-y$ 动时 $\\varphi=\\pi/2$，初相由初始状态决定。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 7
+    },
+    {
+     "text": "写波函数三步法",
+     "x": 1380,
+     "y": 972,
+     "qa": [
+      {
+       "q": "由波形写波函数的一般步骤是什么？",
+       "a": "①由 $\\omega=2\\pi/T$、$k=2\\pi/\\lambda$ 算系数；②由初始状态定初相 $\\varphi$；③代入 $A\\cos(\\omega t-kx+\\varphi)$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 8
+    }
+   ],
    "stepTimes": {
     "1": 360.26,
     "2": 366.47,
@@ -2325,7 +3278,28 @@
    "t_start": 360.26,
    "t_end": 420.64,
    "duration": 60.38,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 388.08,
+     "end": 393.08
+    },
+    {
+     "bullet": 1,
+     "start": 397.74,
+     "end": 402.74
+    },
+    {
+     "bullet": 2,
+     "start": 404.36,
+     "end": 409.36
+    },
+    {
+     "bullet": 3,
+     "start": 404.36,
+     "end": 409.36
+    }
+   ]
   },
   {
    "id": 11,
@@ -2411,6 +3385,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "延迟复制来历",
+     "qa": [
+      {
+       "q": "波函数是怎么来的？",
+       "a": "源点振动沿传播方向延迟复制，延迟量 $\\Delta t=x/u$。"
+      }
      ]
     },
     {
@@ -2431,7 +3413,20 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "波函数标准形式",
+     "qa": [
+      {
+       "q": "标准波函数里 k 是什么？",
+       "a": "$k=2\\pi/\\lambda$，是空间相位的「密度」，与 $\\omega=2\\pi/T$ 对应。"
+      },
+      {
+       "q": "波函数有哪几种等价写法？",
+       "a": "可用 $u$、用 $k$、或用 $T$ 和 $\\lambda$ 表示，三者等价。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -2483,7 +3478,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "传播方向判别",
+     "qa": [
+      {
+       "q": "怎么从波函数判断传播方向？",
+       "a": "括号里 $t$ 与 $x$ 异号（$\\omega t-kx$）沿 $+x$；同号（$\\omega t+kx$）沿 $-x$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2633,7 +3637,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "易错点提醒",
+     "qa": [
+      {
+       "q": "括号里是 $t-x/u$ 还是 $x/u-t$？",
+       "a": "是 $t-x/u$，不是 $x/u-t$；初相 $\\varphi$ 由初始状态定，别默认等于零。"
+      }
+     ]
     },
     {
      "type": "box",
@@ -2698,7 +3710,68 @@
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "延迟复制来历",
+     "x": 550,
+     "y": 394,
+     "qa": [
+      {
+       "q": "波函数是怎么来的？",
+       "a": "源点振动沿传播方向延迟复制，延迟量 $\\Delta t=x/u$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 3
+    },
+    {
+     "text": "波函数标准形式",
+     "x": 550,
+     "y": 474,
+     "qa": [
+      {
+       "q": "标准波函数里 k 是什么？",
+       "a": "$k=2\\pi/\\lambda$，是空间相位的「密度」，与 $\\omega=2\\pi/T$ 对应。"
+      },
+      {
+       "q": "波函数有哪几种等价写法？",
+       "a": "可用 $u$、用 $k$、或用 $T$ 和 $\\lambda$ 表示，三者等价。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    },
+    {
+     "text": "传播方向判别",
+     "x": 1380,
+     "y": 298,
+     "qa": [
+      {
+       "q": "怎么从波函数判断传播方向？",
+       "a": "括号里 $t$ 与 $x$ 异号（$\\omega t-kx$）沿 $+x$；同号（$\\omega t+kx$）沿 $-x$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 7
+    },
+    {
+     "text": "易错点提醒",
+     "x": 550,
+     "y": 892,
+     "qa": [
+      {
+       "q": "括号里是 $t-x/u$ 还是 $x/u-t$？",
+       "a": "是 $t-x/u$，不是 $x/u-t$；初相 $\\varphi$ 由初始状态定，别默认等于零。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 13
+    }
+   ],
    "stepTimes": {
     "1": 421.44,
     "2": 423.71,
@@ -2710,7 +3783,28 @@
    "t_start": 421.44,
    "t_end": 469.15,
    "duration": 47.71,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 421.44,
+     "end": 426.44
+    },
+    {
+     "bullet": 1,
+     "start": 423.71,
+     "end": 428.71
+    },
+    {
+     "bullet": 2,
+     "start": 443.11,
+     "end": 448.11
+    },
+    {
+     "bullet": 3,
+     "start": 456.24,
+     "end": 461.24
+    }
+   ]
   }
  ],
  "subtitles": [
@@ -3111,7 +4205,7 @@
    "text": "最后一句话：一个波函数里装着振幅、频率、波长、波速、初相、传播方向六条信息，会读它，波动这一章就算入门了。"
   }
  ],
- "build_ts": 1792546328,
+ "build_ts": 1794446400,
  "logoScale": 0.67,
  "theme": "wave"
 }

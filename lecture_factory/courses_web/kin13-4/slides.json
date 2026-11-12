@@ -69,7 +69,20 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "等温与绝热过程",
+     "qa": [
+      {
+       "q": "等温过程和绝热过程的区别是什么？",
+       "a": "等温过程温度不变，$T=\\text{常量}$，$pV=\\text{常量}$；绝热过程无热量交换，$Q=0$，满足 $pV^\\gamma=\\text{常量}$。"
+      },
+      {
+       "q": "多方过程是什么？",
+       "a": "多方过程满足 $pV^n=\\text{常量}$，$n$ 为多方指数；$n=1$ 为等温，$n=\\gamma$ 为绝热。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -89,7 +102,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "绝热方程",
+     "qa": [
+      {
+       "q": "绝热方程有哪些形式？",
+       "a": "绝热过程满足 $pV^\\gamma=\\text{常量}$，等价形式有 $TV^{\\gamma-1}=\\text{常量}$、$Tp^{1-\\gamma}=\\text{常量}$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -109,6 +131,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "过程约束条件",
+     "qa": [
+      {
+       "q": "四种基本过程分别锁住了什么？",
+       "a": "等体锁体积，等压锁压强，等温锁温度，绝热断掉热量交换，即 $Q=0$。"
+      }
      ]
     }
    ],
@@ -196,7 +226,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "等温过程能量关系",
+     "qa": [
+      {
+       "q": "等温过程中热量为什么全部变成功？",
+       "a": "温度不变则内能不变，$\\Delta E=0$，由热力学第一定律 $Q_T=W$，吸收的热全部对外做功。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -236,7 +275,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "绝热过程能量关系",
+     "qa": [
+      {
+       "q": "绝热过程为什么功等于内能减少？",
+       "a": "绝热不传热 $\\mathrm{d}Q=0$，由第一定律 $W=-\\Delta E$，做功只能靠消耗内能。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -276,6 +324,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "绝热过程方程",
+     "qa": [
+      {
+       "q": "绝热过程方程是什么？",
+       "a": "由 $\\mathrm{d}Q=0$ 与 $W=-\\Delta E$ 推出 $pV^{\\gamma}=$ 常量，$\\gamma$ 为比热容比。"
+      }
      ]
     },
     {
@@ -316,6 +372,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "绝热线与等温线斜率",
+     "qa": [
+      {
+       "q": "绝热线和等温线谁更陡？",
+       "a": "绝热线更陡。因 $\\gamma>1$，同一 $pV$ 点上绝热线斜率绝对值大于等温线。"
+      }
      ]
     },
     {
@@ -680,7 +744,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "绝热过程特征",
+     "qa": [
+      {
+       "q": "绝热过程的本质特征是什么？",
+       "a": "与外界无热量交换，即 $\\mathrm{d}Q=0$，缸壁和活塞需用绝热材料。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -740,7 +813,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "绝热过程第一定律",
+     "qa": [
+      {
+       "q": "绝热过程的第一定律如何化简？",
+       "a": "由 $0=\\mathrm{d}E+\\mathrm{d}W$ 得 $\\mathrm{d}W=-\\mathrm{d}E$，做功靠内能变化。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -800,6 +882,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "绝热膨胀降温",
+     "qa": [
+      {
+       "q": "绝热膨胀为什么一定降温？",
+       "a": "气体对外做功 $\\mathrm{d}W>0$，内能减少 $\\mathrm{d}E<0$，温度下降。"
+      }
      ]
     },
     {
@@ -820,6 +910,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "绝热压缩升温",
+     "qa": [
+      {
+       "q": "打气筒为什么会发热？",
+       "a": "压缩快来不及散热，接近绝热压缩，外界做功使内能增加、温度升高。"
+      }
      ]
     },
     {
@@ -942,7 +1040,20 @@
      "tex": "W=-\\nu C_{V,\\mathrm{m}}(T_2-T_1)",
      "size": 30,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "绝热功内能算法",
+     "qa": [
+      {
+       "q": "这个公式里的负号是什么意思？",
+       "a": "由 $W=-\\nu C_{V,\\mathrm{m}}(T_2-T_1)$，温度升高时 $W<0$，表示外界对气体做功。"
+      },
+      {
+       "q": "什么时候用这个式子？",
+       "a": "已知初末温度时最方便，温度升降直接决定功的正负。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -994,7 +1105,20 @@
      "tex": "W=\\frac{p_1V_1-p_2V_2}{\\gamma-1}",
      "size": 30,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "绝热功压强体积算法",
+     "qa": [
+      {
+       "q": "这个式子怎么来的？",
+       "a": "由 $W=-\\nu C_{V,\\mathrm{m}}(T_2-T_1)$ 结合状态方程和绝热过程方程 $pV^{\\gamma}=\\text{常量}$ 推出。"
+      },
+      {
+       "q": "什么时候用它？",
+       "a": "已知初末压强或体积时用它，无需知道温度。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1014,6 +1138,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "两式等价与选用",
+     "qa": [
+      {
+       "q": "两个公式结果会不一样吗？",
+       "a": "不会，两式等价，只是已知条件不同，选哪个取决于题目给了什么。"
+      }
      ]
     },
     {
@@ -1048,7 +1180,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "绝热功与路径无关",
+     "qa": [
+      {
+       "q": "为什么绝热功只跟初末状态有关？",
+       "a": "因为 $Q=0$，功全由内能变化决定，而内能是状态量，只依赖初末状态。"
+      }
+     ]
     }
    ],
    "heading": "三　绝热过程的功"
@@ -1107,7 +1247,16 @@
      "tex": "\\mathrm{d}Q=\\mathrm{d}E+p\\,\\mathrm{d}V=0",
      "size": 28,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "绝热过程第一定律",
+     "qa": [
+      {
+       "q": "绝热过程为什么dQ等于0？",
+       "a": "绝热即无热量交换，故 $\\mathrm{d}Q=0$，由第一定律得 $\\mathrm{d}E+p\\,\\mathrm{d}V=0$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1139,7 +1288,15 @@
      "tex": "\\nu C_{V,\\mathrm{m}}\\,\\mathrm{d}T=-p\\,\\mathrm{d}V",
      "size": 28,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "绝热微分方程",
+     "qa": [
+      {
+       "q": "这个式子怎么来的？",
+       "a": "把 $\\mathrm{d}E=\\nu C_{V,\\mathrm{m}}\\mathrm{d}T$ 代入 $\\mathrm{d}Q=\\mathrm{d}E+p\\mathrm{d}V=0$ 即得。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -1171,7 +1328,15 @@
      "tex": "\\frac{\\mathrm{d}p}{p}+\\gamma\\frac{\\mathrm{d}V}{V}=0",
      "size": 30,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "消T后的微分式",
+     "qa": [
+      {
+       "q": "为什么要化成这个形式？",
+       "a": "用 $pV=\\nu RT$ 消去 $T$，分离变量后可直接积分得到 $pV^{\\gamma}$ 关系。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -1208,7 +1373,20 @@
      "tex": "pV^{\\gamma}=\\text{常量}",
      "size": 34,
      "align": "center",
-     "color": "#C00000"
+     "color": "#C00000",
+     "hotspot": true,
+     "label": "绝热过程方程",
+     "qa": [
+      {
+       "q": "γ是什么？",
+       "a": "$\\gamma=C_{p,\\mathrm{m}}/C_{V,\\mathrm{m}}$，即比热容比，恒大于 1。"
+      },
+      {
+       "q": "为什么绝热线比等温线陡？",
+       "a": "因 $\\gamma>1$，$pV^{\\gamma}=C$ 的斜率绝对值大于等温线 $pV=C$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1350,6 +1528,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "等温线斜率",
+     "qa": [
+      {
+       "q": "等温线的斜率为什么是 $-p/V$？",
+       "a": "由 $pV=\\text{常量}$ 微分得 $dp/dV=-p/V$，斜率为负，压强随体积增大而减小。"
+      }
      ]
     },
     {
@@ -1370,7 +1556,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "绝热线斜率",
+     "qa": [
+      {
+       "q": "绝热线斜率为什么多一个 $\\gamma$？",
+       "a": "由 $pV^{\\gamma}=\\text{常量}$ 微分得 $dp/dV=-\\gamma p/V$，比等温线多因子 $\\gamma$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1390,7 +1585,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "绝热线更陡",
+     "qa": [
+      {
+       "q": "为什么绝热线比等温线更陡？",
+       "a": "因 $\\gamma>1$，同样体积下绝热线斜率绝对值更大，故绝热线更陡。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1472,7 +1676,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "更陡的物理原因",
+     "qa": [
+      {
+       "q": "绝热线更陡的物理原因是什么？",
+       "a": "等温时压强只随体积稀释下降；绝热时体积膨胀还伴随降温，两个因素叠加使压降更大。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -1571,7 +1783,16 @@
      "tex": "W=\\nu RT\\ln\\frac{V_2}{V_1}=-2.80\\times10^{4}\\ \\mathrm{J}",
      "size": 26,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "等温压缩功公式",
+     "qa": [
+      {
+       "q": "为什么等温压缩的功是负的？",
+       "a": "负号表示外界对气体做功，气体体积减小，$W=\\nu RT\\ln(V_2/V_1)<0$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1603,7 +1824,16 @@
      "tex": "T_2=T_1\\left(\\frac{V_1}{V_2}\\right)^{\\gamma-1}=753\\ \\mathrm{K}",
      "size": 26,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "绝热温度关系式",
+     "qa": [
+      {
+       "q": "绝热压缩后温度怎么求？",
+       "a": "用 $T_2=T_1(V_1/V_2)^{\\gamma-1}$，代入得 $T_2=753$ K，温度升高。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1635,7 +1865,15 @@
      "tex": "W=-\\nu C_{V,\\mathrm{m}}(T_2-T_1)=-4.70\\times10^{4}\\ \\mathrm{J}",
      "size": 22,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "绝热压缩功公式",
+     "qa": [
+      {
+       "q": "绝热功为什么比等温功大？",
+       "a": "$W=-\\nu C_{V,m}(T_2-T_1)$，绝热压缩升温，额外内能也需外界做功补上。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -1749,7 +1987,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "绝热与等温对比",
+     "qa": [
+      {
+       "q": "同样压缩到 1/10，哪种方式做功多？",
+       "a": "绝热做功约为等温的 1.7 倍，因为绝热压缩还要额外加热气体，内能增加也需外界做功。"
+      }
+     ]
     }
    ],
    "heading": "例 1　把氢气压缩到 1/10 体积"
@@ -1856,7 +2102,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "绝热膨胀判据",
+     "qa": [
+      {
+       "q": "为什么急速膨胀可以当作绝热过程？",
+       "a": "过程极快，气体来不及与外界交换热量，$Q\\approx0$，故可视为绝热过程。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1876,6 +2131,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "双原子分子γ值",
+     "qa": [
+      {
+       "q": "为什么氮气的 γ 取 1.40？",
+       "a": "氮气为双原子分子，自由度 $i=5$，$\\gamma=(i+2)/i=1.40$。"
+      }
      ]
     },
     {
@@ -1888,7 +2151,20 @@
      "tex": "T_2=T_1\\left(\\frac{p_2}{p_1}\\right)^{\\frac{\\gamma-1}{\\gamma}}=98.0\\ \\mathrm{K}",
      "size": 26,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "绝热过程温度公式",
+     "qa": [
+      {
+       "q": "这个公式是怎么来的？",
+       "a": "由 $p^{1-\\gamma}T^{\\gamma}=$常量，结合 $p_1,p_2,T_1$ 解得 $T_2=T_1(p_2/p_1)^{(\\gamma-1)/\\gamma}$。"
+      },
+      {
+       "q": "为什么指数是 $(\\gamma-1)/\\gamma$？",
+       "a": "由 $p^{1-\\gamma}T^{\\gamma}$ 为常量变形，取 $T_2/T_1=(p_2/p_1)^{(\\gamma-1)/\\gamma}$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "box",
@@ -1938,7 +2214,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "液化原理结论",
+     "qa": [
+      {
+       "q": "为什么绝热膨胀能把氮气液化？",
+       "a": "膨胀降温使 $T_2=98.0\\ \\mathrm{K}$ 低于氮气液化温度，从而液化。"
+      }
+     ]
     },
     {
      "type": "box",
@@ -2055,6 +2339,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "等压汽化条件",
+     "qa": [
+      {
+       "q": "为什么水汽化过程可以看成等压过程？",
+       "a": "活塞上压强恒为 $p=1$ atm，缓慢加热时缸壁导热、活塞自由移动，故压强不变。"
+      }
      ]
     },
     {
@@ -2087,7 +2379,16 @@
      "tex": "Q=mL=2.26\\times10^{6}\\ \\mathrm{J}",
      "size": 28,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "汽化吸热公式",
+     "qa": [
+      {
+       "q": "汽化吸热怎么算？",
+       "a": "用 $Q=mL$，其中 $L=2.26\\times10^{6}$ J/kg，1 kg 水吸热 $2.26\\times10^{6}$ J。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2139,6 +2440,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "等压做功公式",
+     "qa": [
+      {
+       "q": "汽化时气体对外做功多少？",
+       "a": "等压下 $W=p\\Delta V$，体积膨胀约 1.67 m³，得 $W\\approx1.69\\times10^{5}$ J。"
+      }
      ]
     },
     {
@@ -2225,7 +2534,16 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "汽化热≠内能增量",
+     "qa": [
+      {
+       "q": "汽化热全部变成内能了吗？",
+       "a": "不是。约 $1.69\\times10^{5}$ J（仅 7%）用于推开大气做功，其余 $\\Delta E=Q-W$ 才转为内能。"
+      }
+     ],
+     "important": true
     }
    ],
    "heading": "例 3　把 1 kg 水汽化"
@@ -2372,7 +2690,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "绝热膨胀判据",
+     "qa": [
+      {
+       "q": "为什么开瓶可以当成绝热过程？",
+       "a": "开盖过程极快，气体来不及与外界交换热量，$Q\\approx 0$，故可视为绝热膨胀。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2392,7 +2719,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "绝热膨胀降温",
+     "qa": [
+      {
+       "q": "绝热膨胀为什么温度会降低？",
+       "a": "气体对外做功而 $Q=0$，由热力学第一定律内能减少，温度随之骤降。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2412,6 +2748,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "水蒸气凝结成雾",
+     "qa": [
+      {
+       "q": "白雾是瓶里冒出的气体吗？",
+       "a": "不是。是温度骤降使水蒸气过饱和，凝结成小水珠，看上去才是白雾。"
+      }
      ]
     },
     {
@@ -2504,7 +2848,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "初温低更易起雾",
+     "qa": [
+      {
+       "q": "为什么冰镇啤酒更容易起白雾？",
+       "a": "起点温度低，绝热膨胀后温度更低，水蒸气凝结更彻底，白雾更明显。"
+      }
+     ]
     },
     {
      "type": "box",
@@ -2603,7 +2955,20 @@
      "tex": "pV^{n}=\\text{常量}",
      "size": 34,
      "align": "center",
-     "color": "#C00000"
+     "color": "#C00000",
+     "hotspot": true,
+     "label": "多方过程方程",
+     "qa": [
+      {
+       "q": "多方过程方程是什么？",
+       "a": "$pV^{n}=\\text{常量}$，由绝热方程把 $\\gamma$ 换成任意实数 $n$ 得到。"
+      },
+      {
+       "q": "多方指数 n 有什么意义？",
+       "a": "$n$ 是任意实数，取不同值就对应不同的具体过程。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2623,6 +2988,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "多方指数",
+     "qa": [
+      {
+       "q": "n 叫多方指数，它可以是任意值吗？",
+       "a": "可以，$n$ 为任意实数，不同 $n$ 对应曲线族中不同过程。"
+      }
      ]
     },
     {
@@ -2643,6 +3016,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "绝热是 n=γ",
+     "qa": [
+      {
+       "q": "绝热过程对应多方指数多少？",
+       "a": "$n=\\gamma$ 时多方过程即为绝热过程。"
+      }
      ]
     },
     {
@@ -2745,7 +3126,20 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "四种过程为特例",
+     "qa": [
+      {
+       "q": "四种基本过程与多方过程什么关系？",
+       "a": "等压($n=0$)、等温($n=1$)、绝热($n=\\gamma$)、等容($n\\to\\infty$)都是多方过程的特例。"
+      },
+      {
+       "q": "为什么说多方过程是母方程？",
+       "a": "因为取不同 $n$ 就锁住不同过程，四种基本过程都包含其中。"
+      }
+     ],
+     "important": true
     }
    ],
    "heading": "六　多方过程"
@@ -2804,7 +3198,16 @@
      "tex": "W=\\frac{p_1V_1-p_2V_2}{n-1}",
      "size": 30,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "多方过程功公式",
+     "qa": [
+      {
+       "q": "多方过程的功公式怎么来的？",
+       "a": "由 $W=\\int p\\,dV$ 结合 $pV^n=\\text{常量}$ 积分得到 $W=\\frac{p_1V_1-p_2V_2}{n-1}$，$n=\\gamma$ 时即绝热功。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2824,6 +3227,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "内能增量公式",
+     "qa": [
+      {
+       "q": "多方过程内能增量怎么算？",
+       "a": "内能只由温度决定，$\\Delta E=\\nu C_V\\Delta T$，与过程无关。"
+      }
      ]
     },
     {
@@ -2876,7 +3287,20 @@
      "tex": "C_{n,\\mathrm{m}}=C_{V,\\mathrm{m}}\\frac{\\gamma-n}{n-1}",
      "size": 30,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "多方摩尔热容",
+     "qa": [
+      {
+       "q": "多方过程摩尔热容公式是什么？",
+       "a": "$C_{n,\\mathrm{m}}=C_{V,\\mathrm{m}}\\frac{\\gamma-n}{n-1}$，由 $Q=\\Delta E+W$ 整理得到。"
+      },
+      {
+       "q": "为什么 $n=\\gamma$ 时热容为零？",
+       "a": "分子 $\\gamma-n=0$，故 $C=0$，对应绝热过程不吸放热。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "box",
@@ -2926,7 +3350,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "两极端情形",
+     "qa": [
+      {
+       "q": "$n=1$ 时热容为什么趋于无穷？",
+       "a": "等温过程吸热但温度不变，$C=Q/\\Delta T$ 分母为零，比值发散。"
+      }
+     ]
     },
     {
      "type": "box",
@@ -3063,7 +3495,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "等温过程公式",
+     "qa": [
+      {
+       "q": "等温过程中为什么 ΔE=0？",
+       "a": "温度不变，理想气体内能只由温度决定，故 $\\Delta E=0$，于是 $Q_T=W$。"
+      },
+      {
+       "q": "等温过程的热量怎么算？",
+       "a": "$Q_T=W=\\nu RT\\ln(V_2/V_1)$，全部吸收的热都用来对外做功。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -3103,7 +3548,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "绝热过程关系",
+     "qa": [
+      {
+       "q": "绝热过程为什么 W=-ΔE？",
+       "a": "绝热时 $\\mathrm{d}Q=0$，由热一律 $Q=\\Delta E+W$ 得 $W=-\\Delta E$，靠消耗内能做功。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -3143,6 +3597,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "绝热方程",
+     "qa": [
+      {
+       "q": "绝热方程有几种形式？",
+       "a": "$pV^{\\gamma}=C$，等价形式 $TV^{\\gamma-1}=C$，$\\gamma=C_p/C_V$。"
+      }
      ]
     },
     {
@@ -3183,6 +3645,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "绝热线更陡",
+     "qa": [
+      {
+       "q": "为什么绝热线比等温线陡？",
+       "a": "同一 pV 图上绝热线斜率为等温线的 $\\gamma$ 倍，因绝热时降温使压强下降更快。"
+      }
      ]
     },
     {

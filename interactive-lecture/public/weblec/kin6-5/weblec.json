@@ -83,7 +83,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "能量储存在场中",
+     "qa": [
+      {
+       "q": "电容器充电消耗的能量到底存在哪里？",
+       "a": "不存在电荷上，而存在电场中。这一观念把能量从电荷转移到场上，是后续讲电磁波与场能量的出发点。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -103,10 +112,56 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "电场能量密度公式",
+     "qa": [
+      {
+       "q": "这个公式中各量的含义是什么？",
+       "a": "$w=\\frac12\\varepsilon_0\\varepsilon_r E^2$ 为电场能量密度，$\\varepsilon_r$ 为相对介电常数，$E$ 为场强，单位体积的能量。"
+      },
+      {
+       "q": "为什么能量密度与 $E^2$ 成正比？",
+       "a": "因为场强越大，建立该场所需做的功越多，能量密度随场强的平方增长。"
+      }
+     ],
+     "important": true
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "能量储存在场中",
+     "x": 960,
+     "y": 752,
+     "qa": [
+      {
+       "q": "电容器充电消耗的能量到底存在哪里？",
+       "a": "不存在电荷上，而存在电场中。这一观念把能量从电荷转移到场上，是后续讲电磁波与场能量的出发点。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "电场能量密度公式",
+     "x": 960,
+     "y": 892,
+     "qa": [
+      {
+       "q": "这个公式中各量的含义是什么？",
+       "a": "$w=\\frac12\\varepsilon_0\\varepsilon_r E^2$ 为电场能量密度，$\\varepsilon_r$ 为相对介电常数，$E$ 为场强，单位体积的能量。"
+      },
+      {
+       "q": "为什么能量密度与 $E^2$ 成正比？",
+       "a": "因为场强越大，建立该场所需做的功越多，能量密度随场强的平方增长。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    }
+   ],
    "stepTimes": {
     "1": 0.0,
     "2": 4.36,
@@ -115,7 +170,18 @@
    "t_start": 0.0,
    "t_end": 24.48,
    "duration": 24.48,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 4.36,
+     "end": 9.36
+    },
+    {
+     "bullet": 1,
+     "start": 9.86,
+     "end": 14.86
+    }
+   ]
   },
   {
    "id": 2,
@@ -173,7 +239,15 @@
      "tex": "\\mathrm dW=u\\,\\mathrm dq=\\dfrac{q}{C}\\mathrm dq",
      "size": 34,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "元功表达式",
+     "qa": [
+      {
+       "q": "为什么 dW 等于 u dq？",
+       "a": "把 dq 从一极板搬到另一极板，需克服极板间电压 u，故做功 $\\mathrm dW=u\\,\\mathrm dq$。"
+      }
+     ]
     },
     {
      "type": "tex",
@@ -185,7 +259,20 @@
      "tex": "W=\\int_0^Q\\dfrac{q}{C}\\mathrm dq=\\dfrac{Q^{2}}{2C}",
      "size": 36,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "充电功积分式",
+     "qa": [
+      {
+       "q": "为什么积分结果是 Q²/2C？",
+       "a": "代入 $u=q/C$ 得 $\\int_0^Q \\frac{q}{C}\\mathrm dq=\\frac{Q^2}{2C}$，即充电总功。"
+      },
+      {
+       "q": "可以用 U 表示吗？",
+       "a": "由 $Q=CU$ 得 $W=\\frac{1}{2}CU^2=\\frac{1}{2}QU$，与 $\\frac{Q^2}{2C}$ 等价。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -205,7 +292,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "电场能",
+     "qa": [
+      {
+       "q": "充电做的功去哪了？",
+       "a": "全部储存在电容器中成为电场能，故 $W=\\frac{Q^2}{2C}$ 即储能。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -225,10 +321,79 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "储能等于充电功",
+     "qa": [
+      {
+       "q": "电容器储能怎么理解？",
+       "a": "储能等于充电过程中外力做的功，即 $\\frac{Q^2}{2C}=\\frac{1}{2}CU^2$。"
+      }
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "元功表达式",
+     "x": 960,
+     "y": 462,
+     "qa": [
+      {
+       "q": "为什么 dW 等于 u dq？",
+       "a": "把 dq 从一极板搬到另一极板，需克服极板间电压 u，故做功 $\\mathrm dW=u\\,\\mathrm dq$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 2
+    },
+    {
+     "text": "充电功积分式",
+     "x": 960,
+     "y": 622,
+     "qa": [
+      {
+       "q": "为什么积分结果是 Q²/2C？",
+       "a": "代入 $u=q/C$ 得 $\\int_0^Q \\frac{q}{C}\\mathrm dq=\\frac{Q^2}{2C}$，即充电总功。"
+      },
+      {
+       "q": "可以用 U 表示吗？",
+       "a": "由 $Q=CU$ 得 $W=\\frac{1}{2}CU^2=\\frac{1}{2}QU$，与 $\\frac{Q^2}{2C}$ 等价。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "电场能",
+     "x": 960,
+     "y": 694,
+     "qa": [
+      {
+       "q": "充电做的功去哪了？",
+       "a": "全部储存在电容器中成为电场能，故 $W=\\frac{Q^2}{2C}$ 即储能。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    },
+    {
+     "text": "储能等于充电功",
+     "x": 960,
+     "y": 774,
+     "qa": [
+      {
+       "q": "电容器储能怎么理解？",
+       "a": "储能等于充电过程中外力做的功，即 $\\frac{Q^2}{2C}=\\frac{1}{2}CU^2$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 5
+    }
+   ],
    "stepTimes": {
     "1": 25.28,
     "2": 29.02,
@@ -239,7 +404,28 @@
    "t_start": 25.28,
    "t_end": 61.95,
    "duration": 36.67,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 29.02,
+     "end": 34.02
+    },
+    {
+     "bullet": 1,
+     "start": 35.61,
+     "end": 40.61
+    },
+    {
+     "bullet": 2,
+     "start": 42.59,
+     "end": 47.59
+    },
+    {
+     "bullet": 3,
+     "start": 51.34,
+     "end": 56.34
+    }
+   ]
   },
   {
    "id": 3,
@@ -277,7 +463,15 @@
      "tex": "W=\\dfrac{Q^{2}}{2C}",
      "size": 40,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "电容储能公式一",
+     "qa": [
+      {
+       "q": "这个式子里的 Q 指什么？",
+       "a": "指电容器极板所带电荷量，由 $Q=CU$ 与电压关联。"
+      }
+     ]
     },
     {
      "type": "tex",
@@ -289,7 +483,15 @@
      "tex": "W=\\dfrac{1}{2}QU",
      "size": 40,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "电容储能公式二",
+     "qa": [
+      {
+       "q": "为什么是 $\frac{1}{2}QU$ 而不是 $QU$？",
+       "a": "充电过程中电压从 0 线性升到 $U$，平均电压为 $U/2$，故 $W=\frac{1}{2}QU$。"
+      }
+     ]
     },
     {
      "type": "tex",
@@ -301,7 +503,16 @@
      "tex": "W=\\dfrac{1}{2}CU^{2}",
      "size": 40,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "电容储能公式三",
+     "qa": [
+      {
+       "q": "已知 U 和 C 时用哪个式子？",
+       "a": "直接用 $W=\frac{1}{2}CU^{2}$，无需先求电荷量。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -341,10 +552,76 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "线性电容器适用条件",
+     "qa": [
+      {
+       "q": "非线性介质还能用这三个式子吗？",
+       "a": "不能，$C$ 非常数时须回到积分式 $W=\\int U\\,dQ$ 计算。"
+      }
+     ],
+     "important": true
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "电容储能公式一",
+     "x": 960,
+     "y": 392,
+     "qa": [
+      {
+       "q": "这个式子里的 Q 指什么？",
+       "a": "指电容器极板所带电荷量，由 $Q=CU$ 与电压关联。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 1
+    },
+    {
+     "text": "电容储能公式二",
+     "x": 960,
+     "y": 562,
+     "qa": [
+      {
+       "q": "为什么是 $\frac{1}{2}QU$ 而不是 $QU$？",
+       "a": "充电过程中电压从 0 线性升到 $U$，平均电压为 $U/2$，故 $W=\frac{1}{2}QU$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 2
+    },
+    {
+     "text": "电容储能公式三",
+     "x": 960,
+     "y": 732,
+     "qa": [
+      {
+       "q": "已知 U 和 C 时用哪个式子？",
+       "a": "直接用 $W=\frac{1}{2}CU^{2}$，无需先求电荷量。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "线性电容器适用条件",
+     "x": 960,
+     "y": 900,
+     "qa": [
+      {
+       "q": "非线性介质还能用这三个式子吗？",
+       "a": "不能，$C$ 非常数时须回到积分式 $W=\\int U\\,dQ$ 计算。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 5
+    }
+   ],
    "stepTimes": {
     "1": 62.75,
     "2": 67.35,
@@ -355,7 +632,28 @@
    "t_start": 62.75,
    "t_end": 96.18,
    "duration": 33.43,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 62.75,
+     "end": 67.75
+    },
+    {
+     "bullet": 1,
+     "start": 67.35,
+     "end": 72.35
+    },
+    {
+     "bullet": 2,
+     "start": 71.81,
+     "end": 76.81
+    },
+    {
+     "bullet": 3,
+     "start": 81.13,
+     "end": 86.13
+    }
+   ]
   },
   {
    "id": 4,
@@ -445,6 +743,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "拉开极板实验",
+     "qa": [
+      {
+       "q": "拉开极板时电荷为什么不变？",
+       "a": "电容器断开电源后极板上的电荷无处可去，所以 $Q$ 保持不变。"
+      }
      ]
     },
     {
@@ -477,7 +783,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "能量随C减小而增大",
+     "qa": [
+      {
+       "q": "为什么 $C$ 变小能量反而变大？",
+       "a": "由 $W=Q^2/2C$，$Q$ 不变时 $C$ 减小，$W$ 增大。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -509,7 +824,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "能量储在场中",
+     "qa": [
+      {
+       "q": "为什么说能量不在电荷上？",
+       "a": "电荷没变而能量变了，说明能量储在极板间的场里，而非电荷本身。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -563,10 +887,75 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "能量密度",
+     "qa": [
+      {
+       "q": "能量密度是什么？",
+       "a": "单位体积的场能，用来描述场中能量的分布。"
+      }
+     ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "拉开极板实验",
+     "x": 960,
+     "y": 394,
+     "qa": [
+      {
+       "q": "拉开极板时电荷为什么不变？",
+       "a": "电容器断开电源后极板上的电荷无处可去，所以 $Q$ 保持不变。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 2
+    },
+    {
+     "text": "能量随C减小而增大",
+     "x": 960,
+     "y": 478,
+     "qa": [
+      {
+       "q": "为什么 $C$ 变小能量反而变大？",
+       "a": "由 $W=Q^2/2C$，$Q$ 不变时 $C$ 减小，$W$ 增大。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "能量储在场中",
+     "x": 960,
+     "y": 564,
+     "qa": [
+      {
+       "q": "为什么说能量不在电荷上？",
+       "a": "电荷没变而能量变了，说明能量储在极板间的场里，而非电荷本身。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    },
+    {
+     "text": "能量密度",
+     "x": 960,
+     "y": 840,
+     "qa": [
+      {
+       "q": "能量密度是什么？",
+       "a": "单位体积的场能，用来描述场中能量的分布。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 6
+    }
+   ],
    "stepTimes": {
     "1": 96.98,
     "2": 100.87,
@@ -578,7 +967,28 @@
    "t_start": 96.98,
    "t_end": 136.12,
    "duration": 39.14,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 100.87,
+     "end": 105.87
+    },
+    {
+     "bullet": 1,
+     "start": 105.81,
+     "end": 110.81
+    },
+    {
+     "bullet": 2,
+     "start": 111.03,
+     "end": 116.03
+    },
+    {
+     "bullet": 3,
+     "start": 123.97,
+     "end": 128.97
+    }
+   ]
   },
   {
    "id": 5,
@@ -636,7 +1046,15 @@
      "tex": "W=\\dfrac{1}{2}\\varepsilon_0\\varepsilon_r E^{2}\\,(Sd)",
      "size": 32,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "平行板能量推导",
+     "qa": [
+      {
+       "q": "为什么 $Sd$ 就是板间体积？",
+       "a": "S 为极板面积，d 为板间距，$Sd$ 即板间空间体积。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -668,7 +1086,20 @@
      "tex": "w=\\dfrac{W}{V}=\\dfrac{1}{2}\\varepsilon_0\\varepsilon_r E^{2}=\\dfrac{1}{2}ED",
      "size": 34,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "能量密度公式",
+     "qa": [
+      {
+       "q": "能量密度 w 的定义是什么？",
+       "a": "单位体积内的电场能量，$w=W/V=\\frac{1}{2}\\varepsilon_0\\varepsilon_r E^{2}=\\frac{1}{2}ED$。"
+      },
+      {
+       "q": "为什么可以写成 $\\frac{1}{2}ED$？",
+       "a": "因为 $D=\\varepsilon_0\\varepsilon_r E$，代入即得 $w=\\frac{1}{2}ED$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -688,7 +1119,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "公式的普适性",
+     "qa": [
+      {
+       "q": "这个能量密度公式只适用于平行板吗？",
+       "a": "不，$w=\\frac{1}{2}\\varepsilon_0\\varepsilon_r E^{2}$ 对任何静电场都适用。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -708,10 +1148,79 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "能量密度与场强关系",
+     "qa": [
+      {
+       "q": "场强加倍，储能怎么变？",
+       "a": "因 $w\\propto E^{2}$，能量密度变为四倍。"
+      }
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "平行板能量推导",
+     "x": 960,
+     "y": 462,
+     "qa": [
+      {
+       "q": "为什么 $Sd$ 就是板间体积？",
+       "a": "S 为极板面积，d 为板间距，$Sd$ 即板间空间体积。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 2
+    },
+    {
+     "text": "能量密度公式",
+     "x": 960,
+     "y": 692,
+     "qa": [
+      {
+       "q": "能量密度 w 的定义是什么？",
+       "a": "单位体积内的电场能量，$w=W/V=\\frac{1}{2}\\varepsilon_0\\varepsilon_r E^{2}=\\frac{1}{2}ED$。"
+      },
+      {
+       "q": "为什么可以写成 $\\frac{1}{2}ED$？",
+       "a": "因为 $D=\\varepsilon_0\\varepsilon_r E$，代入即得 $w=\\frac{1}{2}ED$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    },
+    {
+     "text": "公式的普适性",
+     "x": 960,
+     "y": 772,
+     "qa": [
+      {
+       "q": "这个能量密度公式只适用于平行板吗？",
+       "a": "不，$w=\\frac{1}{2}\\varepsilon_0\\varepsilon_r E^{2}$ 对任何静电场都适用。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 5
+    },
+    {
+     "text": "能量密度与场强关系",
+     "x": 960,
+     "y": 850,
+     "qa": [
+      {
+       "q": "场强加倍，储能怎么变？",
+       "a": "因 $w\\propto E^{2}$，能量密度变为四倍。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 6
+    }
+   ],
    "stepTimes": {
     "1": 136.92,
     "2": 142.51,
@@ -723,7 +1232,28 @@
    "t_start": 136.92,
    "t_end": 181.13,
    "duration": 44.21,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 142.51,
+     "end": 147.51
+    },
+    {
+     "bullet": 1,
+     "start": 154.97,
+     "end": 159.97
+    },
+    {
+     "bullet": 2,
+     "start": 164.18,
+     "end": 169.18
+    },
+    {
+     "bullet": 3,
+     "start": 171.56,
+     "end": 176.56
+    }
+   ]
   },
   {
    "id": 6,
@@ -761,7 +1291,15 @@
      "tex": "E=\\dfrac{Q}{4\\pi\\varepsilon_0\\varepsilon_r r^{2}}",
      "size": 30,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "球壳间场强公式",
+     "qa": [
+      {
+       "q": "为什么场强分母有 ε_r？",
+       "a": "球壳间填充相对介电常数为 $\\varepsilon_r$ 的电介质，故 $E=\\frac{Q}{4\\pi\\varepsilon_0\\varepsilon_r r^2}$。"
+      }
+     ]
     },
     {
      "type": "tex",
@@ -785,7 +1323,20 @@
      "tex": "W=\\int w\\cdot4\\pi r^{2}\\mathrm dr",
      "size": 30,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "能量密度体积积分",
+     "qa": [
+      {
+       "q": "为什么体积元是 $4\\pi r^2 dr$？",
+       "a": "球对称下取半径 $r$、厚 $dr$ 的薄球壳，其体积为 $4\\pi r^2 dr$，作为积分元。"
+      },
+      {
+       "q": "积分上下限怎么取？",
+       "a": "只对两球之间的场区积分，$r$ 从内球半径 $R_1$ 到外球半径 $R_2$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -797,7 +1348,16 @@
      "tex": "W=\\dfrac{Q^{2}}{8\\pi\\varepsilon_0\\varepsilon_r}\\left(\\dfrac{1}{R_1}-\\dfrac{1}{R_2}\\right)",
      "size": 28,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "球形电容器储能",
+     "qa": [
+      {
+       "q": "这个结果怎么和 $Q^2/2C$ 对应？",
+       "a": "球形电容器 $C=\\frac{4\\pi\\varepsilon_0\\varepsilon_r R_1R_2}{R_2-R_1}$，代入 $Q^2/2C$ 即得同一结果。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -837,10 +1397,79 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "场方法优点",
+     "qa": [
+      {
+       "q": "场方法比电容法好在哪？",
+       "a": "无需先求电容，直接由 $w=\\frac12\\varepsilon E^2$ 对场区体积积分即可得储能。"
+      }
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "球壳间场强公式",
+     "x": 960,
+     "y": 372,
+     "qa": [
+      {
+       "q": "为什么场强分母有 ε_r？",
+       "a": "球壳间填充相对介电常数为 $\\varepsilon_r$ 的电介质，故 $E=\\frac{Q}{4\\pi\\varepsilon_0\\varepsilon_r r^2}$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 1
+    },
+    {
+     "text": "能量密度体积积分",
+     "x": 960,
+     "y": 672,
+     "qa": [
+      {
+       "q": "为什么体积元是 $4\\pi r^2 dr$？",
+       "a": "球对称下取半径 $r$、厚 $dr$ 的薄球壳，其体积为 $4\\pi r^2 dr$，作为积分元。"
+      },
+      {
+       "q": "积分上下限怎么取？",
+       "a": "只对两球之间的场区积分，$r$ 从内球半径 $R_1$ 到外球半径 $R_2$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "球形电容器储能",
+     "x": 960,
+     "y": 828,
+     "qa": [
+      {
+       "q": "这个结果怎么和 $Q^2/2C$ 对应？",
+       "a": "球形电容器 $C=\\frac{4\\pi\\varepsilon_0\\varepsilon_r R_1R_2}{R_2-R_1}$，代入 $Q^2/2C$ 即得同一结果。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    },
+    {
+     "text": "场方法优点",
+     "x": 960,
+     "y": 966,
+     "qa": [
+      {
+       "q": "场方法比电容法好在哪？",
+       "a": "无需先求电容，直接由 $w=\\frac12\\varepsilon E^2$ 对场区体积积分即可得储能。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 6
+    }
+   ],
    "stepTimes": {
     "1": 181.93,
     "2": 186.63,
@@ -852,7 +1481,28 @@
    "t_start": 181.93,
    "t_end": 227.55,
    "duration": 45.62,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 181.93,
+     "end": 186.93
+    },
+    {
+     "bullet": 1,
+     "start": 193.13,
+     "end": 198.13
+    },
+    {
+     "bullet": 2,
+     "start": 204.04,
+     "end": 209.04
+    },
+    {
+     "bullet": 3,
+     "start": 219.28,
+     "end": 224.28
+    }
+   ]
   },
   {
    "id": 7,
@@ -898,6 +1548,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "单位长度电容",
+     "qa": [
+      {
+       "q": "同轴电缆单位长度电容怎么算？",
+       "a": "$C/l=\\dfrac{2\\pi\\varepsilon_0\\varepsilon_r}{\\ln(R_2/R_1)}$，只与介质和半径比有关。"
+      }
      ]
     },
     {
@@ -930,7 +1588,20 @@
      "tex": "\\dfrac{W}{l}=\\dfrac{1}{2}\\dfrac{C}{l}U^{2}=\\dfrac{\\pi\\varepsilon_0\\varepsilon_r U^{2}}{\\ln(R_2/R_1)}",
      "size": 30,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "单位长度储能公式",
+     "qa": [
+      {
+       "q": "单位长度储能怎么推导？",
+       "a": "由 $\\frac{W}{l}=\\frac12\\frac{C}{l}U^2$ 代入电容得 $\\dfrac{\\pi\\varepsilon_0\\varepsilon_r U^2}{\\ln(R_2/R_1)}$。"
+      },
+      {
+       "q": "储能与电压是什么关系？",
+       "a": "与 $U^2$ 成正比，故高压下储能急剧增大。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -950,7 +1621,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "能量与电压平方成正比",
+     "qa": [
+      {
+       "q": "为什么高压电缆绝缘要求特别高？",
+       "a": "因为能量 $\\propto U^2$，电压升高时储能与场强迅速增大，易击穿。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -990,10 +1670,79 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "能量密度积分法",
+     "qa": [
+      {
+       "q": "还能用什么方法求储能？",
+       "a": "用 $w=\\frac12\\varepsilon E^2$ 对体积积分，结果与电容法相同。"
+      }
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "单位长度电容",
+     "x": 960,
+     "y": 304,
+     "qa": [
+      {
+       "q": "同轴电缆单位长度电容怎么算？",
+       "a": "$C/l=\\dfrac{2\\pi\\varepsilon_0\\varepsilon_r}{\\ln(R_2/R_1)}$，只与介质和半径比有关。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 1
+    },
+    {
+     "text": "单位长度储能公式",
+     "x": 960,
+     "y": 544,
+     "qa": [
+      {
+       "q": "单位长度储能怎么推导？",
+       "a": "由 $\\frac{W}{l}=\\frac12\\frac{C}{l}U^2$ 代入电容得 $\\dfrac{\\pi\\varepsilon_0\\varepsilon_r U^2}{\\ln(R_2/R_1)}$。"
+      },
+      {
+       "q": "储能与电压是什么关系？",
+       "a": "与 $U^2$ 成正比，故高压下储能急剧增大。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "能量与电压平方成正比",
+     "x": 960,
+     "y": 632,
+     "qa": [
+      {
+       "q": "为什么高压电缆绝缘要求特别高？",
+       "a": "因为能量 $\\propto U^2$，电压升高时储能与场强迅速增大，易击穿。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    },
+    {
+     "text": "能量密度积分法",
+     "x": 960,
+     "y": 790,
+     "qa": [
+      {
+       "q": "还能用什么方法求储能？",
+       "a": "用 $w=\\frac12\\varepsilon E^2$ 对体积积分，结果与电容法相同。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 6
+    }
+   ],
    "stepTimes": {
     "1": 228.35,
     "2": 231.13,
@@ -1005,7 +1754,28 @@
    "t_start": 228.35,
    "t_end": 264.76,
    "duration": 36.41,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 228.35,
+     "end": 233.35
+    },
+    {
+     "bullet": 1,
+     "start": 238.44,
+     "end": 243.44
+    },
+    {
+     "bullet": 2,
+     "start": 244.5,
+     "end": 249.5
+    },
+    {
+     "bullet": 3,
+     "start": 257.8,
+     "end": 262.8
+    }
+   ]
   },
   {
    "id": 8,
@@ -1503,6 +2273,6 @@
    "text": "下一节讲电容器的充放电过程，那里会看到能量如何在电阻上耗散。"
   }
  ],
- "build_ts": 1792400023,
+ "build_ts": 1794446539,
  "logoScale": 0.67
 }

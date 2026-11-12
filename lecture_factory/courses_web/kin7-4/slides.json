@@ -88,7 +88,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "安培环路定理",
+     "qa": [
+      {
+       "q": "安培环路定理的公式是什么？",
+       "a": "$\\oint \\vec{B}\\cdot d\\vec{l}=\\mu_0\\sum I$，环流等于 $\\mu_0$ 乘以穿过环路的电流代数和。"
+      },
+      {
+       "q": "这个定理有什么用？",
+       "a": "在对称情形下，不用积分就能直接求出磁场。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -108,6 +121,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "从通量到环流",
+     "qa": [
+      {
+       "q": "高斯定理和安培环路定理有什么区别？",
+       "a": "高斯定理讨论磁通量，安培环路定理讨论磁场沿闭合路径的环流 $\\oint \\vec{B}\\cdot d\\vec{l}$。"
+      }
      ]
     }
    ],
@@ -195,7 +216,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "安培环路定理表述",
+     "qa": [
+      {
+       "q": "环流公式里的电流和怎么理解？",
+       "a": "指穿过以闭合路径为边界的曲面的所有电流的代数和，即 $\\oint \\vec{B}\\cdot d\\vec{l}=\\mu_0\\sum I$。"
+      },
+      {
+       "q": "为什么是 μ₀ 而不是别的常数？",
+       "a": "μ₀ 是真空磁导率，反映真空对磁场的响应，与库仑定律中的 $1/4\\pi\\varepsilon_0$ 地位对应。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -235,7 +269,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "电流正负符号规则",
+     "qa": [
+      {
+       "q": "怎么判断电流算正还是算负？",
+       "a": "用右手定则：四指沿环路绕行方向，拇指指向为正电流方向，反向穿过的电流取负。"
+      },
+      {
+       "q": "符号判错会怎样？",
+       "a": "结果会差一个符号，环流正负颠倒，后续求 B 的方向也会错。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -317,7 +364,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "与毕奥-萨伐尔分工",
+     "qa": [
+      {
+       "q": "既然毕奥-萨伐尔什么都能算，为什么还要安培环路定理？",
+       "a": "毕奥-萨伐尔需对电流元积分，往往很繁；对称情形下用安培环路定理几行就能出结果。"
+      }
+     ]
     },
     {
      "type": "box",
@@ -409,7 +464,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "使用前提与局限",
+     "qa": [
+      {
+       "q": "没有对称性还能用安培环路定理吗？",
+       "a": "能求环流，但求不出各点的 $B$；需要轴对称或面对称等前提才能解出磁场。"
+      }
+     ]
     }
    ],
    "heading": "本节路线"
@@ -468,7 +531,20 @@
      "tex": "\\oint_l \\vec B\\cdot\\mathrm{d}\\vec l=\\mu_0\\sum I_{\\text{内}}",
      "size": 42,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "安培环路定理公式",
+     "qa": [
+      {
+       "q": "公式右边的 ΣI 要算哪些电流？",
+       "a": "只算穿过以 l 为边界的曲面的电流代数和，绕在路径外没穿进去的一律不计。"
+      },
+      {
+       "q": "μ₀ 在积分里面还是外面？",
+       "a": "μ₀ 是常数，在积分号外面，不在积分里。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -494,6 +570,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "环流的定义",
+     "qa": [
+      {
+       "q": "什么是环流？",
+       "a": "环流是 $\\vec B$ 沿闭合路径 $l$ 的线积分 $\\oint_l \\vec B\\cdot d\\vec l$。"
+      }
      ]
     },
     {
@@ -514,7 +598,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "环流与路径无关性",
+     "qa": [
+      {
+       "q": "路径形状变了环流会变吗？",
+       "a": "只要穿过路径所围曲面的电流不变，环流就不变，与路径形状无关。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -598,6 +691,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "磁场是涡旋场",
+     "qa": [
+      {
+       "q": "环流不为零说明什么？",
+       "a": "说明磁场线闭合、绕着电流打转，磁场是涡旋场，与静电场的无旋性不同。"
+      }
      ]
     },
     {
@@ -757,7 +858,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "右手定则判正负",
+     "qa": [
+      {
+       "q": "怎么判断环路电流的正负？",
+       "a": "右手四指沿积分方向绕行，拇指指向的一侧电流为正，反向为负。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -857,6 +967,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "环路外电流不计",
+     "qa": [
+      {
+       "q": "环路外面的电流 I₃ 为什么不算？",
+       "a": "安培环路定理只计穿过环路所围曲面的电流，环路外的 I₃ 不参与。"
+      }
      ]
     },
     {
@@ -869,7 +987,16 @@
      "tex": "\\oint\\vec B\\cdot\\mathrm{d}\\vec l=\\mu_0(I_1-I_2)",
      "size": 32,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "安培环路定理",
+     "qa": [
+      {
+       "q": "这个公式右边为什么是 I₁ 减 I₂？",
+       "a": "$\\oint\\vec B\\cdot d\\vec l=\\mu_0(I_1-I_2)$，I₁ 为正、I₂ 为负，环路外电流不计。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -931,7 +1058,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "环流为零≠场为零",
+     "qa": [
+      {
+       "q": "环流等于零，是不是路径上就没有磁场？",
+       "a": "不是。路径上每一点都可能有 B，只是沿路径积分相互抵消，净电流为零。"
+      }
+     ]
     },
     {
      "type": "diagram",
@@ -1007,6 +1142,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "对称性取环路",
+     "qa": [
+      {
+       "q": "为什么选圆形路径而不是别的形状？",
+       "a": "圆形路径上 $B$ 大小处处相同、方向沿切线，才能把 $B$ 提出积分号简化计算。"
+      }
      ]
     },
     {
@@ -1039,7 +1182,20 @@
      "tex": "\\oint\\vec B\\cdot\\mathrm{d}\\vec l=B\\oint\\mathrm{d}l=B\\cdot2\\pi r",
      "size": 28,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "安培环路定理应用",
+     "qa": [
+      {
+       "q": "为什么可以把 $\\vec B\\cdot\\mathrm{d}\\vec l$ 直接写成 $B\\,\\mathrm{d}l$？",
+       "a": "由对称性，圆上各点 $B$ 大小相同且方向沿切线，与 $\\mathrm{d}\\vec l$ 同向，故点积等于 $B\\,\\mathrm{d}l$。"
+      },
+      {
+       "q": "为什么积分结果等于 $B$ 乘周长？",
+       "a": "$B$ 在圆上处处相等，可提出积分号，$\\oint \\mathrm{d}l=2\\pi r$，故得 $B\\cdot 2\\pi r$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -1063,7 +1219,16 @@
      "tex": "B=\\dfrac{\\mu_0 I}{2\\pi r}",
      "size": 40,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "直导线磁场公式",
+     "qa": [
+      {
+       "q": "这个结果和毕奥-萨伐尔定律算的一样吗？",
+       "a": "完全一致，都是 $B=\\dfrac{\\mu_0 I}{2\\pi r}$，说明两种方法殊途同归。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1134,7 +1299,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "两种方法分工",
+     "qa": [
+      {
+       "q": "做题时该用哪种方法？",
+       "a": "毕奥-萨伐尔普遍但计算繁；安培环路需对称性但简便。哪个方便用哪个。"
+      }
+     ]
     }
    ],
    "heading": "三　验证：无限长直导线"
@@ -1293,7 +1466,16 @@
      "tex": "\\oint\\vec B\\cdot\\mathrm{d}\\vec l=Bl",
      "size": 32,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "安培环路定理",
+     "qa": [
+      {
+       "q": "为什么环流只剩管内长边一项？",
+       "a": "管外长边 $B\\approx0$，两短边与 $B$ 垂直、点乘为零，故 $\\oint\\vec B\\cdot d\\vec l=Bl$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1313,6 +1495,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "环路所围电流",
+     "qa": [
+      {
+       "q": "为什么穿过环路的电流是 $nlI$？",
+       "a": "矩形长 $l$，单位长度 $n$ 匝，共 $nl$ 匝，每匝电流 $I$，故总电流为 $nlI$。"
+      }
      ]
     },
     {
@@ -1325,7 +1515,16 @@
      "tex": "Bl=\\mu_0 n l I\\ \\Rightarrow\\ B=\\mu_0 n I",
      "size": 32,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "螺线管磁场公式",
+     "qa": [
+      {
+       "q": "长直螺线管内磁场是多少？",
+       "a": "由 $Bl=\\mu_0 nlI$ 约去 $l$ 得 $B=\\mu_0 nI$，与积分法结果一致。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1345,6 +1544,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "环路定理的威力",
+     "qa": [
+      {
+       "q": "用环路定理比积分法好在哪？",
+       "a": "只需三行：算环流、算所围电流、约去 $l$，即可得 $B=\\mu_0 nI$，远快于积分。"
+      }
      ]
     },
     {
@@ -1453,7 +1660,16 @@
      "tex": "\\oint\\vec B\\cdot\\mathrm{d}\\vec l=B\\cdot2\\pi r",
      "size": 30,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "安培环路定理应用",
+     "qa": [
+      {
+       "q": "为什么可以取同心圆作安培环路？",
+       "a": "由对称性，环内同心圆上 B 大小相同、方向沿圆周，环流简化为 $B\\cdot2\\pi r$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1485,7 +1701,20 @@
      "tex": "B=\\dfrac{\\mu_0 N I}{2\\pi r}",
      "size": 38,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "螺绕环磁场公式",
+     "qa": [
+      {
+       "q": "为什么 B 的分母是 2πr 而不是环的周长？",
+       "a": "因为安培环路取半径 r 的同心圆，环流为 $B\\cdot2\\pi r$，故 $B=\\frac{\\mu_0 NI}{2\\pi r}$。"
+      },
+      {
+       "q": "公式里的 N 是总匝数还是单位长度匝数？",
+       "a": "是总匝数 N，穿过环路的电流为全部 N 匝，即 $\\mu_0 NI$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1505,6 +1734,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "环内磁场不均匀",
+     "qa": [
+      {
+       "q": "螺绕环内的磁场为什么不是均匀的？",
+       "a": "因为 $B\\propto 1/r$，r 在分母上，环内侧强、外侧弱，与螺线管不同。"
+      }
      ]
     },
     {
@@ -1545,6 +1782,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "退化为螺线管",
+     "qa": [
+      {
+       "q": "什么情况下螺绕环可当螺线管处理？",
+       "a": "环又大又细、$r\\gg$ 截面尺寸时，$B\\approx\\mu_0 nI$，退化为螺线管结果。"
+      }
      ]
     },
     {
@@ -1613,7 +1858,16 @@
      "tex": "\\oint_S\\vec B\\cdot\\mathrm{d}\\vec S=0",
      "size": 30,
      "color": "#0000CD",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "磁高斯定理",
+     "qa": [
+      {
+       "q": "为什么闭合曲面的磁通量恒为零？",
+       "a": "因为磁感线不发出也不终止，无磁单极子，磁场无源，故 $\\oint_S \\vec B\\cdot d\\vec S=0$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1677,7 +1931,16 @@
      "tex": "\\oint_l\\vec B\\cdot\\mathrm{d}\\vec l=\\mu_0\\sum I",
      "size": 30,
      "color": "#0000CD",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "安培环路定理",
+     "qa": [
+      {
+       "q": "环路积分里的 ΣI 怎么取正负？",
+       "a": "按右手螺旋定则：与环路绕行方向成右手关系的电流取正，反向取负，$\\oint_l \\vec B\\cdot d\\vec l=\\mu_0\\sum I$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1799,7 +2062,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "散度与旋度形式",
+     "qa": [
+      {
+       "q": "微分形式和积分形式是两套不同的定理吗？",
+       "a": "不是，二者等价：$\\nabla\\cdot\\vec B=0$ 对应磁通量为零，$\\nabla\\times\\vec B=\\mu_0\\vec J$ 对应环路定理。"
+      }
+     ]
     },
     {
      "type": "box",
@@ -1841,7 +2112,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "恒定情形的麦克斯韦方程组",
+     "qa": [
+      {
+       "q": "恒定磁场这两条定理在麦克斯韦方程组中占什么位置？",
+       "a": "它们就是恒定情形下磁场的两个方程，加上电场的两条并补上电磁感应，即构成完整的麦克斯韦方程组。"
+      }
+     ]
     }
    ],
    "heading": "六　两条定理的分工"
@@ -1946,7 +2225,16 @@
      "tex": "B\\cdot2\\pi r=\\mu_0 I\\ \\Rightarrow\\ B=\\dfrac{\\mu_0 I}{2\\pi r}",
      "size": 27,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "柱外磁场公式",
+     "qa": [
+      {
+       "q": "为什么柱外磁场和细导线一样？",
+       "a": "半径 $r>R$ 的圆路径包围全部电流 $I$，由安培环路定理 $B\\cdot2\\pi r=\\mu_0 I$，得 $B=\\dfrac{\\mu_0 I}{2\\pi r}$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2004,7 +2292,16 @@
      "tex": "B\\cdot2\\pi r=\\mu_0 I\\dfrac{r^{2}}{R^{2}}",
      "size": 28,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "部分电流按面积比",
+     "qa": [
+      {
+       "q": "为什么包围的电流要乘 $r^2/R^2$？",
+       "a": "电流均匀分布，圆路径内面积 $\\pi r^2$ 占截面 $\\pi R^2$ 的比例即 $r^2/R^2$，故包围电流为 $I\\,r^2/R^2$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -2016,7 +2313,15 @@
      "tex": "B=\\dfrac{\\mu_0 I r}{2\\pi R^{2}}",
      "size": 36,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "柱内磁场公式",
+     "qa": [
+      {
+       "q": "柱内 B 为什么与 r 成正比？",
+       "a": "由 $B\\cdot2\\pi r=\\mu_0 I\\dfrac{r^2}{R^2}$ 解得 $B=\\dfrac{\\mu_0 I r}{2\\pi R^2}$，随 $r$ 线性增大，中心为零。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -2036,6 +2341,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "内外场分布结论",
+     "qa": [
+      {
+       "q": "r=R 处磁场连续吗？",
+       "a": "是。内式 $\\dfrac{\\mu_0 I R}{2\\pi R^2}=\\dfrac{\\mu_0 I}{2\\pi R}$ 与外式在 $r=R$ 相等，场连续。"
+      }
      ]
     },
     {
@@ -2175,7 +2488,20 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "安培环路定理",
+     "qa": [
+      {
+       "q": "安培环路定理的数学表达式是什么？",
+       "a": "$\\oint \\vec{B}\\cdot d\\vec{l}=\\mu_0 I_{\\text{内}}$，即环流只由穿过回路的电流决定。"
+      },
+      {
+       "q": "绕在回路外部的电流对环流有贡献吗？",
+       "a": "没有。只有穿过闭合路径的电流才计入代数和，外部电流不计。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -2247,6 +2573,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "符号规则",
+     "qa": [
+      {
+       "q": "电流的正负号怎么判断？",
+       "a": "用右手定则：四指沿积分方向弯曲，拇指指向的电流为正，反向为负。"
+      }
      ]
     },
     {
@@ -2287,7 +2621,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "螺线管磁场",
+     "qa": [
+      {
+       "q": "无限长螺线管内部磁场是多少？",
+       "a": "管内 $B=\\mu_0 n I$，其中 $n$ 为单位长度匝数，$I$ 为电流。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2407,6 +2750,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "使用条件",
+     "qa": [
+      {
+       "q": "安培环路定理能直接求出空间每点的 B 吗？",
+       "a": "不能。它只给出环流；要逐点求 $B$ 必须具有对称性，否则需回到毕奥-萨伐尔定律。"
+      }
      ]
     },
     {

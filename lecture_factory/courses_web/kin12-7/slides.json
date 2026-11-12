@@ -69,7 +69,20 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "玻耳兹曼分布律",
+     "qa": [
+      {
+       "q": "玻耳兹曼能量分布律讲的是什么？",
+       "a": "把麦克斯韦速率分布从动能推广到总能量：能量越高的状态，分子数越少，按 $e^{-E/kT}$ 衰减。"
+      },
+      {
+       "q": "等温气压公式怎么来的？",
+       "a": "由玻耳兹曼分布取重力势能 $E_p=mgh$，得 $p=p_0e^{-mgh/kT}$，解释高处空气稀薄。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -89,6 +102,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "动能推广到总能量",
+     "qa": [
+      {
+       "q": "为什么这节标星号还要学？",
+       "a": "它只做一件事：把麦克斯韦分布从动能推广到总能量，从而能解释气压随高度变化。"
+      }
      ]
     },
     {
@@ -109,7 +130,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "能量越高分子越少",
+     "qa": [
+      {
+       "q": "这一节最核心的结论是什么？",
+       "a": "一句话：能量越高，分子越少。分布按 $e^{-E/kT}$ 随能量增大而迅速减小。"
+      }
+     ],
+     "important": true
     }
    ],
    "heading": "封面"
@@ -746,7 +776,20 @@
      "tex": "\\mathrm{d}N\\propto \\mathrm{e}^{-(\\varepsilon_k+\\varepsilon_p)/kT}\\,\\mathrm{d}v\\,\\mathrm{d}V",
      "size": 27,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "玻耳兹曼能量分布律",
+     "qa": [
+      {
+       "q": "指数里为什么是总能量？",
+       "a": "总能量为动能加势能，$\\mathrm{d}N\\propto \\mathrm{e}^{-(\\varepsilon_k+\\varepsilon_p)/kT}\\,\\mathrm{d}v\\,\\mathrm{d}V$，按总能量指数衰减。"
+      },
+      {
+       "q": "这个式子对哪些场适用？",
+       "a": "只要能量能写成势能函数即可，不限于重力，电场、离心力场都行。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -778,7 +821,20 @@
      "tex": "n=n_0\\,\\mathrm{e}^{-\\varepsilon_p/kT}",
      "size": 34,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "数密度公式",
+     "qa": [
+      {
+       "q": "$n_0$ 是什么？",
+       "a": "$n_0$ 是势能 $\\varepsilon_p=0$ 处的数密度，作为参考点。"
+      },
+      {
+       "q": "势能高时分子多还是少？",
+       "a": "由 $n=n_0\\mathrm{e}^{-\\varepsilon_p/kT}$，势能越高分子越少，温度越高衰减越慢。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -848,7 +904,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "分布律读法",
+     "qa": [
+      {
+       "q": "温度对分布有什么影响？",
+       "a": "温度越高，$kT$ 越大，势能引起的衰减越不明显，分子分布更均匀。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -868,6 +932,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "适用任意势场",
+     "qa": [
+      {
+       "q": "只能用于重力场吗？",
+       "a": "不是，电场、离心力场等任何可用势能描述的场都适用。"
+      }
      ]
     },
     {
@@ -975,7 +1047,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "负指数分布曲线",
+     "qa": [
+      {
+       "q": "为什么分子能量分布是负指数形状？",
+       "a": "能量越高，可占据的分子数按 $e^{-E/kT}$ 迅速减少，故曲线从零能量处最大值单调下降。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "diagram",
@@ -1044,6 +1125,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "300K高能分子比例",
+     "qa": [
+      {
+       "q": "300 K 时能量到 $1\\times10^{-20}$ J 还剩多少分子？",
+       "a": "不到一成，说明常温下高能分子很少。"
+      }
      ]
     },
     {
@@ -1064,7 +1153,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "温度升高高能分子多",
+     "qa": [
+      {
+       "q": "为什么 1000 K 时同一能量处分子更多？",
+       "a": "温度高使 $kT$ 变大，能量标尺被拉长，同一能量对应的 $e^{-E/kT}$ 更大，高能分子比例上升。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "box",
@@ -1106,7 +1204,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "$kT$ 是能量标尺刻度",
+     "qa": [
+      {
+       "q": "$kT$ 在这里代表什么？",
+       "a": "$kT$ 是能量分布的标尺刻度，$T$ 越高刻度越大，高能分子越多。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -1217,7 +1323,20 @@
      "tex": "n=n_0\\,\\mathrm{e}^{-mgh/kT}",
      "size": 34,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "重力场数密度公式",
+     "qa": [
+      {
+       "q": "这个公式是怎么来的？",
+       "a": "取地面为零势能面，势能 $\\varepsilon_p=mgh$，代入玻耳兹曼分布即得 $n=n_0 e^{-mgh/kT}$。"
+      },
+      {
+       "q": "为什么密度随高度指数衰减？",
+       "a": "因为势能随高度线性增加，玻耳兹曼因子 $e^{-\\varepsilon_p/kT}$ 就呈指数下降。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1237,7 +1356,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "特征长度 h0",
+     "qa": [
+      {
+       "q": "特征长度的物理意义是什么？",
+       "a": "$h_0=kT/mg$，每升高 $h_0$ 密度降为原来的 $1/e$，衡量衰减快慢。"
+      },
+      {
+       "q": "为什么叫特征长度？",
+       "a": "它由温度、分子质量和重力决定，是密度衰减的典型尺度。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1327,6 +1459,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "大气成分随高度变化",
+     "qa": [
+      {
+       "q": "为什么高空氢少、氧多？",
+       "a": "氢分子质量小，$h_0$ 大 16 倍，衰减慢跑得更高；氧分子重，留在地面附近。"
+      }
      ]
     },
     {
@@ -1367,6 +1507,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "轻气体衰减慢",
+     "qa": [
+      {
+       "q": "这个式子能解释什么现象？",
+       "a": "解释大气成分随高度变化：越往上，重分子占比越大，轻气体更容易逃离。"
+      }
      ]
     }
    ],
@@ -1426,7 +1574,15 @@
      "tex": "p=nkT\\ \\Longrightarrow\\ p\\propto n",
      "size": 30,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "压强与数密度成正比",
+     "qa": [
+      {
+       "q": "为什么压强和数密度成正比？",
+       "a": "由物态方程 $p=nkT$，等温下 $T$ 不变，$k$ 为常数，故 $p\\propto n$。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -1458,7 +1614,16 @@
      "tex": "p=p_0\\,\\mathrm{e}^{-mgh/kT}",
      "size": 32,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "等温气压公式（分子质量）",
+     "qa": [
+      {
+       "q": "这个指数衰减公式怎么来的？",
+       "a": "由 $p\\propto n$ 得压强衰减规律与数密度相同，即 $p=p_0 e^{-mgh/kT}$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1490,7 +1655,16 @@
      "tex": "p=p_0\\,\\mathrm{e}^{-Mgh/RT}",
      "size": 33,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "等温气压公式（摩尔质量）",
+     "qa": [
+      {
+       "q": "指数里的 $M$ 和 $R$ 是怎么换来的？",
+       "a": "用 $mN_A=M$、$kN_A=R$ 代入，指数变为 $-Mgh/RT$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "box",
@@ -1540,7 +1714,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "公式的适用条件",
+     "qa": [
+      {
+       "q": "这个公式对真实大气精确吗？",
+       "a": "需等温且处于重力场，实际大气只是近似，温度随高度变化时误差较大。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -1659,7 +1841,16 @@
      "tex": "H=\\frac{RT}{Mg}",
      "size": 34,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "特征高度定义式",
+     "qa": [
+      {
+       "q": "特征高度 H 是怎么来的？",
+       "a": "由压强公式 $p=p_0 e^{-Mgz/RT}$ 把指数中的常数提出，定义 $H=RT/(Mg)$，则 $p=p_0 e^{-z/H}$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1691,7 +1882,16 @@
      "tex": "H\\approx8.0\\ \\mathrm{km}",
      "size": 31,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "空气特征高度约8km",
+     "qa": [
+      {
+       "q": "为什么空气的 H 约是 8 km？",
+       "a": "取 $T=273$ K、$M=29$ g/mol，代入 $H=RT/(Mg)$ 得约 8.0 km。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "diagram",
@@ -1720,6 +1920,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "每升8km压强剩37%",
+     "qa": [
+      {
+       "q": "升高 8 km 压强变成多少？",
+       "a": "每升高一个特征高度 H≈8 km，压强降为原来的 $1/e\\approx37\\%$。"
+      }
      ]
     },
     {
@@ -1786,7 +1994,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "客机增压的原因",
+     "qa": [
+      {
+       "q": "为什么客机必须增压？",
+       "a": "巡航高度约 10 km，舱外气压不到地面的三成，人体无法承受，故需增压。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -1909,7 +2125,20 @@
      "tex": "p=p_0\\,\\mathrm{e}^{-Mgh/RT}",
      "size": 26,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "等温大气压强公式",
+     "qa": [
+      {
+       "q": "这个公式是怎么来的？",
+       "a": "由静力学平衡 $dp=-\\rho g dh$ 与理想气体状态方程结合，等温积分得 $p=p_0 e^{-Mgh/RT}$。"
+      },
+      {
+       "q": "公式里的 $M$ 是什么？",
+       "a": "空气的平均摩尔质量，取 $0.029\\ \\mathrm{kg/mol}$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -1921,7 +2150,15 @@
      "tex": "=p_0\\,\\mathrm{e}^{-1.109}",
      "size": 26,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "指数项计算",
+     "qa": [
+      {
+       "q": "指数 $-1.109$ 怎么算出来的？",
+       "a": "分子 $0.029\\times9.8\\times8848$，分母 $8.31\\times273$，比值约 $1.109$，取负号。"
+      }
+     ]
     },
     {
      "type": "tex",
@@ -1945,7 +2182,16 @@
      "tex": "\\approx3.3\\times10^{4}\\ \\mathrm{Pa}",
      "size": 30,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "珠峰气压估算结果",
+     "qa": [
+      {
+       "q": "为什么结果约为地面的三分之一？",
+       "a": "因 $e^{-1.109}\\approx0.33$，故 $p\\approx0.33p_0\\approx3.3\\times10^4\\ \\mathrm{Pa}$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2049,7 +2295,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "等温假设的局限",
+     "qa": [
+      {
+       "q": "为什么实测气压比公式算的还低？",
+       "a": "真实大气非等温，高处更冷，$T$ 小则指数衰减更快，故实际值略低。"
+      }
+     ]
     }
    ],
    "heading": "七　例题：珠峰顶上的气压"
@@ -2196,7 +2450,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "公式的适用边界",
+     "qa": [
+      {
+       "q": "为什么这个公式只能算估算工具？",
+       "a": "等温假设与均匀重力场都只是近似，真实大气温度随高度下降、$g$ 也随距离变化，故只宜作估算。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2236,6 +2499,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "阿伦尼乌斯速率",
+     "qa": [
+      {
+       "q": "化学反应速率和这个公式有什么关系？",
+       "a": "反应速率遵循阿伦尼乌斯形式，本质就是玻耳兹曼的指数因子：越过能量门槛的分子比例随温度指数增长。"
+      }
      ]
     },
     {
@@ -2326,7 +2597,16 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "能量与概率的联系",
+     "qa": [
+      {
+       "q": "玻耳兹曼分布最核心的一句话是什么？",
+       "a": "它把能量和概率接在一起：能量越高的事件，发生概率越小，这是统计物理的第一句话。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2346,6 +2626,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "统计物理的起点",
+     "qa": [
+      {
+       "q": "这条指数曲线后来发展出什么？",
+       "a": "由它出发才有配分函数、自由能、相变理论等统计物理的核心工具。"
+      }
      ]
     }
    ],
@@ -2405,7 +2693,16 @@
      "tex": "n=n_0\\,\\mathrm{e}^{-\\varepsilon_p/kT}",
      "size": 28,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "玻耳兹曼分布",
+     "qa": [
+      {
+       "q": "玻耳兹曼分布说明什么？",
+       "a": "数密度按势能负指数衰减：$n=n_0 e^{-\\varepsilon_p/kT}$，势能越高，粒子越少。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2469,7 +2766,16 @@
      "tex": "p=p_0\\,\\mathrm{e}^{-Mgh/RT}",
      "size": 27,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "等温气压公式",
+     "qa": [
+      {
+       "q": "等温气压公式怎么来的？",
+       "a": "重力场中 $n=n_0 e^{-mgh/kT}$，代入 $p=nkT$ 得 $p=p_0 e^{-Mgh/RT}$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2509,6 +2815,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "特征高度",
+     "qa": [
+      {
+       "q": "特征高度 8 km 意味着什么？",
+       "a": "$H=RT/Mg\\approx8$ km，每升高 8 km 压强约剩 37%，即 $e^{-1}$。"
+      }
      ]
     },
     {
@@ -2549,6 +2863,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "公式适用边界",
+     "qa": [
+      {
+       "q": "等温气压公式精确吗？",
+       "a": "它假设等温和均匀重力，只作估算，如珠峰顶约三分之一大气压。"
+      }
      ]
     },
     {

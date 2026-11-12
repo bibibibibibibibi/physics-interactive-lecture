@@ -1,0 +1,1165 @@
+{
+ "id": "ch01",
+ "title": "质点运动学",
+ "subject": "mechanics",
+ "chapter": 1,
+ "week": "Week 1",
+ "difficulty": "★★☆☆☆（矢量与微积分入门，概念辨析多）",
+ "source": "马文蔚《物理学》第七版 第一章（OCR fixed 版转换 + 人工精选作业）",
+ "blocks": [
+  {
+   "type": "intro",
+   "summary": "本章是经典力学的入门章：从参考系与质点模型出发，用位置矢量、运动方程、位移、速度、加速度定量描述质点的运动；掌握抛体运动等典型曲线运动的分析方法；引入圆周运动的角量描述与切向、法向加速度；最后讨论运动描述的相对性与伽利略速度变换。"
+  },
+  {
+   "type": "section",
+   "number": "1.1",
+   "title": "质点运动的描述"
+  },
+  {
+   "type": "simulation",
+   "simId": "projectile",
+   "title": "抛体运动模拟器",
+   "hint": "拖动初速度箭头（或调节 v₀ 与抛射角 α）发射抛体，实时观察轨迹、射高、射程与飞行时间；可叠加多条轨迹对比不同角度，验证 45° 射程最大。"
+  },
+  {
+   "type": "video",
+   "source": "bilibili",
+   "bvid": "BV1eK4y1E7Cb",
+   "page": 2,
+   "title": "📺 视频学习：质点运动的描述",
+   "caption": "东北大学《大学物理》MOOC 课堂录播（马文蔚《物理学》配套课程），第 1 次课 配套；本讲对应教材 1-1 质点运动的描述（参考系·位矢·速度·加速度·抛体），时长 50:25。注意：视频标题里的 1.x 是该课程的讲次编号，与教材小节号含义不同，请以本卡片标注的教材小节为准。<a href=\"https://www.bilibili.com/video/BV1eK4y1E7Cb?p=2\" target=\"_blank\" rel=\"noopener\">在 B 站打开本讲 ↗</a>（嵌入加载失败、或想看弹幕与讲义时点此）"
+  },
+  {
+   "type": "text",
+   "html": "<h3>一、参考系 质点</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>1. 参考系</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>自然界中所有的物体都在不停地运动，绝对静止不动的物体是没有的。在观察一个物体的位置及位置的变化时，总要选取其他物体作为标准，选取的标准物不同，对物体运动情况的描述也就不同。这就是运动描述的相对性。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>为描述物体的运动而选择的标准物，一般称为参考系。参考系的选择是任意的，而选择不同的参考系，对同一物体运动情况的描述是不同的。因此，在讲述物体运动情况时，必须指明是对什么参考系而言的。在讨论地面附近物体的运动时，通常选择地面作为参考系。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>2. 质点</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>一般说来，物体的大小和形状的变化，对物体运动的影响是很大的。但在有些问题中，如能忽略这些影响，就可以把物体当作一个有质量的点(即质点)来处理。这将使所研究的问题大大简化。所以说，质点是一个理想模型。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>把物体当作质点是有条件的、相对的，而不是无条件的、绝对的，因而对具体情况要作具体分析。例如，由于地球至太阳的平均距离约为地球直径的 $10^{4}$ 倍，地球上各点相对于太阳的运动可以看作是相同的，因此在研究地球绕太阳公转时，可以把地球当作质点。表1-1列出了一些物体的质量和长度的数量级，供研究问题时参考。</p>"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "物体",
+    "质量/kg",
+    "物体",
+    "长度/m"
+   ],
+   "rows": [
+    [
+     "电子",
+     "$10^{-30}$",
+     "质子半径",
+     "$10^{-15}$"
+    ],
+    [
+     "质子",
+     "$10^{-27}$",
+     "原子半径",
+     "$10^{-10}$"
+    ],
+    [
+     "血红蛋白",
+     "$10^{-22}$",
+     "病毒线度",
+     "$10^{-7}$"
+    ],
+    [
+     "流感病毒",
+     "$10^{-19}$",
+     "阿米巴变形虫线度",
+     "$10^{-4}$"
+    ],
+    [
+     "阿米巴变形虫",
+     "$10^{-8}$",
+     "人的身高",
+     "$10^{0}$"
+    ],
+    [
+     "雨滴",
+     "$10^{-6}$",
+     "珠穆朗玛峰高度",
+     "$10^{4}$"
+    ],
+    [
+     "人",
+     "$10^{2}$",
+     "地球半径",
+     "$10^{6}$"
+    ],
+    [
+     "\"土星5号\"运载火箭",
+     "$10^{6}$",
+     "太阳半径",
+     "$10^{8}$"
+    ],
+    [
+     "金字塔",
+     "$10^{10}$",
+     "太阳与地球的距离",
+     "$10^{11}$"
+    ],
+    [
+     "地球",
+     "$10^{24}$",
+     "太阳与最近恒星的距离",
+     "$10^{16}$"
+    ],
+    [
+     "太阳",
+     "$10^{30}$",
+     "银河系尺度",
+     "$10^{21}$"
+    ],
+    [
+     "银河系",
+     "$10^{41}$",
+     "本星系群尺度",
+     "$10^{23}$"
+    ]
+   ],
+   "caption": "表1-1 一些物体的质量和长度的数量级"
+  },
+  {
+   "type": "text",
+   "html": "<p>应当指出，把物体视为质点这种抽象的研究方法，在实践上和理论上都是有重要意义的。当我们所研究的运动物体不能视为质点时，可把整个物体看成是由许多质点所组成，弄清这些质点的运动，就可以弄清楚整个物体的运动。所以，研究质点的运动是研究物体运动的基础。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在本书有关力学的各章中，除\"刚体转动和流体运动\"一章外，都是把物体当作质点来处理的。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>二、位置矢量 运动方程 位移</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>1. 位置矢量</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>上面已经指出，描述物体的运动必须选定参考系。在参考系选定以后，为定量地描述质点的位置及其随时间的变化，有时须在参考系上选择一个坐标系。坐标系有直角坐标系、极坐标系和自然坐标系①等。在如图1-1所示的直角坐标系中，在时刻 $t$，质点 $P$ 在坐标系里的位置可用位置矢量 $\\mathbf{r}(t)$ 来表示。位置矢量简称位矢，它是一个有向线段，其始端位于坐标系的原点 $O$，末端则与质点 $P$ 在时刻 $t$ 的位置相重合。从图1-1中可以看出，位矢 $\\mathbf{r}$ 在 $Ox$ 轴、$Oy$ 轴和 $Oz$ 轴上的投影（即质点的坐标）分别为 $x$、$y$ 和 $z$.所以，质点 $P$ 在 $Oxyz$ 的直角坐标系中的位置，既可用位矢 $\\mathbf{r}$ 来表示，也可用坐标 $x$、$y$ 和 $z$ 来表示。如取 $\\mathbf{i}$、$\\mathbf{j}$ 和 $\\mathbf{k}$ 分别为沿 $Ox$ 轴、$Oy$ 轴和 $Oz$ 轴的单位矢量，那么位矢 $\\mathbf{r}$ 亦可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{r} = x\\mathbf{i} + y\\mathbf{j} + z\\mathbf{k}"
+  },
+  {
+   "type": "text",
+   "html": "<p>其模为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "r = |\\mathbf{r}| = \\sqrt{x^{2} + y^{2} + z^{2}}",
+   "label": "式（1-1）"
+  },
+  {
+   "type": "text",
+   "html": "<p>位矢 $\\mathbf{r}$ 的方向余弦由下式确定：</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\cos\\alpha = \\frac{x}{r},\\quad \\cos\\beta = \\frac{y}{r},\\quad \\cos\\gamma = \\frac{z}{r}"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $\\alpha, \\beta, \\gamma$ 分别是 $\\mathbf{r}$ 与 $Ox$ 轴、$Oy$ 轴和 $Oz$ 轴正向之间的夹角。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>2. 运动方程</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>当质点运动时，它相对坐标原点 $O$ 的位矢 $\\mathbf{r}$ 是随时间而变化的(图1-2)，因此，$\\mathbf{r}$ 是时间的函数，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{r} = \\mathbf{r}(t) = x(t)\\mathbf{i} + y(t)\\mathbf{j} + z(t)\\mathbf{k}",
+   "label": "式（1-2）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式(1-2)叫做质点的运动方程；而 $x(t)$、$y(t)$ 和 $z(t)$ 则是 $\\mathbf{r}(t)$ 在 $Ox$ 轴、$Oy$ 轴、$Oz$ 轴的分量，从中消去参量 $t$ 便得到了质点运动的轨迹方程，所以它们也是轨迹的参量方程。应当指出，运动学的重要任务之一就是找出各种具体运动所遵循的运动方程。关于这一点我们将在后面作较详细的论述。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch01/pages_0_50_4a6218c96ef59b567240e03eec8af119b602a637491b679591a4da65bf865205.png",
+   "caption": "图 1-1 位置矢量"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch01/pages_0_50_a79763321c816691b7173d61a159bbeec463bcd680ebb492ff0b2a3a57ddf08e.png",
+   "caption": "图 1-2 位矢随时间变化（运动方程的几何意义）"
+  },
+  {
+   "type": "text",
+   "html": "<h4>3. 位移</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在如图1-3(a)所示的 $Oxy$ 平面直角坐标系中，有一质点沿曲线从时刻 $t_{1}$ 的点 $A$ 运动到时刻 $t_{2}$ 的点 $B$，质点由相对原点 $O$ 的位矢 $\\mathbf{r}_{A}$ 变化到 $\\mathbf{r}_{B}$.显然，在时间间隔 $\\Delta t (= t_{2} - t_{1})$ 内，位矢的长度和方向都发生了变化。我们将 $\\mathbf{r}_{B} - \\mathbf{r}_{A} = \\Delta \\mathbf{r}$ 称为在时间 $\\Delta t$ 内质点的位移矢量，简称位移。它反映了在时间 $\\Delta t$ 内质点位矢的变化。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch01/pages_0_50_fd8f78f46d46eec56108c6f996dfca5859e4f2fcdc6e95146b5676d54d4063f2.png",
+   "caption": "图 1-3(a) 位移矢量：Δr = r_B − r_A"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch01/pages_0_50_92cc698ffc93467efd085aeb6a307ae740a8981541e154649d881929be28b36c.png",
+   "caption": "图 1-3(b) 位移沿坐标轴的分解"
+  },
+  {
+   "type": "text",
+   "html": "<p>由式(1-2)，可将 $A$、$B$ 两点的位矢 $\\mathbf{r}_{A}$ 与 $\\mathbf{r}_{B}$ 分别写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\begin{aligned} \\mathbf{r}_{A} &= x_{A}\\mathbf{i} + y_{A}\\mathbf{j} \\\\ \\mathbf{r}_{B} &= x_{B}\\mathbf{i} + y_{B}\\mathbf{j} \\end{aligned}"
+  },
+  {
+   "type": "text",
+   "html": "<p>于是，位移 $\\Delta \\mathbf{r}$ 亦可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\Delta \\mathbf{r} = \\mathbf{r}_{B} - \\mathbf{r}_{A} = (x_{B} - x_{A})\\mathbf{i} + (y_{B} - y_{A})\\mathbf{j}",
+   "label": "式（1-3）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式表明，当质点在平面上运动时，它的位移等于在 $Ox$ 轴和 $Oy$ 轴上的位移的矢量和[图1-3(b)].</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>若质点在三维空间中运动，则在直角坐标系 $Oxyz$ 中其位移为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\Delta \\mathbf{r} = (x_{B} - x_{A})\\mathbf{i} + (y_{B} - y_{A})\\mathbf{j} + (z_{B} - z_{A})\\mathbf{k}"
+  },
+  {
+   "type": "text",
+   "html": "<p>应当注意，位移是描述质点位置变化的物理量，并非是指质点所经历的路程。如在图1-3(a)中，质点作曲线运动，从点 $A$ 运动到点 $B$，所经历的路程为 $\\Delta s$，而位移则是 $\\Delta \\mathbf{r}$.显然，在一般情况下 $\\Delta s \\neq |\\Delta \\mathbf{r}|$.当质点经一闭合路径回到原来的起始位置时，其位移为零，而路程则不为零。所以，质点的位移和路程是两个完全不同的概念。只有在 $\\Delta t \\to 0$ 的极限情况下，两者的大小才视为相同。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>三、速度</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在力学中，只有当质点的位矢和速度同时被确定时，其运动状态才被确知。所以，位矢和速度是描述质点运动状态的两个物理量。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如图1-4所示，一质点在平面上沿轨迹 $CABD$ 作曲线运动。在时刻 $t$，它处于点 $A$，其位矢为 $\\mathbf{r}_{1}(t)$；在时刻 $t + \\Delta t$，它处于点 $B$，其位矢为 $\\mathbf{r}_{2}(t + \\Delta t)$.在时间 $\\Delta t$ 内，质点的位移为 $\\Delta \\mathbf{r} = \\mathbf{r}_{2} - \\mathbf{r}_{1}$，它的平均速度为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\overline{\\mathbf{v}} = \\frac{\\Delta \\mathbf{r}}{\\Delta t}"
+  },
+  {
+   "type": "text",
+   "html": "<p>由于 $\\Delta \\mathbf{r}$ 是矢量，而 $1/\\Delta t$ 是标量，故平均速度 $\\overline{\\mathbf{v}}$ 是矢量，且与 $\\Delta \\mathbf{r}$ 的方向相同。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch01/pages_0_50_13da3d0b39c9c6a9e76488fb385f154ef2d4c2b0e0550487fc21d7f18dbd73f2.png",
+   "caption": "图 1-4 平均速度：位移 Δr 与位矢 r₁、r₂ 的关系"
+  },
+  {
+   "type": "text",
+   "html": "<p>考虑到</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\Delta \\mathbf{r} = (x_{2} - x_{1})\\mathbf{i} + (y_{2} - y_{1})\\mathbf{j} = \\Delta x\\,\\mathbf{i} + \\Delta y\\,\\mathbf{j}"
+  },
+  {
+   "type": "text",
+   "html": "<p>平均速度可以写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\overline{\\mathbf{v}} = \\frac{\\Delta x}{\\Delta t}\\mathbf{i} + \\frac{\\Delta y}{\\Delta t}\\mathbf{j} = \\overline{v}_{x}\\mathbf{i} + \\overline{v}_{y}\\mathbf{j}"
+  },
+  {
+   "type": "text",
+   "html": "<p>其中 $\\overline{v}_{x}$ 和 $\\overline{v}_{y}$ 是平均速度 $\\overline{\\mathbf{v}}$ 在 $Ox$ 轴和 $Oy$ 轴上的分量。当 $\\Delta t \\to 0$ 时，平均速度的极限值叫做瞬时速度(简称速度)，用 $\\mathbf{v}$ 表示，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{v} = \\lim_{\\Delta t \\to 0} \\frac{\\Delta \\mathbf{r}}{\\Delta t} = \\frac{\\mathrm{d}\\mathbf{r}}{\\mathrm{d}t}",
+   "label": "式（1-4a）"
+  },
+  {
+   "type": "text",
+   "html": "<p>或</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{v} = \\frac{\\mathrm{d}x}{\\mathrm{d}t}\\mathbf{i} + \\frac{\\mathrm{d}y}{\\mathrm{d}t}\\mathbf{j} = v_{x}\\mathbf{i} + v_{y}\\mathbf{j}",
+   "label": "式（1-4b）"
+  },
+  {
+   "type": "text",
+   "html": "<p>其中</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "v_{x} = \\frac{\\mathrm{d}x}{\\mathrm{d}t},\\quad v_{y} = \\frac{\\mathrm{d}y}{\\mathrm{d}t}"
+  },
+  {
+   "type": "text",
+   "html": "<p>$v_{x}$ 和 $v_{y}$ 是速度 $\\mathbf{v}$ 在 $Ox$ 轴和 $Oy$ 轴上的分量。显然，如以 $\\mathbf{v}_{x}$ 和 $\\mathbf{v}_{y}$ 分别表示速度 $\\mathbf{v}$ 在 $Ox$ 和 $Oy$ 轴上的分速度(注意：它们是分矢量!)，那么有 $\\mathbf{v}_{x} = v_{x}\\mathbf{i}$ 和 $\\mathbf{v}_{y} = v_{y}\\mathbf{j}$，上式亦可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{v} = \\mathbf{v}_{x} + \\mathbf{v}_{y}",
+   "label": "式（1-4c）"
+  },
+  {
+   "type": "text",
+   "html": "<p>关于速度、分速度和速度分量之间的关系①，可用图1-5表示出来。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>通常把速度 $\\mathbf{v}$ 的值，即 $|\\mathbf{v}|$ 或 $v$ 称为速率②.由式(1-4a)可见，速度 $\\mathbf{v}$ 的方向与 $\\Delta \\mathbf{r}$ 在 $\\Delta t \\to 0$ 时的极限方向一致。从图1-4(a)可见，当 $\\Delta t \\to 0$ 时，$\\Delta \\mathbf{r}$ 趋于和轨道相切，即与点 $A$ 的切线重合，所以当质点作曲线运动时，质点在某一点的速度方向就是沿该点曲线的切线方向。这在日常生活中是经常可以观察到的。拴在绳子上作圆周运动的小球，如果绳子突然断开，小球就会沿切线方向飞出去。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch01/pages_0_50_ebf793c5888632286c1b7f67b19812899d85b6952e2fadb34656a9e44e3cdba2.png",
+   "caption": "图 1-5 速度、分速度及其速度分量"
+  },
+  {
+   "type": "text",
+   "html": "<p>显然，质点在三维直角坐标系中的速度为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{v} = \\mathbf{v}_{x} + \\mathbf{v}_{y} + \\mathbf{v}_{z} = v_{x}\\mathbf{i} + v_{y}\\mathbf{j} + v_{z}\\mathbf{k}",
+   "label": "式（1-5）"
+  },
+  {
+   "type": "text",
+   "html": "<p>概括地说，求解运动学问题有两类：一是已知运动方程求运动状态，另一是已知运动状态求运动方程。读者在阅读本书例题和求解本书习题的过程中对此应予以注意。</p>"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（1.1 节 · 例 1）",
+   "problem": "设质点的运动方程为 $\\mathbf{r}(t) = x(t)\\mathbf{i} + y(t)\\mathbf{j}$，其中 $x(t) = 1.0t + 2.0$，$y(t) = 0.25t^{2} + 2.0$，式中 $x$、$y$ 的单位为m(米)，$t$ 的单位为s(秒).(1)求 $t = 3\\,\\mathrm{s}$ 时的速度；(2)作出质点的运动轨迹图。",
+   "solution_steps": [
+    "(1)由题意可得速度分量分别为",
+    "$$v_{x} = \\frac{\\mathrm{d}x}{\\mathrm{d}t} = 1.0\\ \\mathrm{m \\cdot s^{-1}},\\qquad v_{y} = \\frac{\\mathrm{d}y}{\\mathrm{d}t} = 0.5t$$",
+    "故 $t = 3\\,\\mathrm{s}$ 时的速度分量为 $v_{x} = 1.0\\ \\mathrm{m \\cdot s^{-1}}$ 和 $v_{y} = 1.5\\ \\mathrm{m \\cdot s^{-1}}$.于是 $t = 3\\,\\mathrm{s}$ 时，质点的速度为",
+    "$$\\mathbf{v} = (1.0\\mathbf{i} + 1.5\\mathbf{j})\\ \\mathrm{m \\cdot s^{-1}}$$",
+    "速度的值为 $v = 1.8\\ \\mathrm{m \\cdot s^{-1}}$，速度 $\\mathbf{v}$ 与 $x$ 轴之间的夹角为",
+    "$$\\theta = \\arctan\\frac{1.5}{1.0} = 56.3^{\\circ}$$",
+    "(2)已知运动方程 $x = 1.0t + 2.0$，$y = 0.25t^{2} + 2.0$，消去 $t$ 可得轨迹方程",
+    "$$y = 0.25x^{2} - x + 3.0$$",
+    "并可作如图1-6所示的质点运动轨迹图。",
+    "<img src=\"assets/images/ch01/pages_0_50_4d97a0f673caa6926c25b47cbd5d1c9abca3e3857bfed06c112e7dd5903fce34.png\" style=\"max-width:60%\">",
+    "图1-6"
+   ],
+   "answer": null
+  },
+  {
+   "type": "example",
+   "title": "教材例题（1.1 节 · 例 2）",
+   "problem": "如图1-7所示，$A$、$B$ 两物体由一长为 $l$ 的刚性细杆相连，$A$、$B$ 两物体可在光滑轨道上滑行。如物体 $A$ 以恒定的速率 $v$ 向左滑行。当 $\\alpha = 60^{\\circ}$ 时，物体 $B$ 的速度为多少？",
+   "solution_steps": [
+    "按如图1-7所示的坐标轴，物体 $A$ 的速度为",
+    "$$\\mathbf{v}_{A} = \\frac{\\mathrm{d}x}{\\mathrm{d}t}\\mathbf{i} = -v\\mathbf{i} \\tag{1}$$",
+    "式中\"−\"号表示 $A$ 沿 $Ox$ 轴负方向运动，而物体 $B$ 的速度则为",
+    "$$\\mathbf{v}_{B} = v_{y}\\mathbf{j} = \\frac{\\mathrm{d}y}{\\mathrm{d}t}\\mathbf{j} \\tag{2}$$",
+    "由于 $\\triangle OAB$ 为一直角三角形，因此有 $x^{2} + y^{2} = l^{2}$.考虑到细杆是刚性的，其长度 $l$ 为一常量，但 $x$、$y$ 是时间的函数，故有",
+    "$$2x\\frac{\\mathrm{d}x}{\\mathrm{d}t} + 2y\\frac{\\mathrm{d}y}{\\mathrm{d}t} = 0$$",
+    "<img src=\"assets/images/ch01/pages_0_50_b3f082a2824e501e2f29a889d92c34cec285089b8208c8bc59e22be275923c7e.png\" style=\"max-width:60%\">",
+    "图1-7",
+    "可得",
+    "$$\\frac{\\mathrm{d}y}{\\mathrm{d}t} = -\\frac{x}{y}\\frac{\\mathrm{d}x}{\\mathrm{d}t}$$",
+    "代入式(2)，物体 $B$ 的速度为",
+    "$$\\mathbf{v}_{B} = -\\frac{x}{y}\\frac{\\mathrm{d}x}{\\mathrm{d}t}\\mathbf{j}$$",
+    "因为",
+    "$$\\frac{\\mathrm{d}x}{\\mathrm{d}t} = -v,\\quad \\tan\\alpha = \\frac{x}{y}$$",
+    "所以上式为 $v_{B} = v\\tan\\alpha$.$\\mathbf{v}_{B}$ 的方向沿 $y$ 轴正方向，因此物体 $B$ 的速度值为 $v\\tan\\alpha$.当 $\\alpha = 60^{\\circ}$ 时",
+    "$$v_{B} = 1.73v$$"
+   ],
+   "answer": null
+  },
+  {
+   "type": "text",
+   "html": "<h3>四、加速度</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<p>上面已经指出，作为描述质点运动状态的一个物理量，速度是一个矢量，所以，无论是速度的数值发生改变，还是其方向发生改变，都表示速度发生了变化。为衡量速度的变化，我们将引出加速度概念。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如图1-8所示，质点在 $Oxy$ 平面内作曲线运动。设在时刻 $t$，质点位于点 $A$，其速度为 $\\mathbf{v}_{1}$，在时刻 $t + \\Delta t$，质点位于点 $B$，其速度为 $\\mathbf{v}_{2}$，则在时间间隔 $\\Delta t$ 内，质点的速度增量为 $\\Delta \\mathbf{v} = \\mathbf{v}_{2} - \\mathbf{v}_{1}$，它的平均加速度为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\overline{\\mathbf{a}} = \\frac{\\Delta \\mathbf{v}}{\\Delta t}"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch01/pages_0_50_4933a5b9df346f758b94d4cac4947e893717173266bdddecd1e6aa1d700d2311.png",
+   "caption": "图 1-8 曲线运动的加速度：加速度方向指向轨迹凹侧"
+  },
+  {
+   "type": "text",
+   "html": "<p>当 $\\Delta t \\to 0$ 时，平均加速度的极限值叫做瞬时加速度，用 $\\mathbf{a}$ 表示，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{a} = \\lim_{\\Delta t \\to 0} \\frac{\\Delta \\mathbf{v}}{\\Delta t} = \\frac{\\mathrm{d}\\mathbf{v}}{\\mathrm{d}t}",
+   "label": "式（1-6a）"
+  },
+  {
+   "type": "text",
+   "html": "<p>$\\mathbf{a}$ 的方向是 $\\Delta t \\to 0$ 时 $\\Delta \\mathbf{v}$ 的极限方向，而 $\\mathbf{a}$ 的数值是 $|\\Delta \\mathbf{v}/\\Delta t|$ 的极限值，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "|\\mathbf{a}| = \\lim_{\\Delta t \\to 0} \\left| \\frac{\\Delta \\mathbf{v}}{\\Delta t} \\right|"
+  },
+  {
+   "type": "text",
+   "html": "<p>应当注意，加速度 $\\mathbf{a}$ 既反映了速度方向的变化，又反映了速度数值的变化。所以质点作曲线运动时，任一时刻质点的加速度方向并不与速度方向相同，即加速度方向不沿曲线的切线方向。由图1-8中可以看出，在曲线运动中，加速度的方向指向曲线的凹侧。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>利用式(1-4b)，式(1-6a)可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{a} = \\frac{\\mathrm{d}}{\\mathrm{d}t}(v_{x}\\mathbf{i} + v_{y}\\mathbf{j})"
+  },
+  {
+   "type": "text",
+   "html": "<p>即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{a} = a_{x}\\mathbf{i} + a_{y}\\mathbf{j} = \\mathbf{a}_{x} + \\mathbf{a}_{y}",
+   "label": "式（1-6b）"
+  },
+  {
+   "type": "text",
+   "html": "<p>其中</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "a_{x} = \\frac{\\mathrm{d}v_{x}}{\\mathrm{d}t},\\quad a_{y} = \\frac{\\mathrm{d}v_{y}}{\\mathrm{d}t}"
+  },
+  {
+   "type": "text",
+   "html": "<p>显然，质点在三维直角坐标系中的加速度为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{a} = \\mathbf{a}_{x} + \\mathbf{a}_{y} + \\mathbf{a}_{z} = a_{x}\\mathbf{i} + a_{y}\\mathbf{j} + a_{z}\\mathbf{k}",
+   "label": "式（1-7）"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（1.1 节 · 例 3）",
+   "problem": "一个球体在某液体中竖直下落，球体的初速度为 $\\mathbf{v}_{0} = 10\\mathbf{j}\\ \\mathrm{m \\cdot s^{-1}}$，它在液体中的加速度为 $\\mathbf{a} = -1.0\\mathbf{v}$，式中 $\\mathbf{a}$ 的单位为 $\\mathrm{m \\cdot s^{-2}}$，$\\mathbf{v}$ 的单位为 $\\mathrm{m \\cdot s^{-1}}$.问：(1)经多少时间后可以认为小球已停止运动？(2)此球体在停止前经历的路程有多长？",
+   "solution_steps": [
+    "由题意知，球体作变加速直线运动，加速度 $\\mathbf{a}$ 的方向与球体的速度 $\\mathbf{v}$ 的方向相反。由加速度的定义，有",
+    "$$a = \\frac{\\mathrm{d}v}{\\mathrm{d}t} = -1.0v$$",
+    "$$\\int_{v_{0}}^{v} \\frac{\\mathrm{d}v}{v} = -1.0\\int_{0}^{t} \\mathrm{d}t$$",
+    "$$v = v_{0}\\mathrm{e}^{-1.0t} \\tag{1}$$",
+    "上式表明，球体的速率 $v$ 随时间 $t$ 的增长而减小。又由速度的定义，有",
+    "$$v = \\frac{\\mathrm{d}y}{\\mathrm{d}t} = v_{0}\\mathrm{e}^{-1.0t}$$",
+    "$$\\int_{0}^{y} \\mathrm{d}y = v_{0}\\int_{0}^{t} \\mathrm{e}^{-1.0t}\\mathrm{d}t$$",
+    "$$y = 10\\left[1- \\mathrm{e}^{-1.0t}\\right] \\tag{2}$$",
+    "从题意知道，球体停下来时其速度应当为零，而从式(1)可以看出，要使球体的速度为零，即 $v = 0$，时间须无限长。从式(2)可知在 $t \\to \\infty$ 时 $y = 10\\ \\mathrm{m}$.下面作一些近似计算和分析。我们不妨利用式(1)，先试求球体的速率 $v$ 分别达到 $v_{0}/10$、$v_{0}/100$、$v_{0}/1000$ 和 $v_{0}/10000$ 时所经历的时间，然后再利用式(2)求出球体所经历的路程。我们把依据这个想法所得的计算结果列表如下。",
+    "<table><thead><tr><th>$v$</th><th>$v_{0}/10$</th><th>$v_{0}/100$</th><th>$v_{0}/1000$</th><th>$v_{0}/10000$</th></tr></thead><tbody><tr><td>$t$/s</td><td>2.3</td><td>4.6</td><td>6.9</td><td>9.2</td></tr><tr><td>$y$/m</td><td>8.9974</td><td>9.8995</td><td>9.9899</td><td>9.9990</td></tr></tbody></table>",
+    "从上表可以看出，事实上，在 $t = 6.9\\,\\mathrm{s}$ 或 $t = 9.2\\,\\mathrm{s}$ 时，球体已几乎不再运动，而所经历的路程已显示出其极限值为 $10\\,\\mathrm{m}$ 了。故本题的答案完全可以写成：小球运动了 $9.2\\,\\mathrm{s}$，几乎接近停止，所经历的路程 $y \\approx 10\\,\\mathrm{m}$.这种近似处理的方法是很重要的，也是足够准确的。"
+   ],
+   "answer": null
+  },
+  {
+   "type": "example",
+   "title": "教材例题（1.1 节 · 例 4）",
+   "problem": "如图1-9所示，一抛体在地球表面附近，从原点 $O$ 以初速度 $\\mathbf{v}_{0}$ 沿与水平面上 $Ox$ 轴正<br>图1-9<br>向成角度 $\\alpha$ 的方向抛出。如略去抛体在运动过程中空气的阻力作用，求抛体的轨迹方程和最大射程。",
+   "solution_steps": [
+    "由题意知，抛体运动过程中的加速度 $\\mathbf{a} = \\mathbf{g} = -g\\mathbf{j}$，且 $a_{x} = 0$，故抛体以恒定加速度 $\\mathbf{a} = \\mathbf{g}$ 作斜抛运动。在 $t = 0$ 时抛体位于原点 $O$，其位矢 $\\mathbf{r}_{0} = 0$.在时刻 $t$，抛体位于点 $P$，其位移为 $\\mathbf{r}$.",
+    "从图1-9可以看出，在时间 $t$ 内，抛体的位移 $\\mathbf{r}$ 为两矢量之和，即沿与 $Ox$ 轴成 $\\alpha$ 角方向的匀速直线运动所产生的位移 $\\mathbf{v}_{0}t$ 与同时沿 $Oy$ 轴的匀加速直线运动所产生的位移 $\\frac{1}{2}\\mathbf{g}t^{2}$ 之和。于是，斜抛物体的运动方程为",
+    "$$\\mathbf{r} = \\mathbf{v}_{0}t + \\frac{1}{2}\\mathbf{g}t^{2}$$",
+    "按图1-9所选定的坐标轴及起始条件，在 $t = 0$ 时，有",
+    "$$\\begin{cases} x_{0} = 0, & v_{0x} = v_{0}\\cos\\alpha \\\\ y_{0} = 0, & v_{0y} = v_{0}\\sin\\alpha \\end{cases}$$",
+    "和",
+    "$$a_{x} = 0,\\quad a_{y} = -g$$",
+    "可得",
+    "$$\\begin{cases} x = v_{0}t\\cos\\alpha \\\\ y = v_{0}t\\sin\\alpha - \\frac{1}{2}gt^{2} \\end{cases} \\tag{2}$$",
+    "消去方程中的 $t$，有",
+    "$$y = x\\tan\\alpha - \\frac{g}{2v_{0}^{2}\\cos^{2}\\alpha}\\,x^{2} \\tag{3}$$",
+    "这就是斜抛物体的轨迹方程。它表明在略去空气阻力的情况下，抛体在空间所经历的路径为一抛物线(图1-10).",
+    "<img src=\"assets/images/ch01/pages_0_50_114c7e145e74527b7861f8554822720b21702a8b78ab9586bd843e143f705534.png\" style=\"max-width:60%\">",
+    "图1-10",
+    "从图1-10可以看出，当抛体落回水平面上时 $y = 0$.若把抛体落地点与原点 $O$ 间的距离 $d_{0}$ 称为射程，那么由式(3)可得",
+    "$$d_{0} = \\frac{2v_{0}^{2}}{g}\\sin\\alpha\\cos\\alpha = \\frac{v_{0}^{2}}{g}\\sin 2\\alpha$$",
+    "从上式可看出，在给定初速度 $v_{0}$ 的情况下，射程 $d_{0}$ 是抛射角 $\\alpha$ 的函数。由最大射程的条件，有",
+    "$$\\frac{\\partial d_{0}}{\\partial\\alpha} = \\frac{2v_{0}^{2}}{g}\\cos 2\\alpha = 0$$",
+    "得",
+    "$$2\\alpha = \\pi/2,\\qquad \\alpha = \\pi/4$$",
+    "这就是说，当 $\\alpha = \\pi/4$ 时，抛体的射程最大①，其值为",
+    "$$d_{0\\mathrm{max}} = \\frac{v_{0}^{2}}{g}$$",
+    "在上述的讨论中，忽略了空气阻力。若空气阻力较大，则物体经过的路径为一不对称的曲线②，实际射程 $d$ 往往比真空中射程 $d_{0}$ 小很多(图1-11).表1-2给出了弹丸在真空中和在空气中射程的情况。",
+    "<img src=\"assets/images/ch01/pages_0_50_ffab2a98eecaafe03513ddce9c4c07c80e8ae26e8daed5592eb3b14e43883d7d.png\" style=\"max-width:60%\">",
+    "图1-11",
+    "**表1-2 弹丸在真空和空气中射程的情况**",
+    "<table><thead><tr><th>弹丸</th><th>初速度 $v_{0}/(\\mathrm{m\\cdot s^{-1}})$</th><th>抛射角 $\\alpha$</th><th>真空中射程 $d_{0}$/m</th><th>实际射程 $d$/m</th></tr></thead><tbody><tr><td>7.6 mm 枪弹</td><td>800</td><td>15°</td><td>32700</td><td>3970</td></tr><tr><td>85 mm 炮弹</td><td>700</td><td>45°</td><td>50000</td><td>16000</td></tr><tr><td>82 mm 迫击炮弹</td><td>60</td><td>45°</td><td>367</td><td>350</td></tr></tbody></table>"
+   ],
+   "answer": null
+  },
+  {
+   "type": "text",
+   "html": "<p>利用斜抛物体的运动方程式(2)，经适当修正，可粗略估算出洲际导弹的射程③.</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch01/pages_0_50_98060b17afd6e048a189349660ef5ba73c721c22d2821bfe9f3a48b435c111cf.jpg",
+   "caption": "伽利略画像（原书页边插图）"
+  },
+  {
+   "type": "callout",
+   "calloutType": "info",
+   "title": "人物小传：伽利略 Galileo Galilei（1564—1642）",
+   "body": "<p>伽利略(Galileo Galilei，1564—1642)，杰出的意大利物理学家和天文学家，实验物理学的先驱者，提出著名的相对性原理、惯性原理、抛体的运动定律、摆振动的等时性等。伽利略捍卫哥白尼的日心学说.《关于两门新科学的对话》一书，总结了他最成熟的科学思想以及在物理学和天文学方面的研究成果。</p>"
+  },
+  {
+   "type": "section",
+   "number": "1.2",
+   "title": "圆周运动"
+  },
+  {
+   "type": "video",
+   "source": "bilibili",
+   "bvid": "BV1eK4y1E7Cb",
+   "page": 3,
+   "title": "📺 视频学习：圆周运动与一般平面曲线运动",
+   "caption": "东北大学《大学物理》MOOC 课堂录播（马文蔚《物理学》配套课程），第 2 次课 配套；本讲对应教材 1-2 圆周运动（角量描述·切向与法向加速度），时长 44:47。注意：视频标题里的 1.x 是该课程的讲次编号，与教材小节号含义不同，请以本卡片标注的教材小节为准。<a href=\"https://www.bilibili.com/video/BV1eK4y1E7Cb?p=3\" target=\"_blank\" rel=\"noopener\">在 B 站打开本讲 ↗</a>（嵌入加载失败、或想看弹幕与讲义时点此）"
+  },
+  {
+   "type": "text",
+   "html": "<p>这一节讨论一种较为简单的曲线运动——圆周运动。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>一、平面极坐标</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>设有一质点在如图1-12所示的 $Oxy$ 平面内运动。某时刻它位于点 $A$，它相对原点 $O$ 的位矢 $\\mathbf{r}$ 与 $Ox$ 轴之间的夹角为 $\\theta$.于是，质点在点 $A$ 的位置可由 $(r,\\theta)$ 来确定。这种以 $(r,\\theta)$ 为坐标的坐标系称为平面极坐标系。而在平面直角坐标系内，点 $A$ 的坐标则为 $(x,y)$.这两种坐标系的坐标之间的变换关系为 $x = r\\cos\\theta$ 和 $y = r\\sin\\theta$.</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>二、圆周运动的角速度</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如图1-13所示，一质点在 $Oxy$ 平面上作半径为 $r$ 的圆周运动，某时刻它位于点 $A$，位矢为 $\\mathbf{r}$.当质点在圆周上运动时，位矢 $\\mathbf{r}$ 与 $Ox$ 轴之间的夹角 $\\theta$ 随时间而改变，即 $\\theta$ 是时间 $t$ 的函数。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch01/pages_0_50_18afa3cfde68b3c104610ead986304cb8e2f25d3055c813b5868e9e8de76124a.png",
+   "caption": "图 1-12 平面极坐标"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch01/pages_0_50_cb91e15e5a2cdb292fef2882a322dfe7fc4a2b24fe00dcfb795058208c9b96c2.png",
+   "caption": "图 1-13 质点在平面上作圆周运动"
+  },
+  {
+   "type": "text",
+   "html": "<p>我们定义：角坐标 $\\theta(t)$ 随时间的变化率，即 $\\mathrm{d}\\theta/\\mathrm{d}t$，叫做角速度，用符号 $\\omega$ 表示，则有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\omega = \\frac{\\mathrm{d}\\theta}{\\mathrm{d}t}",
+   "label": "式（1-8）"
+  },
+  {
+   "type": "text",
+   "html": "<p>通常 $\\theta$ 用弧度(rad)来量度，所以角速度 $\\omega$ 的单位名称为弧度每秒，符号为 $\\mathrm{rad \\cdot s^{-1}}$.</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如果在时间 $\\Delta t$ 内，质点由图上的点 $A$ 运动到点 $B$，所经过的圆弧则为 $\\Delta s = r\\Delta\\theta$，$\\Delta\\theta$ 为时间 $\\Delta t$ 内位矢 $\\mathbf{r}$ 所转过的角度。当 $\\Delta t \\to 0$ 时，$\\Delta s/\\Delta t$ 的极限值为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\lim_{\\Delta t \\to 0} \\frac{\\Delta s}{\\Delta t} = \\frac{\\mathrm{d}s}{\\mathrm{d}t} = r\\frac{\\mathrm{d}\\theta}{\\mathrm{d}t}"
+  },
+  {
+   "type": "text",
+   "html": "<p>而质点在点 $A$ 的线速度的大小为 $v = \\mathrm{d}s/\\mathrm{d}t$，所以，由式(1-8)可得质点作圆周运动时速率和角速度之间的瞬时关系为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "v = r\\omega",
+   "label": "式（1-9）"
+  },
+  {
+   "type": "text",
+   "html": "<h4>三、圆周运动的切向加速度和法向加速度 角加速度</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如图1-14所示，质点在圆周上点 $A$ 的速度为 $\\mathbf{v}$，它的值为 $|\\mathbf{v}| = v$，方向与点 $A$ 处圆的切线方向相同。为了便于表示速度的方向，我们在点 $A$ 处圆的切线沿速度方向上取一单位矢量 $\\mathbf{e}_{\\mathrm{t}}$，叫做切向单位矢量，于是点 $A$ 的速度 $\\mathbf{v}$ 可写为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{v} = v\\mathbf{e}_{\\mathrm{t}}",
+   "label": "式（1-10）"
+  },
+  {
+   "type": "text",
+   "html": "<p>一般来说，质点作圆周运动时，不仅速度的方向要改变，而且速度的值也会改变，即质点作变速圆周运动。由式(1-10)可得质点作变速圆周运动时，它在圆周上任意点的加速度为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{a} = \\frac{\\mathrm{d}\\mathbf{v}}{\\mathrm{d}t} = \\frac{\\mathrm{d}v}{\\mathrm{d}t}\\mathbf{e}_{\\mathrm{t}} + v\\frac{\\mathrm{d}\\mathbf{e}_{\\mathrm{t}}}{\\mathrm{d}t}",
+   "label": "式（1-11）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch01/pages_0_50_e6dacc1305b682f38eb04b4fe68b282fc2c1e7fb8bbce1a0d1de0548b8ed89ff.png",
+   "caption": "图 1-14 切向单位矢量 e_t"
+  },
+  {
+   "type": "text",
+   "html": "<p>从上式可以看出，加速度 $\\mathbf{a}$ 具有两个分矢量，式中第一项 $\\frac{\\mathrm{d}v}{\\mathrm{d}t}\\mathbf{e}_{\\mathrm{t}}$ 是由于速度大小变化而引起的，其方向为 $\\mathbf{e}_{\\mathrm{t}}$ 的方向，即与速度 $\\mathbf{v}$ 的方向相同。因此，此项加速度分矢量称为切向加速度，用 $\\mathbf{a}_{\\mathrm{t}}$ 表示，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{a}_{\\mathrm{t}} = \\frac{\\mathrm{d}v}{\\mathrm{d}t}\\mathbf{e}_{\\mathrm{t}},\\quad a_{\\mathrm{t}} = \\frac{\\mathrm{d}v}{\\mathrm{d}t}",
+   "label": "式（1-12）"
+  },
+  {
+   "type": "text",
+   "html": "<p>另外，由式(1-9)可得</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\frac{\\mathrm{d}v}{\\mathrm{d}t} = r\\frac{\\mathrm{d}\\omega}{\\mathrm{d}t}"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $\\mathrm{d}\\omega/\\mathrm{d}t$ 为角速度随时间的变化率，叫做角加速度，用符号 $\\alpha$ 表示，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\alpha = \\frac{\\mathrm{d}\\omega}{\\mathrm{d}t}",
+   "label": "式（1-13）"
+  },
+  {
+   "type": "text",
+   "html": "<p>角加速度 $\\alpha$ 的单位名称为弧度每二次方秒，符号为 $\\mathrm{rad \\cdot s^{-2}}$.把上面两式代入式(1-12)，可得</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "a_{\\mathrm{t}} = r\\alpha",
+   "label": "式（1-14）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式是质点作变速圆周运动时，切向加速度与角加速度之间的瞬时关系。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>至于式(1-11)中的第二项 $v\\frac{\\mathrm{d}\\mathbf{e}_{\\mathrm{t}}}{\\mathrm{d}t}$，则表示切向单位矢量随时间的变化率。这一点从图1-15(a)中可以看出。设在时刻 $t$，质点位于圆周上点 $A$，其速度为 $\\mathbf{v}_{1}$，切向单位矢量为 $\\mathbf{e}_{\\mathrm{t}1}$；在时刻 $t + \\Delta t$，质点位于圆周上点 $B$，速度为 $\\mathbf{v}_{2}$，切向单位矢量为 $\\mathbf{e}_{\\mathrm{t}2}$.在时间间隔 $\\Delta t$ 内，$\\mathbf{r}$ 转过的角度为 $\\Delta\\theta$，切向单位矢量的增量则为 $\\Delta\\mathbf{e}_{\\mathrm{t}} = \\mathbf{e}_{\\mathrm{t}2} - \\mathbf{e}_{\\mathrm{t}1}$.由于切向单位矢量的值为1，即 $|\\mathbf{e}_{\\mathrm{t}1}| = |\\mathbf{e}_{\\mathrm{t}2}| = 1$，因而，从图1-15(b)可以知道 $|\\Delta\\mathbf{e}_{\\mathrm{t}}| = \\Delta\\theta \\times 1 = \\Delta\\theta$.当 $\\Delta t \\to 0$ 时，$\\Delta\\theta$ 亦趋于零，这时 $\\Delta\\mathbf{e}_{\\mathrm{t}}$ 的方向趋于与 $\\mathbf{e}_{\\mathrm{t}1}$ 垂直，且趋于指向圆心。如果我们在指向圆心的法线方向上取单位矢量 $\\mathbf{e}_{\\mathrm{n}}$，称为法向单位矢量(图1-16)，那么当 $\\Delta t \\to 0$ 时，$\\Delta\\mathbf{e}_{\\mathrm{t}}/\\Delta t$ 的极限值为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\lim_{\\Delta t \\to 0} \\frac{\\Delta\\mathbf{e}_{\\mathrm{t}}}{\\Delta t} = \\frac{\\mathrm{d}\\mathbf{e}_{\\mathrm{t}}}{\\mathrm{d}t} = \\frac{\\mathrm{d}\\theta}{\\mathrm{d}t}\\mathbf{e}_{\\mathrm{n}}"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch01/pages_0_50_c56d47be01e9f16c34473a0d14baf2696fec879c6aff8a172463dfa79b5ebc73.png",
+   "caption": "图 1-15(a) 切向单位矢量随位置的变化（A→B）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch01/fig1_15b.png",
+   "caption": "图 1-15(b) Δe_t 矢量图（本站按 e_t2−e_t1 关系重绘）：|Δe_t| = 2sin(Δθ/2) → Δθ（Δt→0）"
+  },
+  {
+   "type": "text",
+   "html": "<p>图1-15 切向单位矢量随时间的变化率 $\\mathrm{d}\\mathbf{e}_{\\mathrm{t}}/\\mathrm{d}t$</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>这样，式(1-11)中第二项可以写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "v\\frac{\\mathrm{d}\\mathbf{e}_{\\mathrm{t}}}{\\mathrm{d}t} = v\\frac{\\mathrm{d}\\theta}{\\mathrm{d}t}\\mathbf{e}_{\\mathrm{n}}"
+  },
+  {
+   "type": "text",
+   "html": "<p>此项加速度沿法线方向，故叫做法向加速度，用 $\\mathbf{a}_{\\mathrm{n}}$ 表示，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{a}_{\\mathrm{n}} = v\\frac{\\mathrm{d}\\theta}{\\mathrm{d}t}\\mathbf{e}_{\\mathrm{n}}",
+   "label": "式（1-15a）"
+  },
+  {
+   "type": "text",
+   "html": "<p>考虑到 $\\omega = \\mathrm{d}\\theta/\\mathrm{d}t$，$v = r\\omega$，故上式为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{a}_{\\mathrm{n}} = r\\omega^{2}\\mathbf{e}_{\\mathrm{n}} = \\frac{v^{2}}{r}\\mathbf{e}_{\\mathrm{n}},\\quad a_{\\mathrm{n}} = \\frac{v^{2}}{r}",
+   "label": "式（1-15b）"
+  },
+  {
+   "type": "text",
+   "html": "<p>由式(1-12)和式(1-15)，可将质点作变速圆周运动时的加速度 $\\mathbf{a}$ 的表示式(1-11)写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{a} = \\mathbf{a}_{\\mathrm{t}} + \\mathbf{a}_{\\mathrm{n}} = \\frac{\\mathrm{d}v}{\\mathrm{d}t}\\mathbf{e}_{\\mathrm{t}} + \\frac{v^{2}}{r}\\mathbf{e}_{\\mathrm{n}}",
+   "label": "式（1-16a）"
+  },
+  {
+   "type": "text",
+   "html": "<p>其中切向加速度 $a_{\\mathrm{t}}$ 是由于速度值的变化而引起的，法向加速度 $a_{\\mathrm{n}}$ 则是由于速度方向的变化而引起的。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在变速圆周运动中，速度的大小和方向都在变化，所以加速度 $\\mathbf{a}$ 的方向不再指向圆心，其大小和方向(图1-17)为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "a = \\bigl(a_{\\mathrm{n}}^{2} + a_{\\mathrm{t}}^{2}\\bigr)^{1/2},\\quad \\tan\\varphi = \\frac{a_{\\mathrm{n}}}{a_{\\mathrm{t}}}"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch01/pages_0_50_e5bfe0b7c7b81297915b4c7ad60f5576a26debebe8e802c11f4261698cc18970.png",
+   "caption": "图 1-16 法向单位矢量 e_n 与切向单位矢量 e_t 相垂直"
+  },
+  {
+   "type": "text",
+   "html": "<p>图1-16 法向单位矢量 $\\mathbf{e}_{\\mathrm{n}}$ 与切向单位矢量 $\\mathbf{e}_{\\mathrm{t}}$ 相垂直</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch01/pages_0_50_c0f597a70e08768a4ee5b7ae52c1d2e8c35181f4eb1b6d9ac739254a7989a0a5.png",
+   "caption": "图 1-17 变速圆周运动的加速度"
+  },
+  {
+   "type": "text",
+   "html": "<p>上述结果虽然是从变速圆周运动中得出的，但对于一般的曲线运动，式(1-11)、式(1-12)、式(1-15)仍然适用。此时可以把一段足够小的曲线看成是一段圆弧。这样包含这段圆弧的圆周就称为曲线在给定点的曲率圆，从而可用曲率半径 $\\rho$ 来替代圆的半径 $r$.则式(1-16a)可变为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{a} = \\frac{\\mathrm{d}v}{\\mathrm{d}t}\\mathbf{e}_{\\mathrm{t}} + \\frac{v^{2}}{\\rho}\\mathbf{e}_{\\mathrm{n}}",
+   "label": "式（1-16c）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式适用于一般的曲线运动。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>四、自然坐标系</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在图1-16中，如以动点 $A$ 为原点，则以切向单位矢量 $\\mathbf{e}_{\\mathrm{t}}$ 和法向单位矢量 $\\mathbf{e}_{\\mathrm{n}}$ 建立的二维坐标系称为自然坐标系。在讨论圆周运动及曲线运动时，我们经常采用这种坐标系。可参见第二章第2-4节例2和例3.</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>五、匀速率圆周运动和匀变速率圆周运动</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<h5>1. 匀速率圆周运动</h5>"
+  },
+  {
+   "type": "text",
+   "html": "<p>质点作匀速率圆周运动时，其速率 $v$ 和角速度 $\\omega$ 都为常量，故角加速度 $\\alpha = 0$，切向加速度 $a_{\\mathrm{t}} = \\mathrm{d}v/\\mathrm{d}t = 0$，而法向加速度的值 $a_{\\mathrm{n}} = r\\omega^{2} = v^{2}/r$ 为常量。于是匀速率圆周运动的加速度为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{a} = \\mathbf{a}_{\\mathrm{n}} = r\\omega^{2}\\mathbf{e}_{\\mathrm{n}}"
+  },
+  {
+   "type": "text",
+   "html": "<p>由式(1-8)可得</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathrm{d}\\theta = \\omega\\mathrm{d}t"
+  },
+  {
+   "type": "text",
+   "html": "<p>如取 $t = 0$ 时，$\\theta = \\theta_{0}$，则有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\theta = \\theta_{0} + \\omega t"
+  },
+  {
+   "type": "text",
+   "html": "<h5>2. 匀变速率圆周运动</h5>"
+  },
+  {
+   "type": "text",
+   "html": "<p>质点作匀变速率圆周运动时，其角加速度 $\\alpha =$ 常量，故圆周上某点的切向加速度的值为 $a_{\\mathrm{t}} = r\\alpha =$ 常量，而法向加速度的值为 $a_{\\mathrm{n}} = r\\omega^{2} = v^{2}/r$，但不为常量。于是匀变速率圆周运动的加速度为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{a} = \\mathbf{a}_{\\mathrm{t}} + \\mathbf{a}_{\\mathrm{n}} = r\\alpha\\mathbf{e}_{\\mathrm{t}} + r\\omega^{2}\\mathbf{e}_{\\mathrm{n}}",
+   "label": "式（1-17）"
+  },
+  {
+   "type": "text",
+   "html": "<p>如果 $t = 0$ 时，$\\theta = \\theta_{0},\\ \\omega = \\omega_{0}$，那么由式(1-13)和式(1-8)可得</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\left. \\begin{aligned} \\omega &= \\omega_{0} + \\alpha t \\\\ \\theta &= \\theta_{0} + \\omega_{0}t + \\frac{1}{2}\\alpha t^{2} \\\\ \\omega^{2} &= \\omega_{0}^{2} + 2\\alpha(\\theta - \\theta_{0}) \\end{aligned} \\right\\}",
+   "label": "式（1-18）"
+  },
+  {
+   "type": "text",
+   "html": "<p>这三个公式与在中学物理中已学过的匀变速直线运动的公式在形式上是相似的。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>从以上对加速度的讨论中可以看出，速度的变化要用加速度来描述。加速度也是可以变化的，为什么不用某个物理量来描述其变化呢？这个问题单从质点运动学的角度是找不出答案的，学过了质点动力学，读者就会明白其中的道理了。</p>"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（1.2 节 · 例 5）",
+   "problem": "如图1-18所示，一超声速歼击机在高空点 $A$ 时的水平速率为 $1940\\ \\mathrm{km \\cdot h^{-1}}$，沿近似于圆弧的曲线俯冲到点 $B$ 时速率为 $2192\\ \\mathrm{km \\cdot h^{-1}}$，所经历的时间为 $3\\ \\mathrm{s}$.设圆弧 $AB$ 的半径约为 $3.5\\ \\mathrm{km}$，且飞机从 $A$ 到 $B$ 的俯冲过程可视为匀变速率圆周运动。求：(1)飞机在点 $B$ 的加速度；(2)飞机由点 $A$ 到达点 $B$ 所经历的路程。",
+   "solution_steps": [
+    "(1)由于飞机在 $AB$ 之间作匀变速率圆周运动，因此切向加速度 $a_{\\mathrm{t}}$ 的值为常量，有",
+    "$$a_{\\mathrm{t}} = \\frac{v_{B} - v_{A}}{t}$$",
+    "<img src=\"assets/images/ch01/pages_0_50_f7b9931131f2edfb3a32b69c71b8d7698d9ae9c1e4b9238f384c3d910f3eb29f.png\" style=\"max-width:60%\">",
+    "图1-18",
+    "而在点 $B$ 时的法向加速度为",
+    "$$a_{\\mathrm{n}} = \\frac{v_{B}^{2}}{r}$$",
+    "由题意知 $v_{A} = 1940\\ \\mathrm{km \\cdot h^{-1}} = 539\\ \\mathrm{m \\cdot s^{-1}}$，$v_{B} = 2192\\ \\mathrm{km \\cdot h^{-1}} = 609\\ \\mathrm{m \\cdot s^{-1}}$，$t = 3\\ \\mathrm{s}$，$r = 3.5 \\times 10^{3}\\ \\mathrm{m}$.将它们代入上两式，可得飞机在点 $B$ 的切向加速度和法向加速度分别为 $a_{\\mathrm{t}} = 23.3\\ \\mathrm{m \\cdot s^{-2}}$，$a_{\\mathrm{n}} = 106\\ \\mathrm{m \\cdot s^{-2}}$.",
+    "故飞机在点 $B$ 时的加速度的值为",
+    "$$a = \\bigl(a_{\\mathrm{t}}^{2} + a_{\\mathrm{n}}^{2}\\bigr)^{1/2} = 109\\ \\mathrm{m \\cdot s^{-2}}$$",
+    "而 $\\mathbf{a}$ 与 $\\mathbf{a}_{\\mathrm{n}}$ 之间夹角 $\\beta$ 为",
+    "$$\\beta = \\arctan\\frac{a_{\\mathrm{t}}}{a_{\\mathrm{n}}} = 12.4^{\\circ}$$",
+    "(2)在时间 $t$ 内，$\\mathbf{r}$ 所转过的角度 $\\theta$ 为",
+    "$$\\theta = \\omega_{A}t + \\frac{1}{2}\\alpha t^{2}$$",
+    "其中 $\\omega_{A}$ 是飞机在点 $A$ 的角速度。故在此时间内，飞机经过的路程为",
+    "$$s = r\\theta = r\\omega_{A}t + \\frac{1}{2}r\\alpha t^{2} = v_{A}t + \\frac{1}{2}a_{\\mathrm{t}}t^{2}$$",
+    "代入已知数据，有",
+    "$$s = \\left(539 \\times 3 + \\frac{1}{2} \\times 23.3 \\times 3^{2}\\right) = 1722\\ \\mathrm{m}$$"
+   ],
+   "answer": null
+  },
+  {
+   "type": "section",
+   "number": "1.3",
+   "title": "相对运动"
+  },
+  {
+   "type": "video",
+   "source": "bilibili",
+   "bvid": "BV1eK4y1E7Cb",
+   "page": 4,
+   "title": "📺 视频学习：相对运动",
+   "caption": "东北大学《大学物理》MOOC 课堂录播（马文蔚《物理学》配套课程），第 2 次课 配套；本讲对应教材 1-3 相对运动（伽利略速度变换），时长 31:22。注意：视频标题里的 1.x 是该课程的讲次编号，与教材小节号含义不同，请以本卡片标注的教材小节为准。<a href=\"https://www.bilibili.com/video/BV1eK4y1E7Cb?p=4\" target=\"_blank\" rel=\"noopener\">在 B 站打开本讲 ↗</a>（嵌入加载失败、或想看弹幕与讲义时点此）"
+  },
+  {
+   "type": "text",
+   "html": "<h4>一、时间与空间</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在图1-19中，小车以通常的速度 $v$ 沿水平轨道先后通过点 $A$ 和点 $B$.如站在地面的人测得通过点 $A$ 和点 $B$ 的时间为 $\\Delta t = t_{B} - t_{A}$；而站在车上的人测得通过 $A$、$B$ 两点的时间为 $\\Delta t' = t'_{B} - t'_{A}$.两者是相等的，即 $\\Delta t = \\Delta t'$.也就是说，在两个作相对直线运动的参考系(地面和小车)中，时间的测量是绝对的，与参考系无关。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>同样，在地面上的人和在车上的人测得 $A$、$B$ 两点之间的距离相等，都等于 $AB$.这也就是说，两个作相对运动的参考系中，长度的测量也是绝对的，与参考系无关。在人们的日常生活和一般生产活动中，上述关于时间和空间量度的结论是毋庸置疑的。时间和长度的绝对性是经典力学或牛顿力学的基础。以后我们将介绍，当相对运动的速度接近于光速时，时间和空间的测量将依赖于相对运动的速度①.只是由于牛顿力学所涉及物体的运动速度远小于光速，即 $v \\ll c$，所以在牛顿力学范围内，时间与空间的测量才可以视为与参考系的选取无关。然而，在牛顿力学范围内，运动质点的位移、速度和运动轨迹则与参考系的选择有关。本节将着重讨论这方面的问题。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch01/pages_0_50_148e5b8d9eda6e191d24a82bef05601f5059985b7f12890705d8ea72e52ff078.jpg",
+   "caption": "图 1-19 低速运动时，时间和空间的测量是绝对的"
+  },
+  {
+   "type": "text",
+   "html": "<h4>二、相对运动</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>质点的运动轨迹依赖于观察者(即参考系)的例子是很多的。例如一个人站在作匀速直线运动的车上，竖直向上抛出一个钢球，车上的观察者看到钢球竖直上升并竖直下落[图1-20(a)]，但是，站在地面上的另一人却看到钢球的运动轨迹为一抛物线[图1-20(b)].从这个例子可以看出，钢球的运动情况依赖于参考系。这个例子也就是第1-1节中所述的运动描述的相对性。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch01/pages_0_50_66280cce9b5104a55667a09ea6b1f9df739a58fc209a4a36432b3a63a26cdb80.png",
+   "caption": "图 1-20(a) 车上观察者看到钢球竖直上升下落"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch01/pages_0_50_c22580a85445cc19a868dc68f9352e55cbee3a369157c699155939be89f3364c.png",
+   "caption": "图 1-20(b) 地面观察者看到钢球作抛物线运动"
+  },
+  {
+   "type": "text",
+   "html": "<p>设有两个参考系，一个为 $S$ 系(即 $Oxy$ 坐标系)，另一个为 $S'$ 系(即 $O'x'y'$ 坐标系).开始时(即 $t = 0$)，这两个参考系相重合。有一个质点在 $S$ 系中的位置以点 $P$ 表示，而在 $S'$ 系中的位置以点 $P'$ 表示。显然，在 $t = 0$ 时，点 $P$ 与点 $P'$ 共居于一点[图1-21(a)].</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如果在时间 $\\Delta t$ 内，$S'$ 系沿 $x$ 轴以速度 $\\mathbf{u}$ 相对 $S$ 系运动的同时，质点运动到点 $Q$.在这段时间内，$S'$ 系沿 $x$ 轴相对 $S$ 系的位移为 $\\Delta \\mathbf{D} = \\mathbf{u}\\Delta t$.在同样的时间内，在 $S$ 系中，质点从点 $P$ 运动到点 $Q$，其位移为 $\\Delta \\mathbf{r}$；而在 $S'$ 系中，质点则由点 $P'$ 运动到点 $Q$，其位移为 $\\Delta \\mathbf{r}'$ [图1-21(b)].在相等的时间内，显然 $\\Delta \\mathbf{r}$ 和 $\\Delta \\mathbf{r}'$ 是不相等的。因为在图1-21(b)中可以看出，从 $S$ 系看来，质点犹如同时参与两种运动：质点除随 $S'$ 系以速度 $\\mathbf{u}$ 沿 $x$ 轴运动外，还要从点 $P'$ 运动到点 $Q$.质点在 $S$ 系中的位移 $\\Delta \\mathbf{r}$ 应等于 $S'$ 系相对 $S$ 系的位移 $\\Delta \\mathbf{D}$ 与质点在 $S'$ 系中的位移 $\\Delta \\mathbf{r}'$ 之和，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\Delta \\mathbf{r} = \\Delta \\mathbf{r}' + \\Delta \\mathbf{D} = \\Delta \\mathbf{r}' + \\mathbf{u}\\Delta t",
+   "label": "式（1-19）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式表明，质点的位移取决于参考系的选择。若 $S'$ 系相对 $S$ 系处于静止状态(即 $\\mathbf{u} = 0$)，那么，质点在两参考系中的位移应相等，即 $\\Delta \\mathbf{r} = \\Delta \\mathbf{r}'$.</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>由位移的相对性可得出速度的相对性。用时间 $\\Delta t$ 除式(1-19)，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\frac{\\Delta \\mathbf{r}}{\\Delta t} = \\frac{\\Delta \\mathbf{r}'}{\\Delta t} + \\mathbf{u}"
+  },
+  {
+   "type": "text",
+   "html": "<p>取 $\\Delta t \\to 0$ 时的极限值，得</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\frac{\\mathrm{d}\\mathbf{r}}{\\mathrm{d}t} = \\frac{\\mathrm{d}\\mathbf{r}'}{\\mathrm{d}t} + \\mathbf{u}"
+  },
+  {
+   "type": "text",
+   "html": "<p>即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{v} = \\mathbf{v}' + \\mathbf{u}",
+   "label": "式（1-20）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch01/pages_0_50_fig1_21_coordinate_displacement.png",
+   "caption": "图 1-21 质点在相对作匀速直线运动的两个坐标系中的位移"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $\\mathbf{u}$ 为 $S'$ 系相对 $S$ 系的速度，$\\mathbf{v}'$ 为质点相对 $S'$ 系的速度，$\\mathbf{v}$ 为质点相对 $S$ 系的速度。上式的物理意义是：质点相对 $S$ 系的速度等于它相对 $S'$ 系的速度与 $S'$ 系相对 $S$ 系的速度之矢量和(图1-22).</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>习惯上，常把视为静止的参考系 $S$ 作为基本参考系，把相对 $S$ 系运动的参考系 $S'$ 作为运动参考系。这样，质点相对基本参考系 $S$ 的速度 $\\mathbf{v}$ 就叫做绝对速度，质点相对运动参考系 $S'$ 的速度 $\\mathbf{v}'$ 叫做相对速度，而运动参考系 $S'$ 相对基本参考系 $S$ 的速度 $\\mathbf{u}$ 叫做牵连速度。于是式(1-20)可理解为：质点相对基本参考系的绝对速度 $\\mathbf{v}$，等于运动参考系相对基本参考系的牵连速度 $\\mathbf{u}$ 与质点相对运动参考系的相对速度 $\\mathbf{v}'$ 之和。例如，在匀速前进的平板车上，一人在车上行走。取地面为基本参考系，车为运动参考系，若车相对地的速度(即牵连速度)为 $\\mathbf{v}_{\\mathrm{TG}}$，人对车的速度(即相对速度)</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch01/pages_0_50_90207eb45d1bca65a4743ec6f6ad6c632bb146548805aba58fa207c614326287.png",
+   "caption": "图 1-22 速度的相对性：v = v′ + u"
+  },
+  {
+   "type": "text",
+   "html": "<p>为 $\\mathbf{v}_{\\mathrm{MT}}$，那么人对地的速度(即绝对速度) $\\mathbf{v}_{\\mathrm{MG}}$ 为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{v}_{\\mathrm{MG}} = \\mathbf{v}_{\\mathrm{MT}} + \\mathbf{v}_{\\mathrm{TG}}"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 M、G 和 T 分别代表人、地和车。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>式(1-20)给出了质点在两个以恒定的速度作相对运动的参考系中速度与参考系间的关系，即质点的速度变换关系式。这个式子叫做伽利略速度变换式。需要指出的是，当质点的速度接近光速时，伽利略速度变换式就不适用了。此时速度的变换应当遵循洛伦兹速度变换式①.</p>"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（1.3 节 · 例 6）",
+   "problem": "如图1-23所示，一实验者 $A$ 在以 $10\\ \\mathrm{m \\cdot s^{-1}}$ 的速率沿水平轨道前进的平板车上控制一台弹射器。此弹射器以与车前进的反方向呈 $60^{\\circ}$ 角斜向上射出一弹丸。此时站在地面上的另一实验者 $B$ 看到弹丸竖直向上运动。求弹丸上升的高度。<br><img src=\"assets/images/ch01/pages_0_50_88fa6d3b02e477a00a9038b0d86d32f1c9caae24361fdeb6ae4fd035d577ebc3.png\" style=\"max-width:60%\"><br>图1-23",
+   "solution_steps": [
+    "设地面参考系为 $S$ 系，其坐标系为 $Oxy$，平板车参考系为 $S'$ 系，其坐标系为 $O'x'y'$，且 $S'$ 系以速率 $u = 10\\ \\mathrm{m \\cdot s^{-1}}$ 沿 $Ox$ 轴正向相对 $S$ 系运动。由图中所选定的坐标系可知，在 $S'$ 系中的实验者 $A$ 射出弹丸的速度 $\\mathbf{v}'$ 在 $x'$、$y'$ 轴上的分量分别为 $v'_{x}$ 和 $v'_{y}$，它们与抛出角 $\\alpha$ 的关系为",
+    "$$\\tan\\alpha = \\frac{v'_{y}}{v'_{x}} \\tag{1}$$",
+    "若以 $\\mathbf{v}$ 代表弹丸相对 $S$ 系的速度，那么它在 $x$、$y$ 轴上的分量则为 $v_{x}$ 和 $v_{y}$.由速度变换式(1-20)及题意可得",
+    "$$v_{x} = v'_{x} + u \\tag{2}$$",
+    "$$v_{y} = v'_{y} \\tag{3}$$",
+    "由于 $S$ 系(地面)的实验者 $B$ 看到弹丸是竖直向上运动的，故 $v_{x} = 0$.于是，由式(2)有",
+    "$$v'_{x} = -u = -10\\ \\mathrm{m \\cdot s^{-1}}$$",
+    "另由式(3)和式(1)可得",
+    "$$v'_{y} = v'_{x}\\tan 60^{\\circ} = 10 \\times \\sqrt{3} = 17.3\\ \\mathrm{m \\cdot s^{-1}}$$",
+    "即 $v_{y} = v'_{y} = 17.3\\ \\mathrm{m \\cdot s^{-1}}$.",
+    "由匀变速直线运动公式可得弹丸上升的高度为",
+    "$$y = \\frac{v_{y}^{2}}{2g} = \\frac{17.3^{2}}{2 \\times 9.8} = 15.3\\ \\mathrm{m}$$"
+   ],
+   "answer": null
+  },
+  {
+   "type": "homework",
+   "title": "本章作业",
+   "allowRetry": 2,
+   "showAnswerAfter": true,
+   "batches": [
+    {
+     "title": "第 1 次作业（1-1 质点运动的描述）",
+     "dueDate": "2026-08-28T23:59:59+08:00",
+     "items": [
+      {
+       "type": "choice",
+       "question": "［教材习题 1-1(1)］质点作曲线运动，在时刻 t 位矢为 r、速度为 v、速率为 v，t 至 t+Δt 内位移为 Δr、路程为 Δs、位矢大小的变化量为 Δr。根据上述情况，则必有（　）",
+       "options": [
+        "|Δr| = Δs = Δr",
+        "|Δr| ≠ Δs ≠ Δr；当 Δt→0 时有 |dr| = ds ≠ dr",
+        "|Δr| ≠ Δr ≠ Δs；当 Δt→0 时有 |dr| = dr ≠ ds",
+        "|Δr| = Δs ≠ Δr；当 Δt→0 时有 |dr| = dr = ds"
+       ],
+       "answer": 1,
+       "explanation": "选 B。曲线运动中位移的大小不等于路程，也不等于位矢模的变化；只有 Δt→0 时位移元的大小 |dr| 才等于路程元 ds，而 dr（位矢模的微分）一般不等于 ds。（上册无答案册，本答案按概念推定）"
+      },
+      {
+       "type": "fill",
+       "question": "［教材习题 1-6］已知质点沿 x 轴作直线运动，运动方程为 x = 2 + 6t² − 2t³（x 以 m 计，t 以 s 计）。运动开始后 4.0 s 内：位移大小为 ______ m，所通过的路程为 ______ m；t = 4 s 时质点的速度为 ______ m/s，加速度为 ______ m/s²。",
+       "blanks": [
+        {
+         "answer": "32",
+         "tolerance": 0.5
+        },
+        {
+         "answer": "48",
+         "tolerance": 0.5
+        },
+        {
+         "answer": "-48",
+         "tolerance": 0.5
+        },
+        {
+         "answer": "-36",
+         "tolerance": 0.5
+        }
+       ],
+       "explanation": "x(0)=2 m，x(4)=−30 m，位移 = −32 m（大小 32 m）。v=dx/dt=12t−6t²，t=2 s 时 v=0 转向，x(2)=10 m，路程 =(10−2)+|−30−10| = 8+40 = 48 m。v(4)=48−96=−48 m/s；a=dv/dt=12−12t，a(4)=−36 m/s²。（答案按公式推定，依据同上）"
+      },
+      {
+       "type": "calculation",
+       "question": "［教材习题 1-9］质点的运动方程为 x = −10t + 30t²，y = 15t − 20t²（x、y 以 m 计，t 以 s 计）。求初速度的大小（结果以 m/s 为单位，保留 1 位小数）。",
+       "answer": 18.0,
+       "unit": "m/s",
+       "tolerance": 0.1,
+       "solution": "v₀ₓ = dx/dt|₀ = −10 m/s，v₀_y = dy/dt|₀ = 15 m/s，v₀ = √((−10)²+15²) = √325 ≈ 18.0 m/s，方向与 x 轴正向成 180°−arctan(15/10) ≈ 123.7°。加速度 aₓ=60 m/s²、a_y=−40 m/s²，a = √5200 ≈ 72.1 m/s²，方向与 x 轴成 arctan(−40/60) ≈ −33.7°。（答案按公式推定，依据同上）"
+      },
+      {
+       "type": "qa",
+       "question": "［教材问题 1-7］一人站在地面上用枪瞄准悬挂在树上的木偶。当子弹从枪口射出时，木偶正好从树上由静止自由下落。试问为什么子弹总可以射中木偶？",
+       "rubric": "指出子弹与木偶的加速度相同（均为重力加速度 g）（3 分）；用相对运动或运动叠加原理说明：在重力场中两者一同「下落」，相对加速度为零（4 分）；得出结论：子弹相对木偶沿瞄准线匀速接近，故必命中（不计空气阻力、命中前木偶未落地）（3 分）",
+       "reference": "子弹出膛后与木偶一样只受重力，二者加速度完全相同，相对加速度为零。因此若以木偶（自由下落参考系）为参照，子弹不受重力影响，沿初始瞄准方向作匀速直线运动，必然命中（前提是命中前木偶尚未落地、且不计空气阻力）。从地面系看，子弹沿抛物线运动，但在同一时间内两者下落的竖直位移 ½gt² 完全相同，子弹始终在瞄准线上。",
+       "maxScore": 10
+      }
+     ]
+    },
+    {
+     "title": "第 2 次作业（1-2 ～ 1-3：圆周运动与相对运动）",
+     "dueDate": "2026-09-04T23:59:59+08:00",
+     "items": [
+      {
+       "type": "choice",
+       "question": "［教材习题 1-4］一个质点在作圆周运动时，则（　）",
+       "options": [
+        "切向加速度一定改变，法向加速度也改变",
+        "切向加速度可能不变，法向加速度一定改变",
+        "切向加速度可能不变，法向加速度不变",
+        "切向加速度一定改变，法向加速度不变"
+       ],
+       "answer": 1,
+       "explanation": "选 B。匀速率圆周运动时切向加速度恒为零（不变），故切向加速度「可能」不变；法向加速度 a_n=v²/r 的方向始终指向圆心、时刻在转，方向必然改变，变速时大小也变，故法向加速度一定改变。（上册无答案册，本答案按概念推定）"
+      },
+      {
+       "type": "fill",
+       "question": "［教材习题 1-29］在无风的下雨天，一列火车以 v₁ = 20.0 m/s 的速度匀速前进，车内旅客看见玻璃窗外的雨滴和竖直线成 75° 角下降。设雨滴匀速下落，则雨滴相对地面的下落速度 v₂ 为 ______ m/s（保留 2 位小数）。",
+       "blanks": [
+        {
+         "answer": "5.36",
+         "tolerance": 0.05
+        }
+       ],
+       "explanation": "雨滴相对车的速度为 v₂−v₁（矢量），其与竖直方向夹角满足 tan75° = v₁/v₂，故 v₂ = v₁/tan75° = 20.0/3.732 ≈ 5.36 m/s。（答案按公式推定，依据同上）"
+      },
+      {
+       "type": "calculation",
+       "question": "［教材习题 1-26(1)］一质点在半径为 0.10 m 的圆周上运动，角位置 θ = 2 + 4t³（θ 以 rad 计，t 以 s 计）。求 t = 2.0 s 时质点的法向加速度（结果以 m/s² 为单位，保留 1 位小数）。",
+       "answer": 230.4,
+       "unit": "m/s²",
+       "tolerance": 1.0,
+       "solution": "ω = dθ/dt = 12t²，t=2 s 时 ω = 48 rad/s；a_n = Rω² = 0.10×48² = 230.4 m/s²。附：α = dω/dt = 24t，t=2 s 时 a_t = Rα = 4.8 m/s²，总加速度 a = √(230.4²+4.8²) ≈ 230.5 m/s²。（答案按公式推定，依据同上）"
+      },
+      {
+       "type": "qa",
+       "question": "［教材问题 1-14］两个质点分别以初速度 v₁₀ 和 v₂₀ 抛出，两初速度在同一平面内且与水平面的夹角分别为 θ₁ 和 θ₂。有人说，在任意时刻，两质点的相对速度是一常量。你说对吗？",
+       "rubric": "明确回答「对」（2 分）；指出两质点均只受重力、加速度同为 g（3 分）；论证相对加速度 a₁−a₂ = 0，故相对速度 v₁₀−v₂₀ 不随时间变化（4 分）；可举相对轨迹为匀速直线加以说明（1 分）",
+       "reference": "对。两质点抛出后均只受重力，加速度都是 g，相对加速度 a₁−a₂ = g−g = 0，所以相对速度恒等于初始相对速度 v₁₀−v₂₀，为常量。也就是说，在一个以 g 自由下落的参考系中看，两质点各自作匀速直线运动，彼此匀速远离或接近。",
+       "maxScore": 10
+      }
+     ]
+    }
+   ],
+   "socratic": {
+    "type": "socratic",
+    "chapter": "1 质点运动学",
+    "sessions": [
+     {
+      "label": "第 1 次课讨论（1-1 质点运动的描述）",
+      "topics": [
+       {
+        "title": "v = dr/dt 对吗？（教材问题 1-3）",
+        "question": "已知质点的运动方程为 r = x(t)i + y(t)j，有人说其速度和加速度分别为 v = dr/dt、a = d²r/dt²，其中 r = √(x²+y²)。这个说法对吗？提示：注意等式两边的量纲与方向——位矢的「模」对时间求导，和位矢「本身」对时间求导，差在哪里？试举一个 r 不变但 v ≠ 0 的运动实例。"
+       }
+      ]
+     },
+     {
+      "label": "第 2 次课讨论（1-2 ～ 1-3：圆周运动与相对运动）",
+      "topics": [
+       {
+        "title": "船过河，船头该朝哪个方向？",
+        "question": "一人划船横渡水流湍急的大河，要到达正对岸，船头应该指向正对岸吗？请分别从岸上观察者和船上观察者的角度分析：两个参考系里船的轨迹分别是什么样？若要过河时间最短，船头又该指向哪里？两种目标能同时达到吗？（可对照课后习题 1-31 用伽利略速度变换定量验证）"
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ]
+}

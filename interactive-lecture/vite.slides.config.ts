@@ -25,6 +25,9 @@ export default defineConfig({
   build: {
     // The temporary build directory is reusable; cleanup is explicit and recoverable.
     emptyOutDir: false,
+    // 幻灯片产物是单文件 HTML，不需要 public/；且 public/learn/textbook 是
+    // 被锁住的残留目录，内置 copyDir 会因 EPERM 中断，这里直接关掉。
+    copyPublicDir: false,
     outDir: 'dist-slides',
     assetsInlineLimit: 100 * 1024 * 1024,
     rollupOptions: {

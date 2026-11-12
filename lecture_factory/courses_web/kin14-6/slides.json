@@ -89,7 +89,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "相对论质量与动能",
+     "qa": [
+      {
+       "q": "相对论质量与静止质量有什么关系？",
+       "a": "相对论质量 $m=\\dfrac{m_0}{\\sqrt{1-v^2/c^2}}$，随速度增大而增大，v 趋近 c 时趋于无穷。"
+      },
+      {
+       "q": "相对论动能公式和经典动能有何不同？",
+       "a": "相对论动能 $E_k=mc^2-m_0c^2$，低速时退化为 $\\frac{1}{2}m_0v^2$，高速时动能可远超经典值。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -109,7 +122,20 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "质能关系公式",
+     "qa": [
+      {
+       "q": "E=mc² 里的 E 指什么能量？",
+       "a": "指物体的总相对论能量，包含静止能量 $m_0c^2$ 与动能，$E=mc^2$ 中 m 为相对论质量。"
+      },
+      {
+       "q": "这个公式说明质量和能量可以互相转化吗？",
+       "a": "它表明质量与能量是同一物体的两种量度，质量的变化对应能量变化 $\\Delta E=\\Delta m\\,c^2$，是核能释放的理论基础。"
+      }
+     ],
+     "important": true
     }
    ],
    "heading": "封面"
@@ -196,7 +222,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "相对论质量公式",
+     "qa": [
+      {
+       "q": "为什么质量会随速度变化？",
+       "a": "$m=m_0/\\sqrt{1-v^2/c^2}$，速度越大分母越小，质量越大；$v\\to c$ 时质量趋于无穷。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -236,6 +271,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "相对论动力学方程",
+     "qa": [
+      {
+       "q": "这个方程和牛顿第二定律有什么区别？",
+       "a": "$F=\\mathrm{d}p/\\mathrm{d}t$ 中 $p=mv$ 且 $m$ 随速度变，故 $F\\neq ma$，高速时须用此式。"
+      }
      ]
     },
     {
@@ -276,7 +319,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "质能关系",
+     "qa": [
+      {
+       "q": "质能方程说明什么？",
+       "a": "$E=mc^2$ 表明质量与能量等价，质量的变化对应巨大能量释放，是核能的理论基础。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -356,6 +408,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "动量能量关系",
+     "qa": [
+      {
+       "q": "光子没有静质量，能量怎么算？",
+       "a": "由 $E^2=p^2c^2+m_0^2c^4$，取 $m_0=0$ 得 $E=pc$，即光子能量由动量决定。"
+      }
      ]
     },
     {
@@ -498,6 +558,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "动量守恒要求质量变",
+     "qa": [
+      {
+       "q": "为什么质量不能是常量？",
+       "a": "要让动量守恒在洛伦兹变换下保持成立，质量必须随速度变化，不能取常量。"
+      }
      ]
     },
     {
@@ -510,7 +578,20 @@
      "tex": "m=\\frac{m_0}{\\sqrt{1-v^2/c^2}}",
      "size": 30,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "相对论质量公式",
+     "qa": [
+      {
+       "q": "公式里的 m₀ 和 m 分别是什么？",
+       "a": "$m_0$ 是静质量，即物体静止时的质量；$m$ 是物体以速度 $v$ 运动时的相对论质量。"
+      },
+      {
+       "q": "为什么分母是根号下一减 v²/c²？",
+       "a": "这是为保证动量守恒在洛伦兹变换下成立而要求的质量形式，速度越大分母越小。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -550,7 +631,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "速度趋光速质量发散",
+     "qa": [
+      {
+       "q": "速度真到了 c，质量会变成多少？",
+       "a": "分母趋于 0，$m\\to\\infty$，质量趋于无穷大，因此有静质量的物体无法达到光速。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "box",
@@ -600,7 +690,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "质量变大是惯性增大",
+     "qa": [
+      {
+       "q": "质量变大是不是物体真的变重了？",
+       "a": "不是。是惯性随速度增大，物体越来越难被加速，并非物体本身「变重」。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -699,7 +797,16 @@
      "tex": "\\vec{F}=\\frac{\\mathrm{d}\\vec{p}}{\\mathrm{d}t}",
      "size": 30,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "相对论动力学方程",
+     "qa": [
+      {
+       "q": "为什么相对论动力学方程形式还是 F=dp/dt？",
+       "a": "形式不变，但 p=mv 中 m 随速度变化，所以不能把 m 提出导数外。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -731,7 +838,16 @@
      "tex": "\\vec{F}=m\\vec{a}+\\vec{v}\\frac{\\mathrm{d}m}{\\mathrm{d}t}",
      "size": 26,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "F=ma+v·dm/dt",
+     "qa": [
+      {
+       "q": "为什么多出 v·dm/dt 这一项？",
+       "a": "因为 m 随 v 变化，对 p=mv 求导时要用乘积法则，m 不能当常量提出。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -791,6 +907,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "牛顿第二定律是低速近似",
+     "qa": [
+      {
+       "q": "牛顿第二定律在什么条件下成立？",
+       "a": "当 v≪c 时 m≈m₀ 为常量，F=ma 才成立，它是相对论方程的低速近似。"
+      }
      ]
     },
     {
@@ -845,7 +969,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "动量守恒与相对论质量",
+     "qa": [
+      {
+       "q": "高速下动量守恒还成立吗？",
+       "a": "成立，但必须用相对论质量 m 的 p=mv；用 p=m₀v 的守恒在高速下会被破坏。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -924,7 +1056,15 @@
      "tex": "E_{\\mathrm{k}}=\\int F\\,\\mathrm{d}s=\\int v\\,\\mathrm{d}p",
      "size": 24,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "相对论动能积分式",
+     "qa": [
+      {
+       "q": "为什么动能要写成对 v dp 的积分？",
+       "a": "由动能定理，合外力做功等于动能增量，代入 $F=dp/dt$ 并对位移积分即得。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -956,7 +1096,20 @@
      "tex": "E_{\\mathrm{k}}=mc^2-m_0c^2",
      "size": 32,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "相对论动能公式",
+     "qa": [
+      {
+       "q": "相对论动能公式是什么？",
+       "a": "$E_k=mc^2-m_0c^2$，即总能量减去静能量。"
+      },
+      {
+       "q": "这里的 m 和 m₀ 分别是什么？",
+       "a": "$m$ 是相对论质量，$m_0$ 是静质量，两者之差乘以 $c^2$ 即动能。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -976,7 +1129,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "动能等于能量之差",
+     "qa": [
+      {
+       "q": "为什么说动能是两个能量之差？",
+       "a": "公式结构为总能量减静能量，暗示能量本身分为「静」与「动」两部分。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1008,7 +1170,15 @@
      "tex": "E_{\\mathrm{k}}\\approx\\frac{1}{2}m_0v^2",
      "size": 26,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "低速近似经典动能",
+     "qa": [
+      {
+       "q": "相对论动能怎么回到经典公式？",
+       "a": "低速展开后第一项正是 $\\frac{1}{2}m_0v^2$，高阶项可忽略，经典公式即近似。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -1371,7 +1541,15 @@
      "tex": "{}^{7}\\mathrm{Li}+{}^{1}\\mathrm{H}\\to2\\,{}^{4}\\mathrm{He}",
      "size": 24,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "锂核裂变方程",
+     "qa": [
+      {
+       "q": "这个反应方程具体是什么？",
+       "a": "${}^{7}\\mathrm{Li}+{}^{1}\\mathrm{H}\\to2\\,{}^{4}\\mathrm{He}$，质子轰击锂核生成两个氦核。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -1403,7 +1581,16 @@
      "tex": "\\Delta m=0.0186\\ \\mathrm{u}",
      "size": 26,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "质量亏损",
+     "qa": [
+      {
+       "q": "质量亏损是多少？",
+       "a": "反应前后质量差 $\\Delta m=0.0186\\ \\mathrm{u}$，是质能关系验证的关键数据。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1435,7 +1622,20 @@
      "tex": "\\Delta E=\\Delta m\\,c^2=17.3\\ \\mathrm{MeV}",
      "size": 26,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "质能关系验证",
+     "qa": [
+      {
+       "q": "怎么用质能关系算出能量？",
+       "a": "$\\Delta E=\\Delta m\\,c^2=17.3\\ \\mathrm{MeV}$，与实验测量值完全一致。"
+      },
+      {
+       "q": "为什么说这是第一个定量验证？",
+       "a": "算出的 17.3 MeV 与测得的 17.3 MeV 分毫不差，首次用实验定量证实 $E=mc^2$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "box",
@@ -1535,7 +1735,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "人工释放核能",
+     "qa": [
+      {
+       "q": "这件事有什么重大意义？",
+       "a": "人类第一次用人工方法释放核能，成为原子能时代的起点。"
+      }
+     ]
     },
     {
      "type": "box",
@@ -1616,7 +1824,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "核裂变定义",
+     "qa": [
+      {
+       "q": "什么是核裂变？",
+       "a": "重核分裂成两个中等质量的核，同时质量减少、放出能量。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1648,7 +1865,16 @@
      "tex": "\\Delta E=\\Delta m\\,c^2",
      "size": 26,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "质能方程",
+     "qa": [
+      {
+       "q": "裂变放出的能量怎么算？",
+       "a": "用质量亏损乘光速平方：$\\Delta E=\\Delta m\\,c^2$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1688,6 +1914,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "裂变释放能量",
+     "qa": [
+      {
+       "q": "1克铀-235裂变能放多少能量？",
+       "a": "约 $8\\times10^{10}$ J，相当于约 3 吨煤燃烧的能量。"
+      }
      ]
     },
     {
@@ -1728,6 +1962,18 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "链式反应",
+     "qa": [
+      {
+       "q": "什么是链式反应？",
+       "a": "裂变产生的中子再引发新的裂变，一代代持续下去。"
+      },
+      {
+       "q": "链式反应有哪些应用？",
+       "a": "不可控的是原子弹，可控的是核电站。"
+      }
      ]
     },
     {
@@ -1938,7 +2184,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "氘氚聚变方程",
+     "qa": [
+      {
+       "q": "氘氚聚变生成什么？",
+       "a": "$^{2}$H + $^{3}$H → $^{4}$He + n，释放 17.6 MeV 能量。"
+      },
+      {
+       "q": "为什么聚变单位质量放能更多？",
+       "a": "轻核聚变后比结合能增大，质量亏损更大，故单位质量释放能量比裂变多。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1978,7 +2237,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "聚变条件",
+     "qa": [
+      {
+       "q": "为什么聚变需要极高温度？",
+       "a": "原子核带正电，需足够动能克服库仑斥力才能靠近发生聚变。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2098,6 +2366,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "受控核聚变",
+     "qa": [
+      {
+       "q": "人类可控聚变实现了吗？",
+       "a": "尚未实现，正在攻关，主要用磁约束方式。氢弹是不可控聚变。"
+      }
      ]
     },
     {
@@ -2132,7 +2408,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "比结合能曲线",
+     "qa": [
+      {
+       "q": "为什么裂变和聚变都放能？",
+       "a": "比结合能曲线两头低中间高，裂变和聚变都朝中间走，比结合能增大故放能。"
+      }
+     ]
     }
    ],
    "heading": "七　核聚变"
@@ -2171,7 +2455,20 @@
      "tex": "E^2=p^2c^2+m_0^2c^4",
      "size": 32,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "质能动量关系",
+     "qa": [
+      {
+       "q": "这个公式里各项分别代表什么？",
+       "a": "$E$ 是总能量，$p$ 是动量，$m_0$ 是静质量，$c$ 为光速；三者构成三角关系。"
+      },
+      {
+       "q": "静质量为零时公式变成什么？",
+       "a": "此时 $E^2=p^2c^2$，即 $E=pc$，光子就满足这一关系。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2223,7 +2520,16 @@
      "tex": "E=pc",
      "size": 30,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "光子能量动量式",
+     "qa": [
+      {
+       "q": "为什么光子有能量却没有静质量？",
+       "a": "因 $m_0=0$，$E=pc$ 仍成立，能量来自动量而非静质量。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2255,7 +2561,15 @@
      "tex": "p=\\frac{h}{\\lambda},\\qquad E=h\\nu",
      "size": 24,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "波粒二象性联系",
+     "qa": [
+      {
+       "q": "这两个式子怎么体现波粒二象性？",
+       "a": "$p=h/\\lambda$、$E=h\\nu$ 把粒子量 $p,E$ 与波动量 $\\lambda,\\nu$ 联系起来。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -2329,7 +2643,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "光子恒以光速运动",
+     "qa": [
+      {
+       "q": "为什么不存在静止的光子？",
+       "a": "光子静质量为零，一产生就以 $c$ 运动，无需加速，也永远以 $c$ 运动。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -2436,7 +2758,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "洛伦兹因子计算",
+     "qa": [
+      {
+       "q": "γ 为什么等于 1.667？",
+       "a": "$\\gamma=1/\\sqrt{1-\\beta^2}=1/\\sqrt{1-0.64}=1/0.6\\approx1.667$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -2448,7 +2779,16 @@
      "tex": "E=\\gamma E_0=1563\\ \\mathrm{MeV}",
      "size": 26,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "总能量公式",
+     "qa": [
+      {
+       "q": "总能量怎么算？",
+       "a": "$E=\\gamma E_0=1.667\\times938\\ \\mathrm{MeV}\\approx1563\\ \\mathrm{MeV}$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -2460,7 +2800,15 @@
      "tex": "E_{\\mathrm{k}}=E-E_0=625\\ \\mathrm{MeV}",
      "size": 26,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "动能与静能关系",
+     "qa": [
+      {
+       "q": "动能为什么是总能量减静能？",
+       "a": "$E_k=E-E_0$，即相对论动能等于总能量减去静止能量，得 $625\\ \\mathrm{MeV}$。"
+      }
+     ]
     },
     {
      "type": "tex",
@@ -2472,7 +2820,15 @@
      "tex": "p=mv=6.68\\times10^{-19}\\ \\mathrm{kg\\cdot m/s}",
      "size": 22,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "相对论动量",
+     "qa": [
+      {
+       "q": "动量为什么用 mv 算？",
+       "a": "此处 $p=mv=\\gamma m_0 v$，代入得 $6.68\\times10^{-19}\\ \\mathrm{kg\\cdot m/s}$。"
+      }
+     ]
     },
     {
      "type": "box",
@@ -2645,7 +3001,15 @@
      "tex": "{}^{2}\\mathrm{H}+{}^{3}\\mathrm{H}\\to{}^{4}\\mathrm{He}+{}^{1}\\mathrm{n}",
      "size": 24,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "聚变反应方程",
+     "qa": [
+      {
+       "q": "氘氚聚变的反应式怎么写？",
+       "a": "${}^{2}\\mathrm{H}+{}^{3}\\mathrm{H}\\to{}^{4}\\mathrm{He}+{}^{1}\\mathrm{n}$，生成氦核并放出一个中子。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -2705,7 +3069,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "质量亏损",
+     "qa": [
+      {
+       "q": "质量亏损是怎么算出来的？",
+       "a": "反应前总质量 $5.0316\\ \\mathrm{u}$ 减反应后 $5.0113\\ \\mathrm{u}$，得 $\\Delta m=0.0189\\ \\mathrm{u}$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -2717,7 +3090,16 @@
      "tex": "\\Delta E=0.0189\\times931.5=17.6\\ \\mathrm{MeV}",
      "size": 24,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "聚变释放能量",
+     "qa": [
+      {
+       "q": "为什么用 931.5 乘质量亏损？",
+       "a": "由 $E=\\Delta m c^2$，$1\\ \\mathrm{u}$ 对应 $931.5\\ \\mathrm{MeV}$，故 $\\Delta E=0.0189\\times931.5=17.6\\ \\mathrm{MeV}$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2831,7 +3213,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "质能等价",
+     "qa": [
+      {
+       "q": "质量亏损是质量消失了吗？",
+       "a": "不是消失，是质量按 $E=\\Delta m c^2$ 转化成了能量。"
+      }
+     ]
     }
    ],
    "heading": "例 2　氘氚聚变"
@@ -2898,7 +3288,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "相对论质量",
+     "qa": [
+      {
+       "q": "为什么速度越大质量越大？",
+       "a": "$m=m_0/\\sqrt{1-v^2/c^2}$，v 趋近 c 时分母趋零，质量趋于无穷，故无法加速到光速。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2938,7 +3337,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "质能关系",
+     "qa": [
+      {
+       "q": "动能和总能量什么关系？",
+       "a": "$E_k=mc^2-m_0c^2$，总能量 $E=mc^2$，静能 $m_0c^2$，动能是二者之差。"
+      },
+      {
+       "q": "静止物体有能量吗？",
+       "a": "有，静能 $E_0=m_0c^2$，即使静止物体也蕴含巨大能量。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2978,6 +3390,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "核能与质量亏损",
+     "qa": [
+      {
+       "q": "核能从哪里来？",
+       "a": "裂变与聚变后总静质量减少，质量亏损按 $\\Delta E=\\Delta m c^2$ 放出能量。"
+      }
      ]
     },
     {
@@ -3018,6 +3438,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "动量能量关系",
+     "qa": [
+      {
+       "q": "这个公式对光子适用吗？",
+       "a": "适用，光子 $m_0=0$，得 $E=pc$，把动量与能量统一起来。"
+      }
      ]
     },
     {

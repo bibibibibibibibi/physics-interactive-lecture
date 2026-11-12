@@ -43,7 +43,7 @@ export default function RatePill({ rate, onChange, containerRef }: Props) {
   return (
     <div
       onMouseDown={startRateDrag}
-      className="absolute z-20 flex cursor-move gap-1 rounded-lg bg-black/50 p-1 backdrop-blur-sm select-none"
+      className="absolute z-20 flex cursor-move gap-1 rounded-lg bg-white/85 p-1 shadow-md ring-1 ring-[#d8dcd0] backdrop-blur-sm select-none"
       style={ratePos
         ? { left: ratePos.x, top: ratePos.y }
         : { left: '50%', top: 8, transform: 'translateX(-50%)' }}
@@ -54,7 +54,7 @@ export default function RatePill({ rate, onChange, containerRef }: Props) {
           key={r}
           onClick={() => onChange(r)}
           className={`rounded px-2 py-0.5 text-xs transition ${
-            rate === r ? 'bg-[#ffb703] text-[#0b1f38] font-bold' : 'text-slate-300 hover:bg-white/15'
+            rate === r ? 'bg-[#47675b] text-[#faf8e9] font-bold' : 'text-[#3d4f48] hover:bg-[#ecefe4]'
           }`}
         >
           {r}x

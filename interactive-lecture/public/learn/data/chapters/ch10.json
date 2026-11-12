@@ -1,0 +1,2169 @@
+{
+ "id": "ch10",
+ "title": "波动",
+ "subject": "oscillation",
+ "chapter": 10,
+ "week": "Week 10",
+ "difficulty": "★★★☆☆（波函数的相位分析是本章难点；与第 9 章衔接紧密，是光学干涉衍射的直接基础）",
+ "source": "马文蔚《物理学》第七版 第十章（OCR fixed 版转换 + 人工精选作业）",
+ "blocks": [
+  {
+   "type": "intro",
+   "summary": "本章在振动的基础上研究振动在空间的传播——波动。先建立机械波的形成、横波与纵波、波长·周期·波速等基本概念；再导出平面简谐波的波函数 y = Acos[ω(t−x/u)+φ]，理解波形曲线与振动曲线的区别；进而讨论波的能量与能流密度 I = ½ρA²ω²u（动能与势能同相变化是波动能量区别于孤立振子的关键）；然后学习惠更斯原理及波的衍射、干涉与相干条件；驻波部分掌握波节波腹、半波损失与简正模式；多普勒效应掌握三种情形的频率公式；最后介绍平面电磁波的特性、坡印廷矢量、电磁波谱以及声波、超声波与次声波。"
+  },
+  {
+   "type": "text",
+   "html": "<p>在上一章讨论振动的基础上，本章将进一步研究振动在空间的传播过程—波动波动是一种常见的物质运动形式，例如绳子上的波、空气中的声波和水面波等，它们都是机械振动在弹性介质中的传播形成的，这类波叫做机械波。波动并不限于机械波，无线电波、光波等也是一种波动，这类波是交变电磁场在空间的传播形成的，统称电磁波。机械波和电磁波在本质上是不相同的，但是它们都具有波动的共同特征，即都具有一定的传播速度，且都伴随着能量的传播，都能产生反射、折射、干涉和衍射等现象，而且有相似的数学表述形式。本章的主要内容为：机械波的形成，波函数和波的能量，惠更斯原理及其在波的衍射、干涉等方面的应用，驻波，多普勒效应，电磁波，超声波等。</p>"
+  },
+  {
+   "type": "section",
+   "number": "10.1",
+   "title": "机械波的几个概念"
+  },
+  {
+   "type": "video",
+   "source": "bilibili",
+   "bvid": "BV1eK4y1E7Cb",
+   "page": 46,
+   "title": "📺 视频学习：机械波的几个概念",
+   "caption": "东北大学《大学物理》MOOC 课堂录播（马文蔚《物理学》配套课程），第 1 次课 配套；本讲对应教材 10-1 机械波的几个概念（形成·横波纵波·波长波速），时长 26:40。注意：视频标题里的 10.x 是该课程的讲次编号，与教材小节号含义不同，请以本卡片标注的教材小节为准。<a href=\"https://www.bilibili.com/video/BV1eK4y1E7Cb?p=46\" target=\"_blank\" rel=\"noopener\">在 B 站打开本讲 ↗</a>（嵌入加载失败、或想看弹幕与讲义时点此）"
+  },
+  {
+   "type": "text",
+   "html": "<h3>一、机械波的形成</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<p>机械振动在弹性介质(固体、液体和气体)中传播就形成了机械波，这是因为弹性介质内各质元之间有弹性力相互作用着。当介质中某一质元离开平衡位置时，介质就发生了形变，于是，一方面邻近质元将对它施加弹性恢复力，使它回到平衡位置，并在平衡位置附近振动起来；另一方面根据牛顿第三定律，这个质元也将对邻近质元施加弹性力，迫使邻近质元也在自己的平衡位置附近振动起来。这样，当弹性介质中的一部分发生振动时，由于各部分之间的弹性相互作用，振动就由近及远地传播开去，形成了波动。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>二、横波与纵波</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<p>按照质元振动方向和波的传播方向的关系，机械波可分为横波与纵波，这是波动的两种最基本的形式</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>为什么要了解波动形式？因为不同的波动形式对应不同的产生机理，不同的机理会导致波的不同传播速度，甚至会影响到合成波的性质。例如，水面波是横波与纵波合成的椭圆波。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如图10-1(a)所示，用手握住一根绷紧的长绳，当手上下抖动时，绳子上各部分质元就依次上下振动起来，这种质元振动方向与波的传播方向相垂直的波，称为横波对于横波，你将会在绳子上看到交替出现凸起的波峰和凹下的波谷，并且它们以一定的速度沿绳传播，这就是横波的外形特征。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch10/fig10_1_redraw.png",
+   "caption": "图 10-1 横波与纵波的形成（重绘）"
+  },
+  {
+   "type": "text",
+   "html": "<p>将一根水平放置的长弹簧的一端固定起来，用手去拍打另一端，各部分弹簧就依次左右振动起来，如图10-1(b)所示。这种各质元的振动方向与波的传播方向相互平行的波，称为纵波。纵波的外形特征是弹簧出现交替的“稀疏”和“稠密”区域，并且它们以一定的速度传播出去。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>从图10-1中还可以看出，无论是横波还是纵波。它们都只是振动状态（即振动相位)的传播，弹性介质中各质元仅在各自的平衡位置附近振动，并没有随振动的传播而移走。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>三、波长　波的周期和频率　波速</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<p>波长、波的周期（或频率）和波速是描述波动的三个重要物理量。在同一波线上，两个相邻的、相位差为 $2\\pi$ 的振动质元之间的距离，叫做波长，用 $\\lambda$ 表示。波前进一个波长的距离所需要的时间，叫做波的周期，用 $T$ 表示；周期的倒数叫做波的频率，用 $\\nu$ 表示，即 $\\nu = 1/T$。单位时间内振动状态（相位）在介质中传播的距离，叫做波速，用 $u$ 表示。由于在一个周期内波前进一个波长的距离，故有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "u = \\frac {\\lambda} {T}",
+   "label": "式（10-1）"
+  },
+  {
+   "type": "text",
+   "html": "<p>即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "u = \\lambda \\nu",
+   "label": "式（10-2）"
+  },
+  {
+   "type": "text",
+   "html": "<p>波速的大小取决于介质的性质（介质的弹性和惯性），与波的频率无关；表 10-1 列出了一些介质中的声速。（本节 OCR 整节丢失，按教材补全）</p>"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "介质",
+    "温度/℃",
+    "声速/(m·s⁻¹)"
+   ],
+   "rows": [
+    [
+     "空气 (1.013×10⁵ Pa)",
+     "0",
+     "331"
+    ],
+    [
+     "空气 (1.013×10⁵ Pa)",
+     "20",
+     "343"
+    ],
+    [
+     "氢 (1.013×10⁵ Pa)",
+     "0",
+     "1270"
+    ],
+    [
+     "玻璃",
+     "0",
+     "5500"
+    ],
+    [
+     "花岗岩",
+     "0",
+     "3950"
+    ],
+    [
+     "冰",
+     "0",
+     "5100"
+    ],
+    [
+     "水",
+     "20",
+     "1460"
+    ],
+    [
+     "铝",
+     "20",
+     "5100"
+    ],
+    [
+     "黄铜",
+     "20",
+     "3500"
+    ]
+   ],
+   "caption": "表 10-1 一些介质中的声速"
+  },
+  {
+   "type": "text",
+   "html": "<p>必须指出，波速虽由介质决定，但波的频率是波源振动的频率，却与介质无关；因此，由式(10-1)或式(10-2)可知，同一频率的波的波长将随介质的不同而不同。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>四、波线波面波前</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<p>波源在弹性介质中振动时，振动将向各个方向传播，形成波动。为了便于形象和定量地讨论波的传播情况，我们引入波线、波面和波前的概念。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>沿波的传播方向画一些带有箭头的线，叫做波线介质中各质元都在平衡位置附近振动，我们把不同波线上相位相同的点所连成的曲面，叫做波面或同相面在任一时刻，波面可以有任意多个，一般使相邻两个波面之间的距离等于一个波长，如图10-2所示。在某一时刻，由波源最初振动状态传到的各点所连成的曲面，叫做波前或波阵面。显然，波前是波面的特例，但却是传到最前面的那个波面，所以，在任一时刻，只有一个波前。波面是球面的波，叫做球面波，波面是平面的波，叫做平面波。在各向同性介质中，波线与波面垂直。；柱面波</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch10/fig10_2_redraw.png",
+   "caption": "图 10-2 波线、波面与波前（a 球面波；b 平面波）（重绘）"
+  },
+  {
+   "type": "text",
+   "html": "<p>值得提及的是，在波动光学中，强调的是波面上各点等相位的特点，而在几何光学中，强调的是波线显示光波传播方向的特点。</p>"
+  },
+  {
+   "type": "section",
+   "number": "10.2",
+   "title": "平面简谐波的波函数"
+  },
+  {
+   "type": "video",
+   "source": "bilibili",
+   "bvid": "BV1eK4y1E7Cb",
+   "page": 47,
+   "title": "📺 视频学习：平面简谐波的波函数",
+   "caption": "东北大学《大学物理》MOOC 课堂录播（马文蔚《物理学》配套课程），第 1 次课 配套；本讲对应教材 10-2 平面简谐波的波函数，时长 32:02。注意：视频标题里的 10.x 是该课程的讲次编号，与教材小节号含义不同，请以本卡片标注的教材小节为准。<a href=\"https://www.bilibili.com/video/BV1eK4y1E7Cb?p=47\" target=\"_blank\" rel=\"noopener\">在 B 站打开本讲 ↗</a>（嵌入加载失败、或想看弹幕与讲义时点此）"
+  },
+  {
+   "type": "text",
+   "html": "<h3>一、平面简谐波的波函数</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<p>我们已经明白，机械波是机械振动在弹性介质中的传播，它是弹性介质中大量质元参与的一种集体运动形式。如果波沿x方向传播，那么要描述它，就应该知道x处的质元在任意时刻t的位移y，换句话说应该知道 $y \\left( \\boldsymbol {x} , t \\right)$ .我们把这种描述波传播的函数y(x,t)叫做波动函数，简称波函数。通常，波函数应该满足$y ( \\ x + \\Delta x \\ , t + \\Delta t ) = y ( \\ x \\ , t )$ 的关系，其中 $\\Delta x = u \\Delta t$ , u 是波速。该关系的含义是：x+∆x处的质元在t+∆t时刻的振动状态是x处的质元在t时刻振动状态的复制，它反映了波动是振动形式的传播这一特性</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>一般来说，波函数的表达式是比较复杂的。现在我们只研究一种最简单最基本的波，即在均匀、无吸收的介质中，当波源作简谐振动时，在介质中所形成的波。这种波叫做平面简谐波。理论分析表明，严格的简谐波只是一种理想化的模型，它不仅具有单一的频率和振幅而且必须在空间和时间上都是无限延展的。所以严格的简谐波是无法实现的。对于作简谐振动的波源在均匀、无吸收的介质中所形成的波，只可近似地看成简谐波。然而可以证明，任何非简谐的复杂的波，都可看成是由若干个频率不同的简谐波叠加而成的。图10-3就是由频率和振幅各不相同的三个简谐波叠加成复杂波的情形。因此，研究简谐波仍具有特别重要的意义。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch10/pages_50_100_b909181774ff2b705fde077ca9da494f5df73491ba40c2128c823a1899546e8e.png",
+   "caption": "图 10-3 三个不同的简谐波叠加成复杂波"
+  },
+  {
+   "type": "text",
+   "html": "<p>先来讨论沿0x轴正方向传播的简谐波。如图10-4所示，在原点0处有一 $O x$ 质元作简谐振动，为简便计，设其初相为零，故其运动方程为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "{\\gamma_{o} = A \\cos \\ \\omega t}"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中γo是质元在t时刻相对平衡位置的位 $y_{o}$ 移，A是振幅， $\\omega$ 是角频率。假定介质是均匀的、无吸收的，那么各点的振幅将保持不变。为了找出在 $O x$ 轴上所有质元在任一时刻t的位移，我们可在 $O x$ 轴正方向上任取一点P,它距点0的距离为 x.显然，当振动从点0传播到点P时，点P将以相同的振幅和频率</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch10/fig10_4_original.png",
+   "caption": "图 10-4 平面简谐波：波形曲线、波速 u、质元位置 x₀ 与 x（archive 教材原图扫描件；第三轮目检撤下 tex 重绘）"
+  },
+  {
+   "type": "text",
+   "html": "<p>重复点0的振动。但振动从点0传播到点P需经历时间为 $t_{0} = x / u \\left( \\right. u$ 为波速).这表明点0在时刻t的振动状态，要在时刻 ${\\boldsymbol {t}} + {\\boldsymbol {t}}_{0}$ 才能传到点P.换言之，点P在时刻t的振动状态，是点0在时刻 ${t - t_{0}}$ 的振动状态。于是点P在时刻t的位移为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\ y_{P} = A \\cos \\ \\omega \\left( t - {\\frac {x} {u}} \\right)",
+   "label": "式（10-3a）"
+  },
+  {
+   "type": "text",
+   "html": "<p>无须细说，此式显然适用于表述0x轴上所有质元的振动，从而可以描绘出 $O x$ 轴上各点位移随时间变化的整体图像，因此，上式即为沿0x轴正方向传播的平面简谐波的波函数，也常称为平面简谐波的波动方程。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>因为 $\\omega = 2 \\pi / T = 2 \\pi \\nu , u = \\lambda \\nu = \\lambda / T$ ,所以通常式(10-3a)可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\ y = A \\cos \\ 2 \\pi {\\left( \\frac {t} {T} - \\frac {x} {\\lambda} \\right)}",
+   "label": "式（10-3b）"
+  },
+  {
+   "type": "text",
+   "html": "<p>由于 $t = n T$ 时，振动传播的距离 $x = n \\lambda$ ,所以式(10-3b)中的 $t / T$ 与 $x / \\lambda$ 地位相当，因此λ亦可称为空间周期。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如取 $k = 2 \\pi / \\lambda$ ,h称为角波数，则波函数又可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "y {=} A \\cos \\left( \\omega t {-} k x \\right)",
+   "label": "式（10-3c）"
+  },
+  {
+   "type": "text",
+   "html": "<p>如果波沿 $O x$ 轴负方向传播，则点P的振动比点0早开始一段时间 $x / u$ ，也就是说，当点0的相位是ωt时，点P的相位已是 $\\omega ( t {+} x / u )$ .所以点P在任一时刻的位移为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\ y = A \\cos \\ \\omega {\\Biggl (} t + {\\frac {x} {u}} {\\Biggr )}",
+   "label": "式（10-4a）"
+  },
+  {
+   "type": "text",
+   "html": "<p>这就是沿Ox轴负方向传播的平面简谐波的波函数，并且同样也可写成以下两 $O x$ 种常用的形式：</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "y = A \\cos 2 \\pi \\left( {\\frac {t} {T}} + {\\frac {x} {\\lambda}} \\right)",
+   "label": "式（10-4b）"
+  },
+  {
+   "type": "formula",
+   "latex": "y = A \\cos \\left( \\omega t + k x \\right)",
+   "label": "式（10-4c）"
+  },
+  {
+   "type": "text",
+   "html": "<p>至此，不难将以上的讨论推广到更一般的情形。若波沿Ox轴的正方向传播， $O x$ 且已知距点0距离为 $x_{0}$ 的点 Q的振动规律为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "y_{Q} = A \\cos \\left( \\omega t + \\varphi \\right)"
+  },
+  {
+   "type": "text",
+   "html": "<p>则相应的波函数为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\ y = A \\cos \\left[ \\omega \\left( t - {\\frac {x - x_{0}} {u}} \\right) + \\varphi \\right]",
+   "label": "式（10-5）"
+  },
+  {
+   "type": "text",
+   "html": "<p>不难看出式(10-3)、式(10-4)、式(10-5)皆满足一般波函数关系式 $y \\left( \\ b {x} + \\ b {\\mathcal {N}} \\right)\\Delta x , t + \\Delta t ) = y ( x , t )$</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>二、波函数的物理含义</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<p>为了帮助大家理解波函数的物理含义，不妨以式(10-3)为例作一番研讨</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(1)当x一定时(相当于对某一质元用摄影机拍摄)，则y仅为时间t的函数。此时式(10-3)表示的是距原点0为x处的质元在不同时刻的位移，即该质元作简谐振动的情况。以γ为纵坐标，t为横坐标，可得如图10-5所示的波线上不同质元的y-t曲线。从这些曲线可以看出，它们的初相位依次为 $0 , - \\pi / 2 , - \\pi- 3 \\pi / 2 , - 2 \\pi$ .就是说 $x = \\lambda / 4$ 处质元的相位比 $x = 0$ 处质元的相位落后 $\\pi / 2$ ,其他质元则依次又落后 $\\pi / 2$</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(2)当t一定时(相当于对各个质元用照相机拍摄)， $O x$ 轴上所有质元的位移γ仅为x的函数。此时，式(10-3)表示了给定时刻各质元的位移分布情况。以y为纵坐标，x为横坐标，可得如图10-6所示的不同时刻的 $y - x$ 曲线，该曲线称为波形图从波形图可以看出，经过一个周期的时间，波向前传播了一个波长的距离。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>从波形图中可看出，在同一时刻，距离波源0分别为x₁和x2的两质元的相 $x_{1}x_{2}$ 位是不同的。由式(10-3)可得两质元的相位分别为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\varphi_{1} = \\omega \\Bigg ( t - \\frac {x_{1}} {u} \\Bigg ) = 2 \\pi \\Bigg ( \\frac {t} {T} - \\frac {x_{1}} {\\lambda} \\Bigg )"
+  },
+  {
+   "type": "formula",
+   "latex": "\\varphi_{2} = \\omega \\Bigg ( t - \\frac {x_{2}} {u} \\Bigg ) = 2 \\pi \\Bigg ( \\frac {t} {T} - \\frac {x_{2}} {\\lambda} \\Bigg )"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch10/fig10_5_redraw.png",
+   "caption": "图 10-5 波线上各质元简谐振动的位移-时间曲线（重绘）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch10/fig10_6_redraw.png",
+   "caption": "图 10-6 不同时刻波线上各质元的位移分布——波形图（重绘）"
+  },
+  {
+   "type": "text",
+   "html": "<p>其相位差为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\Delta \\varphi_{_{12}} = \\varphi_{1} - \\varphi_{2} = 2 \\pi \\left( \\frac {t} {T} - \\frac {x_{_{1}}} {\\lambda} \\right) - 2 \\pi \\left( \\frac {t} {T} - \\frac {x_{_{2}}} {\\lambda} \\right) = 2 \\pi \\frac {x_{_{2}} - x_{_{1}}} {\\lambda}"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $x_{2} - x_{1} = \\Delta x_{21}$ 叫做波程差，上式可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\Delta \\varphi_{12} = \\frac {2 \\pi} {\\lambda} \\Delta x_{21}",
+   "label": "式（10-6a）"
+  },
+  {
+   "type": "text",
+   "html": "<p>从图10-6 中可看出 $x_{2} > x_{1}$ ,所以 $\\Delta \\varphi_{12} > 0$ ,即 $\\varphi_{1} > \\varphi_{2}$ ,也就是说 $x_{2}$ 处的相位落后于$x_{1}$ 处的相位。通常在不需要明确谁的相位超前或落后时，式(10-6a)可以简单地写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\Delta \\varphi = \\frac {2 \\pi} {\\lambda} \\Delta x",
+   "label": "式（10-6b）"
+  },
+  {
+   "type": "text",
+   "html": "<p>（3）当t和x都变化时，波函数就表达了所有质元位移随时间变化的整体情况。图10-7分别画出了t时刻和t+∆t时刻的两个波形图，从而描绘出波动在$\\Delta t$ 时间内传播了∆x距离的情形。换句话说，波在t时刻x处的相位，经过∆t时 $\\Delta x$ 间已传至 $x + \\Delta x$ 处了，这与我们在前面解释 $\\gamma \\left( \\ \\boldsymbol {x} + \\Delta \\boldsymbol {x} \\ , t + \\Delta {t} \\right) = \\gamma \\left( \\boldsymbol {\\mathrm{\\Delta}} \\boldsymbol {x} \\mathrm{,} t \\right)$ 关系式时所说的意思是一致的。于是按式(10-3c)，便有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "{\\frac {2 \\pi} {\\lambda}} ( u t - x ) = {\\frac {2 \\pi} {\\lambda}} [ u ( t + \\Delta t ) - ( x + \\Delta x ) ]"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch10/fig10_7_redraw.png",
+   "caption": "图 10-7 波形的传播（重绘）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中u为波速，由此式可解得</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\Delta x = u \\Delta t"
+  },
+  {
+   "type": "text",
+   "html": "<p>这表明，波的传播是相位的传播，也是振动这种运动形式的传播，或说是整个波形的传播，波速u就是相位或波形向前传播的速度，因此称为“相速”。总之，当t和x都变化时，波函数就描述了波的传播过程，因此这种波也称为行波</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>行波的相速还可写作</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "u = \\lambda \\nu = \\frac {2 \\pi \\nu} {2 \\pi / \\lambda} = \\frac {\\omega} {k}"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（10.2 节 · 例 1）",
+   "problem": "一平面简谐波沿Ox轴正方向传播，已知振幅 $A = 1.0 \\mathrm{~ m ~}$ ,周期 $T = 2.0 \\mathrm{~ s ~}$ 波长 $\\lambda = 2.0 \\mathrm{~ m ~}$ 在t=0时，坐标原点处的质元位于平衡位置且沿 $O y$ 轴的正方向运动。求：<br>(1) 波动方程；<br>(2) $t = 1.0 \\mathrm{~ s ~}$ 时各质元的位移分布，并画出该时刻的波形图；<br>(3) $x = 0.5 \\mathrm{~ m ~}$ 处质元的振动规律，并画出该质元的位移与时间的关系曲线。",
+   "solution_steps": [
+    "解（1）按所给条件，取波动方程为如下形式：",
+    "$$\\gamma = A \\cos {\\left[ 2 \\pi {\\Bigg (} {\\frac {t} {T}} - {\\frac {x} {\\lambda}} {\\Bigg )} + \\varphi \\right]}$$",
+    "式中 $\\varphi$ 为坐标原点振动的初相。据题意很容易求得",
+    "$$\\varphi = - \\frac {\\pi} {2}$$",
+    "代入所给数据，得波动方程",
+    "$$\\gamma = 1.0 \\mathrm{c o s} \\left[ 2 \\pi \\bigg ( \\frac {t} {2.0} - \\frac {x} {2.0} \\bigg ) - \\frac {\\pi} {2} \\right]\\tag{1}$$",
+    "式中y 和 x 的单位为 m,t的单位为 s.",
+    "(2) 将 $t = 1.0 \\mathrm{~ s ~}$ 代入式(1)，得此时刻各质元的位移分布为",
+    "$${\\begin{array} {r l} & {y \\ = 1.0 \\mathrm{c o s} \\left[ \\displaystyle 2 \\pi \\left( {\\frac {1.0} {2.0}} - {\\frac {x} {2.0}} \\right) \\ - {\\frac {\\pi} {2}} \\right]} \\\\ & \\\\ & {\\qquad = 1.0 \\mathrm{c o s} \\left( {\\frac {\\pi} {2}} - \\pi x \\right)} \\\\ & \\\\ & {\\qquad = 1.0 \\mathrm{s i n} \\left( \\pi x \\right)} \\end{array}}\\tag{2}$$",
+    "按照式(2)，可画出 $t = 1.0 \\mathrm{~ s ~}$ 时的波形图，如图10-8所示。",
+    "(3) 将 $x = 0.5 \\mathrm{~ m ~}$ 代入式(1)，得该处质元的振动规律为",
+    "$$\\begin{array} {l} {{y = 1.0 \\mathrm{c o s} \\left[ \\displaystyle 2 \\pi \\left( \\frac {t} {2.0} - \\frac {0.5} {2.0} \\right) ~ - \\frac {\\pi} {2} \\right]}} \\\\ {{= 1.0 \\mathrm{c o s} \\left( ~ \\pi t - \\pi \\right)}} \\end{array}$$",
+    "由上式可知，该质元振动的初相为-π.由此作出其y-t曲线，如图10-9所示。",
+    "<img src=\"assets/images/ch10/fig10_8_redraw.png\" style=\"max-width:60%\">",
+    "<div class=\"figcap\">图 10-8 例1：t = 1.0 s 时的波形图（重绘）</div>",
+    "<img src=\"assets/images/ch10/fig10_9_redraw.png\" style=\"max-width:60%\">",
+    "<div class=\"figcap\">图 10-9 例1：x = 0.5 m 处质元的振动曲线（重绘）</div>"
+   ],
+   "answer": null
+  },
+  {
+   "type": "example",
+   "title": "教材例题（10.2 节 · 例 2）",
+   "problem": "一平面简谐波以速度 $u = 20 \\ m \\cdot \\mathrm{~ s ~}^{- 1}$ 沿直线传播。已知在传播路径上某点A(见图10-10)的简谐振动方程为 $y = 3 \\times 10^{- 2} \\cos {\\left( 4 \\pi t \\right)}$ ,式中 γ的单位为 m,t 的单位为 s.<br>(1)以点A为坐标原点，写出波动方程；<br>(2)以距点A为5m处的点B为坐标原点，写出波动方程；<br>(3)写出传播方向上点C、点D的简谐振动方程(各点间距见图10-10)；<br>(4) 分别求出 BC 和CD两点间的相位差。<br><img src=\"assets/images/ch10/fig10_10_redraw.png\" style=\"max-width:60%\"><br><div class=\"figcap\">图 10-10 例2 用图：C、B 在 A 左侧，D 在 A 右侧（重绘）</div>",
+   "solution_steps": [
+    "解由点A的简谐振动方程可知",
+    "$$\\nu = \\frac {\\omega} {2 \\pi} = \\frac {4 \\pi \\mathrm{~ s ~}} {2 \\pi} = 2 \\mathrm{~ s ~}^{- 1} , \\quad \\lambda = \\frac {u} {\\nu} = \\frac {20 \\mathrm{~ m ~} \\cdot \\mathrm{~ s ~}^{- 1}} {2 \\mathrm{~ s ~}^{- 1}} = 10 \\mathrm{~ m ~}$$",
+    "(1)以A为原点的波动方程为",
+    "$$\\begin{array} {l} {{\\displaystyle y_{_\\mathrm{A W}} = 3 \\times 10^{- 2} \\cos \\left[ 4 \\pi \\left( t - \\frac {x} {u} \\right) \\right] ~ = 3 \\times 10^{- 2} \\cos \\left[ 4 \\pi \\left( t - \\frac {x} {20} \\right) \\right]}} \\\\ {{\\displaystyle}} \\\\ {{\\displaystyle \\qquad = 3 \\times 10^{- 2} \\cos \\left( 4 \\pi t - \\frac {\\pi} {5} x \\right)}} \\end{array}$$",
+    "（2）由于波由左向右行进，故点B的相位比点A超前，其简谐振动方程为",
+    "$$y_{_{B \\mathrm{V}}} = 3 \\times 10^{- 2} \\cos {\\left[ 4 \\pi \\left( t + {\\frac {5} {20}} \\right) \\ \\right]} = 3 \\times 10^{- 2} \\cos {\\left( 4 \\pi t + \\pi \\right)}$$",
+    "故以B为原点的波动方程为",
+    "$$\\mathcal {Y}_{B \\mathrm{W}} = 3 \\times 10^{- 2} \\cos \\left[ 4 \\pi \\bigg ( t - \\frac {x} {u} \\bigg ) + \\pi \\right]$$",
+    "$$= 3 \\times 10^{- 2} \\cos ( 4 \\pi t - \\frac {\\pi} {5} x + \\pi )$$",
+    "（3)由于点C的相位比点A超前，故",
+    "$$\\gamma_{_{C \\mathrm{V}}} = 3 \\times {10}^{- 2} \\cos \\left[ {4 \\pi \\left( {{t + \\frac {A C} {u}}} \\right)} \\right] = 3 \\times {10}^{- 2} \\cos \\left( {4 \\pi {t + \\frac {{13}} {5}} \\pi} \\right)$$",
+    "而点D的相位落后于点A，故",
+    "$$y_{_{D \\mathrm{V}}} = 3 \\times {10^{- 2}} \\cos \\left[ {4 \\pi \\left( {{t - \\frac {A D} {u}}} \\right)} \\right] = 3 \\times {10^{- 2}} \\cos {\\left( {4 \\pi t - {\\frac {9} {5}} \\pi} \\right)}$$",
+    "（4）如图所示，BC和 CD间的距离分别为 $\\Delta x_{_{B C}} = 8 \\mathrm{~ m ~} , \\Delta x_{_{C D}} = 22 \\mathrm{~ m ~}$ 由式(10-6b)可得它们的相位差分别为1.6π和4.4π."
+   ],
+   "answer": null
+  },
+  {
+   "type": "section",
+   "number": "10.3",
+   "title": "波的能量 能流密度"
+  },
+  {
+   "type": "video",
+   "source": "bilibili",
+   "bvid": "BV1eK4y1E7Cb",
+   "page": 48,
+   "title": "📺 视频学习：波动能量的传播",
+   "caption": "东北大学《大学物理》MOOC 课堂录播（马文蔚《物理学》配套课程），第 1 次课 配套；本讲对应教材 10-3 波的能量 能流密度，时长 37:25。注意：视频标题里的 10.x 是该课程的讲次编号，与教材小节号含义不同，请以本卡片标注的教材小节为准。<a href=\"https://www.bilibili.com/video/BV1eK4y1E7Cb?p=48\" target=\"_blank\" rel=\"noopener\">在 B 站打开本讲 ↗</a>（嵌入加载失败、或想看弹幕与讲义时点此）"
+  },
+  {
+   "type": "text",
+   "html": "<h3>一、波动能量的传播</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在波动传播过程中，波源的振动通过弹性介质由近及远地一层接一层地传播出去，使介质中各质元依次在各自的平衡位置附近作振动。可见介质中各质元具有动能，同时介质因发生形变还具有势能</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>所以，波动过程也是能量传播的过程</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>下面我们以图10-11所示棒中的纵波为例，对波的能量传播作一番分析。现考察距棒端为x处一段长为dx的体积元。该棒的密度为 $\\rho$ ，截面积为S,则该体积元的体积为 $\\mathrm{d} V =$ Sdx,质量为 $\\mathrm{d} m = \\rho S \\mathrm{d} x .$ 当波传到该体积元时，若它的左端发生了位移 $\\mathcal {I} :$ ,右端位移为 $y + {\\mathrm{d}} y$ ，这表明它不仅发生了运动，而且还发生了被拉长dγ的形变，所以它应同时具有了振动动能和弹性势能。其振动动能为</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch10/fig10_11_redraw.png",
+   "caption": "图 10-11 棒中的纵波（重绘）"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathrm{d} W_{\\mathrm{k}} = \\frac {1} {2} \\big ( \\mathrm{d} m \\big ) v^{2}"
+  },
+  {
+   "type": "text",
+   "html": "<p>而由式(10-3a），该体积元的振动速度为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "v = \\frac {\\partial \\ y} {\\partial t} {=} - A \\omega \\mathrm{s i n} ~ \\omega \\Bigg ( t {-} \\frac {x} {u} \\Bigg )"
+  },
+  {
+   "type": "text",
+   "html": "<p>所以</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathrm{d} {\\cal W}_{\\mathrm{k}} = \\frac {1} {2} \\big ( \\rho \\mathrm{d} V \\big ) A^{2} \\omega^{2} \\mathrm{s i n}^{2} \\omega \\bigg ( t - \\frac {x} {u} \\bigg )",
+   "label": "式（10-7）"
+  },
+  {
+   "type": "text",
+   "html": "<p>同时，体积元因形变而具有弹性势能 $\\mathrm{d} W_{\\mathrm{p}} = k \\left( \\mathrm{d} y \\right)^{2} / 2$ ,此处k为棒的弹性系数，而k与弹性模量E的关系为 $k = S E / \\mathrm{d} x .$ 于是弹性势能为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathrm{d} W_{\\mathrm{p}} = \\frac {1} {2} k \\left( \\mathrm{d} y \\right)^{2} = \\frac {1} {2} E S \\mathrm{d} x \\Bigg ( \\frac {\\mathrm{d} y} {\\mathrm{d} x} \\Bigg )^{2}"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 Sdx 为体积元的体积 dV,再利用纵波速度 $u = \\sqrt {E / \\rho}$ ，上式可改写为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathrm{d} W_{\\mathrm{p}} = \\frac {1} {2} \\rho u^{2} \\mathrm{d} V \\bigg ( \\frac {\\mathrm{d} y} {\\mathrm{d} x} \\bigg )^{\\ 2}"
+  },
+  {
+   "type": "text",
+   "html": "<p>现在考虑到 $\\mathcal {Y}$ 是 x 和 t的函数，故上式中 dy/dx 应是 y 对 x的偏导数，于是有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathrm{d} W_{\\mathrm{p}} = \\frac {1} {2} \\rho u^{2} \\mathrm{d} V \\Bigg ( \\frac {\\partial y} {\\partial x} \\Bigg )^{2}",
+   "label": "式（10-8）"
+  },
+  {
+   "type": "text",
+   "html": "<p>而根据式(10-3a)，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\frac {\\partial \\boldsymbol {y}} {\\partial x} = \\boldsymbol {A} \\ \\frac {\\omega} {u} \\sin \\ \\omega \\left( \\boldsymbol {t} - \\frac {x} {u} \\right)"
+  },
+  {
+   "type": "text",
+   "html": "<p>因此，式(10-8)可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathrm{d} W_{\\mathrm{p}} = \\frac {1} {2} \\big ( \\rho \\mathrm{d} \\dot {V} \\big ) A^{2} \\omega^{2} \\mathrm{s i n}^{2} \\omega \\bigg ( t - \\frac {x} {u} \\bigg )",
+   "label": "式（10-9）"
+  },
+  {
+   "type": "text",
+   "html": "<p>比较式(10-7)和式(10-9)，可见 $\\mathrm{d} W_{\\mathrm{k}} = \\mathrm{d} W_{\\mathrm{p}}$ ，即两者时时相等①.</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>体积元的总能量为其动能和势能之和，即 $\\mathrm{d} W = \\mathrm{d} W_{\\mathrm{\\scriptsize ~ k}} + \\mathrm{d} W_{\\mathrm{\\scriptsize ~ p}}$ ,所以</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf {d} W {=} \\left( \\rho \\mathbf {d} V \\right) {\\boldsymbol {A}^{2}} {\\omega^{2}} {\\sin^{2}} \\omega \\left( t {-} \\frac {x} {u} \\right)",
+   "label": "式（10-10）"
+  },
+  {
+   "type": "text",
+   "html": "<p>为了精确地描述波能量的分布，人们引入波的能量密度，即单位体积介质中</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>的波动能量，用ω表示，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "{\\boldsymbol {w}} = {\\cfrac {\\operatorname {d} {\\boldsymbol {W}}} {\\operatorname {d} V}} = \\rho A^{2} {\\boldsymbol {\\omega}}^{2} \\sin^{2} \\omega \\left( t - {\\cfrac {x} {u}} \\right)",
+   "label": "式（10-11）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式说明，介质中任一点处波的能量密度是随时间t而变化的。通常可取其在一个周期内的平均值，该平均值叫做平均能量密度 ${\\bar {\\mathbf {\\Gamma}}}_{w .}^{-}$ 因为 $\\sin^{2} \\omega \\left( t - x / u \\right)$ 在一个周期内的平均值为1/2,所以</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\stackrel {-} {w} = \\frac {1} {2} \\rho A^{2} \\stackrel {\\_} {\\omega}^{2}",
+   "label": "式（10-12）"
+  },
+  {
+   "type": "text",
+   "html": "<p>与时间无关。至此，从以上对波动能量的计算可以看出：</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>（1）由式（10-7）和式（10-9）可见。体积元的动能和势能具有相同的“步调”，在平衡位置处，其动能和势能都达到最大值，而在最大位移处又都为零。这与单个质点的简谐振动不同，大家记得那里的动能和势能的“步调”相反</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(2）由式(10-11)可见，体积元的机械能不是常量。能量以波的形式在介质中传播。换言之，波动是传递能量的一种方式</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(3）尽管体积元的机械能不守恒，但由式(10-12)可知，能量密度在一周期内的平均值却是常量，这表明，体积元不断地从后面的介质获得能量，又不断地把能量传给前面的介质，所以平均说来，介质中无能量积累。</p>"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（10.3 节 · 例 1）",
+   "problem": "在弹性介质中传播的平面简谐波，在t时刻某质元的动能是10J,问在(t+T)时刻(T为周期)该质元振动的总能量是多少？",
+   "solution_steps": [
+    "解由于简谐波质元的动能与势能同相位，且经过一个周期后质元的动能应该还是10J,则此时刻的质元势能也是10J,因此该质元振动的总能量应该是20J."
+   ],
+   "answer": null
+  },
+  {
+   "type": "text",
+   "html": "<h3>二、能流和能流密度</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如上所述，波的传播过程必然伴随着能量的传播或能量的流动。为了表述波</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>动能量的这一特性，人们引入了能流的概念。单位时间内垂直通过某一面积的能量，叫做通过该面积的能流，用P表示。如图10-12所示，设想在介质内取垂直于波速u的面积 S,则 dt 时间内通过 S 的能量应等于体积Sudt中的能量，于是有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "P = w u S"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch10/fig10_12_redraw.png",
+   "caption": "图 10-12 平均能流（重绘）"
+  },
+  {
+   "type": "text",
+   "html": "<p>显然P和w一样，是随时间周期性变化的，取其时间平均值，便有平均能流：</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "{\\overline {{P}}} = {\\overline {{w}}} u S",
+   "label": "式（10-13）"
+  },
+  {
+   "type": "text",
+   "html": "<p>能流的单位为W(瓦特），因此波的能流也称为波的功率。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>垂直通过单位面积的平均能流，叫做能流密度，用I表示：</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "{\\cal {I}} = \\frac {\\overline {{{\\cal {P}}}}} {S} {=} \\overline {{{w}}} u {=} \\frac {1} {2} {\\rho} A^{2} {\\omega}^{2} u",
+   "label": "式（10-14）"
+  },
+  {
+   "type": "text",
+   "html": "<p>显然能流密度越大，单位时间内垂直通过单位面积的能量就越多，表示波动越强烈。因此能流密度Ⅰ也称为波的强度，它的单位为 $\\mathbb {W} \\cdot \\textrm {m}^{- 2}$</p>"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（10.3 节 · 例 2）",
+   "problem": "证明球面波的振幅与离开其波源的距离成反比，并求球面简谐波的波函数。",
+   "solution_steps": [
+    "证假定波源处在均匀、无吸收的介质中，那么，从点波源发出的波将以相同的速度沿各方向的波线传开去，即波的能量均匀地分布在球面上。现以波源为球心，分别作半径为 $r_{1}$ 和 $r_{2}$ 的两个球面，其面积分别为 $S_{1} = 4 \\pi r_{1}^{2}$ 和 $S_{2} = 4 \\pi r_{2}^{2}$ ,设两球面上的振幅分别为 $A_{1}$ 和 $A_{2} .$ 由于介质不吸收波的能量，因此通过两个球面的平均能流应相等，根据式(10-13)，有",
+    "$$\\stackrel {-} {w}_{1} u S_{1} = \\stackrel {-} {w}_{2} u \\dot {S}_{2}$$",
+    "又由式(10-12)，有",
+    "$$\\frac {1} {2} \\rho A_{1}^{2} {\\omega}^{2} 4 \\pi r_{1}^{2} = \\frac {1} {2} \\rho A_{2}^{2} {\\omega}^{2} 4 \\pi r_{2}^{2}$$",
+    "由此得",
+    "$$\\frac {A_{1}} {A_{2}} = \\frac {r_{2}} {r_{1}}$$",
+    "即球面波振幅与离开波源的距离成反比",
+    "据此，球面简谐波的波函数可依式(10-3a)写为",
+    "$$y = {\\frac {A_{0} r_{0}} {r}} \\cos \\ \\omega \\left( t - {\\frac {r} {u}} \\right)$$",
+    "式中r为离开波源的距离， $A_{0}$ 为 $\\boldsymbol {r} = \\boldsymbol {r}_{0}$ 处的振幅。"
+   ],
+   "answer": null
+  },
+  {
+   "type": "section",
+   "number": "10.4",
+   "title": "惠更斯原理 波的衍射和干涉"
+  },
+  {
+   "type": "video",
+   "source": "bilibili",
+   "bvid": "BV1eK4y1E7Cb",
+   "page": 49,
+   "title": "📺 视频学习：惠更斯原理 波的衍射 干涉",
+   "caption": "东北大学《大学物理》MOOC 课堂录播（马文蔚《物理学》配套课程），第 2 次课 配套；本讲对应教材 10-4 惠更斯原理 波的衍射和干涉，时长 30:59。注意：视频标题里的 10.x 是该课程的讲次编号，与教材小节号含义不同，请以本卡片标注的教材小节为准。<a href=\"https://www.bilibili.com/video/BV1eK4y1E7Cb?p=49\" target=\"_blank\" rel=\"noopener\">在 B 站打开本讲 ↗</a>（嵌入加载失败、或想看弹幕与讲义时点此）"
+  },
+  {
+   "type": "text",
+   "html": "<h3>一、惠更斯原理</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在波动中，波源的振动是通过介质中的质元依次传播出去的，因此每个质元都可看作新的波源。例如，在图10-13中，水面波传播时，遇到一障碍物，当障碍物小孔的大小与波长相差不多时，就可以看到穿过小孔的波是圆形的，与原来波的形状无关。这说明小孔可以看作新的波源。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在研究和总结大量此类现象的基础上，荷兰物理学家惠更斯(C.Huygens，1629—1695)于1679年首先提出：介质中波动传播到的各点都可以看作发射子波的波源，而在其后的任意时刻，这些子波的包络就是新的波前。这就是惠更斯原理。对任何波动过程(机械波或电磁波），不论其传播波动的介质是均匀的还是非均匀</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>的，是各向同性的还是各向异性的，惠更斯原理都是适用的。若已知某一时刻波前的位置，就可以根据这一原理，用几何作图的方法，确定出下一时刻波前的位置，从而确定波传播的方向。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>下面以球面波为例，说明惠更斯原理的应用。如图10-14(a)所示，以0为中心的球面波以波速u在介质中传播，在时刻t的波前是半径为 $R_{1}$ 的球面 $S_{1}$ 根据惠更斯原理， $S_{1}$ 上的各点都可以看作子波波源。以 $r = u \\Delta t$ 为半径画出许多半球形子波，那么，这些子波的包络 $S_{2}$ 即为 $t + \\Delta t$ 时刻的新的波前。显然 $_{,} S_{2}$ 是以0为中心，以 $R_{2} = R_{1} + u \\Delta t$ 为半径的球面。如法炮制即可不断获得新的波前。半径很大的球面波上的一部分波前，可以看作平面波的波前。由太阳发射的球面波到达地面时的一部分波前，即可看作平面波，用惠更斯原理同样可求得其波前[图 10-14(b)].</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch10/fig10_14_redraw.png",
+   "caption": "图 10-14 用惠更斯原理求波前（重绘）"
+  },
+  {
+   "type": "text",
+   "html": "<p>当波传播到两种介质的分界面时，一部分会被反射回原介质传播，另一部分则以另一波速在另一介质中沿另一方向传播，这就是波的反射和折射现象。对此。我们将在第十一章第11-14节介绍光的反射定律和折射定律，并用以讨论几何光学问题。但须指出，惠更斯原理对这两条定律也是能给出满意解释的，有兴趣的读者不妨一试</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>二、波的衍射</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<p>波在传播过程中遇到障碍物时，能够绕过障碍物的边缘，在障碍物的几何阴影区内继续传播，这种现象叫做波的衍射。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>用惠更斯原理能够定性地说明衍射现象。如图10-15所示，平面波到达一宽度与波长相近的缝时，缝上各点都可看作子波的波源。作出这些子波的包络，就得出新的波前。很明显，此时波前与原来的平面略有不同，靠近边缘处，波前弯曲，即波绕过了障碍物而继续传播。图10-16所示是水波通过狭缝时所发生的衍射现象。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch10/fig10_15_redraw.png",
+   "caption": "图 10-15 波的衍射（惠更斯原理作图）（重绘）"
+  },
+  {
+   "type": "text",
+   "html": "<p>衍射现象显著与否，是和障碍物(缝、遮板等)的大小与波长之比有关的。若障碍物的宽度远大于波长，衍射现象不明显；若障碍物的宽度与波长差不多，衍射现象就比较明显；若障碍物的宽度小于波长，则衍射现象更加明显。在声学中，由于声音的波长与所碰到的障碍物的大小差不多，故声波的衍射较显著，如在室内能够听到室外的声音，就是声波能够绕过窗(或门)缝的缘故。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>机械波和电磁波都会产生衍射现象，衍射现象是波动的重要特征之一</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>三、波的干涉</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>1. 波的叠加原理</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<p>图10-17展示的是用计算机模拟制作的两列振动方向平行的波，在同一直线上相向传播时的情况。在图(a)中，它们的振动位移方向相同，而在图(b)中，两波的振动位移方向相反。大家可以看到，在两波相遇处各点的位移是两列波各自引起的振动位移之和；而在相遇之后，则仍以各自原来的波形继续传播，就像它们没有相遇过一样，在日常生活中，如听乐队演奏或几个人同时讲话时，我们仍能从综合音响中辨别出每种乐器或每个人的声音，这表明某种乐器或某个人发出的声波。并不因其他乐器或其他人同时发出的声波而受到影响。可见，波的传播是独立进行的。又如在水面上的两列水波相遇时，或者几束灯光在空间相遇时，都有类似的情况发生，通过对这些现象的观察和研究，可总结出如下的规律：</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch10/fig10_17_redraw.png",
+   "caption": "图 10-17 沿相反方向传播的两列波的叠加（重绘）"
+  },
+  {
+   "type": "text",
+   "html": "<p>（1）几列波相遇之后，它们仍然保持各自原有的特征（频率、波长、振幅、振动方向等)不变，并按照原来的方向继续前进，好像没有遇到过其他波一样。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(2）在相遇区域内任一点的位移，为各列波单独存在时在该点所引起的振 动位移的矢量和。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>上述规律叫做波的叠加原理该原理是几列波同时在介质中传播并相遇时可能出现于涉现象的理论基础。但也必须指出的是，该原理对波强度很大的情形或在非线性介质中传播时，一般并不成立；也就是说，叠加原理只适用于小振幅波动的线性叠加，这正是通常遇到的情形</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>2. 波的干涉</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<p>我们先观察水波的于涉实验。把两个小球装在同一支架上，使小球的下端紧靠水面当支架沿竖直方向以一定的频率振动时，两小球和水面的接触点就成了两个频率相同、振动方向相同、相位相同的波源，各自发出一列圆形的水面波。在它们相遇的水面上，呈现出如图10-18所示的现象。由图可以看出，有些地方水面起伏得很厉害（图中亮处），说明这些地方振动加强了；而有些地方水面只有微弱的起伏，甚至平静不动(图中暗处），说明这些地方振动减弱，甚至完全抵消。在这两波相遇的区域内，振动的强弱是按一定的规律稳定分布的。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>图 10-18 水波的干涉现象</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>因此人们把频率相同、振动方向平行、相位相同或相位差恒定的两列波相遇时，使某些地方振动始终加强，而使另一些地方振动始终减弱的现象，叫做波的干涉。干涉现象是波动的又一重要特征，它和衍射现象都是作为判别某种运动是否具有波动性的主要依据。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>图10-19是只用单一波源干涉的一种方法。在波源S附近放置一个开有两个小孔 $_{1}$ 和 $\\mathrm{S}_{2}$ 的障碍物，根据惠更斯原理， $_{1}$ 和 $_{2}$ 发出的波就具有同频率、振动方向平行、同相位或相位差恒定的特性，所以也能产生干涉现象。从图10-19中可见， $\\mathrm{\\sf S}_{1}$ 和 $_{2}$ 发出一系列的球形波阵面，其波峰和波谷分别以实线和虚线的圆弧表示，两相邻波峰或波谷间的距离为一个波长λ.当两波在空间相遇时，若它们的波峰与波峰或波谷与波谷相重合（图中实线上各点），振动始终加强，合振幅最大；若两波的波峰与波谷相重合(图中虚线上各点），振动始终减弱，合振幅最小。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch10/fig10_19_redraw.png",
+   "caption": "图 10-19 波的干涉（实线圆弧为波峰，虚线圆弧为波谷）（重绘）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch10/fig10_20_redraw.png",
+   "caption": "图 10-20 两相干波源发出的平面简谐波在空间相遇（OCR 未提取，按正文重绘）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上图中产生了干涉现象的两列波叫做相干波，而它们的波源就叫做相干波源。相干波需满足频率相同、振动方向平行、相位差恒定的条件。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>下面我们从波的叠加原理出发，应用同方向、同频率振动合成的结论，来分析干涉现象的产生并确定干涉加强和减弱的条件。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如图10-20所示，设有两相干波源 $\\mathbf {S}_{1} \\setminus \\mathbf {S}_{2}$ 它们的简谐振动方程分别为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\begin{array} {r} {y_{1} = A_{10} \\cos \\left( \\omega t + \\varphi_{1} \\right)} \\\\ {y_{2} = A_{20} \\cos \\left( \\omega t + \\varphi_{2} \\right)} \\end{array}"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $\\omega$ 为两波源的角频率 $, A_{10} \\setminus A_{20}$ 分别为它们的振幅， $\\varphi_{1} \\setminus \\varphi_{2}$ 分别为它们的初相。若这两个波源发出的波在同一介质中传播，它们的波长均为λ，两列波在点P引起的振幅分别为 $A_{1}$ 和 $A_{2} .$ 设两列波分别经过距离 $r_{1}$ 和 $r_{2}$ 后在点P相遇，则可以写出它们在点P的振动分别为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\gamma_{1} = A_{1} \\cos \\left( \\omega t {+} \\varphi_{1} - \\frac {2 \\pi r_{1}} {\\lambda} \\right)"
+  },
+  {
+   "type": "formula",
+   "latex": "y_{2} = A_{2} \\cos \\left( \\omega t + \\varphi_{2} - {\\frac {2 \\pi r_{2}} {\\lambda}} \\right)"
+  },
+  {
+   "type": "text",
+   "html": "<p>上两式表明，点P同时参与两个同方向、同频率的简谐振动，其合振动亦应为简谐振动。设合振动的运动方程为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "y = y_{1} + y_{2} = A \\cos \\left( \\omega t + \\varphi \\right)"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $\\varphi$ 为合振动的初相，由式(9-24)可知</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\tan \\varphi = {\\frac {A_{1} \\sin \\left( \\varphi_{1} - {\\cfrac {2 \\pi r_{1}} {\\lambda}} \\right) + A_{2} \\sin \\left( \\varphi_{2} - {\\cfrac {2 \\pi r_{2}} {\\lambda}} \\right)} {A_{1} \\cos \\left( \\varphi_{1} - {\\cfrac {2 \\pi r_{1}} {\\lambda}} \\right) + A_{2} \\cos \\left( \\varphi_{2} - {\\cfrac {2 \\pi r_{2}} {\\lambda}} \\right)}}"
+  },
+  {
+   "type": "text",
+   "html": "<p>而A为合振动的振幅，即</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\begin{array} {c} {{A = \\sqrt {A_{1}^{2} + A_{2}^{2} + 2 A_{1} A_{2} \\cos \\ \\Delta \\varphi}}} \\\\ {{\\Delta \\varphi = \\left( \\displaystyle {\\varphi_{2} - \\frac {2 \\pi r_{2}} {\\lambda}} \\right) - \\left( \\displaystyle {\\varphi_{1} - \\frac {2 \\pi r_{1}} {\\lambda}} \\right)}} \\\\ {{\\displaystyle {= \\varphi_{2} - \\varphi_{1} - 2 \\pi \\frac {r_{2} - r_{1}} {\\lambda} = \\frac {\\ast \\scriptscriptstyle {\\Psi}} {\\scriptscriptstyle {\\Psi}} \\frac {\\scriptscriptstyle {}} {\\scriptscriptstyle {}}}}} \\end{array}",
+   "label": "式（10-15a）"
+  },
+  {
+   "type": "text",
+   "html": "<p>所以，由合振动的振幅式可以看出，在满足</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\Delta \\varphi = \\varphi_{2} - \\varphi_{1} - 2 \\pi {\\frac {r_{2} - r_{1}} {\\lambda}} = \\pm 2 k \\pi , \\quad k = 0 , 1 , 2 , \\cdots",
+   "label": "式（10-15b）"
+  },
+  {
+   "type": "text",
+   "html": "<p>的空间各点，合振幅最大，其值为 $A = A_{1} + A_{2}$ ;而在满足</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\Delta \\varphi = \\varphi_{2} - \\varphi_{1} - 2 \\pi {\\frac {r_{2} - r_{1}} {\\lambda}} = \\pm \\left( 2 k + 1 \\right) \\pi , \\quad k = 0 , 1 , 2 , \\cdots",
+   "label": "式（10-15c）"
+  },
+  {
+   "type": "text",
+   "html": "<p>如果两相干波源的初相相同，即 $\\varphi_{2} = \\varphi_{1}$ ,并取δ为两相干波源各自到点P的波程差，即 $\\delta = \\boldsymbol {r}_{2} - \\boldsymbol {r}_{1}$ ,那么上述条件又可简化为：当</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\delta = r_{2} - r_{1} = \\pm k \\lambda \\ , \\quad k = 0 \\ , 1 \\ , 2 \\ , \\cdots",
+   "label": "式（10-16a）"
+  },
+  {
+   "type": "text",
+   "html": "<p>即在波程差等于零或为波长整数倍的空间各点处，合振幅最大；当</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\delta = r_{\\mathrm{{j}}} - r_{\\mathrm{{1}}} = \\pm {\\left( \\ 2 k + 1 \\right)} \\frac {\\lambda} {2} , \\quad k = 0 , 1 , 2 , \\cdots",
+   "label": "式（10-16b）"
+  },
+  {
+   "type": "text",
+   "html": "<p>即在波程差等于半波长的奇数倍的空间各点处，合振幅最小。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>由以上讨论可知，两相干波在空间任一点相遇时，其干涉加强和减弱的条件，除了两波源的初相差之外，还取决于该点至两相干波源间的波程差。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>必须注意，如两波源不是相干波源，则不会出现干涉现象</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>干涉现象是波动所独有的现象，对于光学(见第十一章)、声学和许多工程学科都非常重要，并且有广泛的实际应用。例如大礼堂、影剧院等的设计就必须考虑到声波的干涉，以避免某些区域声音过强，而某些区域声音又过弱。在噪声太强的地方还可以利用干涉原理来达到消声的目的①.</p>"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（10.4 节 · 例）",
+   "problem": "<img src=\"assets/images/ch10/fig10_21_redraw.png\" style=\"max-width:60%\"><br><div class=\"figcap\">图 10-21 例：A、B 两列波传到点 P 时的干涉（重绘：AP⊥AB，AP=15 m，AB=20 m，BP=25 m）</div><br>如图10-21所示，A、B两点为同一介质中的两相干波源，其振幅皆为5cm，频率皆为<br>$100 ~ \\mathrm{H z}$ ，但当点A为波峰时，点B恰为波谷。设波速为$10 \\mathrm{~ m ~} \\cdot \\mathrm{~ s ~}^{- 1}$ ,试写出由A、B发出的两列波传到点P时干涉的结果。",
+   "solution_steps": [
+    "解由图可知， $A P = 15 \\ : \\mathrm{~ m ~} , A B = 20 \\ : \\mathrm{~ m ~}$ ,故 $B P ={\\sqrt {A P^{2} + A B^{2}}} = {\\sqrt {\\left( 20 {\\mathrm{~ m}} \\right)^{2} + \\left( 15 {\\mathrm{~ m}} \\right)^{2}}} = 25 {\\mathrm{~ m}} .$ 又已知 $\\nu =$ 100 Hz, $u = 10 \\mathrm{~ m ~} \\cdot \\mathrm{~ s ~}^{- 1}$ ,因此",
+    "$$\\lambda = {\\frac {u} {\\nu}} {=} {\\frac {10 \\mathrm{\\ m / s}} {100 \\mathrm{\\ H z}}} {=} 0.10 \\mathrm{\\ m}$$",
+    "设A的相位较B超前，则 $\\varphi_{A} - \\varphi_{B} = \\pi$ 根据相位差和波程差的关系，有",
+    "$$\\Delta \\varphi = \\varphi_{_B} - \\varphi_{_A} - 2 \\pi {\\frac {B P - A P} {\\lambda}} = - \\pi - 2 \\pi {\\frac {25 \\mathrm{\\bf ~ m} - 15 \\mathrm{\\bf ~ m}} {0.10 \\mathrm{\\bf ~ m}}} = - 201 \\pi$$"
+   ],
+   "answer": null
+  },
+  {
+   "type": "section",
+   "number": "10.5",
+   "title": "驻波"
+  },
+  {
+   "type": "embed",
+   "title": "互动实验：驻波的形成、测量与应用",
+   "src": "assets/interactives/standing-wave-lab.html?view=formation",
+   "ratio": "16 / 10",
+   "caption": "依次完成形成条件对照、波节波腹测量、微波炉热斑测光速和二维边界模式。课堂演示建议使用全屏页面，可<a href=\"assets/interactives/standing-wave-lab.html?view=formation\" target=\"_blank\" rel=\"noopener\">在新窗口打开完整互动实验 ↗</a>。"
+  },
+  {
+   "type": "video",
+   "source": "bilibili",
+   "bvid": "BV1eK4y1E7Cb",
+   "page": 50,
+   "title": "📺 视频学习：驻波",
+   "caption": "东北大学《大学物理》MOOC 课堂录播（马文蔚《物理学》配套课程），第 2 次课 配套；本讲对应教材 10-5 驻波（波节波腹·半波损失·简正模式），时长 30:37。注意：视频标题里的 10.x 是该课程的讲次编号，与教材小节号含义不同，请以本卡片标注的教材小节为准。<a href=\"https://www.bilibili.com/video/BV1eK4y1E7Cb?p=50\" target=\"_blank\" rel=\"noopener\">在 B 站打开本讲 ↗</a>（嵌入加载失败、或想看弹幕与讲义时点此）"
+  },
+  {
+   "type": "text",
+   "html": "<h3>一、驻波的产生</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<p>特殊的干涉现象会形成驻波。图10-22 是用弦线做驻波实验的示意图。弦线的一端系在音叉上，另一端系着砝码使弦线拉紧。当音叉振动时，音叉带动A端振动所引起的波向右传播到点B时，产生的反射波沿弦线向左传播。调节劈尖至适当的位置，结果可以看到AB段弦线被分成几段长度相等的作稳定振动的部分，即在整个弦线上，并没有波形的传播。线上各点的振幅不同，有些点始终静止不动，即振幅为零，而另一些点则振动最强，即振幅最大。这就是驻波。这样，向右的入射波和向左的反射波干涉的结果是，在弦线上产生了驻波。图10-23示出了弦线驻波的四种情况。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch10/fig10_22_redraw.png",
+   "caption": "图 10-22 弦线驻波实验示意图（重绘）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch10/fig10_23_redraw.png",
+   "caption": "图 10-23 弦线驻波的四种情况（重绘）"
+  },
+  {
+   "type": "text",
+   "html": "<p>如图10-24所示，虚线和细实线分别表示沿0x轴正、负方向传播的简谐波，蓝色实线表示两列波叠加的结果。设t=0时，入射波和反射波的波形刚好重合，其合成波形由两波形在各点相加所得，表明各点振动加强了[图10-24(a)].在t=T/8时，两波分别向右、向左传播了λ/8的距离，其合成波形仍为一余弦曲线「图10-24(b)].在t=T/4时，两列波向右、向左分别传播了λ/4，合成波形为一合振幅为零的直线[图 10-24(c)].在 t = 3T/8 和 t= T/2 时，其合成波形在各点的合位移分别与 t = T/8 和t = 0时的合位移大小相等，但方向相反[图10-24(d)、(e)].</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch10/fig10_24_redraw.png",
+   "caption": "图 10-24 驻波的形成（重绘）"
+  },
+  {
+   "type": "text",
+   "html": "<p>从以上各图可以看出，驻波是由振幅、频率和传播速度都相同的两列相十波，在同一直线上沿相反方向传播时叠加形成的一种特殊形式的干涉现象。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>二、驻波方程</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<p>现以图10-24所示的弦线驻波为例，来求驻波的波函数表达式。设两个独立传播的、振幅相同、频率相同、点0的初相皆为零且分别沿Ox轴正、负方向传播的简谐波的波动方程为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "y_{1} = A \\cos 2 \\pi {\\Bigg (} \\nu t - {\\frac {x} {\\lambda}} {\\Bigg )}"
+  },
+  {
+   "type": "formula",
+   "latex": "y_{2} = A \\cos 2 \\pi \\left( \\nu t + \\frac {x} {\\lambda} \\right)"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中A为波的振幅，ν为频率，λ为波长。两波在任意点处任意时刻叠加产生的合位移为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "y = y_{1} + y_{2} = A \\cos 2 \\pi {\\bigg (} \\nu t - {\\frac {x} {\\lambda}} {\\bigg )} + A \\cos 2 \\pi {\\bigg (} \\nu t + {\\frac {x} {\\lambda}} {\\bigg )}"
+  },
+  {
+   "type": "text",
+   "html": "<p>应用三角关系式，上式可化为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\gamma = 2 A \\cos ~ 2 \\pi \\frac {x} {\\lambda} \\mathrm{c o s} ~ 2 \\pi \\nu t",
+   "label": "式（10-17）"
+  },
+  {
+   "type": "text",
+   "html": "<p>这就是驻波的波函数，显然此式并不满足行波方程条件 $y \\left( \\begin{array} {l} {x + u \\Delta t , t + \\Delta t} \\end{array} \\right) =y ( x , t )$ ，因而常称为驻波方程，式中 $2 A \\cos {\\left( 2 \\pi x / \\lambda \\right)}$ 是各点的振幅，它只与x有关，即各点的振幅随着其与原点的距离x的不同而异。上式表明，当形成驻波时，弦线上的各点作振幅为 $\\mid 2 A \\cos ( 2 \\pi x / \\lambda )$ 、频率皆为ν的简谐振动。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>下面对驻波方程作进一步的讨论</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>1. 波节和波腹</h3>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\cos 2 \\pi {\\frac {x} {\\lambda}} = 0"
+  },
+  {
+   "type": "text",
+   "html": "<p>有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "2 \\pi \\frac {x} {\\lambda} = \\pm \\big ( 2 k + 1 \\big ) \\frac {\\pi} {2}"
+  },
+  {
+   "type": "text",
+   "html": "<p>所以波节的位置为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "x = \\pm {\\big (} 2 k + 1 {\\big )} {\\frac {\\lambda} {4}} , \\quad k = 0 , 1 , 2 , \\cdots",
+   "label": "式（10-18）"
+  },
+  {
+   "type": "text",
+   "html": "<p>相邻两波节之间的距离为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\left| x_{n + 1} - x_{n} \\right| = \\left[ 2 \\left( n + 1 \\right) + 1 \\right] \\frac {\\lambda} {4} - \\left( 2 n + 1 \\right) \\frac {\\lambda} {4} = \\frac {\\lambda} {2}"
+  },
+  {
+   "type": "text",
+   "html": "<p>即相邻两波节之间的距离为半个波长(图10-24).在波腹处</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "2 \\pi \\frac {x} {\\lambda} = \\pm k \\pi"
+  },
+  {
+   "type": "text",
+   "html": "<p>所以波腹的位置为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "x = \\pm k \\frac {\\lambda} {2} , \\quad k = 0 , 1 , 2 , \\cdots",
+   "label": "式（10-19）"
+  },
+  {
+   "type": "text",
+   "html": "<p>相邻两波腹之间的距离为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "x_{n + 1} - x_{n} = \\left( n + 1 \\right) \\frac {\\lambda} {2} - n \\frac {\\lambda} {2} = \\frac {\\lambda} {2}"
+  },
+  {
+   "type": "text",
+   "html": "<p>即相邻两波腹之间的距离也为半个波长(图10-24).至于不满足式(10-18)和式(10-19)的各点，其振幅在0与2A之间。值得说明的是，如果左、右传播的两列波的初始相位不同，获得的驻波方程不一定与式(10-17)完全相同，从而得出的波节、波腹位置也不一定在式(10-18)和式(10-19)确定的位置处，但波节之间、波腹之间的距离仍然只是半个波长。由此可见，只要从实验中测得波节或波腹间的距离，就可以确定波长。更值得注意的是，上述驻波方程是两列振幅相同的相向行波叠加而成的，否则，“驻波”的波节是不完全静止的，这在弦乐器演奏的“泛音”技术中有很多应用。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>2. 各点的相位</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<p>由式(10-17)可以看出，弦线上各点的相位与cos(2πx/λ)的正负有关，凡是使 cos(2πx/λ)为正的各点的相位均为2πνt,凡是使 cos(2πx/λ)为负的各点的相位均为 $2 \\pi \\nu t + \\pi .$ 在波节两边的点，cos(2πx/λ)有相反的符号，因此波节两边的相位相反；在两波节间， $\\cos \\left( 2 \\pi x / \\lambda \\right)$ 具有相同的符号，各点的振动相位相同。也就是说，波节两边各点同时沿相反方向达到各自位移的最大值，又同时沿相反的方向通过平衡位置；而两波节之间各点则沿相同方向达到各自的最大值，又同时沿相同方向通过平衡位置(图10-24).可见，弦线是按节点分段振动的，两邻近节点之间的各段作为一个整体，一起同步振动。在每一时刻，驻波都有一定的波形，但此波形既不左移，也不右移，各点以确定的振幅在各自的平衡位置附近振动，驻波由此得名。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>以上我们讨论了弦上的驻波，但所得到的结论是普遍的，不仅对各种介质中的机械驻波，而且对电磁波和光波的驻波也适用。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>三、相位跃变</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在波长满足一定条件的图10-22所示的实验中，波在固定点B处反射，并形成了波节。实验还表明，如果波是在自由端反射的，则反射处是波腹。一般情况下，在两种介质分界处，是形成波节还是形成波腹，与波的种类、两种介质的性质等有关，定量研究证实，对机械波而言，它由介质的密度 $\\rho$ 和波速u的乘积 $\\rho u$ (叫做波阻)所决定.ρu较大的介质，叫做波密介质；ρu较小的介质，叫做波疏介质。 $\\mathbf {\\nabla} \\cdot \\rho u_{\\stackrel {\\circ} {9}} \\rho u$ 波从波疏介质垂直入射到波密介质，被反射回波疏介质时，在反射处形成波节；反之，则在反射处形成波腹。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在两种介质的分界面上若形成波节，说明入射波与反射波在此处的相位时时相反，即反射波在分界处的相位较入射波跃变了π，相当于出现了半个波长的 $\\pi$ 波程差。通常这种现象称为相位跃变 $\\pi$ ,有时也形象地称为“半波损失”。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>四、驻波的能量</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<p>我们仍以图10-22所示的弦线上的驻波实验为例，来讨论驻波的能量，所得结论对其他驻波也适用，当弦线上各质点达到各自的最大位移时，振动速度都为零，因而动能都为零，但此时弦线各段都有了不同程度的形变，且越靠近波节处的形变就越大，因此，这时驻波的能量具有势能的形式，基本上集中于波节附近。当弦线上各质点同时回到平衡位置时，弦线的形变完全消失，势能为零，但此时各质点的振动速度都达到各自的最大值，且处于波腹处的质点的速度最大，因此此时驻波的能量具有动能的形式，基本上集中于波腹附近。至于其他时刻，则动能与势能同时存在。可见，在弦线上形成驻波时，动能和势能不断相互转化，形成了能量交替地由波腹附近转向波节附近，再由波节附近转回到波腹附近的情形。这说明驻波的能量并没有作定向的传播，换言之，驻波不传播能量。这是驻波与行波的又一重要区别。因此也可以讲，驻波是整个物体进行的一种特殊形式的振动。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>五、振动的简正模式</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<p>从驻波的特征不难推论，并不是任意波长的波都能在一定线度的介质中形成驻波。对于具有一定长度且两端固定的弦线来说，形成驻波时，弦线两端为波节，由图10-25可见，此时波长 $\\lambda_{n}$ 和弦线长度l之间应满足下述关系：</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "l = n \\frac {\\lambda_{n}} {2} , n = 1 , 2 , \\cdots",
+   "label": "式（10-20）"
+  },
+  {
+   "type": "text",
+   "html": "<p>就是说，只有当弦线长度l等于半波长的整数倍时，才能在两端固定的弦线上形成驻波。用量子物理的语言说，波长是“量子化”的。利用关系式 $\\nu = u / \\lambda$ ，可由式(10-20)写出弦线驻波的频率应满足的关系：</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\nu_{_{n}} = n \\frac {u} {2 l} , n = 1 , 2 , \\cdots",
+   "label": "式（10-21）"
+  },
+  {
+   "type": "text",
+   "html": "<p>其中每一频率对应于整个弦线的一种可能的振动方式，而这些频率就叫做弦振动的本征频率。由式(10-21)决定的各种振动方式，统称为弦线振动的简正模式。顺便提及，各个本征频率(也即简正频率)中，最低频率 $\\nu_{1}$ 常称为基频，其他较高的频率 $\\nu_{2} \\nu_{3}$ 、…各为基频的某一整数倍，并常称为二次、三次……谐频，音乐理论中又称泛频</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>根据以上对弦线驻波基本特性的讨论，不难理解，诸如管子里的空气柱、各种形式的膜片、电磁波和反映微观粒子性质的“物质波”(见第十五章)等也都能形成驻波。例如，图10-26展示了一端开口一端封闭的玻璃管内空气柱振动形成驻波时的几种简正模式。由于封闭端为波节，开口端为波腹，所以立即可知其对应的基频为 $\\nu_{1} = \\frac { u } { 4 l }$ ，而谐频则为 $\\nu_{1}$ 的奇数倍。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>应当指出，当外界驱动源的频率与振动系统的某个简正频率相同时，就会激起高强度的驻波，这种现象也叫共振或谐振。每种乐器无论弦、管、锣和鼓等实质上都是驻波系统，它们的振动都按其各自相应的某些简正模式进行并发生共振，从而发出具有特定音色(泛频)的音调(基频).</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch10/fig10_25_original.png",
+   "caption": "图 10-25 两端固定弦振动的简正模式：l = λ₁/2、2λ₂/2、3λ₃/2（archive 教材原图扫描件；第三轮目检撤下 tex 重绘）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch10/fig10_26_redraw.png",
+   "caption": "图 10-26 一端开口一端封闭管内空气柱振动的简正模式（重绘）"
+  },
+  {
+   "type": "text",
+   "html": "<p>图10-27是几种乐器发出某个音的频谱，频谱中出现的频率都是发出的那个音所允许的简正模式。相对振幅(短竖线长短)表示这些简正模式在这个音中的相对声强大小，最长的短线表示这个简正模式被激励的最强(共振），这往往就是基频，短竖线数量(简正模式数)及短竖线长度(相对振幅)和音色有关。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>图10-27几种乐器发出某个音的频谱</p>"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（10.5 节 · 例）",
+   "problem": "如图10-28所示，一列沿x轴正向传播的简谐波方程为<br>$$\\gamma = 10^{- 3} \\cos \\left[ 200 \\pi \\bigg ( t - \\frac {x} {200} \\bigg ) \\right]\\tag{1}$$<br>式中 γ和 x 的单位为 m,t 的单位为 s.在1、2两种介质分界面上的点A与坐标原点O相距 $L = 2.25 \\mathrm{~ m} .$ 已知介质2的波阻大于介质1的波阻，并假设反射波与入射波的振幅相等。求：<br><img src=\"assets/images/ch10/fig10_28_redraw.png\" style=\"max-width:60%\"><br><div class=\"figcap\">图 10-28 例用图：波在波密介质分界面的反射（重绘）</div><br>(1)反射波方程；<br>(2) 驻波方程；<br>(3)在O、A之间波节和波腹的位置坐标。",
+   "solution_steps": [
+    "解（1）设反射波方程为",
+    "$$y_{\\text {反}} = 10^{- 3} \\cos \\left[ 200 \\pi \\left( t + \\frac {x} {200} \\right) + \\varphi_{0} \\right] \\tag{2}$$",
+    "$\\varphi_{0}$ 为反射波在点0处的振动初相位。",
+    "由式(1)求出人射波在点A激起的反射波的振动方程为",
+    "$$y_{\\text {反} A} = 10^{- 3} \\cos \\left[ 200 \\pi \\left( t - \\frac {L} {200} \\right) + \\pi \\right] \\tag{3}$$",
+    "由式(2)可得反射波在点A的振动方程为",
+    "$$y_{\\text {反} A} = 10^{- 3} \\cos \\left[ 200 \\pi \\left( t + \\frac {L} {200} \\right) + \\varphi_{0} \\right] \\tag{4}$$",
+    "式(3)和式(4)描写的是同一个振动，故得",
+    "$$\\varphi_{0} = - 2 L \\pi + \\pi = - 3.5 \\pi = - 4 \\pi + \\frac {\\pi} {2}$$",
+    "舍去-4π，即 $\\varphi_{\\mathfrak {c}}$ 取 $\\pi / 2.$ 所以式(2)为",
+    "$$y_{\\text {反}} = 10^{- 3} \\cos \\left[ 200 \\pi \\left( t + \\frac {x} {200} \\right) + \\frac {\\pi} {2} \\right]$$",
+    "$$( 2 ) \\quad y = y_{\\text {入}} + y_{\\text {反}} = 2 \\times 10^{- 3} \\cos \\left( \\pi x + \\frac {\\pi} {4} \\right) \\cos \\left( 200 \\pi t + \\frac {\\pi} {4} \\right)$$",
+    "(3) 令",
+    "$$\\cos ( \\pi x + {\\frac {\\pi} {4}} ) = 0$$",
+    "得波节坐标",
+    "$$x_{\\oplus} = n + \\frac {1} {4} , \\quad n = 0 , 1 , 2 , \\cdots$$",
+    "由于 $x \\leqslant L = 2.25 \\ \\mathrm{~ m ~}$ 的限制，故 $x_{\\#} = 0.25 \\mathrm{~ m ~}$ , 1.25 m,2.25 m.令",
+    "得波腹坐标",
+    "$$x_{\\scriptscriptstyle {array}} = n - \\frac {1} {4} , \\quad n = 1 , 2 , \\cdots$$",
+    "同样由于 $x \\leqslant 2.25 \\mathrm{~ m ~}$ ,故 $x_{\\parallel \\hdots} = 0.75 \\textrm {m} , 1.75 \\textrm {m}$"
+   ],
+   "answer": null
+  },
+  {
+   "type": "section",
+   "number": "10.6",
+   "title": "多普勒效应"
+  },
+  {
+   "type": "video",
+   "source": "bilibili",
+   "bvid": "BV1eK4y1E7Cb",
+   "page": 51,
+   "title": "📺 视频学习：多普勒效应",
+   "caption": "东北大学《大学物理》MOOC 课堂录播（马文蔚《物理学》配套课程），第 3 次课 配套；本讲对应教材 10-6 多普勒效应（含冲击波），时长 28:19。注意：视频标题里的 10.x 是该课程的讲次编号，与教材小节号含义不同，请以本卡片标注的教材小节为准。<a href=\"https://www.bilibili.com/video/BV1eK4y1E7Cb?p=51\" target=\"_blank\" rel=\"noopener\">在 B 站打开本讲 ↗</a>（嵌入加载失败、或想看弹幕与讲义时点此）"
+  },
+  {
+   "type": "text",
+   "html": "<p>迄今为止，我们所讨论的都是波源与观察者相对介质静止的情况，因此观察者接收到的频率与波源振动的频率是相同的。如果波源或观察者或两者都相对于介质运动，那么观察者接收到的频率与波源振动的频率就不相同了，这种现象叫做多普勒效应①.在日常生活中可以发现，当高速行驶的救护车或消防车鸣笛而来时，人们听到的汽笛音调变高，即频率变大；反之，当救护车或消防车鸣笛离去时，人们听到的音调变低，即频率变小，这就是声波的多普勒效应。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>首先要把波源的频率、观察者接收到的频率和波的频率分清楚：波源的频率ν，是波源在单位时间内振动的次数，或在单位时间内发出完整波的数目；观察者接收到的频率 $\\nu^{\\prime}$ ，是观察者在单位时间内接收到的振动次数或完整波数；而波的频率 $\\nu_{\\mathrm{b}}$ ，则是介质内质点在单位时间内振动的次数，或单位时间内通过介质中某点的完整波数，并且 $\\nu_{\\mathrm{{b}}} = u / \\lambda_{\\mathrm{{b}}}$ ，其中u为介质中的波速， $\\lambda_{\\textrm {b}}$ 为介质中的波长。这三个频率可能互不相同，下面分几种情况进行讨论。为简单起见，只讨论波源和观察者沿着它们的连线相对介质运动的情形。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>一、波源不动，观察者相对介质以速度 $v_{\\mathrm{~ 0 ~}}$ 运动</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<p>观察者在点P向着波源(点S)运动。如图10-29所示，先假定观察者不动，</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>波以速度u向着P传播，dt 时间内波传播的距离为udt,观察者接收到的完整波数，即为分布在距离udt中的波数。而现在观察者是以 $v_{0}$ 迎着波的传播方向运动的，dt时间内移动的距离为 $\\boldsymbol {v}_{0} \\mathrm{d} t$ ,因而分布在距离 $v_{0}$ dt 中的波也应被观察者接收到。总体来看，应是在 ${\\bigl (} v_{0} + u {\\bigr )} \\mathrm{d} t$ 距离中的波都被观察者接收到了，所以观察者接收到的频率(完整波数)为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\nu^{\\prime} = \\frac {v_{0} + u} {\\lambda_{\\mathrm{~ b ~}}}"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch10/fig10_29_redraw.png",
+   "caption": "图 10-29 观察者运动时的多普勒效应（重绘）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $\\lambda_{\\textrm {b}}$ 为介质中的波长，且 $\\lambda_{\\mathrm{~ b ~}}^= u / \\nu_{\\mathrm{{b}}}$ .因为波</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>源在介质中是静止的，所以波的频率 $\\nu_{\\mathrm{{b}}}$ 等于波源的频率ν.这样，上式可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\nu^{\\prime} = \\frac {u + v_{0}} {u} \\nu",
+   "label": "式（10-22）"
+  },
+  {
+   "type": "text",
+   "html": "<p>这表明，当观察者向着静止波源运动时，观察者接收到的频率为波源频率的$( 1 + {v}_{0} / u )$ 倍，即 $\\nu^{\\prime}$ 高于 ${\\boldsymbol {\\nu}} .$</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>当观察者远离静止波源运动时，通过类似的分析，不难求得观察者接收到的频率为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\nu^{\\prime} = \\frac {u - v_{0}} {u} \\nu",
+   "label": "式（10-23）"
+  },
+  {
+   "type": "text",
+   "html": "<p>即此时接收到的频率低于波源的频率。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>二、观察者不动、波源相对介质以速度 $v_{\\textrm {s}}$ 运动</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<p>当波源运动时，介质中的波长将发生变化。图10-30是波源在水中向右运动时所激起的水面波的照片。它显示出沿着波源运动的方向，波长变短了；而背离波源运动的方向，波长变长了。大家知道，波长是介质中相位差为2π的两个振动状态之间的距离，而由于波源是运动的，它所发出的这两个相位差为2π的振动状态。是在不同的地点发出的。如图10-31所示，假设波源以速度 $v_{\\mathrm{s}}$ 向着观察者运动，则当波源从 $S_{1}$ 发出的某振动状态经过一个周期T的时间传到位置A时，波源已运动到了 $S_{2} ( S_{1} S_{2} = v_{\\mathrm{s}} T )$ ，此时才发出与该振动状态相位差为 $2 \\pi$ 的下一个振动状态，可见 $S_{2}$ 与A之间的距离即为此情形下介质中的波长 $\\lambda_{\\mathrm{b}} .$ 若波源静止时的波长为 $\\lambda \\left( \\mathbf {\\lambda} = u T \\right)$ ，则从图10-31中可见，此时介质中的波长为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\lambda_{\\mathrm{\\scriptsize ~ b}} = \\lambda - v_{\\mathrm{\\scriptsize ~ s}} T = \\left( u - v_{\\mathrm{\\scriptsize ~ s}} \\right) T = \\frac {u - v_{\\mathrm{\\scriptsize ~ s}}} {\\nu}"
+  },
+  {
+   "type": "text",
+   "html": "<p>图10-30 波源运动时的多普勒效应</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch10/fig10_31_redraw.png",
+   "caption": "图 10-31 波源运动的前方波长变短（重绘）"
+  },
+  {
+   "type": "text",
+   "html": "<p>或者说，此时波的频率为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\nu_{\\mathrm{b}} = \\frac {u} {\\lambda_{\\mathrm{b}}} = \\frac {u} {u - v_{\\mathrm{s}}} \\nu"
+  },
+  {
+   "type": "text",
+   "html": "<p>由于观察者静止，因此他接收到的频率就是波的频率，即 $\\nu^{\\prime} = \\nu_{\\mathrm{b}}$ .观察者接收到的频率为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\nu^{\\prime} = \\frac {u} {u - v_{\\mathrm{s}}} \\nu",
+   "label": "式（10-24）"
+  },
+  {
+   "type": "text",
+   "html": "<p>这表明，当波源向着静止的观察者运动时，观察者接收到的频率高于波源的频率。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>当波源远离静止的观察者运动时，通过类似的分析，可求得观察者接收到的频率为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\nu^{\\prime} = \\frac {u} {u + v_{\\mathrm{s}}} \\nu",
+   "label": "式（10-25）"
+  },
+  {
+   "type": "text",
+   "html": "<p>即此时接收到的频率低于波源的频率。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>三、波源与观察者同时相对介质运动</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<p>综合以上两种情况可得，当波源与观察者同时相对介质运动时，观察者所接收到的频率为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\nu^{\\prime} = \\frac {u \\pm v_{0}} {u \\mp v_{\\mathrm{s}}} \\nu",
+   "label": "式（10-26）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式中，观察者向着波源运动时， $v_{0}$ 前取正号，远离时取负号；波源向着观察者运动时，v，前取负号，远离时取正号。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>综上可知，不论是波源运动，还是观察者运动，或是两者同时运动，定性地说：只要两者互相接近，接收到的频率就高于原来波源的频率；只要两者互相远离，接收到的频率就低于原来波源的频率</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>最后，可以指出，即使波源与观察者并非沿着它们的连线运动，以上所得各式仍可适用，只是其中 $v_{\\mathrm{s}}$ 和 $v_{0}$ 应作为运动速度沿连线方向的分量就行了，而垂直于连线方向的分量是不产生多普勒效应的(在本节的例3中将会看到对这种情况是如何处理的).</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>不仅机械波有多普勒效应，电磁波也有多普勒效应：由于电磁波传播的速度为光速，因此要运用相对论来处理这个问题，且观察者接收频率的公式将与式(10-26)有所不同。然而波源与观察者互相接近时，频率变大，互相远离时，频率变小的结论，仍然是相同的。后面第14-6节对此有详细的讨论分析。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>多普勒效应有着很多实际的应用，可参阅有关书籍①.</p>"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（10.6 节 · 例 1）",
+   "problem": "<img src=\"assets/images/ch10/fig10_32_redraw.png\" style=\"max-width:55%\"><br><div class=\"figcap\">图 10-32 例1 用图（A、O、B 共线，O 在 A、B 之间；OCR 未提取，按题面重绘）</div><br>如题图10-32所示，A、B为两个汽笛，其频率均为500 Hz，A是静止的，而B以60 m/s的速率向右运动。在两个汽笛之间，一观察者O以30 m/s的速度也向右运动。已知空气中的声速为330 m/s，求：（OCR 题面串栏，按教材重写）<br>（1)观察者听到来自 A的频率；<br>(2) 观察者听到来自B的频率；<br>(3) 观察者听到的拍频",
+   "solution_steps": [
+    "解在式 $\\left( 10- 26 \\right) \\nu^{\\prime} = \\frac {u \\pm v_{0}} {u \\mp v_{s}} \\nu$ 中，已知 $u = 330 ~ \\mathrm{~ m ~} \\cdot \\mathrm{~ s ~}^{- 1} , v_{\\mathrm{~ s A}} = 0 , v_{\\mathrm{s B}} = 60 ~ \\mathrm{~ m ~} \\cdot \\mathrm{~ s ~}^{- 1} , v_{0} =30 \\mathrm{~ m ~} \\cdot \\mathrm{~ s ~}^{- 1} , \\nu = 500 \\mathrm{~ H z} .$",
+    "(1)由于观察者远离波源A运动， $v_{0}$ 应取负号，故观察者听到来自A的频率为",
+    "$$\\nu^{\\prime} = {\\frac {330- 30} {330}} \\times 500 ~ \\mathrm{H z} = 454.5 ~ \\mathrm{H z}$$",
+    "(2)由于观察者向着波源B运动， $v_{0}$ 应取正号，而波源B远离观察者运动， $\\boldsymbol {v}_{\\mathrm{s B}}$ 也应取正号，故观察者听到来自B的频率为",
+    "$$\\nu^{\\prime \\prime} {=} \\frac {330 + 30} {330 + 60} {\\times} 500 ~ \\mathrm{H z} {=} 461.5 ~ \\mathrm{H z}$$",
+    "(3) 拍频为",
+    "$$\\Delta \\nu = \\mid \\nu^{\\prime} - \\nu^{\\prime \\prime} \\mid = 7 ~ \\mathrm{H z}$$"
+   ],
+   "answer": null
+  },
+  {
+   "type": "example",
+   "title": "教材例题（10.6 节 · 例 2）",
+   "problem": "利用多普勒效应监测汽车行驶的速度。一固定波源发出频率为100kHz的超声波，当汽车迎着波源驶来时，与波源安装在一起的接收器接收到从汽车反射回来的超声波的频率为110kHz.已知空气中的声速为 $330 \\mathrm{~ m ~}^{\\cdot} \\mathrm{~ s ~}^{- 1}$ ,求汽车行驶的速度。",
+   "solution_steps": [
+    "解此问题应分两步。第一步，波向着汽车传播并被汽车接收，此时波源是静止的，汽车作为观察者迎着波源运动。设汽车的行驶速度为 $v ,$ 则汽车接收到的频率为",
+    "$$\\nu^{\\prime} = \\frac {u + v} {u} \\nu$$",
+    "第二步，波从汽车表面反射回来，此时汽车作为波源向着接收器运动，汽车发出的波的频率即是它接收到的频率 $\\nu^{\\prime}$ ，而接收器此时是观察者，它接收到的频率为",
+    "$$\\nu^{\\prime \\prime} {=} \\frac {u} {u {-} v} \\nu^{\\prime} {=} \\frac {u {+} v} {u {-} v} \\nu$$",
+    "由此解得汽车行驶的速度为",
+    "$$v = {\\frac {\\nu^{\\prime \\prime} - \\nu} {\\nu^{\\prime \\prime} + \\nu}} u = {\\frac {110- 100} {110 + 100}} \\times 330 {\\textrm {m}} \\cdot {\\textrm {s}}^{- 1} = 15.7 {\\textrm {m}} \\cdot {\\textrm {s}}^{- 1} = 56.5 {\\textrm {k m}} \\cdot {\\textrm {h}}^{- 1}$$",
+    "医学测量人体血液流动速度的原理和方法与此例类似"
+   ],
+   "answer": null
+  },
+  {
+   "type": "example",
+   "title": "教材例题（10.6 节 · 例 3）",
+   "problem": "利用多普勒效应测飞行物高度。飞机在上空以速度 $v_{\\mathrm{s}} = 200 \\ \\mathrm{~ m ~} \\cdot \\mathrm{~ s ~}^{- 1}$ 沿水平直线飞行，发出频率为 $\\nu_{\\mathrm{0}} {=} 2 ~ 000 ~ \\mathrm{H z}$ 的声波。当飞机越过静止于地面上的观察者上空时，观察者在4s内测出的频率由 $\\nu_{\\mathrm{_{1}}} {=} 2 ~ 400 ~ \\mathrm{H z}$ 降为 $\\nu_{2} = 1 \\ 600 \\ \\mathrm{H z} .$ 已知声波在空气中的速度为 $u = 330 \\textrm {m} \\cdot \\textrm {s}^{- 1} .$ .试求飞机的飞行高度h.",
+   "solution_steps": [
+    "解 如图10-33所示，按题意飞机在4 s内经过观察者所在地点C的上空的距离为",
+    "$$A B = v_{\\mathrm{s}} t = h \\big ( \\cot \\alpha + \\cot \\beta \\big )\\tag{1}$$",
+    "声源沿AC、CB方向的分速度分别为",
+    "$$v_{_{A C}} = v_{\\mathrm{s}} \\cos \\alpha , \\quad v_{_{C B}} = v_{\\mathrm{s}} \\cos \\beta$$",
+    "由式(10-24)和式(10-25)得",
+    "$$\\nu_{_1} = \\frac {u} {u - v_{_{A C}}} \\nu_{_0} = \\frac {u} {u - v_{_{s}} \\cos \\ \\alpha} \\nu_{_0}\\tag{2}$$",
+    "$$\\nu_{_2} = \\frac {u} {u + v_{_{C B}}} \\nu_{_0} = \\frac {u} {u + v_{\\mathrm{s}} \\cos \\beta} \\nu_{0}\\tag{3}$$",
+    "由式(2)及式(3)分别求出",
+    "$$\\cos \\ \\alpha = \\frac {\\nu_{_1} - \\nu_{_0}} {\\nu_{_1} \\nu_{\\mathrm{s}}} u = 0.275$$",
+    "<img src=\"assets/images/ch10/fig10_33_redraw.png\" style=\"max-width:60%\">",
+    "<div class=\"figcap\">图 10-33 例3 用图：飞机越过观察者上空的几何关系（重绘）</div>",
+    "$$\\cos \\beta = \\frac {\\nu_{0} - \\nu_{2}} {\\nu_{2} {v_{\\mathrm{s}}}} u = 0.413$$",
+    "代入式(1)得",
+    "$$h = {\\frac {v_{\\mathrm{s}} t} {\\cot \\ \\alpha + \\cot \\beta}} = {\\frac {v_{\\mathrm{s}} t} {\\displaystyle {\\frac {\\cos \\ \\alpha} {\\sqrt {1- \\cos^{2} \\alpha}}} + {\\frac {\\cos \\beta} {\\sqrt {1- \\cos^{2} \\beta}}}}} = 1.08 \\times 10^{3} \\ \\mathrm{m}$$"
+   ],
+   "answer": null
+  },
+  {
+   "type": "text",
+   "html": "<p>顺便指出,如果波源向着观察者运动的速度大于波速(即 $v_{\\textrm {s}} {>} u {\\textrm {)}}$ ,那么式(10-24)将失去意义。实际上，在这种情况下，急速运动着的波源的前方不可能有任何波动产生，所有的波前将被挤压而聚集在一圆锥面上，如图10-34所示。在这个圆锥面上，波的能量已被高度集中，容易造成巨大的破坏，这种波称为冲击波或激波。当飞机、炮弹等以超声速飞行时，或火药爆炸、核爆炸时，都会在空气中激起冲击波。冲击波到达的地方，空气压强突然增大，足以损伤耳膜和内脏，打碎窗玻璃，甚至摧毁建筑物。这种现象称为声爆或声震。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>类似的现象在水面上也能看到。当船速超过水面上水波的波速时，也会激起以船为顶端的V形波，这种波称为艏波（图10-35).</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch10/fig10_34_redraw.png",
+   "caption": "图 10-34 冲击波的产生（重绘）"
+  },
+  {
+   "type": "text",
+   "html": "<p>当带电粒子在介质中以超过介质中光速(小于真空中光速c)的速度运动时，就会激发锥形的电磁辐射，这种辐射称为切连科夫辐射。</p>"
+  },
+  {
+   "type": "section",
+   "number": "10.7",
+   "title": "平面电磁波"
+  },
+  {
+   "type": "video",
+   "source": "bilibili",
+   "bvid": "BV1eK4y1E7Cb",
+   "page": 52,
+   "title": "📺 视频学习：平面电磁波",
+   "caption": "东北大学《大学物理》MOOC 课堂录播（马文蔚《物理学》配套课程），第 3 次课 配套；本讲对应教材 10-7 平面电磁波（特性·坡印廷矢量·电磁波谱），时长 19:01。注意：视频标题里的 10.x 是该课程的讲次编号，与教材小节号含义不同，请以本卡片标注的教材小节为准。<a href=\"https://www.bilibili.com/video/BV1eK4y1E7Cb?p=52\" target=\"_blank\" rel=\"noopener\">在 B 站打开本讲 ↗</a>（嵌入加载失败、或想看弹幕与讲义时点此）"
+  },
+  {
+   "type": "text",
+   "html": "<p>在第9-7节中看到，磁场能量和电场能量在封闭的LC电路中可以互相转化，形成电磁振荡。那么，当电路敞开后情况会怎样呢？研究表明，在敞开的LC电路中，电场和磁场的变化将向空间传播开去，形成电磁波。本节将讨论电磁波在自由空间中传播时的各种特性①.</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>赫兹(H.R. Hertz，1857—1894)，德国物理学家.1886年他利用感应圈放电产生高频电振荡，然后用两根两端带有金属小球的细铜棒弯成两矩形开路，当其中一个矩形开路与工作着的感应圈的次级相连时，两球间的空气隙产生火花。这时，在附近的另一个矩形开路的两球间也有微弱的火花，这说明第二个矩形开路接收到了第一个矩形开路发射的电磁波，从而用实验初步证实了电磁波的存在。此后直至1888年，赫兹又进一步系统地从实验证实，电磁波与光波一样，具有相同的波速，也遵守反射和折射定律，也具有干涉、衍射和偏振等特性。他还在1886—1887年间最早发现了光电效应。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>一、电磁波的产生与传播</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<p>欲产生电磁波，敞开的LC振荡电路是适当的波源之一。理论上已经证明，电磁波在单位时间内辐射的能量与频率的四次方成正比②，即振荡电路的固有频率越高，越能有效地把能量辐射出去。但在第9-7节的封闭LC振荡电路中，因L$\\left( \\nu = {\\frac {1} {2 \\pi {\\sqrt {L C}}}} \\right)$ 很低，故不适于作辐射电磁波的波和C都比较大，即其固有频率源。为了提高电路的固有频率，必须减小L和C的数值。此外，在LC电路中，电场能量和磁场能量还局限在电容器C和线圈L内，不利于把电磁能辐射出去。为了把电磁能辐射出去，就必须改变振荡电路的形状，以提高电路的固有频率，并能将电磁能更好地分散到空间</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>我们可以把电容器极板面积缩小，并把两极板间的距离拉大，同时减少线圈的匝数并把线圈逐渐拉直，最后简化成一根直导线，如图10-36所示。这样敞开的LC振荡电路可以使电场和磁场分散到周围的空间，同时由于L和C的减小，也提高了电路的振荡频率。因此只要在直线形的电路上引起电磁振荡，直线形电路的两端就会交替出现等量异号电荷，这种改造后的LC振荡电路叫做振荡电偶极子。振荡电偶极子可以作为发射电磁波的天线，其发射电路如图10-37所示。（本段 OCR 双栏混排，按教材大意整理）</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch10/fig10_36_redraw.png",
+   "caption": "图 10-36 LC 振荡电路敞开演变为振荡电偶极子（重绘）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch10/fig10_37_redraw.png",
+   "caption": "图 10-37 发射无线电短波的电路示意图（重绘）"
+  },
+  {
+   "type": "text",
+   "html": "<p>极子的电偶极矩 $p$ 可用下式表示：</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "p = p_{0} \\cos \\ \\omega t",
+   "label": "式（10-27）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $p_{0}$ 是电偶极矩的振幅， $\\omega$ 是角频率。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>当振荡电偶极子中的正、负电荷绕它们的公共中心作简谐振动时，其电场线的变化如图10-38所示。随着两电荷周期性地靠近与分离，电场线由张开到闭合；闭合电场线的形成表明，振荡电偶极子所激发的是涡旋电场。（本段 OCR 双栏混排，按教材大意整理）</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch10/fig10_38_redraw.png",
+   "caption": "图 10-38 不同时刻振荡电偶极子附近的电场线（重绘）"
+  },
+  {
+   "type": "text",
+   "html": "<p>以上只分析了振荡电偶极子附近电场线的形成过程，而磁感线则是与图面垂直的闭合曲线。图10-39画出了某时刻远离振荡电偶极子周围电磁场的大致分布情况。图中曲线代表电场线，×和·分别表示穿入纸面和由纸面穿出的磁感线。这些磁感线是环绕电偶极子轴线的同心圆。随着时间的推移，电场线和磁感线便以电磁波的传播速度向外扩张，由近及远地辐射出去了。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch10/fig10_39_redraw.png",
+   "caption": "图 10-39 振荡电偶极子周围的电磁场（重绘）"
+  },
+  {
+   "type": "text",
+   "html": "<p>振荡电偶极子所激发的电场和磁场的波函数，可由麦克斯韦方程组求解得出。下面直接给出其结果。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>取如图10-40所示的极坐标系，振荡电偶极子位于原点0,其电矩p。的方向沿图中极轴的方向。在半径为r的球面上取任意点Q，其径矢r沿着波的传播方向并与极轴方向成θ角。计算结果表明：点Q处的电场强度E、磁场强度H和径矢r三个矢量互相垂直，并构成右手螺旋系，E和H的数值分别为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "E \\left( \\textit {r} , t \\right) = \\frac {\\mu p_{0} \\omega^{2} \\sin \\ \\theta} {4 \\pi r} \\mathrm{c o s} \\ \\omega \\Bigg ( t - \\frac {\\textit {r}} {u} \\Bigg )",
+   "label": "式（10-28）"
+  },
+  {
+   "type": "formula",
+   "latex": "H ( \\boldsymbol {r} , t ) = \\frac {\\sqrt {\\varepsilon \\mu} \\ p_{0} \\omega^{2} \\sin \\ \\theta} {4 \\pi r} \\mathrm{c o s} \\ \\omega \\Bigg ( t - \\frac {r} {u} \\Bigg )",
+   "label": "式（10-29）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中u为电磁波的传播速度，它与介质的电容率 $\\varepsilon$ 和磁导率 $\\mu$ 的关系为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "u = 1 / \\sqrt {\\varepsilon \\mu}",
+   "label": "式（10-30）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式(10-28)和式(10-29)就是距离振荡电偶极子足够远处的球面电磁波的波函数</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在离开电偶极子很远的地方，小范围内θ和r的变化很小，E和H的振幅可以看作常量，于是式(10-28)和式(10-29)可分别写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "E = E_{\\mathrm{{o}}} \\cos \\omega {\\bigg (} t - {\\frac {x} {u}} {\\bigg )} = E_{\\mathrm{{0}}} \\cos {( \\omega t - k x )}",
+   "label": "式（10-31）"
+  },
+  {
+   "type": "formula",
+   "latex": "H = H_{0} \\cos \\omega \\Bigg ( t - \\frac {x} {u} \\Bigg ) = H_{0} \\cos \\big ( \\omega t {-} k x \\big )",
+   "label": "式（10-32）"
+  },
+  {
+   "type": "text",
+   "html": "<p>这就是平面电磁波的波函数，波沿 $O x$ 轴的正向传播。可见，在离电偶极子很远的区域，电磁波已呈现为平面波，图10-41是平面电磁波的示意图。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch10/fig10_40_redraw.png",
+   "caption": "图 10-40 远离振荡电偶极子处的 E 和 H 的方向（重绘）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch10/fig10_41_redraw.png",
+   "caption": "图 10-41 平面电磁波（重绘）"
+  },
+  {
+   "type": "text",
+   "html": "<h3>二、平面电磁波的特性</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<p>根据以上论述，可将电磁波的特性归纳如下：</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>（1）电磁波是横波。由于电场强度E和磁场强度H都垂直于波的传播方向u,因此电磁波是横波，E、H、u三者互相垂直，构成右手螺旋系(图10-41)。应当指出，E和H只在各自所处的平面内振动的这一特性，称为横波的偏振性。所以，电磁波具有偏振性。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(2)E和H同相位。这在式(10-28)、式(10-29)、式(10-31)、式(10-32)中已表述清楚了，即在任何时刻、任何地点E和H都是同步变化的。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(3）E和H的数值成比例。将式(10-28)和式(10-29)相除，即得</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\frac {E} {H} = \\sqrt {\\frac {\\mu} {\\varepsilon}} , \\quad \\text {即} \\quad \\sqrt {\\varepsilon} \\, E = \\sqrt {\\mu} \\, H",
+   "label": "式（10-33）"
+  },
+  {
+   "type": "text",
+   "html": "<p>(4）真空中电磁波的传播速度等于真空中的光速。由式（10-30)可见，电磁波传播速度u的大小取决于介质的性质。对于真空， $\\varepsilon_{\\mathrm{r}} = 1 , \\mu_{\\mathrm{r}} = 1$ ，所以电磁波在真空中的传播速度为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "u = 1 / \\sqrt {\\varepsilon_{\\scriptscriptstyle 0} \\mu_{\\scriptscriptstyle 0}}",
+   "label": "式（10-34）"
+  },
+  {
+   "type": "text",
+   "html": "<p>将 $\\varepsilon_{\\scriptscriptstyle 0} = 8.854 \\times 10^{- 12} \\textnormal {F} \\cdot \\textnormal {m}^{- 1} , \\mu_{\\scriptscriptstyle 0} = 4 \\pi \\times 10^{- 7} \\textnormal {H} \\cdot \\textnormal {m}^{- 1}$ 代入上式得，电磁波在真空中的传播速度为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "u = {\\sqrt {\\frac {1} {\\left( 8.854 \\times 10^{- 12} {\\mathrm{~ F}} \\cdot {\\mathrm{~ m}}^{- 1} \\right) \\left( 4 \\pi \\times 10^{- 7} {\\mathrm{~ H}} \\cdot {\\mathrm{~ m}}^{- 1} \\right)}}}"
+  },
+  {
+   "type": "text",
+   "html": "<p>这个数值与光在真空中的速度完全相等①.在空气中，由于 $\\varepsilon_{\\mathrm{r}}$ 和 $\\mu_{\\mathrm{r}}$ 都近似等于1,因此电磁波在空气中的速度近似等于真空中的光速。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>以上结论虽然是从振荡电偶极子得出的，但它具有普遍性，适用于任何作加速运动的微观带电粒子所辐射的电磁波，例如，分子和原子中运动的带电粒子、加速器中被加速的带电粒子等所发射的电磁波(或所发的光)都具有这些性质。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>三、电磁波的能量</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<p>电场和磁场都具有能量，电磁波的传播就伴随着能量的传播，这种以电磁波形式传播出去的能量叫做辐射能。显然，辐射能传播的速度和方向就是电磁波传播的速度和方向</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>按照第10-3节中引入的能流密度的概念，若电磁场的能量密度为 $_w$ ，则在介质不吸收电磁能量的条件下，单位时间内通过单位面积的能量，即电磁波的能流密度，用符号S表示，为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "S = w u",
+   "label": "式（10-35）"
+  },
+  {
+   "type": "text",
+   "html": "<p>已知电场和磁场的能量密度各为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "w_{\\mathrm{e}} = \\frac 12 \\varepsilon E^{2} , \\quad w_{\\mathrm{m}} = \\frac 12 \\mu H^{2}"
+  },
+  {
+   "type": "text",
+   "html": "<p>故电磁场的能量密度为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "w = w_{\\mathrm{{e}}} + w_{\\mathrm{{m}}} = \\frac {1} {2} \\big ( \\varepsilon E^{2} + \\mu H^{2} \\big )"
+  },
+  {
+   "type": "text",
+   "html": "<p>于是式(10-35)可写为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "{\\cal S} = \\frac {u} {2} \\big ( \\varepsilon E^{2} + \\mu H^{2} \\big )"
+  },
+  {
+   "type": "text",
+   "html": "<p>将 $\\sqrt {\\varepsilon} E = \\sqrt {\\mu} H$ 及 $u = 1 / {\\sqrt {\\varepsilon \\mu}}$ 代入，并化简之，得</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "S = E H",
+   "label": "式（10-36）"
+  },
+  {
+   "type": "text",
+   "html": "<p>由于E、H和电磁波的传播方向三者互相垂直，并构成一右手螺旋系(图10-42)，而辐射能的传播方向就是电磁波的传播</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>方向，故式(10-36)可用矢量表示为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\boldsymbol {S} = \\boldsymbol {E} \\times \\boldsymbol {H}"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中S为电磁波的能流密度矢量，也叫做坡印廷矢量。不难证明，平面电磁波的能流密度的平均值为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\overline {{S}} = \\frac {1} {2} E_{0} H_{0}",
+   "label": "式（10-37）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch10/fig10_42_redraw.png",
+   "caption": "图 10-42 E、H 和 S 构成右手螺旋系（重绘）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $E_{0}$ 和 $H_{0}$ 分别是电场强度和磁场强度的振幅。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>把式(10-28)和式(10-29)代入式(10-36)得，振荡电偶极子辐射的电磁波的能流密度为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "S = E H = {\\frac {{\\sqrt {\\varepsilon}} {\\sqrt {\\mu^{3}}} p_{0}^{2} \\omega^{4} \\sin^{2} \\theta} {16 \\pi^{2} r^{2}}} {\\cos^{2} \\omega} {\\left( t - {\\frac {r} {u}} \\right)}"
+  },
+  {
+   "type": "text",
+   "html": "<p>振荡电偶极子在单位时间内辐射出去的能量，叫做辐射功率，用P表示。如果把上式在以振荡电偶极子为中心、半径为的球面上积分,并把所得结果取时间平均值，则得振荡偶极子的平均辐射功率为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\bar {P} = \\frac {\\mu p_{0}^{2} \\omega^{4}} {12 \\pi u}",
+   "label": "式（10-38）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中p。为振荡电偶极子电矩的振幅。上式说明平均辐射功率与振荡电偶极子频 $p_{0}$ 率的四次方成正比。因此,振荡电偶极子的辐射功率随着频率的增高而迅速增大。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>四、电磁波谱</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<p>实验表明,电磁波的范围很广,波长没有上下限的限制,从无线电波、红外线、可见光、紫外线到X射线和γ射线等都是电磁波。它们的本质完全相同，只是波长(或频率)有很大的差异。由于波长不同，它们就有不同的特性，而且产生的方式也各不相同。为了便于比较，人们把它们按照波长(或频率)大小依次排列起来，这叫做电磁波谱(图10-43).表10-2列出了各种电磁波的波长范围及其主要产生方式。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch10/fig10_43_redraw.png",
+   "caption": "图 10-43 电磁波谱（重绘）"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "电磁波谱",
+    "真空中的波长",
+    "主要产生方式"
+   ],
+   "rows": [
+    [
+     "无线电波（长波/中波/短波/超短波/微波/太赫兹波）",
+     "3×10³~3×10⁴ m（长波）; 200~3×10³ m（中波）; 10~200 m（短波）; 1~10 m（超短波）; 0.1 mm~1 m（微波）; 0.1~1 mm（太赫兹波）",
+     "由电子线路中电磁振荡所激发的电磁辐射；光电导产生宽频带脉冲辐射等"
+    ],
+    [
+     "红外线",
+     "0.76~1000 μm",
+     "由炽热物体、气体放电或其他光源激发分子或原子等微观客体所产生的电磁辐射"
+    ],
+    [
+     "可见光（红/橙/黄/绿/青/蓝/紫）",
+     "620~760 nm（红）; 592~620 nm（橙）; 578~592 nm（黄）; 500~578 nm（绿）; 464~500 nm（青）; 446~464 nm（蓝）; 400~446 nm（紫）",
+     "由炽热物体、气体放电或其他光源激发分子或原子等微观客体所产生的电磁辐射"
+    ],
+    [
+     "紫外线",
+     "5~400 nm",
+     "由炽热物体、气体放电或其他光源激发分子或原子等微观客体所产生的电磁辐射"
+    ],
+    [
+     "X射线",
+     "0.04~5 nm",
+     "用高速电子流轰击原子中的内层电子而产生的电磁辐射"
+    ],
+    [
+     "γ射线",
+     "0.04 nm 以下",
+     "由放射性原子衰变所发出的电磁辐射，或高能粒子与原子核碰撞所产生的电磁辐射"
+    ]
+   ],
+   "caption": "表 10-2 各种电磁波的波长范围及其主要产生方式"
+  },
+  {
+   "type": "text",
+   "html": "<p>在电磁波谱中，波长最长的是无线电波(有人已在地球表面上探测到频率约为10⁻2Hz的电磁波，其周期约为100s,波长是地球半径的5000倍），它又因波长的不同(从几千米到几毫米)而分为长波、中波、短波、超短波、微波和太赫兹波等。长波在介质中传播时损耗很小，故常用于远距离通信和导航；中波多用于航海和航空定向及无线电广播；短波多用于无线电广播、电报、通信等；超短波、微波多用于电视、雷达、无线电导航以及其他专门用途；太赫兹波多用于空间分辨和时间分辨领域，例如，用太赫兹相机对墙体内物品进行扫描成像等。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>红外线的波长在1000μm到0.76μm之间，由于它处于可见红光的外侧，故称为红外线。它可用于红外雷达、红外照相和夜视仪。红外线有显著的热效应（亦叫热波），故可用来取暖，在工农业生产上常用以红外烘干等。波长在760nm到400nm之间的波，可为人眼所感知，称为可见光(一般简称为光波).波长在400nm到5nm之间的波称为紫外线，它能引起化学反应和荧光效应。医学上常用紫外线杀菌，农业上可用紫外线诱杀害虫。红外线、可见光和紫外线这三部分电磁波合称为光辐射</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>X射线(亦称伦琴射线)的波长在5nm到0.04nm之间，它的能量很大，具有很强的穿透能力，是医疗透视、检查金属部件内部损伤和分析物质晶体结构的有力工具。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>波长更短的是γ射线，波长在0.04nm以下.γ射线的能量和穿透能力比X射线还大，可用来进行放射性实验，产生高能粒子，还可借助它研究天体、认识宇宙，并用于医疗手术—γ刀。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>需要指出的是，电磁波谱中上述各波段主要是按照产生方式或探测方法的不同来划分的。随着科学技术的发展，不同方式产生的波会有一些共同的波段，从而出现不同波段相重叠的情形。</p>"
+  },
+  {
+   "type": "section",
+   "number": "10.8",
+   "title": "声波 超声波与次声波"
+  },
+  {
+   "type": "text",
+   "html": "<p>无论是超声波还是次声波，都属于“声”的范畴，因此，本节首先简单介绍一下声波的有关概念。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>一、声波</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<p>机械振动在弹性介质中的传播可以形成机械波。频率在20Hz\\~20kHz范围内的振动能引起人的听觉，因此这一频段内的机械波称为声波。频率低于20Hz的叫做次声波，高于20kHz的叫做超声波。在流体中传播的声波都是纵波。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>声波的能流密度叫做声强，记作I,单位为 $\\mathbb {W} \\cdot \\textrm {m}^{- 2} .$ 由式(10-14)知，声强与频率的二次方成正比。人们能够听见的声波不仅受到频率范围的限制，而且还要处于一定的声强范围之内。刚能听见的声强下限为 $10^{- 12} \\mathrm{\\overrightarrow {W}} \\cdot \\mathrm{~ m}^{- 2}$ ;使人耳产生疼痛感觉的声强上限为 $1 \\mathrm{~ W ~} \\cdot \\mathrm{~ m ~}^{- 2}$ .在这一范围内的实验发现，人耳对不同频率的声波还存在各自的上、下限值。如图10-44所示，图中最外一条曲线范围恰好是上述所说的可听范围；中间一条是对音乐的敏感范围，从图中可知，人耳对音乐频率的敏感范围是 $60 ~ \\mathrm{H z} \\sim 13 ~ \\mathrm{k H z}$ ,声强范围是 $10^{- 9} \\sim 10^{- 1} \\mathrm{~ W ~} \\cdot \\mathrm{~ m ~}^{- 2}$ ;最内一条是对语言的敏感范围。人耳的听觉是由物理机理(耳膜机械振动)和生理机理(通常是神经系统)共同产生的。当声波的交变压力到达外耳时，便使鼓膜按入射声波的频率振动。这些振动在中耳的几个小听骨中放大，并通过内耳中的液体传递到内耳的神经末梢，经分析整理成信号传至大脑，产生了不同音调和强度的声音感觉，这就是听觉过程。虽然人耳的听觉范围(特指声强)很广 $( 10^{- 12} \\sim 1 \\mathrm{~ W ~} \\cdot \\mathrm{~ m ~}^{- 2} )$ ，但是人耳对声强的变化并不敏感。直接用声强单位来计量声波不太能符合听觉(声音探测器)的反应特征，因此，在声学中改用声强的对数来标度声强级别，这不仅能“压缩”声强范围，而且大致符合人耳对响度的反应特征。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>声强级 $L_{\\imath}$ 的定义为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "L_{\\scriptscriptstyle {I}} = 10 \\mathrm{l g} \\frac {I} {I_{\\scriptscriptstyle {0}}}"
+  },
+  {
+   "type": "text",
+   "html": "<p>单位为“分贝”(dB).式中 $I_{0} = 10^{- 12} \\mathrm{~ W ~} \\cdot \\mathrm{~ m ~}^{- 2}$ ，称为基准声强，它是频率1kHz的声波能引起听觉的最弱声强。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>图 10-44 听觉范围</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>人耳感觉到的声音响度与声强级有一定的关系，声强级越高，人耳感觉越响。为了对声强级和响度有较具体的认识，表10-3给出了常遇到的几种声音的声强、声强级和响度。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>值得关注和讨论的是，当前人造耳蜗是听觉障碍人士的福音，那么人造耳蜗的听觉特点是否也与自然人耳的一样呢？由上述有关人耳听觉系统的分析可知，若是耳膜机械系统出现障碍，而神经系统正常，则人造耳蜗的听觉特点应该仍满足图10-44所示的特征；若是听力神经系统或双重系统出现障碍，则人造耳蜗的听觉特点可能与自然人耳的差别就大了。</p>"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "声源",
+    "声强/(W·m⁻²)",
+    "声强级/dB",
+    "响度"
+   ],
+   "rows": [
+    [
+     "引起痛觉的声音",
+     "1",
+     "120",
+     "震耳"
+    ],
+    [
+     "钻岩机或铆钉机",
+     "10⁻²",
+     "100",
+     "响"
+    ],
+    [
+     "交通繁忙的街道",
+     "10⁻⁵",
+     "70",
+     "响"
+    ],
+    [
+     "通常的谈话",
+     "10⁻⁶",
+     "60",
+     "正常"
+    ],
+    [
+     "耳语",
+     "10⁻¹⁰",
+     "20",
+     "轻"
+    ],
+    [
+     "树叶沙沙声",
+     "10⁻¹¹",
+     "10",
+     "极轻"
+    ],
+    [
+     "引起听觉的最弱声音",
+     "10⁻¹²",
+     "0",
+     "—"
+    ]
+   ],
+   "caption": "表 10-3 几种声音的声强、声强级和响度"
+  },
+  {
+   "type": "text",
+   "html": "<p>单个频率或者由少数几个谐频合成的声波，如果强度不太大，听起来是悦耳的乐音。不同频率和不同强度的声波无规律地组合在一起，听起来便是噪声。噪声在城市中已成为污染环境的重要因素。日常生活中的噪声，如汽车喇叭的鸣叫声、声强过大的音乐声、物件的撞击声以及各种汽笛和发动机的嚣叫声，是严重损伤听力及影响人体健康的原因之一。为此，减轻和消除噪声①已成为目前保护环境所必须考虑的重要问题。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>二、超声波</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<p>频率高于20kHz的机械波形成超声波(现代超声技术已能获得高达10°Hz的超声波).近年来超声技术的发展和应用越来越被重视。其原因是超声波具有许多富于应用价值的特性，并且产生超声波的元器件及其工艺得到了很大的改进，使超声波固有的特性更能发挥出有效的作用，最终被许多工农业生产部门和科研部门采用。下面在超声波的特性、产生和应用三个方面作简要介绍。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>1. 超声波的特性</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<p>（1）有极强的定向功能。由于超声波波长很短，因此衍射效应小，传播的方向性好，能量可集中成束。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(2)有极大的声强。超声波频率很高，按式(10-14)计算可得高达 $5 ~ 000 ~ \\mathrm{~ W ~} \\cdot \\mathrm{~ c m}^{- 2}$ 的声强。这一强度足以击碎金刚石、金属等坚硬物质，在医疗上可用于击碎胆结石</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(3）附加声压值大。由于有很大的声强，超声波将会引起较大的声压。这一特性使介质的附加声压值增大，并造成短时间内对介质的拉压作用，在液体中则会形成“空穴作用”或“空化现象”，致使液体瞬时破裂，形成小气泡；尺寸匹配的气泡还能引起共振，从而带来升温、升压与放电等效果。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>（4）穿透本领大。由于超声波在液体、固体中传播时衰减很小，因此它能够在固体中穿透几十米。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(5)有显著的反射效果。超声波在传播中遇到两类介质的分界面时会有明显的反射。这一特性为材料的无损探伤、地质勘探、对人体病变的了解等应用提供了技术可行性。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>2. 超声波的产生</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<p>利用电与磁的变化而产生的高频机械振动是获得超声波的重要方法。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>（1）经适当切割制作的某些晶片，如石英、钛酸钡等，在其表面加一交变电压，使其表面的正负电荷不断变化的同时，能引起晶片快速地机械伸缩。由于电振荡可达很高的频率，由此换得的高频机械振动可发出超声波，这叫压电式超声发生器。下面将要介绍的探伤仪工作原理即属于此类型。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>（2）具有磁致伸缩效应的某些金属，如镍、铝铁合金等材料，在交变磁场作用下会产生机械伸缩变形。这类铁磁性物质做成的芯棒放在通有高频交变电流的线圈中，会引起材料的机械振动，从而产生超声波，这叫磁致伸缩超声发生器。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>3. 超声波的应用</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<p>下面结合超声波的特性简略介绍一些典型的应用</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>（1）工业无损探伤及“B超”</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>利用超声波的各种特性，特别是超声波的反射特性，在工业上可用来探测工件内部的缺</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>陷(如气泡、裂缝、砂眼等).使用超声波探伤仪探伤时，在工件表面涂上油或水，使探头与工件接触良好。若探头发出的超声波遇到工件内的缺陷，超声波会反射回来，被探头接收，通过晶片的机械振动变成电振荡并显示在荧光屏上。若工件内没有缺陷，则荧光屏上只有发射脉冲T和反射回来的脉冲B（图10-45）；若工件内有缺陷，则缺陷把部分超声波反射回来，在T、B两个脉冲之间出现缺陷反射脉冲F.从脉冲F的间隔，可以估计出缺陷的位置。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch10/fig10_45_redraw.png",
+   "caption": "图 10-45 超声波探伤仪显示的脉冲波形（T 发射、F 缺陷反射、B 底面反射）（重绘）"
+  },
+  {
+   "type": "text",
+   "html": "<p>与超声波探伤的原理类似，医学上的“B超”就是利用超声波来显示人体内脏病变图像的。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(2) 加工处理</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>利用超声波附加声压大的特性，可以进行各种加工。例如，把水银捣碎成水银粒子，使其和水均匀地混合在一起成为乳浊液；在医药上可用以捣碎药物制成各种药剂；在食品工业上可用以制成许许多多的调味汁；在建筑业上则可用以制成水泥乳浊液等。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>超声波还可用来清洁空气，洗濯毛织品上的油腻，清洗蒸汽锅炉中的水垢，清洗钟表轴承及精密复杂金属部件上的污物，以及制成超声波烙铁用以焊接铝质物件等。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(3) 医学治疗①</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>超声波用于医学治疗已有多年的历史，应用面广泛，近年来不断有新的应用报道。（OCR 截断，句尾按大意补全）</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h3>三、次声波</h3>"
+  },
+  {
+   "type": "text",
+   "html": "<p>次声波又称亚声波，一般指频率在 $10^{- 4} \\sim 20 \\mathrm{~ H z}$ 之间的机械波。在火山爆发、地震、陨石落地、大气湍流、雷暴等自然现象中都会产生次声波。次声波波长长、传播时能量损失小，可以传播很远的距离。对次声波的研究已形成一个新的分支，这就是次声学。（本段 OCR 混排，按教材大意整理）</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>由于次声波能传得很远，目前有的国家已建立了监测次声波的机构，用于预报火山爆发、地震等自然灾害。（本句 OCR 截断，按教材大意补全）</p>"
+  },
+  {
+   "type": "homework",
+   "title": "本章作业",
+   "allowRetry": 2,
+   "showAnswerAfter": true,
+   "batches": [
+    {
+     "title": "第 1 次作业（10-1 ～ 10-3：波的概念·波函数·波的能量）",
+     "items": [
+      {
+       "type": "choice",
+       "question": "［教材习题 10-2］机械波的表达式为 y = 0.05cos(6πt + 0.06πx)，式中 y 和 x 的单位为 m，t 的单位为 s，则（　）",
+       "options": [
+        "波长为 5 m",
+        "波速为 10 m/s",
+        "周期为 1/3 s",
+        "波沿 x 轴正方向传播"
+       ],
+       "answer": 2,
+       "explanation": "选 C。对照 y = Acos[ω(t+x/u)+φ]：ω = 6π rad/s → T = 2π/ω = 1/3 s（C 对）；k = 0.06π → λ = 2π/k ≈ 33.3 m（A 错）；u = ω/k = 100 m/s（B 错）；x 前为正号，波沿 x 轴负方向传播（D 错）。"
+      },
+      {
+       "type": "fill",
+       "question": "［教材习题 10-10(1)］波源作简谐振动，运动方程为 y = 4.0×10⁻³cos(240πt)（SI 制），所形成的波以 30 m/s 的速度传播。波的周期为 ______ s（保留 4 位小数），波长为 ______ m。",
+       "blanks": [
+        {
+         "answer": "0.0083",
+         "tolerance": 0.0002
+        },
+        {
+         "answer": "0.25",
+         "tolerance": 0.01
+        }
+       ],
+       "explanation": "ω = 240π rad/s，T = 2π/ω = 1/120 ≈ 0.0083 s；λ = uT = 30/120 = 0.25 m。"
+      },
+      {
+       "type": "calculation",
+       "question": "［教材习题 10-13(2)］波源作简谐振动，周期为 0.02 s，该振动以 100 m/s 的速度沿直线传播。求距波源分别为 16.0 m 和 17.0 m 的两质点间的相位差（单位 rad，取 π ≈ 3.14 的倍数形式作答，保留 2 位小数）。",
+       "answer": 3.14,
+       "unit": "rad",
+       "tolerance": 0.05,
+       "solution": "λ = uT = 100×0.02 = 2 m；Δx = 17.0 − 16.0 = 1.0 m。Δφ = 2πΔx/λ = 2π×1.0/2 = π ≈ 3.14 rad。"
+      },
+      {
+       "type": "qa",
+       "question": "［教材问题 10-5］波形曲线与振动曲线有什么不同？试说明之。",
+       "rubric": "指出波形曲线是 y-x 图（某一时刻各质元的位移分布，相当于对全体质元\"照相\"）（4 分）；振动曲线是 y-t 图（某一质元的位移随时间变化，相当于对单个质元\"摄像\"）（4 分）；举例或说明波形曲线随时间平移、振动曲线固定于一个质元（2 分）",
+       "reference": "波形曲线：给定时刻 t 固定，以 y 为纵坐标、x 为横坐标，描绘该时刻波线上所有质元的位移分布——是对全体质元的\"瞬时照相\"；不同时刻波形曲线沿传播方向平移。振动曲线：给定质元 x 固定，以 y 为纵坐标、t 为横坐标，描绘该质元位移随时间的变化——是对单个质元的\"连续摄像\"。两者都是余弦曲线，但横轴与物理对象完全不同：波形曲线的\"周期\"是波长 λ（空间周期），振动曲线的周期是 T（时间周期）。",
+       "maxScore": 10
+      },
+      {
+       "type": "calculation",
+       "question": "［教材习题 10-20］为了保持波源的振动不变，需要消耗 4.0 W 的功率。若波源发出的是球面波（设介质不吸收波的能量），求距离波源 10.0 m 处的能流密度（单位 W/m²，保留 4 位有效数字，如 3.183×10⁻³ 填 0.003183）。",
+       "answer": 0.003183,
+       "unit": "W/m²",
+       "tolerance": 5e-05,
+       "solution": "球面波能流密度 I = P/(4πr²)。r = 10.0 m 处：I = 4.0/(4π×100) = 1/(100π) ≈ 3.183×10⁻³ W/m²。（r = 5.0 m 处 I = 4.0/(4π×25) ≈ 1.273×10⁻² W/m²。）"
+      }
+     ],
+     "dueDate": "2027-03-10T23:59:59+08:00"
+    },
+    {
+     "title": "第 2 次作业（10-4 ～ 10-5：惠更斯原理·干涉·驻波）",
+     "items": [
+      {
+       "type": "choice",
+       "question": "［教材习题 10-5］在驻波中，两个相邻波节间各质元的振动（　）",
+       "options": [
+        "振幅相同，相位相同",
+        "振幅不同，相位相同",
+        "振幅相同，相位不同",
+        "振幅不同，相位不同"
+       ],
+       "answer": 1,
+       "explanation": "选 B。驻波方程 y = 2Acos(2πx/λ)·cos(2πνt)：相邻波节之间 cos(2πx/λ) 同号，各质元相位相同；但振幅 |2Acos(2πx/λ)| 随位置不同而不同（波腹最大、波节为零）。"
+      },
+      {
+       "type": "fill",
+       "question": "［教材习题 10-27(1)(2)］一条弦上的驻波方程式为 y = 0.03cos(1.6πx)cos(550πt)（SI 制）。若将此驻波看成由传播方向相反、振幅及波速均相同的两列相干波叠加而成，则它们的振幅为 ______ m，波速为 ______ m/s；相邻波节之间的距离为 ______ m。",
+       "blanks": [
+        {
+         "answer": "0.015",
+         "tolerance": 0.001
+        },
+        {
+         "answer": "343.75",
+         "tolerance": 2
+        },
+        {
+         "answer": "0.625",
+         "tolerance": 0.01
+        }
+       ],
+       "explanation": "对照 y = 2Acos(kx)cos(ωt)：2A = 0.03 → A = 0.015 m；k = 1.6π → λ = 2π/k = 1.25 m，ω = 550π → ν = 275 Hz，u = λν = 343.75 m/s；相邻波节间距 = λ/2 = 0.625 m。"
+      },
+      {
+       "type": "qa",
+       "question": "［教材问题 10-16］两列相干波形成驻波后的某一时刻，波线上各点的位移都为零，此时波的能量是否为零？如果不为零，是什么能量形式？哪些地方能量最大，哪些地方最小？",
+       "rubric": "明确能量不为零（3 分）；指出此时各质元振动速度最大、能量为动能形式（4 分）；指出动能集中于波腹附近（波腹速度最大），波节附近最小（3 分）",
+       "reference": "能量不为零。各点位移都为零的时刻，弦线形变完全消失、势能为零，但各质元的振动速度同时达到各自最大值，能量全部以动能形式存在；波腹处质元速度最大，动能最集中；波节处质元始终静止，动能最小（为零）。（再过 T/4，各点到最大位移处，能量又全部转为集中于波节附近的势能——驻波能量只在波腹与波节之间来回转移，不作定向传播。）",
+       "maxScore": 10
+      }
+     ],
+     "dueDate": "2027-03-13T23:59:59+08:00"
+    },
+    {
+     "title": "第 3 次作业（10-6 ～ 10-8：多普勒效应·电磁波·声波）",
+     "items": [
+      {
+       "type": "calculation",
+       "question": "［教材习题 10-29(1)］一辆警车以 25 m/s 的速度在静止的空气中行驶，车上警笛的频率为 800 Hz。求静止站在路边的人听到警车驶近时的警笛声波频率（单位 Hz，保留 1 位小数；空气中声速 u = 330 m/s）。",
+       "answer": 865.6,
+       "unit": "Hz",
+       "tolerance": 2,
+       "solution": "波源向着静止观察者运动：ν′ = u/(u−vₛ)·ν = 330/(330−25)×800 = 330/305×800 ≈ 865.6 Hz。（离去时 ν′ = 330/355×800 ≈ 743.7 Hz。）"
+      },
+      {
+       "type": "fill",
+       "question": "［教材习题 10-33］面积为 1.0 m² 的窗户开向街道，街道中的噪声在窗口的声强级为 80 dB。传入窗内的\"声功率\"为 ______ ×10⁻⁴ W（填系数，保留 2 位小数）。",
+       "blanks": [
+        {
+         "answer": "1.00",
+         "tolerance": 0.05
+        }
+       ],
+       "explanation": "L = 10lg(I/I₀) = 80 dB → I = I₀×10⁸ = 10⁻¹²×10⁸ = 10⁻⁴ W/m²；P = IS = 10⁻⁴×1.0 = 1.00×10⁻⁴ W。"
+      },
+      {
+       "type": "calculation",
+       "question": "［教材习题 10-37(1)］真空中一列平面电磁波的电场表达式为 E_y = 0.6cos[2π×10⁸(t − x/c)]（SI 制）。求该电磁波的波长（单位 m，保留 1 位小数；c = 3.0×10⁸ m/s）。",
+       "answer": 3.0,
+       "unit": "m",
+       "tolerance": 0.1,
+       "solution": "ω = 2π×10⁸ rad/s → ν = ω/2π = 10⁸ Hz；λ = c/ν = 3.0×10⁸/10⁸ = 3.0 m。（波沿 x 轴正方向传播。）"
+      },
+      {
+       "type": "qa",
+       "question": "［教材问题 10-18］波源向着观察者运动和观察者向着波源运动，都会产生频率增高的多普勒效应，这两种情况有何区别？",
+       "rubric": "指出波源运动时介质中波长改变（前方 λ_b = (u−vₛ)T 变短）、公式 ν′ = u/(u−vₛ)·ν（4 分）；指出观察者运动时波长不变、是单位时间接收到的波数增多、公式 ν′ = (u+v₀)/u·ν（4 分）；比较两式：同样速率接近时频率升高值不同（分母 vs 分子变化）（2 分）",
+       "reference": "物理机制不同。波源运动时：介质中的波长被压缩（λ_b = (u−vₛ)T < uT），波的频率 ν_b = u/λ_b 升高，静止观察者接收到的就是这个频率，ν′ = u/(u−vₛ)·ν；观察者运动时：介质中波长不变，但观察者迎波而行，单位时间接收的完整波数增多，ν′ = (u+v₀)/u·ν。数值上两者也不同：同样大小的接近速率，前者改变分母、后者改变分子，波源运动引起的频率升高更显著（且 vₛ→u 时发散，出现冲击波）。",
+       "maxScore": 10
+      }
+     ],
+     "dueDate": "2027-03-17T23:59:59+08:00"
+    }
+   ],
+   "socratic": {
+    "type": "socratic",
+    "chapter": "10 波动",
+    "sessions": [
+     {
+      "label": "第 1 次课讨论（10-1 ～ 10-3：波函数与波的能量）",
+      "topics": [
+       {
+        "title": "体积元的总能量随时间变化，这违背能量守恒定律吗？（教材问题 10-9）",
+        "question": "波动过程中，任一体积元的总机械能 dW = ρdV·A²ω²sin²ω(t−x/u) 随时间周期性变化，从零变到最大又回到零——这与第 9 章孤立振子「机械能守恒」截然不同。这是不是说波动过程中能量守恒定律失效了？追问：体积元是孤立系统吗？它与相邻质元之间有没有力的作用、有没有功的交换？能量从零增到最大时从哪里来，减到零时到哪里去？「平均能量密度 w̄ 是常量」和「能量以波的形式传播」这两句话如何调和？孤立的弹簧振子与介质中的一个体积元，本质差别在哪里？"
+       }
+      ]
+     },
+     {
+      "label": "第 2 次课讨论（10-4 ～ 10-5：干涉与驻波）",
+      "topics": [
+       {
+        "title": "某时刻合振幅等于两振幅之和，两波就一定相干吗？（教材问题 10-12）",
+        "question": "两波在空间某点相遇，如果在某一时刻该点合振动的振幅等于两波振幅之和，那么这两个波就一定是相干波吗？追问：「某一时刻」同相与「始终」同相差别在哪？若两波频率不同，相位差随时间变化，会出现什么现象（回想拍）？相干条件为什么要求「频率相同、振动方向平行、相位差恒定」三条缺一不可？一个时刻的加强能保证空间干涉图样稳定吗？"
+      },
+      {
+        "title": "按住吉他弦后，音调为什么会升高？",
+        "question": "同一根吉他弦，按住更靠近琴桥的品位再拨动，听到的音调通常更高。先近似认为弦的张力和线密度不变，用驻波的边界条件解释有效弦长变短后为什么基频升高。再打开“驻波互动实验”的边界模式页，选择 NN，保持波速不变，把弦长 L 从 1.0 m 改为 0.5 m，记录前三阶允许频率的变化。追问：为什么弦上不能形成任意波长的稳定驻波？若只增大张力而弦长不变，频率将怎样变化？请结合 $L=n\\lambda/2$、$v=\\lambda f$ 与实验读数说明。"
+      }
+      ]
+     },
+     {
+      "label": "第 3 次课讨论（10-6 ～ 10-8：多普勒效应与电磁波）",
+      "topics": [
+       {
+        "title": "普通 LC 电路为什么不能有效地发射电磁波？（教材问题 10-21）",
+        "question": "第 9-7 节的封闭 LC 振荡电路中电场能和磁场能相互转化、振荡不息，为什么它不能把电磁能量有效地辐射出去？要有效地发射电磁波，振荡电路必须具备什么条件？追问：辐射功率与频率的关系是什么（式(10-38)：P̄ ∝ ω⁴）？封闭电路中电场、磁场分别集中在哪里，这为什么不利于辐射？把电容器极板拉开、线圈拉直之后，L 和 C 各怎么变、固有频率怎么变？振荡电偶极子为什么是个好天线？"
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ]
+}

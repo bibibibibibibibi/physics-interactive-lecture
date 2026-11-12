@@ -83,7 +83,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "角动量守恒定律",
+     "qa": [
+      {
+       "q": "角动量守恒的条件是什么？",
+       "a": "合外力矩为零时，系统角动量守恒。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -109,7 +118,20 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "冲量矩与角动量定理",
+     "qa": [
+      {
+       "q": "冲量矩和角动量定理是什么关系？",
+       "a": "力矩对时间的累积叫冲量矩，冲量矩改变角动量，即角动量定理。"
+      },
+      {
+       "q": "为什么说这条线索和动量平行？",
+       "a": "把力换成力矩、动量换成角动量，累积关系完全平行。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -129,10 +151,65 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "质点与刚体角动量",
+     "qa": [
+      {
+       "q": "角动量分哪几种情形？",
+       "a": "本节讨论质点的角动量和刚体的角动量。"
+      }
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "角动量守恒定律",
+     "x": 960,
+     "y": 748,
+     "qa": [
+      {
+       "q": "角动量守恒的条件是什么？",
+       "a": "合外力矩为零时，系统角动量守恒。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "冲量矩与角动量定理",
+     "x": 960,
+     "y": 898,
+     "qa": [
+      {
+       "q": "冲量矩和角动量定理是什么关系？",
+       "a": "力矩对时间的累积叫冲量矩，冲量矩改变角动量，即角动量定理。"
+      },
+      {
+       "q": "为什么说这条线索和动量平行？",
+       "a": "把力换成力矩、动量换成角动量，累积关系完全平行。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "质点与刚体角动量",
+     "x": 960,
+     "y": 1002,
+     "qa": [
+      {
+       "q": "角动量分哪几种情形？",
+       "a": "本节讨论质点的角动量和刚体的角动量。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    }
+   ],
    "stepTimes": {
     "1": 0.0,
     "2": 5.06,
@@ -142,7 +219,23 @@
    "t_start": 0.0,
    "t_end": 29.28,
    "duration": 29.28,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 5.06,
+     "end": 10.06
+    },
+    {
+     "bullet": 1,
+     "start": 11.34,
+     "end": 16.34
+    },
+    {
+     "bullet": 2,
+     "start": 23.09,
+     "end": 28.09
+    }
+   ]
   },
   {
    "id": 2,
@@ -220,7 +313,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "动量守恒条件",
+     "qa": [
+      {
+       "q": "动量守恒的条件是什么？",
+       "a": "合外力为零时，系统总动量保持不变，即 $\\sum \\vec{F}_{\\text{外}}=0 \\Rightarrow \\vec{p}=\\text{常量}$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -252,7 +354,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "角动量守恒条件",
+     "qa": [
+      {
+       "q": "角动量守恒需要满足什么条件？",
+       "a": "合外力矩为零时，系统总角动量保持不变，即 $\\sum \\vec{M}_{\\text{外}}=0 \\Rightarrow \\vec{L}=\\text{常量}$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -275,7 +386,36 @@
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "动量守恒条件",
+     "x": 960,
+     "y": 804,
+     "qa": [
+      {
+       "q": "动量守恒的条件是什么？",
+       "a": "合外力为零时，系统总动量保持不变，即 $\\sum \\vec{F}_{\\text{外}}=0 \\Rightarrow \\vec{p}=\\text{常量}$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "角动量守恒条件",
+     "x": 960,
+     "y": 886,
+     "qa": [
+      {
+       "q": "角动量守恒需要满足什么条件？",
+       "a": "合外力矩为零时，系统总角动量保持不变，即 $\\sum \\vec{M}_{\\text{外}}=0 \\Rightarrow \\vec{L}=\\text{常量}$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    }
+   ],
    "stepTimes": {
     "1": 30.08,
     "2": 32.9,
@@ -285,7 +425,18 @@
    "t_start": 30.08,
    "t_end": 59.43,
    "duration": 29.35,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 32.9,
+     "end": 37.9
+    },
+    {
+     "bullet": 1,
+     "start": 42.85,
+     "end": 47.85
+    }
+   ]
   },
   {
    "id": 3,
@@ -383,7 +534,20 @@
      "tex": "\\vec L=\\vec r\\times\\vec p=\\vec r\\times m\\vec v",
      "size": 42,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "角动量定义式",
+     "qa": [
+      {
+       "q": "角动量的定义公式是什么？",
+       "a": "$\\vec L=\\vec r\\times\\vec p=\\vec r\\times m\\vec v$，即位矢与动量的叉积。"
+      },
+      {
+       "q": "为什么角动量用叉积而不是点积？",
+       "a": "叉积使 $\\vec L$ 垂直于 $\\vec r$ 与 $\\vec v$ 张成的平面，反映转动特性。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -403,6 +567,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "角动量方向",
+     "qa": [
+      {
+       "q": "角动量的方向怎么确定？",
+       "a": "$\\vec L$ 垂直于 $\\vec r$、$\\vec v$ 所在平面，方向由右手螺旋定则确定。"
+      }
      ]
     },
     {
@@ -467,7 +639,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "参考点依赖性",
+     "qa": [
+      {
+       "q": "角动量是绝对量吗？",
+       "a": "不是，角动量必须相对于某个参考点而言，换参考点则 $\\vec r$ 变，$\\vec L$ 也变。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -499,7 +680,54 @@
      "name": "ang_mom_def"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "角动量定义式",
+     "x": 550,
+     "y": 620,
+     "qa": [
+      {
+       "q": "角动量的定义公式是什么？",
+       "a": "$\\vec L=\\vec r\\times\\vec p=\\vec r\\times m\\vec v$，即位矢与动量的叉积。"
+      },
+      {
+       "q": "为什么角动量用叉积而不是点积？",
+       "a": "叉积使 $\\vec L$ 垂直于 $\\vec r$ 与 $\\vec v$ 张成的平面，反映转动特性。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    },
+    {
+     "text": "角动量方向",
+     "x": 550,
+     "y": 708,
+     "qa": [
+      {
+       "q": "角动量的方向怎么确定？",
+       "a": "$\\vec L$ 垂直于 $\\vec r$、$\\vec v$ 所在平面，方向由右手螺旋定则确定。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 5
+    },
+    {
+     "text": "参考点依赖性",
+     "x": 550,
+     "y": 868,
+     "qa": [
+      {
+       "q": "角动量是绝对量吗？",
+       "a": "不是，角动量必须相对于某个参考点而言，换参考点则 $\\vec r$ 变，$\\vec L$ 也变。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 7
+    }
+   ],
    "stepTimes": {
     "1": 60.23,
     "2": 70.94,
@@ -509,7 +737,23 @@
    "t_start": 60.23,
    "t_end": 94.29,
    "duration": 34.06,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 70.94,
+     "end": 75.94
+    },
+    {
+     "bullet": 1,
+     "start": 77.1,
+     "end": 82.1
+    },
+    {
+     "bullet": 2,
+     "start": 85.73,
+     "end": 90.73
+    }
+   ]
   },
   {
    "id": 4,
@@ -547,7 +791,20 @@
      "tex": "L=rmv\\sin\\theta",
      "size": 44,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "角动量大小公式",
+     "qa": [
+      {
+       "q": "公式里的 θ 是什么角？",
+       "a": "是位置矢量 $\\vec{r}$ 与速度 $\\vec{v}$ 之间的夹角，$L=rmv\\sin\\theta$。"
+      },
+      {
+       "q": "为什么角动量里有个 sinθ？",
+       "a": "因为只有垂直于 $\\vec{r}$ 的速度分量贡献角动量，$\\sin\\theta$ 正是这一投影因子。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -573,6 +830,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "右手螺旋定方向",
+     "qa": [
+      {
+       "q": "怎么用右手定则判断 L 的方向？",
+       "a": "四指从 $\\vec{r}$ 转向 $\\vec{v}$，拇指所指即为 $\\vec{L}$ 的方向。"
+      }
      ]
     },
     {
@@ -599,6 +864,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "角动量单位",
+     "qa": [
+      {
+       "q": "角动量的单位是什么？",
+       "a": "国际单位是 $\\mathrm{kg\\cdot m^2\\cdot s^{-1}}$。"
+      }
      ]
     },
     {
@@ -645,7 +918,20 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "圆周运动角动量",
+     "qa": [
+      {
+       "q": "为什么 $L=mr^2\\omega$？",
+       "a": "圆周运动中 $\\vec{r}\\perp\\vec{v}$，$\\sin\\theta=1$，且 $v=r\\omega$，代入即得。"
+      },
+      {
+       "q": "这个式子有什么意义？",
+       "a": "它把质点角动量写成 $J\\omega$，与刚体角动量形式一致，便于后续联系。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "box",
@@ -694,7 +980,72 @@
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "角动量大小公式",
+     "x": 960,
+     "y": 382,
+     "qa": [
+      {
+       "q": "公式里的 θ 是什么角？",
+       "a": "是位置矢量 $\\vec{r}$ 与速度 $\\vec{v}$ 之间的夹角，$L=rmv\\sin\\theta$。"
+      },
+      {
+       "q": "为什么角动量里有个 sinθ？",
+       "a": "因为只有垂直于 $\\vec{r}$ 的速度分量贡献角动量，$\\sin\\theta$ 正是这一投影因子。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 1
+    },
+    {
+     "text": "右手螺旋定方向",
+     "x": 960,
+     "y": 470,
+     "qa": [
+      {
+       "q": "怎么用右手定则判断 L 的方向？",
+       "a": "四指从 $\\vec{r}$ 转向 $\\vec{v}$，拇指所指即为 $\\vec{L}$ 的方向。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 2
+    },
+    {
+     "text": "角动量单位",
+     "x": 960,
+     "y": 564,
+     "qa": [
+      {
+       "q": "角动量的单位是什么？",
+       "a": "国际单位是 $\\mathrm{kg\\cdot m^2\\cdot s^{-1}}$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 3
+    },
+    {
+     "text": "圆周运动角动量",
+     "x": 960,
+     "y": 730,
+     "qa": [
+      {
+       "q": "为什么 $L=mr^2\\omega$？",
+       "a": "圆周运动中 $\\vec{r}\\perp\\vec{v}$，$\\sin\\theta=1$，且 $v=r\\omega$，代入即得。"
+      },
+      {
+       "q": "这个式子有什么意义？",
+       "a": "它把质点角动量写成 $J\\omega$，与刚体角动量形式一致，便于后续联系。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 5
+    }
+   ],
    "stepTimes": {
     "1": 95.09,
     "2": 101.54,
@@ -704,7 +1055,28 @@
    "t_start": 95.09,
    "t_end": 131.57,
    "duration": 36.48,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 95.09,
+     "end": 100.09
+    },
+    {
+     "bullet": 1,
+     "start": 101.54,
+     "end": 106.54
+    },
+    {
+     "bullet": 2,
+     "start": 107.99,
+     "end": 112.99
+    },
+    {
+     "bullet": 3,
+     "start": 111.51,
+     "end": 116.51
+    }
+   ]
   },
   {
    "id": 5,
@@ -776,6 +1148,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "总动量为零",
+     "qa": [
+      {
+       "q": "圆盘转动时总动量为什么是零？",
+       "a": "圆盘整体不平移，各点动量等大反向成对抵消，矢量和为零。"
+      }
      ]
     },
     {
@@ -872,7 +1252,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "角动量同向叠加",
+     "qa": [
+      {
+       "q": "为什么各点动量抵消了，角动量却不抵消？",
+       "a": "角动量是 $r\\times p$，两侧点位置矢量方向相反，与反向动量叉乘后同向叠加。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -938,7 +1327,16 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "需要角动量",
+     "qa": [
+      {
+       "q": "为什么有了动量还需要角动量？",
+       "a": "总动量只能描述平动，转动时总动量为零却仍在转，需角动量这一新物理量描述。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "diagram",
@@ -950,7 +1348,50 @@
      "name": "ang_mom_spin"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "总动量为零",
+     "x": 560,
+     "y": 388,
+     "qa": [
+      {
+       "q": "圆盘转动时总动量为什么是零？",
+       "a": "圆盘整体不平移，各点动量等大反向成对抵消，矢量和为零。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 2
+    },
+    {
+     "text": "角动量同向叠加",
+     "x": 560,
+     "y": 634,
+     "qa": [
+      {
+       "q": "为什么各点动量抵消了，角动量却不抵消？",
+       "a": "角动量是 $r\\times p$，两侧点位置矢量方向相反，与反向动量叉乘后同向叠加。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 5
+    },
+    {
+     "text": "需要角动量",
+     "x": 560,
+     "y": 912,
+     "qa": [
+      {
+       "q": "为什么有了动量还需要角动量？",
+       "a": "总动量只能描述平动，转动时总动量为零却仍在转，需角动量这一新物理量描述。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 7
+    }
+   ],
    "stepTimes": {
     "1": 132.37,
     "2": 138.58,
@@ -960,7 +1401,23 @@
    "t_start": 132.37,
    "t_end": 166.57,
    "duration": 34.2,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 138.58,
+     "end": 143.58
+    },
+    {
+     "bullet": 1,
+     "start": 154.48,
+     "end": 159.48
+    },
+    {
+     "bullet": 2,
+     "start": 154.48,
+     "end": 159.48
+    }
+   ]
   },
   {
    "id": 6,
@@ -1048,6 +1505,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "v×p 为零的原因",
+     "qa": [
+      {
+       "q": "为什么 v×p 这一项会消失？",
+       "a": "因为 $\\vec p=m\\vec v$，$\\vec v$ 与 $\\vec p$ 平行，平行向量叉积为零。"
+      }
      ]
     },
     {
@@ -1060,7 +1525,20 @@
      "tex": "\\frac{\\mathrm d\\vec L}{\\mathrm dt}=\\vec r\\times\\vec F",
      "size": 38,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "角动量定理微分式",
+     "qa": [
+      {
+       "q": "为什么 dL/dt 等于 r×F？",
+       "a": "对 $\\vec L=\\vec r\\times\\vec p$ 求导，$\\vec v\\times\\vec p=0$，只剩 $\\vec r\\times\\vec F$。"
+      },
+      {
+       "q": "这里的 F 是合力还是某个力？",
+       "a": "是作用在质点上的合外力，$\\vec r\\times\\vec F$ 即合外力矩。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1104,6 +1582,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "力矩的定义",
+     "qa": [
+      {
+       "q": "力矩 M 是怎么定义的？",
+       "a": "$\\vec M=\\vec r\\times\\vec F$，即合外力对 O 点的力矩。"
+      }
      ]
     },
     {
@@ -1116,10 +1602,88 @@
      "tex": "\\vec M=\\frac{\\mathrm d\\vec L}{\\mathrm dt}",
      "size": 46,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "角动量定理",
+     "qa": [
+      {
+       "q": "角动量定理的内容是什么？",
+       "a": "质点所受合外力矩等于其角动量的时间变化率：$\\vec M=\\mathrm d\\vec L/\\mathrm dt$。"
+      },
+      {
+       "q": "力矩和角动量方向一定相同吗？",
+       "a": "不一定同向，但 $\\vec M$ 的方向就是 $\\mathrm d\\vec L/\\mathrm dt$ 的方向。"
+      }
+     ],
+     "important": true
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "v×p 为零的原因",
+     "x": 960,
+     "y": 526,
+     "qa": [
+      {
+       "q": "为什么 v×p 这一项会消失？",
+       "a": "因为 $\\vec p=m\\vec v$，$\\vec v$ 与 $\\vec p$ 平行，平行向量叉积为零。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 2
+    },
+    {
+     "text": "角动量定理微分式",
+     "x": 960,
+     "y": 698,
+     "qa": [
+      {
+       "q": "为什么 dL/dt 等于 r×F？",
+       "a": "对 $\\vec L=\\vec r\\times\\vec p$ 求导，$\\vec v\\times\\vec p=0$，只剩 $\\vec r\\times\\vec F$。"
+      },
+      {
+       "q": "这里的 F 是合力还是某个力？",
+       "a": "是作用在质点上的合外力，$\\vec r\\times\\vec F$ 即合外力矩。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "力矩的定义",
+     "x": 960,
+     "y": 794,
+     "qa": [
+      {
+       "q": "力矩 M 是怎么定义的？",
+       "a": "$\\vec M=\\vec r\\times\\vec F$，即合外力对 O 点的力矩。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    },
+    {
+     "text": "角动量定理",
+     "x": 960,
+     "y": 944,
+     "qa": [
+      {
+       "q": "角动量定理的内容是什么？",
+       "a": "质点所受合外力矩等于其角动量的时间变化率：$\\vec M=\\mathrm d\\vec L/\\mathrm dt$。"
+      },
+      {
+       "q": "力矩和角动量方向一定相同吗？",
+       "a": "不一定同向，但 $\\vec M$ 的方向就是 $\\mathrm d\\vec L/\\mathrm dt$ 的方向。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 5
+    }
+   ],
    "stepTimes": {
     "1": 167.37,
     "2": 173.44,
@@ -1129,7 +1693,28 @@
    "t_start": 167.37,
    "t_end": 201.33,
    "duration": 33.96,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 173.44,
+     "end": 178.44
+    },
+    {
+     "bullet": 1,
+     "start": 184.57,
+     "end": 189.57
+    },
+    {
+     "bullet": 2,
+     "start": 192.58,
+     "end": 197.58
+    },
+    {
+     "bullet": 3,
+     "start": 192.58,
+     "end": 197.58
+    }
+   ]
   },
   {
    "id": 7,
@@ -1175,7 +1760,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "角动量定理微分形式",
+     "qa": [
+      {
+       "q": "定理中的力矩和角动量必须对哪个点算？",
+       "a": "必须对同一固定参考点 O 计算，力矩与角动量都要对 O 取。"
+      },
+      {
+       "q": "合外力矩与角动量变化率是什么关系？",
+       "a": "合外力对 O 的力矩等于质点对该点角动量的时间变化率，$\\vec M=\\mathrm d\\vec L/\\mathrm dt$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1207,7 +1805,16 @@
      "tex": "\\int_{t_1}^{t_2}\\vec M\\,\\mathrm dt=\\vec L_2-\\vec L_1",
      "size": 42,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "角动量定理积分形式",
+     "qa": [
+      {
+       "q": "这个积分公式的物理意义是什么？",
+       "a": "冲量矩等于角动量的增量：$\\int_{t_1}^{t_2}\\vec M\\,\\mathrm dt=\\vec L_2-\\vec L_1$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1239,6 +1846,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "冲量矩概念",
+     "qa": [
+      {
+       "q": "冲量矩是什么？名字怎么来的？",
+       "a": "冲量矩是力矩对时间的积分，类比冲量（力乘时间）而得名。"
+      }
      ]
     },
     {
@@ -1265,6 +1880,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "冲量矩与角动量关系",
+     "qa": [
+      {
+       "q": "冲量矩和动量定理中的冲量有何对应？",
+       "a": "冲量改变动量，冲量矩改变角动量；两者都需对同一参考点 O 计算。"
+      }
      ]
     },
     {
@@ -1295,7 +1918,68 @@
      "fill": "#CCFFCC"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "角动量定理微分形式",
+     "x": 960,
+     "y": 308,
+     "qa": [
+      {
+       "q": "定理中的力矩和角动量必须对哪个点算？",
+       "a": "必须对同一固定参考点 O 计算，力矩与角动量都要对 O 取。"
+      },
+      {
+       "q": "合外力矩与角动量变化率是什么关系？",
+       "a": "合外力对 O 的力矩等于质点对该点角动量的时间变化率，$\\vec M=\\mathrm d\\vec L/\\mathrm dt$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 1
+    },
+    {
+     "text": "角动量定理积分形式",
+     "x": 960,
+     "y": 562,
+     "qa": [
+      {
+       "q": "这个积分公式的物理意义是什么？",
+       "a": "冲量矩等于角动量的增量：$\\int_{t_1}^{t_2}\\vec M\\,\\mathrm dt=\\vec L_2-\\vec L_1$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "冲量矩概念",
+     "x": 960,
+     "y": 648,
+     "qa": [
+      {
+       "q": "冲量矩是什么？名字怎么来的？",
+       "a": "冲量矩是力矩对时间的积分，类比冲量（力乘时间）而得名。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    },
+    {
+     "text": "冲量矩与角动量关系",
+     "x": 960,
+     "y": 748,
+     "qa": [
+      {
+       "q": "冲量矩和动量定理中的冲量有何对应？",
+       "a": "冲量改变动量，冲量矩改变角动量；两者都需对同一参考点 O 计算。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 5
+    }
+   ],
    "stepTimes": {
     "1": 202.13,
     "2": 210.93,
@@ -1305,7 +1989,28 @@
    "t_start": 202.13,
    "t_end": 235.18,
    "duration": 33.05,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 202.13,
+     "end": 207.13
+    },
+    {
+     "bullet": 1,
+     "start": 210.93,
+     "end": 215.93
+    },
+    {
+     "bullet": 2,
+     "start": 210.93,
+     "end": 215.93
+    },
+    {
+     "bullet": 3,
+     "start": 216.63,
+     "end": 221.63
+    }
+   ]
   },
   {
    "id": 8,
@@ -1375,7 +2080,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "角动量守恒定律",
+     "qa": [
+      {
+       "q": "角动量守恒的条件是什么？",
+       "a": "合外力矩 $M=0$ 时，$dL/dt=0$，角动量 $L$ 为常矢量。"
+      },
+      {
+       "q": "为什么说 L 是常矢量而不只是大小不变？",
+       "a": "常矢量意味着大小和方向都不变，二者同时保持。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1415,7 +2133,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "力矩为零的两种情形",
+     "qa": [
+      {
+       "q": "什么时候合力矩为零？",
+       "a": "①合外力为零 $F=0$；②合力不为零但作用线始终过参考点 O，力臂为零。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1479,6 +2206,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "力臂为零力矩为零",
+     "qa": [
+      {
+       "q": "合力不为零，力矩也可能为零吗？",
+       "a": "可以。若力的作用线始终通过参考点 O，力臂为零，则 $M=0$。"
+      }
      ]
     },
     {
@@ -1499,6 +2234,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "有心力角动量守恒",
+     "qa": [
+      {
+       "q": "行星绕太阳为什么角动量守恒？",
+       "a": "引力是有心力，始终指向太阳，对太阳的力矩恒为零，故角动量守恒。"
+      }
      ]
     },
     {
@@ -1528,7 +2271,68 @@
      "color": "#111111"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "角动量守恒定律",
+     "x": 960,
+     "y": 324,
+     "qa": [
+      {
+       "q": "角动量守恒的条件是什么？",
+       "a": "合外力矩 $M=0$ 时，$dL/dt=0$，角动量 $L$ 为常矢量。"
+      },
+      {
+       "q": "为什么说 L 是常矢量而不只是大小不变？",
+       "a": "常矢量意味着大小和方向都不变，二者同时保持。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 1
+    },
+    {
+     "text": "力矩为零的两种情形",
+     "x": 960,
+     "y": 508,
+     "qa": [
+      {
+       "q": "什么时候合力矩为零？",
+       "a": "①合外力为零 $F=0$；②合力不为零但作用线始终过参考点 O，力臂为零。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "力臂为零力矩为零",
+     "x": 980,
+     "y": 668,
+     "qa": [
+      {
+       "q": "合力不为零，力矩也可能为零吗？",
+       "a": "可以。若力的作用线始终通过参考点 O，力臂为零，则 $M=0$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 5
+    },
+    {
+     "text": "有心力角动量守恒",
+     "x": 980,
+     "y": 736,
+     "qa": [
+      {
+       "q": "行星绕太阳为什么角动量守恒？",
+       "a": "引力是有心力，始终指向太阳，对太阳的力矩恒为零，故角动量守恒。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 6
+    }
+   ],
    "stepTimes": {
     "1": 235.98,
     "2": 246.39,
@@ -1538,7 +2342,28 @@
    "t_start": 235.98,
    "t_end": 274.19,
    "duration": 38.21,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 235.98,
+     "end": 240.98
+    },
+    {
+     "bullet": 1,
+     "start": 246.39,
+     "end": 251.39
+    },
+    {
+     "bullet": 2,
+     "start": 258.84,
+     "end": 263.84
+    },
+    {
+     "bullet": 3,
+     "start": 258.84,
+     "end": 263.84
+    }
+   ]
   },
   {
    "id": 9,
@@ -1696,7 +2521,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "角动量与角速度求解",
+     "qa": [
+      {
+       "q": "求对O点的角动量用什么公式？",
+       "a": "先由机械能守恒求B点速度，再用 $L=mvR$ 及 $\\omega=v/R$ 求解。"
+      },
+      {
+       "q": "为什么要求对O点的角动量？",
+       "a": "取O为参考点，支持力力矩为零，只有重力矩作用，便于分析。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1716,7 +2554,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "参考点选取",
+     "qa": [
+      {
+       "q": "为什么选O点作参考点？",
+       "a": "支持力沿半径过O，力矩为零，只需考虑重力矩，简化问题。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1736,6 +2583,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "支持力力矩为零",
+     "qa": [
+      {
+       "q": "支持力对O点有力矩吗？",
+       "a": "没有。支持力沿半径方向通过O点，力臂为零，故力矩为零。"
+      }
      ]
     },
     {
@@ -1748,7 +2603,54 @@
      "name": "bead_ring"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "角动量与角速度求解",
+     "x": 550,
+     "y": 688,
+     "qa": [
+      {
+       "q": "求对O点的角动量用什么公式？",
+       "a": "先由机械能守恒求B点速度，再用 $L=mvR$ 及 $\\omega=v/R$ 求解。"
+      },
+      {
+       "q": "为什么要求对O点的角动量？",
+       "a": "取O为参考点，支持力力矩为零，只有重力矩作用，便于分析。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 6
+    },
+    {
+     "text": "参考点选取",
+     "x": 550,
+     "y": 784,
+     "qa": [
+      {
+       "q": "为什么选O点作参考点？",
+       "a": "支持力沿半径过O，力矩为零，只需考虑重力矩，简化问题。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 7
+    },
+    {
+     "text": "支持力力矩为零",
+     "x": 550,
+     "y": 844,
+     "qa": [
+      {
+       "q": "支持力对O点有力矩吗？",
+       "a": "没有。支持力沿半径方向通过O点，力臂为零，故力矩为零。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 8
+    }
+   ],
    "stepTimes": {
     "1": 274.99,
     "2": 284.81,
@@ -1758,7 +2660,23 @@
    "t_start": 274.99,
    "t_end": 309.36,
    "duration": 34.37,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 290.39,
+     "end": 295.39
+    },
+    {
+     "bullet": 1,
+     "start": 294.82,
+     "end": 299.82
+    },
+    {
+     "bullet": 2,
+     "start": 294.82,
+     "end": 299.82
+    }
+   ]
   },
   {
    "id": 10,
@@ -1828,6 +2746,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "支持力力矩为零",
+     "qa": [
+      {
+       "q": "为什么支持力对 O 点的力矩为零？",
+       "a": "支持力沿半径方向，其作用线通过 O 点，力臂为零，故力矩为零。"
+      }
      ]
     },
     {
@@ -1892,7 +2818,16 @@
      "tex": "M=mgR\\cos\\theta",
      "size": 40,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "重力矩公式",
+     "qa": [
+      {
+       "q": "重力矩为什么是 $mgR\\cos\\theta$？",
+       "a": "重力作用在小球上，力臂为 $R\\cos\\theta$（θ 为位置与水平线夹角），故 $M=mgR\\cos\\theta$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1912,6 +2847,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "力矩方向判断",
+     "qa": [
+      {
+       "q": "重力矩方向怎么确定？",
+       "a": "由右手定则，重力矩方向垂直纸面向里。"
+      }
      ]
     },
     {
@@ -1944,7 +2887,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "角动量定理",
+     "qa": [
+      {
+       "q": "这里为什么用角动量定理？",
+       "a": "对 O 点只有重力矩，由 $M=dL/dt$ 可得 $dL=mgR\\cos\\theta\\,dt$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -1979,7 +2931,64 @@
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "支持力力矩为零",
+     "x": 960,
+     "y": 304,
+     "qa": [
+      {
+       "q": "为什么支持力对 O 点的力矩为零？",
+       "a": "支持力沿半径方向，其作用线通过 O 点，力臂为零，故力矩为零。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 1
+    },
+    {
+     "text": "重力矩公式",
+     "x": 960,
+     "y": 588,
+     "qa": [
+      {
+       "q": "重力矩为什么是 $mgR\\cos\\theta$？",
+       "a": "重力作用在小球上，力臂为 $R\\cos\\theta$（θ 为位置与水平线夹角），故 $M=mgR\\cos\\theta$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    },
+    {
+     "text": "力矩方向判断",
+     "x": 960,
+     "y": 672,
+     "qa": [
+      {
+       "q": "重力矩方向怎么确定？",
+       "a": "由右手定则，重力矩方向垂直纸面向里。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 5
+    },
+    {
+     "text": "角动量定理",
+     "x": 960,
+     "y": 760,
+     "qa": [
+      {
+       "q": "这里为什么用角动量定理？",
+       "a": "对 O 点只有重力矩，由 $M=dL/dt$ 可得 $dL=mgR\\cos\\theta\\,dt$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 6
+    }
+   ],
    "stepTimes": {
     "1": 310.16,
     "2": 323.23,
@@ -1989,7 +2998,28 @@
    "t_start": 310.16,
    "t_end": 354.13,
    "duration": 43.97,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 310.16,
+     "end": 315.16
+    },
+    {
+     "bullet": 1,
+     "start": 323.23,
+     "end": 328.23
+    },
+    {
+     "bullet": 2,
+     "start": 332.58,
+     "end": 337.58
+    },
+    {
+     "bullet": 3,
+     "start": 332.58,
+     "end": 337.58
+    }
+   ]
   },
   {
    "id": 11,
@@ -2059,7 +3089,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "角速度与角动量关系",
+     "qa": [
+      {
+       "q": "为什么可以用 ω = dθ/dt 和 L = mR²ω 消去 dt？",
+       "a": "由 L=mR²ω 得 ω=L/(mR²)，又 ω=dθ/dt，故 dt=mR²dθ/L，代入 dL 式即可消去 dt。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -2071,7 +3110,15 @@
      "tex": "L\\,\\mathrm dL=m^2gR^3\\cos\\theta\\,\\mathrm d\\theta",
      "size": 36,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "角动量微分方程",
+     "qa": [
+      {
+       "q": "L dL = m²gR³cosθ dθ 是怎么来的？",
+       "a": "把 dt=mR²dθ/L 代入 dL 表达式，两边同乘 L，即得 L dL=m²gR³cosθ dθ。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -2103,7 +3150,15 @@
      "tex": "\\int_0^L L\\,\\mathrm dL=m^2gR^3\\int_0^{\\theta}\\cos\\theta\\,\\mathrm d\\theta",
      "size": 32,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "分离变量积分",
+     "qa": [
+      {
+       "q": "积分上下限为什么是 0→L 和 0→θ？",
+       "a": "由题设初始条件：t=0 时 L=0、θ=0，对应积分下限；末态为 L 和 θ，作为上限。"
+      }
+     ]
     },
     {
      "type": "tex",
@@ -2127,10 +3182,76 @@
      "tex": "\\omega=\\left(\\frac{2g}{R}\\sin\\theta\\right)^{1/2}",
      "size": 40,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "角速度结果",
+     "qa": [
+      {
+       "q": "最终 ω 的表达式怎么得到？",
+       "a": "由 L=mR^{3/2}√(2g sinθ) 及 L=mR²ω，解出 ω=√(2g sinθ/R)。"
+      }
+     ],
+     "important": true
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "角速度与角动量关系",
+     "x": 960,
+     "y": 304,
+     "qa": [
+      {
+       "q": "为什么可以用 ω = dθ/dt 和 L = mR²ω 消去 dt？",
+       "a": "由 L=mR²ω 得 ω=L/(mR²)，又 ω=dθ/dt，故 dt=mR²dθ/L，代入 dL 式即可消去 dt。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 1
+    },
+    {
+     "text": "角动量微分方程",
+     "x": 960,
+     "y": 444,
+     "qa": [
+      {
+       "q": "L dL = m²gR³cosθ dθ 是怎么来的？",
+       "a": "把 dt=mR²dθ/L 代入 dL 表达式，两边同乘 L，即得 L dL=m²gR³cosθ dθ。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 2
+    },
+    {
+     "text": "分离变量积分",
+     "x": 960,
+     "y": 680,
+     "qa": [
+      {
+       "q": "积分上下限为什么是 0→L 和 0→θ？",
+       "a": "由题设初始条件：t=0 时 L=0、θ=0，对应积分下限；末态为 L 和 θ，作为上限。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    },
+    {
+     "text": "角速度结果",
+     "x": 960,
+     "y": 962,
+     "qa": [
+      {
+       "q": "最终 ω 的表达式怎么得到？",
+       "a": "由 L=mR^{3/2}√(2g sinθ) 及 L=mR²ω，解出 ω=√(2g sinθ/R)。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 6
+    }
+   ],
    "stepTimes": {
     "1": 354.93,
     "2": 364.74,
@@ -2140,7 +3261,28 @@
    "t_start": 354.93,
    "t_end": 398.54,
    "duration": 43.61,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 354.93,
+     "end": 359.93
+    },
+    {
+     "bullet": 1,
+     "start": 354.93,
+     "end": 359.93
+    },
+    {
+     "bullet": 2,
+     "start": 364.74,
+     "end": 369.74
+    },
+    {
+     "bullet": 3,
+     "start": 379.46,
+     "end": 384.46
+    }
+   ]
   },
   {
    "id": 12,
@@ -2218,7 +3360,15 @@
      "tex": "\\vec L=\\sum_i m_ir_i^2\\vec\\omega",
      "size": 40,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "角动量求和推导",
+     "qa": [
+      {
+       "q": "刚体角动量为什么是各质量元角动量之和？",
+       "a": "每个质量元作圆周运动，对轴有角动量 $m_ir_i^2\\omega$，总角动量为求和。"
+      }
+     ]
     },
     {
      "type": "tex",
@@ -2242,7 +3392,20 @@
      "tex": "\\vec L=J\\vec\\omega",
      "size": 46,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "刚体角动量公式",
+     "qa": [
+      {
+       "q": "刚体定轴转动的角动量公式是什么？",
+       "a": "$\\vec L=J\\vec\\omega$，方向沿转轴，$J$ 为转动惯量。"
+      },
+      {
+       "q": "为什么 $\\omega$ 可以提到求和号外？",
+       "a": "刚体各质量元角速度相同，故 $\\omega$ 是共同因子可提出。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2274,7 +3437,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "与质点动量类比",
+     "qa": [
+      {
+       "q": "刚体角动量和质点动量如何对应？",
+       "a": "$L=J\\omega$ 对应 $p=mv$，即 $J\\leftrightarrow m$，$\\omega\\leftrightarrow v$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "diagram",
@@ -2286,7 +3458,54 @@
      "name": "rigid_l"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "角动量求和推导",
+     "x": 570,
+     "y": 542,
+     "qa": [
+      {
+       "q": "刚体角动量为什么是各质量元角动量之和？",
+       "a": "每个质量元作圆周运动，对轴有角动量 $m_ir_i^2\\omega$，总角动量为求和。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 3
+    },
+    {
+     "text": "刚体角动量公式",
+     "x": 570,
+     "y": 838,
+     "qa": [
+      {
+       "q": "刚体定轴转动的角动量公式是什么？",
+       "a": "$\\vec L=J\\vec\\omega$，方向沿转轴，$J$ 为转动惯量。"
+      },
+      {
+       "q": "为什么 $\\omega$ 可以提到求和号外？",
+       "a": "刚体各质量元角速度相同，故 $\\omega$ 是共同因子可提出。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 5
+    },
+    {
+     "text": "与质点动量类比",
+     "x": 570,
+     "y": 930,
+     "qa": [
+      {
+       "q": "刚体角动量和质点动量如何对应？",
+       "a": "$L=J\\omega$ 对应 $p=mv$，即 $J\\leftrightarrow m$，$\\omega\\leftrightarrow v$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 6
+    }
+   ],
    "stepTimes": {
     "1": 399.34,
     "2": 409.4,
@@ -2296,7 +3515,23 @@
    "t_start": 399.34,
    "t_end": 435.63,
    "duration": 36.29,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 409.4,
+     "end": 414.4
+    },
+    {
+     "bullet": 1,
+     "start": 425.58,
+     "end": 430.58
+    },
+    {
+     "bullet": 2,
+     "start": 425.58,
+     "end": 430.58
+    }
+   ]
   },
   {
    "id": 13,
@@ -2334,7 +3569,20 @@
      "tex": "\\vec M=\\frac{\\mathrm d\\vec L}{\\mathrm dt}=\\frac{\\mathrm d(J\\vec\\omega)}{\\mathrm dt}",
      "size": 38,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "角动量定理公式",
+     "qa": [
+      {
+       "q": "这个公式里的 L 和 ω 是什么关系？",
+       "a": "刚体定轴转动时 $\\vec L=J\\vec\\omega$，代入即得 $\\vec M=\\frac{\\mathrm d(J\\vec\\omega)}{\\mathrm dt}$。"
+      },
+      {
+       "q": "为什么 M 等于 dL/dt？",
+       "a": "这是角动量定理的一般形式：合外力矩等于角动量的时间变化率。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2366,7 +3614,16 @@
      "tex": "\\vec M=J\\frac{\\mathrm d\\vec\\omega}{\\mathrm dt}=J\\vec\\alpha",
      "size": 40,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "转动定律推导",
+     "qa": [
+      {
+       "q": "J 为什么能提到导数外面？",
+       "a": "对刚体定轴转动，转动惯量 J 为常量，故 $\\vec M=J\\frac{\\mathrm d\\vec\\omega}{\\mathrm dt}=J\\vec\\alpha$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2398,6 +3655,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "转动定律是特例",
+     "qa": [
+      {
+       "q": "转动定律和角动量定理是什么关系？",
+       "a": "转动定律 $\\vec M=J\\vec\\alpha$ 是角动量定理在刚体定轴转动（J 恒定）下的特例。"
+      }
      ]
     },
     {
@@ -2424,7 +3689,19 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "非刚体须保留d(Jω)/",
+     "qa": [
+      {
+       "q": "非刚体为什么不能把 J 提出来？",
+       "a": "非刚体 J 随时间变化，$\\frac{\\mathrm d(J\\vec\\omega)}{\\mathrm dt}$ 中 J 不能当常量提出，须保留原式。"
+      },
+      {
+       "q": "花样滑冰收臂属于哪种情况？",
+       "a": "收臂时 J 改变，属非刚体，须用 $\\vec M=\\frac{\\mathrm d(J\\vec\\omega)}{\\mathrm dt}$ 分析。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -2447,7 +3724,72 @@
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "角动量定理公式",
+     "x": 960,
+     "y": 402,
+     "qa": [
+      {
+       "q": "这个公式里的 L 和 ω 是什么关系？",
+       "a": "刚体定轴转动时 $\\vec L=J\\vec\\omega$，代入即得 $\\vec M=\\frac{\\mathrm d(J\\vec\\omega)}{\\mathrm dt}$。"
+      },
+      {
+       "q": "为什么 M 等于 dL/dt？",
+       "a": "这是角动量定理的一般形式：合外力矩等于角动量的时间变化率。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 1
+    },
+    {
+     "text": "转动定律推导",
+     "x": 960,
+     "y": 652,
+     "qa": [
+      {
+       "q": "J 为什么能提到导数外面？",
+       "a": "对刚体定轴转动，转动惯量 J 为常量，故 $\\vec M=J\\frac{\\mathrm d\\vec\\omega}{\\mathrm dt}=J\\vec\\alpha$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "转动定律是特例",
+     "x": 960,
+     "y": 748,
+     "qa": [
+      {
+       "q": "转动定律和角动量定理是什么关系？",
+       "a": "转动定律 $\\vec M=J\\vec\\alpha$ 是角动量定理在刚体定轴转动（J 恒定）下的特例。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    },
+    {
+     "text": "非刚体须保留d(Jω)/",
+     "x": 960,
+     "y": 922,
+     "qa": [
+      {
+       "q": "非刚体为什么不能把 J 提出来？",
+       "a": "非刚体 J 随时间变化，$\\frac{\\mathrm d(J\\vec\\omega)}{\\mathrm dt}$ 中 J 不能当常量提出，须保留原式。"
+      },
+      {
+       "q": "花样滑冰收臂属于哪种情况？",
+       "a": "收臂时 J 改变，属非刚体，须用 $\\vec M=\\frac{\\mathrm d(J\\vec\\omega)}{\\mathrm dt}$ 分析。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 5
+    }
+   ],
    "stepTimes": {
     "1": 436.43,
     "2": 442.52,
@@ -2457,7 +3799,28 @@
    "t_start": 436.43,
    "t_end": 476.85,
    "duration": 40.42,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 436.43,
+     "end": 441.43
+    },
+    {
+     "bullet": 1,
+     "start": 442.52,
+     "end": 447.52
+    },
+    {
+     "bullet": 2,
+     "start": 448.25,
+     "end": 453.25
+    },
+    {
+     "bullet": 3,
+     "start": 461.19,
+     "end": 466.19
+    }
+   ]
   },
   {
    "id": 14,
@@ -2515,7 +3878,20 @@
      "tex": "\\int_{t_1}^{t_2}M\\,\\mathrm dt=J\\omega_2-J\\omega_1",
      "size": 42,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "刚体角动量定理积分式",
+     "qa": [
+      {
+       "q": "这个公式里的积分项表示什么？",
+       "a": "冲量矩，即力矩对时间的积分 $\\int_{t_1}^{t_2}M\\,\\mathrm dt$，等于角动量的增量。"
+      },
+      {
+       "q": "为什么右边可以写成 $J\\omega_2-J\\omega_1$？",
+       "a": "因为刚体转动过程中 $J$ 不变，可提出公因子，故为 $J(\\omega_2-\\omega_1)$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2567,7 +3943,16 @@
      "tex": "\\int_{t_1}^{t_2}M\\,\\mathrm dt=J_2\\omega_2-J_1\\omega_1",
      "size": 40,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "非刚体角动量定理积分式",
+     "qa": [
+      {
+       "q": "非刚体为什么不能写成 $J(\\omega_2-\\omega_1)$？",
+       "a": "因为非刚体转动中 $J$ 也在变，两个时刻的 $J$ 不同，须分别用 $J_1$、$J_2$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2599,6 +3984,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "判断用哪个式子",
+     "qa": [
+      {
+       "q": "做题时怎么决定用哪个公式？",
+       "a": "先问转动过程中 $J$ 变不变：不变用刚体式，变化用非刚体式。"
+      }
      ]
     },
     {
@@ -2619,10 +4012,79 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "定轴转动角动量定理",
+     "qa": [
+      {
+       "q": "冲量矩与角动量增量的关系是什么？",
+       "a": "冲量矩等于角动量的增量，这就是定轴转动的角动量定理。"
+      }
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "刚体角动量定理积分式",
+     "x": 960,
+     "y": 472,
+     "qa": [
+      {
+       "q": "这个公式里的积分项表示什么？",
+       "a": "冲量矩，即力矩对时间的积分 $\\int_{t_1}^{t_2}M\\,\\mathrm dt$，等于角动量的增量。"
+      },
+      {
+       "q": "为什么右边可以写成 $J\\omega_2-J\\omega_1$？",
+       "a": "因为刚体转动过程中 $J$ 不变，可提出公因子，故为 $J(\\omega_2-\\omega_1)$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "非刚体角动量定理积分式",
+     "x": 960,
+     "y": 816,
+     "qa": [
+      {
+       "q": "非刚体为什么不能写成 $J(\\omega_2-\\omega_1)$？",
+       "a": "因为非刚体转动中 $J$ 也在变，两个时刻的 $J$ 不同，须分别用 $J_1$、$J_2$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 5
+    },
+    {
+     "text": "判断用哪个式子",
+     "x": 960,
+     "y": 908,
+     "qa": [
+      {
+       "q": "做题时怎么决定用哪个公式？",
+       "a": "先问转动过程中 $J$ 变不变：不变用刚体式，变化用非刚体式。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 6
+    },
+    {
+     "text": "定轴转动角动量定理",
+     "x": 960,
+     "y": 980,
+     "qa": [
+      {
+       "q": "冲量矩与角动量增量的关系是什么？",
+       "a": "冲量矩等于角动量的增量，这就是定轴转动的角动量定理。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 7
+    }
+   ],
    "stepTimes": {
     "1": 477.65,
     "2": 481.6,
@@ -2632,7 +4094,28 @@
    "t_start": 477.65,
    "t_end": 509.23,
    "duration": 31.58,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 481.6,
+     "end": 486.6
+    },
+    {
+     "bullet": 1,
+     "start": 490.64,
+     "end": 495.64
+    },
+    {
+     "bullet": 2,
+     "start": 498.17,
+     "end": 503.17
+    },
+    {
+     "bullet": 3,
+     "start": 498.17,
+     "end": 503.17
+    }
+   ]
   },
   {
    "id": 15,
@@ -2670,7 +4153,20 @@
      "tex": "\\vec M=0\\ \\Longrightarrow\\ \\vec L=J\\vec\\omega=\\text{常矢量}",
      "size": 38,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "角动量守恒定律",
+     "qa": [
+      {
+       "q": "角动量守恒的条件是什么？",
+       "a": "合外力矩为零，即 $\\vec M=0$，此时 $\\vec L=J\\vec\\omega$ 为常矢量。"
+      },
+      {
+       "q": "为什么 L 是常矢量而不只是常量？",
+       "a": "因为轴固定，$\\vec\\omega$ 只能沿轴，方向不变，故 $\\vec L$ 大小方向都不变。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2696,7 +4192,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "守恒式 Jω=常量",
+     "qa": [
+      {
+       "q": "定轴转动时守恒式怎么写？",
+       "a": "轴固定使 $\\vec\\omega$ 沿轴，守恒简化为 $J\\omega=\\text{常量}$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2760,6 +4265,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "J变则ω变",
+     "qa": [
+      {
+       "q": "花样滑冰收臂为什么加速？",
+       "a": "收臂使 J 变小，由 $J\\omega$ 不变，ω 变大，转速加快。"
+      }
      ]
     },
     {
@@ -2780,6 +4293,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "J变的物理含义",
+     "qa": [
+      {
+       "q": "J 变化时物体还是刚体吗？",
+       "a": "不是。J 变意味着质量分布改变，物体已不是刚体。"
+      }
      ]
     },
     {
@@ -2809,7 +4330,68 @@
      "color": "#111111"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "角动量守恒定律",
+     "x": 960,
+     "y": 388,
+     "qa": [
+      {
+       "q": "角动量守恒的条件是什么？",
+       "a": "合外力矩为零，即 $\\vec M=0$，此时 $\\vec L=J\\vec\\omega$ 为常矢量。"
+      },
+      {
+       "q": "为什么 L 是常矢量而不只是常量？",
+       "a": "因为轴固定，$\\vec\\omega$ 只能沿轴，方向不变，故 $\\vec L$ 大小方向都不变。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 1
+    },
+    {
+     "text": "守恒式 Jω=常量",
+     "x": 960,
+     "y": 488,
+     "qa": [
+      {
+       "q": "定轴转动时守恒式怎么写？",
+       "a": "轴固定使 $\\vec\\omega$ 沿轴，守恒简化为 $J\\omega=\\text{常量}$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "J变则ω变",
+     "x": 960,
+     "y": 668,
+     "qa": [
+      {
+       "q": "花样滑冰收臂为什么加速？",
+       "a": "收臂使 J 变小，由 $J\\omega$ 不变，ω 变大，转速加快。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    },
+    {
+     "text": "J变的物理含义",
+     "x": 960,
+     "y": 768,
+     "qa": [
+      {
+       "q": "J 变化时物体还是刚体吗？",
+       "a": "不是。J 变意味着质量分布改变，物体已不是刚体。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 5
+    }
+   ],
    "stepTimes": {
     "1": 510.03,
     "2": 518.49,
@@ -2820,7 +4402,28 @@
    "t_start": 510.03,
    "t_end": 547.4,
    "duration": 37.37,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 510.03,
+     "end": 515.03
+    },
+    {
+     "bullet": 1,
+     "start": 518.49,
+     "end": 523.49
+    },
+    {
+     "bullet": 2,
+     "start": 528.47,
+     "end": 533.47
+    },
+    {
+     "bullet": 3,
+     "start": 532.46,
+     "end": 537.46
+    }
+   ]
   },
   {
    "id": 16,
@@ -2872,7 +4475,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "角动量守恒条件",
+     "qa": [
+      {
+       "q": "为什么 J 变时 ω 也变，但 L 不变？",
+       "a": "因为守恒条件是 $M=0$，此时 $L=J\\omega$ 为常量；J 改变时 ω 必须相应改变以保持乘积不变。"
+      },
+      {
+       "q": "角动量守恒的条件是什么？",
+       "a": "合外力矩 $M=0$，此时系统角动量 $L$ 保持不变。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2898,6 +4514,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "内力矩不改变角动量",
+     "qa": [
+      {
+       "q": "内力矩会影响系统角动量吗？",
+       "a": "不会。内力矩成对出现、相互抵消，不改变系统总角动量，正如内力不改变总动量。"
+      }
      ]
     },
     {
@@ -2948,7 +4572,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "冲击问题近似守恒",
+     "qa": [
+      {
+       "q": "碰撞问题里为什么可以认为角动量守恒？",
+       "a": "因为冲击时内力矩远大于外力矩，$M_{in}\\gg M_{ex}$，外力矩可忽略，故 $L\\approx$ 常量。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -2974,6 +4607,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "基本定律地位",
+     "qa": [
+      {
+       "q": "角动量守恒只是解题技巧吗？",
+       "a": "不是。它是自然界基本定律，与动量守恒、能量守恒并列，源自空间旋转不变性。"
+      }
      ]
     },
     {
@@ -3023,7 +4664,68 @@
      "color": "#111111"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "角动量守恒条件",
+     "x": 960,
+     "y": 308,
+     "qa": [
+      {
+       "q": "为什么 J 变时 ω 也变，但 L 不变？",
+       "a": "因为守恒条件是 $M=0$，此时 $L=J\\omega$ 为常量；J 改变时 ω 必须相应改变以保持乘积不变。"
+      },
+      {
+       "q": "角动量守恒的条件是什么？",
+       "a": "合外力矩 $M=0$，此时系统角动量 $L$ 保持不变。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 1
+    },
+    {
+     "text": "内力矩不改变角动量",
+     "x": 960,
+     "y": 408,
+     "qa": [
+      {
+       "q": "内力矩会影响系统角动量吗？",
+       "a": "不会。内力矩成对出现、相互抵消，不改变系统总角动量，正如内力不改变总动量。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 2
+    },
+    {
+     "text": "冲击问题近似守恒",
+     "x": 960,
+     "y": 508,
+     "qa": [
+      {
+       "q": "碰撞问题里为什么可以认为角动量守恒？",
+       "a": "因为冲击时内力矩远大于外力矩，$M_{in}\\gg M_{ex}$，外力矩可忽略，故 $L\\approx$ 常量。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 3
+    },
+    {
+     "text": "基本定律地位",
+     "x": 960,
+     "y": 608,
+     "qa": [
+      {
+       "q": "角动量守恒只是解题技巧吗？",
+       "a": "不是。它是自然界基本定律，与动量守恒、能量守恒并列，源自空间旋转不变性。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 4
+    }
+   ],
    "stepTimes": {
     "1": 548.2,
     "2": 552.54,
@@ -3033,7 +4735,28 @@
    "t_start": 548.2,
    "t_end": 585.21,
    "duration": 37.01,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 548.2,
+     "end": 553.2
+    },
+    {
+     "bullet": 1,
+     "start": 552.54,
+     "end": 557.54
+    },
+    {
+     "bullet": 2,
+     "start": 561.53,
+     "end": 566.53
+    },
+    {
+     "bullet": 3,
+     "start": 569.3,
+     "end": 574.3
+    }
+   ]
   },
   {
    "id": 17,
@@ -3139,7 +4862,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "转动惯量与半径关系",
+     "qa": [
+      {
+       "q": "半径收为一半，转动惯量为什么变成 1/4？",
+       "a": "$J\\propto r^2$，$r$ 减半则 $J$ 变为原来的 $1/4$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -3159,6 +4891,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "角速度反比关系",
+     "qa": [
+      {
+       "q": "J 变为 1/4，ω 为什么变为 4 倍？",
+       "a": "由 $J\\omega$ 守恒，$J$ 变为 $1/4$，$\\omega$ 就变为 4 倍。"
+      }
      ]
     },
     {
@@ -3199,6 +4939,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "加速源于内力矩",
+     "qa": [
+      {
+       "q": "收臂加速是外力矩作用吗？",
+       "a": "不是，无外力矩；是自己把质量往轴附近收，靠内力改变 $J$。"
+      }
      ]
     },
     {
@@ -3241,7 +4989,20 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "角动量守恒",
+     "qa": [
+      {
+       "q": "为什么收臂后角速度会变大？",
+       "a": "无外力矩时 $J\\omega$ 守恒，$J$ 减小则 $\\omega$ 增大。"
+      },
+      {
+       "q": "J 减半为什么 ω 加倍？",
+       "a": "由 $J\\omega=\\text{常量}$，$J$ 变为一半，$\\omega$ 必变为两倍。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "diagram",
@@ -3253,7 +5014,68 @@
      "name": "j_omega"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "转动惯量与半径关系",
+     "x": 540,
+     "y": 474,
+     "qa": [
+      {
+       "q": "半径收为一半，转动惯量为什么变成 1/4？",
+       "a": "$J\\propto r^2$，$r$ 减半则 $J$ 变为原来的 $1/4$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    },
+    {
+     "text": "角速度反比关系",
+     "x": 540,
+     "y": 516,
+     "qa": [
+      {
+       "q": "J 变为 1/4，ω 为什么变为 4 倍？",
+       "a": "由 $J\\omega$ 守恒，$J$ 变为 $1/4$，$\\omega$ 就变为 4 倍。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 5
+    },
+    {
+     "text": "加速源于内力矩",
+     "x": 540,
+     "y": 636,
+     "qa": [
+      {
+       "q": "收臂加速是外力矩作用吗？",
+       "a": "不是，无外力矩；是自己把质量往轴附近收，靠内力改变 $J$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 7
+    },
+    {
+     "text": "角动量守恒",
+     "x": 540,
+     "y": 850,
+     "qa": [
+      {
+       "q": "为什么收臂后角速度会变大？",
+       "a": "无外力矩时 $J\\omega$ 守恒，$J$ 减小则 $\\omega$ 增大。"
+      },
+      {
+       "q": "J 减半为什么 ω 加倍？",
+       "a": "由 $J\\omega=\\text{常量}$，$J$ 变为一半，$\\omega$ 必变为两倍。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 8
+    }
+   ],
    "stepTimes": {
     "1": 586.01,
     "2": 594.1,
@@ -3264,7 +5086,28 @@
    "t_start": 586.01,
    "t_end": 622.39,
    "duration": 36.38,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 600.0,
+     "end": 605.0
+    },
+    {
+     "bullet": 1,
+     "start": 600.0,
+     "end": 605.0
+    },
+    {
+     "bullet": 2,
+     "start": 606.42,
+     "end": 611.42
+    },
+    {
+     "bullet": 3,
+     "start": 611.6,
+     "end": 616.6
+    }
+   ]
   },
   {
    "id": 18,
@@ -3468,7 +5311,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "碰撞角动量守恒",
+     "qa": [
+      {
+       "q": "为什么碰撞瞬间可以用角动量守恒？",
+       "a": "碰撞时轴对杆的约束力过轴，力矩为零，系统对O轴角动量守恒。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -3488,7 +5340,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "转动定律求爬行速率",
+     "qa": [
+      {
+       "q": "为什么用 $M=d(J\\omega)/dt$ 而不是 $M=J\\alpha$？",
+       "a": "因小虫爬行使转动惯量 $J$ 随时间变化，须用 $M=d(J\\omega)/dt$，且 $\\omega$ 恒定。"
+      },
+      {
+       "q": "维持恒定角速度的条件是什么？",
+       "a": "重力矩等于 $\\omega\\,dJ/dt$，由小虫位置变化提供所需 $dJ/dt$，从而定出爬行速率。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "diagram",
@@ -3500,7 +5365,40 @@
      "name": "bug_rod"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "碰撞角动量守恒",
+     "x": 570,
+     "y": 808,
+     "qa": [
+      {
+       "q": "为什么碰撞瞬间可以用角动量守恒？",
+       "a": "碰撞时轴对杆的约束力过轴，力矩为零，系统对O轴角动量守恒。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 8
+    },
+    {
+     "text": "转动定律求爬行速率",
+     "x": 570,
+     "y": 866,
+     "qa": [
+      {
+       "q": "为什么用 $M=d(J\\omega)/dt$ 而不是 $M=J\\alpha$？",
+       "a": "因小虫爬行使转动惯量 $J$ 随时间变化，须用 $M=d(J\\omega)/dt$，且 $\\omega$ 恒定。"
+      },
+      {
+       "q": "维持恒定角速度的条件是什么？",
+       "a": "重力矩等于 $\\omega\\,dJ/dt$，由小虫位置变化提供所需 $dJ/dt$，从而定出爬行速率。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 9
+    }
+   ],
    "stepTimes": {
     "1": 623.19,
     "2": 633.83,
@@ -3510,7 +5408,18 @@
    "t_start": 623.19,
    "t_end": 662.53,
    "duration": 39.34,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 646.9,
+     "end": 651.9
+    },
+    {
+     "bullet": 1,
+     "start": 646.9,
+     "end": 651.9
+    }
+   ]
   },
   {
    "id": 19,
@@ -3568,7 +5477,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "角动量守恒条件",
+     "qa": [
+      {
+       "q": "为什么碰撞瞬间可以用角动量守恒？",
+       "a": "碰撞时间极短，外力矩的冲量矩可忽略，故系统角动量守恒。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -3580,7 +5498,20 @@
      "tex": "mv_0\\frac{l}{4}=\\left[\\frac{1}{12}ml^2+m\\left(\\frac{l}{4}\\right)^2\\right]\\omega",
      "size": 34,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "角动量守恒方程",
+     "qa": [
+      {
+       "q": "等式左边为什么是 $mv_0\\frac{l}{4}$？",
+       "a": "虫垂直落下，对转轴力臂为 $l/4$，碰前角动量为 $mv_0\\cdot\\frac{l}{4}$。"
+      },
+      {
+       "q": "右边括号里两项分别是什么？",
+       "a": "杆的转动惯量 $\\frac{1}{12}ml^2$ 与虫在 $l/4$ 处的 $m(l/4)^2$ 之和。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -3624,10 +5555,65 @@
      "tex": "\\omega=\\frac{12}{7}\\frac{v_0}{l}",
      "size": 46,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "碰后角速度结果",
+     "qa": [
+      {
+       "q": "$\\omega$ 的结果怎么来的？",
+       "a": "由守恒方程解得 $\\omega=\\frac{12}{7}\\frac{v_0}{l}$。"
+      }
+     ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "角动量守恒条件",
+     "x": 960,
+     "y": 304,
+     "qa": [
+      {
+       "q": "为什么碰撞瞬间可以用角动量守恒？",
+       "a": "碰撞时间极短，外力矩的冲量矩可忽略，故系统角动量守恒。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 1
+    },
+    {
+     "text": "角动量守恒方程",
+     "x": 960,
+     "y": 502,
+     "qa": [
+      {
+       "q": "等式左边为什么是 $mv_0\\frac{l}{4}$？",
+       "a": "虫垂直落下，对转轴力臂为 $l/4$，碰前角动量为 $mv_0\\cdot\\frac{l}{4}$。"
+      },
+      {
+       "q": "右边括号里两项分别是什么？",
+       "a": "杆的转动惯量 $\\frac{1}{12}ml^2$ 与虫在 $l/4$ 处的 $m(l/4)^2$ 之和。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "碰后角速度结果",
+     "x": 960,
+     "y": 872,
+     "qa": [
+      {
+       "q": "$\\omega$ 的结果怎么来的？",
+       "a": "由守恒方程解得 $\\omega=\\frac{12}{7}\\frac{v_0}{l}$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 5
+    }
+   ],
    "stepTimes": {
     "1": 663.33,
     "2": 673.52,
@@ -3637,7 +5623,23 @@
    "t_start": 663.33,
    "t_end": 701.08,
    "duration": 37.75,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 663.33,
+     "end": 668.33
+    },
+    {
+     "bullet": 1,
+     "start": 673.52,
+     "end": 678.52
+    },
+    {
+     "bullet": 2,
+     "start": 695.45,
+     "end": 700.45
+    }
+   ]
   },
   {
    "id": 20,
@@ -3689,7 +5691,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "变J维持ω需力矩",
+     "qa": [
+      {
+       "q": "为什么r变就要有力矩？",
+       "a": "r变使J变，维持ω不变需M=ω dJ/dt，此力矩由重力矩提供。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -3713,7 +5724,15 @@
      "tex": "=2mr\\omega\\frac{\\mathrm dr}{\\mathrm dt}",
      "size": 34,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "dJ/dt表达式",
+     "qa": [
+      {
+       "q": "为什么dJ/dt只有虫项在变？",
+       "a": "杆的转动惯量不变，只有小虫的$mr^2$随r变化，故$\\mathrm dJ/\\mathrm dt=2mr\\,\\mathrm dr/\\mathrm dt$。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -3745,7 +5764,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "爬行速率余弦规律",
+     "qa": [
+      {
+       "q": "为什么爬行速率是余弦规律？",
+       "a": "由$\\mathrm dr/\\mathrm dt=\\frac{g\\cos\\omega t}{2\\omega}$，代入ω得$\\frac{7lg}{24v_0}\\cos\\frac{12v_0t}{7l}$，故时快时慢。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -3777,10 +5805,75 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "爬行速率结论",
+     "qa": [
+      {
+       "q": "小虫必须怎样爬行？",
+       "a": "必须按余弦规律时快时慢地爬，才能维持杆的恒定角速度。"
+      }
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "变J维持ω需力矩",
+     "x": 960,
+     "y": 300,
+     "qa": [
+      {
+       "q": "为什么r变就要有力矩？",
+       "a": "r变使J变，维持ω不变需M=ω dJ/dt，此力矩由重力矩提供。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 1
+    },
+    {
+     "text": "dJ/dt表达式",
+     "x": 960,
+     "y": 618,
+     "qa": [
+      {
+       "q": "为什么dJ/dt只有虫项在变？",
+       "a": "杆的转动惯量不变，只有小虫的$mr^2$随r变化，故$\\mathrm dJ/\\mathrm dt=2mr\\,\\mathrm dr/\\mathrm dt$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 3
+    },
+    {
+     "text": "爬行速率余弦规律",
+     "x": 960,
+     "y": 688,
+     "qa": [
+      {
+       "q": "为什么爬行速率是余弦规律？",
+       "a": "由$\\mathrm dr/\\mathrm dt=\\frac{g\\cos\\omega t}{2\\omega}$，代入ω得$\\frac{7lg}{24v_0}\\cos\\frac{12v_0t}{7l}$，故时快时慢。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    },
+    {
+     "text": "爬行速率结论",
+     "x": 960,
+     "y": 940,
+     "qa": [
+      {
+       "q": "小虫必须怎样爬行？",
+       "a": "必须按余弦规律时快时慢地爬，才能维持杆的恒定角速度。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 6
+    }
+   ],
    "stepTimes": {
     "1": 701.88,
     "2": 711.63,
@@ -3791,7 +5884,28 @@
    "t_start": 701.88,
    "t_end": 750.0,
    "duration": 48.12,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 701.88,
+     "end": 706.88
+    },
+    {
+     "bullet": 1,
+     "start": 720.31,
+     "end": 725.31
+    },
+    {
+     "bullet": 2,
+     "start": 727.26,
+     "end": 732.26
+    },
+    {
+     "bullet": 3,
+     "start": 735.75,
+     "end": 740.75
+    }
+   ]
   },
   {
    "id": 21,
@@ -3877,6 +5991,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "转动惯量与定轴转动",
+     "qa": [
+      {
+       "q": "跳板的转动惯量怎么算？",
+       "a": "匀质杆绕中点C转动，$I=\\frac{1}{12}m'l^2$，再叠加演员的贡献。"
+      }
      ]
     },
     {
@@ -3929,7 +6051,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "完全非弹性碰撞",
+     "qa": [
+      {
+       "q": "为什么碰撞瞬间可以用角动量守恒？",
+       "a": "碰撞时跳板受轴C的约束力，但该力对C的力矩为零，故对C轴角动量守恒。"
+      },
+      {
+       "q": "完全非弹性碰撞有什么特点？",
+       "a": "碰后M与跳板A端速度相同，即一起运动，机械能不守恒但角动量守恒。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -3969,7 +6104,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "角动量守恒求线速度",
+     "qa": [
+      {
+       "q": "碰后N的线速度怎么求？",
+       "a": "由对C角动量守恒求出碰后角速度$\\omega$，再用$v=\\omega\\cdot\\frac{l}{2}$得N的线速度。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -3989,6 +6133,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "竖直上抛求高度",
+     "qa": [
+      {
+       "q": "N弹起的高度如何计算？",
+       "a": "由$v^2=2gh'$得$h'=\\frac{v^2}{2g}$，v为碰后N获得的线速度。"
+      }
      ]
     },
     {
@@ -4001,7 +6153,68 @@
      "name": "diving_board"
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "转动惯量与定轴转动",
+     "x": 570,
+     "y": 454,
+     "qa": [
+      {
+       "q": "跳板的转动惯量怎么算？",
+       "a": "匀质杆绕中点C转动，$I=\\frac{1}{12}m'l^2$，再叠加演员的贡献。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 3
+    },
+    {
+     "text": "完全非弹性碰撞",
+     "x": 570,
+     "y": 602,
+     "qa": [
+      {
+       "q": "为什么碰撞瞬间可以用角动量守恒？",
+       "a": "碰撞时跳板受轴C的约束力，但该力对C的力矩为零，故对C轴角动量守恒。"
+      },
+      {
+       "q": "完全非弹性碰撞有什么特点？",
+       "a": "碰后M与跳板A端速度相同，即一起运动，机械能不守恒但角动量守恒。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 5
+    },
+    {
+     "text": "角动量守恒求线速度",
+     "x": 570,
+     "y": 788,
+     "qa": [
+      {
+       "q": "碰后N的线速度怎么求？",
+       "a": "由对C角动量守恒求出碰后角速度$\\omega$，再用$v=\\omega\\cdot\\frac{l}{2}$得N的线速度。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 7
+    },
+    {
+     "text": "竖直上抛求高度",
+     "x": 570,
+     "y": 846,
+     "qa": [
+      {
+       "q": "N弹起的高度如何计算？",
+       "a": "由$v^2=2gh'$得$h'=\\frac{v^2}{2g}$，v为碰后N获得的线速度。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 8
+    }
+   ],
    "stepTimes": {
     "1": 750.8,
     "2": 762.49,
@@ -4012,7 +6225,28 @@
    "t_start": 750.8,
    "t_end": 790.11,
    "duration": 39.31,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 762.49,
+     "end": 767.49
+    },
+    {
+     "bullet": 1,
+     "start": 771.41,
+     "end": 776.41
+    },
+    {
+     "bullet": 2,
+     "start": 781.99,
+     "end": 786.99
+    },
+    {
+     "bullet": 3,
+     "start": 781.99,
+     "end": 786.99
+    }
+   ]
   },
   {
    "id": 22,
@@ -4134,7 +6368,20 @@
      "tex": "mv_{\\mathrm M}\\frac{l}{2}=\\left[\\frac{1}{12}m'l^2+2m\\left(\\frac{l}{2}\\right)^2\\right]\\omega",
      "size": 26,
      "color": "#111111",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "角动量守恒式",
+     "qa": [
+      {
+       "q": "为什么可以对C点用角动量守恒？",
+       "a": "碰撞瞬间重力和轴力对C点力矩为零，故系统对C点角动量守恒。"
+      },
+      {
+       "q": "括号里第二项为什么是2m(l/2)²？",
+       "a": "两人各在l/2处，各贡献$m(l/2)^2$，合计$2m(l/2)^2=\\frac{1}{2}ml^2$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -4146,7 +6393,15 @@
      "tex": "\\omega=\\frac{6m\\sqrt{2gh}}{(m'+6m)\\,l}",
      "size": 30,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "碰后角速度ω",
+     "qa": [
+      {
+       "q": "ω的分子6m是怎么来的？",
+       "a": "由$mv\\frac{l}{2}$除以总转动惯量，约去$l$后得$\\frac{6m\\sqrt{2gh}}{(m'+6m)l}$。"
+      }
+     ]
     },
     {
      "type": "tex",
@@ -4158,7 +6413,20 @@
      "tex": "h'=\\frac{u^2}{2g}=\\left(\\frac{3m}{m'+6m}\\right)^2h",
      "size": 30,
      "color": "#C00000",
-     "align": "center"
+     "align": "center",
+     "hotspot": true,
+     "label": "N上升高度h′",
+     "qa": [
+      {
+       "q": "h′为什么用u²/2g算？",
+       "a": "碰后N以线速度u竖直上升，机械能守恒得$h'=u^2/2g$。"
+      },
+      {
+       "q": "结果里平方是怎么出现的？",
+       "a": "因$h'\\propto u^2\\propto\\omega^2$，而$\\omega\\propto\\frac{3m}{m'+6m}$，故取平方。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -4178,10 +6446,83 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "轻板极限检验",
+     "qa": [
+      {
+       "q": "m′→0时为什么h′=h/4？",
+       "a": "板很轻时两人等质量弹性分配动量，各得一半速度，动能变1/4，高度即h/4。"
+      }
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "角动量守恒式",
+     "x": 960,
+     "y": 644,
+     "qa": [
+      {
+       "q": "为什么可以对C点用角动量守恒？",
+       "a": "碰撞瞬间重力和轴力对C点力矩为零，故系统对C点角动量守恒。"
+      },
+      {
+       "q": "括号里第二项为什么是2m(l/2)²？",
+       "a": "两人各在l/2处，各贡献$m(l/2)^2$，合计$2m(l/2)^2=\\frac{1}{2}ml^2$。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 4
+    },
+    {
+     "text": "碰后角速度ω",
+     "x": 960,
+     "y": 792,
+     "qa": [
+      {
+       "q": "ω的分子6m是怎么来的？",
+       "a": "由$mv\\frac{l}{2}$除以总转动惯量，约去$l$后得$\\frac{6m\\sqrt{2gh}}{(m'+6m)l}$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 5
+    },
+    {
+     "text": "N上升高度h′",
+     "x": 960,
+     "y": 952,
+     "qa": [
+      {
+       "q": "h′为什么用u²/2g算？",
+       "a": "碰后N以线速度u竖直上升，机械能守恒得$h'=u^2/2g$。"
+      },
+      {
+       "q": "结果里平方是怎么出现的？",
+       "a": "因$h'\\propto u^2\\propto\\omega^2$，而$\\omega\\propto\\frac{3m}{m'+6m}$，故取平方。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 6
+    },
+    {
+     "text": "轻板极限检验",
+     "x": 960,
+     "y": 1018,
+     "qa": [
+      {
+       "q": "m′→0时为什么h′=h/4？",
+       "a": "板很轻时两人等质量弹性分配动量，各得一半速度，动能变1/4，高度即h/4。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 7
+    }
+   ],
    "stepTimes": {
     "1": 790.91,
     "2": 797.66,
@@ -4192,7 +6533,28 @@
    "t_start": 790.91,
    "t_end": 850.31,
    "duration": 59.4,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 797.66,
+     "end": 802.66
+    },
+    {
+     "bullet": 1,
+     "start": 814.66,
+     "end": 819.66
+    },
+    {
+     "bullet": 2,
+     "start": 825.52,
+     "end": 830.52
+    },
+    {
+     "bullet": 3,
+     "start": 825.52,
+     "end": 830.52
+    }
+   ]
   },
   {
    "id": 23,
@@ -4278,6 +6640,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "收臂结论",
+     "qa": [
+      {
+       "q": "收臂后 L 和 ω 怎么变？",
+       "a": "$L$ 不变，$\\omega$ 变大，选 A。"
+      }
      ]
     },
     {
@@ -4364,7 +6734,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "转动惯量与角速度关系",
+     "qa": [
+      {
+       "q": "收臂后为什么角速度变大？",
+       "a": "质量靠近轴使 $J$ 变小，由 $L=J\\omega$ 守恒，$\\omega$ 必须变大。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -4404,6 +6783,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "花样滑冰类比",
+     "qa": [
+      {
+       "q": "这和花样滑冰有什么关系？",
+       "a": "滑冰者收臂加速与转台收臂同理，都是 $J$ 变小使 $\\omega$ 变大。"
+      }
      ]
     },
     {
@@ -4454,10 +6841,84 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "角动量守恒判据",
+     "qa": [
+      {
+       "q": "为什么收臂过程中角动量守恒？",
+       "a": "外力矩为零（重力、支持力过轴），故 $L=J\\omega$ 守恒。"
+      },
+      {
+       "q": "角动量守恒的条件是什么？",
+       "a": "合外力矩为零，此时 $L=J\\omega$ 保持不变。"
+      }
+     ],
+     "important": true
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "收臂结论",
+     "x": 580,
+     "y": 522,
+     "qa": [
+      {
+       "q": "收臂后 L 和 ω 怎么变？",
+       "a": "$L$ 不变，$\\omega$ 变大，选 A。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 3
+    },
+    {
+     "text": "转动惯量与角速度关系",
+     "x": 540,
+     "y": 748,
+     "qa": [
+      {
+       "q": "收臂后为什么角速度变大？",
+       "a": "质量靠近轴使 $J$ 变小，由 $L=J\\omega$ 守恒，$\\omega$ 必须变大。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 7
+    },
+    {
+     "text": "花样滑冰类比",
+     "x": 540,
+     "y": 866,
+     "qa": [
+      {
+       "q": "这和花样滑冰有什么关系？",
+       "a": "滑冰者收臂加速与转台收臂同理，都是 $J$ 变小使 $\\omega$ 变大。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 9
+    },
+    {
+     "text": "角动量守恒判据",
+     "x": 1380,
+     "y": 912,
+     "qa": [
+      {
+       "q": "为什么收臂过程中角动量守恒？",
+       "a": "外力矩为零（重力、支持力过轴），故 $L=J\\omega$ 守恒。"
+      },
+      {
+       "q": "角动量守恒的条件是什么？",
+       "a": "合外力矩为零，此时 $L=J\\omega$ 保持不变。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 10
+    }
+   ],
    "stepTimes": {
     "1": 851.11,
     "2": 861.56
@@ -4465,7 +6926,28 @@
    "t_start": 851.11,
    "t_end": 886.1,
    "duration": 34.99,
-   "laser": [],
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 851.11,
+     "end": 856.11
+    },
+    {
+     "bullet": 1,
+     "start": 861.56,
+     "end": 866.56
+    },
+    {
+     "bullet": 2,
+     "start": 861.56,
+     "end": 866.56
+    },
+    {
+     "bullet": 3,
+     "start": 861.56,
+     "end": 866.56
+    }
+   ],
    "interactions": [
     {
      "t": 861.56,
@@ -4545,7 +7027,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "质点角动量定义",
+     "qa": [
+      {
+       "q": "角动量的大小和方向怎么确定？",
+       "a": "$L=r\\times p$，大小 $rmv\\sin\\theta$，方向由右手螺旋定则确定。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -4605,7 +7096,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "角动量定理",
+     "qa": [
+      {
+       "q": "角动量定理的微分和积分形式分别是什么？",
+       "a": "微分形式 $M=\\mathrm dL/\\mathrm dt$；积分形式 $\\int M\\mathrm dt=\\Delta L$，即冲量矩等于角动量增量。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -4665,6 +7165,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "角动量守恒条件",
+     "qa": [
+      {
+       "q": "什么情况下角动量守恒？",
+       "a": "$M=0$ 时 $L$ 为常矢量，即合外力为零或合力始终通过参考点。"
+      }
      ]
     },
     {
@@ -4725,6 +7233,18 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "刚体定轴转动",
+     "qa": [
+      {
+       "q": "刚体定轴转动的角动量定理怎么写？",
+       "a": "$L=J\\omega$，$M=\\mathrm d(J\\omega)/\\mathrm dt$；$J$ 不变时退化为 $M=J\\alpha$。"
+      },
+      {
+       "q": "J 变化时还能用 $M=J\\alpha$ 吗？",
+       "a": "不能，必须写 $M=\\mathrm d(J\\omega)/\\mathrm dt$。"
+      }
      ]
     },
     {
@@ -4836,7 +7356,68 @@
      ]
     }
    ],
-   "bullets": [],
+   "bullets": [
+    {
+     "text": "质点角动量定义",
+     "x": 550,
+     "y": 344,
+     "qa": [
+      {
+       "q": "角动量的大小和方向怎么确定？",
+       "a": "$L=r\\times p$，大小 $rmv\\sin\\theta$，方向由右手螺旋定则确定。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 2
+    },
+    {
+     "text": "角动量定理",
+     "x": 550,
+     "y": 516,
+     "qa": [
+      {
+       "q": "角动量定理的微分和积分形式分别是什么？",
+       "a": "微分形式 $M=\\mathrm dL/\\mathrm dt$；积分形式 $\\int M\\mathrm dt=\\Delta L$，即冲量矩等于角动量增量。"
+      }
+     ],
+     "hotspot": true,
+     "important": true,
+     "elIdx": 5
+    },
+    {
+     "text": "角动量守恒条件",
+     "x": 1380,
+     "y": 344,
+     "qa": [
+      {
+       "q": "什么情况下角动量守恒？",
+       "a": "$M=0$ 时 $L$ 为常矢量，即合外力为零或合力始终通过参考点。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 8
+    },
+    {
+     "text": "刚体定轴转动",
+     "x": 1380,
+     "y": 516,
+     "qa": [
+      {
+       "q": "刚体定轴转动的角动量定理怎么写？",
+       "a": "$L=J\\omega$，$M=\\mathrm d(J\\omega)/\\mathrm dt$；$J$ 不变时退化为 $M=J\\alpha$。"
+      },
+      {
+       "q": "J 变化时还能用 $M=J\\alpha$ 吗？",
+       "a": "不能，必须写 $M=\\mathrm d(J\\omega)/\\mathrm dt$。"
+      }
+     ],
+     "hotspot": true,
+     "important": false,
+     "elIdx": 11
+    }
+   ],
    "stepTimes": {
     "1": 886.9,
     "2": 900.56,
@@ -4848,7 +7429,28 @@
    "t_start": 886.9,
    "t_end": 939.65,
    "duration": 52.75,
-   "laser": []
+   "laser": [
+    {
+     "bullet": 0,
+     "start": 886.9,
+     "end": 891.9
+    },
+    {
+     "bullet": 1,
+     "start": 900.56,
+     "end": 905.56
+    },
+    {
+     "bullet": 2,
+     "start": 908.64,
+     "end": 913.64
+    },
+    {
+     "bullet": 3,
+     "start": 916.41,
+     "end": 921.41
+    }
+   ]
   }
  ],
  "subtitles": [
@@ -5657,6 +8259,6 @@
    "text": "下一节讲力矩做功与转动动能定理——那是对应的“功与能”。"
   }
  ],
- "build_ts": 1792398895,
+ "build_ts": 1794446515,
  "logoScale": 0.67
 }

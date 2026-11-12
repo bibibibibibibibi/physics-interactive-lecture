@@ -1,0 +1,2080 @@
+{
+ "id": "ch03",
+ "title": "动量守恒定律和能量守恒定律",
+ "subject": "mechanics",
+ "chapter": 3,
+ "week": "Week 3",
+ "difficulty": "★★★☆☆（守恒律的条件判断与综合应用，是期中期末的核心考点）",
+ "source": "马文蔚《物理学》第七版 第三章（OCR fixed 版转换 + 人工精选作业）",
+ "blocks": [
+  {
+   "type": "intro",
+   "summary": "本章把牛顿第二定律沿时间与空间两个方向展开：时间上累积得到冲量与动量定理，进而得到自然界最普遍的动量守恒定律，并讨论火箭推进等质量移动问题；空间上累积得到功与动能定理，经保守力做功特点引入势能，建立功能原理与机械能守恒定律，讨论三类宇宙速度；随后用两守恒律处理碰撞问题，最后介绍质心与质心运动定理，并初识对称性与守恒律的深刻联系。"
+  },
+  {
+   "type": "section",
+   "number": "3.1",
+   "title": "质点和质点系的动量定理"
+  },
+  {
+   "type": "video",
+   "source": "bilibili",
+   "bvid": "BV1eK4y1E7Cb",
+   "page": 8,
+   "title": "📺 视频学习：质点和质点系的动量定理",
+   "caption": "东北大学《大学物理》MOOC 课堂录播（马文蔚《物理学》配套课程），第 1 次课 配套；本讲对应教材 3-1 质点和质点系的动量定理（冲量·动量定理·质点系），时长 39:27。注意：视频标题里的 3.x 是该课程的讲次编号，与教材小节号含义不同，请以本卡片标注的教材小节为准。<a href=\"https://www.bilibili.com/video/BV1eK4y1E7Cb?p=8\" target=\"_blank\" rel=\"noopener\">在 B 站打开本讲 ↗</a>（嵌入加载失败、或想看弹幕与讲义时点此）"
+  },
+  {
+   "type": "text",
+   "html": "<h4>一、冲量 质点的动量定理</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在上一章中，将牛顿第二定律表述为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{F} = \\frac{\\mathrm{d}\\mathbf{p}}{\\mathrm{d}t} = \\frac{\\mathrm{d}(m\\mathbf{v})}{\\mathrm{d}t}"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{F}\\mathrm{d}t = \\mathrm{d}\\mathbf{p} = \\mathrm{d}(m\\mathbf{v})"
+  },
+  {
+   "type": "text",
+   "html": "<p>在低速运动的牛顿力学范围内，质点的质量可视为是不改变的，故 $\\mathrm{d}(m\\mathbf{v})$ 可写成 $m\\mathrm{d}\\mathbf{v}$.此外，一般说来，作用在质点上的力是随时间而改变的，即力是时间的函数，$\\mathbf{F} = \\mathbf{F}(t)$.考虑到以上两点，在时间间隔 $\\Delta t = t_{2} - t_{1}$ 内，上式的积分为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\int_{t_{1}}^{t_{2}} \\mathbf{F}(t)\\mathrm{d}t = m\\mathbf{v}_{2} - m\\mathbf{v}_{1}",
+   "label": "式（3-1）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $\\mathbf{v}_{1}$ 和 $\\mathbf{p}_{1}$ 是质点在时刻 $t_{1}$ 的速度和动量，$\\mathbf{v}_{2}$ 和 $\\mathbf{p}_{2}$ 是质点在时刻 $t_{2}$ 的速度和动量.$\\int_{t_{1}}^{t_{2}} \\mathbf{F}(t)\\mathrm{d}t$ 为力对时间的积分，称为力的冲量，它也是矢量，用符号 $\\mathbf{I}$ 表示。式(3-1)的物理意义是：在给定时间间隔内，外力作用在质点上的冲量等于质点在此时间内动量的增量。这就是质点的动量定理。一般来说，冲量的方向并不与动量的方向相同，而是与动量增量的方向相同。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>式(3-1)是质点动量定理的矢量表达式，在直角坐标系中，其分量式为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\left.\\begin{aligned} I_{x} &= \\int_{t_{1}}^{t_{2}} F_{x}\\mathrm{d}t = mv_{2x} - mv_{1x} \\\\ I_{y} &= \\int_{t_{1}}^{t_{2}} F_{y}\\mathrm{d}t = mv_{2y} - mv_{1y} \\\\ I_{z} &= \\int_{t_{1}}^{t_{2}} F_{z}\\mathrm{d}t = mv_{2z} - mv_{1z} \\end{aligned}\\right\\}",
+   "label": "式（3-2）"
+  },
+  {
+   "type": "text",
+   "html": "<p>显然，质点在某一轴线上的动量增量，仅与该质点在此轴线上所受外力的冲量有关。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>下面简单说明一下动量 $\\mathbf{p}$ 的物理意义。从动量定理可以知道，在相等的冲量作用下，不同质量的物体的速度变化是不相同的，但它们的动量的变化却是相同的，所以从过程角度来看，动量 $\\mathbf{p}$ 比速度 $\\mathbf{v}$ 更能确切地反映物体的运动状态。因此，物体作机械运动时，动量 $\\mathbf{p}$ 和位矢 $\\mathbf{r}$ 是描述物体运动状态的参量。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>二、质点系的动量定理</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>上面我们讨论了质点的动量定理。然而在许多问题中还需研究由一些质点构成的质点系的动量变化与作用在质点系上的力之间的关系。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如图3-1所示，在系统 $S$ 内有两个质点1和2，它们的质量分别为 $m_{1}$ 和 $m_{2}$.</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>外界对系统内质点作用的力叫做外力，系统内质点间的相互作用力则叫做内力。设作用在两质点上的外力分别是 $\\mathbf{F}_{1}$ 和 $\\mathbf{F}_{2}$，而两质点间相互作用的内力分别为 $\\mathbf{F}_{12}$ 和 $\\mathbf{F}_{21}$.根据质点的动量定理，在时间间隔 $\\Delta t = t_{2} - t_{1}$ 内，两质点所受力的冲量和动量增量分别为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\int_{t_{1}}^{t_{2}} (\\mathbf{F}_{1} + \\mathbf{F}_{12})\\mathrm{d}t = m_{1}\\mathbf{v}_{1} - m_{1}\\mathbf{v}_{10}"
+  },
+  {
+   "type": "text",
+   "html": "<p>和</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\int_{t_{1}}^{t_{2}} (\\mathbf{F}_{2} + \\mathbf{F}_{21})\\mathrm{d}t = m_{2}\\mathbf{v}_{2} - m_{2}\\mathbf{v}_{20}"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch03/pages_50_100_fc08fedca888754277ff456c6828d1599a6e7a6962361f7f6db21e3992487ae2.png",
+   "caption": "图 3-1 质点系的内力和外力"
+  },
+  {
+   "type": "text",
+   "html": "<p>将上两式相加，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\int_{t_{1}}^{t_{2}} (\\mathbf{F}_{1} + \\mathbf{F}_{2})\\mathrm{d}t + \\int_{t_{1}}^{t_{2}} (\\mathbf{F}_{12} + \\mathbf{F}_{21})\\mathrm{d}t = (m_{1}\\mathbf{v}_{1} + m_{2}\\mathbf{v}_{2}) - (m_{1}\\mathbf{v}_{10} + m_{2}\\mathbf{v}_{20})",
+   "label": "式（3-3）"
+  },
+  {
+   "type": "text",
+   "html": "<p>由牛顿第三定律知 $\\mathbf{F}_{12} = -\\mathbf{F}_{21}$，故上式可写为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\int_{t_{1}}^{t_{2}} (\\mathbf{F}_{1} + \\mathbf{F}_{2})\\mathrm{d}t = (m_{1}\\mathbf{v}_{1} + m_{2}\\mathbf{v}_{2}) - (m_{1}\\mathbf{v}_{10} + m_{2}\\mathbf{v}_{20})"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式表明，作用于两质点组成系统的合外力的冲量等于系统内两质点动量之和的增量，亦即系统的动量增量。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>上述结论容易推广到由 $n$ 个质点所组成的系统。考虑到内力总是成对出现，且每一对力总是大小相等、方向相反，则其矢量和必为零，即 $\\sum_{i=1}^{n} \\mathbf{F}_{i}^{\\mathrm{in}} = 0$.如作用于系统的合外力用 $\\mathbf{F}^{\\mathrm{ex}}$ 表示，且系统的初动量和末动量各为 $\\mathbf{p}_{0}$ 和 $\\mathbf{p}$，那么由上式可得，作用于系统的合外力的冲量与系统动量的增量之间的关系为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\int_{t_{1}}^{t_{2}} \\mathbf{F}^{\\mathrm{ex}}\\mathrm{d}t = \\sum_{i=1}^{n} m_{i}\\mathbf{v}_{i} - \\sum_{i=1}^{n} m_{i}\\mathbf{v}_{i0} = \\mathbf{p} - \\mathbf{p}_{0}",
+   "label": "式（3-4a）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式(3-4a)表明，作用于系统的合外力的冲量等于系统动量的增量。这就是质点系的动量定理。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如同质点的动量定理一样，也可将式(3-4a)的矢量表达式写成像式(3-2)那样的分量式。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>需要强调指出：作用于系统的合外力是作用于系统内每一质点的外力的矢量和。只有外力才对系统的动量变化有贡献，而系统的内力(系统内各质点间的相互作用)是不能改变整个系统的动量的，这是牛顿第三定律的直接结果。利用这个道理来研究几个物体组成的系统的动力学问题就可化繁为简了。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在无限小的时间间隔内，质点系的动量定理可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{F}^{\\mathrm{ex}}\\mathrm{d}t = \\mathrm{d}\\mathbf{p}"
+  },
+  {
+   "type": "text",
+   "html": "<p>或</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{F}^{\\mathrm{ex}} = \\frac{\\mathrm{d}\\mathbf{p}}{\\mathrm{d}t}",
+   "label": "式（3-4b）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式表明，作用于质点系的合外力等于质点系的动量随时间的变化率。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在人造地球卫星的定轨和运行过程中，常常需要调整卫星的运行轨道。近年来，人们采用一种叫做离子推进器①的系统所产生的推力，使卫星能保持在适当的方位上，其基本原理就是质点系的动量定理。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>关于动量的相对性和动量定理不变性的讨论</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>牛顿运动定律曾指出，质点运动时其速度是随惯性系的选取而有所差异的，因此，在某一时刻，运动物体的动量也是相对于不同惯性系而不相同的。如图3-2所示，有一质量为 $m$ 的小球在光滑平面上沿直线运动，在外力 $\\mathbf{F}(t)$ 的持续作用下，位于地面惯性系 $S$ 中的观察者观测到，在时间间隔 $\\Delta t = t_{2} - t_{1}$ 内，小球的速度由 $\\mathbf{v}_{1}$ 增至 $\\mathbf{v}_{2}$，其动量亦相应地由 $m\\mathbf{v}_{1}$ 增加到 $m\\mathbf{v}_{2}$.那么，以速度 $\\mathbf{u}$ 相对地面作匀速直线运动的车厢为惯性系 $S'$，其中的观察者观测到，此小球的速度和动量先后分别为 $(\\mathbf{v}_{1} - \\mathbf{u})$ 和 $(\\mathbf{v}_{2} - \\mathbf{u})$，以及 $m(\\mathbf{v}_{1} - \\mathbf{u})$ 和 $m(\\mathbf{v}_{2} - \\mathbf{u})$.显然这两个惯性系所测得小球的动量是不相同的。这就是动量的相对性。然而，无论是对 $S$ 系的观察者，还是对 $S'$ 系的观察者，小球动量的增量都是相等的，均为 $m\\mathbf{v}_{2} - m\\mathbf{v}_{1}$.所以，无论对 $S$ 系或者是 $S'$ 系，动量定理的形式相同，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\int_{t_{1}}^{t_{2}} \\mathbf{F}\\mathrm{d}t = m\\mathbf{v}_{2} - m\\mathbf{v}_{1}"
+  },
+  {
+   "type": "text",
+   "html": "<p>这说明，小球的动量随惯性系的选取的不同而有所差异，但动量定理却是相同的，这就是动量定理的不变性。在下面将要讲述的动能定理是否也具有不变性呢？读者可试予论证。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch03/pages_50_100_479a0e082de5d3c969b31bf230fcc702b03ce82e63a1ae49e4a08a19f55f4d71.png",
+   "caption": "图 3-2 动量定理的不变性（两惯性系观察同一小球）"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（3.1 节 · 例 1）",
+   "problem": "如图3-3所示，一质量为 $0.05\\ \\mathrm{kg}$、速率为 $10\\ \\mathrm{m \\cdot s^{-1}}$ 的钢球，以与钢板法线呈 $45^\\circ$ 角的方向撞击在钢板上，并以相同的速率和角度弹回来。球与钢板的碰撞时间为 $0.05\\ \\mathrm{s}$.求在此碰撞时间内钢板所受到的平均冲力。<br><img src=\"assets/images/ch03/pages_50_100_08b815985ee91b59e94a511539eb6c03bcdec95ab2710ec3e840eebadfe570e1.png\" style=\"max-width:60%\"><br>图3-3",
+   "solution_steps": [
+    "由题意知 $v_{1} = v_{2} = v = 10\\ \\mathrm{m \\cdot s^{-1}}$，按图所选定的坐标系，$\\mathbf{v}_{1}$ 和 $\\mathbf{v}_{2}$ 均在 $x$、$y$ 平面内，故 $v_{1}$ 在 $Ox$ 轴和 $Oy$ 轴上的分量为 $v_{1x} = v\\cos\\alpha$，$v_{1y} = v\\sin\\alpha$，$v_{2}$ 在 $Ox$ 轴和 $Oy$ 轴上的分量为 $v_{2x} = -v\\cos\\alpha$，$v_{2y} = v\\sin\\alpha$.由动量定理的分量式(3-2)可得，在碰撞过程中球所受的冲量为",
+    "$$F_{x}\\Delta t = mv_{2x} - mv_{1x} = -2mv\\cos\\alpha$$",
+    "$$F_{y}\\Delta t = mv_{2y} - mv_{1y} = 0$$",
+    "因此，球所受的平均冲力为",
+    "$$\\overline{F} = \\frac{2mv\\cos\\alpha}{\\Delta t}$$",
+    "如令 $\\overline{\\mathbf{F}}'$ 为球对钢板作用的平均冲力，则由牛顿第三定律有 $\\overline{\\mathbf{F}} = -\\overline{\\mathbf{F}}'$，即球对钢板作用的平均冲力与钢板对球作用的平均冲力大小相等，方向相反，故有",
+    "$$\\overline{F}' = \\frac{2mv\\cos\\alpha}{\\Delta t}$$",
+    "代入已知数据，得",
+    "$$\\overline{F}' = \\frac{2 \\times 0.05 \\times 10 \\times \\cos 45^{\\circ}}{0.05}\\ \\mathrm{N} = 14.1\\ \\mathrm{N}$$",
+    "$\\overline{\\mathbf{F}}'$ 的方向与 $Ox$ 轴正向相反。"
+   ],
+   "answer": null
+  },
+  {
+   "type": "example",
+   "title": "教材例题（3.1 节 · 例 2）",
+   "problem": "如图3-4所示，一柔软链条长为 $l$，质量线密度为 $\\lambda$.链条放在桌上，桌上有一小孔，链条一端由小孔稍向下伸，其余部分堆在小孔周围。由于某种扰动，链条因自身重量开始下落。求链条下落速度与下落距离之间的关系。设链条与各处的摩擦均略去不计，且认为链条柔软得可自由伸开。<br><img src=\"assets/images/ch03/pages_50_100_ee21e9474a05eeedd23e389790e5ea1a8d4c9a5d829ba4a8ddff4e78216e7b4b.png\" style=\"max-width:60%\"><br>图3-4",
+   "solution_steps": [
+    "如图所示，选桌面上一点为坐标原点 $O$，竖直向下的轴为 $Oy$ 轴正向。在某时刻 $t$，链条下垂部分的长度为 $y$，此时在桌面上尚有长为 $l-y$ 的链条。如选链条为一系统，那么此系统含有竖直悬挂的链条和在桌面上的链条两部分，它们之间作用的力为内力。由于链条与各处的摩擦略去不计，故下垂部分链条所受的重力 $\\mathbf{P}_{1} = m_{1}\\mathbf{g}$，桌面上链条所受的重力 $\\mathbf{P}_{2} = m_{2}\\mathbf{g}$，所受的支持力 $\\mathbf{F}_{\\mathrm{N}} = -m_{2}\\mathbf{g}$，所以作用于系统的外力为 $\\mathbf{F}^{\\mathrm{ex}} = m_{1}\\mathbf{g}$，其中 $m_{1} = \\lambda y$.在无限小时间间隔 $\\mathrm{d}t$ 内，外力 $\\mathbf{F}^{\\mathrm{ex}}$ 在 $Oy$ 轴上的冲量应为 $\\mathbf{F}^{\\mathrm{ex}}\\mathrm{d}t$.所以，由质点系的动量定理可得",
+    "$$F^{\\mathrm{ex}}\\mathrm{d}t = \\lambda y g\\,\\mathrm{d}t = \\mathrm{d}p \\tag{1}$$",
+    "$\\mathrm{d}p$ 为系统的动量增量，即链条下垂部分的动量增量。",
+    "在时刻 $t$，链条下垂长度为 $y$，下落速度为 $v$，因此这部分链条的动量为",
+    "$$p = m_{1}v = \\lambda y v$$",
+    "在 $\\mathrm{d}t$ 时间里，下垂部分链条动量的增量为",
+    "$$\\mathrm{d}p = \\lambda\\mathrm{d}(yv)$$",
+    "把它代入式(1)有",
+    "$$\\lambda y g\\,\\mathrm{d}t = \\lambda\\mathrm{d}(yv)$$",
+    "也即",
+    "$$yg = \\frac{\\mathrm{d}(yv)}{\\mathrm{d}t}$$",
+    "等式两边各乘以 $y\\mathrm{d}y$，上式为",
+    "$$gy^{2}\\mathrm{d}y = y\\frac{\\mathrm{d}y}{\\mathrm{d}t}\\mathrm{d}(yv) = yv\\,\\mathrm{d}(yv) \\tag{2}$$",
+    "已知在开始时，链条尚未下落，其下落速度当然也为零，即 $(yv) = 0$.于是式(2)的积分为",
+    "$$\\int_{0}^{yv} (yv)\\,\\mathrm{d}(yv) = g\\int_{0}^{y} y^{2}\\mathrm{d}y$$",
+    "$$\\frac{1}{2}(yv)^{2} = \\frac{1}{3}gy^{3}$$",
+    "得",
+    "$$v = \\sqrt{\\frac{2}{3}gy}$$",
+    "这就是链条下落速度与下落距离之间的关系。"
+   ],
+   "answer": null
+  },
+  {
+   "type": "section",
+   "number": "3.2",
+   "title": "动量守恒定律"
+  },
+  {
+   "type": "video",
+   "source": "bilibili",
+   "bvid": "BV1eK4y1E7Cb",
+   "page": 9,
+   "title": "📺 视频学习：动量守恒定律（含动能定理）",
+   "caption": "东北大学《大学物理》MOOC 课堂录播（马文蔚《物理学》配套课程），第 1 次课 配套；本讲对应教材 3-2 动量守恒定律；本讲后半的动能定理内容对应 3-4 节，学到 3-4 时可回看本讲后半段，时长 33:00。注意：视频标题里的 3.x 是该课程的讲次编号，与教材小节号含义不同，请以本卡片标注的教材小节为准。<a href=\"https://www.bilibili.com/video/BV1eK4y1E7Cb?p=9\" target=\"_blank\" rel=\"noopener\">在 B 站打开本讲 ↗</a>（嵌入加载失败、或想看弹幕与讲义时点此）"
+  },
+  {
+   "type": "text",
+   "html": "<p>从式(3-4)可以看出，当系统所受合外力为零，即 $\\mathbf{F}^{\\mathrm{ex}} = 0$ 时，系统的总动量的增量亦为零，即 $\\mathbf{p} - \\mathbf{p}_{0} = 0$.这时系统的总动量保持不变，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{p} = \\sum_{i=1}^{n} m_{i}\\mathbf{v}_{i} = \\text{常矢量}",
+   "label": "式（3-5a）"
+  },
+  {
+   "type": "text",
+   "html": "<p>这就是动量守恒定律，它的表述为：当系统所受合外力为零时，系统的总动量将保持不变。式(3-5a)是动量守恒定律的矢量式。在直角坐标系中，其分量式为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\left.\\begin{aligned} p_{x} &= \\sum m_{i}v_{ix} = C_{1} \\quad (F_{x}^{\\mathrm{ex}} = 0) \\\\ p_{y} &= \\sum m_{i}v_{iy} = C_{2} \\quad (F_{y}^{\\mathrm{ex}} = 0) \\\\ p_{z} &= \\sum m_{i}v_{iz} = C_{3} \\quad (F_{z}^{\\mathrm{ex}} = 0) \\end{aligned}\\right\\}",
+   "label": "式（3-5b）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $C_{1},C_{2}$ 和 $C_{3}$ 均为常量。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在应用动量守恒定律时应该注意以下几点：</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(1)在动量守恒定律中，系统的动量是守恒量或不变量。由于动量是矢量，故系统的总动量不变是指系统内各物体动量的矢量和不变，而不是指其中某一个物体的动量不变。此外，各物体的动量还必须都相对于同一惯性参考系。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(2)系统的动量守恒是有条件的。这个条件就是系统所受的合外力必须为零。然而，有时系统所受的合外力虽不为零，但与系统的内力相比较，外力远小于内力，这时可以略去外力对系统的作用，认为系统的动量是守恒的。像爆炸这类问题，一般都可以这样来处理，所以在爆炸过程的前后，系统的总动量可近似视为是不变的。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(3)如果系统所受外力的矢量和并不为零，但合外力在某个坐标轴上的分矢量为零，此时，系统的总动量虽不守恒，但在该坐标轴上的分动量却是守恒的。这一点对处理某些问题是很有用的。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(4)动量守恒定律是物理学最普遍、最基本的定律之一。动量守恒定律虽然是从表述宏观物体运动规律的牛顿运动定律导出的，但近代的科学实验和理论分析都表明：在自然界中，大到天体间的相互作用，小到质子、中子、电子等微观粒子间的相互作用都遵守动量守恒定律；而在原子、原子核等微观领域中，牛顿运动定律却是不适用的。因此，动量守恒定律比牛顿运动定律更加基本，它与能量守恒定律一样，是自然界中最普遍、最基本的定律之一。</p>"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（3.2 节 · 例 1）",
+   "problem": "设有一静止的原子核，衰变辐射出一个电子和一个中微子①后成为一个新的原子核。已知电子和中微子的运动方向相互垂直，且电子的动量为 $1.2 \\times 10^{-22}\\ \\mathrm{kg \\cdot m \\cdot s^{-1}}$，中微子的动量为 $6.4 \\times 10^{-23}\\ \\mathrm{kg \\cdot m \\cdot s^{-1}}$.问新的原子核的动量的值和方向如何?",
+   "solution_steps": [
+    "以 $\\mathbf{p}_{\\mathrm{e}}$、$\\mathbf{p}_{\\nu}$ 和 $\\mathbf{p}_{\\mathrm{N}}$ 分别代表电子、中微子和新原子核的动量，且 $\\mathbf{p}_{\\mathrm{e}}$ 与 $\\mathbf{p}_{\\nu}$ 相互垂直(图3-5).在原子核衰变的短暂时间内，粒子间的内力远大于外界作用于该粒子系统上的外力，故粒子系统在衰变前后的动量是守恒的。考虑到原子核在衰变前是静止的，所以衰变后电子、中微子和新原子核的动量之和亦应为零，即",
+    "$$\\mathbf{p}_{\\mathrm{e}} + \\mathbf{p}_{\\nu} + \\mathbf{p}_{\\mathrm{N}} = 0$$",
+    "<img src=\"assets/images/ch03/pages_50_100_8ab01c66f6421fabc1c7663087427090d77f98ba855173a54383b5d8492be2c8.png\" style=\"max-width:60%\">",
+    "图3-5",
+    "由于 $\\mathbf{p}_{\\mathrm{e}}$ 与 $\\mathbf{p}_{\\nu}$ 垂直，有",
+    "$$p_{\\mathrm{N}} = (p_{\\mathrm{e}}^{2} + p_{\\nu}^{2})^{1/2}$$",
+    "代入已知数据，得",
+    "$$p_{\\mathrm{N}} = \\sqrt{(1.2 \\times 10^{-22})^{2} + (6.4 \\times 10^{-23})^{2}}\\ \\mathrm{kg \\cdot m \\cdot s^{-1}} = 1.36 \\times 10^{-22}\\ \\mathrm{kg \\cdot m \\cdot s^{-1}}$$",
+    "图3-5中的 $\\alpha$ 角为",
+    "$$\\alpha = \\arctan\\frac{p_{\\mathrm{e}}}{p_{\\nu}} = \\arctan\\frac{1.2 \\times 10^{-22}}{6.4 \\times 10^{-23}} = 61.9^{\\circ}$$",
+    "或者新原子核的动量 $\\mathbf{p}_{\\mathrm{N}}$ 与中微子动量 $\\mathbf{p}_{\\nu}$ 之间的夹角为 $\\theta = 180^{\\circ} - 61.9^{\\circ} = 118.1^{\\circ}$.",
+    "① 中微子常用符号 $\\nu$ 表示，不带电，稳定。中微子的存在是在研究原子核的 $\\beta$ 衰变时从理论上首先提出的，但由于它与其他物质的作用极为微弱，直到1956年才比较直接地在实验中被观察到。"
+   ],
+   "answer": null
+  },
+  {
+   "type": "example",
+   "title": "教材例题（3.2 节 · 例 2）",
+   "problem": "一枚返回式火箭以 $2.5 \\times 10^{3}\\ \\mathrm{m \\cdot s^{-1}}$ 的速率相对惯性系 $S$ 沿如图所示的 $Ox$ 轴正向飞行。设空气阻力不计。现由控制系统使火箭分离为两部分，前部分是质量为 $100\\ \\mathrm{kg}$ 的仪器舱，后部分是质量为 $200\\ \\mathrm{kg}$ 的火箭容器。若仪器舱相对火箭容器的水平速率为 $1.0 \\times 10^{3}\\ \\mathrm{m \\cdot s^{-1}}$，求仪器舱和火箭容器相对惯性系的速度。",
+   "solution_steps": [
+    "如图3-6所示，$S$ 系($Oxyz$)为惯性系。设 $v$ 为火箭分离前火箭相对 $S$ 系沿 $xx'$ 轴的速度，$v_{1}$ 和 $v_{2}$ 分别为火箭分离后仪器舱 $m_{1}$ 和火箭容器 $m_{2}$ 相对 $S$ 系的速度，$v'$ 为分离后仪器舱相对火箭容器的速度。取火箭容器为惯性系 $S'(O'x'y'z')$，$S'$ 系沿 $xx'$ 轴以速度 $v_{2}$ 相对 $S$ 系运动。由相对运动的速度公式(1-20)，有",
+    "$$v_{1} = v_{2} + v'$$",
+    "<img src=\"assets/images/ch03/pages_50_100_ffcb00441f7a4f27146f425c0eb832ea4a4c5508da7f338f6be79631a7f8aeb0.png\" style=\"max-width:60%\">",
+    "图3-6",
+    "由于 $v_{1}$、$v_{2}$ 和 $v'$ 都在同一方向上，故上式为",
+    "$$v_{1} = v_{2} + v'$$",
+    "火箭分离前后，它在 $xx'$ 轴上没有受到外力作用，所以沿 $xx'$ 轴动量守恒，有",
+    "$$(m_{1} + m_{2})v = m_{1}v_{1} + m_{2}v_{2}$$",
+    "解上两式，得",
+    "$$v_{2} = v - \\frac{m_{1}}{m_{1} + m_{2}}v',\\quad v_{1} = v + \\frac{m_{2}}{m_{1} + m_{2}}v'$$",
+    "代入数据，有",
+    "$$v_{2} = 2.5 \\times 10^{3} - \\frac{100}{300} \\times 1.0 \\times 10^{3} = 2.17 \\times 10^{3}\\ \\mathrm{m \\cdot s^{-1}}$$",
+    "$$v_{1} = 2.5 \\times 10^{3} + \\frac{200}{300} \\times 1.0 \\times 10^{3} = 3.17 \\times 10^{3}\\ \\mathrm{m \\cdot s^{-1}}$$",
+    "$v_{1}$ 和 $v_{2}$ 都为正值，由此可知它们的速度方向相同，且与 $v$ 同向。只不过仪器舱经火箭推动后其速率变大，而火箭容器的速率却变小了，从而实现了动量的转移。"
+   ],
+   "answer": null
+  },
+  {
+   "type": "section",
+   "number": "3.3",
+   "title": "系统内质量移动问题"
+  },
+  {
+   "type": "text",
+   "html": "<p>当系统内部的质量发生移动时，系统内各部分的质量、速度及动量要发生变化。这类由于质量移动而引起的速度及动量变化的问题是很多的。如砂粒流入车厢，柔软绳索落在桌面上，雨滴下落的加速度①，以及火箭在飞行中由于燃料燃烧而射出大量粒子等，都属这类问题。其中，火箭飞行是特别有趣的问题。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在火箭的运行过程中，火箭内部的燃料发生爆炸性的燃烧，产生的大量粒子流从火箭的末端沿与火箭运动相反的方向射出。设每个粒子相对火箭的速率均为 $u$，$u$ 叫做喷射速率。在这过程中，火箭里燃料的质量在减少，而粒子流的质量在增加。若把火箭、燃料和粒子流作为一个系统，那么虽然这个系统的总质量是守恒的，但有部分质量的燃料变为粒子了。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>为简单起见，我们讨论如图3-7所示的情况。设在时刻 $t$，火箭-燃料系统(简称系统)的质量为 $m'$，它相对某一选定的惯性系的速度为 $\\mathbf{v}$；在 $t \\to t + \\Delta t$ 时间间隔内，有质量为 $\\Delta m$ 的燃料变为粒子，并以速度 $\\mathbf{u}$ 相对火箭喷射出去，此时系统则包括火箭、燃料以及由部分燃料变成的粒子流。在时刻 $t + \\Delta t$ 火箭相对选定的惯性系的速度为 $\\mathbf{v} + \\Delta\\mathbf{v}$，而粒子流相对此惯性系的速度则为 $\\mathbf{v} + \\Delta\\mathbf{v} + \\mathbf{u}$.</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch03/pages_50_100_4580abbabb490f2c8ff80a92569b41b795de5f14a2dac868fa3b670e240ce22f.png",
+   "caption": "图 3-7 火箭飞行原理"
+  },
+  {
+   "type": "text",
+   "html": "<p>按上述分析，在时刻 $t$，系统的动量为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{p}(t) = m'\\mathbf{v}"
+  },
+  {
+   "type": "text",
+   "html": "<p>在时刻 $t + \\Delta t$，系统的动量为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{p}(t + \\Delta t) = (m' - \\Delta m)(\\mathbf{v} + \\Delta\\mathbf{v}) + \\Delta m(\\mathbf{v} + \\Delta\\mathbf{v} + \\mathbf{u})"
+  },
+  {
+   "type": "text",
+   "html": "<p>在 $t \\to t + \\Delta t$ 时间间隔内，系统动量的增量为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\Delta\\mathbf{p} = \\mathbf{p}(t + \\Delta t) - \\mathbf{p}(t)"
+  },
+  {
+   "type": "text",
+   "html": "<p>即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\Delta\\mathbf{p} = m'\\Delta\\mathbf{v} + \\mathbf{u}\\Delta m"
+  },
+  {
+   "type": "text",
+   "html": "<p>由上式可得动量随时间的变化率为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\frac{\\mathrm{d}\\mathbf{p}}{\\mathrm{d}t} = m'\\frac{\\mathrm{d}\\mathbf{v}}{\\mathrm{d}t} + \\mathbf{u}\\frac{\\mathrm{d}m}{\\mathrm{d}t}"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $\\mathrm{d}m/\\mathrm{d}t$ 是粒子流质量随时间的变化率，而它是由火箭中喷射出来的，故有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\frac{\\mathrm{d}m}{\\mathrm{d}t} = -\\frac{\\mathrm{d}m'}{\\mathrm{d}t}"
+  },
+  {
+   "type": "text",
+   "html": "<p>于是，上式可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\frac{\\mathrm{d}\\mathbf{p}}{\\mathrm{d}t} = m'\\frac{\\mathrm{d}\\mathbf{v}}{\\mathrm{d}t} - \\mathbf{u}\\frac{\\mathrm{d}m'}{\\mathrm{d}t}"
+  },
+  {
+   "type": "text",
+   "html": "<p>从式(3-4b)我们已知道，作用于系统的合外力应等于系统的动量随时间的变化率。因此，若以 $\\mathbf{F}$ 表示作用于系统的合外力，则有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{F} = \\frac{\\mathrm{d}\\mathbf{p}}{\\mathrm{d}t} = m'\\frac{\\mathrm{d}\\mathbf{v}}{\\mathrm{d}t} - \\mathbf{u}\\frac{\\mathrm{d}m'}{\\mathrm{d}t}"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式也可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "m'\\frac{\\mathrm{d}\\mathbf{v}}{\\mathrm{d}t} = \\mathbf{F} + \\mathbf{u}\\frac{\\mathrm{d}m'}{\\mathrm{d}t}",
+   "label": "式（3-6）"
+  },
+  {
+   "type": "text",
+   "html": "<p>$\\mathbf{u}\\frac{\\mathrm{d}m'}{\\mathrm{d}t}$ 叫做火箭发动机的推力。从上式可以看出，火箭的加速度是与外力 $\\mathbf{F}$ 及推力的矢量和成正比的。当外力给定时，推力越大，火箭获得的加速度 $\\mathrm{d}\\mathbf{v}/\\mathrm{d}t$ 也越大。从式(3-6)还可以看出，要使火箭获得较大的推力，必须使粒子流具有较大的喷射速率 $u$ 和较大的排出率 $\\mathrm{d}m'/\\mathrm{d}t$.如喷射速率为 $2000\\ \\mathrm{m \\cdot s^{-1}}$，排出率为 $300\\ \\mathrm{kg \\cdot s^{-1}}$，则火箭的推力为 $6 \\times 10^{5}\\ \\mathrm{N}$.</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>对于在远离地球的星际空间（即所谓自由空间）中飞行的火箭，可以认为不受外力作用，即 $\\mathbf{F} = 0$.于是式(3-6)可写为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "m'\\frac{\\mathrm{d}\\mathbf{v}}{\\mathrm{d}t} = \\mathbf{u}\\frac{\\mathrm{d}m'}{\\mathrm{d}t}"
+  },
+  {
+   "type": "text",
+   "html": "<p>或</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "m'\\mathrm{d}\\mathbf{v} = \\mathbf{u}\\,\\mathrm{d}m'"
+  },
+  {
+   "type": "text",
+   "html": "<p>如设粒子流的喷射速度 $\\mathbf{u}$ 为常矢量，且在 $t = 0$ 时刻，火箭的质量为 $m'_{0}$，速度为 $\\mathbf{v}_{0}$，在 $t = t$ 时刻，火箭的质量为 $m'$，速度为 $\\mathbf{v}$，那么对上式积分，得</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\int_{v_{0}}^{v} \\mathrm{d}v = u\\int_{m'_{0}}^{m'} \\frac{\\mathrm{d}m'}{m'}"
+  },
+  {
+   "type": "text",
+   "html": "<p>有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "v - v_{0} = u\\ln\\frac{m'}{m'_{0}} = -u\\ln\\frac{m'_{0}}{m'}"
+  },
+  {
+   "type": "text",
+   "html": "<p>应当注意，粒子流相对火箭的喷射速度 $\\mathbf{u}$ 与火箭相对惯性系的速度方向相反。若选取 $\\mathbf{v}$ 的方向为正向，上式可写为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "v = v_{0} + u\\ln\\frac{m'_{0}}{m'} = v_{0} + u\\ln N",
+   "label": "式（3-7）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $N = m'_{0}/m'$ 叫做质量比。显然，火箭的质量比越大，粒子流的喷射速率越大，火箭获得的速度也越大。然而，仅靠增加单级火箭的质量比或增大粒子流喷射速率来提高火箭的飞行速度是不够的。从目前的理论分析，粒子流喷射速率的理论值只能是 $5000\\ \\mathrm{m \\cdot s^{-1}}$，而实际上能达到的喷射速率最多只是这个值的一半；此外，由于单级火箭燃料的运载量有限，因此质量比也不能很大。这就是说，依靠单级火箭是不能实现人造地球卫星或宇宙飞行器的发射的，必须采用多级火箭。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如有一人造地球卫星由三级火箭从地面静止发射，每级火箭的燃料燃烧完后便自动脱落。设想粒子流的喷射速率恒为 $u = 2.5\\ \\mathrm{km \\cdot s^{-1}}$，且略去燃料用完后脱落燃料容器时而引起的箭体速度的改变。若一、二、三级火箭的质量比各为 $N_{1} = m'_{0}/m'_{1}$，$N_{2} = m'_{1}/m'_{2}$，$N_{3} = m'_{2}/m'_{3}$，其中 $m'_{0}$ 为三级火箭(含燃料)的初始总质量，$m'_{1}$ 为第二、三两级火箭的初始总质量，$m'_{2}$ 为第三级火箭的初始总质量。那么由式(3-7)可得，各级火箭中的燃料燃烧完后的速率各为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "v_{1} = u\\ln N_{1},\\quad v_{2} = v_{1} + u\\ln N_{2},\\quad v_{3} = v_{2} + u\\ln N_{3}"
+  },
+  {
+   "type": "text",
+   "html": "<p>所以，第三级火箭中的燃料燃烧完后，人造地球卫星的速率为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "v_{3} = u(\\ln N_{1} + \\ln N_{2} + \\ln N_{3}) = u\\ln(N_{1} \\times N_{2} \\times N_{3})"
+  },
+  {
+   "type": "text",
+   "html": "<p>已知 $u = 2.5\\ \\mathrm{km \\cdot s^{-1}}$，并设 $N_{1} = 4$，$N_{2} = 3$，$N_{3} = 2$，则由上式可算得 $v_{3} = 7.93\\ \\mathrm{km \\cdot s^{-1}}$.这个速率已达人造地球卫星的入轨速率①.实际上，上述计算只是一种估算，若计及燃料用完后储存燃料①的容器脱落时引起的箭体速度的改变，计算还要复杂一点。</p>"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（3.3 节 · 例）",
+   "problem": "长为 $l$ 密度均匀的柔软链条，质量线密度为 $\\lambda$，卷成一堆放在地面上(图3-8).手握链条的一端，以匀速 $v$ 将其上提。当链条一端被提离地面高度为 $y$ 时，求手的提力。<br><img src=\"assets/images/ch03/pages_50_100_e920de6ede5e46a2552b23db2a644b2984cc2a9c77c55f202d9620de4e3f6900.png\" style=\"max-width:60%\"><br>图3-8",
+   "solution_steps": [
+    "取地面为惯性参考系，地面上一点为坐标原点 $O$，竖直向上为 $Oy$ 轴正向。以整个链条为一系统。设在时刻 $t$，链条一端距原点的高度为 $y$，其速率为 $v$.由于在地面部分的链条的速度为零，故在时刻 $t$，链条的动量为",
+    "$$\\mathbf{p}(t) = \\lambda y v\\,\\mathbf{j}$$",
+    "由于 $\\lambda$ 和 $v$ 均为常量，故链条的动量随时间的变化率为",
+    "$$\\frac{\\mathrm{d}\\mathbf{p}}{\\mathrm{d}t} = \\lambda v\\frac{\\mathrm{d}y}{\\mathrm{d}t}\\mathbf{j} = \\lambda v^{2}\\mathbf{j} \\tag{1}$$",
+    "作用于整个链条上的外力，有手的提力 $\\mathbf{F}$，重力 $\\lambda y\\mathbf{g}$ 和 $\\lambda(l-y)\\mathbf{g}$，以及地面对 $(l-y)$ 长链条的支持力 $\\mathbf{F}_{\\mathrm{N}}$.由上述的分析可知 $\\mathbf{F}_{\\mathrm{N}}$ 与 $\\lambda(l-y)\\mathbf{g}$ 的大小相等、方向相反，所以系统所受的合外力为",
+    "$$\\mathbf{F} - \\lambda y\\mathbf{g} = (F - \\lambda y g)\\mathbf{j} \\tag{2}$$",
+    "由式(1)和式(2)得",
+    "$$(F - \\lambda y g)\\mathbf{j} = \\lambda v^{2}\\mathbf{j}$$",
+    "即",
+    "$$F = \\lambda v^{2} + \\lambda y g \\tag{3}$$",
+    "这个例题是已知运动状态求作用力，而第3-1节例2则是已知作用力求运动状态。"
+   ],
+   "answer": null
+  },
+  {
+   "type": "section",
+   "number": "3.4",
+   "title": "动能定理"
+  },
+  {
+   "type": "text",
+   "html": "<h4>一、功</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>一质点在力的作用下沿路径 $AB$ 运动，如图3-9所示，在力 $\\mathbf{F}$ 作用下质点发生元位移 $\\mathrm{d}\\mathbf{r}$，$\\mathbf{F}$ 与 $\\mathrm{d}\\mathbf{r}$ 之间的夹角为 $\\theta$.功定义为：力在位移方向的分量与该位移大小的乘积。按此定义，力 $\\mathbf{F}$ 所做的元功为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathrm{d}W = F\\cos\\theta\\,|\\mathrm{d}\\mathbf{r}|",
+   "label": "式（3-8a）"
+  },
+  {
+   "type": "text",
+   "html": "<p>如用 $\\mathrm{d}s$ 表示 $|\\mathrm{d}\\mathbf{r}|$，即 $\\mathrm{d}s = |\\mathrm{d}\\mathbf{r}|$，那么上式也可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathrm{d}W = F\\cos\\theta\\,\\mathrm{d}s",
+   "label": "式（3-8b）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch03/pages_50_100_ea0b8c33f950aaa85cf812744bbe806b556dc7a41d6105643413f122afc6bbaf.png",
+   "caption": "图 3-9 功的定义：F 与 dr 的夹角 θ"
+  },
+  {
+   "type": "text",
+   "html": "<p>从上式可以看出，当 $0^{\\circ} \\leqslant \\theta < 90^{\\circ}$ 时，功为正值，即力对质点做正功；当 $90^{\\circ} < \\theta \\leqslant 180^{\\circ}$ 时，功为负值，即力对质点做负功。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>由于力 $\\mathbf{F}$ 和位移 $\\mathrm{d}\\mathbf{r}$ 均为矢量，从矢量的标积定义①知，式(3-8a)等号右边为 $\\mathbf{F}$ 与 $\\mathrm{d}\\mathbf{r}$ 的标积，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathrm{d}W = \\mathbf{F} \\cdot \\mathrm{d}\\mathbf{r}",
+   "label": "式（3-8c）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式表明，虽然力和位移都是矢量，但它们的标积——功却是标量。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如果把式(3-8a)写成 $\\mathrm{d}W = F(|\\mathrm{d}\\mathbf{r}|\\cos\\theta)$，那么功的定义也可以说成是：质点的位移在力方向的分量和力的大小的乘积。这个叙述显然与前述功的定义是等效的。在具体问题中采用哪一种叙述，视方便而定。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>若有一质点沿如图3-10(a)所示的路径由点 $A$ 运动到点 $B$，而在这过程中作用于质点上的力的大小和方向都在改变。为求得在这过程中变力所做的功，我们把路径分成很多段位移元，使得在这些位移元里，力可近似看成是不变的。于是，质点从点 $A$ 运动到点 $B$ 的过程中，变力所做的功应等于力在每段位移元上所做元功的代数和，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "W = \\int_{A}^{B} \\mathbf{F} \\cdot \\mathrm{d}\\mathbf{r}",
+   "label": "式（3-9a）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式是变力做功的表达式。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>功常用图示法来计算。如图3-10(b)所示，图中的曲线表示 $F\\cos\\theta$ 随路径变化的函数关系。曲线下面的面积等于变力所做功的代数值。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在直角坐标系中，$\\mathbf{F}$ 和 $\\mathrm{d}\\mathbf{r}$ 都是坐标 $x$、$y$、$z$ 的函数，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{F} = F_{x}\\mathbf{i} + F_{y}\\mathbf{j} + F_{z}\\mathbf{k}"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathrm{d}\\mathbf{r} = \\mathrm{d}x\\mathbf{i} + \\mathrm{d}y\\mathbf{j} + \\mathrm{d}z\\mathbf{k}"
+  },
+  {
+   "type": "text",
+   "html": "<p>因此式(3-9a)亦可写成①</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "W = \\int_{A}^{B} (F_{x}\\mathrm{d}x + F_{y}\\mathrm{d}y + F_{z}\\mathrm{d}z)",
+   "label": "式（3-9b）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch03/pages_50_100_300d8ca34bf66fcde9989d5ccffac63b25dea1fdfe221d68b79ea7376c6a0c55.png",
+   "caption": "图 3-10(a) 变力做功：沿路径 AB 分割为位移元"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch03/fig3_10b_original.png",
+   "caption": "图 3-10(b) 功的图示法：Fcosθ 曲线下的面积 = 功（archive 教材原图扫描件；第三轮目检撤下 tex 重绘）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式(3-9b)是变力做功的另一数学表达式，它与式(3-9a)是等同的。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>若有几个力同时作用在质点上，它们所做的功是多少呢？设有 $\\mathbf{F}_{1},\\mathbf{F}_{2},\\mathbf{F}_{3},\\cdots,\\mathbf{F}_{i},\\cdots$ 作用在质点上，它们的合力为 $\\mathbf{F} = \\mathbf{F}_{1} + \\mathbf{F}_{2} + \\mathbf{F}_{3} + \\cdots + \\mathbf{F}_{i} + \\cdots$.由功的定义式(3-9a)知，此合力所做的功为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "W = \\int \\mathbf{F} \\cdot \\mathrm{d}\\mathbf{r} = \\int (\\mathbf{F}_{1} + \\mathbf{F}_{2} + \\mathbf{F}_{3} + \\dots + \\mathbf{F}_{i} + \\dots) \\cdot \\mathrm{d}\\mathbf{r}"
+  },
+  {
+   "type": "text",
+   "html": "<p>由矢量标积的分配律②，上式为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "W = \\int \\mathbf{F}_{1} \\cdot \\mathrm{d}\\mathbf{r} + \\int \\mathbf{F}_{2} \\cdot \\mathrm{d}\\mathbf{r} + \\int \\mathbf{F}_{3} \\cdot \\mathrm{d}\\mathbf{r} + \\cdots + \\int \\mathbf{F}_{i} \\cdot \\mathrm{d}\\mathbf{r} + \\cdots"
+  },
+  {
+   "type": "text",
+   "html": "<p>即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "W = W_{1} + W_{2} + W_{3} + \\cdots + W_{i} + \\cdots",
+   "label": "式（3-10）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式(3-10)表明，合力对质点所做的功，等于每个分力所做功的代数和。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在国际单位制中，力的单位是 $\\mathrm{N}$，位移的单位是 $\\mathrm{m}$，所以功的单位是 $\\mathrm{N \\cdot m}$，这个单位叫做焦耳(J).</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>功率定义为力在单位时间内所做的功，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "P = \\frac{\\mathrm{d}W}{\\mathrm{d}t} = \\mathbf{F} \\cdot \\mathbf{v}",
+   "label": "式（3-11）"
+  },
+  {
+   "type": "text",
+   "html": "<p>在国际单位制中，功率的单位名称为瓦特(watt)，简称瓦，符号为 $\\mathrm{W}$.$1\\ \\mathrm{kW} = 10^{3}\\ \\mathrm{W}$.</p>"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（3.4 节 · 例 1）",
+   "problem": "质量为 $m$ 的小球竖直落入水中，刚接触水面时其速率为 $v_{0}$.设此球在水中所受的浮力与重力相等，水的阻力为 $\\mathbf{F}_{\\mathrm{r}} = -b\\mathbf{v}$，$b$ 为一常量。求阻力对球做功与时间的函数关系。",
+   "solution_steps": [
+    "由于阻力随球的速率而变化，故本题属变力做功问题。取水面上某点为坐标原点 $O$，竖直向下的轴为 $Ox$ 轴正向。由功的定义可知",
+    "$$W = \\int \\mathbf{F} \\cdot \\mathrm{d}\\mathbf{r} = \\int -bv\\,\\mathrm{d}x = -\\int bv\\frac{\\mathrm{d}x}{\\mathrm{d}t}\\mathrm{d}t$$",
+    "即",
+    "$$W = -b\\int v^{2}\\mathrm{d}t \\tag{1}$$",
+    "又由第2-4节例5的式(5)知，仅在阻力作用下，物体下落速度与时间的关系为",
+    "$$v = v_{0}\\mathrm{e}^{-\\frac{b}{m}t} \\tag{2}$$",
+    "$m$ 是下落物体的质量，在这里就是球的质量。将式(2)代入式(1)，有",
+    "$$W = -bv_{0}^{2}\\int \\mathrm{e}^{-\\frac{2b}{m}t}\\mathrm{d}t$$",
+    "如以小球刚落入水面时为计时起点，即 $t_{0} = 0$，那么上式的积分为",
+    "$$W = -bv_{0}^{2}\\int_{0}^{t} \\mathrm{e}^{-\\frac{2b}{m}t}\\mathrm{d}t = -bv_{0}^{2}\\left(\\frac{m}{2b}\\right)\\left(\\mathrm{e}^{-\\frac{2b}{m}t} - 1\\right)$$",
+    "即",
+    "$$W = \\frac{1}{2}mv_{0}^{2}(\\mathrm{e}^{-\\frac{2b}{m}t} - 1)$$"
+   ],
+   "answer": null
+  },
+  {
+   "type": "text",
+   "html": "<h4>二、质点的动能定理</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>下面我们讨论力对空间累积作用的效果，从而得出力对质点做功与其动能变化之间的关系。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如图3-11所示，一质量为 $m$ 的质点在合力 $\\mathbf{F}$ 作用下，自点 $A$ 沿曲线移动到点 $B$，它在点 $A$ 和点 $B$ 的速率分别为 $v_{1}$ 和 $v_{2}$.设作用在位移元 $\\mathrm{d}\\mathbf{r}$ 上的合力 $\\mathbf{F}$ 与 $\\mathrm{d}\\mathbf{r}$ 之间的夹角为 $\\theta$.由式(3-8)可得，合力 $\\mathbf{F}$ 对质点所做的元功为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathrm{d}W = \\mathbf{F} \\cdot \\mathrm{d}\\mathbf{r} = F\\cos\\theta\\,|\\mathrm{d}\\mathbf{r}|"
+  },
+  {
+   "type": "text",
+   "html": "<p>由牛顿第二定律及切向加速度 $a_{\\mathrm{t}}$ 的定义，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "F\\cos\\theta = ma_{\\mathrm{t}} = m\\frac{\\mathrm{d}v}{\\mathrm{d}t}"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch03/pages_50_100_ee5a0a3c403b66d5610655b92ca65974a7ca7e7f8943bcda5b2f9c824ecf2146.png",
+   "caption": "图 3-11 动能定理：合力在曲线路径上做功"
+  },
+  {
+   "type": "text",
+   "html": "<p>考虑到 $|\\mathrm{d}\\mathbf{r}| = \\mathrm{d}s$，而 $\\mathrm{d}s = v\\mathrm{d}t$，可得</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathrm{d}W = m\\frac{\\mathrm{d}v}{\\mathrm{d}t}\\mathrm{d}s = mv\\,\\mathrm{d}v"
+  },
+  {
+   "type": "text",
+   "html": "<p>于是，质点自点 $A$ 移至点 $B$ 这一过程中，合力所做的总功为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "W = \\int_{v_{1}}^{v_{2}} mv\\,\\mathrm{d}v = \\frac{1}{2}mv_{2}^{2} - \\frac{1}{2}mv_{1}^{2}",
+   "label": "式（3-12a）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式表明，合力对质点做功的结果使得 $\\frac{1}{2}mv^{2}$ 这个量获得了增量，而 $\\frac{1}{2}mv^{2}$ 是与质点的运动状态有关的参量，叫做质点的动能，用 $E_{\\mathrm{k}}$ 表示，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "E_{\\mathrm{k}} = \\frac{1}{2}mv^{2}"
+  },
+  {
+   "type": "text",
+   "html": "<p>这样，$E_{\\mathrm{k1}} = \\frac{1}{2}mv_{1}^{2}$ 和 $E_{\\mathrm{k2}} = \\frac{1}{2}mv_{2}^{2}$ 分别表示质点在起始和终了位置时的动能。式(3-12a)可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "W = E_{\\mathrm{k2}} - E_{\\mathrm{k1}}",
+   "label": "式（3-12b）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式表明，合力对质点所做的功等于质点动能的增量。这个结论就叫做质点的动能定理.$E_{\\mathrm{k1}}$ 称为初动能，而 $E_{\\mathrm{k2}}$ 称为末动能。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>关于质点的动能定理还应说明以下两点：</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(1)功与动能之间的联系和区别。只有力对质点做功，才能使质点的动能发生变化，功是能量变化的量度。由于功是与在力作用下质点的位置移动过程相联系的，故功是一个过程量。而动能则是取决于质点的运动状态的，故它是运动状态的函数。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(2)与牛顿第二定律一样，动能定理也适用于惯性系。此外，在不同的惯性系中，质点的位移和速度都是不同的，因此，功和动能依赖于惯性系的选取。但对不同的惯性系，动能定理的形式相同。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>动能的单位和量纲与功的单位和量纲相同。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>应该指出，应用动能定理时要计算力的线积分，故必须知道质点的运动路径。然而在许多情况下，这往往又是十分困难的。值得高兴的是，有些力的线积分与积分路径无关，只与质点的起始和终了位置有关，这些力就是下一节要讲到的保守力。</p>"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（3.4 节 · 例 2）",
+   "problem": "如图3-12所示，一质量为 $1.0\\ \\mathrm{kg}$ 的小球系在长为 $1.0\\ \\mathrm{m}$ 的细绳下端，绳的上端固定在天花板上。起初把绳子放在与竖直线成 $\\theta_{0} = 30^{\\circ}$ 角处，然后放手使小球沿圆弧下落。试求绳与竖直线成 $\\theta = 10^{\\circ}$ 角时小球的速率。<br><img src=\"assets/images/ch03/pages_50_100_a2e7657736a9cc929ed767c4915220f06e839c58e8355c1c07f1934d37aaa9e9.png\" style=\"max-width:60%\"><br>图3-12",
+   "solution_steps": [
+    "设小球的质量为 $m$，细绳长为 $l$，在起始时刻细绳与竖直线的夹角为 $\\theta_{0}$，小球的速率 $v_{0} = 0$.在某一时刻细绳与竖直线的夹角为 $\\theta$，小球的速率为 $v$，小球受到绳的拉力 $\\mathbf{F}_{\\mathrm{T}}$ 和重力 $\\mathbf{P}$ 的作用。由功的计算式(3-8)可知，在合力作用下，小球在圆弧上有无限小位移 $\\mathrm{d}s$ 时，合力 $\\mathbf{F}$ 做的功为",
+    "$$\\mathrm{d}W = \\mathbf{F} \\cdot \\mathrm{d}s = \\mathbf{F}_{\\mathrm{T}} \\cdot \\mathrm{d}s + \\mathbf{P} \\cdot \\mathrm{d}s \\tag{1}$$",
+    "由于 $\\mathbf{F}_{\\mathrm{T}}$ 的方向始终与小球运动方向垂直，故 $\\mathbf{F}_{\\mathrm{T}} \\cdot \\mathrm{d}s = 0$，而",
+    "$$\\mathbf{P} \\cdot \\mathrm{d}s = P\\cos\\varphi\\,\\mathrm{d}s$$",
+    "其中 $\\varphi$ 为 $\\mathbf{P}$ 与 $\\mathrm{d}s$ 之间的夹角，由于 $\\varphi + \\theta = \\pi/2$，故",
+    "$$\\mathbf{P} \\cdot \\mathrm{d}s = P\\sin\\theta\\,\\mathrm{d}s$$",
+    "从图3-12可知，位移 $\\mathrm{d}s$ 的大小 $\\mathrm{d}s = -l\\mathrm{d}\\theta$.于是式(1)可写成",
+    "$$\\mathrm{d}W = \\mathbf{P} \\cdot \\mathrm{d}s = -mgl\\sin\\theta\\,\\mathrm{d}\\theta$$",
+    "在摆角由 $\\theta_{0}$ 改变为 $\\theta$ 的过程中，合力所做的功为",
+    "$$W = -mgl\\int_{\\theta_{0}}^{\\theta} \\sin\\theta\\,\\mathrm{d}\\theta = mgl(\\cos\\theta - \\cos\\theta_{0}) \\tag{2}$$",
+    "由动能定理式(3-12)，得",
+    "$$W = mgl(\\cos\\theta - \\cos\\theta_{0}) = \\frac{1}{2}mv^{2} - \\frac{1}{2}mv_{0}^{2}$$",
+    "由题意知 $v_{0} = 0$，故绳与竖直线成 $\\theta$ 角时，小球的速率为",
+    "$$v = \\sqrt{2gl(\\cos\\theta - \\cos\\theta_{0})}$$",
+    "把已知数据 $l = 1.0\\ \\mathrm{m}$，$\\theta_{0} = 30^{\\circ}$，$\\theta = 10^{\\circ}$ 代入上式，得",
+    "$$v = \\sqrt{2 \\times 9.8 \\times 1.0 \\times (\\cos 10^{\\circ} - \\cos 30^{\\circ})}\\ \\mathrm{m \\cdot s^{-1}} = 1.53\\ \\mathrm{m \\cdot s^{-1}}$$"
+   ],
+   "answer": null
+  },
+  {
+   "type": "section",
+   "number": "3.5",
+   "title": "保守力与非保守力 势能"
+  },
+  {
+   "type": "video",
+   "source": "bilibili",
+   "bvid": "BV1eK4y1E7Cb",
+   "page": 10,
+   "title": "📺 视频学习：保守力 势能",
+   "caption": "东北大学《大学物理》MOOC 课堂录播（马文蔚《物理学》配套课程），第 2 次课 配套；本讲对应教材 3-5 保守力与非保守力 势能（做功特点·三种势能·势能曲线），时长 50:42。注意：视频标题里的 3.x 是该课程的讲次编号，与教材小节号含义不同，请以本卡片标注的教材小节为准。<a href=\"https://www.bilibili.com/video/BV1eK4y1E7Cb?p=10\" target=\"_blank\" rel=\"noopener\">在 B 站打开本讲 ↗</a>（嵌入加载失败、或想看弹幕与讲义时点此）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上一节介绍了作为机械运动能量之一的动能，本节将介绍另一种机械能——势能。为此，我们将从万有引力、弹性力以及摩擦力等力的做功特点出发，引出保守力和非保守力概念，然后介绍引力势能、弹性势能和重力势能。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>一、万有引力和弹性力做功的特点</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<h5>1. 万有引力做功</h5>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如图3-13所示，有两个质量分别为 $m$ 和 $m'$ 的质点，其中质点 $m'$ 固定不动①，$m$ 经任一路径由点 $A$ 运动到点 $B$.如取 $m'$ 的位置为坐标原点 $O$，那么 $A$、$B$ 两点对 $m'$ 的距离分别为 $r_{A}$ 和 $r_{B}$.设在某一时刻质点 $m$ 距质点 $m'$ 的距离为 $r$，其位矢为 $\\mathbf{r}$，这时质点 $m$ 受到质点 $m'$ 的万有引力为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{F} = -G\\frac{m'm}{r^{2}}\\mathbf{e}_{r}"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch03/pages_50_100_b7b8bd84cf60472cd6849de8d804a7d47bd6df1c34579b124b2f7649117558fd.png",
+   "caption": "图 3-13 万有引力做功"
+  },
+  {
+   "type": "text",
+   "html": "<p>$\\mathbf{e}_{r}$ 为沿位矢 $\\mathbf{r}$ 的单位矢量。当 $m$ 沿路径移动位移元 $\\mathrm{d}\\mathbf{r}$ 时，万有引力做的功为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathrm{d}W = \\mathbf{F} \\cdot \\mathrm{d}\\mathbf{r} = -G\\frac{m'm}{r^{2}}\\mathbf{e}_{r} \\cdot \\mathrm{d}\\mathbf{r}"
+  },
+  {
+   "type": "text",
+   "html": "<p>从图3-13中可以看出</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{e}_{r} \\cdot \\mathrm{d}\\mathbf{r} = |\\mathbf{e}_{r}||\\mathrm{d}\\mathbf{r}|\\cos\\theta = |\\mathrm{d}\\mathbf{r}|\\cos\\theta = \\mathrm{d}r"
+  },
+  {
+   "type": "text",
+   "html": "<p>于是，上式可写为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathrm{d}W = -G\\frac{m'm}{r^{2}}\\mathrm{d}r"
+  },
+  {
+   "type": "text",
+   "html": "<p>所以，质点 $m$ 从点 $A$ 沿任一路径到达点 $B$ 的过程中，万有引力做的功为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "W = \\int_{A}^{B} \\mathrm{d}W = -Gm'm\\int_{r_{A}}^{r_{B}} \\frac{1}{r^{2}}\\mathrm{d}r"
+  },
+  {
+   "type": "text",
+   "html": "<p>即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "W = Gm'm\\left(\\frac{1}{r_{B}} - \\frac{1}{r_{A}}\\right)",
+   "label": "式（3-13）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式表明，当质点的质量 $m'$ 和 $m$ 给定时，万有引力做的功只取决于质点 $m$ 的起始和终了的位置($r_{A}$ 和 $r_{B}$)，而与所经过的路径无关。这是万有引力做功的一个重要特点。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h5>2. 弹性力做功</h5>"
+  },
+  {
+   "type": "text",
+   "html": "<p>图3-14所示是一放置在光滑平面上的弹簧，弹簧的一端固定，另一端与一质量为 $m$ 的物体相连接。当弹簧在水平方向不受外力作用时，它将不发生形变，此时物体位于点 $O$(即位于 $x = 0$ 处)，这个位置叫做平衡位置。现以平衡位置 $O$ 为坐标原点，向右为 $Ox$ 轴正向。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch03/pages_50_100_fd6864ee08e357fdebb1878ccab0c3d863cab36fa5faec1dd962039098b12bc6.png",
+   "caption": "图 3-14 弹簧的伸长"
+  },
+  {
+   "type": "text",
+   "html": "<p>若物体受到沿 $Ox$ 轴正向的外力 $\\mathbf{F}'$ 作用，弹簧将沿 $Ox$ 轴正向被拉长，弹簧的伸长量为 $x$.根据胡克定律，在弹性限度内，弹簧的弹性力 $\\mathbf{F}$ 与弹簧的伸长量 $x$ 之间的关系为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{F} = -kx\\mathbf{i}"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $k$ 称为弹簧的弹性系数。在弹簧被拉长的过程中，弹性力是变力(图3-15).但弹簧位移为 $\\mathrm{d}x$ 时的弹性力 $\\mathbf{F}$ 可近似看成是不变的。于是，弹簧位移为 $\\mathrm{d}x$ 时，弹性力做的元功为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathrm{d}W = \\mathbf{F} \\cdot \\mathrm{d}x = -kx\\mathbf{i} \\cdot \\mathrm{d}x\\mathbf{i} = -kx\\mathrm{d}x"
+  },
+  {
+   "type": "text",
+   "html": "<p>这样，弹簧的伸长量由 $x_{1}$ 变到 $x_{2}$ 时，弹性力所做的功就等于各个元功之和，数值上等于图3-15所示梯形的面积。由积分计算可得</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "W = \\int \\mathrm{d}W = -k\\int_{x_{1}}^{x_{2}} x\\mathrm{d}x = -\\frac{1}{2}kx_{2}^{2} + \\frac{1}{2}kx_{1}^{2}",
+   "label": "式（3-14）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch03/pages_50_100_0d082ab0cac2ff1f25700a46a342b2e0a0aac4ce3d4026ca913e6a70832a9b05.png",
+   "caption": "图 3-15 弹性力做的功（梯形面积）"
+  },
+  {
+   "type": "text",
+   "html": "<p>从式(3-14)可以看出，对在弹性限度内具有给定弹性系数的弹簧来说，弹性力所做的功只由弹簧起始和终了的位置($x_{1}$ 和 $x_{2}$)决定，而与弹性形变的过程无关。这一特点与万有引力做功的特点是相同的。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>应当指出，这里所用的弹簧-物体系统，虽只是一个特例，但上述结论适用于一切弹性力作用的系统。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>二、保守力与非保守力 保守力做功的数学表达式</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>从上述对万有引力和弹性力做功的讨论中可以看出，它们所做的功只与质点的始末位置有关，而与路径无关。这是它们的一个共同特点。我们把具有这种特点的力叫做保守力。除了上面所讲的万有引力和弹性力是保守力外，电荷间相互作用的库仑力也是保守力。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如何用一个统一的数学式，把各种保守力做功与路径无关这一特点表达出来呢？</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如图3-16(a)所示，设一质点在保守力 $\\mathbf{F}$ 作用下自点 $A$ 沿路径 $ACB$ 到达点 $B$，或沿路径 $ADB$ 到达点 $B$.根据保守力做功与路径无关的特点，有①</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "W_{ACB} = W_{ADB} = \\int_{ACB} \\mathbf{F} \\cdot \\mathrm{d}\\mathbf{r} = \\int_{ADB} \\mathbf{F} \\cdot \\mathrm{d}\\mathbf{r}",
+   "label": "式（3-15）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch03/pages_50_100_2dee4fe79a302a8465f2ee8c7152799e23e51c1e55c0f0afcdf03b3e62da04f1.png",
+   "caption": "图 3-16(a) 保守力做功与路径无关"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch03/pages_50_100_349dffc3488c0a6dadd5b65878fbba851d3abee64ab09f0d2083cd6d4c1cf0d5.png",
+   "caption": "图 3-16(b) 沿闭合路径一周保守力做功为零"
+  },
+  {
+   "type": "text",
+   "html": "<p>显然，此积分结果只是 $A$、$B$ 两点位置的函数。如果质点沿如图3-16(b)所示的 $ACBDA$ 闭合路径运动一周时，保守力对质点做的功为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "W = \\oint_{l} \\mathbf{F} \\cdot \\mathrm{d}\\mathbf{r} = \\int_{ACB} \\mathbf{F} \\cdot \\mathrm{d}\\mathbf{r} + \\int_{BDA} \\mathbf{F} \\cdot \\mathrm{d}\\mathbf{r}"
+  },
+  {
+   "type": "text",
+   "html": "<p>由于</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\int_{BDA} \\mathbf{F} \\cdot \\mathrm{d}\\mathbf{r} = -\\int_{ADB} \\mathbf{F} \\cdot \\mathrm{d}\\mathbf{r}"
+  },
+  {
+   "type": "text",
+   "html": "<p>所以，上式为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "W = \\oint_{l} \\mathbf{F} \\cdot \\mathrm{d}\\mathbf{r} = \\int_{ACB} \\mathbf{F} \\cdot \\mathrm{d}\\mathbf{r} - \\int_{ADB} \\mathbf{F} \\cdot \\mathrm{d}\\mathbf{r}"
+  },
+  {
+   "type": "text",
+   "html": "<p>由式(3-15)知，上式为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "W = \\oint \\mathbf{F} \\cdot \\mathrm{d}\\mathbf{r} = 0",
+   "label": "式（3-16）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式表明，质点沿任意闭合路径运动一周时，保守力对它所做的功为零。式(3-16)是反映保守力做功特点的数学表达式。无论是万有引力、弹性力还是库仑力，它们沿闭合路径做功都符合式(3-16).此外还应指出，式(3-16)是根据式(3-15)得出的，所以，我们可以说，保守力做功与路径无关的特点与保守力沿任意闭合路径一周做功为零的特点是一致的，也是等效的。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>然而，在物理学中并非所有的力都具有做功与路径无关这一特点，例如常见的摩擦力，它所做的功就与路径有关，路径越长，摩擦力做的功也越大。显然，摩擦力做功就不具有保守力做功的特点。另外，还有一些力做功也与路径有关，如磁场对电流作用的安培力做的功就与路径有关。我们把这种做功与路径有关的力叫做非保守力。摩擦力就是一种非保守力。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>三、势能</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>从上面的讨论中，我们知道这些保守力做功均只与质点的始末位置有关，那么，此类功一定可以写成某个状态量的差值。为此，可以引入势能概念。我们把与质点位置有关的能量称为质点的势能，用符号 $E_{\\mathrm{p}}$ 表示。于是，万有引力和弹性力的势能分别为</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>引力势能</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "E_{\\mathrm{p}} = -G\\frac{m'm}{r}",
+   "label": "式（3-17a）"
+  },
+  {
+   "type": "text",
+   "html": "<p>弹性势能</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "E_{\\mathrm{p}} = \\frac{1}{2}kx^{2}",
+   "label": "式（3-17b）"
+  },
+  {
+   "type": "text",
+   "html": "<p>质点在地球表面附近距地面高为 $y$ 时，具有的引力势能称为重力势能，其值为 $E_{\\mathrm{p}} = mgy$.它可由式(3-17a)求得。由式(3-17a)可知，质点在距地球表面为 $y$ 处的引力势能与在地球表面上的引力势能之差为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "E_{\\mathrm{p},R_{\\mathrm{E}}+y} - E_{\\mathrm{p},R_{\\mathrm{E}}} = -Gmm_{\\mathrm{E}}\\left(\\frac{1}{R_{\\mathrm{E}} + y} - \\frac{1}{R_{\\mathrm{E}}}\\right) = Gmm_{\\mathrm{E}}\\frac{y}{R_{\\mathrm{E}}(R_{\\mathrm{E}} + y)}"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $R_{\\mathrm{E}}$ 和 $m_{\\mathrm{E}}$ 分别为地球的半径和质量。由于质点位于地球表面附近，故 $R_{\\mathrm{E}}(R_{\\mathrm{E}} + y) \\approx R_{\\mathrm{E}}^{2}$，上式可近似写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "E_{\\mathrm{p},R_{\\mathrm{E}}+y} - E_{\\mathrm{p},R_{\\mathrm{E}}} \\approx G\\frac{mm_{\\mathrm{E}}}{R_{\\mathrm{E}}^{2}}y"
+  },
+  {
+   "type": "text",
+   "html": "<p>由于地球表面附近重力加速度 $g = Gm_{\\mathrm{E}}/R_{\\mathrm{E}}^{2}$，且取地球表面作为重力势能为零的参考点，即 $E_{\\mathrm{p},R_{\\mathrm{E}}} = 0$，那么，从上式可得 $E_{\\mathrm{p},R_{\\mathrm{E}}+y} = mgy$，一般写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "E_{\\mathrm{p}} = mgy",
+   "label": "式（3-17c）"
+  },
+  {
+   "type": "text",
+   "html": "<p>因此，重力做功一般也可写为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "W = -(mgy_{2} - mgy_{1})",
+   "label": "式（3-17d）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $y_{1}$ 和 $y_{2}$ 分别为始点和终点距地面的高度。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>式(3-13)、式(3-14)和式(3-17d)可统一写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "W = -(E_{\\mathrm{p}2} - E_{\\mathrm{p}1}) = -\\Delta E_{\\mathrm{p}}",
+   "label": "式（3-18）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式表明，保守力对质点做的功等于质点势能增量的负值。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在一维的情况下，由式(3-18)可得</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\int_{x}^{x+\\mathrm{d}x} F(x)\\mathrm{d}x = -\\Delta E_{\\mathrm{p}}(x) = -[E_{\\mathrm{p}}(x + \\Delta x) - E_{\\mathrm{p}}(x)]"
+  },
+  {
+   "type": "text",
+   "html": "<p>对于足够小的 $\\Delta x$ 来说，在积分范围内保守力 $F(x)$ 可视为恒定的，于是有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "F(x) = -\\frac{\\Delta E_{\\mathrm{p}}(x)}{\\Delta x}"
+  },
+  {
+   "type": "text",
+   "html": "<p>在 $\\Delta x \\to 0$ 的情况下，得</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "F(x) = -\\frac{\\mathrm{d}E_{\\mathrm{p}}(x)}{\\mathrm{d}x}",
+   "label": "式（3-19）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式表明，作用于质点上的在 $Ox$ 轴上的保守力，等于势能对坐标 $x$ 的导数的负值。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>为加深对势能的理解，我们再作一些讨论。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(1)势能是状态的函数。在保守力作用下，只要质点的起始和终了位置确定了，保守力所做的功也就确定了，而与所经过的路径是无关的。所以说，势能是坐标的函数，亦即是状态的函数，即 $E_{\\mathrm{p}} = E_{\\mathrm{p}}(x,y,z)$.前面还说过，动能亦是状态的函数，$E_{\\mathrm{k}} = E_{\\mathrm{k}}(v_{x},v_{y},v_{z})$.</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(2)势能具有相对性。势能的值与势能零点的选取有关。一般选地面的重力势能为零，引力势能的零点取在无限远处，而水平放置的弹簧处于平衡位置时，其弹性势能为零。当然，势能零点也可以任意选取，选取不同的势能零点，质点的势能就将具有不同的值。所以，通常说势能具有相对性。但也应当注意，任意两点间的势能之差却具有绝对性。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>(3)势能是属于系统的。势能是由于系统内各物体间具有保守力作用而产生的，因而它是属于系统的。单独谈单个质点的势能是没有意义的。这样，弹性势能和引力势能就是属于弹性力和引力系统的。应当注意，在平常叙述时，常将地球与质点系统的重力势能说成是质点的，这只是为了叙述上的简便，其实它是属于地球和质点系统的。至于质点的引力势能和弹性势能，也都是这样。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>四、势能曲线</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>从上述讨论可以看出，当坐标系和势能零点一经确定后，质点的势能便仅是坐标的函数，即 $E_{\\mathrm{p}} = E_{\\mathrm{p}}(x,y,z)$.按此函数画出的势能随坐标变化的曲线，称为势能曲线。图3-17是重力势能的势能曲线，该曲线是一条直线。图3-18是弹性势能的势能曲线，该曲线是一条通过原点的抛物线。原点为平衡位置，其势能为零，它是弹性势能的最小值。图3-19是万有引力势能的势能曲线，是一条双曲线。从图中可见，当 $r \\to \\infty$ 时，引力势能趋于零，这与前面规定在无限远处万有引力势能为零是一致的。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>应当强调指出，势能曲线不仅给出势能在空间的分布，而且还可以表示系统的稳定状态。例如在图3-18的弹性势能曲线上，由式(3-19)可得点 $A$ 处的 $\\mathrm{d}E_{\\mathrm{p}}/\\mathrm{d}x > 0$，故该处的弹性力是负的；而点 $B$ 处的 $\\mathrm{d}E_{\\mathrm{p}}/\\mathrm{d}x < 0$，故点 $B$ 处的弹性力是正的；而在点 $O$ 处，有 $\\mathrm{d}E_{\\mathrm{p}}/\\mathrm{d}x = 0$，即点 $O$ 处弹性力为零，弹性势能亦为零，故点 $O$ 是一维弹簧振子的平衡位置。这就是说，无论是向左或向右偏离平衡位置点 $O$，质点都将受到指向平衡位置的弹性力。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch03/pages_50_100_21c86d90b5065f991b739f97008c54ceac9151240f22e35a6df44c87a21f8b4a.png",
+   "caption": "图 3-17 重力势能曲线（直线）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch03/pages_50_100_5b791ce2449da3f6887ee24b0cd53df7893b290c5223fe249b9d40fda40a6958.png",
+   "caption": "图 3-18 弹性势能曲线（抛物线）"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch03/pages_50_100_0e1e87b598c74301f8439c6135a98d23885b21b2056ad21329b78dc0cf7f7ad6.png",
+   "caption": "图 3-19 万有引力势能曲线（双曲线）"
+  },
+  {
+   "type": "section",
+   "number": "3.6",
+   "title": "功能原理 机械能守恒定律"
+  },
+  {
+   "type": "video",
+   "source": "bilibili",
+   "bvid": "BV1eK4y1E7Cb",
+   "page": 11,
+   "title": "📺 视频学习：功能原理 机械能守恒定律",
+   "caption": "东北大学《大学物理》MOOC 课堂录播（马文蔚《物理学》配套课程），第 2 次课 配套；本讲对应教材 3-6 功能原理 机械能守恒定律（含宇宙速度），时长 48:51。注意：视频标题里的 3.x 是该课程的讲次编号，与教材小节号含义不同，请以本卡片标注的教材小节为准。<a href=\"https://www.bilibili.com/video/BV1eK4y1E7Cb?p=11\" target=\"_blank\" rel=\"noopener\">在 B 站打开本讲 ↗</a>（嵌入加载失败、或想看弹幕与讲义时点此）"
+  },
+  {
+   "type": "text",
+   "html": "<p>前面我们讨论了质点机械运动的能量——动能和势能，以及合力对质点做功引起质点动能改变的动能定理。可是，在许多实际问题中，我们需要研究由许多质点所构成的系统。这时系统内的质点，既受到系统内各质点之间相互作用的内力，又可能受到系统外的质点对系统内质点作用的外力。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>一、质点系的动能定理</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>设一系统内有 $n$ 个质点，作用于各个质点的力所做的功分别为 $W_{1},W_{2},W_{3},\\cdots$，使各质点由初动能 $E_{\\mathrm{k}10},E_{\\mathrm{k}20},E_{\\mathrm{k}30},\\cdots$ 改变为末动能 $E_{\\mathrm{k}1},E_{\\mathrm{k}2},E_{\\mathrm{k}3},\\cdots$.由质点的动能定理式(3-12)，可得</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\begin{aligned} W_{1} &= E_{\\mathrm{k}1} - E_{\\mathrm{k}10} \\\\ W_{2} &= E_{\\mathrm{k}2} - E_{\\mathrm{k}20} \\\\ W_{3} &= E_{\\mathrm{k}3} - E_{\\mathrm{k}30} \\\\ &\\ \\cdots\\cdots\\cdots\\cdots \\end{aligned}"
+  },
+  {
+   "type": "text",
+   "html": "<p>以上各式相加，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\sum_{i=1}^{n} W_{i} = \\sum_{i=1}^{n} E_{\\mathrm{k}i} - \\sum_{i=1}^{n} E_{\\mathrm{k}i0}",
+   "label": "式（3-20）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $\\sum_{i=1}^{n} E_{\\mathrm{k}i0}$ 是系统内 $n$ 个质点的初动能之和，$\\sum_{i=1}^{n} E_{\\mathrm{k}i}$ 是这些质点的末动能之和，$\\sum_{i=1}^{n} W_{i}$ 则是作用在 $n$ 个质点上的力所做的功之和。因此，上式的物理意义是：作用于质点系的力所做的功，等于该质点系的动能增量。这也叫做质点系的动能定理。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>正如前面所说，系统内的质点所受的力，既有来自系统外的外力，也有来自系统内各质点间相互作用的内力，因此，作用于质点系的力所做的功 $\\sum W_{i}$，应是一切外力对质点系所做的功 $\\sum W_{i}^{\\mathrm{ex}} = W^{\\mathrm{ex}}$ 与质点系内一切内力所做的功 $\\sum W_{i}^{\\mathrm{in}} = W^{\\mathrm{in}}$ 之和，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\sum_{i=1}^{n} W_{i} = \\sum_{i=1}^{n} W_{i}^{\\mathrm{ex}} + \\sum_{i=1}^{n} W_{i}^{\\mathrm{in}} = W^{\\mathrm{ex}} + W^{\\mathrm{in}}"
+  },
+  {
+   "type": "text",
+   "html": "<p>这样式(3-20)亦可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "W^{\\mathrm{ex}} + W^{\\mathrm{in}} = \\sum_{i=1}^{n} E_{\\mathrm{k}i} - \\sum_{i=1}^{n} E_{\\mathrm{k}i0}",
+   "label": "式（3-21）"
+  },
+  {
+   "type": "text",
+   "html": "<p>这是质点系动能定理的另一数学表达式，它表明，质点系的动能的增量等于作用于质点系的一切外力做的功与一切内力做的功之和。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>二、质点系的功能原理</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>前面已经指出，作用于质点系的力有保守力与非保守力。因此，如以 $W_{\\mathrm{c}}^{\\mathrm{in}}$ 表示质点系内各保守内力做功之和，$W_{\\mathrm{nc}}^{\\mathrm{in}}$ 表示质点系内各非保守内力做功之和，那么，质点系内一切内力所做的功则应为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "W^{\\mathrm{in}} = W_{\\mathrm{c}}^{\\mathrm{in}} + W_{\\mathrm{nc}}^{\\mathrm{in}}"
+  },
+  {
+   "type": "text",
+   "html": "<p>此外，从式(3-18)已知，系统内保守力做的功等于势能增量的负值，因此，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "W_{\\mathrm{c}}^{\\mathrm{in}} = -\\left(\\sum_{i=1}^{n} E_{\\mathrm{p}i} - \\sum_{i=1}^{n} E_{\\mathrm{p}i0}\\right)"
+  },
+  {
+   "type": "text",
+   "html": "<p>考虑了以上两点，式(3-21)可写为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "W^{\\mathrm{ex}} + W_{\\mathrm{nc}}^{\\mathrm{in}} = \\left(\\sum_{i=1}^{n} E_{\\mathrm{k}i} + \\sum_{i=1}^{n} E_{\\mathrm{p}i}\\right) - \\left(\\sum_{i=1}^{n} E_{\\mathrm{k}i0} + \\sum_{i=1}^{n} E_{\\mathrm{p}i0}\\right)",
+   "label": "式（3-22）"
+  },
+  {
+   "type": "text",
+   "html": "<p>在力学中，动能和势能统称为机械能。若以 $E_{0}$ 和 $E$ 分别代表质点系的初机械能和末机械能，那么，式(3-22)可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "W^{\\mathrm{ex}} + W_{\\mathrm{nc}}^{\\mathrm{in}} = E - E_{0}",
+   "label": "式（3-23）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式表明，质点系的机械能的增量等于外力与非保守内力做功之和。这就是质点系的功能原理。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>功和能量既有联系又是有区别的。功总是和能量的变化与转化过程相联系，功是能量变化与转化的一种量度。而能量是代表质点系统在一定状态下所具有的做功本领，它和质点系统的状态有关，对机械能来说，它与质点系统的机械运动状态(即位置和速度)有关。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>三、机械能守恒定律</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>从质点系的功能原理式(3-23)可以看出，当外力对质点系不做功 $W^{\\mathrm{ex}} = 0$，质点系内的非保守力亦不做功 $W_{\\mathrm{nc}}^{\\mathrm{in}} = 0$，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "E = E_{0}",
+   "label": "式（3-24a）"
+  },
+  {
+   "type": "text",
+   "html": "<p>即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\sum E_{\\mathrm{k}i} + \\sum E_{\\mathrm{p}i} = \\sum E_{\\mathrm{k}i0} + \\sum E_{\\mathrm{p}i0}",
+   "label": "式（3-24b）"
+  },
+  {
+   "type": "text",
+   "html": "<p>它的物理意义是：当作用于质点系的外力和非保守内力均不做功，此时质点系内的动能和势能可以相互转化，但质点系的总机械能是守恒的。这就是机械能守恒定律。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>机械能守恒定律的数学表达式(3-24)还可以写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\sum E_{\\mathrm{k}i} - \\sum E_{\\mathrm{k}i0} = -\\left(\\sum E_{\\mathrm{p}i} - \\sum E_{\\mathrm{p}i0}\\right)"
+  },
+  {
+   "type": "text",
+   "html": "<p>即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\Delta E_{\\mathrm{k}} = -\\Delta E_{\\mathrm{p}}",
+   "label": "式（3-25）"
+  },
+  {
+   "type": "text",
+   "html": "<p>可见，在满足机械能守恒的条件下，质点系内的动能和势能可以相互转化，但动能和势能之和却是不变的。所以说，在机械能守恒定律中，机械能是不变量或守恒量。而质点系内的动能和势能之间的转化则是通过质点系内的保守力做功($W_{\\mathrm{c}}^{\\mathrm{in}}$)来实现的。</p>"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（3.6 节 · 例 1）",
+   "problem": "如图3-20所示，一雪橇从高度为 $50\\ \\mathrm{m}$ 的山顶上点 $A$ 沿冰道由静止下滑，山顶到山下的坡道长为 $500\\ \\mathrm{m}$.雪橇滑至山下点 $B$ 后，又沿水平冰道继续滑行，滑行若干米后停止在 $C$ 处。若雪橇与冰道的摩擦因数为 $0.050$.求此雪橇沿水平冰道滑行的路程。点 $B$ 附近可视为连续弯曲的冰道，略去空气阻力的作用。<br><img src=\"assets/images/ch03/pages_50_100_d063d7bee0c5d44e4df5cbbc7ce4c4098afe47f1d355ce8372b3ce5afaa5a427.png\" style=\"max-width:60%\"><br>图3-20",
+   "solution_steps": [
+    "如把雪橇、冰道和地球视为一个系统，由于略去空气阻力对雪橇的作用，故作用于雪橇的力只有重力 $\\mathbf{P}$、支持力 $\\mathbf{F}_{\\mathrm{N}}$ 和摩擦力 $\\mathbf{F}_{\\mathrm{f}}$.且只有保守内力(重力)和非保守内力(摩擦力)做功，没有外力做功。故由功能原理可知，雪橇在下滑过程中，摩擦力所做的功为",
+    "$$W^{\\mathrm{in}} = W_{1} + W_{2} = (E_{\\mathrm{p}2} + E_{\\mathrm{k}2}) - (E_{\\mathrm{p}1} + E_{\\mathrm{k}1}) \\tag{1}$$",
+    "式中 $W_{1}$ 和 $W_{2}$ 分别为雪橇沿斜坡下滑和沿水平冰道运动时摩擦力做的功；$E_{\\mathrm{p}1}$ 和 $E_{\\mathrm{k}1}$ 为雪橇在山顶时的势能和动能，$E_{\\mathrm{p}2}$ 和 $E_{\\mathrm{k}2}$ 为雪橇静止在水平冰道上的势能和动能。如选水平冰道处的势能为零，由题意可知 $E_{\\mathrm{p}1} = mgh$，$E_{\\mathrm{k}1} = 0$，$E_{\\mathrm{p}2} = 0$，$E_{\\mathrm{k}2} = 0$；于是由上式有",
+    "$$W_{1} + W_{2} = -mgh \\tag{2}$$",
+    "另由功的定义式(3-9)，有",
+    "$$W_{1} = \\int \\mathbf{F}_{\\mathrm{f}} \\cdot \\mathrm{d}\\mathbf{r} = -\\mu mg\\cos\\theta\\,s'$$",
+    "因斜坡的坡度很小($\\cos\\theta \\approx 1$)，故",
+    "$$W_{1} = -\\mu mgs'$$",
+    "$$W_{2} = \\int \\mathbf{F}_{\\mathrm{f}} \\cdot \\mathrm{d}\\mathbf{r} = -\\mu mgs$$",
+    "把上述结果代入式(2)，得",
+    "$$-\\mu mgs' - \\mu mgs = -mgh$$",
+    "$$s = \\frac{h}{\\mu} - s'$$",
+    "从题意知 $h = 50\\ \\mathrm{m}$，$\\mu = 0.050$，$s' = 500\\ \\mathrm{m}$，代入上式，雪橇沿水平冰道滑行的路程为",
+    "$$s = 500\\ \\mathrm{m}$$",
+    "应当指出，这个题目也可以应用牛顿第二定律先求出加速度，再利用匀变速直线运动公式解出。但运算步骤要略繁一点，读者不妨一试。"
+   ],
+   "answer": null
+  },
+  {
+   "type": "example",
+   "title": "教材例题（3.6 节 · 例 2）",
+   "problem": "如图3-21所示，有一质量略去不计的轻弹簧，其一端系在竖直放置的圆环的顶点 $P$，另一端系一质量为 $m$ 的小球，小球穿过圆环并在圆环上作摩擦可略去不计的运动。设开始时小球静止于点 $A$，弹簧处于自然状态，其长度为圆环的半径 $R$；当小球运动到圆环的底端点 $B$ 时，小球对圆环没有压力。求此弹簧的弹性系数。<br><img src=\"assets/images/ch03/pages_50_100_0f38e41ed37404684fab07aa34066d42eb6725f689afd61e98b3a624ce5cf623.png\" style=\"max-width:60%\"><br>图3-21",
+   "solution_steps": [
+    "取弹簧、小球和地球为一个系统，小球与地球间的重力、小球与弹簧间的作用力均为保守内力。而圆环对小球的支持力和点 $P$ 对弹簧的拉力虽都为外力但都不做功。所以，小球从 $A$ 运动到 $B$ 的过程中，系统的机械能是不变量，机械能应守恒。因小球在点 $A$ 时弹簧为自然状态，故取点 $A$ 的弹性势能为零；另取点 $B$ 时小球的重力势能为零。那么，由机械能守恒定律可得",
+    "$$\\frac{1}{2}mv^{2} + \\frac{1}{2}kR^{2} = mgR(2- \\sin 30^{\\circ}) \\tag{1}$$",
+    "式中 $v$ 是小球在点 $B$ 时的速率。又小球在点 $B$ 时的牛顿第二定律方程为",
+    "$$kR - mg = m\\frac{v^{2}}{R} \\tag{2}$$",
+    "解式(1)和式(2)，得弹簧的弹性系数为",
+    "$$k = \\frac{2mg}{R}$$"
+   ],
+   "answer": null
+  },
+  {
+   "type": "text",
+   "html": "<h4>四、宇宙速度</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>众所周知，人造地球卫星和人造行星是人类认识宇宙的重要工具。但怎样才能把物体抛向天空，使之成为人造地球卫星或人造行星呢？这取决于抛体的初速度。有趣的是，在牛顿的《自然哲学的数学原理》中有一幅插图。这幅图指出抛体的运动轨迹取决于抛体的初速度，它预示着发射人造地球卫星的可能性，当然这种可能性在当时只是理论上的.270年后，人类才把理论上的人造地球卫星变成了现实。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h5>1. 人造地球卫星 第一宇宙速度</h5>"
+  },
+  {
+   "type": "text",
+   "html": "<p>设地球的平均半径为 $R_{\\mathrm{E}}$、质量为 $m_{\\mathrm{E}}$.在地面上有一质量为 $m$ 的抛体，以初速 $v_{1}$ 竖直向上发射，到达距地面高度为 $h$ 时，以速率 $v$ 绕地球作匀速率圆周运动。如略去大气对抛体的阻力，那么抛体至少应具有多大的初速 $v_{1}$ 才能使之成为地球卫星？如把抛体与地球作为一个系统，由于没有外力作用在这个系统上，系统的机械能守恒。于是，由式(3-24)，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "E = \\frac{1}{2}mv_{1}^{2} - \\frac{Gmm_{\\mathrm{E}}}{R_{\\mathrm{E}}} = \\frac{1}{2}mv^{2} - \\frac{Gmm_{\\mathrm{E}}}{R_{\\mathrm{E}} + h}",
+   "label": "式（1）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "v_{1}^{2} = v^{2} - 2\\frac{Gm_{\\mathrm{E}}}{R_{\\mathrm{E}} + h} + 2\\frac{Gm_{\\mathrm{E}}}{R_{\\mathrm{E}}}",
+   "label": "式（2）"
+  },
+  {
+   "type": "text",
+   "html": "<p>又由牛顿第二定律和万有引力定律，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "m\\frac{v^{2}}{R_{\\mathrm{E}} + h} = \\frac{Gm_{\\mathrm{E}}m}{(R_{\\mathrm{E}} + h)^{2}}",
+   "label": "式（3）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "v^{2} = \\frac{Gm_{\\mathrm{E}}}{R_{\\mathrm{E}} + h}",
+   "label": "式（4）"
+  },
+  {
+   "type": "text",
+   "html": "<p>将式(4)代入式(2)，且已知地球表面附近的重力加速度 $g = Gm_{\\mathrm{E}}/R_{\\mathrm{E}}^{2}$，得</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "v_{1} = \\sqrt{gR_{\\mathrm{E}}\\left(2- \\frac{R_{\\mathrm{E}}}{R_{\\mathrm{E}} + h}\\right)}"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式中 $R_{\\mathrm{E}} = 6.37 \\times 10^{6}\\ \\mathrm{m}$.显然对于地球表面附近的人造地球卫星有 $R_{\\mathrm{E}} \\gg h$，故上式可简化为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "v_{1} = \\sqrt{gR_{\\mathrm{E}}} = 7.9\\ \\mathrm{km \\cdot s^{-1}}",
+   "label": "式（5）"
+  },
+  {
+   "type": "text",
+   "html": "<p>这就是在地面上发射人造地球卫星所需达到的最小速度，通常叫做第一宇宙速度。在地球表面附近的卫星($R_{\\mathrm{E}} \\gg h$)，由式(2)可得 $v \\approx v_{1}$.故常说，人造地球卫星环绕地球的最小发射速度亦为 $7.9\\ \\mathrm{km \\cdot s^{-1}}$.</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h5>2. 人造行星 第二宇宙速度</h5>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如果抛体的发射速度继续增大，致使抛体与地球之间的距离增加到趋于无限远时，即 $r = \\infty$，这时可认为抛体已脱离地球引力的作用范围。抛体成为太阳系的人造行星。在这种情况下，抛体在地球引力作用下的引力势能为零，即 $E_{\\mathrm{p}\\infty} = 0$.若此时抛体的动能也为零，即 $E_{\\mathrm{k}\\infty} = 0$，那么抛体在距地球无限远处的总机械能 $E_{\\infty} = E_{\\mathrm{p}\\infty} + E_{\\mathrm{k}\\infty} = 0$.这就是说，在抛体从地面飞行到刚好脱离地球引力作用的过程中，抛体以自己的动能克服引力而做功，从而把动能转化为引力势能。由于略去阻力以及其他星体的作用力所做的功，故机械能应守恒，由式(3-24)，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "E = \\frac{1}{2}mv_{2}^{2} - \\frac{Gm_{\\mathrm{E}}m}{R_{\\mathrm{E}}} = E_{\\mathrm{k}\\infty} + E_{\\mathrm{p}\\infty} = 0"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $v_{2}$ 是使抛体脱离地球引力作用范围，在地面发射时抛体所必须具有的最小发射速度。这个速度又叫做第二宇宙速度。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>由上式可得第二宇宙速度为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "v_{2} = \\sqrt{\\frac{2Gm_{\\mathrm{E}}}{R_{\\mathrm{E}}}} = \\sqrt{2gR_{\\mathrm{E}}} = \\sqrt{2}v_{1} = 11.2\\ \\mathrm{km \\cdot s^{-1}}"
+  },
+  {
+   "type": "text",
+   "html": "<p>从上述关于第二宇宙速度的讨论中可以看出，要使抛体脱离地球引力作用，只要抛体具有不小于 $11.2\\ \\mathrm{km \\cdot s^{-1}}$ 的发射速度就行了，而这时可以不考虑发射速度的方向，就能得到所要求的数值。这是用能量观点来讨论这类问题最显著的一个优点。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h5>3. 飞出太阳系 第三宇宙速度</h5>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如果我们继续增加从地球表面发射抛体的速度，并使之能脱离太阳引力的束缚而飞出太阳系，这个速度叫做第三宇宙速度，用 $v_{3}$ 来表示。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>显然，要使抛体脱离太阳系的束缚，必须先脱离地球引力的束缚，然后再脱离太阳引力的束缚。这就是说，抛体脱离地球引力束缚后还要具有足够大的动能实现飞出太阳系的目的。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>首先讨论抛体脱离地球引力场的情形。我们把地球和抛体作为一个系统，并取地球为参考系。设从地球表面发射一个速度为 $v_{3}$ 的抛体，其动能为 $mv_{3}^{2}/2$，引力势能为 $-Gm_{\\mathrm{E}}m/R_{\\mathrm{E}}$.当抛体脱离地球引力的束缚后，它相对地球的速度为 $v'$.按机械能守恒定律，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\frac{1}{2}mv_{3}^{2} - G\\frac{m_{\\mathrm{E}}m}{R_{\\mathrm{E}}} = \\frac{1}{2}m{v'}^{2}",
+   "label": "式（1）"
+  },
+  {
+   "type": "text",
+   "html": "<p>为求 $v'$，取太阳为参考系，此抛体距太阳的距离为 $r_{\\mathrm{s}}$，相对太阳的速度为 $v'_{3}$.由相对速度公式(1-20)可知，抛体相对太阳的速度 $v'_{3}$ 应当等于抛体相对地球的速度 $\\mathbf{v}'$ 与地球相对太阳的速度 $\\mathbf{v}_{\\mathrm{E}}$ 之和，即</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{v}'_{3} = \\mathbf{v}' + \\mathbf{v}_{\\mathrm{E}}"
+  },
+  {
+   "type": "text",
+   "html": "<p>如 $\\mathbf{v}'$ 与 $\\mathbf{v}_{\\mathrm{E}}$ 方向相同，则抛体相对太阳的速度最大，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "v'_{3} = v' + v_{\\mathrm{E}}",
+   "label": "式（2）"
+  },
+  {
+   "type": "text",
+   "html": "<p>此后，抛体在太阳的引力作用下飞行，其引力势能为 $-Gm_{\\mathrm{s}}m/r_{\\mathrm{s}}$，动能为 $m{v'_{3}}^{2}/2$，其中 $m_{\\mathrm{s}}$ 为太阳的质量，故抛体要脱离太阳引力作用，其机械能至少是</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\frac{1}{2}m{v'_{3}}^{2} - G\\frac{m_{\\mathrm{s}}m}{r_{\\mathrm{s}}} = 0",
+   "label": "式（3）"
+  },
+  {
+   "type": "text",
+   "html": "<p>有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "v'_{3} = \\left(\\frac{2Gm_{\\mathrm{s}}}{r_{\\mathrm{s}}}\\right)^{1/2}",
+   "label": "式（4）"
+  },
+  {
+   "type": "text",
+   "html": "<p>把式(4)代入式(2)，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "v' = v'_{3} - v_{\\mathrm{E}} = \\left(\\frac{2Gm_{\\mathrm{s}}}{r_{\\mathrm{s}}}\\right)^{1/2} - v_{\\mathrm{E}}",
+   "label": "式（5）"
+  },
+  {
+   "type": "text",
+   "html": "<p>如设地球绕太阳的运动轨道近似为一圆，那么由于抛体与地球的运动方向相同，且都只受太阳引力的作用，故可以认为此时抛体至太阳的距离 $r_{\\mathrm{s}}$ 即是地球轨道圆的半径。于是由牛顿第二定律有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "G\\frac{m_{\\mathrm{E}}m_{\\mathrm{s}}}{r_{\\mathrm{s}}^{2}} = m_{\\mathrm{E}}\\frac{v_{\\mathrm{E}}^{2}}{r_{\\mathrm{s}}}"
+  },
+  {
+   "type": "text",
+   "html": "<p>即得</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "v_{\\mathrm{E}} = \\left(G\\frac{m_{\\mathrm{s}}}{r_{\\mathrm{s}}}\\right)^{1/2}"
+  },
+  {
+   "type": "text",
+   "html": "<p>把上式代入式(5)，得</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "v' = (\\sqrt{2} - 1)\\left(G\\frac{m_{\\mathrm{s}}}{r_{\\mathrm{s}}}\\right)^{1/2}"
+  },
+  {
+   "type": "text",
+   "html": "<p>从附录三可查得 $m_{\\mathrm{s}} = 1.99 \\times 10^{30}\\ \\mathrm{kg}$，$r_{\\mathrm{s}} = 1.50 \\times 10^{11}\\ \\mathrm{m}$，故得 $v' = 12.3\\ \\mathrm{km \\cdot s^{-1}}$.将 $v'$ 的值代入式(1)，有</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "v_{3} = \\left({v'}^{2} + 2G\\frac{m_{\\mathrm{E}}}{R_{\\mathrm{E}}}\\right)^{1/2}"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $m_{\\mathrm{E}} = 5.97 \\times 10^{24}\\ \\mathrm{kg}$，$R_{\\mathrm{E}} = 6.37 \\times 10^{6}\\ \\mathrm{m}$，所以第三宇宙速度为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "v_{3} = 16.7\\ \\mathrm{km \\cdot s^{-1}}"
+  },
+  {
+   "type": "text",
+   "html": "<p>自1957年世界上第一颗人造地球卫星上天以来，1961年苏联宇航员加加林乘坐宇宙飞船环绕地球一周，人类首次进入了太空.1969年7月美国\"阿波罗\"11号宇宙飞船首次实现载人登月.1976年美国\"海盗\"1号宇宙飞船成功登上火星，发回5万多张照片和大量探测数据.1997年7月4日，美国\"火星探路者\"探测器又在火星上着陆，并以火星车在火星表面采集样品，拍摄照片。有关资料表明，在几十亿年以前火星上非常可能发生过特大洪水。然而，火星上是否真的有过液态水，甚至有过生命，仍然是一个有待进一步考察研究的问题.2011年11月26日美国宇航局用\"宇宙神\"5号火箭发射\"好奇号\"火星探测器，并于2012年8月6日使之成功在火星上着陆。该探测器的任务之一是调查火星在此前和现在维持生命的可能性。这项研究有许多国家参与。探测器发现火星有大的古老河床迹象，并在火星的岩石粉末中发现氮、氢、氧、磷和碳等元素。美国宇航局筹划在不久的将来将宇航员送到绕火星的轨道，甚至使宇航员登上火星。人类完全有信心实现载人火星飞行，并在火星上建造适宜人类居住的太空城等愿望。中国已于2020年7月发射\"天问一号\"火星探测器，并计划一次实现\"绕、落、巡\"三大目标。</p>"
+  },
+  {
+   "type": "section",
+   "number": "3.7",
+   "title": "完全弹性碰撞 完全非弹性碰撞"
+  },
+  {
+   "type": "simulation",
+   "simId": "collision-lab",
+   "title": "碰撞实验室",
+   "hint": "调节两滑块的质量与初速度，选择完全弹性或完全非弹性碰撞，观察碰后速度；下方实时校验动量是否守恒、动能损失多少。试试 m₁ = m₂（交换速度）、m₂ ≫ m₁（原速弹回）与 m₂ ≪ m₁（小球以近两倍速飞出）三种极限情形。"
+  },
+  {
+   "type": "video",
+   "source": "bilibili",
+   "bvid": "BV1eK4y1E7Cb",
+   "page": 12,
+   "title": "📺 视频学习：碰撞 碰撞定律",
+   "caption": "东北大学《大学物理》MOOC 课堂录播（马文蔚《物理学》配套课程），第 3 次课 配套；本讲对应教材 3-7 完全弹性碰撞 完全非弹性碰撞，时长 49:15。注意：视频标题里的 3.x 是该课程的讲次编号，与教材小节号含义不同，请以本卡片标注的教材小节为准。<a href=\"https://www.bilibili.com/video/BV1eK4y1E7Cb?p=12\" target=\"_blank\" rel=\"noopener\">在 B 站打开本讲 ↗</a>（嵌入加载失败、或想看弹幕与讲义时点此）"
+  },
+  {
+   "type": "text",
+   "html": "<p>两物体在碰撞过程中，如它们之间相互作用的内力较之其他物体对它们作用的外力要大得多，在研究两物体间的碰撞问题时，可将其他物体对它们作用的外力忽略不计。如果在碰撞后，两物体的动能之和完全没有损失，那么，这种碰撞叫做完全弹性碰撞。实际上，在两物体碰撞时，由于非保守力作用，致使机械能转化为热能、声能、化学能等其他形式的能量，或者其他形式的能量转化为机械能，这种碰撞叫做非弹性碰撞。如两物体在非弹性碰撞后以同一速度运动，这种碰撞叫做完全非弹性碰撞。下面通过举例来讨论完全非弹性碰撞和完全弹性碰撞。</p>"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（3.7 节 · 例 1）",
+   "problem": "设在宇宙中有密度为 $\\rho$ 的尘埃，这些尘埃相对惯性参考系是静止的。一质量为 $m_{0}$ 的宇宙飞船以初速度 $\\mathbf{v}_{0}$ 穿过宇宙尘埃，尘埃粘到飞船上，致使飞船的速度发生改变。求飞船的速度与其在尘埃中飞行时间的关系。为便于计算，设想飞船的外形是截面积为 $S$ 的圆柱体(图3-22).<br><img src=\"assets/images/ch03/pages_100_150_3cbfbd726b5ca45141d8032b8983554abdb89fc1c7a3ac5ea0590b1f5776e091.png\" style=\"max-width:60%\"><br>图3-22",
+   "solution_steps": [
+    "按题设条件，可认为尘埃与飞船作完全非弹性碰撞，把尘埃与飞船作为一个系统。考虑到飞船在自由空间飞行，无外力作用在这个系统上，因此系统的动量守恒。如以 $m_{0}$ 和 $v_{0}$ 为飞船进入尘埃前(即 $t = 0$)的质量和速度，$m$ 和 $v$ 为飞船在尘埃中(即时刻 $t$)的质量和速度。那么，由动量守恒有",
+    "$$m_{0}v_{0} = mv \\tag{1}$$",
+    "此外，在 $t \\sim t + \\mathrm{d}t$ 时间间隔内，由于飞船与尘埃间作完全非弹性碰撞，而粘在宇宙飞船上尘埃的质量即飞船所增加的质量为",
+    "$$\\mathrm{d}m = \\rho Sv\\,\\mathrm{d}t$$",
+    "由式(1)有",
+    "$$m = \\frac{m_{0}v_{0}}{v},\\quad \\mathrm{d}m = -\\frac{m_{0}v_{0}}{v^{2}}\\mathrm{d}v$$",
+    "从而得",
+    "$$\\rho Sv\\,\\mathrm{d}t = -\\frac{m_{0}v_{0}}{v^{2}}\\mathrm{d}v$$",
+    "由已知条件，上式积分",
+    "$$\\int_{v_{0}}^{v} \\frac{\\mathrm{d}v}{v^{3}} = -\\frac{\\rho S}{m_{0}v_{0}}\\int_{0}^{t} \\mathrm{d}t$$",
+    "$$\\frac{1}{2}\\left(\\frac{1}{v^{2}} - \\frac{1}{v_{0}^{2}}\\right) = \\frac{\\rho S}{m_{0}v_{0}}t$$",
+    "$$v = \\left(\\frac{m_{0}}{2\\rho Sv_{0}t + m_{0}}\\right)^{1/2}v_{0}$$",
+    "显然，飞船在尘埃中飞行的时间愈长，其速度就愈低。",
+    "1999年2月美国发射\"星尘号\"飞船，其任务就是搜集彗星尘埃.2006年1月15日飞船返回地球。在胡萝卜状的气凝胶内，有多达百万颗尘埃粒子，这也许会有助于研究宇宙和地球生命的起源。",
+    "<img src=\"assets/images/ch03/pages_100_150_dc4068b337bb9f792c44be31f3386cd5af2aab52566689caf34660b48c70f2d4.png\" style=\"max-width:44%\">",
+    "<div class=\"figcap\">星尘号飞船搜集彗星尘埃（教材页边照片，自例2图位移回）</div>",
+    "除上例外，完全非弹性碰撞的事例还有很多，如采用子弹打入沙摆的方法来测量子弹的速度，就是这方面一个常见的例子。"
+   ],
+   "answer": null
+  },
+  {
+   "type": "example",
+   "title": "教材例题（3.7 节 · 例 2）",
+   "problem": "如图3-23所示，设有两个质量分别为 $m_{1}$ 和 $m_{2}$，速度分别为 $\\mathbf{v}_{10}$ 和 $\\mathbf{v}_{20}$ 的弹性小球作对心碰撞，两球的速度方向相同。若碰撞是完全弹性的，求碰撞后的速度 $\\mathbf{v}_{1}$ 和 $\\mathbf{v}_{2}$.<br><img src=\"assets/images/ch03/fig3_23.png\" style=\"max-width:52%\"><br><div class=\"figcap\">图 3-23 两球对心碰撞（OCR 原图错置为星尘号照片，本站按题意补绘）</div>",
+   "solution_steps": [
+    "由动量守恒定律得",
+    "$$m_{1}v_{10} + m_{2}v_{20} = m_{1}v_{1} + m_{2}v_{2} \\tag{1}$$",
+    "由完全弹性碰撞的动能守恒得",
+    "$$\\frac{1}{2}m_{1}v_{10}^{2} + \\frac{1}{2}m_{2}v_{20}^{2} = \\frac{1}{2}m_{1}v_{1}^{2} + \\frac{1}{2}m_{2}v_{2}^{2} \\tag{2}$$",
+    "式(1)可改写为",
+    "$$m_{1}(v_{10} - v_{1}) = m_{2}(v_{2} - v_{20}) \\tag{3}$$",
+    "式(2)可改写为",
+    "$$m_{1}(v_{10}^{2} - v_{1}^{2}) = m_{2}(v_{2}^{2} - v_{20}^{2}) \\tag{4}$$",
+    "由式(3)、式(4)可解得",
+    "$$v_{10} + v_{1} = v_{2} + v_{20}$$",
+    "或",
+    "$$v_{10} - v_{20} = v_{2} - v_{1} \\tag{5}$$",
+    "式(5)表明，碰撞前两球相互趋近的相对速度 $(v_{10} - v_{20})$ 等于碰撞后它们相互分开的相对速度 $(v_{2} - v_{1})$.",
+    "从式(3)和式(5)，可解出",
+    "$$v_{1} = \\frac{(m_{1} - m_{2})v_{10} + 2m_{2}v_{20}}{m_{1} + m_{2}},\\quad v_{2} = \\frac{(m_{2} - m_{1})v_{20} + 2m_{1}v_{10}}{m_{1} + m_{2}} \\tag{6}$$",
+    "讨论：(1)若 $m_{1} = m_{2}$，从式(6)可得",
+    "$$v_{1} = v_{20},\\quad v_{2} = v_{10}$$",
+    "即两质量相同的小球碰撞后互相交换速度。",
+    "(2)若 $m_{2} \\gg m_{1}$ 且 $v_{20} = 0$，从式(6)可得",
+    "$$v_{1} \\approx -v_{10},\\quad v_{2} \\approx 0$$",
+    "即碰撞后，质量为 $m_{1}$ 的小球将以同样大小的速率，从质量为 $m_{2}$ 的大球上反弹回来，而大球 $m_{2}$ 几乎保持静止。皮球对墙壁的碰撞，以及气体分子和容器壁的碰撞都属于这种情形。",
+    "(3)若 $m_{2} \\ll m_{1}$，且 $v_{20} = 0$，从式(6)可得",
+    "$$v_{1} \\approx v_{10},\\quad v_{2} \\approx 2v_{10}$$",
+    "这个结果表示：一个质量很大的球体，当它与质量很小的球体相碰撞时，它的速度不发生显著改变，但质量很小的球却以近两倍于大球体的速度向前运动。",
+    "读者若有兴趣，可用讨论完全弹性碰撞的方法去说明第一章问题1-13.上面这个例题属一维完全弹性碰撞中的对心碰撞问题。一般说来，完全弹性碰撞常常不是对心碰撞，读者若有兴趣可解习题3-35."
+   ],
+   "answer": null
+  },
+  {
+   "type": "section",
+   "number": "3.8",
+   "title": "能量守恒定律"
+  },
+  {
+   "type": "text",
+   "html": "<p>在机械能守恒定律这一节中，我们知道如果外力和非保守内力都不做功，系统内的动能和势能之间是可以相互转化的，其和是守恒的。但是，如果系统内部除重力和弹性力等保守内力做功外，还有摩擦力等非保守内力做功，那么系统的机械能就要与其他形式的能量发生转化。</p>"
+  },
+  {
+   "type": "callout",
+   "calloutType": "info",
+   "title": "人物小传：亥姆霍兹 H. von Helmholtz（1821—1894）",
+   "body": "<p>亥姆霍兹(H. von Helmholtz,1821—1894)，德国物理学家和生理学家。他在J.P.焦耳和J.R.迈耶的能量守恒研究的基础上，于1847年发表了《论力(现称能量)守恒》的讲演，首先系统地以数学方式阐述了自然界各种运动形式之间都遵守能量守恒这条规律。这对近代物理学的发展起了很大作用，所以说亥姆霍兹是能量守恒定律的创立者之一。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在长期的生产生活和科学实验中，人们总结出一条重要的结论：对于一个与自然界无任何联系的系统来说，系统内各种形式的能量是可以相互转化的，但是不论如何转化，能量既不能产生，也不能消灭。这一结论叫做能量守恒定律，它是自然界的基本定律之一。能量是这一守恒定律的不变量或守恒量，在能量守恒定律中，系统的能量是不变的，但能量的各种形式之间却可以相互转化。例如机械能、电磁能、热能、光能以及分子能、原子能、核能等能量之间都可以相互转化。应当指出，在能量转化的过程中，能量的变化常用功来量度。在机械运动范围内，功是机械能变化的唯一量度。但是，不能把功与能量等同起来，功是和能量转化过程联系在一起的，而能量则只和系统的状态有关，是系统状态的函数。</p>"
+  },
+  {
+   "type": "section",
+   "number": "3.9",
+   "title": "质心 质心运动定理"
+  },
+  {
+   "type": "text",
+   "html": "<p>研究由许多质点所组成的系统的运动时，质心是十分有用的概念。无论这些质点是彼此隔离开来的，还是结构紧密的，都是如此。这一节我们先介绍质心的概念，然后讨论质心运动定理。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>一、质心</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>一人向空中抛一匀质薄三角板[图3-24(a)]，实际观测表明，板上有一点 $C$ 的运动轨迹为抛物线，而其他各点既随点 $C$ 作抛物线运动，又绕通过点 $C$ 的轴线作圆周运动。这时板的运动可看成是板的平动与整个板绕点 $C$ 转动这两种运动的合成。因此，我们可用点 $C$ 的运动来代表整个板的平动，点 $C$ 就是三角板的质心。就平动而言，板的全部质量似乎集中在质心这一点上。跳水运动员在空中的质心的运动轨迹也是抛物线[图3-24(b)].下面分别讨论质心位置的确定和质心运动的规律。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch03/pages_100_150_5b47d97cbb768cd2c37020146ab994a018141a268a6bc591468eba6a4a5f09f3.png",
+   "caption": "图 3-24 质心：抛出的三角板与跳水运动员的质心轨迹均为抛物线"
+  },
+  {
+   "type": "text",
+   "html": "<p>在如图3-25所示的直角坐标系中，有 $n$ 个质点组成的质点系，其质心位置可由下式确定：</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch03/pages_100_150_fb3024b5e5ad0fcfee79182ed05bfb64adc056fbfa3813841cec20b21bba46d3.png",
+   "caption": "图 3-25 质心位置的确定"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{r}_{C} = \\frac{\\sum_{i=1}^{n} m_{i}\\mathbf{r}_{i}}{m'}",
+   "label": "式（3-26a）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $m'$ 为质点系内各质点的质量总和；$\\mathbf{r}_{i}$ 为第 $i$ 个质点对原点 $O$ 的位矢，$\\mathbf{r}_{C}$ 为质心对原点 $O$ 的位矢，它在 $Ox$ 轴、$Oy$ 轴和 $Oz$ 轴上的分量即质心在 $Ox$ 轴、$Oy$ 轴和 $Oz$ 轴上的坐标，分别为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "x_{C} = \\frac{\\sum_{i=1}^{n} m_{i}x_{i}}{m'},\\quad y_{C} = \\frac{\\sum_{i=1}^{n} m_{i}y_{i}}{m'},\\quad z_{C} = \\frac{\\sum_{i=1}^{n} m_{i}z_{i}}{m'}",
+   "label": "式（3-26b）"
+  },
+  {
+   "type": "text",
+   "html": "<p>对于质量连续分布的物体，可把物体分成许多质量元 $\\mathrm{d}m$，式(3-26b)中的求和 $\\sum x_{i}m_{i}$，可用积分 $\\int x\\mathrm{d}m$ 来替代。于是，质心的坐标为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "x_{C} = \\frac{1}{m'}\\int x\\mathrm{d}m,\\quad y_{C} = \\frac{1}{m'}\\int y\\mathrm{d}m,\\quad z_{C} = \\frac{1}{m'}\\int z\\mathrm{d}m",
+   "label": "式（3-26c）"
+  },
+  {
+   "type": "text",
+   "html": "<p>对于密度均匀、形状对称分布的物体，其质心都在它的几何中心处，例如圆环的质心在圆环中心，球的质心在球心等。</p>"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（3.9 节 · 例 1）",
+   "problem": "水分子 $\\mathrm{H}_{2}\\mathrm{O}$ 由两个氢原子和一个氧原子构成，它们的结构如图3-26所示。每个氢原子与氧原子之间的距离均为 $d = 1.0 \\times 10^{-10}\\ \\mathrm{m}$，氢原子与氧原子两条连线之间的夹角为 $\\theta = 104.6^{\\circ}$.求水分子的质心。<br><img src=\"assets/images/ch03/pages_100_150_93c411c0f5a494b51e04e4f307e7b19c83da025c21073edb121be62e9a0a2374.png\" style=\"max-width:60%\"><br>图3-26",
+   "solution_steps": [
+    "选如图所示的坐标系。由于氧原子的中心位于坐标原点 $O$，两个氢原子对 $x$ 轴对称，故质心 $C$ 在 $y$ 轴上的坐标 $y_{C} = 0$，利用式(3-26)可得质心 $C$ 在 $x$ 轴上的坐标为",
+    "$$x_{C} = \\frac{\\sum m_{i}x_{i}}{m'} = \\frac{m_{\\mathrm{O}} \\cdot 0 + 2m_{\\mathrm{H}} \\cdot d\\cos(\\theta/2)}{m_{\\mathrm{O}} + 2m_{\\mathrm{H}}}$$",
+    "关于氢原子和氧原子的质量 $m_{\\mathrm{H}}$ 和 $m_{\\mathrm{O}}$，如以 $\\mathrm{u}$(原子质量单位①)为单位计算，$m_{\\mathrm{H}} = 1.0\\ \\mathrm{u}$，$m_{\\mathrm{O}} = 16\\ \\mathrm{u}$.把已知数据代入，得",
+    "$$x_{C} = \\frac{2 \\times 1.0 \\times 1.0 \\times 10^{-10} \\times \\cos 52.3^{\\circ}}{16 + 2 \\times 1.0} = 6.8 \\times 10^{-12}\\ \\mathrm{m}$$",
+    "即质心处于图3-26中 $y = 0$，$x = 6.8 \\times 10^{-12}\\ \\mathrm{m}$ 处，其位矢为 $\\mathbf{r}_{C} = 6.8 \\times 10^{-12}\\,\\mathbf{i}\\ \\mathrm{m}$."
+   ],
+   "answer": null
+  },
+  {
+   "type": "example",
+   "title": "教材例题（3.9 节 · 例 2）",
+   "problem": "求半径为 $R$ 的匀质半薄球壳的质心。",
+   "solution_steps": [
+    "选如图3-27所示的坐标系。由于球壳对 $Oy$ 轴对称，质心显然位于图中的 $Oy$ 轴上。在半球壳上取一圆环，圆环所在的平面与 $Oy$ 轴垂直。圆环的面积为 $\\mathrm{d}S = 2\\pi R\\sin\\theta \\cdot R\\mathrm{d}\\theta$.设匀质薄球壳的质量面密度为 $\\sigma$，则圆环的质量为",
+    "<img src=\"assets/images/ch03/pages_100_150_1a3c3a0d6de05890786fae2584f903817528183cbefe44881cfff357a9a6b29d.png\" style=\"max-width:60%\">",
+    "图3-27",
+    "$$\\mathrm{d}m = \\sigma \\cdot 2\\pi R^{2}\\sin\\theta\\,\\mathrm{d}\\theta$$",
+    "由式(3-26c)可得匀质薄球壳的质心处于",
+    "$$y_{C} = \\frac{\\int y\\mathrm{d}m}{\\int \\mathrm{d}m} = \\frac{\\int_{0}^{\\pi/2} R\\cos\\theta \\cdot \\sigma \\cdot 2\\pi R^{2}\\sin\\theta\\,\\mathrm{d}\\theta}{\\sigma \\cdot 2\\pi R^{2}} = \\frac{R\\int_{0}^{\\pi/2} \\cos\\theta\\sin\\theta\\,\\mathrm{d}\\theta}{\\int_{0}^{\\pi/2} \\sin\\theta\\,\\mathrm{d}\\theta}$$",
+    "从图3-27可见，$y = R\\cos\\theta$，所以上式可写为",
+    "$$y_{C} = R\\frac{\\int_{0}^{\\pi/2} \\cos\\theta\\sin\\theta\\,\\mathrm{d}\\theta}{\\int_{0}^{\\pi/2} \\sin\\theta\\,\\mathrm{d}\\theta} = \\frac{1}{2}R$$",
+    "即质心位于 $y_{C} = R/2$ 处，其位矢为 $\\mathbf{r}_{C} = (R/2)\\mathbf{j}$."
+   ],
+   "answer": null
+  },
+  {
+   "type": "text",
+   "html": "<h4>二、质心运动定理</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>在如图3-25所示的质点系中，式(3-26a)可写成</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "m'\\mathbf{r}_{C} = \\sum_{i=1}^{n} m_{i}\\mathbf{r}_{i}"
+  },
+  {
+   "type": "text",
+   "html": "<p>考虑到质点系内各质点的质量总和 $m'$ 是一定的，因此，上式对时间的一阶导数为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "m'\\frac{\\mathrm{d}\\mathbf{r}_{C}}{\\mathrm{d}t} = \\sum_{i=1}^{n} m_{i}\\frac{\\mathrm{d}\\mathbf{r}_{i}}{\\mathrm{d}t}",
+   "label": "式（3-27）"
+  },
+  {
+   "type": "text",
+   "html": "<p>式中 $\\mathrm{d}\\mathbf{r}_{C}/\\mathrm{d}t$ 是质心的速度，用 $\\mathbf{v}_{C}$ 表示，$\\mathrm{d}\\mathbf{r}_{i}/\\mathrm{d}t$ 是第 $i$ 个质点的速度，用 $\\mathbf{v}_{i}$ 表示，故上式为</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "m'\\mathbf{v}_{C} = \\sum_{i=1}^{n} m_{i}\\mathbf{v}_{i} = \\sum_{i=1}^{n} \\mathbf{p}_{i}",
+   "label": "式（3-28）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式表明，系统内各质点的动量的矢量和等于系统质心的速度乘以系统的质量。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>前面在讨论质点系的动量定理时已经讲过，系统内各质点间相互作用的内力的矢量和为零，即 $\\sum_{i=1}^{n} \\mathbf{F}_{i}^{\\mathrm{in}} = 0$.因此，作用在系统上的合力就等于合外力，即 $\\mathbf{F}^{\\mathrm{ex}} = \\sum_{i=1}^{n} \\mathbf{F}_{i}^{\\mathrm{ex}}$.于是由式(3-28)可得</p>"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{F}^{\\mathrm{ex}} = m'\\frac{\\mathrm{d}\\mathbf{v}_{C}}{\\mathrm{d}t} = m'\\mathbf{a}_{C}",
+   "label": "式（3-29）"
+  },
+  {
+   "type": "text",
+   "html": "<p>上式表明，作用在系统上的合外力等于系统的总质量乘以系统质心的加速度。它与牛顿第二定律在形式上完全相同，只是系统的质量集中于质心，在合外力作用下，质心以加速度 $\\mathbf{a}_{C}$ 运动。通常我们把式(3-29)作为质心运动定理的数学表达式。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>利用质心运动定理求解多粒子体系的物理问题时，会带来许多方便①.下面举两个这方面的例子。</p>"
+  },
+  {
+   "type": "example",
+   "title": "教材例题（3.9 节 · 例 3）",
+   "problem": "设有一质量为 $2m$ 的弹丸，从地面斜抛出去，它在最高点处爆炸成质量相等的两个碎片(图3-28)，其中一个碎片竖直自由下落，另一个碎片水平飞出，它们同时落地。试问第二个碎片落地点在何处？<br><img src=\"assets/images/ch03/pages_100_150_72a83e61fb08e7bb3a66a7fd418bfb45b17263b7e5e01ced9962e1dd80841a84.png\" style=\"max-width:60%\"><br>图3-28",
+   "solution_steps": [
+    "考虑弹丸为一系统，空气阻力略去不计。爆炸前和爆炸后弹丸质心的运动轨迹都在同一抛物线上，这就是说，爆炸以后两碎片质心的运动轨迹仍沿爆炸前弹丸的抛物线运动轨迹。取第一个碎片的落地点为坐标原点 $O$，水平向右为 $Ox$ 轴正向。设 $m_{1}$ 和 $m_{2}$ 为第一和第二碎片的质量，且 $m_{1} = m_{2} = m$，$x_{1}$ 和 $x_{2}$ 为两碎片同时落地时距原点 $O$ 的距离，$x_{C}$ 为两碎片落地时它们的质心距原点 $O$ 的距离。由图可知 $x_{1} = 0$，于是，从式(3-26)可得",
+    "$$x_{C} = \\frac{m_{1}x_{1} + m_{2}x_{2}}{m_{1} + m_{2}} = \\frac{0 + mx_{2}}{2m} = \\frac{x_{2}}{2}$$",
+    "即",
+    "$$x_{2} = 2x_{C}$$",
+    "即第二个碎片与第一个碎片落地点的水平距离为碎片的质心与第一个碎片的落地点水平距离的两倍。这个问题虽也可用第一章的质点运动学方法来求解，但要复杂一点，读者不妨一试。"
+   ],
+   "answer": null
+  },
+  {
+   "type": "example",
+   "title": "教材例题（3.9 节 · 例 4）",
+   "problem": "在第3-3节的例题中，我们曾作为质量移动问题的例子，用牛顿运动定律讨论了从地面上匀速提起柔软链条的过程中，手的提力与链条提离地面长度的关系。这里我们用质心运动定理来讨论。<br>如图3-29所示，设链条长为 $l$，质量线密度为 $\\lambda$.在时刻 $t$，链条被提离地面的高度为 $y$，提起的速度为 $v$，且 $v$ 为常量。取地面为坐标原点，竖直向上为 $Oy$ 轴正向。由式(3-26a)，链条质心的坐标为<br><img src=\"assets/images/ch03/pages_100_150_73300fadc54804dc0610d9c57c3236492845e6ba3864922ff68b8c37ec28fd8c.png\" style=\"max-width:60%\"><br>图3-29<br>$$y_{C} = \\frac{\\lambda y \\cdot (y/2) + \\lambda(l-y) \\cdot 0}{\\lambda l} = \\frac{y^{2}}{2l} \\tag{1}$$<br>式中 $\\lambda$ 为链条的质量线密度。而作用于链条的合外力为 $\\mathbf{F} + \\lambda y\\mathbf{g}$，故由质心运动定理有<br>$$F - \\lambda y g = l\\lambda\\frac{\\mathrm{d}^{2}y_{C}}{\\mathrm{d}t^{2}} \\tag{2}$$<br>式(1)对时间 $t$ 求二阶导数，有<br>$$\\frac{\\mathrm{d}^{2}y_{C}}{\\mathrm{d}t^{2}} = \\frac{1}{l}\\left[\\left(\\frac{\\mathrm{d}y}{\\mathrm{d}t}\\right)^{2} + y\\frac{\\mathrm{d}^{2}y}{\\mathrm{d}t^{2}}\\right]$$<br>考虑到 $v = \\mathrm{d}y/\\mathrm{d}t$ 及 $\\mathrm{d}^{2}y/\\mathrm{d}t^{2} = 0$，得<br>$$\\frac{\\mathrm{d}^{2}y_{C}}{\\mathrm{d}t^{2}} = \\frac{v^{2}}{l}$$<br>把上式代入式(2)，得<br>$$(F - \\lambda y g)\\mathbf{j} = \\lambda v^{2}\\mathbf{j}$$<br>即<br>$$F = \\lambda v^{2} + \\lambda y g$$<br>可见，这两种解法所得的结果是相同的。",
+   "solution_steps": [],
+   "answer": null
+  },
+  {
+   "type": "section",
+   "number": "3.10",
+   "title": "对称性与守恒律"
+  },
+  {
+   "type": "text",
+   "html": "<p>虽然动量守恒定律和能量守恒定律是从经典力学里得出的，但这些守恒定律比牛顿运动定律的适应面更广、更基本，在牛顿运动定律不适用的领域，它们仍然成立。现代物理学已经认识到这些守恒定律与时空对称性紧密联系着。下面先来介绍一点有关对称性的概念。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h4>一、对称性</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>最初，对称性概念来源于生活，来源于对自然的认识。圆、雪花、树叶、动物的体形和中国古代建筑都具有很好的对称性(图3-30).下面介绍几个名词。系统从一个状态变化到另一个状态的过程叫做变换，或叫做操作。通过操作把系统从一个状态变化到另一个与之等价的状态，就称系统对于这个操作是对称的。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch03/pages_100_150_2f6c667ca2d0eef1c0ad3acf825c630284a8c2a417ee31ac5266267a922fbc77.png",
+   "caption": "图 3-30 几种对称性的物体"
+  },
+  {
+   "type": "text",
+   "html": "<p>常见的对称性时空操作，有空间的平移、转动以及时间的平移等。例如一根无限长的直导线沿其自身方向作任意大小的平移将都是对称的；同样，一个无限大的平面对沿面内任意方向的平移也是对称的。但晶体只能沿某特定方向，作给定长度的平移才是对称的。所以就空间平移的对称性来说，晶体平移对称性的程度较之无限长直导线和无限大平面来说要低很多。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>如果一个物体绕某轴旋转一角度后，仍和原来相同，这种对称叫做旋转对称或简称轴对称。显然，树叶要绕其轴旋转 $180^{\\circ}$，甚至 $360^{\\circ}$ 后方可恢复原状；图3-30中的六角形雪花，只要对通过其中心的垂直轴绕 $60^{\\circ}$ 后就可恢复原状了；而圆形物则对通过圆心并垂直于圆平面的轴旋转任意角度都能保持原状。所以说，上述雪花的对称性比树叶要高，比圆要低。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>关于时间不变性可以这样来理解，即一个系统的状态经过给定的时间平移后，其状态表现出不变性。理想的单摆是时间平移不变性的一个很好例子。如图3-31所示，单摆经历时间 $T = 2\\pi(l/g)^{1/2}$ 后仍恢复原来的状态。</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch03/pages_100_150_f2a91a7be93325a598bde7e761c275104b70aea628e893924c89d1320f29e2ca.png",
+   "caption": "图 3-31 时间不变性：单摆经周期 T 恢复原状态"
+  },
+  {
+   "type": "text",
+   "html": "<h4>二、对称性与守恒律</h4>"
+  },
+  {
+   "type": "text",
+   "html": "<p>物理定律的对称性是指经过一定的操作后物理定律的形式保持不变，所以物理定律的对称性又叫物理定律的不变性。物理学中的各守恒定律的存在并不是偶然的，它们是各种对称性的反映。下面介绍几种对应关系。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h5>1. 空间平移不变性与动量守恒律</h5>"
+  },
+  {
+   "type": "text",
+   "html": "<p>设在系统中有一对粒子 $A$ 和 $B$(图3-32)，它们间的相互作用势能为 $E_{\\mathrm{p}}$.若 $B$ 不动，将 $A$ 移动至 $A'$，系统势能的增量 $\\Delta E_{\\mathrm{p}} = -\\mathbf{F}_{BA} \\cdot \\Delta\\mathbf{s}$，式中 $-\\mathbf{F}_{BA} \\cdot \\Delta\\mathbf{s}$ 为反抗 $B$ 对 $A$ 的力做的功。同样，如 $A$ 不动，将 $B$ 沿反方向以相等距离移到 $B'$，系统势能的增量 $\\Delta E_{\\mathrm{p}}' = -\\mathbf{F}_{AB} \\cdot \\Delta\\mathbf{s}'$，式中 $-\\mathbf{F}_{AB} \\cdot \\Delta\\mathbf{s}'$ 为反抗 $A$ 对 $B$ 的力做的功。令 $\\Delta\\mathbf{s}' = -\\Delta\\mathbf{s}$，则从整体上来看，这两种情况的区别只在两粒子系统在空间有个平移，而它们的相对位置改变相同，以致它们势能的增量应相等，即 $\\Delta E_{\\mathrm{p}} = \\Delta E_{\\mathrm{p}}'$，于是有 $\\mathbf{F}_{AB} = -\\mathbf{F}_{BA}$.如设 $A$ 的动量为 $\\mathbf{p}_{A}$，$B$ 的动量为 $\\mathbf{p}_{B}$，那么由牛顿第二定律可得 $(\\mathrm{d}\\mathbf{p}_{A}/\\mathrm{d}t + \\mathrm{d}\\mathbf{p}_{B}/\\mathrm{d}t) = 0$，可得</p>"
+  },
+  {
+   "type": "figure",
+   "src": "assets/images/ch03/pages_100_150_b077ec01aa5934b0fbd8696d1db0e0c3a96d3716ef653b52022bb71363eb71cf.png",
+   "caption": "图 3-32 空间平移不变性"
+  },
+  {
+   "type": "formula",
+   "latex": "\\mathbf{p}_{A} + \\mathbf{p}_{B} = \\text{常矢量}"
+  },
+  {
+   "type": "text",
+   "html": "<p>即两粒子系统的动量守恒，与它们整体在空间的平移无关。这样就从空间平移不变性推出了动量守恒律。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<h5>2. 时间平移不变性与能量守恒律</h5>"
+  },
+  {
+   "type": "text",
+   "html": "<p>前面在讲述机械能守恒定律时曾强调指出，若系统为一孤立的保守系统，那么这个系统中的势能和动能可以相互转化，但它们之和是守恒的，是不随时间的流逝而改变的。这就是机械能的时间平移不变性。不仅如此，能量守恒定律也具有时间平移不变性。下面举个反例来说明。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>设想某一储能水电站所在地的重力加速度是随昼夜不同而变化的。譬如，白天为 $g$，晚上为 $g'$，且 $g > g'$.那么我们可以在晚上利用重力加速度小的时候把水抽到水库里，到白天再用水库里的水冲击水轮机发电。这样一来，抽水电站不仅避开用电高峰获得了经济效益，而且由于重力加速度的周期性变化而取得能量的盈余。这是多么好的\"永动机\"啊！然而，重力加速度的时间平移不变性不容许这种情况存在。</p>"
+  },
+  {
+   "type": "text",
+   "html": "<p>上面我们仅由时空对称性推出和说明了动量守恒律和能量守恒律，物理学的其他定律也具有对称性。德国女数学家诺特(E.Noether，1882—1935)指出：作用量的每一种对称性都对应一个守恒定律，有一个守恒量。不仅在经典力学里，对称性与守恒量紧密联系在一起，而且在20世纪中叶以后，粒子物理学的进展使得对称性的研究取得更多的成果，从而推动了现代物理学的发展。</p>"
+  },
+  {
+   "type": "homework",
+   "title": "本章作业",
+   "allowRetry": 2,
+   "showAnswerAfter": true,
+   "batches": [
+    {
+     "title": "第 1 次作业（3-1 ～ 3-3：动量定理·动量守恒·质量移动）",
+     "items": [
+      {
+       "type": "choice",
+       "question": "［教材习题 3-1］对质点系有以下几种说法：(1) 质点系总动量的改变与内力无关；(2) 质点系总动能的改变与内力无关；(3) 质点系机械能的改变与保守内力无关。下列判断正确的是（　）",
+       "options": [
+        "只有 (1) 是正确的",
+        "(1)、(2) 是正确的",
+        "(1)、(3) 是正确的",
+        "(2)、(3) 是正确的"
+       ],
+       "answer": 2,
+       "explanation": "选 C。(1) 对：内力成对抵消，不改变系统总动量；(2) 错：内力做功可以改变总动能（如爆炸中内力做正功）；(3) 对：由功能原理 W^ex + W^in_nc = ΔE，机械能增量只取决于外力功与非保守内力功，与保守内力无关（保守内力功已计入势能变化）。（上册无答案册，本答案按概念推定）"
+      },
+      {
+       "type": "fill",
+       "question": "［教材习题 3-8(1)］合外力 F = 30 + 4t（F 以 N 计，t 以 s 计）作用在质量 m = 10 kg 的物体上，则在开始 2 s 内此力的冲量 I = ______ N·s。",
+       "blanks": [
+        {
+         "answer": "68",
+         "tolerance": 0.5
+        }
+       ],
+       "explanation": "I = ∫₀²(30 + 4t)dt = 30×2 + 2×2² = 60 + 8 = 68 N·s。（答案按公式推定，依据同上）"
+      },
+      {
+       "type": "calculation",
+       "question": "［教材习题 3-10］一质量为 51.0 kg 的人从高空竖直跌落，因安全带保护最终被悬挂住。已知跌落距离为 2.0 m，安全带弹性缓冲作用时间为 0.50 s。求安全带对人的平均冲力（取 g = 9.8 m/s²，结果保留整数，单位 N）。",
+       "answer": 1138,
+       "unit": "N",
+       "tolerance": 15,
+       "solution": "跌落 2.0 m 后的速率 v = √(2gh) = √(2×9.8×2.0) ≈ 6.26 m/s。缓冲过程中由动量定理（取向上为正）：(F̄ − mg)t = 0 − (−mv)，得 F̄ = mg + mv/t = 51.0×9.8 + 51.0×6.26/0.50 ≈ 500 + 639 ≈ 1138 N，约为体重的 2.3 倍——这就是高空作业必须系安全带、且安全带要有缓冲的原因。（答案按公式推定，依据同上）"
+      },
+      {
+       "type": "qa",
+       "question": "［教材问题 3-4］一人在帆船上用电动鼓风机正对帆鼓风，试图使帆船前进，但他发觉船非但不前进，反而缓慢后退，这是为什么？",
+       "rubric": "指出鼓风机—帆—船属同一系统，鼓风对帆的力是内力，不能改变系统总动量（4 分）；说明船缓慢后退的原因：鼓风机吸入前方空气向后排出，相当于向后的喷气反冲，帆无法全部拦截气流动量（4 分）；给出正确做法：撤掉帆，直接向后鼓风可获得向前的反冲（2 分）",
+       "reference": "把鼓风机、帆和船视为一个系统，鼓风机吹向帆的风施加的力是系统内力，内力不改变系统总动量，所以这种装置原则上不能使船前进。而鼓风机工作时从前面吸气、向后排气，相当于一台向后喷气的装置；若帆不能完全挡下这股气流（气流动量有净向后的泄漏），船反而会缓慢后退。真要利用鼓风机前进，应当撤去帆、让鼓风机直接向后鼓风，靠反冲获得向前的动量。",
+       "maxScore": 10
+      }
+     ],
+     "dueDate": "2026-09-29T23:59:59+08:00"
+    },
+    {
+     "title": "第 2 次作业（3-4 ～ 3-6：动能定理·势能·机械能守恒）",
+     "items": [
+      {
+       "type": "choice",
+       "question": "［教材习题 3-3］对功的概念有以下几种说法：(1) 保守力做正功时，系统内相应的势能增加；(2) 质点运动经一闭合路径，保守力对质点做的功为零；(3) 作用力和反作用力大小相等、方向相反，所以两者所做功的代数和必为零。下列判断正确的是（　）",
+       "options": [
+        "(1)、(2) 是正确的",
+        "(2)、(3) 是正确的",
+        "只有 (2) 是正确的",
+        "只有 (3) 是正确的"
+       ],
+       "answer": 2,
+       "explanation": "选 C。(1) 错：由 W = −ΔE_p，保守力做正功时势能减少；(2) 对：保守力沿任意闭合路径一周做功为零（式 3-16）；(3) 错：作用力与反作用力作用在不同物体上，两物体位移一般不同，功的代数和不一定为零（如子弹穿木块，一对摩擦力做功之和为负）。（上册无答案册，本答案按概念推定）"
+      },
+      {
+       "type": "fill",
+       "question": "［教材习题 3-24 改编］一质量为 0.20 kg 的小球系在长为 2.00 m 的细绳下端，绳上端固定于天花板。把小球移至绳与竖直方向成 30° 角处由静止放开。则在最低点时小球的动能为 ______ J，细绳的张力为 ______ N（取 g = 9.8 m/s²，均保留 2 位小数）。",
+       "blanks": [
+        {
+         "answer": "0.53",
+         "tolerance": 0.02
+        },
+        {
+         "answer": "2.49",
+         "tolerance": 0.05
+        }
+       ],
+       "explanation": "下落高度 h = l(1 − cos30°) = 2×0.134 = 0.268 m。机械能守恒：E_k = mgh = 0.20×9.8×0.268 ≈ 0.53 J；v² = 2gh ≈ 5.25 (m/s)²。最低点法向方程 F_T − mg = mv²/l，得 F_T = 0.20×9.8 + 0.20×5.25/2.00 ≈ 1.96 + 0.53 ≈ 2.49 N。（答案按公式推定，依据同上）"
+      },
+      {
+       "type": "calculation",
+       "question": "［教材习题 3-19 改编］质量 m = 3.0 kg 的质点在外力 F 作用下沿 x 轴运动，F 随距离线性减小：x = 0 时 F = 60 N，x = 2.0 m 时 F = 0。t = 0 时质点在原点且初速为零。求质点运动到 x = 2.0 m 处时的速率（保留 2 位小数，单位 m/s）。",
+       "answer": 6.32,
+       "unit": "m/s",
+       "tolerance": 0.05,
+       "solution": "变力做功等于 F-x 图线下（三角形）面积：W = ½×F₀×L = ½×60×2.0 = 60 J。由动能定理 ½mv² = W，v = √(2×60/3.0) = √40 ≈ 6.32 m/s。（答案按公式推定，依据同上）"
+      },
+      {
+       "type": "qa",
+       "question": "［教材问题 3-12］有人认为：「质点系内各质点间相互作用的内力总是成对出现、大小相等方向相反，因而所有内力做功相互抵消，质点系的总动能增量等于外力对质点系做的功。」这与质点系动能定理不符，错误出在哪里？",
+       "rubric": "明确指出「内力做功相互抵消」不成立（2 分）；指出一对内力大小相等方向相反，但分别作用在两个质点上，两质点的位移一般不同（4 分）；故一对内力的功之和一般不为零（可举爆炸、两物体间摩擦等例）（3 分）；结论：总动能增量 = 外力功 + 内力功之和（1 分）",
+       "reference": "错误在于把「内力的矢量和为零」误当成「内力做功之和为零」。一对内力虽然大小相等、方向相反，但它们分别作用在两个不同的质点上，而两个质点的位移一般并不相同，所以这对内力所做的功不一定抵消。例如炸弹爆炸时，内力（火药推力）对两块弹片都做正功，系统总动能明显增加。因此质点系的动能增量应等于外力做的功与内力做的功之和，即式(3-21)。",
+       "maxScore": 10
+      }
+     ],
+     "dueDate": "2026-10-13T23:59:59+08:00"
+    },
+    {
+     "title": "第 3 次作业（3-7 ～ 3-10：碰撞·能量守恒·质心·对称性）",
+     "items": [
+      {
+       "type": "choice",
+       "question": "［教材习题 3-4］质量分别为 m₁ 和 m₂ 的物体 A、B 置于光滑桌面上，A、B 之间连一轻弹簧；另有质量为 m₁、m₂ 的物体 C、D 分别置于 A、B 之上，A 与 C、B 与 D 之间的摩擦因数均不为零。先用外力相向推压 A、B 使弹簧压缩，然后撤去外力，则在 A、B 弹开的过程中，对 A、B、C、D 及弹簧组成的系统有（　）",
+       "options": [
+        "动量守恒，机械能守恒",
+        "动量不守恒，机械能守恒",
+        "动量不守恒，机械能不守恒",
+        "动量守恒，机械能不一定守恒"
+       ],
+       "answer": 3,
+       "explanation": "选 D。桌面光滑，系统在水平方向不受外力（外力仅为竖直方向的重力与支持力，互相平衡），故动量守恒。弹开过程中，若 C、D 与 A、B 之间无相对滑动，则静摩擦不做功、机械能守恒；若发生相对滑动，滑动摩擦生热、机械能不守恒。题设不能保证无相对滑动，故机械能不一定守恒。（上册无答案册，本答案按概念推定）"
+      },
+      {
+       "type": "fill",
+       "question": "［教材习题 3-34 改编］一个电子与一个原来静止的氢原子发生对心弹性碰撞，氢原子质量约为电子质量的 1840 倍。电子动能中传递给氢原子的能量约占 ______ %（保留 2 位小数）。",
+       "blanks": [
+        {
+         "answer": "0.22",
+         "tolerance": 0.03
+        }
+       ],
+       "explanation": "对心弹性碰撞中入射粒子损失能量的份额为 ΔE_k/E_k = 4m₁m₂/(m₁+m₂)² = 4×1×1840/(1841)² ≈ 2.17×10⁻³ ≈ 0.22%。可见电子与重原子弹性碰撞时几乎不损失能量。（答案按公式推定，依据同上）"
+      },
+      {
+       "type": "calculation",
+       "question": "［教材习题 3-6］一架以 3.0×10² m/s 速率水平飞行的飞机，与一只身长 0.20 m、质量 0.50 kg 的飞鸟相撞，撞后飞鸟与飞机同速（飞鸟原有速率可忽略）。碰撞时间用飞鸟身长除以飞机速率估算。求飞鸟对飞机的冲击力（结果用科学记数法数值填写，单位 N，即填 2.25×10⁵ 的数值部分 225000）。",
+       "answer": 225000,
+       "unit": "N",
+       "tolerance": 8000,
+       "solution": "Δt = 0.20/300 ≈ 6.67×10⁻⁴ s。由动量定理 F̄·Δt = mv − 0，F̄ = 0.50×300/(6.67×10⁻⁴) ≈ 2.25×10⁵ N——相当于 23 吨重物的重力！可见高速物体与飞鸟、小石子相撞极其危险（飞机风挡、高铁前窗的设计都要考虑这一点）。（答案按公式推定，依据同上）"
+      },
+      {
+       "type": "qa",
+       "question": "［教材问题 3-22］在宇宙空间站外，两位宇航员甲和乙漂浮在太空中。起先甲将扳手扔给乙，过后乙又将此扳手扔还给甲。试问他们的质心如何运动？",
+       "rubric": "明确质心保持原有运动状态（静止或匀速直线运动）不变（4 分）；指出甲乙与扳手组成的系统不受外力，互扔扳手是系统内力作用（3 分）；说明虽然甲、乙各自因扔/接扳手而来回漂移，但质心位置的运动不变（3 分）",
+       "reference": "以甲、乙和扳手为一个系统，太空中不受外力（重力在此问题中提供环绕地球的向心力，局部失重视为自由漂浮），互扔扳手纯属系统内力作用。由质心运动定理 F^ex = m′a_C，合外力为零则 a_C = 0，系统质心保持原来的静止或匀速直线运动状态不变。过程中甲扔出扳手时向后退、乙接住时向后飘，乙扔还、甲再接住时各自又反向漂移，但三者质心的运动自始至终不变。",
+       "maxScore": 10
+      }
+     ],
+     "dueDate": "2026-10-20T23:59:59+08:00"
+    }
+   ],
+   "socratic": {
+    "type": "socratic",
+    "chapter": "3 动量守恒定律和能量守恒定律",
+    "sessions": [
+     {
+      "label": "第 1 次课讨论（3-1 ～ 3-3：动量定理与动量守恒）",
+      "topics": [
+       {
+        "title": "在真空中放飞气球，它还能上升吗？（教材问题 3-5）",
+        "question": "在大气中打开充气气球的塞子，空气冲出，气球上升。有人说「气球是被喷出的空气推着周围大气、靠大气的反作用力推上去的」——那么在真空中打开塞子，气球还会上升吗？追问：把气球和喷出的气体看成一个系统，系统总动量如何变化？反冲到底需不需要「有东西可推」？火箭在太空里加速，与气球有何异同？（可对照 3-3 节火箭推力公式 F = u·dm′/dt 思考）"
+       }
+      ]
+     },
+     {
+      "label": "第 2 次课讨论（3-4 ～ 3-6：功、势能与机械能守恒）",
+      "topics": [
+       {
+        "title": "平抛与沿斜面滑下，谁先落地？（教材问题 3-14）",
+        "question": "两个同样的物体在同一高度：一个水平抛出，一个沿光滑斜面无摩擦滑下。哪一个先到达地面？到达地面时速率是否相等？追问：用机械能守恒能直接回答「谁先落地」吗——能量方法擅长回答什么、不能回答什么？两者落地时的「速度」相同吗（注意速率与速度的区别）？竖直方向的运动分别由什么决定？"
+       }
+      ]
+     },
+     {
+      "label": "第 3 次课讨论（3-7 ～ 3-10：碰撞·质心·对称性）",
+      "topics": [
+       {
+        "title": "中间船向前后各抛一重物，三船如何变化？（教材问题 3-9）",
+        "question": "三艘质量相同的船相距很近、以相同速度鱼贯而行。中间的船同时向前后两船分别抛去质量相同的重物。这三艘船的运动各有何变化？追问：分析「抛出」与「接住」时，系统该怎样选取才能用动量守恒？中间的船会变快、变慢还是不变？前船接到从后面抛来的重物后呢？整支船队的总动量变化了吗？（忽略水的阻力）"
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ]
+}

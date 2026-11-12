@@ -88,7 +88,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "磁化强度与磁场强度",
+     "qa": [
+      {
+       "q": "磁化强度 M 和磁场强度 H 有什么区别？",
+       "a": "$M$ 描述介质被磁化的程度，$H$ 是把磁化效应收进参数后的辅助场量，二者通过 $M=\\chi_m H$ 联系。"
+      },
+      {
+       "q": "为什么要引入磁场强度 H？",
+       "a": "为把复杂的磁化效应收进一个参数，使含介质的磁场问题简化。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -108,7 +121,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "介质中安培环路定理",
+     "qa": [
+      {
+       "q": "有了磁介质后安培环路定理怎么变？",
+       "a": "需改写：环路积分改为 $\\oint \\mathbf{H}\\cdot d\\mathbf{l}=\\sum I_0$，只计传导电流。"
+      }
+     ],
+     "important": true
     }
    ],
    "heading": "封面"
@@ -195,6 +217,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "分子电流假说",
+     "qa": [
+      {
+       "q": "介质磁化的微观原因是什么？",
+       "a": "安培认为分子内有圆电流，无外场时取向杂乱，有外场时转向，从而产生磁化。"
+      }
      ]
     },
     {
@@ -295,6 +325,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "磁化强度定义",
+     "qa": [
+      {
+       "q": "磁化强度 M 怎么定义？",
+       "a": "$M=\\sum p_m/\\Delta V$，即单位体积内分子磁矩的矢量和，描述磁化程度。"
+      }
      ]
     },
     {
@@ -315,6 +353,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "磁化面电流",
+     "qa": [
+      {
+       "q": "M 和磁化面电流有什么关系？",
+       "a": "磁化强度等价于侧面磁化面电流，大小关系为 $i'=M$。"
+      }
      ]
     },
     {
@@ -397,7 +443,20 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "有介质环路定理",
+     "qa": [
+      {
+       "q": "有介质时安培环路定理怎么写？",
+       "a": "$\\oint\\vec H\\cdot\\mathrm d\\vec l=\\sum I_0$，只数自由电流，磁化电流被 H 消去。"
+      },
+      {
+       "q": "为什么引入 H 后式子变简单？",
+       "a": "H 把磁化电流吸收掉，介质只通过 $\\mu$ 出现一次，只需数自由电流。"
+      }
+     ],
+     "important": true
     }
    ],
    "heading": "本节路线"
@@ -444,6 +503,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "磁介质定义",
+     "qa": [
+      {
+       "q": "什么是磁介质？",
+       "a": "能与磁场发生相互作用的物质，一切实物都属于磁介质。"
+      }
      ]
     },
     {
@@ -464,7 +531,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "分子电流假说",
+     "qa": [
+      {
+       "q": "安培分子电流假说的内容是什么？",
+       "a": "分子内电子运动等效为微小圆电流，每个分子电流都有自己的磁矩 $\\vec p_m$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -610,7 +686,16 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "磁化定义",
+     "qa": [
+      {
+       "q": "什么叫磁化？",
+       "a": "在外磁场作用下分子磁矩转向外场方向，介质出现宏观磁矩 $M\\neq0$ 的过程。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -630,6 +715,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "总磁场叠加",
+     "qa": [
+      {
+       "q": "磁化后空间总磁场如何表示？",
+       "a": "总磁场等于原磁场加磁化附加场：$\\vec B=\\vec B_0+\\vec B'$。"
+      }
      ]
     },
     {
@@ -706,7 +799,16 @@
         "b": true
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "磁介质分类依据",
+     "qa": [
+      {
+       "q": "磁介质按什么标准分类？",
+       "a": "按相对磁导率 $\\mu_r$ 的大小分为顺磁质、抗磁质和铁磁质三类。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -824,6 +926,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "铁磁质磁导率",
+     "qa": [
+      {
+       "q": "铁磁质的 $\\mu_r$ 有多大？",
+       "a": "$\\mu_r \\gg 1$，可达 $10^3$~$10^5$ 量级，远大于顺磁、抗磁质。"
+      }
      ]
     },
     {
@@ -864,7 +974,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "顺磁与抗磁机制",
+     "qa": [
+      {
+       "q": "顺磁质和抗磁质的微观机制有何不同？",
+       "a": "顺磁质分子有固有磁矩，外场使其转向；抗磁质无固有磁矩，外场感生出反向磁矩。"
+      },
+      {
+       "q": "抗磁性的反向磁矩体现了什么规律？",
+       "a": "体现楞次定律：感生磁矩总是阻碍外场变化，故与外场反向。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -924,6 +1047,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "抗磁性普遍存在",
+     "qa": [
+      {
+       "q": "顺磁质有没有抗磁性？",
+       "a": "有。一切物质都有抗磁性，只是顺磁效应盖过它时才表现为顺磁。"
+      }
      ]
     },
     {
@@ -1006,7 +1137,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "磁化强度定义",
+     "qa": [
+      {
+       "q": "磁化强度 M 的物理意义是什么？",
+       "a": "单位体积内分子磁矩的矢量和，反映介质被磁化的程度，单位 A/m。"
+      },
+      {
+       "q": "M 的单位为什么是安每米？",
+       "a": "分子磁矩单位为 $\\mathrm{A\\cdot m^2}$，除以体积 $\\mathrm{m^3}$ 得 $\\mathrm{A/m}$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -1018,7 +1162,15 @@
      "tex": "M=\\dfrac{\\sum \\vec p_m}{\\Delta V}",
      "size": 34,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "磁化强度公式",
+     "qa": [
+      {
+       "q": "这个求和公式中 ΔV 要取多小？",
+       "a": "宏观上足够小、微观上足够大，使 $\\sum \\vec p_m$ 有稳定平均值。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -1110,7 +1262,16 @@
      "tex": "i'=M",
      "size": 34,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "面电流密度等于 M",
+     "qa": [
+      {
+       "q": "为什么面电流线密度数值上等于 M？",
+       "a": "均匀磁化圆柱内部电流抵消，侧面剩余面电流密度 $i'=M$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1170,6 +1331,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "束缚电流",
+     "qa": [
+      {
+       "q": "磁化电流为什么叫束缚电流？",
+       "a": "它由分子内束缚电荷运动产生，不能像自由电荷那样自由流动。"
+      }
      ]
     },
     {
@@ -1278,7 +1447,20 @@
      "tex": "\\vec H=\\dfrac{\\vec B}{\\mu_0}-\\vec M",
      "size": 40,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "磁场强度定义式",
+     "qa": [
+      {
+       "q": "为什么要定义H而不是直接用B？",
+       "a": "因为B由自由电流和测不到的磁化电流共同决定，H把磁化部分$\\vec M$剥离出来，只与可测的自由电流相关。"
+      },
+      {
+       "q": "H和B的量纲一样吗？",
+       "a": "不一样，H单位是A/m，B单位是T，两者通过$\\vec B=\\mu_0(\\vec H+\\vec M)$联系。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -1290,7 +1472,15 @@
      "tex": "\\vec B=\\mu_0(\\vec H+\\vec M)",
      "size": 36,
      "color": "#0000CD",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "B与H的关系式",
+     "qa": [
+      {
+       "q": "这个式子里M代表什么？",
+       "a": "$\\vec M$是磁化强度，描述介质被磁化的程度，正是测不到的磁化电流的来源。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -1310,7 +1500,20 @@
         "b": false
        }
       ]
-     ]
+     ],
+     "hotspot": true,
+     "label": "线性介质本构关系",
+     "qa": [
+      {
+       "q": "μr和χm是什么关系？",
+       "a": "相对磁导率$\\mu_r=1+\\chi_m$，$\\chi_m$是磁化率，线性介质中$\\vec M=\\chi_m\\vec H$。"
+      },
+      {
+       "q": "线性介质下B怎么快速算？",
+       "a": "直接用$\\vec B=\\mu_0\\mu_r\\vec H=\\mu\\vec H$，只需知道H即可。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "box",
@@ -1344,7 +1547,15 @@
      "tex": null,
      "size": 40,
      "align": "center",
-     "color": "#111111"
+     "color": "#111111",
+     "hotspot": true,
+     "label": "H与B的单位区分",
+     "qa": [
+      {
+       "q": "为什么说名字与直觉相反？",
+       "a": "历史上H叫「磁场强度」、B叫「磁感应强度」，但两者单位不同：H为A/m，B为T，记单位最保险。"
+      }
+     ]
     }
    ],
    "heading": "四　磁场强度 H"
@@ -1623,7 +1834,16 @@
      "tex": "\\oint\\vec H\\cdot\\mathrm d\\vec l=H\\cdot2\\pi R",
      "size": 30,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "安培环路定理求H",
+     "qa": [
+      {
+       "q": "为什么环路积分直接等于 H·2πR？",
+       "a": "由对称性，H 沿同心圆周大小处处相等且沿切向，故 $\\oint\\vec H\\cdot d\\vec l=H\\cdot2\\pi R$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -1635,7 +1855,16 @@
      "tex": "H=\\dfrac{NI_0}{2\\pi R}",
      "size": 34,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "螺绕环内H公式",
+     "qa": [
+      {
+       "q": "H 为什么只和自由电流有关？",
+       "a": "环路定理中环流等于穿过环面的自由电流 $NI_0$，磁化电流不出现，故 $H=\\frac{NI_0}{2\\pi R}$。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "tex",
@@ -1647,7 +1876,15 @@
      "tex": "B=\\mu_0\\mu_r\\dfrac{NI_0}{2\\pi R},\\qquad M=\\chi_m H",
      "size": 27,
      "color": "#0000CD",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "B与磁化强度M",
+     "qa": [
+      {
+       "q": "B 和 M 分别怎么求？",
+       "a": "$B=\\mu_0\\mu_r H$，$M=\\chi_m H$，其中 $\\chi_m=\\mu_r-1$，代入 H 即可。"
+      }
+     ]
     },
     {
      "type": "text",
@@ -1667,6 +1904,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "细环退化为螺线管",
+     "qa": [
+      {
+       "q": "为什么截面很小时 H=nI₀？",
+       "a": "截面半径远小于 R 时 $n=N/2\\pi R$，故 $H=\\frac{NI_0}{2\\pi R}=nI_0$，与螺线管一致。"
+      }
      ]
     },
     {
@@ -1795,7 +2040,16 @@
      "tex": "M=\\dfrac{\\sum p_m}{\\Delta V},\\quad i'=M",
      "size": 25,
      "color": "#111111",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "磁化强度与面电流",
+     "qa": [
+      {
+       "q": "磁化强度 M 和面电流 i' 是什么关系？",
+       "a": "$M=\\frac{\\sum p_m}{\\Delta V}$，均匀磁化介质侧面面电流线密度 $i'=M$，等效于螺线管。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1827,7 +2081,20 @@
      "tex": "\\vec H=\\dfrac{\\vec B}{\\mu_0}-\\vec M,\\quad \\vec B=\\mu\\vec H",
      "size": 24,
      "color": "#C00000",
-     "align": "left"
+     "align": "left",
+     "hotspot": true,
+     "label": "磁场强度定义",
+     "qa": [
+      {
+       "q": "为什么要引入 H？",
+       "a": "$\\vec H=\\frac{\\vec B}{\\mu_0}-\\vec M$，把磁化贡献剥离，环流只由自由电流决定。"
+      },
+      {
+       "q": "B、H、M 三者关系？",
+       "a": "$\\vec B=\\mu\\vec H$，介质响应收进 $\\mu$，但铁磁质不能用常数描述。"
+      }
+     ],
+     "important": true
     },
     {
      "type": "text",
@@ -1879,6 +2146,14 @@
         "b": false
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "有介质环路定理",
+     "qa": [
+      {
+       "q": "有介质时怎么求 B？",
+       "a": "先用 $\\oint\\vec H\\cdot d\\vec l=\\sum I_{自由}$ 求 H，再乘 $\\mu$ 得 B。"
+      }
      ]
     },
     {
@@ -1919,6 +2194,14 @@
         "b": true
        }
       ]
+     ],
+     "hotspot": true,
+     "label": "三类磁介质",
+     "qa": [
+      {
+       "q": "顺磁、抗磁、铁磁有何区别？",
+       "a": "顺磁 $\\mu_r\\gtrsim1$，抗磁 $\\mu_r\\lesssim1$，效应都弱；铁磁 $\\mu_r\\gg1$，下一节讨论。"
+      }
      ]
     },
     {
