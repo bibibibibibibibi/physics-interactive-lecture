@@ -5,6 +5,7 @@ import textbookMap from '@/lib/textbook-map.json'
 import courseLogo from '@/assets/gewu-header.svg'
 import minghu from '@/assets/jnu-minghu.webp'
 import './course-menu.css'
+import AqiangHero from '@/components/AqiangHero'
 
 const personalSite = 'https://phys.caoxuanmin.chatgpt.site/'
 /** 一个章：绑定一份课程清单 */
@@ -122,6 +123,7 @@ export default function CourseMenu({
   const extras = extraLinks ?? (extraLink ? [extraLink] : [])
 
   const mainMenu = nav?.find(item => item.current)?.href === '/'
+  const specialMenu = nav?.find(item => item.current)?.href === '/?menu=special'
   const visible = (sections ?? []).map((subject, index) => {
     const chapters = subject.chapters.flatMap(ch => {
       if (!term || subject.name.toLowerCase().includes(term) || ch.title?.toLowerCase().includes(term)) return [ch]
@@ -170,7 +172,7 @@ export default function CourseMenu({
         </div>
       </header>
       <main>
-        <section className={`atlas-wrap atlas-intro ${mainMenu ? 'atlas-intro-photo' : 'atlas-intro-compact'}`} aria-labelledby="atlas-title">
+        <section className={`atlas-wrap atlas-intro ${mainMenu ? 'atlas-intro-photo' : 'atlas-intro-compact'} ${specialMenu ? 'atlas-intro-special' : ''}`} aria-labelledby="atlas-title">
           {mainMenu && <img className="atlas-campus" src={minghu} alt="" fetchPriority="high" />}
           <div className="atlas-opening">
             <div className="atlas-intro-copy">
@@ -188,6 +190,7 @@ export default function CourseMenu({
                 </div>}
               </div>
             </div>
+            {specialMenu && <AqiangHero />}
           </div>
           {mainMenu && <a className="atlas-campus-credit" href="https://www.jnu.edu.cn/36429/list.htm">明湖 · 暨南大学官网原图 · AI 清晰度增强 ↗</a>}
         </section>

@@ -1,0 +1,198 @@
+/* 专题首屏：阿强直接站在浅绿课堂背景中，不再嵌套独立动画卡片。 */
+.atlas-intro.atlas-intro-special {
+  color: #273d3a;
+  border: 1px solid #d2ddcd;
+  background: radial-gradient(ellipse at 85% 20%, #f3f6ec 0, #e7eee1 52%, #dfe9dc 100%);
+}
+.atlas-intro-special::before {
+  background-image: radial-gradient(#6f88733d .8px, transparent .8px);
+  background-size: 20px 20px;
+  mask-image: none;
+  opacity: .58;
+}
+.atlas-intro.atlas-intro-special .atlas-opening {
+  display: grid;
+  grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+  min-height: 446px;
+  gap: 26px;
+  padding: 32px 48px 24px;
+}
+.atlas-intro-special .atlas-intro-copy { width: min(550px, 100%); }
+.atlas-intro-special .atlas-kicker { color: #47675b; }
+.atlas-intro-special h1 {
+  max-width: none;
+  color: #203f32;
+  font-size: clamp(46px, 4.6vw, 66px);
+  letter-spacing: .015em;
+}
+.atlas-intro-special p { color: #52685c; }
+.atlas-intro-special .atlas-cta-secondary { color: #304c40; border-color: #809886; }
+.atlas-intro-special .atlas-cta-secondary:hover { color: #203f32; background: #f7f8f080; border-color: #47675b; }
+
+.aqiang-hero { position: relative; z-index: 1; width: 100%; min-width: 0; align-self: center; }
+.aqiang-scene { position: relative; width: 100%; height: 344px; }
+.aqiang-scene::after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  left: 19%;
+  right: 19%;
+  bottom: 5%;
+  height: 16px;
+  border-radius: 50%;
+  background: #273d3a1a;
+  filter: blur(8px);
+  transition: opacity 240ms ease-out;
+}
+.aqiang-scene:is(.is-flipping)::after,
+.aqiang-hero.is-finished .aqiang-scene::after { opacity: 0; }
+.aqiang-board-label {
+  position: absolute;
+  z-index: 1;
+  top: 16px;
+  left: 10px;
+  color: #47675b;
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: .12em;
+}
+.aqiang-formula {
+  position: absolute;
+  z-index: 1;
+  top: 54px;
+  right: 8%;
+  color: #47675b80;
+  font: 500 25px/1.2 Georgia, serif;
+  transform: rotate(5deg);
+}
+.aqiang-chalk-line {
+  position: absolute;
+  z-index: 1;
+  top: 89px;
+  right: 8%;
+  width: 68px;
+  height: 10px;
+  border-top: 2px solid #47675b59;
+  border-radius: 50%;
+  transform: rotate(-4deg);
+}
+.aqiang-pose-box {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: 3%;
+  width: min(82%, 360px);
+  height: 88%;
+  transform: translateX(-50%);
+}
+.aqiang-pose {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  opacity: 0;
+  transform: translateY(8px) scale(.98);
+  transform-origin: center bottom;
+  transition: opacity 260ms ease-out, transform 260ms ease-out;
+  will-change: transform, opacity;
+  pointer-events: none;
+  user-select: none;
+}
+.aqiang-pose.is-active { opacity: 1; transform: translateY(0) scale(1); }
+.aqiang-pose-flip { height: 66%; bottom: 8%; transform-origin: 50% 50%; }
+.aqiang-scene.is-flipping .aqiang-pose-flip {
+  animation: aqiang-flip-exit 1500ms cubic-bezier(.35, .05, .65, .95) both;
+}
+@keyframes aqiang-flip-exit {
+  0% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(1); }
+  35% { opacity: 1; transform: translate(8%, -16%) rotate(-160deg) scale(.96); }
+  70% { opacity: 1; transform: translate(45%, -8%) rotate(-420deg) scale(.88); }
+  100% { opacity: 0; transform: translate(145%, 15%) rotate(-720deg) scale(.78); }
+}
+.aqiang-finish-mark {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 10px;
+  color: #47675b;
+  text-align: center;
+  opacity: 0;
+  transform: scale(.95);
+  transition: opacity 240ms ease-out, transform 240ms ease-out;
+  pointer-events: none;
+}
+.aqiang-finish-mark strong { font-size: 21px; }
+.aqiang-finish-mark span { color: #52685c; font-size: 13px; }
+.aqiang-hero.is-finished .aqiang-finish-mark { opacity: 1; transform: scale(1); }
+.aqiang-hero-footer {
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid #b9c9b380;
+  color: #52685c;
+  font-size: 12px;
+}
+.aqiang-play-state { display: inline-flex; align-items: center; gap: 7px; }
+.aqiang-play-state::before { content: ''; width: 6px; height: 6px; flex: none; border-radius: 50%; background: #64836b; }
+.aqiang-replay {
+  min-height: 44px;
+  padding: 8px 0 8px 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: none;
+  border: 0;
+  color: #385545;
+  background: transparent;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: color 160ms ease-out, transform 160ms ease-out;
+}
+.aqiang-replay:hover { color: #203f32; transform: translateY(-1px); }
+.aqiang-replay:active { transform: translateY(0) scale(.98); }
+.aqiang-replay:disabled { opacity: .55; cursor: not-allowed; transform: none; }
+
+@media (max-width: 940px) {
+  .atlas-intro.atlas-intro-special .atlas-opening { min-height: 410px; padding: 30px; gap: 16px; }
+  .atlas-intro-special h1 { font-size: 44px; }
+  .aqiang-scene { height: 310px; }
+  .aqiang-formula { right: 4%; }
+  .aqiang-chalk-line { right: 4%; }
+}
+@media (max-width: 720px) {
+  .atlas-intro.atlas-intro-special .atlas-opening {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+    gap: 18px;
+    padding: 28px 26px 18px;
+  }
+  .atlas-intro-special h1 { max-width: none; font-size: 46px; }
+  .atlas-intro-special .atlas-hero-actions { margin-top: 20px; }
+  .aqiang-scene { height: 310px; }
+  .aqiang-board-label { left: 4px; }
+  .aqiang-pose-box { width: min(78%, 330px); }
+}
+@media (max-width: 440px) {
+  .atlas-intro.atlas-intro-special .atlas-opening { padding: 26px 22px 16px; }
+  .atlas-intro-special h1 { font-size: 37px; }
+  .aqiang-scene { height: 280px; }
+  .aqiang-hero-footer { gap: 6px; font-size: 11px; }
+  .aqiang-replay { font-size: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .aqiang-hero *, .aqiang-hero *::before, .aqiang-hero *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .aqiang-pose { will-change: auto; }
+}

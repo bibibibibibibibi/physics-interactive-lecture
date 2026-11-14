@@ -11,6 +11,7 @@ import json, os, sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 from web_author import *
+from web_quality import add_diagnostic, apply_annotations
 
 pages = []
 
@@ -36,7 +37,7 @@ pages.append({
   text(1, 170, 240, 1580, [R("真空中：$\\oint\\vec E\\cdot\\mathrm d\\vec S=\\dfrac{1}{\\varepsilon_0}\\sum q$", 31),
                            R("——很干净", 30, "#666")], h=54),
   text(2, 170, 322, 1580, [R("有介质时，面内多了", 31), R("束缚电荷", 32, RED, True), R("：", 31)], h=52),
-  tex(3, 170, 396, 1300, r"\oint\vec E\cdot\mathrm d\vec S=\dfrac{1}{\varepsilon_0}\left(\sum q_0+\sum q'\right)",
+  tex(3, 170, 396, 1300, r"\\oint\\vec E\\cdot\\mathrm d\\vec S=\\dfrac{1}{\\varepsilon_0}\\left(\\sum q_0+\\sum q'\\right)",
       size=32, h=130, color=BLUE),
   text(4, 170, 556, 1580, [R("束缚电荷 $q'$ 取决于介质极化与形状，", 31), R("很难事先知道", 31, RED, True), R("．", 31)],
        h=52),
@@ -53,10 +54,10 @@ pages.append({
  "narration": "[[1]]二，定义电位移矢量。[[2]]令 D 等于 epsilon 零 E 加 P。[[3]]P 是极化强度，epsilon 零 E 是真空部分的贡献。[[4]]这样定义的 D，单位是库仑每平方米——和 P 一样，也和面密度一样。[[5]]对线性各向同性介质，P 正比于 E，于是 D 可以写成 epsilon 零 epsilon r E，简写为 epsilon E。[[6]]epsilon 叫介质的绝对介电常数，等于 epsilon 零乘 epsilon r。这样 D 和 E 就同向且成正比了。",
  "elements": [
   text(0, 170, 137, 1580, [R("二　电位移矢量 $\\vec D$", 48, RED, True)]),
-  tex(1, 170, 250, 1580, r"\vec D=\varepsilon_0\vec E+\vec P", size=42, h=150, color=RED, align="center"),
+  tex(1, 170, 250, 1580, r"\\vec D=\\varepsilon_0\\vec E+\\vec P", size=42, h=150, color=RED, align="center"),
   text(2, 170, 420, 1580, [R("$\\varepsilon_0\\vec E$：真空部分的贡献；$\\vec P$：介质的极化贡献．", 30)], h=50, align="center"),
   text(3, 170, 500, 1580, [R("单位：$\\mathrm{C/m^{2}}$（与 $P$、面密度同）．", 31)], h=50, align="center"),
-  tex(4, 170, 578, 1580, r"\vec D=\varepsilon_0\varepsilon_r\vec E=\varepsilon\vec E", size=36, h=140,
+  tex(4, 170, 578, 1580, r"\\vec D=\\varepsilon_0\\varepsilon_r\\vec E=\\varepsilon\\vec E", size=36, h=140,
       color=BLUE, align="center"),
   text(5, 170, 730, 1580, [R("$\\varepsilon=\\varepsilon_0\\varepsilon_r$ 叫", 31), R("绝对介电常数", 32, RED, True),
                            R("．", 31)], h=54, align="center"),
@@ -66,21 +67,21 @@ pages.append({
 # ---------------- 第 4 页：有介质的高斯定理 ----------------
 pages.append({
  "id": 4,
- "narration": "[[1]]有了 D，高斯定理就变干净了。[[2]]穿过任意闭合曲面的电位移通量，等于该曲面所包围的自由电荷的代数和。[[3]]注意右边只有自由电荷，束缚电荷完全不出现。[[4]]这就是它的价值：做题时只要数自由电荷，不用管介质极化成什么样。[[5]]但要注意：D 的通量与自由电荷的关系，只在有介质的高斯定理这个形式下成立；D 本身并不是「场强」，它不直接给出力。[[6]]真正对电荷施力的是 E。",
+ "narration": "[[1]]有了 D，高斯定理就变干净了。[[2]]穿过任意闭合曲面的电位移通量，等于该曲面所包围的自由电荷的代数和。[[3]]注意右边只有自由电荷，束缚电荷完全不出现。[[4]]它的价值是：闭合面的 D 通量只由面内自由电荷总量决定。但 D 的局部场分布还受介质、几何和边界条件影响，不能把“通量只数自由电荷”误读成“D 处处只由自由电荷决定”。[[5]]只有在足够对称且已知本构关系等条件下，才能由高斯定理方便地先求 D，再由 D 等于 epsilon E 求 E；一般问题还要结合边界条件。[[6]]D 不是电场强度，真正对电荷施力的是 E。求场时先检查对称性，再选择高斯定理。",
  "elements": [
   text(0, 170, 137, 1400, [R("三　有介质时的高斯定理", 46, RED, True)]),
-  tex(1, 170, 240, 1300, r"\oint_S\vec D\cdot\mathrm d\vec S=\sum_{S\text{内}}q_0", size=42,
+  tex(1, 170, 240, 1300, r"\\oint_S\\vec D\\cdot\\mathrm d\\vec S=\\sum_{S\text{内}}q_0", size=42,
       h=150, color=RED),
   text(2, 170, 420, 1580, [R("右边", 31), R("只有自由电荷", 32, RED, True),
                            R("，束缚电荷完全不出现．", 31)], h=54),
-  text(3, 170, 504, 1580, [R("价值：做题只数自由电荷，不用管极化细节．", 31)], h=50),
+  text(3, 170, 504, 1580, [R("通量只数自由电荷；求 $D$ 仍需对称性、介质与边界条件．", 28)], h=50),
   text(4, 170, 588, 1580, [R("但 $\\vec D$ 不是「场强」：它对电荷不直接施力，", 30),
                            R("施力的是 $\\vec E$", 31, RED, True), R("．", 30)], h=52),
-  text(5, 170, 672, 1580, [R("所以两条式子要配套用：先用 $D$ 求 $D$，再由 $D=\\varepsilon E$ 求 $E$．", 30, "#666")],
+  text(5, 170, 672, 1580, [R("对称模型可先求 $D$，再由 $D=\\varepsilon E$ 求 $E$；一般情形还需边界条件．", 27, "#666")],
        h=48),
   box(6, 170, 760, 1580, 160, GREEN_FILL, GREEN_LINE,
       [[R("记忆法", 31, BLUE, True)],
-       [R("D 是「自由电荷的账」，E 是「真正施力的场」", 29, RED, True)]], align="center"),
+       [R("D 的闭合面通量记自由电荷；E 决定电荷受力", 28, RED, True)]], align="center"),
  ]})
 
 # ---------------- 第 5 页：三者的关系 ----------------
@@ -92,7 +93,7 @@ pages.append({
   text(1, 170, 240, 1580, [R("定义式（根本）：", 33, BLUE, True),
                            R("$\\vec D=\\varepsilon_0\\vec E+\\vec P$", 32, RED, True)], h=54, align="center"),
   text(2, 170, 322, 1580, [R("线性介质：$\\vec P=\\chi_e\\varepsilon_0\\vec E$", 31)], h=50, align="center"),
-  tex(3, 170, 390, 1580, r"\vec D=\varepsilon_0(1+\chi_e)\vec E=\varepsilon_0\varepsilon_r\vec E", size=32,
+  tex(3, 170, 390, 1580, r"\\vec D=\\varepsilon_0(1+\\chi_e)\\vec E=\\varepsilon_0\\varepsilon_r\\vec E", size=32,
       h=130, color=BLUE, align="center"),
   text(4, 170, 548, 1580, [R("其中 $1+\\chi_e=\\varepsilon_r$．", 31)], h=50, align="center"),
   text(5, 170, 628, 1580, [R("三条要能随手写出：定义式、$P$ 与 $E$、$D$ 与 $E$．", 31)], h=50, align="center"),
@@ -103,14 +104,14 @@ pages.append({
 # ---------------- 第 6 页：例1 介质中的点电荷 ----------------
 pages.append({
  "id": 6,
- "narration": "[[1]]例一，介质中的点电荷。[[2]]在相对介电常数为 epsilon r 的无限大均匀介质中，放一个自由电荷 q0。[[3]]由球对称，取半径 r 的球面作高斯面，D 在面上处处相等、垂直于面。[[4]]所以 D 乘四派 r 平方等于 q0，得 D 等于 q0 除以四派 r 平方。[[5]]再由 D 等于 epsilon E，得 E 等于 q0 除以四派 epsilon 零 epsilon r r 平方。[[6]]注意：D 的表达式与真空中完全一样，只是 E 多除了一个 epsilon r——这正是 D 的好处。",
+ "narration": "[[1]]例一，介质中的点电荷。[[2]]在相对介电常数为 epsilon r 的无限大均匀线性各向同性介质中，放一个自由电荷 q0。[[3]]由球对称，取半径 r 的球面作高斯面，D 在面上处处大小相等并沿径向；正是对称性允许把通量写成 D 乘面积。[[4]]所以 D 乘四派 r 平方等于 q0，得 D 等于 q0 除以四派 r 平方。[[5]]再由 D 等于 epsilon E，得 E 等于 q0 除以四派 epsilon 零 epsilon r r 平方。[[6]]注意：在这个球对称模型中，D 的表达式与真空点电荷相同，E 则多除了一个 epsilon r；这不是说任何介质问题中的 D 都与真空分布相同。",
  "elements": [
   text(0, 170, 137, 1580, [R("例1　介质中的点电荷", 46, RED, True)]),
-  text(1, 170, 240, 1580, [R("无限大均匀介质（$\\varepsilon_r$）中放自由电荷 $q_0$．", 31)], h=52, align="center"),
+  text(1, 170, 240, 1580, [R("无限大均匀线性各向同性介质（$\\varepsilon_r$）中放自由电荷 $q_0$．", 29)], h=52, align="center"),
   text(2, 170, 320, 1580, [R("球对称：取半径 $r$ 的球面，$D$ 处处相等且垂直面．", 30)], h=50, align="center"),
-  tex(3, 170, 396, 1580, r"D\cdot4\pi r^{2}=q_0\ \Rightarrow\ D=\dfrac{q_0}{4\pi r^{2}}", size=30,
+  tex(3, 170, 396, 1580, r"D\\cdot4\\pi r^{2}=q_0\ \Rightarrow\ D=\\dfrac{q_0}{4\\pi r^{2}}", size=30,
       h=130, color=RED, align="center"),
-  tex(4, 170, 548, 1580, r"E=\dfrac{D}{\varepsilon_0\varepsilon_r}=\dfrac{q_0}{4\pi\varepsilon_0\varepsilon_r r^{2}}",
+  tex(4, 170, 548, 1580, r"E=\\dfrac{D}{\\varepsilon_0\\varepsilon_r}=\\dfrac{q_0}{4\\pi\\varepsilon_0\\varepsilon_r r^{2}}",
       size=30, h=130, color=RED, align="center"),
   text(5, 170, 706, 1580, [R("$D$ 的表达式与真空中", 31), R("完全一样", 31, RED, True),
                            R("；$E$ 多除一个 $\\varepsilon_r$．", 31)], h=52, align="center"),
@@ -120,14 +121,14 @@ pages.append({
 # ---------------- 第 7 页：例2 平行板填介质 ----------------
 pages.append({
  "id": 7,
- "narration": "[[1]]例二，平行板电容器里填满介质。[[2]]设极板上的自由电荷面密度为 sigma 零。[[3]]取一个药盒形高斯面，一个底面在导体里、一个在介质里。[[4]]导体里 D 为零，侧面通量为零，所以只剩介质里那个底面，D 乘 S 等于 sigma 零 S。[[5]]得 D 等于 sigma 零，与介质无关。[[6]]而 E 等于 sigma 零 除以 epsilon 零 epsilon r，比真空中小了 epsilon r 倍。这正是电容器填介质后电容变大的原因。",
+ "narration": "[[1]]例二，平行板电容器里填满介质。[[2]]设极板上的自由电荷面密度为 sigma 零，并忽略边缘效应。[[3]]取一个药盒形高斯面，一个底面在导体里、一个在介质里。[[4]]导体内部 E 为零，按通常定义其中 P 也为零，所以 D 为零；侧面上 D 与面法线垂直，通量为零，只剩介质里那个底面，D 乘 S 等于 sigma 零 S。[[5]]得 D 等于 sigma 零，与介质无关。[[6]]而 E 等于 sigma 零 除以 epsilon 零 epsilon r，比真空中小了 epsilon r 倍。这正是电容器填介质后电容变大的原因。",
  "elements": [
   text(0, 170, 137, 1580, [R("例2　平行板间填满介质", 44, RED, True)]),
-  text(1, 170, 236, 1580, [R("极板自由电荷面密度 $\\sigma_0$；药盒形高斯面一底在导体、一底在介质．", 29)], h=50, align="center"),
-  text(2, 170, 316, 1580, [R("导体中 $D=0$，侧面通量为零 ⇒ $D\\cdot S=\\sigma_0 S$", 30)], h=50, align="center"),
-  tex(3, 170, 390, 1580, r"D=\sigma_0", size=34, h=120, color=RED, align="center"),
+  text(1, 170, 236, 1580, [R("忽略边缘效应；药盒形高斯面一底在导体、一底在介质．", 28)], h=50, align="center"),
+  text(2, 170, 316, 1580, [R("导体中 $E=P=D=0$；侧面 $D\\perp dS$ ⇒ $DS=\\sigma_0S$", 27)], h=50, align="center"),
+  tex(3, 170, 390, 1580, r"D=\\sigma_0", size=34, h=120, color=RED, align="center"),
   text(3, 380, 402, 700, [R("（与介质无关）", 28, "#666")], h=48, align="center"),
-  tex(4, 170, 520, 1580, r"E=\dfrac{\sigma_0}{\varepsilon_0\varepsilon_r}", size=36, h=130,
+  tex(4, 170, 520, 1580, r"E=\\dfrac{\\sigma_0}{\\varepsilon_0\\varepsilon_r}", size=36, h=130,
       color=RED, align="center"),
   text(5, 170, 674, 1580, [R("$E$ 比真空中（$\\sigma_0/\\varepsilon_0$）", 31), R("小了 $\\varepsilon_r$ 倍", 31, RED, True),
                            R("．", 31)], h=52, align="center"),
@@ -137,15 +138,15 @@ pages.append({
 # ---------------- 第 8 页：小结 ----------------
 pages.append({
  "id": 8,
- "narration": "[[1]]小结。[[2]]电位移定义 D 等于 epsilon 零 E 加 P，线性介质中 D 等于 epsilon 零 epsilon r E。[[3]]有介质的高斯定理：闭合面的 D 通量等于面内自由电荷代数和。[[4]]它的价值是把束缚电荷吸收掉，做题只数自由电荷。[[5]]但 D 不是场强，施力的是 E；两条式子要配套：先由 D 求 D，再由 D 等于 epsilon E 求 E。[[6]]下一节讲电容——那里会直接用这一节的结果。",
+ "narration": "[[1]]小结。[[2]]电位移定义 D 等于 epsilon 零 E 加 P，线性介质中 D 等于 epsilon 零 epsilon r E。[[3]]有介质的高斯定理：闭合面的 D 通量等于面内自由电荷代数和。[[4]]它的价值是把闭合面通量中的束缚电荷吸收掉；求局部 D 仍需对称性、介质和边界条件。[[5]]D 不是场强，施力的是 E；在合适对称模型中先由 D 求 D，再由 D 等于 epsilon E 求 E。[[6]]下一节讲电容——那里会直接用这一节的结果。",
  "elements": [
   text(0, 170, 137, 1400, [R("本节小结", 50, RED, True)]),
   text(1, 170, 236, 1580, [R("① 定义：", 33, BLUE, True),
-                           R("$\\vec D=\\varepsilon_0\\vec E+\\vec P=\\varepsilon_0\\varepsilon_r\\vec E$", 31, RED, True)], h=54),
+                           R("$\\vec D=\\varepsilon_0\\vec E+\\vec P$；线性各向同性时 $D=\\varepsilon E$", 28, RED, True)], h=54),
   text(2, 170, 316, 1580, [R("② 有介质高斯定理：", 33, BLUE, True),
                            R("$\\oint\\vec D\\cdot\\mathrm d\\vec S=\\sum q_0$", 31, RED, True)], h=54),
-  text(3, 170, 396, 1580, [R("③ 价值：束缚电荷被吸收，只数自由电荷．", 31)], h=52),
-  text(4, 170, 476, 1580, [R("④ 但施力的是 $E$：先 $D$ 后 $E$，两条配套．", 31)], h=52),
+  text(3, 170, 396, 1580, [R("③ 通量只数自由电荷；局部 $D$ 仍需对称性与边界条件．", 29)], h=52),
+  text(4, 170, 476, 1580, [R("④ 施力的是 $E$；对称模型中可先 $D$ 后 $E$．", 29)], h=52),
   box(5, 170, 566, 1580, 170, GREEN_FILL, GREEN_LINE,
       [[R("下一节：电容　电容器", 34, RED, True)],
        [R("C = Q/U，填介质后 C 增大 εr 倍", 28)]], align="center"),
@@ -158,15 +159,41 @@ HEADINGS = ["封面", "一　问题在哪里", "二　电位移矢量 D", "三�
 for pg, h in zip(pages, HEADINGS):
     pg["heading"] = h
 
+# 第六章本轮质量整改：诊断题与可重复构建标注。
+add_diagnostic(pages, 4,
+    "求场时先检查对称性，再选择高斯定理。",
+    "关于 $\\oint_S\\vec D\\cdot d\\vec S=Q_{0,in}$，下列理解哪项正确？",
+    ["任意一点的 D 都只由自由电荷决定，与介质和边界无关", "闭合面的 D 通量只由面内自由电荷总量决定；求局部 D 仍需对称性和边界条件", "D 就是对试探电荷直接施力的电场强度", "只要知道自由电荷总量，没有任何对称性也能唯一算出各点 D"],
+    1,
+    ["这是把整体通量约束误作局部场决定论，介质与边界仍会影响 D。",
+     "正确。高斯定理给出积分约束，求场分布还要利用对称性、介质本构和边界条件。",
+     "对电荷直接施力的是 E，不是 D。",
+     "自由电荷总量通常不足以唯一确定矢量场分布。"],
+    "把“闭合面通量由什么决定”和“每一点的矢量场由什么决定”分开。")
+
+add_diagnostic(pages, 7,
+    "这正是电容器填介质后电容变大的原因。",
+    "在忽略边缘效应、极板自由电荷面密度保持为 $\\sigma_0$ 的平行板模型中，填满线性介质后哪项正确？",
+    ["D 增大为原来的 $\\varepsilon_r$ 倍，E 不变", "D 与 E 都不变", "D 保持 $\\sigma_0$，E 变为 $\\sigma_0/(\\varepsilon_0\\varepsilon_r)$", "D 与 E 都必然变为原来的 $\\varepsilon_r$ 倍"],
+    2,
+    ["固定自由电荷时 D 不变，E 减小。",
+     "D 不变，但 E 会随介电常数改变。",
+     "正确。D 由高斯面内自由电荷决定，E 再由 $D=\\varepsilon_0\\varepsilon_rE$ 得到。",
+     "本构关系要求 D 与 E 同比例变化，不可能两者都增大而自由电荷不变。"],
+    "先看哪个量被外部条件固定，再由高斯定理和本构关系依次求 D、E。")
+
+annotation_count = apply_annotations(__file__, pages)
+
 doc = {
   "title": "6-3 电位移 有介质时的高斯定理",
   "nav": "6-3　电位移　有介质高斯定理",
   "footer": "第六章　静电场中的导体与电介质",
   "logoScale": 0.67,
+  "theme": "refined",
   "engine": "edge",
   "voice": "zh-CN-YunxiNeural",
   "pages": pages,
 }
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "slides.json")
 json.dump(doc, open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-print(f"pages: {len(pages)} -> {out}")
+print(f"pages: {len(pages)}, annotations: {annotation_count} -> {out}")

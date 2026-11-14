@@ -96,9 +96,25 @@ const WAVE_THEME: PageTheme = {
   softBox: true,
 }
 
+/** refined：质量工程样板课。沿用 wave 的降噪图版，再统一无衬线导航、
+    细分隔线和蓝色标题标记；只显式启用于审定课程，不影响 default/wave。 */
+const REFINED_THEME: PageTheme = {
+  ...WAVE_THEME,
+  navText: { fontSize: 32, color: '#29496F', fontFamily: SANS, fontWeight: 500, letterSpacing: 1 },
+  navBar: { height: 2, marginTop: 13, background: '#8FA9C6' },
+  headerRule: {
+    position: 'absolute', left: 70, right: 70, top: 112, height: 1,
+    background: '#E4EBF3', pointerEvents: 'none',
+  },
+  footerText: { fontSize: 21, color: '#6B8099', fontFamily: SANS, letterSpacing: 2 },
+  pageNumText: { fontSize: 22, color: '#6B8099', fontFamily: SANS },
+  titleAccent: { color: '#1F4E9C', width: 7 },
+}
+
 const THEMES: Record<string, PageTheme> = {
   special: SPECIAL_THEME,
   wave: WAVE_THEME,
+  refined: REFINED_THEME,
 }
 
 /** 解析课程主题：缺省/未知值一律回落 default（第九章等旧课件零变化） */

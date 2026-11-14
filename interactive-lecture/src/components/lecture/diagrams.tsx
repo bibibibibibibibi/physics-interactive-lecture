@@ -1,4 +1,4 @@
-﻿import type { JSX } from 'react'
+import type { JSX } from 'react'
 
 /** 网页版课件的 SVG 图示库。内部坐标系与幻灯片 1920×1080 设计坐标一致，
     通过 viewBox + width/height 100% 缩放，文字不失真。 */
@@ -4749,8 +4749,8 @@ export function EarthG() {
 /* ============ 2-1 牛顿定律 图示 ============ */
 
 /** 2-3 P5：电弱统一理论（温伯格、萨拉姆、格拉肖，1979 年诺贝尔物理学奖）——
- *  弱相互作用与电磁相互作用统一为电弱相互作用；它再与强相互作用、万有引力作用
- *  合称「大统一」（尚待实现）。静态结构图。 */
+ *  弱相互作用与电磁相互作用统一为电弱相互作用；电弱与强相互作用的进一步统一
+ *  属于大统一理论，再纳入引力则涉及量子引力。静态结构图。 */
 export function EwUnify() {
   /** 右向花括号：从 (x, y0) 到 (x, y1)，中点在 ym 处向右凸出 */
   const brace = (x: number, y0: number, y1: number, d = 22) => {
@@ -4781,11 +4781,12 @@ export function EwUnify() {
       {box(760, 68, 400, 130)}
       {lines(960, [152], ['电弱相互作用理论'], 46)}
 
-      {/* ── 下排：大统一 ── */}
+      {/* ── 下排：大统一不直接包含引力；再纳入引力涉及量子引力 ── */}
       {box(256, 268, 420, 150)}
-      {lines(466, [312, 358, 404], ['电弱相互作用', '强相互作用', '万有引力作用'], 42)}
+      {lines(466, [326, 386], ['电弱相互作用', '强相互作用'], 42)}
       <path d={brace(698, 268, 418)} fill="none" stroke="#111" strokeWidth="4" />
-      <text x={782} y={358} fontSize="48" fontFamily={HEI} fill="#111">“大统一”（尚待实现）</text>
+      <text x={782} y={326} fontSize="44" fontFamily={HEI} fill="#111">“大统一”（尚未确立）</text>
+      <text x={782} y={390} fontSize="34" fontFamily={HEI} fill="#111">再纳入引力 → 量子引力（待探索）</text>
     </svg>
   )
 }
@@ -7963,10 +7964,10 @@ export function CosmicV1() {
       <text x={O[0] + 16} y={O[1] - r - 14} fontSize="34" fontStyle="italic" fontFamily={SERIF}
         fill="#E07000">h</text>
       {/* 发射 */}
-      <Arrow x1={lift[0]} y1={lift[1]} x2={lift[0]} y2={lift[1] - 132} color="#E00" w={6} />
-      <VecN ch="v" sub="1" x={lift[0] + 14} y={lift[1] - 136} size={36} fill="#E00" />
+      <Arrow x1={lift[0]} y1={lift[1]} x2={lift[0] + 96} y2={lift[1] - 92} color="#E00" w={6} />
+      <VecN ch="v" sub="1" x={lift[0] + 110} y={lift[1] - 92} size={36} fill="#E00" />
       <text x={lift[0] - 26} y={lift[1] + 34} textAnchor="end" fontSize="30" fontFamily={HEI}
-        fill="#666">发射</text>
+        fill="#666">理想初态</text>
       {/* 卫星与轨道速度 */}
       <circle cx={sat[0]} cy={sat[1]} r="14" fill="#D01B1B" stroke="#111" strokeWidth="2.5" />
       <Arrow x1={sat[0]} y1={sat[1]} x2={sat[0] + tg[0] * 118} y2={sat[1] + tg[1] * 118}
@@ -8695,7 +8696,7 @@ export function CmShell() {
 
 export function CmBurst() {
   const yG = 560
-  const xO = 600            // m₁ 落点（坐标原点）
+  const xO = 600            // 最高点与 m₁ 落点：x₁=R/2；发射点为 xO-half
   const half = 240          // 半射程 = x_C
   const top = 200
   const yOf = (x: number) => top + 360 * ((x - xO) / half) ** 2
@@ -8739,33 +8740,29 @@ export function CmBurst() {
       <circle cx={xO + half} cy={yG} r="8" fill="#E00" />
       <circle cx={xO + 2 * half} cy={yG} r="8" fill="#C000C0" />
       <text x={xO} y={yG + 76} textAnchor="middle" fontSize="34" fontStyle="italic"
-        fontFamily={SERIF} fill="#0A8A0A">O</text>
+        fontFamily={SERIF} fill="#0A8A0A">x₁=R/2</text>
       <Sca ch="m" sub="1" x={xO - 76} y={yG - 22} size={32} fill="#0A8A0A" />
       <text x={xO + half + 16} y={yG - 22} fontSize="34" fontStyle="italic"
         fontFamily={SERIF} fill="#E00">C</text>
       <Sca ch="m" sub="2" x={xO + 2 * half + 18} y={yG - 20} size={32} fill="#C000C0" />
       {/* x_C 与 x₂ 两条标注：x₂ 严格两倍长 */}
-      <line x1={xO} y1={yG + 96} x2={xO} y2={yG + 74} stroke="#E00" strokeWidth="2.4" />
+      <line x1={xO - half} y1={yG + 96} x2={xO - half} y2={yG + 74} stroke="#E00" strokeWidth="2.4" />
       <line x1={xO + half} y1={yG + 96} x2={xO + half} y2={yG + 74} stroke="#E00"
         strokeWidth="2.4" />
-      <line x1={xO} y1={yG + 86} x2={xO + half} y2={yG + 86} stroke="#E00" strokeWidth="2.6" />
+      <line x1={xO - half} y1={yG + 86} x2={xO + half} y2={yG + 86} stroke="#E00" strokeWidth="2.6" />
       <polygon points={`${xO + half},${yG + 86} ${xO + half - 18},${yG + 80} ${xO + half - 18},${yG + 92}`}
         fill="#E00" />
-      <text x={xO + half / 2} y={yG + 132} textAnchor="middle" fontSize="32" fontStyle="italic"
-        fontFamily={SERIF} fill="#E00">x</text>
-      <text x={xO + half / 2 + 26} y={yG + 140} textAnchor="middle" fontSize="24"
-        fontStyle="italic" fontFamily={SERIF} fill="#E00">C</text>
-      <line x1={xO} y1={yG + 190} x2={xO} y2={yG + 160} stroke="#C000C0" strokeWidth="2.4" />
+      <text x={xO + half / 2} y={yG + 132} textAnchor="middle" fontSize="26"
+        fontFamily={HEI} fill="#E00">发射点到质心：原射程 R</text>
+      <line x1={xO - half} y1={yG + 190} x2={xO - half} y2={yG + 160} stroke="#C000C0" strokeWidth="2.4" />
       <line x1={xO + 2 * half} y1={yG + 190} x2={xO + 2 * half} y2={yG + 160}
         stroke="#C000C0" strokeWidth="2.4" />
-      <line x1={xO} y1={yG + 176} x2={xO + 2 * half} y2={yG + 176} stroke="#C000C0"
+      <line x1={xO - half} y1={yG + 176} x2={xO + 2 * half} y2={yG + 176} stroke="#C000C0"
         strokeWidth="2.6" />
       <polygon points={`${xO + 2 * half},${yG + 176} ${xO + 2 * half - 18},${yG + 170} ${xO + 2 * half - 18},${yG + 182}`}
         fill="#C000C0" />
-      <text x={xO + half} y={yG + 222} textAnchor="middle" fontSize="32" fontStyle="italic"
-        fontFamily={SERIF} fill="#C000C0">x</text>
-      <text x={xO + half + 26} y={yG + 230} textAnchor="middle" fontSize="24" fontStyle="italic"
-        fontFamily={SERIF} fill="#C000C0">2</text>
+      <text x={xO + half} y={yG + 222} textAnchor="middle" fontSize="26"
+        fontFamily={HEI} fill="#C000C0">发射点到第二块：x₂=3R/2</text>
       {/* 抛出速度 */}
       <Arrow x1={xO - half - 4} y1={yOf(xO - half + 40) - 52} x2={xO - half + 96} y2={yOf(xO - half + 40) - 52}
         color="#0000CD" w={5} />
@@ -10652,7 +10649,7 @@ export function ChargeQuant() {
       {dots.map((q, i) => (
         <circle key={i} cx={q[0]} cy={q[1]} r="11" fill="#D0021B" />
       ))}
-      <text x="300" y="566" fontSize="29" fontFamily={HEI} fill="#555">测得的电荷量只能落在这些线上</text>
+      <text x="460" y="540" textAnchor="middle" fontSize="26" fontFamily={HEI} fill="#555">测得的电荷量只能落在这些线上</text>
     </svg>
   )
 }
@@ -10857,11 +10854,11 @@ export function QuantScalePair() {
   )
 }
 
-/** 5-1 P5：电荷守恒 —— 摩擦起电与电子对产生 */
+/** 5-1 P5：电荷守恒 —— 摩擦起电与原子核附近的电子对产生 */
 export function ChargeConserve() {
   return (
     <svg viewBox="0 0 700 500" width="100%" height="100%">
-      {/* 玻璃棒 */}
+      {/* 玻璃棒与丝绸：电子从玻璃棒转向丝绸 */}
       <rect x="30" y="146" width="286" height="80" rx="8" fill="#EAF2FA" stroke="#1F4E9C"
         strokeWidth="2.8" />
       <rect x="384" y="146" width="286" height="80" rx="8" fill="#FBF0E6" stroke="#8A6A3A"
@@ -10872,13 +10869,12 @@ export function ChargeConserve() {
       <text x="527" y="270" textAnchor="middle" fontSize="32" fontFamily={HEI} fill="#8A6A3A">
         丝绸
       </text>
-      {/* 电子转移 */}
       {[0, 1, 2].map(i => (
-        <circle key={i} cx={378 + i * 26} cy={116} r="8" fill="#1F4E9C" />
+        <circle key={i} cx={338 + i * 26} cy={116} r="8" fill="#1F4E9C" />
       ))}
-      <Arrow x1={420} y1={88} x2={322} y2={88} color="#1F4E9C" w={4.5} />
-      <text x="350" y="62" textAnchor="middle" fontSize="26" fontFamily={HEI} fill="#1F4E9C">
-        转移 −q（电子）
+      <Arrow x1={280} y1={88} x2={420} y2={88} color="#1F4E9C" w={4.5} />
+      <text x="350" y="62" textAnchor="middle" fontSize="25" fontFamily={HEI} fill="#1F4E9C">
+        电子：玻璃棒 → 丝绸
       </text>
       <text x="173" y="330" textAnchor="middle" fontSize="42" fontFamily={SERIF} fill="#D0021B">
         +q
@@ -10889,14 +10885,14 @@ export function ChargeConserve() {
       <text x="350" y="322" textAnchor="middle" fontSize="26" fontFamily={HEI} fill="#666">
         代数和仍为 0
       </text>
-      {/* 电子对产生 */}
+      {/* 自由光子在真空中不能直接成对产生；N 参与反冲 */}
       <line x1="80" y1="372" x2="620" y2="372" stroke="#DCE5F0" strokeWidth="1.6"
         strokeDasharray="9 7" />
-      <text x="350" y="424" textAnchor="middle" fontSize="32" fontFamily={SERIF} fill="#333">
-        γ ⟶ e⁺ + e⁻
+      <text x="350" y="424" textAnchor="middle" fontSize="30" fontFamily={SERIF} fill="#333">
+        γ + N ⟶ e⁺ + e⁻ + N
       </text>
-      <text x="350" y="470" textAnchor="middle" fontSize="25" fontFamily={HEI} fill="#666">
-        产生一对正负电子，总电荷仍是零
+      <text x="350" y="470" textAnchor="middle" fontSize="24" fontFamily={HEI} fill="#666">
+        原子核 N 参与反冲；产生一对正负电子，总电荷不变
       </text>
     </svg>
   )
@@ -10924,17 +10920,17 @@ export function PointChargeModel() {
       {/* 距离 r */}
       <Arrow x1={326} y1={356} x2={600} y2={356} color="#12852F" w={3.4} />
       <Arrow x1={600} y1={356} x2={326} y2={356} color="#12852F" w={3.4} />
-      <text x="463" y="400" textAnchor="middle" fontSize="33" fontStyle="italic"
+      <text x={463} y={400} textAnchor="middle" fontSize="33" fontStyle="italic"
         fontFamily={SERIF} fill="#12852F">r</text>
       {/* 等效点电荷 */}
-      <circle cx="190" cy="215" r="13" fill="#D0021B" />
-      <circle cx="190" cy="215" r="36" fill="none" stroke="#D0021B" strokeWidth="2"
+      <circle cx={190} cy={215} r="13" fill="#D0021B" />
+      <circle cx={190} cy={215} r="36" fill="none" stroke="#D0021B" strokeWidth="2"
         strokeDasharray="7 6" />
       <text x="190" y="440" textAnchor="middle" fontSize="31" fontFamily={HEI} fill="#B00020">
         等效于点电荷
       </text>
-      <text x="350" y="486" textAnchor="middle" fontSize="31" fontFamily={HEI} fill="#333">
-        d ≪ r ⇒ 形状与电荷分布都不重要
+      <text x="350" y="486" textAnchor="middle" fontSize="28" fontFamily={HEI} fill="#333">
+        d ≪ r ⇒ 对待求作用的影响可忽略
       </text>
       <text x="350" y="528" textAnchor="middle" fontSize="25" fontFamily={HEI} fill="#777">
         和力学里的「质点」是同一件事
@@ -11830,11 +11826,12 @@ function OilDrop({ field }: { field: boolean }) {
       <Arrow x1={cx} y1={cy + 26} x2={cx} y2={cy + 150} color="#D0021B" w={5.5} />
       <text x={cx + 12} y={cy + 146} fontSize="30" fontStyle="italic"
         fontFamily={SERIF} fill="#D0021B">P</text>
-      {/* 黏性力 */}
-      <Arrow x1={cx - 16} y1={cy - 24} x2={cx - 16} y2={cy - 132} color="#8A6A3A" w={5} />
-      <text x={cx - 62} y={cy - 116} fontSize="26" fontStyle="italic"
+      {/* 黏性阻力始终与运动方向相反：自由下落时向上，电场驱动上升时向下 */}
+      <Arrow x1={cx - 16} y1={field ? cy + 24 : cy - 24}
+        x2={cx - 16} y2={field ? cy + 132 : cy - 132} color="#8A6A3A" w={5} />
+      <text x={cx - 62} y={field ? cy + 126 : cy - 116} fontSize="26" fontStyle="italic"
         fontFamily={SERIF} fill="#8A6A3A">F</text>
-      <text x={cx - 42} y={cy - 110} fontSize="18" fontFamily={SERIF}
+      <text x={cx - 42} y={field ? cy + 132 : cy - 110} fontSize="18" fontFamily={SERIF}
         fill="#8A6A3A">r</text>
       {/* 电场力（可选）与 E */}
       {field && (
@@ -14289,7 +14286,7 @@ export function CapSph() {
 /** 6-4 P8/P9：两电容器串联与并联（电路符号） */
 function capSymbol(cx: number, cy: number) {
   return (
-    <g key={`c${cx}`}>
+    <g key={`c${cx}-${cy}`}>
       <line x1={cx - 11} y1={cy - 52} x2={cx - 11} y2={cy + 52} stroke="#333"
         strokeWidth="6" />
       <line x1={cx + 11} y1={cy - 52} x2={cx + 11} y2={cy + 52} stroke="#333"
@@ -14560,7 +14557,7 @@ export function DipoleNonuniform() {
       <text x="640" y="496" fontSize="28" fontStyle="italic" fontFamily={SERIF}
         fill="#7B1FA2">F</text>
       <text x="520" y="524" textAnchor="middle" fontSize="23" fontFamily={HEI}
-        fill="#7B1FA2">合力指向强场区</text>
+        fill="#7B1FA2">本图 p∥E：合力指向强场区</text>
     </svg>
   )
 }

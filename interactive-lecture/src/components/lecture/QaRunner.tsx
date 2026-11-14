@@ -141,16 +141,20 @@ export default function QaRunner({ mediaRef, weblec }: {
         w.__qaProgress = progressText
         const sts = Object.values(p.stepTimes)
         const last = sts.length ? Math.max(...sts) : p.t_start
-        /** seek 后等 seeked 事件（音频未缓冲时 3s 兜底），再留 500ms 让 DOM 稳定 */
+        /** seek 后等 seeked 事件（音频未缓冲时 3s 兜底），再留 650ms 覆盖 500/450ms 入场动画 */
         await new Promise<void>(resolve => {
           const done = () => { clearTimeout(to); a!.removeEventListener('seeked', done); resolve() }
           const to = setTimeout(done, 3000)
           a!.addEventListener('seeked', done)
           a!.currentTime = Math.min(last + 0.4, p.t_end - 0.05)
         })
-        await sleep(500)
+        await sleep(650)
         /** KaTeX/中文字体异步加载，未就绪就量会把公式量窄（框过松紧全失真） */
         await document.fonts.ready
+        /** 背景过渡最长 600ms；只等有限动画，忽略激光笔等无限循环。 */
+        await Promise.all(document.getAnimations()
+          .filter(animation => animation.effect?.getTiming().iterations !== Infinity)
+          .map(animation => animation.finished.catch(() => undefined)))
         if (cancelled) return
         /** 页码指示器没翻过来：再等一次，仍不对就记警告（防止用错页面元数据测量） */
         if (!pageShown(p.id)) await sleep(800)

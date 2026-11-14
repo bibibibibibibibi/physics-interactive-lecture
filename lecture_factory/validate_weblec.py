@@ -17,7 +17,7 @@ FACTORY = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, FACTORY)
 WEBLEC = os.path.normpath(os.path.join(FACTORY, "..", "interactive-lecture", "public", "weblec"))
 VIDEO_W, VIDEO_H = 1920, 1080
-KNOWN_THEMES = ("special", "wave")  # 页面版式主题（前端 lib/theme.ts 的 THEMES 键）
+KNOWN_THEMES = ("special", "wave", "refined")  # 页面版式主题（前端 lib/theme.ts 的 THEMES 键）
 TIME_TOL = 0.6        # 时刻相对页面区间的容忍（秒）
 STEP_MIN_GAP = 0.8    # 相邻步进最小间隔，更小疑似同句多标记
 MAX_IMPORTANT = 3     # 每页 important 要点上限（引擎每页最多画 3 条红线）
