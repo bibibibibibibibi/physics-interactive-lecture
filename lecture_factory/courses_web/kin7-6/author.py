@@ -221,8 +221,8 @@ doc = {
   "footer": "第七章　恒定磁场",
   "logoScale": 0.67,
   "theme": "refined",
-  "engine": "edge",
-  "voice": "zh-CN-YunxiNeural",
+  "engine": "index-tts",
+  "voice": "voice_03.wav",
   "pages": pages,
 }
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "slides.json")

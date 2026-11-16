@@ -303,8 +303,8 @@ doc = {
   "footer": "第十章　波动",
   "logoScale": 0.67,
   "theme": "wave",       # 第十章的降噪版式（图版 + 细页眉）
-  "engine": "edge",
-  "voice": "zh-CN-YunxiNeural",
+  "engine": "index-tts",
+  "voice": "voice_03.wav",
   "pages": pages,
 }
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "slides.json")

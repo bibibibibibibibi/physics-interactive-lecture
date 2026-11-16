@@ -140,6 +140,10 @@ def main():
     if engine == "edge":
         voice = doc.get("voice", "zh-CN-YunxiNeural")
         tts_fn = gen_audio.edge_tts
+    elif engine == "index-tts":
+        import local_index_tts
+        voice = doc.get("voice", "voice_03.wav")
+        tts_fn = local_index_tts.tts
     else:
         voice = STYLE.get("voices", {}).get(char, STYLE["voice_id"])
         tts_fn = gen_audio.tts
@@ -151,7 +155,7 @@ def main():
         n = pg["id"]
         if not (os.path.exists(os.path.join(adir, f"page{n}.mp3"))
                 and os.path.exists(os.path.join(course, f"page{n}.times.json"))):
-            if engine != "edge":
+            if engine not in ("edge", "index-tts"):
                 gen_audio.audio_tool_command()
             break
     os.makedirs(adir, exist_ok=True)
@@ -309,8 +313,12 @@ def main():
     with open(lst, "w", encoding="utf-8") as fp:
         for p in concat_parts:
             fp.write("file '" + p.replace("\\", "/").replace("'", "'\\''") + "'\n")
+    # Stream-copy concatenation can replace a page-initial short sentence with silence.
+    # Decode every page and encode the continuous lecture once; duration is then probed
+    # from the actual deliverable rather than inferred from container timestamps.
     subprocess.run([FF, "-y", "-f", "concat", "-safe", "0", "-i", lst,
-                    "-c", "copy", full], capture_output=True, check=True)
+                    "-ar", "24000", "-ac", "1", "-c:a", "libmp3lame", "-b:a", "96k", full],
+                   capture_output=True, check=True)
     total = gen_audio.probe(full)
 
     # 页面左上角 logo：唯一源是 lecture_factory/assets/logo_gewu.png（与 new_webcourse.py 一致）

@@ -170,8 +170,8 @@ doc = {
   "footer": "第六章　静电场中的导体与电介质",
   "logoScale": 0.67,
   "theme": "refined",
-  "engine": "edge",
-  "voice": "zh-CN-YunxiNeural",
+  "engine": "index-tts",
+  "voice": "voice_03.wav",
   "pages": pages,
 }
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "slides.json")
