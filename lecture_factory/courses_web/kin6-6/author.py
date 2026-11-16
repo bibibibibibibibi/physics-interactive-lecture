@@ -37,9 +37,9 @@ pages.append({
   text(3, 170, 410, 1580, [R("随电荷积累：$u_C$ 升高 ⇒ $u_R$ 减小 ⇒ 电流下降．", 31)], h=52),
   text(4, 170, 494, 1580, [R("$t\\to\\infty$：$u_C\\to\\varepsilon$，$i\\to0$；有限时间近似充满．", 28, RED, True)], h=52),
   text(5, 170, 578, 1580, [R("所以是「越来越慢」的过程，不是线性．", 31, "#666")], h=50),
-  box(6, 170, 664, 1580, 160, GREEN_FILL, GREEN_LINE,
+  box(6, 600, 664, 720, 110, GREEN_FILL, GREEN_LINE,
       [[R("回路方程", 31, BLUE, True)],
-       [R("ε = iR + u_C，其中 u_C = q/C", 30)]], align="center"),
+       [R(r"$\varepsilon=iR+u_C$，其中 $u_C=q/C$", 30)]], align="center"),
  ]})
 
 # ---------------- 第 3 页：充电规律 ----------------
@@ -48,9 +48,9 @@ pages.append({
  "narration": "[[1]]解这个回路方程，得到充电规律。[[2]]电荷随时间的变化是：q 等于 C epsilon 乘以括号一减 e 的负 t 比 RC 次方。[[3]]t 等于零时，指数项为一，q 为零，符合初始条件。[[4]]t 趋于无穷时，指数项趋于零，q 趋于 C epsilon，也就是充满。[[5]]电流是 q 的导数：i 等于 epsilon 除以 R 乘 e 的负 t 比 RC 次方，指数衰减。[[6]]注意 t 等于零时电流是最大值，之后单调下降——这与电荷的「先快后慢」正好呼应。",
  "elements": [
   text(0, 170, 137, 1580, [R("充电规律", 48, RED, True)]),
-  tex(1, 170, 244, 1580, r"q=C\\varepsilon\\left(1-\\mathrm e^{-t/RC}\\right)", size=36, h=140,
+  tex(1, 170, 244, 1580, r"q=C\varepsilon\left(1-\mathrm e^{-t/RC}\right)", size=36, h=140,
       color=RED, align="center"),
-  tex(2, 170, 410, 1580, r"i=\\dfrac{\\mathrm dq}{\\mathrm dt}=\\dfrac{\\varepsilon}{R}\\mathrm e^{-t/RC}", size=34,
+  tex(2, 170, 410, 1580, r"i=\dfrac{\mathrm dq}{\mathrm dt}=\dfrac{\varepsilon}{R}\mathrm e^{-t/RC}", size=34,
       h=140, color=BLUE, align="center"),
   text(3, 170, 580, 1580, [R("$t=0$：$q=0$，$i=\\varepsilon/R$（最大）．", 31)], h=52, align="center"),
   text(4, 170, 662, 1580, [R("$t\\to\\infty$：$q\\to C\\varepsilon$（充满），$i\\to0$．", 31)], h=52, align="center"),
@@ -83,8 +83,8 @@ pages.append({
  "elements": [
   text(0, 170, 137, 1580, [R("放电", 48, RED, True)]),
   text(1, 170, 244, 1580, [R("断开电源，电容通过电阻放电：$q/C=-R\\,\\mathrm dq/\\mathrm dt$．", 30)], h=52, align="center"),
-  tex(2, 170, 320, 1580, r"q=Q_0\,\\mathrm e^{-t/RC}", size=38, h=140, color=RED, align="center"),
-  tex(3, 170, 490, 1580, r"i=\\dfrac{dq}{dt}=-\\dfrac{Q_0}{RC}\\mathrm e^{-t/RC}", size=30, h=130, color=BLUE, align="center"),
+  tex(2, 170, 320, 1580, r"q=Q_0\,\mathrm e^{-t/RC}", size=38, h=140, color=RED, align="center"),
+  tex(3, 170, 490, 1580, r"i=\dfrac{dq}{dt}=-\dfrac{Q_0}{RC}\mathrm e^{-t/RC}", size=30, h=130, color=BLUE, align="center"),
   text(4, 170, 654, 1580, [R("$i<0$：与充电参考方向相反；$|i|$ 指数衰减．", 28)], h=52, align="center"),
   text(5, 170, 736, 1580, [R("能量全部消耗在电阻上，变成热．", 31, RED, True)], h=52, align="center"),
   text(6, 170, 818, 1580, [R("所以大电容放电会打火、会烫——不要直接短接．", 30, "#666")], h=48, align="center"),
@@ -103,10 +103,10 @@ pages.append({
   text(3, 170, 404, 1580, [R("③ 滤波：", 33, BLUE, True),
                            R("大电容把脉动电压抹平，输出接近直流．", 31)], h=54),
   text(4, 170, 486, 1580, [R("④ 消抖、复位电路：同一个道理．", 33, BLUE, True)], h=54),
-  box(5, 170, 578, 1580, 170, GREEN_FILL, GREEN_LINE,
+  box(5, 615, 578, 690, 100, GREEN_FILL, GREEN_LINE,
       [[R("注意「慢」是相对的", 31, BLUE, True)],
        [R("RC 可以从微秒到小时，全看选多大的电阻和电容", 28)]], align="center"),
-  text(6, 170, 796, 1580, [R("充电时电源做功 $C\\varepsilon^{2}$，储能只有一半，另一半耗在电阻上．", 28, "#666")],
+  text(6, 170, 796, 1580, [R("理想恒压源经电阻充满时：电源做功 $C\\varepsilon^{2}$，一半储能、一半耗散．", 28, "#666")],
        h=48),
  ]})
 
@@ -121,7 +121,7 @@ pages.append({
   text(3, 170, 396, 1580, [R("③ 时间常数 $\\tau=RC$；$1\\tau\\to63\\%$，$5\\tau\\to99\\%$．", 30)], h=52),
   text(4, 170, 476, 1580, [R("④ 充电能量：电源做功 $C\\varepsilon^{2}$，储能 $\\frac12C\\varepsilon^{2}$，", 30)], h=50),
   text(4, 220, 526, 1560, [R("另一半消耗在电阻上（与 $R$ 无关）．", 30, RED, True)], h=48),
-  box(5, 170, 612, 1580, 170, GREEN_FILL, GREEN_LINE,
+  box(5, 645, 612, 630, 100, GREEN_FILL, GREEN_LINE,
       [[R("特定理想 RC 充电的能量分配", 31, BLUE, True)],
        [R("储能／电源输出 = 1/2；不是通用充电效率", 28, RED, True)]], align="center"),
   text(6, 170, 830, 1580, [R("$R$ 改变耗散功率曲线与充电快慢，不改变完整过程的总耗散．", 27, "#666")], h=48),

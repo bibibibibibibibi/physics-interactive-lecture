@@ -32,6 +32,27 @@ def add_diagnostic(pages, page_id, anchor, question, options, answer, feedback, 
             overrides.append({'after_sentence': anchor, 'gap_seconds': 1.2})
 
 
+def revise_content(pages, replacements):
+    """Apply exact counted revisions without changing element order."""
+    def walk(value, old, new):
+        if isinstance(value, str):
+            return value.replace(old, new), value.count(old)
+        if isinstance(value, list):
+            pairs=[walk(item,old,new) for item in value]
+            return [item[0] for item in pairs],sum(item[1] for item in pairs)
+        if isinstance(value, dict):
+            pairs={key:walk(item,old,new) for key,item in value.items()}
+            return {key:item[0] for key,item in pairs.items()},sum(item[1] for item in pairs.values())
+        return value,0
+    for entry in replacements:
+        old,new=entry[:2]
+        expected=entry[2] if len(entry)>2 else 1
+        revised,hits=walk(pages,old,new)
+        if hits!=expected:
+            raise ValueError(f'内容替换应命中 {expected} 次，实际 {hits} 次：{old[:160]!r}')
+        pages[:]=revised
+
+
 def tighten_boxes(pages, specifications):
     """Apply reviewed box coordinates without changing element order or annotation keys."""
     for (page_id, element_index), geometry in specifications.items():

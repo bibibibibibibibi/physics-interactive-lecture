@@ -12214,7 +12214,7 @@ export function MagGauss() {
 /* ---------- 7-2 图示修订：电流元方向、场点叠加、螺线管内部场 ---------- */
 
 /** 7-2 P3/P5：电流元 Idl、场点 P、r̂、dB 的空间关系
- *  Idl 沿导线（+x），r 指向 P；dB = Idl × r̂ 指向纸面内（⊗）。
+ *  Idl 沿导线（+x），r 指向 P；dB = Idl × r̂ 指向纸面外（⊙）。
  *  几何：O 为电流元中点，u 为单位指向 P 的矢量。 */
 export function BiotElem() {
   const O: [number, number] = [210, 330]
@@ -12246,8 +12246,7 @@ export function BiotElem() {
       <circle cx={P[0]} cy={P[1]} r="9" fill="#111" />
       <text x={P[0] + 16} y={P[1] - 10} fontSize="37" fontStyle="italic" fontFamily={SERIF} fill="#111">P</text>
       <circle cx={P[0] - 18} cy={P[1] + 66} r="20" fill="#fff" stroke="#7B1FA2" strokeWidth="4.8" />
-      <line x1={P[0] - 31} y1={P[1] + 53} x2={P[0] - 5} y2={P[1] + 79} stroke="#7B1FA2" strokeWidth="4.4" />
-      <line x1={P[0] - 5} y1={P[1] + 53} x2={P[0] - 31} y2={P[1] + 79} stroke="#7B1FA2" strokeWidth="4.4" />
+      <circle cx={P[0] - 18} cy={P[1] + 66} r="6" fill="#7B1FA2" />
       <line x1={P[0] - 18} y1={P[1] + 90} x2={P[0] - 18} y2={P[1] + 122} stroke="#7B1FA2" strokeWidth="3.2"
         strokeDasharray="6 5" />
       <text x={P[0] - 18} y={P[1] + 148} textAnchor="middle" fontSize="35" fontStyle="italic"
@@ -12256,7 +12255,7 @@ export function BiotElem() {
         dB ⊥ Idl，dB ⊥ r
       </text>
       <text x="96" y="392" fontSize="27" fontFamily={HEI} fill="#7B1FA2">
-        ⊗ 表示垂直纸面向里
+        ⊙ 表示垂直纸面向外
       </text>
     </svg>
   )
@@ -12690,7 +12689,7 @@ export function MassSpec() {
         </g>
       ))}
       <text x="360" y="392" textAnchor="middle" fontSize="27" fontFamily={SERIF} fill="#333">
-        r = mv/(qB) ⇒ 半径给出 m
+        r = mv/(|q|B) ⇒ 半径给出 m
       </text>
     </svg>
   )
@@ -12730,10 +12729,10 @@ export function HallEffect() {
       <text x={x0 - 44} y={(y0 + y1) / 2} textAnchor="end" fontSize="27" fontStyle="italic"
         fontFamily={SERIF} fill="#12852F">U<tspan fontSize="19" dy="6">H</tspan></text>
       <text x={330} y="140" textAnchor="middle" fontSize="25" fontFamily={HEI} fill="#333">
-        载流子受洛伦兹力向一侧偏转
+        w：电压方向间距；d：沿 B 厚度
       </text>
       <text x="330" y="426" textAnchor="middle" fontSize="26" fontFamily={SERIF} fill="#B00020">
-        U_H = IB/(nqd)
+        |U_H| = IB/(n|q|d)
       </text>
     </svg>
   )

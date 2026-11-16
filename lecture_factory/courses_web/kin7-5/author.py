@@ -10,6 +10,7 @@ import json, os, sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 from web_author import *
+from web_quality import add_diagnostic,apply_annotations,revise_content,tighten_boxes
 
 pages = []
 
@@ -214,15 +215,31 @@ HEADINGS = ["封面", "本节路线", "一　洛伦兹力", "二　磁场中的�
 for pg, h in zip(pages, HEADINGS):
     pg["heading"] = h
 
+# 第七章本轮质量整改
+revise_content(pages,[('qB', '|q|B', 18), ('qvB', '|q|vB', 5), ('qU', '|q|U', 2), ('电场力做功', '电场力可以做功', 3), ('电场力沿电场方向', '正电荷的电场力沿电场方向，负电荷则反向'), ('沿电场方向，与速度无关．', '正电荷沿 E，负电荷反向；与速度无关．'), ('电场力：与 v 无关，做功', '电场力：与 v 无关，可以做功'), ('速度接近光速时质量变大，周期不再固定', '速度接近光速时相对论动量改变，回旋周期不再固定'), ('[[1]]只看磁场，速度垂直于 B 的情形。', '[[1]]以下采用非相对论近似，只看磁场且速度垂直于 B 的情形。'), ('粒子每过一次缝隙，就被电场加速一次，动能增加 |q|U。', '粒子每过一次缝隙，在相位合适时被电场加速，动能增加 |q|U；这里 U 是该次过缝的有效加速电压。'), ('让两者方向垂直。只有速度恰好等于 E 除以 B 的离子', '让 E、B 与速度两两垂直，并使电场力与磁场力反向。只有速度大小恰好等于 E 除以 B 的离子'), ('[[6]]平衡时 qE 等于 |q|vB，把 E 写成 U 除以 d，得到霍尔电压等于 IB 除以 nqd。', '[[6]]取霍尔电压方向间距为 w、沿 B 的板厚为 d。平衡时 E 等于 v_dB，且 E 等于 |U_H|/w，v_d 等于 I/(n|q|wd)，所以 |U_H| 等于 IB/(n|q|d)。'), ('nqd', 'n|q|d', 2)])
+pages[7]['elements'][6]['tex']=r'E=\dfrac{|U_H|}{w}=v_dB,\quad v_d=\dfrac{I}{n|q|wd}'
+pages[7]['elements'][7]['tex']=r'|U_H|=\dfrac{IB}{n|q|d}'
+pages[8]['elements'][11]['paras']=[[R('霍尔效应：|U_H| = IB/(n|q|d)，d 为沿 B 的厚度',25)]]
+
+add_diagnostic(pages,7,'这就是质谱仪测质量、定同位素丰度的原理。','速度选择器中，E 向右、B 向里、正电荷速度向上。磁场力向哪里？',['向右','向左','向上','向里'],1,['电场力向右，磁场力须反向才能平衡。','正确。v×B 向左，与电场力抵消。','速度方向不是磁场力方向。','叉乘结果在纸面内。'],'用 v×B 判方向，并检查 qE 与 qv×B 是否反向。')
+
+add_diagnostic(pages,8,'霍尔效应就是靠这一点成为半导体测量的基本手段。','霍尔电压方向间距为 w，沿 B 的厚度为 d。哪个公式正确？',['|U_H|=IB/(n|q|w)','|U_H|=IB/(n|q|d)','|U_H|=IBwd/(n|q|)','|U_H|=n|q|d/(IB)'],1,['w 出现在漂移速度分母，会消去。','正确。E=|U_H|/w，v_d=I/(n|q|wd)，联立即得。','量纲与推导均不符。','把倒数关系写反了。'],'关键几何：电场用 w，电流横截面积用 wd，最后只保留厚度 d。')
+# 第七章实测框体整改
+tighten_boxes(pages,{(2, 8): (240.5, 698.0, 599.0, 180.0), (2, 9): (1065.0, 243.5, 605.0, 235.0), (2, 10): (1049.0, 520.5, 637.0, 191.0), (3, 10): (1058.5, 251.0, 618.0, 230.0), (3, 11): (1049.0, 520.5, 637.0, 191.0), (4, 9): (1043.0, 694.5, 649.0, 179.0), (6, 5): (227.5, 486.5, 625.0, 175.0), (7, 11): (1074.5, 694.5, 586.0, 179.0), (9, 15): (359.5, 792.5, 1201.0, 149.0)})
+# 第七章二次实测框体整改
+tighten_boxes(pages,{(9, 15): (469.0, 802.5, 982.0, 129.0)})
+annotation_count=apply_annotations(__file__,pages)
+
 doc = {
   "title": "7-5 带电粒子在电场和磁场中的运动",
   "nav": "7-5　带电粒子在电磁场中的运动",
   "footer": "第七章　恒定磁场",
   "logoScale": 0.67,
+  "theme": "refined",
   "engine": "edge",
   "voice": "zh-CN-YunxiNeural",
   "pages": pages,
 }
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "slides.json")
 json.dump(doc, open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-print(f"pages: {len(pages)} -> {out}")
+print(f"pages: {len(pages)}, annotations: {annotation_count} -> {out}")

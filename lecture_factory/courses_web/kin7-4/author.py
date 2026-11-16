@@ -12,6 +12,7 @@ import json, os, sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 from web_author import *
+from web_quality import add_diagnostic,apply_annotations,revise_content,tighten_boxes
 
 pages = []
 
@@ -250,15 +251,32 @@ HEADINGS = ["封面", "本节路线", "一　安培环路定理", "二　符号�
 for pg, h in zip(pages, HEADINGS):
     pg["heading"] = h
 
+# 第七章本轮质量整改
+revise_content(pages,[('在磁场中任取闭合路径 $l$：', '恒定电流条件下，任取闭合路径 $l$：'), ('[[1]]第一个应用，长直螺线管。', '[[1]]第一个应用，理想长直螺线管；实际长管只在远离端口处采用以下近似。'), ('[[6]]这两条加上后面要学的电磁感应，就是麦克斯韦方程组在恒定情形下的样子。', '[[6]]恒定情形由电场与磁场的静态方程组成，感应项为零；完整时变方程还须加入感应项和位移电流项。'), ('这两条 + 电场的两条', '恒定情形：电场两条 + 磁场两条'), ('再加上电磁感应，就齐了（第八章）', '时变形式还需感应项与位移电流项'), ('让 r 远大于环的截面尺寸', '取平均半径 R 远大于截面尺寸，并用 R 近似 r')])
+add_diagnostic(pages,4,'这一点和「通量为零不等于场为零」是同一个道理，别混。','右手拇指指向纸面外时，向里的电流应取什么符号？',['正','负','不计','可任意选'],1,['方向与绕向共同决定符号。','正确，与选定正方向相反。','穿过曲面就要计入。','约定后必须一致。'],'右手四指沿绕向，拇指方向为正电流方向。')
+
+add_diagnostic(pages,9,'在 r 等于 R 处两式相等，场是连续的。','均匀载流圆柱中，r=R/2 处的 B 是 r=2R 处的几倍？',['1/4','1/2','1','2'],2,['柱内外须用不同公式。','这只是内部相对表面值的比值。','正确，两处相等。','比例算反了。'],'分别代入柱内外公式再取比值。')
+
+pages[6]['elements'][9]['paras']=[[R('细环近似：平均半径 R 远大于截面尺寸，n=N/(2πR)，r≈R，B≈μ₀nI．',27,'#666')]]
+# 第七章实测框体整改
+tighten_boxes(pages,{(2, 9): (1063.5, 240.5, 608.0, 231.0), (2, 10): (1049.0, 510.0, 637.0, 192.0), (3, 9): (1052.0, 251.0, 631.0, 230.0), (4, 9): (236.5, 797.0, 607.0, 176.0), (5, 9): (1045.5, 704.5, 644.0, 179.0), (8, 9): (1065.5, 253.0, 604.0, 236.0), (8, 10): (1049.0, 533.0, 637.0, 196.0), (9, 10): (1045.5, 249.0, 644.0, 224.0), (9, 11): (1045.5, 513.0, 644.0, 196.0), (10, 15): (393.0, 792.5, 1134.0, 149.0)})
+# 第七章二次实测框体整改
+tighten_boxes(pages,{(10, 15): (519.5, 802.5, 881.0, 129.0)})
+# 第七章路线页重叠整改
+pages[1]['elements'][1]['paras']=[[R('主线：定理 → 符号 → 验证 → 应用 → 对照',31,BLUE,True)]]
+pages[1]['elements'][1]['w']=790
+annotation_count=apply_annotations(__file__,pages)
+
 doc = {
   "title": "7-4 安培环路定理",
   "nav": "7-4　安培环路定理",
   "footer": "第七章　恒定磁场",
   "logoScale": 0.67,
+  "theme": "refined",
   "engine": "edge",
   "voice": "zh-CN-YunxiNeural",
   "pages": pages,
 }
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "slides.json")
 json.dump(doc, open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-print(f"pages: {len(pages)} -> {out}")
+print(f"pages: {len(pages)}, annotations: {annotation_count} -> {out}")

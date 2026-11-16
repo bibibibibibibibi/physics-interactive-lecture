@@ -10,6 +10,7 @@ import json, os, sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 from web_author import *
+from web_quality import add_diagnostic,apply_annotations,revise_content,tighten_boxes
 
 pages = []
 
@@ -200,15 +201,30 @@ HEADINGS = ["封面", "本节路线", "一　电流元的受力", "二　均匀�
 for pg, h in zip(pages, HEADINGS):
     pg["heading"] = h
 
+# 第七章本轮质量整改
+revise_content(pages,[('均匀磁场里，弯曲部分的贡献会相互抵消，合力只由两端连线决定。', '均匀磁场里，B 可提到积分号外，∫dl 等于首尾位移矢量，故合力只由两端连线决定；并非弯曲部分各自抵消。'), ('可以看成「电流之间有一种想并在一起的倾向」。', '同向相吸、反向相斥应分别用两场叠加和安培力方向判断，不能笼统说成电流都想并在一起。'), ('可以想成：电流有并在一起的倾向．', '方向须由磁场与安培力逐步判定．')])
+add_diagnostic(pages,5,'注意它只对均匀磁场成立；磁场不均匀时，B 提不出来，就得老老实实积分。','弯导线在非均匀磁场中，合力仍只由首尾连线决定吗？',['一定仍成立','成立，只要电流恒定','不一定，须逐段积分','只在闭合导线成立'],2,['首尾等效依赖 B 为常矢量。','恒定电流不能替代均匀场条件。','正确。非均匀场中 B 不能提出积分号。','闭合导线在均匀场中合力为零，非均匀场无此保证。'],'核心条件是均匀磁场，而不是形状或电流是否恒定。')
+
+add_diagnostic(pages,6,'这个公式在历史上很重要——二零一九年以前，安培这个单位就是用两平行导线之间的力定义的，而不是用基本电荷。','两平行导线间距不变，两电流都加倍，单位长度作用力变为几倍？',['1 倍','2 倍','4 倍','8 倍'],2,['电流变了，力会改变。','只考虑了一个电流加倍。','正确。F/l∝I₁I₂，两个因子都乘 2，合力乘 4。','间距未变，不会再多乘 2。'],'使用 F/l=μ₀I₁I₂/(2πd)，方向仍按同向相吸、反向相斥判断。')
+# 第七章实测框体整改
+tighten_boxes(pages,{(2, 9): (1047.5, 226.5, 640.0, 239.0), (2, 10): (1061.5, 498.0, 612.0, 186.0), (2, 12): (1044.5, 791.0, 646.0, 178.0), (3, 9): (1081.0, 690.5, 573.0, 187.0), (5, 10): (1044.5, 695.0, 646.0, 178.0), (7, 9): (221.0, 838.0, 638.0, 146.0), (7, 10): (1055.5, 243.5, 624.0, 255.0), (7, 11): (1043.0, 531.0, 649.0, 190.0), (8, 13): (356.5, 744.5, 1207.0, 149.0)})
+# 第七章二次实测框体整改
+tighten_boxes(pages,{(8, 13): (464.5, 754.5, 991.0, 129.0)})
+# 第七章路线页重叠整改
+pages[1]['elements'][1]['paras']=[[R('主线：电流元 → 直导线 → 弯导线 → 平行导线',31,BLUE,True)]]
+pages[1]['elements'][1]['w']=790
+annotation_count=apply_annotations(__file__,pages)
+
 doc = {
   "title": "7-6 磁场对载流导线的作用",
   "nav": "7-6　磁场对载流导线的作用",
   "footer": "第七章　恒定磁场",
   "logoScale": 0.67,
+  "theme": "refined",
   "engine": "edge",
   "voice": "zh-CN-YunxiNeural",
   "pages": pages,
 }
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "slides.json")
 json.dump(doc, open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-print(f"pages: {len(pages)} -> {out}")
+print(f"pages: {len(pages)}, annotations: {annotation_count} -> {out}")
